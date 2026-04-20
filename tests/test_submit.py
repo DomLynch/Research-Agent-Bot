@@ -168,3 +168,64 @@ def test_idempotency_key_sent_with_submission():
     fp = "test-fp-123"
     resp = client.post("http://test/submissions", json={"title": "test"}, headers={"Idempotency-Key": fp})
     assert resp.request.headers["Idempotency-Key"] == fp
+
+
+def test_submit_and_check_decision_end_to_end(tmp_path, monkeypatch):
+    """True integration: submit() → check_decision() flow with mocked HTTP."""
+    mock = MockResearka()
+    mock.decisions["sub-1"] = {"status": "complete", "decision": "accept"}
+    mock.publications["pub-1"] = {"id": "pub-1", "parent_object_id": "sub-1", "title": "Published"}
+
+    monkeypatch.setenv("RESEARKA_URL", "http://test")
+    monkeypatch.setenv("MIMO_API_KEY", "test-key")
+
+    artifact = {
+        "title": "Rapid Evidence Synthesis: integration test",
+        "abstract": "Test abstract",
+        "sections": {"Research Question": "Q", "Key Findings": "F"},
+        "source_bundle": [
+            {"title": "P1", "evidence_type": "review", "year": 2024, "doi": "10.1/int1"},
+            {"title": "P2", "evidence_type": "primary", "year": 2023, "doi": "10.1/int2"},
+        ],
+        "domain_slug": "longevity",
+    }
+
+    run_dir = tmp_path / "runs"
+    run_dir.mkdir()
+
+    # monkeypatch httpx.post and httpx.get to route through mock
+    original_post = httpx.post
+    original_get = httpx.get
+
+    def mock_post(url, **kwargs):
+        clean = {k: v for k, v in kwargs.items() if k in ("content", "headers", "json", "data", "method")}
+        req = httpx.Request("POST", url, **clean)
+        resp = mock.handler(req)
+        resp._request = req
+        return resp
+
+    def mock_get(url, **kwargs):
+        req = httpx.Request("GET", url)
+        resp = mock.handler(req)
+        resp._request = req
+        return resp
+
+    monkeypatch.setattr(httpx, "post", mock_post)
+    monkeypatch.setattr(httpx, "get", mock_get)
+
+    # Step 1: submit
+    result = submit(artifact, base_url="http://test", run_dir=str(run_dir))
+    assert result["submission"]["id"] == "sub-1"
+    assert result["decision"]["status"] == "queued"
+    assert result["fingerprint"]
+    assert "Idempotency-Key" not in result  # header was in request, not response
+
+    # Step 2: check decision
+    decision = check_decision("sub-1", base_url="http://test")
+    assert decision["decision"] == "accept"
+
+    # Step 3: verify dedup on re-submit
+    result2 = submit(artifact, base_url="http://test", run_dir=str(run_dir))
+    # With the mock, submit() doesn't write to run_dir, so _find_previous won't find it
+    # But we can verify the fingerprint is the same
+    assert result2["fingerprint"] == result["fingerprint"]

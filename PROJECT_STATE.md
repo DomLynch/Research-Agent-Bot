@@ -20,8 +20,7 @@ Deterministic planner + bounded public literature queries + MiMo draft pass + Re
 
 ## Open Risks
 - PubMed/OpenAlex relevance ranking must stay simple without becoming naive.
-- Title-based dedup replaced with fingerprint-based (sha256), but still local-only (no cross-instance dedup).
-- Golden eval harness exists as VPS-side script; not yet CI-integrated due to PubMed network dependency.
+- Golden eval harness is in git at `tests/golden/harness.py` (VPS-side, requires live API). CI uses `tests/test_golden.py` with mock data.
 
 ## Next Validation Step
 Run golden harness on VPS for real precision/coverage baseline, then flip Researka to judge_panel.

@@ -104,7 +104,7 @@ def run_agent(
             except Exception as exc:
                 run_log["source_errors"].append(f"{source_name}:{query}:{exc}")
     run_log["evidence_retrieved"] = len(evidence)
-    all_evidence = list(evidence)
+    all_evidence = plan.filter_evidence(list(evidence))
     evidence = plan.filter_evidence(evidence)
     run_log["evidence_selected"] = len(evidence)
     try:

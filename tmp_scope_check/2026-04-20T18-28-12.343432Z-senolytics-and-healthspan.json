@@ -1,0 +1,70 @@
+{
+  "started_at": "2026-04-20T18:28:12.343432+00:00",
+  "topic": "senolytics and healthspan",
+  "domain_slug": "longevity",
+  "criteria": "human studies only safety 2020+",
+  "queries": [
+    "senolytics and healthspan human studies only safety 2020+",
+    "senolytics and healthspan aging health outcomes",
+    "senolytics and healthspan clinical trial older adults outcomes"
+  ],
+  "scope_signals": [
+    "year>=2020",
+    "human_only",
+    "safety_focus"
+  ],
+  "evidence_retrieved": 12,
+  "evidence_selected": 6,
+  "source_errors": [
+    "openalex:senolytics and healthspan human studies only safety 2020+:too many requests",
+    "openalex:senolytics and healthspan aging health outcomes:too many requests",
+    "openalex:senolytics and healthspan clinical trial older adults outcomes:too many requests"
+  ],
+  "title": "Rapid Evidence Synthesis: senolytics and healthspan",
+  "abstract": "This draft synthesizes public-index evidence on senolytics and healthspan for the longevity domain. The run retained 4 evidence receipts spanning 2018 to 2024, with 2 review-like items and 2 primary-study items.",
+  "sections": {
+    "Research Question": "This draft examines rapamycin and anti-aging outcomes [1] with a cautious evidence frame suitable for readable output. This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.",
+    "Search Summary": "Public literature sources were queried with scoped variants and the bundle was reduced to the most relevant retained receipts.",
+    "Evidence Landscape": "The retained evidence is review-led and should be interpreted conservatively rather than as final clinical proof.",
+    "Key Findings": "The strongest signal is directional support [1] with uncertainty driven by heterogeneous designs and incomplete replication.",
+    "Limitations": "This remains a rapid synthesis of indexed evidence rather than a full systematic review with exhaustive full-text screening.",
+    "Gaps Identified": "This section draws on 4 retained evidence receipts (2 review, 2 primary) queried on 2026-04-20 via 3 scoped search strings.",
+    "Conclusion": "Rapamycin remains decision-relevant [1], but claims should stay inside the limits of the retained evidence bundle."
+  },
+  "source_bundle": [
+    {
+      "title": "Senolytics in older adults: safety review",
+      "evidence_type": "review",
+      "year": 2024,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2/",
+      "doi": null,
+      "relevance": 0.85
+    },
+    {
+      "title": "Senolytics in mice improve healthspan",
+      "evidence_type": "primary",
+      "year": 2024,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3/",
+      "doi": null,
+      "relevance": 0.9
+    },
+    {
+      "title": "Senolytic efficacy in human healthspan trials",
+      "evidence_type": "primary",
+      "year": 2023,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5/",
+      "doi": null,
+      "relevance": 0.75
+    }
+  ],
+  "prompt_version": "test-prompt/v1",
+  "usage": {
+    "input_tokens": 100,
+    "output_tokens": 50,
+    "total_tokens": 150
+  },
+  "estimated_cost_usd": 0.0,
+  "model": "MiniMax-M2.7-highspeed",
+  "markdown": "# Rapid Evidence Synthesis: senolytics and healthspan\n\n- Topic: senolytics and healthspan\n- Domain: longevity\n- Criteria: human studies only safety 2020+\n\n## Abstract\n\nThis draft synthesizes public-index evidence on senolytics and healthspan for the longevity domain. The run retained 4 evidence receipts spanning 2018 to 2024, with 2 review-like items and 2 primary-study items.\n\n## Research Question\n\nThis draft examines rapamycin and anti-aging outcomes [1] with a cautious evidence frame suitable for readable output. This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.\n\n## Search Summary\n\nPublic literature sources were queried with scoped variants and the bundle was reduced to the most relevant retained receipts.\n\n## Evidence Landscape\n\nThe retained evidence is review-led and should be interpreted conservatively rather than as final clinical proof.\n\n## Key Findings\n\nThe strongest signal is directional support [1] with uncertainty driven by heterogeneous designs and incomplete replication.\n\n## Limitations\n\nThis remains a rapid synthesis of indexed evidence rather than a full systematic review with exhaustive full-text screening.\n\n## Gaps Identified\n\nThis section draws on 4 retained evidence receipts (2 review, 2 primary) queried on 2026-04-20 via 3 scoped search strings.\n\n## Conclusion\n\nRapamycin remains decision-relevant [1], but claims should stay inside the limits of the retained evidence bundle.\n\n## Sources\n\n[1] Senolytics in older adults: safety review (2024), review \u2014 https://pubmed.ncbi.nlm.nih.gov/2/\n[2] Senolytics in mice improve healthspan (2024), primary \u2014 https://pubmed.ncbi.nlm.nih.gov/3/\n[3] Senolytic efficacy in human healthspan trials (2023), primary \u2014 https://pubmed.ncbi.nlm.nih.gov/5/\n",
+  "markdown_file": "2026-04-20T18-28-12.343432Z-senolytics-and-healthspan.md"
+}

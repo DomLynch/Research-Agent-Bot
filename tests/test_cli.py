@@ -151,6 +151,11 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
         assert "year" in item
         assert "title" in item
         assert "url" in item
+    # verify no animal papers leak into the bundle
+    for item in run["source_bundle"]:
+        title = str(item.get("title", "")).lower()
+        assert "mice" not in title, f"Animal paper leaked into source_bundle: {title}"
+        assert "mouse" not in title, f"Animal paper leaked into source_bundle: {title}"
 
 
 def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monkeypatch) -> None:
