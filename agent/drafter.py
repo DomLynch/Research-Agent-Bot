@@ -109,6 +109,7 @@ class RapidEvidenceDrafter:
             system_prompt=system_prompt,
             user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\nEvidence:\n{_prompt(selected)}",
         )
+        result = {str(k).lower(): v for k, v in result.items()}
         fb_ctx = {
             "topic": topic, "domain": domain_slug,
             "today": datetime.now(timezone.utc).date().isoformat(),
