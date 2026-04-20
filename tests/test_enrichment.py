@@ -112,7 +112,7 @@ def test_enrich_with_mocked_minimax(monkeypatch):
     raw = {"title": "Test", "excerpt": "Test excerpt", "year": 2021, "url": "http://test.com", "source_type": "pubmed", "evidence_type": "primary", "query": "test"}
     card, raw_resp = enrich_evidence(raw, minimax_client)
 
-    assert card["title"] == "Test"  # raw title preserved by _validate
+    assert card["title"] == "Mocked Study"  # model title used by _validate
     assert card["year"] == 2021
     assert card["study_type"] == "RCT"
     assert card["relevance_score"] == 0.85
