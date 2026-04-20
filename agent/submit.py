@@ -59,7 +59,7 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: st
         "domain_slug": artifact.get("domain_slug", "general"),
         "core_claims_resolved": True,
     }
-    response = httpx.post(f"{url}/submissions", json=payload, timeout=30, headers={"Idempotency-Key": fp})
+    response = httpx.post(f"{url}/submissions", json=payload, timeout=30, headers={"Idempotency-Key": fp, "X-Api-Key": os.getenv("RESEARKA_V2_API_KEY", "")})
     response.raise_for_status()
     result = response.json()
     result["decision"] = {"status": "queued"}
@@ -72,10 +72,11 @@ def check_decision(submission_id: str, *, base_url: str | None = None) -> dict[s
     if not url:
         return {"status": "error", "error": "no RESEARKA_URL"}
     try:
-        decision = httpx.get(f"{url}/submissions/{submission_id}/decision", timeout=10).json()
+        headers = {"X-Api-Key": os.getenv("RESEARKA_V2_API_KEY", "")}
+        decision = httpx.get(f"{url}/submissions/{submission_id}/decision", timeout=10, headers=headers).json()
         if decision.get("decision") == "accept":
             try:
-                pubs = httpx.get(f"{url}/publications", timeout=10).json()
+                pubs = httpx.get(f"{url}/publications", timeout=10, headers=headers).json()
                 for pub in pubs.get("publications", []):
                     if pub.get("parent_object_id") == submission_id:
                         decision["publication_id"] = pub["id"]
