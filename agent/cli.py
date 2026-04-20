@@ -68,7 +68,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--topic", required=True)
     parser.add_argument("--domain", required=True)
     parser.add_argument("--criteria", default="")
-    parser.add_argument("--per-source-limit", type=int, default=20)
+    parser.add_argument("--per-source-limit", type=int, default=25)
     parser.add_argument("--run-dir", default="runs")
     return parser
 
@@ -78,7 +78,7 @@ def run_agent(
     topic: str,
     domain: str,
     criteria: str = "",
-    per_source_limit: int = 20,
+    per_source_limit: int = 25,
     run_dir: str = "runs",
 ) -> dict:
     started_at = datetime.now(timezone.utc).isoformat()

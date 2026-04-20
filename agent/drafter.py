@@ -174,7 +174,7 @@ class RapidEvidenceDrafter:
             }
             for e in bundle_sources
             if e.get("evidence_type") in {"review", "primary"}
-            and (rel := _relevance(e, topic_tokens)) >= 0.3
+            and (rel := _relevance(e, topic_tokens)) >= 0.4
         ]
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
