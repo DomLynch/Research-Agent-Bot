@@ -49,11 +49,10 @@ def _dedupe(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _rank(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    def _s(item: dict[str, Any]) -> tuple[int, int, int, int]:
+    def _s(item: dict[str, Any]) -> tuple[int, int, int]:
         return (
-            1 if item.get("evidence_type") == "review" else 0,
             int(item.get("year") or 0),
-            1 if item.get("doi") else 0,
+            1 if item.get("evidence_type") == "review" else 0,
             len(_clean(item.get("excerpt"))),
         )
 
@@ -122,7 +121,7 @@ class RapidEvidenceDrafter:
         ]
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
-            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nIMPORTANT: The 'question' field MUST be at least 50 words. Frame a specific, bounded research question.\n\nEvidence:\n" + "\n".join(prompt_lines) or "No evidence receipts retained.",
+            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field MUST contain at least 50 words (a full paragraph). Include population, intervention, comparator, outcomes, and time frame.\n\nEvidence:\n" + "\n".join(prompt_lines) or "No evidence receipts retained.",
         )
         result = {str(k).lower(): v for k, v in result.items()}
         fb_ctx = {
