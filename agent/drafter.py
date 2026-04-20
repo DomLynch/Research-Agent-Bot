@@ -109,7 +109,9 @@ class RapidEvidenceDrafter:
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
-            "The Research Question section MUST be at least 50 words. "
+            "The 'question' field MUST be a full paragraph of at least 50 words. "
+            "Example: 'What are the effects of [intervention] on [outcomes] in [population], "
+            "compared to [comparator], as evaluated in [study types] with [time frame]?' "
             "Frame a specific, bounded research question with explicit scope, population, intervention, and outcome. "
             "Return exactly these JSON keys, each a plain string: "
             "question, search_summary, landscape, findings, limitations, gaps_identified, conclusion."
@@ -121,7 +123,7 @@ class RapidEvidenceDrafter:
         ]
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
-            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field MUST contain at least 50 words (a full paragraph). Include population, intervention, comparator, outcomes, and time frame.\n\nEvidence:\n" + "\n".join(prompt_lines) or "No evidence receipts retained.",
+            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: 'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy?'\n\nEvidence:\n" + "\n".join(prompt_lines) or "No evidence receipts retained.",
         )
         result = {str(k).lower(): v for k, v in result.items()}
         fb_ctx = {
