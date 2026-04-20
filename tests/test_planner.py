@@ -4,7 +4,7 @@ from agent.planner import QueryPlanner
 def test_planner_generates_multiple_queries() -> None:
     planner = QueryPlanner()
     plan = planner.build(topic="senolytics and healthspan", domain_slug="longevity")
-    assert len(plan.queries) == 3
+    assert len(plan.queries) >= 2
     assert any("systematic review" in q.lower() for q in plan.queries)
 
 
@@ -32,3 +32,15 @@ def test_topic_token_scoring_prefers_exact_overlap() -> None:
     ]
     filtered = plan.filter_evidence(evidence)
     assert filtered[0]["url"] == "https://pubmed.test/1/"
+
+
+def test_default_query_set_is_unique() -> None:
+    planner = QueryPlanner()
+    plan = planner.build(topic="senolytics and healthspan", domain_slug="longevity")
+    assert len(plan.queries) == len(set(plan.queries))
+
+
+def test_general_domain_safety_net_avoids_duplicate_outcomes() -> None:
+    planner = QueryPlanner()
+    plan = planner.build(topic="rapamycin", domain_slug="anti-aging")
+    assert "outcomes outcomes" not in " ".join(plan.queries).lower()

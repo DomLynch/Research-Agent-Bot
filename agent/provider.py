@@ -43,6 +43,7 @@ def _usage(payload: dict[str, Any]) -> dict[str, int]:
 
 @dataclass(slots=True)
 class ChatClient:
+    provider_name: str = "minimax"
     model: str = "MiniMax-M2.7-highspeed"
     base_url: str = "https://api.minimax.io/v1"
     api_key_env: str = "MINIMAX_API_KEY"
@@ -71,6 +72,7 @@ class ChatClient:
     @classmethod
     def mimo(cls) -> ChatClient:
         return cls(
+            provider_name="mimo",
             model=os.getenv("MIMO_MODEL", "mimo-v2-pro"),
             base_url=os.getenv("MIMO_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"),
             api_key_env="MIMO_API_KEY",
@@ -102,7 +104,7 @@ class ChatClient:
                 content["usage"] = _usage(payload)
                 content["estimated_cost_usd"] = 0.0
                 content["prompt_version"] = self.prompt_version
-                content["provider"] = "minimax"
+                content["provider"] = self.provider_name
                 content["model"] = self.model
                 return (content, payload)
             except (httpx.TimeoutException, httpx.HTTPStatusError, json.JSONDecodeError, KeyError) as exc:

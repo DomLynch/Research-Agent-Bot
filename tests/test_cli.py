@@ -230,7 +230,7 @@ def test_multi_query_executed(tmp_path: Path, monkeypatch) -> None:
     run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
 
     assert not run.get("error")
-    assert len(run["queries"]) == 3
+    assert len(run["queries"]) >= 2
     assert run["source_errors"]
 
 

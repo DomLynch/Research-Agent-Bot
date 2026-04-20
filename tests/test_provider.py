@@ -5,6 +5,7 @@ import os
 import httpx
 
 from agent.provider import _extract_json
+from agent.provider import ChatClient
 from agent.provider import MiniMaxClient
 
 
@@ -74,3 +75,24 @@ def test_client_complete_json_handles_prose_and_sets_usage(monkeypatch):
     assert result["usage"] == {"input_tokens": 11, "output_tokens": 7, "total_tokens": 18}
     assert result["model"] == "MiniMax-M2.7-highspeed"
     assert raw["choices"][0]["message"]["content"] is not None
+
+
+def test_mimo_client_sets_provider_and_model(monkeypatch):
+    monkeypatch.setenv("MIMO_API_KEY", "test-key")
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "choices": [{"message": {"content": '{"question":"ok","conclusion":"done"}'}}],
+                "usage": {"prompt_tokens": 3, "completion_tokens": 2},
+            },
+        )
+
+    client = ChatClient.mimo()
+    client.transport = httpx.MockTransport(handler)
+    client.__post_init__()
+    result, _ = client.complete_json(system_prompt="system", user_prompt="user")
+
+    assert result["provider"] == "mimo"
+    assert result["model"] == "mimo-v2-pro"

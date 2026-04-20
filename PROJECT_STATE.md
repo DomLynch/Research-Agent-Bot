@@ -4,7 +4,7 @@
 Ship a minimal Python V0 that turns `topic + domain + criteria` into a visible research draft plus markdown download.
 
 ## Success Condition
-- Hosted page runs one query end to end without hanging or hidden dead paths.
+- Hosted page runs the bounded query set end to end without hanging or hidden dead paths.
 - `criteria` changes both search intent and retained evidence.
 - Run log records queries, retained evidence, usage, and markdown output.
 
@@ -14,7 +14,7 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a visible r
 - Keep the code obvious enough for a customer to customize in under an hour.
 
 ## Winning Path
-Deterministic planner + public literature APIs + one MiniMax draft pass + markdown/log output + tiny dashboard.
+Deterministic planner + bounded public literature queries + one provider-selected draft pass + markdown/log output + tiny dashboard.
 
 ## Open Risks
 - Live provider latency still dominates the user-perceived speed.

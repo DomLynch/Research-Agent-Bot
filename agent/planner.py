@@ -138,5 +138,15 @@ class QueryPlanner:
         else:
             queries.append(f"{clean_topic} systematic review {hints[0]}")
         queries.append(f"{clean_topic} systematic review {hints[0]}")
-        queries.append(f"{clean_topic} {hints[1]} outcomes")
-        return QueryPlan(clean_topic, clean_domain, clean_criteria, scope, queries, tokens)
+        safety_net = f"{clean_topic} {hints[1]}"
+        if "outcomes" not in safety_net.lower():
+            safety_net = f"{safety_net} outcomes"
+        queries.append(safety_net)
+        deduped: list[str] = []
+        seen: set[str] = set()
+        for query in queries:
+            if query in seen:
+                continue
+            seen.add(query)
+            deduped.append(query)
+        return QueryPlan(clean_topic, clean_domain, clean_criteria, scope, deduped, tokens)

@@ -7,7 +7,7 @@
 
 ## Non-Negotiables
 - Python only.
-- Primary model: MiniMax M2.7 Highspeed.
+- Provider is env-selectable. Current live deployment may use MiMo v2 Pro.
 - V0 pipeline only: plan -> retrieve -> draft -> markdown/log -> dashboard.
 - No submit path, no poll path, no spar model, no fallback model in V0.
 - No frameworks, no multi-agent orchestration, no persistence beyond run logs.

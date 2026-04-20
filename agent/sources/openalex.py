@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 from typing import Any
 
 import httpx
@@ -9,7 +10,7 @@ OPENALEX_WORKS_URL = "https://api.openalex.org/works"
 
 
 def _clean_text(value: Any, *, limit: int = 1600) -> str:
-    return " ".join(str(value or "").split()).strip()[:limit]
+    return html.unescape(" ".join(str(value or "").split()).strip()[:limit])
 
 
 def _openalex_abstract(inverted_index: Any) -> str:
