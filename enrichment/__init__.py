@@ -143,8 +143,9 @@ def enrich_evidence(raw: dict, client: ChatClient | None = None) -> tuple[dict, 
         return _safe_fallback(raw, str(exc)), None
 
 
-def enrich_batch(evidence_list: list[dict], output_path: Path | str | None = None) -> dict:
-    client = ChatClient.minimax()
+def enrich_batch(evidence_list: list[dict], output_path: Path | str | None = None, client: ChatClient | None = None) -> dict:
+    if client is None:
+        client = ChatClient.minimax()
     cards = []
     raw_responses = []
     total_cost = 0.0

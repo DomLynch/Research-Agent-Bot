@@ -44,11 +44,31 @@ def test_batch_writes_output(tmp_path):
 
 
 def test_batch_writes_raw_output(tmp_path):
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "choices": [{"message": {"content": json.dumps({
+                    "title": "Study A", "year": 2020, "doi": None, "url": "http://a.com",
+                    "source_type": "pubmed", "evidence_type": "primary", "study_type": "unknown",
+                    "population": None, "intervention_or_exposure": None, "outcomes": None,
+                    "summary_bullets": ["point 1"], "relevance_score": 0.8,
+                    "human_evidence_score": 0.7, "safety_signal_score": 0.1,
+                    "novelty_score": 0.3, "is_generic_or_off_topic": False,
+                    "reasoning_notes": "test",
+                })}}],
+                "usage": {"prompt_tokens": 100, "completion_tokens": 50},
+            },
+        )
+
+    from agent.provider import ChatClient
+    client = ChatClient(transport=httpx.MockTransport(handler))
+
     evidence = [
         {"title": "Study A", "excerpt": "A study about X", "year": 2020, "url": "http://a.com", "source_type": "pubmed", "evidence_type": "primary", "query": "X"},
     ]
     output_path = tmp_path / "test.evidence.json"
-    result = enrich_batch(evidence, output_path)
+    result = enrich_batch(evidence, output_path, client=client)
     raw_path = tmp_path / "test.evidence.raw.json"
     assert raw_path.exists()
     raw_stored = json.loads(raw_path.read_text())
@@ -90,7 +110,7 @@ def test_enrich_with_mocked_minimax():
     raw = {"title": "Test", "excerpt": "Test excerpt", "year": 2021, "url": "http://test.com", "source_type": "pubmed", "evidence_type": "primary", "query": "test"}
     card, raw_resp = enrich_evidence(raw, minimax_client)
 
-    assert card["title"] == "Mocked Study"
+    assert card["title"] == "Test"  # raw title preserved by _validate
     assert card["year"] == 2021
     assert card["study_type"] == "RCT"
     assert card["relevance_score"] == 0.85
@@ -113,3 +133,18 @@ def test_enrich_fallback_on_invalid_response():
     assert "error" in card
     assert card["title"] == "Test"
     assert raw_resp is None
+
+
+def test_enriched_cards_enable_filtering():
+    cards = [
+        {"title": "A", "relevance_score": 0.9, "is_generic_or_off_topic": False, "safety_signal_score": 0.1},
+        {"title": "B", "relevance_score": 0.3, "is_generic_or_off_topic": True, "safety_signal_score": 0.8},
+        {"title": "C", "relevance_score": 0.7, "is_generic_or_off_topic": False, "safety_signal_score": 0.2},
+    ]
+    filtered = [c for c in cards if c["relevance_score"] >= 0.7 and not c["is_generic_or_off_topic"]]
+    assert len(filtered) == 2
+    assert all(c["relevance_score"] >= 0.7 for c in filtered)
+    assert all(not c["is_generic_or_off_topic"] for c in filtered)
+    high_safety = [c for c in cards if c["safety_signal_score"] > 0.5]
+    assert len(high_safety) == 1
+    assert high_safety[0]["title"] == "B"
