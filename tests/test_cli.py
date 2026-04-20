@@ -119,7 +119,7 @@ class OldHumanSource:
 def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: FakeProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
     run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="500 words", run_dir=str(tmp_path))
 
@@ -133,7 +133,7 @@ def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, m
 def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: MixedSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: FakeProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
     run = cli.run_agent(
         topic="senolytics and healthspan",
@@ -156,7 +156,7 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
 def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: OldHumanSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: FakeProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
     run = cli.run_agent(
         topic="senolytics and healthspan",
@@ -194,7 +194,7 @@ class LeakyProvider:
 def test_all_fallback_raises_error(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: LeakyProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: LeakyProvider()))
 
     run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
 
@@ -204,7 +204,7 @@ def test_all_fallback_raises_error(tmp_path: Path, monkeypatch) -> None:
 def test_insufficient_evidence(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: OldHumanSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: FakeProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
     run = cli.run_agent(topic="senolytics", domain="longevity", criteria="2020+", run_dir=str(tmp_path))
 
@@ -214,7 +214,7 @@ def test_insufficient_evidence(tmp_path: Path, monkeypatch) -> None:
 def test_inline_citations_present(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: MixedSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: FakeProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
     run = cli.run_agent(topic="senolytics and healthspan", domain="longevity", criteria="", run_dir=str(tmp_path))
 
@@ -225,7 +225,7 @@ def test_inline_citations_present(tmp_path: Path, monkeypatch) -> None:
 def test_multi_query_executed(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: FakeProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
     run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
 
@@ -237,7 +237,7 @@ def test_multi_query_executed(tmp_path: Path, monkeypatch) -> None:
 def test_source_list_is_numbered_with_titles(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
-    monkeypatch.setattr(cli, "_make_provider", lambda: FakeProvider())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
     run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
 

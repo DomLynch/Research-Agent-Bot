@@ -7,14 +7,9 @@ from pathlib import Path
 
 from agent.drafter import RapidEvidenceDrafter
 from agent.planner import QueryPlanner
-from agent.provider import ChatClient
+from agent.provider import MimoClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
-
-
-def _make_provider():
-    import os
-    return ChatClient.mimo() if os.getenv("AI_PROVIDER") == "mimo" else ChatClient.minimax()
 
 
 def _slug(value: str) -> str:
@@ -111,7 +106,7 @@ def run_agent(
     evidence = plan.filter_evidence(evidence)
     run_log["evidence_selected"] = len(evidence)
     try:
-        artifact, raw_output = RapidEvidenceDrafter(provider=_make_provider()).draft(
+        artifact, raw_output = RapidEvidenceDrafter(provider=MimoClient.from_env()).draft(
             topic=topic,
             domain_slug=domain,
             criteria=criteria,
