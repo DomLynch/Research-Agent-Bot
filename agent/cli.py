@@ -104,6 +104,7 @@ def run_agent(
             except Exception as exc:
                 run_log["source_errors"].append(f"{source_name}:{query}:{exc}")
     run_log["evidence_retrieved"] = len(evidence)
+    all_evidence = list(evidence)
     evidence = plan.filter_evidence(evidence)
     run_log["evidence_selected"] = len(evidence)
     try:
@@ -112,7 +113,7 @@ def run_agent(
             domain_slug=domain,
             criteria=criteria,
             queries=queries,
-            evidence=evidence,
+            evidence=all_evidence,
         )
         if raw_output:
             run_dir_p = Path(run_dir)

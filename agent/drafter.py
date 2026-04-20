@@ -88,15 +88,18 @@ class RapidEvidenceDrafter:
         bundle_sources = ranked[:12]
 
         if len(selected) < 2:
-            return (
-                {
-                    "error": "Insufficient evidence for synthesis (fewer than 2 relevant sources retained).",
-                    "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
-                    "sections": {},
-                    "source_bundle": [],
-                },
-                None,
-            )
+            # fallback: use top 12 ranked for bundle even if filtered selection is thin
+            selected = ranked[:6]
+            if not selected:
+                return (
+                    {
+                        "error": "Insufficient evidence for synthesis (fewer than 2 relevant sources retained).",
+                        "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
+                        "sections": {},
+                        "source_bundle": [],
+                    },
+                    None,
+                )
 
         years = [int(e["year"]) for e in bundle_sources if isinstance(e.get("year"), int)]
         rc = sum(1 for e in bundle_sources if e.get("evidence_type") == "review")
