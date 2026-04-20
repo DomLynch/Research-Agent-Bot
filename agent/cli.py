@@ -113,24 +113,17 @@ def run_agent(
             queries=queries,
             evidence=evidence,
         )
-        if artifact.get("error"):
-            if raw_output:
-                run_dir_p = Path(run_dir)
-                run_dir_p.mkdir(parents=True, exist_ok=True)
-                stem = _run_stem(started_at, topic)
-                (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
-            run_log.update(artifact)
-        else:
-            if raw_output:
-                run_dir_p = Path(run_dir)
-                run_dir_p.mkdir(parents=True, exist_ok=True)
-                stem = _run_stem(started_at, topic)
-                (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
+        if raw_output:
+            run_dir_p = Path(run_dir)
+            run_dir_p.mkdir(parents=True, exist_ok=True)
+            stem = _run_stem(started_at, topic)
+            (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
+        run_log.update(artifact)
+        if not artifact.get("error"):
             markdown = _payload_to_markdown(artifact, topic=topic, criteria=criteria)
             markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=topic, markdown=markdown)
-            artifact["markdown"] = markdown
-            artifact["markdown_file"] = markdown_path.name
-            run_log.update(artifact)
+            run_log["markdown"] = markdown
+            run_log["markdown_file"] = markdown_path.name
     except Exception as exc:
         run_log["error"] = str(exc)
     run_log["run_log"] = str(_write_json(Path(run_dir), run_log))
