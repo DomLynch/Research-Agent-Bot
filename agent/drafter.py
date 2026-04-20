@@ -107,7 +107,8 @@ class RapidEvidenceDrafter:
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
-            "The Research Question section must be at least 50 words and frame a specific, bounded question. "
+            "The Research Question section MUST be at least 50 words. "
+            "Frame a specific, bounded research question with explicit scope, population, intervention, and outcome. "
             "Return exactly these JSON keys, each a plain string: "
             "question, search_summary, landscape, findings, limitations, gaps_identified, conclusion."
         )
