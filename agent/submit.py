@@ -1,13 +1,36 @@
 from __future__ import annotations
 
+import json
 import os
 import time
+from pathlib import Path
 from typing import Any
 
 import httpx
 
 
-def submit(artifact: dict[str, Any], *, base_url: str | None = None) -> dict[str, Any]:
+def _find_previous(title: str, run_dir: str = "runs") -> dict[str, Any] | None:
+    runs_path = Path(run_dir)
+    if not runs_path.exists():
+        return None
+    for f in sorted(runs_path.glob("*.json"), reverse=True):
+        if f.name.endswith(".raw.json"):
+            continue
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if data.get("title") == title and data.get("submission", {}).get("submission", {}).get("id"):
+            return data
+    return None
+
+
+def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: str = "runs") -> dict[str, Any]:
+    title = artifact["title"]
+    prev = _find_previous(title, run_dir)
+    if prev:
+        return {"duplicate": True, "previous_submission_id": prev["submission"]["submission"]["id"], "previous_decision": prev.get("submission", {}).get("decision")}
+
     url = base_url or os.getenv("RESEARKA_URL", "http://localhost:8000")
     payload = {
         "title": artifact["title"],
