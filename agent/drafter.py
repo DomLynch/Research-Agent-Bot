@@ -60,13 +60,17 @@ def _rank(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _relevance(item: dict[str, Any], topic_tokens: list[str]) -> float:
+    title = str(item.get("title") or "").lower()
     text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt")).lower()
     if not topic_tokens:
         return 0.3
-    matched = sum(1 for t in topic_tokens if t in text)
-    if matched == 0:
+    title_matched = sum(1 for t in topic_tokens if t in title)
+    text_matched = sum(1 for t in topic_tokens if t in text)
+    if text_matched == 0:
         return 0.1
-    base = 0.3 + (matched / len(topic_tokens)) * 0.4
+    base = 0.3 + (text_matched / len(topic_tokens)) * 0.3
+    if title_matched > 0:
+        base += 0.2
     if item.get("evidence_type") == "review":
         base += 0.1
     if int(item.get("year") or 0) >= 2020:
@@ -165,7 +169,8 @@ class RapidEvidenceDrafter:
             }
             for e in bundle_sources
             if e.get("evidence_type") in {"review", "primary"}
-            and (rel := _relevance(e, topic_tokens)) >= 0.5
+            and (rel := _relevance(e, topic_tokens)) >= 0.3
+            and any(t in str(e.get("title") or "").lower() for t in topic_tokens)
         ]
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
