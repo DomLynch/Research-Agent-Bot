@@ -43,7 +43,8 @@ def test_batch_writes_output(tmp_path):
     assert result["metadata"]["total_cost_usd"] >= 0
 
 
-def test_batch_writes_raw_output(tmp_path):
+def test_batch_writes_raw_output(tmp_path, monkeypatch):
+    monkeypatch.setenv("MINIMAX_API_KEY", "test-key")
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(
             200,
@@ -76,7 +77,8 @@ def test_batch_writes_raw_output(tmp_path):
     assert "metadata" in raw_stored
 
 
-def test_enrich_with_mocked_minimax():
+def test_enrich_with_mocked_minimax(monkeypatch):
+    monkeypatch.setenv("MINIMAX_API_KEY", "test-key")
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(
             200,
@@ -120,7 +122,8 @@ def test_enrich_with_mocked_minimax():
     assert card["cost_usd"] > 0
 
 
-def test_enrich_fallback_on_invalid_response():
+def test_enrich_fallback_on_invalid_response(monkeypatch):
+    monkeypatch.setenv("MINIMAX_API_KEY", "test-key")
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json={"choices": [{"message": {"content": "not json at all"}}]})
 
