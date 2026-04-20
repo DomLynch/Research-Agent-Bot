@@ -130,7 +130,11 @@ def run_agent(
             import os as _os
             if _os.getenv("RESEARKA_URL"):
                 try:
-                    run_log["submission"] = submit(artifact, run_dir=run_dir)
+                    sub = submit(artifact, run_dir=run_dir)
+                    run_log["submission"] = sub
+                    sub_id = sub.get("submission", {}).get("id")
+                    if sub_id:
+                        run_log["submission_id"] = sub_id
                 except Exception as exc:
                     run_log["submission_error"] = str(exc)
     except Exception as exc:

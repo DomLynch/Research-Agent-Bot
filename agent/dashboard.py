@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, quote, urlparse
 
 from agent.cli import run_agent
+from agent.submit import check_decision
 
 CSS = (
     ":root{--bg:#f3f0ea;--panel:#e4efef;--ink:#295b62;--muted:#5f8186;--line:#8db2b4;--error:#7c443c;--shadow:rgba(41,91,98,0.08)}"
@@ -37,6 +38,7 @@ def _esc(value: object) -> str:
 def _render_page(*, form: dict[str, str], result: dict | None = None, error: str = "") -> str:
     error_block = f'<section class="panel error"><strong>{_esc(error)}</strong></section>' if error else ""
     result_block = ""
+    refresh_tag = ""
     if result:
         download_block = ""
         if result.get("markdown_file"):
@@ -55,16 +57,18 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
                 f"<div><label>Previous ID</label><strong>{_esc(str(sub.get('previous_submission_id', '?'))[:8])}…</strong></div>"
             )
         else:
-            sub_id = sub.get("submission", {}).get("id")
+            sub_id = sub.get("submission", {}).get("id") or result.get("submission_id")
             decision = sub.get("decision", {})
             if sub_id:
                 dec_status = decision.get("status", "pending")
-                dec_verdict = decision.get("decision", "—")
+                dec_verdict = decision.get("decision") or "pending"
                 gates = decision.get("gate_failures", [])
                 gate_str = "; ".join(g["reason"] for g in gates) if gates else "all passed"
                 pub_str = ""
-                if sub.get("publication_id"):
-                    pub_str = f"<div><label>Publication</label><strong>{_esc(str(sub['publication_id'])[:8])}…</strong></div>"
+                if decision.get("publication_id"):
+                    pub_str = f"<div><label>Publication</label><strong>{_esc(str(decision['publication_id'])[:8])}…</strong></div>"
+                if dec_status in ("queued", "pending"):
+                    refresh_tag = f'<meta http-equiv="refresh" content="5;url=/status/{_esc(sub_id)}">'
                 sub_block = (
                     f"<div><label>Submission</label><strong>{_esc(sub_id[:8])}…</strong></div>"
                     f"<div><label>Decision</label><strong>{_esc(dec_verdict)} ({_esc(dec_status)})</strong></div>"
@@ -85,6 +89,7 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
         )
     return (
         "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
+        f"{refresh_tag}"
         "<title>Research Agent</title><style>" + CSS + "</style></head><body><div class='wrap'>"
         '<section class="hero"><h1>Research Agent</h1>'
         "<p>Type the topic, domain, and criteria. The agent searches, writes the draft, shows it below, and gives you a markdown download.</p>"
@@ -120,6 +125,16 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.wfile.write(data)
             except BrokenPipeError:
                 pass
+            return
+        if parsed.path.startswith("/status/"):
+            sub_id = parsed.path.split("/status/", 1)[1]
+            decision = check_decision(sub_id)
+            if decision.get("decision") == "accept":
+                self._send(_render_page(form={}, result={"submission": {"submission": {"id": sub_id}, "decision": decision}}).encode("utf-8"))
+            elif decision.get("status") in ("complete", "error"):
+                self._send(_render_page(form={}, result={"submission": {"submission": {"id": sub_id}, "decision": decision}}).encode("utf-8"))
+            else:
+                self._send(_render_page(form={}, result={"submission": {"submission": {"id": sub_id}, "decision": {"status": "pending", "decision": "processing..."}}}).encode("utf-8"))
             return
         self._send(_render_page(form={}).encode("utf-8"))
 

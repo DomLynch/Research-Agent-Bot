@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import os
-import time
 from pathlib import Path
 from typing import Any
 
@@ -31,7 +30,9 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: st
     if prev:
         return {"duplicate": True, "previous_submission_id": prev["submission"]["submission"]["id"], "previous_decision": prev.get("submission", {}).get("decision")}
 
-    url = base_url or os.getenv("RESEARKA_URL", "http://localhost:8000")
+    url = (base_url or os.getenv("RESEARKA_URL", "")).rstrip("/")
+    if not url:
+        return {"error": "no RESEARKA_URL configured"}
     payload = {
         "title": artifact["title"],
         "abstract": artifact["abstract"],
@@ -44,34 +45,28 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: st
         "domain_slug": artifact.get("domain_slug", "general"),
         "core_claims_resolved": True,
     }
-    response = httpx.post(f"{url.rstrip('/')}/submissions", json=payload, timeout=30)
+    response = httpx.post(f"{url}/submissions", json=payload, timeout=30)
     response.raise_for_status()
     result = response.json()
-    sub_id = result.get("submission", {}).get("id")
-
-    # process intake → review → editorial pipeline
-    if sub_id:
-        for _ in range(6):
-            try:
-                job = httpx.post(f"{url.rstrip('/')}/jobs/run-once", timeout=120).json()
-                if job.get("completed", 0) == 0:
-                    break
-                time.sleep(1)
-            except Exception:
-                break
-        try:
-            decision = httpx.get(f"{url.rstrip('/')}/submissions/{sub_id}/decision", timeout=10).json()
-            result["decision"] = decision
-            if decision.get("decision") == "accept":
-                try:
-                    pubs = httpx.get(f"{url.rstrip('/')}/publications", timeout=10).json()
-                    for pub in pubs.get("publications", []):
-                        if pub.get("parent_object_id") == sub_id:
-                            result["publication_id"] = pub["id"]
-                            break
-                except Exception:
-                    pass
-        except Exception as exc:
-            result["decision"] = {"status": "error", "error": str(exc)}
-
+    result["decision"] = {"status": "queued"}
     return result
+
+
+def check_decision(submission_id: str, *, base_url: str | None = None) -> dict[str, Any]:
+    url = (base_url or os.getenv("RESEARKA_URL", "")).rstrip("/")
+    if not url:
+        return {"status": "error", "error": "no RESEARKA_URL"}
+    try:
+        decision = httpx.get(f"{url}/submissions/{submission_id}/decision", timeout=10).json()
+        if decision.get("decision") == "accept":
+            try:
+                pubs = httpx.get(f"{url}/publications", timeout=10).json()
+                for pub in pubs.get("publications", []):
+                    if pub.get("parent_object_id") == submission_id:
+                        decision["publication_id"] = pub["id"]
+                        break
+            except Exception:
+                pass
+        return decision
+    except Exception as exc:
+        return {"status": "error", "error": str(exc)}
