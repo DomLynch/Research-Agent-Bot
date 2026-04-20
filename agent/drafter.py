@@ -61,18 +61,17 @@ def _rank(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def _relevance(item: dict[str, Any], topic_tokens: list[str]) -> float:
     text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt")).lower()
-    year = int(item.get("year") or 0)
-    score = 0.0
-    if topic_tokens:
-        matched = sum(1 for t in topic_tokens if t in text)
-        score += matched / len(topic_tokens) * 7
+    if not topic_tokens:
+        return 0.3
+    matched = sum(1 for t in topic_tokens if t in text)
+    if matched < 2:
+        return 0.1
+    base = 0.5 + (matched / len(topic_tokens)) * 0.3
     if item.get("evidence_type") == "review":
-        score += 2
-    if year >= 2020:
-        score += 2
-    if item.get("doi"):
-        score += 1
-    return round(min(score / 12, 1.0), 2)
+        base += 0.1
+    if int(item.get("year") or 0) >= 2020:
+        base += 0.1
+    return round(min(base, 1.0), 2)
 
 
 class RapidEvidenceDrafter:
