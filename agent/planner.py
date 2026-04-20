@@ -129,6 +129,7 @@ class QueryPlanner:
             queries.append(f"{clean_topic} {clean_criteria}")
         else:
             queries.append(f"{clean_topic} systematic review {hints[0]}")
+        queries.append(f"{clean_topic} {hints[0]} clinical evidence {hints[2]}")
         safety_net = f"{clean_topic} clinical trial {hints[2]}"
         if "outcomes" not in safety_net.lower():
             safety_net = f"{safety_net} outcomes"
