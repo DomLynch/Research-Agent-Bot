@@ -1,25 +1,27 @@
 # PROJECT_STATE.md
 
 ## Current Objective
-Ship a minimal Python V0 that turns `topic + domain + criteria` into a visible research draft plus markdown download.
+Ship a minimal Python V0 that turns `topic + domain + criteria` into a research draft, submits to Researka when configured, and surfaces submission state on the page.
 
 ## Success Condition
-- Hosted page runs the bounded query set end to end without hanging or hidden dead paths.
+- Hosted page runs the query set end to end without hanging or hidden dead paths.
 - `criteria` changes both search intent and retained evidence.
-- Run log records queries, retained evidence, usage, and markdown output.
+- Researka submission (when RESEARKA_URL is set) passes intake gates and publishes.
+- Run log records queries, retained evidence, usage, submission ID, and decision.
 
 ## Constraints
-- Stay as small as possible; aim for a sub-700 LOC runtime slice. Current: 856.
+- Runtime target: ~1,100 LOC (submit/poll/dedup/publication surfacing are now in scope).
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
 
 ## Winning Path
-Deterministic planner + bounded public literature queries + one provider-selected draft pass + markdown/log output + tiny dashboard.
+Deterministic planner + bounded public literature queries + MiMo draft pass + Researka submission + dedup + publication surfacing + tiny dashboard.
 
 ## Open Risks
-- Live provider latency still dominates the user-perceived speed.
+- Inline /jobs/run-once polling can block the dashboard on Researka flake. Needs async refactor.
 - PubMed/OpenAlex relevance ranking must stay simple without becoming naive.
+- Title-based dedup is simplistic. Needs fingerprint-based dedup.
 
 ## Next Validation Step
-Finish the V0 deletion pass, rerun planner/cli tests, then smoke the hosted page manually.
+Fix docs, kill inline orchestration, add golden eval harness, then flip Researka to judge_panel.
