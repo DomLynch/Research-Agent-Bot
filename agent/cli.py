@@ -104,9 +104,6 @@ def run_agent(
             except Exception as exc:
                 run_log["source_errors"].append(f"{source_name}:{query}:{exc}")
     run_log["evidence_retrieved"] = len(evidence)
-    year_min = int(plan.scope.get("year_min", 0) or 0)
-    if year_min:
-        evidence = [e for e in evidence if isinstance(e.get("year"), int) and e["year"] >= year_min]
     all_evidence = list(evidence)
     evidence = plan.filter_evidence(evidence)
     run_log["evidence_selected"] = len(evidence)
