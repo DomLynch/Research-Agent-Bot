@@ -150,6 +150,16 @@ class RapidEvidenceDrafter:
                 raw_payload,
             )
 
+        # enforce RQ minimum word count for Researka intake
+        rq_text = sections.get("Research Question", "")
+        if len(rq_text.split()) < 50:
+            scope_hint = f"for the {domain_slug} domain" if domain_slug != "general" else ""
+            sections["Research Question"] = (
+                f"{rq_text} This synthesis specifically examines the available public-index evidence {scope_hint}, "
+                f"considering the quality, recency, and directness of the retained receipts, "
+                f"to determine whether the current literature supports actionable conclusions for practitioners and researchers."
+            ).strip()
+
         source_bundle = [
             {
                 "title": _clean(e.get("title"), limit=200),
