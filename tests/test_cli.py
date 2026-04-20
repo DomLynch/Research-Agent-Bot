@@ -166,7 +166,8 @@ def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monk
     )
 
     assert run["evidence_retrieved"] >= 1
-    assert not run.get("error")  # drafter receives unfiltered evidence, succeeds
+    assert run["evidence_selected"] == 0
+    assert "Insufficient evidence" in run.get("error", "")
 
 
 class LeakyProvider:
@@ -208,7 +209,7 @@ def test_insufficient_evidence(tmp_path: Path, monkeypatch) -> None:
     run = cli.run_agent(topic="senolytics", domain="longevity", criteria="2020+", run_dir=str(tmp_path))
 
     assert run["evidence_retrieved"] >= 1
-    assert not run.get("error")  # drafter receives unfiltered evidence, succeeds
+    assert "Insufficient evidence" in run.get("error", "")
 
 
 def test_inline_citations_present(tmp_path: Path, monkeypatch) -> None:

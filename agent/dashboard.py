@@ -47,6 +47,20 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
         scope_block = ""
         if result.get("scope_signals"):
             scope_block = f"<p>Scope signals: {_esc(', '.join(result['scope_signals']))}</p>"
+        sub_block = ""
+        sub = result.get("submission", {})
+        sub_id = sub.get("submission", {}).get("id")
+        decision = sub.get("decision", {})
+        if sub_id:
+            dec_status = decision.get("status", "pending")
+            dec_verdict = decision.get("decision", "—")
+            gates = decision.get("gate_failures", [])
+            gate_str = "; ".join(g["reason"] for g in gates) if gates else "all passed"
+            sub_block = (
+                f"<div><label>Submission</label><strong>{_esc(sub_id[:8])}…</strong></div>"
+                f"<div><label>Decision</label><strong>{_esc(dec_verdict)} ({_esc(dec_status)})</strong></div>"
+                f"<div><label>Intake Gates</label><strong>{_esc(gate_str)}</strong></div>"
+            )
         result_block = (
             '<section class="panel"><h2>Result</h2>'
             '<div class="grid">'
@@ -54,6 +68,7 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
             f"<div><label>Evidence Kept</label><strong>{_esc(result.get('evidence_selected', 0))}</strong></div>"
             f"<div><label>Retrieved / Errors</label><strong>{_esc(result.get('evidence_retrieved', 0))} / {_esc(len(result.get('source_errors', [])))}</strong></div>"
             f"<div><label>Cost</label><strong>${_esc(result.get('estimated_cost_usd', 0.0))}</strong></div>"
+            f"{sub_block}"
             f"</div>{scope_block}"
             f'<div class="actions">{download_block}</div>'
             f"<h3>Draft</h3>{md_block}</section>"

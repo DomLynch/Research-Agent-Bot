@@ -113,7 +113,8 @@ def run_agent(
             domain_slug=domain,
             criteria=criteria,
             queries=queries,
-            evidence=all_evidence,
+            evidence=evidence,
+            all_evidence=all_evidence,
         )
         if raw_output:
             run_dir_p = Path(run_dir)

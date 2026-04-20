@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import time
 from typing import Any
 
 import httpx
@@ -22,4 +23,23 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None) -> dict[str
     }
     response = httpx.post(f"{url.rstrip('/')}/submissions", json=payload, timeout=30)
     response.raise_for_status()
-    return response.json()
+    result = response.json()
+    sub_id = result.get("submission", {}).get("id")
+
+    # process intake → review → editorial pipeline
+    if sub_id:
+        for _ in range(6):
+            try:
+                job = httpx.post(f"{url.rstrip('/')}/jobs/run-once", timeout=120).json()
+                if job.get("completed", 0) == 0:
+                    break
+                time.sleep(1)
+            except Exception:
+                break
+        try:
+            decision = httpx.get(f"{url.rstrip('/')}/submissions/{sub_id}/decision", timeout=10).json()
+            result["decision"] = decision
+        except Exception as exc:
+            result["decision"] = {"status": "error", "error": str(exc)}
+
+    return result

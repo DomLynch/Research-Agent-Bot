@@ -81,24 +81,21 @@ class RapidEvidenceDrafter:
     def __init__(self, *, provider: Any) -> None:
         self.provider = provider
 
-    def draft(self, *, topic: str, domain_slug: str, criteria: str, queries: list[str], evidence: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    def draft(self, *, topic: str, domain_slug: str, criteria: str, queries: list[str], evidence: list[dict[str, Any]], all_evidence: list[dict[str, Any]] | None = None) -> tuple[dict[str, Any], dict[str, Any] | None]:
         ranked = _rank(evidence)
         selected = ranked[:6]
-        bundle_sources = ranked[:12]
+        bundle_sources = _rank(all_evidence or evidence)[:12]
 
         if len(selected) < 2:
-            # fallback: use top 12 ranked for bundle even if filtered selection is thin
-            selected = ranked[:6]
-            if not selected:
-                return (
-                    {
-                        "error": "Insufficient evidence for synthesis (fewer than 2 relevant sources retained).",
-                        "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
-                        "sections": {},
-                        "source_bundle": [],
-                    },
-                    None,
-                )
+            return (
+                {
+                    "error": "Insufficient evidence for synthesis (fewer than 2 relevant sources retained).",
+                    "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
+                    "sections": {},
+                    "source_bundle": [],
+                },
+                None,
+            )
 
         years = [int(e["year"]) for e in bundle_sources if isinstance(e.get("year"), int)]
         rc = sum(1 for e in bundle_sources if e.get("evidence_type") == "review")
