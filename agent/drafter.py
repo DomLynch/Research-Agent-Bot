@@ -29,7 +29,7 @@ _FALLBACKS = {
 }
 _GENERIC_FALLBACK = "This section draws on {nr} retained evidence receipts ({rv} review, {pr} primary) queried on {today} via {nq} scoped search strings."
 
-_STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
+_SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"], "senolytic": ["senolytics"]}
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -102,6 +102,10 @@ class RapidEvidenceDrafter:
         rc = sum(1 for e in bundle_sources if e.get("evidence_type") == "review")
         pc = sum(1 for e in bundle_sources if e.get("evidence_type") == "primary")
         topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
+        expanded = list(topic_tokens)
+        for tok in topic_tokens:
+            expanded.extend(_SYNONYMS.get(tok, []))
+        topic_tokens = expanded
 
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
@@ -170,7 +174,6 @@ class RapidEvidenceDrafter:
             for e in bundle_sources
             if e.get("evidence_type") in {"review", "primary"}
             and (rel := _relevance(e, topic_tokens)) >= 0.3
-            and any(t in str(e.get("title") or "").lower() for t in topic_tokens)
         ]
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
