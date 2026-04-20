@@ -65,13 +65,11 @@ def _relevance(item: dict[str, Any], topic_tokens: list[str]) -> float:
     score = 0.0
     if topic_tokens:
         matched = sum(1 for t in topic_tokens if t in text)
-        score += matched / len(topic_tokens) * 5
+        score += matched / len(topic_tokens) * 7
     if item.get("evidence_type") == "review":
-        score += 3
+        score += 2
     if year >= 2020:
         score += 2
-    if year >= 2022:
-        score += 1
     if item.get("doi"):
         score += 1
     return round(min(score / 12, 1.0), 2)
