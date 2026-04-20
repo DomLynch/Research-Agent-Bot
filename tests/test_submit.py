@@ -224,8 +224,15 @@ def test_submit_and_check_decision_end_to_end(tmp_path, monkeypatch):
     decision = check_decision("sub-1", base_url="http://test")
     assert decision["decision"] == "accept"
 
-    # Step 3: verify dedup on re-submit
+    # Step 3: simulate run log write (as cli.run_agent would do)
+    run_log = {
+        "title": artifact["title"],
+        "fingerprint": result["fingerprint"],
+        "submission": {"submission": {"id": "sub-1"}, "decision": decision},
+    }
+    (run_dir / "run.json").write_text(json.dumps(run_log), encoding="utf-8")
+
+    # Step 4: re-submit — should be dedupped
     result2 = submit(artifact, base_url="http://test", run_dir=str(run_dir))
-    # With the mock, submit() doesn't write to run_dir, so _find_previous won't find it
-    # But we can verify the fingerprint is the same
-    assert result2["fingerprint"] == result["fingerprint"]
+    assert result2["duplicate"] is True
+    assert result2["previous_submission_id"] == "sub-1"

@@ -85,7 +85,7 @@ def run_eval(per_source_limit: int = 25) -> dict:
             "sources": len(source_bundle),
             "min_required": g["min_sources"],
             "title_precision": round(precision, 2),
-            "meets_threshold": has_min and precision >= 0.5,
+            "meets_threshold": has_min and precision >= 0.70,
         })
 
     avg_precision = sum(r["title_precision"] for r in results) / len(results)

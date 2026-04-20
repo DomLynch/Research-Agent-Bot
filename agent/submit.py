@@ -13,8 +13,12 @@ def _fingerprint(artifact: dict[str, Any]) -> str:
     topic = str(artifact.get("title", "")).lower().strip()
     domain = str(artifact.get("domain_slug", "")).lower().strip()
     bundle = artifact.get("source_bundle", [])
-    top_dois = sorted([str(e.get("doi", "")) for e in bundle[:3] if e.get("doi")])
-    raw = f"{topic}|{domain}|{'|'.join(top_dois)}"
+    top_keys = []
+    for e in bundle[:3]:
+        key = e.get("doi") or e.get("url") or str(e.get("title", ""))[:60]
+        if key:
+            top_keys.append(str(key).lower().strip())
+    raw = f"{topic}|{'|'.join(sorted(top_keys))}"
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 
