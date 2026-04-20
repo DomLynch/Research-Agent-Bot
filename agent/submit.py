@@ -18,7 +18,7 @@ def _fingerprint(artifact: dict[str, Any]) -> str:
         key = e.get("doi") or e.get("url") or str(e.get("title", ""))[:60]
         if key:
             top_keys.append(str(key).lower().strip())
-    raw = f"{topic}|{'|'.join(sorted(top_keys))}"
+    raw = f"{topic}|{domain}|{'|'.join(sorted(top_keys))}"
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 

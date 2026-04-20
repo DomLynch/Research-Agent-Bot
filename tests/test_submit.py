@@ -82,6 +82,23 @@ def test_fingerprint_changes_with_different_dois():
     assert fp1 != fp2, "Fingerprint should differ when DOIs differ"
 
 
+def test_fingerprint_differs_across_domains():
+    """Same title + same sources + different domain != duplicate."""
+    artifact1 = {
+        "title": "Rapid Evidence Synthesis: rapamycin",
+        "domain_slug": "longevity",
+        "source_bundle": [{"doi": "10.1/a"}, {"doi": "10.1/b"}],
+    }
+    artifact2 = {
+        "title": "Rapid Evidence Synthesis: rapamycin",
+        "domain_slug": "oncology",
+        "source_bundle": [{"doi": "10.1/a"}, {"doi": "10.1/b"}],
+    }
+    fp1 = _fingerprint(artifact1)
+    fp2 = _fingerprint(artifact2)
+    assert fp1 != fp2, "Cross-domain submissions with same title+DOIs must not dedupe"
+
+
 def test_check_decision_endpoint():
     """Verify check_decision calls the correct Researka endpoint."""
     mock = MockResearka()
