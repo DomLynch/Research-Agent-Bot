@@ -164,10 +164,11 @@ class RapidEvidenceDrafter:
                 "year": int(e["year"]) if isinstance(e.get("year"), int) else None,
                 "url": e.get("url"),
                 "doi": e.get("doi"),
-                "relevance": _relevance(e, topic_tokens),
+                "relevance": rel,
             }
             for e in bundle_sources
             if e.get("evidence_type") in {"review", "primary"}
+            and (rel := _relevance(e, topic_tokens)) >= 0.5
         ]
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
