@@ -86,7 +86,7 @@ class RapidEvidenceDrafter:
     def draft(self, *, topic: str, domain_slug: str, criteria: str, queries: list[str], evidence: list[dict[str, Any]], all_evidence: list[dict[str, Any]] | None = None) -> tuple[dict[str, Any], dict[str, Any] | None]:
         ranked = _rank(evidence)
         selected = ranked[:6]
-        bundle_sources = _rank(all_evidence or evidence)[:12]
+        bundle_sources = _rank(all_evidence or evidence)[:20]
 
         if len(selected) < 2:
             return (
@@ -174,7 +174,7 @@ class RapidEvidenceDrafter:
             }
             for e in bundle_sources
             if e.get("evidence_type") in {"review", "primary"}
-            and (rel := _relevance(e, topic_tokens)) >= 0.4
+            and (rel := _relevance(e, topic_tokens)) >= 0.3
         ]
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
