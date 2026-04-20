@@ -64,9 +64,9 @@ def _relevance(item: dict[str, Any], topic_tokens: list[str]) -> float:
     if not topic_tokens:
         return 0.3
     matched = sum(1 for t in topic_tokens if t in text)
-    if matched < 2:
+    if matched == 0:
         return 0.1
-    base = 0.5 + (matched / len(topic_tokens)) * 0.3
+    base = 0.3 + (matched / len(topic_tokens)) * 0.4
     if item.get("evidence_type") == "review":
         base += 0.1
     if int(item.get("year") or 0) >= 2020:
