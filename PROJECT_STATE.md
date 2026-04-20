@@ -9,9 +9,10 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a visible r
 - Run log records queries, retained evidence, usage, and markdown output.
 
 ## Constraints
-- Stay as small as possible; aim for a sub-700 LOC runtime slice.
+- Stay as small as possible; aim for a sub-700 LOC runtime slice. Current: 856.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
+- Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
 
 ## Winning Path
 Deterministic planner + bounded public literature queries + one provider-selected draft pass + markdown/log output + tiny dashboard.

@@ -7,9 +7,9 @@
 
 ## Non-Negotiables
 - Python only.
-- Provider is env-selectable. Current live deployment may use MiMo v2 Pro.
+- Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var).
 - V0 pipeline only: plan -> retrieve -> draft -> markdown/log -> dashboard.
-- No submit path, no poll path, no spar model, no fallback model in V0.
+- No submit path, no poll path, no fallback model in V0.
 - No frameworks, no multi-agent orchestration, no persistence beyond run logs.
 
 ## Quality Bar

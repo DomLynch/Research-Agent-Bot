@@ -90,7 +90,10 @@ class MimoClient:
                 message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
                 content = _extract_json(message)
                 content["usage"] = _usage(payload)
-                content["estimated_cost_usd"] = 0.0
+                content["estimated_cost_usd"] = (
+                    (payload.get("usage", {}).get("prompt_tokens", 0) or 0) / 1000 * 0.00014
+                    + (payload.get("usage", {}).get("completion_tokens", 0) or 0) / 1000 * 0.00028
+                )
                 content["prompt_version"] = self.prompt_version
                 content["model"] = self.model
                 return (content, payload)
