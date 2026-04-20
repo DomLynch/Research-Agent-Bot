@@ -62,10 +62,14 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
                 dec_verdict = decision.get("decision", "—")
                 gates = decision.get("gate_failures", [])
                 gate_str = "; ".join(g["reason"] for g in gates) if gates else "all passed"
+                pub_str = ""
+                if sub.get("publication_id"):
+                    pub_str = f"<div><label>Publication</label><strong>{_esc(str(sub['publication_id'])[:8])}…</strong></div>"
                 sub_block = (
                     f"<div><label>Submission</label><strong>{_esc(sub_id[:8])}…</strong></div>"
                     f"<div><label>Decision</label><strong>{_esc(dec_verdict)} ({_esc(dec_status)})</strong></div>"
                     f"<div><label>Intake Gates</label><strong>{_esc(gate_str)}</strong></div>"
+                    f"{pub_str}"
                 )
         result_block = (
             '<section class="panel"><h2>Result</h2>'

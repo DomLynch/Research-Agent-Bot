@@ -62,6 +62,15 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: st
         try:
             decision = httpx.get(f"{url.rstrip('/')}/submissions/{sub_id}/decision", timeout=10).json()
             result["decision"] = decision
+            if decision.get("decision") == "accept":
+                try:
+                    pubs = httpx.get(f"{url.rstrip('/')}/publications", timeout=10).json()
+                    for pub in pubs.get("publications", []):
+                        if pub.get("parent_object_id") == sub_id:
+                            result["publication_id"] = pub["id"]
+                            break
+                except Exception:
+                    pass
         except Exception as exc:
             result["decision"] = {"status": "error", "error": str(exc)}
 
