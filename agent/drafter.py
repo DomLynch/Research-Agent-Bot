@@ -24,13 +24,10 @@ LEAKY_PHRASES = (
 )
 _FALLBACKS = {
     "Research Question": "This draft asks whether {topic} has decision-relevant evidence in the {domain} domain and keeps the scope narrow enough to stay faithful to the retained evidence.",
-    "Search Summary": "Public literature indexes were queried on {today} with {nq} scoped search strings, and the retained bundle was kept transparent by query, title, and abstract relevance.",
-    "Evidence Landscape": "The retained bundle spans {nr} records, including {rv} review-style items and {pr} primary-study items, with higher-level reviews carrying most of the stable weight.",
-    "Methods": "The run expanded the user topic into a small set of query variants, retrieved abstract-level evidence, removed obvious duplicates, and kept the most relevant receipts for a fast readable draft.",
     "Key Findings": "The main signal is directional rather than definitive. The evidence bundle suggests the topic is relevant, but the confidence level should stay bounded by heterogeneous designs, limited samples, and incomplete replication.",
-    "Limitations": "This is a rapid draft built from public abstract indexes, not a full systematic review. Missing full-text detail, publication lag, and query sensitivity all limit how hard any conclusion should be stated.",
     "Conclusion": "The draft supports a cautious summary on {topic} without claiming more than the retained evidence can justify. Representative retained titles include {titles}.",
 }
+_GENERIC_FALLBACK = "This section draws on {nr} retained evidence receipts ({rv} review, {pr} primary) queried on {today} via {nq} scoped search strings."
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -59,21 +56,6 @@ def _rank(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
         )
 
     return sorted(_dedupe(evidence), key=_s, reverse=True)
-
-
-def _prompt(evidence: list[dict[str, Any]]) -> str:
-    lines = []
-    for i, item in enumerate(evidence, start=1):
-        lines.append(
-            f"{i}. type={item.get('evidence_type', 'unknown')}; year={item.get('year', 'unknown')}; "
-            f"title={_clean(item.get('title'), limit=220)}; excerpt={_clean(item.get('excerpt'), limit=320)}"
-        )
-    return "\n".join(lines) or "No evidence receipts retained."
-
-
-def _pick(value: str, fallback: str) -> str:
-    c = _clean(value, limit=4000)
-    return fallback if not c or any(t in c.lower() for t in LEAKY_PHRASES) else c
 
 
 class RapidEvidenceDrafter:
@@ -105,9 +87,14 @@ class RapidEvidenceDrafter:
             "Return exactly these JSON keys, each a plain string: "
             "question, search_summary, landscape, methods, findings, limitations, conclusion."
         )
+        prompt_lines = [
+            f"{i}. type={e.get('evidence_type', 'unknown')}; year={e.get('year', 'unknown')}; "
+            f"title={_clean(e.get('title'), limit=220)}; excerpt={_clean(e.get('excerpt'), limit=320)}"
+            for i, e in enumerate(selected, start=1)
+        ]
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
-            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\nEvidence:\n{_prompt(selected)}",
+            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\nEvidence:\n" + "\n".join(prompt_lines) or "No evidence receipts retained.",
         )
         result = {str(k).lower(): v for k, v in result.items()}
         fb_ctx = {
@@ -121,8 +108,9 @@ class RapidEvidenceDrafter:
         sections: dict[str, str] = {}
         for heading, field in SECTION_FIELDS:
             raw = result.get(field, "")
-            fallback = _FALLBACKS[heading].format(**fb_ctx)
-            picked = _pick(raw, fallback)
+            fallback = _FALLBACKS.get(heading, _GENERIC_FALLBACK).format(**fb_ctx)
+            c = _clean(raw, limit=4000)
+            picked = fallback if not c or any(t in c.lower() for t in LEAKY_PHRASES) else c
             if picked == fallback:
                 fallback_count += 1
             sections[heading] = picked

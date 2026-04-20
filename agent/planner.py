@@ -21,10 +21,6 @@ def _clean(value: Any, limit: int = 160) -> str:
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 
 
-def _topic_tokens(topic: str) -> list[str]:
-    return [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
-
-
 def _parse_scope(text: str) -> dict[str, Any]:
     t = _clean(text, limit=200).lower()
     ym = re.search(r"\b(20\d{2})\+|\b(?:since|after|from)\s+(20\d{2})\b", t)
@@ -41,10 +37,6 @@ def _parse_scope(text: str) -> dict[str, Any]:
         scope["review_only"] = False
         scope["primary_only"] = False
     return scope
-
-
-def _scope_active(scope: dict[str, Any]) -> bool:
-    return any(scope.values())
 
 
 def _scope_signals(scope: dict[str, Any]) -> list[str]:
@@ -131,9 +123,9 @@ class QueryPlanner:
         clean_criteria = _clean(criteria, limit=120)
         scope = _parse_scope(clean_criteria)
         hints = DOMAIN_HINTS.get(clean_domain, DOMAIN_HINTS["general"])
-        tokens = _topic_tokens(clean_topic)
+        tokens = [t for t in clean_topic.lower().split() if t not in _STOPWORDS]
         queries: list[str] = []
-        if clean_criteria and _scope_active(scope):
+        if clean_criteria and any(scope.values()):
             queries.append(f"{clean_topic} {clean_criteria}")
         else:
             queries.append(f"{clean_topic} systematic review {hints[0]}")
