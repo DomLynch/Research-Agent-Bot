@@ -101,7 +101,9 @@ class RapidEvidenceDrafter:
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
-            "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list."
+            "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
+            "Return exactly these JSON keys, each a plain string: "
+            "question, search_summary, landscape, methods, findings, limitations, conclusion."
         )
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
