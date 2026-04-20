@@ -129,12 +129,21 @@ class DashboardHandler(BaseHTTPRequestHandler):
         if parsed.path.startswith("/status/"):
             sub_id = parsed.path.split("/status/", 1)[1]
             decision = check_decision(sub_id)
-            if decision.get("decision") == "accept":
-                self._send(_render_page(form={}, result={"submission": {"submission": {"id": sub_id}, "decision": decision}}).encode("utf-8"))
-            elif decision.get("status") in ("complete", "error"):
-                self._send(_render_page(form={}, result={"submission": {"submission": {"id": sub_id}, "decision": decision}}).encode("utf-8"))
-            else:
-                self._send(_render_page(form={}, result={"submission": {"submission": {"id": sub_id}, "decision": {"status": "pending", "decision": "processing..."}}}).encode("utf-8"))
+            # find the run log that contains this submission
+            import json as _json
+            run_data = {"submission": {"submission": {"id": sub_id}, "decision": decision}}
+            for f in sorted(Path("runs").glob("*.json"), reverse=True):
+                if f.name.endswith(".raw.json"):
+                    continue
+                try:
+                    data = _json.loads(f.read_text(encoding="utf-8"))
+                except Exception:
+                    continue
+                if data.get("submission_id") == sub_id or data.get("submission", {}).get("submission", {}).get("id") == sub_id:
+                    data["submission"]["decision"] = decision
+                    run_data = data
+                    break
+            self._send(_render_page(form={}, result=run_data).encode("utf-8"))
             return
         self._send(_render_page(form={}).encode("utf-8"))
 

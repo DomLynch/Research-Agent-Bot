@@ -19,9 +19,9 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a research 
 Deterministic planner + bounded public literature queries + MiMo draft pass + Researka submission + dedup + publication surfacing + tiny dashboard.
 
 ## Open Risks
-- Inline /jobs/run-once polling can block the dashboard on Researka flake. Needs async refactor.
 - PubMed/OpenAlex relevance ranking must stay simple without becoming naive.
-- Title-based dedup is simplistic. Needs fingerprint-based dedup.
+- Title-based dedup replaced with fingerprint-based (sha256), but still local-only (no cross-instance dedup).
+- Golden eval harness exists as VPS-side script; not yet CI-integrated due to PubMed network dependency.
 
 ## Next Validation Step
-Fix docs, kill inline orchestration, add golden eval harness, then flip Researka to judge_panel.
+Run golden harness on VPS for real precision/coverage baseline, then flip Researka to judge_panel.

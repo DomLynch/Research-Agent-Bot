@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import re
 from datetime import datetime, timezone
 from typing import Any
@@ -176,6 +177,12 @@ class RapidEvidenceDrafter:
             if e.get("evidence_type") in {"review", "primary"}
             and (rel := _relevance(e, topic_tokens)) >= 0.3
         ]
+
+        if len(source_bundle) < 12 and os.getenv("RESEARKA_URL"):
+            return (
+                {"error": f"Insufficient relevant sources for submission ({len(source_bundle)}/12).", "source_bundle": source_bundle},
+                raw_payload,
+            )
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
             "abstract": _clean(

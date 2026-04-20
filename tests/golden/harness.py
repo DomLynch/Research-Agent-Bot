@@ -1,18 +1,19 @@
 from __future__ import annotations
 
-"""Golden eval harness. Run on VPS with real PubMed/OpenAlex to measure retrieval quality.
+"""Golden eval harness — VPS ONLY. Requires live PubMed/OpenAlex API access.
 
-Usage:
-    python tests/golden/harness.py
+This is NOT a CI test. Run manually on the VPS to measure retrieval quality:
+    ssh root@vps && cd /opt/research-agent-bot && .venv/bin/python tests/golden/harness.py
 
 Metrics:
     precision = % of source bundle entries whose title contains >= 1 topic token
     coverage  = % of topics that meet minimum source count (12+)
-    noise     = source entries with 0 topic tokens in title
 
 Thresholds:
     precision >= 0.70
     coverage  >= 0.80
+
+For CI, use tests/test_golden.py which validates the harness logic with mock data.
 """
 
 import re

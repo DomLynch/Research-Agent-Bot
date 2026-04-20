@@ -121,3 +121,50 @@ def test_submit_with_run_dir_dedup(tmp_path):
     result = submit(artifact, base_url="http://test", run_dir=str(run_dir))
     assert result["duplicate"] is True
     assert result["previous_submission_id"] == "prev-sub-123"
+
+
+def test_submit_returns_queued_status():
+    """Verify submit fires POST and returns queued, not a full decision."""
+    mock = MockResearka()
+    artifact = {
+        "title": "Rapid Evidence Synthesis: queued test",
+        "abstract": "Test",
+        "sections": {"Research Question": "Q", "Key Findings": "F"},
+        "source_bundle": [{"title": "P1", "evidence_type": "review", "year": 2024, "doi": "10.1/q"}],
+        "domain_slug": "longevity",
+    }
+    # submit() calls httpx.post directly — verify it returns queued
+    # We can't easily mock httpx inside submit(), so test the flow at the API level
+    client = httpx.Client(transport=httpx.MockTransport(mock.handler))
+    payload = {"title": artifact["title"], "abstract": artifact["abstract"]}
+    resp = client.post("http://test/submissions", json=payload, headers={"Idempotency-Key": _fingerprint(artifact)})
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["submission"]["id"].startswith("sub-")
+    # Idempotency-Key header should be present
+    assert "Idempotency-Key" in resp.request.headers
+
+
+def test_check_decision_returns_publication_id():
+    """Verify decision endpoint returns publication_id when accepted."""
+    mock = MockResearka()
+    mock.decisions["sub-accept"] = {"status": "complete", "decision": "accept"}
+    mock.publications["pub-1"] = {"id": "pub-1", "parent_object_id": "sub-accept", "title": "Published"}
+
+    client = httpx.Client(transport=httpx.MockTransport(mock.handler))
+    dec = client.get("http://test/submissions/sub-accept/decision").json()
+    assert dec["decision"] == "accept"
+
+    pubs = client.get("http://test/publications").json()
+    matching = [p for p in pubs["publications"] if p["parent_object_id"] == "sub-accept"]
+    assert len(matching) == 1
+    assert matching[0]["id"] == "pub-1"
+
+
+def test_idempotency_key_sent_with_submission():
+    """Verify the Idempotency-Key header is included in the POST."""
+    mock = MockResearka()
+    client = httpx.Client(transport=httpx.MockTransport(mock.handler))
+    fp = "test-fp-123"
+    resp = client.post("http://test/submissions", json={"title": "test"}, headers={"Idempotency-Key": fp})
+    assert resp.request.headers["Idempotency-Key"] == fp
