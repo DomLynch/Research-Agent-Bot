@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -8,7 +9,16 @@ from typing import Any
 import httpx
 
 
-def _find_previous(title: str, run_dir: str = "runs") -> dict[str, Any] | None:
+def _fingerprint(artifact: dict[str, Any]) -> str:
+    topic = str(artifact.get("title", "")).lower().strip()
+    domain = str(artifact.get("domain_slug", "")).lower().strip()
+    bundle = artifact.get("source_bundle", [])
+    top_dois = sorted([str(e.get("doi", "")) for e in bundle[:3] if e.get("doi")])
+    raw = f"{topic}|{domain}|{'|'.join(top_dois)}"
+    return hashlib.sha256(raw.encode()).hexdigest()[:16]
+
+
+def _find_previous(fingerprint: str, run_dir: str = "runs") -> dict[str, Any] | None:
     runs_path = Path(run_dir)
     if not runs_path.exists():
         return None
@@ -19,16 +29,16 @@ def _find_previous(title: str, run_dir: str = "runs") -> dict[str, Any] | None:
             data = json.loads(f.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
             continue
-        if data.get("title") == title and data.get("submission", {}).get("submission", {}).get("id"):
+        if data.get("fingerprint") == fingerprint and data.get("submission", {}).get("submission", {}).get("id"):
             return data
     return None
 
 
 def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: str = "runs") -> dict[str, Any]:
-    title = artifact["title"]
-    prev = _find_previous(title, run_dir)
+    fp = _fingerprint(artifact)
+    prev = _find_previous(fp, run_dir)
     if prev:
-        return {"duplicate": True, "previous_submission_id": prev["submission"]["submission"]["id"], "previous_decision": prev.get("submission", {}).get("decision")}
+        return {"duplicate": True, "fingerprint": fp, "previous_submission_id": prev["submission"]["submission"]["id"], "previous_decision": prev.get("submission", {}).get("decision")}
 
     url = (base_url or os.getenv("RESEARKA_URL", "")).rstrip("/")
     if not url:
@@ -45,10 +55,11 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: st
         "domain_slug": artifact.get("domain_slug", "general"),
         "core_claims_resolved": True,
     }
-    response = httpx.post(f"{url}/submissions", json=payload, timeout=30)
+    response = httpx.post(f"{url}/submissions", json=payload, timeout=30, headers={"Idempotency-Key": fp})
     response.raise_for_status()
     result = response.json()
     result["decision"] = {"status": "queued"}
+    result["fingerprint"] = fp
     return result
 
 

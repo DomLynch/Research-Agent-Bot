@@ -135,6 +135,8 @@ def run_agent(
                     sub_id = sub.get("submission", {}).get("id")
                     if sub_id:
                         run_log["submission_id"] = sub_id
+                    if sub.get("fingerprint"):
+                        run_log["fingerprint"] = sub["fingerprint"]
                 except Exception as exc:
                     run_log["submission_error"] = str(exc)
     except Exception as exc:
