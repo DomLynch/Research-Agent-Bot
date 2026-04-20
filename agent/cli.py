@@ -10,6 +10,7 @@ from agent.planner import QueryPlanner
 from agent.provider import MimoClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
+from agent.submit import submit
 
 
 def _slug(value: str) -> str:
@@ -67,7 +68,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--topic", required=True)
     parser.add_argument("--domain", required=True)
     parser.add_argument("--criteria", default="")
-    parser.add_argument("--per-source-limit", type=int, default=3)
+    parser.add_argument("--per-source-limit", type=int, default=6)
     parser.add_argument("--run-dir", default="runs")
     return parser
 
@@ -77,7 +78,7 @@ def run_agent(
     topic: str,
     domain: str,
     criteria: str = "",
-    per_source_limit: int = 3,
+    per_source_limit: int = 6,
     run_dir: str = "runs",
 ) -> dict:
     started_at = datetime.now(timezone.utc).isoformat()
@@ -124,6 +125,12 @@ def run_agent(
             markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=topic, markdown=markdown)
             run_log["markdown"] = markdown
             run_log["markdown_file"] = markdown_path.name
+            import os as _os
+            if _os.getenv("RESEARKA_URL"):
+                try:
+                    run_log["submission"] = submit(artifact)
+                except Exception as exc:
+                    run_log["submission_error"] = str(exc)
     except Exception as exc:
         run_log["error"] = str(exc)
     run_log["run_log"] = str(_write_json(Path(run_dir), run_log))

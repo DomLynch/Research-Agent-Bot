@@ -9,9 +9,9 @@ SECTION_FIELDS = (
     ("Research Question", "question"),
     ("Search Summary", "search_summary"),
     ("Evidence Landscape", "landscape"),
-    ("Methods", "methods"),
     ("Key Findings", "findings"),
     ("Limitations", "limitations"),
+    ("Gaps Identified", "gaps_identified"),
     ("Conclusion", "conclusion"),
 )
 LEAKY_PHRASES = (
@@ -28,6 +28,8 @@ _FALLBACKS = {
     "Conclusion": "The draft supports a cautious summary on {topic} without claiming more than the retained evidence can justify. Representative retained titles include {titles}.",
 }
 _GENERIC_FALLBACK = "This section draws on {nr} retained evidence receipts ({rv} review, {pr} primary) queried on {today} via {nq} scoped search strings."
+
+_STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -58,12 +60,32 @@ def _rank(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(_dedupe(evidence), key=_s, reverse=True)
 
 
+def _relevance(item: dict[str, Any], topic_tokens: list[str]) -> float:
+    text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt")).lower()
+    year = int(item.get("year") or 0)
+    score = 0.0
+    if topic_tokens:
+        matched = sum(1 for t in topic_tokens if t in text)
+        score += matched / len(topic_tokens) * 5
+    if item.get("evidence_type") == "review":
+        score += 3
+    if year >= 2020:
+        score += 2
+    if year >= 2022:
+        score += 1
+    if item.get("doi"):
+        score += 1
+    return round(min(score / 12, 1.0), 2)
+
+
 class RapidEvidenceDrafter:
     def __init__(self, *, provider: Any) -> None:
         self.provider = provider
 
     def draft(self, *, topic: str, domain_slug: str, criteria: str, queries: list[str], evidence: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Any] | None]:
-        selected = _rank(evidence)[:6]
+        ranked = _rank(evidence)
+        selected = ranked[:6]
+        bundle_sources = ranked[:12]
 
         if len(selected) < 2:
             return (
@@ -76,16 +98,18 @@ class RapidEvidenceDrafter:
                 None,
             )
 
-        years = [int(e["year"]) for e in selected if isinstance(e.get("year"), int)]
-        rc = sum(1 for e in selected if e.get("evidence_type") == "review")
-        pc = sum(1 for e in selected if e.get("evidence_type") == "primary")
+        years = [int(e["year"]) for e in bundle_sources if isinstance(e.get("year"), int)]
+        rc = sum(1 for e in bundle_sources if e.get("evidence_type") == "review")
+        pc = sum(1 for e in bundle_sources if e.get("evidence_type") == "primary")
+        topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
 
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
+            "The Research Question section must be at least 50 words and frame a specific, bounded question. "
             "Return exactly these JSON keys, each a plain string: "
-            "question, search_summary, landscape, methods, findings, limitations, conclusion."
+            "question, search_summary, landscape, findings, limitations, gaps_identified, conclusion."
         )
         prompt_lines = [
             f"{i}. type={e.get('evidence_type', 'unknown')}; year={e.get('year', 'unknown')}; "
@@ -100,9 +124,9 @@ class RapidEvidenceDrafter:
         fb_ctx = {
             "topic": topic, "domain": domain_slug,
             "today": datetime.now(timezone.utc).date().isoformat(),
-            "nq": str(len(queries)), "nr": str(len(selected)),
+            "nq": str(len(queries)), "nr": str(len(bundle_sources)),
             "rv": str(rc), "pr": str(pc),
-            "titles": "; ".join(_clean(e.get("title"), limit=110) for e in selected[:3]) or "the retained evidence bundle",
+            "titles": "; ".join(_clean(e.get("title"), limit=110) for e in bundle_sources[:3]) or "the retained evidence bundle",
         }
         fallback_count = 0
         sections: dict[str, str] = {}
@@ -123,21 +147,21 @@ class RapidEvidenceDrafter:
 
         source_bundle = [
             {
-                "evidence_type": e["evidence_type"],
-                "year": int(e["year"]),
                 "title": _clean(e.get("title"), limit=200),
+                "evidence_type": e.get("evidence_type"),
+                "year": int(e["year"]) if isinstance(e.get("year"), int) else None,
                 "url": e.get("url"),
-                "source_type": e.get("source_type"),
                 "doi": e.get("doi"),
+                "relevance": _relevance(e, topic_tokens),
             }
-            for e in selected
-            if e.get("evidence_type") in {"review", "primary"} and isinstance(e.get("year"), int)
+            for e in bundle_sources
+            if e.get("evidence_type") in {"review", "primary"}
         ]
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
             "abstract": _clean(
                 f"This draft synthesizes public-index evidence on {topic} for the {domain_slug} domain. "
-                f"The run retained {len(selected)} evidence receipts spanning {min(years) if years else 'unknown'} to {max(years) if years else 'unknown'}, "
+                f"The run retained {len(bundle_sources)} evidence receipts spanning {min(years) if years else 'unknown'} to {max(years) if years else 'unknown'}, "
                 f"with {rc} review-like items and {pc} primary-study items.",
                 limit=1200,
             ),
