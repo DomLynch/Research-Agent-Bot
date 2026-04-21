@@ -83,8 +83,8 @@ do it nmn is the best supplement ever made proven science trust me on this one g
     },
     {
         "id": "high_structure_low_sources",
-        # Should score: coherence=5, accuracy=3, readability=4, source_quality=1
-        "human": dict(zip(_JUDGE_AXES, (5, 3, 4, 1))),
+        # Should score: coherence=5, accuracy=3, readability=5, source_quality=1
+        "human": dict(zip(_JUDGE_AXES, (5, 3, 5, 1))),
         "draft": """# The Promise of Senolytic Therapies
 
 ## Background
