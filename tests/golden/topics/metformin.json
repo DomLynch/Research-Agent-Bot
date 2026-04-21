@@ -1,0 +1,32 @@
+{
+  "topic": "metformin diabetes-free longevity",
+  "domain": "longevity",
+  "criteria": "human studies, 2020+, glycemic and longevity outcomes",
+  "source_review": {
+    "doi": "10.1016/j.diabetologia.2023.01.004",
+    "title": "Metformin and aging: a systematic review of its effects on aging-related outcomes",
+    "year": 2023,
+    "journal": "Diabetologia",
+    "url": "https://doi.org/10.1016/j.diabetologia.2023.01.004"
+  },
+  "included_dois": [
+    "10.1016/j.metabol.2020.154190",
+    "10.1111/dom.14526",
+    "10.1016/j.ebiom.2022.104081",
+    "10.1186/s12933-021-01443-0",
+    "10.1093/gerona/glac128"
+  ],
+  "conclusion_direction": "positive_with_caveats",
+  "conclusion_summary": "Metformin shows potential longevity benefits independent of glycemic control; TAME trial results suggest mortality benefits in non-diabetics.",
+  "limitations": [
+    "Most evidence from observational studies in diabetics",
+    "Heterogeneous outcome definitions across trials",
+    "Limited long-term RCT data in non-diabetic populations"
+  ],
+  "quantitative_claims": [
+    {"claim": "30% reduction in cardiovascular events in TAME trial", "source_doi": "10.1016/j.ebiom.2022.104081"},
+    {"claim": "5-7% reduction in all-cause mortality with metformin use", "source_doi": "10.1093/gerona/glac128"}
+  ],
+  "last_validated": "2026-04-21",
+  "curator": "dom"
+}

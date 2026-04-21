@@ -1,0 +1,32 @@
+{
+  "topic": "vitamin D supplementation all-cause mortality",
+  "domain": "longevity",
+  "criteria": "RCTs, 2020+, mortality outcomes in adults 50+",
+  "source_review": {
+    "doi": "10.1016/j.annepidem.2023.05.004",
+    "title": "Vitamin D supplementation and all-cause mortality: a systematic review and meta-analysis",
+    "year": 2023,
+    "journal": "Annals of Epidemiology",
+    "url": "https://doi.org/10.1016/j.annepidem.2023.05.004"
+  },
+  "included_dois": [
+    "10.1016/j.jacc.2017.08.046",
+    "10.1016/j.bone.2020.115693",
+    "10.1016/j.jns2020.119982",
+    "10.1093/gerona/glaa280",
+    "10.1016/j.maturitas.2021.09.012"
+  ],
+  "conclusion_direction": "negative_with_caveats",
+  "conclusion_summary": "Vitamin D supplementation does not reduce all-cause mortality in the general older adult population; routine supplementation not supported by evidence.",
+  "limitations": [
+    "Many trials included vitamin D-sufficient participants",
+    "Variable dosing regimens and baseline status",
+    "Most trials not designed for mortality as primary endpoint"
+  ],
+  "quantitative_claims": [
+    {"claim": "No significant reduction in mortality (RR 0.98, 95% CI 0.95-1.02)", "source_doi": "10.1016/j.jacc.2017.08.046"},
+    {"claim": "6-8% improvement in muscle strength with vitamin D in deficient individuals", "source_doi": "10.1093/gerona/glaa280"}
+  ],
+  "last_validated": "2026-04-21",
+  "curator": "dom"
+}
