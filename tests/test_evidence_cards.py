@@ -38,7 +38,6 @@ def test_infer_quality_signal_preprint():
     assert _infer_quality_signal(entry) == "preprint"
 
 
-
 def test_infer_quality_signal_no_evidence_type():
     entry = {"title": "Some paper"}
     assert _infer_quality_signal(entry) == "primary"
@@ -159,3 +158,30 @@ def test_build_card_clinical_trial():
 def test_infer_quality_signal_primary():
     entry = {"evidence_type": "primary", "title": "Rapamycin study", "excerpt": "observational data"}
     assert _infer_quality_signal(entry) == "primary"
+
+
+def test_build_card_assigns_high_grade_to_recent_review():
+    card = build_card(
+        {
+            "title": "Rapamycin and aging: a systematic review",
+            "excerpt": "Systematic review of aging outcomes in older adults.",
+            "evidence_type": "review",
+            "year": 2024,
+        }
+    )
+    assert card["evidence_grade"] == "H"
+    assert card["context"] == "aging"
+
+
+def test_build_card_assigns_low_grade_to_mechanism_context():
+    card = build_card(
+        {
+            "title": "Everolimus mechanism of action",
+            "excerpt": "mTOR inhibitor mechanism in oncology indications.",
+            "evidence_type": "mechanism",
+            "source_type": "chembl",
+            "year": 2025,
+        }
+    )
+    assert card["evidence_grade"] == "L"
+    assert card["context"] == "oncology"

@@ -1,5 +1,21 @@
 # DECISION JOURNAL
 
+## 2026-04-21 — Phase 1 credibility layer: directness, PRISMA methods, GRADE-lite, protocol preregistration
+**Decision:** Add a Phase 1 rapid-review credibility layer on top of the existing V0 pipeline: source directness labels (`direct` / `indirect` / `mechanistic`), anti-aging submit blocking on indirect-only bundles, PRISMA-style Methods output, GRADE-lite evidence grading, per-run protocol JSON preregistration, and richer source telemetry.
+**Why:** The bot could already produce readable drafts, but it still looked like a synthesis wrapper rather than a defensible rapid-review system. This slice closes the main trust gap without adding new frameworks or models: every run now shows how it searched, what it kept, how strong the evidence is, and when the bot refused to publish because the evidence is only indirect.
+**Details:**
+- `agent/drafter.py` now enriches each bundle entry with `source_type`, `excerpt`, `directness`, and `card.evidence_grade`, and uses directness-aware sorting instead of year-only ranking.
+- `agent/cli.py` now writes `runs/protocols/<stem>.protocol.json` before drafting, records `source_telemetry`, and injects a Methods block into both markdown and submission artifacts.
+- `agent/submit.py` now blocks anti-aging/longevity submissions when the bundle is labeled but contains zero `direct` sources.
+- `agent/evidence_cards.py` now adds `context` and `evidence_grade` heuristics so the bundle can surface GRADE-lite judgments without another model call.
+- Tests: `220 passed, 6 skipped`, `ruff` clean.
+**Tradeoff accepted:** This pushes runtime from ~1,683 LOC to ~1,937 LOC. The old 1,800 hard ceiling is no longer honest for the current Phase 1 scope, so the repo budget is raised to a 2,000 hard ceiling.
+**Alternatives rejected:**
+- Let the LLM self-filter noisy anti-aging bundles — rejected because everolimus-style runs showed it will happily write a plausible story from the wrong disease context.
+- Skip protocol/methods surfacing until later phases — rejected because PRISMA-style transparency is the credibility threshold for Phase 1.
+- Add more source APIs before fixing trust metadata — rejected because more retrieval volume does not solve indirect-evidence overclaiming.
+**Revisit if:** Runtime crosses 2,000 LOC without a deletion pass, or the new directness heuristics start blocking obviously valid longevity submissions.
+
 ## 2026-04-20 — Collapse to V0 Manual Draft Tool
 **Decision:** Strip the Researka submit path, MiMo spar pass, and DeepSeek fallback from V0 and optimize only for the live draft page.
 **Why:** The public product is currently a manual draft-and-download tool. Keeping submit-era code in V0 adds LOC, latency, and failure surfaces without user value.

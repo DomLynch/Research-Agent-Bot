@@ -22,6 +22,29 @@ _STUDY_TYPES = (
     ("double-blind", "rct"),
     ("placebo-controlled", "rct"),
 )
+_AGING_RE = re.compile(
+    r"(?:aging|ageing|healthspan|longevity|older\s+adults?|frailty|"
+    r"biological\s+age|geroscience|multimorbidity|cognitive\s+decline|"
+    r"mild\s+cognitive\s+impairment|mci|sarcopenia)",
+    re.IGNORECASE,
+)
+_ONCOLOGY_RE = re.compile(
+    r"(?:cancer|oncology|tumou?r|carcinoma|neoplasm|metastatic|leukemia|"
+    r"lymphoma|melanoma|renal\s+cell)",
+    re.IGNORECASE,
+)
+_TRANSPLANT_RE = re.compile(
+    r"(?:transplant|allograft|graft|immunosuppression)",
+    re.IGNORECASE,
+)
+_DEVICE_RE = re.compile(
+    r"(?:stent|angioplasty|catheter|implant|device)",
+    re.IGNORECASE,
+)
+_PEDIATRIC_RE = re.compile(
+    r"(?:children|child|pediatric|paediatric|adolescent|infant|neonate|fetal|foetal|pregnan)",
+    re.IGNORECASE,
+)
 _POP_RE = re.compile(
     r"(?:adults?|patients?|elderly|older\s+adults?|children|pediatric|"
     r"populations?|participants?|men|women|individuals?|subjects?|cohort"
@@ -93,6 +116,42 @@ def _format_citation(entry: dict[str, Any]) -> str:
     return f"{short}, {year}"
 
 
+def _context_label(entry: dict[str, Any]) -> str:
+    text = f"{entry.get('title', '')} {entry.get('excerpt', '')}"
+    if _AGING_RE.search(text):
+        return "aging"
+    if _ONCOLOGY_RE.search(text):
+        return "oncology"
+    if _TRANSPLANT_RE.search(text):
+        return "transplant"
+    if _DEVICE_RE.search(text):
+        return "device"
+    if _PEDIATRIC_RE.search(text):
+        return "pediatric"
+    return "general"
+
+
+def _grade_lite(entry: dict[str, Any]) -> str:
+    quality = _infer_quality_signal(entry)
+    study_type = _infer_study_type(entry)
+    year = int(entry.get("year") or 0)
+    score = 1
+    if quality in {"meta-analysis", "systematic-review", "review"}:
+        score = 3
+    elif study_type in {"rct", "clinical-trial"} or entry.get("evidence_type") == "interventional":
+        score = 3
+    elif study_type in {"cohort", "observational", "case-control", "cross-sectional"} or entry.get("evidence_type") == "observational":
+        score = 2
+    if quality == "preprint":
+        score -= 1
+    if entry.get("evidence_type") == "mechanism" or entry.get("source_type") == "chembl":
+        score = 1
+    if year and year < 2020:
+        score -= 1
+    score = max(1, min(3, score))
+    return {3: "H", 2: "M", 1: "L"}[score]
+
+
 def build_card(entry: dict[str, Any]) -> dict[str, Any]:
     """Build an evidence card from a source entry."""
     text = f"{entry.get('title', '')} {entry.get('excerpt', '')}"
@@ -100,7 +159,9 @@ def build_card(entry: dict[str, Any]) -> dict[str, Any]:
         "citation": _format_citation(entry),
         "journal": entry.get("journal") or "",
         "quality_signal": _infer_quality_signal(entry),
+        "evidence_grade": _grade_lite(entry),
         "study_type": _infer_study_type(entry),
+        "context": _context_label(entry),
         "population": _extract_regex(text, _POP_RE, max_matches=2),
         "intervention": _extract_regex(text, _INTERVENTION_RE, max_matches=2),
         "outcomes": _extract_regex(text, _OUTCOMES_RE, max_matches=2),

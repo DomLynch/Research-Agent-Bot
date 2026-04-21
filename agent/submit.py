@@ -29,6 +29,7 @@ _INJECTION_PATTERNS = (
 _INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
+_ANTI_AGING_DOMAINS = {"longevity", "anti-aging", "anti aging"}
 
 
 def _topic_tokens(title: str) -> list[str]:
@@ -39,6 +40,13 @@ def _quality_gate(artifact: dict[str, Any], *, current_year: int | None = None, 
     bundle = artifact.get("source_bundle", [])
     if len(bundle) < 8:
         return f"bundle_too_small:{len(bundle)}"
+
+    domain = str(artifact.get("domain_slug", "")).lower().strip()
+    if domain in _ANTI_AGING_DOMAINS or "aging" in domain:
+        labeled = [e for e in bundle if e.get("directness")]
+        direct = sum(1 for e in labeled if e.get("directness") == "direct")
+        if labeled and direct == 0:
+            return "indirect_only_bundle"
 
     for entry in bundle:
         title = str(entry.get("title") or "")
@@ -130,8 +138,9 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: st
         "title": artifact["title"],
         "abstract": artifact["abstract"],
         "sections": artifact.get("sections", {}),
+        "methods": artifact.get("methods", ""),
         "source_bundle": [
-            {**{k: v for k, v in entry.items() if k in ("title", "evidence_type", "year", "url", "doi", "relevance")},
+            {**{k: v for k, v in entry.items() if k in ("title", "evidence_type", "year", "url", "doi", "relevance", "source_type", "directness")},
              **({"card": entry["card"]} if "card" in entry else {})}
             for entry in artifact.get("source_bundle", [])
         ],

@@ -1,30 +1,34 @@
 # PROJECT_STATE.md
 
 ## Current Objective
-Ship a minimal Python V0 that turns `topic + domain + criteria` into a research draft, submits to Researka when configured, and surfaces submission state on the page.
+Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible rapid-review draft, submits to Researka when configured, and surfaces submission state on the page.
 
 ## Success Condition
 - Hosted page runs the query set end to end without hanging or hidden dead paths.
 - `criteria` changes both search intent and retained evidence.
 - Researka submission (when RESEARKA_URL is set) passes intake gates and publishes.
-- Run log records queries, retained evidence, usage, submission ID, and decision.
+- Run log records queries, retained evidence, per-source telemetry, protocol path, usage, submission ID, and decision.
+- Draft output includes a PRISMA-style Methods block and GRADE-lite source labels.
+- Anti-aging topics with indirect-only bundles refuse submission instead of overclaiming.
 
 ## Constraints
-- Runtime target: ~1,500 LOC (raised from 1,200 — see DECISIONS.md 2026-04-21 "scope creep").
-  Hard ceiling: 1,800 LOC. Actual: ~1,683 LOC.
+- Runtime target: ~1,700 LOC (raised from 1,500 — see DECISIONS.md 2026-04-21 "Phase 1 credibility layer").
+  Hard ceiling: 2,000 LOC. Actual: ~1,937 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
 
 ## Winning Path
-Deterministic planner + bounded public literature queries + MiMo draft pass + Researka submission + dedup + publication surfacing + tiny dashboard.
+Deterministic planner + bounded public literature queries + directness-aware bundle + MiMo draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.
 
 ## Open Risks
 - PubMed/OpenAlex relevance ranking must stay simple without becoming naive.
 - Golden eval harness now has 3-tier eval corpus (gold + adversarial + breadth) with CI gating.
+- Runtime is now above the previous 1,800 ceiling; further additions need deletions or another explicit DECISIONS entry.
+- Quantitative fidelity is now honestly measured and still weak on the gold baseline; drafter must earn future quality gains with supported numbers.
 
 ## Next Validation Step
-All hardening steps complete. Ready for main merge and real-world QA.
+Deploy the Phase 1 credibility slice, rerun the VPS gold baseline, and run one real publish QA topic through the live site.
 
 ## Hardening Status
 | Step | What | Status |
@@ -43,6 +47,14 @@ All hardening steps complete. Ready for main merge and real-world QA.
 | 12 | Weekly report script | DONE (scripts/weekly_report.py; 7 tests including gate_blocked + submission_breakdown) |
 | 13 | 3-tier eval corpus (gold + adversarial + breadth) | DONE (10 gold topics, 30 adversarial, 60 breadth; 4 scoring functions; CI workflow) |
 
+## Phase 1 Credibility Slice (Apr 21)
+- **Directness labels:** each retained source now carries `direct`, `indirect`, or `mechanistic` for downstream gating and audit.
+- **GRADE-lite:** evidence cards now expose `evidence_grade` (`H/M/L`) and `context` labels.
+- **Protocol preregistration:** every run writes `runs/protocols/<stem>.protocol.json` before drafting.
+- **PRISMA-style methods:** every draft surfaces search date, sources searched, queries, and flow counts (`retrieved → filtered → final bundle`).
+- **Submit trust gate:** anti-aging / longevity runs with indirect-only bundles return `indirect_only_bundle` instead of posting to Researka.
+- **Telemetry:** run logs now include `source_telemetry` with per-source retrieved, post-filter, final-bundle, and final-directness counts.
+
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 10 gold + 30 adversarial + 60 breadth
 - **Gold ground truth**: OpenAlex programmatic — top systematic review since 2022 matching topic tokens in title, `referenced_works` → 14–15 included DOIs per topic. Every DOI CrossRef-verified. 148 verified DOIs, zero dead. `curator: openalex-programmatic`.
@@ -54,7 +66,7 @@ All hardening steps complete. Ready for main merge and real-world QA.
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 217 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 220 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
 - Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
-- Main is current. No uncommitted scope creep — see DECISIONS.md 2026-04-21 for the 4 out-of-scope features that got accepted with a raised LOC budget.
+- Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

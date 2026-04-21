@@ -98,6 +98,54 @@ def _write_markdown(run_dir: Path, *, started_at: str, topic: str, markdown: str
     return path
 
 
+def _write_protocol_json(
+    run_dir: Path,
+    *,
+    started_at: str,
+    topic: str,
+    domain: str,
+    criteria: str,
+    queries: list[str],
+    scope_signals: list[str],
+    sources: list[str],
+) -> Path:
+    protocol_dir = run_dir / "protocols"
+    protocol_dir.mkdir(parents=True, exist_ok=True)
+    path = protocol_dir / f"{_run_stem(started_at, topic)}.protocol.json"
+    payload = {
+        "registered_at": started_at,
+        "topic": topic,
+        "domain_slug": domain,
+        "criteria": criteria,
+        "queries": queries,
+        "scope_signals": scope_signals,
+        "sources": sources,
+        "analysis_plan": "Rapid evidence synthesis with direct/indirect evidence labeling, GRADE-lite source grading, and PRISMA-style flow reporting.",
+    }
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return path
+
+
+def _count_by(entries: list[dict[str, Any]], key: str) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for entry in entries:
+        value = str(entry.get(key) or "unknown")
+        counts[value] = counts.get(value, 0) + 1
+    return counts
+
+
+def _build_methods_block(run_log: dict[str, Any], artifact: dict[str, Any], source_names: list[str]) -> str:
+    stages = run_log.get("bundle_stages", {})
+    return (
+        f"Search date: {run_log['started_at']}. Databases/sources searched: {', '.join(source_names)}. "
+        f"Queries: {' | '.join(run_log.get('queries', []))}. "
+        f"Flow: {stages.get('retrieved', 0)} retrieved, "
+        f"{stages.get('after_domain_filter', 0)} after scope/domain filtering, "
+        f"{stages.get('final_bundle', 0)} included in the final source bundle. "
+        f"Scope signals: {', '.join(run_log.get('scope_signals', [])) or 'none'}."
+    )
+
+
 def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     lines = [
         f"# {payload['title']}",
@@ -108,7 +156,11 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
     lines.extend(["", "## Abstract", "", payload["abstract"], ""])
+    if payload.get("methods"):
+        lines.extend(["## Methods", "", payload["methods"], ""])
     for heading, body in payload.get("sections", {}).items():
+        if heading == "Methods" and payload.get("methods"):
+            continue
         lines.extend([f"## {heading}", "", body, ""])
     if payload.get("source_bundle"):
         lines.extend(["## Sources", ""])
@@ -124,6 +176,8 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
             citation = card.get("citation", "")
             journal = card.get("journal", "")
             quality = card.get("quality_signal", "")
+            grade = card.get("evidence_grade", "")
+            directness = item.get("directness", "")
             card_str = ""
             if citation:
                 card_str += f" | {citation}"
@@ -131,6 +185,10 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
                 card_str += f" | {journal}"
             if quality:
                 card_str += f" | {quality}"
+            if grade:
+                card_str += f" | GRADE-lite {grade}"
+            if directness:
+                card_str += f" | {directness}"
             lines.append(f"[{i}] {title} ({year}), {etype}{src_str}{card_str}{url_str}")
         lines.append("")
     return "\n".join(lines).strip() + "\n"
@@ -163,6 +221,7 @@ def run_agent(
         return {"error": f"Daily cost cap reached (${spent:.4f} >= ${cap:.2f}). Set DAILY_COST_CAP_USD to override.", "started_at": started_at, "topic": topic}
     plan = QueryPlanner().build(topic=topic, domain_slug=domain, criteria=criteria)
     queries = plan.primary_queries()
+    source_names: list[str] = ["pubmed", "openalex"]
     run_log = {
         "started_at": started_at,
         "topic": topic,
@@ -180,10 +239,24 @@ def run_agent(
     sources: list[tuple[str, Any]] = [("pubmed", PubMedClient()), ("openalex", OpenAlexClient())]
     if _should_use_rxiv(domain, topic):
         sources.append(("rxiv", RxivClient()))
+        source_names.append("rxiv")
     if _should_use_clinical_trials(domain, topic):
         sources.append(("clinicaltrials", ClinicalTrialsClient()))
+        source_names.append("clinicaltrials")
     if _should_use_chembl(topic):
         sources.append(("chembl", ChEMBLClient()))
+        source_names.append("chembl")
+    protocol_path = _write_protocol_json(
+        Path(run_dir),
+        started_at=started_at,
+        topic=topic,
+        domain=domain,
+        criteria=criteria,
+        queries=queries,
+        scope_signals=plan.scope_signals(),
+        sources=source_names,
+    )
+    run_log["protocol_file"] = protocol_path.name
     source_counts: dict[str, int] = {name: 0 for name, _ in sources}
     # Specialty sources (ChEMBL = compound metadata, not literature) get a
     # hard per-query cap so they contribute context without swamping the
@@ -222,8 +295,17 @@ def run_agent(
             run_dir_p.mkdir(parents=True, exist_ok=True)
             stem = _run_stem(started_at, topic)
             (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
+        artifact["methods"] = _build_methods_block(run_log, artifact, source_names)
+        if "Methods" not in artifact.get("sections", {}):
+            artifact["sections"] = {"Methods": artifact["methods"], **artifact.get("sections", {})}
         run_log.update(artifact)
         run_log["bundle_stages"]["final_bundle"] = len(artifact.get("source_bundle", []))
+        run_log["source_telemetry"] = {
+            "retrieved": source_counts,
+            "post_filter": _count_by(evidence, "source_type"),
+            "final_bundle": _count_by(artifact.get("source_bundle", []), "source_type"),
+            "final_directness": _count_by(artifact.get("source_bundle", []), "directness"),
+        }
         if not artifact.get("error"):
             markdown = _payload_to_markdown(artifact, topic=topic, criteria=criteria)
             markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=topic, markdown=markdown)

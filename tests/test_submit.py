@@ -339,6 +339,26 @@ def test_submit_gate_blocked():
     assert "bundle_too_small" in result["reason"]
 
 
+def test_quality_gate_blocks_indirect_only_longevity_bundle():
+    bundle = [
+        {
+            "title": f"everolimus oncology study {i}",
+            "evidence_type": "review" if i % 3 == 0 else "primary",
+            "year": 2024,
+            "doi": f"10.1/onco{i}",
+            "directness": "indirect",
+        }
+        for i in range(8)
+    ]
+    artifact = {
+        "title": "Rapid Evidence Synthesis: everolimus",
+        "domain_slug": "longevity",
+        "source_bundle": bundle,
+    }
+    reason = _quality_gate(artifact, current_year=2026, topic="everolimus longevity")
+    assert reason == "indirect_only_bundle"
+
+
 # ── edge-case rejection probes ─────────────────────────────────────────
 
 

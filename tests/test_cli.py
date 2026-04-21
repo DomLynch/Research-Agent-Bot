@@ -116,6 +116,9 @@ def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, m
     assert not run.get("error")
     assert run["source_errors"]
     assert run["markdown"].startswith("# Rapid Evidence Synthesis:")
+    assert "## Methods" in run["markdown"]
+    assert run["protocol_file"].endswith(".protocol.json")
+    assert (tmp_path / "protocols" / run["protocol_file"]).exists()
     assert (tmp_path / run["markdown_file"]).exists()
     assert len(run["queries"]) >= 1
 
@@ -137,11 +140,15 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
     assert run["scope_signals"] == ["year>=2020", "human_only", "safety_focus"]
     assert run["evidence_retrieved"] >= 3
     assert run["evidence_selected"] >= 1
+    assert run["source_telemetry"]["retrieved"]["pubmed"] >= 1
     for item in run["source_bundle"]:
         assert "evidence_type" in item
         assert "year" in item
         assert "title" in item
         assert "url" in item
+        assert item.get("source_type")
+        assert item.get("directness") in {"direct", "indirect", "mechanistic"}
+        assert item.get("card", {}).get("evidence_grade") in {"H", "M", "L"}
     # verify no animal papers leak into the bundle
     for item in run["source_bundle"]:
         title = str(item.get("title", "")).lower()

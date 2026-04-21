@@ -34,6 +34,11 @@ _GENERIC_FALLBACK = "This section draws on {nr} retained evidence receipts ({rv}
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"], "senolytic": ["senolytics"]}
+_ANTI_AGING_DOMAINS = {"longevity", "anti-aging", "anti aging"}
+_ANTI_AGING_TERMS = (
+    "aging", "ageing", "healthspan", "longevity", "older adults", "biological age",
+    "geroscience", "frailty", "multimorbidity", "mci", "cognitive decline",
+)
 
 _INJECTION_PATTERNS = (
     r"ignore previous instructions",
@@ -84,23 +89,87 @@ def _rank(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(_dedupe(evidence), key=_s, reverse=True)
 
 
-def _relevance(item: dict[str, Any], topic_tokens: list[str]) -> float:
+def _is_anti_aging_domain(domain_slug: str) -> bool:
+    domain = domain_slug.lower().strip()
+    return domain in _ANTI_AGING_DOMAINS or "aging" in domain
+
+
+def _classify_directness(item: dict[str, Any], card: dict[str, Any], domain_slug: str, topic_tokens: list[str]) -> str:
+    if item.get("evidence_type") == "mechanism" or item.get("source_type") == "chembl":
+        return "mechanistic"
+    text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt", "query")).lower()
+    if _is_anti_aging_domain(domain_slug):
+        if any(term in text for term in _ANTI_AGING_TERMS) or card.get("context") == "aging":
+            return "direct"
+        if card.get("context") in {"oncology", "transplant", "device", "pediatric"}:
+            return "indirect"
+        if any(tok in text for tok in topic_tokens):
+            return "indirect"
+        return "indirect"
+    return "direct" if any(tok in text for tok in topic_tokens) else "indirect"
+
+
+def _relevance(item: dict[str, Any], topic_tokens: list[str], *, card: dict[str, Any] | None = None, directness: str = "indirect") -> float:
     title = str(item.get("title") or "").lower()
-    text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt")).lower()
+    card = card or {}
+    text = " ".join(
+        str(v or "")
+        for v in (
+            item.get("title"),
+            item.get("excerpt"),
+            item.get("query"),
+            card.get("population"),
+            card.get("intervention"),
+            card.get("outcomes"),
+            card.get("journal"),
+        )
+    ).lower()
     if not topic_tokens:
-        return 0.3
+        return 0.25
     title_matched = sum(1 for t in topic_tokens if t in title)
     text_matched = sum(1 for t in topic_tokens if t in text)
     if text_matched == 0:
-        return 0.1
-    base = 0.3 + (text_matched / len(topic_tokens)) * 0.3
+        return 0.1 if directness != "mechanistic" else 0.05
+    base = 0.2 + (text_matched / len(topic_tokens)) * 0.25
     if title_matched > 0:
-        base += 0.2
+        base += 0.15 + min(0.1, (title_matched / len(topic_tokens)) * 0.1)
+    base += {"direct": 0.2, "indirect": 0.05, "mechanistic": 0.0}.get(directness, 0.0)
     if item.get("evidence_type") == "review":
         base += 0.1
+    elif item.get("evidence_type") in {"interventional", "observational"}:
+        base += 0.05
     if int(item.get("year") or 0) >= 2020:
-        base += 0.1
+        base += 0.05
     return round(min(base, 1.0), 2)
+
+
+def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: str) -> dict[str, Any]:
+    card = build_card(item)
+    directness = _classify_directness(item, card, domain_slug, topic_tokens)
+    card["directness"] = directness
+    relevance = _relevance(item, topic_tokens, card=card, directness=directness)
+    return {
+        "title": _clean(item.get("title"), limit=200),
+        "excerpt": _clean(item.get("excerpt"), limit=500),
+        "evidence_type": item.get("evidence_type"),
+        "source_type": item.get("source_type"),
+        "year": int(item["year"]) if isinstance(item.get("year"), int) else None,
+        "url": item.get("url"),
+        "doi": item.get("doi"),
+        "query": item.get("query"),
+        "relevance": relevance,
+        "directness": directness,
+        "card": card,
+    }
+
+
+def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, float, int, int]:
+    return (
+        {"direct": 3, "indirect": 2, "mechanistic": 1}.get(entry.get("directness", "indirect"), 0),
+        float(entry.get("relevance") or 0.0),
+        int(entry.get("year") or 0),
+        1 if entry.get("evidence_type") == "review" else 0,
+    )
 
 
 class RapidEvidenceDrafter:
@@ -108,9 +177,23 @@ class RapidEvidenceDrafter:
         self.provider = provider
 
     def draft(self, *, topic: str, domain_slug: str, criteria: str, queries: list[str], evidence: list[dict[str, Any]], all_evidence: list[dict[str, Any]] | None = None) -> tuple[dict[str, Any], dict[str, Any] | None]:
+        topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
+        expanded = list(topic_tokens)
+        for tok in topic_tokens:
+            expanded.extend(_SYNONYMS.get(tok, []))
+        topic_tokens = expanded
+
         ranked = _rank(evidence)
-        selected = ranked[:6]
-        bundle_sources = _rank(all_evidence or evidence)[:20]
+        selected = sorted(
+            (_bundle_entry(e, topic_tokens, domain_slug) for e in ranked),
+            key=_entry_sort_key,
+            reverse=True,
+        )[:6]
+        bundle_candidates = sorted(
+            (_bundle_entry(e, topic_tokens, domain_slug) for e in _rank(all_evidence or evidence)),
+            key=_entry_sort_key,
+            reverse=True,
+        )
 
         if len(selected) < 2:
             return (
@@ -123,14 +206,20 @@ class RapidEvidenceDrafter:
                 None,
             )
 
-        years = [int(e["year"]) for e in bundle_sources if isinstance(e.get("year"), int)]
-        rc = sum(1 for e in bundle_sources if e.get("evidence_type") == "review")
-        pc = sum(1 for e in bundle_sources if e.get("evidence_type") in {"primary", "interventional", "observational", "mechanism"})
-        topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
-        expanded = list(topic_tokens)
-        for tok in topic_tokens:
-            expanded.extend(_SYNONYMS.get(tok, []))
-        topic_tokens = expanded
+        accepted_types = {"review", "primary", "interventional", "observational", "mechanism"}
+        source_bundle = [
+            entry for entry in bundle_candidates
+            if entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
+        ][:20]
+        if len(source_bundle) < 8:
+            source_bundle = [entry for entry in bundle_candidates if entry.get("evidence_type") in accepted_types][:20]
+
+        years = [int(e["year"]) for e in source_bundle if isinstance(e.get("year"), int)]
+        rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")
+        pc = sum(1 for e in source_bundle if e.get("evidence_type") in {"primary", "interventional", "observational", "mechanism"})
+        direct_ct = sum(1 for e in source_bundle if e.get("directness") == "direct")
+        indirect_ct = sum(1 for e in source_bundle if e.get("directness") == "indirect")
+        mechanistic_ct = sum(1 for e in source_bundle if e.get("directness") == "mechanistic")
 
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
@@ -145,9 +234,11 @@ class RapidEvidenceDrafter:
         )
         prompt_lines = []
         for i, e in enumerate(selected, start=1):
-            card = build_card(e)
+            card = e["card"]
             parts = [f"cite={card.get('citation', 'unknown')}"]
             parts.append(f"type={card.get('study_type', 'unknown')}")
+            parts.append(f"grade={card.get('evidence_grade', 'L')}")
+            parts.append(f"directness={e.get('directness', 'indirect')}")
             if card.get("quality_signal"):
                 parts.append(f"quality={card['quality_signal']}")
             parts.append(f"year={e.get('year', 'unknown')}")
@@ -159,6 +250,8 @@ class RapidEvidenceDrafter:
                 parts.append(f"intervention={card['intervention']}")
             if card.get("outcomes"):
                 parts.append(f"outcomes={card['outcomes']}")
+            if card.get("context"):
+                parts.append(f"context={card['context']}")
             prompt_lines.append(f"{i}. {'; '.join(parts)}")
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
@@ -168,9 +261,9 @@ class RapidEvidenceDrafter:
         fb_ctx = {
             "topic": topic, "domain": domain_slug,
             "today": datetime.now(timezone.utc).date().isoformat(),
-            "nq": str(len(queries)), "nr": str(len(bundle_sources)),
+            "nq": str(len(queries)), "nr": str(len(source_bundle)),
             "rv": str(rc), "pr": str(pc),
-            "titles": "; ".join(_clean(e.get("title"), limit=110) for e in bundle_sources[:3]) or "the retained evidence bundle",
+            "titles": "; ".join(_clean(e.get("title"), limit=110) for e in source_bundle[:3]) or "the retained evidence bundle",
         }
         fallback_count = 0
         sections: dict[str, str] = {}
@@ -199,22 +292,6 @@ class RapidEvidenceDrafter:
                 f"to determine whether the current literature supports actionable conclusions for practitioners and researchers."
             ).strip()
 
-        _ACCEPTED_TYPES = {"review", "primary", "interventional", "observational", "mechanism"}
-        source_bundle = [
-            {
-                "title": _clean(e.get("title"), limit=200),
-                "evidence_type": e.get("evidence_type"),
-                "year": int(e["year"]) if isinstance(e.get("year"), int) else None,
-                "url": e.get("url"),
-                "doi": e.get("doi"),
-                "relevance": rel,
-                "card": build_card(e),
-            }
-            for e in bundle_sources
-            if e.get("evidence_type") in _ACCEPTED_TYPES
-            and (rel := _relevance(e, topic_tokens)) >= 0.3
-        ]
-
         if len(source_bundle) < 8 and os.getenv("RESEARKA_URL"):
             return (
                 {"error": f"Insufficient relevant sources for submission ({len(source_bundle)}/8).", "source_bundle": source_bundle},
@@ -224,13 +301,21 @@ class RapidEvidenceDrafter:
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
             "abstract": _clean(
                 f"This draft synthesizes public-index evidence on {topic} for the {domain_slug} domain. "
-                f"The run retained {len(bundle_sources)} evidence receipts spanning {min(years) if years else 'unknown'} to {max(years) if years else 'unknown'}, "
-                f"with {rc} review-like items and {pc} primary-study items.",
+                f"The run retained {len(source_bundle)} evidence receipts spanning {min(years) if years else 'unknown'} to {max(years) if years else 'unknown'}, "
+                f"with {rc} review-like items, {pc} primary-study items, {direct_ct} direct items, "
+                f"{indirect_ct} indirect items, and {mechanistic_ct} mechanistic items.",
                 limit=1200,
             ),
             "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
             "sections": sections,
             "source_bundle": source_bundle,
+            "bundle_profile": {
+                "review_count": rc,
+                "primary_count": pc,
+                "direct_count": direct_ct,
+                "indirect_count": indirect_ct,
+                "mechanistic_count": mechanistic_ct,
+            },
             "prompt_version": result.get("prompt_version", getattr(self.provider, "prompt_version", "unknown")),
             "usage": result.get("usage", {}),
             "estimated_cost_usd": float(result.get("estimated_cost_usd", 0.0) or 0.0),
