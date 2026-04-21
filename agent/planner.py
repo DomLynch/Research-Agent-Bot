@@ -13,11 +13,20 @@ DOMAIN_HINTS = {
 _HUMAN = ("human", "humans", "patient", "patients", "adult", "adults", "clinical")
 _ANIMAL = ("animal", "animals", "mouse", "mice", "murine", "rat", "rats")
 
+_BASE_NEGATIVE = [
+    "cooking", "cook", "recipe", "recipes",
+    "sports", "football", "basketball",
+    "engineering", "automotive", "fashion",
+    "gaming", "real estate", "agriculture", "construction",
+    "case law", "court ruling", "judicial", "statute", "legislation",
+    "patent law", "tort", "legal precedent",
+]
+
 DOMAIN_NEGATIVE_FILTERS: dict[str, list[str]] = {
-    "longevity": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
-    "oncology": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
-    "metabolic": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
-    "general": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
+    "longevity": list(_BASE_NEGATIVE),
+    "oncology": list(_BASE_NEGATIVE),
+    "metabolic": list(_BASE_NEGATIVE),
+    "general": list(_BASE_NEGATIVE),
 }
 
 

@@ -337,3 +337,90 @@ def test_submit_gate_blocked():
     result = submit(artifact, base_url="http://test")
     assert result["gate_blocked"] is True
     assert "bundle_too_small" in result["reason"]
+
+
+# ── edge-case rejection probes ─────────────────────────────────────────
+
+
+def test_quality_gate_exactly_11_entries():
+    """Bundle with 11 entries (just under 12 threshold) → bundle_too_small."""
+    bundle = [
+        {"title": f"topic study {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
+         "year": 2024, "doi": f"10.1/edge{i}"}
+        for i in range(11)
+    ]
+    artifact = {"title": "topic review", "source_bundle": bundle}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is not None
+    assert "bundle_too_small" in reason
+
+
+def test_quality_gate_topic_precision_at_threshold():
+    """Exactly 4 of 12 entries share a topic token → 33.3% → below 40% → should fail."""
+    bundle = [
+        {"title": f"rapamycin study {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
+         "year": 2024, "doi": f"10.1/tpat{i}"}
+        for i in range(4)
+    ] + [
+        {"title": f"cooking recipe {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
+         "year": 2024, "doi": f"10.1/tpoff{i}"}
+        for i in range(8)
+    ]
+    artifact = {"title": "rapamycin longevity effects", "source_bundle": bundle}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is not None
+    assert "low_topic_precision" in reason
+
+
+def test_quality_gate_topic_precision_just_above():
+    """Exactly 5 of 12 entries share a topic token → 41.7% → above 40% → should pass."""
+    bundle = [
+        {"title": f"rapamycin study {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
+         "year": 2024, "doi": f"10.1/tpabv{i}"}
+        for i in range(5)
+    ] + [
+        {"title": f"cooking recipe {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
+         "year": 2024, "doi": f"10.1/tpaboff{i}"}
+        for i in range(7)
+    ]
+    artifact = {"title": "rapamycin longevity effects", "source_bundle": bundle}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is None
+
+
+def test_quality_gate_recent_ratio_exact_boundary():
+    """Exactly 6 of 12 sources from 2021+ → 50% → should pass at 50% threshold."""
+    bundle = [
+        {"title": f"topic study {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
+         "year": 2022 if i < 6 else 2018, "doi": f"10.1/rr{i}"}
+        for i in range(12)
+    ]
+    artifact = {"title": "topic review", "source_bundle": bundle}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is None
+
+
+def test_quality_gate_missing_year_treated_as_non_recent():
+    """Entries without year key → treated as non-recent → fails if ratio too low."""
+    bundle = [
+        {"title": f"topic study {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
+         "doi": f"10.1/my{i}"}
+        for i in range(12)
+    ]
+    artifact = {"title": "topic review", "source_bundle": bundle}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is not None
+    assert "low_recent_ratio" in reason
+
+
+def test_quality_gate_reviews_off_topic_still_fails():
+    """All entries are evidence_type='review' but off-topic → should fail topic_precision."""
+    bundle = [
+        {"title": f"cooking recipe {i}", "evidence_type": "review",
+         "year": 2024, "doi": f"10.1/roff{i}"}
+        for i in range(12)
+    ]
+    artifact = {"title": "rapamycin longevity effects", "source_bundle": bundle}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is not None
+    assert "low_topic_precision" in reason

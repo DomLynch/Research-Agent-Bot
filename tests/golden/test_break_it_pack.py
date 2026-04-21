@@ -9,6 +9,7 @@ from __future__ import annotations
 from agent.drafter import _clean, _dedupe, _rank, _relevance, RapidEvidenceDrafter
 from agent.submit import _quality_gate, _topic_tokens
 from agent.evidence_cards import build_card
+from agent.planner import _should_filter_entry
 
 
 # ── injection payloads in titles and excerpts ──────────────────────────
@@ -459,3 +460,43 @@ class TestDrafterAdversarial:
         )
         # Should not crash — on VPS with RESEARKA_URL, empty source_bundle returns error
         assert "title" in artifact or "error" in artifact
+
+
+# ── case-law exclusions ────────────────────────────────────────────────
+
+
+class TestCaseLawExclusions:
+    """Case-law and legal entries must be excluded by negative filters."""
+
+    def test_case_law_entry_filtered(self):
+        entry = {"title": "Case law on pharmaceutical liability in drug approvals", "excerpt": ""}
+        assert _should_filter_entry(entry, "longevity") is True
+
+    def test_court_ruling_entry_filtered(self):
+        entry = {"title": "Supreme Court ruling on drug patent expiration", "excerpt": ""}
+        assert _should_filter_entry(entry, "oncology") is True
+
+    def test_clinical_study_not_filtered(self):
+        entry = {"title": "Phase III clinical trial of rapamycin in longevity", "excerpt": "Human patients"}
+        assert _should_filter_entry(entry, "longevity") is False
+
+    def test_case_law_in_excerpt_filtered(self):
+        entry = {"title": "Drug approval process", "excerpt": "This case law review examines legal precedent"}
+        assert _should_filter_entry(entry, "general") is True
+
+    def test_quality_gate_catches_off_topic_legal_bundle(self):
+        """A bundle of legal entries with review types should still fail topic_precision."""
+        bundle = [
+            {"title": f"Case law ruling {i}", "evidence_type": "review",
+             "year": 2024, "doi": f"10.1/legal{i}"}
+            for i in range(12)
+        ]
+        artifact = {"title": "rapamycin longevity effects", "source_bundle": bundle}
+        reason = _quality_gate(artifact, current_year=2026)
+        assert reason is not None
+        assert "low_topic_precision" in reason
+
+    def test_all_domains_exclude_case_law(self):
+        from agent.planner import DOMAIN_NEGATIVE_FILTERS
+        for domain, filters in DOMAIN_NEGATIVE_FILTERS.items():
+            assert "case law" in filters, f"{domain} missing 'case law'"

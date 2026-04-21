@@ -129,3 +129,44 @@ class TestDomainNegativeFilters:
 
     def test_general_has_minimum_entries(self):
         assert len(DOMAIN_NEGATIVE_FILTERS["general"]) >= 5
+
+
+# --- case-law exclusions ---
+
+
+class TestCaseLawExclusions:
+    def test_filters_case_law_entry(self):
+        entry = _entry("Case law analysis of pharmaceutical liability")
+        assert _should_filter_entry(entry, "longevity") is True
+
+    def test_filters_court_ruling_entry(self):
+        entry = _entry("Supreme Court ruling on drug patents")
+        assert _should_filter_entry(entry, "oncology") is True
+
+    def test_filters_judicial_entry(self):
+        entry = _entry("Judicial review of clinical trial regulations")
+        assert _should_filter_entry(entry, "metabolic") is True
+
+    def test_filters_case_law_in_excerpt(self):
+        entry = _entry("Drug approval process", excerpt="This case law review examines precedent set by court ruling")
+        assert _should_filter_entry(entry, "general") is True
+
+    def test_keeps_clinical_study(self):
+        entry = _entry("Phase III clinical trial of rapamycin in longevity")
+        assert _should_filter_entry(entry, "longevity") is False
+
+    def test_filter_evidence_removes_case_law(self):
+        scope = _parse_scope("")
+        evidence = [
+            _entry("Rapamycin extends lifespan"),
+            _entry("Case law on pharmaceutical patents"),
+            _entry("Metformin and aging"),
+        ]
+        result = _filter_evidence(scope, evidence, domain_slug="longevity")
+        titles = [e["title"] for e in result]
+        assert "Case law on pharmaceutical patents" not in titles
+        assert len(result) == 2
+
+    def test_all_domains_have_case_law(self):
+        for domain, filters in DOMAIN_NEGATIVE_FILTERS.items():
+            assert "case law" in filters, f"{domain} missing 'case law'"
