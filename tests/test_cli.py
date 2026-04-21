@@ -99,6 +99,7 @@ class OldHumanSource:
 
 
 def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
@@ -113,6 +114,7 @@ def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, m
 
 
 def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
     monkeypatch.setattr(cli, "PubMedClient", lambda: MixedSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
@@ -200,6 +202,7 @@ def test_insufficient_evidence(tmp_path: Path, monkeypatch) -> None:
 
 
 def test_inline_citations_present(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
     monkeypatch.setattr(cli, "PubMedClient", lambda: MixedSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
@@ -211,6 +214,7 @@ def test_inline_citations_present(tmp_path: Path, monkeypatch) -> None:
 
 
 def test_multi_query_executed(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
@@ -223,6 +227,7 @@ def test_multi_query_executed(tmp_path: Path, monkeypatch) -> None:
 
 
 def test_source_list_is_numbered_with_titles(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
