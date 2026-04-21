@@ -1,7 +1,5 @@
 import json
 import httpx
-import pytest
-from pathlib import Path
 from agent.submit import submit, check_decision, _fingerprint
 
 
@@ -211,8 +209,6 @@ def test_submit_and_check_decision_end_to_end(tmp_path, monkeypatch):
     run_dir.mkdir()
 
     # monkeypatch httpx.post and httpx.get to route through mock
-    original_post = httpx.post
-    original_get = httpx.get
 
     def mock_post(url, **kwargs):
         clean = {k: v for k, v in kwargs.items() if k in ("content", "headers", "json", "data", "method")}

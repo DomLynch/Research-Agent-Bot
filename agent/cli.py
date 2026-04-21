@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -11,6 +12,36 @@ from agent.provider import MimoClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
 from agent.submit import submit
+
+
+def _daily_cost(run_dir: str = "runs") -> float:
+    today = datetime.now(timezone.utc).date().isoformat()
+    total = 0.0
+    for f in Path(run_dir).glob("*.json"):
+        if f.name.endswith(".raw.json"):
+            continue
+        if not f.name.startswith(today):
+            continue
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+            total += float(data.get("estimated_cost_usd", 0.0) or 0.0)
+        except (json.JSONDecodeError, OSError):
+            continue
+    return round(total, 6)
+
+
+def _daily_cost_cap() -> float:
+    return float(os.getenv("DAILY_COST_CAP_USD", "10.0") or "10.0")
+
+
+def _is_enabled() -> bool:
+    val = os.getenv("BOT_ENABLED", "true").strip().lower()
+    return val in {"true", "1", "yes", "on"}
+
+
+def _is_submit_enabled() -> bool:
+    val = os.getenv("BOT_SUBMIT_ENABLED", "true").strip().lower()
+    return val in {"true", "1", "yes", "on"}
 
 
 def _slug(value: str) -> str:
@@ -81,7 +112,13 @@ def run_agent(
     per_source_limit: int = 25,
     run_dir: str = "runs",
 ) -> dict:
+    if not _is_enabled():
+        return {"error": "BOT_ENABLED is not set to true. Run blocked by kill switch.", "started_at": datetime.now(timezone.utc).isoformat(), "topic": topic}
     started_at = datetime.now(timezone.utc).isoformat()
+    spent = _daily_cost(run_dir)
+    cap = _daily_cost_cap()
+    if spent >= cap:
+        return {"error": f"Daily cost cap reached (${spent:.4f} >= ${cap:.2f}). Set DAILY_COST_CAP_USD to override.", "started_at": started_at, "topic": topic}
     plan = QueryPlanner().build(topic=topic, domain_slug=domain, criteria=criteria)
     queries = plan.primary_queries()
     run_log = {
@@ -127,8 +164,7 @@ def run_agent(
             markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=topic, markdown=markdown)
             run_log["markdown"] = markdown
             run_log["markdown_file"] = markdown_path.name
-            import os as _os
-            if _os.getenv("RESEARKA_URL"):
+            if os.getenv("RESEARKA_URL") and _is_submit_enabled():
                 try:
                     sub = submit(artifact, run_dir=run_dir)
                     run_log["submission"] = sub
@@ -155,7 +191,7 @@ def main(argv: list[str] | None = None) -> int:
         run_dir=args.run_dir,
     )
     if run_log.get("error"):
-        print(json.dumps({"error": run_log["error"], "run_log": run_log["run_log"]}))
+        print(json.dumps({"error": run_log["error"], "run_log": run_log.get("run_log")}))
         return 1
     print(
         json.dumps(

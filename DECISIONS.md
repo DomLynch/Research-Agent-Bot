@@ -15,3 +15,16 @@
 - Keep V0 draft-only — rejected because Researka is ready and the integration is ~25 LOC.
 - Use async worker instead of inline polling — deferred. Inline /jobs/run-once is pilot-grade; async worker orchestration is a follow-up.
 **Revisit if:** Inline polling causes request hangs or Researka worker flakes become frequent.
+
+## 2026-04-21 — Safety rails (Step 1)
+**Decision:** Add three env-gate controls (BOT_ENABLED, BOT_SUBMIT_ENABLED, DAILY_COST_CAP_USD) checked before expensive work begins.
+**Why:** Bot must not burn API costs unattended or submit when disabled. Kill switch allows instant halt, cost cap prevents runaway spend, submit switch separates submission from drafting.
+**Details:**
+- `_is_enabled()` / `_is_submit_enabled()` accept `true`, `1`, `yes`, `on` (case-insensitive).
+- `_daily_cost()` scans today's `runs/*.json` (skipping `.raw.json`) and sums `estimated_cost_usd`.
+- Kill check runs first (line 115), cost cap check second (line 118), submit switch gates the POST (line 167).
+- 7 new tests added to `tests/test_cli.py` (total 15).
+**Alternatives rejected:**
+- Use a single file-based lock — rejected because env vars are simpler and VPS-friendly.
+- Cost cap via external service — rejected, local JSON scan is fast enough for V0.
+**Revisit if:** Cost tracking needs inter-day or cross-instance aggregation.

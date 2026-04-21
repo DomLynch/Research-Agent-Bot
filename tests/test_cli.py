@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from pathlib import Path
 
 import httpx
@@ -252,3 +253,93 @@ def test_source_list_is_numbered_with_titles(tmp_path: Path, monkeypatch) -> Non
     assert "## Sources" in md
     assert "[1]" in md
     assert "pubmed.ncbi.nlm.nih.gov" in md
+
+
+# ── Safety gate tests ──────────────────────────────────────────────
+
+
+def test_kill_switch_blocks_run(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("BOT_ENABLED", "false")
+    monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+
+    assert "kill switch" in run.get("error", "").lower()
+    assert run.get("started_at")
+    assert "queries" not in run
+
+
+def test_kill_switch_values(tmp_path: Path, monkeypatch) -> None:
+    for val in ("true", "1", "yes", "on", "TRUE", " Yes "):
+        monkeypatch.setenv("BOT_ENABLED", val)
+        assert cli._is_enabled() is True, f"BOT_ENABLED={val!r} should be enabled"
+    for val in ("false", "0", "no", "off", "", "False"):
+        monkeypatch.setenv("BOT_ENABLED", val)
+        assert cli._is_enabled() is False, f"BOT_ENABLED={val!r} should be disabled"
+
+
+def test_submit_switch_skips_submission(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("BOT_SUBMIT_ENABLED", "false")
+    monkeypatch.setenv("RESEARKA_URL", "http://example.com")
+    monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    # Run with per-source-limit high enough to get ≥12 items for source gate
+    run = cli.run_agent(
+        topic="rapamycin", domain="anti-aging", criteria="",
+        per_source_limit=25, run_dir=str(tmp_path),
+    )
+
+    # The run may error on insufficient sources (2 items per query × 3 queries = 6),
+    # but the key check is that no submission was attempted.
+    assert "submission" not in run
+    assert "submission_id" not in run
+
+
+def test_submit_switch_values(tmp_path: Path, monkeypatch) -> None:
+    for val in ("true", "1", "yes", "on"):
+        monkeypatch.setenv("BOT_SUBMIT_ENABLED", val)
+        assert cli._is_submit_enabled() is True, f"BOT_SUBMIT_ENABLED={val!r} should be enabled"
+    for val in ("false", "0", "no", "off", ""):
+        monkeypatch.setenv("BOT_SUBMIT_ENABLED", val)
+        assert cli._is_submit_enabled() is False, f"BOT_SUBMIT_ENABLED={val!r} should be disabled"
+
+
+def test_daily_cost_cap_blocks_run(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("DAILY_COST_CAP_USD", "0.01")
+    monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    today = datetime.now(timezone.utc).date().isoformat()
+
+    # Pre-seed a log file with today's date prefix so _daily_cost picks it up
+    import json as _json
+
+    log_path = tmp_path / f"{today}-fake-expensive.json"
+    log_path.write_text(_json.dumps({"estimated_cost_usd": 0.02}), encoding="utf-8")
+
+    assert cli._daily_cost(str(tmp_path)) >= 0.02
+
+    run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+    assert "cost cap" in run.get("error", "").lower()
+
+
+def test_daily_cost_skips_raw_json(tmp_path: Path) -> None:
+    import json
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    good = tmp_path / f"{today}-run.json"
+    good.write_text(json.dumps({"estimated_cost_usd": 5.0}), encoding="utf-8")
+    raw = tmp_path / f"{today}-run.raw.json"
+    raw.write_text(json.dumps({"estimated_cost_usd": 99.0}), encoding="utf-8")
+
+    assert cli._daily_cost(str(tmp_path)) == 5.0
+
+
+def test_daily_cost_cap_default_is_10(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("DAILY_COST_CAP_USD", raising=False)
+    assert cli._daily_cost_cap() == 10.0

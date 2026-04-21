@@ -24,3 +24,19 @@ Deterministic planner + bounded public literature queries + MiMo draft pass + Re
 
 ## Next Validation Step
 Run golden harness on VPS for real precision/coverage baseline, then flip Researka to judge_panel.
+
+## Hardening Status
+| Step | What | Status |
+|---|---|---|
+| 1 | Kill switch + submit switch + daily cost cap | DONE |
+| 2 | Prompt injection sanitizer for titles/excerpts | NOT STARTED |
+| 3 | .env.example + last_validated in harness | NOT STARTED |
+| 4 | Golden harness upgrade (5 metrics) | NOT STARTED |
+| 5 | Bundle quality gate, fail-closed | NOT STARTED |
+| 6 | Judge calibration round | NOT STARTED |
+| 7 | Evidence cards | NOT STARTED |
+| 8 | Adversarial break-it pack | NOT STARTED |
+| 9 | Topic-specific negative filters | NOT STARTED |
+| 10 | Conditional source expansion (ClinicalTrials.gov) | NOT STARTED |
+| 11 | bioRxiv/medRxiv, ChEMBL | DEFERRED |
+| 12 | Weekly report script | NOT STARTED |

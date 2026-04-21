@@ -16,11 +16,10 @@ Thresholds:
 For CI, use tests/test_golden.py which validates the harness logic with mock data.
 """
 
-import re
-from agent.planner import QueryPlanner
-from agent.sources.pubmed import PubMedClient
-from agent.sources.openalex import OpenAlexClient
-from agent.drafter import _rank, _relevance, _clean
+from agent.planner import QueryPlanner  # noqa: E402
+from agent.sources.pubmed import PubMedClient  # noqa: E402
+from agent.sources.openalex import OpenAlexClient  # noqa: E402
+from agent.drafter import _rank, _relevance, _clean  # noqa: E402
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"]}
