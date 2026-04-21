@@ -23,7 +23,7 @@ Deterministic planner + bounded public literature queries + MiMo draft pass + Re
 - Golden eval harness is in git at `tests/golden/harness.py` (VPS-side, requires live API). CI uses `tests/test_golden.py` with mock data.
 
 ## Next Validation Step
-Run golden harness on VPS for real precision/coverage baseline (Step 4 results: metformin precision 0.33, rapamycin precision 0.50 — investigate). Then Step 6: judge calibration round.
+Step 7: Evidence cards — add structured citation cards per source to improve draft accuracy.
 
 ## Hardening Status
 | Step | What | Status |
@@ -33,7 +33,7 @@ Run golden harness on VPS for real precision/coverage baseline (Step 4 results: 
 | 3 | .env.example + last_validated in harness | DONE (fixed: .env.example created) |
 | 4 | Golden harness upgrade (5 metrics) | DONE (avg_tone removed from pass condition) |
 | 5 | Bundle quality gate, fail-closed | DONE (fixed: replaced tone-based gate with topic_precision/recent_ratio/source_mix) |
-| 6 | Judge calibration round | DONE (judge_draft() + weighted_kappa + judge_calibration.py) |
+| 6 | Judge calibration round | DONE (judge_draft() + cohen_kappa + judge_calibration.py; 6/6 tests pass on VPS) |
 | 7 | Evidence cards | NOT STARTED |
 | 8 | Adversarial break-it pack | NOT STARTED |
 | 9 | Topic-specific negative filters | NOT STARTED |
