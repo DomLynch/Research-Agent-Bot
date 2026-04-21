@@ -117,6 +117,10 @@ def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, m
     assert run["source_errors"]
     assert run["markdown"].startswith("# Rapid Evidence Synthesis:")
     assert "## Methods" in run["markdown"]
+    assert "PRISMA-style flow:" in run["markdown"]
+    assert "excluded during scope/domain filtering" in run["markdown"]
+    assert "excluded during final bundle assembly" in run["markdown"]
+    assert "Exclusion reasons:" in run["markdown"]
     assert run["protocol_file"].endswith(".protocol.json")
     assert (tmp_path / "protocols" / run["protocol_file"]).exists()
     assert (tmp_path / run["markdown_file"]).exists()
@@ -253,6 +257,20 @@ def test_source_list_is_numbered_with_titles(tmp_path: Path, monkeypatch) -> Non
     assert "## Sources" in md
     assert "[1]" in md
     assert "pubmed.ncbi.nlm.nih.gov" in md
+
+
+def test_methods_final_bundle_count_matches_source_bundle(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+
+    assert not run.get("error")
+    final_bundle = len(run["source_bundle"])
+    assert run["bundle_stages"]["final_bundle"] == final_bundle
+    assert f"{final_bundle} included in the final source bundle" in run["markdown"]
 
 
 def test_source_routing_helpers() -> None:

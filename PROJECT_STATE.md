@@ -53,6 +53,7 @@ Deploy the tightened directness classifier, regenerate the 10 gold fixtures, and
 - **GRADE-lite:** evidence cards now expose `evidence_grade` (`H/M/L`) and `context` labels.
 - **Protocol preregistration:** every run writes `runs/protocols/<stem>.protocol.json` before drafting.
 - **PRISMA-style methods:** every draft surfaces search date, sources searched, queries, and flow counts (`retrieved → filtered → final bundle`).
+- **PRISMA-style methods:** every draft now surfaces search date, sources searched, queries, screened/excluded/included counts, and explicit exclusion-reason summaries that reconcile with the final source bundle.
 - **Submit trust gate:** anti-aging / longevity runs with indirect-only bundles return `indirect_only_bundle` instead of posting to Researka.
 - **Telemetry:** run logs now include `source_telemetry` with per-source retrieved, post-filter, final-bundle, and final-directness counts.
 

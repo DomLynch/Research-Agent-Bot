@@ -134,15 +134,38 @@ def _count_by(entries: list[dict[str, Any]], key: str) -> dict[str, int]:
     return counts
 
 
+def _exclusion_reasons(scope_signals: list[str], run_log: dict[str, Any]) -> str:
+    reasons: list[str] = []
+    scope_map = {
+        "human_only": "non-human or non-clinical evidence",
+        "review_only": "non-review study designs",
+        "primary_only": "non-primary study designs",
+        "safety_focus": "records without clear safety signal relevance",
+        "mechanism_focus": "records without mechanistic/pathway relevance",
+    }
+    for signal in scope_signals:
+        if signal.startswith("year>="):
+            reasons.append(f"publication year before {signal.split('>=', 1)[1]}")
+        elif signal in scope_map:
+            reasons.append(scope_map[signal])
+    if run_log.get("bundle_stages", {}).get("excluded_after_filter", 0):
+        reasons.append("lower-ranked or less direct evidence removed during final bundle assembly")
+    return "; ".join(dict.fromkeys(reasons)) or "none"
+
+
 def _build_methods_block(run_log: dict[str, Any], artifact: dict[str, Any], source_names: list[str]) -> str:
     stages = run_log.get("bundle_stages", {})
+    scope_signals = run_log.get("scope_signals", [])
     return (
         f"Search date: {run_log['started_at']}. Databases/sources searched: {', '.join(source_names)}. "
         f"Queries: {' | '.join(run_log.get('queries', []))}. "
-        f"Flow: {stages.get('retrieved', 0)} retrieved, "
-        f"{stages.get('after_domain_filter', 0)} after scope/domain filtering, "
+        f"PRISMA-style flow: {stages.get('retrieved', 0)} retrieved, "
+        f"{stages.get('screened', 0)} screened, "
+        f"{stages.get('excluded_scope', 0)} excluded during scope/domain filtering, "
+        f"{stages.get('excluded_after_filter', 0)} excluded during final bundle assembly, "
         f"{stages.get('final_bundle', 0)} included in the final source bundle. "
-        f"Scope signals: {', '.join(run_log.get('scope_signals', [])) or 'none'}."
+        f"Exclusion reasons: {_exclusion_reasons(scope_signals, run_log)}. "
+        f"Scope signals: {', '.join(scope_signals) or 'none'}."
     )
 
 
@@ -279,7 +302,9 @@ def run_agent(
     run_log["evidence_selected"] = len(evidence)
     run_log["bundle_stages"] = {
         "retrieved": retrieved_n,
+        "screened": retrieved_n,
         "after_domain_filter": len(evidence),
+        "excluded_scope": max(0, retrieved_n - len(evidence)),
     }
     try:
         artifact, raw_output = RapidEvidenceDrafter(provider=MimoClient.from_env()).draft(
@@ -295,11 +320,14 @@ def run_agent(
             run_dir_p.mkdir(parents=True, exist_ok=True)
             stem = _run_stem(started_at, topic)
             (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
+        run_log["bundle_stages"]["final_bundle"] = len(artifact.get("source_bundle", []))
+        run_log["bundle_stages"]["excluded_after_filter"] = max(
+            0, run_log["bundle_stages"].get("after_domain_filter", 0) - run_log["bundle_stages"]["final_bundle"]
+        )
         artifact["methods"] = _build_methods_block(run_log, artifact, source_names)
         if "Methods" not in artifact.get("sections", {}):
             artifact["sections"] = {"Methods": artifact["methods"], **artifact.get("sections", {})}
         run_log.update(artifact)
-        run_log["bundle_stages"]["final_bundle"] = len(artifact.get("source_bundle", []))
         run_log["source_telemetry"] = {
             "retrieved": source_counts,
             "post_filter": _count_by(evidence, "source_type"),

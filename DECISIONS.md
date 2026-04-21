@@ -1,5 +1,18 @@
 # DECISION JOURNAL
 
+## 2026-04-21 — Reconcile PRISMA-style Methods counts with the actual included bundle
+**Decision:** Render the Methods block only after the final source bundle is known, and expand it from a loose flow sentence into a reconciled PRISMA-style summary with screened, excluded, included, and exclusion-reason text.
+**Why:** The previous markdown could say `0 included in the final source bundle` while still listing sources below. That made the new credibility layer look fake even when the underlying bundle was real.
+**Details:**
+- `agent/cli.py` now records `screened`, `excluded_scope`, `excluded_after_filter`, and `final_bundle` before building the Methods block.
+- The Methods block now says `PRISMA-style flow: retrieved, screened, excluded during scope/domain filtering, excluded during final bundle assembly, included in the final source bundle`.
+- Exclusion reasons are now summarized from active scope signals plus the final bundle assembly step.
+- `tests/test_cli.py` now checks the PRISMA-style wording and that the included-final count matches `len(source_bundle)`.
+**Alternatives rejected:**
+- Leave the old `Flow:` sentence and just fix the final number — rejected because the user explicitly needs screened/excluded/included clarity, not just one corrected field.
+- Invent full PRISMA reasons without tracking them — rejected; use honest summaries from the current deterministic filters.
+**Revisit if:** we later add full per-record exclusion auditing in the planner, at which point the Methods block should use those exact reason counts instead of the current summary.
+
 ## 2026-04-21 — Tighten directness classifier so the anti-aging gate can actually fire
 **Decision:** Narrow anti-aging `directness` to title-level topic fit plus study-type quality. A source is now `direct` only when the title matches a topic token, the evidence is from a stronger study class (RCT / cohort / observational / systematic review / meta-analysis), and the source signals aging-relevant outcomes or population. Mechanism records stay `mechanistic`; oncology/transplant/device/pediatric contexts stay `indirect`.
 **Why:** The first Phase 1 classifier labeled ~93% of bundle entries as `direct`, which turned the new indirect-only submission gate into theater. Generic reviews that happened to mention `aging` in the excerpt were being treated as direct longevity evidence. The gate now has a real chance to block weak longevity bundles.
