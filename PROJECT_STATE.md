@@ -35,13 +35,13 @@ Run calibration on VPS after deployment to verify kappas still hold with Clinica
 | 5 | Bundle quality gate, fail-closed | DONE |
 | 6 | Judge calibration round | DONE (6/6 pass, all kappas ≥ 0.60) |
 | 7 | Evidence cards | DONE (build_card() returns 7 fields: citation, journal, quality_signal, study_type, population, intervention, outcomes; heuristic regex extraction) |
-| 8 | Adversarial break-it pack | DONE (38 tests across 7 test classes) |
-| 9 | Topic-specific negative filters | DONE (DOMAIN_NEGATIVE_FILTERS, _should_filter_entry(); 17 tests) |
+| 8 | Adversarial break-it pack | DONE (44 tests across 8 test classes) |
+| 9 | Topic-specific negative filters | DONE (DOMAIN_NEGATIVE_FILTERS, _should_filter_entry(); 24 tests) |
 | 10 | Conditional source expansion (ClinicalTrials.gov) | DONE (ClinicalTrialsClient; interventional/observational entries now accepted by drafter and harness; conditional in cli.py for oncology/longevity domains; 17 tests) |
 | 11 | bioRxiv/medRxiv, ChEMBL | DEFERRED |
 | 12 | Weekly report script | DONE (scripts/weekly_report.py; 5 tests) |
 
 ## Test Coverage
-- Total: 167 collected, 161 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
-- Break-it pack (38 tests) now collected automatically via `tests/golden` in testpaths
+- Total: 186 collected, 180 passed, 6 skipped (judge calibration — needs MIMO_API_KEY). VPS: 186 passed.
+- Break-it pack (44 tests) now collected automatically via `tests/golden` in testpaths
 - ruff clean
