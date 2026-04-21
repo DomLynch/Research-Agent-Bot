@@ -146,10 +146,13 @@ class RapidEvidenceDrafter:
         prompt_lines = []
         for i, e in enumerate(selected, start=1):
             card = build_card(e)
-            parts = [f"type={card.get('study_type', 'unknown')}"]
+            parts = [f"cite={card.get('citation', 'unknown')}"]
+            parts.append(f"type={card.get('study_type', 'unknown')}")
+            if card.get("quality_signal"):
+                parts.append(f"quality={card['quality_signal']}")
             parts.append(f"year={e.get('year', 'unknown')}")
-            parts.append(f"title={_clean(e.get('title'), limit=220)}")
-            parts.append(f"excerpt={_clean(e.get('excerpt'), limit=320)}")
+            if card.get("journal"):
+                parts.append(f"journal={card['journal']}")
             if card.get("population"):
                 parts.append(f"pop={card['population']}")
             if card.get("intervention"):

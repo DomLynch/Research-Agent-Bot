@@ -48,19 +48,27 @@ def _report(runs: list[dict]) -> str:
 
     errors = [r for r in runs if r.get("error")]
     submissions = [r for r in runs if r.get("submission_id")]
+    gate_blocked = [r for r in runs if r.get("submission", {}).get("gate_blocked")]
+    duplicates = [r for r in runs if r.get("submission", {}).get("duplicate")]
+    sub_errors = [r for r in runs if r.get("submission_error")]
     costs = [r.get("estimated_cost_usd", 0.0) for r in runs]
     topics = Counter(r.get("topic", "?") for r in runs)
     domains = Counter(r.get("domain_slug", "?") for r in runs)
     evidence_counts = [r.get("evidence_selected", 0) for r in runs]
 
+    reached_researka = len(submissions) + len(duplicates)
+
     lines = [
         f"# Weekly Report ({total} runs in last 7 days)",
         "",
-        f"- Errors: {len(errors)}/{total}",
-        f"- Submissions: {len(submissions)}/{total}",
-        f"- Submission rate: {len(submissions) / total * 100:.0f}%"
-        if total
-        else "- Submission rate: N/A",
+        f"- Errors (draft): {len(errors)}/{total}",
+        f"- Submissions posted: {len(submissions)}/{total}",
+        f"- Duplicates skipped: {len(duplicates)}/{total}",
+        f"- Quality-gate blocked: {len(gate_blocked)}/{total}",
+        f"- Submission errors: {len(sub_errors)}/{total}",
+        f"- Submission success rate: {len(submissions) / reached_researka * 100:.0f}% ({len(submissions)}/{reached_researka} intended)"
+        if reached_researka
+        else "- Submission success rate: N/A (no submissions intended)",
         f"- Avg cost/run: ${sum(costs) / total:.4f}",
         f"- Total cost: ${sum(costs):.4f}",
         f"- Avg evidence selected: {sum(evidence_counts) / total:.1f}",
@@ -76,11 +84,18 @@ def _report(runs: list[dict]) -> str:
         lines.append(f"  {domain}: {count}")
 
     if errors:
-        lines.extend(["", "## Errors"])
+        lines.extend(["", "## Draft Errors"])
         for r in errors[:10]:
             topic = r.get("topic", "?")
             err = r.get("error", "?")
             lines.append(f"  - [{topic}] {err}")
+
+    if gate_blocked:
+        lines.extend(["", "## Quality-Gate Blocks"])
+        for r in gate_blocked[:10]:
+            topic = r.get("topic", "?")
+            reason = r.get("submission", {}).get("reason", "?")
+            lines.append(f"  - [{topic}] {reason}")
 
     return "\n".join(lines)
 
