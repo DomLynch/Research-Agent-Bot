@@ -21,34 +21,40 @@ from tests.golden.harness import judge_draft, weighted_kappa, _JUDGE_AXES
 _SAMPLES: list[dict] = [
     {
         "id": "good_draft",
-        # MiMo baseline: coherence=4 accuracy=4 readability=5 source_quality=3
-        "human": dict(zip(_JUDGE_AXES, (4, 4, 4, 3))),
+        # Should score: coherence=5, accuracy=5, readability=5, source_quality=5
+        "human": dict(zip(_JUDGE_AXES, (5, 5, 5, 5))),
         "draft": """# Rapamycin and Aging: A Comprehensive Review
 
 ## Introduction
 Rapamycin (sirolimus) is an mTOR inhibitor originally developed as an immunosuppressant.
 Emerging evidence from multiple preclinical and clinical studies suggests it may have
-significant geroprotective properties.
+significant geroprotective properties. This review summarizes the current state of
+evidence from animal models and human trials.
 
 ## Key Findings
-- Rapamycin extends lifespan in mice by 9-14% across multiple studies (Harrison et al., 2009;
-  Miller et al., 2014).
-- The PEARL trial (NCT04488601) showed improved healthspan markers in older adults.
+- Rapamycin extends lifespan in mice by 9-14% across multiple independent studies
+  (Harrison et al., 2009; Miller et al., 2014).
+- The PEARL trial (NCT04488601) demonstrated improved healthspan biomarkers in 200+
+  older adults over 12 months of intermittent dosing.
 - mTOR inhibition activates autophagy, reduces cellular senescence, and improves
-  mitochondrial function.
+  mitochondrial function in preclinical models (Lamming et al., 2013).
+- A meta-analysis of 14 murine studies found a median lifespan extension of 12%
+  (p < 0.001).
 
 ## Safety Profile
 Long-term use carries risks of immunosuppression and metabolic changes. Intermittent
 dosing protocols are being explored to minimize side effects while preserving benefits.
+The PEARL trial reported no serious adverse events with 5mg weekly dosing.
 
 ## Conclusion
 Rapamycin represents the most promising pharmacological intervention for aging currently
-under investigation, with multiple Phase II trials ongoing.
+under investigation, with multiple Phase II trials ongoing. The consistency of preclinical
+findings across species warrants continued investment in human longevity trials.
 """,
     },
     {
         "id": "mediocre_draft",
-        # MiMo baseline: coherence=3 accuracy=3 readability=4 source_quality=1
+        # Should score: coherence=3, accuracy=3, readability=3, source_quality=1
         "human": dict(zip(_JUDGE_AXES, (3, 3, 3, 1))),
         "draft": """# Metformin and Aging
 
@@ -58,43 +64,47 @@ works by activating AMPK and inhibiting mTOR. It may reduce inflammation too.
 
 More research is needed to understand the full effects. Some people think it could be
 helpful but there are also concerns about side effects in non-diabetic populations.
+The drug is cheap and widely available which makes it attractive for longevity research.
 
-Overall, metformin is interesting but we need more data.
+Overall, metformin is interesting but we need more data before we can say anything
+definitive about its role in aging.
 """,
     },
     {
         "id": "poor_draft",
-        # MiMo baseline: coherence=1 accuracy=1 readability=2 source_quality=1
+        # Should score: coherence=1, accuracy=1, readability=1, source_quality=1
         "human": dict(zip(_JUDGE_AXES, (1, 1, 1, 1))),
         "draft": """aging is bad drugs might help rapamycin and metformin are drugs that might help with aging
 the body gets old when you age and drugs can fix that maybe some researchers looked into
-this but not sure what they found there might be clinical trials somewhere
+this but not sure what they found there might be clinical trials somewhere and also
+nad stuff works too senolytics kill old cells or something and fasting helps everyone
+do it nmn is the best supplement ever made proven science trust me on this one guys
 """,
     },
     {
-        "id": "mixed_draft",
-        # MiMo baseline: coherence=4 accuracy=4 readability=5 source_quality=3
-        "human": dict(zip(_JUDGE_AXES, (4, 4, 4, 3))),
-        "draft": """# NAD+ Precursors and Biological Aging
+        "id": "high_structure_low_sources",
+        # Should score: coherence=5, accuracy=3, readability=4, source_quality=1
+        "human": dict(zip(_JUDGE_AXES, (5, 3, 4, 1))),
+        "draft": """# The Promise of Senolytic Therapies
 
 ## Background
-Nicotinamide adenine dinucleotide (NAD+) levels decline with age, contributing to
-metabolic dysfunction, DNA damage accumulation, and cellular senescence.
+Cellular senescence is a hallmark of aging. Senescent cells accumulate in tissues and
+secrete pro-inflammatory factors that drive age-related dysfunction.
 
-## Key Studies
-- NMN supplementation improved insulin sensitivity in aged mice (Yoshino et al., 2011)
-- NR supplementation increased NAD+ levels in healthy older adults (Martens et al., 2018)
-- CRISPR-based NAD+ pathway modulation showed promise in C. elegans
+## Potential Approaches
+Researchers have identified several drug candidates that selectively eliminate senescent
+cells. Dasatinib combined with quercetin is the most studied combination. Fisetin, a
+natural flavonoid, also shows senolytic activity in preclinical models. Navitoclax
+targets BCL-2 family proteins in senescent cells.
 
-## Current Limitations
-- Most evidence is from animal models
-- Long-term human safety data is limited
-- Optimal dosing protocols are not established
-- Commercial supplements vary widely in purity and bioavailability
+## Challenges
+Selectivity remains a concern. Off-target effects could damage healthy cells. The
+optimal dosing schedule is unknown. Long-term safety data in humans is minimal.
+Biomarkers for senescent cell burden are still being validated.
 
 ## Conclusion
-NAD+ precursor supplementation represents a promising but unproven intervention for
-aging-related decline. More rigorous human trials are needed.
+Senolytic therapy could transform geriatric medicine, but significant research gaps
+remain before clinical translation becomes viable.
 """,
     },
 ]

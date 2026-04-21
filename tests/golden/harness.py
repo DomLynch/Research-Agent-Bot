@@ -81,15 +81,40 @@ def _has_injection(text: str) -> bool:
 
 _JUDGE_RUBRIC = """You are a strict research quality judge. Rate the draft on exactly 4 axes.
 Return ONLY valid JSON with keys: coherence, accuracy, readability, source_quality.
+Each key MUST be an integer from 1 to 5.
 
-Scoring (1-5):
-  1 = Very poor: major gaps or errors
-  2 = Below average: noticeable issues
-  3 = Adequate: meets minimum standards
-  4 = Good: well-structured and reliable
-  5 = Excellent: publication-ready quality
+CRITERIA — apply each axis independently:
 
-Each key MUST have an integer value between 1 and 5."""
+COHERENCE (logical structure and flow):
+  5 = Clear section headings (Introduction, Methods, Results, Conclusion or similar).
+      Logical progression from background → evidence → conclusion.
+  3 = Has some structure (headings or paragraphs) but transitions are weak.
+      Ideas repeat or jump without clear progression.
+  1 = No headings, no paragraphs, or random topic jumps within sentences.
+      Stream-of-consciousness, no logical flow.
+
+ACCURACY (evidence quality and factual claims):
+  5 = Cites specific studies with author names or trial IDs.
+      Claims include numbers (percentages, p-values, sample sizes).
+      No obvious false claims.
+  3 = Mentions specific drugs/topics correctly but lacks citations or numbers.
+      Vague claims like "some studies suggest" without references.
+  1 = Contains factual errors (wrong drug names, invented statistics).
+      Purely speculative with no grounding in evidence.
+
+READABILITY (clarity and grammar):
+  5 = Professional writing, correct grammar, appropriate terminology,
+      no spelling errors, well-organized paragraphs.
+  3 = Mostly readable but has awkward phrasing, some repetition,
+      or inconsistent tone. Minor grammar issues.
+  1 = Difficult to follow, major grammar errors, run-on sentences,
+      no paragraph structure, spelling mistakes throughout.
+
+SOURCE_QUALITY (references and citations):
+  5 = 3+ named citations (author, year, trial ID, or DOI).
+      Mix of study types (trials, reviews, meta-analyses).
+  3 = 1-2 vague references like "the TAME trial" or "some studies" without details.
+  1 = Zero references or citations of any kind. No study names, no trial IDs."""
 
 _JUDGE_AXES = ("coherence", "accuracy", "readability", "source_quality")
 
