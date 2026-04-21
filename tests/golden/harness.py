@@ -305,13 +305,15 @@ ACCURACY (evidence quality and factual claims):
   1 = Contains factual errors (wrong drug names, invented statistics).
       Purely speculative with no grounding in evidence.
 
-READABILITY (clarity and grammar):
-  5 = Professional writing, correct grammar, appropriate terminology,
-      no spelling errors, well-organized paragraphs.
-  3 = Mostly readable but has awkward phrasing, some repetition,
-      or inconsistent tone. Minor grammar issues.
-  1 = Difficult to follow, major grammar errors, run-on sentences,
-      no paragraph structure, spelling mistakes throughout.
+READABILITY (clarity and grammar — countable criteria):
+  5 = Has paragraph breaks (blank lines). Average sentence length <= 30 words.
+      No single sentence exceeds 50 words. Active voice predominates.
+      Consistent professional tone throughout.
+  3 = Has paragraph breaks OR short sentences, but not both. Some sentences 30-50 words.
+      Mixing of casual and formal tone, or 1-2 run-on sentences.
+  1 = No paragraph breaks AND/OR majority of sentences exceed 40 words (run-on).
+      Severe grammar issues (subject-verb disagreement, missing articles).
+      Stream-of-consciousness with no sentence boundaries.
 
 SOURCE_QUALITY (references and citations):
   5 = 3+ named citations (author, year, trial ID, or DOI).
