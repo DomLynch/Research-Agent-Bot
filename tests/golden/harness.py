@@ -267,14 +267,14 @@ def quantitative_fidelity(draft: dict[str, Any], gold: dict[str, Any]) -> float:
 def composite_score(draft: dict[str, Any], gold: dict[str, Any]) -> float:
     """Weighted composite of 4 scoring functions.
 
-    Weights: study_overlap=0.35, quantitative_fidelity=0.30,
-             direction_agreement=0.20, limitation_overlap=0.15
+    Weights: study_overlap=0.10, quantitative_fidelity=0.40,
+             direction_agreement=0.30, limitation_overlap=0.20
     """
     return (
-        0.35 * study_overlap(draft, gold)
-        + 0.30 * quantitative_fidelity(draft, gold)
-        + 0.20 * direction_agreement(draft, gold)
-        + 0.15 * limitation_overlap(draft, gold)
+        0.10 * study_overlap(draft, gold)
+        + 0.40 * quantitative_fidelity(draft, gold)
+        + 0.30 * direction_agreement(draft, gold)
+        + 0.20 * limitation_overlap(draft, gold)
     )
 
 
