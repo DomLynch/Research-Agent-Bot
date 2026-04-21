@@ -3,10 +3,66 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any
 
 import httpx
+
+_INJECTION_PATTERNS = (
+    r"ignore previous instructions",
+    r"you are now",
+    r"system prompt",
+    r"reveal your",
+    r"act as",
+    r"do not follow",
+    r"new instructions",
+    r"override",
+    r"jailbreak",
+    r"prompt injection",
+    r"disregard.*above",
+    r"<\|im_start\|>",
+    r"<\|im_end\|>",
+    r"BEGINCHAT",
+    r"ENDCHAT",
+)
+_INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
+
+_TONE_POSITIVE = {"promising", "robust", "significant", "effective", "novel", "validated", "strong"}
+_TONE_NEGATIVE = {"limited", "small", "inconclusive", "unclear", "weak", "insufficient", "heterogeneous"}
+
+
+def _tone_rating(text: str) -> float:
+    lower = text.lower()
+    pos = sum(1 for w in _TONE_POSITIVE if w in lower)
+    neg = sum(1 for w in _TONE_NEGATIVE if w in lower)
+    total = pos + neg
+    if total == 0:
+        return 0.5
+    return round(pos / total, 2)
+
+
+def _quality_gate(artifact: dict[str, Any]) -> str | None:
+    bundle = artifact.get("source_bundle", [])
+    if len(bundle) < 12:
+        return f"bundle_too_small:{len(bundle)}"
+
+    for entry in bundle:
+        title = str(entry.get("title") or "")
+        if title and _INJECTION_RE.search(title):
+            return "injection_detected"
+
+    titles = [str(e.get("title") or "") for e in bundle]
+    titled_pct = sum(1 for t in titles if t.strip()) / len(titles)
+    if titled_pct < 0.60:
+        return f"low_title_precision:{titled_pct:.2f}"
+
+    tones = [_tone_rating(t) for t in titles]
+    avg_tone = sum(tones) / len(tones)
+    if avg_tone < 0.70:
+        return f"low_tone:{avg_tone:.2f}"
+
+    return None
 
 
 def _fingerprint(artifact: dict[str, Any]) -> str:
@@ -39,6 +95,10 @@ def _find_previous(fingerprint: str, run_dir: str = "runs") -> dict[str, Any] | 
 
 
 def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: str = "runs") -> dict[str, Any]:
+    gate_reason = _quality_gate(artifact)
+    if gate_reason:
+        return {"gate_blocked": True, "reason": gate_reason}
+
     fp = _fingerprint(artifact)
     prev = _find_previous(fp, run_dir)
     if prev:
