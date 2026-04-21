@@ -125,7 +125,7 @@ class RapidEvidenceDrafter:
 
         years = [int(e["year"]) for e in bundle_sources if isinstance(e.get("year"), int)]
         rc = sum(1 for e in bundle_sources if e.get("evidence_type") == "review")
-        pc = sum(1 for e in bundle_sources if e.get("evidence_type") in {"primary", "interventional", "observational"})
+        pc = sum(1 for e in bundle_sources if e.get("evidence_type") in {"primary", "interventional", "observational", "mechanism"})
         topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
         expanded = list(topic_tokens)
         for tok in topic_tokens:
@@ -199,7 +199,7 @@ class RapidEvidenceDrafter:
                 f"to determine whether the current literature supports actionable conclusions for practitioners and researchers."
             ).strip()
 
-        _ACCEPTED_TYPES = {"review", "primary", "interventional", "observational"}
+        _ACCEPTED_TYPES = {"review", "primary", "interventional", "observational", "mechanism"}
         source_bundle = [
             {
                 "title": _clean(e.get("title"), limit=200),

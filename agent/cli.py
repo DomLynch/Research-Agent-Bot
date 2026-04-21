@@ -10,13 +10,18 @@ from typing import Any
 from agent.drafter import RapidEvidenceDrafter
 from agent.planner import QueryPlanner
 from agent.provider import MimoClient
+from agent.sources.chembl import ChEMBLClient
 from agent.sources.clinicaltrials import ClinicalTrialsClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
+from agent.sources.rxiv import RxivClient
 from agent.submit import submit
 
 _CLINICAL_DOMAINS = {"oncology", "longevity"}
 _CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
+_RXIV_DOMAINS = {"longevity", "oncology", "metabolic", "general"}
+_CHEMBL_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "statin")
+_CHEMBL_STOPWORDS = {"and", "or", "anti", "aging", "anti-aging", "longevity", "healthspan", "effects", "outcomes"}
 
 
 def _should_use_clinical_trials(domain: str, topic: str) -> bool:
@@ -24,6 +29,20 @@ def _should_use_clinical_trials(domain: str, topic: str) -> bool:
         return True
     combined = f"{topic} {domain}".lower()
     return any(kw in combined for kw in _CLINICAL_KEYWORDS)
+
+
+def _should_use_rxiv(domain: str, topic: str) -> bool:
+    if domain in _RXIV_DOMAINS:
+        return True
+    combined = f"{topic} {domain}".lower()
+    return any(kw in combined for kw in ("preprint", "mechanism", "geroscience", "aging"))
+
+
+def _should_use_chembl(topic: str) -> bool:
+    tokens = [tok for tok in _slug(topic).split("-") if tok and tok not in _CHEMBL_STOPWORDS]
+    if len(tokens) == 1:
+        return True
+    return any(tok.endswith(_CHEMBL_SUFFIXES) for tok in tokens)
 
 
 def _daily_cost(run_dir: str = "runs") -> float:
@@ -157,8 +176,12 @@ def run_agent(
     }
     evidence: list[dict] = []
     sources: list[tuple[str, Any]] = [("pubmed", PubMedClient()), ("openalex", OpenAlexClient())]
+    if _should_use_rxiv(domain, topic):
+        sources.append(("rxiv", RxivClient()))
     if _should_use_clinical_trials(domain, topic):
         sources.append(("clinicaltrials", ClinicalTrialsClient()))
+    if _should_use_chembl(topic):
+        sources.append(("chembl", ChEMBLClient()))
     for query in queries:
         for source_name, client in sources:
             try:

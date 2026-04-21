@@ -11,7 +11,7 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a research 
 
 ## Constraints
 - Runtime target: ~1,500 LOC (raised from 1,200 — see DECISIONS.md 2026-04-21 "scope creep").
-  Hard ceiling: 1,800 LOC. Actual: ~1,482 LOC.
+  Hard ceiling: 1,800 LOC. Actual: ~1,683 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
@@ -39,7 +39,7 @@ All hardening steps complete. Ready for main merge and real-world QA.
 | 8 | Adversarial break-it pack | DONE (44 tests across 8 test classes) |
 | 9 | Topic-specific negative filters | DONE (DOMAIN_NEGATIVE_FILTERS, _should_filter_entry(); 24 tests) |
 | 10 | Conditional source expansion (ClinicalTrials.gov) | DONE (ClinicalTrialsClient; interventional/observational entries now accepted by drafter and harness; conditional in cli.py for oncology/longevity domains; 17 tests) |
-| 11 | bioRxiv/medRxiv, ChEMBL | DEFERRED |
+| 11 | bioRxiv/medRxiv, ChEMBL | DONE (RxivClient via Europe PMC preprints filtered to bioRxiv/medRxiv publishers; ChEMBLClient for compound/mechanism context on drug-like topics) |
 | 12 | Weekly report script | DONE (scripts/weekly_report.py; 7 tests including gate_blocked + submission_breakdown) |
 | 13 | 3-tier eval corpus (gold + adversarial + breadth) | DONE (10 gold topics, 30 adversarial, 60 breadth; 4 scoring functions; CI workflow) |
 
@@ -54,7 +54,7 @@ All hardening steps complete. Ready for main merge and real-world QA.
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 207 passed, 7 skipped (6 judge calibration + 1 gold_smoke without fixtures)
+- MacBook: 217 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
 - Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
 - Main is current. No uncommitted scope creep — see DECISIONS.md 2026-04-21 for the 4 out-of-scope features that got accepted with a raised LOC budget.

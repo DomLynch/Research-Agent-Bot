@@ -6,6 +6,7 @@ from pathlib import Path
 import httpx
 
 from agent import cli
+import pytest
 
 
 class FakeProvider:
@@ -96,6 +97,12 @@ class OldHumanSource:
                 "query": query,
             }
         ]
+
+
+@pytest.fixture(autouse=True)
+def _stub_new_source_clients(monkeypatch):
+    monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: FailingSource())
 
 
 def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, monkeypatch) -> None:
@@ -239,6 +246,12 @@ def test_source_list_is_numbered_with_titles(tmp_path: Path, monkeypatch) -> Non
     assert "## Sources" in md
     assert "[1]" in md
     assert "pubmed.ncbi.nlm.nih.gov" in md
+
+
+def test_source_routing_helpers() -> None:
+    assert cli._should_use_rxiv("longevity", "rapamycin")
+    assert cli._should_use_chembl("everolimus")
+    assert not cli._should_use_chembl("time restricted eating")
 
 
 # ── Safety gate tests ──────────────────────────────────────────────
