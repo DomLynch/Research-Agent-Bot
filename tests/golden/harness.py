@@ -79,9 +79,23 @@ def _has_injection(text: str) -> bool:
 # Scoring functions for 3-tier eval corpus
 # ---------------------------------------------------------------------------
 
-_POSITIVE_KW = {"supports", "effective", "improved", "reduces", "increases"}
-_NEGATIVE_PHRASES = {"no evidence", "null result", "null findings", "no benefit", "no improvement", "no advantage", "ineffective", "harmful"}
-_CAVEAT_KW = {"limited", "preliminary", "caution", "mixed", "heterogeneous", "inconsistent", "uncertain"}
+_POSITIVE_KW = {
+    "suggest", "suggests", "suggested", "could", "may", "might", "can",
+    "demonstrate", "demonstrates", "demonstrated", "shows", "indicates",
+    "support", "supports", "supported", "effective", "efficacy",
+    "improved", "improvement", "reduces", "reducing", "reduction",
+    "increases", "increasing", "beneficial", "benefit", "positive",
+    "favorable", "associated", "implicated", "linked", "helps", "impact",
+}
+_NEGATIVE_PHRASES = {
+    "no evidence", "no benefit", "no improvement", "no advantage",
+    "ineffective", "harmful",
+}
+_CAVEAT_KW = {
+    "limited", "preliminary", "preliminarily", "caution",
+    "mixed", "heterogeneous", "inconsistent", "uncertain", "unclear",
+    "insufficient", "needed", "required", "promising", "investigational", "varies",
+}
 
 
 def _normalize_doi(doi: str) -> str:
