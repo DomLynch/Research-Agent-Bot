@@ -173,6 +173,8 @@ def run_agent(
         "evidence_retrieved": 0,
         "evidence_selected": 0,
         "source_errors": [],
+        "source_counts": {},
+        "bundle_stages": {},
     }
     evidence: list[dict] = []
     sources: list[tuple[str, Any]] = [("pubmed", PubMedClient()), ("openalex", OpenAlexClient())]
@@ -182,16 +184,30 @@ def run_agent(
         sources.append(("clinicaltrials", ClinicalTrialsClient()))
     if _should_use_chembl(topic):
         sources.append(("chembl", ChEMBLClient()))
+    source_counts: dict[str, int] = {name: 0 for name, _ in sources}
+    # Specialty sources (ChEMBL = compound metadata, not literature) get a
+    # hard per-query cap so they contribute context without swamping the
+    # literature signal from pubmed/openalex/rxiv.
+    _SPECIALTY_CAP = {"chembl": 5, "clinicaltrials": 8}
     for query in queries:
         for source_name, client in sources:
             try:
-                evidence.extend(client.search(query, limit=per_source_limit))
+                cap = min(per_source_limit, _SPECIALTY_CAP.get(source_name, per_source_limit))
+                hits = client.search(query, limit=cap)
+                evidence.extend(hits)
+                source_counts[source_name] += len(hits)
             except Exception as exc:
                 run_log["source_errors"].append(f"{source_name}:{query}:{exc}")
+    run_log["source_counts"] = source_counts
     run_log["evidence_retrieved"] = len(evidence)
+    retrieved_n = len(evidence)
     all_evidence = plan.filter_evidence(list(evidence))
     evidence = plan.filter_evidence(evidence)
     run_log["evidence_selected"] = len(evidence)
+    run_log["bundle_stages"] = {
+        "retrieved": retrieved_n,
+        "after_domain_filter": len(evidence),
+    }
     try:
         artifact, raw_output = RapidEvidenceDrafter(provider=MimoClient.from_env()).draft(
             topic=topic,
@@ -207,6 +223,7 @@ def run_agent(
             stem = _run_stem(started_at, topic)
             (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
         run_log.update(artifact)
+        run_log["bundle_stages"]["final_bundle"] = len(artifact.get("source_bundle", []))
         if not artifact.get("error"):
             markdown = _payload_to_markdown(artifact, topic=topic, criteria=criteria)
             markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=topic, markdown=markdown)

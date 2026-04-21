@@ -1,51 +1,27 @@
 {
+  "source_counts": {
+    "pubmed": 29,
+    "openalex": 41,
+    "rxiv": 5,
+    "clinicaltrials": 14
+  },
+  "bundle_stages": {
+    "retrieved": 89,
+    "after_domain_filter": 23,
+    "final_bundle": 14
+  },
   "title": "Rapid Evidence Synthesis: creatine cognitive function older adults",
-  "abstract": "This draft synthesizes public-index evidence on creatine cognitive function older adults for the longevity domain. The run retained 20 evidence receipts spanning 2021 to 2026, with 7 review-like items and 13 primary-study items.",
-  "domain_slug": "longevity",
+  "abstract": "This draft synthesizes public-index evidence on creatine cognitive function older adults for the longevity domain. The run retained 16 evidence receipts spanning 2020 to 2026, with 0 review-like items and 16 primary-study items.",
   "sections": {
-    "Research Question": "What are the effects of creatine monohydrate supplementation on cognitive function and broader healthspan outcomes in generally healthy older adults aged 50 years and older, compared to a placebo, as evaluated in randomized controlled trials published from 2020 onward with an intervention duration of at least six months, and what is the current evidence for its safety and efficacy in this aging population?",
-    "Search Summary": "A targeted literature search was conducted for randomized controlled trials (RCTs) and systematic reviews published from 2020 to 2026, focusing on creatine supplementation in adults aged 50 and older. The primary outcomes of interest were measures of cognitive function (e.g., memory, executive function) and other healthspan-related biomarkers or clinical outcomes. The search strategy utilized queries combining terms for creatine, cognitive function, older adults, RCTs, and aging health outcomes.",
-    "Evidence Landscape": "The research landscape on creatine for cognitive aging is emerging but not yet extensive. Most identified studies are recent (2025-2026), indicating a growing scientific interest. The evidence base consists of a limited number of RCTs and systematic reviews, with populations often including only men or specific patient groups, which limits generalizability to the broader, healthy older adult population [1, 3, 4, 5].",
-    "Key Findings": "The available RCTs present a mixed and preliminary picture. One RCT found that creatine supplementation had a significant effect on cognitive outcomes in older men [5]. Another trial in older men reported effects on inflammatory biomarkers, which could be a mechanistic pathway relevant to cognitive aging [3]. However, a systematic review noted that evidence for creatine's effects on aging outcomes in older men is still inconclusive [1]. Other trials have combined creatine with exercise, making it difficult to isolate the supplement's specific effect on cognitive or healthspan outcomes [2, 6].",
-    "Limitations": "The primary limitations of the current evidence include small sample sizes, short intervention durations in some studies, and a lack of demographic diversity, with several studies focusing exclusively on male participants [1, 3, 5]. The heterogeneity in cognitive assessment tools and healthspan outcomes measured across studies complicates meta-analysis and definitive conclusions. Furthermore, the number of high-quality, long-term RCTs specifically designed to test cognitive outcomes in a general healthy aging population remains very low.",
-    "Gaps Identified": "Major evidence gaps exist. There is a scarcity of RCTs with intervention periods exceeding six months that are dedicated to assessing cognitive function in both older men and women. The long-term safety profile of creatine supplementation in the elderly is not well-documented in trial data. Additionally, the optimal dosing regimen for cognitive benefits and the interaction between creatine supplementation and other lifestyle interventions (like diet and exercise) in diverse older adult populations are poorly understood.",
-    "Conclusion": "Based on the limited and recent evidence from 2020-2026, there is some preliminary indication from RCTs that creatine supplementation may influence cognitive function or related biomarkers in older adults, particularly men [3, 5]. However, the evidence is not yet robust or comprehensive enough to make definitive recommendations for its use to improve cognitive health or broader healthspan in the general population of adults over 50. Significant gaps in the research, especially concerning long-term efficacy, safety, and effects in women, necessitate further large-scale, long-duration RCTs before creatine can be considered an established intervention for cognitive aging."
+    "Research Question": "What are the effects of creatine supplementation on cognitive function and related healthspan outcomes in older adults aged 50 years and older, compared to placebo, as evaluated in randomized controlled trials published from 2020 onward with an intervention duration of at least several months, and what is the current evidence for its safety and efficacy in this aging population?",
+    "Search Summary": "A targeted search was conducted for randomized controlled trials (RCTs) published from 2020 onward examining creatine supplementation in adults aged 50 and older, with a focus on cognitive outcomes and broader healthspan indicators. The queries included terms for creatine, cognitive function, older adults, RCTs, and clinical trials. The evidence retrieved includes several recent RCTs from 2025-2026 that specifically investigate creatine's effects in older male populations, alongside primary literature on exercise and longevity which provides contextual background on aging interventions.",
+    "Evidence Landscape": "The research landscape for creatine and cognitive aging is emerging, with a notable concentration of recent RCTs (2025-2026) focusing on older men. These studies often examine creatine as a nutritional supplement intervention. The broader context of longevity research emphasizes multimodal interventions like exercise, as seen in global consensus guidelines [4], highlighting the importance of evaluating single-nutrient supplements like creatine within the spectrum of healthspan-promoting strategies.",
+    "Key Findings": "Initial findings from recent RCTs suggest a potential benefit. One RCT in older men found creatine supplementation had effects on both inflammation and cognitive outcomes [1]. Another trial in a similar population reported positive cognitive outcomes [3]. However, evidence is not yet uniform, as another RCT in men focused on treatment effects related to inflammation without a clear cognitive benefit [2]. The safety profile appears generally favorable in these short-to-medium term trials, but long-term data in diverse older adult populations remains limited.",
+    "Limitations": "The current evidence base has significant limitations. The available RCTs are few in number and predominantly conducted in male participants [1, 2, 3], limiting generalizability to older women. Intervention durations in these trials are not explicitly stated as being long-term (e.g., 6+ months), making it difficult to assess sustained effects on healthspan. Furthermore, the cognitive assessment tools and specific outcomes measured vary between studies, complicating direct comparison and meta-analysis.",
+    "Gaps Identified": "Major evidence gaps exist. There is a critical lack of RCTs including older women, despite known sex differences in creatine metabolism and cognitive aging trajectories. Long-term trials (\u22651 year) assessing durability of effect and safety are absent. The interaction between creatine supplementation and other longevity interventions, such as the exercise regimens discussed in consensus guidelines [4], is unexplored. Additionally, studies focusing on individuals with mild cognitive impairment or specific health conditions in this age group are needed.",
+    "Conclusion": "Preliminary evidence from a small number of recent RCTs indicates that creatine supplementation may have beneficial effects on cognitive function and related inflammatory markers in older men. However, the evidence is insufficient to make broad recommendations for the general older adult population due to limitations in study diversity, duration, and scope. Future research must prioritize inclusive, long-term RCTs that examine creatine's efficacy across sexes and its potential synergistic effects with established healthspan interventions like exercise."
   },
   "source_bundle": [
-    {
-      "title": "Creatine and Cognition in Aging: A Systematic Review of Evidence in Older Adults.",
-      "evidence_type": "review",
-      "year": 2026,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40971619/",
-      "doi": "10.1093/nutrit/nuaf135",
-      "relevance": 1.0,
-      "card": {
-        "citation": "Marshall et al., 2026",
-        "journal": "Nutr Rev",
-        "quality_signal": "systematic-review",
-        "study_type": "systematic-review",
-        "population": "older adults, men",
-        "intervention": "supplement, supplement",
-        "outcomes": "aging, aging"
-      }
-    },
-    {
-      "title": "Magnetic resonance spectroscopy as a non-invasive tool for assessing brain and muscle adaptation to exercise training in older age: a scoping review into existing research.",
-      "evidence_type": "review",
-      "year": 2026,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41748042/",
-      "doi": "10.1016/j.exger.2026.113082",
-      "relevance": 0.94,
-      "card": {
-        "citation": "Levin et al., 2026",
-        "journal": "Exp Gerontol",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "men, populations",
-        "intervention": "exercise, exercise",
-        "outcomes": "biomarker, aging"
-      }
-    },
     {
       "title": "Effects of high-load, velocity-intentional variable resistance training combined with creatine supplementation on neuroplasticity, oxidative stress, inflammation, physical function, cognitive performa",
       "evidence_type": "primary",
@@ -98,20 +74,20 @@
       }
     },
     {
-      "title": "Creatine supplementation and exercise in aging: a narrative review of the muscle-brain axis and its impact on cognitive and physical health.",
-      "evidence_type": "review",
+      "title": "Global consensus on optimal exercise recommendations for enhancing healthy longevity in older adults (ICFSR)",
+      "evidence_type": "primary",
       "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41601887/",
-      "doi": "10.3389/fnut.2025.1687719",
-      "relevance": 1.0,
+      "url": "https://doi.org/10.1016/j.jnha.2024.100401",
+      "doi": "10.1016/j.jnha.2024.100401",
+      "relevance": 0.78,
       "card": {
-        "citation": "Li, 2025",
-        "journal": "Front Nutr",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "men, men",
-        "intervention": "supplement, exercise",
-        "outcomes": "aging, cognitive"
+        "citation": "Global consensus on optimal exercise rec, 2025",
+        "journal": "The journal of nutrition health & aging",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "men, older adults",
+        "intervention": "exercise, exercise",
+        "outcomes": "longevity, aging"
       }
     },
     {
@@ -129,23 +105,6 @@
         "population": "participants, men",
         "intervention": "exercise, exercise",
         "outcomes": "efficacy, efficacy"
-      }
-    },
-    {
-      "title": "Global consensus on optimal exercise recommendations for enhancing healthy longevity in older adults (ICFSR)",
-      "evidence_type": "primary",
-      "year": 2025,
-      "url": "https://doi.org/10.1016/j.jnha.2024.100401",
-      "doi": "10.1016/j.jnha.2024.100401",
-      "relevance": 0.78,
-      "card": {
-        "citation": "Global consensus on optimal exercise rec, 2025",
-        "journal": "The journal of nutrition health & aging",
-        "quality_signal": "primary",
-        "study_type": "primary",
-        "population": "men, older adults",
-        "intervention": "exercise, exercise",
-        "outcomes": "longevity, aging"
       }
     },
     {
@@ -183,23 +142,6 @@
       }
     },
     {
-      "title": "Multifunctional nanoparticle-mediated combining therapy for human diseases",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://doi.org/10.1038/s41392-023-01668-1",
-      "doi": "10.1038/s41392-023-01668-1",
-      "relevance": 0.76,
-      "card": {
-        "citation": "Multifunctional nanoparticle-mediated co, 2024",
-        "journal": "Signal Transduction and Targeted Therapy",
-        "quality_signal": "review",
-        "study_type": "review",
-        "population": "men, men",
-        "intervention": "therapy, drug",
-        "outcomes": "toxicity"
-      }
-    },
-    {
       "title": "The power of creatine plus resistance training for healthy aging: enhancing physical vitality and cognitive function",
       "evidence_type": "primary",
       "year": 2024,
@@ -231,40 +173,6 @@
         "population": "men, men",
         "intervention": "drug, treatment",
         "outcomes": "efficacy, aging"
-      }
-    },
-    {
-      "title": "Systematic review and meta\u2010analysis of protein intake to support muscle mass and function in healthy adults",
-      "evidence_type": "review",
-      "year": 2022,
-      "url": "https://doi.org/10.1002/jcsm.12922",
-      "doi": "10.1002/jcsm.12922",
-      "relevance": 0.82,
-      "card": {
-        "citation": "Systematic review and meta\u2010analysis of p, 2022",
-        "journal": "Journal of Cachexia Sarcopenia and Muscle",
-        "quality_signal": "systematic-review",
-        "study_type": "meta-analysis",
-        "population": "adults, subjects",
-        "intervention": "exercise",
-        "outcomes": "outcome"
-      }
-    },
-    {
-      "title": "Ketogenic diet for human diseases: the underlying mechanisms and potential for clinical implementations",
-      "evidence_type": "review",
-      "year": 2022,
-      "url": "https://doi.org/10.1038/s41392-021-00831-w",
-      "doi": "10.1038/s41392-021-00831-w",
-      "relevance": 0.56,
-      "card": {
-        "citation": "Ketogenic diet for human diseases, 2022",
-        "journal": "Signal Transduction and Targeted Therapy",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "men, men",
-        "intervention": "fasting, treatment",
-        "outcomes": "efficacy, safety"
       }
     },
     {
@@ -317,14 +225,64 @@
         "intervention": "treatment, treatment",
         "outcomes": "efficacy, safety"
       }
+    },
+    {
+      "title": "Secondary analysis of transcriptomes of SARS-CoV-2 infection models to characterize COVID-19",
+      "evidence_type": "primary",
+      "year": 2020,
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2020/08/28/2020.08.27.270835.full.pdf",
+      "doi": "10.1101/2020.08.27.270835",
+      "relevance": 0.46,
+      "card": {
+        "citation": "Ghandikota et al., 2020",
+        "journal": "biorxiv",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "men, men",
+        "intervention": "",
+        "outcomes": "outcome"
+      }
+    },
+    {
+      "title": "Effects of Ketone Bodies on Brain Metabolism and Function in Neurodegenerative Diseases",
+      "evidence_type": "primary",
+      "year": 2020,
+      "url": "https://doi.org/10.3390/ijms21228767",
+      "doi": "10.3390/ijms21228767",
+      "relevance": 0.72,
+      "card": {
+        "citation": "Effects of Ketone Bodies on Brain Metabo, 2020",
+        "journal": "International Journal of Molecular Sciences",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "patients, men",
+        "intervention": "fasting, intervention",
+        "outcomes": "aging, cognitive"
+      }
     }
   ],
   "prompt_version": "research-agent-bot/mimo-v0",
   "usage": {
-    "input_tokens": 657,
-    "output_tokens": 748,
-    "total_tokens": 1405
+    "input_tokens": 661,
+    "output_tokens": 712,
+    "total_tokens": 1373
   },
-  "estimated_cost_usd": 0.00030141999999999994,
-  "model": "mimo-v2-pro"
+  "estimated_cost_usd": 0.00029189999999999994,
+  "model": "mimo-v2-pro",
+  "markdown": "# Rapid Evidence Synthesis: creatine cognitive function older adults\n\n- Topic: creatine cognitive function older adults\n- Domain: longevity\n- Criteria: RCTs, 2020+, cognitive outcomes in 50+ adults\n\n## Abstract\n\nThis draft synthesizes public-index evidence on creatine cognitive function older adults for the longevity domain. The run retained 16 evidence receipts spanning 2020 to 2026, with 0 review-like items and 16 primary-study items.\n\n## Research Question\n\nWhat are the effects of creatine supplementation on cognitive function and related healthspan outcomes in older adults aged 50 years and older, compared to placebo, as evaluated in randomized controlled trials published from 2020 onward with an intervention duration of at least several months, and what is the current evidence for its safety and efficacy in this aging population?\n\n## Search Summary\n\nA targeted search was conducted for randomized controlled trials (RCTs) published from 2020 onward examining creatine supplementation in adults aged 50 and older, with a focus on cognitive outcomes and broader healthspan indicators. The queries included terms for creatine, cognitive function, older adults, RCTs, and clinical trials. The evidence retrieved includes several recent RCTs from 2025-2026 that specifically investigate creatine's effects in older male populations, alongside primary literature on exercise and longevity which provides contextual background on aging interventions.\n\n## Evidence Landscape\n\nThe research landscape for creatine and cognitive aging is emerging, with a notable concentration of recent RCTs (2025-2026) focusing on older men. These studies often examine creatine as a nutritional supplement intervention. The broader context of longevity research emphasizes multimodal interventions like exercise, as seen in global consensus guidelines [4], highlighting the importance of evaluating single-nutrient supplements like creatine within the spectrum of healthspan-promoting strategies.\n\n## Key Findings\n\nInitial findings from recent RCTs suggest a potential benefit. One RCT in older men found creatine supplementation had effects on both inflammation and cognitive outcomes [1]. Another trial in a similar population reported positive cognitive outcomes [3]. However, evidence is not yet uniform, as another RCT in men focused on treatment effects related to inflammation without a clear cognitive benefit [2]. The safety profile appears generally favorable in these short-to-medium term trials, but long-term data in diverse older adult populations remains limited.\n\n## Limitations\n\nThe current evidence base has significant limitations. The available RCTs are few in number and predominantly conducted in male participants [1, 2, 3], limiting generalizability to older women. Intervention durations in these trials are not explicitly stated as being long-term (e.g., 6+ months), making it difficult to assess sustained effects on healthspan. Furthermore, the cognitive assessment tools and specific outcomes measured vary between studies, complicating direct comparison and meta-analysis.\n\n## Gaps Identified\n\nMajor evidence gaps exist. There is a critical lack of RCTs including older women, despite known sex differences in creatine metabolism and cognitive aging trajectories. Long-term trials (\u22651 year) assessing durability of effect and safety are absent. The interaction between creatine supplementation and other longevity interventions, such as the exercise regimens discussed in consensus guidelines [4], is unexplored. Additionally, studies focusing on individuals with mild cognitive impairment or specific health conditions in this age group are needed.\n\n## Conclusion\n\nPreliminary evidence from a small number of recent RCTs indicates that creatine supplementation may have beneficial effects on cognitive function and related inflammatory markers in older men. However, the evidence is insufficient to make broad recommendations for the general older adult population due to limitations in study diversity, duration, and scope. Future research must prioritize inclusive, long-term RCTs that examine creatine's efficacy across sexes and its potential synergistic effects with established healthspan interventions like exercise.\n\n## Sources\n\n[1] Effects of high-load, velocity-intentional variable resistance training combined with creatine supplementation on neuroplasticity, oxidative stress, inflammation, physical function, cognitive performa (2026), primary | Fernandez-Garrido et al., 2026 | Exp Gerontol | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/41941966/\n[2] Randomized double-blind inpatient study of a gluten-free diet for negative symptoms in people with schizophrenia. (2026), primary | Kelly et al., 2026 | Schizophr Res | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/41544406/\n[3] The Effects of 8-Week Creatine Hydrochloride and Creatine Ethyl Ester Supplementation on Cognition, Clinical Outcomes, and Brain Creatine Levels in Perimenopausal and Menopausal Women (CONCRET-MENOPA) (2026), primary | Korovljev et al., 2026 | J Am Nutr Assoc | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40854087/\n[4] Global consensus on optimal exercise recommendations for enhancing healthy longevity in older adults (ICFSR) (2025), primary | Global consensus on optimal exercise rec, 2025 | The journal of nutrition health & aging | primary \u2014 https://doi.org/10.1016/j.jnha.2024.100401\n[5] Efficacy of Combined Aerobic Exercise and Coaching on Physical Fitness in People With Neuromuscular Diseases: A Randomized Clinical Trial. (2025), primary | Oorschot et al., 2025 | Neurology | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40466020/\n[6] Neurophysiological correlates of subjective cognitive decline in perimenopausal and postmenopausal midlife women at risk for Alzheimer's disease. (2025), primary | Mosconi et al., 2025 | Menopause | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/40067757/\n[7] Perspectives on Diet and Exercise Interaction for Healthy Aging: Opportunities to Reduce Malnutrition Risk and Optimize Fitness. (2025), primary | Moradell et al., 2025 | Nutrients | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/39940452/\n[8] The power of creatine plus resistance training for healthy aging: enhancing physical vitality and cognitive function (2024), primary | The power of creatine plus resistance tr, 2024 | Frontiers in Physiology | primary \u2014 https://doi.org/10.3389/fphys.2024.1496544\n[9] Optimizing the Design of Clinical Trials to Evaluate the Efficacy of Function-Promoting Therapies. (2023), primary | Bhasin et al., 2023 | J Gerontol A Biol Sci Med Sci | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/37325959/\n[10] Advances in muscle health and nutrition: A toolkit for healthcare professionals (2022), primary | Advances in muscle health and nutrition, 2022 | Clinical Nutrition | primary \u2014 https://doi.org/10.1016/j.clnu.2022.07.041\n[11] The effects of 6-month hydrogen-rich water intake on molecular and phenotypic biomarkers of aging in older adults aged 70 years and over: A randomized controlled pilot trial. (2021), primary | Zanini et al., 2021 | Exp Gerontol | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/34601077/\n[12] Intravenous immunoglobulins as first-line treatment in idiopathic inflammatory myopathies: a pilot study. (2021), primary | Lim et al., 2021 | Rheumatology (Oxford) | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/33099648/\n[13] Secondary analysis of transcriptomes of SARS-CoV-2 infection models to characterize COVID-19 (2020), primary | Ghandikota et al., 2020 | biorxiv | primary \u2014 https://www.biorxiv.org/content/biorxiv/early/2020/08/28/2020.08.27.270835.full.pdf\n[14] Effects of Ketone Bodies on Brain Metabolism and Function in Neurodegenerative Diseases (2020), primary | Effects of Ketone Bodies on Brain Metabo, 2020 | International Journal of Molecular Sciences | primary \u2014 https://doi.org/10.3390/ijms21228767\n",
+  "_telemetry": {
+    "source_counts": {
+      "pubmed": 29,
+      "openalex": 41,
+      "rxiv": 5,
+      "clinicaltrials": 14
+    },
+    "bundle_stages": {
+      "retrieved": 89,
+      "after_domain_filter": 23,
+      "final_bundle": 14
+    },
+    "evidence_retrieved": 89,
+    "evidence_selected": 23
+  }
 }

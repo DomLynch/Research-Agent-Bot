@@ -29,46 +29,47 @@ def check_env():
 
 
 def generate_fixture(slug: str, topic: str, domain: str, criteria: str) -> dict | None:
-    """Run the bot pipeline for one topic, return draft artifact."""
+    """Run the REAL production path for one topic, return draft artifact + telemetry.
+
+    Uses run_agent() directly so fixtures match production behaviour:
+    all 5 sources (pubmed/openalex/rxiv/clinicaltrials/chembl) fire per
+    the _should_use_* gates, quality gates apply, telemetry is captured.
+    """
     try:
-        from agent.planner import QueryPlanner
-        from agent.sources.pubmed import PubMedClient
-        from agent.sources.openalex import OpenAlexClient
-        from agent.drafter import RapidEvidenceDrafter
-        from agent.provider import MimoClient
+        from agent.cli import run_agent
     except ImportError as e:
         print(f"Import error: {e}")
         return None
 
-    provider = MimoClient.from_env()
-    planner = QueryPlanner()
-    drafter = RapidEvidenceDrafter(provider=provider)
-
-    plan = planner.build(topic=topic, domain_slug=domain, criteria=criteria)
-
-    evidence = []
-    for source_name, client_cls in [("pubmed", PubMedClient), ("openalex", OpenAlexClient)]:
-        client = client_cls()
-        for query in plan.primary_queries():
-            try:
-                results = client.search(query, limit=20)
-                evidence.extend(results)
-            except Exception as e:
-                print(f"  [{source_name}] {query[:50]}: {e}", file=sys.stderr)
-
-    artifact, raw = drafter.draft(
+    # Use a temporary run_dir so we don't pollute runs/ with fixtures
+    run_log = run_agent(
         topic=topic,
-        domain_slug=domain,
+        domain=domain,
         criteria=criteria,
-        queries=plan.queries,
-        evidence=evidence,
-        all_evidence=evidence,
+        per_source_limit=20,  # match brief's original "limit=20" behaviour
+        run_dir="tests/golden/fixture_runs",
     )
 
-    if artifact.get("error"):
-        print(f"  ERROR: {artifact['error']}")
+    if run_log.get("error"):
+        print(f"  ERROR: {run_log['error']}")
         return None
 
+    # Strip fields that don't belong in a scored fixture artifact
+    artifact = {
+        k: v for k, v in run_log.items()
+        if k not in {"run_log", "started_at", "topic", "domain_slug", "criteria",
+                     "queries", "scope_signals", "source_errors",
+                     "evidence_retrieved", "evidence_selected",
+                     "submission", "submission_id", "submission_status",
+                     "submission_error", "fingerprint", "markdown_file"}
+    }
+    # Keep telemetry for transparency
+    artifact["_telemetry"] = {
+        "source_counts": run_log.get("source_counts", {}),
+        "bundle_stages": run_log.get("bundle_stages", {}),
+        "evidence_retrieved": run_log.get("evidence_retrieved"),
+        "evidence_selected": run_log.get("evidence_selected"),
+    }
     return artifact
 
 

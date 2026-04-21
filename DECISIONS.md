@@ -81,3 +81,38 @@
 - Keep the hard fail — rejected, red-light CI on all pushes is noise.
 - Ship canned "reference fixtures" with known scores — rejected, undermines the whole premise (the benchmark exists to score live bot output, not canned artifacts).
 **Revisit if:** CI adds MIMO_API_KEY secret → `gold_smoke` should run live, not skip.
+
+## 2026-04-21 — Three real-bug fixes: quant_fidelity free pass, source telemetry, crippled fixture generator
+**Decision:** Fix three issues surfaced by the first real gold baseline. Composite dropped from fake-0.788 to honest-0.544 as a result — that's correct.
+
+**(1) quantitative_fidelity free pass.** Previous: "no numbers claimed" returned 1.0 — a free pass that rewarded the drafter for vague prose. New: "no numbers claimed" returns 0.5 (neutral — no lies, but no rigor either). Unsupported numeric claims still pull toward 0.0. A credible research synthesis makes AND supports numeric claims; absence of numbers is mediocre, not perfect.
+
+**(2) Missing source telemetry.** Previous: no visibility into where evidence dropped between retrieval and final bundle, making "metformin bundle=3" impossible to diagnose. New: every `run_log` records `source_counts` (per-source hit counts for pubmed/openalex/rxiv/clinicaltrials/chembl) and `bundle_stages` (`retrieved → after_domain_filter → final_bundle`). Diagnosed within minutes: metformin's "diabetes-free" token returns 0 PubMed hits; ChEMBL was dumping 60 records/topic that survived domain filter but failed relevance.
+
+**(3) Crippled fixture generator.** Previous: `scripts/generate_fixtures.py` hand-rolled a pipeline using only PubMed + OpenAlex, ignoring ClinicalTrials.gov, bioRxiv, and ChEMBL — the "fixtures" being scored were a crippled bot, not production. New: `generate_fixtures.py` calls `run_agent()` directly, so fixtures match production behavior exactly (all 5 sources, quality gates, telemetry).
+
+**Supporting fix:** Capped ChEMBL at 5/query and ClinicalTrials at 8/query. ChEMBL returns compound metadata (titles = "METFORMIN HYDROCHLORIDE"), not research literature — it should add context without swamping the bundle. 60 records/topic was drowning the relevance signal.
+
+**Gold_smoke threshold:** Raised per-topic floor from 0.20 to 0.15 (old threshold was calibrated against the broken quant_fidelity metric). Added aggregate check: avg composite > 0.45.
+
+**Baseline shift:**
+- Composite avg: 0.788 → 0.544 (honest)
+- quant_fidelity avg: 1.00 → 0.40 (honest — bot rarely cites supported numbers)
+- limitation_overlap avg: 0.73 → 0.87 (IMPROVED — real pipeline surfaces better limitations)
+- direction_agreement avg: 0.80 → 0.70 (slightly worse on real pipeline)
+- study_overlap avg: 0.01 → 0.01 (unchanged — retrieval mismatch persists)
+
+**What I did NOT do and why:**
+- Did not lower the relevance threshold from 0.3 to 0.2 — investigation showed the filter is correctly dropping tangential papers (e.g., for metformin, 9 of 10 post-domain-filter papers don't mention metformin at all — they're diabetes/aging papers that leaked through retrieval). Loosening the filter would let noise into the bundle.
+- Did not fix the "diabetes-free" topic string in gold metformin.json — that's a gold corpus phrasing issue, out of scope.
+- Did not change the drafter to cite more numbers — that's a drafter prompt change, separate work.
+
+**Alternatives rejected:**
+- Keep the 1.0 free pass + document — rejected, the metric was actively misleading.
+- Widen relevance filter — rejected, real investigation showed filter is correct; retrieval is the upstream issue.
+- Re-generate fixtures without using real pipeline — rejected, "crippled bot" benchmark is worse than no benchmark.
+
+**Revisit if:**
+- Composite avg drops below 0.45 → investigate which metric regressed.
+- Metformin bundle stays at 2 after other fixes → revisit gold topic phrasing or widen per_source_limit from 20 to 40.
+- PubMed returns 0 for other topics → investigate query construction in planner.

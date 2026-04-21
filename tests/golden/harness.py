@@ -301,18 +301,25 @@ def _evidence_contains_number(evidence_excerpts: list[str], number_str: str) -> 
 
 
 def quantitative_fidelity(draft: dict[str, Any], gold: dict[str, Any]) -> float:
-    """Extract numeric claims from draft Key Findings, verify against evidence.
+    """Measure quantitative rigor of the draft's Key Findings.
 
-    Regex extracts numbers with units. Each extracted number must appear in
-    at least one evidence excerpt from the source bundle. Returns fraction
-    of numeric claims that are supported. Returns float in [0.0, 1.0].
+    Returns in [0.0, 1.0]:
+      - 0.5  neutral: draft claims no numbers (no lies, but no rigor either —
+             a credible research synthesis cites effect sizes, N, p-values).
+      - supported / total: fraction of numeric claims traceable to an
+             evidence excerpt. Unsupported claims pull the score toward 0.
+
+    Previous behavior returned 1.0 for "no numbers claimed" — a free pass
+    that hid the drafter's tendency to write prose without quantitative
+    backing. Good rapid-evidence synthesis should make AND support numeric
+    claims, so absence of numbers is now neutral, not perfect.
     """
     sections = draft.get("sections", {})
     findings = sections.get("Key Findings", "") or ""
 
     numeric_claims = _extract_numbers(findings)
     if not numeric_claims:
-        return 1.0
+        return 0.5  # neutral — no lies, but no rigor either
 
     source_bundle = draft.get("source_bundle", [])
     evidence_excerpts = [

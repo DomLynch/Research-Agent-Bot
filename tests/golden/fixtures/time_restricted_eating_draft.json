@@ -1,136 +1,27 @@
 {
+  "source_counts": {
+    "pubmed": 40,
+    "openalex": 44,
+    "rxiv": 1,
+    "clinicaltrials": 2
+  },
+  "bundle_stages": {
+    "retrieved": 87,
+    "after_domain_filter": 32,
+    "final_bundle": 18
+  },
   "title": "Rapid Evidence Synthesis: time-restricted eating intermittent fasting humans",
-  "abstract": "This draft synthesizes public-index evidence on time-restricted eating intermittent fasting humans for the longevity domain. The run retained 20 evidence receipts spanning 2024 to 2025, with 10 review-like items and 10 primary-study items.",
-  "domain_slug": "longevity",
+  "abstract": "This draft synthesizes public-index evidence on time-restricted eating intermittent fasting humans for the longevity domain. The run retained 20 evidence receipts spanning 2022 to 2025, with 0 review-like items and 20 primary-study items.",
   "sections": {
-    "Research Question": "What are the effects of time-restricted eating, a form of intermittent fasting, on healthspan outcomes in older adults, compared to an ad libitum eating schedule or placebo control, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy regarding metabolic, cognitive, and longevity-related biomarkers?",
-    "Search Summary": "A targeted search was conducted for randomized controlled trials (RCTs) published from 2020 onward focusing on time-restricted eating (TRE) in human populations, specifically older adults. The primary outcomes of interest were metabolic parameters, cognitive function, and biomarkers associated with longevity and aging. The search yielded several recent meta-analyses and reviews from 2025 that synthesize evidence on fasting interventions, though direct RCT data in older adults over long durations (\u22656 months) remains limited.",
-    "Evidence Landscape": "The current research landscape, as of 2025, is characterized by a growing number of meta-analyses and reviews summarizing the effects of various fasting regimens, including TRE, on health outcomes [2, 3, 5, 6]. These syntheses often include studies with mixed populations and intervention durations, making it difficult to isolate findings specific to long-term TRE in older adults. Evidence points to potential benefits for metabolic health and biomarkers of aging, but the specific impact on cognitive healthspan and long-term safety in the elderly is less clear [1, 4, 6].",
-    "Key Findings": "Recent meta-analyses indicate that fasting interventions can improve various health outcomes and biomarkers [2, 5]. For instance, one review highlights the potential role of fasting in modulating longevity pathways [6]. However, evidence specifically for TRE in older adults is sparse. A 2025 review notes that fasting may influence cognitive outcomes, but the data is not yet conclusive, especially for long-term effects [1]. Another review discusses caloric restriction and aging, providing a mechanistic context for TRE but not direct RCT evidence in older populations [4].",
-    "Limitations": "A major limitation is the scarcity of RCTs with a duration of 6 months or longer that exclusively enroll older adults. The available evidence is largely derived from meta-analyses pooling studies with heterogeneous populations (including younger adults), intervention types (e.g., alternate-day fasting, TRE), and durations [2, 3, 5]. This makes it challenging to draw firm conclusions about the specific effects and safety of long-term TRE for promoting healthspan in the elderly.",
-    "Gaps Identified": "There is a clear gap in high-quality, long-term (\u22656 month) RCT data on TRE specifically in older adult populations. Key unanswered questions include: the sustained effects on age-related cognitive decline, the impact on frailty and physical function, the long-term safety profile (e.g., risk of nutrient deficiencies, sarcopenia), and the comparative efficacy against other dietary patterns for extending healthspan.",
-    "Conclusion": "While preliminary evidence from recent reviews and meta-analyses suggests that fasting regimens, including TRE, may have beneficial effects on metabolic health and longevity-related biomarkers, there is insufficient direct evidence from long-term RCTs to conclusively determine their efficacy and safety for improving healthspan outcomes in older adults. Robust, long-duration clinical trials targeting this specific population are urgently needed to fill this evidence gap."
+    "Research Question": "What are the effects of time-restricted eating and intermittent fasting on healthspan outcomes, including metabolic parameters and markers of biological aging, in generally healthy older adults, compared to an ad libitum or isocaloric placebo diet, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the current evidence for both safety and efficacy in this population?",
+    "Search Summary": "A targeted search was conducted for randomized controlled trials (RCTs) published from 2020 onward, focusing on time-restricted eating (TRE) or intermittent fasting (IF) interventions in human adults. The primary outcomes of interest were metabolic health (e.g., insulin sensitivity, lipid profiles) and longevity/aging biomarkers (e.g., inflammatory markers, epigenetic clocks). The search specifically sought studies with longer-term interventions (\u22656 months) and those including older adult participants.",
+    "Evidence Landscape": "The research landscape for TRE/IF in humans is rapidly evolving, with a growing number of RCTs examining metabolic outcomes. However, evidence specifically targeting older adults and explicitly measuring validated healthspan or longevity biomarkers remains limited. Most available trials focus on weight loss and cardiometabolic risk factors in general adult or overweight/obese populations, with fewer studies extending beyond 12 months or including frailty, cognitive function, or multi-morbidity as endpoints [2, 3, 6].",
+    "Key Findings": "Recent RCTs indicate that TRE can lead to modest improvements in metabolic parameters such as body weight, fasting glucose, and blood pressure in adults [2, 6]. For instance, a 2025 trial found TRE improved glycemic control in adults with type 2 diabetes [4]. However, direct evidence from RCTs of sufficient duration (\u22656 months) in older adults specifically measuring healthspan outcomes is scarce. One 2025 RCT in adults reported that alternate-day fasting did not significantly affect aging biomarkers measured by epigenetic clocks compared to controls [3]. Preclinical and pilot human data suggest potential effects on longevity pathways [1], but robust, long-term clinical trial data in older populations are lacking.",
+    "Limitations": "The primary limitation is the paucity of RCTs meeting the full criteria: long-term (\u22656+ months), conducted in older adults (e.g., >65 years), and using validated healthspan or biological aging outcomes as primary endpoints. Many trials have high dropout rates, challenges with dietary adherence monitoring, and often compare TRE to active dietary advice rather than a true ad libitum control [2, 6]. Furthermore, the safety profile in older adults, particularly regarding lean mass loss, nutrient deficiencies, and interactions with polypharmacy, is not well-characterized in long-term studies.",
+    "Gaps Identified": "A major evidence gap exists for long-term RCTs of TRE/IF in older adults. Key unanswered questions include: 1) The effect on frailty, sarcopenia, and cognitive function; 2) The impact on validated aging biomarkers (e.g., DNA methylation age, senescence markers); 3) The optimal fasting protocol (e.g., 16:8 vs. 5:2) for this population; 4) Long-term safety and sustainability beyond one year. No identified RCT from 2020+ has primarily focused on a healthspan composite outcome in older adults [1-6].",
+    "Conclusion": "Current evidence from RCTs suggests TRE/IF can improve some metabolic risk factors in general adult populations, but direct, high-quality evidence for extending healthspan or improving longevity outcomes in older adults is insufficient. While mechanistic and preliminary data are promising [1], definitive conclusions about efficacy and safety for promoting healthy aging in older adults await the results of dedicated, long-term RCTs with geriatric-relevant endpoints."
   },
   "source_bundle": [
-    {
-      "title": "Intermittent fasting and neurocognitive disorders: What the evidence shows.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39798403/",
-      "doi": "10.1016/j.jnha.2025.100480",
-      "relevance": 0.82,
-      "card": {
-        "citation": "Beveridge et al., 2025",
-        "journal": "J Nutr Health Aging",
-        "quality_signal": "review",
-        "study_type": "review",
-        "population": "individuals, men",
-        "intervention": "fasting, fasting",
-        "outcomes": "cognitive, cognitive"
-      }
-    },
-    {
-      "title": "The impact of intermittent fasting on body composition and cardiometabolic outcomes in overweight and obese adults: a systematic review and meta-analysis of randomized controlled trials.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40731344/",
-      "doi": "10.1186/s12937-025-01178-6",
-      "relevance": 0.82,
-      "card": {
-        "citation": "Wang et al., 2025",
-        "journal": "Nutr J",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "adults, adults",
-        "intervention": "fasting, fasting",
-        "outcomes": "outcome, outcome"
-      }
-    },
-    {
-      "title": "Effects of Intermittent Fasting and Calorie Restriction on Exercise Performance: A Systematic Review and Meta-Analysis.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40573103/",
-      "doi": "10.3390/nu17121992",
-      "relevance": 0.82,
-      "card": {
-        "citation": "Kazeminasab et al., 2025",
-        "journal": "Nutrients",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "individuals, adults",
-        "intervention": "fasting, exercise",
-        "outcomes": "outcome"
-      }
-    },
-    {
-      "title": "Dietary and Pharmacological Modulation of Aging-Related Metabolic Pathways: Molecular Insights, Clinical Evidence, and a Translational Model.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41096907/",
-      "doi": "10.3390/ijms26199643",
-      "relevance": 0.68,
-      "card": {
-        "citation": "Murillo-Cancho et al., 2025",
-        "journal": "Int J Mol Sci",
-        "quality_signal": "review",
-        "study_type": "review",
-        "population": "men, men",
-        "intervention": "intervention, caloric restriction",
-        "outcomes": "aging, aging"
-      }
-    },
-    {
-      "title": "Is isocaloric intermittent fasting superior to calorie restriction? A systematic review and meta-analysis of RCTs.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39732588/",
-      "doi": "10.1016/j.numecd.2024.103805",
-      "relevance": 0.82,
-      "card": {
-        "citation": "Hamsho et al., 2025",
-        "journal": "Nutr Metab Cardiovasc Dis",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "men, adults",
-        "intervention": "fasting, fasting",
-        "outcomes": "biomarker"
-      }
-    },
-    {
-      "title": "A Critical Assessment of Fasting to Promote Metabolic Health and Longevity.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40700575/",
-      "doi": "10.1210/endrev/bnaf021",
-      "relevance": 0.82,
-      "card": {
-        "citation": "Fazeli et al., 2025",
-        "journal": "Endocr Rev",
-        "quality_signal": "review",
-        "study_type": "review",
-        "population": "men, men",
-        "intervention": "fasting, fasting",
-        "outcomes": "longevity, survival"
-      }
-    },
-    {
-      "title": "Intermittent fasting and cardiovascular health: a circadian rhythm-based approach.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40480884/",
-      "doi": "10.1016/j.scib.2025.05.017",
-      "relevance": 0.82,
-      "card": {
-        "citation": "Zhang et al., 2025",
-        "journal": "Sci Bull (Beijing)",
-        "quality_signal": "review",
-        "study_type": "clinical-trial",
-        "population": "individuals, men",
-        "intervention": "fasting, fasting",
-        "outcomes": "aging, outcome"
-      }
-    },
     {
       "title": "Genetic regulation of fasting-induced longevity effects.",
       "evidence_type": "primary",
@@ -217,57 +108,6 @@
       }
     },
     {
-      "title": "The Effects of Time-Restricted Eating on Fat Loss in Adults with Overweight and Obese Depend upon the Eating Window and Intervention Strategies: A Systematic Review and Meta-Analysis.",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39408357/",
-      "doi": "10.3390/nu16193390",
-      "relevance": 0.94,
-      "card": {
-        "citation": "Xie et al., 2024",
-        "journal": "Nutrients",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "adults, adults",
-        "intervention": "intervention, fasting",
-        "outcomes": "efficacy, safety"
-      }
-    },
-    {
-      "title": "Intermittent fasting and longevity: From animal models to implication for humans.",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38499159/",
-      "doi": "10.1016/j.arr.2024.102274",
-      "relevance": 0.88,
-      "card": {
-        "citation": "Strilbytska et al., 2024",
-        "journal": "Ageing Res Rev",
-        "quality_signal": "review",
-        "study_type": "review",
-        "population": "men, men",
-        "intervention": "fasting, fasting",
-        "outcomes": "longevity, lifespan"
-      }
-    },
-    {
-      "title": "Impact of Intermittent Fasting and/or Caloric Restriction on Aging-Related Outcomes in Adults: A Scoping Review of Randomized Controlled Trials.",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38276554/",
-      "doi": "10.3390/nu16020316",
-      "relevance": 0.82,
-      "card": {
-        "citation": "James et al., 2024",
-        "journal": "Nutrients",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "adults, adults",
-        "intervention": "fasting, caloric restriction",
-        "outcomes": "aging, outcome"
-      }
-    },
-    {
       "title": "Effects of dietary interventions and intermittent fasting on HDL function in obese individuals with T2DM: a randomized controlled trial.",
       "evidence_type": "primary",
       "year": 2024,
@@ -351,14 +191,166 @@
         "intervention": "fasting, intervention",
         "outcomes": "aging, aging"
       }
+    },
+    {
+      "title": "Efficacy of different 8 h time-restricted eating schedules on visceral adipose tissue and cardiometabolic health: A study protocol.",
+      "evidence_type": "primary",
+      "year": 2024,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37949715/",
+      "doi": "10.1016/j.numecd.2023.09.014",
+      "relevance": 0.72,
+      "card": {
+        "citation": "Dote-Montero et al., 2024",
+        "journal": "Nutr Metab Cardiovasc Dis",
+        "quality_signal": "primary",
+        "study_type": "rct",
+        "population": "men, women",
+        "intervention": "intervention, intervention",
+        "outcomes": "efficacy, efficacy"
+      }
+    },
+    {
+      "title": "Effect of intermittent fasting 16:8 and 14:10 compared with control-group on weight reduction and metabolic outcomes in obesity with type 2 diabetes patients: A randomized controlled trial.",
+      "evidence_type": "primary",
+      "year": 2024,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38932663/",
+      "doi": "10.1111/jdi.14186",
+      "relevance": 0.72,
+      "card": {
+        "citation": "Sukkriang et al., 2024",
+        "journal": "J Diabetes Investig",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "patients, participants",
+        "intervention": "fasting, fasting",
+        "outcomes": "outcome, outcome"
+      }
+    },
+    {
+      "title": "Effects of Different Types of Intermittent Fasting Interventions on Metabolic Health in Healthy Individuals (EDIF): A Randomised Trial with a Controlled-Run in Phase.",
+      "evidence_type": "primary",
+      "year": 2024,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38674802/",
+      "doi": "10.3390/nu16081114",
+      "relevance": 0.72,
+      "card": {
+        "citation": "Herz et al., 2024",
+        "journal": "Nutrients",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "individuals, population",
+        "intervention": "fasting, intervention",
+        "outcomes": "efficacy, outcome"
+      }
+    },
+    {
+      "title": "International consensus on fasting terminology.",
+      "evidence_type": "primary",
+      "year": 2024,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39059384/",
+      "doi": "10.1016/j.cmet.2024.06.013",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Koppold et al., 2024",
+        "journal": "Cell Metab",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "men, men",
+        "intervention": "fasting, fasting",
+        "outcomes": ""
+      }
+    },
+    {
+      "title": "Toward nutrition improving outcome of critically ill patients: How to interpret recent feeding RCTs?",
+      "evidence_type": "primary",
+      "year": 2023,
+      "url": "https://doi.org/10.1186/s13054-023-04317-9",
+      "doi": "10.1186/s13054-023-04317-9",
+      "relevance": 0.46,
+      "card": {
+        "citation": "Toward nutrition improving outcome of cr, 2023",
+        "journal": "Critical Care",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "patients, patients",
+        "intervention": "dose, dose",
+        "outcomes": "outcome, outcome"
+      }
+    },
+    {
+      "title": "Time\u2010restricted eating: What we know and where the field is going",
+      "evidence_type": "primary",
+      "year": 2023,
+      "url": "https://doi.org/10.1002/oby.23672",
+      "doi": "10.1002/oby.23672",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Time\u2010restricted eating, 2023",
+        "journal": "Obesity",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "men, adults",
+        "intervention": "intervention, intervention",
+        "outcomes": ""
+      }
+    },
+    {
+      "title": "Effects of intermittent fasting on cognitive health and Alzheimer\u2019s disease",
+      "evidence_type": "primary",
+      "year": 2023,
+      "url": "https://doi.org/10.1093/nutrit/nuad021",
+      "doi": "10.1093/nutrit/nuad021",
+      "relevance": 0.72,
+      "card": {
+        "citation": "Effects of intermittent fasting on cogni, 2023",
+        "journal": "Nutrition Reviews",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "",
+        "intervention": "fasting, fasting",
+        "outcomes": "cognitive"
+      }
+    },
+    {
+      "title": "The effects of caloric restriction on adipose tissue and metabolic health are sex- and age-dependent",
+      "evidence_type": "primary",
+      "year": 2022,
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2022/02/22/2022.02.20.481222.full.pdf",
+      "doi": "10.1101/2022.02.20.481222",
+      "relevance": 0.46,
+      "card": {
+        "citation": "Suchacki et al., 2022",
+        "journal": "biorxiv",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "cohort",
+        "intervention": "caloric restriction, caloric restriction",
+        "outcomes": ""
+      }
     }
   ],
   "prompt_version": "research-agent-bot/mimo-v0",
   "usage": {
-    "input_tokens": 659,
-    "output_tokens": 717,
-    "total_tokens": 1376
+    "input_tokens": 651,
+    "output_tokens": 812,
+    "total_tokens": 1463
   },
-  "estimated_cost_usd": 0.00029301999999999996,
-  "model": "mimo-v2-pro"
+  "estimated_cost_usd": 0.0003185,
+  "model": "mimo-v2-pro",
+  "markdown": "# Rapid Evidence Synthesis: time-restricted eating intermittent fasting humans\n\n- Topic: time-restricted eating intermittent fasting humans\n- Domain: longevity\n- Criteria: RCTs, 2020+, metabolic and longevity outcomes\n\n## Abstract\n\nThis draft synthesizes public-index evidence on time-restricted eating intermittent fasting humans for the longevity domain. The run retained 20 evidence receipts spanning 2022 to 2025, with 0 review-like items and 20 primary-study items.\n\n## Research Question\n\nWhat are the effects of time-restricted eating and intermittent fasting on healthspan outcomes, including metabolic parameters and markers of biological aging, in generally healthy older adults, compared to an ad libitum or isocaloric placebo diet, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the current evidence for both safety and efficacy in this population?\n\n## Search Summary\n\nA targeted search was conducted for randomized controlled trials (RCTs) published from 2020 onward, focusing on time-restricted eating (TRE) or intermittent fasting (IF) interventions in human adults. The primary outcomes of interest were metabolic health (e.g., insulin sensitivity, lipid profiles) and longevity/aging biomarkers (e.g., inflammatory markers, epigenetic clocks). The search specifically sought studies with longer-term interventions (\u22656 months) and those including older adult participants.\n\n## Evidence Landscape\n\nThe research landscape for TRE/IF in humans is rapidly evolving, with a growing number of RCTs examining metabolic outcomes. However, evidence specifically targeting older adults and explicitly measuring validated healthspan or longevity biomarkers remains limited. Most available trials focus on weight loss and cardiometabolic risk factors in general adult or overweight/obese populations, with fewer studies extending beyond 12 months or including frailty, cognitive function, or multi-morbidity as endpoints [2, 3, 6].\n\n## Key Findings\n\nRecent RCTs indicate that TRE can lead to modest improvements in metabolic parameters such as body weight, fasting glucose, and blood pressure in adults [2, 6]. For instance, a 2025 trial found TRE improved glycemic control in adults with type 2 diabetes [4]. However, direct evidence from RCTs of sufficient duration (\u22656 months) in older adults specifically measuring healthspan outcomes is scarce. One 2025 RCT in adults reported that alternate-day fasting did not significantly affect aging biomarkers measured by epigenetic clocks compared to controls [3]. Preclinical and pilot human data suggest potential effects on longevity pathways [1], but robust, long-term clinical trial data in older populations are lacking.\n\n## Limitations\n\nThe primary limitation is the paucity of RCTs meeting the full criteria: long-term (\u22656+ months), conducted in older adults (e.g., >65 years), and using validated healthspan or biological aging outcomes as primary endpoints. Many trials have high dropout rates, challenges with dietary adherence monitoring, and often compare TRE to active dietary advice rather than a true ad libitum control [2, 6]. Furthermore, the safety profile in older adults, particularly regarding lean mass loss, nutrient deficiencies, and interactions with polypharmacy, is not well-characterized in long-term studies.\n\n## Gaps Identified\n\nA major evidence gap exists for long-term RCTs of TRE/IF in older adults. Key unanswered questions include: 1) The effect on frailty, sarcopenia, and cognitive function; 2) The impact on validated aging biomarkers (e.g., DNA methylation age, senescence markers); 3) The optimal fasting protocol (e.g., 16:8 vs. 5:2) for this population; 4) Long-term safety and sustainability beyond one year. No identified RCT from 2020+ has primarily focused on a healthspan composite outcome in older adults [1-6].\n\n## Conclusion\n\nCurrent evidence from RCTs suggests TRE/IF can improve some metabolic risk factors in general adult populations, but direct, high-quality evidence for extending healthspan or improving longevity outcomes in older adults is insufficient. While mechanistic and preliminary data are promising [1], definitive conclusions about efficacy and safety for promoting healthy aging in older adults await the results of dedicated, long-term RCTs with geriatric-relevant endpoints.\n\n## Sources\n\n[1] Genetic regulation of fasting-induced longevity effects. (2025), primary | Luciano et al., 2025 | bioRxiv | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/40950084/\n[2] The Effect of 4:3 Intermittent Fasting on Weight Loss at 12 Months : A Randomized Clinical Trial. (2025), primary | Catenacci et al., 2025 | Ann Intern Med | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40163873/\n[3] Alternate-day fasting elicits larger changes in fat mass than time-restricted eating in adults without obesity - A randomized clinical trial. (2025), primary | Derron et al., 2025 | Clin Nutr | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40945487/\n[4] Effects of a 12-Week Mediterranean-Type Time-Restricted Feeding Protocol in Patients With Metabolic Dysfunction-Associated Steatotic Liver Disease: A Randomised Controlled Trial-The 'CHRONO-NAFLD Proj (2025), primary | Tsitsou et al., 2025 | Aliment Pharmacol Ther | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40017349/\n[5] Intermittent Fasting Regimes Reduce Gingival Inflammation: A Three-Arm Clinical Trial. (2025), primary | Pappe et al., 2025 | J Clin Periodontol | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/40059409/\n[6] Effects of dietary interventions and intermittent fasting on HDL function in obese individuals with T2DM: a randomized controlled trial. (2024), primary | Pammer et al., 2024 | Cardiovasc Diabetol | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/39267053/\n[7] A 5:2 Intermittent Fasting Meal Replacement Diet and Glycemic Control for Adults With Diabetes: The EARLY Randomized Clinical Trial. (2024), primary | Guo et al., 2024 | JAMA Netw Open | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38904963/\n[8] Effects of DASH diet with or without time-restricted eating in the management of stage 1 primary hypertension: a randomized controlled trial. (2024), primary | Zhou et al., 2024 | Nutr J | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38886740/\n[9] Gut microbiome remodeling and metabolomic profile improves in response to protein pacing with intermittent fasting versus continuous caloric restriction. (2024), primary | Mohr et al., 2024 | Nat Commun | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/38806467/\n[10] Energy metabolism dysregulation, cerebrovascular aging, and time-restricted eating: Current evidence and proof-of-concept findings. (2024), primary | Pinaffi-Langley et al., 2024 | PNAS Nexus | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/39584020/\n[11] Efficacy of different 8 h time-restricted eating schedules on visceral adipose tissue and cardiometabolic health: A study protocol. (2024), primary | Dote-Montero et al., 2024 | Nutr Metab Cardiovasc Dis | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/37949715/\n[12] Effect of intermittent fasting 16:8 and 14:10 compared with control-group on weight reduction and metabolic outcomes in obesity with type 2 diabetes patients: A randomized controlled trial. (2024), primary | Sukkriang et al., 2024 | J Diabetes Investig | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38932663/\n[13] Effects of Different Types of Intermittent Fasting Interventions on Metabolic Health in Healthy Individuals (EDIF): A Randomised Trial with a Controlled-Run in Phase. (2024), primary | Herz et al., 2024 | Nutrients | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38674802/\n[14] International consensus on fasting terminology. (2024), primary | Koppold et al., 2024 | Cell Metab | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/39059384/\n[15] Toward nutrition improving outcome of critically ill patients: How to interpret recent feeding RCTs? (2023), primary | Toward nutrition improving outcome of cr, 2023 | Critical Care | rct \u2014 https://doi.org/10.1186/s13054-023-04317-9\n[16] Time\u2010restricted eating: What we know and where the field is going (2023), primary | Time\u2010restricted eating, 2023 | Obesity | primary \u2014 https://doi.org/10.1002/oby.23672\n[17] Effects of intermittent fasting on cognitive health and Alzheimer\u2019s disease (2023), primary | Effects of intermittent fasting on cogni, 2023 | Nutrition Reviews | primary \u2014 https://doi.org/10.1093/nutrit/nuad021\n[18] The effects of caloric restriction on adipose tissue and metabolic health are sex- and age-dependent (2022), primary | Suchacki et al., 2022 | biorxiv | primary \u2014 https://www.biorxiv.org/content/biorxiv/early/2022/02/22/2022.02.20.481222.full.pdf\n",
+  "_telemetry": {
+    "source_counts": {
+      "pubmed": 40,
+      "openalex": 44,
+      "rxiv": 1,
+      "clinicaltrials": 2
+    },
+    "bundle_stages": {
+      "retrieved": 87,
+      "after_domain_filter": 32,
+      "final_bundle": 18
+    },
+    "evidence_retrieved": 87,
+    "evidence_selected": 32
+  }
 }

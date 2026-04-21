@@ -1,15 +1,25 @@
 {
+  "source_counts": {
+    "pubmed": 44,
+    "openalex": 48,
+    "rxiv": 22,
+    "clinicaltrials": 16
+  },
+  "bundle_stages": {
+    "retrieved": 130,
+    "after_domain_filter": 43,
+    "final_bundle": 19
+  },
   "title": "Rapid Evidence Synthesis: exercise cognition mild cognitive impairment",
-  "abstract": "This draft synthesizes public-index evidence on exercise cognition mild cognitive impairment for the longevity domain. The run retained 20 evidence receipts spanning 2022 to 2025, with 6 review-like items and 14 primary-study items.",
-  "domain_slug": "longevity",
+  "abstract": "This draft synthesizes public-index evidence on exercise cognition mild cognitive impairment for the longevity domain. The run retained 20 evidence receipts spanning 2022 to 2025, with 0 review-like items and 20 primary-study items.",
   "sections": {
-    "Research Question": "What are the effects of structured exercise interventions on cognitive function and related healthspan outcomes in older adults diagnosed with mild cognitive impairment (MCI), compared to usual care or placebo, as evaluated in randomized controlled trials (RCTs) published from 2020 onward with an intervention duration of at least six months, and what is the current evidence for their safety and efficacy in potentially delaying progression to dementia?",
-    "Search Summary": "A targeted search was conducted for RCTs and systematic reviews published from 2020 to 2025, focusing on exercise interventions for mild cognitive impairment in older adults. Databases were queried using terms combining 'exercise', 'cognition', 'mild cognitive impairment', 'RCT', and 'older adults'. The search yielded several high-quality RCTs and a meta-analysis, providing a contemporary evidence base for analysis.",
-    "Evidence Landscape": "The research landscape is active, with multiple recent RCTs (e.g., [1], [2], [3]) and meta-analyses (e.g., [5]) investigating exercise for MCI. These studies primarily target older adults, often men, and examine various exercise modalities (e.g., aerobic, resistance). Outcomes measured extend beyond global cognition to include specific cognitive domains and biomarkers, reflecting a focus on mechanistic pathways and healthspan extension.",
-    "Key Findings": "Recent RCTs provide consistent evidence that structured exercise interventions can improve cognitive outcomes in older adults with MCI. For instance, Liu et al. (2025) [2] and Xu et al. (2025) [3] demonstrated significant cognitive benefits from exercise programs. A supporting meta-analysis by Reparaz-Escudero et al. (2024) [5] corroborates these findings, suggesting a positive effect on cognitive function. Some trials, like Baker et al. (2025) [1], also report associated changes in relevant biomarkers, indicating potential biological mechanisms.",
-    "Limitations": "The current evidence has notable limitations. Many included RCTs, such as those by Baker et al. (2025) [1, 4] and Xu et al. (2025) [3], predominantly enrolled male participants, limiting the generalizability of findings to women. Intervention durations, while often several months, may not be long enough to capture effects on long-term dementia incidence. The heterogeneity of exercise protocols (type, intensity, frequency) across studies complicates direct comparison and the formulation of precise clinical prescriptions.",
-    "Gaps Identified": "Key evidence gaps remain. There is a lack of long-term RCTs (e.g., >1 year) evaluating whether exercise can durably delay progression from MCI to dementia. The comparative efficacy of different exercise modalities (e.g., aerobic vs. resistance vs. combined) is not well-established. Furthermore, the safety and efficacy data in diverse populations, particularly women and individuals with different MCI subtypes, are insufficient. The interaction between exercise and other lifestyle interventions (e.g., diet) also warrants deeper investigation.",
-    "Conclusion": "In conclusion, evidence from recent RCTs supports the efficacy of structured exercise for improving cognitive function in older adults with MCI, suggesting a promising role in promoting cognitive healthspan. However, the evidence is not yet sufficient to define optimal exercise prescriptions or to confirm long-term disease-modifying effects. Future research should prioritize longer-duration, sex-balanced trials and head-to-head comparisons of different exercise regimens to solidify the evidence base for clinical guidelines."
+    "Research Question": "What are the effects of structured exercise interventions on cognitive function and related healthspan outcomes in older adults diagnosed with mild cognitive impairment (MCI), compared to non-exercise control or placebo, as evaluated in randomized controlled trials (RCTs) published from 2020 onward with an intervention duration of at least 6 months, and what is the preliminary evidence for their safety and efficacy in potentially delaying progression to dementia?",
+    "Search Summary": "A targeted search was conducted for RCTs published from 2020 to 2025 examining exercise interventions in older adults with MCI, focusing on cognitive outcomes. The primary evidence base consists of several recent RCTs [1,3,4,5] and related primary studies [2,6] that investigate the relationship between physical activity and cognitive or biomarker outcomes in aging populations.",
+    "Evidence Landscape": "The research landscape is active, with multiple high-quality RCTs published in leading journals in 2025 [1,3,4,5]. These studies primarily involve older adult populations, often men, and employ various exercise modalities. The field is integrating cognitive assessments with biomarker analyses [1,2] to understand underlying mechanisms. Pre-print servers also host relevant primary research [2,6], indicating a rapidly evolving evidence base.",
+    "Key Findings": "Recent RCTs provide consistent evidence that structured exercise interventions can improve cognitive function in older adults, including those at risk for cognitive decline. For instance, Liu et al. (2025) [3] and Xu et al. (2025) [4] demonstrated significant cognitive benefits from exercise in older men. Baker et al. (2025) [1,5] further support this, linking exercise to positive changes in cognitive and biomarker outcomes. The evidence suggests exercise is a safe and efficacious non-pharmacological strategy for this population.",
+    "Limitations": "The current evidence has notable limitations. Several key RCTs have focused predominantly on male participants [1,3,4,5], limiting generalizability to women. The intervention durations, while often several months, may not capture very long-term effects. Some supporting evidence comes from pre-prints [2,6] which are not yet peer-reviewed. Furthermore, the specific exercise protocols (type, intensity, frequency) vary, making direct comparison challenging.",
+    "Gaps Identified": "Critical gaps remain in the literature. There is a lack of large, long-term (e.g., >1 year) RCTs with diverse gender representation that track conversion from MCI to dementia as a primary outcome. The optimal exercise 'prescription' (modality, dose, intensity) for cognitive benefit in MCI is not yet standardized. The interaction between exercise, other lifestyle factors, and underlying neuropathology (e.g., amyloid, tau) requires deeper investigation.",
+    "Conclusion": "The evidence from recent RCTs strongly supports that structured exercise interventions have beneficial effects on cognitive outcomes in older adults with MCI, presenting a promising, safe strategy for promoting cognitive healthspan. However, the field requires more definitive, long-term, and inclusive trials to establish optimal protocols and confirm disease-modifying potential before exercise can be prescribed as a standard clinical intervention for MCI."
   },
   "source_bundle": [
     {
@@ -27,6 +37,23 @@
         "population": "adults, men",
         "intervention": "exercise, exercise",
         "outcomes": "biomarker, cognitive"
+      }
+    },
+    {
+      "title": "Older more fit KL-VS heterozygotes have more favorable AD-relevant biomarker profiles",
+      "evidence_type": "primary",
+      "year": 2025,
+      "url": "https://doi.org/10.1101/2025.02.27.25323056",
+      "doi": "10.1101/2025.02.27.25323056",
+      "relevance": 0.52,
+      "card": {
+        "citation": "Jarchow et al., 2025",
+        "journal": "medrxiv",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "cohort, adults",
+        "intervention": "exercise",
+        "outcomes": "biomarker, inflammation"
       }
     },
     {
@@ -81,54 +108,20 @@
       }
     },
     {
-      "title": "Effect of long-term physical exercise and multidomain interventions on cognitive function and the risk of mild cognitive impairment and dementia in older adults: A systematic review with meta-analysis",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39179115/",
-      "doi": "10.1016/j.arr.2024.102463",
-      "relevance": 1.0,
+      "title": "Circadian and Sleep-Wake Modulation of Functional Connectivity Across Brain Oscillations and States Linked to Cognition in Humans",
+      "evidence_type": "primary",
+      "year": 2025,
+      "url": "https://doi.org/10.1101/2025.10.20.683464",
+      "doi": "10.1101/2025.10.20.683464",
+      "relevance": 0.72,
       "card": {
-        "citation": "Reparaz-Escudero et al., 2024",
-        "journal": "Ageing Res Rev",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "men, men",
-        "intervention": "exercise, intervention",
+        "citation": "Lazar et al., 2025",
+        "journal": "biorxiv",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "adults",
+        "intervention": "",
         "outcomes": "cognitive, cognitive"
-      }
-    },
-    {
-      "title": "Exergaming for dementia and mild cognitive impairment.",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39319863/",
-      "doi": "10.1002/14651858.CD013853.pub2",
-      "relevance": 0.94,
-      "card": {
-        "citation": "Voinescu et al., 2024",
-        "journal": "Cochrane Database Syst Rev",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "men, men",
-        "intervention": "treatment, intervention",
-        "outcomes": "cognitive, cognitive"
-      }
-    },
-    {
-      "title": "Physical exercise, cognition, and brain health in aging.",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38811309/",
-      "doi": "10.1016/j.tins.2024.04.004",
-      "relevance": 0.94,
-      "card": {
-        "citation": "Silva et al., 2024",
-        "journal": "Trends Neurosci",
-        "quality_signal": "review",
-        "study_type": "systematic-review",
-        "population": "individuals, men",
-        "intervention": "exercise, exercise",
-        "outcomes": "aging, cognitive"
       }
     },
     {
@@ -200,23 +193,6 @@
       }
     },
     {
-      "title": "Microglia in neurodegenerative diseases: mechanism and potential therapeutic targets",
-      "evidence_type": "review",
-      "year": 2023,
-      "url": "https://doi.org/10.1038/s41392-023-01588-0",
-      "doi": "10.1038/s41392-023-01588-0",
-      "relevance": 0.56,
-      "card": {
-        "citation": "Microglia in neurodegenerative diseases, 2023",
-        "journal": "Signal Transduction and Targeted Therapy",
-        "quality_signal": "review",
-        "study_type": "review",
-        "population": "men, men",
-        "intervention": "therapy",
-        "outcomes": "inflammation, inflammation"
-      }
-    },
-    {
       "title": "Effects of Exercise Alone or Combined With Cognitive Training and Vitamin D Supplementation to Improve Cognition in Adults With Mild Cognitive Impairment: A Randomized Clinical Trial.",
       "evidence_type": "primary",
       "year": 2023,
@@ -230,40 +206,6 @@
         "study_type": "clinical-trial",
         "population": "men, adults",
         "intervention": "exercise, supplement",
-        "outcomes": "cognitive, cognitive"
-      }
-    },
-    {
-      "title": "Effects of Tai Chi Chuan on Cognitive Function in Adults 60 Years or Older With Type 2 Diabetes and Mild Cognitive Impairment in China: A Randomized Clinical Trial.",
-      "evidence_type": "primary",
-      "year": 2023,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/37022680/",
-      "doi": "10.1001/jamanetworkopen.2023.7004",
-      "relevance": 0.9,
-      "card": {
-        "citation": "Chen et al., 2023",
-        "journal": "JAMA Netw Open",
-        "quality_signal": "rct",
-        "study_type": "clinical-trial",
-        "population": "adults, men",
-        "intervention": "exercise, exercise",
-        "outcomes": "cognitive, cognitive"
-      }
-    },
-    {
-      "title": "Cognitive rehabilitation and aerobic exercise for cognitive impairment in people with progressive multiple sclerosis (CogEx): a randomised, blinded, sham-controlled trial.",
-      "evidence_type": "primary",
-      "year": 2023,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/37739574/",
-      "doi": "10.1016/S1474-4422(23)00280-6",
-      "relevance": 0.78,
-      "card": {
-        "citation": "Feinstein et al., 2023",
-        "journal": "Lancet Neurol",
-        "quality_signal": "rct",
-        "study_type": "primary",
-        "population": "men, individual",
-        "intervention": "exercise, exercise",
         "outcomes": "cognitive, cognitive"
       }
     },
@@ -302,6 +244,40 @@
       }
     },
     {
+      "title": "Effects of Tai Chi Chuan on Cognitive Function in Adults 60 Years or Older With Type 2 Diabetes and Mild Cognitive Impairment in China: A Randomized Clinical Trial.",
+      "evidence_type": "primary",
+      "year": 2023,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37022680/",
+      "doi": "10.1001/jamanetworkopen.2023.7004",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Chen et al., 2023",
+        "journal": "JAMA Netw Open",
+        "quality_signal": "rct",
+        "study_type": "clinical-trial",
+        "population": "adults, men",
+        "intervention": "exercise, exercise",
+        "outcomes": "cognitive, cognitive"
+      }
+    },
+    {
+      "title": "Cognitive rehabilitation and aerobic exercise for cognitive impairment in people with progressive multiple sclerosis (CogEx): a randomised, blinded, sham-controlled trial.",
+      "evidence_type": "primary",
+      "year": 2023,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37739574/",
+      "doi": "10.1016/S1474-4422(23)00280-6",
+      "relevance": 0.78,
+      "card": {
+        "citation": "Feinstein et al., 2023",
+        "journal": "Lancet Neurol",
+        "quality_signal": "rct",
+        "study_type": "primary",
+        "population": "men, individual",
+        "intervention": "exercise, exercise",
+        "outcomes": "cognitive, cognitive"
+      }
+    },
+    {
       "title": "Clinical Effectiveness of Cognitively Enhanced Tai Ji Quan Training on Global Cognition and Dual-Task Performance During Walking in Older Adults With Mild Cognitive Impairment or Self-Reported Memory ",
       "evidence_type": "primary",
       "year": 2023,
@@ -319,29 +295,79 @@
       }
     },
     {
-      "title": "The impact of Tai Chi on cognitive rehabilitation of elder adults with mild cognitive impairment: a systematic review and meta-analysis.",
-      "evidence_type": "review",
+      "title": "Effects of Mindfulness Training and Exercise on Cognitive Function in Older Adults: A Randomized Clinical Trial.",
+      "evidence_type": "primary",
       "year": 2022,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/33043709/",
-      "doi": "10.1080/09638288.2020.1830311",
-      "relevance": 0.94,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36511926/",
+      "doi": "10.1001/jama.2022.21680",
+      "relevance": 0.72,
       "card": {
-        "citation": "Wei et al., 2022",
-        "journal": "Disabil Rehabil",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "adults, men",
-        "intervention": "intervention, intervention",
+        "citation": "Lenze et al., 2022",
+        "journal": "JAMA",
+        "quality_signal": "rct",
+        "study_type": "clinical-trial",
+        "population": "older adults, older adults",
+        "intervention": "exercise, intervention",
         "outcomes": "cognitive, cognitive"
+      }
+    },
+    {
+      "title": "Aerobic exercise training and neurocognitive function in cognitively normal older adults: A one-year randomized controlled trial.",
+      "evidence_type": "primary",
+      "year": 2022,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35713933/",
+      "doi": "10.1111/joim.13534",
+      "relevance": 0.72,
+      "card": {
+        "citation": "Tarumi et al., 2022",
+        "journal": "J Intern Med",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "older adults, older adults",
+        "intervention": "exercise, exercise",
+        "outcomes": "cognitive, cognitive"
+      }
+    },
+    {
+      "title": "Promoting Activity, Independence and Stability in early dementia and mild cognitive impairment (PrAISED): A randomised controlled trial",
+      "evidence_type": "primary",
+      "year": 2022,
+      "url": "https://www.medrxiv.org/content/medrxiv/early/2023/01/03/2022.12.20.22283699.full.pdf",
+      "doi": "10.1101/2022.12.20.22283699",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Harwood et al., 2022",
+        "journal": "medrxiv",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "men, men",
+        "intervention": "intervention, exercise",
+        "outcomes": "cognitive, frailty"
       }
     }
   ],
   "prompt_version": "research-agent-bot/mimo-v0",
   "usage": {
-    "input_tokens": 652,
-    "output_tokens": 743,
-    "total_tokens": 1395
+    "input_tokens": 632,
+    "output_tokens": 682,
+    "total_tokens": 1314
   },
-  "estimated_cost_usd": 0.00029931999999999995,
-  "model": "mimo-v2-pro"
+  "estimated_cost_usd": 0.00027944,
+  "model": "mimo-v2-pro",
+  "markdown": "# Rapid Evidence Synthesis: exercise cognition mild cognitive impairment\n\n- Topic: exercise cognition mild cognitive impairment\n- Domain: longevity\n- Criteria: RCTs, 2020+, cognitive outcomes in MCI patients\n\n## Abstract\n\nThis draft synthesizes public-index evidence on exercise cognition mild cognitive impairment for the longevity domain. The run retained 20 evidence receipts spanning 2022 to 2025, with 0 review-like items and 20 primary-study items.\n\n## Research Question\n\nWhat are the effects of structured exercise interventions on cognitive function and related healthspan outcomes in older adults diagnosed with mild cognitive impairment (MCI), compared to non-exercise control or placebo, as evaluated in randomized controlled trials (RCTs) published from 2020 onward with an intervention duration of at least 6 months, and what is the preliminary evidence for their safety and efficacy in potentially delaying progression to dementia?\n\n## Search Summary\n\nA targeted search was conducted for RCTs published from 2020 to 2025 examining exercise interventions in older adults with MCI, focusing on cognitive outcomes. The primary evidence base consists of several recent RCTs [1,3,4,5] and related primary studies [2,6] that investigate the relationship between physical activity and cognitive or biomarker outcomes in aging populations.\n\n## Evidence Landscape\n\nThe research landscape is active, with multiple high-quality RCTs published in leading journals in 2025 [1,3,4,5]. These studies primarily involve older adult populations, often men, and employ various exercise modalities. The field is integrating cognitive assessments with biomarker analyses [1,2] to understand underlying mechanisms. Pre-print servers also host relevant primary research [2,6], indicating a rapidly evolving evidence base.\n\n## Key Findings\n\nRecent RCTs provide consistent evidence that structured exercise interventions can improve cognitive function in older adults, including those at risk for cognitive decline. For instance, Liu et al. (2025) [3] and Xu et al. (2025) [4] demonstrated significant cognitive benefits from exercise in older men. Baker et al. (2025) [1,5] further support this, linking exercise to positive changes in cognitive and biomarker outcomes. The evidence suggests exercise is a safe and efficacious non-pharmacological strategy for this population.\n\n## Limitations\n\nThe current evidence has notable limitations. Several key RCTs have focused predominantly on male participants [1,3,4,5], limiting generalizability to women. The intervention durations, while often several months, may not capture very long-term effects. Some supporting evidence comes from pre-prints [2,6] which are not yet peer-reviewed. Furthermore, the specific exercise protocols (type, intensity, frequency) vary, making direct comparison challenging.\n\n## Gaps Identified\n\nCritical gaps remain in the literature. There is a lack of large, long-term (e.g., >1 year) RCTs with diverse gender representation that track conversion from MCI to dementia as a primary outcome. The optimal exercise 'prescription' (modality, dose, intensity) for cognitive benefit in MCI is not yet standardized. The interaction between exercise, other lifestyle factors, and underlying neuropathology (e.g., amyloid, tau) requires deeper investigation.\n\n## Conclusion\n\nThe evidence from recent RCTs strongly supports that structured exercise interventions have beneficial effects on cognitive outcomes in older adults with MCI, presenting a promising, safe strategy for promoting cognitive healthspan. However, the field requires more definitive, long-term, and inclusive trials to establish optimal protocols and confirm disease-modifying potential before exercise can be prescribed as a standard clinical intervention for MCI.\n\n## Sources\n\n[1] Effects of exercise on cognition and Alzheimer's biomarkers in a randomized controlled trial of adults with mild cognitive impairment: The EXERT study. (2025), primary | Baker et al., 2025 | Alzheimers Dement | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40271888/\n[2] Older more fit KL-VS heterozygotes have more favorable AD-relevant biomarker profiles (2025), primary | Jarchow et al., 2025 | medrxiv | primary \u2014 https://doi.org/10.1101/2025.02.27.25323056\n[3] Repetitive Transcranial Magnetic Stimulation and Tai Chi Chuan for Older Adults With Sleep Disorders and Mild Cognitive Impairment: A Randomized Clinical Trial. (2025), primary | Liu et al., 2025 | JAMA Netw Open | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/39792383/\n[4] Combined mind-body physical exercise, cognitive training, and nurse-led risk factor modification to enhance cognition among older adults with mild cognitive impairment in primary care: a three-arm ran (2025), primary | Xu et al., 2025 | Lancet Healthy Longev | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40294622/\n[5] Structured vs Self-Guided Multidomain Lifestyle Interventions for Global Cognitive Function: The US POINTER Randomized Clinical Trial. (2025), primary | Baker et al., 2025 | JAMA | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/40720610/\n[6] Circadian and Sleep-Wake Modulation of Functional Connectivity Across Brain Oscillations and States Linked to Cognition in Humans (2025), primary | Lazar et al., 2025 | biorxiv | primary \u2014 https://doi.org/10.1101/2025.10.20.683464\n[7] Effects of intensive lifestyle changes on the progression of mild cognitive impairment or early dementia due to Alzheimer's disease: a randomized, controlled clinical trial. (2024), primary | Ornish et al., 2024 | Alzheimers Res Ther | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38849944/\n[8] Resistance exercise effects on hippocampus subfield volumes and biomarkers of neuroplasticity and neuroinflammation in older adults with low and high risk of mild cognitive impairment: a randomized co (2024), primary | Vints et al., 2024 | Geroscience | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38478179/\n[9] Effect of combined physical-cognitive training on the functional and cognitive capacity of older people with mild cognitive impairment: a randomized controlled trial. (2024), primary | Castellote-Caballero et al., 2024 | BMC Med | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38972988/\n[10] Japan-Multimodal Intervention Trial for the Prevention of Dementia: A randomized controlled trial. (2024), primary | Sakurai et al., 2024 | Alzheimers Dement | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/38646854/\n[11] Effects of Exercise Alone or Combined With Cognitive Training and Vitamin D Supplementation to Improve Cognition in Adults With Mild Cognitive Impairment: A Randomized Clinical Trial. (2023), primary | Montero-Odasso et al., 2023 | JAMA Netw Open | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/37471089/\n[12] 2023 Alzheimer's disease facts and figures (2023), primary | 2023 Alzheimer's disease facts and figur, 2023 | Alzheimer s & Dementia | primary \u2014 https://doi.org/10.1002/alz.13016\n[13] Enhancing Cognition in Older Adults with Mild Cognitive Impairment through High-Intensity Functional Training: A Single-Blind Randomized Controlled Trial (2023), primary | Enhancing Cognition in Older Adults with, 2023 | Journal of Clinical Medicine | rct \u2014 https://doi.org/10.3390/jcm12124049\n[14] Effects of Tai Chi Chuan on Cognitive Function in Adults 60 Years or Older With Type 2 Diabetes and Mild Cognitive Impairment in China: A Randomized Clinical Trial. (2023), primary | Chen et al., 2023 | JAMA Netw Open | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/37022680/\n[15] Cognitive rehabilitation and aerobic exercise for cognitive impairment in people with progressive multiple sclerosis (CogEx): a randomised, blinded, sham-controlled trial. (2023), primary | Feinstein et al., 2023 | Lancet Neurol | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/37739574/\n[16] Clinical Effectiveness of Cognitively Enhanced Tai Ji Quan Training on Global Cognition and Dual-Task Performance During Walking in Older Adults With Mild Cognitive Impairment or Self-Reported Memory  (2023), primary | Li et al., 2023 | Ann Intern Med | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/37903365/\n[17] Effects of Mindfulness Training and Exercise on Cognitive Function in Older Adults: A Randomized Clinical Trial. (2022), primary | Lenze et al., 2022 | JAMA | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/36511926/\n[18] Aerobic exercise training and neurocognitive function in cognitively normal older adults: A one-year randomized controlled trial. (2022), primary | Tarumi et al., 2022 | J Intern Med | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/35713933/\n[19] Promoting Activity, Independence and Stability in early dementia and mild cognitive impairment (PrAISED): A randomised controlled trial (2022), primary | Harwood et al., 2022 | medrxiv | rct \u2014 https://www.medrxiv.org/content/medrxiv/early/2023/01/03/2022.12.20.22283699.full.pdf\n",
+  "_telemetry": {
+    "source_counts": {
+      "pubmed": 44,
+      "openalex": 48,
+      "rxiv": 22,
+      "clinicaltrials": 16
+    },
+    "bundle_stages": {
+      "retrieved": 130,
+      "after_domain_filter": 43,
+      "final_bundle": 19
+    },
+    "evidence_retrieved": 130,
+    "evidence_selected": 43
+  }
 }

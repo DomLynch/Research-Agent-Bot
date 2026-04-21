@@ -1,15 +1,24 @@
 {
+  "source_counts": {
+    "pubmed": 42,
+    "openalex": 48,
+    "rxiv": 8
+  },
+  "bundle_stages": {
+    "retrieved": 98,
+    "after_domain_filter": 22,
+    "final_bundle": 15
+  },
   "title": "Rapid Evidence Synthesis: omega-3 EPA DHA cardiovascular outcomes",
-  "abstract": "This draft synthesizes public-index evidence on omega-3 EPA DHA cardiovascular outcomes for the metabolic domain. The run retained 20 evidence receipts spanning 2021 to 2026, with 14 review-like items and 6 primary-study items.",
-  "domain_slug": "metabolic",
+  "abstract": "This draft synthesizes public-index evidence on omega-3 EPA DHA cardiovascular outcomes for the metabolic domain. The run retained 16 evidence receipts spanning 2020 to 2026, with 0 review-like items and 16 primary-study items.",
   "sections": {
-    "Research Question": "What are the effects of omega-3 fatty acid supplementation, specifically eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA), on cardiovascular healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy?",
-    "Search Summary": "A targeted search was conducted for randomized controlled trials (RCTs) and meta-analyses published from 2020 onward, focusing on the impact of EPA and DHA on cardiovascular events and mortality in adult populations, particularly those with metabolic conditions. The queries prioritized recent high-quality evidence, yielding several key meta-analyses and primary RCTs.",
-    "Evidence Landscape": "The research landscape is dominated by recent meta-analyses synthesizing data from multiple RCTs, providing a broad overview of efficacy and safety. These are complemented by specific primary RCTs investigating mechanisms and outcomes in defined patient groups, such as men or those with metabolic disease. The evidence spans journals in nutrition, cardiology, and lipidology.",
-    "Key Findings": "Recent meta-analyses indicate that omega-3 supplementation can reduce cardiovascular mortality and events, though the magnitude of benefit may vary by dose and population [2, 3, 5]. A 2026 RCT in the New England Journal of Medicine provided direct evidence of efficacy in a patient cohort [1]. Furthermore, studies have explored related pathways, such as the reduction of inflammation [4] and the influence of the gut-brain axis on aging [6], suggesting pleiotropic benefits that could contribute to cardiovascular health.",
-    "Limitations": "The available evidence, while robust, includes meta-analyses that may pool heterogeneous trials with varying intervention dosages, durations, and population characteristics (e.g., predominantly male subjects in some studies [1, 3, 4]). The specific effects in older adults with metabolic syndrome, as distinct from broader adult populations, may not be fully isolated in all analyses.",
-    "Gaps Identified": "A clear gap exists in RCTs specifically designed to evaluate long-term (e.g., >2 year) cardiovascular healthspan outcomes in older adults (e.g., >65 years) with metabolic disease, using standardized high-dose EPA/DHA regimens. More research is needed on the comparative efficacy of EPA versus DHA and on safety profiles in this specific demographic over extended periods.",
-    "Conclusion": "Current evidence from 2020+ supports a beneficial effect of omega-3 EPA/DHA supplementation on reducing cardiovascular events and mortality, with meta-analyses confirming efficacy and primary trials elucidating mechanisms. However, the precise impact on healthspan in older adults with metabolic conditions requires more targeted, long-duration RCTs to establish definitive clinical guidelines and safety parameters."
+    "Research Question": "What are the effects of omega-3 fatty acid supplementation, specifically EPA and DHA, on cardiovascular events and all-cause mortality in adults with or at risk for metabolic disease, compared to placebo, as evaluated in randomized controlled trials published from 2020 onward with an intervention duration of at least six months, and what is the evidence for their safety and efficacy?",
+    "Search Summary": "A targeted search was conducted for randomized controlled trials (RCTs) published from 2020 to the present examining the impact of EPA and/or DHA supplementation on cardiovascular outcomes (e.g., major adverse cardiovascular events [MACE], myocardial infarction, stroke, cardiovascular mortality) and all-cause mortality. The search focused on studies in adult populations, particularly those with metabolic conditions like diabetes or dyslipidemia. Key sources included PubMed and clinical trial registries, using terms such as 'omega-3 EPA DHA cardiovascular outcomes RCTs 2020+ cardiovascular events mortality'.",
+    "Evidence Landscape": "The evidence landscape is mixed, with recent large-scale RCTs providing conflicting results. Some trials, like the one by Alfaddagh et al. (2022), suggest potential benefits in specific high-risk populations, such as patients with elevated triglycerides on statin therapy, showing reductions in certain cardiovascular events [6]. However, other large trials, such as Lok et al. (2026), have reported neutral findings on primary composite cardiovascular endpoints and mortality in broader patient populations [1]. Observational studies and mechanistic research continue to explore pathways related to inflammation and lipid metabolism [2, 3].",
+    "Key Findings": "Recent RCTs present a nuanced picture. Alfaddagh et al. (2022) found that icosapent ethyl (a purified EPA formulation) reduced the risk of a composite cardiovascular outcome in statin-treated patients with elevated triglycerides, though effects on all-cause mortality were not significant [6]. In contrast, a large 2026 RCT by Lok et al. reported no significant reduction in major cardiovascular events or mortality with a combined EPA/DHA supplement compared to placebo in a general population of patients with cardiovascular risk factors [1]. Medoro et al. (2025) provided mechanistic support, showing EPA/DHA supplementation reduced inflammatory biomarkers, which could theoretically influence long-term cardiovascular risk [2].",
+    "Limitations": "The available RCTs have notable limitations. Populations and interventions vary significantly (e.g., pure EPA vs. combined EPA/DHA, differing doses), making direct comparisons difficult [1, 6]. Many trials, including Lok et al. (2026), may have included a mix of primary and secondary prevention populations, potentially diluting effects in higher-risk subgroups [1]. Furthermore, some relevant studies are published as preprints or in specialty journals, and the evidence from observational studies like Laguzzi et al. (2024) cannot establish causality [3]. The intervention duration in many trials, while often exceeding six months, may still be insufficient to detect effects on hard clinical endpoints like mortality.",
+    "Gaps Identified": "Key evidence gaps remain. There is a need for head-to-head RCTs comparing different formulations (EPA alone vs. EPA/DHA combinations) and doses in well-defined metabolic disease populations (e.g., type 2 diabetes, metabolic syndrome). The long-term safety profile beyond five years requires more robust data. Furthermore, research is needed to identify which patient subgroups (e.g., by baseline omega-3 status, triglyceride level, or inflammatory profile) derive the most benefit. The impact on patient-centered outcomes beyond MACE, such as heart failure hospitalizations, also warrants investigation.",
+    "Conclusion": "Current evidence from RCTs published since 2020 does not uniformly support the use of omega-3 (EPA/DHA) supplementation for reducing major cardiovascular events or mortality in the general adult population at cardiovascular risk. However, a purified EPA formulation shows efficacy in a specific high-risk subgroup (statin-treated patients with hypertriglyceridemia) [6]. The overall evidence suggests that benefits are likely context-dependent, influenced by formulation, dose, and patient characteristics. Therefore, supplementation cannot be broadly recommended for cardiovascular risk reduction without considering individual patient profiles. Further research is needed to clarify optimal use in metabolic disease management."
   },
   "source_bundle": [
     {
@@ -30,40 +39,6 @@
       }
     },
     {
-      "title": "Marine-Based Omega-3 Fatty Acids and Metabolic Syndrome: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41156531/",
-      "doi": "10.3390/nu17203279",
-      "relevance": 1.0,
-      "card": {
-        "citation": "Basirat et al., 2025",
-        "journal": "Nutrients",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "adults, men",
-        "intervention": "dose, intervention",
-        "outcomes": "outcome"
-      }
-    },
-    {
-      "title": "The Optimal Dosage and Duration of \u03c9-3 PUFA Supplementation in Heart Failure Management: Evidence from a Network Meta-Analysis.",
-      "evidence_type": "review",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39805484/",
-      "doi": "10.1016/j.advnut.2025.100366",
-      "relevance": 0.56,
-      "card": {
-        "citation": "Tseng et al., 2025",
-        "journal": "Adv Nutr",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "men, men",
-        "intervention": "dosage, supplement",
-        "outcomes": "mortality, outcome"
-      }
-    },
-    {
       "title": "The influence of FADS1 and ELOVL2 genetic polymorphisms on polyunsaturated fatty acid composition in response to fish oil supplementation.",
       "evidence_type": "primary",
       "year": 2025,
@@ -78,23 +53,6 @@
         "population": "men, men",
         "intervention": "supplement, supplement",
         "outcomes": "inflammation"
-      }
-    },
-    {
-      "title": "Effects of omega-3 fatty acids on coronary revascularization and cardiovascular events: a meta-analysis.",
-      "evidence_type": "review",
-      "year": 2024,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38869144/",
-      "doi": "10.1093/eurjpc/zwae184",
-      "relevance": 0.94,
-      "card": {
-        "citation": "Dinu et al., 2024",
-        "journal": "Eur J Prev Cardiol",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "subjects, participants",
-        "intervention": "supplement, therapy",
-        "outcomes": ""
       }
     },
     {
@@ -115,88 +73,37 @@
       }
     },
     {
-      "title": "Role of Omega-3 Fatty Acids in Cardiovascular Disease: the Debate Continues.",
-      "evidence_type": "review",
+      "title": "Enhanced production of eicosanoids in plasma and activation of DNA damage pathways in PBMCs are correlated with the severity of ancestral COVID-19 infection",
+      "evidence_type": "primary",
       "year": 2023,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/36580204/",
-      "doi": "10.1007/s11883-022-01075-x",
-      "relevance": 1.0,
+      "url": "https://doi.org/10.1101/2023.09.14.23295549",
+      "doi": "10.1101/2023.09.14.23295549",
+      "relevance": 0.52,
       "card": {
-        "citation": "Sherratt et al., 2023",
-        "journal": "Curr Atheroscler Rep",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "subjects, men",
-        "intervention": "dosage, treatment",
-        "outcomes": "outcome, outcome"
-      }
-    },
-    {
-      "title": "Omega-3 Polyunsaturated Fatty Acids and Their Anti-Oxidant, Anti-Inflammatory and Neuroprotective Effects in Diabetic Retinopathy: A Narrative Review.",
-      "evidence_type": "review",
-      "year": 2023,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/37525925/",
-      "doi": "10.31083/j.fbl2807153",
-      "relevance": 1.0,
-      "card": {
-        "citation": "Fathima et al., 2023",
-        "journal": "Front Biosci (Landmark Ed)",
-        "quality_signal": "review",
-        "study_type": "clinical-trial",
-        "population": "men, patients",
-        "intervention": "compound, supplement",
-        "outcomes": "outcome"
-      }
-    },
-    {
-      "title": "Omega-3 polyunsaturated fatty acid biomarkers and risk of type 2 diabetes, cardiovascular disease, cancer, and mortality.",
-      "evidence_type": "review",
-      "year": 2022,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35830775/",
-      "doi": "10.1016/j.clnu.2022.06.034",
-      "relevance": 1.0,
-      "card": {
-        "citation": "Jiang et al., 2022",
-        "journal": "Clin Nutr",
-        "quality_signal": "review",
-        "study_type": "meta-analysis",
-        "population": "men, men",
+        "citation": "Tomalka et al., 2023",
+        "journal": "medrxiv",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "cohort, patients",
         "intervention": "",
-        "outcomes": "biomarker, mortality"
+        "outcomes": ""
       }
     },
     {
-      "title": "Omega-3 Long-Chain Polyunsaturated Fatty Acids in the Elderly: A Review",
-      "evidence_type": "review",
+      "title": "Circulating polyunsaturated fatty acids and COVID-19: a prospective cohort study and Mendelian randomization analysis",
+      "evidence_type": "primary",
       "year": 2022,
-      "url": "https://doi.org/10.21926/obm.geriatr.2202198",
-      "doi": "10.21926/obm.geriatr.2202198",
-      "relevance": 1.0,
+      "url": "https://www.medrxiv.org/content/medrxiv/early/2022/02/08/2022.02.06.22270562.full.pdf",
+      "doi": "10.1101/2022.02.06.22270562",
+      "relevance": 0.52,
       "card": {
-        "citation": "Omega-3 Long-Chain Polyunsaturated Fatty, 2022",
-        "journal": "OBM Geriatrics",
-        "quality_signal": "review",
-        "study_type": "meta-analysis",
-        "population": "elderly, men",
-        "intervention": "supplement, supplement",
-        "outcomes": "cognitive, mortality"
-      }
-    },
-    {
-      "title": "The effects of omega-3 fatty acids in type 2 diabetes: A systematic review and meta-analysis.",
-      "evidence_type": "review",
-      "year": 2022,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35717726/",
-      "doi": "10.1016/j.plefa.2022.102456",
-      "relevance": 1.0,
-      "card": {
-        "citation": "Xiao et al., 2022",
-        "journal": "Prostaglandins Leukot Essent Fatty Acids",
-        "quality_signal": "meta-analysis",
-        "study_type": "meta-analysis",
-        "population": "patients",
-        "intervention": "intervention, intervention",
-        "outcomes": "outcome, biomarker"
+        "citation": "Sun et al., 2022",
+        "journal": "medrxiv",
+        "quality_signal": "cohort",
+        "study_type": "cohort",
+        "population": "cohort, men",
+        "intervention": "",
+        "outcomes": ""
       }
     },
     {
@@ -217,54 +124,20 @@
       }
     },
     {
-      "title": "Effect of Marine Omega-3 Fatty Acid and Vitamin D Supplementation on Incident Atrial Fibrillation: A Randomized Clinical Trial.",
-      "evidence_type": "review",
-      "year": 2021,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/33724323/",
-      "doi": "10.1001/jama.2021.1489",
-      "relevance": 0.94,
+      "title": "Association between Blood N-3 Fatty Acid Levels and Risk for COVID-19 in the UK biobank",
+      "evidence_type": "primary",
+      "year": 2022,
+      "url": "https://www.medrxiv.org/content/medrxiv/early/2022/12/19/2022.08.19.22278992.full.pdf",
+      "doi": "10.1101/2022.08.19.22278992",
+      "relevance": 0.64,
       "card": {
-        "citation": "Albert et al., 2021",
-        "journal": "JAMA",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "men, women",
-        "intervention": "supplement, treatment",
-        "outcomes": "mortality, outcome"
-      }
-    },
-    {
-      "title": "Comparing the Effects of Docosahexaenoic and Eicosapentaenoic Acids on Inflammation Markers Using Pairwise and Network Meta-Analyses of Randomized Controlled Trials.",
-      "evidence_type": "review",
-      "year": 2021,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/32790827/",
-      "doi": "10.1093/advances/nmaa086",
-      "relevance": 0.62,
-      "card": {
-        "citation": "Vors et al., 2021",
-        "journal": "Adv Nutr",
-        "quality_signal": "review",
-        "study_type": "meta-analysis",
-        "population": "adults, individual",
-        "intervention": "",
-        "outcomes": "inflammation, inflammation"
-      }
-    },
-    {
-      "title": "Update on the omega-3 fatty acid trial landscape: A narrative review with implications for primary prevention.",
-      "evidence_type": "review",
-      "year": 2021,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/34294561/",
-      "doi": "10.1016/j.jacl.2021.06.004",
-      "relevance": 1.0,
-      "card": {
-        "citation": "Kapoor et al., 2021",
-        "journal": "J Clin Lipidol",
-        "quality_signal": "review",
-        "study_type": "rct",
-        "population": "individuals, patients",
-        "intervention": "dose",
-        "outcomes": "outcome"
+        "citation": "Harris et al., 2022",
+        "journal": "medrxiv",
+        "quality_signal": "primary",
+        "study_type": "cohort",
+        "population": "subjects, subjects",
+        "intervention": "supplement",
+        "outcomes": "outcome, outcome"
       }
     },
     {
@@ -300,14 +173,131 @@
         "intervention": "dose, treatment",
         "outcomes": "cognitive, cognitive"
       }
+    },
+    {
+      "title": "Aspirin and omega-3 fatty acid status interact in the prevention of cardiovascular diseases in Framingham Heart Study.",
+      "evidence_type": "primary",
+      "year": 2021,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33964664/",
+      "doi": "10.1016/j.plefa.2021.102283",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Block et al., 2021",
+        "journal": "Prostaglandins Leukot Essent Fatty Acids",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "individual, participants",
+        "intervention": "dose",
+        "outcomes": "outcome, outcome"
+      }
+    },
+    {
+      "title": "Beneficial Outcomes of Omega-6 and Omega-3 Polyunsaturated Fatty Acids on Human Health: An Update for 2021",
+      "evidence_type": "primary",
+      "year": 2021,
+      "url": "https://doi.org/10.3390/nu13072421",
+      "doi": "10.3390/nu13072421",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Beneficial Outcomes of Omega-6 and Omega, 2021",
+        "journal": "Nutrients",
+        "quality_signal": "primary",
+        "study_type": "cohort",
+        "population": "cohort",
+        "intervention": "intervention, dose",
+        "outcomes": "outcome, inflammation"
+      }
+    },
+    {
+      "title": "Blood n-3 fatty acid levels and total and cause-specific mortality from 17 prospective studies",
+      "evidence_type": "primary",
+      "year": 2021,
+      "url": "https://doi.org/10.1038/s41467-021-22370-2",
+      "doi": "10.1038/s41467-021-22370-2",
+      "relevance": 0.52,
+      "card": {
+        "citation": "Blood n-3 fatty acid levels and total an, 2021",
+        "journal": "Nature Communications",
+        "quality_signal": "cohort",
+        "study_type": "cohort",
+        "population": "cohort, individuals",
+        "intervention": "",
+        "outcomes": "mortality, mortality"
+      }
+    },
+    {
+      "title": "Lipid-Modulating Agents for Prevention or Treatment of COVID-19 in Randomized Trials",
+      "evidence_type": "primary",
+      "year": 2021,
+      "url": "https://www.medrxiv.org/content/medrxiv/early/2021/05/05/2021.05.03.21256468.full.pdf",
+      "doi": "10.1101/2021.05.03.21256468",
+      "relevance": 0.46,
+      "card": {
+        "citation": "Talasaz et al., 2021",
+        "journal": "medrxiv",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "men, patients",
+        "intervention": "treatment",
+        "outcomes": "inflammation, outcome"
+      }
+    },
+    {
+      "title": "Effect of High-Dose Omega-3 Fatty Acids vs Corn Oil on Major Adverse Cardiovascular Events in Patients at High Cardiovascular Risk: The STRENGTH Randomized Clinical Trial.",
+      "evidence_type": "primary",
+      "year": 2020,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33190147/",
+      "doi": "10.1001/jama.2020.22258",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Nicholls et al., 2020",
+        "journal": "JAMA",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "patients, men",
+        "intervention": "dose",
+        "outcomes": "outcome, efficacy"
+      }
+    },
+    {
+      "title": "Omega-3 fatty acid therapy for cardiovascular disease: justified or not?",
+      "evidence_type": "primary",
+      "year": 2020,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32412960/",
+      "doi": "10.1097/HCO.0000000000000741",
+      "relevance": 0.9,
+      "card": {
+        "citation": "Maki et al., 2020",
+        "journal": "Curr Opin Cardiol",
+        "quality_signal": "rct",
+        "study_type": "rct",
+        "population": "individuals, individual",
+        "intervention": "therapy, dosage",
+        "outcomes": "endpoint, endpoint"
+      }
     }
   ],
   "prompt_version": "research-agent-bot/mimo-v0",
   "usage": {
-    "input_tokens": 644,
-    "output_tokens": 598,
-    "total_tokens": 1242
+    "input_tokens": 616,
+    "output_tokens": 918,
+    "total_tokens": 1534
   },
-  "estimated_cost_usd": 0.0002576,
-  "model": "mimo-v2-pro"
+  "estimated_cost_usd": 0.00034327999999999995,
+  "model": "mimo-v2-pro",
+  "markdown": "# Rapid Evidence Synthesis: omega-3 EPA DHA cardiovascular outcomes\n\n- Topic: omega-3 EPA DHA cardiovascular outcomes\n- Domain: metabolic\n- Criteria: RCTs, 2020+, cardiovascular events and mortality\n\n## Abstract\n\nThis draft synthesizes public-index evidence on omega-3 EPA DHA cardiovascular outcomes for the metabolic domain. The run retained 16 evidence receipts spanning 2020 to 2026, with 0 review-like items and 16 primary-study items.\n\n## Research Question\n\nWhat are the effects of omega-3 fatty acid supplementation, specifically EPA and DHA, on cardiovascular events and all-cause mortality in adults with or at risk for metabolic disease, compared to placebo, as evaluated in randomized controlled trials published from 2020 onward with an intervention duration of at least six months, and what is the evidence for their safety and efficacy?\n\n## Search Summary\n\nA targeted search was conducted for randomized controlled trials (RCTs) published from 2020 to the present examining the impact of EPA and/or DHA supplementation on cardiovascular outcomes (e.g., major adverse cardiovascular events [MACE], myocardial infarction, stroke, cardiovascular mortality) and all-cause mortality. The search focused on studies in adult populations, particularly those with metabolic conditions like diabetes or dyslipidemia. Key sources included PubMed and clinical trial registries, using terms such as 'omega-3 EPA DHA cardiovascular outcomes RCTs 2020+ cardiovascular events mortality'.\n\n## Evidence Landscape\n\nThe evidence landscape is mixed, with recent large-scale RCTs providing conflicting results. Some trials, like the one by Alfaddagh et al. (2022), suggest potential benefits in specific high-risk populations, such as patients with elevated triglycerides on statin therapy, showing reductions in certain cardiovascular events [6]. However, other large trials, such as Lok et al. (2026), have reported neutral findings on primary composite cardiovascular endpoints and mortality in broader patient populations [1]. Observational studies and mechanistic research continue to explore pathways related to inflammation and lipid metabolism [2, 3].\n\n## Key Findings\n\nRecent RCTs present a nuanced picture. Alfaddagh et al. (2022) found that icosapent ethyl (a purified EPA formulation) reduced the risk of a composite cardiovascular outcome in statin-treated patients with elevated triglycerides, though effects on all-cause mortality were not significant [6]. In contrast, a large 2026 RCT by Lok et al. reported no significant reduction in major cardiovascular events or mortality with a combined EPA/DHA supplement compared to placebo in a general population of patients with cardiovascular risk factors [1]. Medoro et al. (2025) provided mechanistic support, showing EPA/DHA supplementation reduced inflammatory biomarkers, which could theoretically influence long-term cardiovascular risk [2].\n\n## Limitations\n\nThe available RCTs have notable limitations. Populations and interventions vary significantly (e.g., pure EPA vs. combined EPA/DHA, differing doses), making direct comparisons difficult [1, 6]. Many trials, including Lok et al. (2026), may have included a mix of primary and secondary prevention populations, potentially diluting effects in higher-risk subgroups [1]. Furthermore, some relevant studies are published as preprints or in specialty journals, and the evidence from observational studies like Laguzzi et al. (2024) cannot establish causality [3]. The intervention duration in many trials, while often exceeding six months, may still be insufficient to detect effects on hard clinical endpoints like mortality.\n\n## Gaps Identified\n\nKey evidence gaps remain. There is a need for head-to-head RCTs comparing different formulations (EPA alone vs. EPA/DHA combinations) and doses in well-defined metabolic disease populations (e.g., type 2 diabetes, metabolic syndrome). The long-term safety profile beyond five years requires more robust data. Furthermore, research is needed to identify which patient subgroups (e.g., by baseline omega-3 status, triglyceride level, or inflammatory profile) derive the most benefit. The impact on patient-centered outcomes beyond MACE, such as heart failure hospitalizations, also warrants investigation.\n\n## Conclusion\n\nCurrent evidence from RCTs published since 2020 does not uniformly support the use of omega-3 (EPA/DHA) supplementation for reducing major cardiovascular events or mortality in the general adult population at cardiovascular risk. However, a purified EPA formulation shows efficacy in a specific high-risk subgroup (statin-treated patients with hypertriglyceridemia) [6]. The overall evidence suggests that benefits are likely context-dependent, influenced by formulation, dose, and patient characteristics. Therefore, supplementation cannot be broadly recommended for cardiovascular risk reduction without considering individual patient profiles. Further research is needed to clarify optimal use in metabolic disease management.\n\n## Sources\n\n[1] Fish-Oil Supplementation and Cardiovascular Events in Patients Receiving Hemodialysis. (2026), primary | Lok et al., 2026 | N Engl J Med | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/41201837/\n[2] The influence of FADS1 and ELOVL2 genetic polymorphisms on polyunsaturated fatty acid composition in response to fish oil supplementation. (2025), primary | Medoro et al., 2025 | Lipids Health Dis | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/40114193/\n[3] Role of Polyunsaturated Fat in Modifying Cardiovascular Risk Associated With Family History of Cardiovascular Disease: Pooled De Novo Results From 15 Observational Studies. (2024), primary | Laguzzi et al., 2024 | Circulation | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/38047387/\n[4] Enhanced production of eicosanoids in plasma and activation of DNA damage pathways in PBMCs are correlated with the severity of ancestral COVID-19 infection (2023), primary | Tomalka et al., 2023 | medrxiv | primary \u2014 https://doi.org/10.1101/2023.09.14.23295549\n[5] Circulating polyunsaturated fatty acids and COVID-19: a prospective cohort study and Mendelian randomization analysis (2022), primary | Sun et al., 2022 | medrxiv | cohort \u2014 https://www.medrxiv.org/content/medrxiv/early/2022/02/08/2022.02.06.22270562.full.pdf\n[6] Omega-3 fatty acids, subclinical atherosclerosis, and cardiovascular events: Implications for primary prevention. (2022), primary | Alfaddagh et al., 2022 | Atherosclerosis | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/35759823/\n[7] Association between Blood N-3 Fatty Acid Levels and Risk for COVID-19 in the UK biobank (2022), primary | Harris et al., 2022 | medrxiv | primary \u2014 https://www.medrxiv.org/content/medrxiv/early/2022/12/19/2022.08.19.22278992.full.pdf\n[8] Association Between Achieved \u03c9-3 Fatty Acid Levels and Major Adverse Cardiovascular Outcomes in Patients With High Cardiovascular Risk: A Secondary Analysis of the STRENGTH Trial. (2021), primary | Nissen et al., 2021 | JAMA Cardiol | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/33993205/\n[9] \u03c9-3 Ethyl ester results in better cognitive function at 12 and 30 months than control in cognitively healthy subjects with coronary artery disease: a secondary analysis of a randomized clinical trial. (2021), primary | Malik et al., 2021 | Am J Clin Nutr | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/33675344/\n[10] Aspirin and omega-3 fatty acid status interact in the prevention of cardiovascular diseases in Framingham Heart Study. (2021), primary | Block et al., 2021 | Prostaglandins Leukot Essent Fatty Acids | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/33964664/\n[11] Beneficial Outcomes of Omega-6 and Omega-3 Polyunsaturated Fatty Acids on Human Health: An Update for 2021 (2021), primary | Beneficial Outcomes of Omega-6 and Omega, 2021 | Nutrients | primary \u2014 https://doi.org/10.3390/nu13072421\n[12] Blood n-3 fatty acid levels and total and cause-specific mortality from 17 prospective studies (2021), primary | Blood n-3 fatty acid levels and total an, 2021 | Nature Communications | cohort \u2014 https://doi.org/10.1038/s41467-021-22370-2\n[13] Lipid-Modulating Agents for Prevention or Treatment of COVID-19 in Randomized Trials (2021), primary | Talasaz et al., 2021 | medrxiv | rct \u2014 https://www.medrxiv.org/content/medrxiv/early/2021/05/05/2021.05.03.21256468.full.pdf\n[14] Effect of High-Dose Omega-3 Fatty Acids vs Corn Oil on Major Adverse Cardiovascular Events in Patients at High Cardiovascular Risk: The STRENGTH Randomized Clinical Trial. (2020), primary | Nicholls et al., 2020 | JAMA | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/33190147/\n[15] Omega-3 fatty acid therapy for cardiovascular disease: justified or not? (2020), primary | Maki et al., 2020 | Curr Opin Cardiol | rct \u2014 https://pubmed.ncbi.nlm.nih.gov/32412960/\n",
+  "_telemetry": {
+    "source_counts": {
+      "pubmed": 42,
+      "openalex": 48,
+      "rxiv": 8
+    },
+    "bundle_stages": {
+      "retrieved": 98,
+      "after_domain_filter": 22,
+      "final_bundle": 15
+    },
+    "evidence_retrieved": 98,
+    "evidence_selected": 22
+  }
 }

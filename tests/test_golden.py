@@ -311,7 +311,7 @@ def test_quantitative_fidelity_unsupported():
 
 
 def test_quantitative_fidelity_no_numbers():
-    """No numeric claims returns 1.0 (no false positives)."""
+    """No numeric claims returns 0.5 (neutral — no rigor, but no lies)."""
     draft = {
         "sections": {
             "Key Findings": "The evidence supports benefit.",
@@ -319,7 +319,7 @@ def test_quantitative_fidelity_no_numbers():
         "source_bundle": []
     }
     score = quantitative_fidelity(draft, GOLD_TOPIC)
-    assert score == 1.0, f"Expected 1.0 for no numbers, got {score}"
+    assert score == 0.5, f"Expected 0.5 neutral for no numbers, got {score}"
 
 
 def test_composite_score_calculation():
@@ -434,10 +434,17 @@ def test_schema_validator_breadth():
 
 @pytest.mark.gold_smoke
 def test_gold_smoke_all_topics_score_above_threshold():
-    """Smoke test: all gold topics score > 0.2 when evaluated against fixture drafts.
+    """Smoke test: all gold topics score > 0.15 AND average > 0.45.
 
     Requires fixture drafts in tests/golden/fixtures/<slug>_draft.json.
     Generate via: python scripts/generate_fixtures.py --all  (needs MIMO_API_KEY)
+
+    Threshold rationale (2026-04-21 after quantitative_fidelity fix):
+      Previously 0.20 per-topic under a broken metric that gave free passes
+      for "no numbers claimed" = 1.0. Honest metric makes the floor lower
+      but a weak aggregate more visible. Two checks:
+        - Per-topic > 0.15 (nothing completely broken)
+        - Average > 0.45 (aggregate quality floor)
 
     Skip behavior:
       - No fixtures at all → test is SKIPPED (CI without MIMO_API_KEY secret).
@@ -462,6 +469,7 @@ def test_gold_smoke_all_topics_score_above_threshold():
         )
 
     failures = []
+    scores: list[float] = []
     for slug in topic_slugs:
         with open(os.path.join(topics_dir, f"{slug}.json")) as f:
             gold = json.load(f)
@@ -475,8 +483,14 @@ def test_gold_smoke_all_topics_score_above_threshold():
             draft = json.load(f)
 
         score = composite_score(draft, gold)
-        if score <= 0.2:
-            failures.append(f"{slug}: composite {score:.3f} <= 0.2")
+        scores.append(score)
+        if score <= 0.15:
+            failures.append(f"{slug}: composite {score:.3f} <= 0.15 (broken)")
+
+    if scores:
+        avg = sum(scores) / len(scores)
+        if avg <= 0.45:
+            failures.append(f"aggregate: avg composite {avg:.3f} <= 0.45 (quality floor)")
 
     assert not failures, "gold_smoke failures:\n  " + "\n  ".join(failures)
 
