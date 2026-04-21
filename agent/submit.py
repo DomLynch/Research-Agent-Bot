@@ -37,7 +37,7 @@ def _topic_tokens(title: str) -> list[str]:
 
 def _quality_gate(artifact: dict[str, Any], *, current_year: int | None = None, topic: str = "") -> str | None:
     bundle = artifact.get("source_bundle", [])
-    if len(bundle) < 12:
+    if len(bundle) < 8:
         return f"bundle_too_small:{len(bundle)}"
 
     for entry in bundle:

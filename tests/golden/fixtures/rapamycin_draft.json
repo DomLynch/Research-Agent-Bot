@@ -1,0 +1,109 @@
+{
+  "title": "Rapid Evidence Synthesis: rapamycin mTOR inhibition healthspan",
+  "abstract": "This draft synthesizes public-index evidence on rapamycin mTOR inhibition healthspan for the longevity domain. The run retained 20 evidence receipts spanning 2017 to 2025, with 9 review-like items and 11 primary-study items.",
+  "domain_slug": "longevity",
+  "sections": {
+    "Research Question": "What are the effects of rapamycin-mediated mTOR inhibition on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy? This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.",
+    "Search Summary": "A targeted literature search was conducted focusing on human studies published from 2020 onwards, with a primary emphasis on safety and healthspan outcomes. The search strategy used queries combining terms for rapamycin, mTOR inhibition, healthspan, clinical trials, and older adults. The evidence base is currently limited, with most relevant studies being preclinical or mechanistic reviews. The identified primary literature and reviews provide foundational insights but lack direct, long-term human trial data on healthspan.",
+    "Evidence Landscape": "The research landscape is characterized by a strong mechanistic rationale for targeting the mTOR pathway to modulate aging hallmarks like cellular senescence and chronic inflammation [2, 3, 5]. However, the translation of this knowledge into human clinical trials specifically designed to measure healthspan in older adults is in its early stages. Most available evidence comes from reviews summarizing the potential of mTOR inhibitors and other geroprotective interventions [4, 6], or from primary studies not exclusively focused on rapamycin or long-term healthspan metrics [1].",
+    "Key Findings": "Current evidence suggests that mTOR inhibition can influence fundamental aging processes. For instance, it is implicated in modulating chronic inflammation, a key hallmark of aging [2]. Reviews discuss the potential of targeting senescent cells, a process linked to mTOR signaling, to improve healthspan [3]. However, direct evidence from randomized controlled trials of rapamycin in older adults measuring composite healthspan outcomes over six months or longer is not present in the supplied evidence. The available primary study [1] and reviews [4, 6] discuss aging and interventions but do not provide specific, quantitative results on rapamycin's efficacy and safety for healthspan in the requested population and timeframe.",
+    "Limitations": "The primary limitation is the absence of direct, high-quality evidence from long-duration RCTs in older adults as specified. The evidence provided is either mechanistic [2, 5], a broad review of aging hallmarks [3, 4], or a review of a different drug (metformin) [6]. One primary study [1] is noted but its specific outcomes and relevance to a 6+ month healthspan trial are unclear from the citation alone. This severely limits the ability to draw conclusions about effects, safety, and efficacy.",
+    "Gaps Identified": "A major gap is the lack of recent (2020+), completed randomized controlled trials evaluating rapamycin or other mTOR inhibitors specifically for healthspan extension in older humans with intervention periods of six months or longer. There is a need for trials with well-defined healthspan metrics (e.g., composite of physical function, cognitive status, frailty indices, and quality of life) and rigorous, long-term safety monitoring. The existing literature highlights the biological plausibility but underscores the need for clinical translation [4, 6].",
+    "Conclusion": "Based on the supplied evidence, there is a compelling biological rationale from preclinical and review literature that rapamycin-mediated mTOR inhibition could positively impact healthspan by targeting fundamental aging processes [2, 3, 5]. However, this potential is not yet substantiated by direct evidence from human randomized controlled trials meeting the specified criteria of a 6+ month intervention in older adults. The field is poised for such clinical evaluation, but current conclusions about effects, safety, and efficacy in humans for healthspan cannot be reliably drawn from the available studies. Rigorous clinical trials are urgently needed to bridge this translational gap."
+  },
+  "source_bundle": [
+    {
+      "title": "In Silico Assessment of Potential Geroprotectors: From Separate Endpoints to Complex Pharmacotherapeutic Effects.",
+      "evidence_type": "primary",
+      "year": 2025,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41009425/",
+      "doi": "10.3390/ijms26188858",
+      "relevance": 0.64,
+      "card": {
+        "citation": "Stolbov et al., 2025",
+        "journal": "Int J Mol Sci",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "men, men",
+        "intervention": "compound, rapamycin",
+        "outcomes": "endpoint, aging"
+      }
+    },
+    {
+      "title": "A Critical Review of the Evidence That Metformin Is a Putative Anti-Aging Drug That Enhances Healthspan and Extends Lifespan",
+      "evidence_type": "review",
+      "year": 2021,
+      "url": "https://doi.org/10.3389/fendo.2021.718942",
+      "doi": "10.3389/fendo.2021.718942",
+      "relevance": 0.76,
+      "card": {
+        "citation": "A Critical Review of the Evidence That M, 2021",
+        "journal": "Frontiers in Endocrinology",
+        "quality_signal": "review",
+        "study_type": "clinical-trial",
+        "population": "patients, subjects",
+        "intervention": "metformin, drug",
+        "outcomes": "aging, healthspan"
+      }
+    },
+    {
+      "title": "Immunosenescence: a key player in cancer development",
+      "evidence_type": "review",
+      "year": 2020,
+      "url": "https://doi.org/10.1186/s13045-020-00986-z",
+      "doi": "10.1186/s13045-020-00986-z",
+      "relevance": 0.62,
+      "card": {
+        "citation": "Immunosenescence, 2020",
+        "journal": "Journal of Hematology & Oncology",
+        "quality_signal": "review",
+        "study_type": "clinical-trial",
+        "population": "men, elderly",
+        "intervention": "therapy, intervention",
+        "outcomes": ""
+      }
+    },
+    {
+      "title": "RETRACTED ARTICLE: Fasting inhibits aerobic glycolysis and proliferation in colorectal cancer via the Fdft1-mediated AKT/mTOR/HIF1\u03b1 pathway suppression",
+      "evidence_type": "primary",
+      "year": 2020,
+      "url": "https://doi.org/10.1038/s41467-020-15795-8",
+      "doi": "10.1038/s41467-020-15795-8",
+      "relevance": 0.72,
+      "card": {
+        "citation": "RETRACTED ARTICLE, 2020",
+        "journal": "Nature Communications",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "",
+        "intervention": "fasting, fasting",
+        "outcomes": ""
+      }
+    },
+    {
+      "title": "Mechanisms of Dysfunction in the Aging Vasculature and Role in Age-Related Disease",
+      "evidence_type": "review",
+      "year": 2018,
+      "url": "https://doi.org/10.1161/circresaha.118.312563",
+      "doi": "10.1161/circresaha.118.312563",
+      "relevance": 0.52,
+      "card": {
+        "citation": "Mechanisms of Dysfunction in the Aging V, 2018",
+        "journal": "Circulation Research",
+        "quality_signal": "review",
+        "study_type": "review",
+        "population": "men, older adults",
+        "intervention": "rapamycin, intervention",
+        "outcomes": "aging, inflammation"
+      }
+    }
+  ],
+  "prompt_version": "research-agent-bot/mimo-v0",
+  "usage": {
+    "input_tokens": 656,
+    "output_tokens": 787,
+    "total_tokens": 1443
+  },
+  "estimated_cost_usd": 0.0003122,
+  "model": "mimo-v2-pro"
+}

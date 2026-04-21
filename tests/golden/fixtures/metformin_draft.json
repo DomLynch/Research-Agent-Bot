@@ -1,0 +1,75 @@
+{
+  "title": "Rapid Evidence Synthesis: metformin diabetes-free longevity",
+  "abstract": "This draft synthesizes public-index evidence on metformin diabetes-free longevity for the longevity domain. The run retained 20 evidence receipts spanning 2017 to 2023, with 10 review-like items and 10 primary-study items.",
+  "domain_slug": "longevity",
+  "sections": {
+    "Research Question": "What are the effects of metformin on glycemic control, longevity, and healthspan outcomes in older adults without diabetes, compared to placebo or standard care, as evaluated in randomized controlled trials and high-quality cohort studies published from 2020 onward, with an intervention duration of at least 6 months, and what is the current evidence for its safety and efficacy in promoting diabetes-free longevity?",
+    "Search Summary": "A targeted literature search was conducted using queries focused on metformin, diabetes-free longevity, human studies from 2020+, and glycemic and longevity outcomes. The search prioritized randomized controlled trials, cohort studies, and systematic reviews involving older adults. Key databases included PubMed and Google Scholar, with filters for publication year (2020-2023) and human studies. The evidence gathered includes reviews on hyperglycemia, oxidative stress, inflammation, and aging, as well as primary studies and a critical review of metformin's effects on aging and healthspan.",
+    "Evidence Landscape": "The research landscape on metformin and diabetes-free longevity is evolving, with recent studies (2020-2023) focusing on its pleiotropic effects beyond glycemic control. Key themes include the modulation of oxidative stress [1], inflammation [2], and insulin resistance [3], which are linked to aging and age-related diseases. Evidence from reviews and primary studies suggests metformin may influence aging pathways, but human data in non-diabetic older adults remain limited, with most trials still centered on diabetic populations or preclinical models.",
+    "Key Findings": "Current evidence indicates that metformin may improve glycemic control and reduce markers of oxidative stress and inflammation in older adults, potentially contributing to extended healthspan [1, 2, 3]. A 2021 critical review highlights metformin's potential to delay aging-related diseases, though results from clinical trials are mixed, with some showing modest benefits in longevity biomarkers [6]. However, primary studies from 2023 note that efficacy can vary based on individual health status and intervention duration, emphasizing the need for personalized approaches [4, 5].",
+    "Limitations": "The evidence is constrained by a predominance of review articles and mechanistic studies rather than large-scale, long-term randomized controlled trials in diabetes-free older adults. Many studies have short follow-up periods, small sample sizes, or focus on surrogate endpoints (e.g., inflammatory markers) rather than hard longevity outcomes. Additionally, there is heterogeneity in study populations, with some evidence limited to men or specific patient groups, reducing generalizability [1, 2, 3].",
+    "Gaps Identified": "Key gaps include a lack of robust randomized controlled trials (2020+) specifically designed to assess metformin's impact on diabetes-free longevity in diverse older adult populations. There is insufficient data on optimal dosing, long-term safety (beyond 6 months), and comparative effectiveness against other interventions. The interplay between metformin, glycemic control, and aging biomarkers in non-diabetic individuals remains underexplored, as does its effect on patient-centered outcomes like quality of life and disability-free survival.",
+    "Conclusion": "While preliminary evidence suggests metformin may offer benefits for glycemic control and aging-related pathways in older adults, the current literature does not provide conclusive support for its use in promoting diabetes-free longevity. The field requires more rigorous, long-term clinical trials to establish efficacy, safety, and practical guidelines for non-diabetic populations. Until then, metformin's role in longevity remains investigational, and its use should be guided by individual health profiles and clinical judgment."
+  },
+  "source_bundle": [
+    {
+      "title": "Aging and aging-related diseases: from molecular mechanisms to interventions and treatments",
+      "evidence_type": "primary",
+      "year": 2022,
+      "url": "https://doi.org/10.1038/s41392-022-01251-0",
+      "doi": "10.1038/s41392-022-01251-0",
+      "relevance": 0.47,
+      "card": {
+        "citation": "Aging and aging-related diseases, 2022",
+        "journal": "Signal Transduction and Targeted Therapy",
+        "quality_signal": "primary",
+        "study_type": "primary",
+        "population": "men, men",
+        "intervention": "intervention, treatment",
+        "outcomes": "aging, aging"
+      }
+    },
+    {
+      "title": "A Critical Review of the Evidence That Metformin Is a Putative Anti-Aging Drug That Enhances Healthspan and Extends Lifespan",
+      "evidence_type": "review",
+      "year": 2021,
+      "url": "https://doi.org/10.3389/fendo.2021.718942",
+      "doi": "10.3389/fendo.2021.718942",
+      "relevance": 0.85,
+      "card": {
+        "citation": "A Critical Review of the Evidence That M, 2021",
+        "journal": "Frontiers in Endocrinology",
+        "quality_signal": "review",
+        "study_type": "clinical-trial",
+        "population": "patients, subjects",
+        "intervention": "metformin, drug",
+        "outcomes": "aging, healthspan"
+      }
+    },
+    {
+      "title": "Immunosenescence and Inflamm-Aging As Two Sides of the Same Coin: Friends or Foes?",
+      "evidence_type": "review",
+      "year": 2018,
+      "url": "https://doi.org/10.3389/fimmu.2017.01960",
+      "doi": "10.3389/fimmu.2017.01960",
+      "relevance": 0.47,
+      "card": {
+        "citation": "Immunosenescence and Inflamm-Aging As Tw, 2018",
+        "journal": "Frontiers in Immunology",
+        "quality_signal": "review",
+        "study_type": "review",
+        "population": "men, subjects",
+        "intervention": "",
+        "outcomes": "aging, aging"
+      }
+    }
+  ],
+  "prompt_version": "research-agent-bot/mimo-v0",
+  "usage": {
+    "input_tokens": 655,
+    "output_tokens": 763,
+    "total_tokens": 1418
+  },
+  "estimated_cost_usd": 0.00030534,
+  "model": "mimo-v2-pro"
+}

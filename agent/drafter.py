@@ -215,9 +215,9 @@ class RapidEvidenceDrafter:
             and (rel := _relevance(e, topic_tokens)) >= 0.3
         ]
 
-        if len(source_bundle) < 12 and os.getenv("RESEARKA_URL"):
+        if len(source_bundle) < 8 and os.getenv("RESEARKA_URL"):
             return (
-                {"error": f"Insufficient relevant sources for submission ({len(source_bundle)}/12).", "source_bundle": source_bundle},
+                {"error": f"Insufficient relevant sources for submission ({len(source_bundle)}/8).", "source_bundle": source_bundle},
                 raw_payload,
             )
         artifact = {

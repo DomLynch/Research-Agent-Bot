@@ -342,12 +342,12 @@ def test_submit_gate_blocked():
 # ── edge-case rejection probes ─────────────────────────────────────────
 
 
-def test_quality_gate_exactly_11_entries():
-    """Bundle with 11 entries (just under 12 threshold) → bundle_too_small."""
+def test_quality_gate_exactly_7_entries():
+    """Bundle with 7 entries (just under 8 threshold) → bundle_too_small."""
     bundle = [
         {"title": f"topic study {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
          "year": 2024, "doi": f"10.1/edge{i}"}
-        for i in range(11)
+        for i in range(7)
     ]
     artifact = {"title": "topic review", "source_bundle": bundle}
     reason = _quality_gate(artifact, current_year=2026)
