@@ -29,9 +29,9 @@ Run golden harness on VPS for real precision/coverage baseline, then flip Resear
 | Step | What | Status |
 |---|---|---|
 | 1 | Kill switch + submit switch + daily cost cap | DONE |
-| 2 | Prompt injection sanitizer for titles/excerpts | NOT STARTED |
-| 3 | .env.example + last_validated in harness | NOT STARTED |
-| 4 | Golden harness upgrade (5 metrics) | NOT STARTED |
+| 2 | Prompt injection sanitizer for titles/excerpts | DONE |
+| 3 | .env.example + last_validated in harness | DONE |
+| 4 | Golden harness upgrade (5 metrics) | DONE |
 | 5 | Bundle quality gate, fail-closed | NOT STARTED |
 | 6 | Judge calibration round | NOT STARTED |
 | 7 | Evidence cards | NOT STARTED |
