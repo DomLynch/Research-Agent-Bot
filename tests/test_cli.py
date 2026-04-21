@@ -30,69 +30,50 @@ class FakeProvider:
 
 
 class GoodSource:
+    """Returns enough entries to pass the 12-entry source gate (RESEARKA_URL on VPS)."""
+
     def search(self, query: str, *, limit: int) -> list[dict]:
         return [
             {
-                "title": "Rapamycin and healthy aging: a systematic review",
-                "excerpt": "Review evidence suggests rapamycin is mechanistically and translationally relevant, but endpoint heterogeneity remains substantial.",
+                "title": f"{query} and healthy aging: a systematic review",
+                "excerpt": f"Review evidence suggests {query} is mechanistically and translationally relevant, but endpoint heterogeneity remains substantial.",
                 "year": 2024,
                 "source_type": "pubmed",
                 "evidence_type": "review",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/1/",
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{i}/",
                 "query": query,
-            },
-            {
-                "title": "Rapamycin clinical outcomes in aging populations",
-                "excerpt": "Primary study evidence shows rapamycin has measurable effects on aging biomarkers in human cohorts.",
-                "year": 2023,
-                "source_type": "pubmed",
-                "evidence_type": "primary",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/2/",
-                "query": query,
-            },
+            }
+            for i in range(7)
         ]
 
 
 class MixedSource:
+    """Returns enough entries to pass the 12-entry source gate after filtering."""
+
     def search(self, query: str, *, limit: int) -> list[dict]:
-        return [
+        base = [
             {
-                "title": "Senolytics in older adults: safety review",
-                "excerpt": "Human clinical evidence in older adults reports safety signals and cautious translational relevance.",
+                "title": f"{query}: safety review in older adults",
+                "excerpt": f"Human clinical evidence in older adults reports safety signals and cautious translational relevance for {query}.",
                 "year": 2024,
                 "source_type": "pubmed",
                 "evidence_type": "review",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/2/",
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{i*10}/",
                 "query": query,
-            },
-            {
-                "title": "Senolytics in mice improve healthspan",
-                "excerpt": "Animal-only murine evidence reports mechanistic upside without human data.",
-                "year": 2024,
-                "source_type": "pubmed",
-                "evidence_type": "primary",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/3/",
-                "query": query,
-            },
-            {
-                "title": "Older senolytic review",
-                "excerpt": "Human review evidence exists, but this older paper predates the scope year floor.",
-                "year": 2018,
-                "source_type": "pubmed",
-                "evidence_type": "review",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/4/",
-                "query": query,
-            },
-            {
-                "title": "Senolytic efficacy in human healthspan trials",
-                "excerpt": "Human clinical evidence in older adults shows safety signals and healthspan improvements.",
-                "year": 2023,
-                "source_type": "pubmed",
-                "evidence_type": "primary",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/5/",
-                "query": query,
-            },
+            }
+            for i in range(7)
         ]
+        # One animal entry that should be filtered by negative filters
+        base.append({
+            "title": f"{query} in mice improve healthspan",
+            "excerpt": f"Animal-only murine evidence reports mechanistic upside without human data for {query}.",
+            "year": 2024,
+            "source_type": "pubmed",
+            "evidence_type": "primary",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/99/",
+            "query": query,
+        })
+        return base
 
 
 class FailingSource:
