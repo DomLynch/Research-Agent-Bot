@@ -158,6 +158,11 @@ def build_card(entry: dict[str, Any]) -> dict[str, Any]:
         str(entry.get(key, "") or "")
         for key in ("title", "excerpt", "full_text")
     )
+    extraction = entry.get("extraction") or {}
+    extracted_effects = extraction.get("effects") or []
+    extracted_outcomes = ", ".join(
+        filter(None, [str(effect.get("outcome") or "") for effect in extracted_effects[:2]])
+    )
     return {
         "citation": _format_citation(entry),
         "journal": entry.get("journal") or "",
@@ -165,9 +170,15 @@ def build_card(entry: dict[str, Any]) -> dict[str, Any]:
         "evidence_grade": _grade_lite(entry),
         "study_type": _infer_study_type(entry),
         "context": _context_label(entry),
-        "population": _extract_regex(text, _POP_RE, max_matches=2),
-        "intervention": _extract_regex(text, _INTERVENTION_RE, max_matches=2),
-        "outcomes": _extract_regex(text, _OUTCOMES_RE, max_matches=2),
+        "population": str(extraction.get("population") or _extract_regex(text, _POP_RE, max_matches=2)),
+        "intervention": str(extraction.get("intervention") or _extract_regex(text, _INTERVENTION_RE, max_matches=2)),
+        "outcomes": str(extracted_outcomes or extraction.get("primary_outcome") or _extract_regex(text, _OUTCOMES_RE, max_matches=2)),
+        "comparator": str(extraction.get("comparator") or ""),
+        "methods_summary": str(extraction.get("methods_summary") or ""),
+        "risk_of_bias": str(extraction.get("risk_of_bias") or ""),
+        "effects": extracted_effects,
         "full_text_source": entry.get("full_text_source") or "",
         "full_text_found": bool(entry.get("full_text")),
+        "extraction_found": bool(extraction),
+        "extractor_version": str(extraction.get("extractor_version") or ""),
     }

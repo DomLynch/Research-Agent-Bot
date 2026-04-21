@@ -14,8 +14,8 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~2,100 LOC (raised from 1,700 — see DECISIONS.md 2026-04-21 "Add Tier 1 full-text ingestion").
-  Hard ceiling: 2,500 LOC. Actual: ~2,401 LOC.
+- Runtime target: ~2,400 LOC (raised from 2,100 — see DECISIONS.md 2026-04-21 "Add Tier 1.5 structured extraction").
+  Hard ceiling: 2,800 LOC. Actual: ~2,591 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
@@ -31,9 +31,10 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Directness labeling is still heuristic. The tightened classifier now blocks obvious indirect-only longevity bundles, but retrieval quality still dominates final bundle quality.
 - Topic/entity resolution is now ChEMBL-first plus alias/fuzzy fallback. It still needs richer biomedical vocabularies before Tier 1 full-text work.
 - Tier 1 full-text coverage is Europe PMC-only and DOI/PMID-driven. Closed-access PDFs, figures/tables, and non-PMC papers still fall back to abstract-only behavior.
+- Tier 1.5 extraction is cached and real, but numeric validation is not yet a hard gate. The model now sees extracted facts from a subset of papers; it is still possible to draft unsupported numbers until a validator pass lands.
 
 ## Next Validation Step
-Run one live literature topic with open PMC coverage and confirm the run log reports non-zero `full_text.found`, the Methods block surfaces the full-text count, and evidence cards extract population/intervention/outcomes from full text rather than abstract-only snippets.
+Run one live literature topic with open PMC coverage and confirm the run log reports non-zero `extraction.found`, the Methods block surfaces structured extraction counts, and the draft cites at least one numeric effect from an extracted evidence record.
 
 ## Hardening Status
 | Step | What | Status |
@@ -62,6 +63,7 @@ Run one live literature topic with open PMC coverage and confirm the run log rep
 - **Telemetry:** run logs now include `source_telemetry` with per-source retrieved, post-filter, final-bundle, and final-directness counts.
 - **Tier 0 entity layer:** compound-like topics now resolve to canonical names before retrieval, ChEMBL returns `[]` on no real match, and low topic-match bundles fail before draft generation.
 - **Tier 1 full-text ingestion:** literature entries now attempt Europe PMC full-text fetch with cache-by-identity, run logs expose `full_text` telemetry, Methods surfaces full-text coverage, and evidence cards can extract fields from full-text text when available.
+- **Tier 1.5 structured extraction:** full-text-backed entries now attempt cached MiMo extraction into population/intervention/comparator/methods/effects JSON, evidence cards prefer extracted facts, and drafter prompts now see extracted outcomes/effect summaries instead of a bare full-text flag.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 10 gold + 30 adversarial + 60 breadth
@@ -74,7 +76,7 @@ Run one live literature topic with open PMC coverage and confirm the run log rep
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 239 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 242 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
 - Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

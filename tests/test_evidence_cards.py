@@ -202,3 +202,39 @@ def test_build_card_uses_full_text_for_extraction():
     assert "frailty" in card["outcomes"]
     assert card["full_text_found"] is True
     assert card["full_text_source"] == "europepmc"
+
+
+def test_build_card_prefers_structured_extraction_when_present():
+    card = build_card(
+        {
+            "title": "Metformin paper",
+            "excerpt": "",
+            "evidence_type": "primary",
+            "extraction": {
+                "population": "older adults with diabetes",
+                "intervention": "metformin",
+                "primary_outcome": "all-cause mortality",
+                "comparator": "placebo",
+                "methods_summary": "double-blind randomized trial",
+                "risk_of_bias": "low",
+                "effects": [
+                    {
+                        "outcome": "all-cause mortality",
+                        "metric": "HR",
+                        "value": "0.77",
+                        "ci_low": "0.65",
+                        "ci_high": "0.91",
+                        "p_value": "0.002",
+                        "n": "1240",
+                        "source_span": "HR 0.77 (95% CI 0.65-0.91).",
+                    }
+                ],
+                "extractor_version": "tier1.5-v1",
+            },
+        }
+    )
+    assert card["population"] == "older adults with diabetes"
+    assert card["intervention"] == "metformin"
+    assert card["outcomes"] == "all-cause mortality"
+    assert card["effects"][0]["metric"] == "HR"
+    assert card["extraction_found"] is True

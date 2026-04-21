@@ -156,11 +156,54 @@ class StubFullTextFetcher:
         return enriched, {"attempted": min(limit, len(entries)), "found": found, "source_counts": {"europepmc": found} if found else {}}
 
 
+class StubStructuredExtractor:
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
+    @classmethod
+    def from_env(cls, *, cache_dir):
+        return cls()
+
+    def enrich_entries(self, entries: list[dict], *, limit: int = 6) -> tuple[list[dict], dict]:
+        enriched = []
+        found = 0
+        for i, entry in enumerate(entries):
+            item = dict(entry)
+            if item.get("full_text") and i < 2:
+                item["extraction"] = {
+                    "found": True,
+                    "primary_outcome": "all-cause mortality",
+                    "population": "older adults",
+                    "intervention": "rapamycin",
+                    "comparator": "placebo",
+                    "methods_summary": "randomized trial",
+                    "risk_of_bias": "low",
+                    "effects": [
+                        {
+                            "outcome": "all-cause mortality",
+                            "metric": "HR",
+                            "value": "0.77",
+                            "ci_low": "0.65",
+                            "ci_high": "0.91",
+                            "p_value": "0.002",
+                            "n": "1240",
+                            "source_span": "HR 0.77 (95% CI 0.65-0.91) in older adults.",
+                        }
+                    ],
+                    "extractor_version": "test-v1",
+                    "source_doi": item.get("doi", ""),
+                }
+                found += 1
+            enriched.append(item)
+        return enriched, {"attempted": min(limit, len(entries)), "found": found, "version": "test-v1"}
+
+
 @pytest.fixture(autouse=True)
 def _stub_new_source_clients(monkeypatch):
     monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
     monkeypatch.setattr(cli, "ChEMBLClient", lambda: FailingSource())
     monkeypatch.setattr(cli, "FullTextFetcher", StubFullTextFetcher)
+    monkeypatch.setattr(cli, "StructuredExtractor", StubStructuredExtractor)
 
 
 def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, monkeypatch) -> None:
@@ -180,6 +223,7 @@ def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, m
     assert "excluded during final bundle assembly" in run["markdown"]
     assert "Exclusion reasons:" in run["markdown"]
     assert "Full text:" in run["markdown"]
+    assert "Structured extraction:" in run["markdown"]
     assert run["protocol_file"].endswith(".protocol.json")
     assert (tmp_path / "protocols" / run["protocol_file"]).exists()
     assert (tmp_path / run["markdown_file"]).exists()
@@ -205,6 +249,7 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
     assert run["evidence_selected"] >= 1
     assert run["source_telemetry"]["retrieved"]["pubmed"] >= 1
     assert run["source_telemetry"]["full_text"]["found"] == 2
+    assert run["source_telemetry"]["extraction"]["found"] == 2
     for item in run["source_bundle"]:
         assert "evidence_type" in item
         assert "year" in item
@@ -213,6 +258,8 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
         assert item.get("source_type")
         assert item.get("directness") in {"direct", "indirect", "mechanistic"}
         assert item.get("card", {}).get("evidence_grade") in {"H", "M", "L"}
+        if item.get("card", {}).get("full_text_found"):
+            assert item.get("card", {}).get("extraction_found") is True
     # verify no animal papers leak into the bundle
     for item in run["source_bundle"]:
         title = str(item.get("title", "")).lower()
@@ -332,6 +379,7 @@ def test_methods_final_bundle_count_matches_source_bundle(tmp_path: Path, monkey
     assert run["bundle_stages"]["final_bundle"] == final_bundle
     assert f"{final_bundle} included in the final source bundle" in run["markdown"]
     assert "Full text: 2 of" in run["markdown"]
+    assert "Structured extraction: 2 of" in run["markdown"]
 
 
 def test_source_routing_helpers() -> None:

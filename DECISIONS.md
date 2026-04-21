@@ -1,5 +1,22 @@
 # DECISION JOURNAL
 
+## 2026-04-21 — Add Tier 1.5 structured extraction before meta-analysis
+**Decision:** Add a cached structured extraction layer now, between full-text ingestion and drafting. The slice is: for a capped set of full-text-backed papers, run MiMo once per paper to extract population/intervention/comparator/methods/effects JSON, cache it by entry identity + extractor version, and make the drafter consume those extracted facts.
+**Why:** Tier 1 ingestion alone only proved that full text exists. It did not materially change what the model could say, because the drafter saw only a `fulltext=yes` flag. Structured extraction is the cheapest move that converts full text into actual model-visible quantitative facts without dumping raw sections into the prompt.
+**What shipped:**
+- New `agent/extractor.py` with `StructuredExtractor`, cache-by-identity, extraction schema normalization, and capped enrichment.
+- `agent/cli.py` now runs extraction after full-text enrichment, records `extraction` telemetry, and surfaces extraction coverage in the PRISMA-style Methods block.
+- `agent/evidence_cards.py` now prefers extracted population/intervention/outcomes/comparator/methods/effects when available.
+- `agent/drafter.py` now feeds extracted methods/effect summaries and a short results span into the MiMo draft prompt.
+- Tests added for extractor caching/enrichment and the CLI/evidence-card wiring.
+**Tradeoff accepted:** This raises runtime again and adds a second MiMo pass per run. That is acceptable because extraction is cached and capped to a small number of papers; the capability gain is real. The validator/gate for unsupported numeric claims is still separate work.
+**Budget impact:** Runtime now exceeds the prior 2,500 hard ceiling. Raise the working target to ~2,400 LOC and hard ceiling to 2,800 until the next deletion pass.
+**Alternatives rejected:**
+- Dump raw Results sections straight into the drafter prompt — rejected because it is less structured, harder to verify, and wastes context.
+- Wait for full Tier 2 effect-size extraction/meta-analysis before changing the drafter — rejected because Tier 1 would remain mostly invisible to users.
+- Add validator first — rejected because there was nothing structured to validate yet.
+**Revisit if:** extracted fact quality is too noisy on live topics, or the next bottleneck is clearly numeric-claim verification rather than extraction coverage.
+
 ## 2026-04-21 — Add Tier 1 full-text ingestion as a bounded Europe PMC slice
 **Decision:** Add a minimal full-text layer now instead of waiting for a larger parser stack. The slice is: Europe PMC lookup by DOI/PMID, XML fetch when PMCID exists, cache by entry identity, surface coverage in run logs/Methods, and let evidence cards read from full text when available.
 **Why:** Abstract-only retrieval is a structural ceiling. But jumping straight to GROBID/CORE/Unpaywall/figure extraction would blow the runtime and verification budget in one move. Europe PMC is the cheapest biomedical full-text source that actually changes what the bot can read today.

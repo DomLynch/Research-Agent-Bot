@@ -182,6 +182,31 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
     }
 
 
+def _effect_brief(extraction: dict[str, Any]) -> str:
+    effects = extraction.get("effects") or []
+    if not effects:
+        return ""
+    parts = []
+    for effect in effects[:2]:
+        outcome = _clean(effect.get("outcome"), limit=80)
+        metric = _clean(effect.get("metric"), limit=20)
+        value = _clean(effect.get("value"), limit=20)
+        ci_low = _clean(effect.get("ci_low"), limit=20)
+        ci_high = _clean(effect.get("ci_high"), limit=20)
+        n = _clean(effect.get("n"), limit=20)
+        snippet = []
+        if outcome:
+            snippet.append(outcome)
+        if metric and value:
+            snippet.append(f"{metric} {value}")
+        if ci_low and ci_high:
+            snippet.append(f"95% CI {ci_low}-{ci_high}")
+        if n:
+            snippet.append(f"N={n}")
+        parts.append(", ".join(snippet))
+    return " | ".join(part for part in parts if part)
+
+
 def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, float, int, int]:
     return (
         {"direct": 3, "indirect": 2, "mechanistic": 1}.get(entry.get("directness", "indirect"), 0),
@@ -240,6 +265,7 @@ class RapidEvidenceDrafter:
         indirect_ct = sum(1 for e in source_bundle if e.get("directness") == "indirect")
         mechanistic_ct = sum(1 for e in source_bundle if e.get("directness") == "mechanistic")
         full_text_ct = sum(1 for e in source_bundle if e.get("card", {}).get("full_text_found"))
+        extracted_ct = sum(1 for e in source_bundle if e.get("card", {}).get("extraction_found"))
 
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
@@ -274,6 +300,17 @@ class RapidEvidenceDrafter:
                 parts.append(f"context={card['context']}")
             if card.get("full_text_found"):
                 parts.append(f"fulltext={card.get('full_text_source') or 'yes'}")
+            if card.get("comparator"):
+                parts.append(f"comparator={card['comparator']}")
+            if card.get("methods_summary"):
+                parts.append(f"methods={_clean(card['methods_summary'], limit=140)}")
+            if card.get("risk_of_bias"):
+                parts.append(f"bias={_clean(card['risk_of_bias'], limit=100)}")
+            if card.get("effects"):
+                parts.append(f"effect={_effect_brief(e.get('extraction') or {})}")
+                top_span = _clean((e.get("extraction") or {}).get("effects", [{}])[0].get("source_span"), limit=220)
+                if top_span:
+                    parts.append(f"results_excerpt={top_span}")
             prompt_lines.append(f"{i}. {'; '.join(parts)}")
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
@@ -325,7 +362,8 @@ class RapidEvidenceDrafter:
                 f"This draft synthesizes public-index evidence on {topic} for the {domain_slug} domain. "
                 f"The run retained {len(source_bundle)} evidence receipts spanning {min(years) if years else 'unknown'} to {max(years) if years else 'unknown'}, "
                 f"with {rc} review-like items, {pc} primary-study items, {direct_ct} direct items, "
-                f"{indirect_ct} indirect items, {mechanistic_ct} mechanistic items, and {full_text_ct} full-text-backed items.",
+                f"{indirect_ct} indirect items, {mechanistic_ct} mechanistic items, {full_text_ct} full-text-backed items, "
+                f"and {extracted_ct} structured-extraction items.",
                 limit=1200,
             ),
             "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
