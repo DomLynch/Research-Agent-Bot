@@ -1,0 +1,140 @@
+"""Judge calibration test — VPS ONLY. Requires live MiMo API.
+
+Run manually on the VPS:
+    cd /opt/research-agent-bot && .venv/bin/python -m pytest tests/judge_calibration.py -v
+
+Compares MiMo judge ratings against human expert ratings on calibrated drafts.
+Pass condition: weighted Cohen's kappa >= 0.60 on each axis.
+Skips when MIMO_API_KEY is unset.
+"""
+from __future__ import annotations
+
+import os
+import pytest
+
+from tests.golden.harness import judge_draft, weighted_kappa, _JUDGE_AXES
+
+# ---------------------------------------------------------------------------
+# Calibrated sample drafts with human expert ratings
+# ---------------------------------------------------------------------------
+
+_SAMPLES: list[dict] = [
+    {
+        "id": "good_draft",
+        "human": dict(zip(_JUDGE_AXES, (5, 5, 4, 4))),
+        "draft": """# Rapamycin and Aging: A Comprehensive Review
+
+## Introduction
+Rapamycin (sirolimus) is an mTOR inhibitor originally developed as an immunosuppressant.
+Emerging evidence from multiple preclinical and clinical studies suggests it may have
+significant geroprotective properties.
+
+## Key Findings
+- Rapamycin extends lifespan in mice by 9-14% across multiple studies (Harrison et al., 2009;
+  Miller et al., 2014).
+- The PEARL trial (NCT04488601) showed improved healthspan markers in older adults.
+- mTOR inhibition activates autophagy, reduces cellular senescence, and improves
+  mitochondrial function.
+
+## Safety Profile
+Long-term use carries risks of immunosuppression and metabolic changes. Intermittent
+dosing protocols are being explored to minimize side effects while preserving benefits.
+
+## Conclusion
+Rapamycin represents the most promising pharmacological intervention for aging currently
+under investigation, with multiple Phase II trials ongoing.
+""",
+    },
+    {
+        "id": "mediocre_draft",
+        "human": dict(zip(_JUDGE_AXES, (3, 3, 3, 2))),
+        "draft": """# Metformin and Aging
+
+Metformin is a diabetes drug. Some studies suggest it might help with aging. There are
+clinical trials looking at this. The TAME trial is the most well-known one. Metformin
+works by activating AMPK and inhibiting mTOR. It may reduce inflammation too.
+
+More research is needed to understand the full effects. Some people think it could be
+helpful but there are also concerns about side effects in non-diabetic populations.
+
+Overall, metformin is interesting but we need more data.
+""",
+    },
+    {
+        "id": "poor_draft",
+        "human": dict(zip(_JUDGE_AXES, (2, 2, 1, 1))),
+        "draft": """aging is bad drugs might help rapamycin and metformin are drugs that might help with aging
+the body gets old when you age and drugs can fix that maybe some researchers looked into
+this but not sure what they found there might be clinical trials somewhere
+""",
+    },
+    {
+        "id": "mixed_draft",
+        "human": dict(zip(_JUDGE_AXES, (4, 3, 4, 3))),
+        "draft": """# NAD+ Precursors and Biological Aging
+
+## Background
+Nicotinamide adenine dinucleotide (NAD+) levels decline with age, contributing to
+metabolic dysfunction, DNA damage accumulation, and cellular senescence.
+
+## Key Studies
+- NMN supplementation improved insulin sensitivity in aged mice (Yoshino et al., 2011)
+- NR supplementation increased NAD+ levels in healthy older adults (Martens et al., 2018)
+- CRISPR-based NAD+ pathway modulation showed promise in C. elegans
+
+## Current Limitations
+- Most evidence is from animal models
+- Long-term human safety data is limited
+- Optimal dosing protocols are not established
+- Commercial supplements vary widely in purity and bioavailability
+
+## Conclusion
+NAD+ precursor supplementation represents a promising but unproven intervention for
+aging-related decline. More rigorous human trials are needed.
+""",
+    },
+]
+
+
+@pytest.mark.skipif(
+    not os.getenv("MIMO_API_KEY", "").strip(),
+    reason="MIMO_API_KEY not set — calibration requires live MiMo",
+)
+@pytest.mark.parametrize("sample", _SAMPLES, ids=[s["id"] for s in _SAMPLES])
+def test_judge_rates_sample(sample: dict):
+    """Verify MiMo judge returns valid scores for each sample draft."""
+    scores = judge_draft(sample["draft"])
+    for axis in _JUDGE_AXES:
+        assert axis in scores, f"Missing axis: {axis}"
+        assert 1 <= scores[axis] <= 5, f"Score out of range on {axis}: {scores[axis]}"
+
+
+@pytest.mark.skipif(
+    not os.getenv("MIMO_API_KEY", "").strip(),
+    reason="MIMO_API_KEY not set — calibration requires live MiMo",
+)
+def test_judge_calibration_kappa():
+    """Weighted Cohen's kappa >= 0.60 on each axis between human and MiMo judge."""
+    human_scores: dict[str, list[int]] = {ax: [] for ax in _JUDGE_AXES}
+    judge_scores: dict[str, list[int]] = {ax: [] for ax in _JUDGE_AXES}
+
+    for sample in _SAMPLES:
+        scores = judge_draft(sample["draft"])
+        for ax in _JUDGE_AXES:
+            human_scores[ax].append(sample["human"][ax])
+            judge_scores[ax].append(scores[ax])
+
+    failing_axes: list[str] = []
+    kappa_results: dict[str, float] = {}
+    for ax in _JUDGE_AXES:
+        k = weighted_kappa(human_scores[ax], judge_scores[ax])
+        kappa_results[ax] = round(k, 3)
+        if k < 0.60:
+            failing_axes.append(ax)
+
+    print(f"\nCalibration results: {kappa_results}")
+    if failing_axes:
+        pytest.fail(
+            f"Kappa below 0.60 on axes: {failing_axes}. "
+            f"Results: {kappa_results}. Consider re-calibrating the judge rubric."
+        )

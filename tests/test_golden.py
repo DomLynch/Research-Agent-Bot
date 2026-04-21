@@ -73,14 +73,6 @@ def test_cleanliness_blocks_injection():
     assert not _has_injection("Rapamycin extends lifespan in mice")
 
 
-def test_tone_rating():
-    """Verify tone scoring."""
-    from tests.golden.harness import _tone_rating
-    assert _tone_rating("promising robust significant") > 0.5
-    assert _tone_rating("limited small inconclusive") < 0.5
-    assert _tone_rating("neutral text") == 0.5
-
-
 def test_cleanliness_clean_sources():
     """Verify clean sources get 1.0 cleanliness."""
     topic = "rapamycin and aging"

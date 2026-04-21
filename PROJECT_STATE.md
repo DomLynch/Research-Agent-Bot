@@ -33,7 +33,7 @@ Run golden harness on VPS for real precision/coverage baseline (Step 4 results: 
 | 3 | .env.example + last_validated in harness | DONE (fixed: .env.example created) |
 | 4 | Golden harness upgrade (5 metrics) | DONE (avg_tone removed from pass condition) |
 | 5 | Bundle quality gate, fail-closed | DONE (fixed: replaced tone-based gate with topic_precision/recent_ratio/source_mix) |
-| 6 | Judge calibration round | NOT STARTED |
+| 6 | Judge calibration round | DONE (judge_draft() + weighted_kappa + judge_calibration.py) |
 | 7 | Evidence cards | NOT STARTED |
 | 8 | Adversarial break-it pack | NOT STARTED |
 | 9 | Topic-specific negative filters | NOT STARTED |

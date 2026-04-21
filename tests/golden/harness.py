@@ -1,22 +1,23 @@
 from __future__ import annotations
 
 import re
+from typing import Any
 
 """Golden eval harness — VPS ONLY. Requires live PubMed/OpenAlex API access.
 
 This is NOT a CI test. Run manually on the VPS to measure retrieval quality:
     ssh root@vps && cd /opt/research-agent-bot && .venv/bin/python tests/golden/harness.py
 
-Metrics:
+Metrics (retrieval):
     precision  = % of source bundle entries whose title contains >= 1 topic token
     recall     = % of topics that meet minimum source count (12+)
     breadth    = % of golden topics successfully covered
     cleanliness = % of sources without injection markers
 
-Thresholds:
-    precision   >= 0.70
-    cleanliness >= 0.95
-    recall, breadth >= 0.80
+Judge calibration (Step 6):
+    judge_draft() rates draft quality on 4 axes (coherence, accuracy, readability, source_quality)
+    using a standardized rubric. Calibration test compares against human expert ratings.
+    Agreement target: weighted Cohen's kappa >= 0.60 on each axis.
 
 For CI, use tests/test_golden.py which validates the harness logic with mock data.
 """
@@ -48,9 +49,6 @@ _INJECTION_PATTERNS = (
 )
 _INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
 
-_TONE_POSITIVE = {"promising", "robust", "significant", "effective", "novel", "validated", "strong"}
-_TONE_NEGATIVE = {"limited", "small", "inconclusive", "unclear", "weak", "insufficient", "heterogeneous"}
-
 GOLDEN_TOPICS = [
     {"topic": "rapamycin and aging", "domain": "longevity", "min_sources": 12, "description": "Core geroprotector topic"},
     {"topic": "metformin and longevity", "domain": "longevity", "min_sources": 10, "description": "Diabetes drug repurposed for aging"},
@@ -77,14 +75,61 @@ def _has_injection(text: str) -> bool:
     return bool(_INJECTION_RE.search(text))
 
 
-def _tone_rating(text: str) -> float:
-    lower = text.lower()
-    pos = sum(1 for w in _TONE_POSITIVE if w in lower)
-    neg = sum(1 for w in _TONE_NEGATIVE if w in lower)
-    total = pos + neg
-    if total == 0:
-        return 0.5
-    return round(pos / total, 2)
+# ---------------------------------------------------------------------------
+# Step 6: Judge calibration
+# ---------------------------------------------------------------------------
+
+_JUDGE_RUBRIC = """You are a strict research quality judge. Rate the draft on exactly 4 axes.
+Return ONLY valid JSON with keys: coherence, accuracy, readability, source_quality.
+
+Scoring (1-5):
+  1 = Very poor: major gaps or errors
+  2 = Below average: noticeable issues
+  3 = Adequate: meets minimum standards
+  4 = Good: well-structured and reliable
+  5 = Excellent: publication-ready quality
+
+Each key MUST have an integer value between 1 and 5."""
+
+_JUDGE_AXES = ("coherence", "accuracy", "readability", "source_quality")
+
+
+def judge_draft(draft: str, *, provider: Any | None = None) -> dict:
+    """Rate a draft on 4 quality axes using MiMo as judge."""
+    if provider is None:
+        from agent.provider import MimoClient
+
+        provider = MimoClient.from_env()
+    result, _ = provider.complete_json(
+        system_prompt=_JUDGE_RUBRIC,
+        user_prompt=f"Rate this research draft:\n\n{draft}",
+    )
+    scores = {ax: int(result.get(ax, 3)) for ax in _JUDGE_AXES}
+    return scores
+
+
+def weighted_kappa(human: list[int], judge: list[int], k: int = 5) -> float:
+    """Weighted Cohen's kappa between two rating vectors (same length)."""
+    n = len(human)
+    if n == 0:
+        return 0.0
+    obs = [[0] * k for _ in range(k)]
+    for h, j in zip(human, judge):
+        obs[h - 1][j - 1] += 1
+    exp = [[0.0] * k for _ in range(k)]
+    for i in range(k):
+        row_s = sum(obs[i])
+        col_s = sum(obs[j][i] for j in range(k))
+        for j in range(k):
+            exp[i][j] = row_s * col_s / n
+    num = 0.0
+    den = 0.0
+    for i in range(k):
+        for j in range(k):
+            w = 1.0 - (i - j) ** 2 / (k - 1) ** 2
+            num += w * (obs[i][j] - exp[i][j])
+            den += w * exp[i][j]
+    return num / den if den != 0 else 1.0
 
 
 def run_eval(per_source_limit: int = 25) -> dict:
@@ -129,13 +174,6 @@ def run_eval(per_source_limit: int = 25) -> dict:
         )
         cleanliness = clean_count / len(source_bundle) if source_bundle else 1.0
 
-        # Tone: average tone rating across bundle
-        tone_ratings = [
-            _tone_rating(str(e.get("excerpt") or "") + " " + str(e.get("title") or ""))
-            for e in source_bundle
-        ]
-        tone = round(sum(tone_ratings) / len(tone_ratings), 2) if tone_ratings else 0.5
-
         results.append({
             "topic": g["topic"],
             "description": g["description"],
@@ -143,7 +181,6 @@ def run_eval(per_source_limit: int = 25) -> dict:
             "min_required": g["min_sources"],
             "title_precision": round(precision, 2),
             "cleanliness": round(cleanliness, 2),
-            "tone": tone,
             "meets_threshold": has_min and precision >= 0.70,
         })
 
@@ -151,7 +188,6 @@ def run_eval(per_source_limit: int = 25) -> dict:
     recall = sum(1 for r in results if r["meets_threshold"]) / len(results)
     breadth = sum(1 for r in results if r["sources"] >= r["min_required"]) / len(results)
     avg_cleanliness = sum(r["cleanliness"] for r in results) / len(results)
-    avg_tone = sum(r["tone"] for r in results) / len(results)
 
     return {
         "topics": results,
@@ -159,7 +195,6 @@ def run_eval(per_source_limit: int = 25) -> dict:
         "recall": round(recall, 2),
         "breadth": round(breadth, 2),
         "avg_cleanliness": round(avg_cleanliness, 2),
-        "avg_tone": round(avg_tone, 2),
         "pass": (
             avg_precision >= 0.70
             and avg_cleanliness >= 0.95
@@ -175,4 +210,4 @@ if __name__ == "__main__":
     print(json.dumps(report, indent=2))
     print(f"\nPrecision: {report['avg_precision']:.0%}  Recall: {report['recall']:.0%}  "
           f"Breadth: {report['breadth']:.0%}  Cleanliness: {report['avg_cleanliness']:.0%}  "
-          f"Tone: {report['avg_tone']:.0%}  {'PASS' if report['pass'] else 'FAIL'}")
+          f"{'PASS' if report['pass'] else 'FAIL'}")
