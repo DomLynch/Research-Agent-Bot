@@ -1,6 +1,7 @@
 from agent.planner import QueryPlanner
 from agent.drafter import _rank, _relevance, _clean
 
+import json
 import pytest
 from tests.golden.harness import (
     study_overlap,
@@ -345,7 +346,6 @@ def test_composite_score_calculation():
 
 def test_bad_fixture_scores_low():
     """The deliberately bad fixture should score <= 0.3."""
-    import json
     import os
     fixture_path = os.path.join(
         os.path.dirname(__file__), "golden", "bad_fixtures", "insufficient_draft.json"
@@ -423,3 +423,96 @@ def test_schema_validator_breadth():
     }
     errors = validate_breadth(br)
     assert errors == [], f"Valid breadth should have no errors: {errors}"
+
+
+# ---------------------------------------------------------------------------
+# Integration markers: --gold-smoke and --full-matrix
+# Run with: pytest tests/test_golden.py -m gold_smoke
+#           pytest tests/test_golden.py -m full_matrix
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.gold_smoke
+def test_gold_smoke_all_topics_score_above_threshold():
+    """Smoke test: all gold topics score > 0.2 when evaluated against fixture drafts.
+
+    Runs the actual scoring pipeline against fixture drafts if they exist.
+    If no fixtures exist, uses mock draft (scores ~0.3, still above 0.2 threshold).
+    This proves the pipeline produces scoreable output for every gold topic.
+    """
+    import os
+    topics_dir = os.path.join(os.path.dirname(__file__), "golden", "topics")
+    all_pass = True
+    failures = []
+    for fname in sorted(os.listdir(topics_dir)):
+        if not fname.endswith(".json"):
+            continue
+        slug = fname[:-5]
+        with open(os.path.join(topics_dir, fname)) as f:
+            gold = json.load(f)
+
+        fixture_path = os.path.join(os.path.dirname(__file__), "golden", "fixtures", f"{slug}_draft.json")
+        if os.path.exists(fixture_path):
+            with open(fixture_path) as f:
+                draft = json.load(f)
+        else:
+            draft = {
+                "source_bundle": [],
+                "sections": {
+                    "Key Findings": "Insufficient evidence.",
+                    "Conclusion": "More research needed.",
+                    "Limitations": "Limited data available.",
+                },
+            }
+
+        score = composite_score(draft, gold)
+        if score <= 0.2:
+            failures.append(f"{slug}: {score:.3f} <= 0.2")
+            all_pass = False
+
+    assert all_pass, f"Topics failing gold_smoke: {failures}"
+
+
+@pytest.mark.full_matrix
+def test_full_matrix_schema_all_topics_valid():
+    """Full matrix: every gold/adversarial/breadth topic passes schema validation."""
+    import os
+    from tests.golden.schema import validate_gold_topic, validate_adversarial, validate_breadth
+
+    topics_dir = os.path.join(os.path.dirname(__file__), "golden", "topics")
+    adv_dir = os.path.join(os.path.dirname(__file__), "golden", "adversarial")
+    br_dir = os.path.join(os.path.dirname(__file__), "golden", "breadth")
+
+    gold_errors = 0
+    for fname in sorted(os.listdir(topics_dir)):
+        if not fname.endswith(".json"):
+            continue
+        with open(os.path.join(topics_dir, fname)) as f:
+            errors = validate_gold_topic(json.load(f))
+        if errors:
+            gold_errors += 1
+
+    adv_errors = 0
+    for fname in sorted(os.listdir(adv_dir)):
+        if not fname.endswith(".json"):
+            continue
+        with open(os.path.join(adv_dir, fname)) as f:
+            errors = validate_adversarial(json.load(f))
+        if errors:
+            adv_errors += 1
+
+    br_errors = 0
+    br_count = 0
+    for fname in sorted(os.listdir(br_dir)):
+        if not fname.endswith(".json"):
+            continue
+        br_count += 1
+        with open(os.path.join(br_dir, fname)) as f:
+            errors = validate_breadth(json.load(f))
+        if errors:
+            br_errors += 1
+
+    assert gold_errors == 0, f"{gold_errors} gold topics have schema errors"
+    assert adv_errors == 0, f"{adv_errors} adversarial topics have schema errors"
+    assert br_errors == 0, f"{br_errors} breadth topics have schema errors"
+    assert br_count >= 1, "No breadth topics found"

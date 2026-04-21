@@ -21,6 +21,10 @@ dev = [
 [tool.pytest.ini_options]
 testpaths = ["tests", "tests/golden"]
 pythonpath = ["."]
+markers = [
+    "gold_smoke: smoke test scoring all gold topics against fixture drafts",
+    "full_matrix: full matrix schema validation on all eval corpus tiers",
+]
 
 [tool.setuptools.packages.find]
 include = ["agent*"]
