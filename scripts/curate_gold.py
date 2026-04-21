@@ -75,13 +75,24 @@ def _fetch_review(client: httpx.Client, topic: str) -> dict | None:
     return None
 
 
+REF_YEAR_MIN = 2020  # Align gold with bot's typical scope ("human studies, 2020+")
+
+
 def _fetch_ref_doi(client: httpx.Client, ref_url: str) -> str | None:
-    """Given an OpenAlex work URL, return its DOI (or None)."""
+    """Given an OpenAlex work URL, return its DOI if published >=REF_YEAR_MIN.
+
+    The bot filters evidence to 2020+; gold references should match that window
+    so study_overlap measures real retrieval capability, not a scope mismatch.
+    """
     oa_id = ref_url.rsplit("/", 1)[-1]
     try:
-        r = client.get(f"{OPENALEX}/works/{oa_id}", params={"select": "doi"}, timeout=15)
+        r = client.get(f"{OPENALEX}/works/{oa_id}", params={"select": "doi,publication_year"}, timeout=15)
         r.raise_for_status()
-        return _doi(r.json().get("doi"))
+        data = r.json()
+        year = data.get("publication_year") or 0
+        if year < REF_YEAR_MIN:
+            return None
+        return _doi(data.get("doi"))
     except Exception:
         return None
 
@@ -125,13 +136,18 @@ def curate_topic(client: httpx.Client, topic_file: Path, dry_run: bool = False) 
     print(f"  review: {source_title[:70]}...")
     print(f"  doi: {source_doi}  year: {source_year}  refs_available: {len(refs)}")
 
+    # Scan references in order, take first MAX_REFS that pass the year filter
     included_dois: list[str] = []
-    for ref_url in refs[:MAX_REFS]:
+    scanned = 0
+    for ref_url in refs:
+        scanned += 1
         d = _fetch_ref_doi(client, ref_url)
         if d:
             included_dois.append(d)
+            if len(included_dois) >= MAX_REFS:
+                break
         time.sleep(0.12)  # polite pool ≤10/sec
-    print(f"  resolved {len(included_dois)} DOIs from {min(len(refs), MAX_REFS)} references")
+    print(f"  resolved {len(included_dois)} post-{REF_YEAR_MIN} DOIs from {scanned} references scanned")
 
     new_summary = _conclusion_from_abstract(review.get("abstract_inverted_index"))
 
