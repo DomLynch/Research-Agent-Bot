@@ -39,6 +39,16 @@ _ANTI_AGING_TERMS = (
     "aging", "ageing", "healthspan", "longevity", "older adults", "biological age",
     "geroscience", "frailty", "multimorbidity", "mci", "cognitive decline",
 )
+_DIRECT_STUDY_TYPES = {
+    "rct",
+    "clinical-trial",
+    "cohort",
+    "case-control",
+    "cross-sectional",
+    "observational",
+    "meta-analysis",
+    "systematic-review",
+}
 
 _INJECTION_PATTERNS = (
     r"ignore previous instructions",
@@ -97,16 +107,25 @@ def _is_anti_aging_domain(domain_slug: str) -> bool:
 def _classify_directness(item: dict[str, Any], card: dict[str, Any], domain_slug: str, topic_tokens: list[str]) -> str:
     if item.get("evidence_type") == "mechanism" or item.get("source_type") == "chembl":
         return "mechanistic"
+    title = str(item.get("title") or "").lower()
     text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt", "query")).lower()
+    title_match = any(tok in title for tok in topic_tokens)
+    study_type = str(card.get("study_type") or "")
+    aging_signal = (
+        any(term in title for term in _ANTI_AGING_TERMS)
+        or card.get("context") == "aging"
+        or "older adults" in str(card.get("population") or "")
+        or any(term in str(card.get("outcomes") or "") for term in ("healthspan", "aging", "longevity", "mortality", "cognitive", "frailty"))
+    )
     if _is_anti_aging_domain(domain_slug):
-        if any(term in text for term in _ANTI_AGING_TERMS) or card.get("context") == "aging":
-            return "direct"
         if card.get("context") in {"oncology", "transplant", "device", "pediatric"}:
             return "indirect"
+        if title_match and aging_signal and study_type in _DIRECT_STUDY_TYPES:
+            return "direct"
         if any(tok in text for tok in topic_tokens):
             return "indirect"
         return "indirect"
-    return "direct" if any(tok in text for tok in topic_tokens) else "indirect"
+    return "direct" if title_match else "indirect"
 
 
 def _relevance(item: dict[str, Any], topic_tokens: list[str], *, card: dict[str, Any] | None = None, directness: str = "indirect") -> float:

@@ -26,9 +26,10 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Golden eval harness now has 3-tier eval corpus (gold + adversarial + breadth) with CI gating.
 - Runtime is now above the previous 1,800 ceiling; further additions need deletions or another explicit DECISIONS entry.
 - Quantitative fidelity is now honestly measured and still weak on the gold baseline; drafter must earn future quality gains with supported numbers.
+- Directness labeling is still heuristic. The tightened classifier now blocks obvious indirect-only longevity bundles, but retrieval quality still dominates final bundle quality.
 
 ## Next Validation Step
-Deploy the Phase 1 credibility slice, rerun the VPS gold baseline, and run one real publish QA topic through the live site.
+Deploy the tightened directness classifier, regenerate the 10 gold fixtures, and rerun the VPS gold baseline against fresh drafts.
 
 ## Hardening Status
 | Step | What | Status |
@@ -66,7 +67,7 @@ Deploy the Phase 1 credibility slice, rerun the VPS gold baseline, and run one r
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 220 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 224 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
 - Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

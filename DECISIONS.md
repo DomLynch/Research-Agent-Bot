@@ -1,5 +1,21 @@
 # DECISION JOURNAL
 
+## 2026-04-21 — Tighten directness classifier so the anti-aging gate can actually fire
+**Decision:** Narrow anti-aging `directness` to title-level topic fit plus study-type quality. A source is now `direct` only when the title matches a topic token, the evidence is from a stronger study class (RCT / cohort / observational / systematic review / meta-analysis), and the source signals aging-relevant outcomes or population. Mechanism records stay `mechanistic`; oncology/transplant/device/pediatric contexts stay `indirect`.
+**Why:** The first Phase 1 classifier labeled ~93% of bundle entries as `direct`, which turned the new indirect-only submission gate into theater. Generic reviews that happened to mention `aging` in the excerpt were being treated as direct longevity evidence. The gate now has a real chance to block weak longevity bundles.
+**Details:**
+- `agent/drafter.py` now requires `title_match + aging_signal + study_type in _DIRECT_STUDY_TYPES` for anti-aging `direct`.
+- `tests/test_drafter.py` adds discriminating coverage for:
+  - a true aging RCT -> `direct`
+  - an oncology aging-adjacent review -> `indirect`
+  - a ChEMBL record -> `mechanistic`
+  - a classifier-produced indirect-only longevity bundle -> `indirect_only_bundle`
+- Tests: `224 passed, 6 skipped`, `ruff` clean.
+**Alternatives rejected:**
+- Let the LLM infer directness from noisy bundles — rejected because everolimus/metformin runs showed it over-trusts weak context.
+- Hard-code topic-specific exceptions — rejected; the fix should stay generic across longevity topics.
+**Revisit if:** regenerated gold fixtures show the stricter classifier starves obviously valid longevity topics of direct evidence.
+
 ## 2026-04-21 — Phase 1 credibility layer: directness, PRISMA methods, GRADE-lite, protocol preregistration
 **Decision:** Add a Phase 1 rapid-review credibility layer on top of the existing V0 pipeline: source directness labels (`direct` / `indirect` / `mechanistic`), anti-aging submit blocking on indirect-only bundles, PRISMA-style Methods output, GRADE-lite evidence grading, per-run protocol JSON preregistration, and richer source telemetry.
 **Why:** The bot could already produce readable drafts, but it still looked like a synthesis wrapper rather than a defensible rapid-review system. This slice closes the main trust gap without adding new frameworks or models: every run now shows how it searched, what it kept, how strong the evidence is, and when the bot refused to publish because the evidence is only indirect.
