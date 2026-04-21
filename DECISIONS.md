@@ -28,3 +28,21 @@
 - Use a single file-based lock — rejected because env vars are simpler and VPS-friendly.
 - Cost cap via external service — rejected, local JSON scan is fast enough for V0.
 **Revisit if:** Cost tracking needs inter-day or cross-instance aggregation.
+
+## 2026-04-21 — 3-Tier Eval Corpus (Cochrane-grounded, not LLM-picked)
+**Decision:** Build golden eval as 10 human-curated topics (real 2023-2026 systematic reviews) + 30 adversarial + 60 breadth (MiniMax-generated), not 100 LLM-picked "elite" papers.
+**Why:** LLM-picked benchmarks are circular (LLM picks → LLM drafts → LLM grades). Real published systematic reviews are free ground truth with traceable DOIs, effect directions, and limitations. The 15k/day MiniMax quota is better spent on CI-gated regression runs (100 topics × 6 queries × every push) than on one-shot benchmark construction.
+**Details:**
+- 10 gold topics: rapamycin, nad_precursors, metformin, senolytics, glp1, time_restricted_eating, creatine_cognition, omega3_cv, vitamin_d_mortality, exercise_mci
+- 4 scoring functions: study_overlap (0.35), quantitative_fidelity (0.30), direction_agreement (0.20), limitation_overlap (0.15)
+- Schema validator in `tests/golden/schema.py`
+- CI workflow in `.github/workflows/eval.yml`
+- Bulk generation script in `scripts/generate_eval_corpus.py`
+**Alternatives rejected:**
+- 100 MiniMax-picked elite papers — rejected for circularity (LLM picks → LLM drafts → LLM grades)
+- Full-text scraping — rejected, out of V0 scope
+- ClinicalTrials.gov / bioRxiv / ChEMBL integration now — rejected; data-gated on quantitative_fidelity baseline
+**Revisit if:**
+- `quantitative_fidelity` on interventional topics baselines below 0.50 → wire ClinicalTrials.gov
+- Direction classifier accuracy below 80% → replace rule-based with MiMo JSON extraction
+- CI run exceeds 20 min → cache layer or matrix split

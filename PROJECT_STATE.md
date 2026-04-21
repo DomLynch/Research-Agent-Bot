@@ -20,10 +20,10 @@ Deterministic planner + bounded public literature queries + MiMo draft pass + Re
 
 ## Open Risks
 - PubMed/OpenAlex relevance ranking must stay simple without becoming naive.
-- Golden eval harness is in git at `tests/golden/harness.py` (VPS-side, requires live API). CI uses `tests/test_golden.py` with mock data.
+- Golden eval harness now has 3-tier eval corpus (gold + adversarial + breadth) with CI gating.
 
 ## Next Validation Step
-Run calibration on VPS after deployment to verify kappas still hold with ClinicalTrials.gov entries in the mix.
+Run `pytest tests/test_golden.py --gold-smoke` to verify scoring functions work against real bot output.
 
 ## Hardening Status
 | Step | What | Status |
@@ -40,6 +40,15 @@ Run calibration on VPS after deployment to verify kappas still hold with Clinica
 | 10 | Conditional source expansion (ClinicalTrials.gov) | DONE (ClinicalTrialsClient; interventional/observational entries now accepted by drafter and harness; conditional in cli.py for oncology/longevity domains; 17 tests) |
 | 11 | bioRxiv/medRxiv, ChEMBL | DEFERRED |
 | 12 | Weekly report script | DONE (scripts/weekly_report.py; 5 tests) |
+| 13 | 3-tier eval corpus (gold + adversarial + breadth) | DONE (10 gold topics, 30 adversarial, 60 breadth; 4 scoring functions; CI workflow) |
+
+## Eval Corpus (Step 13)
+- **3-tier structure**: 10 gold (human-curated systematic reviews) + 30 adversarial (MiniMax-generated traps) + 60 breadth (MiniMax-generated regression matrix)
+- **Scoring**: study_overlap (0.35), quantitative_fidelity (0.30), direction_agreement (0.20), limitation_overlap (0.15)
+- **CI gate**: `.github/workflows/eval.yml` runs on push, posts PR comment with scores
+- **Gold topics**: rapamycin, nad_precursors, metformin, senolytics, glp1, time_restricted_eating, creatine_cognition, omega3_cv, vitamin_d_mortality, exercise_mci
+- **Schema validator**: `tests/golden/schema.py` validates all topic JSONs
+- **Bulk generation**: `scripts/generate_eval_corpus.py --adversarial 30 --breadth 60`
 
 ## Test Coverage
 - Total: 186 collected, 180 passed, 6 skipped (judge calibration — needs MIMO_API_KEY). VPS: 186 passed.
