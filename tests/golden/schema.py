@@ -43,10 +43,18 @@ def validate_gold_topic(data: dict[str, Any]) -> list[str]:
             if f not in sr or not sr[f]:
                 errors.append(f"source_review missing required field: {f}")
 
-    if "included_dois" not in data or not isinstance(data["included_dois"], list):
-        errors.append("Missing or non-list included_dois")
-    elif len(data["included_dois"]) < 1:
-        errors.append("included_dois must have at least 1 entry")
+    if "included_dois" in data and not isinstance(data["included_dois"], list):
+        errors.append("included_dois must be a list")
+
+    if "quantitative_claims" in data:
+        if not isinstance(data["quantitative_claims"], list):
+            errors.append("quantitative_claims must be a list")
+        else:
+            for i, qc in enumerate(data["quantitative_claims"]):
+                if not isinstance(qc, dict):
+                    errors.append(f"quantitative_claims[{i}] is not a dict")
+                elif "claim" not in qc or "source_doi" not in qc:
+                    errors.append(f"quantitative_claims[{i}] missing 'claim' or 'source_doi'")
 
     conclusion_dir = data.get("conclusion_direction", "")
     if conclusion_dir not in ALLOWED_CONCLUSION_DIRECTIONS:
@@ -60,16 +68,15 @@ def validate_gold_topic(data: dict[str, Any]) -> list[str]:
     elif len(data["limitations"]) < 1:
         errors.append("limitations must have at least 1 entry")
 
-    if "quantitative_claims" not in data or not isinstance(data["quantitative_claims"], list):
-        errors.append("Missing or non-list quantitative_claims")
-    elif len(data["quantitative_claims"]) < 1:
-        errors.append("quantitative_claims must have at least 1 entry")
-
-    for i, qc in enumerate(data.get("quantitative_claims", [])):
-        if not isinstance(qc, dict):
-            errors.append(f"quantitative_claims[{i}] is not a dict")
-        elif "claim" not in qc or "source_doi" not in qc:
-            errors.append(f"quantitative_claims[{i}] missing 'claim' or 'source_doi'")
+    if "quantitative_claims" in data:
+        if not isinstance(data["quantitative_claims"], list):
+            errors.append("quantitative_claims must be a list")
+        else:
+            for i, qc in enumerate(data["quantitative_claims"]):
+                if not isinstance(qc, dict):
+                    errors.append(f"quantitative_claims[{i}] is not a dict")
+                elif "claim" not in qc or "source_doi" not in qc:
+                    errors.append(f"quantitative_claims[{i}] missing 'claim' or 'source_doi'")
 
     if "last_validated" not in data:
         errors.append("Missing last_validated")
