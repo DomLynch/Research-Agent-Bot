@@ -94,11 +94,15 @@ _POSITIVE_KW = {
 _NEGATIVE_PHRASES = {
     "no evidence", "no benefit", "no improvement", "no advantage",
     "ineffective", "harmful",
+    "does not reduce", "does not significantly reduce", "not supported",
+    "not supported by", "no significant benefit", "no significant effect",
+    "no effect on",
 }
 _CAVEAT_KW = {
     "limited", "preliminary", "preliminarily", "caution",
     "mixed", "heterogeneous", "inconsistent", "uncertain", "unclear",
-    "insufficient", "needed", "required", "promising", "investigational", "varies",
+    "insufficient", "needed", "required", "requires", "promising",
+    "investigational", "varies", "however", "lacks", "gap", "gaps",
 }
 
 
@@ -120,6 +124,11 @@ def _classify_direction(text: str) -> str:
     neg_count = sum(1 for phrase in _NEGATIVE_PHRASES if phrase in t)
     caveat_count = sum(1 for kw in _CAVEAT_KW if kw in words)
 
+    # When both pos+neg present: if neg signal is strong, classify as negative variant
+    if pos_count > 0 and neg_count > 0:
+        if neg_count >= 2 and neg_count * 2 >= pos_count:
+            return "negative_with_caveats" if caveat_count > 0 else "negative"
+        return "mixed"
     if pos_count > 0 and neg_count == 0 and caveat_count == 0:
         return "positive"
     if pos_count > 0 and caveat_count > 0:
@@ -128,8 +137,6 @@ def _classify_direction(text: str) -> str:
         return "negative"
     if neg_count > 0 and caveat_count > 0:
         return "negative_with_caveats"
-    if pos_count > 0 and neg_count > 0:
-        return "mixed"
     if caveat_count > 2:
         return "mixed"
     return "insufficient_evidence"
