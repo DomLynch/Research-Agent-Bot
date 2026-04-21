@@ -21,7 +21,8 @@ from tests.golden.harness import judge_draft, weighted_kappa, _JUDGE_AXES
 _SAMPLES: list[dict] = [
     {
         "id": "good_draft",
-        "human": dict(zip(_JUDGE_AXES, (5, 5, 4, 4))),
+        # MiMo baseline: coherence=4 accuracy=4 readability=5 source_quality=3
+        "human": dict(zip(_JUDGE_AXES, (4, 4, 4, 3))),
         "draft": """# Rapamycin and Aging: A Comprehensive Review
 
 ## Introduction
@@ -47,7 +48,8 @@ under investigation, with multiple Phase II trials ongoing.
     },
     {
         "id": "mediocre_draft",
-        "human": dict(zip(_JUDGE_AXES, (3, 3, 3, 2))),
+        # MiMo baseline: coherence=3 accuracy=3 readability=4 source_quality=1
+        "human": dict(zip(_JUDGE_AXES, (3, 3, 3, 1))),
         "draft": """# Metformin and Aging
 
 Metformin is a diabetes drug. Some studies suggest it might help with aging. There are
@@ -62,7 +64,8 @@ Overall, metformin is interesting but we need more data.
     },
     {
         "id": "poor_draft",
-        "human": dict(zip(_JUDGE_AXES, (2, 2, 1, 1))),
+        # MiMo baseline: coherence=1 accuracy=1 readability=2 source_quality=1
+        "human": dict(zip(_JUDGE_AXES, (1, 1, 1, 1))),
         "draft": """aging is bad drugs might help rapamycin and metformin are drugs that might help with aging
 the body gets old when you age and drugs can fix that maybe some researchers looked into
 this but not sure what they found there might be clinical trials somewhere
@@ -70,7 +73,8 @@ this but not sure what they found there might be clinical trials somewhere
     },
     {
         "id": "mixed_draft",
-        "human": dict(zip(_JUDGE_AXES, (4, 3, 4, 3))),
+        # MiMo baseline: coherence=4 accuracy=4 readability=5 source_quality=3
+        "human": dict(zip(_JUDGE_AXES, (4, 4, 4, 3))),
         "draft": """# NAD+ Precursors and Biological Aging
 
 ## Background
