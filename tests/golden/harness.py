@@ -17,7 +17,7 @@ Metrics (retrieval):
 Judge calibration (Step 6):
     judge_draft() rates draft quality on 4 axes (coherence, accuracy, readability, source_quality)
     using a standardized rubric. Calibration test compares against human expert ratings.
-    Agreement target: weighted Cohen's kappa >= 0.60 on each axis.
+    Agreement target: Cohen's kappa >= 0.60 on each axis.
 
 For CI, use tests/test_golden.py which validates the harness logic with mock data.
 """
@@ -133,28 +133,23 @@ def judge_draft(draft: str, *, provider: Any | None = None) -> dict:
     return scores
 
 
-def weighted_kappa(human: list[int], judge: list[int], k: int = 5) -> float:
-    """Weighted Cohen's kappa between two rating vectors (same length)."""
+def cohen_kappa(human: list[int], judge: list[int], k: int = 5) -> float:
+    """Unweighted Cohen's kappa between two rating vectors (same length)."""
     n = len(human)
     if n == 0:
         return 0.0
     obs = [[0] * k for _ in range(k)]
     for h, j in zip(human, judge):
         obs[h - 1][j - 1] += 1
-    exp = [[0.0] * k for _ in range(k)]
+    # Observed agreement
+    p_o = sum(obs[i][i] for i in range(k)) / n
+    # Expected agreement (marginal independence)
+    p_e = 0.0
     for i in range(k):
         row_s = sum(obs[i])
-        col_s = sum(obs[j][i] for j in range(k))
-        for j in range(k):
-            exp[i][j] = row_s * col_s / n
-    num = 0.0
-    den = 0.0
-    for i in range(k):
-        for j in range(k):
-            w = 1.0 - (i - j) ** 2 / (k - 1) ** 2
-            num += w * (obs[i][j] - exp[i][j])
-            den += w * exp[i][j]
-    return num / den if den != 0 else 1.0
+        col_s = sum(obs[r][i] for r in range(k))
+        p_e += row_s * col_s / n**2
+    return (p_o - p_e) / (1 - p_e) if p_e != 1.0 else 1.0
 
 
 def run_eval(per_source_limit: int = 25) -> dict:

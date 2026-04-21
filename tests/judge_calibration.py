@@ -4,7 +4,7 @@ Run manually on the VPS:
     cd /opt/research-agent-bot && .venv/bin/python -m pytest tests/judge_calibration.py -v
 
 Compares MiMo judge ratings against human expert ratings on calibrated drafts.
-Pass condition: weighted Cohen's kappa >= 0.60 on each axis.
+Pass condition: Cohen's kappa >= 0.60 on each axis.
 Skips when MIMO_API_KEY is unset.
 """
 from __future__ import annotations
@@ -12,7 +12,7 @@ from __future__ import annotations
 import os
 import pytest
 
-from tests.golden.harness import judge_draft, weighted_kappa, _JUDGE_AXES
+from tests.golden.harness import judge_draft, cohen_kappa, _JUDGE_AXES
 
 # ---------------------------------------------------------------------------
 # Calibrated sample drafts with human expert ratings
@@ -136,7 +136,6 @@ def test_judge_mimo_connectivity():
         system_prompt="Return JSON with keys: coherence, accuracy, readability, source_quality. Each an integer 1-5.",
         user_prompt='Rate this draft: "# Test\n\nThis is a test. (Smith et al., 2024)."\n',
     )
-    print(f"\nMiMo raw result: {result}")
     for ax in _JUDGE_AXES:
         assert ax in result, f"Missing axis in raw result: {ax}. Got keys: {list(result.keys())}"
         val = result[ax]
@@ -149,13 +148,12 @@ def test_judge_mimo_connectivity():
     reason="MIMO_API_KEY not set — calibration requires live MiMo",
 )
 def test_judge_calibration_kappa():
-    """Weighted Cohen's kappa >= 0.60 on each axis between human and MiMo judge."""
+    """Cohen's kappa >= 0.60 on each axis between human and MiMo judge."""
     human_scores: dict[str, list[int]] = {ax: [] for ax in _JUDGE_AXES}
     judge_scores: dict[str, list[int]] = {ax: [] for ax in _JUDGE_AXES}
 
     for sample in _SAMPLES:
         scores = judge_draft(sample["draft"])
-        print(f"\n[sample={sample['id']}] MiMo scores: {scores}  human: {sample['human']}")
         for ax in _JUDGE_AXES:
             human_scores[ax].append(sample["human"][ax])
             judge_scores[ax].append(scores[ax])
@@ -163,14 +161,11 @@ def test_judge_calibration_kappa():
     failing_axes: list[str] = []
     kappa_results: dict[str, float] = {}
     for ax in _JUDGE_AXES:
-        k = weighted_kappa(human_scores[ax], judge_scores[ax])
+        k = cohen_kappa(human_scores[ax], judge_scores[ax])
         kappa_results[ax] = round(k, 3)
         if k < 0.60:
             failing_axes.append(ax)
 
-    print(f"\nCalibration results: {kappa_results}")
-    print(f"  Human:  { {ax: human_scores[ax] for ax in _JUDGE_AXES} }")
-    print(f"  MiMo:   { {ax: judge_scores[ax] for ax in _JUDGE_AXES} }")
     if failing_axes:
         pytest.fail(
             f"Kappa below 0.60 on axes: {failing_axes}. "
