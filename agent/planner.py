@@ -13,6 +13,19 @@ DOMAIN_HINTS = {
 _HUMAN = ("human", "humans", "patient", "patients", "adult", "adults", "clinical")
 _ANIMAL = ("animal", "animals", "mouse", "mice", "murine", "rat", "rats")
 
+DOMAIN_NEGATIVE_FILTERS: dict[str, list[str]] = {
+    "longevity": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
+    "oncology": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
+    "metabolic": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
+    "general": ["cooking", "cook", "recipe", "recipes", "sports", "football", "basketball", "engineering", "automotive", "fashion", "gaming", "real estate", "agriculture", "construction"],
+}
+
+
+def _should_filter_entry(entry: dict[str, Any], domain_slug: str) -> bool:
+    filters = DOMAIN_NEGATIVE_FILTERS.get(domain_slug, DOMAIN_NEGATIVE_FILTERS["general"])
+    text = " ".join(str(entry.get(k) or "") for k in ("title", "excerpt")).lower()
+    return any(f in text for f in filters)
+
 
 def _clean(value: Any, limit: int = 160) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()[:limit]
@@ -83,10 +96,11 @@ def _human_ok(item: dict[str, Any]) -> bool:
     return any(t in text for t in _HUMAN) or not any(t in text for t in _ANIMAL)
 
 
-def _filter_evidence(scope: dict[str, Any], evidence: list[dict[str, Any]], topic_tokens: list[str] | None = None) -> list[dict[str, Any]]:
+def _filter_evidence(scope: dict[str, Any], evidence: list[dict[str, Any]], topic_tokens: list[str] | None = None, domain_slug: str = "general") -> list[dict[str, Any]]:
     if not evidence:
         return evidence
     scoped = list(evidence)
+    scoped = [e for e in scoped if not _should_filter_entry(e, domain_slug)]
     if scope["review_only"] != scope["primary_only"]:
         wanted = "review" if scope["review_only"] else "primary"
         scoped = [e for e in scoped if e.get("evidence_type") == wanted]
@@ -110,7 +124,7 @@ class QueryPlan:
         return self.queries
 
     def filter_evidence(self, evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        return _filter_evidence(self.scope, evidence, self.topic_tokens)
+        return _filter_evidence(self.scope, evidence, self.topic_tokens, self.domain_slug)
 
     def scope_signals(self) -> list[str]:
         return _scope_signals(self.scope)

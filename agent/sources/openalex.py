@@ -56,6 +56,8 @@ class OpenAlexClient:
                 continue
             location = work.get("primary_location") or {}
             doi = _clean_text(work.get("doi"), limit=256).removeprefix("https://doi.org/") or None
+            source = location.get("source") or {}
+            journal = _clean_text(source.get("display_name"), limit=200) or None
             entries.append(
                 {
                     "id": work.get("id"),
@@ -67,6 +69,7 @@ class OpenAlexClient:
                     "query": _clean_text(query, limit=240),
                     "source_type": "openalex",
                     "evidence_type": _infer_evidence_type(title, abstract),
+                    "journal": journal,
                 }
             )
         return entries

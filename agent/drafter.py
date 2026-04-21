@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from agent.evidence_cards import build_card
+
 import os
 import re
 from datetime import datetime, timezone
@@ -123,7 +125,7 @@ class RapidEvidenceDrafter:
 
         years = [int(e["year"]) for e in bundle_sources if isinstance(e.get("year"), int)]
         rc = sum(1 for e in bundle_sources if e.get("evidence_type") == "review")
-        pc = sum(1 for e in bundle_sources if e.get("evidence_type") == "primary")
+        pc = sum(1 for e in bundle_sources if e.get("evidence_type") in {"primary", "interventional", "observational"})
         topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
         expanded = list(topic_tokens)
         for tok in topic_tokens:
@@ -185,6 +187,7 @@ class RapidEvidenceDrafter:
                 f"to determine whether the current literature supports actionable conclusions for practitioners and researchers."
             ).strip()
 
+        _ACCEPTED_TYPES = {"review", "primary", "interventional", "observational"}
         source_bundle = [
             {
                 "title": _clean(e.get("title"), limit=200),
@@ -193,9 +196,10 @@ class RapidEvidenceDrafter:
                 "url": e.get("url"),
                 "doi": e.get("doi"),
                 "relevance": rel,
+                "card": build_card(e),
             }
             for e in bundle_sources
-            if e.get("evidence_type") in {"review", "primary"}
+            if e.get("evidence_type") in _ACCEPTED_TYPES
             and (rel := _relevance(e, topic_tokens)) >= 0.3
         ]
 

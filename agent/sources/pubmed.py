@@ -62,6 +62,12 @@ class PubMedClient:
                 if str(node.attrib.get("IdType") or "").lower() == "doi":
                     doi = _clean_text(node.text, limit=256) or None
                     break
+            journal = _clean_text(article.findtext(".//Journal/JournalTitle") or article.findtext(".//ISOAbbreviation"), limit=200) or None
+            authors = []
+            for author in article.findall(".//AuthorList/Author"):
+                last = _clean_text(author.findtext("LastName"), limit=80)
+                if last:
+                    authors.append(last)
             entries.append(
                 {
                     "id": pmid,
@@ -73,6 +79,8 @@ class PubMedClient:
                     "query": _clean_text(query, limit=240),
                     "source_type": "pubmed",
                     "evidence_type": _infer_evidence_type(title, abstract),
+                    "journal": journal,
+                    "authors": authors,
                 }
             )
             if len(entries) >= limit:

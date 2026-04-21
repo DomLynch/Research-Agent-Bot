@@ -307,9 +307,29 @@ def test_quality_gate_blocks_no_review_sources():
     assert "no_review_sources" in reason
 
 
+def test_quality_gate_off_topic_wont_pass_with_prefix_words():
+    """Bundle of "random evidence synthesis" sources must not pass gate
+    just because artifact title starts with 'Rapid Evidence Synthesis:'."""
+    bundle = [
+        {"title": f"random evidence synthesis paper {i}", "evidence_type": "review" if i % 3 == 0 else "primary", "year": 2020 + (i % 5), "doi": f"10.1/evid{i}"}
+        for i in range(12)
+    ]
+    artifact = {"title": "Rapid Evidence Synthesis: rapamycin longevity", "source_bundle": bundle}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is not None
+    assert "low_topic_precision" in reason
+
+
 def test_quality_gate_passes_clean_bundle():
     artifact = {"title": "rapamycin and aging review", "source_bundle": _make_bundle(12)}
     assert _quality_gate(artifact, current_year=2026) is None
+
+
+def test_quality_gate_passes_with_topic_param():
+    """Explicit topic should override artifact title."""
+    bundle = _make_bundle(12, topic="metformin diabetes")
+    artifact = {"title": "Rapid Evidence Synthesis: metformin", "source_bundle": bundle}
+    assert _quality_gate(artifact, current_year=2026, topic="metformin diabetes") is None
 
 
 def test_submit_gate_blocked():

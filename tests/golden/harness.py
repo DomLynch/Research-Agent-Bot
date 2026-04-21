@@ -175,7 +175,7 @@ def run_eval(per_source_limit: int = 25) -> dict:
 
         source_bundle = [
             e for e in bundle
-            if e.get("evidence_type") in {"review", "primary"}
+            if e.get("evidence_type") in {"review", "primary", "interventional", "observational"}
             and _relevance(e, topic_tokens) >= 0.3
         ][:12]
 

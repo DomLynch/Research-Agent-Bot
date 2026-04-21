@@ -35,7 +35,7 @@ def _topic_tokens(title: str) -> list[str]:
     return [t for t in re.sub(r"[^a-z0-9 ]", " ", title.lower()).split() if t not in _STOPWORDS and len(t) > 2]
 
 
-def _quality_gate(artifact: dict[str, Any], *, current_year: int | None = None) -> str | None:
+def _quality_gate(artifact: dict[str, Any], *, current_year: int | None = None, topic: str = "") -> str | None:
     bundle = artifact.get("source_bundle", [])
     if len(bundle) < 12:
         return f"bundle_too_small:{len(bundle)}"
@@ -45,8 +45,15 @@ def _quality_gate(artifact: dict[str, Any], *, current_year: int | None = None) 
         if title and _INJECTION_RE.search(title):
             return "injection_detected"
 
-    # topic_precision: % of bundle titles sharing >=1 token with artifact title
-    tokens = _topic_tokens(artifact.get("title", ""))
+    # topic_precision: % of bundle titles sharing >=1 token with the *topic*
+    # Falls back to artifact title prefix if topic is empty.
+    # This prevents gaming via generic tokens like "rapid", "evidence", "synthesis".
+    if not topic:
+        raw_title = str(artifact.get("title", ""))
+        # Strip the "Rapid Evidence Synthesis: " prefix so common words don't inflate hits
+        raw_title = re.sub(r"^rapid evidence synthesis:\s*", "", raw_title, flags=re.IGNORECASE)
+        topic = raw_title
+    tokens = _topic_tokens(topic)
     if tokens:
         hits = sum(
             1 for e in bundle
@@ -124,7 +131,8 @@ def submit(artifact: dict[str, Any], *, base_url: str | None = None, run_dir: st
         "abstract": artifact["abstract"],
         "sections": artifact.get("sections", {}),
         "source_bundle": [
-            {k: v for k, v in entry.items() if k in ("title", "evidence_type", "year", "url", "doi", "relevance")}
+            {**{k: v for k, v in entry.items() if k in ("title", "evidence_type", "year", "url", "doi", "relevance")},
+             **({"card": entry["card"]} if "card" in entry else {})}
             for entry in artifact.get("source_bundle", [])
         ],
         "author_agent_id": os.getenv("AGENT_ID", "research-agent-bot"),

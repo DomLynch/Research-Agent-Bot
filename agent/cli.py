@@ -5,13 +5,25 @@ import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 from agent.drafter import RapidEvidenceDrafter
 from agent.planner import QueryPlanner
 from agent.provider import MimoClient
+from agent.sources.clinicaltrials import ClinicalTrialsClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
 from agent.submit import submit
+
+_CLINICAL_DOMAINS = {"oncology", "longevity"}
+_CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
+
+
+def _should_use_clinical_trials(domain: str, topic: str) -> bool:
+    if domain in _CLINICAL_DOMAINS:
+        return True
+    combined = f"{topic} {domain}".lower()
+    return any(kw in combined for kw in _CLINICAL_KEYWORDS)
 
 
 def _daily_cost(run_dir: str = "runs") -> float:
@@ -89,7 +101,18 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
             src = item.get("source_type", "")
             url_str = f" — {url}" if url else ""
             src_str = f", {src}" if src else ""
-            lines.append(f"[{i}] {title} ({year}), {etype}{src_str}{url_str}")
+            card = item.get("card") or {}
+            citation = card.get("citation", "")
+            journal = card.get("journal", "")
+            quality = card.get("quality_signal", "")
+            card_str = ""
+            if citation:
+                card_str += f" | {citation}"
+            if journal:
+                card_str += f" | {journal}"
+            if quality:
+                card_str += f" | {quality}"
+            lines.append(f"[{i}] {title} ({year}), {etype}{src_str}{card_str}{url_str}")
         lines.append("")
     return "\n".join(lines).strip() + "\n"
 
@@ -133,7 +156,9 @@ def run_agent(
         "source_errors": [],
     }
     evidence: list[dict] = []
-    sources = (("pubmed", PubMedClient()), ("openalex", OpenAlexClient()))
+    sources: list[tuple[str, Any]] = [("pubmed", PubMedClient()), ("openalex", OpenAlexClient())]
+    if _should_use_clinical_trials(domain, topic):
+        sources.append(("clinicaltrials", ClinicalTrialsClient()))
     for query in queries:
         for source_name, client in sources:
             try:

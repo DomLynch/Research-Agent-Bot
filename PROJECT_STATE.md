@@ -23,20 +23,25 @@ Deterministic planner + bounded public literature queries + MiMo draft pass + Re
 - Golden eval harness is in git at `tests/golden/harness.py` (VPS-side, requires live API). CI uses `tests/test_golden.py` with mock data.
 
 ## Next Validation Step
-Step 7: Evidence cards — add structured citation cards per source to improve draft accuracy.
+Run calibration on VPS after deployment to verify kappas still hold with ClinicalTrials.gov entries in the mix.
 
 ## Hardening Status
 | Step | What | Status |
 |---|---|---|
 | 1 | Kill switch + submit switch + daily cost cap | DONE |
-| 2 | Prompt injection sanitizer for titles/excerpts | DONE (fixed: _clean() now redacts via _INJECTION_RE; test_sanitizer.py created) |
-| 3 | .env.example + last_validated in harness | DONE (fixed: .env.example created) |
-| 4 | Golden harness upgrade (5 metrics) | DONE (avg_tone removed from pass condition) |
-| 5 | Bundle quality gate, fail-closed | DONE (fixed: replaced tone-based gate with topic_precision/recent_ratio/source_mix) |
-| 6 | Judge calibration round | DONE (judge_draft() + cohen_kappa + judge_calibration.py; 6/6 tests pass on VPS) |
-| 7 | Evidence cards | NOT STARTED |
-| 8 | Adversarial break-it pack | NOT STARTED |
-| 9 | Topic-specific negative filters | NOT STARTED |
-| 10 | Conditional source expansion (ClinicalTrials.gov) | NOT STARTED |
+| 2 | Prompt injection sanitizer for titles/excerpts | DONE |
+| 3 | .env.example + last_validated in harness | DONE |
+| 4 | Golden harness upgrade (5 metrics) | DONE |
+| 5 | Bundle quality gate, fail-closed | DONE |
+| 6 | Judge calibration round | DONE (6/6 pass, all kappas ≥ 0.60) |
+| 7 | Evidence cards | DONE (build_card() returns 7 fields: citation, journal, quality_signal, study_type, population, intervention, outcomes; heuristic regex extraction) |
+| 8 | Adversarial break-it pack | DONE (38 tests across 7 test classes) |
+| 9 | Topic-specific negative filters | DONE (DOMAIN_NEGATIVE_FILTERS, _should_filter_entry(); 17 tests) |
+| 10 | Conditional source expansion (ClinicalTrials.gov) | DONE (ClinicalTrialsClient; interventional/observational entries now accepted by drafter and harness; conditional in cli.py for oncology/longevity domains; 17 tests) |
 | 11 | bioRxiv/medRxiv, ChEMBL | DEFERRED |
-| 12 | Weekly report script | NOT STARTED |
+| 12 | Weekly report script | DONE (scripts/weekly_report.py; 5 tests) |
+
+## Test Coverage
+- Total: 167 collected, 161 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- Break-it pack (38 tests) now collected automatically via `tests/golden` in testpaths
+- ruff clean
