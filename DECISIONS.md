@@ -1,5 +1,19 @@
 # DECISION JOURNAL
 
+## 2026-04-21 — Add Tier 0 entity resolution before full-text or meta-analysis work
+**Decision:** Insert a topic/entity foundation layer ahead of retrieval: canonicalize compound-like topics before planning, make ChEMBL return `[]` on zero real match, and block drafting when the filtered evidence barely matches the resolved topic.
+**Why:** The `evrolimus` run proved the upstream failure mode. Without an entity layer, the bot can write a polished negative memo over typo-driven garbage. Full-text, extraction, meta-analysis, and adversarial review are all wasted if the topic string is wrong at the top of the pipeline.
+**Details:**
+- New `agent/entity_resolver.py` resolves compound-like inputs to a canonical term, returning `canonical_topic`, `did_you_mean`, `resolver_confidence`, and `resolver_source`.
+- `agent/sources/chembl.py` now extracts a focus term from the query, scores candidate molecules by lexical similarity, exposes `resolve()`, and returns `[]` when there is no real match instead of random adjacent molecules.
+- `agent/cli.py` now records `raw_topic`, `canonical_topic`, `canonical_term`, `did_you_mean`, and `resolver_confidence` in the run log and protocol JSON.
+- `agent/cli.py` now blocks drafting on low topic-match ratios for compound topics, returning a clear spelling/refinement error before the MiMo draft call.
+- Tests added for typo correction, unresolved-compound blocking, topic-match ratio calculation, no-random ChEMBL fallback, and the low-topic-match draft gate.
+**Alternatives rejected:**
+- Push straight into full-text ingestion first — rejected because full-text on the wrong entity only fetches the wrong papers faster.
+- Let MiMo infer the intended molecule from noisy bundles — rejected because that recreates the same garbage-in, garbage-out failure at a higher token cost.
+**Revisit if:** compound resolution starts falsely blocking too many legitimate biomedical topics, or if a broader MeSH/DrugBank-backed resolver replaces the current ChEMBL/alias bootstrap.
+
 ## 2026-04-21 — Reconcile PRISMA-style Methods counts with the actual included bundle
 **Decision:** Render the Methods block only after the final source bundle is known, and expand it from a loose flow sentence into a reconciled PRISMA-style summary with screened, excluded, included, and exclusion-reason text.
 **Why:** The previous markdown could say `0 included in the final source bundle` while still listing sources below. That made the new credibility layer look fake even when the underlying bundle was real.

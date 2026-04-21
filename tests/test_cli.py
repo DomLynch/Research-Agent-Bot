@@ -84,6 +84,46 @@ class FailingSource:
         raise httpx.HTTPStatusError("too many requests", request=request, response=response)
 
 
+class ResolverOnlySource:
+    def resolve(self, query: str) -> dict:
+        return {"canonical_name": "Everolimus", "confidence": 0.95}
+
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return []
+
+
+class IrrelevantSource:
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return [
+            {
+                "title": f"Cardiometabolic outcomes unrelated paper {i}",
+                "excerpt": "Generic disease outcomes without the queried compound in title or abstract.",
+                "year": 2024,
+                "source_type": "pubmed",
+                "evidence_type": "review",
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{100+i}/",
+                "query": query,
+            }
+            for i in range(8)
+        ]
+
+
+class IndirectOnlySource:
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return [
+            {
+                "title": f"Everolimus oncology review {i}",
+                "excerpt": "Cancer outcomes and transplant immunosuppression without healthy aging endpoints.",
+                "year": 2024,
+                "source_type": "pubmed",
+                "evidence_type": "review",
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{200+i}/",
+                "query": query,
+            }
+            for i in range(8)
+        ]
+
+
 class OldHumanSource:
     def search(self, query: str, *, limit: int) -> list[dict]:
         return [
@@ -277,6 +317,49 @@ def test_source_routing_helpers() -> None:
     assert cli._should_use_rxiv("longevity", "rapamycin")
     assert cli._should_use_chembl("everolimus")
     assert not cli._should_use_chembl("time restricted eating")
+
+
+def test_run_agent_canonicalizes_typo_topic(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(topic="evrolimus", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+
+    assert not run.get("error")
+    assert run["raw_topic"] == "evrolimus"
+    assert run["canonical_topic"] == "everolimus"
+    assert run["did_you_mean"] == "everolimus"
+    assert run["resolver_source"] == "alias_map"
+
+
+def test_run_agent_blocks_low_topic_match_ratio(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: IrrelevantSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(topic="everolimus", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+
+    assert "Low topic-match ratio" in run.get("error", "")
+    assert run["topic_match_ratio"] == 0.0
+
+
+def test_run_agent_blocks_indirect_only_anti_aging_draft(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: IndirectOnlySource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(topic="everolimus", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+
+    assert "Insufficient direct evidence" in run.get("error", "")
+    assert run.get("gate_reason") == "insufficient_direct_evidence"
+    assert "markdown" not in run
 
 
 # ── Safety gate tests ──────────────────────────────────────────────

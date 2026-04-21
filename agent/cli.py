@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from agent.drafter import RapidEvidenceDrafter
+from agent.entity_resolver import resolve_topic, topic_match_ratio
 from agent.planner import QueryPlanner
 from agent.provider import MimoClient
 from agent.sources.chembl import ChEMBLClient
@@ -22,6 +23,7 @@ _CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
 _RXIV_DOMAINS = {"longevity", "oncology", "metabolic", "general"}
 _CHEMBL_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "statin")
 _CHEMBL_STOPWORDS = {"and", "or", "anti", "aging", "anti-aging", "longevity", "healthspan", "effects", "outcomes"}
+_TOPIC_MATCH_FLOOR = 0.50
 
 
 def _should_use_clinical_trials(domain: str, topic: str) -> bool:
@@ -43,6 +45,11 @@ def _should_use_chembl(topic: str) -> bool:
     if len(tokens) == 1:
         return True
     return any(tok.endswith(_CHEMBL_SUFFIXES) for tok in tokens)
+
+
+def _is_anti_aging_domain(domain: str) -> bool:
+    normalized = (domain or "").strip().lower()
+    return normalized in {"longevity", "anti-aging", "anti aging"} or "aging" in normalized
 
 
 def _daily_cost(run_dir: str = "runs") -> float:
@@ -103,11 +110,13 @@ def _write_protocol_json(
     *,
     started_at: str,
     topic: str,
+    raw_topic: str,
     domain: str,
     criteria: str,
     queries: list[str],
     scope_signals: list[str],
     sources: list[str],
+    entity_resolution: dict[str, Any],
 ) -> Path:
     protocol_dir = run_dir / "protocols"
     protocol_dir.mkdir(parents=True, exist_ok=True)
@@ -115,11 +124,13 @@ def _write_protocol_json(
     payload = {
         "registered_at": started_at,
         "topic": topic,
+        "raw_topic": raw_topic,
         "domain_slug": domain,
         "criteria": criteria,
         "queries": queries,
         "scope_signals": scope_signals,
         "sources": sources,
+        "entity_resolution": entity_resolution,
         "analysis_plan": "Rapid evidence synthesis with direct/indirect evidence labeling, GRADE-lite source grading, and PRISMA-style flow reporting.",
     }
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -242,12 +253,30 @@ def run_agent(
     cap = _daily_cost_cap()
     if spent >= cap:
         return {"error": f"Daily cost cap reached (${spent:.4f} >= ${cap:.2f}). Set DAILY_COST_CAP_USD to override.", "started_at": started_at, "topic": topic}
-    plan = QueryPlanner().build(topic=topic, domain_slug=domain, criteria=criteria)
+    chembl_client = ChEMBLClient() if _should_use_chembl(topic) else None
+    entity = resolve_topic(topic, chembl_client=chembl_client)
+    if entity.get("blocked"):
+        return {
+            "error": f"Could not confidently resolve topic '{topic}'. Verify spelling and try again.",
+            "started_at": started_at,
+            "topic": topic,
+            "canonical_topic": entity.get("canonical_topic"),
+            "did_you_mean": entity.get("did_you_mean"),
+            "resolver_confidence": entity.get("confidence", 0.0),
+        }
+    resolved_topic = str(entity.get("canonical_topic") or topic)
+    plan = QueryPlanner().build(topic=resolved_topic, domain_slug=domain, criteria=criteria)
     queries = plan.primary_queries()
     source_names: list[str] = ["pubmed", "openalex"]
     run_log = {
         "started_at": started_at,
-        "topic": topic,
+        "topic": resolved_topic,
+        "raw_topic": topic,
+        "canonical_topic": resolved_topic,
+        "canonical_term": entity.get("canonical_term"),
+        "did_you_mean": entity.get("did_you_mean"),
+        "resolver_confidence": entity.get("confidence", 1.0),
+        "resolver_source": entity.get("resolver_source", "identity"),
         "domain_slug": domain,
         "criteria": criteria,
         "queries": queries,
@@ -266,18 +295,20 @@ def run_agent(
     if _should_use_clinical_trials(domain, topic):
         sources.append(("clinicaltrials", ClinicalTrialsClient()))
         source_names.append("clinicaltrials")
-    if _should_use_chembl(topic):
-        sources.append(("chembl", ChEMBLClient()))
+    if chembl_client:
+        sources.append(("chembl", chembl_client))
         source_names.append("chembl")
     protocol_path = _write_protocol_json(
         Path(run_dir),
         started_at=started_at,
-        topic=topic,
+        topic=resolved_topic,
+        raw_topic=topic,
         domain=domain,
         criteria=criteria,
         queries=queries,
         scope_signals=plan.scope_signals(),
         sources=source_names,
+        entity_resolution=entity,
     )
     run_log["protocol_file"] = protocol_path.name
     source_counts: dict[str, int] = {name: 0 for name, _ in sources}
@@ -300,15 +331,28 @@ def run_agent(
     all_evidence = plan.filter_evidence(list(evidence))
     evidence = plan.filter_evidence(evidence)
     run_log["evidence_selected"] = len(evidence)
+    topic_ratio = topic_match_ratio(
+        evidence[:20],
+        canonical_term=str(entity.get("canonical_term") or resolved_topic),
+        aliases=list(entity.get("aliases") or []),
+    ) if entity.get("entity_type") == "compound" else 1.0
+    run_log["topic_match_ratio"] = topic_ratio
     run_log["bundle_stages"] = {
         "retrieved": retrieved_n,
         "screened": retrieved_n,
         "after_domain_filter": len(evidence),
         "excluded_scope": max(0, retrieved_n - len(evidence)),
     }
+    if entity.get("entity_type") == "compound" and evidence and topic_ratio < _TOPIC_MATCH_FLOOR:
+        run_log["error"] = (
+            f"Low topic-match ratio ({topic_ratio:.2f}) for '{resolved_topic}'. "
+            f"Verify topic spelling or refine the query."
+        )
+        run_log["run_log"] = str(_write_json(Path(run_dir), run_log))
+        return run_log
     try:
         artifact, raw_output = RapidEvidenceDrafter(provider=MimoClient.from_env()).draft(
-            topic=topic,
+            topic=resolved_topic,
             domain_slug=domain,
             criteria=criteria,
             queries=queries,
@@ -327,6 +371,14 @@ def run_agent(
         artifact["methods"] = _build_methods_block(run_log, artifact, source_names)
         if "Methods" not in artifact.get("sections", {}):
             artifact["sections"] = {"Methods": artifact["methods"], **artifact.get("sections", {})}
+        if (
+            not artifact.get("error")
+            and _is_anti_aging_domain(domain)
+            and len(artifact.get("source_bundle", [])) >= 8
+            and artifact.get("bundle_profile", {}).get("direct_count", 0) == 0
+        ):
+            artifact["error"] = f"Insufficient direct evidence for '{resolved_topic}' in the {domain} domain."
+            artifact["gate_reason"] = "insufficient_direct_evidence"
         run_log.update(artifact)
         run_log["source_telemetry"] = {
             "retrieved": source_counts,
@@ -335,8 +387,8 @@ def run_agent(
             "final_directness": _count_by(artifact.get("source_bundle", []), "directness"),
         }
         if not artifact.get("error"):
-            markdown = _payload_to_markdown(artifact, topic=topic, criteria=criteria)
-            markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=topic, markdown=markdown)
+            markdown = _payload_to_markdown(artifact, topic=resolved_topic, criteria=criteria)
+            markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=resolved_topic, markdown=markdown)
             run_log["markdown"] = markdown
             run_log["markdown_file"] = markdown_path.name
             if os.getenv("RESEARKA_URL") and _is_submit_enabled():

@@ -1,0 +1,41 @@
+from agent.entity_resolver import resolve_topic, topic_match_ratio
+
+
+class ResolverStub:
+    def __init__(self, canonical_name: str = "Everolimus", confidence: float = 0.95):
+        self.canonical_name = canonical_name
+        self.confidence = confidence
+
+    def resolve(self, query: str):
+        return {"canonical_name": self.canonical_name, "confidence": self.confidence}
+
+
+def test_resolve_topic_corrects_common_typo():
+    out = resolve_topic("evrolimus", chembl_client=None)
+    assert out["canonical_topic"] == "everolimus"
+    assert out["did_you_mean"] == "everolimus"
+    assert out["blocked"] is False
+
+
+def test_resolve_topic_uses_chembl_canonical_name():
+    out = resolve_topic("everolimus and aging", chembl_client=ResolverStub())
+    assert out["canonical_topic"] == "everolimus and aging"
+    assert out["canonical_term"] == "everolimus"
+    assert out["blocked"] is False
+
+
+def test_resolve_topic_blocks_unresolved_compound():
+    out = resolve_topic("zzzimus", chembl_client=None)
+    assert out["entity_type"] == "compound"
+    assert out["blocked"] is True
+    assert out["resolver_source"] == "unresolved"
+
+
+def test_topic_match_ratio_uses_canonical_and_aliases():
+    entries = [
+        {"title": "Everolimus in older adults", "excerpt": ""},
+        {"title": "sirolimus aging trial", "excerpt": ""},
+        {"title": "melatonin sleep study", "excerpt": ""},
+    ]
+    ratio = topic_match_ratio(entries, canonical_term="everolimus", aliases=["evrolimus", "sirolimus"])
+    assert ratio == 0.667

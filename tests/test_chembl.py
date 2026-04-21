@@ -54,3 +54,46 @@ def test_search_respects_limit():
     client = ChEMBLClient(transport=httpx.MockTransport(handler))
     results = client.search("everolimus", limit=2)
     assert len(results) == 2
+
+
+def test_search_returns_empty_on_no_real_match():
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/molecule/search.json"):
+            return httpx.Response(200, json={"molecules": [_molecule(pref_name="Melatonin"), _molecule(pref_name="Insulin Human")]})
+        if request.url.path.endswith("/mechanism.json"):
+            return httpx.Response(200, json={"mechanisms": [{"mechanism_of_action": "irrelevant mechanism"}]})
+        if request.url.path.endswith("/drug_indication.json"):
+            return httpx.Response(200, json={"drug_indications": []})
+        raise AssertionError(request.url)
+
+    client = ChEMBLClient(transport=httpx.MockTransport(handler))
+    assert client.search("nonsense_compound", limit=3) == []
+
+
+def test_search_uses_focus_term_not_full_query_phrase():
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/molecule/search.json"):
+            assert request.url.params["q"] == "everolimus"
+            return httpx.Response(200, json={"molecules": [_molecule(pref_name="Everolimus")]})
+        if request.url.path.endswith("/mechanism.json"):
+            return httpx.Response(200, json={"mechanisms": [{"mechanism_of_action": "mTOR inhibitor"}]})
+        if request.url.path.endswith("/drug_indication.json"):
+            return httpx.Response(200, json={"drug_indications": []})
+        raise AssertionError(request.url)
+
+    client = ChEMBLClient(transport=httpx.MockTransport(handler))
+    results = client.search("everolimus evidence health outcomes", limit=1)
+    assert len(results) == 1
+    assert results[0]["title"] == "Everolimus"
+
+
+def test_resolve_returns_canonical_name():
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/molecule/search.json"):
+            return httpx.Response(200, json={"molecules": [_molecule(pref_name="Everolimus")]})
+        raise AssertionError(request.url)
+
+    client = ChEMBLClient(transport=httpx.MockTransport(handler))
+    match = client.resolve("evrolimus clinical trial adults outcomes")
+    assert match
+    assert match["canonical_name"] == "Everolimus"
