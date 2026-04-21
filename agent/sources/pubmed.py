@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import re
 import xml.etree.ElementTree as et
 from typing import Any
 
@@ -11,7 +12,10 @@ PUBMED_EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
 
 def _clean_text(value: Any, *, limit: int = 1600) -> str:
-    return html.unescape(" ".join(str(value or "").split()).strip()[:limit])
+    text = str(value or "")
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text)
+    return " ".join(text.split()).strip()[:limit]
 
 
 def _infer_evidence_type(title: str, abstract: str) -> str:

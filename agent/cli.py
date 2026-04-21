@@ -196,6 +196,7 @@ def run_agent(
                     sub_id = sub.get("submission", {}).get("id")
                     if sub_id:
                         run_log["submission_id"] = sub_id
+                    run_log["submission_status"] = sub.get("decision", {}).get("status", "unknown")
                     if sub.get("fingerprint"):
                         run_log["fingerprint"] = sub["fingerprint"]
                 except Exception as exc:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import re
 from typing import Any
 
 import httpx
@@ -9,7 +10,10 @@ CLINICALTRIALS_URL = "https://clinicaltrials.gov/api/v2/studies"
 
 
 def _clean_text(value: Any, *, limit: int = 1600) -> str:
-    return html.unescape(" ".join(str(value or "").split()).strip()[:limit])
+    text = str(value or "")
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text)
+    return " ".join(text.split()).strip()[:limit]
 
 
 def _extract_year(study: dict[str, Any]) -> int | None:
