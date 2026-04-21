@@ -1,6 +1,15 @@
 from agent.planner import QueryPlanner
 from agent.drafter import _rank, _relevance, _clean
 
+import pytest
+from tests.golden.harness import (
+    study_overlap,
+    direction_agreement,
+    limitation_overlap,
+    quantitative_fidelity,
+    composite_score,
+)
+
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 
@@ -90,3 +99,327 @@ def test_cleanliness_clean_sources():
     )
     cleanliness = clean_count / len(source_bundle) if source_bundle else 1.0
     assert cleanliness == 1.0, f"Clean sources should have 1.0 cleanliness, got {cleanliness}"
+
+
+# ---------------------------------------------------------------------------
+# Scoring function tests
+# ---------------------------------------------------------------------------
+
+
+GOLD_TOPIC = {
+    "topic": "rapamycin healthspan",
+    "domain": "longevity",
+    "criteria": "human studies, 2020+, safety focus",
+    "source_review": {
+        "doi": "10.1111/acel.13492",
+        "title": "Rapamycin and healthspan: a systematic review and meta-analysis",
+        "year": 2023,
+        "journal": "Aging Cell",
+        "url": "https://doi.org/10.1111/acel.13492"
+    },
+    "included_dois": [
+        "10.1038/s41586-021-xxxxx",
+        "10.1016/j.cell.2022-xxxxx",
+        "10.1111/acel.13492",
+    ],
+    "conclusion_direction": "positive_with_caveats",
+    "limitations": [
+        "Heterogeneous dosing regimens across trials",
+        "Limited long-term human safety data",
+        "Biomarker endpoints, not clinical outcomes",
+    ],
+    "quantitative_claims": [
+        {"claim": "11% increase in median lifespan in mice at 14ppm dosing", "source_doi": "10.1038/s41586-2009-xxxxx"},
+    ],
+    "last_validated": "2026-04-21",
+    "curator": "dom"
+}
+
+
+def test_study_overlap_full_match():
+    """All gold DOIs present in draft bundle."""
+    draft = {
+        "source_bundle": [
+            {"doi": "10.1038/s41586-021-xxxxx", "title": "Study A"},
+            {"doi": "10.1016/j.cell.2022-xxxxx", "title": "Study B"},
+            {"doi": "10.1111/acel.13492", "title": "Study C"},
+        ]
+    }
+    score = study_overlap(draft, GOLD_TOPIC)
+    assert score == 1.0, f"Expected 1.0, got {score}"
+
+
+def test_study_overlap_partial_match():
+    """Only 1 of 3 gold DOIs present."""
+    draft = {
+        "source_bundle": [
+            {"doi": "10.1038/s41586-021-xxxxx", "title": "Study A"},
+        ]
+    }
+    score = study_overlap(draft, GOLD_TOPIC)
+    assert score == pytest.approx(1/3), f"Expected ~0.333, got {score}"
+
+
+def test_study_overlap_no_match():
+    """No gold DOIs present in draft bundle."""
+    draft = {
+        "source_bundle": [
+            {"doi": "10.9999/other", "title": "Other Study"},
+        ]
+    }
+    score = study_overlap(draft, GOLD_TOPIC)
+    assert score == 0.0, f"Expected 0.0, got {score}"
+
+
+def test_study_overlap_doi_normalization():
+    """DOI normalization strips https://doi.org/ prefix."""
+    draft = {
+        "source_bundle": [
+            {"doi": "https://doi.org/10.1038/s41586-021-xxxxx", "title": "Study A"},
+        ]
+    }
+    score = study_overlap(draft, GOLD_TOPIC)
+    assert score == pytest.approx(1/3), f"Expected ~0.333 with normalized DOI, got {score}"
+
+
+def test_study_overlap_empty_bundle():
+    """Empty source bundle returns 0.0."""
+    draft = {"source_bundle": []}
+    score = study_overlap(draft, GOLD_TOPIC)
+    assert score == 0.0
+
+
+def test_direction_agreement_exact_match():
+    """Exact direction match returns 1.0."""
+    draft = {
+        "sections": {
+            "Key Findings": "The evidence supports rapamycin benefit for healthspan, though data is limited and preliminary.",
+            "Conclusion": "Rapamycin shows directional benefit but requires caution due to limited data.",
+        }
+    }
+    score = direction_agreement(draft, GOLD_TOPIC)
+    assert score == 1.0, f"Expected 1.0 for exact match (positive_with_caveats), got {score}"
+
+
+def test_direction_agreement_off_by_one():
+    """positive vs positive_with_caveats returns 0.5."""
+    draft = {
+        "sections": {
+            "Key Findings": "Rapamycin effectively extends healthspan in multiple models.",
+            "Conclusion": "The intervention is effective.",
+        }
+    }
+    score = direction_agreement(draft, GOLD_TOPIC)
+    assert score == 0.5, f"Expected 0.5 for off-by-one, got {score}"
+
+
+def test_direction_agreement_mismatch():
+    """Completely different direction returns 0.0."""
+    draft = {
+        "sections": {
+            "Key Findings": "No advantage was found across any trial.",
+            "Conclusion": "Null results observed in all comparisons.",
+        }
+    }
+    score = direction_agreement(draft, GOLD_TOPIC)
+    assert score == 0.0, f"Expected 0.0 for mismatch, got {score}"
+
+
+def test_direction_agreement_insufficient_evidence():
+    """Vague text classified as insufficient_evidence."""
+    draft = {
+        "sections": {
+            "Key Findings": "The evidence is unclear.",
+            "Conclusion": "More research is needed.",
+        }
+    }
+    score = direction_agreement(draft, GOLD_TOPIC)
+    assert score == 0.0, f"Expected 0.0 for insufficient vs positive_with_caveats, got {score}"
+
+
+def test_limitation_overlap_full_match():
+    """Draft limitations match all gold limitations."""
+    draft = {
+        "sections": {
+            "Limitations": "Heterogeneous dosing regimens across trials. Limited long-term human safety data. Biomarker endpoints, not clinical outcomes.",
+        }
+    }
+    score = limitation_overlap(draft, GOLD_TOPIC)
+    assert score == 1.0, f"Expected 1.0, got {score}"
+
+
+def test_limitation_overlap_partial_match():
+    """Only 1 of 3 limitations matched."""
+    draft = {
+        "sections": {
+            "Limitations": "The main issue is heterogeneous dosing regimens across trials.",
+        }
+    }
+    score = limitation_overlap(draft, GOLD_TOPIC)
+    assert score == pytest.approx(1/3), f"Expected ~0.333, got {score}"
+
+
+def test_limitation_overlap_no_match():
+    """No limitations mentioned."""
+    draft = {
+        "sections": {
+            "Limitations": "There are no limitations.",
+        }
+    }
+    score = limitation_overlap(draft, GOLD_TOPIC)
+    assert score == 0.0, f"Expected 0.0, got {score}"
+
+
+def test_limitation_overlap_empty():
+    """Empty limitations section."""
+    draft = {
+        "sections": {
+            "Limitations": "",
+        }
+    }
+    score = limitation_overlap(draft, GOLD_TOPIC)
+    assert score == 0.0
+
+
+def test_quantitative_fidelity_supported():
+    """Number found in evidence excerpt."""
+    draft = {
+        "sections": {
+            "Key Findings": "The study reported an 11% increase in median lifespan at 14ppm dosing in mice.",
+        },
+        "source_bundle": [
+            {"excerpt": "Mice treated with 14ppm rapamycin showed an 11% increase in median lifespan."},
+        ]
+    }
+    score = quantitative_fidelity(draft, GOLD_TOPIC)
+    assert score == 1.0, f"Expected 1.0, got {score}"
+
+
+def test_quantitative_fidelity_unsupported():
+    """Number not found in evidence."""
+    draft = {
+        "sections": {
+            "Key Findings": "The study reported a 99% increase in lifespan.",
+        },
+        "source_bundle": [
+            {"excerpt": "Mice treated with rapamycin showed marginal lifespan increase."},
+        ]
+    }
+    score = quantitative_fidelity(draft, GOLD_TOPIC)
+    assert score == 0.0, f"Expected 0.0, got {score}"
+
+
+def test_quantitative_fidelity_no_numbers():
+    """No numeric claims returns 1.0 (no false positives)."""
+    draft = {
+        "sections": {
+            "Key Findings": "The evidence supports benefit.",
+        },
+        "source_bundle": []
+    }
+    score = quantitative_fidelity(draft, GOLD_TOPIC)
+    assert score == 1.0, f"Expected 1.0 for no numbers, got {score}"
+
+
+def test_composite_score_calculation():
+    """Composite equals weighted sum of 4 components."""
+    draft = {
+        "source_bundle": [
+            {"doi": "10.1038/s41586-021-xxxxx", "excerpt": "11% increase"},
+        ],
+        "sections": {
+            "Key Findings": "Evidence supports benefit. 11% increase in lifespan.",
+            "Conclusion": "Positive effects observed with caution.",
+            "Limitations": "Heterogeneous dosing regimens.",
+        }
+    }
+    gold = GOLD_TOPIC
+    so = study_overlap(draft, gold)
+    da = direction_agreement(draft, gold)
+    lo = limitation_overlap(draft, gold)
+    qf = quantitative_fidelity(draft, gold)
+    expected = 0.35 * so + 0.30 * qf + 0.20 * da + 0.15 * lo
+    actual = composite_score(draft, gold)
+    assert abs(actual - expected) < 0.001, f"Composite mismatch: {actual} vs {expected}"
+
+
+def test_bad_fixture_scores_low():
+    """The deliberately bad fixture should score <= 0.3."""
+    import json
+    import os
+    fixture_path = os.path.join(
+        os.path.dirname(__file__), "golden", "bad_fixtures", "insufficient_draft.json"
+    )
+    with open(fixture_path) as f:
+        bad_draft = json.load(f)
+    score = composite_score(bad_draft, GOLD_TOPIC)
+    assert score <= 0.3, f"Bad fixture should score <= 0.3, got {score}"
+
+
+def test_good_fixture_scores_high():
+    """A deliberately good fixture should score >= 0.6."""
+    good_draft = {
+        "source_bundle": [
+            {"doi": "10.1038/s41586-021-xxxxx", "title": "Study A"},
+            {"doi": "10.1016/j.cell.2022-xxxxx", "title": "Study B"},
+            {"doi": "10.1111/acel.13492", "title": "Study C"},
+        ],
+        "sections": {
+            "Key Findings": "The evidence supports rapamycin benefit for healthspan, though data is limited and preliminary. Studies show a directional benefit with heterogeneous dosing regimens across trials.",
+            "Conclusion": "Rapamycin shows positive effects with caveats due to limited long-term human safety data.",
+            "Limitations": "Heterogeneous dosing regimens across trials. Limited long-term human safety data. Biomarker endpoints, not clinical outcomes.",
+        }
+    }
+    score = composite_score(good_draft, GOLD_TOPIC)
+    assert score >= 0.6, f"Good fixture should score >= 0.6, got {score}"
+
+
+def test_schema_validator_gold_topic():
+    """Schema validator correctly validates a gold topic."""
+    from tests.golden.schema import validate_gold_topic
+    errors = validate_gold_topic(GOLD_TOPIC)
+    assert errors == [], f"Valid gold topic should have no errors: {errors}"
+
+
+def test_schema_validator_missing_fields():
+    """Schema validator catches missing required fields."""
+    from tests.golden.schema import validate_gold_topic
+    invalid = {"topic": "test"}
+    errors = validate_gold_topic(invalid)
+    assert len(errors) > 0, "Missing fields should produce errors"
+
+
+def test_schema_validator_invalid_conclusion_direction():
+    """Schema validator catches invalid conclusion_direction."""
+    from tests.golden.schema import validate_gold_topic
+    bad_topic = dict(GOLD_TOPIC)
+    bad_topic["conclusion_direction"] = "not_a_direction"
+    errors = validate_gold_topic(bad_topic)
+    assert any("conclusion_direction" in e for e in errors)
+
+
+def test_schema_validator_adversarial():
+    """Schema validator validates adversarial topics."""
+    from tests.golden.schema import validate_adversarial
+    adv = {
+        "topic": "rapamcyin heathspan",
+        "domain": "longevity",
+        "tier": "adversarial",
+        "failure_mode": "typo_drift",
+        "last_validated": "2026-04-21",
+    }
+    errors = validate_adversarial(adv)
+    assert errors == [], f"Valid adversarial should have no errors: {errors}"
+
+
+def test_schema_validator_breadth():
+    """Schema validator validates breadth topics."""
+    from tests.golden.schema import validate_breadth
+    br = {
+        "topic": "omega-3 cardiovascular outcomes",
+        "domain": "longevity",
+        "tier": "breadth",
+        "last_validated": "2026-04-21",
+    }
+    errors = validate_breadth(br)
+    assert errors == [], f"Valid breadth should have no errors: {errors}"

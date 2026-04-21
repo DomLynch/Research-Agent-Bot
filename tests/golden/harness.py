@@ -76,6 +76,209 @@ def _has_injection(text: str) -> bool:
 
 
 # ---------------------------------------------------------------------------
+# Scoring functions for 3-tier eval corpus
+# ---------------------------------------------------------------------------
+
+_POSITIVE_KW = {"supports", "effective", "improved", "reduces", "increases"}
+_NEGATIVE_PHRASES = {"no evidence", "null result", "null findings", "no benefit", "no improvement", "no advantage", "ineffective", "harmful"}
+_CAVEAT_KW = {"limited", "preliminary", "caution", "mixed", "heterogeneous", "inconsistent", "uncertain"}
+
+
+def _normalize_doi(doi: str) -> str:
+    """Strip https://doi.org/ prefix and lowercase."""
+    doi = doi.lower()
+    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
+        if doi.startswith(prefix):
+            doi = doi[len(prefix):]
+    return doi.strip()
+
+
+def _classify_direction(text: str) -> str:
+    """Classify text direction into one of 6 conclusion_direction values."""
+    import re
+    t = text.lower()
+    words = set(re.sub(r"[^\w\s]", "", w) for w in t.split())
+    pos_count = sum(1 for kw in _POSITIVE_KW if kw in words)
+    neg_count = sum(1 for phrase in _NEGATIVE_PHRASES if phrase in t)
+    caveat_count = sum(1 for kw in _CAVEAT_KW if kw in words)
+
+    if pos_count > 0 and neg_count == 0 and caveat_count == 0:
+        return "positive"
+    if pos_count > 0 and caveat_count > 0:
+        return "positive_with_caveats"
+    if neg_count > 0 and pos_count == 0 and caveat_count == 0:
+        return "negative"
+    if neg_count > 0 and caveat_count > 0:
+        return "negative_with_caveats"
+    if pos_count > 0 and neg_count > 0:
+        return "mixed"
+    if caveat_count > 2:
+        return "mixed"
+    return "insufficient_evidence"
+
+
+def _direction_distance(d1: str, d2: str) -> float:
+    """0.0 = same, 0.5 = off-by-one-confidence-level, 1.0 = completely different."""
+    order = [
+        "negative",
+        "negative_with_caveats",
+        "insufficient_evidence",
+        "mixed",
+        "positive_with_caveats",
+        "positive",
+    ]
+    try:
+        i1, i2 = order.index(d1), order.index(d2)
+        diff = abs(i1 - i2)
+        if diff == 0:
+            return 0.0
+        if diff == 1:
+            return 0.5
+        return 1.0
+    except ValueError:
+        return 1.0
+
+
+def study_overlap(draft: dict[str, Any], gold: dict[str, Any]) -> float:
+    """Fraction of gold.included_dois that appear in draft.source_bundle.
+
+    DOIs are normalized (strip https://doi.org/, lowercase) before comparison.
+    Returns float in [0.0, 1.0]. Higher is better.
+    """
+    source_bundle = draft.get("source_bundle", [])
+    draft_dois: set[str] = set()
+    for entry in source_bundle:
+        doi = entry.get("doi") or ""
+        if doi:
+            draft_dois.add(_normalize_doi(doi))
+
+    if not draft_dois:
+        return 0.0
+
+    gold_dois = gold.get("included_dois", [])
+    matched = sum(
+        1 for gd in gold_dois
+        if _normalize_doi(gd) in draft_dois
+    )
+    return matched / len(gold_dois) if gold_dois else 0.0
+
+
+def direction_agreement(draft: dict[str, Any], gold: dict[str, Any]) -> float:
+    """Classify draft Key Findings + Conclusion direction, compare to gold.conclusion_direction.
+
+    Uses deterministic rule-based classifier with positive/negative/caveat keywords.
+    Returns 1.0 if exact match, 0.5 if off-by-one-confidence-level, 0.0 otherwise.
+    """
+    sections = draft.get("sections", {})
+    findings = sections.get("Key Findings", "") or ""
+    conclusion = sections.get("Conclusion", "") or ""
+    combined = f"{findings} {conclusion}"
+
+    draft_dir = _classify_direction(combined)
+    gold_dir = gold.get("conclusion_direction", "insufficient_evidence")
+
+    dist = _direction_distance(draft_dir, gold_dir)
+    return 1.0 - dist
+
+
+def _jaccard_similarity(text1: str, text2: str) -> float:
+    """Word-level similarity: fraction of text2 (gold) words that appear in text1 (draft).
+
+    This is recall-oriented: we care about how many of the gold limitation's
+    words the draft mentions, not how many extra words the draft has.
+    """
+    import re
+    tokens1 = set(re.sub(r"[^\w\s]", "", w) for w in text1.lower().split())
+    tokens2 = set(re.sub(r"[^\w\s]", "", w) for w in text2.lower().split())
+    tokens1.discard("")
+    tokens2.discard("")
+    if not tokens2:
+        return 0.0
+    if not tokens1 and not tokens2:
+        return 0.0
+    overlap = len(tokens1 & tokens2)
+    return overlap / len(tokens2)
+
+
+def limitation_overlap(draft: dict[str, Any], gold: dict[str, Any]) -> float:
+    """Bag-of-word Jaccard between draft Limitations and each gold limitation.
+
+    Returns fraction of gold limitations with Jaccard similarity >= 0.4.
+    Returns float in [0.0, 1.0]. Higher is better.
+    """
+    sections = draft.get("sections", {})
+    draft_limitations = sections.get("Limitations", "") or ""
+
+    gold_limitations = gold.get("limitations", [])
+    if not gold_limitations:
+        return 0.0
+
+    matched = sum(
+        1 for gl in gold_limitations
+        if _jaccard_similarity(draft_limitations, gl) >= 0.4
+    )
+    return matched / len(gold_limitations)
+
+
+_NUMERIC_CLAIM_RE = re.compile(
+    r"\d+(?:\.\d+)?\s*(?:%|ppm|mg|fold|x|years?|months?|days?|patients?|subjects?|participants?|kg|mg/kg|ug|L|mL|nM|uM|uL|mmHg|bpm)"
+)
+
+
+def _extract_numbers(text: str) -> set[str]:
+    """Extract all numeric claim patterns from text as strings."""
+    return set(_NUMERIC_CLAIM_RE.findall(text.lower()))
+
+
+def _evidence_contains_number(evidence_excerpts: list[str], number_str: str) -> bool:
+    """Check if any evidence excerpt contains the given number string."""
+    for excerpt in evidence_excerpts:
+        if number_str in excerpt.lower():
+            return True
+    return False
+
+
+def quantitative_fidelity(draft: dict[str, Any], gold: dict[str, Any]) -> float:
+    """Extract numeric claims from draft Key Findings, verify against evidence.
+
+    Regex extracts numbers with units. Each extracted number must appear in
+    at least one evidence excerpt from the source bundle. Returns fraction
+    of numeric claims that are supported. Returns float in [0.0, 1.0].
+    """
+    sections = draft.get("sections", {})
+    findings = sections.get("Key Findings", "") or ""
+
+    numeric_claims = _extract_numbers(findings)
+    if not numeric_claims:
+        return 1.0
+
+    source_bundle = draft.get("source_bundle", [])
+    evidence_excerpts = [
+        str(e.get("excerpt", "")) for e in source_bundle
+    ]
+
+    supported = sum(
+        1 for num in numeric_claims
+        if _evidence_contains_number(evidence_excerpts, num)
+    )
+    return supported / len(numeric_claims)
+
+
+def composite_score(draft: dict[str, Any], gold: dict[str, Any]) -> float:
+    """Weighted composite of 4 scoring functions.
+
+    Weights: study_overlap=0.35, quantitative_fidelity=0.30,
+             direction_agreement=0.20, limitation_overlap=0.15
+    """
+    return (
+        0.35 * study_overlap(draft, gold)
+        + 0.30 * quantitative_fidelity(draft, gold)
+        + 0.20 * direction_agreement(draft, gold)
+        + 0.15 * limitation_overlap(draft, gold)
+    )
+
+
+# ---------------------------------------------------------------------------
 # Step 6: Judge calibration
 # ---------------------------------------------------------------------------
 
