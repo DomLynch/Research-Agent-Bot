@@ -23,7 +23,7 @@ Deterministic planner + bounded public literature queries + MiMo draft pass + Re
 - Golden eval harness now has 3-tier eval corpus (gold + adversarial + breadth) with CI gating.
 
 ## Next Validation Step
-Run `pytest tests/test_golden.py --gold-smoke` to verify scoring functions work against real bot output.
+All hardening steps complete. Ready for main merge and real-world QA.
 
 ## Hardening Status
 | Step | What | Status |
@@ -33,13 +33,13 @@ Run `pytest tests/test_golden.py --gold-smoke` to verify scoring functions work 
 | 3 | .env.example + last_validated in harness | DONE |
 | 4 | Golden harness upgrade (5 metrics) | DONE |
 | 5 | Bundle quality gate, fail-closed | DONE |
-| 6 | Judge calibration round | DONE (6/6 pass, all kappas ≥ 0.60) |
+| 6 | Judge calibration round | DONE (6/6 pass, all kappas ≥ 0.60; readability rubric rewritten with subjective gate) |
 | 7 | Evidence cards | DONE (build_card() returns 7 fields: citation, journal, quality_signal, study_type, population, intervention, outcomes; heuristic regex extraction) |
 | 8 | Adversarial break-it pack | DONE (44 tests across 8 test classes) |
 | 9 | Topic-specific negative filters | DONE (DOMAIN_NEGATIVE_FILTERS, _should_filter_entry(); 24 tests) |
 | 10 | Conditional source expansion (ClinicalTrials.gov) | DONE (ClinicalTrialsClient; interventional/observational entries now accepted by drafter and harness; conditional in cli.py for oncology/longevity domains; 17 tests) |
 | 11 | bioRxiv/medRxiv, ChEMBL | DEFERRED |
-| 12 | Weekly report script | DONE (scripts/weekly_report.py; 5 tests) |
+| 12 | Weekly report script | DONE (scripts/weekly_report.py; 7 tests including gate_blocked + submission_breakdown) |
 | 13 | 3-tier eval corpus (gold + adversarial + breadth) | DONE (10 gold topics, 30 adversarial, 60 breadth; 4 scoring functions; CI workflow) |
 
 ## Eval Corpus (Step 13)
@@ -51,6 +51,7 @@ Run `pytest tests/test_golden.py --gold-smoke` to verify scoring functions work 
 - **Bulk generation**: `scripts/generate_eval_corpus.py --adversarial 30 --breadth 60`
 
 ## Test Coverage
-- Total: 186 collected, 180 passed, 6 skipped (judge calibration — needs MIMO_API_KEY). VPS: 186 passed.
-- Break-it pack (44 tests) now collected automatically via `tests/golden` in testpaths
+- VPS (2026-04-21): 212 passed in ~28s
+- MacBook: 206 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
+- All branches on `eval-corpus`; main has not been updated
