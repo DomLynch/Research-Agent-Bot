@@ -58,9 +58,9 @@ def _report(runs: list[dict]) -> str:
         "",
         f"- Errors: {len(errors)}/{total}",
         f"- Submissions: {len(submissions)}/{total}",
-        f"- Accept rate: {len(submissions) / total * 100:.0f}%"
+        f"- Submission rate: {len(submissions) / total * 100:.0f}%"
         if total
-        else "- Accept rate: N/A",
+        else "- Submission rate: N/A",
         f"- Avg cost/run: ${sum(costs) / total:.4f}",
         f"- Total cost: ${sum(costs):.4f}",
         f"- Avg evidence selected: {sum(evidence_counts) / total:.1f}",

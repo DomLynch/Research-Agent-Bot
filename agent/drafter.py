@@ -143,11 +143,20 @@ class RapidEvidenceDrafter:
             "Return exactly these JSON keys, each a plain string: "
             "question, search_summary, landscape, findings, limitations, gaps_identified, conclusion."
         )
-        prompt_lines = [
-            f"{i}. type={e.get('evidence_type', 'unknown')}; year={e.get('year', 'unknown')}; "
-            f"title={_clean(e.get('title'), limit=220)}; excerpt={_clean(e.get('excerpt'), limit=320)}"
-            for i, e in enumerate(selected, start=1)
-        ]
+        prompt_lines = []
+        for i, e in enumerate(selected, start=1):
+            card = build_card(e)
+            parts = [f"type={card.get('study_type', 'unknown')}"]
+            parts.append(f"year={e.get('year', 'unknown')}")
+            parts.append(f"title={_clean(e.get('title'), limit=220)}")
+            parts.append(f"excerpt={_clean(e.get('excerpt'), limit=320)}")
+            if card.get("population"):
+                parts.append(f"pop={card['population']}")
+            if card.get("intervention"):
+                parts.append(f"intervention={card['intervention']}")
+            if card.get("outcomes"):
+                parts.append(f"outcomes={card['outcomes']}")
+            prompt_lines.append(f"{i}. {'; '.join(parts)}")
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
             user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: 'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy?'\n\nEvidence:\n" + "\n".join(prompt_lines) or "No evidence receipts retained.",
