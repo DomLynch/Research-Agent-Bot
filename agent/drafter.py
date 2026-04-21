@@ -239,6 +239,7 @@ class RapidEvidenceDrafter:
         direct_ct = sum(1 for e in source_bundle if e.get("directness") == "direct")
         indirect_ct = sum(1 for e in source_bundle if e.get("directness") == "indirect")
         mechanistic_ct = sum(1 for e in source_bundle if e.get("directness") == "mechanistic")
+        full_text_ct = sum(1 for e in source_bundle if e.get("card", {}).get("full_text_found"))
 
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
@@ -271,6 +272,8 @@ class RapidEvidenceDrafter:
                 parts.append(f"outcomes={card['outcomes']}")
             if card.get("context"):
                 parts.append(f"context={card['context']}")
+            if card.get("full_text_found"):
+                parts.append(f"fulltext={card.get('full_text_source') or 'yes'}")
             prompt_lines.append(f"{i}. {'; '.join(parts)}")
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
@@ -322,7 +325,7 @@ class RapidEvidenceDrafter:
                 f"This draft synthesizes public-index evidence on {topic} for the {domain_slug} domain. "
                 f"The run retained {len(source_bundle)} evidence receipts spanning {min(years) if years else 'unknown'} to {max(years) if years else 'unknown'}, "
                 f"with {rc} review-like items, {pc} primary-study items, {direct_ct} direct items, "
-                f"{indirect_ct} indirect items, and {mechanistic_ct} mechanistic items.",
+                f"{indirect_ct} indirect items, {mechanistic_ct} mechanistic items, and {full_text_ct} full-text-backed items.",
                 limit=1200,
             ),
             "domain_slug": _clean(domain_slug, limit=48).lower() or "general",

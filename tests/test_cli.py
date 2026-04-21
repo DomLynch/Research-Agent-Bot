@@ -139,10 +139,28 @@ class OldHumanSource:
         ]
 
 
+class StubFullTextFetcher:
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
+    def enrich_entries(self, entries: list[dict], *, limit: int = 12) -> tuple[list[dict], dict]:
+        enriched = []
+        found = 0
+        for i, entry in enumerate(entries):
+            item = dict(entry)
+            if i < 2:
+                item["full_text"] = "Methods Results older adults rapamycin safety outcomes."
+                item["full_text_source"] = "europepmc"
+                found += 1
+            enriched.append(item)
+        return enriched, {"attempted": min(limit, len(entries)), "found": found, "source_counts": {"europepmc": found} if found else {}}
+
+
 @pytest.fixture(autouse=True)
 def _stub_new_source_clients(monkeypatch):
     monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
     monkeypatch.setattr(cli, "ChEMBLClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "FullTextFetcher", StubFullTextFetcher)
 
 
 def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, monkeypatch) -> None:
@@ -161,6 +179,7 @@ def test_run_agent_tolerates_source_errors_and_writes_markdown(tmp_path: Path, m
     assert "excluded during scope/domain filtering" in run["markdown"]
     assert "excluded during final bundle assembly" in run["markdown"]
     assert "Exclusion reasons:" in run["markdown"]
+    assert "Full text:" in run["markdown"]
     assert run["protocol_file"].endswith(".protocol.json")
     assert (tmp_path / "protocols" / run["protocol_file"]).exists()
     assert (tmp_path / run["markdown_file"]).exists()
@@ -185,6 +204,7 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
     assert run["evidence_retrieved"] >= 3
     assert run["evidence_selected"] >= 1
     assert run["source_telemetry"]["retrieved"]["pubmed"] >= 1
+    assert run["source_telemetry"]["full_text"]["found"] == 2
     for item in run["source_bundle"]:
         assert "evidence_type" in item
         assert "year" in item
@@ -311,6 +331,7 @@ def test_methods_final_bundle_count_matches_source_bundle(tmp_path: Path, monkey
     final_bundle = len(run["source_bundle"])
     assert run["bundle_stages"]["final_bundle"] == final_bundle
     assert f"{final_bundle} included in the final source bundle" in run["markdown"]
+    assert "Full text: 2 of" in run["markdown"]
 
 
 def test_source_routing_helpers() -> None:

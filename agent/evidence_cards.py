@@ -154,7 +154,10 @@ def _grade_lite(entry: dict[str, Any]) -> str:
 
 def build_card(entry: dict[str, Any]) -> dict[str, Any]:
     """Build an evidence card from a source entry."""
-    text = f"{entry.get('title', '')} {entry.get('excerpt', '')}"
+    text = " ".join(
+        str(entry.get(key, "") or "")
+        for key in ("title", "excerpt", "full_text")
+    )
     return {
         "citation": _format_citation(entry),
         "journal": entry.get("journal") or "",
@@ -165,4 +168,6 @@ def build_card(entry: dict[str, Any]) -> dict[str, Any]:
         "population": _extract_regex(text, _POP_RE, max_matches=2),
         "intervention": _extract_regex(text, _INTERVENTION_RE, max_matches=2),
         "outcomes": _extract_regex(text, _OUTCOMES_RE, max_matches=2),
+        "full_text_source": entry.get("full_text_source") or "",
+        "full_text_found": bool(entry.get("full_text")),
     }

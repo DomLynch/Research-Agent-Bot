@@ -9,6 +9,7 @@ from typing import Any
 
 from agent.drafter import RapidEvidenceDrafter
 from agent.entity_resolver import resolve_topic, topic_match_ratio
+from agent.fulltext import FullTextFetcher, entry_identity
 from agent.planner import QueryPlanner
 from agent.provider import MimoClient
 from agent.sources.chembl import ChEMBLClient
@@ -167,6 +168,13 @@ def _exclusion_reasons(scope_signals: list[str], run_log: dict[str, Any]) -> str
 def _build_methods_block(run_log: dict[str, Any], artifact: dict[str, Any], source_names: list[str]) -> str:
     stages = run_log.get("bundle_stages", {})
     scope_signals = run_log.get("scope_signals", [])
+    full_text = run_log.get("full_text") or {}
+    full_text_line = ""
+    if full_text.get("attempted", 0):
+        full_text_line = (
+            f" Full text: {full_text.get('found', 0)} of {full_text.get('attempted', 0)} "
+            f"eligible literature records fetched via {', '.join((full_text.get('source_counts') or {}).keys()) or 'cache/Europe PMC'}."
+        )
     return (
         f"Search date: {run_log['started_at']}. Databases/sources searched: {', '.join(source_names)}. "
         f"Queries: {' | '.join(run_log.get('queries', []))}. "
@@ -176,7 +184,7 @@ def _build_methods_block(run_log: dict[str, Any], artifact: dict[str, Any], sour
         f"{stages.get('excluded_after_filter', 0)} excluded during final bundle assembly, "
         f"{stages.get('final_bundle', 0)} included in the final source bundle. "
         f"Exclusion reasons: {_exclusion_reasons(scope_signals, run_log)}. "
-        f"Scope signals: {', '.join(scope_signals) or 'none'}."
+        f"Scope signals: {', '.join(scope_signals) or 'none'}.{full_text_line}"
     )
 
 
@@ -330,7 +338,12 @@ def run_agent(
     retrieved_n = len(evidence)
     all_evidence = plan.filter_evidence(list(evidence))
     evidence = plan.filter_evidence(evidence)
+    full_text_fetcher = FullTextFetcher(cache_dir=Path(run_dir) / "fulltext-cache")
+    all_evidence, full_text_stats = full_text_fetcher.enrich_entries(all_evidence, limit=12)
+    enriched_lookup = {entry_identity(item): item for item in all_evidence if entry_identity(item)}
+    evidence = [dict(enriched_lookup.get(entry_identity(item), item)) for item in evidence]
     run_log["evidence_selected"] = len(evidence)
+    run_log["full_text"] = full_text_stats
     topic_ratio = topic_match_ratio(
         evidence[:20],
         canonical_term=str(entity.get("canonical_term") or resolved_topic),
@@ -385,6 +398,7 @@ def run_agent(
             "post_filter": _count_by(evidence, "source_type"),
             "final_bundle": _count_by(artifact.get("source_bundle", []), "source_type"),
             "final_directness": _count_by(artifact.get("source_bundle", []), "directness"),
+            "full_text": full_text_stats,
         }
         if not artifact.get("error"):
             markdown = _payload_to_markdown(artifact, topic=resolved_topic, criteria=criteria)

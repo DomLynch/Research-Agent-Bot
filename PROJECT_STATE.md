@@ -14,8 +14,8 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~1,700 LOC (raised from 1,500 — see DECISIONS.md 2026-04-21 "Phase 1 credibility layer").
-  Hard ceiling: 2,000 LOC. Actual: ~1,937 LOC.
+- Runtime target: ~2,100 LOC (raised from 1,700 — see DECISIONS.md 2026-04-21 "Add Tier 1 full-text ingestion").
+  Hard ceiling: 2,500 LOC. Actual: ~2,401 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
@@ -30,9 +30,10 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Quantitative fidelity is now honestly measured and still weak on the gold baseline; drafter must earn future quality gains with supported numbers.
 - Directness labeling is still heuristic. The tightened classifier now blocks obvious indirect-only longevity bundles, but retrieval quality still dominates final bundle quality.
 - Topic/entity resolution is now ChEMBL-first plus alias/fuzzy fallback. It still needs richer biomedical vocabularies before Tier 1 full-text work.
+- Tier 1 full-text coverage is Europe PMC-only and DOI/PMID-driven. Closed-access PDFs, figures/tables, and non-PMC papers still fall back to abstract-only behavior.
 
 ## Next Validation Step
-Deploy the Tier 0 entity layer, verify typo correction (`evrolimus -> everolimus`), and confirm low topic-match bundles fail before drafting on live-like runs.
+Run one live literature topic with open PMC coverage and confirm the run log reports non-zero `full_text.found`, the Methods block surfaces the full-text count, and evidence cards extract population/intervention/outcomes from full text rather than abstract-only snippets.
 
 ## Hardening Status
 | Step | What | Status |
@@ -60,6 +61,7 @@ Deploy the Tier 0 entity layer, verify typo correction (`evrolimus -> everolimus
 - **Submit trust gate:** anti-aging / longevity runs with indirect-only bundles return `indirect_only_bundle` instead of posting to Researka.
 - **Telemetry:** run logs now include `source_telemetry` with per-source retrieved, post-filter, final-bundle, and final-directness counts.
 - **Tier 0 entity layer:** compound-like topics now resolve to canonical names before retrieval, ChEMBL returns `[]` on no real match, and low topic-match bundles fail before draft generation.
+- **Tier 1 full-text ingestion:** literature entries now attempt Europe PMC full-text fetch with cache-by-identity, run logs expose `full_text` telemetry, Methods surfaces full-text coverage, and evidence cards can extract fields from full-text text when available.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 10 gold + 30 adversarial + 60 breadth
@@ -72,7 +74,7 @@ Deploy the Tier 0 entity layer, verify typo correction (`evrolimus -> everolimus
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 235 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 239 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
 - Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

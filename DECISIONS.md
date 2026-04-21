@@ -1,5 +1,22 @@
 # DECISION JOURNAL
 
+## 2026-04-21 — Add Tier 1 full-text ingestion as a bounded Europe PMC slice
+**Decision:** Add a minimal full-text layer now instead of waiting for a larger parser stack. The slice is: Europe PMC lookup by DOI/PMID, XML fetch when PMCID exists, cache by entry identity, surface coverage in run logs/Methods, and let evidence cards read from full text when available.
+**Why:** Abstract-only retrieval is a structural ceiling. But jumping straight to GROBID/CORE/Unpaywall/figure extraction would blow the runtime and verification budget in one move. Europe PMC is the cheapest biomedical full-text source that actually changes what the bot can read today.
+**What shipped:**
+- New `agent/fulltext.py` with `FullTextFetcher` and `entry_identity()`.
+- Cache-first fetch path: DOI or PMID -> Europe PMC search -> `fullTextXML` -> parsed body + section snippets.
+- `agent/cli.py` now enriches filtered evidence with full text before drafting, records `full_text` telemetry, and adds full-text coverage to the PRISMA-style Methods block.
+- `agent/evidence_cards.py` now reads `full_text` in addition to title/excerpt and exposes `full_text_found` + `full_text_source`.
+- Drafter prompt lines and abstract now acknowledge full-text-backed items.
+**Tradeoff accepted:** This is not full endgame ingestion. Closed-access papers, table/figure extraction, and non-PMC full text are still out of scope. The goal is to move from abstract-only to some real full-text grounding without destabilizing V0.
+**Budget impact:** Runtime rose above the previous 2,000-line ceiling. Raise the working target to ~2,100 LOC and hard ceiling to 2,500 until Tier 2 extraction or a deletion pass earns that code back.
+**Alternatives rejected:**
+- Wait for a complete multi-source full-text stack (Unpaywall + CORE + GROBID) — rejected, too much surface area for one sprint.
+- Fetch full text for every retrieved record — rejected, too expensive and noisy; capped to the top filtered literature entries.
+- Keep full-text data hidden in cache only — rejected, if the artifact cannot prove it used full text, the credibility gain is fake.
+**Revisit if:** Europe PMC coverage stays near zero on the core gold topics or the next bottleneck becomes parser quality rather than missing full text. At that point, Tier 1 must expand to broader OA/full-PDF ingestion.
+
 ## 2026-04-21 — Add Tier 0 entity resolution before full-text or meta-analysis work
 **Decision:** Insert a topic/entity foundation layer ahead of retrieval: canonicalize compound-like topics before planning, make ChEMBL return `[]` on zero real match, and block drafting when the filtered evidence barely matches the resolved topic.
 **Why:** The `evrolimus` run proved the upstream failure mode. Without an entity layer, the bot can write a polished negative memo over typo-driven garbage. Full-text, extraction, meta-analysis, and adversarial review are all wasted if the topic string is wrong at the top of the pipeline.

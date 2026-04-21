@@ -185,3 +185,20 @@ def test_build_card_assigns_low_grade_to_mechanism_context():
     )
     assert card["evidence_grade"] == "L"
     assert card["context"] == "oncology"
+
+
+def test_build_card_uses_full_text_for_extraction():
+    card = build_card(
+        {
+            "title": "Minimal abstract title",
+            "excerpt": "",
+            "full_text": "Methods: older adults received rapamycin intervention. Outcomes included frailty and mortality.",
+            "evidence_type": "primary",
+            "full_text_source": "europepmc",
+        }
+    )
+    assert "older adults" in card["population"]
+    assert "rapamycin" in card["intervention"]
+    assert "frailty" in card["outcomes"]
+    assert card["full_text_found"] is True
+    assert card["full_text_source"] == "europepmc"
