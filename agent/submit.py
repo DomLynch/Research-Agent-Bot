@@ -28,21 +28,14 @@ _INJECTION_PATTERNS = (
 )
 _INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
 
-_TONE_POSITIVE = {"promising", "robust", "significant", "effective", "novel", "validated", "strong"}
-_TONE_NEGATIVE = {"limited", "small", "inconclusive", "unclear", "weak", "insufficient", "heterogeneous"}
+_STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 
 
-def _tone_rating(text: str) -> float:
-    lower = text.lower()
-    pos = sum(1 for w in _TONE_POSITIVE if w in lower)
-    neg = sum(1 for w in _TONE_NEGATIVE if w in lower)
-    total = pos + neg
-    if total == 0:
-        return 0.5
-    return round(pos / total, 2)
+def _topic_tokens(title: str) -> list[str]:
+    return [t for t in re.sub(r"[^a-z0-9 ]", " ", title.lower()).split() if t not in _STOPWORDS and len(t) > 2]
 
 
-def _quality_gate(artifact: dict[str, Any]) -> str | None:
+def _quality_gate(artifact: dict[str, Any], *, current_year: int | None = None) -> str | None:
     bundle = artifact.get("source_bundle", [])
     if len(bundle) < 12:
         return f"bundle_too_small:{len(bundle)}"
@@ -52,15 +45,34 @@ def _quality_gate(artifact: dict[str, Any]) -> str | None:
         if title and _INJECTION_RE.search(title):
             return "injection_detected"
 
-    titles = [str(e.get("title") or "") for e in bundle]
-    titled_pct = sum(1 for t in titles if t.strip()) / len(titles)
-    if titled_pct < 0.60:
-        return f"low_title_precision:{titled_pct:.2f}"
+    # topic_precision: % of bundle titles sharing >=1 token with artifact title
+    tokens = _topic_tokens(artifact.get("title", ""))
+    if tokens:
+        hits = sum(
+            1 for e in bundle
+            if any(t in str(e.get("title") or "").lower() for t in tokens)
+        )
+        topic_prec = hits / len(bundle)
+        if topic_prec < 0.40:
+            return f"low_topic_precision:{topic_prec:.2f}"
 
-    tones = [_tone_rating(t) for t in titles]
-    avg_tone = sum(tones) / len(tones)
-    if avg_tone < 0.70:
-        return f"low_tone:{avg_tone:.2f}"
+    # recent_ratio: % of sources from last 5 years
+    if current_year is None:
+        from datetime import datetime, timezone
+        current_year = datetime.now(timezone.utc).year
+    recent_threshold = current_year - 5
+    recent = sum(
+        1 for e in bundle
+        if isinstance(e.get("year"), int) and e["year"] >= recent_threshold
+    )
+    recent_ratio = recent / len(bundle)
+    if recent_ratio < 0.50:
+        return f"low_recent_ratio:{recent_ratio:.2f}"
+
+    # source_mix: at least 1 review-type source
+    reviews = sum(1 for e in bundle if e.get("evidence_type") == "review")
+    if reviews < 1:
+        return "no_review_sources"
 
     return None
 

@@ -12,12 +12,11 @@ Metrics:
     recall     = % of topics that meet minimum source count (12+)
     breadth    = % of golden topics successfully covered
     cleanliness = % of sources without injection markers
-    tone       = keyword-based rating (avg tone_rating across bundle)
 
 Thresholds:
-    precision  >= 0.70
+    precision   >= 0.70
     cleanliness >= 0.95
-    recall, breadth, tone >= 0.80
+    recall, breadth >= 0.80
 
 For CI, use tests/test_golden.py which validates the harness logic with mock data.
 """
@@ -166,7 +165,6 @@ def run_eval(per_source_limit: int = 25) -> dict:
             and avg_cleanliness >= 0.95
             and recall >= 0.80
             and breadth >= 0.80
-            and avg_tone >= 0.80
         ),
     }
 

@@ -33,9 +33,30 @@ _GENERIC_FALLBACK = "This section draws on {nr} retained evidence receipts ({rv}
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"], "senolytic": ["senolytics"]}
 
+_INJECTION_PATTERNS = (
+    r"ignore previous instructions",
+    r"you are now",
+    r"system prompt",
+    r"reveal your",
+    r"act as",
+    r"do not follow",
+    r"new instructions",
+    r"override",
+    r"jailbreak",
+    r"prompt injection",
+    r"disregard.*above",
+    r"<\|im_start\|>",
+    r"<\|im_end\|>",
+    r"BEGINCHAT",
+    r"ENDCHAT",
+)
+_INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
+
 
 def _clean(value: Any, limit: int = 2000) -> str:
-    return re.sub(r"\s+", " ", str(value or "")).strip()[:limit]
+    raw = str(value or "")
+    raw = _INJECTION_RE.sub("[REDACTED]", raw)
+    return re.sub(r"\s+", " ", raw).strip()[:limit]
 
 
 def _dedupe(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:

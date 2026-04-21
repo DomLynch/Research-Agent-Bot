@@ -3,9 +3,11 @@ import httpx
 from agent.submit import submit, check_decision, _fingerprint, _quality_gate
 
 
-def _make_bundle(n: int = 12) -> list[dict]:
+def _make_bundle(n: int = 12, topic: str = "rapamycin aging review") -> list[dict]:
+    tokens = topic.split()
+    prefix = tokens[0]
     return [
-        {"title": f"Significant effect of intervention {i} on robust aging outcomes", "evidence_type": "review" if i % 3 == 0 else "primary", "year": 2020 + (i % 5), "doi": f"10.1/test{i}"}
+        {"title": f"{prefix} {tokens[i % len(tokens)]} effects on model {i}", "evidence_type": "review" if i % 3 == 0 else "primary", "year": 2020 + (i % 5), "doi": f"10.1/test{i}"}
         for i in range(n)
     ]
 
@@ -40,7 +42,7 @@ class MockResearka:
 def test_submit_new_submission(tmp_path):
     mock = MockResearka()
     artifact = {
-        "title": "Rapid Evidence Synthesis: test topic",
+        "title": "Rapid Evidence Synthesis: rapamycin",
         "abstract": "Test abstract",
         "sections": {"Research Question": "Test question", "Key Findings": "Test findings"},
         "source_bundle": _make_bundle(12),
@@ -121,7 +123,7 @@ def test_check_decision_endpoint():
 
 def test_submit_with_run_dir_dedup(tmp_path):
     artifact = {
-        "title": "Rapid Evidence Synthesis: dedup test",
+        "title": "Rapid Evidence Synthesis: rapamycin",
         "abstract": "Test",
         "sections": {"Research Question": "Q", "Key Findings": "F"},
         "source_bundle": _make_bundle(12),
@@ -149,10 +151,10 @@ def test_submit_returns_queued_status():
     """Verify submit fires POST and returns queued, not a full decision."""
     mock = MockResearka()
     artifact = {
-        "title": "Rapid Evidence Synthesis: queued test",
+        "title": "Rapid Evidence Synthesis: rapamycin queued",
         "abstract": "Test",
         "sections": {"Research Question": "Q", "Key Findings": "F"},
-        "source_bundle": [{"title": "P1", "evidence_type": "review", "year": 2024, "doi": "10.1/q"}],
+        "source_bundle": [{"title": "Rapamycin effects on queued model", "evidence_type": "review", "year": 2024, "doi": "10.1/q"}],
         "domain_slug": "longevity",
     }
     # submit() calls httpx.post directly — verify it returns queued
@@ -202,7 +204,7 @@ def test_submit_and_check_decision_end_to_end(tmp_path, monkeypatch):
     monkeypatch.setenv("MIMO_API_KEY", "test-key")
 
     artifact = {
-        "title": "Rapid Evidence Synthesis: integration test",
+        "title": "Rapid Evidence Synthesis: rapamycin integration test",
         "abstract": "Test abstract",
         "sections": {"Research Question": "Q", "Key Findings": "F"},
         "source_bundle": _make_bundle(12),
@@ -269,27 +271,45 @@ def test_quality_gate_blocks_injection():
     assert reason == "injection_detected"
 
 
-def test_quality_gate_blocks_low_title_precision():
-    bad = _make_bundle(12)
-    for i in range(8):
-        bad[i]["title"] = ""
-    reason = _quality_gate({"source_bundle": bad})
+def test_quality_gate_blocks_off_topic_bundle():
+    """12 non-empty but clearly off-topic titles → fails topic_precision."""
+    off_topic = [
+        {"title": f"cooking recipe {i}", "evidence_type": "review" if i % 3 == 0 else "primary", "year": 2020 + (i % 5), "doi": f"10.1/cook{i}"}
+        for i in range(12)
+    ]
+    artifact = {"title": "rapamycin and aging review", "source_bundle": off_topic}
+    reason = _quality_gate(artifact)
     assert reason is not None
-    assert "low_title_precision" in reason
+    assert "low_topic_precision" in reason
 
 
-def test_quality_gate_blocks_low_tone():
-    bad = _make_bundle(12)
-    for e in bad:
-        e["title"] = "limited small inconclusive unclear weak insufficient heterogeneous study"
-    reason = _quality_gate({"source_bundle": bad})
+def test_quality_gate_blocks_old_sources():
+    """All sources from 2010-2014 → fails recent_ratio."""
+    old = [
+        {"title": f"rapamycin aging effects {i}", "evidence_type": "review" if i % 3 == 0 else "primary", "year": 2010 + (i % 5), "doi": f"10.1/old{i}"}
+        for i in range(12)
+    ]
+    artifact = {"title": "rapamycin and aging review", "source_bundle": old}
+    reason = _quality_gate(artifact, current_year=2026)
     assert reason is not None
-    assert "low_tone" in reason
+    assert "low_recent_ratio" in reason
+
+
+def test_quality_gate_blocks_no_review_sources():
+    """All primary, zero reviews → fails source_mix."""
+    primary_only = [
+        {"title": f"rapamycin aging study {i}", "evidence_type": "primary", "year": 2020 + (i % 5), "doi": f"10.1/prim{i}"}
+        for i in range(12)
+    ]
+    artifact = {"title": "rapamycin and aging review", "source_bundle": primary_only}
+    reason = _quality_gate(artifact, current_year=2026)
+    assert reason is not None
+    assert "no_review_sources" in reason
 
 
 def test_quality_gate_passes_clean_bundle():
-    artifact = {"source_bundle": _make_bundle(12)}
-    assert _quality_gate(artifact) is None
+    artifact = {"title": "rapamycin and aging review", "source_bundle": _make_bundle(12)}
+    assert _quality_gate(artifact, current_year=2026) is None
 
 
 def test_submit_gate_blocked():
