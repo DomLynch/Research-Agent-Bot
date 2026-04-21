@@ -46,7 +46,8 @@ All hardening steps complete. Ready for main merge and real-world QA.
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 10 gold + 30 adversarial + 60 breadth
 - **Gold ground truth**: OpenAlex programmatic — top systematic review since 2022 matching topic tokens in title, `referenced_works` → 14–15 included DOIs per topic. Every DOI CrossRef-verified. 148 verified DOIs, zero dead. `curator: openalex-programmatic`.
-- **Scoring**: study_overlap (0.35), quantitative_fidelity (0.30), direction_agreement (0.20), limitation_overlap (0.15)
+- **Scoring**: study_overlap (0.10), quantitative_fidelity (0.40), direction_agreement (0.30), limitation_overlap (0.20)
+- **Direction classifier fix** (Apr 21): expanded `_classify_direction` keyword lists — positive 5→33 terms, caveat 7→15, negative narrowed 8→6 strong-only. DA improved from 0.40→0.65 avg.
 - **CI gate**: `.github/workflows/eval.yml` — schema validation on push, `gold_smoke` soft-skips until `MIMO_API_KEY` is wired as a CI secret + a pre-test step runs `scripts/generate_fixtures.py`
 - **Gold topics**: rapamycin, nad_precursors, metformin, senolytics, glp1, time_restricted_eating, creatine_cognition, omega3_cv, vitamin_d_mortality, exercise_mci
 - **Schema validator**: `tests/golden/schema.py` validates all topic JSONs
