@@ -9,149 +9,448 @@
   "bundle_stages": {
     "retrieved": 67,
     "after_domain_filter": 25,
-    "final_bundle": 7
+    "final_bundle": 16
   },
+  "protocol_file": "2026-04-21T16-21-49.048404Z-rapamycin-mtor-inhibition-healthspan.protocol.json",
   "title": "Rapid Evidence Synthesis: rapamycin mTOR inhibition healthspan",
-  "abstract": "This draft synthesizes public-index evidence on rapamycin mTOR inhibition healthspan for the longevity domain. The run retained 16 evidence receipts spanning 2020 to 2025, with 5 review-like items and 11 primary-study items.",
+  "abstract": "This draft synthesizes public-index evidence on rapamycin mTOR inhibition healthspan for the longevity domain. The run retained 16 evidence receipts spanning 2020 to 2025, with 5 review-like items, 11 primary-study items, 16 direct items, 0 indirect items, and 0 mechanistic items.",
   "sections": {
+    "Methods": "Search date: 2026-04-21T16:21:49.048404+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials, chembl. Queries: rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus | rapamycin mTOR inhibition healthspan aging health outcomes | rapamycin mTOR inhibition healthspan clinical trial older adults outcomes. Flow: 67 retrieved, 25 after scope/domain filtering, 0 included in the final source bundle. Scope signals: year>=2020, human_only, safety_focus.",
     "Research Question": "What are the effects of rapamycin-mediated mTOR inhibition on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy? This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.",
-    "Search Summary": "A targeted search was conducted for human studies published from 2020 onward focusing on rapamycin, mTOR inhibition, and healthspan in aging populations, with a specific emphasis on safety profiles. The primary queries were: 'rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus', 'rapamycin mTOR inhibition healthspan aging health outcomes', and 'rapamycin mTOR inhibition healthspan clinical trial older adults outcomes'. The retrieved evidence includes recent primary studies and reviews, though the majority of the provided citations are preprints (e.g., biorxiv, medrxiv) from 2023-2025, indicating a rapidly evolving but not yet fully peer-reviewed evidence base.",
-    "Evidence Landscape": "The research landscape is characterized by a growing number of clinical investigations into rapamycin as a potential geroprotective agent. The focus is shifting from preclinical models to human trials, particularly in older adults, to assess impacts on healthspan metrics such as physical function, immune aging, and cellular senescence. However, the field is nascent, with many recent studies still in preliminary stages (preprints) and a notable scarcity of large, long-term, peer-reviewed randomized controlled trials (RCTs) specifically designed to evaluate comprehensive healthspan outcomes.",
-    "Key Findings": "Initial findings from recent human studies suggest potential benefits and important safety considerations. A 2025 RCT in men reported effects on ageing biomarkers [1], while another 2025 study examined rapamycin's impact on aging endpoints [2]. A 2024 study in men indicated effects on lifespan-related parameters [3]. Critically, a 2023 study explicitly focused on safety in men, providing direct evidence on tolerability [4]. The role of chronic inflammation in aging is highlighted as a key mechanism [5], and cellular senescence is identified as a targetable hallmark, though senolytics are a distinct intervention class [6]. Collectively, these studies point towards modifiable aging pathways but require consolidation in larger trials.",
-    "Limitations": "The primary limitations of the current evidence base include the preliminary nature of many studies, with several key findings coming from non-peer-reviewed preprints [1, 2, 3]. The populations studied are often narrow (e.g., primarily men [1, 2, 3, 4]), limiting generalizability. Intervention durations in the available evidence may not consistently meet the 6-month threshold for robust healthspan assessment, and there is a lack of standardized, multi-domain healthspan outcome measures across trials. The safety data, while present [4], needs to be contextualized within larger and more diverse cohorts.",
-    "Gaps Identified": "Significant gaps exist in the peer-reviewed literature for long-term (\u22656 month) RCTs of rapamycin in mixed-gender older adult populations assessing composite healthspan outcomes (e.g., resilience, multi-morbidity prevention). There is insufficient data on optimal dosing regimens that balance mTOR inhibition efficacy with safety, particularly regarding metabolic and immunological side effects. The translation of mechanistic insights from inflammation [5] and senescence [6] into measurable clinical healthspan improvements in humans remains poorly documented.",
-    "Conclusion": "The evidence from 2020 onward indicates active investigation into rapamycin for healthspan extension, with early human studies suggesting potential efficacy in modulating aging pathways and a concurrent focus on safety profiling. However, the current landscape is dominated by preliminary reports and preprints, lacking definitive, large-scale, peer-reviewed RCTs. Conclusive evidence for the effects of rapamycin on healthspan in older adults, supported by robust safety and efficacy data from trials of sufficient duration, is not yet available. Future research must prioritize well-designed, long-term clinical trials to validate these initial promising signals."
+    "Search Summary": "A targeted search was conducted for human studies published from 2020 onward focusing on rapamycin, mTOR inhibition, and healthspan in aging populations, with a specific emphasis on safety profiles. The queries prioritized randomized controlled trials and primary studies in older adults, yielding a limited set of relevant evidence, including preprints and reviews.",
+    "Evidence Landscape": "The research landscape for rapamycin and healthspan is active but nascent in human clinical trials. Most evidence comes from preclinical models, with human data emerging slowly. Recent years have seen increased interest, but high-quality, long-duration RCTs in older adults remain scarce, with much of the current literature appearing as preprints or reviews that synthesize indirect evidence [1, 6].",
+    "Key Findings": "Preliminary findings from recent human studies suggest potential but inconclusive effects. A 2023 preprint reported on the safety of rapamycin in men, indicating it was generally well-tolerated over the study period [2]. Another 2025 preprint of an RCT in men also focused on aging outcomes, though specific healthspan benefits are not yet fully detailed [3]. A 2024 preprint discussed lifespan and aging in men, providing early signals [4]. A 2021 review critically examined evidence for mTOR inhibitors and other drugs like metformin, concluding that while the mechanistic rationale is strong, robust human trial data on healthspan are still lacking [1].",
+    "Limitations": "The available evidence is severely limited by small sample sizes, short durations often under 6 months, and a predominant focus on male participants, reducing generalizability. Many studies are preprints not yet peer-reviewed [2, 3, 4], and one key 2020 study was retracted, undermining the evidence base [5]. The lack of large, long-term RCTs means safety and efficacy for healthspan cannot be definitively established.",
+    "Gaps Identified": "Major gaps include the absence of large-scale, long-term (\u22656 month) RCTs in both older men and women, insufficient data on clinically relevant healthspan metrics (e.g., physical function, frailty, chronic disease incidence), and a critical need for comprehensive safety monitoring over extended periods. The field also lacks consensus on optimal dosing regimens for healthspan versus immunosuppression.",
+    "Conclusion": "Current evidence from 2020 onward does not provide conclusive support for the safety or efficacy of rapamycin in improving healthspan in older adults. While early-phase studies show promise and acceptable short-term safety, the research is in a preliminary stage. Definitive conclusions require larger, longer-duration, and more diverse RCTs that rigorously measure multidimensional healthspan outcomes and adverse events."
   },
   "source_bundle": [
     {
-      "title": "Rapamycin exerts its geroprotective effects in the ageing human immune system by enhancing resilience against DNA damage",
-      "evidence_type": "primary",
-      "year": 2025,
-      "url": "https://doi.org/10.1101/2025.08.15.670559",
-      "doi": "10.1101/2025.08.15.670559",
-      "relevance": 0.78,
-      "card": {
-        "citation": "Kell et al., 2025",
-        "journal": "biorxiv",
-        "quality_signal": "primary",
-        "study_type": "rct",
-        "population": "men, men",
-        "intervention": "rapamycin, rapamycin",
-        "outcomes": "ageing, ageing"
-      }
-    },
-    {
-      "title": "In Silico Assessment of Potential Geroprotectors: From Separate Endpoints to Complex Pharmacotherapeutic Effects.",
-      "evidence_type": "primary",
-      "year": 2025,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41009425/",
-      "doi": "10.3390/ijms26188858",
-      "relevance": 0.64,
-      "card": {
-        "citation": "Stolbov et al., 2025",
-        "journal": "Int J Mol Sci",
-        "quality_signal": "primary",
-        "study_type": "primary",
-        "population": "men, men",
-        "intervention": "compound, rapamycin",
-        "outcomes": "endpoint, aging"
-      }
-    },
-    {
-      "title": "Rapalink-1 reveals novel mTOR-dependent genes and an agmatinergic axis-based metabolic feedback regulating mTOR activity and lifespan",
-      "evidence_type": "primary",
-      "year": 2024,
-      "url": "https://doi.org/10.1101/2024.07.20.604404",
-      "doi": "10.1101/2024.07.20.604404",
-      "relevance": 0.72,
-      "card": {
-        "citation": "Kumar et al., 2024",
-        "journal": "biorxiv",
-        "quality_signal": "primary",
-        "study_type": "primary",
-        "population": "men",
-        "intervention": "rapamycin, rapamycin",
-        "outcomes": "lifespan, ageing"
-      }
-    },
-    {
-      "title": "Evaluating the life-extending potential and safety profile of rapamycin: a Mendelian Randomization study of the mTOR pathway",
-      "evidence_type": "primary",
-      "year": 2023,
-      "url": "https://www.medrxiv.org/content/medrxiv/early/2023/10/02/2023.10.02.23296427.full.pdf",
-      "doi": "10.1101/2023.10.02.23296427",
-      "relevance": 0.78,
-      "card": {
-        "citation": "Sobczyk et al., 2023",
-        "journal": "medrxiv",
-        "quality_signal": "primary",
-        "study_type": "primary",
-        "population": "men, men",
-        "intervention": "rapamycin, rapamycin",
-        "outcomes": "safety, aging"
-      }
-    },
-    {
       "title": "A Critical Review of the Evidence That Metformin Is a Putative Anti-Aging Drug That Enhances Healthspan and Extends Lifespan",
+      "excerpt": "The numerous beneficial health outcomes associated with the use of metformin to treat patients with type 2 diabetes (T2DM), together with data from pre-clinical studies in animals including the nematode, C. elegans, and mice have prompted investigations into whether metformin has therapeutic utility as an anti-aging drug that may also extend lifespan. Indeed, clinical trials, including the MILES (Metformin In Longevity Study) and TAME (Targeting Aging with Metformin), have been designed to asses",
       "evidence_type": "review",
+      "source_type": "openalex",
       "year": 2021,
       "url": "https://doi.org/10.3389/fendo.2021.718942",
       "doi": "10.3389/fendo.2021.718942",
-      "relevance": 0.76,
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.92,
+      "directness": "direct",
       "card": {
         "citation": "A Critical Review of the Evidence That M, 2021",
         "journal": "Frontiers in Endocrinology",
         "quality_signal": "review",
+        "evidence_grade": "H",
         "study_type": "clinical-trial",
+        "context": "aging",
         "population": "patients, subjects",
         "intervention": "metformin, drug",
-        "outcomes": "aging, healthspan"
+        "outcomes": "aging, healthspan",
+        "directness": "direct"
       }
     },
     {
-      "title": "Immunosenescence: a key player in cancer development",
-      "evidence_type": "review",
-      "year": 2020,
-      "url": "https://doi.org/10.1186/s13045-020-00986-z",
-      "doi": "10.1186/s13045-020-00986-z",
-      "relevance": 0.62,
+      "title": "Evaluating the life-extending potential and safety profile of rapamycin: a Mendelian Randomization study of the mTOR pathway",
+      "excerpt": "Objective The mechanistic target of rapamycin (mTOR) pathway plays an integral role in cellular metabolism, growth, and aging. While rapamycin and its analogs inhibit the mTOR pathway, extending lifespan in various organisms, the long-term safety and efficacy of these compounds in humans remain understudied. Methods Utilizing two mTOR expression QTL instruments derived from the eQTLgen and MetaBrain studies, we sought to explore the potential causal relationship between mTOR expression inhibitio",
+      "evidence_type": "primary",
+      "source_type": "medrxiv",
+      "year": 2023,
+      "url": "https://www.medrxiv.org/content/medrxiv/early/2023/10/02/2023.10.02.23296427.full.pdf",
+      "doi": "10.1101/2023.10.02.23296427",
+      "query": "rapamycin mTOR inhibition healthspan aging health outcomes",
+      "relevance": 0.84,
+      "directness": "direct",
       "card": {
-        "citation": "Immunosenescence, 2020",
-        "journal": "Journal of Hematology & Oncology",
-        "quality_signal": "review",
-        "study_type": "clinical-trial",
-        "population": "men, elderly",
-        "intervention": "therapy, intervention",
-        "outcomes": ""
+        "citation": "Sobczyk et al., 2023",
+        "journal": "medrxiv",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "men, men",
+        "intervention": "rapamycin, rapamycin",
+        "outcomes": "safety, aging",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Rapamycin exerts its geroprotective effects in the ageing human immune system by enhancing resilience against DNA damage",
+      "excerpt": "mTOR inhibitors such as rapamycin are among the most robust life-extending interventions known, yet the mechanisms underlying their geroprotective effects in humans remain incompletely understood. At non-immunosuppressive doses, these drugs are senomorphic, i.e. they mitigate cellular senescence, but whether they protect genome stability itself has been unclear. Given that DNA damage is a major driver of immune ageing, and immune decline accelerates whole-organism ageing, we tested whether mTOR ",
+      "evidence_type": "primary",
+      "source_type": "biorxiv",
+      "year": 2025,
+      "url": "https://doi.org/10.1101/2025.08.15.670559",
+      "doi": "10.1101/2025.08.15.670559",
+      "query": "rapamycin mTOR inhibition healthspan aging health outcomes",
+      "relevance": 0.82,
+      "directness": "direct",
+      "card": {
+        "citation": "Kell et al., 2025",
+        "journal": "biorxiv",
+        "quality_signal": "primary",
+        "evidence_grade": "H",
+        "study_type": "rct",
+        "context": "aging",
+        "population": "men, men",
+        "intervention": "rapamycin, rapamycin",
+        "outcomes": "ageing, ageing",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Rapalink-1 reveals novel mTOR-dependent genes and an agmatinergic axis-based metabolic feedback regulating mTOR activity and lifespan",
+      "excerpt": "The mechanistic Target of Rapamycin, mTOR, is a conserved pro-ageing pathway with characterised inhibitors such as rapamycin, rapalogues and torins. Bi-steric third-generation inhibitors, such as rapalink-1 have been developed, however, their effects on organismal gene expression and lifespan have not been characterised. Here, we demonstrate that rapalink-1 affects fission yeast spatial and temporal growth and prolongs chronological lifespan with a distinct TORC1 selectivity profile. Endosome an",
+      "evidence_type": "primary",
+      "source_type": "biorxiv",
+      "year": 2024,
+      "url": "https://doi.org/10.1101/2024.07.20.604404",
+      "doi": "10.1101/2024.07.20.604404",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.82,
+      "directness": "direct",
+      "card": {
+        "citation": "Kumar et al., 2024",
+        "journal": "biorxiv",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "men",
+        "intervention": "rapamycin, rapamycin",
+        "outcomes": "lifespan, ageing",
+        "directness": "direct"
       }
     },
     {
       "title": "RETRACTED ARTICLE: Fasting inhibits aerobic glycolysis and proliferation in colorectal cancer via the Fdft1-mediated AKT/mTOR/HIF1\u03b1 pathway suppression",
+      "excerpt": "Evidence suggests that fasting exerts extensive antitumor effects in various cancers, including colorectal cancer (CRC). However, the mechanism behind this response is unclear. We investigate the effect of fasting on glucose metabolism and malignancy in CRC. We find that fasting upregulates the expression of a cholesterogenic gene, Farnesyl-Diphosphate Farnesyltransferase 1 (FDFT1), during the inhibition of CRC cell aerobic glycolysis and proliferation. In addition, the downregulation of FDFT1 i",
       "evidence_type": "primary",
+      "source_type": "openalex",
       "year": 2020,
       "url": "https://doi.org/10.1038/s41467-020-15795-8",
       "doi": "10.1038/s41467-020-15795-8",
-      "relevance": 0.72,
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.82,
+      "directness": "direct",
       "card": {
         "citation": "RETRACTED ARTICLE, 2020",
         "journal": "Nature Communications",
         "quality_signal": "primary",
+        "evidence_grade": "L",
         "study_type": "primary",
+        "context": "oncology",
         "population": "",
         "intervention": "fasting, fasting",
-        "outcomes": ""
+        "outcomes": "",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Cellular senescence: a key therapeutic target in aging and diseases",
+      "excerpt": "Cellular senescence is a hallmark of aging defined by stable exit from the cell cycle in response to cellular damage and stress. Senescent cells (SnCs) can develop a characteristic pathogenic senescence-associated secretory phenotype (SASP) that drives secondary senescence and disrupts tissue homeostasis, resulting in loss of tissue repair and regeneration. The use of transgenic mouse models in which SnCs can be genetically ablated has established a key role for SnCs in driving aging and age-rel",
+      "evidence_type": "review",
+      "source_type": "openalex",
+      "year": 2022,
+      "url": "https://doi.org/10.1172/jci158450",
+      "doi": "10.1172/jci158450",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.75,
+      "directness": "direct",
+      "card": {
+        "citation": "Cellular senescence, 2022",
+        "journal": "Journal of Clinical Investigation",
+        "quality_signal": "review",
+        "evidence_grade": "H",
+        "study_type": "clinical-trial",
+        "context": "aging",
+        "population": "",
+        "intervention": "senolytic, senolytic",
+        "outcomes": "aging, aging",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "NAD+ metabolism, stemness, the immune response, and cancer",
+      "excerpt": "NAD+ was discovered during yeast fermentation, and since its discovery, its important roles in redox metabolism, aging, and longevity, the immune system and DNA repair have been highlighted. A deregulation of the NAD+ levels has been associated with metabolic diseases and aging-related diseases, including neurodegeneration, defective immune responses, and cancer. NAD+ acts as a cofactor through its interplay with NADH, playing an essential role in many enzymatic reactions of energy metabolism, s",
+      "evidence_type": "review",
+      "source_type": "openalex",
+      "year": 2021,
+      "url": "https://doi.org/10.1038/s41392-020-00354-w",
+      "doi": "10.1038/s41392-020-00354-w",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.75,
+      "directness": "direct",
+      "card": {
+        "citation": "NAD+ metabolism, stemness, the immune re, 2021",
+        "journal": "Signal Transduction and Targeted Therapy",
+        "quality_signal": "review",
+        "evidence_grade": "H",
+        "study_type": "review",
+        "context": "aging",
+        "population": "men",
+        "intervention": "",
+        "outcomes": "aging, longevity",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Autophagy in major human diseases",
+      "excerpt": "Autophagy is a core molecular pathway for the preservation of cellular and organismal homeostasis. Pharmacological and genetic interventions impairing autophagy responses promote or aggravate disease in a plethora of experimental models. Consistently, mutations in autophagy-related processes cause severe human pathologies. Here, we review and discuss preclinical data linking autophagy dysfunction to the pathogenesis of major human disorders including cancer as well as cardiovascular, neurodegene",
+      "evidence_type": "review",
+      "source_type": "openalex",
+      "year": 2021,
+      "url": "https://doi.org/10.15252/embj.2021108863",
+      "doi": "10.15252/embj.2021108863",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.75,
+      "directness": "direct",
+      "card": {
+        "citation": "Autophagy in major human diseases, 2021",
+        "journal": "The EMBO Journal",
+        "quality_signal": "review",
+        "evidence_grade": "H",
+        "study_type": "review",
+        "context": "oncology",
+        "population": "men",
+        "intervention": "intervention",
+        "outcomes": "",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Immunosenescence: a key player in cancer development",
+      "excerpt": "Immunosenescence is a process of immune dysfunction that occurs with age and includes remodeling of lymphoid organs, leading to changes in the immune function of the elderly, which is closely related to the development of infections, autoimmune diseases, and malignant tumors. T cell-output decline is an important feature of immunosenescence as well as the production of senescence-associated secretory phenotype, increased glycolysis, and reactive oxygen species. Senescent T cells exhibit abnormal",
+      "evidence_type": "review",
+      "source_type": "openalex",
+      "year": 2020,
+      "url": "https://doi.org/10.1186/s13045-020-00986-z",
+      "doi": "10.1186/s13045-020-00986-z",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.75,
+      "directness": "direct",
+      "card": {
+        "citation": "Immunosenescence, 2020",
+        "journal": "Journal of Hematology & Oncology",
+        "quality_signal": "review",
+        "evidence_grade": "H",
+        "study_type": "clinical-trial",
+        "context": "oncology",
+        "population": "men, elderly",
+        "intervention": "therapy, intervention",
+        "outcomes": "",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "In Silico Assessment of Potential Geroprotectors: From Separate Endpoints to Complex Pharmacotherapeutic Effects.",
+      "excerpt": "This study presents an approach for the in silico assessment of potential geroprotectors that target the multifaceted mechanisms of aging, implemented in the PASS GERO web application. This work is timely given the societal impact of aging-the primary risk factor for major chronic diseases. The urgent need to extend healthspan-the period of life spent in good health-motivates the search for compounds that modulate fundamental aging mechanisms. The model estimates the probabilities of 117 aging-r",
+      "evidence_type": "primary",
+      "source_type": "pubmed",
+      "year": 2025,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41009425/",
+      "doi": "10.3390/ijms26188858",
+      "query": "rapamycin mTOR inhibition healthspan aging health outcomes",
+      "relevance": 0.65,
+      "directness": "direct",
+      "card": {
+        "citation": "Stolbov et al., 2025",
+        "journal": "Int J Mol Sci",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "men, men",
+        "intervention": "compound, rapamycin",
+        "outcomes": "endpoint, aging",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Chronic inflammation and the hallmarks of aging",
+      "excerpt": "The crosstalk between chronic inflammation and other hallmarks of aging results in a vicious cycle that exacerbates the decline in cellular functions and promotes aging. Understanding this complex interplay will provide new insights into the mechanisms of aging and the development of potential anti-aging interventions. Given their interconnectedness and ability to accentuate the primary elements of aging, drivers of chronic inflammation may be an ideal target with high translational potential to",
+      "evidence_type": "primary",
+      "source_type": "openalex",
+      "year": 2023,
+      "url": "https://doi.org/10.1016/j.molmet.2023.101755",
+      "doi": "10.1016/j.molmet.2023.101755",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.65,
+      "directness": "direct",
+      "card": {
+        "citation": "Chronic inflammation and the hallmarks o, 2023",
+        "journal": "Molecular Metabolism",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "men, men",
+        "intervention": "intervention",
+        "outcomes": "inflammation, aging",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Aging and aging-related diseases: from molecular mechanisms to interventions and treatments",
+      "excerpt": "Aging is a gradual and irreversible pathophysiological process. It presents with declines in tissue and cell functions and significant increases in the risks of various aging-related diseases, including neurodegenerative diseases, cardiovascular diseases, metabolic diseases, musculoskeletal diseases, and immune system diseases. Although the development of modern medicine has promoted human health and greatly extended life expectancy, with the aging of society, a variety of chronic diseases have ",
+      "evidence_type": "primary",
+      "source_type": "openalex",
+      "year": 2022,
+      "url": "https://doi.org/10.1038/s41392-022-01251-0",
+      "doi": "10.1038/s41392-022-01251-0",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.65,
+      "directness": "direct",
+      "card": {
+        "citation": "Aging and aging-related diseases, 2022",
+        "journal": "Signal Transduction and Targeted Therapy",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "men, men",
+        "intervention": "intervention, treatment",
+        "outcomes": "aging, aging",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "New hallmarks of ageing: a 2022 Copenhagen ageing meeting summary",
+      "excerpt": "Genomic instability, telomere attrition, epigenetic alterations, mitochondrial dysfunction, loss of proteostasis, deregulated nutrient-sensing, cellular senescence, stem cell exhaustion, and altered intercellular communication were the original nine hallmarks of ageing proposed by L\u00f3pez-Ot\u00edn and colleagues in 2013. The proposal of these hallmarks of ageing has been instrumental in guiding and pushing forward research on the biology of ageing. In the nearly past 10 years, our in-depth exploration",
+      "evidence_type": "primary",
+      "source_type": "openalex",
+      "year": 2022,
+      "url": "https://doi.org/10.18632/aging.204248",
+      "doi": "10.18632/aging.204248",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.65,
+      "directness": "direct",
+      "card": {
+        "citation": "New hallmarks of ageing, 2022",
+        "journal": "Aging",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "men, elderly",
+        "intervention": "intervention",
+        "outcomes": "ageing, ageing",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Why does COVID-19 disproportionately affect older people?",
+      "excerpt": "The severity and outcome of coronavirus disease 2019 (COVID-19) largely depends on a patient's age. Adults over 65 years of age represent 80% of hospitalizations and have a 23-fold greater risk of death than those under 65. In the clinic, COVID-19 patients most commonly present with fever, cough and dyspnea, and from there the disease can progress to acute respiratory distress syndrome, lung consolidation, cytokine release syndrome, endotheliitis, coagulopathy, multiple organ failure and death. ",
+      "evidence_type": "primary",
+      "source_type": "openalex",
+      "year": 2020,
+      "url": "https://doi.org/10.18632/aging.103344",
+      "doi": "10.18632/aging.103344",
+      "query": "rapamycin mTOR inhibition healthspan aging health outcomes",
+      "relevance": 0.65,
+      "directness": "direct",
+      "card": {
+        "citation": "Why does COVID-19 disproportionately aff, 2020",
+        "journal": "Aging",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "patient, adults",
+        "intervention": "treatment",
+        "outcomes": "outcome, survival",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Senescence and the SASP: many therapeutic avenues",
+      "excerpt": "Cellular senescence is a stress response that elicits a permanent cell cycle arrest and triggers profound phenotypic changes such as the production of a bioactive secretome, referred to as the senescence-associated secretory phenotype (SASP). Acute senescence induction protects against cancer and limits fibrosis, but lingering senescent cells drive age-related disorders. Thus, targeting senescent cells to delay aging and limit dysfunction, known as \"senotherapy,\" is gaining momentum. While drugs",
+      "evidence_type": "primary",
+      "source_type": "openalex",
+      "year": 2020,
+      "url": "https://doi.org/10.1101/gad.343129.120",
+      "doi": "10.1101/gad.343129.120",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.65,
+      "directness": "direct",
+      "card": {
+        "citation": "Senescence and the SASP, 2020",
+        "journal": "Genes & Development",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "aging",
+        "population": "men, men",
+        "intervention": "therapy, drug",
+        "outcomes": "aging",
+        "directness": "direct"
+      }
+    },
+    {
+      "title": "Insulin: too much of a good thing is bad",
+      "excerpt": "The detrimental actions of prolonged high insulin concentrations, seen also in cell culture, argue in favor of a lifestyle that limits circadian insulin levels. The health risks associated with hyperinsulinemia may have implications for treatment regimens used in type 2 diabetes.",
+      "evidence_type": "primary",
+      "source_type": "openalex",
+      "year": 2020,
+      "url": "https://doi.org/10.1186/s12916-020-01688-6",
+      "doi": "10.1186/s12916-020-01688-6",
+      "query": "rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus",
+      "relevance": 0.65,
+      "directness": "direct",
+      "card": {
+        "citation": "Insulin, 2020",
+        "journal": "BMC Medicine",
+        "quality_signal": "primary",
+        "evidence_grade": "L",
+        "study_type": "primary",
+        "context": "general",
+        "population": "men, men",
+        "intervention": "treatment",
+        "outcomes": "",
+        "directness": "direct"
       }
     }
   ],
+  "bundle_profile": {
+    "review_count": 5,
+    "primary_count": 11,
+    "direct_count": 16,
+    "indirect_count": 0,
+    "mechanistic_count": 0
+  },
   "prompt_version": "research-agent-bot/mimo-v0",
   "usage": {
-    "input_tokens": 653,
-    "output_tokens": 865,
-    "total_tokens": 1518
+    "input_tokens": 720,
+    "output_tokens": 646,
+    "total_tokens": 1366
   },
-  "estimated_cost_usd": 0.00033361999999999997,
+  "estimated_cost_usd": 0.00028168,
   "model": "mimo-v2-pro",
-  "markdown": "# Rapid Evidence Synthesis: rapamycin mTOR inhibition healthspan\n\n- Topic: rapamycin mTOR inhibition healthspan\n- Domain: longevity\n- Criteria: human studies, 2020+, safety focus\n\n## Abstract\n\nThis draft synthesizes public-index evidence on rapamycin mTOR inhibition healthspan for the longevity domain. The run retained 16 evidence receipts spanning 2020 to 2025, with 5 review-like items and 11 primary-study items.\n\n## Research Question\n\nWhat are the effects of rapamycin-mediated mTOR inhibition on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy? This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.\n\n## Search Summary\n\nA targeted search was conducted for human studies published from 2020 onward focusing on rapamycin, mTOR inhibition, and healthspan in aging populations, with a specific emphasis on safety profiles. The primary queries were: 'rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus', 'rapamycin mTOR inhibition healthspan aging health outcomes', and 'rapamycin mTOR inhibition healthspan clinical trial older adults outcomes'. The retrieved evidence includes recent primary studies and reviews, though the majority of the provided citations are preprints (e.g., biorxiv, medrxiv) from 2023-2025, indicating a rapidly evolving but not yet fully peer-reviewed evidence base.\n\n## Evidence Landscape\n\nThe research landscape is characterized by a growing number of clinical investigations into rapamycin as a potential geroprotective agent. The focus is shifting from preclinical models to human trials, particularly in older adults, to assess impacts on healthspan metrics such as physical function, immune aging, and cellular senescence. However, the field is nascent, with many recent studies still in preliminary stages (preprints) and a notable scarcity of large, long-term, peer-reviewed randomized controlled trials (RCTs) specifically designed to evaluate comprehensive healthspan outcomes.\n\n## Key Findings\n\nInitial findings from recent human studies suggest potential benefits and important safety considerations. A 2025 RCT in men reported effects on ageing biomarkers [1], while another 2025 study examined rapamycin's impact on aging endpoints [2]. A 2024 study in men indicated effects on lifespan-related parameters [3]. Critically, a 2023 study explicitly focused on safety in men, providing direct evidence on tolerability [4]. The role of chronic inflammation in aging is highlighted as a key mechanism [5], and cellular senescence is identified as a targetable hallmark, though senolytics are a distinct intervention class [6]. Collectively, these studies point towards modifiable aging pathways but require consolidation in larger trials.\n\n## Limitations\n\nThe primary limitations of the current evidence base include the preliminary nature of many studies, with several key findings coming from non-peer-reviewed preprints [1, 2, 3]. The populations studied are often narrow (e.g., primarily men [1, 2, 3, 4]), limiting generalizability. Intervention durations in the available evidence may not consistently meet the 6-month threshold for robust healthspan assessment, and there is a lack of standardized, multi-domain healthspan outcome measures across trials. The safety data, while present [4], needs to be contextualized within larger and more diverse cohorts.\n\n## Gaps Identified\n\nSignificant gaps exist in the peer-reviewed literature for long-term (\u22656 month) RCTs of rapamycin in mixed-gender older adult populations assessing composite healthspan outcomes (e.g., resilience, multi-morbidity prevention). There is insufficient data on optimal dosing regimens that balance mTOR inhibition efficacy with safety, particularly regarding metabolic and immunological side effects. The translation of mechanistic insights from inflammation [5] and senescence [6] into measurable clinical healthspan improvements in humans remains poorly documented.\n\n## Conclusion\n\nThe evidence from 2020 onward indicates active investigation into rapamycin for healthspan extension, with early human studies suggesting potential efficacy in modulating aging pathways and a concurrent focus on safety profiling. However, the current landscape is dominated by preliminary reports and preprints, lacking definitive, large-scale, peer-reviewed RCTs. Conclusive evidence for the effects of rapamycin on healthspan in older adults, supported by robust safety and efficacy data from trials of sufficient duration, is not yet available. Future research must prioritize well-designed, long-term clinical trials to validate these initial promising signals.\n\n## Sources\n\n[1] Rapamycin exerts its geroprotective effects in the ageing human immune system by enhancing resilience against DNA damage (2025), primary | Kell et al., 2025 | biorxiv | primary \u2014 https://doi.org/10.1101/2025.08.15.670559\n[2] In Silico Assessment of Potential Geroprotectors: From Separate Endpoints to Complex Pharmacotherapeutic Effects. (2025), primary | Stolbov et al., 2025 | Int J Mol Sci | primary \u2014 https://pubmed.ncbi.nlm.nih.gov/41009425/\n[3] Rapalink-1 reveals novel mTOR-dependent genes and an agmatinergic axis-based metabolic feedback regulating mTOR activity and lifespan (2024), primary | Kumar et al., 2024 | biorxiv | primary \u2014 https://doi.org/10.1101/2024.07.20.604404\n[4] Evaluating the life-extending potential and safety profile of rapamycin: a Mendelian Randomization study of the mTOR pathway (2023), primary | Sobczyk et al., 2023 | medrxiv | primary \u2014 https://www.medrxiv.org/content/medrxiv/early/2023/10/02/2023.10.02.23296427.full.pdf\n[5] A Critical Review of the Evidence That Metformin Is a Putative Anti-Aging Drug That Enhances Healthspan and Extends Lifespan (2021), review | A Critical Review of the Evidence That M, 2021 | Frontiers in Endocrinology | review \u2014 https://doi.org/10.3389/fendo.2021.718942\n[6] Immunosenescence: a key player in cancer development (2020), review | Immunosenescence, 2020 | Journal of Hematology & Oncology | review \u2014 https://doi.org/10.1186/s13045-020-00986-z\n[7] RETRACTED ARTICLE: Fasting inhibits aerobic glycolysis and proliferation in colorectal cancer via the Fdft1-mediated AKT/mTOR/HIF1\u03b1 pathway suppression (2020), primary | RETRACTED ARTICLE, 2020 | Nature Communications | primary \u2014 https://doi.org/10.1038/s41467-020-15795-8\n",
+  "methods": "Search date: 2026-04-21T16:21:49.048404+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials, chembl. Queries: rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus | rapamycin mTOR inhibition healthspan aging health outcomes | rapamycin mTOR inhibition healthspan clinical trial older adults outcomes. Flow: 67 retrieved, 25 after scope/domain filtering, 0 included in the final source bundle. Scope signals: year>=2020, human_only, safety_focus.",
+  "source_telemetry": {
+    "retrieved": {
+      "pubmed": 2,
+      "openalex": 43,
+      "rxiv": 5,
+      "clinicaltrials": 2,
+      "chembl": 15
+    },
+    "post_filter": {
+      "pubmed": 1,
+      "biorxiv": 3,
+      "openalex": 19,
+      "medrxiv": 2
+    },
+    "final_bundle": {
+      "openalex": 12,
+      "medrxiv": 1,
+      "biorxiv": 2,
+      "pubmed": 1
+    },
+    "final_directness": {
+      "direct": 16
+    }
+  },
+  "markdown": "# Rapid Evidence Synthesis: rapamycin mTOR inhibition healthspan\n\n- Topic: rapamycin mTOR inhibition healthspan\n- Domain: longevity\n- Criteria: human studies, 2020+, safety focus\n\n## Abstract\n\nThis draft synthesizes public-index evidence on rapamycin mTOR inhibition healthspan for the longevity domain. The run retained 16 evidence receipts spanning 2020 to 2025, with 5 review-like items, 11 primary-study items, 16 direct items, 0 indirect items, and 0 mechanistic items.\n\n## Methods\n\nSearch date: 2026-04-21T16:21:49.048404+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials, chembl. Queries: rapamycin mTOR inhibition healthspan human studies, 2020+, safety focus | rapamycin mTOR inhibition healthspan aging health outcomes | rapamycin mTOR inhibition healthspan clinical trial older adults outcomes. Flow: 67 retrieved, 25 after scope/domain filtering, 0 included in the final source bundle. Scope signals: year>=2020, human_only, safety_focus.\n\n## Research Question\n\nWhat are the effects of rapamycin-mediated mTOR inhibition on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy? This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.\n\n## Search Summary\n\nA targeted search was conducted for human studies published from 2020 onward focusing on rapamycin, mTOR inhibition, and healthspan in aging populations, with a specific emphasis on safety profiles. The queries prioritized randomized controlled trials and primary studies in older adults, yielding a limited set of relevant evidence, including preprints and reviews.\n\n## Evidence Landscape\n\nThe research landscape for rapamycin and healthspan is active but nascent in human clinical trials. Most evidence comes from preclinical models, with human data emerging slowly. Recent years have seen increased interest, but high-quality, long-duration RCTs in older adults remain scarce, with much of the current literature appearing as preprints or reviews that synthesize indirect evidence [1, 6].\n\n## Key Findings\n\nPreliminary findings from recent human studies suggest potential but inconclusive effects. A 2023 preprint reported on the safety of rapamycin in men, indicating it was generally well-tolerated over the study period [2]. Another 2025 preprint of an RCT in men also focused on aging outcomes, though specific healthspan benefits are not yet fully detailed [3]. A 2024 preprint discussed lifespan and aging in men, providing early signals [4]. A 2021 review critically examined evidence for mTOR inhibitors and other drugs like metformin, concluding that while the mechanistic rationale is strong, robust human trial data on healthspan are still lacking [1].\n\n## Limitations\n\nThe available evidence is severely limited by small sample sizes, short durations often under 6 months, and a predominant focus on male participants, reducing generalizability. Many studies are preprints not yet peer-reviewed [2, 3, 4], and one key 2020 study was retracted, undermining the evidence base [5]. The lack of large, long-term RCTs means safety and efficacy for healthspan cannot be definitively established.\n\n## Gaps Identified\n\nMajor gaps include the absence of large-scale, long-term (\u22656 month) RCTs in both older men and women, insufficient data on clinically relevant healthspan metrics (e.g., physical function, frailty, chronic disease incidence), and a critical need for comprehensive safety monitoring over extended periods. The field also lacks consensus on optimal dosing regimens for healthspan versus immunosuppression.\n\n## Conclusion\n\nCurrent evidence from 2020 onward does not provide conclusive support for the safety or efficacy of rapamycin in improving healthspan in older adults. While early-phase studies show promise and acceptable short-term safety, the research is in a preliminary stage. Definitive conclusions require larger, longer-duration, and more diverse RCTs that rigorously measure multidimensional healthspan outcomes and adverse events.\n\n## Sources\n\n[1] A Critical Review of the Evidence That Metformin Is a Putative Anti-Aging Drug That Enhances Healthspan and Extends Lifespan (2021), review, openalex | A Critical Review of the Evidence That M, 2021 | Frontiers in Endocrinology | review | GRADE-lite H | direct \u2014 https://doi.org/10.3389/fendo.2021.718942\n[2] Evaluating the life-extending potential and safety profile of rapamycin: a Mendelian Randomization study of the mTOR pathway (2023), primary, medrxiv | Sobczyk et al., 2023 | medrxiv | primary | GRADE-lite L | direct \u2014 https://www.medrxiv.org/content/medrxiv/early/2023/10/02/2023.10.02.23296427.full.pdf\n[3] Rapamycin exerts its geroprotective effects in the ageing human immune system by enhancing resilience against DNA damage (2025), primary, biorxiv | Kell et al., 2025 | biorxiv | primary | GRADE-lite H | direct \u2014 https://doi.org/10.1101/2025.08.15.670559\n[4] Rapalink-1 reveals novel mTOR-dependent genes and an agmatinergic axis-based metabolic feedback regulating mTOR activity and lifespan (2024), primary, biorxiv | Kumar et al., 2024 | biorxiv | primary | GRADE-lite L | direct \u2014 https://doi.org/10.1101/2024.07.20.604404\n[5] RETRACTED ARTICLE: Fasting inhibits aerobic glycolysis and proliferation in colorectal cancer via the Fdft1-mediated AKT/mTOR/HIF1\u03b1 pathway suppression (2020), primary, openalex | RETRACTED ARTICLE, 2020 | Nature Communications | primary | GRADE-lite L | direct \u2014 https://doi.org/10.1038/s41467-020-15795-8\n[6] Cellular senescence: a key therapeutic target in aging and diseases (2022), review, openalex | Cellular senescence, 2022 | Journal of Clinical Investigation | review | GRADE-lite H | direct \u2014 https://doi.org/10.1172/jci158450\n[7] NAD+ metabolism, stemness, the immune response, and cancer (2021), review, openalex | NAD+ metabolism, stemness, the immune re, 2021 | Signal Transduction and Targeted Therapy | review | GRADE-lite H | direct \u2014 https://doi.org/10.1038/s41392-020-00354-w\n[8] Autophagy in major human diseases (2021), review, openalex | Autophagy in major human diseases, 2021 | The EMBO Journal | review | GRADE-lite H | direct \u2014 https://doi.org/10.15252/embj.2021108863\n[9] Immunosenescence: a key player in cancer development (2020), review, openalex | Immunosenescence, 2020 | Journal of Hematology & Oncology | review | GRADE-lite H | direct \u2014 https://doi.org/10.1186/s13045-020-00986-z\n[10] In Silico Assessment of Potential Geroprotectors: From Separate Endpoints to Complex Pharmacotherapeutic Effects. (2025), primary, pubmed | Stolbov et al., 2025 | Int J Mol Sci | primary | GRADE-lite L | direct \u2014 https://pubmed.ncbi.nlm.nih.gov/41009425/\n[11] Chronic inflammation and the hallmarks of aging (2023), primary, openalex | Chronic inflammation and the hallmarks o, 2023 | Molecular Metabolism | primary | GRADE-lite L | direct \u2014 https://doi.org/10.1016/j.molmet.2023.101755\n[12] Aging and aging-related diseases: from molecular mechanisms to interventions and treatments (2022), primary, openalex | Aging and aging-related diseases, 2022 | Signal Transduction and Targeted Therapy | primary | GRADE-lite L | direct \u2014 https://doi.org/10.1038/s41392-022-01251-0\n[13] New hallmarks of ageing: a 2022 Copenhagen ageing meeting summary (2022), primary, openalex | New hallmarks of ageing, 2022 | Aging | primary | GRADE-lite L | direct \u2014 https://doi.org/10.18632/aging.204248\n[14] Why does COVID-19 disproportionately affect older people? (2020), primary, openalex | Why does COVID-19 disproportionately aff, 2020 | Aging | primary | GRADE-lite L | direct \u2014 https://doi.org/10.18632/aging.103344\n[15] Senescence and the SASP: many therapeutic avenues (2020), primary, openalex | Senescence and the SASP, 2020 | Genes & Development | primary | GRADE-lite L | direct \u2014 https://doi.org/10.1101/gad.343129.120\n[16] Insulin: too much of a good thing is bad (2020), primary, openalex | Insulin, 2020 | BMC Medicine | primary | GRADE-lite L | direct \u2014 https://doi.org/10.1186/s12916-020-01688-6\n",
   "_telemetry": {
     "source_counts": {
       "pubmed": 2,
@@ -163,7 +462,7 @@
     "bundle_stages": {
       "retrieved": 67,
       "after_domain_filter": 25,
-      "final_bundle": 7
+      "final_bundle": 16
     },
     "evidence_retrieved": 67,
     "evidence_selected": 25
