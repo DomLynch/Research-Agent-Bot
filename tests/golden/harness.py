@@ -307,10 +307,14 @@ ACCURACY (evidence quality and factual claims):
 
 READABILITY (clarity and grammar — countable criteria):
   5 = Has paragraph breaks (blank lines). Average sentence length <= 30 words.
-      No single sentence exceeds 50 words. Active voice predominates.
-      Consistent professional tone throughout.
-  3 = Has paragraph breaks OR short sentences, but not both. Some sentences 30-50 words.
-      Mixing of casual and formal tone, or 1-2 run-on sentences.
+      No single sentence exceeds 50 words. Tone is consistently professional —
+      NO filler language (e.g. "we need more data", "some people think"),
+      NO awkward transitions, no mixing of casual and academic voice.
+      Writing is polished and authoritative throughout.
+  3 = Has paragraph breaks and short sentences, BUT tone is flat, generic,
+      or mixes casual/formal language. Contains filler phrases like
+      "more research is needed", "interesting but...", "some people think".
+      Structurally adequate but not polished.
   1 = No paragraph breaks AND/OR majority of sentences exceed 40 words (run-on).
       Severe grammar issues (subject-verb disagreement, missing articles).
       Stream-of-consciousness with no sentence boundaries.
