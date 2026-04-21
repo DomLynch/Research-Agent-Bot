@@ -3,13 +3,28 @@
   "domain": "longevity",
   "criteria": "RCTs, 2020+, cognitive outcomes in MCI patients",
   "source_review": {
-    "doi": "PENDING_VERIFICATION",
-    "title": "Exercise interventions for mild cognitive impairment: a systematic review and meta-analysis",
+    "doi": "10.1016/j.apmr.2023.04.011",
+    "title": "Effect of Multicomponent Exercise on Cognition, Physical Function and Activities of Daily Life in Older Adults With Dementia or Mild Cognitive Impairment: A Systematic Review and Meta-analysis",
     "year": 2023,
-    "journal": "American Journal of Geriatric Psychiatry",
-    "url": "https://doi.org/10.1016/j.jagp.2023.03.018"
+    "journal": "Archives of Physical Medicine and Rehabilitation",
+    "url": "https://doi.org/10.1016/j.apmr.2023.04.011"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.1186/1471-2288-5-13",
+    "10.1111/j.1471-6712.2011.00895.x",
+    "10.1016/j.jalz.2015.05.016",
+    "10.1139/m85-144",
+    "10.1159/000272435",
+    "10.1089/rej.2011.1215",
+    "10.1001/archinte.168.12.1270",
+    "10.1111/j.1532-5415.2007.01035.x",
+    "10.1007/bf00395534",
+    "10.1371/journal.pone.0061483",
+    "10.1249/mss.0b013e31802f04c7",
+    "10.1093/gerona/50a.5.m235",
+    "10.1002/ev.1376",
+    "10.1519/jpt.0b013e31820aab9c"
+  ],
   "conclusion_direction": "positive",
   "conclusion_summary": "Regular exercise, particularly aerobic and resistance training, shows moderate benefit for cognitive function in MCI patients.",
   "limitations": [
@@ -19,6 +34,22 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": false
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:46:22+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.1111/j.1471-6712.2011.00895.x",
+      "10.1016/j.jalz.2015.05.016",
+      "10.1139/m85-144",
+      "10.1159/000272435",
+      "10.1089/rej.2011.1215",
+      "10.1001/archinte.168.12.1270",
+      "10.1111/j.1532-5415.2007.01035.x",
+      "10.1249/mss.0b013e31802f04c7",
+      "10.1093/gerona/50a.5.m235",
+      "10.1002/ev.1376",
+      "10.1519/jpt.0b013e31820aab9c"
+    ]
+  }
 }

@@ -3,13 +3,28 @@
   "domain": "longevity",
   "criteria": "RCTs, 2020+, mortality outcomes in adults 50+",
   "source_review": {
-    "doi": "10.1016/j.annepidem.2023.05.004",
-    "title": "Vitamin D supplementation and all-cause mortality: a systematic review and meta-analysis",
+    "doi": "10.1007/s40265-023-01875-8",
+    "title": "The Role of Vitamin D in Health and Disease: A Narrative Review on the Mechanisms Linking Vitamin D with Disease and the Effects of Supplementation",
     "year": 2023,
-    "journal": "Annals of Epidemiology",
-    "url": "https://doi.org/10.1016/j.annepidem.2023.05.004"
+    "journal": "Drugs",
+    "url": "https://doi.org/10.1007/s40265-023-01875-8"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.1038/eye.2015.96",
+    "10.1097/mib.0000000000000546",
+    "10.1128/iai.55.12.2945-2950.1987",
+    "10.1093/ajcn/88.2.582s",
+    "10.1093/jn/130.11.2648",
+    "10.1002/gps.4056",
+    "10.1359/jbmr.050908",
+    "10.1080/01635581.2011.594208",
+    "10.1371/journal.pone.0118108",
+    "10.1016/j.archger.2013.11.004",
+    "10.1016/j.cca.2013.08.012",
+    "10.1096/fj.13-242040",
+    "10.1016/s8756-3282(03)00023-1",
+    "10.1016/j.pneurobio.2011.09.005"
+  ],
   "conclusion_direction": "negative_with_caveats",
   "conclusion_summary": "Vitamin D supplementation does not reduce all-cause mortality in the general older adult population; routine supplementation not supported by evidence.",
   "limitations": [
@@ -19,6 +34,23 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": true
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:47:10+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.1097/mib.0000000000000546",
+      "10.1128/iai.55.12.2945-2950.1987",
+      "10.1093/ajcn/88.2.582s",
+      "10.1093/jn/130.11.2648",
+      "10.1002/gps.4056",
+      "10.1359/jbmr.050908",
+      "10.1080/01635581.2011.594208",
+      "10.1016/j.archger.2013.11.004",
+      "10.1016/j.cca.2013.08.012",
+      "10.1096/fj.13-242040",
+      "10.1016/s8756-3282(03)00023-1",
+      "10.1016/j.pneurobio.2011.09.005"
+    ]
+  }
 }

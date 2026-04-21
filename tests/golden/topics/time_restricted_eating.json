@@ -3,13 +3,29 @@
   "domain": "longevity",
   "criteria": "RCTs, 2020+, metabolic and longevity outcomes",
   "source_review": {
-    "doi": "PENDING_VERIFICATION",
-    "title": "Time-restricted eating and metabolic health: a systematic review and meta-analysis",
-    "year": 2023,
-    "journal": "Cell Metabolism",
-    "url": "https://doi.org/10.1016/j.cmet.2023.04.010"
+    "doi": "10.1038/s41574-022-00638-x",
+    "title": "Clinical application of intermittent fasting for weight loss: progress and future directions",
+    "year": 2022,
+    "journal": "Nature Reviews Endocrinology",
+    "url": "https://doi.org/10.1038/s41574-022-00638-x"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.1007/7854_2010_80",
+    "10.1002/oby.21005",
+    "10.1002/oby.20353",
+    "10.1186/s12937-015-0029-9",
+    "10.1093/jn/137.6.1478",
+    "10.1111/obr.12143",
+    "10.1002/oby.21358",
+    "10.1038/nature04634",
+    "10.1038/ijo.2010.171",
+    "10.1002/oby.20909",
+    "10.1097/00005768-200106001-00021",
+    "10.1016/j.metabol.2007.07.018",
+    "10.1016/j.vph.2015.03.005",
+    "10.1249/mss.0b013e3181b2ef8e",
+    "10.1111/j.1468-1331.2005.01081.x"
+  ],
   "conclusion_direction": "mixed",
   "conclusion_summary": "Time-restricted eating shows metabolic benefits in some studies but results are inconsistent; evidence quality is moderate.",
   "limitations": [
@@ -19,6 +35,22 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": false
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:47:04+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.1002/oby.21005",
+      "10.1002/oby.20353",
+      "10.1093/jn/137.6.1478",
+      "10.1111/obr.12143",
+      "10.1002/oby.21358",
+      "10.1002/oby.20909",
+      "10.1097/00005768-200106001-00021",
+      "10.1016/j.metabol.2007.07.018",
+      "10.1016/j.vph.2015.03.005",
+      "10.1249/mss.0b013e3181b2ef8e",
+      "10.1111/j.1468-1331.2005.01081.x"
+    ]
+  }
 }

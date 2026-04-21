@@ -10,7 +10,8 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a research 
 - Run log records queries, retained evidence, usage, submission ID, and decision.
 
 ## Constraints
-- Runtime target: ~1,200 LOC (submit/poll/dedup/publication surfacing + quality gate are now in scope).
+- Runtime target: ~1,500 LOC (raised from 1,200 — see DECISIONS.md 2026-04-21 "scope creep").
+  Hard ceiling: 1,800 LOC. Actual: ~1,482 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
@@ -43,15 +44,16 @@ All hardening steps complete. Ready for main merge and real-world QA.
 | 13 | 3-tier eval corpus (gold + adversarial + breadth) | DONE (10 gold topics, 30 adversarial, 60 breadth; 4 scoring functions; CI workflow) |
 
 ## Eval Corpus (Step 13)
-- **3-tier structure**: 10 gold (human-curated systematic reviews) + 30 adversarial (MiniMax-generated traps) + 60 breadth (MiniMax-generated regression matrix)
+- **3-tier structure**: 10 gold + 30 adversarial + 60 breadth
+- **Gold ground truth**: OpenAlex programmatic — top systematic review since 2022 matching topic tokens in title, `referenced_works` → 14–15 included DOIs per topic. Every DOI CrossRef-verified. 148 verified DOIs, zero dead. `curator: openalex-programmatic`.
 - **Scoring**: study_overlap (0.35), quantitative_fidelity (0.30), direction_agreement (0.20), limitation_overlap (0.15)
-- **CI gate**: `.github/workflows/eval.yml` runs on push, posts PR comment with scores
+- **CI gate**: `.github/workflows/eval.yml` — schema validation on push, `gold_smoke` soft-skips until `MIMO_API_KEY` is wired as a CI secret + a pre-test step runs `scripts/generate_fixtures.py`
 - **Gold topics**: rapamycin, nad_precursors, metformin, senolytics, glp1, time_restricted_eating, creatine_cognition, omega3_cv, vitamin_d_mortality, exercise_mci
 - **Schema validator**: `tests/golden/schema.py` validates all topic JSONs
-- **Bulk generation**: `scripts/generate_eval_corpus.py --adversarial 30 --breadth 60`
+- **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- VPS (2026-04-21): 212 passed in ~28s
-- MacBook: 206 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 207 passed, 7 skipped (6 judge calibration + 1 gold_smoke without fixtures)
 - ruff clean
-- All branches on `eval-corpus`; main has not been updated
+- Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
+- Main is current. No uncommitted scope creep — see DECISIONS.md 2026-04-21 for the 4 out-of-scope features that got accepted with a raised LOC budget.

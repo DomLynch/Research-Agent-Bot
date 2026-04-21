@@ -3,13 +3,29 @@
   "domain": "longevity",
   "criteria": "human clinical trials, 2020+, NAD+ metabolism",
   "source_review": {
-    "doi": "10.1038/s41580-023-00603-0",
-    "title": "NAD+ metabolism in aging: a systematic review of NAD+ precursors",
+    "doi": "10.3390/nu15020445",
+    "title": "Potential Synergistic Supplementation of NAD+ Promoting Compounds as a Strategy for Increasing Healthspan",
     "year": 2023,
-    "journal": "Nature Reviews Drug Discovery",
-    "url": "https://doi.org/10.1038/s41580-023-00603-0"
+    "journal": "Nutrients",
+    "url": "https://doi.org/10.3390/nu15020445"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.1016/j.clnu.2015.07.010",
+    "10.1038/srep13429",
+    "10.1093/jn/119.6.952",
+    "10.1111/j.1474-9726.2011.00707.x",
+    "10.1155/2015/673847",
+    "10.1038/npre.2010.4421.1",
+    "10.1111/acel.12133",
+    "10.1016/j.bmcl.2011.05.022",
+    "10.3389/neuro.24.004.2009",
+    "10.1002/mnfr.201300195",
+    "10.4161/cc.8.12.8810",
+    "10.1016/j.mad.2015.03.008",
+    "10.1038/nchembio.1352",
+    "10.1016/j.cellsig.2013.06.007",
+    "10.1016/j.mito.2013.04.002"
+  ],
   "conclusion_direction": "positive_with_caveats",
   "conclusion_summary": "NAD+ precursors show moderate efficacy in raising NAD+ levels in humans; evidence for healthspan benefits remains preliminary.",
   "limitations": [
@@ -19,6 +35,22 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": true
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:46:40+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.1016/j.clnu.2015.07.010",
+      "10.1093/jn/119.6.952",
+      "10.1111/j.1474-9726.2011.00707.x",
+      "10.1155/2015/673847",
+      "10.1111/acel.12133",
+      "10.1016/j.bmcl.2011.05.022",
+      "10.1002/mnfr.201300195",
+      "10.4161/cc.8.12.8810",
+      "10.1016/j.mad.2015.03.008",
+      "10.1016/j.cellsig.2013.06.007",
+      "10.1016/j.mito.2013.04.002"
+    ]
+  }
 }

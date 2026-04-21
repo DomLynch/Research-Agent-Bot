@@ -436,40 +436,47 @@ def test_schema_validator_breadth():
 def test_gold_smoke_all_topics_score_above_threshold():
     """Smoke test: all gold topics score > 0.2 when evaluated against fixture drafts.
 
-    Parametrized per-topic: each of the 10 gold topics gets its own test run.
-    Requires fixture drafts in tests/golden/fixtures/<slug>_draft.json to be meaningful.
-    Without fixtures, falls back to mock stub (score ~0.05) which FAILS this test —
-    which is correct: CI should not silently pass on mock data.
+    Requires fixture drafts in tests/golden/fixtures/<slug>_draft.json.
+    Generate via: python scripts/generate_fixtures.py --all  (needs MIMO_API_KEY)
+
+    Skip behavior:
+      - No fixtures at all → test is SKIPPED (CI without MIMO_API_KEY secret).
+      - Some fixtures present → fail on low scores AND on topics missing their
+        fixture (you started generating; finish the job).
     """
     import os
     topics_dir = os.path.join(os.path.dirname(__file__), "golden", "topics")
     fixture_dir = os.path.join(os.path.dirname(__file__), "golden", "fixtures")
-    failures = []
-    no_fixture = []
 
-    for fname in sorted(os.listdir(topics_dir)):
-        if not fname.endswith(".json"):
-            continue
-        slug = fname[:-5]
-        with open(os.path.join(topics_dir, fname)) as f:
+    topic_slugs = sorted(
+        f[:-5] for f in os.listdir(topics_dir) if f.endswith(".json")
+    )
+    fixtures_present = [
+        slug for slug in topic_slugs
+        if os.path.exists(os.path.join(fixture_dir, f"{slug}_draft.json"))
+    ]
+    if not fixtures_present:
+        pytest.skip(
+            "No fixture drafts present — run scripts/generate_fixtures.py --all "
+            "(requires MIMO_API_KEY) to activate gold_smoke scoring"
+        )
+
+    failures = []
+    for slug in topic_slugs:
+        with open(os.path.join(topics_dir, f"{slug}.json")) as f:
             gold = json.load(f)
 
         fixture_path = os.path.join(fixture_dir, f"{slug}_draft.json")
-        if os.path.exists(fixture_path):
-            with open(fixture_path) as f:
-                draft = json.load(f)
-        else:
-            no_fixture.append(slug)
-            failures.append(f"{slug}: NO FIXTURE (mock stub would score ~0.05)")
+        if not os.path.exists(fixture_path):
+            failures.append(f"{slug}: partial fixture set — missing draft")
             continue
+
+        with open(fixture_path) as f:
+            draft = json.load(f)
 
         score = composite_score(draft, gold)
         if score <= 0.2:
-            failures.append(f"{slug}: {score:.3f} <= 0.2")
-
-    if no_fixture:
-        print(f"\nWARNING: {len(no_fixture)} topics have no fixture draft: {no_fixture}")
-        print("Fixture drafts required for meaningful scoring. Run bot to generate: tests/golden/fixtures/<slug>_draft.json")
+            failures.append(f"{slug}: composite {score:.3f} <= 0.2")
 
     assert not failures, "gold_smoke failures:\n  " + "\n  ".join(failures)
 

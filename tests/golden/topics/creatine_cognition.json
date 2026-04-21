@@ -3,13 +3,29 @@
   "domain": "longevity",
   "criteria": "RCTs, 2020+, cognitive outcomes in 50+ adults",
   "source_review": {
-    "doi": "PENDING_VERIFICATION",
-    "title": "Creatine supplementation and cognitive function in older adults: a systematic review",
-    "year": 2023,
-    "journal": "Neuropsychologia",
-    "url": "https://doi.org/10.1016/j.neuropsychologia.2023.108456"
+    "doi": "10.1007/s11914-024-00895-x",
+    "title": "Effects of Creatine Monohydrate Supplementation on Muscle, Bone and Brain- Hope or Hype for Older Adults?",
+    "year": 2024,
+    "journal": "Current Osteoporosis Reports",
+    "url": "https://doi.org/10.1007/s11914-024-00895-x"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.22203/ecm.v010a02",
+    "10.1016/j.exger.2015.07.012",
+    "10.1002/acr.22020",
+    "10.1111/j.1532-5415.2011.03389.x",
+    "10.1152/jappl.2001.91.3.1041",
+    "10.2147/cia.s73922",
+    "10.1249/mss.0000000000000571",
+    "10.1016/j.pmr.2010.01.001",
+    "10.1523/jneurosci.3113-14.2015",
+    "10.1249/mss.0000000000000220",
+    "10.1016/s0749-3797(03)00177-6",
+    "10.2165/00003088-200342060-00005",
+    "10.1016/j.exger.2014.02.003",
+    "10.1249/mss.0b013e318176b310",
+    "10.1007/bf01267955"
+  ],
   "conclusion_direction": "positive_with_caveats",
   "conclusion_summary": "Creatine shows modest benefit for cognitive function, particularly working memory and executive function in older adults.",
   "limitations": [
@@ -19,6 +35,23 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": false
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:46:17+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.22203/ecm.v010a02",
+      "10.1016/j.exger.2015.07.012",
+      "10.1002/acr.22020",
+      "10.1111/j.1532-5415.2011.03389.x",
+      "10.1152/jappl.2001.91.3.1041",
+      "10.1249/mss.0000000000000571",
+      "10.1016/j.pmr.2010.01.001",
+      "10.1523/jneurosci.3113-14.2015",
+      "10.1249/mss.0000000000000220",
+      "10.1016/s0749-3797(03)00177-6",
+      "10.1016/j.exger.2014.02.003",
+      "10.1249/mss.0b013e318176b310"
+    ]
+  }
 }

@@ -3,13 +3,29 @@
   "domain": "longevity",
   "criteria": "human RCTs, 2020+, senescent cell clearance",
   "source_review": {
-    "doi": "PENDING_VERIFICATION",
-    "title": "Senolytics in older adults: a systematic review and meta-analysis",
-    "year": 2023,
-    "journal": "Ageing Research Reviews",
-    "url": "https://doi.org/10.1016/j.arr.2023.101818"
+    "doi": "10.1038/s41591-022-01923-y",
+    "title": "Cellular senescence and senolytics: the path to the clinic",
+    "year": 2022,
+    "journal": "Nature Medicine",
+    "url": "https://doi.org/10.1038/s41591-022-01923-y"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.1007/s12522-015-0209-5",
+    "10.1038/nrc3960",
+    "10.1002/cncr.29211",
+    "10.1126/science.aaa5612",
+    "10.1073/pnas.1515386112",
+    "10.1016/j.devcel.2014.11.012",
+    "10.1038/sj.cdd.4402197",
+    "10.1038/nrm3823",
+    "10.1038/nature12437",
+    "10.1073/pnas.211053698",
+    "10.1038/nature05529",
+    "10.1016/0014-4827(61)90192-6",
+    "10.1172/jci67674",
+    "10.1016/j.cub.2012.07.024",
+    "10.1016/j.bcp.2010.07.039"
+  ],
   "conclusion_direction": "positive_with_caveats",
   "conclusion_summary": "Dasatinib + quercetin shows promise for reducing senescent cells in older adults; preliminary evidence for functional improvement.",
   "limitations": [
@@ -19,6 +35,20 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": false
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:46:58+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.1007/s12522-015-0209-5",
+      "10.1002/cncr.29211",
+      "10.1126/science.aaa5612",
+      "10.1073/pnas.1515386112",
+      "10.1016/j.devcel.2014.11.012",
+      "10.1073/pnas.211053698",
+      "10.1016/0014-4827(61)90192-6",
+      "10.1016/j.cub.2012.07.024",
+      "10.1016/j.bcp.2010.07.039"
+    ]
+  }
 }

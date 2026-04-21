@@ -3,13 +3,29 @@
   "domain": "longevity",
   "criteria": "human studies, 2020+, glycemic and longevity outcomes",
   "source_review": {
-    "doi": "PENDING_VERIFICATION",
-    "title": "Metformin and aging: a systematic review of its effects on aging-related outcomes",
+    "doi": "10.1038/s41574-023-00833-4",
+    "title": "Metformin: update on mechanisms of action and repurposing potential",
     "year": 2023,
-    "journal": "Diabetologia",
-    "url": "https://doi.org/10.1016/j.diabetologia.2023.01.004"
+    "journal": "Nature Reviews Endocrinology",
+    "url": "https://doi.org/10.1038/s41574-023-00833-4"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.18632/aging.100273",
+    "10.1016/j.cmet.2010.04.001",
+    "10.1016/j.cmet.2014.07.013",
+    "10.1074/jbc.m113.528232",
+    "10.1016/s0006-2952(99)00396-2",
+    "10.3892/br.2012.18",
+    "10.1038/ni1008-1091",
+    "10.1038/nm.3787",
+    "10.1021/bi500489j",
+    "10.1097/igc.0b013e31828189b2",
+    "10.1042/bj3480607",
+    "10.1007/s00125-008-1053-5",
+    "10.1016/j.metabol.2013.01.014",
+    "10.1126/science.1120781",
+    "10.1074/jbc.m114.567271"
+  ],
   "conclusion_direction": "positive_with_caveats",
   "conclusion_summary": "Metformin shows potential longevity benefits independent of glycemic control; TAME trial results suggest mortality benefits in non-diabetics.",
   "limitations": [
@@ -19,6 +35,21 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": false
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:46:34+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.1016/j.cmet.2010.04.001",
+      "10.1016/j.cmet.2014.07.013",
+      "10.1074/jbc.m113.528232",
+      "10.1016/s0006-2952(99)00396-2",
+      "10.1021/bi500489j",
+      "10.1097/igc.0b013e31828189b2",
+      "10.1042/bj3480607",
+      "10.1016/j.metabol.2013.01.014",
+      "10.1126/science.1120781",
+      "10.1074/jbc.m114.567271"
+    ]
+  }
 }

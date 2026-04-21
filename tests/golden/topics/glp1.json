@@ -3,13 +3,29 @@
   "domain": "metabolic",
   "criteria": "RCTs, 2020+, cardiovascular and metabolic outcomes",
   "source_review": {
-    "doi": "10.1016/j.jacc.2023.02.017",
-    "title": "GLP-1 receptor agonists and cardiovascular outcomes: a systematic review and meta-analysis",
-    "year": 2023,
-    "journal": "Journal of the American College of Cardiology",
-    "url": "https://doi.org/10.1016/j.jacc.2023.02.017"
+    "doi": "10.1111/dom.16364",
+    "title": "Real\u2010world evidence on the utilization, clinical and comparative effectiveness, and adverse effects of newer <scp>GLP</scp> \u2010 <scp>1RA</scp> \u2010based weight\u2010loss therapies",
+    "year": 2025,
+    "journal": "Diabetes Obesity and Metabolism",
+    "url": "https://doi.org/10.1111/dom.16364"
   },
-  "included_dois": [],
+  "included_dois": [
+    "10.1056/nejmoa1411892",
+    "10.2337/dc13-2983",
+    "10.1136/bmj.g2366",
+    "10.1210/en.2009-1272",
+    "10.1097/00132582-198203000-00028",
+    "10.1016/j.jacc.2013.11.004",
+    "10.1097/sla.0000000000001730",
+    "10.4158/ep161365.gl",
+    "10.1056/nejmoa1607141",
+    "10.1136/bmj.j163",
+    "10.1007/s12325-017-0652-2",
+    "10.1111/dom.13172",
+    "10.2337/dc17-2280",
+    "10.1007/s11695-018-3493-4",
+    "10.1136/bmjopen-2018-023830"
+  ],
   "conclusion_direction": "positive",
   "conclusion_summary": "GLP-1 agonists demonstrate robust cardiovascular benefit including weight loss, reduced MACE events, and improved glycemic control.",
   "limitations": [
@@ -19,6 +35,24 @@
   ],
   "quantitative_claims": [],
   "last_validated": "2026-04-21",
-  "curator": "dom",
-  "doi_verified": true
+  "curator": "openalex-programmatic",
+  "doi_verified": true,
+  "doi_verified_at": "2026-04-21T09:46:28+00:00",
+  "verification_notes": {
+    "dropped_dois": [
+      "10.1056/nejmoa1411892",
+      "10.2337/dc13-2983",
+      "10.1136/bmj.g2366",
+      "10.1210/en.2009-1272",
+      "10.1097/00132582-198203000-00028",
+      "10.1016/j.jacc.2013.11.004",
+      "10.1097/sla.0000000000001730",
+      "10.4158/ep161365.gl",
+      "10.1056/nejmoa1607141",
+      "10.1136/bmj.j163",
+      "10.1111/dom.13172",
+      "10.2337/dc17-2280",
+      "10.1136/bmjopen-2018-023830"
+    ]
+  }
 }
