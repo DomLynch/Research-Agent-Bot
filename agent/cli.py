@@ -19,6 +19,7 @@ from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
 from agent.sources.rxiv import RxivClient
 from agent.submit import submit
+from agent.validator import validate_citations
 
 _CLINICAL_DOMAINS = {"oncology", "longevity"}
 _CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
@@ -408,6 +409,11 @@ def run_agent(
         ):
             artifact["error"] = f"Insufficient direct evidence for '{resolved_topic}' in the {domain} domain."
             artifact["gate_reason"] = "insufficient_direct_evidence"
+        citation_violations = validate_citations(artifact, artifact.get("source_bundle", []))
+        artifact["citation_violations"] = citation_violations
+        artifact["high_severity_citation_count"] = sum(
+            1 for violation in citation_violations if violation.get("severity") == "high"
+        )
         run_log.update(artifact)
         run_log["source_telemetry"] = {
             "retrieved": source_counts,

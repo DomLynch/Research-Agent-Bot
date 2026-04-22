@@ -22,6 +22,8 @@ def _transport(counter: dict[str, int], *, has_pmcid: bool = True) -> httpx.Mock
             </article>
             """
             return httpx.Response(200, text=xml)
+        if "api.unpaywall.org" in request.url.host:
+            return httpx.Response(404, json={})
         raise AssertionError(f"Unexpected path: {request.url.path}")
 
     return httpx.MockTransport(handler)
@@ -36,6 +38,8 @@ def test_fetch_full_text_from_europe_pmc_and_cache(tmp_path: Path) -> None:
 
     assert stats["attempted"] == 1
     assert stats["found"] == 1
+    assert stats["found_any"] == 1
+    assert stats["parseable_text_count"] == 1
     assert enriched[0]["full_text_source"] == "europepmc"
     assert "Older adults" in enriched[0]["full_text"]
     assert enriched[0]["full_text_sections"]["methods"].startswith("Older adults")
@@ -43,6 +47,7 @@ def test_fetch_full_text_from_europe_pmc_and_cache(tmp_path: Path) -> None:
     second, second_stats = cached.enrich_entries([entry], limit=1)
     assert second[0]["pmcid"] == "PMC123"
     assert second_stats["found"] == 1
+    assert second_stats["found_any"] == 1
     assert counter["calls"] == 2
 
 
@@ -55,6 +60,73 @@ def test_fetch_full_text_handles_missing_pmcid(tmp_path: Path) -> None:
     assert stats["attempted"] == 1
     assert stats["found"] == 0
     assert "full_text" not in enriched[0]
+    assert stats["source_counts"]["none"] == 1
+
+
+def test_fetch_cascades_to_unpaywall_pmc_xml(tmp_path: Path) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/search"):
+            return httpx.Response(200, json={"resultList": {"result": [{}]}})
+        if "api.unpaywall.org" in request.url.host:
+            return httpx.Response(
+                200,
+                json={
+                    "is_oa": True,
+                    "oa_status": "gold",
+                    "best_oa_location": {
+                        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9999999/",
+                        "url_for_pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9999999/pdf/main.pdf",
+                    },
+                },
+            )
+        if request.url.path.endswith("/PMC9999999/fullTextXML"):
+            xml = """
+            <article>
+              <body>
+                <sec><title>Results</title><p>Frailty improved by 23%.</p></sec>
+              </body>
+            </article>
+            """
+            return httpx.Response(200, text=xml)
+        raise AssertionError(f"Unexpected URL: {request.url}")
+
+    fetcher = FullTextFetcher(cache_dir=tmp_path, transport=httpx.MockTransport(handler))
+    enriched, stats = fetcher.enrich_entries([{"doi": "10.1/jats", "title": "JATS paper", "source_type": "pubmed"}], limit=1)
+
+    assert enriched[0]["full_text_source"] == "unpaywall_jats"
+    assert "23%" in enriched[0]["full_text"]
+    assert stats["source_counts"]["unpaywall_jats"] == 1
+    assert stats["found_any"] == 1
+    assert stats["parseable_text_count"] == 1
+
+
+def test_fetch_cascades_to_unpaywall_pdf_only(tmp_path: Path) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/search"):
+            return httpx.Response(200, json={"resultList": {"result": [{}]}})
+        if "api.unpaywall.org" in request.url.host:
+            return httpx.Response(
+                200,
+                json={
+                    "is_oa": True,
+                    "oa_status": "bronze",
+                    "best_oa_location": {
+                        "url": "https://example.org/article",
+                        "url_for_pdf": "https://example.org/article.pdf",
+                    },
+                },
+            )
+        raise AssertionError(f"Unexpected URL: {request.url}")
+
+    fetcher = FullTextFetcher(cache_dir=tmp_path, transport=httpx.MockTransport(handler))
+    enriched, stats = fetcher.enrich_entries([{"doi": "10.1/pdfonly", "title": "PDF only", "source_type": "pubmed"}], limit=1)
+
+    assert enriched[0]["full_text_source"] == "unpaywall_pdf_only"
+    assert enriched[0]["full_text_pdf_url"] == "https://example.org/article.pdf"
+    assert "full_text" not in enriched[0]
+    assert stats["source_counts"]["unpaywall_pdf_only"] == 1
+    assert stats["found_any"] == 1
+    assert stats["parseable_text_count"] == 0
 
 
 def test_entry_identity_prefers_doi_then_url() -> None:

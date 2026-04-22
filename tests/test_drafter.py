@@ -151,9 +151,9 @@ def test_drafter_separates_reported_findings_from_registry_only_trials():
         all_evidence=[published, registered],
     )
     assert not artifact.get("error")
-    assert "Registered but not yet reported" in provider.user_prompt
-    assert "Published findings" in provider.user_prompt
-    assert "Do not say they found, showed, reported, or demonstrated outcomes" in provider.system_prompt
+    assert "=== REGISTERED / NOT YET REPORTED" in provider.user_prompt
+    assert "=== PUBLISHED RESULTS" in provider.user_prompt
+    assert "For registered or protocol studies, describe only the study design or aim" in provider.system_prompt
 
 
 def test_drafter_sanitizes_registry_only_outcome_claims_and_adds_numeric_fallback():
