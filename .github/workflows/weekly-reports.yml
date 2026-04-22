@@ -1,0 +1,38 @@
+name: Weekly Reports
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Coverage audit
+        run: PYTHONPATH=. python scripts/coverage_audit.py
+
+      - name: Weekly report
+        run: PYTHONPATH=. python scripts/weekly_report.py
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-reports
+          path: |
+            runs/
+            coverage_report.json

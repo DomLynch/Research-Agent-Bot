@@ -268,3 +268,46 @@ Each cycle only stayed after the targeted test slice passed.
 - Rely on prompt wording only — rejected; registration-only fabrication needs a deterministic fence, not just a softer instruction.
 - Treat every CT.gov record as low-grade direct evidence — rejected; registrations and posted results are not the same evidence class.
 **Revisit if:** live drafts still attach outcome verbs to registration-only refs, or if CT.gov posted-result strings are too noisy and need normalization into arm-level effect estimates before Tier 2 meta-analysis.
+
+---
+
+## Brief 5 — Gold Expansion + Registry Tests
+**Date:** 2026-04-22
+**Branch:** `mimo-brief-5-gold-expansion` → PR #6 (MERGED)
+**Motive:** V0 composite ≈ 0.54 — gold coverage is still a gap. Prior brief covered the top-10 emerging research topics; expand to 15 (the full MIMO ranking set). Add real fixtures (not stubs) and verify every DOI via CrossRef.
+
+**Chosen:** Expand golden set from 10 → 15 topics with 5 new fixture files (donanemab_alzheimer, semaglutide_weight, glp1_cv_mace, sglt2_heart_failure, statin_primary_prevention). 59 new DOIs (148 → 207 total, all CrossRef-verified). Fixed entity resolver: donanemab ratio 0.65, glp1 raised to 0.50. Updated test counts in test_karpathy_loop.py (10→15) and test_coverage_audit.py (already 15). Renamed 3 TestLoaders tests to reflect 15 topics.
+
+**Alternatives rejected:**
+- Fixtures with inline strings — rejected; every golden fixture must contain real PubMed/CrossRef data so meta-analysis + scoring paths have real metadata to validate against.
+- Expand to 20+ topics now — rejected; diminishing returns before the core pipeline is hardened. Revisit after AAA gate pass.
+
+**Revisit if:** composite still below 0.70 after a full run with 15 topics, or if any of the new fixtures expose a scoring regression.
+
+---
+
+## Brief 6 — CI Automation
+**Date:** 2026-04-22
+**Branch:** `mimo-brief-6-ci-automation` (IN PROGRESS)
+**Motive:** There is no CI gate. Tests and ruff only run locally. Without a CI gate, regressions can slip onto main. Need a lean, modular CI setup that replaces the existing 249-line `eval.yml` without conflicting with concurrent GPT work.
+
+**Chosen:** Three focused workflows replacing `eval.yml`:
+1. **ci.yml** — tests + ruff on every push/PR (replaces `eval.yml`)
+2. **karpathy-pr.yml** — regenerate fixtures + snapshot + diff + PR comment on PRs (uses `upload-artifact`/`download-artifact` to pass PR snapshot across branch switch)
+3. **weekly-reports.yml** — Monday cron: coverage audit + weekly report
+
+Plus `scripts/ci_smoke.sh` — local simulation of CI.
+
+Key decisions:
+- Never use `.venv/bin/python` in YAML (GitHub runners don't have that venv)
+- Never hardcode MIMO_API_KEY — use `${{ secrets.MIMO_API_KEY }}`
+- Never regenerate fixtures in ci.yml (only in karpathy-pr.yml)
+- Snapshot command saves timestamped files, not fixed names — used `ls -t` + `grep` to find latest
+- `DIFFS_DIR` = `scripts/karpathy-loop/diffs/` — diff command auto-saves output there
+
+**Alternatives rejected:**
+- Keep `eval.yml` and add workflows — rejected; monolithic inline Python is unmaintainable. Three clean workflows are easier to reason about.
+- One combined CI workflow — rejected; fixture regeneration + diff is expensive; should only run on PRs, not every push.
+- Use `act` to test locally — rejected; `ci_smoke.sh` is simpler and covers the fast gate.
+
+**Revisit if:** CI runs become too slow (>10 min), or if weekly-reports cron needs to trigger on specific PR labels instead.
