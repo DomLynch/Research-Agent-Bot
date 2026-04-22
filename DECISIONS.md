@@ -329,3 +329,31 @@ Key decisions:
 - Skip dead-code detection entirely — rejected, it catches real rot when a module is genuinely abandoned.
 - Wire smoke test to daily cron — rejected, private repo free plan; Monday-only saves CI minutes.
 **Revisit if:** schema.py or unpaywall.py gets imported by agent internals (detector should stop flagging them), or if the project upgrades to a paid GitHub plan (then add daily smoke).
+
+
+---
+
+## 2026-04-22 — Semantic Scholar citation graph source (Brief 8)
+
+**Decision:** Add Semantic Scholar as a new source adapter exposing both topic
+search and citation graph traversal (references_of / citations_of). Ship as
+standalone module; wire into production in a separate follow-up brief.
+
+**Why:** Current `study_overlap` metric is stuck at 0.01 because the bot's
+retrieval is topic-string-based only. Cochrane-style reviews cite specific
+seminal papers that don't surface via topic search. Semantic Scholar's citation
+graph API gives direct access to what a given review cites. Traversal of the
+gold topic's source review reference list is the clean path to finding the
+same foundational papers Cochrane found.
+
+**Alternatives rejected:**
+- OpenAlex referenced_works — we already use OpenAlex for search, but S2's
+  citation-graph API is richer and has better metadata on both directions.
+- CrossRef references endpoint — lower coverage, no abstracts.
+- Skip until GPT wires it — rejected, MiMo can build the module in parallel
+  while GPT works Tier 2.
+
+**Revisit if:**
+- S2 rate limits become an issue at production scale (unlikely under 1000 runs/day)
+- Wiring this into retrieval doesn't materially improve study_overlap
+  (would indicate upstream retrieval, not the source, is the bottleneck)

@@ -98,3 +98,19 @@ Modules built but not yet integrated into `run_agent()` are kept alive via:
 
 When Tier 2 lands, the detector goes silent on those two modules; the other two
 surrogate checks keep running against the integrated modules.
+
+
+## Semantic Scholar Citation Graph (Brief 8)
+
+New source module `agent/sources/semantic_scholar.py` — standalone, NOT wired
+into production yet. Exposes:
+
+- `search(query)` — drop-in topic search, same shape as other source clients
+- `references_of(doi)` — fetch the reference list of a paper (what it cites)
+- `citations_of(doi)` — fetch papers that cite a given paper
+
+Wiring plan: once integrated (future brief, ~30 LOC in cli.py), the bot will
+expand retrieval by traversing the citation graph of the gold-topic source
+review. Expected: `study_overlap` 0.01 → 0.30+.
+
+Optional env var: `SEMANTIC_SCHOLAR_API_KEY` (works without at lower rate).
