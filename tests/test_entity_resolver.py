@@ -39,3 +39,19 @@ def test_topic_match_ratio_uses_canonical_and_aliases():
     ]
     ratio = topic_match_ratio(entries, canonical_term="everolimus", aliases=["evrolimus", "sirolimus"])
     assert ratio == 0.667
+
+
+def test_resolve_topic_keeps_known_compound_identity():
+    out = resolve_topic("NAD precursors NMN NR aging", chembl_client=None)
+    assert out["blocked"] is False
+    assert out["canonical_term"] == "nmn"
+    assert out["resolver_source"] == "known_compound"
+
+
+def test_resolve_topic_combines_glp1_and_omega3_tokens():
+    glp = resolve_topic("GLP-1 agonists cardiometabolic outcomes", chembl_client=None)
+    omega = resolve_topic("omega-3 EPA DHA cardiovascular outcomes", chembl_client=None)
+    assert glp["blocked"] is False
+    assert glp["canonical_term"] == "glp1"
+    assert omega["blocked"] is False
+    assert omega["canonical_term"] == "omega3"

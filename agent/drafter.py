@@ -62,8 +62,17 @@ _INJECTION_PATTERNS = (
 )
 _INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
 _NUMERIC_CLAIM_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
+_QUANT_LITERAL_RE = re.compile(
+    r"\d+(?:\.\d+)?\s*(?:%|ppm|mg|fold|x|years?|months?|days?|patients?|subjects?|participants?|kg|mg/kg|ug|l|ml|nm|um|ul|mmhg|bpm)",
+    re.IGNORECASE,
+)
 _OUTCOME_VERB_RE = re.compile(
     r"\b(found|showed|reported|demonstrated|improved|reduced|increased|decreased|achieved|yielded)\b",
+    re.IGNORECASE,
+)
+_NUMERIC_SENTENCE_RE = re.compile(
+    r"(?:\bhr\b|hazard ratio|odds ratio|\bor\b|\brr\b|confidence interval|\bci\b|"
+    r"p\s*[<=>]|n\s*=|\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?\s*(?:months?|years?|weeks?|days?|kg|mg|mmhg))",
     re.IGNORECASE,
 )
 
@@ -72,6 +81,37 @@ def _clean(value: Any, limit: int = 2000) -> str:
     raw = str(value or "")
     raw = _INJECTION_RE.sub("[REDACTED]", raw)
     return re.sub(r"\s+", " ", raw).strip()[:limit]
+
+
+def _bundle_excerpt(item: dict[str, Any]) -> str:
+    raw = _clean(item.get("excerpt"), limit=1800)
+    if not raw:
+        return ""
+    sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", raw) if part.strip()]
+    picked: list[str] = []
+    length = 0
+    for sentence in sentences:
+        if length >= 220:
+            break
+        picked.append(sentence)
+        length += len(sentence) + 1
+    for sentence in sentences:
+        if not _NUMERIC_SENTENCE_RE.search(sentence):
+            continue
+        if sentence in picked:
+            continue
+        picked.append(sentence)
+        if len(" ".join(picked)) >= 420:
+            break
+    excerpt = _clean(" ".join(picked) or raw, limit=420)
+    effect_spans = []
+    for effect in (item.get("extraction") or {}).get("effects") or []:
+        span = _clean(effect.get("source_span"), limit=160)
+        if span and span.lower() not in excerpt.lower():
+            effect_spans.append(span)
+    if effect_spans:
+        excerpt = _clean(f"{excerpt} {' '.join(effect_spans[:2])}", limit=500)
+    return excerpt
 
 
 def _dedupe(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -153,7 +193,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
     relevance = _relevance(item, topic_tokens, card=card, directness=directness, role=role)
     return {
         "title": _clean(item.get("title"), limit=200),
-        "excerpt": _clean(item.get("excerpt"), limit=500),
+        "excerpt": _bundle_excerpt(item),
         "evidence_type": item.get("evidence_type"),
         "source_type": item.get("source_type"),
         "trial_status": item.get("trial_status"),
@@ -239,6 +279,20 @@ def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
     if n:
         bits.append(n)
     return "; ".join(bits).strip() + "."
+
+
+def _strip_unsupported_numeric_claims(text: str, source_bundle: list[dict[str, Any]]) -> str:
+    cleaned = _clean(text, limit=4000)
+    claims = set(_QUANT_LITERAL_RE.findall(cleaned.lower()))
+    if not claims:
+        return cleaned
+    excerpts = [str(entry.get("excerpt") or "").lower() for entry in source_bundle]
+    unsupported = {claim for claim in claims if not any(claim in excerpt for excerpt in excerpts)}
+    if not unsupported:
+        return cleaned
+    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    kept = [sentence for sentence in sentences if not any(claim in sentence.lower() for claim in unsupported)]
+    return " ".join(part for part in kept if part).strip()
 
 
 def _has_quantitative_content(text: str) -> bool:
@@ -410,6 +464,10 @@ class RapidEvidenceDrafter:
         for heading in ("Evidence Landscape", "Key Findings", "Conclusion"):
             if heading in sections:
                 sections[heading] = _sanitize_registry_claims(sections[heading], registered_refs)
+
+        for heading in ("Key Findings", "Conclusion"):
+            if heading in sections:
+                sections[heading] = _strip_unsupported_numeric_claims(sections[heading], source_bundle)
 
         if has_effect_data and not _has_quantitative_content(sections.get("Key Findings", "")) and first_effect_entry:
             sections["Key Findings"] = f"{sections['Key Findings']} {_numeric_effect_sentence(*first_effect_entry)}".strip()

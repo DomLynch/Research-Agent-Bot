@@ -13,7 +13,7 @@ _GENERIC_TOKENS = {
 _COMPOUND_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "statin")
 _KNOWN_COMPOUNDS = {
     "rapamycin", "sirolimus", "everolimus", "metformin", "acarbose", "resveratrol",
-    "spermidine", "semaglutide", "tirzepatide", "glp1", "nmn", "nr",
+    "spermidine", "semaglutide", "tirzepatide", "glp1", "nmn", "nr", "omega3", "epa", "dha",
 }
 _ALIASES = {
     "evrolimus": "everolimus",
@@ -24,6 +24,9 @@ _ALIASES = {
     "glp1": "glp1",
     "glp1ra": "glp1",
     "glp": "glp1",
+    "omega3": "omega3",
+    "epa": "omega3",
+    "dha": "omega3",
     "donanemab": "donanemab",
     "lecanemab": "donanemab",
     "aducanumab": "donanemab",
@@ -41,6 +44,7 @@ _COMPOUND_CLASS_MEMBERS = {
              "incretin", "incretin therapy", "incretin-based"],
     "sglt2": ["empagliflozin", "dapagliflozin", "canagliflozin",
               "sglt2 inhibitor", "gliflozin", "sodium-glucose cotransporter-2"],
+    "omega3": ["omega-3", "eicosapentaenoic acid", "docosahexaenoic acid", "epa", "dha", "fish oil"],
 }
 
 
@@ -49,7 +53,19 @@ def _normalize(value: str) -> str:
 
 
 def _tokens(text: str) -> list[str]:
-    return [tok for tok in re.sub(r"[^a-z0-9]+", " ", str(text or "").lower()).split() if tok]
+    raw_tokens = [tok for tok in re.sub(r"[^a-z0-9]+", " ", str(text or "").lower()).split() if tok]
+    combined: list[str] = []
+    i = 0
+    while i < len(raw_tokens):
+        current = raw_tokens[i]
+        nxt = raw_tokens[i + 1] if i + 1 < len(raw_tokens) else ""
+        if (current, nxt) in {("glp", "1"), ("omega", "3"), ("sglt", "2")}:
+            combined.append(f"{current}{nxt}")
+            i += 2
+            continue
+        combined.append(current)
+        i += 1
+    return combined
 
 
 def _compound_focus(topic: str) -> str | None:
@@ -57,6 +73,8 @@ def _compound_focus(topic: str) -> str | None:
     if not tokens:
         return None
     for tok in tokens:
+        if tok.isdigit():
+            continue
         if tok in _ALIASES or tok in _KNOWN_COMPOUNDS or tok.endswith(_COMPOUND_SUFFIXES) or any(ch.isdigit() for ch in tok):
             return tok
     return None
@@ -98,6 +116,24 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
                 "did_you_mean": canonical_topic if canonical_topic.lower() != raw.lower() else None,
                 "confidence": 0.99,
                 "resolver_source": "alias_map",
+                "aliases": aliases,
+            }
+        )
+        return resolution
+
+    if _normalize(focus) in _KNOWN_COMPOUNDS:
+        canonical = _normalize(focus)
+        aliases = []
+        for m in _COMPOUND_CLASS_MEMBERS.get(canonical, []):
+            if m not in aliases:
+                aliases.append(m)
+        resolution.update(
+            {
+                "canonical_topic": raw,
+                "canonical_term": canonical,
+                "did_you_mean": None,
+                "confidence": 0.95,
+                "resolver_source": "known_compound",
                 "aliases": aliases,
             }
         )

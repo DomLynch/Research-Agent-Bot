@@ -314,6 +314,11 @@ def test_main_no_args():
         capture_output=True,
         text=True,
         cwd=str(__import__("pathlib").Path(__file__).resolve().parent.parent),
+        env={
+            **__import__("os").environ,
+            "PYTHONPATH": str(__import__("pathlib").Path(__file__).resolve().parent.parent),
+            "COVERAGE_AUDIT_OFFLINE": "1",
+        },
     )
     assert result.returncode == 0
 
@@ -326,6 +331,11 @@ def test_main_unknown_topic():
         capture_output=True,
         text=True,
         cwd=str(__import__("pathlib").Path(__file__).resolve().parent.parent),
+        env={
+            **__import__("os").environ,
+            "PYTHONPATH": str(__import__("pathlib").Path(__file__).resolve().parent.parent),
+            "COVERAGE_AUDIT_OFFLINE": "1",
+        },
     )
     assert result.returncode == 1
     assert "Unknown topic slug" in result.stderr

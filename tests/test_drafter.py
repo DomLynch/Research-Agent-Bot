@@ -46,6 +46,24 @@ class BadRegistryProvider(CaptureProvider):
         )
 
 
+class UnsupportedNumericProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of semaglutide on weight outcomes in adults with obesity over at least six months of follow-up, compared with placebo, and what does the retained evidence indicate about efficacy, safety, and remaining uncertainty?",
+                "search_summary": "Recent published findings were reviewed.",
+                "landscape": "The evidence base is composed of recent obesity trials.",
+                "findings": "One trial reported -15.8% weight loss versus -3.0% placebo [1]. Another found 86.4% achieved at least 5% weight loss [1].",
+                "limitations": "The evidence remains limited.",
+                "gaps_identified": "Long-term outcomes remain uncertain.",
+                "conclusion": "Semaglutide reduced weight by -15.8% versus -3.0% placebo [1].",
+            },
+            {},
+        )
+
+
 def test_classify_directness_marks_aging_rct_direct():
     item = {
         "title": "Metformin and aging in older adults: randomized controlled trial",
@@ -202,6 +220,52 @@ def test_drafter_sanitizes_registry_only_outcome_claims_and_adds_numeric_fallbac
     assert "p=0.04" in findings
 
 
+def test_bundle_entry_appends_effect_source_span_to_excerpt():
+    entry = _bundle_entry(
+        {
+            "title": "Metformin and frailty outcomes",
+            "excerpt": "Older adults completed a randomized trial.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "extraction": {
+                "effects": [
+                    {
+                        "outcome": "frailty index",
+                        "metric": "MEAN",
+                        "value": "-0.1 vs 0.0",
+                        "source_span": "Frailty index at 2 years: -0.1 vs 0.0; p=0.04",
+                    }
+                ]
+            },
+        },
+        ["metformin", "frailty"],
+        "longevity",
+    )
+    assert "Older adults completed a randomized trial." in entry["excerpt"]
+    assert "Frailty index at 2 years: -0.1 vs 0.0; p=0.04" in entry["excerpt"]
+
+
+def test_bundle_entry_keeps_numeric_result_sentence_from_later_in_excerpt():
+    entry = _bundle_entry(
+        {
+            "title": "Semaglutide and cardiovascular outcomes",
+            "excerpt": (
+                "Semaglutide was studied in adults with obesity and cardiovascular disease. "
+                "Background details and eligibility criteria were described extensively for the study cohort. "
+                "Treatment reduced major adverse cardiovascular events by 20% (HR 0.80, 95% CI 0.72-0.90) over 39.8 months."
+            ),
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2024,
+        },
+        ["semaglutide", "cardiovascular"],
+        "metabolic",
+    )
+    assert "20% (HR 0.80, 95% CI 0.72-0.90)" in entry["excerpt"]
+    assert "39.8 months" in entry["excerpt"]
+
+
 def test_quality_gate_fires_on_classifier_generated_indirect_only_bundle():
     topic_tokens = ["everolimus", "aging"]
     items = [
@@ -222,3 +286,34 @@ def test_quality_gate_fires_on_classifier_generated_indirect_only_bundle():
         "source_bundle": bundle,
     }
     assert _quality_gate(artifact, current_year=2026, topic="everolimus aging") == "indirect_only_bundle"
+
+
+def test_drafter_strips_unsupported_numeric_claims():
+    provider = UnsupportedNumericProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Semaglutide trial in obesity",
+        "excerpt": "Adults with obesity were treated with semaglutide. The trial reported improved weight outcomes and gastrointestinal adverse events.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/1/",
+    }
+    companion = {
+        **published,
+        "title": "Companion semaglutide obesity outcomes paper",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/2/",
+    }
+    artifact, _ = drafter.draft(
+        topic="semaglutide weight loss",
+        domain_slug="metabolic",
+        criteria="2020 onwards RCTs",
+        queries=["semaglutide obesity trial"],
+        evidence=[published, companion],
+        all_evidence=[published, companion],
+    )
+    findings = artifact["sections"]["Key Findings"]
+    conclusion = artifact["sections"]["Conclusion"]
+    assert "-15.8%" not in findings
+    assert "86.4%" not in findings
+    assert "-15.8%" not in conclusion

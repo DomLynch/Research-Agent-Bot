@@ -352,3 +352,52 @@ Key decisions:
 - Skip dead-code detection entirely — rejected, it catches real rot when a module is genuinely abandoned.
 - Wire smoke test to daily cron — rejected, private repo free plan; Monday-only saves CI minutes.
 **Revisit if:** schema.py or unpaywall.py gets imported by agent internals (detector should stop flagging them), or if the project upgrades to a paid GitHub plan (then add daily smoke).
+
+---
+
+## 2026-04-22 — Tier 2 Finish: live benchmark + judge hardening
+**Decision:** Merge the Tier 2 citation-role/full-text branch on top of current `main`, then add three hardening fixes before shipping:
+1. exact known compound/class topics bypass the typo-only low-topic-match gate,
+2. bundle excerpts preserve later numeric result sentences plus extracted `source_span`s,
+3. unsupported quantitative claims are scrubbed from Key Findings/Conclusion before artifact return.
+
+**Why:** The raw Tier 2 branch was structurally correct but benchmark-incomplete. Once live MiMo regeneration ran on all 15 gold topics, the first honest diff exposed two real problems:
+- strict compound topic gating blocked valid benchmark topics (`GLP-1`, `omega-3`, `NAD`, `rapamycin`, etc.),
+- long abstracts were truncated before the numeric result sentence reached the bundle, so the drafter could still invent or overstate numbers.
+
+The final hardening moves fix the actual failure modes, not the score display.
+
+**What shipped:**
+- `agent/entity_resolver.py`
+  - added exact known-compound/class resolution path (`known_compound`) for `GLP-1`, `omega-3`, `EPA`, `DHA`, `NAD/NMN/NR`
+  - token combiner now normalizes `glp 1`, `omega 3`, `sglt 2`
+- `agent/cli.py`
+  - low-topic-match gate now applies only to corrected/uncertain compound resolutions (`did_you_mean`, `fuzzy_alias`, `chembl`), not exact known compounds/classes
+- `agent/drafter.py`
+  - bundle excerpt builder now preserves later numeric result sentences instead of only the front of long abstracts
+  - extracted `source_span` text is folded into the stored excerpt
+  - unsupported quantitative claims are deterministically removed from Key Findings/Conclusion
+- `scripts/coverage_audit.py`
+  - adds repo-root bootstrap for direct script execution
+  - explicit `COVERAGE_AUDIT_OFFLINE=1` path for fast deterministic subprocess tests
+- tests updated accordingly (`tests/test_cli.py`, `tests/test_entity_resolver.py`, `tests/test_drafter.py`, `tests/test_coverage_audit.py`, `tests/test_detect_unused_modules.py`)
+- `docs/tier2-validator-audit.md` now records the real live benchmark and violation profile
+
+**Judge result:**
+- full suite: `403 passed, 6 skipped, 5 xfailed`
+- `ruff` clean
+- honest Karpathy delta vs clean pre-run fixture baseline:
+  - `composite_score +0.0256`
+  - `quantitative_fidelity +0.0444`
+  - `limitation_overlap +0.0889`
+  - `direction_agreement -0.0333`
+  - `study_overlap +0.0000`
+
+**Tradeoff accepted:** The branch does **not** hit the aspirational `+0.08` composite target from the brief. It does, however, land positive on real live scoring, removes the registry-as-results fabrication class, widens full-text coverage, and hardens numeric grounding. Shipping a smaller positive delta is better than fabricating a bigger one.
+
+**Alternatives rejected:**
+- pretend the first negative diff was “close enough” — rejected; reran live, found the exact root causes, and fixed them.
+- hard-block drafts on medium-severity validator misses — rejected for now; the validator remains advisory until we have a rewrite loop.
+- chase broader PDF parsing before fixing excerpt/numeric grounding — rejected; the benchmark showed the immediate leverage was in what the drafter says from the evidence already in hand.
+
+**Revisit if:** `glp1_cv_mace`, `creatine_cognition`, or `senolytics` remain regressed after adding a validator-driven rewrite loop for medium-severity `missing_numeric` findings.

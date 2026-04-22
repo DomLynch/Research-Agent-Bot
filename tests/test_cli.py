@@ -407,14 +407,14 @@ def test_run_agent_canonicalizes_typo_topic(tmp_path: Path, monkeypatch) -> None
     assert run["resolver_source"] == "alias_map"
 
 
-def test_run_agent_blocks_low_topic_match_ratio(tmp_path: Path, monkeypatch) -> None:
+def test_run_agent_blocks_low_topic_match_ratio_for_corrected_topic(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.delenv("RESEARKA_URL", raising=False)
     monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
     monkeypatch.setattr(cli, "PubMedClient", lambda: IrrelevantSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
 
-    run = cli.run_agent(topic="everolimus", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+    run = cli.run_agent(topic="evrolimus", domain="anti-aging", criteria="", run_dir=str(tmp_path))
 
     assert "Low topic-match ratio" in run.get("error", "")
     assert run["topic_match_ratio"] == 0.0
@@ -432,6 +432,19 @@ def test_run_agent_blocks_indirect_only_anti_aging_draft(tmp_path: Path, monkeyp
     assert "Insufficient direct evidence" in run.get("error", "")
     assert run.get("gate_reason") == "insufficient_direct_evidence"
     assert "markdown" not in run
+
+
+def test_run_agent_does_not_apply_topic_match_gate_to_exact_known_compound(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "PubMedClient", lambda: IrrelevantSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(topic="metformin longevity", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+
+    assert "Low topic-match ratio" not in run.get("error", "")
+    assert run["canonical_topic"] == "metformin longevity"
+    assert run["resolver_source"] == "known_compound"
 
 
 # ── Safety gate tests ──────────────────────────────────────────────

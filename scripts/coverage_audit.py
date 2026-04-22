@@ -6,12 +6,18 @@ retrieval ceiling for each gold topic. No LLM calls, no cost.
 Usage:
     python scripts/coverage_audit.py [--topic SLUG]
 """
+# ruff: noqa: E402
 
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
 from agent.planner import QueryPlanner
 from agent.sources.clinicaltrials import ClinicalTrialsClient
@@ -19,8 +25,8 @@ from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
 from agent.sources.rxiv import RxivClient
 
-_TOPICS_DIR = Path(__file__).resolve().parent.parent / "tests" / "golden" / "topics"
-_RUNS_DIR = Path(__file__).resolve().parent.parent / "runs"
+_TOPICS_DIR = _REPO_ROOT / "tests" / "golden" / "topics"
+_RUNS_DIR = _REPO_ROOT / "runs"
 
 
 def normalize_doi(doi: str) -> str:
@@ -45,6 +51,8 @@ def collect_retrieved_dois(
     *,
     limit: int = 10,
 ) -> set[str]:
+    if os.getenv("COVERAGE_AUDIT_OFFLINE") == "1":
+        return set()
     plan = QueryPlanner().build(topic=topic, domain_slug=domain_slug, criteria=criteria)
     queries = plan.primary_queries()
     clients = [PubMedClient(), OpenAlexClient(), RxivClient(), ClinicalTrialsClient()]

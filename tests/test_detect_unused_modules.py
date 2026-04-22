@@ -33,14 +33,14 @@ def test_schema_is_flagged():
     assert "agent.schema" in data["dead_modules"]
 
 
-def test_unpaywall_is_flagged():
+def test_unpaywall_is_not_flagged():
     result = subprocess.run(
         [sys.executable, str(SCRIPT), "--json"],
         capture_output=True, text=True,
         env={**__import__("os").environ, "PYTHONPATH": str(REPO)},
     )
     data = json.loads(result.stdout)
-    assert "agent.sources.unpaywall" in data["dead_modules"]
+    assert "agent.sources.unpaywall" not in data["dead_modules"]
 
 
 def test_active_modules_not_flagged():
@@ -56,6 +56,7 @@ def test_active_modules_not_flagged():
         "agent.provider", "agent.submit", "agent.entity_resolver",
         "agent.sources.pubmed", "agent.sources.openalex",
         "agent.sources.chembl", "agent.sources.rxiv",
+        "agent.sources.unpaywall",
     ]
     for mod in active:
         assert mod not in data["dead_modules"], f"{mod} should not be dead"

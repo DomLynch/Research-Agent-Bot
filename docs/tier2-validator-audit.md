@@ -1,73 +1,105 @@
 # Tier 2 Validator Audit
 
 ## Scope
-- Branch: `gpt-tier2-citation-roles`
+- Branch: `tier2-finish`
 - Slice:
-  - citation roles
-  - advisory citation validator
+  - citation role taxonomy + advisory validator
   - Europe PMC -> Unpaywall -> CORE full-text cascade
+  - exact-compound resolver/gate compatibility fix
+  - excerpt grounding + unsupported-numeric scrub
 
-## Code Audit
-- New modules:
+## Runtime Surfaces
+- New:
   - `agent/citation_roles.py`
   - `agent/validator.py`
-  - `agent/sources/unpaywall.py`
   - `agent/sources/core.py`
-- Modified runtime surfaces:
+- Expanded:
+  - `agent/sources/unpaywall.py`
+  - `agent/fulltext.py`
   - `agent/drafter.py`
   - `agent/cli.py`
-  - `agent/evidence_cards.py`
-  - `agent/fulltext.py`
+  - `agent/entity_resolver.py`
 
 ## Judge Pass
-- Focused Phase A suite:
-  - `79 passed`
-  - validates role precedence, prompt grouping, validator behavior, and advisory run-log wiring
-- Focused Phase B suite:
-  - `30 passed`
-  - validates Europe PMC fallback, Unpaywall JATS, Unpaywall PDF-only, CORE adapter, and CLI compatibility
+- Changed-surface suites:
+  - `78 passed` on drafter / validator / role / full-text / resolver surfaces
+  - `27 passed` on coverage-audit + dead-code detector repairs
 - Full suite:
-  - `330 passed, 6 skipped`
+  - `403 passed, 6 skipped, 5 xfailed`
   - `ruff` clean
 
-## Live Smoke
-- Full-text cascade smoke on real DOIs:
-  - `10.1038/s41586-020-2649-2 -> europepmc, parseable_text=True`
-  - `10.1371/journal.pbio.3002669 -> europepmc, parseable_text=True`
-- This confirms the cascade still works on live network requests after the refactor.
-
-## Karpathy Loop Record
+## Live Benchmark
 - Before snapshot:
-  - `scripts/karpathy-loop/snapshots/20260422_061652_snapshot.json`
+  - `scripts/karpathy-loop/snapshots/20260422_181957_snapshot.json`
 - After snapshot:
-  - `scripts/karpathy-loop/snapshots/20260422_063158_snapshot.json`
+  - `scripts/karpathy-loop/snapshots/20260422_191110_snapshot.json`
 - Diff:
-  - `scripts/karpathy-loop/diffs/20260422_063209_diff.json`
+  - `scripts/karpathy-loop/diffs/20260422_191138_diff.json`
 
-## Metric Delta
-- `composite_score`: `+0.0000`
-- `quantitative_fidelity`: `+0.0000`
-- `direction_agreement`: `+0.0000`
-- `limitation_overlap`: `+0.0000`
+### Average Delta
+- `composite_score`: `+0.0256`
+- `quantitative_fidelity`: `+0.0444`
+- `limitation_overlap`: `+0.0889`
+- `direction_agreement`: `-0.0333`
 - `study_overlap`: `+0.0000`
 
-This flat delta is expected. Gold fixtures were **not** regenerated because `MIMO_API_KEY` is unset in this shell, so the harness is still scoring the pre-Tier-2 drafts.
+### Topic Summary
+- Improved: `7`
+- Regressed: `4`
+- Unchanged: `4`
 
-## Blocker
-- `scripts/generate_fixtures.py --all` is blocked in this environment:
-  - `MIMO_API_KEY` missing
-- Because of that, the live benchmark delta for Tier 2 is not measured yet.
+Largest improvements:
+- `omega3_cv`: `+0.2167`
+- `donanemab_alzheimer`: `+0.2000`
+- `sglt2_heart_failure`: `+0.2000`
+- `statin_primary_prevention`: `+0.2000`
+
+Remaining regressions:
+- `senolytics`: `-0.2833`
+- `glp1_cv_mace`: `-0.2000`
+- `creatine_cognition`: `-0.1500`
+- `semaglutide_weight`: `-0.0167`
+
+## Citation Validator Audit
+- High severity violations: `0`
+- Medium severity violations remain concentrated in summary-only bundles where the evidence lacks explicit numeric outcome strings.
+
+Per-topic non-zero counts:
+- `time_restricted_eating`: `10 medium`
+- `donanemab_alzheimer`: `6 medium`
+- `glp1_cv_mace`: `3 medium`
+- `omega3_cv`: `3 medium`
+- `statin_primary_prevention`: `3 medium`
+- `rapamycin`: `2 medium`
+- `glp1`: `1 medium`
+- `semaglutide_weight`: `1 medium`
+- `senolytics`: `1 medium`
+
+Representative medium-severity validator misses:
+1. `time_restricted_eating`
+   - issue: `missing_numeric`
+   - window: `One high-grade RCT in adults found no significant effect of intermittent fasting on a composite health outcome [6].`
+2. `glp1_cv_mace`
+   - issue: `missing_numeric`
+   - window: `One trial reported that an intervention led to a specific outcome [1].`
+3. `senolytics`
+   - issue: `missing_numeric`
+   - window: `the DQ combination significantly reduced senescence-associated β-galactosidase activity in human gingival keratinocytes [1].`
+
+## What Actually Improved
+- Registry-only ClinicalTrials citations no longer get outcome verbs.
+- Posted CT.gov results now feed structured `effects[]` without an LLM pass.
+- Exact known compound/class topics (`GLP-1`, `omega-3`, `NAD`, etc.) no longer trip the typo gate.
+- Bundle excerpts now preserve later numeric result sentences when available.
+- Unsupported quantitative claims are scrubbed before the artifact ships.
 
 ## Remaining Risks
-- Citation validation is advisory only. It logs violations but does not yet block or rewrite the draft.
-- Unpaywall PDF-only hits improve coverage telemetry but do not help extraction until a PDF parser lands.
-- CORE adapter is env-gated and unexercised without `CORE_API_KEY`.
+- `glp1_cv_mace` still lacks strong numeric grounding because the retained bundle often surfaces narrative summaries rather than trial-result abstracts with explicit effect sizes.
+- `creatine_cognition` and `senolytics` remain sensitive to direction wording because the evidence mix is sparse and partly indirect.
+- Validator is still advisory only; it logs misses but does not yet trigger an automatic rewrite loop.
+- Full-text hit rate improved, but PDF-only Unpaywall hits still cannot feed extraction until a parser lands.
 
-## Next Required Step
-1. Export `MIMO_API_KEY` in this shell.
-2. Regenerate all 10 gold fixtures.
-3. Rerun the Karpathy-loop snapshot/diff.
-4. Re-audit:
-   - `quantitative_fidelity`
-   - `citation_violations`
-   - role-language failures on metformin-aging and everolimus-style topics
+## Next Real Step
+1. Add a validator-driven rewrite loop for medium-severity `missing_numeric` failures on `published_results`.
+2. Tighten ranking for `glp1_cv_mace` and `senolytics` toward explicit trial-result abstracts and away from narrative summaries.
+3. Only then revisit broader PDF parsing / GROBID expansion.

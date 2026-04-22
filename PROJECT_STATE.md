@@ -71,6 +71,7 @@ Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/g
 - **Tier 1.6 trial-results grounding:** ClinicalTrials.gov entries now distinguish registry-only records from posted results, posted-result trials can populate structured `effects[]` directly from CT.gov outcomes, Methods reconciles bundle-backed extraction/full-text counts, and draft post-processing strips outcome claims attached to registration-only citations while forcing a numeric fallback when effect data exists.
 - **Tier 2 citation-role discipline:** every bundle entry now gets a `role` (`published_results`, `registered_pending`, `published_protocol`, `animal_model`, `off_domain_indirect`, etc.), the drafter prompt is grouped by role with explicit language rules, and post-draft citation validation logs forbidden-role language, missing hedges, and missing numerics.
 - **Tier 2 multi-source full-text:** full-text enrichment now cascades Europe PMC -> Unpaywall -> CORE, tracking `found_any`, `parseable_text_count`, and per-source hit counts so OA coverage gains are visible even when only PDF URLs are available.
+- **Tier 2 benchmarked:** live MiMo fixture regeneration now ran end-to-end on all 15 gold topics. Honest Karpathy delta versus the clean pre-run fixture set: `composite +0.0256`, `quant +0.0444`, `limitations +0.0889`, `direction -0.0333`, `study_overlap +0.0000`. See `docs/tier2-validator-audit.md`.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
@@ -83,7 +84,7 @@ Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/g
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 349 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 403 passed, 6 skipped, 5 xfailed
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.
@@ -97,8 +98,8 @@ Modules built but not yet integrated into `run_agent()` are kept alive via:
 - **Unpaywall smoke** (`scripts/unpaywall_smoke.py`): weekly cron resolves 5 known OA DOIs,
   writes `docs/weekly/YYYY-MM-DD-unpaywall.md`. Exits 1 on hit rate < 60%.
 - **Dead-code detector** (`scripts/detect_unused_modules.py`): CI warning when
-  `agent/**/*.py` modules are not imported anywhere. Currently flags `unpaywall.py` + `schema.py`
-  pending Tier 2. Guards against future bloat.
+  `agent/**/*.py` modules are not imported anywhere. After Tier 2, `unpaywall.py`
+  is live and no longer flagged; `schema.py` remains externally exercised.
 
-When Tier 2 lands, the detector goes silent on those two modules; the other two
-surrogate checks keep running against the integrated modules.
+After Tier 2, the detector goes silent on `unpaywall.py`; the other surrogate
+checks keep running against the integrated modules.

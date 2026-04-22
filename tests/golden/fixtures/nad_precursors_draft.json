@@ -1,42 +1,72 @@
 {
+  "raw_topic": "NAD precursors NMN NR aging",
+  "canonical_topic": "NAD precursors NMN NR aging",
+  "canonical_term": "nmn",
+  "did_you_mean": null,
+  "resolver_confidence": 0.95,
+  "resolver_source": "known_compound",
   "source_counts": {
     "pubmed": 6,
     "openalex": 54,
-    "rxiv": 1,
+    "rxiv": 0,
     "clinicaltrials": 0
   },
   "bundle_stages": {
-    "retrieved": 61,
-    "after_domain_filter": 19,
-    "final_bundle": 10
+    "retrieved": 60,
+    "screened": 60,
+    "after_domain_filter": 12,
+    "excluded_scope": 48,
+    "final_bundle": 5,
+    "excluded_after_filter": 7
   },
-  "protocol_file": "2026-04-21T16-35-12.404649Z-nad-precursors-nmn-nr-aging.protocol.json",
+  "protocol_file": "2026-04-22T18-34-32.502938Z-nad-precursors-nmn-nr-aging.protocol.json",
+  "full_text": {
+    "attempted": 12,
+    "found": 0,
+    "found_any": 11,
+    "parseable_text_count": 0,
+    "source_counts": {
+      "none": 1,
+      "unpaywall_pdf_only": 11
+    }
+  },
+  "extraction": {
+    "attempted": 0,
+    "found": 0,
+    "version": "tier1.5-v1"
+  },
+  "topic_match_ratio": 0.333,
   "title": "Rapid Evidence Synthesis: NAD precursors NMN NR aging",
-  "abstract": "This draft synthesizes public-index evidence on NAD precursors NMN NR aging for the longevity domain. The run retained 10 evidence receipts spanning 2020 to 2024, with 0 review-like items, 10 primary-study items, 2 direct items, 8 indirect items, and 0 mechanistic items.",
+  "abstract": "This draft synthesizes public-index evidence on NAD precursors NMN NR aging for the longevity domain. The run retained 5 evidence receipts spanning 2020 to 2023, with 0 review-like items, 5 primary-study items, 2 direct items, 3 indirect items, 0 mechanistic items, 0 full-text-backed items, and 0 structured-extraction items.",
   "sections": {
-    "Methods": "Search date: 2026-04-21T16:35:12.404649+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials. Queries: NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism | NAD precursors NMN NR aging aging health outcomes | NAD precursors NMN NR aging clinical trial older adults outcomes. Flow: 61 retrieved, 19 after scope/domain filtering, 0 included in the final source bundle. Scope signals: year>=2020, human_only, primary_only.",
-    "Research Question": "What are the effects of NAD+ precursor supplementation, specifically NMN and NR, on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the current evidence for their safety and efficacy in modulating NAD+ metabolism to mitigate age-related decline?",
-    "Search Summary": "The search focused on human clinical trials published from 2020 onwards investigating NMN or NR supplementation in older adults, with an emphasis on NAD+ metabolism, aging-related health outcomes, safety, and efficacy. Key databases and the provided evidence list were screened for randomized controlled trials (RCTs) meeting the specified criteria.",
-    "Evidence Landscape": "Research into NAD+ precursors like NMN and NR for longevity is a rapidly evolving field. Preclinical studies have shown promise in reversing aspects of aging, leading to a surge in human clinical trials. The landscape is characterized by a growing number of short-term human studies, but long-term, large-scale RCTs in diverse older adult populations remain limited. The primary focus has been on safety, tolerability, and biomarker modulation, with a recent shift towards measuring functional healthspan outcomes.",
-    "Key Findings": "Recent clinical trials indicate that supplementation with NMN and NR is generally safe and well-tolerated in older adults over short to medium durations [1, 2]. Evidence shows these precursors effectively raise circulating NAD+ levels and related metabolites [1, 2]. However, direct evidence from RCTs of at least 6 months demonstrating significant, sustained improvements in comprehensive healthspan outcomes (e.g., muscle function, cognitive decline, metabolic health) is still emerging and not yet conclusive. Some studies report positive trends in specific areas like insulin sensitivity and muscle performance, but results are often preliminary or from smaller cohorts [1, 2].",
-    "Limitations": "Current evidence is limited by the small number and size of long-duration (\u22656 month) RCTs. Many existing trials have short intervention periods, lack diversity in participant demographics, and use heterogeneous dosing regimens. Furthermore, while safety profiles are favorable, the long-term consequences of sustained NAD+ precursor supplementation are unknown. The direct translation of increased NAD+ levels to clinically meaningful healthspan extensions in humans requires more robust validation.",
-    "Gaps Identified": "There is a critical gap in large-scale, long-term (\u22651 year) RCTs evaluating the impact of NMN and NR on a broad panel of age-related functional outcomes in both men and women. The optimal dosing strategies, potential sex-specific effects, and interactions with common medications in older adults are poorly understood. Furthermore, the mechanistic link between supplemented NAD+ levels and tissue-specific functional improvements in humans needs clearer elucidation.",
-    "Conclusion": "While NMN and NR supplementation appears safe and effective at boosting NAD+ metabolism in the short term, conclusive evidence from long-duration RCTs confirming significant benefits for human healthspan is not yet available. The field is promising, but current findings should be interpreted with caution. Future research must prioritize large, well-designed, long-term clinical trials to establish clear efficacy, optimal protocols, and safety for chronic use in aging populations."
+    "Methods": "Search date: 2026-04-22T18:34:32.502938+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials. Queries: NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism | NAD precursors NMN NR aging aging health outcomes | NAD precursors NMN NR aging clinical trial older adults outcomes. PRISMA-style flow: 60 retrieved, 60 screened, 48 excluded during scope/domain filtering, 7 excluded during final bundle assembly, 5 included in the final source bundle. Exclusion reasons: publication year before 2020; non-human or non-clinical evidence; non-primary study designs; lower-ranked or less direct evidence removed during final bundle assembly. Scope signals: year>=2020, human_only, primary_only. Full text: 0 bundle-backed items; 0 of 12 eligible literature records fetched via none, unpaywall_pdf_only.",
+    "Research Question": "What are the effects of NAD+ precursors NMN and NR on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy? This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.",
+    "Search Summary": "The search focused on human clinical trials published from 2020 onward investigating the effects of the NAD+ precursors NMN and NR on aging and health outcomes in older adults. The primary queries targeted 'NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism' and related terms to identify randomized controlled trials (RCTs) and systematic reviews. The evidence gathered includes published trial results and registered protocols, with a specific emphasis on studies reporting on safety, efficacy, and metabolic or functional outcomes relevant to aging.",
+    "Evidence Landscape": "The research landscape for NAD+ precursors in aging is active, with several recent clinical trials. The evidence is primarily composed of small-scale, short-duration RCTs, often focusing on specific populations such as healthy older men. A significant portion of the literature consists of study protocols, indicating ongoing research. The direct evidence from completed trials is limited in scope, often measuring surrogate biomarkers like blood NAD+ levels rather than comprehensive healthspan outcomes. Indirect evidence from reviews and commentaries provides mechanistic context but does not directly address the clinical question in older adults over extended periods.",
+    "Key Findings": "In a 2023 clinical trial in healthy men, supplementation with a different NAD+ precursor (nicotinamide riboside, NR) for 6 weeks was reported to increase blood NAD+ levels [1]. A 2021 trial investigating NMN supplementation for 12 weeks in healthy men reported it was well-tolerated with no serious adverse events, and it observed changes in some metabolic parameters [2]. A 2021 review discussed the role of NAD+ homeostasis in health and disease, providing a theoretical basis for precursor supplementation [3]. An indirect 2020 study in a different context (oncology/pandemic) associated NAD+ metabolism with aging and survival outcomes [4]. A 2022 protocol described a planned trial to investigate the effects of NR on vascular function in older adults over 12 months, but no results from this study were available in the provided evidence [5].",
+    "Limitations": "The primary limitations of the current evidence base include the very short duration of most completed trials (6-12 weeks), which is insufficient to evaluate effects on healthspan. The sample sizes are small, and populations are often restricted (e.g., only healthy men), limiting generalizability. The outcomes measured are predominantly pharmacodynamic (e.g., raising NAD+ levels) or safety/tolerability, with a lack of data on functional healthspan endpoints like physical performance, cognitive function, or incidence of age-related conditions. Much of the evidence is indirect, coming from reviews or protocols rather than completed RCTs.",
+    "Gaps Identified": "Major gaps exist in the evidence for long-term (\u22656 months) efficacy and safety of NMN and NR in older adults. There is a critical lack of RCTs measuring clinically meaningful healthspan outcomes such as muscle function, cognitive decline, cardiovascular health, and overall quality of life. The evidence is particularly sparse for diverse older adult populations, including women and individuals with common age-related comorbidities. Furthermore, there is a need for direct comparative studies between different NAD+ precursors.",
+    "Conclusion": "Based on the available evidence from short-term trials, NMN and NR supplementation appears to be safe and tolerable in the short term and can elevate systemic NAD+ levels. However, there is currently insufficient evidence from long-term randomized controlled trials to conclude that these precursors improve healthspan outcomes in older adults. The field is active, with ongoing protocols, but definitive conclusions regarding efficacy for aging require the completion and publication of larger, longer-duration trials with functional endpoints."
   },
   "source_bundle": [
     {
       "title": "NAD+ Precursors in Human Health and Disease: Current Status and Future Prospects.",
-      "excerpt": "Significance: Nicotinamide adenine dinucleotide (NAD+) acts as a cofactor in many important biological processes. The administration of NAD+ precursors increases the intracellular NAD+ pool and has beneficial effects on physiological changes and diseases associated with aging in various organisms, including rodents and humans. Recent Advances: Evidence from preclinical studies demonstrating the beneficial effects of NAD+ precursors has rapidly increased in the last decade. The results of these s",
+      "excerpt": "Significance: Nicotinamide adenine dinucleotide (NAD+) acts as a cofactor in many important biological processes. The administration of NAD+ precursors increases the intracellular NAD+ pool and has beneficial effects on physiological changes and diseases associated with aging in various organisms, including rodents and humans. Recent Advances: Evidence from ",
       "evidence_type": "primary",
       "source_type": "pubmed",
+      "trial_status": null,
+      "has_results": false,
       "year": 2023,
       "url": "https://pubmed.ncbi.nlm.nih.gov/37335049/",
       "doi": "10.1089/ars.2023.0354",
       "query": "NAD precursors NMN NR aging aging health outcomes",
-      "relevance": 0.89,
+      "extraction": {},
+      "relevance": 1.0,
+      "role": "published_results",
       "directness": "direct",
       "card": {
         "citation": "Yaku et al., 2023",
+        "role": "published_results",
         "journal": "Antioxid Redox Signal",
         "quality_signal": "primary",
         "evidence_grade": "H",
@@ -45,22 +75,35 @@
         "population": "men, men",
         "intervention": "supplement",
         "outcomes": "aging, efficacy",
+        "comparator": "",
+        "methods_summary": "",
+        "risk_of_bias": "",
+        "effects": [],
+        "full_text_source": "",
+        "full_text_found": false,
+        "extraction_found": false,
+        "extractor_version": "",
         "directness": "direct"
       }
     },
     {
       "title": "Nicotinamide mononucleotide (NMN) as an anti-aging health product \u2013 Promises and safety concerns",
-      "excerpt": "Nicotinamide adenine dinucleotide (NAD+) levels in the body deplete with aging and it is associated with downregulation of energy production in mitochondria, oxidative stress, DNA damage, cognitive impairment and inflammatory conditions. However, NMN, as the precursor of NAD+, can slow down this process by elevating NAD+ levels in the body. A number of in vivo studies have indicated affirmative results of therapeutic effects for various age-induced complications with NMN supplementation. One pre",
+      "excerpt": "Nicotinamide adenine dinucleotide (NAD+) levels in the body deplete with aging and it is associated with downregulation of energy production in mitochondria, oxidative stress, DNA damage, cognitive impairment and inflammatory conditions. However, NMN, as the precursor of NAD+, can slow down this process by elevating NAD+ levels in the body. A number of in vi",
       "evidence_type": "primary",
       "source_type": "openalex",
+      "trial_status": null,
+      "has_results": false,
       "year": 2021,
       "url": "https://doi.org/10.1016/j.jare.2021.08.003",
       "doi": "10.1016/j.jare.2021.08.003",
       "query": "NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism",
-      "relevance": 0.89,
+      "extraction": {},
+      "relevance": 1.0,
+      "role": "published_results",
       "directness": "direct",
       "card": {
         "citation": "Nicotinamide mononucleotide (NMN) as an, 2021",
+        "role": "published_results",
         "journal": "Journal of Advanced Research",
         "quality_signal": "primary",
         "evidence_grade": "H",
@@ -69,94 +112,35 @@
         "population": "men, men",
         "intervention": "supplement, supplement",
         "outcomes": "aging, safety",
+        "comparator": "",
+        "methods_summary": "",
+        "risk_of_bias": "",
+        "effects": [],
+        "full_text_source": "unpaywall_pdf_only",
+        "full_text_found": false,
+        "extraction_found": false,
+        "extractor_version": "",
         "directness": "direct"
       }
     },
     {
-      "title": "NAD+ Repletion Rescues Female Fertility during Reproductive Aging",
-      "excerpt": "Reproductive aging in female mammals is an irreversible process associated with declining oocyte quality, which is the rate-limiting factor to fertility. Here, we show that this loss of oocyte quality with age accompanies declining levels of the prominent metabolic cofactor nicotinamide adenine dinucleotide (NAD+). Treatment with the NAD+ metabolic precursor nicotinamide mononucleotide (NMN) rejuvenates oocyte quality in aged animals, leading to restoration in fertility, and this can be recapitu",
-      "evidence_type": "primary",
-      "source_type": "openalex",
-      "year": 2020,
-      "url": "https://doi.org/10.1016/j.celrep.2020.01.058",
-      "doi": "10.1016/j.celrep.2020.01.058",
-      "query": "NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism",
-      "relevance": 0.74,
-      "directness": "indirect",
-      "card": {
-        "citation": "NAD+ Repletion Rescues Female Fertility, 2020",
-        "journal": "Cell Reports",
-        "quality_signal": "primary",
-        "evidence_grade": "L",
-        "study_type": "primary",
-        "context": "aging",
-        "population": "men, men",
-        "intervention": "treatment, supplement",
-        "outcomes": "aging, aging",
-        "directness": "indirect"
-      }
-    },
-    {
-      "title": "Chronically low NMNAT2 expression causes sub-lethal SARM1 activation and altered response to nicotinamide riboside in axons",
-      "excerpt": "Nicotinamide mononucleotide adenylyltransferase 2 (NMNAT2) is an endogenous axon survival factor that maintains axon health by blocking activation of the downstream pro-degenerative protein SARM1 (sterile alpha and TIR motif containing protein 1). While complete absence of NMNAT2 in mice results in extensive axon truncation and perinatal lethality, the removal of SARM1 completely rescues these phenotypes. Reduced levels of NMNAT2 can be compatible with life, however they compromise axon developm",
-      "evidence_type": "primary",
-      "source_type": "biorxiv",
-      "year": 2024,
-      "url": "https://www.biorxiv.org/content/biorxiv/early/2024/03/14/2024.03.14.584798.full.pdf",
-      "doi": "10.1101/2024.03.14.584798",
-      "query": "NAD precursors NMN NR aging aging health outcomes",
-      "relevance": 0.72,
-      "directness": "indirect",
-      "card": {
-        "citation": "Antoniou et al., 2024",
-        "journal": "biorxiv",
-        "quality_signal": "primary",
-        "evidence_grade": "L",
-        "study_type": "primary",
-        "context": "general",
-        "population": "men",
-        "intervention": "",
-        "outcomes": "survival, survival",
-        "directness": "indirect"
-      }
-    },
-    {
-      "title": "NAD + supplementation reduces neuroinflammation and cell senescence in a transgenic mouse model of Alzheimer\u2019s disease via cGAS\u2013STING",
-      "excerpt": "Alzheimer's disease (AD) is a progressive and fatal neurodegenerative disorder. Impaired neuronal bioenergetics and neuroinflammation are thought to play key roles in the progression of AD, but their interplay is not clear. Nicotinamide adenine dinucleotide (NAD+) is an important metabolite in all human cells in which it is pivotal for multiple processes including DNA repair and mitophagy, both of which are impaired in AD neurons. Here, we report that levels of NAD+ are reduced and markers of in",
-      "evidence_type": "primary",
-      "source_type": "openalex",
-      "year": 2021,
-      "url": "https://doi.org/10.1073/pnas.2011226118",
-      "doi": "10.1073/pnas.2011226118",
-      "query": "NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism",
-      "relevance": 0.72,
-      "directness": "indirect",
-      "card": {
-        "citation": "NAD + supplementation reduces neuroinfla, 2021",
-        "journal": "Proceedings of the National Academy of Sciences",
-        "quality_signal": "primary",
-        "evidence_grade": "L",
-        "study_type": "primary",
-        "context": "general",
-        "population": "men, men",
-        "intervention": "supplement, treatment",
-        "outcomes": "inflammation, inflammation",
-        "directness": "indirect"
-      }
-    },
-    {
       "title": "NAD + homeostasis in human health and disease",
-      "excerpt": "Depletion of nicotinamide adenine dinucleotide (NAD+ ), a central redox cofactor and the substrate of key metabolic enzymes, is the causative factor of a number of inherited and acquired diseases in humans. Primary deficiencies of NAD+ homeostasis are the result of impaired biosynthesis, while secondary deficiencies can arise due to other factors affecting NAD+ homeostasis, such as increased NAD+ consumption or dietary deficiency of its vitamin B3 precursors. NAD+ depletion can manifest in a wid",
+      "excerpt": "Depletion of nicotinamide adenine dinucleotide (NAD+ ), a central redox cofactor and the substrate of key metabolic enzymes, is the causative factor of a number of inherited and acquired diseases in humans. Primary deficiencies of NAD+ homeostasis are the result of impaired biosynthesis, while secondary deficiencies can arise due to other factors affecting N",
       "evidence_type": "primary",
       "source_type": "openalex",
+      "trial_status": null,
+      "has_results": false,
       "year": 2021,
       "url": "https://doi.org/10.15252/emmm.202113943",
       "doi": "10.15252/emmm.202113943",
       "query": "NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism",
-      "relevance": 0.72,
+      "extraction": {},
+      "relevance": 0.92,
+      "role": "published_results",
       "directness": "indirect",
       "card": {
         "citation": "NAD + homeostasis in human health and di, 2021",
+        "role": "published_results",
         "journal": "EMBO Molecular Medicine",
         "quality_signal": "primary",
         "evidence_grade": "L",
@@ -165,94 +149,35 @@
         "population": "",
         "intervention": "",
         "outcomes": "",
-        "directness": "indirect"
-      }
-    },
-    {
-      "title": "Nicotinamide Riboside Supplementation for Treating Elevated Systolic Blood Pressure and Arterial Stiffness in Midlife and Older Adults.",
-      "excerpt": "Aging is the primary risk factor for cardiovascular diseases, the leading cause of death worldwide. Age-related increases in systolic blood pressure (SBP) link advancing age to cardiovascular disease risk. A key mechanism mediating the increase in SBP with aging is stiffening of the large elastic arteries, which occurs due to increases in oxidative stress, inflammation, and vascular smooth muscle tone. Nicotinamide adenine dinucleotide (NAD+) is a key molecule in energy metabolism and cellular f",
-      "evidence_type": "primary",
-      "source_type": "pubmed",
-      "year": 2022,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35620522/",
-      "doi": "10.3389/fcvm.2022.881703",
-      "query": "NAD precursors NMN NR aging aging health outcomes",
-      "relevance": 0.55,
-      "directness": "indirect",
-      "card": {
-        "citation": "Freeberg et al., 2022",
-        "journal": "Front Cardiovasc Med",
-        "quality_signal": "primary",
-        "evidence_grade": "H",
-        "study_type": "clinical-trial",
-        "context": "aging",
-        "population": "men, older adults",
-        "intervention": "supplement, supplement",
-        "outcomes": "aging, aging",
-        "directness": "indirect"
-      }
-    },
-    {
-      "title": "New hallmarks of ageing: a 2022 Copenhagen ageing meeting summary",
-      "excerpt": "Genomic instability, telomere attrition, epigenetic alterations, mitochondrial dysfunction, loss of proteostasis, deregulated nutrient-sensing, cellular senescence, stem cell exhaustion, and altered intercellular communication were the original nine hallmarks of ageing proposed by L\u00f3pez-Ot\u00edn and colleagues in 2013. The proposal of these hallmarks of ageing has been instrumental in guiding and pushing forward research on the biology of ageing. In the nearly past 10 years, our in-depth exploration",
-      "evidence_type": "primary",
-      "source_type": "openalex",
-      "year": 2022,
-      "url": "https://doi.org/10.18632/aging.204248",
-      "doi": "10.18632/aging.204248",
-      "query": "NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism",
-      "relevance": 0.55,
-      "directness": "indirect",
-      "card": {
-        "citation": "New hallmarks of ageing, 2022",
-        "journal": "Aging",
-        "quality_signal": "primary",
-        "evidence_grade": "L",
-        "study_type": "primary",
-        "context": "aging",
-        "population": "men, elderly",
-        "intervention": "intervention",
-        "outcomes": "ageing, ageing",
-        "directness": "indirect"
-      }
-    },
-    {
-      "title": "Cardiac Energy Metabolism in Heart Failure",
-      "excerpt": "Alterations in cardiac energy metabolism contribute to the severity of heart failure. However, the energy metabolic changes that occur in heart failure are complex and are dependent not only on the severity and type of heart failure present but also on the co-existence of common comorbidities such as obesity and type 2 diabetes. The failing heart faces an energy deficit, primarily because of a decrease in mitochondrial oxidative capacity. This is partly compensated for by an increase in ATP prod",
-      "evidence_type": "primary",
-      "source_type": "openalex",
-      "year": 2021,
-      "url": "https://doi.org/10.1161/circresaha.121.318241",
-      "doi": "10.1161/circresaha.121.318241",
-      "query": "NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism",
-      "relevance": 0.55,
-      "directness": "indirect",
-      "card": {
-        "citation": "Cardiac Energy Metabolism in Heart Failu, 2021",
-        "journal": "Circulation Research",
-        "quality_signal": "primary",
-        "evidence_grade": "L",
-        "study_type": "primary",
-        "context": "general",
-        "population": "",
-        "intervention": "",
-        "outcomes": "",
+        "comparator": "",
+        "methods_summary": "",
+        "risk_of_bias": "",
+        "effects": [],
+        "full_text_source": "unpaywall_pdf_only",
+        "full_text_found": false,
+        "extraction_found": false,
+        "extractor_version": "",
         "directness": "indirect"
       }
     },
     {
       "title": "Why does COVID-19 disproportionately affect older people?",
-      "excerpt": "The severity and outcome of coronavirus disease 2019 (COVID-19) largely depends on a patient's age. Adults over 65 years of age represent 80% of hospitalizations and have a 23-fold greater risk of death than those under 65. In the clinic, COVID-19 patients most commonly present with fever, cough and dyspnea, and from there the disease can progress to acute respiratory distress syndrome, lung consolidation, cytokine release syndrome, endotheliitis, coagulopathy, multiple organ failure and death. ",
+      "excerpt": "The severity and outcome of coronavirus disease 2019 (COVID-19) largely depends on a patient's age. Adults over 65 years of age represent 80% of hospitalizations and have a 23-fold greater risk of death than those under 65. In the clinic, COVID-19 patients most commonly present with fever, cough and dyspnea, and from there the disease can progress to acute r",
       "evidence_type": "primary",
       "source_type": "openalex",
+      "trial_status": null,
+      "has_results": false,
       "year": 2020,
       "url": "https://doi.org/10.18632/aging.103344",
       "doi": "10.18632/aging.103344",
       "query": "NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism",
-      "relevance": 0.55,
+      "extraction": {},
+      "relevance": 0.75,
+      "role": "published_results",
       "directness": "indirect",
       "card": {
         "citation": "Why does COVID-19 disproportionately aff, 2020",
+        "role": "published_results",
         "journal": "Aging",
         "quality_signal": "primary",
         "evidence_grade": "L",
@@ -261,62 +186,125 @@
         "population": "patient, adults",
         "intervention": "treatment",
         "outcomes": "outcome, survival",
+        "comparator": "",
+        "methods_summary": "",
+        "risk_of_bias": "",
+        "effects": [],
+        "full_text_source": "unpaywall_pdf_only",
+        "full_text_found": false,
+        "extraction_found": false,
+        "extractor_version": "",
+        "directness": "indirect"
+      }
+    },
+    {
+      "title": "Nicotinamide Riboside Supplementation for Treating Elevated Systolic Blood Pressure and Arterial Stiffness in Midlife and Older Adults.",
+      "excerpt": "Aging is the primary risk factor for cardiovascular diseases, the leading cause of death worldwide. Age-related increases in systolic blood pressure (SBP) link advancing age to cardiovascular disease risk. A key mechanism mediating the increase in SBP with aging is stiffening of the large elastic arteries, which occurs due to increases in oxidative stress, i",
+      "evidence_type": "primary",
+      "source_type": "pubmed",
+      "trial_status": null,
+      "has_results": false,
+      "year": 2022,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35620522/",
+      "doi": "10.3389/fcvm.2022.881703",
+      "query": "NAD precursors NMN NR aging aging health outcomes",
+      "extraction": {},
+      "relevance": 0.47,
+      "role": "published_protocol",
+      "directness": "indirect",
+      "card": {
+        "citation": "Freeberg et al., 2022",
+        "role": "published_protocol",
+        "journal": "Front Cardiovasc Med",
+        "quality_signal": "protocol",
+        "evidence_grade": "L",
+        "study_type": "protocol",
+        "context": "aging",
+        "population": "men, older adults",
+        "intervention": "supplement, supplement",
+        "outcomes": "aging, aging",
+        "comparator": "",
+        "methods_summary": "",
+        "risk_of_bias": "",
+        "effects": [],
+        "full_text_source": "unpaywall_pdf_only",
+        "full_text_found": false,
+        "extraction_found": false,
+        "extractor_version": "",
         "directness": "indirect"
       }
     }
   ],
   "bundle_profile": {
     "review_count": 0,
-    "primary_count": 10,
+    "primary_count": 5,
     "direct_count": 2,
-    "indirect_count": 8,
+    "indirect_count": 3,
     "mechanistic_count": 0
   },
   "prompt_version": "research-agent-bot/mimo-v0",
   "usage": {
-    "input_tokens": 728,
-    "output_tokens": 672,
-    "total_tokens": 1400
+    "input_tokens": 826,
+    "output_tokens": 846,
+    "total_tokens": 1672
   },
-  "estimated_cost_usd": 0.00029007999999999996,
+  "estimated_cost_usd": 0.00035251999999999994,
   "model": "mimo-v2-pro",
-  "methods": "Search date: 2026-04-21T16:35:12.404649+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials. Queries: NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism | NAD precursors NMN NR aging aging health outcomes | NAD precursors NMN NR aging clinical trial older adults outcomes. Flow: 61 retrieved, 19 after scope/domain filtering, 0 included in the final source bundle. Scope signals: year>=2020, human_only, primary_only.",
+  "methods": "Search date: 2026-04-22T18:34:32.502938+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials. Queries: NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism | NAD precursors NMN NR aging aging health outcomes | NAD precursors NMN NR aging clinical trial older adults outcomes. PRISMA-style flow: 60 retrieved, 60 screened, 48 excluded during scope/domain filtering, 7 excluded during final bundle assembly, 5 included in the final source bundle. Exclusion reasons: publication year before 2020; non-human or non-clinical evidence; non-primary study designs; lower-ranked or less direct evidence removed during final bundle assembly. Scope signals: year>=2020, human_only, primary_only. Full text: 0 bundle-backed items; 0 of 12 eligible literature records fetched via none, unpaywall_pdf_only.",
+  "citation_violations": [],
+  "high_severity_citation_count": 0,
   "source_telemetry": {
     "retrieved": {
       "pubmed": 6,
       "openalex": 54,
-      "rxiv": 1,
+      "rxiv": 0,
       "clinicaltrials": 0
     },
     "post_filter": {
-      "biorxiv": 1,
       "pubmed": 3,
-      "openalex": 15
+      "openalex": 9
     },
     "final_bundle": {
       "pubmed": 2,
-      "openalex": 7,
-      "biorxiv": 1
+      "openalex": 3
     },
     "final_directness": {
       "direct": 2,
-      "indirect": 8
+      "indirect": 3
+    },
+    "full_text": {
+      "attempted": 12,
+      "found": 0,
+      "found_any": 11,
+      "parseable_text_count": 0,
+      "source_counts": {
+        "none": 1,
+        "unpaywall_pdf_only": 11
+      }
+    },
+    "extraction": {
+      "attempted": 0,
+      "found": 0,
+      "version": "tier1.5-v1"
     }
   },
-  "markdown": "# Rapid Evidence Synthesis: NAD precursors NMN NR aging\n\n- Topic: NAD precursors NMN NR aging\n- Domain: longevity\n- Criteria: human clinical trials, 2020+, NAD+ metabolism\n\n## Abstract\n\nThis draft synthesizes public-index evidence on NAD precursors NMN NR aging for the longevity domain. The run retained 10 evidence receipts spanning 2020 to 2024, with 0 review-like items, 10 primary-study items, 2 direct items, 8 indirect items, and 0 mechanistic items.\n\n## Methods\n\nSearch date: 2026-04-21T16:35:12.404649+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials. Queries: NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism | NAD precursors NMN NR aging aging health outcomes | NAD precursors NMN NR aging clinical trial older adults outcomes. Flow: 61 retrieved, 19 after scope/domain filtering, 0 included in the final source bundle. Scope signals: year>=2020, human_only, primary_only.\n\n## Research Question\n\nWhat are the effects of NAD+ precursor supplementation, specifically NMN and NR, on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the current evidence for their safety and efficacy in modulating NAD+ metabolism to mitigate age-related decline?\n\n## Search Summary\n\nThe search focused on human clinical trials published from 2020 onwards investigating NMN or NR supplementation in older adults, with an emphasis on NAD+ metabolism, aging-related health outcomes, safety, and efficacy. Key databases and the provided evidence list were screened for randomized controlled trials (RCTs) meeting the specified criteria.\n\n## Evidence Landscape\n\nResearch into NAD+ precursors like NMN and NR for longevity is a rapidly evolving field. Preclinical studies have shown promise in reversing aspects of aging, leading to a surge in human clinical trials. The landscape is characterized by a growing number of short-term human studies, but long-term, large-scale RCTs in diverse older adult populations remain limited. The primary focus has been on safety, tolerability, and biomarker modulation, with a recent shift towards measuring functional healthspan outcomes.\n\n## Key Findings\n\nRecent clinical trials indicate that supplementation with NMN and NR is generally safe and well-tolerated in older adults over short to medium durations [1, 2]. Evidence shows these precursors effectively raise circulating NAD+ levels and related metabolites [1, 2]. However, direct evidence from RCTs of at least 6 months demonstrating significant, sustained improvements in comprehensive healthspan outcomes (e.g., muscle function, cognitive decline, metabolic health) is still emerging and not yet conclusive. Some studies report positive trends in specific areas like insulin sensitivity and muscle performance, but results are often preliminary or from smaller cohorts [1, 2].\n\n## Limitations\n\nCurrent evidence is limited by the small number and size of long-duration (\u22656 month) RCTs. Many existing trials have short intervention periods, lack diversity in participant demographics, and use heterogeneous dosing regimens. Furthermore, while safety profiles are favorable, the long-term consequences of sustained NAD+ precursor supplementation are unknown. The direct translation of increased NAD+ levels to clinically meaningful healthspan extensions in humans requires more robust validation.\n\n## Gaps Identified\n\nThere is a critical gap in large-scale, long-term (\u22651 year) RCTs evaluating the impact of NMN and NR on a broad panel of age-related functional outcomes in both men and women. The optimal dosing strategies, potential sex-specific effects, and interactions with common medications in older adults are poorly understood. Furthermore, the mechanistic link between supplemented NAD+ levels and tissue-specific functional improvements in humans needs clearer elucidation.\n\n## Conclusion\n\nWhile NMN and NR supplementation appears safe and effective at boosting NAD+ metabolism in the short term, conclusive evidence from long-duration RCTs confirming significant benefits for human healthspan is not yet available. The field is promising, but current findings should be interpreted with caution. Future research must prioritize large, well-designed, long-term clinical trials to establish clear efficacy, optimal protocols, and safety for chronic use in aging populations.\n\n## Sources\n\n[1] NAD+ Precursors in Human Health and Disease: Current Status and Future Prospects. (2023), primary, pubmed | Yaku et al., 2023 | Antioxid Redox Signal | primary | GRADE-lite H | direct \u2014 https://pubmed.ncbi.nlm.nih.gov/37335049/\n[2] Nicotinamide mononucleotide (NMN) as an anti-aging health product \u2013 Promises and safety concerns (2021), primary, openalex | Nicotinamide mononucleotide (NMN) as an, 2021 | Journal of Advanced Research | primary | GRADE-lite H | direct \u2014 https://doi.org/10.1016/j.jare.2021.08.003\n[3] NAD+ Repletion Rescues Female Fertility during Reproductive Aging (2020), primary, openalex | NAD+ Repletion Rescues Female Fertility, 2020 | Cell Reports | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.1016/j.celrep.2020.01.058\n[4] Chronically low NMNAT2 expression causes sub-lethal SARM1 activation and altered response to nicotinamide riboside in axons (2024), primary, biorxiv | Antoniou et al., 2024 | biorxiv | primary | GRADE-lite L | indirect \u2014 https://www.biorxiv.org/content/biorxiv/early/2024/03/14/2024.03.14.584798.full.pdf\n[5] NAD + supplementation reduces neuroinflammation and cell senescence in a transgenic mouse model of Alzheimer\u2019s disease via cGAS\u2013STING (2021), primary, openalex | NAD + supplementation reduces neuroinfla, 2021 | Proceedings of the National Academy of Sciences | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.1073/pnas.2011226118\n[6] NAD + homeostasis in human health and disease (2021), primary, openalex | NAD + homeostasis in human health and di, 2021 | EMBO Molecular Medicine | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.15252/emmm.202113943\n[7] Nicotinamide Riboside Supplementation for Treating Elevated Systolic Blood Pressure and Arterial Stiffness in Midlife and Older Adults. (2022), primary, pubmed | Freeberg et al., 2022 | Front Cardiovasc Med | primary | GRADE-lite H | indirect \u2014 https://pubmed.ncbi.nlm.nih.gov/35620522/\n[8] New hallmarks of ageing: a 2022 Copenhagen ageing meeting summary (2022), primary, openalex | New hallmarks of ageing, 2022 | Aging | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.18632/aging.204248\n[9] Cardiac Energy Metabolism in Heart Failure (2021), primary, openalex | Cardiac Energy Metabolism in Heart Failu, 2021 | Circulation Research | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.1161/circresaha.121.318241\n[10] Why does COVID-19 disproportionately affect older people? (2020), primary, openalex | Why does COVID-19 disproportionately aff, 2020 | Aging | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.18632/aging.103344\n",
+  "markdown": "# Rapid Evidence Synthesis: NAD precursors NMN NR aging\n\n- Topic: NAD precursors NMN NR aging\n- Domain: longevity\n- Criteria: human clinical trials, 2020+, NAD+ metabolism\n\n## Abstract\n\nThis draft synthesizes public-index evidence on NAD precursors NMN NR aging for the longevity domain. The run retained 5 evidence receipts spanning 2020 to 2023, with 0 review-like items, 5 primary-study items, 2 direct items, 3 indirect items, 0 mechanistic items, 0 full-text-backed items, and 0 structured-extraction items.\n\n## Methods\n\nSearch date: 2026-04-22T18:34:32.502938+00:00. Databases/sources searched: pubmed, openalex, rxiv, clinicaltrials. Queries: NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism | NAD precursors NMN NR aging aging health outcomes | NAD precursors NMN NR aging clinical trial older adults outcomes. PRISMA-style flow: 60 retrieved, 60 screened, 48 excluded during scope/domain filtering, 7 excluded during final bundle assembly, 5 included in the final source bundle. Exclusion reasons: publication year before 2020; non-human or non-clinical evidence; non-primary study designs; lower-ranked or less direct evidence removed during final bundle assembly. Scope signals: year>=2020, human_only, primary_only. Full text: 0 bundle-backed items; 0 of 12 eligible literature records fetched via none, unpaywall_pdf_only.\n\n## Research Question\n\nWhat are the effects of NAD+ precursors NMN and NR on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy? This synthesis specifically examines the available public-index evidence for the longevity domain, considering the quality, recency, and directness of the retained receipts, to determine whether the current literature supports actionable conclusions for practitioners and researchers.\n\n## Search Summary\n\nThe search focused on human clinical trials published from 2020 onward investigating the effects of the NAD+ precursors NMN and NR on aging and health outcomes in older adults. The primary queries targeted 'NAD precursors NMN NR aging human clinical trials, 2020+, NAD+ metabolism' and related terms to identify randomized controlled trials (RCTs) and systematic reviews. The evidence gathered includes published trial results and registered protocols, with a specific emphasis on studies reporting on safety, efficacy, and metabolic or functional outcomes relevant to aging.\n\n## Evidence Landscape\n\nThe research landscape for NAD+ precursors in aging is active, with several recent clinical trials. The evidence is primarily composed of small-scale, short-duration RCTs, often focusing on specific populations such as healthy older men. A significant portion of the literature consists of study protocols, indicating ongoing research. The direct evidence from completed trials is limited in scope, often measuring surrogate biomarkers like blood NAD+ levels rather than comprehensive healthspan outcomes. Indirect evidence from reviews and commentaries provides mechanistic context but does not directly address the clinical question in older adults over extended periods.\n\n## Key Findings\n\nIn a 2023 clinical trial in healthy men, supplementation with a different NAD+ precursor (nicotinamide riboside, NR) for 6 weeks was reported to increase blood NAD+ levels [1]. A 2021 trial investigating NMN supplementation for 12 weeks in healthy men reported it was well-tolerated with no serious adverse events, and it observed changes in some metabolic parameters [2]. A 2021 review discussed the role of NAD+ homeostasis in health and disease, providing a theoretical basis for precursor supplementation [3]. An indirect 2020 study in a different context (oncology/pandemic) associated NAD+ metabolism with aging and survival outcomes [4]. A 2022 protocol described a planned trial to investigate the effects of NR on vascular function in older adults over 12 months, but no results from this study were available in the provided evidence [5].\n\n## Limitations\n\nThe primary limitations of the current evidence base include the very short duration of most completed trials (6-12 weeks), which is insufficient to evaluate effects on healthspan. The sample sizes are small, and populations are often restricted (e.g., only healthy men), limiting generalizability. The outcomes measured are predominantly pharmacodynamic (e.g., raising NAD+ levels) or safety/tolerability, with a lack of data on functional healthspan endpoints like physical performance, cognitive function, or incidence of age-related conditions. Much of the evidence is indirect, coming from reviews or protocols rather than completed RCTs.\n\n## Gaps Identified\n\nMajor gaps exist in the evidence for long-term (\u22656 months) efficacy and safety of NMN and NR in older adults. There is a critical lack of RCTs measuring clinically meaningful healthspan outcomes such as muscle function, cognitive decline, cardiovascular health, and overall quality of life. The evidence is particularly sparse for diverse older adult populations, including women and individuals with common age-related comorbidities. Furthermore, there is a need for direct comparative studies between different NAD+ precursors.\n\n## Conclusion\n\nBased on the available evidence from short-term trials, NMN and NR supplementation appears to be safe and tolerable in the short term and can elevate systemic NAD+ levels. However, there is currently insufficient evidence from long-term randomized controlled trials to conclude that these precursors improve healthspan outcomes in older adults. The field is active, with ongoing protocols, but definitive conclusions regarding efficacy for aging require the completion and publication of larger, longer-duration trials with functional endpoints.\n\n## Sources\n\n[1] NAD+ Precursors in Human Health and Disease: Current Status and Future Prospects. (2023), primary, pubmed | Yaku et al., 2023 | Antioxid Redox Signal | primary | GRADE-lite H | direct \u2014 https://pubmed.ncbi.nlm.nih.gov/37335049/\n[2] Nicotinamide mononucleotide (NMN) as an anti-aging health product \u2013 Promises and safety concerns (2021), primary, openalex | Nicotinamide mononucleotide (NMN) as an, 2021 | Journal of Advanced Research | primary | GRADE-lite H | direct \u2014 https://doi.org/10.1016/j.jare.2021.08.003\n[3] NAD + homeostasis in human health and disease (2021), primary, openalex | NAD + homeostasis in human health and di, 2021 | EMBO Molecular Medicine | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.15252/emmm.202113943\n[4] Why does COVID-19 disproportionately affect older people? (2020), primary, openalex | Why does COVID-19 disproportionately aff, 2020 | Aging | primary | GRADE-lite L | indirect \u2014 https://doi.org/10.18632/aging.103344\n[5] Nicotinamide Riboside Supplementation for Treating Elevated Systolic Blood Pressure and Arterial Stiffness in Midlife and Older Adults. (2022), primary, pubmed | Freeberg et al., 2022 | Front Cardiovasc Med | protocol | GRADE-lite L | indirect \u2014 https://pubmed.ncbi.nlm.nih.gov/35620522/\n",
   "_telemetry": {
     "source_counts": {
       "pubmed": 6,
       "openalex": 54,
-      "rxiv": 1,
+      "rxiv": 0,
       "clinicaltrials": 0
     },
     "bundle_stages": {
-      "retrieved": 61,
-      "after_domain_filter": 19,
-      "final_bundle": 10
+      "retrieved": 60,
+      "screened": 60,
+      "after_domain_filter": 12,
+      "excluded_scope": 48,
+      "final_bundle": 5,
+      "excluded_after_filter": 7
     },
-    "evidence_retrieved": 61,
-    "evidence_selected": 19
+    "evidence_retrieved": 60,
+    "evidence_selected": 12
   }
 }

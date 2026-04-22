@@ -373,7 +373,8 @@ def run_agent(
         "after_domain_filter": len(evidence),
         "excluded_scope": max(0, retrieved_n - len(evidence)),
     }
-    if entity.get("entity_type") == "compound" and evidence and topic_ratio < _TOPIC_MATCH_FLOOR:
+    should_apply_topic_gate = bool(entity.get("did_you_mean")) or str(entity.get("resolver_source") or "") in {"fuzzy_alias", "chembl"}
+    if entity.get("entity_type") == "compound" and evidence and should_apply_topic_gate and topic_ratio < _TOPIC_MATCH_FLOOR:
         run_log["error"] = (
             f"Low topic-match ratio ({topic_ratio:.2f}) for '{resolved_topic}'. "
             f"Verify topic spelling or refine the query."
