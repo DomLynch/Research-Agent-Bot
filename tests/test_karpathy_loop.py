@@ -399,15 +399,15 @@ class TestReportSubcommand:
 # ── Loader tests against real fixtures ────────────────────────────────────────
 
 class TestLoaders:
-    def test_load_topics_returns_all_ten(self):
+    def test_load_topics_returns_all_fifteen(self):
         topics_dir = Path(__file__).parent / "golden" / "topics"
         topics = load_topics(topics_dir)
-        assert len(topics) == 10
+        assert len(topics) == 15
 
-    def test_load_fixtures_returns_all_ten(self):
+    def test_load_fixtures_returns_all_fifteen(self):
         fixtures_dir = Path(__file__).parent / "golden" / "fixtures"
         fixtures = load_fixtures(fixtures_dir)
-        assert len(fixtures) == 10
+        assert len(fixtures) == 15
 
     def test_scoring_no_errors_on_real_data(self):
         """Verify scoring runs without error on all real topic/fixture pairs."""
@@ -416,7 +416,7 @@ class TestLoaders:
         topics = load_topics(topics_dir)
         fixtures = load_fixtures(fixtures_dir)
         shared = set(topics) & set(fixtures)
-        assert len(shared) == 10
+        assert len(shared) == 15
         for slug in shared:
             result = score_topic(fixtures[slug], topics[slug])
             for key in ("study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "composite_score"):

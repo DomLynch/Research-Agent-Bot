@@ -29,11 +29,16 @@ _ALIASES = {
     "aducanumab": "donanemab",
 }
 _COMPOUND_CLASS_MEMBERS = {
-    "donanemab": ["lecanemab", "aducanumab", "bapineuzumab",
-                  "anti-amyloid", "anti-amyloid antibody", "anti-amyloid therapy", "amyloid antibody"],
+    "donanemab": ["lecanemab", "aducanumab", "bapineuzumab", "solanezumab", "gantenerumab",
+                  "anti-amyloid", "anti-amyloid antibody", "anti-amyloid therapy", "amyloid antibody",
+                  "amyloid"],
     "glp1": ["semaglutide", "liraglutide", "dulaglutide", "exenatide", "tirzepatide",
-             "glp-1 agonist", "glp1 agonist", "glp-1 receptor agonist", "glp1 receptor agonist",
-             "incretin therapy"],
+             "glp-1 agonist", "glp1 agonist", "glp-1 agonists", "glp1 agonists",
+             "glp-1 receptor agonist", "glp1 receptor agonist",
+             "glp-1 receptor agonists", "glp1 receptor agonists",
+             "glucagon-like peptide", "glucagon-like peptide-1",
+             "glp1ras", "gip/glp", "gip-glp",
+             "incretin", "incretin therapy", "incretin-based"],
     "sglt2": ["empagliflozin", "dapagliflozin", "canagliflozin",
               "sglt2 inhibitor", "gliflozin", "sodium-glucose cotransporter-2"],
 }
