@@ -161,7 +161,7 @@ def test_source_entry_dict_core_fields_required():
 
 def test_source_entry_dict_optional_fields():
     """Optional fields should accept None."""
-    from typing import get_type_hints, NotRequired
+    from typing import get_type_hints
 
     hints = get_type_hints(SourceEntryDict)
     optional = {"doi", "year", "journal", "authors", "query",
