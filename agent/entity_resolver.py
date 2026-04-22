@@ -28,6 +28,15 @@ _ALIASES = {
     "lecanemab": "donanemab",
     "aducanumab": "donanemab",
 }
+_COMPOUND_CLASS_MEMBERS = {
+    "donanemab": ["lecanemab", "aducanumab", "bapineuzumab",
+                  "anti-amyloid", "anti-amyloid antibody", "anti-amyloid therapy", "amyloid antibody"],
+    "glp1": ["semaglutide", "liraglutide", "dulaglutide", "exenatide", "tirzepatide",
+             "glp-1 agonist", "glp1 agonist", "glp-1 receptor agonist", "glp1 receptor agonist",
+             "incretin therapy"],
+    "sglt2": ["empagliflozin", "dapagliflozin", "canagliflozin",
+              "sglt2 inhibitor", "gliflozin", "sodium-glucose cotransporter-2"],
+}
 
 
 def _normalize(value: str) -> str:
@@ -73,6 +82,10 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
     alias_hit = _ALIASES.get(_normalize(focus))
     if alias_hit:
         canonical_topic = _replace_focus(raw, focus, alias_hit)
+        aliases = [focus] if focus != alias_hit else []
+        for m in _COMPOUND_CLASS_MEMBERS.get(alias_hit, []):
+            if m not in aliases:
+                aliases.append(m)
         resolution.update(
             {
                 "canonical_topic": canonical_topic,
@@ -80,7 +93,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
                 "did_you_mean": canonical_topic if canonical_topic.lower() != raw.lower() else None,
                 "confidence": 0.99,
                 "resolver_source": "alias_map",
-                "aliases": [focus],
+                "aliases": aliases,
             }
         )
         return resolution
@@ -91,6 +104,9 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
             canonical = str(match.get("canonical_name") or focus).lower()
             canonical_topic = _replace_focus(raw, focus, canonical)
             aliases = [focus] if canonical != focus else []
+            for m in _COMPOUND_CLASS_MEMBERS.get(canonical, []):
+                if m not in aliases:
+                    aliases.append(m)
             resolution.update(
                 {
                     "canonical_topic": canonical_topic,
@@ -108,6 +124,10 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
     if close:
         canonical = _ALIASES.get(close[0], close[0])
         canonical_topic = _replace_focus(raw, focus, canonical)
+        aliases = [focus]
+        for m in _COMPOUND_CLASS_MEMBERS.get(canonical, []):
+            if m not in aliases:
+                aliases.append(m)
         resolution.update(
             {
                 "canonical_topic": canonical_topic,
@@ -115,7 +135,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
                 "did_you_mean": canonical_topic,
                 "confidence": round(SequenceMatcher(None, _normalize(focus), _normalize(canonical)).ratio(), 3),
                 "resolver_source": "fuzzy_alias",
-                "aliases": [focus],
+                "aliases": aliases,
             }
         )
         return resolution

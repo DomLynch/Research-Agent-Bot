@@ -37,7 +37,7 @@ class TestLoadGoldTopics:
     def test_returns_tuples(self):
         from scripts.coverage_audit import load_gold_topics
         topics = load_gold_topics()
-        assert len(topics) == 10
+        assert len(topics) == 15
         for slug, data in topics:
             assert isinstance(slug, str)
             assert isinstance(data, dict)
@@ -296,7 +296,7 @@ def test_run_audit_all_topics(mock_collect):
 
     mock_collect.return_value = set()
     results = run_audit(limit=5)
-    assert len(results) == 10
+    assert len(results) == 15
     slugs = {r["slug"] for r in results}
     assert "rapamycin" in slugs
     assert "metformin" in slugs
