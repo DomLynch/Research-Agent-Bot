@@ -250,12 +250,15 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
     assert run["source_telemetry"]["retrieved"]["pubmed"] >= 1
     assert run["source_telemetry"]["full_text"]["found"] == 2
     assert run["source_telemetry"]["extraction"]["found"] == 2
+    assert "citation_violations" in run
+    assert isinstance(run["citation_violations"], list)
     for item in run["source_bundle"]:
         assert "evidence_type" in item
         assert "year" in item
         assert "title" in item
         assert "url" in item
         assert item.get("source_type")
+        assert item.get("role")
         assert item.get("directness") in {"direct", "indirect", "mechanistic"}
         assert item.get("card", {}).get("evidence_grade") in {"H", "M", "L"}
         if item.get("card", {}).get("full_text_found"):

@@ -182,6 +182,7 @@ def build_card(entry: dict[str, Any]) -> dict[str, Any]:
     )
     return {
         "citation": _format_citation(entry),
+        "role": str(entry.get("role") or ""),
         "journal": entry.get("journal") or "",
         "quality_signal": _infer_quality_signal(entry),
         "evidence_grade": _grade_lite(entry),

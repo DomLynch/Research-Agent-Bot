@@ -1,6 +1,14 @@
 from __future__ import annotations
 
 from agent.evidence_cards import build_card
+from agent.citation_roles import (
+    ROLE_ORDER,
+    classify_citation_role,
+    citation_directness,
+    role_relevance_bonus,
+    role_section_title,
+    role_sort_priority,
+)
 
 import os
 import re
@@ -34,21 +42,6 @@ _GENERIC_FALLBACK = "This section draws on {nr} retained evidence receipts ({rv}
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"], "senolytic": ["senolytics"]}
-_ANTI_AGING_DOMAINS = {"longevity", "anti-aging", "anti aging"}
-_ANTI_AGING_TERMS = (
-    "aging", "ageing", "healthspan", "longevity", "older adults", "biological age",
-    "geroscience", "frailty", "multimorbidity", "mci", "cognitive decline",
-)
-_DIRECT_STUDY_TYPES = {
-    "rct",
-    "clinical-trial",
-    "cohort",
-    "case-control",
-    "cross-sectional",
-    "observational",
-    "meta-analysis",
-    "systematic-review",
-}
 
 _INJECTION_PATTERNS = (
     r"ignore previous instructions",
@@ -104,38 +97,19 @@ def _rank(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(_dedupe(evidence), key=_s, reverse=True)
 
 
-def _is_anti_aging_domain(domain_slug: str) -> bool:
-    domain = domain_slug.lower().strip()
-    return domain in _ANTI_AGING_DOMAINS or "aging" in domain
-
-
 def _classify_directness(item: dict[str, Any], card: dict[str, Any], domain_slug: str, topic_tokens: list[str]) -> str:
-    if item.get("evidence_type") == "mechanism" or item.get("source_type") == "chembl":
-        return "mechanistic"
-    if item.get("source_type") == "clinicaltrials" and not item.get("has_results"):
-        return "indirect"
-    title = str(item.get("title") or "").lower()
-    text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt", "query")).lower()
-    title_match = any(tok in title for tok in topic_tokens)
-    study_type = str(card.get("study_type") or "")
-    aging_signal = (
-        any(term in title for term in _ANTI_AGING_TERMS)
-        or card.get("context") == "aging"
-        or "older adults" in str(card.get("population") or "")
-        or any(term in str(card.get("outcomes") or "") for term in ("healthspan", "aging", "longevity", "mortality", "cognitive", "frailty"))
-    )
-    if _is_anti_aging_domain(domain_slug):
-        if card.get("context") in {"oncology", "transplant", "device", "pediatric"}:
-            return "indirect"
-        if title_match and aging_signal and study_type in _DIRECT_STUDY_TYPES:
-            return "direct"
-        if any(tok in text for tok in topic_tokens):
-            return "indirect"
-        return "indirect"
-    return "direct" if title_match else "indirect"
+    role = classify_citation_role(item, card, domain_slug, topic_tokens)
+    return citation_directness(role, item, card, domain_slug, topic_tokens)
 
 
-def _relevance(item: dict[str, Any], topic_tokens: list[str], *, card: dict[str, Any] | None = None, directness: str = "indirect") -> float:
+def _relevance(
+    item: dict[str, Any],
+    topic_tokens: list[str],
+    *,
+    card: dict[str, Any] | None = None,
+    directness: str = "indirect",
+    role: str = "unknown",
+) -> float:
     title = str(item.get("title") or "").lower()
     card = card or {}
     text = " ".join(
@@ -166,14 +140,17 @@ def _relevance(item: dict[str, Any], topic_tokens: list[str], *, card: dict[str,
         base += 0.05
     if int(item.get("year") or 0) >= 2020:
         base += 0.05
+    base += role_relevance_bonus(role)
     return round(min(base, 1.0), 2)
 
 
 def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: str) -> dict[str, Any]:
     card = build_card(item)
+    role = classify_citation_role(item, card, domain_slug, topic_tokens)
+    card["role"] = role
     directness = _classify_directness(item, card, domain_slug, topic_tokens)
     card["directness"] = directness
-    relevance = _relevance(item, topic_tokens, card=card, directness=directness)
+    relevance = _relevance(item, topic_tokens, card=card, directness=directness, role=role)
     return {
         "title": _clean(item.get("title"), limit=200),
         "excerpt": _clean(item.get("excerpt"), limit=500),
@@ -187,6 +164,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "query": item.get("query"),
         "extraction": item.get("extraction") or {},
         "relevance": relevance,
+        "role": role,
         "directness": directness,
         "card": card,
     }
@@ -218,7 +196,7 @@ def _effect_brief(extraction: dict[str, Any]) -> str:
 
 
 def _is_reported_finding(entry: dict[str, Any]) -> bool:
-    return not (entry.get("source_type") == "clinicaltrials" and not entry.get("has_results"))
+    return entry.get("role") in {"published_results", "meta_analysis", "review", "observational"}
 
 
 def _sanitize_registry_claims(text: str, blocked_refs: list[int]) -> str:
@@ -270,7 +248,7 @@ def _has_quantitative_content(text: str) -> bool:
 
 def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, float, int, int]:
     return (
-        {"direct": 3, "indirect": 2, "mechanistic": 1}.get(entry.get("directness", "indirect"), 0),
+        role_sort_priority(str(entry.get("role") or "unknown")),
         float(entry.get("relevance") or 0.0),
         int(entry.get("year") or 0),
         1 if entry.get("evidence_type") == "review" else 0,
@@ -345,9 +323,13 @@ class RapidEvidenceDrafter:
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
-            "The evidence is split into Published findings and Registered but not yet reported studies. "
-            "For registered studies, describe only the study design or aim. "
-            "Do not say they found, showed, reported, or demonstrated outcomes. "
+            "The evidence is grouped by citation role. "
+            "For published results and meta-analyses, use past-tense outcome language and cite numbers when provided. "
+            "For registered or protocol studies, describe only the study design or aim. "
+            "Do not say they found, showed, reported, demonstrated, improved, reduced, or increased outcomes. "
+            "For animal-model evidence, explicitly hedge with 'in animal models' or 'preclinical'. "
+            "For off-domain indirect evidence, name the different context such as oncology, pregnancy, pediatric, or burn care. "
+            "For observational evidence, describe associations rather than causal proof. "
             "The 'question' field MUST be a full paragraph of at least 50 words. "
             "Example: 'What are the effects of [intervention] on [outcomes] in [population], "
             "compared to [comparator], as evaluated in [study types] with [time frame]?' "
@@ -357,11 +339,11 @@ class RapidEvidenceDrafter:
         )
         if has_effect_data:
             system_prompt += " In Key Findings, when Published findings include effect data, cite at least one numeric value from that effect data."
-        reported_lines = []
-        registered_lines = []
+        grouped_lines: dict[str, list[str]] = {role: [] for role in ROLE_ORDER}
         for i, e in enumerate(prompt_entries, start=1):
             card = e["card"]
             parts = [f"cite={card.get('citation', 'unknown')}"]
+            parts.append(f"role={e.get('role', 'unknown')}")
             parts.append(f"type={card.get('study_type', 'unknown')}")
             parts.append(f"grade={card.get('evidence_grade', 'L')}")
             parts.append(f"directness={e.get('directness', 'indirect')}")
@@ -394,17 +376,14 @@ class RapidEvidenceDrafter:
                 if top_span:
                     parts.append(f"results_excerpt={top_span}")
             line = f"{i}. {'; '.join(parts)}"
-            if _is_reported_finding(e):
-                reported_lines.append(line)
-            else:
-                registered_lines.append(line)
+            grouped_lines.setdefault(str(e.get("role") or "unknown"), []).append(line)
         evidence_blocks = []
-        if reported_lines:
-            evidence_blocks.append("Published findings (can support outcome claims):")
-            evidence_blocks.extend(reported_lines)
-        if registered_lines:
-            evidence_blocks.append("Registered but not yet reported (design only, no outcome claims):")
-            evidence_blocks.extend(registered_lines)
+        for role in ROLE_ORDER:
+            lines = grouped_lines.get(role) or []
+            if not lines:
+                continue
+            evidence_blocks.append(role_section_title(role))
+            evidence_blocks.extend(lines)
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
             user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: 'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy?'\n\nEvidence:\n" + "\n".join(evidence_blocks) or "No evidence receipts retained.",
