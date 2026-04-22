@@ -18,6 +18,15 @@ _KNOWN_COMPOUNDS = {
 _ALIASES = {
     "evrolimus": "everolimus",
     "sirolimus": "rapamycin",
+    "sglt2": "sglt2",
+    "sglt2i": "sglt2",
+    "sglt": "sglt2",
+    "glp1": "glp1",
+    "glp1ra": "glp1",
+    "glp": "glp1",
+    "donanemab": "donanemab",
+    "lecanemab": "donanemab",
+    "aducanumab": "donanemab",
 }
 
 
