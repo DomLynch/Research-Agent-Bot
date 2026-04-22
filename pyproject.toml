@@ -19,7 +19,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "tests/golden"]
+testpaths = ["tests"]
 pythonpath = ["."]
 markers = [
     "gold_smoke: smoke test scoring all gold topics against fixture drafts",
