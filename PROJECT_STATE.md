@@ -83,3 +83,18 @@ Re-run `metformin aging older adults` with `2023 onwards human studies relevance
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.
+
+## Surrogate Wiring (Brief 7)
+
+Modules built but not yet integrated into `run_agent()` are kept alive via:
+
+- **Schema conformance** (`tests/test_schema_conformance.py`): every pytest run validates
+  real extraction cache files against `agent/schema.py` — catches output shape drift.
+- **Unpaywall smoke** (`scripts/unpaywall_smoke.py`): weekly cron resolves 5 known OA DOIs,
+  writes `docs/weekly/YYYY-MM-DD-unpaywall.md`. Exits 1 on hit rate < 60%.
+- **Dead-code detector** (`scripts/detect_unused_modules.py`): CI warning when
+  `agent/**/*.py` modules are not imported anywhere. Currently flags `unpaywall.py` + `schema.py`
+  pending Tier 2. Guards against future bloat.
+
+When Tier 2 lands, the detector goes silent on those two modules; the other two
+surrogate checks keep running against the integrated modules.
