@@ -233,3 +233,38 @@
 - Broad LLM-only filtering — rejected; deterministic scope bugs should be fixed at parse/filter time.
 - Hard-reject any abstract mentioning animal terms — rejected; too aggressive for mixed human context papers, while title-level species rejection kills the concrete leak with lower regression risk.
 **Revisit if:** human-only runs still leak obvious non-human titles or if legitimate human studies without explicit human/patient tokens start getting dropped in live queries.
+
+## 2026-04-22 — Distinguish CT.gov registry-only trials from posted results and harden draft claims
+**Decision:** Treat ClinicalTrials.gov as two evidence classes: `trial_registered` for design-only records without posted results and `trial_results` for posted results with structured outcomes. Feed posted CT.gov results directly into `effects[]`, block registration-only trials from counting as reported findings, and add a deterministic post-pass that scrubs registry-as-results claims while forcing a numeric fallback when effect data exists.
+**Why:** The `metformin aging older adults` draft was using registry entries as if they had reported outcome results. That is a credibility cliff, not a cosmetic issue. CT.gov already exposes structured outcomes via `hasResults` + `resultsSection.outcomeMeasuresModule`, so this is the highest-leverage numeric grounding move per LOC.
+**Details:**
+- `agent/sources/clinicaltrials.py`
+  - Detects `hasResults`.
+  - Builds lightweight structured extraction from posted outcome tables (`primary_outcome`, arm labels, Ns, metric/value strings, p-value, source span).
+  - Emits `trial_status` plus `has_results`; registry-only records keep `extraction=None`.
+- `agent/evidence_cards.py`
+  - Grades CT.gov result entries as `trial-results` and registry-only entries as `trial-registered`.
+- `agent/drafter.py`
+  - ClinicalTrials entries without posted results are always `indirect`.
+  - Prompt evidence is reordered so published findings are numbered first and registry-only studies come after in a separate block.
+  - System prompt explicitly forbids outcome verbs for registered-but-not-reported studies.
+  - Deterministic post-pass strips any outcome-claim sentence tied to registry-only refs and replaces it with a design-only sentence.
+  - If real effect data exists but Key Findings stays generic, a numeric fallback sentence is appended from the first structured effect.
+- `agent/cli.py`
+  - Methods block now reports bundle-backed full-text/extraction counts and explicitly surfaces CT.gov result-backed structured outcomes.
+- Tests:
+  - Added CT.gov posted-results extraction tests.
+  - Added drafter tests for registry-only separation, claim scrubbing, and numeric fallback.
+  - Updated CLI Methods expectation to the reconciled bundle-backed wording.
+**Karpathy loop used:** short cycles on one surface at a time:
+1. CT.gov results extraction + client tests
+2. Prompt separation + drafter tests
+3. Deterministic registry claim scrub + adversarial test
+4. Numeric fallback + adversarial test
+5. Methods wording reconciliation + CLI test
+Each cycle only stayed after the targeted test slice passed.
+**Alternatives rejected:**
+- Wait for Unpaywall/CORE/GROBID first — rejected; CT.gov posted results are already structured, authoritative, and cheaper to exploit.
+- Rely on prompt wording only — rejected; registration-only fabrication needs a deterministic fence, not just a softer instruction.
+- Treat every CT.gov record as low-grade direct evidence — rejected; registrations and posted results are not the same evidence class.
+**Revisit if:** live drafts still attach outcome verbs to registration-only refs, or if CT.gov posted-result strings are too noisy and need normalization into arm-level effect estimates before Tier 2 meta-analysis.

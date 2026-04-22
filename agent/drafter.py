@@ -68,6 +68,11 @@ _INJECTION_PATTERNS = (
     r"ENDCHAT",
 )
 _INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
+_NUMERIC_CLAIM_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
+_OUTCOME_VERB_RE = re.compile(
+    r"\b(found|showed|reported|demonstrated|improved|reduced|increased|decreased|achieved|yielded)\b",
+    re.IGNORECASE,
+)
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -107,6 +112,8 @@ def _is_anti_aging_domain(domain_slug: str) -> bool:
 def _classify_directness(item: dict[str, Any], card: dict[str, Any], domain_slug: str, topic_tokens: list[str]) -> str:
     if item.get("evidence_type") == "mechanism" or item.get("source_type") == "chembl":
         return "mechanistic"
+    if item.get("source_type") == "clinicaltrials" and not item.get("has_results"):
+        return "indirect"
     title = str(item.get("title") or "").lower()
     text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt", "query")).lower()
     title_match = any(tok in title for tok in topic_tokens)
@@ -172,10 +179,13 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "excerpt": _clean(item.get("excerpt"), limit=500),
         "evidence_type": item.get("evidence_type"),
         "source_type": item.get("source_type"),
+        "trial_status": item.get("trial_status"),
+        "has_results": bool(item.get("has_results")),
         "year": int(item["year"]) if isinstance(item.get("year"), int) else None,
         "url": item.get("url"),
         "doi": item.get("doi"),
         "query": item.get("query"),
+        "extraction": item.get("extraction") or {},
         "relevance": relevance,
         "directness": directness,
         "card": card,
@@ -207,6 +217,57 @@ def _effect_brief(extraction: dict[str, Any]) -> str:
     return " | ".join(part for part in parts if part)
 
 
+def _is_reported_finding(entry: dict[str, Any]) -> bool:
+    return not (entry.get("source_type") == "clinicaltrials" and not entry.get("has_results"))
+
+
+def _sanitize_registry_claims(text: str, blocked_refs: list[int]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned or not blocked_refs:
+        return cleaned
+    blocked_tags = [f"[{idx}]" for idx in blocked_refs]
+    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    kept = []
+    hit_tags: list[str] = []
+    for sentence in sentences:
+        tags = [tag for tag in blocked_tags if tag in sentence]
+        if tags and _OUTCOME_VERB_RE.search(sentence):
+            hit_tags.extend(tags)
+            continue
+        kept.append(sentence)
+    if hit_tags:
+        refs = ", ".join(dict.fromkeys(hit_tags))
+        kept.append(f"Registered studies {refs} describe study design only; outcome results have not been posted.")
+    return " ".join(part for part in kept if part).strip()
+
+
+def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
+    effects = ((entry.get("extraction") or {}).get("effects") or [])
+    if not effects:
+        return ""
+    effect = effects[0]
+    outcome = _clean(effect.get("outcome"), limit=90) or "reported outcome"
+    metric = _clean(effect.get("metric"), limit=30)
+    value = _clean(effect.get("value"), limit=120)
+    p_value = _clean(effect.get("p_value"), limit=20)
+    n = _clean(effect.get("n"), limit=80)
+    bits = [f"Published results [{index}] report {outcome}"]
+    if metric and value:
+        bits.append(f"{metric} {value}")
+    elif value:
+        bits.append(value)
+    if p_value:
+        bits.append(f"p={p_value}")
+    if n:
+        bits.append(n)
+    return "; ".join(bits).strip() + "."
+
+
+def _has_quantitative_content(text: str) -> bool:
+    cleaned = re.sub(r"\[\d+\]", "", _clean(text, limit=4000))
+    return bool(_NUMERIC_CLAIM_RE.search(cleaned))
+
+
 def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, float, int, int]:
     return (
         {"direct": 3, "indirect": 2, "mechanistic": 1}.get(entry.get("directness", "indirect"), 0),
@@ -233,6 +294,18 @@ class RapidEvidenceDrafter:
             key=_entry_sort_key,
             reverse=True,
         )[:6]
+        prompt_entries = [entry for entry in selected if _is_reported_finding(entry)] + [
+            entry for entry in selected if not _is_reported_finding(entry)
+        ]
+        registered_refs = [i for i, entry in enumerate(prompt_entries, start=1) if not _is_reported_finding(entry)]
+        first_effect_entry = next(
+            (
+                (i, entry)
+                for i, entry in enumerate(prompt_entries, start=1)
+                if _is_reported_finding(entry) and ((entry.get("extraction") or {}).get("effects") or [])
+            ),
+            None,
+        )
         bundle_candidates = sorted(
             (_bundle_entry(e, topic_tokens, domain_slug) for e in _rank(all_evidence or evidence)),
             key=_entry_sort_key,
@@ -267,10 +340,14 @@ class RapidEvidenceDrafter:
         full_text_ct = sum(1 for e in source_bundle if e.get("card", {}).get("full_text_found"))
         extracted_ct = sum(1 for e in source_bundle if e.get("card", {}).get("extraction_found"))
 
+        has_effect_data = any((entry.get("extraction") or {}).get("effects") for entry in prompt_entries if _is_reported_finding(entry))
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
+            "The evidence is split into Published findings and Registered but not yet reported studies. "
+            "For registered studies, describe only the study design or aim. "
+            "Do not say they found, showed, reported, or demonstrated outcomes. "
             "The 'question' field MUST be a full paragraph of at least 50 words. "
             "Example: 'What are the effects of [intervention] on [outcomes] in [population], "
             "compared to [comparator], as evaluated in [study types] with [time frame]?' "
@@ -278,13 +355,18 @@ class RapidEvidenceDrafter:
             "Return exactly these JSON keys, each a plain string: "
             "question, search_summary, landscape, findings, limitations, gaps_identified, conclusion."
         )
-        prompt_lines = []
-        for i, e in enumerate(selected, start=1):
+        if has_effect_data:
+            system_prompt += " In Key Findings, when Published findings include effect data, cite at least one numeric value from that effect data."
+        reported_lines = []
+        registered_lines = []
+        for i, e in enumerate(prompt_entries, start=1):
             card = e["card"]
             parts = [f"cite={card.get('citation', 'unknown')}"]
             parts.append(f"type={card.get('study_type', 'unknown')}")
             parts.append(f"grade={card.get('evidence_grade', 'L')}")
             parts.append(f"directness={e.get('directness', 'indirect')}")
+            if e.get("source_type") == "clinicaltrials":
+                parts.append(f"trial_status={e.get('trial_status', 'registered')}")
             if card.get("quality_signal"):
                 parts.append(f"quality={card['quality_signal']}")
             parts.append(f"year={e.get('year', 'unknown')}")
@@ -311,10 +393,21 @@ class RapidEvidenceDrafter:
                 top_span = _clean((e.get("extraction") or {}).get("effects", [{}])[0].get("source_span"), limit=220)
                 if top_span:
                     parts.append(f"results_excerpt={top_span}")
-            prompt_lines.append(f"{i}. {'; '.join(parts)}")
+            line = f"{i}. {'; '.join(parts)}"
+            if _is_reported_finding(e):
+                reported_lines.append(line)
+            else:
+                registered_lines.append(line)
+        evidence_blocks = []
+        if reported_lines:
+            evidence_blocks.append("Published findings (can support outcome claims):")
+            evidence_blocks.extend(reported_lines)
+        if registered_lines:
+            evidence_blocks.append("Registered but not yet reported (design only, no outcome claims):")
+            evidence_blocks.extend(registered_lines)
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
-            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: 'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy?'\n\nEvidence:\n" + "\n".join(prompt_lines) or "No evidence receipts retained.",
+            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: 'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy?'\n\nEvidence:\n" + "\n".join(evidence_blocks) or "No evidence receipts retained.",
         )
         result = {str(k).lower(): v for k, v in result.items()}
         fb_ctx = {
@@ -334,6 +427,13 @@ class RapidEvidenceDrafter:
             if picked == fallback:
                 fallback_count += 1
             sections[heading] = picked
+
+        for heading in ("Evidence Landscape", "Key Findings", "Conclusion"):
+            if heading in sections:
+                sections[heading] = _sanitize_registry_claims(sections[heading], registered_refs)
+
+        if has_effect_data and not _has_quantitative_content(sections.get("Key Findings", "")) and first_effect_entry:
+            sections["Key Findings"] = f"{sections['Key Findings']} {_numeric_effect_sentence(*first_effect_entry)}".strip()
 
         if fallback_count >= 6:
             return (

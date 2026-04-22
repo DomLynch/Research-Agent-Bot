@@ -171,17 +171,22 @@ def _build_methods_block(run_log: dict[str, Any], artifact: dict[str, Any], sour
     scope_signals = run_log.get("scope_signals", [])
     full_text = run_log.get("full_text") or {}
     extraction = run_log.get("extraction") or {}
+    source_bundle = artifact.get("source_bundle") or []
+    bundle_full_text = sum(1 for item in source_bundle if item.get("card", {}).get("full_text_found"))
+    bundle_extracted = sum(1 for item in source_bundle if item.get("card", {}).get("extraction_found"))
+    trial_results_ct = sum(1 for item in source_bundle if item.get("source_type") == "clinicaltrials" and item.get("has_results"))
     full_text_line = ""
     if full_text.get("attempted", 0):
         full_text_line = (
-            f" Full text: {full_text.get('found', 0)} of {full_text.get('attempted', 0)} "
+            f" Full text: {bundle_full_text} bundle-backed items; {full_text.get('found', 0)} of {full_text.get('attempted', 0)} "
             f"eligible literature records fetched via {', '.join((full_text.get('source_counts') or {}).keys()) or 'cache/Europe PMC'}."
         )
     extraction_line = ""
-    if extraction.get("attempted", 0):
+    if extraction.get("attempted", 0) or trial_results_ct:
+        registry_str = f"; {trial_results_ct} ClinicalTrials result entries supplied structured outcomes" if trial_results_ct else ""
         extraction_line = (
-            f" Structured extraction: {extraction.get('found', 0)} of {extraction.get('attempted', 0)} "
-            f"full-text-backed records parsed into fact tables (version {extraction.get('version', 'unknown')})."
+            f" Structured extraction: {bundle_extracted} bundle-backed items; {extraction.get('found', 0)} of {extraction.get('attempted', 0)} "
+            f"full-text-backed records parsed into fact tables (version {extraction.get('version', 'unknown')}){registry_str}."
         )
     return (
         f"Search date: {run_log['started_at']}. Databases/sources searched: {', '.join(source_names)}. "

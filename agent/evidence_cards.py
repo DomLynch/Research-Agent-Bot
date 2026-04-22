@@ -76,6 +76,8 @@ _OUTCOMES_RE = re.compile(
 def _infer_quality_signal(entry: dict[str, Any]) -> str:
     """Return a quality signal label for the entry."""
     etype = str(entry.get("evidence_type") or "").lower()
+    if entry.get("source_type") == "clinicaltrials":
+        return "trial-results" if entry.get("has_results") else "trial-registered"
     text = f"{entry.get('title', '')} {entry.get('excerpt', '')}".lower()
     if any(term in text for term in ("study protocol", "protocol for", "trial design", "study design", "rationale and design", "design and rationale")):
         return "protocol"
@@ -147,8 +149,10 @@ def _grade_lite(entry: dict[str, Any]) -> str:
     study_type = _infer_study_type(entry)
     year = int(entry.get("year") or 0)
     score = 1
-    if quality == "protocol" or study_type == "protocol":
+    if quality in {"protocol", "trial-registered"} or study_type == "protocol":
         score = 1
+    elif quality == "trial-results":
+        score = 3
     elif quality in {"meta-analysis", "systematic-review", "review"}:
         score = 3
     elif study_type in {"rct", "clinical-trial"} or entry.get("evidence_type") == "interventional":

@@ -32,9 +32,10 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Topic/entity resolution is now ChEMBL-first plus alias/fuzzy fallback. It still needs richer biomedical vocabularies before Tier 1 full-text work.
 - Tier 1 full-text coverage is Europe PMC-only and DOI/PMID-driven. Closed-access PDFs, figures/tables, and non-PMC papers still fall back to abstract-only behavior.
 - Tier 1.5 extraction is cached and real, but numeric validation is not yet a hard gate. The model now sees extracted facts from a subset of papers; it is still possible to draft unsupported numbers until a validator pass lands.
+- ClinicalTrials.gov registry records are now split into `trial_registered` versus `trial_results`, and posted registry results can supply structured effects without an LLM extraction call. Registry-only studies are design-only in the prompt and get scrubbed if the drafter tries to state outcomes.
 
 ## Next Validation Step
-Re-run `metformin and longevity` with `2023 onwards human studies relevance` and confirm the scope signals include `year>=2023`, the retained bundle excludes obvious non-human/protocol leakage, and any structured-extraction-backed numeric claims stay traceable to extracted spans.
+Re-run `metformin aging older adults` with `2023 onwards human studies relevance` and confirm ClinicalTrials entries with no posted results are described as design-only while any posted-result entries surface numeric claims from structured effects rather than generic prose.
 
 ## Hardening Status
 | Step | What | Status |
@@ -65,6 +66,7 @@ Re-run `metformin and longevity` with `2023 onwards human studies relevance` and
 - **Tier 1 full-text ingestion:** literature entries now attempt Europe PMC full-text fetch with cache-by-identity, run logs expose `full_text` telemetry, Methods surfaces full-text coverage, and evidence cards can extract fields from full-text text when available.
 - **Tier 1.5 structured extraction:** full-text-backed entries now attempt cached MiMo extraction into population/intervention/comparator/methods/effects JSON, evidence cards prefer extracted facts, and drafter prompts now see extracted outcomes/effect summaries instead of a bare full-text flag.
 - **Scope/directness tightening:** criteria parsing now accepts `2023 onwards`, `post-2023`, and `≥2023`; human-only filtering rejects obvious non-human species titles; protocol/rationale/design papers are labeled `protocol` and no longer count as direct evidence.
+- **Tier 1.6 trial-results grounding:** ClinicalTrials.gov entries now distinguish registry-only records from posted results, posted-result trials can populate structured `effects[]` directly from CT.gov outcomes, Methods reconciles bundle-backed extraction/full-text counts, and draft post-processing strips outcome claims attached to registration-only citations while forcing a numeric fallback when effect data exists.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 10 gold + 30 adversarial + 60 breadth
@@ -77,7 +79,7 @@ Re-run `metformin and longevity` with `2023 onwards human studies relevance` and
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 242 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 257 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
 - Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

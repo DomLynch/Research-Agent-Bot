@@ -10,7 +10,9 @@ from agent.sources.clinicaltrials import (
     _extract_title,
     _extract_year,
     _extract_excerpt,
+    _has_results,
     _is_interventional,
+    _extract_results_extraction,
 )
 
 
@@ -20,15 +22,60 @@ def _study(
     summary: str = "This trial evaluates rapamycin for longevity.",
     year: int = 2024,
     study_type: str = "INTERVENTIONAL",
+    has_results: bool = False,
 ) -> dict:
-    return {
+    study = {
         "protocolSection": {
             "identificationModule": {"nctId": nct_id, "briefTitle": title},
             "descriptionModule": {"briefSummary": summary},
             "statusModule": {"primaryCompletionDateStruct": {"date": f"{year}-06-15"}},
             "designModule": {"studyType": study_type},
+            "eligibilityModule": {"eligibilityCriteria": "Adults aged 65 and older with pre-diabetes."},
         }
     }
+    if has_results:
+        study["hasResults"] = True
+        study["resultsSection"] = {
+            "outcomeMeasuresModule": {
+                "outcomeMeasures": [
+                    {
+                        "type": "PRIMARY",
+                        "title": "Frailty Index",
+                        "reportingStatus": "POSTED",
+                        "paramType": "MEAN",
+                        "unitOfMeasure": "Index score",
+                        "timeFrame": "2 years",
+                        "groups": [
+                            {"id": "OG000", "title": "Metformin"},
+                            {"id": "OG001", "title": "Placebo"},
+                        ],
+                        "denoms": [
+                            {
+                                "units": "Participants",
+                                "counts": [
+                                    {"groupId": "OG000", "value": "58"},
+                                    {"groupId": "OG001", "value": "67"},
+                                ],
+                            }
+                        ],
+                        "classes": [
+                            {
+                                "categories": [
+                                    {
+                                        "measurements": [
+                                            {"groupId": "OG000", "value": "-0.0002", "spread": "0.0002"},
+                                            {"groupId": "OG001", "value": "0.0002", "spread": "0.0002"},
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "analyses": [{"pValue": "0.04"}],
+                    }
+                ]
+            }
+        }
+    return study
 
 
 def _mock_response(studies: list[dict] | None = None) -> httpx.Response:
@@ -86,6 +133,19 @@ class TestExtractors:
     def test_is_observational_when_missing(self):
         assert _is_interventional({}) == "observational"
 
+    def test_has_results_flag(self):
+        assert _has_results(_study(has_results=True)) is True
+        assert _has_results(_study()) is False
+
+    def test_extract_results_extraction(self):
+        extraction = _extract_results_extraction(_study(has_results=True))
+        assert extraction is not None
+        assert extraction["primary_outcome"] == "Frailty Index"
+        assert extraction["intervention"] == "Metformin"
+        assert extraction["comparator"] == "Placebo"
+        assert extraction["effects"][0]["metric"] == "MEAN"
+        assert "p=0.04" in extraction["effects"][0]["source_span"]
+
 
 # --- Client.search ---
 
@@ -136,3 +196,23 @@ class TestClinicalTrialsClient:
         client = ClinicalTrialsClient(transport=httpx.MockTransport(handler))
         results = client.search("test", limit=5)
         assert results[0]["evidence_type"] == "observational"
+
+    def test_search_marks_trial_results_and_populates_extraction(self):
+        def handler(request: httpx.Request) -> httpx.Response:
+            return _mock_response([_study(has_results=True)])
+
+        client = ClinicalTrialsClient(transport=httpx.MockTransport(handler))
+        results = client.search("test", limit=5)
+        assert results[0]["trial_status"] == "results"
+        assert results[0]["has_results"] is True
+        assert results[0]["extraction"]["effects"][0]["outcome"] == "Frailty Index"
+
+    def test_search_marks_registry_only_when_no_results_posted(self):
+        def handler(request: httpx.Request) -> httpx.Response:
+            return _mock_response([_study(has_results=False)])
+
+        client = ClinicalTrialsClient(transport=httpx.MockTransport(handler))
+        results = client.search("test", limit=5)
+        assert results[0]["trial_status"] == "registered"
+        assert results[0]["has_results"] is False
+        assert results[0]["extraction"] is None
