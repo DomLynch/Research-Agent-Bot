@@ -52,7 +52,7 @@ Re-run `metformin aging older adults` with `2023 onwards human studies relevance
 | 10 | Conditional source expansion (ClinicalTrials.gov) | DONE (ClinicalTrialsClient; interventional/observational entries now accepted by drafter and harness; conditional in cli.py for oncology/longevity domains; 17 tests) |
 | 11 | bioRxiv/medRxiv, ChEMBL | DONE (RxivClient via Europe PMC preprints filtered to bioRxiv/medRxiv publishers; ChEMBLClient for compound/mechanism context on drug-like topics) |
 | 12 | Weekly report script | DONE (scripts/weekly_report.py; 7 tests including gate_blocked + submission_breakdown) |
-| 13 | 3-tier eval corpus (gold + adversarial + breadth) | DONE (10 gold topics, 30 adversarial, 60 breadth; 4 scoring functions; CI workflow) |
+| 13 | 3-tier eval corpus (gold + adversarial + breadth) | DONE (15 gold topics, 30 adversarial, 60 breadth; 4 scoring functions; CI workflow) |
 
 ## Phase 1 Credibility Slice (Apr 21)
 - **Directness labels:** each retained source now carries `direct`, `indirect`, or `mechanistic` for downstream gating and audit.
@@ -69,17 +69,17 @@ Re-run `metformin aging older adults` with `2023 onwards human studies relevance
 - **Tier 1.6 trial-results grounding:** ClinicalTrials.gov entries now distinguish registry-only records from posted results, posted-result trials can populate structured `effects[]` directly from CT.gov outcomes, Methods reconciles bundle-backed extraction/full-text counts, and draft post-processing strips outcome claims attached to registration-only citations while forcing a numeric fallback when effect data exists.
 
 ## Eval Corpus (Step 13)
-- **3-tier structure**: 10 gold + 30 adversarial + 60 breadth
-- **Gold ground truth**: OpenAlex programmatic — top systematic review since 2022 matching topic tokens in title, `referenced_works` → 14–15 included DOIs per topic. Every DOI CrossRef-verified. 148 verified DOIs, zero dead. `curator: openalex-programmatic`.
+- **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
+- **Gold ground truth**: OpenAlex programmatic — top systematic review since 2022 matching topic tokens in title, `referenced_works` → 14–15 included DOIs per topic. Every DOI CrossRef-verified. 207 verified DOIs, zero dead. `curator: openalex-programmatic`.
 - **Scoring**: study_overlap (0.10), quantitative_fidelity (0.40), direction_agreement (0.30), limitation_overlap (0.20)
 - **Direction classifier fix** (Apr 21): expanded `_classify_direction` keyword lists — positive 5→33 terms, caveat 7→15, negative narrowed 8→6 strong-only. DA improved from 0.40→0.65 avg.
-- **CI gate**: `.github/workflows/eval.yml` — schema validation on push, `gold_smoke` soft-skips until `MIMO_API_KEY` is wired as a CI secret + a pre-test step runs `scripts/generate_fixtures.py`
-- **Gold topics**: rapamycin, nad_precursors, metformin, senolytics, glp1, time_restricted_eating, creatine_cognition, omega3_cv, vitamin_d_mortality, exercise_mci
+- **CI gate**: `.github/workflows/ci.yml` — tests + ruff on every push/PR; `.github/workflows/karpathy-pr.yml` — fixture regen + snapshot diff on PRs; `.github/workflows/weekly-reports.yml` — Monday cron for coverage audit + weekly report
+- **Gold topics**: rapamycin, nad_precursors, metformin, senolytics, glp1, time_restricted_eating, creatine_cognition, omega3_cv, vitamin_d_mortality, exercise_mci, donanemab_alzheimer, semaglutide_weight, glp1_cv_mace, sglt2_heart_failure, statin_primary_prevention
 - **Schema validator**: `tests/golden/schema.py` validates all topic JSONs
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 257 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
+- MacBook: 349 passed, 6 skipped (judge calibration — needs MIMO_API_KEY)
 - ruff clean
-- Gold corpus: 10/10 topic-matched, 148/148 CrossRef-verified DOIs, 0 dead
+- Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.
