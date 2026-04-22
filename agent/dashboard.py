@@ -38,7 +38,6 @@ def _esc(value: object) -> str:
 def _render_page(*, form: dict[str, str], result: dict | None = None, error: str = "") -> str:
     error_block = f'<section class="panel error"><strong>{_esc(error)}</strong></section>' if error else ""
     result_block = ""
-    refresh_tag = ""
     if result:
         download_block = ""
         if result.get("markdown_file"):
@@ -65,14 +64,16 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
                 gates = decision.get("gate_failures", [])
                 gate_str = "; ".join(g["reason"] for g in gates) if gates else "all passed"
                 pub_str = ""
+                status_link = ""
                 if decision.get("publication_id"):
                     pub_str = f"<div><label>Publication</label><strong>{_esc(str(decision['publication_id'])[:8])}…</strong></div>"
                 if dec_status in ("queued", "pending"):
-                    refresh_tag = f'<meta http-equiv="refresh" content="5;url=/status/{_esc(sub_id)}">'
+                    status_link = f'<div><label>Status</label><a class="button secondary" href="/status/{quote(sub_id, safe="")}">Refresh status</a></div>'
                 sub_block = (
                     f"<div><label>Submission</label><strong>{_esc(sub_id[:8])}…</strong></div>"
                     f"<div><label>Decision</label><strong>{_esc(dec_verdict)} ({_esc(dec_status)})</strong></div>"
                     f"<div><label>Intake Gates</label><strong>{_esc(gate_str)}</strong></div>"
+                    f"{status_link}"
                     f"{pub_str}"
                 )
         result_block = (
@@ -89,7 +90,6 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
         )
     return (
         "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
-        f"{refresh_tag}"
         "<title>Research Agent</title><style>" + CSS + "</style></head><body><div class='wrap'>"
         '<section class="hero"><h1>Research Agent</h1>'
         "<p>Type the topic, domain, and criteria. The agent searches, writes the draft, shows it below, and gives you a markdown download.</p>"
