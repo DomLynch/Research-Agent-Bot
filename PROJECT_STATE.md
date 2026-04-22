@@ -34,7 +34,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Tier 1.5 extraction is cached and real, but numeric validation is not yet a hard gate. The model now sees extracted facts from a subset of papers; it is still possible to draft unsupported numbers until a validator pass lands.
 
 ## Next Validation Step
-Run one live literature topic with open PMC coverage and confirm the run log reports non-zero `extraction.found`, the Methods block surfaces structured extraction counts, and the draft cites at least one numeric effect from an extracted evidence record.
+Re-run `metformin and longevity` with `2023 onwards human studies relevance` and confirm the scope signals include `year>=2023`, the retained bundle excludes obvious non-human/protocol leakage, and any structured-extraction-backed numeric claims stay traceable to extracted spans.
 
 ## Hardening Status
 | Step | What | Status |
@@ -64,6 +64,7 @@ Run one live literature topic with open PMC coverage and confirm the run log rep
 - **Tier 0 entity layer:** compound-like topics now resolve to canonical names before retrieval, ChEMBL returns `[]` on no real match, and low topic-match bundles fail before draft generation.
 - **Tier 1 full-text ingestion:** literature entries now attempt Europe PMC full-text fetch with cache-by-identity, run logs expose `full_text` telemetry, Methods surfaces full-text coverage, and evidence cards can extract fields from full-text text when available.
 - **Tier 1.5 structured extraction:** full-text-backed entries now attempt cached MiMo extraction into population/intervention/comparator/methods/effects JSON, evidence cards prefer extracted facts, and drafter prompts now see extracted outcomes/effect summaries instead of a bare full-text flag.
+- **Scope/directness tightening:** criteria parsing now accepts `2023 onwards`, `post-2023`, and `≥2023`; human-only filtering rejects obvious non-human species titles; protocol/rationale/design papers are labeled `protocol` and no longer count as direct evidence.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 10 gold + 30 adversarial + 60 breadth

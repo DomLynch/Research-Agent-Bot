@@ -209,3 +209,27 @@
 - Composite avg drops below 0.45 → investigate which metric regressed.
 - Metformin bundle stays at 2 after other fixes → revisit gold topic phrasing or widen per_source_limit from 20 to 40.
 - PubMed returns 0 for other topics → investigate query construction in planner.
+
+## 2026-04-22 — Tighten scope parsing, human-only species rejection, and protocol directness
+**Decision:** Expand scope-year parsing to match real user phrasing, make `human_only` reject obvious non-human species titles, and classify protocol/rationale/design papers as `protocol` instead of evidence-producing direct studies.
+**Why:** The `metformin and longevity` run exposed three concrete leaks:
+- `2023 onwards` did not activate `year>=2023`, so pre-2023 papers survived.
+- `human_only` was query-biased and let a *C. elegans* title through.
+- Protocol/rationale papers were being counted as direct evidence because study-type inference had no `protocol` branch.
+**Details:**
+- `agent/planner.py`
+  - `_parse_scope()` now recognizes `2023 onwards`, `post-2023`, and `≥2023` in addition to `2023+` / `since 2023`.
+  - `_human_ok()` now ignores the query string, rejects obvious non-human species in the title (`Caenorhabditis`, `C. elegans`, `mouse`, `rat`, `drosophila`, `zebrafish`), and only uses title/excerpt for human-vs-animal relevance.
+- `agent/evidence_cards.py`
+  - Added protocol-style title patterns (`study protocol`, `protocol for`, `trial design`, `study design`, `rationale and design`, `design and rationale`).
+  - Protocol papers now get `study_type = protocol`, `quality_signal = protocol`, and `evidence_grade = L`.
+  - Because `protocol` is not in `_DIRECT_STUDY_TYPES`, longevity directness no longer overcounts study designs as direct evidence.
+- Tests added for:
+  - `2023 onwards`, `post-2023`, `≥2023`
+  - non-human title rejection under `human_only`
+  - protocol detection / grading
+  - protocol papers classifying as `indirect` in longevity directness
+**Alternatives rejected:**
+- Broad LLM-only filtering — rejected; deterministic scope bugs should be fixed at parse/filter time.
+- Hard-reject any abstract mentioning animal terms — rejected; too aggressive for mixed human context papers, while title-level species rejection kills the concrete leak with lower regression risk.
+**Revisit if:** human-only runs still leak obvious non-human titles or if legitimate human studies without explicit human/patient tokens start getting dropped in live queries.

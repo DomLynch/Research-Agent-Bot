@@ -41,6 +41,18 @@ def test_classify_directness_marks_chembl_mechanistic():
     assert directness == "mechanistic"
 
 
+def test_classify_directness_marks_protocol_indirect():
+    item = {
+        "title": "Metformin and longevity: protocol for a randomized trial in older adults",
+        "excerpt": "Rationale and study design for healthy aging outcomes.",
+        "evidence_type": "primary",
+        "year": 2024,
+    }
+    card = build_card(item)
+    directness = _classify_directness(item, card, "longevity", ["metformin", "longevity"])
+    assert directness == "indirect"
+
+
 def test_quality_gate_fires_on_classifier_generated_indirect_only_bundle():
     topic_tokens = ["everolimus", "aging"]
     items = [

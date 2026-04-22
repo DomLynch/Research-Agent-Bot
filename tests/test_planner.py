@@ -1,4 +1,4 @@
-from agent.planner import QueryPlanner
+from agent.planner import QueryPlanner, _human_ok
 
 
 def test_planner_generates_multiple_queries() -> None:
@@ -44,3 +44,33 @@ def test_general_domain_safety_net_avoids_duplicate_outcomes() -> None:
     planner = QueryPlanner()
     plan = planner.build(topic="rapamycin", domain_slug="anti-aging")
     assert "outcomes outcomes" not in " ".join(plan.queries).lower()
+
+
+def test_parse_scope_accepts_onwards_post_and_ge_phrasing() -> None:
+    planner = QueryPlanner()
+    onward = planner.build(topic="metformin", domain_slug="longevity", criteria="2023 onwards human studies relevance")
+    post = planner.build(topic="metformin", domain_slug="longevity", criteria="post-2023 human studies")
+    ge = planner.build(topic="metformin", domain_slug="longevity", criteria="≥2023 human studies")
+    assert onward.scope_signals() == ["year>=2023", "human_only"]
+    assert post.scope_signals() == ["year>=2023", "human_only"]
+    assert ge.scope_signals() == ["year>=2023", "human_only"]
+
+
+def test_human_only_rejects_non_human_species_in_title() -> None:
+    assert _human_ok(
+        {
+            "title": "Metformin treatment of diverse Caenorhabditis species extends longevity",
+            "excerpt": "Human longevity pathways are discussed for comparison.",
+            "query": "metformin human studies longevity",
+        }
+    ) is False
+
+
+def test_human_only_keeps_patient_study() -> None:
+    assert _human_ok(
+        {
+            "title": "Metformin and mortality in older adults",
+            "excerpt": "Clinical cohort of patients aged 65 and older.",
+            "query": "metformin human studies longevity",
+        }
+    ) is True

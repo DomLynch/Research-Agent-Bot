@@ -11,7 +11,14 @@ DOMAIN_HINTS = {
     "general": ("evidence", "outcomes", "adults"),
 }
 _HUMAN = ("human", "humans", "patient", "patients", "adult", "adults", "clinical")
-_ANIMAL = ("animal", "animals", "mouse", "mice", "murine", "rat", "rats")
+_ANIMAL = (
+    "animal", "animals", "mouse", "mice", "murine", "rat", "rats",
+    "c. elegans", "c elegans", "caenorhabditis", "drosophila", "zebrafish",
+)
+_TITLE_NON_HUMAN_RE = re.compile(
+    r"\b(?:c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|rats|drosophila|zebrafish)\b",
+    re.IGNORECASE,
+)
 
 _BASE_NEGATIVE = [
     "cooking", "cook", "recipe", "recipes",
@@ -45,7 +52,13 @@ _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 
 def _parse_scope(text: str) -> dict[str, Any]:
     t = _clean(text, limit=200).lower()
-    ym = re.search(r"\b(20\d{2})\+|\b(?:since|after|from)\s+(20\d{2})\b", t)
+    ym = re.search(
+        r"(?:\b(20\d{2})(?:\+|\s*onward(?:s)?)|"
+        r"\b(?:since|after|from)\s+(20\d{2})\b|"
+        r"\bpost[-\s]?(20\d{2})\b|"
+        r"(?:≥|>=)\s*(20\d{2})\b)",
+        t,
+    )
     year_min = next((int(g) for g in ym.groups() if g), None) if ym else None
     scope: dict[str, Any] = {
         "year_min": year_min,
@@ -99,10 +112,17 @@ def _score(item: dict[str, Any], scope: dict[str, Any], topic_tokens: list[str] 
 
 
 def _human_ok(item: dict[str, Any]) -> bool:
-    text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt", "query")).lower()
+    title = str(item.get("title") or "").lower()
+    text = " ".join(str(item.get(k) or "") for k in ("title", "excerpt")).lower()
     if any(t in text for t in ("without human", "no human", "animal-only", "animal only")):
         return False
-    return any(t in text for t in _HUMAN) or not any(t in text for t in _ANIMAL)
+    if _TITLE_NON_HUMAN_RE.search(title):
+        return False
+    has_human = any(t in text for t in _HUMAN)
+    has_animal = any(t in text for t in _ANIMAL)
+    if has_animal and not has_human:
+        return False
+    return has_human or not has_animal
 
 
 def _filter_evidence(scope: dict[str, Any], evidence: list[dict[str, Any]], topic_tokens: list[str] | None = None, domain_slug: str = "general") -> list[dict[str, Any]]:

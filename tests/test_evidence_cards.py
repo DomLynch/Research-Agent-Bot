@@ -38,6 +38,11 @@ def test_infer_quality_signal_preprint():
     assert _infer_quality_signal(entry) == "preprint"
 
 
+def test_infer_quality_signal_protocol():
+    entry = {"evidence_type": "primary", "title": "Metformin and longevity: study protocol and rationale", "excerpt": ""}
+    assert _infer_quality_signal(entry) == "protocol"
+
+
 def test_infer_quality_signal_no_evidence_type():
     entry = {"title": "Some paper"}
     assert _infer_quality_signal(entry) == "primary"
@@ -135,6 +140,11 @@ def test_build_card_infer_study_type_cohort():
     assert _infer_study_type(entry) == "cohort"
 
 
+def test_build_card_infer_study_type_protocol():
+    entry = {"title": "Metformin and longevity: protocol for a randomized trial", "evidence_type": "primary"}
+    assert _infer_study_type(entry) == "protocol"
+
+
 def test_build_card_empty_fields_when_no_match():
     entry = {"title": "Some unrelated paper", "evidence_type": "primary"}
     card = build_card(entry)
@@ -185,6 +195,20 @@ def test_build_card_assigns_low_grade_to_mechanism_context():
     )
     assert card["evidence_grade"] == "L"
     assert card["context"] == "oncology"
+
+
+def test_build_card_assigns_low_grade_to_protocol():
+    card = build_card(
+        {
+            "title": "Metformin and longevity: rationale and design for a clinical trial",
+            "excerpt": "Study protocol in older adults.",
+            "evidence_type": "primary",
+            "year": 2024,
+        }
+    )
+    assert card["study_type"] == "protocol"
+    assert card["quality_signal"] == "protocol"
+    assert card["evidence_grade"] == "L"
 
 
 def test_build_card_uses_full_text_for_extraction():
