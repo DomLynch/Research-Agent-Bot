@@ -98,3 +98,21 @@ Modules built but not yet integrated into `run_agent()` are kept alive via:
 
 When Tier 2 lands, the detector goes silent on those two modules; the other two
 surrogate checks keep running against the integrated modules.
+
+
+## Judge Panel Prototype (Brief 9)
+
+New module `agent/review/judge_panel.py` — standalone peer review system.
+Three judges (methodology, evidence, claims) independently score drafts
+on 10 rubric axes, adjudicator synthesizes verdict.
+
+Public API:
+    from agent.review.judge_panel import review_draft
+    review = review_draft(draft_artifact)
+    # review["adjudicated_verdict"] -> accept|minor_revision|major_revision|reject
+    # review["required_fixes"] -> list of specific fixes
+    # review["aggregate_score"] -> 1.0-5.0 mean
+
+Cost: ~4 MimoClient calls per review, roughly $0.003 per submission.
+
+Not wired into production Researka submission flow yet — that's the next brief.

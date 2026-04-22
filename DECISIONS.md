@@ -329,3 +329,35 @@ Key decisions:
 - Skip dead-code detection entirely — rejected, it catches real rot when a module is genuinely abandoned.
 - Wire smoke test to daily cron — rejected, private repo free plan; Monday-only saves CI minutes.
 **Revisit if:** schema.py or unpaywall.py gets imported by agent internals (detector should stop flagging them), or if the project upgrades to a paid GitHub plan (then add daily smoke).
+
+
+---
+
+## 2026-04-22 — Judge panel prototype (Brief 9)
+
+**Decision:** Build a three-agent peer-review panel (methodology/evidence/claims
+judges + adjudicator) as a standalone module callable from any Researka
+submission. Ship unwired.
+
+**Why:** Researka's current `deterministic-mvp` review is rubber-stamp. To be a
+real venue, every submission needs filtering. Three independent judges with
+distinct rubrics + adjudicator gives something a human editor recognizes as
+peer review — not a single-prompt evaluator.
+
+**Axis coverage (10 axes total):**
+- Methodology: search_strategy, scope_discipline, directness, prisma_compliance
+- Evidence: bundle_quality, numeric_grounding, citation_accuracy
+- Claims: overclaim_risk, verb_role_discipline, hedge_calibration
+
+**Cost:** ~$0.003 per review at 4 MiMo calls x (2k input + 600 output tokens).
+Trivial at any reasonable submission volume.
+
+**Alternatives rejected:**
+- Single-prompt evaluator — rejected, conflates scoring axes, no redundancy
+- Human reviewer network — parallel future path, not a substitute (too slow)
+- Deterministic rule-based gate — rejected, can't judge overclaim/hedge calibration
+
+**Revisit if:**
+- Adjudicator verdicts don't correlate with human editorial judgment on spot-checks
+- Cost scales above $1/day (would indicate submission volume warrants caching)
+- Rubric axes need domain-specific variants (longevity vs cardiology etc.)
