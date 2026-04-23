@@ -624,5 +624,6 @@ def test_drafter_grounds_from_structured_pubmed_results_excerpt() -> None:
         evidence=[published, meta],
         all_evidence=[published, meta],
     )
+    assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in artifact["source_bundle"][0]["excerpt"]
     findings = artifact["sections"]["Key Findings"]
     assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in findings

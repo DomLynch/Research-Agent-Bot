@@ -114,6 +114,11 @@ _STRUCTURED_RESULT_LABEL_RE = re.compile(
     r"\b(FINDINGS|RESULTS|INTERPRETATION|CONCLUSIONS?)\s*:\s*",
     re.IGNORECASE,
 )
+_OUTCOME_SENTENCE_RE = re.compile(
+    r"(?:adjusted treatment effect|did not improve|no significant|mean [\w\- ]+ at \d+|"
+    r"metformin group|placebo group|metformin versus|versus three|versus placebo)",
+    re.IGNORECASE,
+)
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -137,6 +142,12 @@ def _bundle_excerpt(item: dict[str, Any]) -> str:
             priority_sentences.extend(
                 [part.strip() for part in re.split(r"(?<=[.!?])\s+", text) if part.strip()]
             )
+    def _priority_score(sentence: str) -> tuple[int, int]:
+        return (
+            1 if _OUTCOME_SENTENCE_RE.search(sentence) else 0,
+            1 if _RESULT_MARKER_RE.search(sentence) else 0,
+        )
+    priority_sentences = sorted(priority_sentences, key=_priority_score, reverse=True)
     sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", raw) if part.strip()]
     picked: list[str] = []
     length = 0
