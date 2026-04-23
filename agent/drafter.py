@@ -116,7 +116,27 @@ _STRUCTURED_RESULT_LABEL_RE = re.compile(
 )
 _OUTCOME_SENTENCE_RE = re.compile(
     r"(?:adjusted treatment effect|did not improve|no significant|mean [\w\- ]+ at \d+|"
-    r"metformin group|placebo group|metformin versus|versus three|versus placebo)",
+    r"metformin group|placebo group|metformin versus|versus placebo)",
+    re.IGNORECASE,
+)
+_PRIMARY_RESULT_SENTENCE_RE = re.compile(
+    r"(?:primary outcome|adjusted treatment effect|did not improve|no significant|"
+    r"mean [\w\- ]+ at \d+|between-group difference)",
+    re.IGNORECASE,
+)
+_STRONG_RESULT_SENTENCE_RE = re.compile(
+    r"(?:adjusted treatment effect|95%\s*ci|confidence interval|p\s*[<=>]|"
+    r"hazard ratio|odds ratio|\brr\b|metformin versus|versus placebo|"
+    r"placebo group|metformin group|mean (?:difference|change))",
+    re.IGNORECASE,
+)
+_SAFETY_EVENT_SENTENCE_RE = re.compile(
+    r"(?:adverse events?|serious adverse|hospital admissions?|poorly tolerated|death occurred|funding:)",
+    re.IGNORECASE,
+)
+_TRIAL_FLOW_SENTENCE_RE = re.compile(
+    r"(?:screened|eligible|randomly assigned|randomised|enrolled|recruited|"
+    r"mean age|baseline|follow-up completed|dropout)",
     re.IGNORECASE,
 )
 
@@ -142,10 +162,15 @@ def _bundle_excerpt(item: dict[str, Any]) -> str:
             priority_sentences.extend(
                 [part.strip() for part in re.split(r"(?<=[.!?])\s+", text) if part.strip()]
             )
-    def _priority_score(sentence: str) -> tuple[int, int]:
+    def _priority_score(sentence: str) -> tuple[int, int, int, int, int]:
         return (
+            1 if _PRIMARY_RESULT_SENTENCE_RE.search(sentence) else 0,
+            1 if _STRONG_RESULT_SENTENCE_RE.search(sentence) else 0,
             1 if _OUTCOME_SENTENCE_RE.search(sentence) else 0,
+            0 if _SAFETY_EVENT_SENTENCE_RE.search(sentence) else 1,
+            0 if _TRIAL_FLOW_SENTENCE_RE.search(sentence) else 1,
             1 if _RESULT_MARKER_RE.search(sentence) else 0,
+            len(sentence),
         )
     priority_sentences = sorted(priority_sentences, key=_priority_score, reverse=True)
     sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", raw) if part.strip()]

@@ -414,6 +414,57 @@ def test_bundle_entry_keeps_numeric_result_sentence_from_later_in_excerpt():
     assert "39.8 months" in entry["excerpt"]
 
 
+def test_bundle_entry_prioritizes_structured_result_over_trial_flow_counts():
+    entry = _bundle_entry(
+        {
+            "title": "Metformin and physical performance in older people (MET-PREVENT)",
+            "excerpt": (
+                "BACKGROUND: Background sentence. METHODS: Methods sentence. "
+                "FINDINGS: Between Aug 1, 2021, and Sept 5, 2023, 1373 people were screened, "
+                "105 were eligible, and 72 participants were randomly assigned to metformin (n=35) "
+                "or placebo (n=37). Mean age was 80.4 years. At 4 months, adjusted treatment effect "
+                "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96. "
+                "INTERPRETATION: Metformin did not improve 4-m walk speed."
+            ),
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+        },
+        ["metformin", "aging", "older", "adults", "glucophage"],
+        "longevity",
+    )
+    first_sentence = entry["excerpt"].split(". ", 1)[0]
+    assert "adjusted treatment effect 0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in first_sentence
+    assert "1373 people were screened" not in first_sentence
+
+
+def test_bundle_entry_prefers_primary_result_over_safety_counts_in_structured_pubmed_excerpt():
+    entry = _bundle_entry(
+        {
+            "title": "Metformin and physical performance in older people with probable sarcopenia and physical prefrailty or frailty in England (MET-PREVENT)",
+            "excerpt": (
+                "BACKGROUND: Metformin has effects on multiple biological systems relevant to ageing. "
+                "METHODS: Participants were randomly assigned to metformin or placebo. "
+                "FINDINGS: Between Aug 1, 2021, and Sept 30, 2022, 268 individuals were screened for inclusion in the trial, "
+                "and 72 participants were randomly assigned to either metformin (n=36) or placebo (n=36). "
+                "Mean age was 80.4 years. Mean 4-m walk speed at 4 months was 0.57 m/s in the metformin group "
+                "and 0.58 m/s in the placebo group (adjusted treatment effect 0.001 m/s [95% CI -0.06 to 0.06]; p=0.96). "
+                "108 adverse events occurred in 35 participants who received metformin and 77 adverse events occurred in 33 participants "
+                "who received placebo, and 12 participants had hospital admissions in the metformin group versus three in the placebo group. "
+                "INTERPRETATION: Metformin did not improve 4-m walk speed and was poorly tolerated in this population."
+            ),
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+        },
+        ["metformin", "aging", "older", "adults", "glucophage"],
+        "longevity",
+    )
+    first_sentence = entry["excerpt"].split(". ", 1)[0]
+    assert "Mean 4-m walk speed at 4 months was 0.57 m/s" in first_sentence
+    assert "108 adverse events occurred" not in first_sentence
+
+
 def test_quality_gate_fires_on_classifier_generated_indirect_only_bundle():
     topic_tokens = ["everolimus", "aging"]
     items = [
