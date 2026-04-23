@@ -465,7 +465,13 @@ def _clean_grounding_mashups(text: str, source_bundle: list[dict[str, Any]]) -> 
         return cleaned
     sentences = re.split(r"(?<=[.!?])\s+", cleaned)
     kept: list[str] = []
-    for sentence in sentences:
+    for idx, sentence in enumerate(sentences):
+        next_sentence = sentences[idx + 1] if idx + 1 < len(sentences) else ""
+        if sentence.rstrip().lower().endswith("vs.") and re.match(
+            r"^(Published results \[\d+\] report|Meta-analysis \[\d+\] reported)",
+            next_sentence,
+        ):
+            continue
         match = re.search(r"(Published results \[\d+\] report .*|Meta-analysis \[\d+\] reported .*)", sentence)
         if match and "vs." in sentence:
             kept.append(match.group(1).strip())

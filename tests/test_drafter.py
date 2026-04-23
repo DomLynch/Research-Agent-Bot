@@ -119,6 +119,24 @@ class BrokenNumericProvider(CaptureProvider):
         )
 
 
+class SplitMashupProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of metformin on healthspan outcomes in older adults, compared to placebo, and what does recent direct trial evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+                "search_summary": "Recent direct trials and a broad meta-analysis were reviewed.",
+                "landscape": "The evidence includes direct trials and broader comparative syntheses.",
+                "findings": "A recent trial found no significant difference in frailty after 2 years (mean change: metformin -0.0002 vs. Published results [1] report Frailty Index Based on Deficit Accumulation; MEAN Metformin=-0.0002; Placebo=0.0002.",
+                "limitations": "The evidence base remains small and underpowered.",
+                "gaps_identified": "Long-duration trials remain sparse.",
+                "conclusion": "Metformin remains inconclusive for broad healthspan benefit [1].",
+            },
+            {},
+        )
+
+
 def test_classify_directness_marks_aging_rct_direct():
     item = {
         "title": "Metformin and aging in older adults: randomized controlled trial",
@@ -631,6 +649,51 @@ def test_drafter_replaces_broken_vs_mashup_with_grounded_result_sentence() -> No
     )
     findings = artifact["sections"]["Key Findings"]
     assert "vs. [1]" not in findings
+    assert "Published results [1] report Frailty Index Based on Deficit Accumulation" in findings
+
+
+def test_drafter_drops_split_vs_mashup_prefix_before_grounded_sentence() -> None:
+    provider = SplitMashupProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+        "excerpt": "Interventional study in older adults.",
+        "evidence_type": "interventional",
+        "source_type": "clinicaltrials",
+        "has_results": True,
+        "trial_status": "results",
+        "year": 2024,
+        "url": "https://clinicaltrials.gov/study/NCT00000001",
+        "extraction": {
+            "effects": [
+                {
+                    "outcome": "Frailty Index Based on Deficit Accumulation",
+                    "metric": "MEAN",
+                    "value": "Metformin=-0.0002 (spread 0.0002); Placebo=0.0002 (spread 0.0002)",
+                    "n": "Metformin N=58; Placebo N=67",
+                    "source_span": "Frailty Index Based on Deficit Accumulation. 2 years. Metformin=-0.0002 (spread 0.0002); Placebo=0.0002 (spread 0.0002). Metformin N=58; Placebo N=67",
+                }
+            ]
+        },
+    }
+    meta = {
+        "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+        "excerpt": "Broad comparative review in older adults.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, meta],
+        all_evidence=[published, meta],
+    )
+    findings = artifact["sections"]["Key Findings"]
+    assert "mean change: metformin -0.0002 vs." not in findings
     assert "Published results [1] report Frailty Index Based on Deficit Accumulation" in findings
 
 
