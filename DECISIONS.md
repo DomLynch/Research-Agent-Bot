@@ -484,3 +484,50 @@ The final hardening moves fix the actual failure modes, not the score display.
 - keep off-domain logic advisory-only — rejected; the noisy entries were already visible in live markdown
 
 **Revisit if:** metformin still carries weak-fit indirect context after this pass. The next move would be a tighter `query-fit` filter for indirect context or a second-stage bundle cap keyed to metformin title/synonym matches.
+
+---
+
+## 2026-04-23 — Replace metformin-only pruning with a generic longevity fit + claim gate
+**Decision:** Remove the metformin-specific bundle retention path and replace it with a generic longevity evidence pipeline driven by canonical entity resolution, topic-fit scoring, claim-quality validation, and shared human-only filtering.
+
+**Why:** Metformin quality had improved partly because of explicit metformin title/drop rules in `agent/drafter.py`. Rapamycin immediately exposed that this was local tuning, not a scalable engine. The next step had to generalize across longevity compounds without reintroducing per-topic hardcoding.
+
+**What shipped:**
+- `agent/entity_resolver.py`
+  - expanded canonical alias/class-term support for longevity compounds (`metformin`, `rapamycin`, `senolytics`, `NR/NMN`, `omega3`, etc.)
+  - `resolve_topic()` now returns `class_terms` alongside aliases so later stages can reason about class-level reviews without topic-specific conditionals
+- `agent/drafter.py`
+  - removed metformin-only `_keep_bundle_entry()` behavior and replaced it with:
+    - `_topic_profile()` canonical topic object
+    - `_topic_fit_score()` generic entity/alias/class/population/outcome scoring
+    - `_topic_fit_bucket()` (`core` / `landscape` / `drop`)
+    - `_claim_from_entry()` / `_claim_schema_ok()` generic claim extraction and validation
+    - generic result-sentence quality filtering before prose injection
+  - multi-drug/meta-analysis findings now need topic-fit to survive into `Key Findings`
+  - structured numeric effects now humanize through a shared path instead of leaking raw fragments
+- `agent/cli.py`
+  - drafter now receives the resolved topic profile from the resolver
+  - anti-aging / longevity runs now fail closed on zero direct evidence regardless of bundle size
+- `agent/planner.py`
+  - human-only filtering now rejects `nonhuman primate(s)` / `macaque(s)` / `monkey(s)` generically, fixing a blind senolytics leak
+- tests
+  - new resolver coverage for aliases + class terms
+  - new drafter coverage for generic rapamycin and senolytic pruning
+  - new planner regression for nonhuman primate rejection
+
+**Judge result:**
+- local validation: `441 passed, 6 skipped, 5 xfailed`
+- `ruff` clean
+- live VPS audit on `tier2-finish`:
+  - `metformin aging older adults`: drafts cleanly, `10` sources, `5` direct, no high-severity citation violations
+  - `rapamycin aging older adults`: now drafts under the generic path with `6` relevant sources when submission gating is removed; no metformin/PCSK9/insect leakage remained
+  - `senolytics dasatinib quercetin older adults`: drafts cleanly with `8` sources after the primate filter fix; the nonhuman-primate paper is gone
+
+**Tradeoff accepted:** Generic scoring is broader than the old metformin-only pruning, so metformin regained some indirect context (for example DPP follow-up / GRADE-like diabetes context). That is acceptable for now because the goal of this sprint was topic-uniformity, not topic-specific maximal polish.
+
+**Alternatives rejected:**
+- keep hand-tuning metformin and then clone the pattern to other compounds — rejected; not scalable
+- jump straight to a full structured-claim architecture rewrite across every extractor path — rejected for this sprint; too large for the needed proof
+- add more deny-lists per topic — rejected; that is the same local-optimization trap in a different form
+
+**Revisit if:** rapamycin and senolytics still need materially different pruning rules after another live editorial pass. That would mean the current generic fit rubric is still too shallow and the next move should be a stricter claim schema / bundle contract rather than more token matching.
