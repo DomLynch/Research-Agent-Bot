@@ -399,6 +399,29 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
     return " ".join(part for part in kept if part).strip()
 
 
+def _clean_grounding_mashups(text: str, source_bundle: list[dict[str, Any]]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    kept: list[str] = []
+    for sentence in sentences:
+        match = re.search(r"(Published results \[\d+\] report .*|Meta-analysis \[\d+\] reported .*)", sentence)
+        if match and "vs." in sentence:
+            kept.append(match.group(1).strip())
+            continue
+        refs = [int(m.group(1)) for m in _CITATION_TOKEN_RE.finditer(sentence)]
+        roles = {
+            str(source_bundle[ref - 1].get("role") or "unknown")
+            for ref in refs
+            if 1 <= ref <= len(source_bundle)
+        }
+        if "meta_analysis" in roles and not (_NUMERIC_CLAIM_RE.search(sentence) and _RESULT_MARKER_RE.search(sentence)):
+            continue
+        kept.append(sentence)
+    return " ".join(part for part in kept if part).strip()
+
+
 def _strip_unsupported_numeric_claims(text: str, source_bundle: list[dict[str, Any]]) -> str:
     cleaned = _clean(text, limit=4000)
     claims = set(_QUANT_LITERAL_RE.findall(cleaned.lower()))
@@ -696,6 +719,7 @@ class RapidEvidenceDrafter:
         for heading in ("Key Findings", "Conclusion"):
             if heading in sections:
                 sections[heading] = _ground_required_numeric_sentences(sections[heading], source_bundle)
+                sections[heading] = _clean_grounding_mashups(sections[heading], source_bundle)
                 sections[heading] = _strip_unsupported_numeric_claims(sections[heading], source_bundle)
 
         if has_effect_data and not _has_quantitative_content(sections.get("Key Findings", "")) and first_effect_entry:
