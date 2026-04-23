@@ -81,6 +81,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **MiMo editor pass + evidence tiers:** a bounded second MiMo pass now edits the assembled draft for abstract completeness, duplicate hook removal, and clearer Tier A/B/C evidence separation; the source bundle now carries generic `evidence_tier` labels instead of relying on topic-specific prose hacks.
 - **MiMo upstream judgment layer:** retained candidates now go through a generic MiMo reranking pass (`core` / `landscape` / `drop`) and a generic MiMo role/directness/tier labeling pass before drafting. Deterministic scoring remains as scaffold and validator, but explicit MiMo `drop` decisions are no longer revived by low-count fallback bundling.
 - **Source substrate + intake alignment:** Europe PMC is now a first-class retrieval adapter, OpenAlex/Semantic Scholar now carry richer metadata into ranking, Semantic Scholar graph expansion now includes recommendations, source bundles can include protocol-type support records, NIH RePORTER is available as Tier C/project-context retrieval, DOAJ can mark indexed journals in the final bundle, and the Researka submission floor is now correctly enforced at 12 retained sources instead of the stale 8-source gate.
+- **Bundle hygiene repair under the 12-source rule:** final bundle selection now hard-drops entries with no canonical intervention fit, collapses MED/PMC mirror duplicates by normalized title/URL/DOI, and uses `Tier A1 / A2 / B / C` labels so direct older-adult RCTs outrank disease-context cohorts, reviews, and protocol/mechanistic support without reverting the Researka 12-citation floor.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
@@ -93,7 +94,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 446 passed, 6 skipped, 5 xfailed
+- MacBook: 455 passed, 6 skipped, 5 xfailed
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

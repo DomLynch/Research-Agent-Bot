@@ -812,8 +812,10 @@ def test_methods_final_bundle_count_matches_source_bundle(tmp_path: Path, monkey
     final_bundle = len(run["source_bundle"])
     assert run["bundle_stages"]["final_bundle"] == final_bundle
     assert f"{final_bundle} included in the final source bundle" in run["markdown"]
-    assert "Full text: 2 bundle-backed items; 2 of" in run["markdown"]
-    assert "Structured extraction: 2 bundle-backed items; 2 of" in run["markdown"]
+    bundle_full_text = sum(1 for item in run["source_bundle"] if item.get("card", {}).get("full_text_found"))
+    bundle_extracted = sum(1 for item in run["source_bundle"] if item.get("card", {}).get("extraction_found"))
+    assert f"Full text: {bundle_full_text} bundle-backed items; {run['source_telemetry']['full_text']['found']} of" in run["markdown"]
+    assert f"Structured extraction: {bundle_extracted} bundle-backed items; {run['source_telemetry']['extraction']['found']} of" in run["markdown"]
 
 
 def test_source_routing_helpers() -> None:

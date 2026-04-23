@@ -157,11 +157,22 @@ _SYNONYM_CANONICALS = {
 }
 _VALID_TOPIC_FIT_BUCKETS = {"core", "landscape", "drop"}
 _VALID_DIRECTNESS = {"direct", "indirect", "mechanistic"}
+_TIER_A1 = "Tier A1 direct aging evidence"
+_TIER_A2 = "Tier A2 disease-context human evidence"
+_TIER_B = "Tier B supporting human evidence"
+_TIER_C = "Tier C protocol/mechanistic support"
 _VALID_EVIDENCE_TIERS = {
-    "Tier A direct aging evidence",
-    "Tier B supporting human evidence",
-    "Tier C protocol/mechanistic support",
+    _TIER_A1,
+    _TIER_A2,
+    _TIER_B,
+    _TIER_C,
 }
+_DISEASE_CONTEXT_RE = re.compile(
+    r"(?:alzheimer|dementia|diabetes|burn|fibrosis|ipf|oral health|periodont|"
+    r"angiodysplas|polyposis|covid|cancer|obesity|depression|stroke|"
+    r"cardiovascular|renal|kidney|liver disease|retinopathy|glaucoma)",
+    re.IGNORECASE,
+)
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -169,6 +180,92 @@ def _clean(value: Any, limit: int = 2000) -> str:
     raw = _INJECTION_RE.sub("[REDACTED]", raw)
     raw = _DECIMAL_INTERPUNCT_RE.sub(".", raw)
     return re.sub(r"\s+", " ", raw).strip()[:limit]
+
+
+def _normalized_title_key(value: Any) -> str:
+    text = re.sub(r"<[^>]+>", " ", _clean(value, limit=400).lower())
+    return re.sub(r"[^a-z0-9]+", " ", text).strip()
+
+
+def _duplicate_keys(item: dict[str, Any]) -> list[str]:
+    keys: list[str] = []
+    doi = _clean(item.get("doi"), limit=200).lower()
+    if doi:
+        keys.append(f"doi:{doi}")
+    url = _clean(item.get("url"), limit=300).lower()
+    if url:
+        keys.append(f"url:{url}")
+    title_key = _normalized_title_key(item.get("title"))
+    year = int(item.get("year") or 0)
+    if title_key:
+        keys.append(f"title:{title_key}")
+        if year:
+            keys.append(f"title_year:{title_key}:{year}")
+    return keys
+
+
+def _raw_evidence_rank(item: dict[str, Any]) -> tuple[int, int, int, int, int]:
+    source_type = str(item.get("source_type") or "")
+    url = str(item.get("url") or "").lower()
+    source_bonus = 3 if source_type == "pubmed" else 2 if source_type == "clinicaltrials" else 1
+    if source_type == "europepmc" and "/med/" in url:
+        source_bonus += 1
+    return (
+        int(item.get("year") or 0),
+        1 if _clean(item.get("doi"), limit=120) else 0,
+        source_bonus,
+        len(_clean(item.get("excerpt"), limit=1600)),
+        len(item.get("authors") or []),
+    )
+
+
+def _intervention_terms(topic_meta: dict[str, Any]) -> tuple[list[str], list[str]]:
+    exact = []
+    for term in [topic_meta.get("canonical_term"), *(topic_meta.get("aliases") or [])]:
+        cleaned = _clean(term, limit=80).lower()
+        if cleaned and cleaned not in exact:
+            exact.append(cleaned)
+    class_terms = []
+    for term in topic_meta.get("class_terms") or []:
+        cleaned = _clean(term, limit=80).lower()
+        if cleaned and cleaned not in class_terms and cleaned not in exact:
+            class_terms.append(cleaned)
+    return exact, class_terms
+
+
+def _intervention_fit_level(item: dict[str, Any], card: dict[str, Any], topic_meta: dict[str, Any]) -> str:
+    exact_terms, class_terms = _intervention_terms(topic_meta)
+    blob = " ".join(
+        _clean(v, limit=400).lower()
+        if not isinstance(v, list)
+        else " ".join(_clean(part, limit=120).lower() for part in v[:12])
+        for v in (
+            item.get("title"),
+            item.get("excerpt"),
+            card.get("intervention"),
+            item.get("topic_terms"),
+            item.get("mesh_terms"),
+            item.get("summary"),
+        )
+    )
+    if any(term in blob for term in exact_terms):
+        return "exact"
+    if any(term in blob for term in class_terms):
+        return "class"
+    return "none"
+
+
+def _disease_context_signal(item: dict[str, Any], card: dict[str, Any]) -> bool:
+    blob = " ".join(
+        str(v or "")
+        for v in (
+            item.get("title"),
+            item.get("excerpt"),
+            card.get("population"),
+            card.get("context"),
+        )
+    )
+    return bool(_DISEASE_CONTEXT_RE.search(blob))
 
 
 def _core_topic_tokens(topic_tokens: list[str]) -> list[str]:
@@ -383,9 +480,19 @@ def _topic_fit_bucket(score: float) -> str:
     return "drop"
 
 
-def _evidence_tier(item: dict[str, Any], card: dict[str, Any], *, role: str, directness: str, topic_fit_bucket: str) -> str:
+def _evidence_tier(
+    item: dict[str, Any],
+    card: dict[str, Any],
+    *,
+    role: str,
+    directness: str,
+    topic_fit_bucket: str,
+    intervention_fit: str,
+) -> str:
     if role in {"registered_pending", "published_protocol", "animal_model", "mechanistic", "off_domain_indirect", "unknown"}:
-        return "Tier C protocol/mechanistic support"
+        return _TIER_C
+    if str(item.get("evidence_type") or "") == "review" or role == "meta_analysis":
+        return _TIER_B
     blob = " ".join(
         str(v or "")
         for v in (
@@ -396,11 +503,22 @@ def _evidence_tier(item: dict[str, Any], card: dict[str, Any], *, role: str, dir
             card.get("context"),
         )
     )
-    if directness == "direct" and topic_fit_bucket == "core" and (
-        _aging_outcome_signal(blob) or _POPULATION_SIGNAL_RE.search(blob)
+    study_type = str(card.get("study_type") or "").lower()
+    exact_fit = intervention_fit == "exact"
+    if directness == "direct" and exact_fit and topic_fit_bucket == "core":
+        if study_type in {"cohort", "observational", "case-control", "cross-sectional"} or _disease_context_signal(item, card):
+            return _TIER_A2
+        if _aging_outcome_signal(blob) and (
+            role == "published_results"
+            or study_type in {"rct", "clinical-trial"}
+            or str(item.get("evidence_type") or "") == "interventional"
+        ):
+            return _TIER_A1
+    if exact_fit and role in {"published_results", "observational"} and (
+        study_type in {"cohort", "observational", "case-control", "cross-sectional"} or _disease_context_signal(item, card)
     ):
-        return "Tier A direct aging evidence"
-    return "Tier B supporting human evidence"
+        return _TIER_A2
+    return _TIER_B
 
 
 def _claim_from_entry(entry: dict[str, Any]) -> dict[str, Any] | None:
@@ -614,13 +732,26 @@ def _bundle_excerpt(item: dict[str, Any]) -> str:
 
 def _dedupe(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
     kept: list[dict[str, Any]] = []
-    seen: set[str] = set()
+    seen: dict[str, int] = {}
     for item in evidence:
-        key = _clean(item.get("doi") or item.get("url") or item.get("title"), limit=300).lower()
-        if not key or key in seen:
+        keys = _duplicate_keys(item)
+        if not keys:
             continue
-        seen.add(key)
-        kept.append(item)
+        duplicate_idx = next((seen[key] for key in keys if key in seen), None)
+        if duplicate_idx is None:
+            kept.append(item)
+            idx = len(kept) - 1
+            for key in keys:
+                seen[key] = idx
+            continue
+        if _raw_evidence_rank(item) <= _raw_evidence_rank(kept[duplicate_idx]):
+            continue
+        kept[duplicate_idx] = item
+        for key in list(seen):
+            if seen[key] == duplicate_idx:
+                seen.pop(key)
+        for key in keys:
+            seen[key] = duplicate_idx
     return kept
 
 
@@ -692,7 +823,15 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
     topic_meta = topic_meta or _topic_profile(" ".join(topic_tokens))
     topic_fit = _topic_fit_score({**item, "role": role}, card, topic_meta, domain_slug)
     topic_fit_bucket = _topic_fit_bucket(topic_fit)
-    evidence_tier = _evidence_tier(item, card, role=role, directness=directness, topic_fit_bucket=topic_fit_bucket)
+    intervention_fit = _intervention_fit_level(item, card, topic_meta)
+    evidence_tier = _evidence_tier(
+        item,
+        card,
+        role=role,
+        directness=directness,
+        topic_fit_bucket=topic_fit_bucket,
+        intervention_fit=intervention_fit,
+    )
     claim = _claim_from_entry({"excerpt": _bundle_excerpt(item), "extraction": item.get("extraction") or {}, "card": card})
     return {
         "title": _clean(item.get("title"), limit=200),
@@ -718,6 +857,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "deterministic_directness": directness,
         "directness": directness,
         "claim": claim if _claim_schema_ok(claim) else None,
+        "intervention_fit": intervention_fit,
         "card": card,
     }
 
@@ -1072,21 +1212,33 @@ def _apply_mimo_labels(candidates: list[dict[str, Any]], labels: list[dict[str, 
         tier = str(label.get("evidence_tier") or "").strip()
         if tier not in _VALID_EVIDENCE_TIERS:
             tier = _evidence_tier(
-                {"title": entry.get("title"), "excerpt": entry.get("excerpt")},
+                {
+                    "title": entry.get("title"),
+                    "excerpt": entry.get("excerpt"),
+                    "evidence_type": entry.get("evidence_type"),
+                },
                 entry.get("card") or {},
                 role=str(entry.get("role") or "unknown"),
                 directness=str(entry.get("directness") or "indirect"),
                 topic_fit_bucket=str(entry.get("topic_fit_bucket") or "drop"),
+                intervention_fit=str(entry.get("intervention_fit") or "none"),
             )
         entry["llm_evidence_tier"] = tier
         entry["evidence_tier"] = tier
 
 
-def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, float, int, int]:
+def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, int, float, float, int, int]:
+    tier_rank = {
+        _TIER_A1: 4,
+        _TIER_A2: 3,
+        _TIER_B: 2,
+        _TIER_C: 1,
+    }.get(str(entry.get("evidence_tier") or ""), 0)
     return (
-        1 if entry.get("evidence_tier") == "Tier A direct aging evidence" else 0,
+        tier_rank,
         role_sort_priority(str(entry.get("role") or "unknown")),
         1 if entry.get("directness") == "direct" else 0,
+        1 if entry.get("intervention_fit") == "exact" else 0,
         1 if entry.get("claim") else 0,
         float(entry.get("topic_fit") or 0.0),
         float(entry.get("relevance") or 0.0),
@@ -1099,11 +1251,13 @@ def _keep_bundle_entry(entry: dict[str, Any]) -> bool:
     role = str(entry.get("role") or "")
     if role in {"off_domain_indirect", "animal_model"}:
         return False
+    if str(entry.get("intervention_fit") or "none") == "none":
+        return False
     bucket = str(entry.get("topic_fit_bucket") or "drop")
     if bucket == "core":
         return True
     if bucket == "landscape":
-        return role in {"meta_analysis", "review", "observational", "published_protocol", "registered_pending"} or entry.get("directness") != "direct"
+        return str(entry.get("evidence_tier") or "") in {_TIER_A2, _TIER_B, _TIER_C}
     return False
 
 
@@ -1111,9 +1265,10 @@ def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict
     kept = bundle_candidates
     selected: list[dict[str, Any]] = []
     groups = (
-        [e for e in kept if e.get("topic_fit_bucket") == "core" and e.get("role") == "published_results" and e.get("directness") == "direct"],
+        [e for e in kept if e.get("evidence_tier") == _TIER_A1 and e.get("role") == "published_results" and e.get("directness") == "direct"],
+        [e for e in kept if e.get("evidence_tier") == _TIER_A2 and e.get("directness") == "direct"],
         [e for e in kept if e.get("topic_fit_bucket") == "core" and e.get("role") == "meta_analysis"],
-        [e for e in kept if e.get("topic_fit_bucket") == "core" and e.get("directness") == "direct"],
+        [e for e in kept if e.get("evidence_tier") == _TIER_B],
         [e for e in kept if _is_reported_finding(e)],
         [e for e in kept if not _is_reported_finding(e)],
     )
@@ -1125,6 +1280,40 @@ def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict
             if len(selected) >= 6:
                 return selected
     return selected
+
+
+def _select_source_bundle(bundle_candidates: list[dict[str, Any]], *, domain_slug: str) -> list[dict[str, Any]]:
+    accepted_types = {"review", "primary", "interventional", "observational", "mechanism", "protocol"}
+    candidates = [
+        entry for entry in bundle_candidates
+        if _keep_bundle_entry(entry)
+        and entry.get("evidence_type") in accepted_types
+        and float(entry.get("relevance") or 0.0) >= 0.25
+    ]
+    if (domain_slug or "").lower() not in {"longevity", "anti-aging", "anti aging"}:
+        return candidates[:RESEARKA_MIN_SOURCES]
+    targets = (
+        (_TIER_A1, 4),
+        (_TIER_A2, 3),
+        (_TIER_B, 3),
+        (_TIER_C, 2),
+    )
+    selected: list[dict[str, Any]] = []
+    for tier, limit in targets:
+        for entry in candidates:
+            if entry in selected or str(entry.get("evidence_tier") or "") != tier:
+                continue
+            selected.append(entry)
+            if len([item for item in selected if item.get("evidence_tier") == tier]) >= limit:
+                break
+    if len(selected) < RESEARKA_MIN_SOURCES:
+        for entry in candidates:
+            if entry in selected:
+                continue
+            selected.append(entry)
+            if len(selected) >= RESEARKA_MIN_SOURCES:
+                break
+    return selected[:RESEARKA_MIN_SOURCES]
 
 
 class RapidEvidenceDrafter:
@@ -1180,8 +1369,8 @@ class RapidEvidenceDrafter:
             "Each label must contain: id, role, directness, evidence_tier. "
             "Valid roles: " + ", ".join(ROLE_ORDER) + ". "
             "Valid directness: direct, indirect, mechanistic. "
-            "Valid evidence_tier: Tier A direct aging evidence, Tier B supporting human evidence, Tier C protocol/mechanistic support. "
-            "Use Tier A for core direct aging/older-adult outcome evidence, Tier B for supporting human disease-context or broader human evidence, and Tier C for protocols, registry-only records, mechanistic work, preclinical work, or other indirect support."
+            "Valid evidence_tier: Tier A1 direct aging evidence, Tier A2 disease-context human evidence, Tier B supporting human evidence, Tier C protocol/mechanistic support. "
+            "Use Tier A1 for core direct aging/older-adult outcome evidence, Tier A2 for direct human disease-context evidence, Tier B for reviews, multi-drug syntheses, or broader supporting human evidence, and Tier C for protocols, registry-only records, mechanistic work, preclinical work, or other indirect support."
         )
         user_prompt = (
             f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\n\n"
@@ -1215,8 +1404,8 @@ class RapidEvidenceDrafter:
             "Use only the cited evidence already in the draft. The Abstract must contain 4-5 complete sentences, "
             "lead with the overall direction, include the strongest direct result, and avoid truncated fragments. "
             "Do not repeat the same sentence verbatim in both the abstract and Key Findings. "
-            "When broader human disease-context evidence appears, label it as supporting human evidence rather than core aging evidence. "
-            "Treat Tier A as direct aging evidence, Tier B as supporting human evidence, and Tier C as protocol/mechanistic support. "
+            "When broader human disease-context evidence appears, label it as Tier A2 disease-context human evidence rather than Tier A1 core aging evidence. "
+            "Treat Tier A1 as direct aging evidence, Tier A2 as disease-context human evidence, Tier B as supporting human evidence, and Tier C as protocol/mechanistic support. "
             "Do not cite both a published paper and its preprint variant as parallel flagship evidence if one published version is already present."
         )
         user_prompt = (
@@ -1307,27 +1496,7 @@ class RapidEvidenceDrafter:
                 None,
             )
 
-        accepted_types = {"review", "primary", "interventional", "observational", "mechanism", "protocol"}
-        source_bundle = [
-            entry for entry in bundle_candidates
-            if _keep_bundle_entry(entry)
-            and entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
-        ][:24]
-        if len(source_bundle) < RESEARKA_MIN_SOURCES:
-            source_bundle = [
-                entry for entry in bundle_candidates
-                if str(entry.get("topic_fit_bucket") or "drop") in {"core", "landscape"}
-                and entry.get("evidence_type") in accepted_types
-            ][:24]
-        if len(source_bundle) < RESEARKA_MIN_SOURCES:
-            source_bundle = [
-                entry for entry in bundle_candidates
-                if entry.get("evidence_type") in accepted_types
-                and float(entry.get("topic_fit") or 0.0) >= 0.3
-                and str(entry.get("topic_fit_bucket") or "drop") != "drop"
-            ][:24]
-        if (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
-            source_bundle = source_bundle[:12]
+        source_bundle = _select_source_bundle(bundle_candidates, domain_slug=domain_slug)
 
         rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")
         pc = sum(1 for e in source_bundle if e.get("evidence_type") in {"primary", "interventional", "observational", "mechanism"})

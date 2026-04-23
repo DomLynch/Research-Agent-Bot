@@ -591,3 +591,29 @@ The final hardening moves fix the actual failure modes, not the score display.
 - add more deny-lists per topic — rejected; that is the same local-optimization trap in a different form
 
 **Revisit if:** rapamycin and senolytics still need materially different pruning rules after another live editorial pass. That would mean the current generic fit rubric is still too shallow and the next move should be a stricter claim schema / bundle contract rather than more token matching.
+
+## 2026-04-23 — Generic bundle-hygiene fix under Researka 12-source floor
+
+**Decision:** Keep the Researka `12`-citation minimum, but repair bundle curation generically instead of reverting to the older tighter 8-source cap.
+
+**Why:** After Europe PMC / NIH RePORTER retrieval shipped, the metformin draft improved on prose but regressed on bundle trust: an off-topic REMAP surgical trial still leaked through, Europe PMC MED/PMC mirrors could survive as duplicates, and too many items were flattened into one broad Tier A bucket. The problem was no longer retrieval volume; it was final-bundle hygiene.
+
+**What shipped:**
+- `agent/drafter.py`
+  - added a canonical intervention-fit gate for final bundle retention (`none` fit drops completely)
+  - upgraded raw-record dedupe to collapse DOI, URL, and normalized-title mirrors
+  - split evidence tiers into `Tier A1 direct aging evidence`, `Tier A2 disease-context human evidence`, `Tier B supporting human evidence`, and `Tier C protocol/mechanistic support`
+  - changed longevity bundle selection to fill the 12-source floor tier-first instead of by a flat relevance slice
+- tests
+  - added discriminating coverage for REMAP removal, MED/PMC duplicate collapse, and generic A1/A2/B tier assignment
+  - updated brittle telemetry/tier tests to assert the real contract instead of stale string literals
+
+**Judge result:**
+- local validation: `455 passed, 6 skipped, 5 xfailed`
+- `ruff` clean
+- known local limitation: live smoke could not run from this shell because `MIMO_API_KEY` is not present; deployment/live verification must use the VPS environment.
+
+**Alternatives rejected:**
+- revert back to an 8-source cap — rejected; conflicts with the current Researka house rule
+- add another metformin-only deny-list — rejected; does not generalize
+- leave disease-context studies in the same tier as direct older-adult RCTs — rejected; weakens editorial trust

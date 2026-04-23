@@ -219,8 +219,8 @@ class RefinementProvider(CaptureProvider):
                     "Protocol and mechanistic sources remain hypothesis-generating rather than outcome evidence [3]."
                 ),
                 "landscape": (
-                    "Tier A direct aging evidence comes from completed older-adult trials [1]. "
-                    "Tier B supporting human evidence comes from disease-context studies that remain less generalizable [2]. "
+                    "Tier A1 direct aging evidence comes from completed older-adult trials [1]. "
+                    "Tier A2 disease-context human evidence remains less generalizable [2]. "
                     "Tier C protocol/mechanistic support frames future questions without outcome claims [3]."
                 ),
                 "findings": (
@@ -282,9 +282,9 @@ class JudgmentProvider(CaptureProvider):
             return (
                 {
                     "labels": [
-                        {"id": pearl, "role": "published_results", "directness": "direct", "evidence_tier": "Tier A direct aging evidence"},
+                        {"id": pearl, "role": "published_results", "directness": "direct", "evidence_tier": "Tier A1 direct aging evidence"},
                         {"id": oral, "role": "observational", "directness": "indirect", "evidence_tier": "Tier B supporting human evidence"},
-                        {"id": rapa_ex, "role": "published_results", "directness": "direct", "evidence_tier": "Tier A direct aging evidence"},
+                        {"id": rapa_ex, "role": "published_results", "directness": "direct", "evidence_tier": "Tier A1 direct aging evidence"},
                     ],
                     "usage": {"input_tokens": 40, "output_tokens": 20, "total_tokens": 60},
                     "estimated_cost_usd": 0.003,
@@ -781,6 +781,114 @@ def test_drafter_caps_metformin_longevity_source_bundle_to_twelve() -> None:
     assert len(artifact["source_bundle"]) == 12
 
 
+def test_drafter_drops_remap_and_collapses_med_pmc_duplicate_records() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+            "excerpt": "Older adults received metformin or placebo with frailty outcomes over two years.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2024,
+            "url": "https://clinicaltrials.gov/study/NCT02570672",
+        },
+        {
+            "title": "Metformin and physical performance in older people with probable sarcopenia and physical prefrailty or frailty in England (MET-PREVENT): a double-blind, randomised, placebo-controlled trial.",
+            "excerpt": "Older adults were randomized to metformin or placebo for physical performance outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "authors": ["Witham", "Smith"],
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+        },
+        {
+            "title": "Metformin for Longevity and Sarcopenia: A Therapeutic Paradox in Aging.",
+            "excerpt": "A narrative synthesis on metformin, sarcopenia, and longevity in aging.",
+            "evidence_type": "primary",
+            "source_type": "europepmc",
+            "year": 2026,
+            "authors": ["Shim", "Yoon"],
+            "url": "https://europepmc.org/article/MED/41751275",
+        },
+        {
+            "title": "Metformin for Longevity and Sarcopenia: A Therapeutic Paradox in Aging",
+            "excerpt": "Full-text mirror of the same metformin longevity and sarcopenia synthesis.",
+            "evidence_type": "primary",
+            "source_type": "europepmc",
+            "year": 2026,
+            "authors": ["Shim", "Yoon"],
+            "url": "https://europepmc.org/article/PMC/PMC12938515",
+        },
+        {
+            "title": "REMAP Trial for Optimizing Surgical Outcomes at UPMC",
+            "excerpt": "A surgical outcomes trial in adults at UPMC without metformin intervention.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2022,
+            "url": "https://clinicaltrials.gov/study/NCT03861767",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2022 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    titles = [str(item.get("title", "")).lower() for item in artifact["source_bundle"]]
+    assert not any("remap" in title for title in titles)
+    assert sum("therapeutic paradox in aging" in title for title in titles) == 1
+
+
+def test_drafter_assigns_a1_a2_b_tiers_for_metformin_generically() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Metformin and physical performance in older people with probable sarcopenia and physical prefrailty or frailty in England (MET-PREVENT): a double-blind, randomised, placebo-controlled trial.",
+            "excerpt": "Randomized placebo-controlled metformin trial in older adults with gait and physical performance outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+        },
+        {
+            "title": "APOE4-dependent association between metformin use and Alzheimer's disease-related cortical thickness in older adults with type 2 diabetes.",
+            "excerpt": "Cross-sectional metformin exposure study in older adults with diabetes and Alzheimer's disease-related cortical thickness outcomes.",
+            "evidence_type": "observational",
+            "source_type": "europepmc",
+            "year": 2026,
+            "url": "https://europepmc.org/article/MED/41761644",
+        },
+        {
+            "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials.",
+            "excerpt": "A broad multi-drug review of glucose-lowering medications in older adults that includes metformin among several interventions.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2022 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    tiers = {item["title"]: item["evidence_tier"] for item in artifact["source_bundle"]}
+    assert tiers["Metformin and physical performance in older people with probable sarcopenia and physical prefrailty or frailty in England (MET-PREVENT): a double-blind, randomised, placebo-controlled trial."] == "Tier A1 direct aging evidence"
+    assert tiers["APOE4-dependent association between metformin use and Alzheimer's disease-related cortical thickness in older adults with type 2 diabetes."] == "Tier A2 disease-context human evidence"
+    assert tiers["Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials."] == "Tier B supporting human evidence"
+
+
 def test_drafter_replaces_broken_vs_mashup_with_grounded_result_sentence() -> None:
     provider = BrokenNumericProvider()
     drafter = RapidEvidenceDrafter(provider=provider)
@@ -1101,13 +1209,13 @@ def test_drafter_uses_editor_refinement_and_bundle_tiers_generically() -> None:
     )
     assert provider.calls == 2
     assert artifact["editor_refinement_applied"] is True
-    assert "Tier A direct aging evidence" in artifact["sections"]["Evidence Landscape"]
-    assert "Tier B supporting human evidence" in artifact["sections"]["Evidence Landscape"]
+    assert "Tier A1 direct aging evidence" in artifact["sections"]["Evidence Landscape"]
+    assert "Tier A2 disease-context human evidence" in artifact["sections"]["Evidence Landscape"]
     assert "Tier C protocol/mechanistic support" in artifact["sections"]["Evidence Landscape"]
     assert "The overall evidence is limited but hypothesis-generating." not in artifact["abstract"]
     tiers = {item["title"]: item["evidence_tier"] for item in artifact["source_bundle"]}
-    assert tiers["Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results"] == "Tier A direct aging evidence"
-    assert tiers["Efficacy and safety of sirolimus in the treatment of gastrointestinal angiodysplasias."] == "Tier B supporting human evidence"
+    assert tiers["Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results"] == "Tier A1 direct aging evidence"
+    assert tiers["Efficacy and safety of sirolimus in the treatment of gastrointestinal angiodysplasias."] == "Tier A2 disease-context human evidence"
     assert tiers["A single-center randomized placebo-controlled study to evaluate once-weekly sirolimus in older adults"] == "Tier C protocol/mechanistic support"
 
 
@@ -1253,7 +1361,7 @@ def test_drafter_uses_mimo_reranking_and_labeling_before_prompt_selection() -> N
     rapa_ex = next(item for item in artifact["source_bundle"] if "RAPA-EX-01" in item["title"])
     assert rapa_ex["role"] == "published_results"
     assert rapa_ex["directness"] == "direct"
-    assert rapa_ex["evidence_tier"] == "Tier A direct aging evidence"
+    assert rapa_ex["evidence_tier"] == "Tier A1 direct aging evidence"
 
 
 def test_drafter_prunes_senolytic_bundle_generically_as_blind_topic() -> None:
