@@ -14,10 +14,12 @@ _COMPOUND_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "stati
 _KNOWN_COMPOUNDS = {
     "rapamycin", "sirolimus", "everolimus", "metformin", "acarbose", "resveratrol",
     "spermidine", "semaglutide", "tirzepatide", "glp1", "nmn", "nr", "omega3", "epa", "dha",
+    "senolytic", "senolytics", "taurine", "urolithina",
 }
 _ALIASES = {
     "evrolimus": "everolimus",
     "sirolimus": "rapamycin",
+    "glucophage": "metformin",
     "sglt2": "sglt2",
     "sglt2i": "sglt2",
     "sglt": "sglt2",
@@ -27,9 +29,34 @@ _ALIASES = {
     "omega3": "omega3",
     "epa": "omega3",
     "dha": "omega3",
+    "senolytics": "senolytic",
+    "d+q": "senolytic",
+    "urolithin": "urolithina",
     "donanemab": "donanemab",
     "lecanemab": "donanemab",
     "aducanumab": "donanemab",
+}
+_CANONICAL_ALIASES = {
+    "rapamycin": ["sirolimus"],
+    "everolimus": [],
+    "metformin": ["glucophage"],
+    "senolytic": ["senolytics", "d+q", "dasatinib", "quercetin", "fisetin", "navitoclax"],
+    "nmn": ["nicotinamide mononucleotide"],
+    "nr": ["nicotinamide riboside"],
+    "omega3": ["omega-3", "epa", "dha", "fish oil"],
+    "taurine": [],
+    "urolithina": ["urolithin a"],
+}
+_CLASS_TERMS = {
+    "rapamycin": ["mtor inhibitor", "mtor inhibitors", "rapalog", "rapalogs"],
+    "everolimus": ["mtor inhibitor", "mtor inhibitors", "rapalog", "rapalogs"],
+    "metformin": ["biguanide", "biguanides", "glucose-lowering medication", "glucose lowering medication"],
+    "senolytic": ["senolytic", "senolytics", "senolytic therapy", "senolytic therapies"],
+    "nmn": ["nad precursor", "nad precursors"],
+    "nr": ["nad precursor", "nad precursors"],
+    "glp1": ["glp-1 agonist", "glp-1 agonists", "glp1 agonist", "glp1 agonists", "incretin"],
+    "sglt2": ["sglt2 inhibitor", "sglt2 inhibitors", "gliflozin"],
+    "omega3": ["polyunsaturated fatty acid", "omega-3 fatty acid", "omega-3 fatty acids"],
 }
 _COMPOUND_CLASS_MEMBERS = {
     "donanemab": ["lecanemab", "aducanumab", "bapineuzumab", "solanezumab", "gantenerumab",
@@ -96,6 +123,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
         "entity_type": "general",
         "resolver_source": "identity",
         "aliases": [],
+        "class_terms": [],
         "blocked": False,
     }
     if not raw or not focus:
@@ -105,10 +133,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
     alias_hit = _ALIASES.get(_normalize(focus))
     if alias_hit:
         canonical_topic = _replace_focus(raw, focus, alias_hit)
-        aliases = [focus] if focus != alias_hit else []
-        for m in _COMPOUND_CLASS_MEMBERS.get(alias_hit, []):
-            if m not in aliases:
-                aliases.append(m)
+        aliases = list(dict.fromkeys([a for a in ([focus] if focus != alias_hit else []) + _CANONICAL_ALIASES.get(alias_hit, []) if a != alias_hit]))
         resolution.update(
             {
                 "canonical_topic": canonical_topic,
@@ -117,16 +142,14 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
                 "confidence": 0.99,
                 "resolver_source": "alias_map",
                 "aliases": aliases,
+                "class_terms": list(dict.fromkeys(_CLASS_TERMS.get(alias_hit, []) + _COMPOUND_CLASS_MEMBERS.get(alias_hit, []))),
             }
         )
         return resolution
 
     if _normalize(focus) in _KNOWN_COMPOUNDS:
         canonical = _normalize(focus)
-        aliases = []
-        for m in _COMPOUND_CLASS_MEMBERS.get(canonical, []):
-            if m not in aliases:
-                aliases.append(m)
+        aliases = list(dict.fromkeys(_CANONICAL_ALIASES.get(canonical, [])))
         resolution.update(
             {
                 "canonical_topic": raw,
@@ -135,6 +158,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
                 "confidence": 0.95,
                 "resolver_source": "known_compound",
                 "aliases": aliases,
+                "class_terms": list(dict.fromkeys(_CLASS_TERMS.get(canonical, []) + _COMPOUND_CLASS_MEMBERS.get(canonical, []))),
             }
         )
         return resolution
@@ -144,10 +168,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
         if match:
             canonical = str(match.get("canonical_name") or focus).lower()
             canonical_topic = _replace_focus(raw, focus, canonical)
-            aliases = [focus] if canonical != focus else []
-            for m in _COMPOUND_CLASS_MEMBERS.get(canonical, []):
-                if m not in aliases:
-                    aliases.append(m)
+            aliases = list(dict.fromkeys(([focus] if canonical != focus else []) + _CANONICAL_ALIASES.get(canonical, [])))
             resolution.update(
                 {
                     "canonical_topic": canonical_topic,
@@ -156,6 +177,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
                     "confidence": float(match.get("confidence") or 0.0),
                     "resolver_source": "chembl",
                     "aliases": aliases,
+                    "class_terms": list(dict.fromkeys(_CLASS_TERMS.get(canonical, []) + _COMPOUND_CLASS_MEMBERS.get(canonical, []))),
                 }
             )
             return resolution
@@ -165,10 +187,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
     if close:
         canonical = _ALIASES.get(close[0], close[0])
         canonical_topic = _replace_focus(raw, focus, canonical)
-        aliases = [focus]
-        for m in _COMPOUND_CLASS_MEMBERS.get(canonical, []):
-            if m not in aliases:
-                aliases.append(m)
+        aliases = list(dict.fromkeys([focus] + _CANONICAL_ALIASES.get(canonical, [])))
         resolution.update(
             {
                 "canonical_topic": canonical_topic,
@@ -177,6 +196,7 @@ def resolve_topic(topic: str, *, chembl_client: Any | None = None) -> dict[str, 
                 "confidence": round(SequenceMatcher(None, _normalize(focus), _normalize(canonical)).ratio(), 3),
                 "resolver_source": "fuzzy_alias",
                 "aliases": aliases,
+                "class_terms": list(dict.fromkeys(_CLASS_TERMS.get(canonical, []) + _COMPOUND_CLASS_MEMBERS.get(canonical, []))),
             }
         )
         return resolution

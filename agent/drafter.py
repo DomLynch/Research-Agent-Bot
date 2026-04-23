@@ -9,6 +9,7 @@ from agent.citation_roles import (
     role_section_title,
     role_sort_priority,
 )
+from agent.entity_resolver import resolve_topic
 from agent.validator import validate_citations
 
 import os
@@ -91,7 +92,7 @@ _EFFECT_STYLE_RE = re.compile(
 )
 _RESULT_MARKER_RE = re.compile(
     r"(?:p\s*[<=>]|n\s*=|95%\s*ci|confidence interval|\bhr\b|hazard ratio|"
-    r"\bor\b|odds ratio|\brr\b|placebo=|metformin=|\d+(?:\.\d+)?\s*%)",
+    r"\bor\b|odds ratio|\brr\b|placebo\b|control\b|\d+(?:\.\d+)?\s*%)",
     re.IGNORECASE,
 )
 _CITATION_TOKEN_RE = re.compile(r"\[(\d+)\]")
@@ -101,28 +102,13 @@ _PUBLISHED_RESULT_REPAIRS = {
     "will examine": "evaluated",
     "plans to assess": "evaluated",
 }
-_METFORMIN_TITLE_TOKENS = ("metformin", "glucophage")
-_METFORMIN_ALLOWED_INDIRECT_TITLE_BITS = ("glucose-lowering medications in older people",)
-_METFORMIN_DROP_TITLE_BITS = (
-    "precision prognostics",
-    "amyloid pathology",
-    "cerebral microbleeds",
-    "antiaging agents",
-    "pain and aging",
-    "incretin",
-    "glucagon-like peptide-1",
-    "glp-1",
-    "glioblastoma",
-    "parkinson",
-    "hiv",
-)
 _STRUCTURED_RESULT_LABEL_RE = re.compile(
     r"\b(FINDINGS|RESULTS|INTERPRETATION|CONCLUSIONS?)\s*:\s*",
     re.IGNORECASE,
 )
 _OUTCOME_SENTENCE_RE = re.compile(
     r"(?:adjusted treatment effect|did not improve|no significant|mean [\w\- ]+ at \d+|"
-    r"metformin group|placebo group|metformin versus|versus placebo)",
+    r"treatment group|placebo group|intervention group|versus placebo|compared (?:with|to) placebo)",
     re.IGNORECASE,
 )
 _PRIMARY_RESULT_SENTENCE_RE = re.compile(
@@ -132,8 +118,8 @@ _PRIMARY_RESULT_SENTENCE_RE = re.compile(
 )
 _STRONG_RESULT_SENTENCE_RE = re.compile(
     r"(?:adjusted treatment effect|95%\s*ci|confidence interval|p\s*[<=>]|"
-    r"hazard ratio|odds ratio|\brr\b|metformin versus|versus placebo|"
-    r"placebo group|metformin group|mean (?:difference|change))",
+    r"hazard ratio|odds ratio|\brr\b|versus placebo|compared (?:with|to) placebo|"
+    r"placebo group|intervention group|treatment group|mean (?:difference|change))",
     re.IGNORECASE,
 )
 _SAFETY_EVENT_SENTENCE_RE = re.compile(
@@ -147,6 +133,27 @@ _TRIAL_FLOW_SENTENCE_RE = re.compile(
 )
 _DECIMAL_INTERPUNCT_RE = re.compile(r"(?<=\d)[·•](?=\d)")
 _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
+_CLAIM_QUALITY_RE = re.compile(
+    r"(?:effect|result|mean|median|difference|n\s*=|p\s*[<=>]|confidence interval|\bci\b|"
+    r"vs\.?|versus|compared|reduced|increased|significant|reported|found|improved)",
+    re.IGNORECASE,
+)
+_LONGEVITY_OUTCOME_RE = re.compile(
+    r"(?:frailty|sarcopenia|muscle|strength|endurance|cognition|cognitive|mobility|"
+    r"walking|gait|healthspan|longevity|resilience|functional|physical performance|"
+    r"visceral adiposity|lean (?:mass|tissue)|body composition|brain)",
+    re.IGNORECASE,
+)
+_POPULATION_SIGNAL_RE = re.compile(
+    r"(?:older adults?|older people|aging adults?|healthy adults?|human|clinical|participants?|patients?)",
+    re.IGNORECASE,
+)
+
+_SYNONYM_CANONICALS = {
+    alias: canonical
+    for canonical, aliases in _SYNONYMS.items()
+    for alias in aliases
+}
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -177,6 +184,42 @@ def _mentions_topic(text: str, topic_tokens: list[str]) -> bool:
     return any(token in haystack for token in _core_topic_tokens(topic_tokens))
 
 
+def _topic_profile(topic: str, topic_meta: dict[str, Any] | None = None) -> dict[str, Any]:
+    topic_meta = topic_meta or resolve_topic(topic, chembl_client=None)
+    raw_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
+    canonical = _clean((topic_meta or {}).get("canonical_term"), limit=80).lower()
+    if not canonical:
+        core = _core_topic_tokens(raw_tokens)
+        canonical = core[0] if core else (raw_tokens[0] if raw_tokens else "")
+    canonical = _SYNONYM_CANONICALS.get(canonical, canonical)
+    aliases: list[str] = []
+    for value in ((topic_meta or {}).get("aliases") or []) + _SYNONYMS.get(canonical, []):
+        cleaned = _clean(value, limit=80).lower()
+        if cleaned and cleaned != canonical and cleaned not in aliases:
+            aliases.append(cleaned)
+    class_terms: list[str] = []
+    for value in (topic_meta or {}).get("class_terms") or []:
+        cleaned = _clean(value, limit=80).lower()
+        if cleaned and cleaned != canonical and cleaned not in aliases and cleaned not in class_terms:
+            class_terms.append(cleaned)
+    claim_terms = [term for term in [canonical, *aliases] if term]
+    fit_terms = [term for term in [*claim_terms, *class_terms] if term]
+    query_terms = list(dict.fromkeys([*raw_tokens, *fit_terms]))
+    return {
+        "canonical_term": canonical,
+        "aliases": aliases,
+        "class_terms": class_terms,
+        "claim_terms": claim_terms,
+        "fit_terms": fit_terms,
+        "query_terms": query_terms,
+    }
+
+
+def _term_hits(text: str, terms: list[str]) -> int:
+    haystack = _clean(text, limit=3000).lower()
+    return sum(1 for term in terms if term and term in haystack)
+
+
 def _entry_title_mentions_topic(entry: dict[str, Any], topic_tokens: list[str]) -> bool:
     return _mentions_topic(str(entry.get("title") or ""), topic_tokens)
 
@@ -202,6 +245,158 @@ def _split_sentences(text: str, *, limit: int = 4000) -> list[str]:
 
 def _sentence_refs(sentence: str) -> list[int]:
     return [int(match.group(1)) for match in _CITATION_TOKEN_RE.finditer(sentence)]
+
+
+def _claim_sentence_quality_ok(sentence: str) -> bool:
+    bare = _strip_citations(_normalize_numeric_phrase(sentence), limit=400)
+    if not bare:
+        return False
+    if len(bare) < 40 or len(bare) > 300:
+        return False
+    if bare[-1] not in ".!?":
+        return False
+    return bool(_CLAIM_QUALITY_RE.search(bare))
+
+
+def _aging_outcome_signal(text: str) -> bool:
+    return bool(_LONGEVITY_OUTCOME_RE.search(_clean(text, limit=3000)))
+
+
+def _topic_fit_score(
+    item: dict[str, Any],
+    card: dict[str, Any],
+    topic_meta: dict[str, Any],
+    domain_slug: str,
+) -> float:
+    role = str(item.get("role") or "")
+    if role in {"off_domain_indirect", "animal_model"}:
+        return 0.0
+    canonical = str(topic_meta.get("canonical_term") or "")
+    aliases = list(topic_meta.get("aliases") or [])
+    class_terms = list(topic_meta.get("class_terms") or [])
+    title = _clean(item.get("title"), limit=300).lower()
+    abstract = _clean(item.get("excerpt"), limit=2200).lower()
+    intervention = _clean(card.get("intervention"), limit=200).lower()
+    negative_terms = [term for term in [canonical, *aliases, *class_terms] if term]
+    negative_context = any(
+        re.search(rf"\b(without|unrelated to|not|non|no)\b[^.;,]{{0,40}}\b{re.escape(term)}\b", abstract)
+        for term in negative_terms
+    )
+    score = 0.0
+    if canonical and canonical in title:
+        score += 0.4
+    has_alias_title = any(alias in title for alias in aliases)
+    has_class_text = any(term in f"{title} {abstract} {intervention}" for term in class_terms)
+    if has_alias_title:
+        score += 0.3
+    if any(term in title for term in class_terms):
+        score += 0.15
+    if str(item.get("evidence_type") or "") == "review" and has_class_text:
+        score += 0.15
+        if _POPULATION_SIGNAL_RE.search(f"{title} {abstract}"):
+            score += 0.1
+    mention_count = 0 if negative_context else _term_hits(f"{title} {abstract} {intervention}", [canonical, *aliases])
+    if mention_count >= 2:
+        score += 0.2
+    elif mention_count == 1:
+        score += 0.1
+    if any(term in intervention for term in [canonical, *aliases, *class_terms] if term):
+        score += 0.25
+    if role == "published_results" and (canonical in title or has_alias_title):
+        if _POPULATION_SIGNAL_RE.search(f"{title} {abstract}") or _aging_outcome_signal(f"{title} {abstract}"):
+            score += 0.2
+    if (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
+        blob = " ".join(
+            str(v or "")
+            for v in (
+                item.get("title"),
+                item.get("excerpt"),
+                card.get("population"),
+                card.get("outcomes"),
+                card.get("context"),
+            )
+        )
+        if _aging_outcome_signal(blob):
+            score += 0.15
+    return round(min(score, 1.0), 2)
+
+
+def _topic_fit_bucket(score: float) -> str:
+    if score >= 0.5:
+        return "core"
+    if score >= 0.3:
+        return "landscape"
+    return "drop"
+
+
+def _claim_from_entry(entry: dict[str, Any]) -> dict[str, Any] | None:
+    extraction = entry.get("extraction") or {}
+    effects = extraction.get("effects") or []
+    card = entry.get("card") or {}
+    if effects:
+        effect = effects[0]
+        source_span = _normalize_numeric_phrase(_clean(effect.get("source_span"), limit=320), limit=320)
+        if source_span and source_span[-1] not in ".!?":
+            source_span = f"{source_span}."
+        claim = {
+            "intervention": _clean(extraction.get("intervention") or card.get("intervention"), limit=120),
+            "comparator": _clean(extraction.get("comparator") or card.get("comparator"), limit=120),
+            "endpoint": _clean(effect.get("outcome") or extraction.get("primary_outcome"), limit=120),
+            "metric": _normalize_numeric_phrase(_clean(effect.get("metric"), limit=40), limit=40),
+            "effect": _normalize_numeric_phrase(_clean(effect.get("value"), limit=160), limit=160),
+            "p_value": _clean(effect.get("p_value"), limit=32),
+            "n": _clean(effect.get("n"), limit=80),
+            "source_span": source_span,
+        }
+        return claim
+    excerpt = _clean(entry.get("excerpt"), limit=700)
+    for sentence in _split_sentences(excerpt, limit=700):
+        if not _claim_sentence_quality_ok(sentence):
+            continue
+        if not (_RESULT_MARKER_RE.search(sentence) or _STRONG_RESULT_SENTENCE_RE.search(sentence)):
+            continue
+        return {
+            "intervention": _clean(card.get("intervention"), limit=120),
+            "comparator": _clean(card.get("comparator"), limit=120),
+            "endpoint": _clean(card.get("outcomes"), limit=120) or "reported outcome",
+            "metric": "",
+            "effect": "",
+            "p_value": "",
+            "n": "",
+            "source_span": _normalize_numeric_phrase(sentence, limit=320),
+        }
+    return None
+
+
+def _claim_has_structured_fields(claim: dict[str, Any] | None) -> bool:
+    return bool(claim and any(claim.get(field) for field in ("metric", "effect", "p_value", "n")))
+
+
+def _claim_schema_ok(claim: dict[str, Any] | None) -> bool:
+    if not claim:
+        return False
+    if not claim.get("endpoint"):
+        return False
+    if _claim_has_structured_fields(claim):
+        return True
+    if not _RESULT_MARKER_RE.search(str(claim.get("source_span") or "")):
+        return False
+    return _claim_sentence_quality_ok(str(claim.get("source_span") or ""))
+
+
+def _claim_sentence(claim: dict[str, Any] | None) -> str:
+    if not _claim_schema_ok(claim):
+        return ""
+    if _claim_has_structured_fields(claim):
+        return ""
+    source_span = _strip_citations(str((claim or {}).get("source_span") or ""), limit=320)
+    sentences = _split_sentences(source_span, limit=320)
+    if len(sentences) != 1:
+        return ""
+    sentence = sentences[0]
+    if not _claim_sentence_quality_ok(sentence):
+        return ""
+    return sentence
 
 
 def _dedupe_repeated_sentences(text: str) -> str:
@@ -243,10 +438,13 @@ def _strip_offtopic_claims(text: str, source_bundle: list[dict[str, Any]], topic
 
 
 def _entry_result_sentence(entry: dict[str, Any]) -> str:
+    if claim := _claim_from_entry(entry):
+        if sentence := _claim_sentence(claim):
+            return sentence
     excerpt = _clean(entry.get("excerpt"), limit=700)
     if not excerpt:
         return ""
-    sentences = _split_sentences(excerpt, limit=700)
+    sentences = [sentence for sentence in _split_sentences(excerpt, limit=700) if _claim_sentence_quality_ok(sentence)]
     if not sentences:
         return ""
     def _score(sentence: str) -> tuple[int, int, int, int]:
@@ -270,8 +468,10 @@ def _best_direct_result_entry(source_bundle: list[dict[str, Any]]) -> dict[str, 
     return max(
         candidates,
         key=lambda entry: (
+            1 if _claim_schema_ok(_claim_from_entry(entry)) else 0,
             1 if _entry_result_sentence(entry) else 0,
             1 if entry.get("source_type") != "clinicaltrials" else 0,
+            float(entry.get("topic_fit") or 0.0),
             float(entry.get("relevance") or 0.0),
             int(entry.get("year") or 0),
         ),
@@ -290,9 +490,7 @@ def _bundle_excerpt(item: dict[str, Any]) -> str:
             text = structured_parts[i + 1] if i + 1 < len(structured_parts) else ""
             if label not in {"FINDINGS", "RESULTS", "INTERPRETATION", "CONCLUSION", "CONCLUSIONS"}:
                 continue
-            priority_sentences.extend(
-                [part.strip() for part in re.split(r"(?<=[.!?])\s+", text) if part.strip()]
-            )
+            priority_sentences.extend([part for part in _split_sentences(text, limit=1200) if _claim_sentence_quality_ok(part)])
     def _priority_score(sentence: str) -> tuple[int, int, int, int, int]:
         return (
             1 if _PRIMARY_RESULT_SENTENCE_RE.search(sentence) else 0,
@@ -304,7 +502,7 @@ def _bundle_excerpt(item: dict[str, Any]) -> str:
             len(sentence),
         )
     priority_sentences = sorted(priority_sentences, key=_priority_score, reverse=True)
-    sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", raw) if part.strip()]
+    sentences = _split_sentences(raw, limit=5000)
     picked: list[str] = []
     length = 0
     for sentence in priority_sentences:
@@ -332,7 +530,7 @@ def _bundle_excerpt(item: dict[str, Any]) -> str:
     excerpt = _clean(" ".join(picked) or raw, limit=420)
     effect_spans = []
     for effect in (item.get("extraction") or {}).get("effects") or []:
-        span = _clean(effect.get("source_span"), limit=160)
+        span = _normalize_numeric_phrase(_clean(effect.get("source_span"), limit=160), limit=160)
         if span and span.lower() not in excerpt.lower():
             effect_spans.append(span)
     if effect_spans:
@@ -410,13 +608,16 @@ def _relevance(
     return round(min(base, 1.0), 2)
 
 
-def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: str) -> dict[str, Any]:
+def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: str, *, topic_meta: dict[str, Any] | None = None) -> dict[str, Any]:
     card = build_card(item)
     role = classify_citation_role(item, card, domain_slug, topic_tokens)
     card["role"] = role
     directness = _classify_directness(item, card, domain_slug, topic_tokens)
     card["directness"] = directness
     relevance = _relevance(item, topic_tokens, card=card, directness=directness, role=role)
+    topic_meta = topic_meta or _topic_profile(" ".join(topic_tokens))
+    topic_fit = _topic_fit_score({**item, "role": role}, card, topic_meta, domain_slug)
+    claim = _claim_from_entry({"excerpt": _bundle_excerpt(item), "extraction": item.get("extraction") or {}, "card": card})
     return {
         "title": _clean(item.get("title"), limit=200),
         "excerpt": _bundle_excerpt(item),
@@ -430,8 +631,11 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "query": item.get("query"),
         "extraction": item.get("extraction") or {},
         "relevance": relevance,
+        "topic_fit": topic_fit,
+        "topic_fit_bucket": _topic_fit_bucket(topic_fit),
         "role": role,
         "directness": directness,
+        "claim": claim if _claim_schema_ok(claim) else None,
         "card": card,
     }
 
@@ -511,20 +715,22 @@ def _sanitize_published_result_language(text: str, source_bundle: list[dict[str,
 
 
 def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
-    effects = ((entry.get("extraction") or {}).get("effects") or [])
-    if not effects:
+    claim = entry.get("claim") or _claim_from_entry(entry)
+    if not _claim_schema_ok(claim):
         return ""
-    effect = effects[0]
-    outcome = _normalize_numeric_phrase(_clean(effect.get("outcome"), limit=90), limit=90) or "reported outcome"
-    metric = _normalize_numeric_phrase(_clean(effect.get("metric"), limit=30), limit=30)
-    value = _normalize_numeric_phrase(_clean(effect.get("value"), limit=120), limit=140)
-    p_value = _clean(effect.get("p_value"), limit=20)
-    n = _clean(effect.get("n"), limit=80)
+    if source_span := _claim_sentence(claim):
+        lead = "Meta-analysis" if entry.get("role") == "meta_analysis" else "Published results"
+        return f"{lead} [{index}] reported {source_span.rstrip('.')}."
+    outcome = _normalize_numeric_phrase(str(claim.get("endpoint") or "reported outcome"), limit=90)
+    metric = _normalize_numeric_phrase(str(claim.get("metric") or ""), limit=40).lower()
+    effect = _normalize_numeric_phrase(str(claim.get("effect") or ""), limit=140)
+    p_value = _clean(claim.get("p_value"), limit=20)
+    n = _clean(claim.get("n"), limit=80)
     bits = [f"Published results [{index}] report {outcome}"]
-    if metric and value:
-        bits.append(f"{metric} {value}")
-    elif value:
-        bits.append(value)
+    if metric and effect:
+        bits.append(f"{metric} {effect}")
+    elif effect:
+        bits.append(effect)
     if p_value:
         bits.append(f"p={p_value}")
     if n:
@@ -533,17 +739,10 @@ def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
 
 
 def _excerpt_numeric_sentence(index: int, entry: dict[str, Any]) -> str:
-    excerpt = _clean(entry.get("excerpt"), limit=500)
-    if not excerpt:
-        return ""
-    sentences = _split_sentences(excerpt, limit=500)
-    for sentence in sentences:
-        bare = _normalize_numeric_phrase(re.sub(r"\[\d+\]", "", sentence), limit=320)
-        if not (_NUMERIC_CLAIM_RE.search(bare) and _EFFECT_STYLE_RE.search(bare)):
-            continue
-        role = str(entry.get("role") or "unknown")
-        lead = "Meta-analysis" if role == "meta_analysis" else "Published results"
-        return f"{lead} [{index}] reported {bare.rstrip('.')}."
+    if claim := _claim_from_entry(entry):
+        if source_span := _claim_sentence(claim):
+            lead = "Meta-analysis" if str(entry.get("role") or "unknown") == "meta_analysis" else "Published results"
+            return f"{lead} [{index}] reported {source_span.rstrip('.')}."
     return ""
 
 
@@ -664,44 +863,37 @@ def _human_abstract(topic: str, domain_slug: str, sections: dict[str, str], sour
     )
 
 
-def _is_metformin_focus(topic_tokens: list[str]) -> bool:
-    return any(tok in topic_tokens for tok in _METFORMIN_TITLE_TOKENS)
-
-
 def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, float, int, int]:
     return (
         role_sort_priority(str(entry.get("role") or "unknown")),
         1 if entry.get("directness") == "direct" else 0,
-        1 if ((entry.get("extraction") or {}).get("effects") or []) else 0,
+        1 if entry.get("claim") else 0,
+        float(entry.get("topic_fit") or 0.0),
         float(entry.get("relevance") or 0.0),
         int(entry.get("year") or 0),
         1 if entry.get("evidence_type") == "review" else 0,
     )
 
 
-def _keep_bundle_entry(entry: dict[str, Any], topic_tokens: list[str], domain_slug: str) -> bool:
+def _keep_bundle_entry(entry: dict[str, Any]) -> bool:
     role = str(entry.get("role") or "")
     if role in {"off_domain_indirect", "animal_model"}:
         return False
-    if _is_metformin_focus(topic_tokens) and (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
-        title = str(entry.get("title") or "").lower()
-        mentions_metformin = any(tok in title for tok in _METFORMIN_TITLE_TOKENS)
-        if any(bit in title for bit in _METFORMIN_DROP_TITLE_BITS) and not mentions_metformin:
-            return False
-        if role == "meta_analysis":
-            return mentions_metformin or any(bit in title for bit in _METFORMIN_ALLOWED_INDIRECT_TITLE_BITS)
-        if role in {"review", "observational", "published_protocol", "registered_pending", "unknown"}:
-            return mentions_metformin
-    return True
+    bucket = str(entry.get("topic_fit_bucket") or "drop")
+    if bucket == "core":
+        return True
+    if bucket == "landscape":
+        return role in {"meta_analysis", "review", "observational", "published_protocol", "registered_pending"} or entry.get("directness") != "direct"
+    return False
 
 
 def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
     kept = bundle_candidates
     selected: list[dict[str, Any]] = []
     groups = (
-        [e for e in kept if e.get("role") == "published_results" and e.get("directness") == "direct"],
-        [e for e in kept if e.get("role") == "meta_analysis"],
-        [e for e in kept if e.get("directness") == "direct"],
+        [e for e in kept if e.get("topic_fit_bucket") == "core" and e.get("role") == "published_results" and e.get("directness") == "direct"],
+        [e for e in kept if e.get("topic_fit_bucket") == "core" and e.get("role") == "meta_analysis"],
+        [e for e in kept if e.get("topic_fit_bucket") == "core" and e.get("directness") == "direct"],
         [e for e in kept if _is_reported_finding(e)],
         [e for e in kept if not _is_reported_finding(e)],
     )
@@ -728,20 +920,18 @@ class RapidEvidenceDrafter:
         queries: list[str],
         evidence: list[dict[str, Any]],
         all_evidence: list[dict[str, Any]] | None = None,
+        topic_profile: dict[str, Any] | None = None,
         revision_feedback: str = "",
     ) -> tuple[dict[str, Any], dict[str, Any] | None]:
-        topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
-        expanded = list(topic_tokens)
-        for tok in topic_tokens:
-            expanded.extend(_SYNONYMS.get(tok, []))
-        topic_tokens = expanded
+        topic_meta = _topic_profile(topic, topic_profile)
+        topic_tokens = list(topic_meta.get("query_terms") or [])
 
         bundle_candidates = sorted(
-            (_bundle_entry(e, topic_tokens, domain_slug) for e in _rank(all_evidence or evidence)),
+            (_bundle_entry(e, topic_tokens, domain_slug, topic_meta=topic_meta) for e in _rank(all_evidence or evidence)),
             key=_entry_sort_key,
             reverse=True,
         )
-        kept_candidates = [entry for entry in bundle_candidates if _keep_bundle_entry(entry, topic_tokens, domain_slug)]
+        kept_candidates = [entry for entry in bundle_candidates if _keep_bundle_entry(entry)]
         selected = _select_prompt_entries(kept_candidates)
         prompt_entries = [entry for entry in selected if _is_reported_finding(entry)] + [
             entry for entry in selected if not _is_reported_finding(entry)
@@ -770,21 +960,21 @@ class RapidEvidenceDrafter:
         accepted_types = {"review", "primary", "interventional", "observational", "mechanism"}
         source_bundle = [
             entry for entry in bundle_candidates
-            if _keep_bundle_entry(entry, topic_tokens, domain_slug)
+            if _keep_bundle_entry(entry)
             and entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
         ][:20]
         if len(source_bundle) < 8:
             source_bundle = [
                 entry for entry in bundle_candidates
-                if _keep_bundle_entry(entry, topic_tokens, domain_slug)
+                if str(entry.get("topic_fit_bucket") or "drop") in {"core", "landscape"}
                 and entry.get("evidence_type") in accepted_types
             ][:20]
-        if len(source_bundle) < 8 and not _is_metformin_focus(topic_tokens):
+        if len(source_bundle) < 8:
             source_bundle = [
                 entry for entry in bundle_candidates
-            if entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
+                if entry.get("evidence_type") in accepted_types and float(entry.get("topic_fit") or 0.0) >= 0.3
             ][:20]
-        if _is_metformin_focus(topic_tokens) and (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
+        if (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
             source_bundle = source_bundle[:10]
 
         rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")

@@ -1,4 +1,4 @@
-from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness
+from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness, _entry_result_sentence
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
 from agent.validator import validate_citations
@@ -889,3 +889,167 @@ def test_drafter_strengthens_abstract_with_strongest_direct_numeric_result_and_a
     )
     assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in artifact["abstract"]
     assert "·" not in artifact["abstract"]
+
+
+def test_entry_result_sentence_rejects_fragmentary_claim_sentence() -> None:
+    entry = {
+        "excerpt": "Along with presenting evidence that rapamycin can be used safely in adults of normal health status, we discovered that about 26% of rapamycin",
+        "card": {"intervention": "rapamycin", "outcomes": "oral health"},
+        "role": "observational",
+    }
+    assert _entry_result_sentence(entry) == ""
+
+
+def test_drafter_prunes_rapamycin_bundle_generically() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results",
+            "excerpt": "Weekly rapamycin in older adults did not change visceral adiposity compared with placebo.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40188830/",
+        },
+        {
+            "title": "Rapamycin exerts geroprotective effects in the ageing human immune system",
+            "excerpt": "Rapamycin improved resilience against DNA damage in older adults.",
+            "evidence_type": "primary",
+            "source_type": "rxiv",
+            "year": 2025,
+            "url": "https://doi.org/10.1101/2025.08.15.670559",
+        },
+        {
+            "title": "Evaluation of off-label rapamycin use on oral health",
+            "excerpt": "Off-label rapamycin use in adults with oral health outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38839644/",
+        },
+        {
+            "title": "A single-center randomized placebo-controlled study to evaluate once-weekly sirolimus in older adults",
+            "excerpt": "Sirolimus trial protocol in older adults with strength and endurance outcomes.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39354527/",
+        },
+        {
+            "title": "Metformin for Longevity and Sarcopenia: A Therapeutic Paradox in Aging",
+            "excerpt": "Metformin review unrelated to rapamycin-specific outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2026,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41751275/",
+        },
+        {
+            "title": "Pain and aging: A unique challenge in neuroinflammation and behavior",
+            "excerpt": "Aging review without rapamycin-specific evidence.",
+            "evidence_type": "review",
+            "source_type": "openalex",
+            "year": 2023,
+            "url": "https://doi.org/10.1177/17448069231203090",
+        },
+        {
+            "title": "Galleria mellonella pathogen infection models",
+            "excerpt": "Insect infection model review unrelated to rapamycin in older adults.",
+            "evidence_type": "review",
+            "source_type": "openalex",
+            "year": 2023,
+            "url": "https://doi.org/10.1093/femsre/fuad011",
+        },
+        {
+            "title": "Multiplex Apolipoprotein Panel Improves Cardiovascular Event Prediction",
+            "excerpt": "PCSK9 inhibitor study with no rapamycin signal.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40995631/",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="rapamycin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["rapamycin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    titles = [str(item.get("title", "")).lower() for item in artifact["source_bundle"]]
+    assert not any("metformin" in title for title in titles)
+    assert not any("pain and aging" in title for title in titles)
+    assert not any("galleria" in title for title in titles)
+    assert not any("apolipoprotein panel" in title for title in titles)
+    direct_titles = [title for title, item in zip(titles, artifact["source_bundle"]) if item.get("directness") == "direct"]
+    assert direct_titles
+    assert all("rapamycin" in title or "sirolimus" in title for title in direct_titles)
+
+
+def test_drafter_prunes_senolytic_bundle_generically_as_blind_topic() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Dasatinib plus quercetin improves physical function in older adults",
+            "excerpt": "Senolytic intervention in older adults with physical performance outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/501001/",
+        },
+        {
+            "title": "Fisetin senolytic therapy for frailty in aging adults",
+            "excerpt": "Fisetin senolytic trial in older adults with frailty outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/501002/",
+        },
+        {
+            "title": "Senolytics and healthspan: a systematic review",
+            "excerpt": "Review of senolytic interventions and healthspan endpoints in human aging.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/501003/",
+        },
+        {
+            "title": "Metformin and longevity review",
+            "excerpt": "Metformin evidence in aging without senolytic intervention.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/501004/",
+        },
+        {
+            "title": "PCSK9 inhibitor therapy and cardiovascular risk",
+            "excerpt": "Cardiology study without senolytic relevance.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/501005/",
+        },
+        {
+            "title": "Mouse senescence model in liver fibrosis",
+            "excerpt": "Mouse model only, not human clinical evidence.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/501006/",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="senolytics aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["senolytics aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    titles = [str(item.get("title", "")).lower() for item in artifact["source_bundle"]]
+    assert any("dasatinib" in title or "fisetin" in title or "senolytics" in title for title in titles)
+    assert not any("metformin" in title for title in titles)
+    assert not any("pcsk9" in title for title in titles)
+    assert not any("mouse" in title for title in titles)

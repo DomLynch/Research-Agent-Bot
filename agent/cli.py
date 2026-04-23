@@ -467,6 +467,7 @@ def run_agent(
             queries=queries,
             evidence=evidence,
             all_evidence=all_evidence,
+            topic_profile=entity,
         )
         if raw_output:
             run_dir_p = Path(run_dir)
@@ -483,6 +484,7 @@ def run_agent(
                 queries=queries,
                 evidence=evidence,
                 all_evidence=all_evidence,
+                topic_profile=entity,
                 revision_feedback=_citation_revision_feedback(high_severity),
             )
             run_log["citation_retry_count"] = 1
@@ -508,10 +510,9 @@ def run_agent(
         if (
             not artifact.get("error")
             and _is_anti_aging_domain(domain)
-            and len(artifact.get("source_bundle", [])) >= 8
             and artifact.get("bundle_profile", {}).get("direct_count", 0) == 0
         ):
-            artifact["error"] = f"Insufficient direct evidence for '{resolved_topic}' in the {domain} domain."
+            artifact["error"] = f"Insufficient evidence: no direct evidence for '{resolved_topic}' in the {domain} domain."
             artifact["gate_reason"] = "insufficient_direct_evidence"
         artifact["citation_violations"] = citation_violations
         artifact["high_severity_citation_count"] = len(high_severity)

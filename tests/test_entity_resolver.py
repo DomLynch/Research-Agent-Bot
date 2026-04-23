@@ -55,3 +55,15 @@ def test_resolve_topic_combines_glp1_and_omega3_tokens():
     assert glp["canonical_term"] == "glp1"
     assert omega["blocked"] is False
     assert omega["canonical_term"] == "omega3"
+
+
+def test_resolve_topic_returns_aliases_and_class_terms_for_longevity_compounds():
+    rapa = resolve_topic("rapamycin aging older adults", chembl_client=None)
+    met = resolve_topic("metformin aging older adults", chembl_client=None)
+    seno = resolve_topic("senolytics aging older adults", chembl_client=None)
+    assert "sirolimus" in rapa["aliases"]
+    assert "mtor inhibitor" in rapa["class_terms"]
+    assert "glucophage" in met["aliases"]
+    assert "biguanide" in met["class_terms"]
+    assert "dasatinib" in seno["aliases"]
+    assert "senolytic" in seno["class_terms"]
