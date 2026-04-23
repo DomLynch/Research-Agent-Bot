@@ -728,6 +728,9 @@ class RapidEvidenceDrafter:
             sections["Key Findings"] = (
                 f"{sections['Key Findings']} No retained study directly addresses integrated healthspan in a general older-adult population."
             ).strip()
+        for heading in ("Key Findings", "Conclusion"):
+            if heading in sections:
+                sections[heading] = _clean_grounding_mashups(sections[heading], source_bundle)
 
         if fallback_count >= 6:
             return (
