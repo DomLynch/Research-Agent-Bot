@@ -239,6 +239,78 @@ class RefinementProvider(CaptureProvider):
         )
 
 
+class JudgmentProvider(CaptureProvider):
+    supports_reranking = True
+    supports_labeling = True
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.calls = 0
+
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.calls += 1
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        def _id_for(needle: str) -> int:
+            for line in user_prompt.splitlines():
+                if f"title={needle}" in line:
+                    head = line.split(";", 1)[0]
+                    return int(head.split("=", 1)[1])
+            return 0
+        if self.calls == 1:
+            pearl = _id_for("Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results")
+            oral = _id_for("Evaluation of off-label rapamycin use on oral health.")
+            rapa_ex = _id_for("Exercise and Weekly Sirolimus (Rapamycin) in Older Adults: RAPA-EX-01 Randomised, Double-Blind, Placebo-Controlled Trial.")
+            return (
+                {
+                    "assessments": [
+                        {"id": pearl, "relevance_score": 0.95, "bucket": "core"},
+                        {"id": oral, "relevance_score": 0.15, "bucket": "drop"},
+                        {"id": rapa_ex, "relevance_score": 0.91, "bucket": "core"},
+                    ],
+                    "usage": {"input_tokens": 50, "output_tokens": 20, "total_tokens": 70},
+                    "estimated_cost_usd": 0.003,
+                    "prompt_version": self.prompt_version,
+                    "model": self.model,
+                },
+                {},
+            )
+        if self.calls == 2:
+            pearl = _id_for("Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results")
+            oral = _id_for("Evaluation of off-label rapamycin use on oral health.")
+            rapa_ex = _id_for("Exercise and Weekly Sirolimus (Rapamycin) in Older Adults: RAPA-EX-01 Randomised, Double-Blind, Placebo-Controlled Trial.")
+            return (
+                {
+                    "labels": [
+                        {"id": pearl, "role": "published_results", "directness": "direct", "evidence_tier": "Tier A direct aging evidence"},
+                        {"id": oral, "role": "observational", "directness": "indirect", "evidence_tier": "Tier B supporting human evidence"},
+                        {"id": rapa_ex, "role": "published_results", "directness": "direct", "evidence_tier": "Tier A direct aging evidence"},
+                    ],
+                    "usage": {"input_tokens": 40, "output_tokens": 20, "total_tokens": 60},
+                    "estimated_cost_usd": 0.003,
+                    "prompt_version": self.prompt_version,
+                    "model": self.model,
+                },
+                {},
+            )
+        return (
+            {
+                "question": "What are the effects of rapamycin on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy in this population?",
+                "search_summary": "Recent direct trials and supporting disease-context evidence were reviewed separately.",
+                "landscape": "The evidence includes direct older-adult rapamycin trials and narrower disease-context studies.",
+                "findings": "Published results [1] and [2] provide the main direct signal on rapamycin in older adults.",
+                "limitations": "The evidence remains limited and partly indirect.",
+                "gaps_identified": "Long-duration trials are still sparse.",
+                "conclusion": "Rapamycin remains investigational for broad healthspan benefit.",
+                "usage": {"input_tokens": 80, "output_tokens": 40, "total_tokens": 120},
+                "estimated_cost_usd": 0.005,
+                "prompt_version": self.prompt_version,
+                "model": self.model,
+            },
+            {},
+        )
+
+
 def test_classify_directness_marks_aging_rct_direct():
     item = {
         "title": "Metformin and aging in older adults: randomized controlled trial",
@@ -1133,6 +1205,55 @@ def test_drafter_prunes_rapamycin_bundle_generically() -> None:
     direct_titles = [title for title, item in zip(titles, artifact["source_bundle"]) if item.get("directness") == "direct"]
     assert direct_titles
     assert all("rapamycin" in title or "sirolimus" in title for title in direct_titles)
+
+
+def test_drafter_uses_mimo_reranking_and_labeling_before_prompt_selection() -> None:
+    provider = JudgmentProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results",
+            "excerpt": "Weekly rapamycin in older adults did not change visceral adiposity compared with placebo.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40188830/",
+        },
+        {
+            "title": "Evaluation of off-label rapamycin use on oral health.",
+            "excerpt": "Off-label rapamycin use in adults with oral health outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38839644/",
+        },
+        {
+            "title": "Exercise and Weekly Sirolimus (Rapamycin) in Older Adults: RAPA-EX-01 Randomised, Double-Blind, Placebo-Controlled Trial.",
+            "excerpt": "Older adults completed a randomized placebo-controlled sirolimus trial with strength and endurance outcomes.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2026,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41985884/",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="rapamycin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["rapamycin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    assert provider.calls == 3
+    assert artifact["rerank_applied"] is True
+    assert artifact["labeling_applied"] is True
+    assert "Evaluation of off-label rapamycin use on oral health." not in provider.user_prompt
+    assert "RAPA-EX-01" in provider.user_prompt
+    assert all("oral health" not in item["title"].lower() for item in artifact["source_bundle"])
+    rapa_ex = next(item for item in artifact["source_bundle"] if "RAPA-EX-01" in item["title"])
+    assert rapa_ex["role"] == "published_results"
+    assert rapa_ex["directness"] == "direct"
+    assert rapa_ex["evidence_tier"] == "Tier A direct aging evidence"
 
 
 def test_drafter_prunes_senolytic_bundle_generically_as_blind_topic() -> None:

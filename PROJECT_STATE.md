@@ -77,6 +77,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Semantic Scholar graph wiring:** Brief 8 is now partially integrated — `agent/sources/semantic_scholar.py` is live, `run_agent()` expands retrieval from review reference lists on longevity/anti-aging topics, and full-text enrichment now accepts `semantic_scholar` entries so cited DOI hits can flow into Europe PMC / Unpaywall / CORE.
 - **Generic longevity fit gate:** the old metformin-only retention path is gone. Topic handling now flows through canonical entity resolution (`canonical_term`, aliases, class terms), generic topic-fit scoring, generic claim-fit gating, and a shared human-only filter that now rejects nonhuman primate studies.
 - **MiMo editor pass + evidence tiers:** a bounded second MiMo pass now edits the assembled draft for abstract completeness, duplicate hook removal, and clearer Tier A/B/C evidence separation; the source bundle now carries generic `evidence_tier` labels instead of relying on topic-specific prose hacks.
+- **MiMo upstream judgment layer:** retained candidates now go through a generic MiMo reranking pass (`core` / `landscape` / `drop`) and a generic MiMo role/directness/tier labeling pass before drafting. Deterministic scoring remains as scaffold and validator, but explicit MiMo `drop` decisions are no longer revived by low-count fallback bundling.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
@@ -89,7 +90,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 441 passed, 6 skipped, 5 xfailed
+- MacBook: 446 passed, 6 skipped, 5 xfailed
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

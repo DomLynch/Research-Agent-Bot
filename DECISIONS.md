@@ -541,6 +541,31 @@ The final hardening moves fix the actual failure modes, not the score display.
 
 **Tradeoff accepted:** Generic scoring is broader than the old metformin-only pruning, so metformin regained some indirect context (for example DPP follow-up / GRADE-like diabetes context). That is acceptable for now because the goal of this sprint was topic-uniformity, not topic-specific maximal polish.
 
+**What shipped next:**
+- `agent/drafter.py`
+  - added a generic upstream MiMo relevance pass over retained candidates (`core` / `landscape` / `drop`)
+  - added a generic upstream MiMo label pass for `role`, `directness`, and `evidence_tier`
+  - preserved deterministic scoring/validators as scaffold and backstop
+  - low-count source-bundle fallback no longer revives entries MiMo explicitly dropped
+- `agent/provider.py`
+  - `MimoClient` now advertises reranking + labeling support alongside the existing editor refinement support
+- tests
+  - added discriminating coverage proving MiMo can promote a mislabeled RCT (`RAPA-EX-01`) into Tier A direct evidence while dropping weaker oral-health context before prompt selection
+
+**Judge result:**
+- local validation: `446 passed, 6 skipped, 5 xfailed`
+- `ruff` clean
+- intended pipeline order is now:
+  1. deterministic retrieval + evidence scaffolding
+  2. MiMo reranking over retained candidates
+  3. MiMo role/directness/tier assignment
+  4. deterministic validators + bounded MiMo editor pass
+
+**Alternatives rejected:**
+- replacing the scaffold with pure LLM selection end-to-end — rejected; loses auditability and reproducibility
+- keeping deterministic keyword scoring as the only judge — rejected; too brittle on cross-topic relevance
+- reviving dropped items just to satisfy the source-count gate — rejected; better to fail closed than publish weak evidence
+
 **Alternatives rejected:**
 - keep hand-tuning metformin and then clone the pattern to other compounds — rejected; not scalable
 - jump straight to a full structured-claim architecture rewrite across every extractor path — rejected for this sprint; too large for the needed proof

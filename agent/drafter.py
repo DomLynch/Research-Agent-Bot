@@ -154,6 +154,13 @@ _SYNONYM_CANONICALS = {
     for canonical, aliases in _SYNONYMS.items()
     for alias in aliases
 }
+_VALID_TOPIC_FIT_BUCKETS = {"core", "landscape", "drop"}
+_VALID_DIRECTNESS = {"direct", "indirect", "mechanistic"}
+_VALID_EVIDENCE_TIERS = {
+    "Tier A direct aging evidence",
+    "Tier B supporting human evidence",
+    "Tier C protocol/mechanistic support",
+}
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -674,6 +681,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
     topic_meta = topic_meta or _topic_profile(" ".join(topic_tokens))
     topic_fit = _topic_fit_score({**item, "role": role}, card, topic_meta, domain_slug)
     topic_fit_bucket = _topic_fit_bucket(topic_fit)
+    evidence_tier = _evidence_tier(item, card, role=role, directness=directness, topic_fit_bucket=topic_fit_bucket)
     claim = _claim_from_entry({"excerpt": _bundle_excerpt(item), "extraction": item.get("extraction") or {}, "card": card})
     return {
         "title": _clean(item.get("title"), limit=200),
@@ -687,11 +695,16 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "doi": item.get("doi"),
         "query": item.get("query"),
         "extraction": item.get("extraction") or {},
+        "deterministic_relevance": relevance,
         "relevance": relevance,
         "topic_fit": topic_fit,
+        "deterministic_topic_fit_bucket": topic_fit_bucket,
         "topic_fit_bucket": topic_fit_bucket,
-        "evidence_tier": _evidence_tier(item, card, role=role, directness=directness, topic_fit_bucket=topic_fit_bucket),
+        "deterministic_evidence_tier": evidence_tier,
+        "evidence_tier": evidence_tier,
+        "deterministic_role": role,
         "role": role,
+        "deterministic_directness": directness,
         "directness": directness,
         "claim": claim if _claim_schema_ok(claim) else None,
         "card": card,
@@ -978,6 +991,86 @@ def _editor_bundle_lines(source_bundle: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
+def _candidate_summary_lines(candidates: list[dict[str, Any]], *, limit: int = 16) -> str:
+    lines: list[str] = []
+    for idx, entry in enumerate(candidates[:limit], start=1):
+        card = entry.get("card") or {}
+        line = (
+            f"id={idx}; title={entry.get('title', 'unknown')}; year={entry.get('year', 'unknown')}; "
+            f"evidence_type={entry.get('evidence_type', 'unknown')}; source_type={entry.get('source_type', 'unknown')}; "
+            f"role={entry.get('role', 'unknown')}; directness={entry.get('directness', 'indirect')}; "
+            f"tier={entry.get('evidence_tier', 'unknown')}; topic_fit_bucket={entry.get('topic_fit_bucket', 'drop')}; "
+            f"relevance={entry.get('relevance', 0.0)}"
+        )
+        for field, label in (("population", "population"), ("intervention", "intervention"), ("outcomes", "outcomes"), ("context", "context")):
+            if card.get(field):
+                line += f"; {label}={_clean(card[field], limit=120)}"
+        excerpt = _clean(entry.get("excerpt"), limit=220)
+        if excerpt:
+            line += f"; excerpt={excerpt}"
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def _safe_float(value: Any, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _apply_mimo_rerank(candidates: list[dict[str, Any]], assessments: list[dict[str, Any]]) -> None:
+    for assessment in assessments:
+        idx = int(assessment.get("id") or 0)
+        if idx < 1 or idx > len(candidates):
+            continue
+        entry = candidates[idx - 1]
+        bucket = str(assessment.get("bucket") or "").strip().lower()
+        score = max(0.0, min(1.0, _safe_float(assessment.get("relevance_score"), _safe_float(entry.get("relevance"), 0.0))))
+        entry["llm_relevance"] = round(score, 2)
+        entry["relevance"] = round((_safe_float(entry.get("deterministic_relevance"), _safe_float(entry.get("relevance"), 0.0)) * 0.35) + (score * 0.65), 2)
+        if bucket in _VALID_TOPIC_FIT_BUCKETS:
+            entry["llm_topic_fit_bucket"] = bucket
+            entry["topic_fit_bucket"] = bucket
+
+
+def _apply_mimo_labels(candidates: list[dict[str, Any]], labels: list[dict[str, Any]]) -> None:
+    sticky_roles = {"off_domain_indirect", "animal_model"}
+    for label in labels:
+        idx = int(label.get("id") or 0)
+        if idx < 1 or idx > len(candidates):
+            continue
+        entry = candidates[idx - 1]
+        current_role = str(entry.get("role") or "unknown")
+        role = str(label.get("role") or "").strip()
+        if current_role not in sticky_roles and role in ROLE_ORDER:
+            entry["llm_role"] = role
+            entry["role"] = role
+            if entry.get("card"):
+                entry["card"]["role"] = role
+        directness = str(label.get("directness") or "").strip().lower()
+        if directness in _VALID_DIRECTNESS:
+            if entry.get("role") in {"animal_model", "mechanistic"}:
+                directness = "mechanistic"
+            elif entry.get("role") in {"registered_pending", "published_protocol", "off_domain_indirect", "unknown"} and directness == "direct":
+                directness = "indirect"
+            entry["llm_directness"] = directness
+            entry["directness"] = directness
+            if entry.get("card"):
+                entry["card"]["directness"] = directness
+        tier = str(label.get("evidence_tier") or "").strip()
+        if tier not in _VALID_EVIDENCE_TIERS:
+            tier = _evidence_tier(
+                {"title": entry.get("title"), "excerpt": entry.get("excerpt")},
+                entry.get("card") or {},
+                role=str(entry.get("role") or "unknown"),
+                directness=str(entry.get("directness") or "indirect"),
+                topic_fit_bucket=str(entry.get("topic_fit_bucket") or "drop"),
+            )
+        entry["llm_evidence_tier"] = tier
+        entry["evidence_tier"] = tier
+
+
 def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, float, int, int]:
     return (
         1 if entry.get("evidence_tier") == "Tier A direct aging evidence" else 0,
@@ -1026,6 +1119,72 @@ def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict
 class RapidEvidenceDrafter:
     def __init__(self, *, provider: Any) -> None:
         self.provider = provider
+
+    def _rerank_with_mimo(
+        self,
+        *,
+        topic: str,
+        domain_slug: str,
+        criteria: str,
+        candidates: list[dict[str, Any]],
+    ) -> tuple[bool, dict[str, Any] | None]:
+        if not getattr(self.provider, "supports_reranking", False) or not candidates:
+            return False, None
+        system_prompt = (
+            "You are a relevance judge for a biomedical evidence bundle. Return JSON only with key 'assessments'. "
+            "Each assessment must contain: id, relevance_score, bucket. "
+            "Use bucket from: core, landscape, drop. "
+            "Judge whether each candidate directly helps answer the exact topic/domain/criteria question. "
+            "Prefer human older-adult outcome evidence over tangential disease-context or generic reviews. "
+            "Do not invent papers or IDs."
+        )
+        user_prompt = (
+            f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\n\n"
+            "Rank these candidates by actual usefulness for the question.\n"
+            "core = belongs in the main retained bundle\n"
+            "landscape = supporting context only\n"
+            "drop = too weak, off-scope, or not decision-relevant\n\n"
+            f"Candidates:\n{_candidate_summary_lines(candidates, limit=16)}"
+        )
+        result, _ = self.provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        result = {str(k).lower(): v for k, v in result.items()}
+        assessments = result.get("assessments")
+        if not isinstance(assessments, list):
+            return False, result
+        _apply_mimo_rerank(candidates, [item for item in assessments if isinstance(item, dict)])
+        return True, result
+
+    def _label_with_mimo(
+        self,
+        *,
+        topic: str,
+        domain_slug: str,
+        criteria: str,
+        candidates: list[dict[str, Any]],
+    ) -> tuple[bool, dict[str, Any] | None]:
+        if not getattr(self.provider, "supports_labeling", False) or not candidates:
+            return False, None
+        system_prompt = (
+            "You are a citation-role and evidence-tier classifier for a biomedical review. Return JSON only with key 'labels'. "
+            "Each label must contain: id, role, directness, evidence_tier. "
+            "Valid roles: " + ", ".join(ROLE_ORDER) + ". "
+            "Valid directness: direct, indirect, mechanistic. "
+            "Valid evidence_tier: Tier A direct aging evidence, Tier B supporting human evidence, Tier C protocol/mechanistic support. "
+            "Use Tier A for core direct aging/older-adult outcome evidence, Tier B for supporting human disease-context or broader human evidence, and Tier C for protocols, registry-only records, mechanistic work, preclinical work, or other indirect support."
+        )
+        user_prompt = (
+            f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\n\n"
+            "Assign role, directness, and evidence tier for these retained candidates. "
+            "Do not invent IDs or add explanation.\n\n"
+            f"Candidates:\n{_candidate_summary_lines(candidates, limit=12)}"
+        )
+        result, _ = self.provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        result = {str(k).lower(): v for k, v in result.items()}
+        labels = result.get("labels")
+        if not isinstance(labels, list):
+            return False, result
+        _apply_mimo_labels(candidates, [item for item in labels if isinstance(item, dict)])
+        return True, result
 
     def _refine_with_editor(
         self,
@@ -1089,6 +1248,28 @@ class RapidEvidenceDrafter:
             key=_entry_sort_key,
             reverse=True,
         )
+        rerank_applied = False
+        labeling_applied = False
+        rerank_payload: dict[str, Any] | None = None
+        label_payload: dict[str, Any] | None = None
+        rerank_candidates = bundle_candidates[:16]
+        rerank_applied, rerank_payload = self._rerank_with_mimo(
+            topic=topic,
+            domain_slug=domain_slug,
+            criteria=criteria,
+            candidates=rerank_candidates,
+        )
+        if rerank_applied:
+            bundle_candidates = sorted(bundle_candidates, key=_entry_sort_key, reverse=True)
+        label_candidates = [entry for entry in bundle_candidates if str(entry.get("topic_fit_bucket") or "drop") != "drop"][:12] or bundle_candidates[:12]
+        labeling_applied, label_payload = self._label_with_mimo(
+            topic=topic,
+            domain_slug=domain_slug,
+            criteria=criteria,
+            candidates=label_candidates,
+        )
+        if labeling_applied:
+            bundle_candidates = sorted(bundle_candidates, key=_entry_sort_key, reverse=True)
         kept_candidates = [entry for entry in bundle_candidates if _keep_bundle_entry(entry)]
         selected = _select_prompt_entries(kept_candidates)
         prompt_entries = [entry for entry in selected if _is_reported_finding(entry)] + [
@@ -1130,7 +1311,9 @@ class RapidEvidenceDrafter:
         if len(source_bundle) < 8:
             source_bundle = [
                 entry for entry in bundle_candidates
-                if entry.get("evidence_type") in accepted_types and float(entry.get("topic_fit") or 0.0) >= 0.3
+                if entry.get("evidence_type") in accepted_types
+                and float(entry.get("topic_fit") or 0.0) >= 0.3
+                and str(entry.get("topic_fit_bucket") or "drop") != "drop"
             ][:20]
         if (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
             source_bundle = source_bundle[:10]
@@ -1319,10 +1502,22 @@ class RapidEvidenceDrafter:
             result["usage"] = _merge_usage(result.get("usage", {}), editor_payload.get("usage", {}))
             result["estimated_cost_usd"] = float(result.get("estimated_cost_usd", 0.0) or 0.0) + float(editor_payload.get("estimated_cost_usd", 0.0) or 0.0)
             result["editor_refinement_applied"] = True
+        if rerank_payload:
+            result["usage"] = _merge_usage(result.get("usage", {}), rerank_payload.get("usage", {}))
+            result["estimated_cost_usd"] = float(result.get("estimated_cost_usd", 0.0) or 0.0) + float(rerank_payload.get("estimated_cost_usd", 0.0) or 0.0)
+        if label_payload:
+            result["usage"] = _merge_usage(result.get("usage", {}), label_payload.get("usage", {}))
+            result["estimated_cost_usd"] = float(result.get("estimated_cost_usd", 0.0) or 0.0) + float(label_payload.get("estimated_cost_usd", 0.0) or 0.0)
 
         if len(source_bundle) < 8 and os.getenv("RESEARKA_URL"):
             return (
-                {"error": f"Insufficient relevant sources for submission ({len(source_bundle)}/8).", "source_bundle": source_bundle},
+                {
+                    "error": f"Insufficient relevant sources for submission ({len(source_bundle)}/8).",
+                    "source_bundle": source_bundle,
+                    "rerank_applied": rerank_applied,
+                    "labeling_applied": labeling_applied,
+                    "editor_refinement_applied": bool(result.get("editor_refinement_applied")),
+                },
                 raw_payload,
             )
         artifact = {
@@ -1342,6 +1537,8 @@ class RapidEvidenceDrafter:
             "usage": result.get("usage", {}),
             "estimated_cost_usd": float(result.get("estimated_cost_usd", 0.0) or 0.0),
             "model": result.get("model", getattr(self.provider, "model", "unknown")),
+            "rerank_applied": rerank_applied,
+            "labeling_applied": labeling_applied,
             "editor_refinement_applied": bool(result.get("editor_refinement_applied")),
         }
         artifact["citation_violations"] = validate_citations(artifact, source_bundle)
