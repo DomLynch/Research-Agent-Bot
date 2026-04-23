@@ -465,10 +465,8 @@ def _keep_bundle_entry(entry: dict[str, Any], topic_tokens: list[str], domain_sl
             return False
         if role == "meta_analysis":
             return mentions_metformin or any(bit in title for bit in _METFORMIN_ALLOWED_INDIRECT_TITLE_BITS)
-        if role in {"review", "observational", "registered_pending", "unknown"}:
+        if role in {"review", "observational", "published_protocol", "registered_pending", "unknown"}:
             return mentions_metformin
-        if role == "published_protocol":
-            return False
     return True
 
 
