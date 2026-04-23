@@ -18,12 +18,14 @@ from agent.sources.clinicaltrials import ClinicalTrialsClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
 from agent.sources.rxiv import RxivClient
+from agent.sources.semantic_scholar import SemanticScholarClient
 from agent.submit import submit
 from agent.validator import validate_citations
 
 _CLINICAL_DOMAINS = {"oncology", "longevity"}
 _CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
 _RXIV_DOMAINS = {"longevity", "oncology", "metabolic", "general"}
+_SEMANTIC_SCHOLAR_DOMAINS = {"longevity", "anti-aging", "anti aging"}
 _CHEMBL_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "statin")
 _CHEMBL_STOPWORDS = {"and", "or", "anti", "aging", "anti-aging", "longevity", "healthspan", "effects", "outcomes"}
 _TOPIC_MATCH_FLOOR = 0.50
@@ -41,6 +43,13 @@ def _should_use_rxiv(domain: str, topic: str) -> bool:
         return True
     combined = f"{topic} {domain}".lower()
     return any(kw in combined for kw in ("preprint", "mechanism", "geroscience", "aging"))
+
+
+def _should_use_semantic_scholar(domain: str, topic: str) -> bool:
+    if _is_anti_aging_domain(domain) or domain in _SEMANTIC_SCHOLAR_DOMAINS:
+        return True
+    combined = f"{topic} {domain}".lower()
+    return any(kw in combined for kw in ("aging", "geroscience", "longevity"))
 
 
 def _should_use_chembl(topic: str) -> bool:
@@ -168,6 +177,36 @@ def _citation_revision_feedback(violations: list[dict[str, Any]]) -> str:
             detail += f" phrase='{phrase}'"
         lines.append(detail)
     return "\n".join(lines)
+
+
+def _semantic_graph_hits(
+    client: SemanticScholarClient,
+    evidence: list[dict[str, Any]],
+    *,
+    canonical_term: str,
+    aliases: list[str],
+    limit_per_seed: int = 8,
+) -> list[dict[str, Any]]:
+    needles = [str(canonical_term or "").lower().strip(), *[str(alias).lower().strip() for alias in aliases]]
+    seed_dois: list[str] = []
+    seen: set[str] = set()
+    for item in evidence:
+        doi = str(item.get("doi") or "").strip()
+        if not doi or doi.lower() in seen:
+            continue
+        if str(item.get("evidence_type") or "").lower() != "review":
+            continue
+        text = f"{item.get('title', '')} {item.get('excerpt', '')}".lower()
+        if needles and not any(needle and needle in text for needle in needles):
+            continue
+        seed_dois.append(doi)
+        seen.add(doi.lower())
+        if len(seed_dois) >= 2:
+            break
+    expanded: list[dict[str, Any]] = []
+    for doi in seed_dois:
+        expanded.extend(client.references_of(doi, limit=limit_per_seed))
+    return expanded
 
 
 def _exclusion_reasons(scope_signals: list[str], run_log: dict[str, Any]) -> str:
@@ -309,6 +348,7 @@ def run_agent(
             "resolver_confidence": entity.get("confidence", 0.0),
         }
     resolved_topic = str(entity.get("canonical_topic") or topic)
+    semantic_scholar_client = SemanticScholarClient() if _should_use_semantic_scholar(domain, resolved_topic) else None
     plan = QueryPlanner().build(topic=resolved_topic, domain_slug=domain, criteria=criteria)
     queries = plan.primary_queries()
     source_names: list[str] = ["pubmed", "openalex"]
@@ -342,6 +382,8 @@ def run_agent(
     if chembl_client:
         sources.append(("chembl", chembl_client))
         source_names.append("chembl")
+    if semantic_scholar_client:
+        source_names.append("semantic_scholar")
     protocol_path = _write_protocol_json(
         Path(run_dir),
         started_at=started_at,
@@ -369,6 +411,19 @@ def run_agent(
                 source_counts[source_name] += len(hits)
             except Exception as exc:
                 run_log["source_errors"].append(f"{source_name}:{query}:{exc}")
+    if semantic_scholar_client:
+        source_counts["semantic_scholar"] = source_counts.get("semantic_scholar", 0)
+        try:
+            graph_hits = _semantic_graph_hits(
+                semantic_scholar_client,
+                evidence,
+                canonical_term=str(entity.get("canonical_term") or resolved_topic),
+                aliases=list(entity.get("aliases") or []),
+            )
+            evidence.extend(graph_hits)
+            source_counts["semantic_scholar"] += len(graph_hits)
+        except Exception as exc:
+            run_log["source_errors"].append(f"semantic_scholar:graph:{exc}")
     run_log["source_counts"] = source_counts
     run_log["evidence_retrieved"] = len(evidence)
     retrieved_n = len(evidence)

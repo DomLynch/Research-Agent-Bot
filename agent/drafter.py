@@ -333,13 +333,39 @@ def _has_quantitative_content(text: str) -> bool:
     return bool(_NUMERIC_CLAIM_RE.search(cleaned))
 
 
-def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, float, int, int]:
+def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, float, int, int]:
     return (
         role_sort_priority(str(entry.get("role") or "unknown")),
+        1 if entry.get("directness") == "direct" else 0,
+        1 if ((entry.get("extraction") or {}).get("effects") or []) else 0,
         float(entry.get("relevance") or 0.0),
         int(entry.get("year") or 0),
         1 if entry.get("evidence_type") == "review" else 0,
     )
+
+
+def _keep_bundle_entry(entry: dict[str, Any]) -> bool:
+    return str(entry.get("role") or "") != "off_domain_indirect"
+
+
+def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    kept = [entry for entry in bundle_candidates if _keep_bundle_entry(entry)]
+    selected: list[dict[str, Any]] = []
+    groups = (
+        [e for e in kept if e.get("role") == "published_results" and e.get("directness") == "direct"],
+        [e for e in kept if e.get("role") == "meta_analysis"],
+        [e for e in kept if e.get("directness") == "direct"],
+        [e for e in kept if _is_reported_finding(e)],
+        [e for e in kept if not _is_reported_finding(e)],
+    )
+    for group in groups:
+        for entry in group:
+            if entry in selected:
+                continue
+            selected.append(entry)
+            if len(selected) >= 6:
+                return selected
+    return selected
 
 
 class RapidEvidenceDrafter:
@@ -363,12 +389,12 @@ class RapidEvidenceDrafter:
             expanded.extend(_SYNONYMS.get(tok, []))
         topic_tokens = expanded
 
-        ranked = _rank(evidence)
-        selected = sorted(
-            (_bundle_entry(e, topic_tokens, domain_slug) for e in ranked),
+        bundle_candidates = sorted(
+            (_bundle_entry(e, topic_tokens, domain_slug) for e in _rank(all_evidence or evidence)),
             key=_entry_sort_key,
             reverse=True,
-        )[:6]
+        )
+        selected = _select_prompt_entries(bundle_candidates)
         prompt_entries = [entry for entry in selected if _is_reported_finding(entry)] + [
             entry for entry in selected if not _is_reported_finding(entry)
         ]
@@ -380,11 +406,6 @@ class RapidEvidenceDrafter:
                 if _is_reported_finding(entry) and ((entry.get("extraction") or {}).get("effects") or [])
             ),
             None,
-        )
-        bundle_candidates = sorted(
-            (_bundle_entry(e, topic_tokens, domain_slug) for e in _rank(all_evidence or evidence)),
-            key=_entry_sort_key,
-            reverse=True,
         )
 
         if len(selected) < 2:
@@ -401,10 +422,20 @@ class RapidEvidenceDrafter:
         accepted_types = {"review", "primary", "interventional", "observational", "mechanism"}
         source_bundle = [
             entry for entry in bundle_candidates
-            if entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
+            if _keep_bundle_entry(entry)
+            and entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
         ][:20]
         if len(source_bundle) < 8:
-            source_bundle = [entry for entry in bundle_candidates if entry.get("evidence_type") in accepted_types][:20]
+            source_bundle = [
+                entry for entry in bundle_candidates
+                if _keep_bundle_entry(entry)
+                and entry.get("evidence_type") in accepted_types
+            ][:20]
+        if len(source_bundle) < 8:
+            source_bundle = [
+                entry for entry in bundle_candidates
+            if entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
+            ][:20]
 
         years = [int(e["year"]) for e in source_bundle if isinstance(e.get("year"), int)]
         rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")
@@ -422,6 +453,8 @@ class RapidEvidenceDrafter:
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
             "The evidence is grouped by citation role. "
             "For published results and meta-analyses, use past-tense outcome language and cite numbers when provided. "
+            "Spend most of the Key Findings on the highest-ranked direct published results entries. "
+            "When citing published results or meta-analyses, name the endpoint and include effect direction or numeric outcome, sample size, and duration when available. "
             "For registered or protocol studies, describe only the study design or aim. "
             "Do not say they found, showed, reported, demonstrated, improved, reduced, or increased outcomes. "
             "For animal-model evidence, explicitly hedge with 'in animal models' or 'preclinical'. "
@@ -441,7 +474,7 @@ class RapidEvidenceDrafter:
         grouped_lines: dict[str, list[str]] = {role: [] for role in ROLE_ORDER}
         for i, e in enumerate(prompt_entries, start=1):
             card = e["card"]
-            parts = [f"cite={card.get('citation', 'unknown')}"]
+            parts = [f"title={e.get('title', 'unknown')}", f"cite={card.get('citation', 'unknown')}"]
             parts.append(f"role={e.get('role', 'unknown')}")
             parts.append(f"type={card.get('study_type', 'unknown')}")
             parts.append(f"grade={card.get('evidence_grade', 'L')}")
@@ -483,6 +516,11 @@ class RapidEvidenceDrafter:
                 continue
             evidence_blocks.append(role_section_title(role))
             evidence_blocks.extend(lines)
+        priority_refs = [
+            str(i)
+            for i, entry in enumerate(prompt_entries, start=1)
+            if entry.get("role") == "published_results" and entry.get("directness") == "direct"
+        ][:3]
         user_prompt = (
             f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\n"
             "CRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: "
@@ -491,6 +529,11 @@ class RapidEvidenceDrafter:
             "and what is the evidence for safety and efficacy?'\n\nEvidence:\n"
             + ("\n".join(evidence_blocks) or "No evidence receipts retained.")
         )
+        if priority_refs:
+            user_prompt += (
+                f"\n\nKEY FINDINGS PRIORITY: focus mainly on direct published-results citations "
+                f"[{'], ['.join(priority_refs)}]. Keep indirect context brief and explicitly labeled indirect."
+            )
         if revision_feedback:
             user_prompt += f"\n\nREVISION FEEDBACK:\n{_clean(revision_feedback, limit=1200)}"
         result, raw_payload = self.provider.complete_json(

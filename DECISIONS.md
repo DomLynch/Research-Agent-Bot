@@ -442,3 +442,45 @@ The final hardening moves fix the actual failure modes, not the score display.
 - hard-block every medium violation — rejected; too many current runs still need a softer judge there
 
 **Revisit if:** medium-severity `missing_numeric` remains the dominant citation problem after more Tier 2 reruns; that is the point to add a second rewrite loop or stricter numeric gating.
+
+---
+
+## 2026-04-23 — Metformin-first pruning + Semantic Scholar graph wiring
+**Decision:** Focus the next quality pass on the metformin longevity draft only: prune explicit off-domain bundle noise, make `direct` require a real topic token in title, center the drafter on top direct published trials, and wire Semantic Scholar reference-graph expansion with minimal code.
+
+**Why:** After the clean `tier2-finish` deploy, the old `[3] is investigating` bug was gone, but the live metformin draft still shipped obvious off-domain baggage (`embryo`, `antiseizure`, `ocular`, `COVID`, `exercise timing`) and diluted Key Findings with indirect context. The next bottleneck was bundle composition, not validator infrastructure.
+
+**What shipped:**
+- `agent/citation_roles.py`
+  - expanded longevity off-domain list: embryo/embryonic/dormancy/blastocyst, antiseizure/anticonvulsant/seizure, ocular/macular/retinopathy/glaucoma, COVID/SARS-CoV, exercise timing, polypharmacy
+  - `off_domain_indirect` now fires before ClinicalTrials role assignment so off-domain registries do not bypass pruning
+  - `direct` for longevity/anti-aging now requires a non-generic topic token in title, not just generic words like `aging` / `older adults`
+- `agent/drafter.py`
+  - final bundle drops `off_domain_indirect` entries before shipping
+  - prompt evidence lines now include `title=...`
+  - prompt selection now leads with direct `published_results`, then meta-analysis, then remaining direct/context evidence
+  - Key Findings instructions now explicitly center the highest-ranked direct published results and ask for endpoint/effect/N/duration when available
+- `agent/sources/semantic_scholar.py`
+  - Brief 8 adapter imported as-is
+- `agent/cli.py`
+  - longevity / anti-aging runs now expand retrieval via Semantic Scholar `references_of()` using topic-fit review DOIs as seeds
+  - retrieved graph papers are counted under `semantic_scholar`
+- `agent/fulltext.py`
+  - `semantic_scholar` entries now qualify for DOI-based Europe PMC / Unpaywall / CORE full-text enrichment
+
+**Judge result:**
+- targeted metformin + Semantic Scholar suites: `68 passed`
+- `ruff` clean
+- specific new guarantees:
+  - metformin bundle tests now reject embryo / antiseizure / ocular / COVID / exercise-timing leaks
+  - at least 70% of `direct` metformin bundle entries must carry `metformin` or `glucophage` in title
+  - Semantic Scholar citation-graph expansion is proven by run-agent integration test
+
+**Tradeoff accepted:** This is intentionally metformin-first, not a broad taxonomy sweep. Some indirect-but-not-off-domain context still remains in the source bundle after pruning; that is acceptable because the next editor pass is supposed to judge the metformin artifact, not chase every possible longevity false positive in one sprint.
+
+**Alternatives rejected:**
+- broad 10-topic parallel cleanup — rejected; too much feedback noise before metformin is elite
+- wire Semantic Scholar as another topic-search source first — rejected; reference-graph expansion is higher leverage and less noisy
+- keep off-domain logic advisory-only — rejected; the noisy entries were already visible in live markdown
+
+**Revisit if:** metformin still carries weak-fit indirect context after this pass. The next move would be a tighter `query-fit` filter for indirect context or a second-stage bundle cap keyed to metformin title/synonym matches.

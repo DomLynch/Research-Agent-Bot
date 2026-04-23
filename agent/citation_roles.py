@@ -95,22 +95,39 @@ _ANIMAL_RE = re.compile(
     r"\b(c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|zebrafish|drosophila|animal model|mice\b|rats\b|mice\W|mice$|mitopark)\b",
     re.IGNORECASE,
 )
+_GENERIC_TOPIC_TOKENS = {
+    "aging", "ageing", "older", "adult", "adults", "elderly", "longevity",
+    "healthspan", "frailty", "prefrailty", "sarcopenia", "cognition", "cognitive",
+    "function", "physical", "performance",
+}
 
 _OFF_DOMAIN = {
     "longevity": (
         "esophageal", "pancreatic cancer", "gastric cancer", "cancer", "carcinoma",
         "pregnancy", "pregestational", "pediatric", "paediatric", "neonatal",
-        "gestational", "prescription cascade", "peripheral artery disease", "parkinson",
+        "gestational", "prescription cascade", "polypharmacy", "peripheral artery disease", "parkinson",
+        "embryo", "embryonic", "dormancy", "blastocyst",
+        "antiseizure", "anticonvulsant", "seizure",
+        "ocular", "macular", "retinopathy", "glaucoma",
+        "covid", "sars-cov", "exercise timing",
     ),
     "anti-aging": (
         "esophageal", "pancreatic cancer", "gastric cancer", "cancer", "carcinoma",
         "pregnancy", "pregestational", "pediatric", "paediatric", "neonatal",
-        "gestational", "prescription cascade", "peripheral artery disease", "parkinson",
+        "gestational", "prescription cascade", "polypharmacy", "peripheral artery disease", "parkinson",
+        "embryo", "embryonic", "dormancy", "blastocyst",
+        "antiseizure", "anticonvulsant", "seizure",
+        "ocular", "macular", "retinopathy", "glaucoma",
+        "covid", "sars-cov", "exercise timing",
     ),
     "anti aging": (
         "esophageal", "pancreatic cancer", "gastric cancer", "cancer", "carcinoma",
         "pregnancy", "pregestational", "pediatric", "paediatric", "neonatal",
-        "gestational", "prescription cascade", "peripheral artery disease", "parkinson",
+        "gestational", "prescription cascade", "polypharmacy", "peripheral artery disease", "parkinson",
+        "embryo", "embryonic", "dormancy", "blastocyst",
+        "antiseizure", "anticonvulsant", "seizure",
+        "ocular", "macular", "retinopathy", "glaucoma",
+        "covid", "sars-cov", "exercise timing",
     ),
     "cardiology": ("pregnancy", "pediatric", "neonatal"),
     "metabolic": ("pediatric", "neonatal", "oncology", "cancer", "carcinoma"),
@@ -142,16 +159,28 @@ def _aging_signal(card: dict[str, Any], item: dict[str, Any]) -> bool:
     )
 
 
-def _title_match(item: dict[str, Any], topic_tokens: list[str]) -> bool:
+def _core_topic_tokens(topic_tokens: list[str]) -> list[str]:
+    core = [tok for tok in topic_tokens if tok and tok not in _GENERIC_TOPIC_TOKENS]
+    return core or [tok for tok in topic_tokens if tok]
+
+
+def _title_match(item: dict[str, Any], topic_tokens: list[str], *, core_only: bool = False) -> bool:
     title = str(item.get("title") or "").lower()
-    return any(tok in title for tok in topic_tokens if tok)
+    tokens = _core_topic_tokens(topic_tokens) if core_only else [tok for tok in topic_tokens if tok]
+    return any(tok in title for tok in tokens)
 
 
 def _off_domain_match(item: dict[str, Any], card: dict[str, Any], domain_slug: str) -> bool:
     domain = _normalized_domain(domain_slug)
+    title = str(item.get("title") or "").lower()
     text = " ".join(str(v or "") for v in (item.get("title"), item.get("excerpt"))).lower()
     if domain in {"longevity", "anti-aging", "anti aging"} and card.get("context") in {"oncology", "transplant", "device", "pediatric"}:
         return True
+    if domain in {"longevity", "anti-aging", "anti aging"}:
+        if ("cancer" in text or "carcinoma" in text) and ("prevention" in text or "chemoprevention" in text):
+            return False
+        if "exercise timing" in title and any(tok in title for tok in ("metformin", "glucophage", "rapamycin", "sirolimus")):
+            return False
     return any(term in text for term in _OFF_DOMAIN.get(domain, ()))
 
 
@@ -167,10 +196,6 @@ def classify_citation_role(
     study_type = str(card.get("study_type") or "")
     title = str(item.get("title") or "")
 
-    if source_type == "clinicaltrials" and not item.get("has_results"):
-        return "registered_pending"
-    if source_type == "clinicaltrials" and item.get("has_results"):
-        return "published_results"
     if source_type == "chembl" or evidence_type == "mechanism":
         return "mechanistic"
     if _PROTOCOL_RE.search(title) or quality == "protocol" or study_type == "protocol":
@@ -179,6 +204,10 @@ def classify_citation_role(
         return "animal_model"
     if _off_domain_match(item, card, domain_slug):
         return "off_domain_indirect"
+    if source_type == "clinicaltrials" and not item.get("has_results"):
+        return "registered_pending"
+    if source_type == "clinicaltrials" and item.get("has_results"):
+        return "published_results"
     if quality in {"meta-analysis", "systematic-review"} or study_type == "meta-analysis":
         return "meta_analysis"
     if evidence_type == "review" or quality == "review":
@@ -205,7 +234,7 @@ def citation_directness(
         return "mechanistic"
     if role in {"registered_pending", "published_protocol", "animal_model", "off_domain_indirect", "unknown"}:
         return "indirect"
-    title_match = _title_match(item, topic_tokens)
+    title_match = _title_match(item, topic_tokens, core_only=True)
     if _normalized_domain(domain_slug) in {"longevity", "anti-aging", "anti aging"} or "aging" in _normalized_domain(domain_slug):
         return "direct" if title_match and _aging_signal(card, item) else "indirect"
     return "direct" if title_match else "indirect"

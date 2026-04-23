@@ -90,6 +90,16 @@ def test_off_domain_longevity_entry_is_off_domain_indirect() -> None:
     assert role == "off_domain_indirect"
 
 
+def test_embryo_entry_is_off_domain_for_longevity() -> None:
+    entry = {
+        "title": "FOXO1-mediated lipid metabolism maintains mammalian embryos in dormancy",
+        "excerpt": "Embryo dormancy pathways in mammals.",
+        "evidence_type": "primary",
+    }
+    role = classify_citation_role(entry, _card(entry), "longevity", ["metformin", "aging", "older", "adults"])
+    assert role == "off_domain_indirect"
+
+
 def test_observational_entry_is_observational_role() -> None:
     entry = {
         "title": "Prospective cohort of metformin and mortality in older adults",
@@ -119,6 +129,18 @@ def test_directness_for_published_aging_trial_is_direct() -> None:
     card = _card(entry)
     role = classify_citation_role(entry, card, "longevity", ["metformin", "older", "adults"])
     assert citation_directness(role, entry, card, "longevity", ["metformin", "older", "adults"]) == "direct"
+
+
+def test_longevity_review_without_topic_token_in_title_is_indirect() -> None:
+    entry = {
+        "title": "Pain and aging: A unique challenge in neuroinflammation and behavior",
+        "excerpt": "Review in aging adults without metformin in the title.",
+        "evidence_type": "review",
+    }
+    card = _card(entry)
+    role = classify_citation_role(entry, card, "longevity", ["metformin", "aging", "older", "adults"])
+    assert role == "review"
+    assert citation_directness(role, entry, card, "longevity", ["metformin", "aging", "older", "adults"]) == "indirect"
 
 
 def test_off_domain_entry_is_indirect() -> None:

@@ -193,6 +193,58 @@ def test_drafter_separates_reported_findings_from_registry_only_trials():
     assert "For registered or protocol studies, describe only the study design or aim" in provider.system_prompt
 
 
+def test_drafter_prioritizes_direct_published_results_in_prompt() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    direct_1 = {
+        "title": "Metformin and physical performance in older adults with frailty",
+        "excerpt": "Randomized trial in older adults.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/101/",
+    }
+    direct_2 = {
+        "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
+        "excerpt": "Interventional trial in insulin resistant older adults.",
+        "evidence_type": "interventional",
+        "source_type": "clinicaltrials",
+        "has_results": True,
+        "trial_status": "results",
+        "year": 2023,
+        "url": "https://clinicaltrials.gov/study/NCT03733132",
+    }
+    direct_3 = {
+        "title": "Metformin administration improves adverse outcomes in older adult burn patients",
+        "excerpt": "Cohort study of metformin in older adults.",
+        "evidence_type": "observational",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/102/",
+    }
+    indirect_review = {
+        "title": "Pain and aging: A unique challenge in neuroinflammation and behavior",
+        "excerpt": "Review in aging adults without metformin in the title.",
+        "evidence_type": "review",
+        "source_type": "openalex",
+        "year": 2023,
+        "url": "https://doi.org/10.1/pain",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[indirect_review, direct_1, direct_2, direct_3],
+        all_evidence=[indirect_review, direct_1, direct_2, direct_3],
+    )
+    assert not artifact.get("error")
+    assert "KEY FINDINGS PRIORITY: focus mainly on direct published-results citations [1], [2]." in provider.user_prompt
+    assert provider.user_prompt.find(direct_1["title"]) < provider.user_prompt.find(indirect_review["title"])
+    assert provider.user_prompt.find(direct_2["title"]) < provider.user_prompt.find(indirect_review["title"])
+    assert provider.user_prompt.find(direct_3["title"]) < provider.user_prompt.find(indirect_review["title"])
+
+
 def test_drafter_sanitizes_registry_only_outcome_claims_and_adds_numeric_fallback():
     provider = BadRegistryProvider()
     drafter = RapidEvidenceDrafter(provider=provider)

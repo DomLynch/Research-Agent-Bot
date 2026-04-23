@@ -73,6 +73,8 @@ Re-run `metformin aging older adults` and `glp1_cv_mace` on the live site and co
 - **Tier 2 multi-source full-text:** full-text enrichment now cascades Europe PMC -> Unpaywall -> CORE, tracking `found_any`, `parseable_text_count`, and per-source hit counts so OA coverage gains are visible even when only PDF URLs are available.
 - **Tier 2 benchmarked:** live MiMo fixture regeneration now ran end-to-end on all 15 gold topics. Honest Karpathy delta versus the clean pre-run fixture set: `composite +0.0256`, `quant +0.0444`, `limitations +0.0889`, `direction -0.0333`, `study_overlap +0.0000`. See `docs/tier2-validator-audit.md`.
 - **Tier 2 judge veto:** published-results/design-language drift is now repaired before validation, and any remaining high-severity citation-role violations trigger one revision pass before the run fails closed instead of shipping known-bad prose.
+- **Metformin cleanup pass:** longevity bundles now drop explicit off-domain leaks such as embryo/antiseizure/ocular/COVID/exercise-timing records, `direct` requires a real topic token in title rather than generic aging words, prompt evidence lines now include titles, and Key Findings are instructed to center the top direct published metformin trials.
+- **Semantic Scholar graph wiring:** Brief 8 is now partially integrated — `agent/sources/semantic_scholar.py` is live, `run_agent()` expands retrieval from review reference lists on longevity/anti-aging topics, and full-text enrichment now accepts `semantic_scholar` entries so cited DOI hits can flow into Europe PMC / Unpaywall / CORE.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth

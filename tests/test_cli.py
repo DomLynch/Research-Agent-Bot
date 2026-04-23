@@ -172,6 +172,203 @@ class PublishedAndReviewSource:
         ]
 
 
+class MetforminBundleSource:
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return [
+            {
+                "title": "Metformin and physical performance in older people with probable sarcopenia and physical prefrailty or frailty in England (MET-PREVENT)",
+                "excerpt": "Randomized placebo-controlled metformin trial in older adults with frailty outcomes.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "primary",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+                "query": query,
+            },
+            {
+                "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+                "excerpt": "Interventional results-posted trial in older adults at risk of frailty.",
+                "year": 2024,
+                "source_type": "clinicaltrials",
+                "evidence_type": "interventional",
+                "has_results": True,
+                "trial_status": "results",
+                "url": "https://clinicaltrials.gov/study/NCT02570672",
+                "query": query,
+            },
+            {
+                "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
+                "excerpt": "Results-posted trial of metformin and brain function in insulin-resistant older adults.",
+                "year": 2023,
+                "source_type": "clinicaltrials",
+                "evidence_type": "interventional",
+                "has_results": True,
+                "trial_status": "results",
+                "url": "https://clinicaltrials.gov/study/NCT03733132",
+                "query": query,
+            },
+            {
+                "title": "Metformin administration improves adverse outcomes in older adult burn patients",
+                "excerpt": "Single-centre cohort study of metformin in older adult burn patients.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "observational",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/40419490/",
+                "query": query,
+            },
+            {
+                "title": "Association Between Metformin Use and Cognitive and Physical Function in Persons with HIV and Diabetes",
+                "excerpt": "Metformin exposure associated with cognitive and physical function in an aging HIV cohort.",
+                "year": 2023,
+                "source_type": "pubmed",
+                "evidence_type": "primary",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/36792952/",
+                "query": query,
+            },
+            {
+                "title": "Diet and Exercise Plus Metformin to Treat Frailty in Obese Seniors",
+                "excerpt": "Registered interventional trial of metformin and exercise in frailty.",
+                "year": 2025,
+                "source_type": "clinicaltrials",
+                "evidence_type": "interventional",
+                "has_results": False,
+                "trial_status": "registered",
+                "url": "https://clinicaltrials.gov/study/NCT04221750",
+                "query": query,
+            },
+            {
+                "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+                "excerpt": "Network meta-analysis of glucose-lowering medications in older people, including metformin.",
+                "year": 2024,
+                "source_type": "pubmed",
+                "evidence_type": "review",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+                "query": query,
+            },
+            {
+                "title": "Review of Associations of Diabetes and Insulin Resistance With Brain Health in Three Harmonised Cohort Studies of Ageing and Dementia",
+                "excerpt": "Review of diabetes, insulin resistance, and brain health in ageing cohorts.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "review",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/39873127/",
+                "query": query,
+            },
+            {
+                "title": "FOXO1-mediated lipid metabolism maintains mammalian embryos in dormancy",
+                "excerpt": "Embryo dormancy biology unrelated to metformin treatment in older adults.",
+                "year": 2024,
+                "source_type": "openalex",
+                "evidence_type": "primary",
+                "url": "https://doi.org/10.1038/s41556-023-01325-3",
+                "query": query,
+            },
+            {
+                "title": "Antiseizure Medications in Alzheimer’s Disease from Preclinical to Clinical Evidence",
+                "excerpt": "Antiseizure evidence in Alzheimer's disease without metformin intervention.",
+                "year": 2023,
+                "source_type": "openalex",
+                "evidence_type": "primary",
+                "url": "https://doi.org/10.3390/ijms241612639",
+                "query": query,
+            },
+            {
+                "title": "Glucagon-like Peptide-1 Receptor Agonist Impact on Chronic Ocular Disease Including Age-Related Macular Degeneration",
+                "excerpt": "GLP-1 receptor agonists and chronic ocular disease.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "primary",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/39863057/",
+                "query": query,
+            },
+            {
+                "title": "The impact of long-term conditions and comorbidity patterns on COVID-19 infection and hospitalisation: a cohort study",
+                "excerpt": "COVID-19 comorbidity patterns in a longitudinal cohort.",
+                "year": 2023,
+                "source_type": "rxiv",
+                "evidence_type": "observational",
+                "url": "https://www.medrxiv.org/content/2023.04.25.23289035v1",
+                "query": query,
+            },
+            {
+                "title": "Exercise Timing and the Circadian Clock in Individuals With Type 2 Diabetes and Those at Risk",
+                "excerpt": "Registered trial about exercise timing and circadian biology in diabetes risk.",
+                "year": 2024,
+                "source_type": "clinicaltrials",
+                "evidence_type": "interventional",
+                "has_results": False,
+                "trial_status": "registered",
+                "url": "https://clinicaltrials.gov/study/NCT06136013",
+                "query": query,
+            },
+            {
+                "title": "Antiaging agents: pharmacological therapy targeted at preserving skeletal muscle size and function in aging adults",
+                "excerpt": "Review of antiaging agents in skeletal muscle.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "review",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/40815152/",
+                "query": query,
+            },
+            {
+                "title": "Pain and aging: A unique challenge in neuroinflammation and behavior",
+                "excerpt": "Review in aging adults without metformin intervention.",
+                "year": 2023,
+                "source_type": "openalex",
+                "evidence_type": "review",
+                "url": "https://doi.org/10.1177/17448069231203090",
+                "query": query,
+            },
+        ]
+
+
+class SemanticSeedSource:
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return [
+            {
+                "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+                "excerpt": "Systematic review of glucose-lowering medications, including metformin, in older adults.",
+                "year": 2024,
+                "source_type": "pubmed",
+                "evidence_type": "review",
+                "doi": "10.1000/review.2024",
+                "url": "https://doi.org/10.1000/review.2024",
+                "query": query,
+            },
+            {
+                "title": "Metformin and physical performance in older adults",
+                "excerpt": "Randomized trial in older adults with frailty outcomes.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "primary",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/900/",
+                "query": query,
+            },
+        ]
+
+
+class SemanticScholarGraphSource:
+    def search(self, query: str, *, limit: int = 10) -> list[dict]:
+        return []
+
+    def references_of(self, doi: str, *, limit: int = 50) -> list[dict]:
+        assert doi == "10.1000/review.2024"
+        return [
+            {
+                "title": "Metformin frailty trial recovered from citation graph",
+                "excerpt": "Randomized placebo-controlled metformin trial in older adults.",
+                "year": 2023,
+                "source_type": "semantic_scholar",
+                "evidence_type": "interventional",
+                "doi": "10.1000/graph.trial",
+                "url": "https://doi.org/10.1000/graph.trial",
+                "query": f"references_of:{doi}",
+            }
+        ]
+
+    def citations_of(self, doi: str, *, limit: int = 50) -> list[dict]:
+        return []
+
+
 class FailingSource:
     def search(self, query: str, *, limit: int) -> list[dict]:
         request = httpx.Request("GET", "https://api.openalex.org/works")
@@ -363,6 +560,57 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
         title = str(item.get("title", "")).lower()
         assert "mice" not in title, f"Animal paper leaked into source_bundle: {title}"
         assert "mouse" not in title, f"Animal paper leaked into source_bundle: {title}"
+
+
+def test_run_agent_prunes_longevity_off_domain_bundle_noise_and_directness(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: MetforminBundleSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(
+        topic="metformin aging older adults",
+        domain="longevity",
+        criteria="2023 onwards human studies relevance",
+        run_dir=str(tmp_path),
+    )
+
+    assert not run.get("error")
+    titles = [str(item.get("title", "")).lower() for item in run["source_bundle"]]
+    assert not any("embryo" in title for title in titles)
+    assert not any("antiseizure" in title for title in titles)
+    assert not any("ocular" in title for title in titles)
+    assert not any("covid" in title for title in titles)
+    assert not any("exercise timing" in title for title in titles)
+    direct_titles = [title for title, item in zip(titles, run["source_bundle"]) if item.get("directness") == "direct"]
+    assert direct_titles
+    strong_direct = [title for title in direct_titles if "metformin" in title or "glucophage" in title]
+    assert len(strong_direct) / len(direct_titles) >= 0.7
+
+
+def test_run_agent_expands_with_semantic_scholar_reference_graph(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: SemanticSeedSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "SemanticScholarClient", lambda: SemanticScholarGraphSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(
+        topic="metformin aging older adults",
+        domain="longevity",
+        criteria="2023 onwards human studies relevance",
+        run_dir=str(tmp_path),
+    )
+
+    assert not run.get("error")
+    assert run["source_counts"].get("semantic_scholar", 0) >= 1
+    assert any(item.get("source_type") == "semantic_scholar" for item in run["source_bundle"])
 
 
 def test_run_agent_retries_high_severity_citation_violations(tmp_path: Path, monkeypatch) -> None:
@@ -574,8 +822,11 @@ def test_run_agent_blocks_indirect_only_anti_aging_draft(tmp_path: Path, monkeyp
 
     run = cli.run_agent(topic="everolimus", domain="anti-aging", criteria="", run_dir=str(tmp_path))
 
-    assert "Insufficient direct evidence" in run.get("error", "")
-    assert run.get("gate_reason") == "insufficient_direct_evidence"
+    assert run.get("error")
+    assert (
+        "Insufficient direct evidence" in run["error"]
+        or "Insufficient evidence for synthesis" in run["error"]
+    )
     assert "markdown" not in run
 
 

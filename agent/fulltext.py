@@ -211,7 +211,7 @@ class FullTextFetcher:
         source_counts: dict[str, int] = {}
         for entry in entries:
             cloned = dict(entry)
-            if attempted < limit and cloned.get("source_type") in {"pubmed", "openalex", "rxiv"}:
+            if attempted < limit and cloned.get("source_type") in {"pubmed", "openalex", "rxiv", "semantic_scholar"}:
                 attempted += 1
                 try:
                     payload = self.fetch(cloned)

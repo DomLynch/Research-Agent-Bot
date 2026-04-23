@@ -132,3 +132,15 @@ def test_fetch_cascades_to_unpaywall_pdf_only(tmp_path: Path) -> None:
 def test_entry_identity_prefers_doi_then_url() -> None:
     assert entry_identity({"doi": "10.1000/test", "url": "https://example.com"}) == "10.1000/test"
     assert entry_identity({"url": "https://example.com"}) == "https://example.com"
+
+
+def test_fetch_full_text_accepts_semantic_scholar_entries(tmp_path: Path) -> None:
+    counter: dict[str, int] = {}
+    fetcher = FullTextFetcher(cache_dir=tmp_path, transport=_transport(counter))
+    entry = {"doi": "10.1000/test", "title": "Test paper", "source_type": "semantic_scholar"}
+
+    enriched, stats = fetcher.enrich_entries([entry], limit=1)
+
+    assert stats["attempted"] == 1
+    assert stats["found"] == 1
+    assert enriched[0]["full_text_source"] == "europepmc"
