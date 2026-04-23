@@ -15,6 +15,14 @@ _ANIMAL = (
     "animal", "animals", "mouse", "mice", "murine", "rat", "rats",
     "c. elegans", "c elegans", "caenorhabditis", "drosophila", "zebrafish",
 )
+_HUMAN_RE = re.compile(
+    r"\b(?:human|humans|patient|patients|adult|adults|clinical|participant|participants|older people|older adults?)\b",
+    re.IGNORECASE,
+)
+_ANIMAL_RE = re.compile(
+    r"\b(?:animal|animals|mouse|mice|murine|rat|rats|c\.?\s*elegans|c elegans|caenorhabditis|drosophila|zebrafish)\b",
+    re.IGNORECASE,
+)
 _TITLE_NON_HUMAN_RE = re.compile(
     r"\b(?:c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|rats|drosophila|zebrafish)\b",
     re.IGNORECASE,
@@ -98,7 +106,7 @@ def _score(item: dict[str, Any], scope: dict[str, Any], topic_tokens: list[str] 
         s += 4
     if scope["human_only"]:
         if not any(t in text for t in ("without human", "no human", "animal-only", "animal only")):
-            if any(t in text for t in _HUMAN) or not any(t in text for t in _ANIMAL):
+            if _HUMAN_RE.search(text) or not _ANIMAL_RE.search(text):
                 s += 3
     if scope["review_only"] and item.get("evidence_type") == "review":
         s += 2
@@ -118,8 +126,8 @@ def _human_ok(item: dict[str, Any]) -> bool:
         return False
     if _TITLE_NON_HUMAN_RE.search(title):
         return False
-    has_human = any(t in text for t in _HUMAN)
-    has_animal = any(t in text for t in _ANIMAL)
+    has_human = bool(_HUMAN_RE.search(text))
+    has_animal = bool(_ANIMAL_RE.search(text))
     if has_animal and not has_human:
         return False
     return has_human or not has_animal

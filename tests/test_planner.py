@@ -74,3 +74,23 @@ def test_human_only_keeps_patient_study() -> None:
             "query": "metformin human studies longevity",
         }
     ) is True
+
+
+def test_human_only_does_not_treat_tolerated_as_rat() -> None:
+    assert _human_ok(
+        {
+            "title": "Metformin and physical performance in older people",
+            "excerpt": "Metformin did not improve 4-m walk speed and was poorly tolerated in this population.",
+            "query": "metformin human studies longevity",
+        }
+    ) is True
+
+
+def test_human_only_recognizes_older_people_as_human_signal() -> None:
+    assert _human_ok(
+        {
+            "title": "Metformin in older people with frailty",
+            "excerpt": "Randomised placebo-controlled trial in older people with probable sarcopenia.",
+            "query": "metformin human studies longevity",
+        }
+    ) is True
