@@ -148,6 +148,28 @@ def _count_by(entries: list[dict[str, Any]], key: str) -> dict[str, int]:
     return counts
 
 
+def _high_severity_violations(violations: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [violation for violation in violations if violation.get("severity") == "high"]
+
+
+def _citation_revision_feedback(violations: list[dict[str, Any]]) -> str:
+    lines = [
+        "Rewrite every cited sentence so the language matches the cited source role.",
+        "Published results and meta-analyses must use past-tense reported/evaluated language.",
+        "Registered or protocol studies must stay design-only and must not claim outcomes.",
+    ]
+    for violation in violations[:5]:
+        ref = violation.get("citation")
+        role = violation.get("role", "unknown")
+        issue = violation.get("issue", "unknown")
+        phrase = violation.get("phrase")
+        detail = f"[{ref}] role={role} issue={issue}"
+        if phrase:
+            detail += f" phrase='{phrase}'"
+        lines.append(detail)
+    return "\n".join(lines)
+
+
 def _exclusion_reasons(scope_signals: list[str], run_log: dict[str, Any]) -> str:
     reasons: list[str] = []
     scope_map = {
@@ -382,7 +404,8 @@ def run_agent(
         run_log["run_log"] = str(_write_json(Path(run_dir), run_log))
         return run_log
     try:
-        artifact, raw_output = RapidEvidenceDrafter(provider=MimoClient.from_env()).draft(
+        drafter = RapidEvidenceDrafter(provider=MimoClient.from_env())
+        artifact, raw_output = drafter.draft(
             topic=resolved_topic,
             domain_slug=domain,
             criteria=criteria,
@@ -395,6 +418,31 @@ def run_agent(
             run_dir_p.mkdir(parents=True, exist_ok=True)
             stem = _run_stem(started_at, topic)
             (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
+        citation_violations = validate_citations(artifact, artifact.get("source_bundle", []))
+        high_severity = _high_severity_violations(citation_violations)
+        if high_severity and not artifact.get("error"):
+            artifact, retry_raw = drafter.draft(
+                topic=resolved_topic,
+                domain_slug=domain,
+                criteria=criteria,
+                queries=queries,
+                evidence=evidence,
+                all_evidence=all_evidence,
+                revision_feedback=_citation_revision_feedback(high_severity),
+            )
+            run_log["citation_retry_count"] = 1
+            if retry_raw:
+                run_dir_p = Path(run_dir)
+                run_dir_p.mkdir(parents=True, exist_ok=True)
+                stem = _run_stem(started_at, topic)
+                (run_dir_p / f"{stem}.retry.raw.json").write_text(json.dumps(retry_raw, indent=2), encoding="utf-8")
+            citation_violations = validate_citations(artifact, artifact.get("source_bundle", []))
+            high_severity = _high_severity_violations(citation_violations)
+            if high_severity and not artifact.get("error"):
+                artifact["error"] = "High-severity citation-role violations remained after one revision pass."
+                artifact["gate_reason"] = "citation_role_violation"
+        else:
+            run_log["citation_retry_count"] = 0
         run_log["bundle_stages"]["final_bundle"] = len(artifact.get("source_bundle", []))
         run_log["bundle_stages"]["excluded_after_filter"] = max(
             0, run_log["bundle_stages"].get("after_domain_filter", 0) - run_log["bundle_stages"]["final_bundle"]
@@ -410,11 +458,8 @@ def run_agent(
         ):
             artifact["error"] = f"Insufficient direct evidence for '{resolved_topic}' in the {domain} domain."
             artifact["gate_reason"] = "insufficient_direct_evidence"
-        citation_violations = validate_citations(artifact, artifact.get("source_bundle", []))
         artifact["citation_violations"] = citation_violations
-        artifact["high_severity_citation_count"] = sum(
-            1 for violation in citation_violations if violation.get("severity") == "high"
-        )
+        artifact["high_severity_citation_count"] = len(high_severity)
         run_log.update(artifact)
         run_log["source_telemetry"] = {
             "retrieved": source_counts,

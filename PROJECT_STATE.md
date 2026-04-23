@@ -32,12 +32,12 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Topic/entity resolution is now ChEMBL-first plus alias/fuzzy fallback. It still needs richer biomedical vocabularies before Tier 1 full-text work.
 - Tier 1 full-text coverage is Europe PMC-only and DOI/PMID-driven. Closed-access PDFs, figures/tables, and non-PMC papers still fall back to abstract-only behavior.
 - Tier 2 full-text coverage now cascades Europe PMC -> Unpaywall -> CORE, but only Europe PMC and Unpaywall are exercised locally today. CORE is env-gated on `CORE_API_KEY`, and PDF-only Unpaywall hits still need GROBID or another parser before they help extraction.
-- Tier 1.5 extraction is cached and real, but numeric validation is not yet a hard gate. The model now sees extracted facts from a subset of papers; it is still possible to draft unsupported numbers until a validator pass lands.
+- Tier 1.5 extraction is cached and real, but quantitative fidelity is still uneven. Unsupported numbers are now scrubbed and high-severity citation-role violations trigger one revision pass plus fail-closed behavior, but medium-severity numeric misses still need a richer rewrite loop.
 - ClinicalTrials.gov registry records are now split into `trial_registered` versus `trial_results`, and posted registry results can supply structured effects without an LLM extraction call. Registry-only studies are design-only in the prompt and get scrubbed if the drafter tries to state outcomes.
-- Citation-role validation is now advisory and logged in `citation_violations`; it is not yet a hard gate, and the live gold-fixture rerun is still blocked in this shell because `MIMO_API_KEY` is unset.
+- Citation-role validation is now logged in `citation_violations`, and high-severity violations trigger one revision pass before the run fails closed. Medium-severity issues remain advisory.
 
 ## Next Validation Step
-Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/generate_fixtures.py --all`, and rerun the Karpathy-loop diff to measure the real Tier 2 delta on citation-role violations and quantitative fidelity.
+Re-run `metformin aging older adults` and `glp1_cv_mace` on the live site and confirm no published-results paper is described with registry-style language (`is investigating`, `ongoing RCT`, `will examine`) while any surviving medium-severity citation violations stay visible in the run log.
 
 ## Hardening Status
 | Step | What | Status |
@@ -72,6 +72,7 @@ Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/g
 - **Tier 2 citation-role discipline:** every bundle entry now gets a `role` (`published_results`, `registered_pending`, `published_protocol`, `animal_model`, `off_domain_indirect`, etc.), the drafter prompt is grouped by role with explicit language rules, and post-draft citation validation logs forbidden-role language, missing hedges, and missing numerics.
 - **Tier 2 multi-source full-text:** full-text enrichment now cascades Europe PMC -> Unpaywall -> CORE, tracking `found_any`, `parseable_text_count`, and per-source hit counts so OA coverage gains are visible even when only PDF URLs are available.
 - **Tier 2 benchmarked:** live MiMo fixture regeneration now ran end-to-end on all 15 gold topics. Honest Karpathy delta versus the clean pre-run fixture set: `composite +0.0256`, `quant +0.0444`, `limitations +0.0889`, `direction -0.0333`, `study_overlap +0.0000`. See `docs/tier2-validator-audit.md`.
+- **Tier 2 judge veto:** published-results/design-language drift is now repaired before validation, and any remaining high-severity citation-role violations trigger one revision pass before the run fails closed instead of shipping known-bad prose.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
@@ -84,7 +85,7 @@ Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/g
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 403 passed, 6 skipped, 5 xfailed
+- MacBook: 407 passed, 6 skipped, 5 xfailed
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

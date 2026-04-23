@@ -401,3 +401,44 @@ The final hardening moves fix the actual failure modes, not the score display.
 - chase broader PDF parsing before fixing excerpt/numeric grounding — rejected; the benchmark showed the immediate leverage was in what the drafter says from the evidence already in hand.
 
 **Revisit if:** `glp1_cv_mace`, `creatine_cognition`, or `senolytics` remain regressed after adding a validator-driven rewrite loop for medium-severity `missing_numeric` findings.
+
+---
+
+## 2026-04-23 — High-severity citation-role violations now get a judge veto
+**Decision:** Stop shipping drafts that still contain high-severity citation-role violations after validation. The judge now gets one revision pass to fix them, then the run fails closed if they survive.
+
+**Why:** A live `metformin aging older adults` run still described a published 2025 Lancet Healthy Longevity RCT as `is investigating` and `ongoing RCT`. Tier 2 had shipped the classifier and validator, but the validator was advisory only, so known-bad role language still reached the markdown.
+
+**What shipped:**
+- `agent/citation_roles.py`
+  - `published_results` now also forbids `ongoing rct` and `ongoing trial`
+- `agent/drafter.py`
+  - added deterministic repair for published-results/meta-analysis design language (`is investigating`, `is evaluating`, `will examine`, `plans to assess`, `ongoing RCT/trial`)
+  - added optional `revision_feedback` prompt hook
+  - draft artifacts now expose `citation_violations` and `high_severity_citation_count` directly
+- `agent/cli.py`
+  - added one retry loop driven by high-severity citation-role violations
+  - if violations survive the retry, the run now returns `gate_reason = citation_role_violation` and does not write markdown
+- tests
+  - new drafter regression covering the published-results `is investigating` / `ongoing RCT` failure class
+  - new cli tests proving retry-on-high-severity and fail-closed behavior
+  - validator test for `ongoing RCT` language on published results
+
+**Judge result:**
+- focused suites: `46 passed`
+- full suite: `407 passed, 6 skipped, 5 xfailed`
+- `ruff` clean
+- live MiMo smoke on the exact topic:
+  - no error
+  - `citation_retry_count = 0`
+  - `high_severity_citation_count = 0`
+  - published results are now described with past-tense `evaluated` / `reported` language rather than registry verbs
+
+**Tradeoff accepted:** The retry loop is only for high-severity violations. Medium-severity issues such as `missing_numeric` remain advisory so the system does not collapse into excessive rewrites on every topic.
+
+**Alternatives rejected:**
+- keep the validator advisory-only — rejected; this was the direct cause of shipping known-bad prose
+- rely on prompt wording alone — rejected; the exact bug survived prompt-level role instructions
+- hard-block every medium violation — rejected; too many current runs still need a softer judge there
+
+**Revisit if:** medium-severity `missing_numeric` remains the dominant citation problem after more Tier 2 reruns; that is the point to add a second rewrite loop or stricter numeric gating.

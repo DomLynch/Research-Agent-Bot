@@ -30,6 +30,53 @@ class FakeProvider:
         return (data, {"choices": [{"message": {"content": "raw"}}], "usage": {}})
 
 
+class RetryingViolationProvider:
+    prompt_version = "test-prompt/v1"
+    model = "MiniMax-M2.7-highspeed"
+
+    def __init__(self) -> None:
+        self.calls = 0
+
+    def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
+        self.calls += 1
+        if self.calls == 1:
+            data = {
+                "question": "What are the effects of metformin on healthy aging outcomes in older adults, compared with placebo, and what does the retained evidence imply for efficacy, safety, and uncertainty over at least six months of follow-up?",
+                "search_summary": "The evidence included a published trial and a review.",
+                "landscape": "The bundle mixes direct evidence and contextual synthesis.",
+                "findings": "The review randomized participants across aging studies [2].",
+                "limitations": "Cross-species translation remains limited.",
+                "gaps_identified": "More human RCTs are needed.",
+                "conclusion": "The evidence remains mixed.",
+            }
+            return (data, {"choices": [{"message": {"content": "raw1"}}], "usage": {}})
+        data = {
+            "question": "What are the effects of metformin on healthy aging outcomes in older adults, compared with placebo, and what does the retained evidence imply for efficacy, safety, and uncertainty over at least six months of follow-up?",
+            "search_summary": "The evidence included a published trial and a review.",
+            "landscape": "The bundle mixes direct evidence and contextual synthesis.",
+            "findings": "The review provided contextual synthesis across aging studies [2].",
+            "limitations": "Cross-species translation remains limited.",
+            "gaps_identified": "More human RCTs are needed.",
+            "conclusion": "The evidence remains mixed.",
+        }
+        return (data, {"choices": [{"message": {"content": "raw2"}}], "usage": {}})
+
+
+class AlwaysBadViolationProvider(RetryingViolationProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
+        self.calls += 1
+        data = {
+            "question": "What are the effects of metformin on healthy aging outcomes in older adults, compared with placebo, and what does the retained evidence imply for efficacy, safety, and uncertainty over at least six months of follow-up?",
+            "search_summary": "The evidence included a published trial and a review.",
+            "landscape": "The bundle mixes direct evidence and contextual synthesis.",
+            "findings": "The review randomized participants across aging studies [2].",
+            "limitations": "Cross-species translation remains limited.",
+            "gaps_identified": "More human RCTs are needed.",
+            "conclusion": "The evidence remains mixed.",
+        }
+        return (data, {"choices": [{"message": {"content": "raw-bad"}}], "usage": {}})
+
+
 class GoodSource:
     """Returns enough entries to pass the 12-entry source gate (RESEARKA_URL on VPS)."""
 
@@ -75,6 +122,54 @@ class MixedSource:
             "query": query,
         })
         return base
+
+
+class PublishedAndAnimalSource:
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return [
+            {
+                "title": "Metformin and frailty in older adults: randomized trial",
+                "excerpt": "Older adults completed a randomized placebo-controlled trial with frailty outcomes.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "primary",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/301/",
+                "query": query,
+            },
+            {
+                "title": "Metformin improves frailty in MitoPark mice",
+                "excerpt": "Animal-model evidence in mice reported preclinical improvement.",
+                "year": 2024,
+                "source_type": "pubmed",
+                "evidence_type": "primary",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/302/",
+                "query": query,
+            },
+        ]
+
+
+class PublishedAndReviewSource:
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return [
+            {
+                "title": "Metformin and frailty in older adults: randomized trial",
+                "excerpt": "Older adults completed a randomized placebo-controlled trial with frailty outcomes.",
+                "year": 2025,
+                "source_type": "pubmed",
+                "evidence_type": "primary",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/311/",
+                "query": query,
+            },
+            {
+                "title": "Metformin therapy in aging adults: narrative review",
+                "excerpt": "Review article describing healthy aging context without new participant randomization.",
+                "year": 2024,
+                "source_type": "pubmed",
+                "evidence_type": "review",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/312/",
+                "query": query,
+            },
+        ]
 
 
 class FailingSource:
@@ -268,6 +363,56 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
         title = str(item.get("title", "")).lower()
         assert "mice" not in title, f"Animal paper leaked into source_bundle: {title}"
         assert "mouse" not in title, f"Animal paper leaked into source_bundle: {title}"
+
+
+def test_run_agent_retries_high_severity_citation_violations(tmp_path: Path, monkeypatch) -> None:
+    provider = RetryingViolationProvider()
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: PublishedAndReviewSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: provider))
+
+    run = cli.run_agent(
+        topic="metformin aging older adults",
+        domain="longevity",
+        criteria="",
+        run_dir=str(tmp_path),
+    )
+
+    assert not run.get("error")
+    assert provider.calls == 2
+    assert run["citation_retry_count"] == 1
+    assert run["high_severity_citation_count"] == 0
+    assert "randomized participants across aging studies [2]" not in run["sections"]["Key Findings"].lower()
+    assert "provided contextual synthesis across aging studies [2]." in run["sections"]["Key Findings"].lower()
+
+
+def test_run_agent_fails_closed_when_high_severity_citation_violations_survive_retry(tmp_path: Path, monkeypatch) -> None:
+    provider = AlwaysBadViolationProvider()
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: PublishedAndReviewSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: provider))
+
+    run = cli.run_agent(
+        topic="metformin aging older adults",
+        domain="longevity",
+        criteria="",
+        run_dir=str(tmp_path),
+    )
+
+    assert "High-severity citation-role violations remained" in run.get("error", "")
+    assert run.get("gate_reason") == "citation_role_violation"
+    assert provider.calls == 2
+    assert run["citation_retry_count"] == 1
+    assert run["high_severity_citation_count"] >= 1
+    assert "markdown" not in run
 
 
 def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monkeypatch) -> None:

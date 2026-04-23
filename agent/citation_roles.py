@@ -19,7 +19,7 @@ CitationRole = Literal[
 
 ROLE_LANGUAGE_RULES: dict[CitationRole, dict[str, Any]] = {
     "published_results": {
-        "forbidden": ["is investigating", "will examine", "plans to assess", "is evaluating"],
+        "forbidden": ["is investigating", "will examine", "plans to assess", "is evaluating", "ongoing rct", "ongoing trial"],
         "requires_numeric": True,
     },
     "meta_analysis": {

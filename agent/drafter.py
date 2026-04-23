@@ -9,6 +9,7 @@ from agent.citation_roles import (
     role_section_title,
     role_sort_priority,
 )
+from agent.validator import validate_citations
 
 import os
 import re
@@ -75,6 +76,13 @@ _NUMERIC_SENTENCE_RE = re.compile(
     r"p\s*[<=>]|n\s*=|\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?\s*(?:months?|years?|weeks?|days?|kg|mg|mmhg))",
     re.IGNORECASE,
 )
+_CITATION_TOKEN_RE = re.compile(r"\[(\d+)\]")
+_PUBLISHED_RESULT_REPAIRS = {
+    "is investigating": "evaluated",
+    "is evaluating": "evaluated",
+    "will examine": "evaluated",
+    "plans to assess": "evaluated",
+}
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -259,6 +267,31 @@ def _sanitize_registry_claims(text: str, blocked_refs: list[int]) -> str:
     return " ".join(part for part in kept if part).strip()
 
 
+def _sanitize_published_result_language(text: str, source_bundle: list[dict[str, Any]]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    kept: list[str] = []
+    for sentence in sentences:
+        refs = [int(match.group(1)) for match in _CITATION_TOKEN_RE.finditer(sentence)]
+        if not refs:
+            kept.append(sentence)
+            continue
+        roles = {
+            str(source_bundle[ref - 1].get("role") or "unknown")
+            for ref in refs
+            if 1 <= ref <= len(source_bundle)
+        }
+        patched = sentence
+        if roles & {"published_results", "meta_analysis"}:
+            for phrase, replacement in _PUBLISHED_RESULT_REPAIRS.items():
+                patched = re.sub(re.escape(phrase), replacement, patched, flags=re.IGNORECASE)
+            patched = re.sub(r"\bongoing (RCT|trial)\b", lambda m: f"published {m.group(1)}", patched, flags=re.IGNORECASE)
+        kept.append(patched)
+    return " ".join(part for part in kept if part).strip()
+
+
 def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
     effects = ((entry.get("extraction") or {}).get("effects") or [])
     if not effects:
@@ -313,7 +346,17 @@ class RapidEvidenceDrafter:
     def __init__(self, *, provider: Any) -> None:
         self.provider = provider
 
-    def draft(self, *, topic: str, domain_slug: str, criteria: str, queries: list[str], evidence: list[dict[str, Any]], all_evidence: list[dict[str, Any]] | None = None) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    def draft(
+        self,
+        *,
+        topic: str,
+        domain_slug: str,
+        criteria: str,
+        queries: list[str],
+        evidence: list[dict[str, Any]],
+        all_evidence: list[dict[str, Any]] | None = None,
+        revision_feedback: str = "",
+    ) -> tuple[dict[str, Any], dict[str, Any] | None]:
         topic_tokens = [t for t in _clean(topic).lower().split() if t not in _STOPWORDS]
         expanded = list(topic_tokens)
         for tok in topic_tokens:
@@ -393,6 +436,8 @@ class RapidEvidenceDrafter:
         )
         if has_effect_data:
             system_prompt += " In Key Findings, when Published findings include effect data, cite at least one numeric value from that effect data."
+        if revision_feedback:
+            system_prompt += " A previous draft had citation-role violations. You must correct every cited sentence to match the cited source role before returning JSON."
         grouped_lines: dict[str, list[str]] = {role: [] for role in ROLE_ORDER}
         for i, e in enumerate(prompt_entries, start=1):
             card = e["card"]
@@ -438,9 +483,19 @@ class RapidEvidenceDrafter:
                 continue
             evidence_blocks.append(role_section_title(role))
             evidence_blocks.extend(lines)
+        user_prompt = (
+            f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\n"
+            "CRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: "
+            "'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, "
+            "as evaluated in randomized controlled trials with an intervention duration of at least 6 months, "
+            "and what is the evidence for safety and efficacy?'\n\nEvidence:\n"
+            + ("\n".join(evidence_blocks) or "No evidence receipts retained.")
+        )
+        if revision_feedback:
+            user_prompt += f"\n\nREVISION FEEDBACK:\n{_clean(revision_feedback, limit=1200)}"
         result, raw_payload = self.provider.complete_json(
             system_prompt=system_prompt,
-            user_prompt=f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\nQueries: {' | '.join(queries)}\n\nCRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: 'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, as evaluated in randomized controlled trials with an intervention duration of at least 6 months, and what is the evidence for safety and efficacy?'\n\nEvidence:\n" + "\n".join(evidence_blocks) or "No evidence receipts retained.",
+            user_prompt=user_prompt,
         )
         result = {str(k).lower(): v for k, v in result.items()}
         fb_ctx = {
@@ -460,6 +515,10 @@ class RapidEvidenceDrafter:
             if picked == fallback:
                 fallback_count += 1
             sections[heading] = picked
+
+        for heading in ("Search Summary", "Evidence Landscape", "Key Findings", "Limitations", "Conclusion"):
+            if heading in sections:
+                sections[heading] = _sanitize_published_result_language(sections[heading], source_bundle)
 
         for heading in ("Evidence Landscape", "Key Findings", "Conclusion"):
             if heading in sections:
@@ -518,4 +577,8 @@ class RapidEvidenceDrafter:
             "estimated_cost_usd": float(result.get("estimated_cost_usd", 0.0) or 0.0),
             "model": result.get("model", getattr(self.provider, "model", "unknown")),
         }
+        artifact["citation_violations"] = validate_citations(artifact, source_bundle)
+        artifact["high_severity_citation_count"] = sum(
+            1 for violation in artifact["citation_violations"] if violation.get("severity") == "high"
+        )
         return (artifact, raw_payload)

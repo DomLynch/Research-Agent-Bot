@@ -1,6 +1,7 @@
 from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
+from agent.validator import validate_citations
 
 
 class CaptureProvider:
@@ -59,6 +60,24 @@ class UnsupportedNumericProvider(CaptureProvider):
                 "limitations": "The evidence remains limited.",
                 "gaps_identified": "Long-term outcomes remain uncertain.",
                 "conclusion": "Semaglutide reduced weight by -15.8% versus -3.0% placebo [1].",
+            },
+            {},
+        )
+
+
+class BadPublishedResultsProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of metformin on sarcopenia, frailty, and related healthspan outcomes in older adults, compared with placebo, and how should recent randomized evidence be interpreted for efficacy, safety, and remaining uncertainty in longevity research?",
+                "search_summary": "Recent randomized evidence and reviews were examined.",
+                "landscape": "A 2025 RCT is investigating physical performance outcomes [1].",
+                "findings": "A 2025 RCT is investigating effects on sarcopenia and frailty [1].",
+                "limitations": "Many studies, including the ongoing RCT on sarcopenia [1], remain difficult to compare directly.",
+                "gaps_identified": "More long-duration trials are needed.",
+                "conclusion": "The 2025 RCT is evaluating aging outcomes [1].",
             },
             {},
         )
@@ -218,6 +237,41 @@ def test_drafter_sanitizes_registry_only_outcome_claims_and_adds_numeric_fallbac
     assert "Registered studies [2] describe study design only" in findings
     assert "MEAN -0.1 vs 0.0" in findings
     assert "p=0.04" in findings
+
+
+def test_drafter_repairs_design_language_on_published_results() -> None:
+    provider = BadPublishedResultsProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin and physical performance in older people with probable sarcopenia and frailty",
+        "excerpt": "Randomized placebo-controlled trial in older adults with frailty outcomes.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+    }
+    meta = {
+        "title": "Evaluation of glucose-lowering medications in older people: meta-analysis",
+        "excerpt": "Meta-analysis in older adults with aging outcomes.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, meta],
+        all_evidence=[published, meta],
+    )
+    assert not artifact.get("error")
+    assert "is investigating" not in artifact["sections"]["Key Findings"].lower()
+    assert "ongoing rct" not in artifact["sections"]["Limitations"].lower()
+    assert "is evaluating" not in artifact["sections"]["Conclusion"].lower()
+    assert "evaluated" in artifact["sections"]["Key Findings"].lower()
+    assert not any(v["severity"] == "high" for v in validate_citations(artifact, artifact["source_bundle"]))
 
 
 def test_bundle_entry_appends_effect_source_span_to_excerpt():

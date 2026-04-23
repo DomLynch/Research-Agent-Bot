@@ -13,6 +13,12 @@ def test_validator_flags_published_results_with_registry_language() -> None:
     assert any(v["severity"] == "high" and v["issue"] == "forbidden_phrase" for v in violations)
 
 
+def test_validator_flags_published_results_with_ongoing_trial_language() -> None:
+    draft = {"sections": {"Limitations": "The ongoing RCT remains under follow-up [1]."}}
+    violations = validate_citations(draft, _bundle("published_results"))
+    assert any(v["severity"] == "high" and v["issue"] == "forbidden_phrase" for v in violations)
+
+
 def test_validator_flags_registered_pending_with_outcome_claim() -> None:
     draft = {"sections": {"Key Findings": "The registered study found frailty benefits [1]."}}
     violations = validate_citations(draft, _bundle("registered_pending"))
