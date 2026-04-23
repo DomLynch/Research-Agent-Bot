@@ -419,7 +419,12 @@ def _has_quantitative_content(text: str) -> bool:
 
 
 def _strip_citations(text: str, *, limit: int = 1200) -> str:
-    return _clean(re.sub(r"\[\d+\]", "", text), limit=limit)
+    cleaned = re.sub(r"\[\d+\]", "", text)
+    cleaned = re.sub(r"\(\s*[;,]?\s*\)", "", cleaned)
+    cleaned = re.sub(r"\bin\s*[,)]", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+,", ",", cleaned)
+    cleaned = re.sub(r"\s+\)", ")", cleaned)
+    return _clean(cleaned, limit=limit)
 
 
 def _leading_sentences(text: str, count: int = 2, *, limit: int = 700) -> str:
@@ -460,8 +465,10 @@ def _keep_bundle_entry(entry: dict[str, Any], topic_tokens: list[str], domain_sl
             return False
         if role == "meta_analysis":
             return mentions_metformin or any(bit in title for bit in _METFORMIN_ALLOWED_INDIRECT_TITLE_BITS)
-        if role in {"review", "observational", "published_protocol", "registered_pending", "unknown"}:
+        if role in {"review", "observational", "registered_pending", "unknown"}:
             return mentions_metformin
+        if role == "published_protocol":
+            return False
     return True
 
 
