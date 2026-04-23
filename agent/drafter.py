@@ -110,6 +110,10 @@ _METFORMIN_DROP_TITLE_BITS = (
     "parkinson",
     "hiv",
 )
+_STRUCTURED_RESULT_LABEL_RE = re.compile(
+    r"\b(FINDINGS|RESULTS|INTERPRETATION|CONCLUSIONS?)\s*:\s*",
+    re.IGNORECASE,
+)
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -119,15 +123,35 @@ def _clean(value: Any, limit: int = 2000) -> str:
 
 
 def _bundle_excerpt(item: dict[str, Any]) -> str:
-    raw = _clean(item.get("excerpt"), limit=1800)
+    raw = _clean(item.get("excerpt"), limit=5000)
     if not raw:
         return ""
+    structured_parts = _STRUCTURED_RESULT_LABEL_RE.split(raw)
+    priority_sentences: list[str] = []
+    if len(structured_parts) > 1:
+        for i in range(1, len(structured_parts), 2):
+            label = structured_parts[i].upper()
+            text = structured_parts[i + 1] if i + 1 < len(structured_parts) else ""
+            if label not in {"FINDINGS", "RESULTS", "INTERPRETATION", "CONCLUSION", "CONCLUSIONS"}:
+                continue
+            priority_sentences.extend(
+                [part.strip() for part in re.split(r"(?<=[.!?])\s+", text) if part.strip()]
+            )
     sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", raw) if part.strip()]
     picked: list[str] = []
     length = 0
+    for sentence in priority_sentences:
+        if length >= 260:
+            break
+        if sentence in picked:
+            continue
+        picked.append(sentence)
+        length += len(sentence) + 1
     for sentence in sentences:
         if length >= 220:
             break
+        if sentence in picked:
+            continue
         picked.append(sentence)
         length += len(sentence) + 1
     for sentence in sentences:

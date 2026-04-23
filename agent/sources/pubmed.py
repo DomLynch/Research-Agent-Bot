@@ -18,6 +18,17 @@ def _clean_text(value: Any, *, limit: int = 1600) -> str:
     return " ".join(text.split()).strip()[:limit]
 
 
+def _abstract_text(article: et.Element) -> str:
+    parts: list[str] = []
+    for node in article.findall(".//Abstract/AbstractText"):
+        label = _clean_text(node.attrib.get("Label"), limit=40)
+        text = _clean_text("".join(node.itertext()), limit=4000)
+        if not text:
+            continue
+        parts.append(f"{label}: {text}" if label else text)
+    return _clean_text(" ".join(parts), limit=5000)
+
+
 def _infer_evidence_type(title: str, abstract: str) -> str:
     haystack = f"{title} {abstract}".lower()
     review_tokens = ("systematic review", "meta-analysis", "umbrella review", "narrative review", "review")
@@ -58,7 +69,7 @@ class PubMedClient:
         for article in root.findall(".//PubmedArticle"):
             pmid = _clean_text(article.findtext(".//PMID"))
             title = _clean_text("".join(article.find(".//ArticleTitle").itertext()) if article.find(".//ArticleTitle") is not None else "")
-            abstract = _clean_text(" ".join("".join(node.itertext()) for node in article.findall(".//Abstract/AbstractText")))
+            abstract = _abstract_text(article)
             if not pmid or not title or not abstract:
                 continue
             doi = None

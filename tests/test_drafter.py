@@ -581,3 +581,48 @@ def test_drafter_replaces_broken_vs_mashup_with_grounded_result_sentence() -> No
     findings = artifact["sections"]["Key Findings"]
     assert "vs. [1]" not in findings
     assert "Published results [1] report Frailty Index Based on Deficit Accumulation" in findings
+
+
+def test_drafter_grounds_from_structured_pubmed_results_excerpt() -> None:
+    provider = CaptureProvider()
+    provider.response = {
+        "question": "What are the effects of metformin on healthspan outcomes in older adults, compared to placebo, and what does recent direct trial evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+        "search_summary": "Recent direct trials were reviewed.",
+        "landscape": "The evidence includes direct trials.",
+        "findings": "A 2025 trial in prefrail older adults found no benefit on physical performance [1].",
+        "limitations": "The evidence base remains small and underpowered.",
+        "gaps_identified": "Long-duration trials remain sparse.",
+        "conclusion": "Metformin remains inconclusive for broad healthspan benefit [1].",
+    }
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin and physical performance in older people (MET-PREVENT)",
+        "excerpt": (
+            "BACKGROUND: Background sentence. METHODS: Methods sentence. "
+            "FINDINGS: Mean 4-m walk speed at 4 months was 0.57 m/s in metformin versus 0.58 m/s in placebo "
+            "(adjusted treatment effect 0.001 m/s [95% CI -0.06 to 0.06]; p=0.96). "
+            "INTERPRETATION: Metformin did not improve 4-m walk speed."
+        ),
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+    }
+    meta = {
+        "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+        "excerpt": "Broad comparative review in older adults.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, meta],
+        all_evidence=[published, meta],
+    )
+    findings = artifact["sections"]["Key Findings"]
+    assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in findings
