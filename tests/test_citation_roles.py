@@ -60,6 +60,16 @@ def test_animal_title_is_animal_model() -> None:
     assert role == "animal_model"
 
 
+def test_insect_model_title_is_animal_model() -> None:
+    entry = {
+        "title": "Galleria mellonella pathogen infection models",
+        "excerpt": "Insect infection model unrelated to senolytic therapy in older adults.",
+        "evidence_type": "review",
+    }
+    role = classify_citation_role(entry, _card(entry), "longevity", ["senolytic", "dasatinib", "quercetin"])
+    assert role == "animal_model"
+
+
 def test_meta_analysis_is_meta_analysis_role() -> None:
     entry = {
         "title": "Metformin for aging: a meta-analysis",

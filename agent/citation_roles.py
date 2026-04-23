@@ -46,7 +46,7 @@ ROLE_LANGUAGE_RULES: dict[CitationRole, dict[str, Any]] = {
     "animal_model": {
         "forbidden": ["patients", "older adults", "participants"],
         "requires_numeric": False,
-        "requires_hedge": r"\b(animal models?|mouse|mice|murine|rat|zebrafish|drosophila|preclinical)\b",
+        "requires_hedge": r"\b(animal models?|mouse|mice|murine|rat|zebrafish|drosophila|preclinical|galleria mellonella|insect (?:infection )?models?)\b",
     },
     "off_domain_indirect": {
         "forbidden": [],
@@ -93,7 +93,7 @@ _PROTOCOL_RE = re.compile(
 )
 _META_ANALYSIS_RE = re.compile(r"\b(meta-analysis|network meta-analysis|systematic review)\b", re.IGNORECASE)
 _ANIMAL_RE = re.compile(
-    r"\b(c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|zebrafish|drosophila|animal model|mice\b|rats\b|mice\W|mice$|mitopark)\b",
+    r"\b(c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|zebrafish|drosophila|animal model|galleria mellonella|insect (?:infection )?models?|mice\b|rats\b|mice\W|mice$|mitopark)\b",
     re.IGNORECASE,
 )
 _IN_VITRO_RE = re.compile(

@@ -282,7 +282,6 @@ def _longevity_support_signal(entry: dict[str, Any]) -> bool:
             entry.get("excerpt"),
             card.get("population"),
             card.get("outcomes"),
-            card.get("context"),
         )
     )
     return bool(_LONGEVITY_SUPPORT_RE.search(blob) or _aging_outcome_signal(blob))
