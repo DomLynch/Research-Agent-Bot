@@ -149,6 +149,11 @@ _POPULATION_SIGNAL_RE = re.compile(
     r"(?:older adults?|older people|aging adults?|healthy adults?|human|clinical|participants?|patients?)",
     re.IGNORECASE,
 )
+_LONGEVITY_SUPPORT_RE = re.compile(
+    r"(?:older adults?|older people|elderly|geriatric|frailty|prefrailty|sarcopenia|"
+    r"healthspan|aging|ageing|cognitive|brain aging|physical performance|gait|mobility)",
+    re.IGNORECASE,
+)
 
 _SYNONYM_CANONICALS = {
     alias: canonical
@@ -266,6 +271,21 @@ def _disease_context_signal(item: dict[str, Any], card: dict[str, Any]) -> bool:
         )
     )
     return bool(_DISEASE_CONTEXT_RE.search(blob))
+
+
+def _longevity_support_signal(entry: dict[str, Any]) -> bool:
+    card = entry.get("card") or {}
+    blob = " ".join(
+        str(v or "")
+        for v in (
+            entry.get("title"),
+            entry.get("excerpt"),
+            card.get("population"),
+            card.get("outcomes"),
+            card.get("context"),
+        )
+    )
+    return bool(_LONGEVITY_SUPPORT_RE.search(blob) or _aging_outcome_signal(blob))
 
 
 def _core_topic_tokens(topic_tokens: list[str]) -> list[str]:
@@ -1297,6 +1317,10 @@ def _select_source_bundle(bundle_candidates: list[dict[str, Any]], *, domain_slu
     ]
     if (domain_slug or "").lower() not in {"longevity", "anti-aging", "anti aging"}:
         return candidates[:RESEARKA_MIN_SOURCES]
+    candidates = [
+        entry for entry in candidates
+        if str(entry.get("evidence_tier") or "") in {_TIER_A2, _TIER_C} or _longevity_support_signal(entry)
+    ]
     targets = (
         (_TIER_A1, 4),
         (_TIER_A2, 3),

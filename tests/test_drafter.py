@@ -824,7 +824,7 @@ def test_drafter_drops_remap_and_collapses_med_pmc_duplicate_records() -> None:
         },
         {
             "title": "REMAP Trial for Optimizing Surgical Outcomes at UPMC",
-            "excerpt": "A surgical outcomes trial in adults at UPMC without metformin intervention.",
+            "excerpt": "Elective-surgery outcomes trial in adult patients with metformin short-course intervention arms and hospital free days at day 90.",
             "evidence_type": "interventional",
             "source_type": "clinicaltrials",
             "has_results": True,
