@@ -585,10 +585,18 @@ def test_run_agent_prunes_longevity_off_domain_bundle_noise_and_directness(tmp_p
     assert not any("ocular" in title for title in titles)
     assert not any("covid" in title for title in titles)
     assert not any("exercise timing" in title for title in titles)
+    assert not any("amyloid pathology" in title for title in titles)
+    assert not any("cerebral microbleeds" in title for title in titles)
+    assert not any("antiaging agents" in title for title in titles)
+    assert not any("pain and aging" in title for title in titles)
+    assert not any("incretin" in title for title in titles)
+    assert not any("glp-1" in title for title in titles)
+    assert not any("glioblastoma" in title for title in titles)
     direct_titles = [title for title, item in zip(titles, run["source_bundle"]) if item.get("directness") == "direct"]
     assert direct_titles
     strong_direct = [title for title in direct_titles if "metformin" in title or "glucophage" in title]
     assert len(strong_direct) / len(direct_titles) >= 0.7
+    assert len(run["source_bundle"]) <= 10
 
 
 def test_run_agent_expands_with_semantic_scholar_reference_graph(tmp_path: Path, monkeypatch) -> None:

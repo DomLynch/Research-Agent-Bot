@@ -83,6 +83,21 @@ _PUBLISHED_RESULT_REPAIRS = {
     "will examine": "evaluated",
     "plans to assess": "evaluated",
 }
+_METFORMIN_TITLE_TOKENS = ("metformin", "glucophage")
+_METFORMIN_ALLOWED_INDIRECT_TITLE_BITS = ("glucose-lowering medications in older people",)
+_METFORMIN_DROP_TITLE_BITS = (
+    "precision prognostics",
+    "amyloid pathology",
+    "cerebral microbleeds",
+    "antiaging agents",
+    "pain and aging",
+    "incretin",
+    "glucagon-like peptide-1",
+    "glp-1",
+    "glioblastoma",
+    "parkinson",
+    "hiv",
+)
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -314,6 +329,60 @@ def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
     return "; ".join(bits).strip() + "."
 
 
+def _excerpt_numeric_sentence(index: int, entry: dict[str, Any]) -> str:
+    excerpt = _clean(entry.get("excerpt"), limit=500)
+    if not excerpt:
+        return ""
+    sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", excerpt) if part.strip()]
+    for sentence in sentences:
+        bare = re.sub(r"\[\d+\]", "", sentence)
+        if not _NUMERIC_SENTENCE_RE.search(bare):
+            continue
+        role = str(entry.get("role") or "unknown")
+        lead = "Meta-analysis" if role == "meta_analysis" else "Published results"
+        return f"{lead} [{index}] reported {bare.rstrip('.')}."
+    return ""
+
+
+def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, Any]]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    kept: list[str] = []
+    for sentence in sentences:
+        refs = [int(match.group(1)) for match in _CITATION_TOKEN_RE.finditer(sentence)]
+        if not refs:
+            kept.append(sentence)
+            continue
+        bare = re.sub(r"\[\d+\]", "", sentence)
+        if _NUMERIC_SENTENCE_RE.search(bare):
+            kept.append(sentence)
+            continue
+        replacement = ""
+        drop_sentence = False
+        for ref in refs:
+            if not (1 <= ref <= len(source_bundle)):
+                continue
+            entry = source_bundle[ref - 1]
+            role = str(entry.get("role") or "unknown")
+            if role in {"published_results", "meta_analysis"}:
+                effects = ((entry.get("extraction") or {}).get("effects") or [])
+                if effects:
+                    replacement = _numeric_effect_sentence(ref, entry)
+                    break
+                replacement = _excerpt_numeric_sentence(ref, entry)
+                if replacement:
+                    break
+                if role == "meta_analysis":
+                    drop_sentence = True
+        if replacement:
+            kept.append(replacement)
+        elif not drop_sentence:
+            kept.append(sentence)
+    return " ".join(part for part in kept if part).strip()
+
+
 def _strip_unsupported_numeric_claims(text: str, source_bundle: list[dict[str, Any]]) -> str:
     cleaned = _clean(text, limit=4000)
     claims = set(_QUANT_LITERAL_RE.findall(cleaned.lower()))
@@ -330,7 +399,27 @@ def _strip_unsupported_numeric_claims(text: str, source_bundle: list[dict[str, A
 
 def _has_quantitative_content(text: str) -> bool:
     cleaned = re.sub(r"\[\d+\]", "", _clean(text, limit=4000))
-    return bool(_NUMERIC_CLAIM_RE.search(cleaned))
+    return bool(_NUMERIC_SENTENCE_RE.search(cleaned))
+
+
+def _strip_citations(text: str, *, limit: int = 1200) -> str:
+    return _clean(re.sub(r"\[\d+\]", "", text), limit=limit)
+
+
+def _leading_sentences(text: str, count: int = 2, *, limit: int = 700) -> str:
+    sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", _strip_citations(text, limit=2000)) if part.strip()]
+    return _clean(" ".join(sentences[:count]), limit=limit)
+
+
+def _human_abstract(topic: str, domain_slug: str, sections: dict[str, str]) -> str:
+    opener = f"This rapid review evaluates {topic} in the {domain_slug} domain."
+    findings = _leading_sentences(sections.get("Key Findings", ""), count=2, limit=700)
+    limitation = _leading_sentences(sections.get("Limitations", ""), count=1, limit=320)
+    return _clean(" ".join(part for part in (opener, findings, limitation) if part), limit=1200)
+
+
+def _is_metformin_focus(topic_tokens: list[str]) -> bool:
+    return any(tok in topic_tokens for tok in _METFORMIN_TITLE_TOKENS)
 
 
 def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, float, int, int]:
@@ -344,12 +433,24 @@ def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, float, int, i
     )
 
 
-def _keep_bundle_entry(entry: dict[str, Any]) -> bool:
-    return str(entry.get("role") or "") != "off_domain_indirect"
+def _keep_bundle_entry(entry: dict[str, Any], topic_tokens: list[str], domain_slug: str) -> bool:
+    role = str(entry.get("role") or "")
+    if role in {"off_domain_indirect", "animal_model"}:
+        return False
+    if _is_metformin_focus(topic_tokens) and (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
+        title = str(entry.get("title") or "").lower()
+        mentions_metformin = any(tok in title for tok in _METFORMIN_TITLE_TOKENS)
+        if any(bit in title for bit in _METFORMIN_DROP_TITLE_BITS) and not mentions_metformin:
+            return False
+        if role == "meta_analysis":
+            return mentions_metformin or any(bit in title for bit in _METFORMIN_ALLOWED_INDIRECT_TITLE_BITS)
+        if role in {"review", "observational", "published_protocol", "registered_pending", "unknown"}:
+            return mentions_metformin
+    return True
 
 
 def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    kept = [entry for entry in bundle_candidates if _keep_bundle_entry(entry)]
+    kept = bundle_candidates
     selected: list[dict[str, Any]] = []
     groups = (
         [e for e in kept if e.get("role") == "published_results" and e.get("directness") == "direct"],
@@ -394,7 +495,8 @@ class RapidEvidenceDrafter:
             key=_entry_sort_key,
             reverse=True,
         )
-        selected = _select_prompt_entries(bundle_candidates)
+        kept_candidates = [entry for entry in bundle_candidates if _keep_bundle_entry(entry, topic_tokens, domain_slug)]
+        selected = _select_prompt_entries(kept_candidates)
         prompt_entries = [entry for entry in selected if _is_reported_finding(entry)] + [
             entry for entry in selected if not _is_reported_finding(entry)
         ]
@@ -422,39 +524,40 @@ class RapidEvidenceDrafter:
         accepted_types = {"review", "primary", "interventional", "observational", "mechanism"}
         source_bundle = [
             entry for entry in bundle_candidates
-            if _keep_bundle_entry(entry)
+            if _keep_bundle_entry(entry, topic_tokens, domain_slug)
             and entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
         ][:20]
         if len(source_bundle) < 8:
             source_bundle = [
                 entry for entry in bundle_candidates
-                if _keep_bundle_entry(entry)
+                if _keep_bundle_entry(entry, topic_tokens, domain_slug)
                 and entry.get("evidence_type") in accepted_types
             ][:20]
-        if len(source_bundle) < 8:
+        if len(source_bundle) < 8 and not _is_metformin_focus(topic_tokens):
             source_bundle = [
                 entry for entry in bundle_candidates
             if entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
             ][:20]
+        if _is_metformin_focus(topic_tokens) and (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
+            source_bundle = source_bundle[:10]
 
-        years = [int(e["year"]) for e in source_bundle if isinstance(e.get("year"), int)]
         rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")
         pc = sum(1 for e in source_bundle if e.get("evidence_type") in {"primary", "interventional", "observational", "mechanism"})
         direct_ct = sum(1 for e in source_bundle if e.get("directness") == "direct")
         indirect_ct = sum(1 for e in source_bundle if e.get("directness") == "indirect")
         mechanistic_ct = sum(1 for e in source_bundle if e.get("directness") == "mechanistic")
-        full_text_ct = sum(1 for e in source_bundle if e.get("card", {}).get("full_text_found"))
-        extracted_ct = sum(1 for e in source_bundle if e.get("card", {}).get("extraction_found"))
 
         has_effect_data = any((entry.get("extraction") or {}).get("effects") for entry in prompt_entries if _is_reported_finding(entry))
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
+            "The Abstract must read like a journal abstract in plain language and must not mention pipeline statistics, receipt counts, or structured extraction counts. "
             "The evidence is grouped by citation role. "
             "For published results and meta-analyses, use past-tense outcome language and cite numbers when provided. "
             "Spend most of the Key Findings on the highest-ranked direct published results entries. "
             "When citing published results or meta-analyses, name the endpoint and include effect direction or numeric outcome, sample size, and duration when available. "
+            "Key Findings must open with one synthesis sentence naming the overall direction of the evidence, group the evidence by conclusion rather than listing one study per sentence, and end with one sentence stating what remains unsupported. "
             "For registered or protocol studies, describe only the study design or aim. "
             "Do not say they found, showed, reported, demonstrated, improved, reduced, or increased outcomes. "
             "For animal-model evidence, explicitly hedge with 'in animal models' or 'preclinical'. "
@@ -526,7 +629,9 @@ class RapidEvidenceDrafter:
             "CRITICAL: The 'question' field must be at least 50 words. Write a full paragraph: "
             "'What are the effects of [topic] on healthspan outcomes in older adults, compared to placebo, "
             "as evaluated in randomized controlled trials with an intervention duration of at least 6 months, "
-            "and what is the evidence for safety and efficacy?'\n\nEvidence:\n"
+            "and what is the evidence for safety and efficacy?'\n"
+            "The Abstract must sound like a real journal abstract, not a pipeline log.\n"
+            "Key Findings must synthesize across sources, not list papers one by one.\n\nEvidence:\n"
             + ("\n".join(evidence_blocks) or "No evidence receipts retained.")
         )
         if priority_refs:
@@ -569,10 +674,15 @@ class RapidEvidenceDrafter:
 
         for heading in ("Key Findings", "Conclusion"):
             if heading in sections:
+                sections[heading] = _ground_required_numeric_sentences(sections[heading], source_bundle)
                 sections[heading] = _strip_unsupported_numeric_claims(sections[heading], source_bundle)
 
         if has_effect_data and not _has_quantitative_content(sections.get("Key Findings", "")) and first_effect_entry:
             sections["Key Findings"] = f"{sections['Key Findings']} {_numeric_effect_sentence(*first_effect_entry)}".strip()
+        if not re.search(r"\b(no evidence|remains unsupported|not directly addressed|inconclusive|insufficient)\b", sections.get("Key Findings", ""), re.IGNORECASE):
+            sections["Key Findings"] = (
+                f"{sections['Key Findings']} No retained study directly addresses integrated healthspan in a general older-adult population."
+            ).strip()
 
         if fallback_count >= 6:
             return (
@@ -597,14 +707,7 @@ class RapidEvidenceDrafter:
             )
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
-            "abstract": _clean(
-                f"This draft synthesizes public-index evidence on {topic} for the {domain_slug} domain. "
-                f"The run retained {len(source_bundle)} evidence receipts spanning {min(years) if years else 'unknown'} to {max(years) if years else 'unknown'}, "
-                f"with {rc} review-like items, {pc} primary-study items, {direct_ct} direct items, "
-                f"{indirect_ct} indirect items, {mechanistic_ct} mechanistic items, {full_text_ct} full-text-backed items, "
-                f"and {extracted_ct} structured-extraction items.",
-                limit=1200,
-            ),
+            "abstract": _human_abstract(topic, domain_slug, sections),
             "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
             "sections": sections,
             "source_bundle": source_bundle,

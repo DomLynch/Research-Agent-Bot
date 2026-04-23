@@ -91,6 +91,7 @@ _PROTOCOL_RE = re.compile(
     r"(study protocol|protocol for|trial design|study design|rationale and (study )?design|design and rationale)",
     re.IGNORECASE,
 )
+_META_ANALYSIS_RE = re.compile(r"\b(meta-analysis|network meta-analysis|systematic review)\b", re.IGNORECASE)
 _ANIMAL_RE = re.compile(
     r"\b(c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|zebrafish|drosophila|animal model|mice\b|rats\b|mice\W|mice$|mitopark)\b",
     re.IGNORECASE,
@@ -109,7 +110,7 @@ _OFF_DOMAIN = {
         "embryo", "embryonic", "dormancy", "blastocyst",
         "antiseizure", "anticonvulsant", "seizure",
         "ocular", "macular", "retinopathy", "glaucoma",
-        "covid", "sars-cov", "exercise timing",
+        "covid", "sars-cov", "exercise timing", "hiv",
     ),
     "anti-aging": (
         "esophageal", "pancreatic cancer", "gastric cancer", "cancer", "carcinoma",
@@ -118,7 +119,7 @@ _OFF_DOMAIN = {
         "embryo", "embryonic", "dormancy", "blastocyst",
         "antiseizure", "anticonvulsant", "seizure",
         "ocular", "macular", "retinopathy", "glaucoma",
-        "covid", "sars-cov", "exercise timing",
+        "covid", "sars-cov", "exercise timing", "hiv",
     ),
     "anti aging": (
         "esophageal", "pancreatic cancer", "gastric cancer", "cancer", "carcinoma",
@@ -127,7 +128,7 @@ _OFF_DOMAIN = {
         "embryo", "embryonic", "dormancy", "blastocyst",
         "antiseizure", "anticonvulsant", "seizure",
         "ocular", "macular", "retinopathy", "glaucoma",
-        "covid", "sars-cov", "exercise timing",
+        "covid", "sars-cov", "exercise timing", "hiv",
     ),
     "cardiology": ("pregnancy", "pediatric", "neonatal"),
     "metabolic": ("pediatric", "neonatal", "oncology", "cancer", "carcinoma"),
@@ -209,6 +210,8 @@ def classify_citation_role(
     if source_type == "clinicaltrials" and item.get("has_results"):
         return "published_results"
     if quality in {"meta-analysis", "systematic-review"} or study_type == "meta-analysis":
+        return "meta_analysis"
+    if evidence_type == "review" and _META_ANALYSIS_RE.search(title):
         return "meta_analysis"
     if evidence_type == "review" or quality == "review":
         return "review"

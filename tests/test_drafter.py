@@ -83,6 +83,24 @@ class BadPublishedResultsProvider(CaptureProvider):
         )
 
 
+class VagueMetaProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of metformin on healthspan outcomes in older adults, compared to placebo, and what does recent direct trial evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+                "search_summary": "Recent direct trials and a broad meta-analysis were reviewed.",
+                "landscape": "The evidence includes direct trials and broader comparative syntheses.",
+                "findings": "Published RCT results provide mixed evidence [1]. A meta-analysis from 2024 synthesized outcomes for metformin and acarbose in older adults [2].",
+                "limitations": "The evidence base remains small and underpowered.",
+                "gaps_identified": "Long-duration trials remain sparse.",
+                "conclusion": "Metformin remains inconclusive for broad healthspan benefit [1,2].",
+            },
+            {},
+        )
+
+
 def test_classify_directness_marks_aging_rct_direct():
     item = {
         "title": "Metformin and aging in older adults: randomized controlled trial",
@@ -240,9 +258,15 @@ def test_drafter_prioritizes_direct_published_results_in_prompt() -> None:
     )
     assert not artifact.get("error")
     assert "KEY FINDINGS PRIORITY: focus mainly on direct published-results citations [1], [2]." in provider.user_prompt
-    assert provider.user_prompt.find(direct_1["title"]) < provider.user_prompt.find(indirect_review["title"])
-    assert provider.user_prompt.find(direct_2["title"]) < provider.user_prompt.find(indirect_review["title"])
-    assert provider.user_prompt.find(direct_3["title"]) < provider.user_prompt.find(indirect_review["title"])
+    assert direct_1["title"] in provider.user_prompt
+    assert direct_2["title"] in provider.user_prompt
+    assert direct_3["title"] in provider.user_prompt
+    assert indirect_review["title"] not in provider.user_prompt
+    assert "pipeline statistics" in provider.system_prompt
+    assert "Key Findings must synthesize across sources" in provider.user_prompt
+    assert "evidence receipts" not in artifact["abstract"].lower()
+    assert "structured-extraction" not in artifact["abstract"].lower()
+    assert artifact["abstract"].startswith("This rapid review evaluates")
 
 
 def test_drafter_sanitizes_registry_only_outcome_claims_and_adds_numeric_fallback():
@@ -423,3 +447,74 @@ def test_drafter_strips_unsupported_numeric_claims():
     assert "-15.8%" not in findings
     assert "86.4%" not in findings
     assert "-15.8%" not in conclusion
+
+
+def test_drafter_drops_vague_meta_analysis_sentence_without_numeric_grounding() -> None:
+    provider = VagueMetaProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+        "excerpt": "Interventional study in older adults.",
+        "evidence_type": "interventional",
+        "source_type": "clinicaltrials",
+        "has_results": True,
+        "trial_status": "results",
+        "year": 2024,
+        "url": "https://clinicaltrials.gov/study/NCT00000001",
+        "extraction": {
+            "effects": [
+                {
+                    "outcome": "Frailty Index Based on Deficit Accumulation",
+                    "metric": "MEAN",
+                    "value": "Metformin=-0.0002; Placebo=0.0002",
+                    "n": "Metformin N=58; Placebo N=67",
+                    "source_span": "Frailty Index Based on Deficit Accumulation. 2 years. Metformin=-0.0002; Placebo=0.0002. Metformin N=58; Placebo N=67",
+                }
+            ]
+        },
+    }
+    meta = {
+        "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+        "excerpt": "A broad comparative meta-analysis in older adults without a metformin-specific pooled estimate in the retained excerpt.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, meta],
+        all_evidence=[published, meta],
+    )
+    findings = artifact["sections"]["Key Findings"]
+    assert "A meta-analysis from 2024 synthesized outcomes" not in findings
+    assert "MEAN Metformin=-0.0002; Placebo=0.0002" in findings
+    assert "No retained study directly addresses integrated healthspan" in findings
+
+
+def test_drafter_caps_metformin_longevity_source_bundle_to_ten() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": f"Metformin outcome study {idx} in older adults",
+            "excerpt": "Metformin study in older adults with aging outcomes.",
+            "evidence_type": "primary" if idx % 3 == 0 else "observational",
+            "source_type": "pubmed",
+            "year": 2025 - (idx % 2),
+            "url": f"https://pubmed.ncbi.nlm.nih.gov/{1000 + idx}/",
+        }
+        for idx in range(14)
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    assert len(artifact["source_bundle"]) == 10
