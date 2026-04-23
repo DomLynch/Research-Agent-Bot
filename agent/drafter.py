@@ -1262,23 +1262,28 @@ def _keep_bundle_entry(entry: dict[str, Any]) -> bool:
 
 
 def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    kept = bundle_candidates
     selected: list[dict[str, Any]] = []
     groups = (
-        [e for e in kept if e.get("evidence_tier") == _TIER_A1 and e.get("role") == "published_results" and e.get("directness") == "direct"],
-        [e for e in kept if e.get("evidence_tier") == _TIER_A2 and e.get("directness") == "direct"],
-        [e for e in kept if e.get("topic_fit_bucket") == "core" and e.get("role") == "meta_analysis"],
-        [e for e in kept if e.get("evidence_tier") == _TIER_B],
-        [e for e in kept if _is_reported_finding(e)],
-        [e for e in kept if not _is_reported_finding(e)],
+        (_TIER_A1, 4),
+        (_TIER_A2, 1),
+        (_TIER_B, 1),
+        (_TIER_C, 1),
     )
-    for group in groups:
-        for entry in group:
-            if entry in selected:
+    for tier, limit in groups:
+        for entry in bundle_candidates:
+            if entry in selected or entry.get("evidence_tier") != tier:
                 continue
             selected.append(entry)
+            if len([item for item in selected if item.get("evidence_tier") == tier]) >= limit:
+                break
             if len(selected) >= 6:
                 return selected
+    for entry in bundle_candidates:
+        if entry in selected:
+            continue
+        selected.append(entry)
+        if len(selected) >= 6:
+            return selected
     return selected
 
 
@@ -1511,8 +1516,9 @@ class RapidEvidenceDrafter:
             "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
             "The Abstract must read like a journal abstract in plain language and must not mention pipeline statistics, receipt counts, or structured extraction counts. "
             "The evidence is grouped by citation role. "
+            "Treat the retained bundle as an evidence pyramid: Tier A1 drives the answer, Tier A2 adds one clearly labeled human qualifier, Tier B gives context, and Tier C shows future or mechanistic support. "
             "For published results and meta-analyses, use past-tense outcome language and cite numbers when provided. "
-            "Spend most of the Key Findings on the highest-ranked direct published results entries. "
+            "Spend most of the Abstract, Key Findings, and Conclusion on Tier A1 direct evidence. "
             "When citing published results or meta-analyses, name the endpoint and include effect direction or numeric outcome, sample size, and duration when available. "
             "Key Findings must open with one synthesis sentence naming the overall direction of the evidence, group the evidence by conclusion rather than listing one study per sentence, and end with one sentence stating what remains unsupported. "
             "For registered or protocol studies, describe only the study design or aim. "
@@ -1589,7 +1595,8 @@ class RapidEvidenceDrafter:
             "as evaluated in randomized controlled trials with an intervention duration of at least 6 months, "
             "and what is the evidence for safety and efficacy?'\n"
             "The Abstract must sound like a real journal abstract, not a pipeline log.\n"
-            "Key Findings must synthesize across sources, not list papers one by one.\n\nEvidence:\n"
+            "Key Findings must synthesize across sources, not list papers one by one.\n"
+            "Only Tier A1 should drive the headline claim; Tier A2/B/C can qualify, contextualize, or show what comes next.\n\nEvidence:\n"
             + ("\n".join(evidence_blocks) or "No evidence receipts retained.")
         )
         if priority_refs:
