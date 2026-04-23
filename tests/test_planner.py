@@ -94,3 +94,13 @@ def test_human_only_recognizes_older_people_as_human_signal() -> None:
             "query": "metformin human studies longevity",
         }
     ) is True
+
+
+def test_human_only_rejects_nonhuman_primates() -> None:
+    assert _human_ok(
+        {
+            "title": "Long-term dasatinib plus quercetin effects on aging outcomes in nonhuman primates",
+            "excerpt": "Nonhuman primate model with inflammation endpoints relevant to senolytic design.",
+            "query": "senolytics human studies longevity",
+        }
+    ) is False

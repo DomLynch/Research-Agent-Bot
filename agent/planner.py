@@ -14,17 +14,21 @@ _HUMAN = ("human", "humans", "patient", "patients", "adult", "adults", "clinical
 _ANIMAL = (
     "animal", "animals", "mouse", "mice", "murine", "rat", "rats",
     "c. elegans", "c elegans", "caenorhabditis", "drosophila", "zebrafish",
+    "primate", "primates", "monkey", "monkeys", "macaque", "macaques",
+    "nonhuman primate", "nonhuman primates",
 )
 _HUMAN_RE = re.compile(
     r"\b(?:human|humans|patient|patients|adult|adults|clinical|participant|participants|older people|older adults?)\b",
     re.IGNORECASE,
 )
 _ANIMAL_RE = re.compile(
-    r"\b(?:animal|animals|mouse|mice|murine|rat|rats|c\.?\s*elegans|c elegans|caenorhabditis|drosophila|zebrafish)\b",
+    r"\b(?:animal|animals|mouse|mice|murine|rat|rats|c\.?\s*elegans|c elegans|caenorhabditis|drosophila|zebrafish|"
+    r"primate|primates|monkey|monkeys|macaque|macaques|nonhuman primate|nonhuman primates)\b",
     re.IGNORECASE,
 )
 _TITLE_NON_HUMAN_RE = re.compile(
-    r"\b(?:c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|rats|drosophila|zebrafish)\b",
+    r"\b(?:c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|rats|drosophila|zebrafish|"
+    r"primate|primates|monkey|monkeys|macaque|macaques|nonhuman primate|nonhuman primates)\b",
     re.IGNORECASE,
 )
 
