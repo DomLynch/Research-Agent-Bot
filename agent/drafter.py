@@ -83,6 +83,11 @@ _EFFECT_STYLE_RE = re.compile(
     r"\d+(?:\.\d+)?\s*%)",
     re.IGNORECASE,
 )
+_RESULT_MARKER_RE = re.compile(
+    r"(?:p\s*[<=>]|n\s*=|95%\s*ci|confidence interval|\bhr\b|hazard ratio|"
+    r"\bor\b|odds ratio|\brr\b|placebo=|metformin=|\d+(?:\.\d+)?\s*%)",
+    re.IGNORECASE,
+)
 _CITATION_TOKEN_RE = re.compile(r"\[(\d+)\]")
 _PUBLISHED_RESULT_REPAIRS = {
     "is investigating": "evaluated",
@@ -363,11 +368,9 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
             kept.append(sentence)
             continue
         bare = re.sub(r"\[\d+\]", "", sentence)
-        if _EFFECT_STYLE_RE.search(bare):
-            kept.append(sentence)
-            continue
         replacement = ""
         drop_sentence = False
+        grounded = _NUMERIC_CLAIM_RE.search(bare) and _EFFECT_STYLE_RE.search(bare)
         for ref in refs:
             if not (1 <= ref <= len(source_bundle)):
                 continue
@@ -375,6 +378,9 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
             role = str(entry.get("role") or "unknown")
             if role in {"published_results", "meta_analysis"}:
                 effects = ((entry.get("extraction") or {}).get("effects") or [])
+                if grounded and (role != "published_results" or _RESULT_MARKER_RE.search(bare)):
+                    replacement = sentence
+                    break
                 if effects:
                     replacement = _numeric_effect_sentence(ref, entry)
                     break
@@ -383,6 +389,9 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
                     break
                 if role == "meta_analysis":
                     drop_sentence = True
+        if replacement == sentence:
+            kept.append(sentence)
+            continue
         if replacement:
             kept.append(replacement)
         elif not drop_sentence:
