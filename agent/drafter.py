@@ -76,6 +76,13 @@ _NUMERIC_SENTENCE_RE = re.compile(
     r"p\s*[<=>]|n\s*=|\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?\s*(?:months?|years?|weeks?|days?|kg|mg|mmhg))",
     re.IGNORECASE,
 )
+_EFFECT_STYLE_RE = re.compile(
+    r"(?:\bhr\b|hazard ratio|odds ratio|\bor\b|\brr\b|confidence interval|\bci\b|"
+    r"p\s*[<=>]|vs\.?|versus|mean(?:\s+(?:change|difference))?|difference|"
+    r"reduced?|increased?|decreased?|improved?|worsened?|higher|lower|"
+    r"\d+(?:\.\d+)?\s*%)",
+    re.IGNORECASE,
+)
 _CITATION_TOKEN_RE = re.compile(r"\[(\d+)\]")
 _PUBLISHED_RESULT_REPAIRS = {
     "is investigating": "evaluated",
@@ -336,7 +343,7 @@ def _excerpt_numeric_sentence(index: int, entry: dict[str, Any]) -> str:
     sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", excerpt) if part.strip()]
     for sentence in sentences:
         bare = re.sub(r"\[\d+\]", "", sentence)
-        if not _NUMERIC_SENTENCE_RE.search(bare):
+        if not (_NUMERIC_CLAIM_RE.search(bare) and _EFFECT_STYLE_RE.search(bare)):
             continue
         role = str(entry.get("role") or "unknown")
         lead = "Meta-analysis" if role == "meta_analysis" else "Published results"
@@ -356,7 +363,7 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
             kept.append(sentence)
             continue
         bare = re.sub(r"\[\d+\]", "", sentence)
-        if _NUMERIC_SENTENCE_RE.search(bare):
+        if _EFFECT_STYLE_RE.search(bare):
             kept.append(sentence)
             continue
         replacement = ""
@@ -399,7 +406,7 @@ def _strip_unsupported_numeric_claims(text: str, source_bundle: list[dict[str, A
 
 def _has_quantitative_content(text: str) -> bool:
     cleaned = re.sub(r"\[\d+\]", "", _clean(text, limit=4000))
-    return bool(_NUMERIC_SENTENCE_RE.search(cleaned))
+    return bool(_EFFECT_STYLE_RE.search(cleaned))
 
 
 def _strip_citations(text: str, *, limit: int = 1200) -> str:
