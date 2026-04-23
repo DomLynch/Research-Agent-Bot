@@ -101,6 +101,9 @@ class FullTextFetcher:
         )
 
     def _search_query(self, entry: dict[str, Any]) -> str | None:
+        pmcid = _clean_text(entry.get("pmcid"), limit=64)
+        if pmcid:
+            return f"PMCID:{pmcid}"
         doi = _clean_text(entry.get("doi"), limit=256)
         if doi:
             return f'DOI:"{doi}"'
@@ -180,6 +183,15 @@ class FullTextFetcher:
         if cache_path.exists():
             payload = json.loads(cache_path.read_text(encoding="utf-8"))
             return payload if payload.get("found") else None
+        pmcid = _clean_text(entry.get("pmcid"), limit=64)
+        if pmcid:
+            try:
+                payload = self._fetch_pmc_xml(pmcid, source="europepmc")
+            except (httpx.HTTPError, OSError, ValueError, et.ParseError):
+                payload = None
+            if payload:
+                cache_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+                return payload
         if not self._search_query(entry):
             cache_path.write_text(json.dumps({"found": False, "reason": "no_lookup"}), encoding="utf-8")
             return None
@@ -211,7 +223,7 @@ class FullTextFetcher:
         source_counts: dict[str, int] = {}
         for entry in entries:
             cloned = dict(entry)
-            if attempted < limit and cloned.get("source_type") in {"pubmed", "openalex", "rxiv", "semantic_scholar"}:
+            if attempted < limit and cloned.get("source_type") in {"pubmed", "openalex", "rxiv", "semantic_scholar", "europepmc"}:
                 attempted += 1
                 try:
                     payload = self.fetch(cloned)

@@ -368,6 +368,20 @@ class SemanticScholarGraphSource:
     def citations_of(self, doi: str, *, limit: int = 50) -> list[dict]:
         return []
 
+    def recommendations_for(self, doi: str, *, limit: int = 20) -> list[dict]:
+        return [
+            {
+                "title": "Metformin aging recommendation recovered from citation graph",
+                "excerpt": "Supporting metformin aging evidence from a recommendation edge.",
+                "year": 2024,
+                "source_type": "semantic_scholar",
+                "evidence_type": "review",
+                "doi": "10.1000/graph.recommendation",
+                "url": "https://doi.org/10.1000/graph.recommendation",
+                "query": f"recommendations_for:{doi}",
+            }
+        ]
+
 
 class FailingSource:
     def search(self, query: str, *, limit: int) -> list[dict]:
@@ -382,6 +396,19 @@ class ResolverOnlySource:
 
     def search(self, query: str, *, limit: int) -> list[dict]:
         return []
+
+
+class EmptySource:
+    def search(self, query: str, *, limit: int) -> list[dict]:
+        return []
+
+
+class StubDOAJClient:
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
+    def annotate_entries(self, entries: list[dict]) -> list[dict]:
+        return list(entries)
 
 
 class IrrelevantSource:
@@ -494,6 +521,9 @@ class StubStructuredExtractor:
 def _stub_new_source_clients(monkeypatch):
     monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
     monkeypatch.setattr(cli, "ChEMBLClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "EuropePMCClient", lambda: EmptySource())
+    monkeypatch.setattr(cli, "NIHReporterClient", lambda: EmptySource())
+    monkeypatch.setattr(cli, "DOAJClient", StubDOAJClient)
     monkeypatch.setattr(cli, "FullTextFetcher", StubFullTextFetcher)
     monkeypatch.setattr(cli, "StructuredExtractor", StubStructuredExtractor)
 
@@ -596,7 +626,7 @@ def test_run_agent_prunes_longevity_off_domain_bundle_noise_and_directness(tmp_p
     assert direct_titles
     strong_direct = [title for title in direct_titles if "metformin" in title or "glucophage" in title]
     assert len(strong_direct) / len(direct_titles) >= 0.7
-    assert len(run["source_bundle"]) <= 10
+    assert len(run["source_bundle"]) <= 12
 
 
 def test_run_agent_expands_with_semantic_scholar_reference_graph(tmp_path: Path, monkeypatch) -> None:

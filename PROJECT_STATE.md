@@ -14,8 +14,8 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~3,500 LOC (raised from 3,200 — see DECISIONS.md 2026-04-23 "MiMo editor pass + evidence tiers").
-  Hard ceiling: 4,000 LOC. Actual: ~3,867 LOC.
+- Runtime target: ~5,200 LOC (raised from 3,500 — see DECISIONS.md 2026-04-23 "Source substrate + 12-citation intake alignment").
+  Hard ceiling: 5,800 LOC. Actual: ~5,515 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
@@ -27,6 +27,8 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - PubMed/OpenAlex relevance ranking must stay simple without becoming naive.
 - Golden eval harness now has 3-tier eval corpus (gold + adversarial + breadth) with CI gating.
 - Runtime is now above the previous 1,800 ceiling; further additions need deletions or another explicit DECISIONS entry.
+- Submission intake now correctly requires 12+ retained sources, which raises pressure on retrieval depth and tier-aware bundle filling for thin longevity topics.
+- OpenAlex / Semantic Scholar are now richer metadata substrates and Europe PMC is now a direct retrieval source, but the new NIH RePORTER / DOAJ paths are still early and need live-topic validation.
 - Quantitative fidelity is now honestly measured and still weak on the gold baseline; drafter must earn future quality gains with supported numbers.
 - Directness labeling is still heuristic. The new generic longevity topic-fit scorer removed the metformin-only bundle path and now generalizes across aliases/classes, and a new MiMo editor pass now cleans the assembled artifact, but live bundle quality still varies by topic and retrieval quality still dominates final bundle quality.
 - Topic/entity resolution is now ChEMBL-first plus alias/fuzzy fallback. It still needs richer biomedical vocabularies before Tier 1 full-text work.
@@ -78,6 +80,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Generic longevity fit gate:** the old metformin-only retention path is gone. Topic handling now flows through canonical entity resolution (`canonical_term`, aliases, class terms), generic topic-fit scoring, generic claim-fit gating, and a shared human-only filter that now rejects nonhuman primate studies.
 - **MiMo editor pass + evidence tiers:** a bounded second MiMo pass now edits the assembled draft for abstract completeness, duplicate hook removal, and clearer Tier A/B/C evidence separation; the source bundle now carries generic `evidence_tier` labels instead of relying on topic-specific prose hacks.
 - **MiMo upstream judgment layer:** retained candidates now go through a generic MiMo reranking pass (`core` / `landscape` / `drop`) and a generic MiMo role/directness/tier labeling pass before drafting. Deterministic scoring remains as scaffold and validator, but explicit MiMo `drop` decisions are no longer revived by low-count fallback bundling.
+- **Source substrate + intake alignment:** Europe PMC is now a first-class retrieval adapter, OpenAlex/Semantic Scholar now carry richer metadata into ranking, Semantic Scholar graph expansion now includes recommendations, source bundles can include protocol-type support records, NIH RePORTER is available as Tier C/project-context retrieval, DOAJ can mark indexed journals in the final bundle, and the Researka submission floor is now correctly enforced at 12 retained sources instead of the stale 8-source gate.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth

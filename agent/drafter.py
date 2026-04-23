@@ -10,6 +10,7 @@ from agent.citation_roles import (
     role_sort_priority,
 )
 from agent.entity_resolver import resolve_topic
+from agent.submit import RESEARKA_MIN_SOURCES
 from agent.validator import validate_citations
 
 import os
@@ -320,6 +321,16 @@ def _topic_fit_score(
     title = _clean(item.get("title"), limit=300).lower()
     abstract = _clean(item.get("excerpt"), limit=2200).lower()
     intervention = _clean(card.get("intervention"), limit=200).lower()
+    metadata_blob = " ".join(
+        _clean(v, limit=200).lower()
+        if not isinstance(v, list)
+        else " ".join(_clean(item, limit=80).lower() for item in v[:8])
+        for v in (
+            item.get("topic_terms"),
+            item.get("mesh_terms"),
+            item.get("summary"),
+        )
+    )
     negative_terms = [term for term in [canonical, *aliases, *class_terms] if term]
     negative_context = any(
         re.search(rf"\b(without|unrelated to|not|non|no)\b[^.;,]{{0,40}}\b{re.escape(term)}\b", abstract)
@@ -329,7 +340,7 @@ def _topic_fit_score(
     if canonical and canonical in title:
         score += 0.4
     has_alias_title = any(alias in title for alias in aliases)
-    has_class_text = any(term in f"{title} {abstract} {intervention}" for term in class_terms)
+    has_class_text = any(term in f"{title} {abstract} {intervention} {metadata_blob}" for term in class_terms)
     if has_alias_title:
         score += 0.3
     if any(term in title for term in class_terms):
@@ -338,7 +349,7 @@ def _topic_fit_score(
         score += 0.15
         if _POPULATION_SIGNAL_RE.search(f"{title} {abstract}"):
             score += 0.1
-    mention_count = 0 if negative_context else _term_hits(f"{title} {abstract} {intervention}", [canonical, *aliases])
+    mention_count = 0 if negative_context else _term_hits(f"{title} {abstract} {intervention} {metadata_blob}", [canonical, *aliases])
     if mention_count >= 2:
         score += 0.2
     elif mention_count == 1:
@@ -359,7 +370,7 @@ def _topic_fit_score(
                 card.get("context"),
             )
         )
-        if _aging_outcome_signal(blob):
+        if _aging_outcome_signal(f"{blob} {metadata_blob}"):
             score += 0.15
     return round(min(score, 1.0), 2)
 
@@ -978,7 +989,7 @@ def _merge_usage(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]:
 
 def _editor_bundle_lines(source_bundle: list[dict[str, Any]]) -> str:
     lines: list[str] = []
-    for idx, entry in enumerate(source_bundle[:10], start=1):
+    for idx, entry in enumerate(source_bundle[:12], start=1):
         line = (
             f"[{idx}] tier={entry.get('evidence_tier', 'unknown')}; role={entry.get('role', 'unknown')}; "
             f"directness={entry.get('directness', 'indirect')}; year={entry.get('year', 'unknown')}; "
@@ -1296,27 +1307,27 @@ class RapidEvidenceDrafter:
                 None,
             )
 
-        accepted_types = {"review", "primary", "interventional", "observational", "mechanism"}
+        accepted_types = {"review", "primary", "interventional", "observational", "mechanism", "protocol"}
         source_bundle = [
             entry for entry in bundle_candidates
             if _keep_bundle_entry(entry)
             and entry.get("evidence_type") in accepted_types and float(entry.get("relevance") or 0.0) >= 0.25
-        ][:20]
-        if len(source_bundle) < 8:
+        ][:24]
+        if len(source_bundle) < RESEARKA_MIN_SOURCES:
             source_bundle = [
                 entry for entry in bundle_candidates
                 if str(entry.get("topic_fit_bucket") or "drop") in {"core", "landscape"}
                 and entry.get("evidence_type") in accepted_types
-            ][:20]
-        if len(source_bundle) < 8:
+            ][:24]
+        if len(source_bundle) < RESEARKA_MIN_SOURCES:
             source_bundle = [
                 entry for entry in bundle_candidates
                 if entry.get("evidence_type") in accepted_types
                 and float(entry.get("topic_fit") or 0.0) >= 0.3
                 and str(entry.get("topic_fit_bucket") or "drop") != "drop"
-            ][:20]
+            ][:24]
         if (domain_slug or "").lower() in {"longevity", "anti-aging", "anti aging"}:
-            source_bundle = source_bundle[:10]
+            source_bundle = source_bundle[:12]
 
         rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")
         pc = sum(1 for e in source_bundle if e.get("evidence_type") in {"primary", "interventional", "observational", "mechanism"})
@@ -1509,10 +1520,10 @@ class RapidEvidenceDrafter:
             result["usage"] = _merge_usage(result.get("usage", {}), label_payload.get("usage", {}))
             result["estimated_cost_usd"] = float(result.get("estimated_cost_usd", 0.0) or 0.0) + float(label_payload.get("estimated_cost_usd", 0.0) or 0.0)
 
-        if len(source_bundle) < 8 and os.getenv("RESEARKA_URL"):
+        if len(source_bundle) < RESEARKA_MIN_SOURCES and os.getenv("RESEARKA_URL"):
             return (
                 {
-                    "error": f"Insufficient relevant sources for submission ({len(source_bundle)}/8).",
+                    "error": f"Insufficient relevant sources for submission ({len(source_bundle)}/{RESEARKA_MIN_SOURCES}).",
                     "source_bundle": source_bundle,
                     "rerank_applied": rerank_applied,
                     "labeling_applied": labeling_applied,

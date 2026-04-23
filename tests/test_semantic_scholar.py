@@ -97,6 +97,37 @@ def test_citations_of_handles_citingPaper_wrap():
     assert cites[0]["year"] == 2024
 
 
+def test_recommendations_for_returns_normalized_papers():
+    response = {
+        "recommendedPapers": [
+            {
+                "title": "Related rapamycin aging trial",
+                "abstract": "",
+                "tldr": {"text": "Trial in older adults with aging outcomes."},
+                "year": 2025,
+                "externalIds": {"DOI": "10.1000/reco.2025"},
+                "publicationTypes": ["ClinicalTrial"],
+                "journal": {"name": "Aging Cell"},
+                "authors": [{"name": "Doe J"}],
+                "citationCount": 12,
+                "influentialCitationCount": 3,
+            }
+        ]
+    }
+
+    def handler(req):
+        assert "recommendations" in str(req.url)
+        return httpx.Response(200, json=response)
+
+    client = SemanticScholarClient(transport=_transport(handler))
+    items = client.recommendations_for("10.1000/example.2023")
+    assert len(items) == 1
+    assert items[0]["source_type"] == "semantic_scholar"
+    assert items[0]["summary"] == "Trial in older adults with aging outcomes."
+    assert items[0]["journal"] == "Aging Cell"
+    assert items[0]["authors"] == ["Doe J"]
+
+
 def test_invalid_doi_returns_empty_list():
     def handler(req): raise AssertionError("should not call API on invalid DOI")
     client = SemanticScholarClient(transport=_transport(handler))

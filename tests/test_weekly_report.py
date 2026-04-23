@@ -100,7 +100,7 @@ def test_weekly_report_gate_blocked(tmp_path: Path) -> None:
         "domain_slug": "longevity",
         "estimated_cost_usd": 0.05,
         "evidence_selected": 12,
-        "submission": {"gate_blocked": True, "reason": "bundle_too_small:8"},
+        "submission": {"gate_blocked": True, "reason": "bundle_too_small:11"},
     }
     (tmp_path / "run0.json").write_text(json.dumps(run), encoding="utf-8")
 
@@ -111,7 +111,7 @@ def test_weekly_report_gate_blocked(tmp_path: Path) -> None:
     )
     assert result.returncode == 0
     assert "Quality-gate blocked: 1/1" in result.stdout
-    assert "bundle_too_small:8" in result.stdout
+    assert "bundle_too_small:11" in result.stdout
 
 
 def test_weekly_report_submission_breakdown(tmp_path: Path) -> None:

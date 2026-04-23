@@ -30,6 +30,7 @@ _INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _ANTI_AGING_DOMAINS = {"longevity", "anti-aging", "anti aging"}
+RESEARKA_MIN_SOURCES = 12
 
 
 def _topic_tokens(title: str) -> list[str]:
@@ -38,7 +39,7 @@ def _topic_tokens(title: str) -> list[str]:
 
 def _quality_gate(artifact: dict[str, Any], *, current_year: int | None = None, topic: str = "") -> str | None:
     bundle = artifact.get("source_bundle", [])
-    if len(bundle) < 8:
+    if len(bundle) < RESEARKA_MIN_SOURCES:
         return f"bundle_too_small:{len(bundle)}"
 
     domain = str(artifact.get("domain_slug", "")).lower().strip()

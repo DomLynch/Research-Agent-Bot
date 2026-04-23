@@ -203,6 +203,8 @@ def classify_citation_role(
 
     if source_type == "chembl" or evidence_type == "mechanism":
         return "mechanistic"
+    if source_type == "nih_reporter":
+        return "published_protocol"
     if _PROTOCOL_RE.search(title) or quality == "protocol" or study_type == "protocol":
         return "published_protocol"
     text = " ".join(str(v or "") for v in (title, item.get("excerpt"), card.get("context"), card.get("outcomes")))

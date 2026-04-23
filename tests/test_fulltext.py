@@ -144,3 +144,16 @@ def test_fetch_full_text_accepts_semantic_scholar_entries(tmp_path: Path) -> Non
     assert stats["attempted"] == 1
     assert stats["found"] == 1
     assert enriched[0]["full_text_source"] == "europepmc"
+
+
+def test_fetch_full_text_accepts_europepmc_entries_with_pmcid(tmp_path: Path) -> None:
+    counter: dict[str, int] = {}
+    fetcher = FullTextFetcher(cache_dir=tmp_path, transport=_transport(counter))
+    entry = {"pmcid": "PMC123", "title": "Test paper", "source_type": "europepmc"}
+
+    enriched, stats = fetcher.enrich_entries([entry], limit=1)
+
+    assert stats["attempted"] == 1
+    assert stats["found"] == 1
+    assert enriched[0]["full_text_source"] == "europepmc"
+    assert counter["calls"] == 1

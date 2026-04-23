@@ -78,6 +78,8 @@ def _infer_quality_signal(entry: dict[str, Any]) -> str:
     etype = str(entry.get("evidence_type") or "").lower()
     if entry.get("source_type") == "clinicaltrials":
         return "trial-results" if entry.get("has_results") else "trial-registered"
+    if entry.get("source_type") == "nih_reporter":
+        return "funded-project"
     text = f"{entry.get('title', '')} {entry.get('excerpt', '')}".lower()
     if any(term in text for term in ("study protocol", "protocol for", "trial design", "study design", "rationale and design", "design and rationale")):
         return "protocol"
@@ -161,6 +163,8 @@ def _grade_lite(entry: dict[str, Any]) -> str:
         score = 2
     if quality == "preprint":
         score -= 1
+    if quality == "funded-project":
+        score = 1
     if entry.get("evidence_type") == "mechanism" or entry.get("source_type") == "chembl":
         score = 1
     if year and year < 2020:
@@ -184,6 +188,7 @@ def build_card(entry: dict[str, Any]) -> dict[str, Any]:
         "citation": _format_citation(entry),
         "role": str(entry.get("role") or ""),
         "journal": entry.get("journal") or "",
+        "journal_quality": str(entry.get("journal_quality") or ""),
         "quality_signal": _infer_quality_signal(entry),
         "evidence_grade": _grade_lite(entry),
         "study_type": _infer_study_type(entry),

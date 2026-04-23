@@ -15,8 +15,11 @@ from agent.planner import QueryPlanner
 from agent.provider import MimoClient
 from agent.sources.chembl import ChEMBLClient
 from agent.sources.clinicaltrials import ClinicalTrialsClient
+from agent.sources.doaj import DOAJClient
+from agent.sources.europepmc import EuropePMCClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
+from agent.sources.reporter import NIHReporterClient
 from agent.sources.rxiv import RxivClient
 from agent.sources.semantic_scholar import SemanticScholarClient
 from agent.submit import submit
@@ -26,6 +29,7 @@ _CLINICAL_DOMAINS = {"oncology", "longevity"}
 _CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
 _RXIV_DOMAINS = {"longevity", "oncology", "metabolic", "general"}
 _SEMANTIC_SCHOLAR_DOMAINS = {"longevity", "anti-aging", "anti aging"}
+_EUROPEPMC_DOMAINS = {"longevity", "oncology", "metabolic", "cardiology", "neurology", "general"}
 _CHEMBL_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "statin")
 _CHEMBL_STOPWORDS = {"and", "or", "anti", "aging", "anti-aging", "longevity", "healthspan", "effects", "outcomes"}
 _TOPIC_MATCH_FLOOR = 0.50
@@ -50,6 +54,17 @@ def _should_use_semantic_scholar(domain: str, topic: str) -> bool:
         return True
     combined = f"{topic} {domain}".lower()
     return any(kw in combined for kw in ("aging", "geroscience", "longevity"))
+
+
+def _should_use_europepmc(domain: str, topic: str) -> bool:
+    if domain in _EUROPEPMC_DOMAINS:
+        return True
+    combined = f"{topic} {domain}".lower()
+    return any(kw in combined for kw in ("aging", "trial", "therapy", "disease", "older adults", "clinical"))
+
+
+def _should_use_nih_reporter(domain: str, topic: str) -> bool:
+    return _should_use_clinical_trials(domain, topic) or _should_use_semantic_scholar(domain, topic)
 
 
 def _should_use_chembl(topic: str) -> bool:
@@ -204,8 +219,20 @@ def _semantic_graph_hits(
         if len(seed_dois) >= 2:
             break
     expanded: list[dict[str, Any]] = []
+    seen_keys: set[str] = set()
     for doi in seed_dois:
-        expanded.extend(client.references_of(doi, limit=limit_per_seed))
+        for item in client.references_of(doi, limit=limit_per_seed):
+            key = str(item.get("doi") or item.get("url") or item.get("title") or "").lower()
+            if not key or key in seen_keys:
+                continue
+            seen_keys.add(key)
+            expanded.append(item)
+        for item in client.recommendations_for(doi, limit=max(2, min(6, limit_per_seed))):
+            key = str(item.get("doi") or item.get("url") or item.get("title") or "").lower()
+            if not key or key in seen_keys:
+                continue
+            seen_keys.add(key)
+            expanded.append(item)
     return expanded
 
 
@@ -303,6 +330,8 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
                 card_str += f" | {journal}"
             if quality:
                 card_str += f" | {quality}"
+            if card.get("journal_quality"):
+                card_str += f" | {card['journal_quality']}"
             if grade:
                 card_str += f" | GRADE-lite {grade}"
             if directness:
@@ -340,6 +369,7 @@ def run_agent(
     if spent >= cap:
         return {"error": f"Daily cost cap reached (${spent:.4f} >= ${cap:.2f}). Set DAILY_COST_CAP_USD to override.", "started_at": started_at, "topic": topic}
     chembl_client = ChEMBLClient() if _should_use_chembl(topic) else None
+    doaj_client = DOAJClient(cache_dir=Path(run_dir) / "doaj-cache")
     entity = resolve_topic(topic, chembl_client=chembl_client)
     if entity.get("blocked"):
         return {
@@ -376,6 +406,9 @@ def run_agent(
     }
     evidence: list[dict] = []
     sources: list[tuple[str, Any]] = [("pubmed", PubMedClient()), ("openalex", OpenAlexClient())]
+    if _should_use_europepmc(domain, topic):
+        sources.append(("europepmc", EuropePMCClient()))
+        source_names.append("europepmc")
     if _should_use_rxiv(domain, topic):
         sources.append(("rxiv", RxivClient()))
         source_names.append("rxiv")
@@ -385,6 +418,9 @@ def run_agent(
     if chembl_client:
         sources.append(("chembl", chembl_client))
         source_names.append("chembl")
+    if _should_use_nih_reporter(domain, topic):
+        sources.append(("nih_reporter", NIHReporterClient()))
+        source_names.append("nih_reporter")
     if semantic_scholar_client:
         source_names.append("semantic_scholar")
     protocol_path = _write_protocol_json(
@@ -519,6 +555,10 @@ def run_agent(
             artifact["gate_reason"] = "insufficient_direct_evidence"
         artifact["citation_violations"] = citation_violations
         artifact["high_severity_citation_count"] = len(high_severity)
+        artifact["source_bundle"] = doaj_client.annotate_entries(artifact.get("source_bundle", []))
+        for entry in artifact["source_bundle"]:
+            if entry.get("card") is not None and entry.get("journal_quality"):
+                entry["card"]["journal_quality"] = str(entry.get("journal_quality"))
         run_log.update(artifact)
         run_log["source_telemetry"] = {
             "retrieved": source_counts,

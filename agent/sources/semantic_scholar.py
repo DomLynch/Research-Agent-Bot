@@ -22,6 +22,7 @@ import httpx
 
 
 BASE_URL = "https://api.semanticscholar.org/graph/v1"
+RECOMMENDATIONS_URL = "https://api.semanticscholar.org/recommendations/v1"
 USER_AGENT = "researka-reference-agent/0.1 (+https://researka.org)"
 DEFAULT_TIMEOUT = 12.0
 
@@ -59,7 +60,7 @@ class SemanticScholarClient:
         params = {
             "query": _clean(query, limit=240),
             "limit": max(1, min(limit, 100)),
-            "fields": "title,abstract,year,externalIds,publicationTypes",
+            "fields": "title,abstract,year,externalIds,publicationTypes,tldr,url,journal,authors,citationCount,influentialCitationCount",
         }
         data = self._get("/paper/search", params=params)
         return [self._normalize(item, query, source_mode="search")
@@ -72,7 +73,7 @@ class SemanticScholarClient:
             return []
         params = {
             "limit": max(1, min(limit, 100)),
-            "fields": "title,abstract,year,externalIds,publicationTypes",
+            "fields": "title,abstract,year,externalIds,publicationTypes,tldr,url,journal,authors,citationCount,influentialCitationCount",
         }
         data = self._get(f"/paper/DOI:{normalized}/references", params=params)
         return [self._normalize(_unwrap_citation(item), f"references_of:{normalized}",
@@ -87,7 +88,7 @@ class SemanticScholarClient:
             return []
         params = {
             "limit": max(1, min(limit, 100)),
-            "fields": "title,abstract,year,externalIds,publicationTypes",
+            "fields": "title,abstract,year,externalIds,publicationTypes,tldr,url,journal,authors,citationCount,influentialCitationCount",
         }
         data = self._get(f"/paper/DOI:{normalized}/citations", params=params)
         return [self._normalize(_unwrap_citation(item), f"citations_of:{normalized}",
@@ -95,13 +96,25 @@ class SemanticScholarClient:
                 for item in data.get("data", [])
                 if _unwrap_citation(item)]
 
+    def recommendations_for(self, doi: str, *, limit: int = 20) -> list[dict[str, Any]]:
+        normalized = _normalize_doi(doi)
+        if not normalized:
+            return []
+        params = {
+            "limit": max(1, min(limit, 100)),
+            "fields": "title,abstract,year,externalIds,publicationTypes,tldr,url,journal,authors,citationCount,influentialCitationCount",
+        }
+        data = self._get(f"/papers/forpaper/DOI:{normalized}", params=params, base_url=RECOMMENDATIONS_URL)
+        return [self._normalize(item, f"recommendations_for:{normalized}", source_mode="recommended")
+                for item in data.get("recommendedPapers", [])]
+
     # ---- Internals ----
 
-    def _get(self, path: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
+    def _get(self, path: str, params: dict[str, Any] | None = None, *, base_url: str = BASE_URL) -> dict[str, Any]:
         """GET with one retry on 429 (rate limit). Returns empty dict on error."""
         for attempt in range(2):
             try:
-                r = self.client.get(f"{BASE_URL}{path}", params=params)
+                r = self.client.get(f"{base_url}{path}", params=params)
                 if r.status_code == 429:
                     time.sleep(1.5 * (attempt + 1))
                     continue
@@ -118,7 +131,8 @@ class SemanticScholarClient:
         doi = _normalize_doi(ext.get("DOI"))
         pmid = ext.get("PubMed") or ""
         title = _clean(paper.get("title"), limit=300)
-        excerpt = _clean(paper.get("abstract"), limit=1600)
+        tldr = (paper.get("tldr") or {}).get("text") if isinstance(paper.get("tldr"), dict) else paper.get("tldr")
+        excerpt = _clean(paper.get("abstract") or tldr, limit=1600)
         year = paper.get("year")
         if isinstance(year, str) and year.isdigit():
             year = int(year)
@@ -126,7 +140,8 @@ class SemanticScholarClient:
             year = None
         pub_types = paper.get("publicationTypes") or []
         evidence_type = _infer_evidence_type(pub_types, title, excerpt)
-        url = _build_url(doi, pmid)
+        url = _clean(paper.get("url"), limit=600) or _build_url(doi, pmid)
+        journal = paper.get("journal") or {}
         return {
             "title": title,
             "excerpt": excerpt,
@@ -137,6 +152,11 @@ class SemanticScholarClient:
             "evidence_type": evidence_type,
             "query": _clean(query, limit=240),
             "_s2_mode": source_mode,
+            "summary": _clean(tldr, limit=320),
+            "citation_count": int(paper.get("citationCount") or 0),
+            "influential_citation_count": int(paper.get("influentialCitationCount") or 0),
+            "journal": _clean((journal or {}).get("name"), limit=200) or None,
+            "authors": [_clean(author.get("name"), limit=120) for author in (paper.get("authors") or []) if _clean(author.get("name"), limit=120)],
         }
 
 

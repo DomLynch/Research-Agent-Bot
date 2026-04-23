@@ -1,5 +1,24 @@
 # DECISION JOURNAL
 
+## 2026-04-23 — Source substrate + 12-citation intake alignment
+**Decision:** Keep the existing public-source scaffold, but deepen the source substrate instead of adding generic-volume databases. Europe PMC becomes a direct retrieval source, OpenAlex and Semantic Scholar contribute richer metadata/signals, NIH RePORTER becomes an optional Tier C/project-context source, DOAJ becomes a journal-quality validator, and the stale 8-source submission gate is raised to the actual 12-source Researka house rule already documented in `AGENTS.md`.
+**Why:** The repo contract already required `12+` retained sources, but runtime code still blocked only below 8 and even capped longevity bundles at 10. At the same time, OpenAlex/Semantic Scholar were being underused, Europe PMC was only helping full-text fetch, and the next retrieval gain for longevity topics was better biomedical substrate, not more grey-literature volume.
+**What shipped:**
+- New `agent/sources/europepmc.py` for direct Europe PMC retrieval.
+- New `agent/sources/doaj.py` for cached DOAJ journal lookups; final source bundles can now carry `journal_quality=doaj-indexed`.
+- New `agent/sources/reporter.py` for NIH RePORTER project retrieval as protocol-like context.
+- `agent/sources/openalex.py` now carries topics, MeSH-like terms, authors, OA URL, citation count, and reference/related-work metadata.
+- `agent/sources/semantic_scholar.py` now carries TLDR/journal/citation metadata and a `recommendations_for()` path used in citation-graph expansion.
+- `agent/fulltext.py` now accepts Europe PMC retrieval entries directly via `pmcid`.
+- `agent/drafter.py` now lets protocol-type entries into the retained bundle, uses richer metadata in topic-fit scoring, expands the longevity cap from 10 to 12, and enforces the 12-source submission threshold.
+- `agent/submit.py` now uses the real 12-source gate; tests and weekly-report expectations were updated to match.
+**Budget impact:** Runtime is now ~5,515 LOC. Raise the working target to ~5,200 LOC and the hard ceiling to 5,800 until the next deletion/refactor pass.
+**Alternatives rejected:**
+- Add BASE/arXiv/CORE as primary retrieval — rejected; wrong signal-to-noise for biomedical longevity.
+- Add WHO ICTRP/PROSPERO immediately — rejected for now; useful, but the official programmatic path is less clean than Europe PMC/RePORTER/DOAJ and should be verified first.
+- Keep the stale 8-source runtime gate because it was “working” — rejected; it contradicted the house rule and made live behavior untrustworthy.
+**Revisit if:** the new 12-source floor blocks too many thin-but-honest longevity topics, or if Europe PMC/OpenAlex/S2 substrate gains still do not materially improve retained bundle quality on live reruns.
+
 ## 2026-04-23 — MiMo editor pass + generic evidence tiers
 **Decision:** Keep the deterministic retrieval/bundle scaffold, but add one bounded second MiMo pass that edits the assembled artifact instead of trusting first-pass prose plus regex cleanup alone. Pair that with generic Tier A/B/C evidence labels on bundle entries so broader topics like rapamycin can separate core aging evidence from supporting human context without topic-specific rules.
 **Why:** The Tier 3 generic fit gate proved the pipeline could generalize across metformin, rapamycin, and senolytics, but the remaining failures were last-mile artifact bugs: truncated abstract clauses (`N=58 vs.`), duplicate abstract/findings hooks, muddy evidence-tier separation on broader rapamycin queries, and lingering extractor-shaped prose. Those are better solved by giving MiMo one final constrained editorial read than by adding more narrow regex patches.

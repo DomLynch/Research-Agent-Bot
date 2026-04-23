@@ -668,7 +668,7 @@ def test_quality_gate_fires_on_classifier_generated_indirect_only_bundle():
             "source_type": "openalex",
             "doi": f"10.1/onco{i}",
         }
-        for i in range(8)
+        for i in range(12)
     ]
     bundle = [_bundle_entry(item, topic_tokens, "longevity") for item in items]
     artifact = {
@@ -756,7 +756,7 @@ def test_drafter_drops_vague_meta_analysis_sentence_without_numeric_grounding() 
     assert "No retained study directly addresses integrated healthspan" in findings
 
 
-def test_drafter_caps_metformin_longevity_source_bundle_to_ten() -> None:
+def test_drafter_caps_metformin_longevity_source_bundle_to_twelve() -> None:
     provider = CaptureProvider()
     drafter = RapidEvidenceDrafter(provider=provider)
     evidence = [
@@ -778,7 +778,7 @@ def test_drafter_caps_metformin_longevity_source_bundle_to_ten() -> None:
         evidence=evidence,
         all_evidence=evidence,
     )
-    assert len(artifact["source_bundle"]) == 10
+    assert len(artifact["source_bundle"]) == 12
 
 
 def test_drafter_replaces_broken_vs_mashup_with_grounded_result_sentence() -> None:

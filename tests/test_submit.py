@@ -348,7 +348,7 @@ def test_quality_gate_blocks_indirect_only_longevity_bundle():
             "doi": f"10.1/onco{i}",
             "directness": "indirect",
         }
-        for i in range(8)
+        for i in range(12)
     ]
     artifact = {
         "title": "Rapid Evidence Synthesis: everolimus",
@@ -363,11 +363,11 @@ def test_quality_gate_blocks_indirect_only_longevity_bundle():
 
 
 def test_quality_gate_exactly_7_entries():
-    """Bundle with 7 entries (just under 8 threshold) → bundle_too_small."""
+    """Bundle with 11 entries (just under 12 threshold) → bundle_too_small."""
     bundle = [
         {"title": f"topic study {i}", "evidence_type": "review" if i % 3 == 0 else "primary",
          "year": 2024, "doi": f"10.1/edge{i}"}
-        for i in range(7)
+        for i in range(11)
     ]
     artifact = {"title": "topic review", "source_bundle": bundle}
     reason = _quality_gate(artifact, current_year=2026)
