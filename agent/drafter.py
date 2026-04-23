@@ -43,6 +43,12 @@ _GENERIC_FALLBACK = "This section draws on {nr} retained evidence receipts ({rv}
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"], "senolytic": ["senolytics"]}
+_GENERIC_TOPIC_TOKENS = {
+    "aging", "ageing", "older", "adult", "adults", "elderly", "longevity", "healthspan",
+    "health", "outcome", "outcomes", "function", "functional", "study", "studies",
+    "trial", "trials", "therapy", "therapies", "treatment", "treatments", "intervention",
+    "interventions", "disease", "prevention", "risk", "risks",
+}
 
 _INJECTION_PATTERNS = (
     r"ignore previous instructions",
@@ -139,12 +145,137 @@ _TRIAL_FLOW_SENTENCE_RE = re.compile(
     r"mean age|baseline|follow-up completed|dropout)",
     re.IGNORECASE,
 )
+_DECIMAL_INTERPUNCT_RE = re.compile(r"(?<=\d)[·•](?=\d)")
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
     raw = str(value or "")
     raw = _INJECTION_RE.sub("[REDACTED]", raw)
+    raw = _DECIMAL_INTERPUNCT_RE.sub(".", raw)
     return re.sub(r"\s+", " ", raw).strip()[:limit]
+
+
+def _core_topic_tokens(topic_tokens: list[str]) -> list[str]:
+    seen: set[str] = set()
+    core: list[str] = []
+    for token in topic_tokens:
+        cleaned = _clean(token, limit=80).lower()
+        if not cleaned or cleaned in _STOPWORDS or cleaned in _GENERIC_TOPIC_TOKENS:
+            continue
+        if cleaned in seen:
+            continue
+        seen.add(cleaned)
+        core.append(cleaned)
+    if core:
+        return core
+    return [token for token in topic_tokens if token and token not in _STOPWORDS]
+
+
+def _mentions_topic(text: str, topic_tokens: list[str]) -> bool:
+    haystack = _clean(text, limit=2400).lower()
+    return any(token in haystack for token in _core_topic_tokens(topic_tokens))
+
+
+def _entry_title_mentions_topic(entry: dict[str, Any], topic_tokens: list[str]) -> bool:
+    return _mentions_topic(str(entry.get("title") or ""), topic_tokens)
+
+
+def _normalize_numeric_phrase(text: str, *, limit: int = 400) -> str:
+    cleaned = _clean(text, limit=limit)
+    if not cleaned:
+        return cleaned
+    cleaned = re.sub(r"\bMEAN\b", "mean", cleaned)
+    cleaned = re.sub(r"\bMEDIAN\b", "median", cleaned)
+    cleaned = re.sub(r"\bspread\b", "SD", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(
+        r"\b(?!CI\b|RR\b|HR\b|OR\b|SD\b|MD\b|N\b|P\b)([A-Z][A-Za-z0-9+/\-]{2,})=([-+]?\d)",
+        r"\1 \2",
+        cleaned,
+    )
+    return cleaned
+
+
+def _split_sentences(text: str, *, limit: int = 4000) -> list[str]:
+    return [part.strip() for part in _SENTENCE_SPLIT_RE.split(_clean(text, limit=limit)) if part.strip()]
+
+
+def _sentence_refs(sentence: str) -> list[int]:
+    return [int(match.group(1)) for match in _CITATION_TOKEN_RE.finditer(sentence)]
+
+
+def _dedupe_repeated_sentences(text: str) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    kept: list[str] = []
+    seen: set[tuple[tuple[int, ...], str]] = set()
+    for sentence in _split_sentences(cleaned):
+        norm = re.sub(r"[^a-z0-9.%/\-]+", " ", _strip_citations(sentence, limit=900).lower()).strip()
+        key = (tuple(sorted(set(_sentence_refs(sentence)))), norm)
+        if norm and key in seen:
+            continue
+        seen.add(key)
+        kept.append(sentence)
+    return " ".join(kept).strip()
+
+
+def _strip_offtopic_claims(text: str, source_bundle: list[dict[str, Any]], topic_tokens: list[str]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    kept: list[str] = []
+    reviewish_roles = {"meta_analysis", "review", "observational", "off_domain_indirect", "unknown"}
+    for sentence in _split_sentences(cleaned):
+        refs = [ref for ref in _sentence_refs(sentence) if 1 <= ref <= len(source_bundle)]
+        if not refs:
+            kept.append(sentence)
+            continue
+        entries = [source_bundle[ref - 1] for ref in refs]
+        roles = {str(entry.get("role") or "unknown") for entry in entries}
+        if roles.issubset(reviewish_roles):
+            if _mentions_topic(sentence, topic_tokens) or any(_entry_title_mentions_topic(entry, topic_tokens) for entry in entries):
+                kept.append(sentence)
+                continue
+            continue
+        kept.append(sentence)
+    return " ".join(kept).strip()
+
+
+def _entry_result_sentence(entry: dict[str, Any]) -> str:
+    excerpt = _clean(entry.get("excerpt"), limit=700)
+    if not excerpt:
+        return ""
+    sentences = _split_sentences(excerpt, limit=700)
+    if not sentences:
+        return ""
+    def _score(sentence: str) -> tuple[int, int, int, int]:
+        return (
+            1 if _PRIMARY_RESULT_SENTENCE_RE.search(sentence) else 0,
+            1 if _STRONG_RESULT_SENTENCE_RE.search(sentence) else 0,
+            1 if _RESULT_MARKER_RE.search(sentence) else 0,
+            len(sentence),
+        )
+    best = sorted(sentences, key=_score, reverse=True)[0]
+    return _strip_citations(_normalize_numeric_phrase(best), limit=500)
+
+
+def _best_direct_result_entry(source_bundle: list[dict[str, Any]]) -> dict[str, Any] | None:
+    candidates = [
+        entry for entry in source_bundle
+        if entry.get("directness") == "direct" and entry.get("role") == "published_results"
+    ]
+    if not candidates:
+        return None
+    return max(
+        candidates,
+        key=lambda entry: (
+            1 if _entry_result_sentence(entry) else 0,
+            1 if entry.get("source_type") != "clinicaltrials" else 0,
+            float(entry.get("relevance") or 0.0),
+            int(entry.get("year") or 0),
+        ),
+    )
 
 
 def _bundle_excerpt(item: dict[str, Any]) -> str:
@@ -339,7 +470,7 @@ def _sanitize_registry_claims(text: str, blocked_refs: list[int]) -> str:
     if not cleaned or not blocked_refs:
         return cleaned
     blocked_tags = [f"[{idx}]" for idx in blocked_refs]
-    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    sentences = _split_sentences(cleaned)
     kept = []
     hit_tags: list[str] = []
     for sentence in sentences:
@@ -358,10 +489,10 @@ def _sanitize_published_result_language(text: str, source_bundle: list[dict[str,
     cleaned = _clean(text, limit=4000)
     if not cleaned:
         return cleaned
-    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    sentences = _split_sentences(cleaned)
     kept: list[str] = []
     for sentence in sentences:
-        refs = [int(match.group(1)) for match in _CITATION_TOKEN_RE.finditer(sentence)]
+        refs = _sentence_refs(sentence)
         if not refs:
             kept.append(sentence)
             continue
@@ -384,9 +515,9 @@ def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
     if not effects:
         return ""
     effect = effects[0]
-    outcome = _clean(effect.get("outcome"), limit=90) or "reported outcome"
-    metric = _clean(effect.get("metric"), limit=30)
-    value = _clean(effect.get("value"), limit=120)
+    outcome = _normalize_numeric_phrase(_clean(effect.get("outcome"), limit=90), limit=90) or "reported outcome"
+    metric = _normalize_numeric_phrase(_clean(effect.get("metric"), limit=30), limit=30)
+    value = _normalize_numeric_phrase(_clean(effect.get("value"), limit=120), limit=140)
     p_value = _clean(effect.get("p_value"), limit=20)
     n = _clean(effect.get("n"), limit=80)
     bits = [f"Published results [{index}] report {outcome}"]
@@ -405,9 +536,9 @@ def _excerpt_numeric_sentence(index: int, entry: dict[str, Any]) -> str:
     excerpt = _clean(entry.get("excerpt"), limit=500)
     if not excerpt:
         return ""
-    sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", excerpt) if part.strip()]
+    sentences = _split_sentences(excerpt, limit=500)
     for sentence in sentences:
-        bare = re.sub(r"\[\d+\]", "", sentence)
+        bare = _normalize_numeric_phrase(re.sub(r"\[\d+\]", "", sentence), limit=320)
         if not (_NUMERIC_CLAIM_RE.search(bare) and _EFFECT_STYLE_RE.search(bare)):
             continue
         role = str(entry.get("role") or "unknown")
@@ -420,10 +551,10 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
     cleaned = _clean(text, limit=4000)
     if not cleaned:
         return cleaned
-    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    sentences = _split_sentences(cleaned)
     kept: list[str] = []
     for sentence in sentences:
-        refs = [int(match.group(1)) for match in _CITATION_TOKEN_RE.finditer(sentence)]
+        refs = _sentence_refs(sentence)
         if not refs:
             kept.append(sentence)
             continue
@@ -463,7 +594,7 @@ def _clean_grounding_mashups(text: str, source_bundle: list[dict[str, Any]]) -> 
     cleaned = _clean(text, limit=4000)
     if not cleaned:
         return cleaned
-    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    sentences = _split_sentences(cleaned)
     kept: list[str] = []
     for idx, sentence in enumerate(sentences):
         next_sentence = sentences[idx + 1] if idx + 1 < len(sentences) else ""
@@ -497,7 +628,7 @@ def _strip_unsupported_numeric_claims(text: str, source_bundle: list[dict[str, A
     unsupported = {claim for claim in claims if not any(claim in excerpt for excerpt in excerpts)}
     if not unsupported:
         return cleaned
-    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    sentences = _split_sentences(cleaned)
     kept = [sentence for sentence in sentences if not any(claim in sentence.lower() for claim in unsupported)]
     return " ".join(part for part in kept if part).strip()
 
@@ -517,15 +648,20 @@ def _strip_citations(text: str, *, limit: int = 1200) -> str:
 
 
 def _leading_sentences(text: str, count: int = 2, *, limit: int = 700) -> str:
-    sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", _strip_citations(text, limit=2000)) if part.strip()]
+    sentences = _split_sentences(_strip_citations(text, limit=2000), limit=2000)
     return _clean(" ".join(sentences[:count]), limit=limit)
 
 
-def _human_abstract(topic: str, domain_slug: str, sections: dict[str, str]) -> str:
+def _human_abstract(topic: str, domain_slug: str, sections: dict[str, str], source_bundle: list[dict[str, Any]]) -> str:
     opener = f"This rapid review evaluates {topic} in the {domain_slug} domain."
+    strongest = ""
+    if strongest_entry := _best_direct_result_entry(source_bundle):
+        strongest = _entry_result_sentence(strongest_entry)
     findings = _leading_sentences(sections.get("Key Findings", ""), count=2, limit=700)
     limitation = _leading_sentences(sections.get("Limitations", ""), count=1, limit=320)
-    return _clean(" ".join(part for part in (opener, findings, limitation) if part), limit=1200)
+    return _dedupe_repeated_sentences(
+        _clean(" ".join(part for part in (opener, strongest, findings, limitation) if part), limit=1200)
+    )
 
 
 def _is_metformin_focus(topic_tokens: list[str]) -> bool:
@@ -786,6 +922,7 @@ class RapidEvidenceDrafter:
             if heading in sections:
                 sections[heading] = _ground_required_numeric_sentences(sections[heading], source_bundle)
                 sections[heading] = _clean_grounding_mashups(sections[heading], source_bundle)
+                sections[heading] = _strip_offtopic_claims(sections[heading], source_bundle, topic_tokens)
                 sections[heading] = _strip_unsupported_numeric_claims(sections[heading], source_bundle)
 
         if has_effect_data and not _has_quantitative_content(sections.get("Key Findings", "")) and first_effect_entry:
@@ -794,6 +931,9 @@ class RapidEvidenceDrafter:
             sections["Key Findings"] = (
                 f"{sections['Key Findings']} No retained study directly addresses integrated healthspan in a general older-adult population."
             ).strip()
+        for heading in ("Key Findings", "Conclusion"):
+            if heading in sections:
+                sections[heading] = _dedupe_repeated_sentences(sections[heading])
 
         if fallback_count >= 6:
             return (
@@ -818,7 +958,7 @@ class RapidEvidenceDrafter:
             )
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
-            "abstract": _human_abstract(topic, domain_slug, sections),
+            "abstract": _human_abstract(topic, domain_slug, sections, source_bundle),
             "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
             "sections": sections,
             "source_bundle": source_bundle,

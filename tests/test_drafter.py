@@ -137,6 +137,51 @@ class SplitMashupProvider(CaptureProvider):
         )
 
 
+class DuplicateGroundedProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of metformin on healthspan outcomes in older adults, compared to placebo, and what does recent direct trial evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+                "search_summary": "Recent direct trials were reviewed.",
+                "landscape": "The evidence includes direct trials.",
+                "findings": (
+                    "Published results [1] report Frailty Index Based on Deficit Accumulation; "
+                    "MEAN Metformin=-0.0002 (spread 0.0002); Placebo=0.0002 (spread 0.0002). "
+                    "Published results [1] report Frailty Index Based on Deficit Accumulation; "
+                    "MEAN Metformin=-0.0002 (spread 0.0002); Placebo=0.0002 (spread 0.0002)."
+                ),
+                "limitations": "The evidence base remains small and underpowered.",
+                "gaps_identified": "Long-duration trials remain sparse.",
+                "conclusion": "Metformin remains inconclusive for broad healthspan benefit [1].",
+            },
+            {},
+        )
+
+
+class OffTopicMultiDrugProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of rapamycin on healthspan outcomes in older adults, compared to placebo, and what does recent direct trial evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+                "search_summary": "Recent direct trials and broad reviews were reviewed.",
+                "landscape": "The evidence includes direct trials and broader comparative syntheses.",
+                "findings": (
+                    "The direct evidence remains limited. "
+                    "Published results [1] reported sirolimus improved vaccine responses in older adults. "
+                    "Meta-analysis [2] reported everolimus reduced major adverse cardiovascular events."
+                ),
+                "limitations": "The evidence base remains small and underpowered.",
+                "gaps_identified": "Long-duration trials remain sparse.",
+                "conclusion": "Rapamycin remains inconclusive for broad healthspan benefit [1,2].",
+            },
+            {},
+        )
+
+
 def test_classify_directness_marks_aging_rct_direct():
     item = {
         "title": "Metformin and aging in older adults: randomized controlled trial",
@@ -347,7 +392,7 @@ def test_drafter_sanitizes_registry_only_outcome_claims_and_adds_numeric_fallbac
     findings = artifact["sections"]["Key Findings"]
     assert "Registered trial [2] showed" not in findings
     assert "Registered studies [2] describe study design only" in findings
-    assert "MEAN -0.1 vs 0.0" in findings
+    assert "mean -0.1 vs 0.0" in findings
     assert "p=0.04" in findings
 
 
@@ -578,7 +623,7 @@ def test_drafter_drops_vague_meta_analysis_sentence_without_numeric_grounding() 
     )
     findings = artifact["sections"]["Key Findings"]
     assert "A meta-analysis from 2024 synthesized outcomes" not in findings
-    assert "MEAN Metformin=-0.0002; Placebo=0.0002" in findings
+    assert "mean Metformin -0.0002; Placebo 0.0002" in findings
     assert "No retained study directly addresses integrated healthspan" in findings
 
 
@@ -741,3 +786,106 @@ def test_drafter_grounds_from_structured_pubmed_results_excerpt() -> None:
     assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in artifact["source_bundle"][0]["excerpt"]
     findings = artifact["sections"]["Key Findings"]
     assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in findings
+
+
+def test_drafter_dedupes_repeated_grounded_sentence() -> None:
+    provider = DuplicateGroundedProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+        "excerpt": "Interventional study in older adults.",
+        "evidence_type": "interventional",
+        "source_type": "clinicaltrials",
+        "has_results": True,
+        "trial_status": "results",
+        "year": 2024,
+        "url": "https://clinicaltrials.gov/study/NCT00000001",
+        "extraction": {
+            "effects": [
+                {
+                    "outcome": "Frailty Index Based on Deficit Accumulation",
+                    "metric": "MEAN",
+                    "value": "Metformin=-0.0002 (spread 0.0002); Placebo=0.0002 (spread 0.0002)",
+                    "n": "Metformin N=58; Placebo N=67",
+                }
+            ]
+        },
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, {**published, "url": "https://clinicaltrials.gov/study/NCT00000002", "title": "Metformin companion direct trial"}],
+        all_evidence=[published, {**published, "url": "https://clinicaltrials.gov/study/NCT00000002", "title": "Metformin companion direct trial"}],
+    )
+    findings = artifact["sections"]["Key Findings"]
+    assert findings.count("Frailty Index Based on Deficit Accumulation") == 1
+
+
+def test_drafter_topic_claim_fit_guard_is_generic() -> None:
+    provider = OffTopicMultiDrugProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Sirolimus and vaccine responses in older adults",
+        "excerpt": "Published results: sirolimus improved vaccine responses in older adults.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/501/",
+    }
+    review = {
+        "title": "Evaluation of mTOR inhibitors in older people: systematic review",
+        "excerpt": "A multi-intervention review including everolimus and other mTOR inhibitors.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/502/",
+    }
+    artifact, _ = drafter.draft(
+        topic="rapamycin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["rapamycin aging older adults"],
+        evidence=[published, review],
+        all_evidence=[published, review],
+    )
+    findings = artifact["sections"]["Key Findings"].lower()
+    assert "everolimus reduced major adverse cardiovascular events" not in findings
+    assert "sirolimus improved vaccine responses" in findings
+
+
+def test_drafter_strengthens_abstract_with_strongest_direct_numeric_result_and_ascii_decimals() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin and physical performance in older people (MET-PREVENT)",
+        "excerpt": (
+            "BACKGROUND: Background sentence. METHODS: Methods sentence. "
+            "FINDINGS: Mean 4-m walk speed at 4 months was 0·57 m/s in metformin versus 0·58 m/s in placebo "
+            "(adjusted treatment effect 0·001 m/s [95% CI -0·06 to 0·06]; p=0·96). "
+            "INTERPRETATION: Metformin did not improve 4-m walk speed."
+        ),
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+    }
+    companion = {
+        "title": "Metformin companion trial in older adults",
+        "excerpt": "A smaller metformin trial in older adults reported mixed functional outcomes.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40147476/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, companion],
+        all_evidence=[published, companion],
+    )
+    assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in artifact["abstract"]
+    assert "·" not in artifact["abstract"]
