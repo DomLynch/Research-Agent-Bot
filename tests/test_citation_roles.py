@@ -120,6 +120,28 @@ def test_published_aging_trial_is_published_results() -> None:
     assert role == "published_results"
 
 
+def test_rct_like_review_entry_is_promoted_to_published_results() -> None:
+    entry = {
+        "title": "Exercise and Weekly Sirolimus (Rapamycin) in Older Adults: RAPA-EX-01 Randomised, Double-Blind, Placebo-Controlled Trial",
+        "excerpt": "Older adults completed a randomized placebo-controlled sirolimus trial with strength outcomes.",
+        "evidence_type": "review",
+    }
+    card = _card(entry)
+    card["study_type"] = "rct"
+    role = classify_citation_role(entry, card, "longevity", ["rapamycin", "older", "adults", "sirolimus"])
+    assert role == "published_results"
+
+
+def test_in_vitro_entry_is_mechanistic() -> None:
+    entry = {
+        "title": "Dasatinib and Quercetin Limit Gingival Senescence, Inflammation, and Bone Loss",
+        "excerpt": "In vitro gingival fibroblast assays showed reduced SA-beta-gal activity.",
+        "evidence_type": "primary",
+    }
+    role = classify_citation_role(entry, _card(entry), "longevity", ["senolytic", "dasatinib", "quercetin"])
+    assert role == "mechanistic"
+
+
 def test_directness_for_published_aging_trial_is_direct() -> None:
     entry = {
         "title": "Metformin and cognitive decline in older adults",

@@ -295,6 +295,7 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
             quality = card.get("quality_signal", "")
             grade = card.get("evidence_grade", "")
             directness = item.get("directness", "")
+            evidence_tier = item.get("evidence_tier", "")
             card_str = ""
             if citation:
                 card_str += f" | {citation}"
@@ -306,6 +307,8 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
                 card_str += f" | GRADE-lite {grade}"
             if directness:
                 card_str += f" | {directness}"
+            if evidence_tier:
+                card_str += f" | {evidence_tier}"
             lines.append(f"[{i}] {title} ({year}), {etype}{src_str}{card_str}{url_str}")
         lines.append("")
     return "\n".join(lines).strip() + "\n"

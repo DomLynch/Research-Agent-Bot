@@ -224,8 +224,44 @@ def _entry_title_mentions_topic(entry: dict[str, Any], topic_tokens: list[str]) 
     return _mentions_topic(str(entry.get("title") or ""), topic_tokens)
 
 
+def _sentence_complete(sentence: str) -> bool:
+    bare = _strip_citations(_clean(sentence, limit=500), limit=500)
+    if not bare or bare[-1] not in ".!?":
+        return False
+    if re.search(r"\bvs\.$", bare, re.IGNORECASE):
+        return False
+    if bare.count("(") != bare.count(")") or bare.count("[") != bare.count("]"):
+        return False
+    return True
+
+
+def _complete_sentences(text: str, *, max_sentences: int | None = None, limit: int = 1200) -> str:
+    kept = [sentence for sentence in _split_sentences(_trim_incomplete_fragments(text, limit=limit), limit=limit) if _sentence_complete(sentence)]
+    if max_sentences is not None:
+        kept = kept[:max_sentences]
+    return _clean(" ".join(kept), limit=limit)
+
+
+def _sentence_key(sentence: str) -> str:
+    return re.sub(r"[^a-z0-9.%/\-]+", " ", _strip_citations(sentence, limit=900).lower()).strip()
+
+
+def _drop_shared_sentences(text: str, other: str, *, limit: int = 1200) -> str:
+    other_keys = {_sentence_key(sentence) for sentence in _split_sentences(other, limit=limit)}
+    kept = [sentence for sentence in _split_sentences(text, limit=limit) if _sentence_key(sentence) not in other_keys]
+    return _clean(" ".join(kept), limit=limit) if kept else _clean(text, limit=limit)
+
+
+def _trim_incomplete_fragments(text: str, *, limit: int = 1200) -> str:
+    cleaned = re.sub(r"\bvs\.(?=(?:\s*[).,;:]|$))", "", text, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\bversus(?=(?:\s*[).,;:]|$))", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\.\.+", ".", cleaned)
+    cleaned = re.sub(r"\s+\.", ".", cleaned)
+    return _clean(cleaned, limit=limit)
+
+
 def _normalize_numeric_phrase(text: str, *, limit: int = 400) -> str:
-    cleaned = _clean(text, limit=limit)
+    cleaned = _trim_incomplete_fragments(text, limit=limit)
     if not cleaned:
         return cleaned
     cleaned = re.sub(r"\bMEAN\b", "mean", cleaned)
@@ -327,6 +363,26 @@ def _topic_fit_bucket(score: float) -> str:
     if score >= 0.3:
         return "landscape"
     return "drop"
+
+
+def _evidence_tier(item: dict[str, Any], card: dict[str, Any], *, role: str, directness: str, topic_fit_bucket: str) -> str:
+    if role in {"registered_pending", "published_protocol", "animal_model", "mechanistic", "off_domain_indirect", "unknown"}:
+        return "Tier C protocol/mechanistic support"
+    blob = " ".join(
+        str(v or "")
+        for v in (
+            item.get("title"),
+            item.get("excerpt"),
+            card.get("population"),
+            card.get("outcomes"),
+            card.get("context"),
+        )
+    )
+    if directness == "direct" and topic_fit_bucket == "core" and (
+        _aging_outcome_signal(blob) or _POPULATION_SIGNAL_RE.search(blob)
+    ):
+        return "Tier A direct aging evidence"
+    return "Tier B supporting human evidence"
 
 
 def _claim_from_entry(entry: dict[str, Any]) -> dict[str, Any] | None:
@@ -617,6 +673,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
     relevance = _relevance(item, topic_tokens, card=card, directness=directness, role=role)
     topic_meta = topic_meta or _topic_profile(" ".join(topic_tokens))
     topic_fit = _topic_fit_score({**item, "role": role}, card, topic_meta, domain_slug)
+    topic_fit_bucket = _topic_fit_bucket(topic_fit)
     claim = _claim_from_entry({"excerpt": _bundle_excerpt(item), "extraction": item.get("extraction") or {}, "card": card})
     return {
         "title": _clean(item.get("title"), limit=200),
@@ -632,7 +689,8 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "extraction": item.get("extraction") or {},
         "relevance": relevance,
         "topic_fit": topic_fit,
-        "topic_fit_bucket": _topic_fit_bucket(topic_fit),
+        "topic_fit_bucket": topic_fit_bucket,
+        "evidence_tier": _evidence_tier(item, card, role=role, directness=directness, topic_fit_bucket=topic_fit_bucket),
         "role": role,
         "directness": directness,
         "claim": claim if _claim_schema_ok(claim) else None,
@@ -858,13 +916,71 @@ def _human_abstract(topic: str, domain_slug: str, sections: dict[str, str], sour
         strongest = _entry_result_sentence(strongest_entry)
     findings = _leading_sentences(sections.get("Key Findings", ""), count=2, limit=700)
     limitation = _leading_sentences(sections.get("Limitations", ""), count=1, limit=320)
-    return _dedupe_repeated_sentences(
+    abstract = _dedupe_repeated_sentences(
         _clean(" ".join(part for part in (opener, strongest, findings, limitation) if part), limit=1200)
     )
+    return _complete_sentences(abstract, max_sentences=5, limit=1200)
+
+
+def _postprocess_sections(
+    sections: dict[str, str],
+    *,
+    source_bundle: list[dict[str, Any]],
+    registered_refs: list[int],
+    topic_tokens: list[str],
+    has_effect_data: bool,
+    first_effect_entry: tuple[int, dict[str, Any]] | None,
+) -> dict[str, str]:
+    polished = dict(sections)
+    for heading in ("Search Summary", "Evidence Landscape", "Key Findings", "Limitations", "Conclusion"):
+        if heading in polished:
+            polished[heading] = _sanitize_published_result_language(polished[heading], source_bundle)
+    for heading in ("Evidence Landscape", "Key Findings", "Conclusion"):
+        if heading in polished:
+            polished[heading] = _sanitize_registry_claims(polished[heading], registered_refs)
+    for heading in ("Key Findings", "Conclusion"):
+        if heading in polished:
+            polished[heading] = _ground_required_numeric_sentences(polished[heading], source_bundle)
+            polished[heading] = _clean_grounding_mashups(polished[heading], source_bundle)
+            polished[heading] = _strip_offtopic_claims(polished[heading], source_bundle, topic_tokens)
+            polished[heading] = _strip_unsupported_numeric_claims(polished[heading], source_bundle)
+    if has_effect_data and not _has_quantitative_content(polished.get("Key Findings", "")) and first_effect_entry:
+        polished["Key Findings"] = f"{polished['Key Findings']} {_numeric_effect_sentence(*first_effect_entry)}".strip()
+    if not re.search(r"\b(no evidence|remains unsupported|not directly addressed|inconclusive|insufficient)\b", polished.get("Key Findings", ""), re.IGNORECASE):
+        polished["Key Findings"] = (
+            f"{polished['Key Findings']} No retained study directly addresses integrated healthspan in a general older-adult population."
+        ).strip()
+    for heading in ("Evidence Landscape", "Key Findings", "Conclusion"):
+        if heading in polished:
+            polished[heading] = _complete_sentences(_dedupe_repeated_sentences(polished[heading]), limit=4000)
+    return polished
+
+
+def _merge_usage(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]:
+    merged = dict(base or {})
+    for key in ("input_tokens", "output_tokens", "total_tokens"):
+        merged[key] = int(merged.get(key, 0) or 0) + int(extra.get(key, 0) or 0)
+    return merged
+
+
+def _editor_bundle_lines(source_bundle: list[dict[str, Any]]) -> str:
+    lines: list[str] = []
+    for idx, entry in enumerate(source_bundle[:10], start=1):
+        line = (
+            f"[{idx}] tier={entry.get('evidence_tier', 'unknown')}; role={entry.get('role', 'unknown')}; "
+            f"directness={entry.get('directness', 'indirect')}; year={entry.get('year', 'unknown')}; "
+            f"title={entry.get('title', 'unknown')}"
+        )
+        result_sentence = _entry_result_sentence(entry)
+        if result_sentence:
+            line += f"; result={_clean(result_sentence, limit=220)}"
+        lines.append(line)
+    return "\n".join(lines)
 
 
 def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, int, int, float, int, int]:
     return (
+        1 if entry.get("evidence_tier") == "Tier A direct aging evidence" else 0,
         role_sort_priority(str(entry.get("role") or "unknown")),
         1 if entry.get("directness") == "direct" else 0,
         1 if entry.get("claim") else 0,
@@ -910,6 +1026,48 @@ def _select_prompt_entries(bundle_candidates: list[dict[str, Any]]) -> list[dict
 class RapidEvidenceDrafter:
     def __init__(self, *, provider: Any) -> None:
         self.provider = provider
+
+    def _refine_with_editor(
+        self,
+        *,
+        topic: str,
+        domain_slug: str,
+        criteria: str,
+        abstract: str,
+        sections: dict[str, str],
+        source_bundle: list[dict[str, Any]],
+    ) -> tuple[dict[str, str], dict[str, Any] | None]:
+        if not getattr(self.provider, "supports_refinement", False):
+            return {}, None
+        system_prompt = (
+            "You are the final editor for a rapid evidence synthesis. Return JSON only with plain-string keys: "
+            "abstract, landscape, findings, conclusion. Improve clarity without inventing facts or citations. "
+            "Use only the cited evidence already in the draft. The Abstract must contain 4-5 complete sentences, "
+            "lead with the overall direction, include the strongest direct result, and avoid truncated fragments. "
+            "Do not repeat the same sentence verbatim in both the abstract and Key Findings. "
+            "When broader human disease-context evidence appears, label it as supporting human evidence rather than core aging evidence. "
+            "Treat Tier A as direct aging evidence, Tier B as supporting human evidence, and Tier C as protocol/mechanistic support. "
+            "Do not cite both a published paper and its preprint variant as parallel flagship evidence if one published version is already present."
+        )
+        user_prompt = (
+            f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\n\n"
+            f"Current abstract:\n{abstract}\n\n"
+            f"Current Evidence Landscape:\n{sections.get('Evidence Landscape', '')}\n\n"
+            f"Current Key Findings:\n{sections.get('Key Findings', '')}\n\n"
+            f"Current Conclusion:\n{sections.get('Conclusion', '')}\n\n"
+            f"Bundle summary:\n{_editor_bundle_lines(source_bundle)}"
+        )
+        result, _ = self.provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        result = {str(k).lower(): v for k, v in result.items()}
+        updates = {
+            "abstract": _clean(result.get("abstract"), limit=1600),
+            "landscape": _clean(result.get("landscape"), limit=4000),
+            "findings": _clean(result.get("findings"), limit=4000),
+            "conclusion": _clean(result.get("conclusion"), limit=2000),
+        }
+        if not any(updates.values()):
+            return {}, result
+        return updates, result
 
     def draft(
         self,
@@ -1018,6 +1176,7 @@ class RapidEvidenceDrafter:
             parts.append(f"type={card.get('study_type', 'unknown')}")
             parts.append(f"grade={card.get('evidence_grade', 'L')}")
             parts.append(f"directness={e.get('directness', 'indirect')}")
+            parts.append(f"tier={e.get('evidence_tier', 'unknown')}")
             if e.get("source_type") == "clinicaltrials":
                 parts.append(f"trial_status={e.get('trial_status', 'registered')}")
             if card.get("quality_signal"):
@@ -1100,30 +1259,14 @@ class RapidEvidenceDrafter:
                 fallback_count += 1
             sections[heading] = picked
 
-        for heading in ("Search Summary", "Evidence Landscape", "Key Findings", "Limitations", "Conclusion"):
-            if heading in sections:
-                sections[heading] = _sanitize_published_result_language(sections[heading], source_bundle)
-
-        for heading in ("Evidence Landscape", "Key Findings", "Conclusion"):
-            if heading in sections:
-                sections[heading] = _sanitize_registry_claims(sections[heading], registered_refs)
-
-        for heading in ("Key Findings", "Conclusion"):
-            if heading in sections:
-                sections[heading] = _ground_required_numeric_sentences(sections[heading], source_bundle)
-                sections[heading] = _clean_grounding_mashups(sections[heading], source_bundle)
-                sections[heading] = _strip_offtopic_claims(sections[heading], source_bundle, topic_tokens)
-                sections[heading] = _strip_unsupported_numeric_claims(sections[heading], source_bundle)
-
-        if has_effect_data and not _has_quantitative_content(sections.get("Key Findings", "")) and first_effect_entry:
-            sections["Key Findings"] = f"{sections['Key Findings']} {_numeric_effect_sentence(*first_effect_entry)}".strip()
-        if not re.search(r"\b(no evidence|remains unsupported|not directly addressed|inconclusive|insufficient)\b", sections.get("Key Findings", ""), re.IGNORECASE):
-            sections["Key Findings"] = (
-                f"{sections['Key Findings']} No retained study directly addresses integrated healthspan in a general older-adult population."
-            ).strip()
-        for heading in ("Key Findings", "Conclusion"):
-            if heading in sections:
-                sections[heading] = _dedupe_repeated_sentences(sections[heading])
+        sections = _postprocess_sections(
+            sections,
+            source_bundle=source_bundle,
+            registered_refs=registered_refs,
+            topic_tokens=topic_tokens,
+            has_effect_data=has_effect_data,
+            first_effect_entry=first_effect_entry,
+        )
 
         if fallback_count >= 6:
             return (
@@ -1141,6 +1284,42 @@ class RapidEvidenceDrafter:
                 f"to determine whether the current literature supports actionable conclusions for practitioners and researchers."
             ).strip()
 
+        abstract = _human_abstract(topic, domain_slug, sections, source_bundle)
+        editor_updates, editor_payload = self._refine_with_editor(
+            topic=topic,
+            domain_slug=domain_slug,
+            criteria=criteria,
+            abstract=abstract,
+            sections=sections,
+            source_bundle=source_bundle,
+        )
+        if editor_updates:
+            if editor_updates.get("landscape"):
+                sections["Evidence Landscape"] = editor_updates["landscape"]
+            if editor_updates.get("findings"):
+                sections["Key Findings"] = editor_updates["findings"]
+            if editor_updates.get("conclusion"):
+                sections["Conclusion"] = editor_updates["conclusion"]
+            sections = _postprocess_sections(
+                sections,
+                source_bundle=source_bundle,
+                registered_refs=registered_refs,
+                topic_tokens=topic_tokens,
+                has_effect_data=has_effect_data,
+                first_effect_entry=first_effect_entry,
+            )
+            if editor_updates.get("abstract"):
+                abstract = editor_updates["abstract"]
+        abstract = _complete_sentences(_dedupe_repeated_sentences(abstract), max_sentences=5, limit=1200)
+        if editor_updates:
+            abstract = _drop_shared_sentences(abstract, sections.get("Key Findings", ""), limit=1200)
+        if not abstract:
+            abstract = _human_abstract(topic, domain_slug, sections, source_bundle)
+        if editor_payload:
+            result["usage"] = _merge_usage(result.get("usage", {}), editor_payload.get("usage", {}))
+            result["estimated_cost_usd"] = float(result.get("estimated_cost_usd", 0.0) or 0.0) + float(editor_payload.get("estimated_cost_usd", 0.0) or 0.0)
+            result["editor_refinement_applied"] = True
+
         if len(source_bundle) < 8 and os.getenv("RESEARKA_URL"):
             return (
                 {"error": f"Insufficient relevant sources for submission ({len(source_bundle)}/8).", "source_bundle": source_bundle},
@@ -1148,7 +1327,7 @@ class RapidEvidenceDrafter:
             )
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
-            "abstract": _human_abstract(topic, domain_slug, sections, source_bundle),
+            "abstract": abstract,
             "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
             "sections": sections,
             "source_bundle": source_bundle,
@@ -1163,6 +1342,7 @@ class RapidEvidenceDrafter:
             "usage": result.get("usage", {}),
             "estimated_cost_usd": float(result.get("estimated_cost_usd", 0.0) or 0.0),
             "model": result.get("model", getattr(self.provider, "model", "unknown")),
+            "editor_refinement_applied": bool(result.get("editor_refinement_applied")),
         }
         artifact["citation_violations"] = validate_citations(artifact, source_bundle)
         artifact["high_severity_citation_count"] = sum(

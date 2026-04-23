@@ -42,6 +42,7 @@ def _usage(payload: dict[str, Any]) -> dict[str, int]:
 
 @dataclass(slots=True)
 class MimoClient:
+    supports_refinement: bool = True
     model: str = "mimo-v2-pro"
     base_url: str = "https://token-plan-sgp.xiaomimimo.com/v1"
     api_key_env: str = "MIMO_API_KEY"

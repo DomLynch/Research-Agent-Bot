@@ -182,6 +182,63 @@ class OffTopicMultiDrugProvider(CaptureProvider):
         )
 
 
+class RefinementProvider(CaptureProvider):
+    supports_refinement = True
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.calls = 0
+
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.calls += 1
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        if self.calls == 1:
+            return (
+                {
+                    "question": "What are the effects of rapamycin on healthspan outcomes in older adults, compared to placebo, and what does recent direct trial evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+                    "search_summary": "Recent direct trials and broad reviews were reviewed.",
+                    "landscape": "The evidence includes direct trials and broader comparative syntheses.",
+                    "findings": "The overall evidence is limited but hypothesis-generating. Published results [1] reported weekly rapamycin did not change visceral adiposity versus placebo [1].",
+                    "limitations": "The evidence base remains small and underpowered.",
+                    "gaps_identified": "Long-duration trials remain sparse.",
+                    "conclusion": "Rapamycin remains inconclusive for broad healthspan benefit [1].",
+                    "usage": {"input_tokens": 100, "output_tokens": 50, "total_tokens": 150},
+                    "estimated_cost_usd": 0.01,
+                    "prompt_version": self.prompt_version,
+                    "model": self.model,
+                },
+                {},
+            )
+        return (
+            {
+                "abstract": (
+                    "The overall evidence is limited but hypothesis-generating. "
+                    "The strongest completed older-adult trial found no change in visceral adiposity versus placebo [1]. "
+                    "Supporting human disease-context evidence is secondary and should not be treated as core healthspan proof [2]. "
+                    "Protocol and mechanistic sources remain hypothesis-generating rather than outcome evidence [3]."
+                ),
+                "landscape": (
+                    "Tier A direct aging evidence comes from completed older-adult trials [1]. "
+                    "Tier B supporting human evidence comes from disease-context studies that remain less generalizable [2]. "
+                    "Tier C protocol/mechanistic support frames future questions without outcome claims [3]."
+                ),
+                "findings": (
+                    "The overall evidence is limited but hypothesis-generating. "
+                    "Published results [1] reported weekly rapamycin did not change visceral adiposity versus placebo [1]. "
+                    "Supporting human evidence from disease-context studies remains secondary [2]. "
+                    "No retained study directly addresses integrated healthspan in a general older-adult population."
+                ),
+                "conclusion": "Rapamycin shows selective signals but no proven broad healthspan benefit in older adults [1].",
+                "usage": {"input_tokens": 60, "output_tokens": 40, "total_tokens": 100},
+                "estimated_cost_usd": 0.005,
+                "prompt_version": self.prompt_version,
+                "model": self.model,
+            },
+            {},
+        )
+
+
 def test_classify_directness_marks_aging_rct_direct():
     item = {
         "title": "Metformin and aging in older adults: randomized controlled trial",
@@ -889,6 +946,97 @@ def test_drafter_strengthens_abstract_with_strongest_direct_numeric_result_and_a
     )
     assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in artifact["abstract"]
     assert "·" not in artifact["abstract"]
+
+
+def test_drafter_drops_truncated_sentence_from_human_abstract() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin frailty trial in older adults",
+        "excerpt": "Randomized trial in older adults with frailty outcomes.",
+        "evidence_type": "interventional",
+        "source_type": "clinicaltrials",
+        "has_results": True,
+        "trial_status": "results",
+        "year": 2024,
+        "url": "https://clinicaltrials.gov/study/NCT00000001",
+        "extraction": {
+            "effects": [
+                {
+                    "outcome": "Frailty Index Based on Deficit Accumulation",
+                    "metric": "MEAN",
+                    "value": "Metformin=-0.0002 (spread 0.0002); Placebo=0.0002 (spread 0.0002)",
+                    "n": "Metformin N=58 vs.",
+                }
+            ]
+        },
+    }
+    companion = {
+        "title": "Metformin companion trial in older adults",
+        "excerpt": "A smaller metformin trial in older adults reported mixed functional outcomes.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40147476/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, companion],
+        all_evidence=[published, companion],
+    )
+    assert "N=58 vs." not in artifact["abstract"]
+
+
+def test_drafter_uses_editor_refinement_and_bundle_tiers_generically() -> None:
+    provider = RefinementProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results",
+            "excerpt": "Weekly rapamycin in older adults did not change visceral adiposity compared with placebo.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40188830/",
+        },
+        {
+            "title": "Efficacy and safety of sirolimus in the treatment of gastrointestinal angiodysplasias.",
+            "excerpt": "Sirolimus improved bleeding outcomes in a disease-specific adult cohort.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40656607/",
+        },
+        {
+            "title": "A single-center randomized placebo-controlled study to evaluate once-weekly sirolimus in older adults",
+            "excerpt": "Trial protocol in older adults with strength and endurance outcomes.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39354527/",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="rapamycin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["rapamycin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    assert provider.calls == 2
+    assert artifact["editor_refinement_applied"] is True
+    assert "Tier A direct aging evidence" in artifact["sections"]["Evidence Landscape"]
+    assert "Tier B supporting human evidence" in artifact["sections"]["Evidence Landscape"]
+    assert "Tier C protocol/mechanistic support" in artifact["sections"]["Evidence Landscape"]
+    assert "The overall evidence is limited but hypothesis-generating." not in artifact["abstract"]
+    tiers = {item["title"]: item["evidence_tier"] for item in artifact["source_bundle"]}
+    assert tiers["Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results"] == "Tier A direct aging evidence"
+    assert tiers["Efficacy and safety of sirolimus in the treatment of gastrointestinal angiodysplasias."] == "Tier B supporting human evidence"
+    assert tiers["A single-center randomized placebo-controlled study to evaluate once-weekly sirolimus in older adults"] == "Tier C protocol/mechanistic support"
 
 
 def test_entry_result_sentence_rejects_fragmentary_claim_sentence() -> None:

@@ -96,6 +96,10 @@ _ANIMAL_RE = re.compile(
     r"\b(c\.?\s*elegans|caenorhabditis|mouse|mice|murine|rat|zebrafish|drosophila|animal model|mice\b|rats\b|mice\W|mice$|mitopark)\b",
     re.IGNORECASE,
 )
+_IN_VITRO_RE = re.compile(
+    r"\b(in vitro|cell culture|fibroblast|fibroblasts|organoid|organoids|cell line|cell lines|sa-β-gal|sa-beta-gal)\b",
+    re.IGNORECASE,
+)
 _GENERIC_TOPIC_TOKENS = {
     "aging", "ageing", "older", "adult", "adults", "elderly", "longevity",
     "healthspan", "frailty", "prefrailty", "sarcopenia", "cognition", "cognitive",
@@ -201,8 +205,11 @@ def classify_citation_role(
         return "mechanistic"
     if _PROTOCOL_RE.search(title) or quality == "protocol" or study_type == "protocol":
         return "published_protocol"
-    if _ANIMAL_RE.search(title):
+    text = " ".join(str(v or "") for v in (title, item.get("excerpt"), card.get("context"), card.get("outcomes")))
+    if _ANIMAL_RE.search(text):
         return "animal_model"
+    if _IN_VITRO_RE.search(text):
+        return "mechanistic"
     if _off_domain_match(item, card, domain_slug):
         return "off_domain_indirect"
     if source_type == "clinicaltrials" and not item.get("has_results"):
@@ -213,14 +220,14 @@ def classify_citation_role(
         return "meta_analysis"
     if evidence_type == "review" and _META_ANALYSIS_RE.search(title):
         return "meta_analysis"
-    if evidence_type == "review" or quality == "review":
-        return "review"
-    if study_type in _OBSERVATIONAL_TYPES or evidence_type in _OBSERVATIONAL_TYPES:
-        return "observational"
     if (study_type in _RESULT_TYPES or evidence_type in _RESULT_TYPES or quality == "rct") and (
         _title_match(item, topic_tokens) or _aging_signal(card, item)
     ):
         return "published_results"
+    if evidence_type == "review" or quality == "review":
+        return "review"
+    if study_type in _OBSERVATIONAL_TYPES or evidence_type in _OBSERVATIONAL_TYPES:
+        return "observational"
     if _title_match(item, topic_tokens) and evidence_type == "primary":
         return "published_results"
     return "unknown"

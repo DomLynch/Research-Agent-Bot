@@ -14,8 +14,8 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~3,200 LOC (raised from 2,400 — see DECISIONS.md 2026-04-22 "Tier 2 citation roles + validator + multi-source full-text cascade").
-  Hard ceiling: 3,600 LOC. Actual: ~3,405 LOC.
+- Runtime target: ~3,500 LOC (raised from 3,200 — see DECISIONS.md 2026-04-23 "MiMo editor pass + evidence tiers").
+  Hard ceiling: 4,000 LOC. Actual: ~3,867 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
 - Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
@@ -28,7 +28,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Golden eval harness now has 3-tier eval corpus (gold + adversarial + breadth) with CI gating.
 - Runtime is now above the previous 1,800 ceiling; further additions need deletions or another explicit DECISIONS entry.
 - Quantitative fidelity is now honestly measured and still weak on the gold baseline; drafter must earn future quality gains with supported numbers.
-- Directness labeling is still heuristic. The new generic longevity topic-fit scorer removed the metformin-only bundle path and now generalizes across aliases/classes, but live bundle quality still varies by topic and retrieval quality still dominates final bundle quality.
+- Directness labeling is still heuristic. The new generic longevity topic-fit scorer removed the metformin-only bundle path and now generalizes across aliases/classes, and a new MiMo editor pass now cleans the assembled artifact, but live bundle quality still varies by topic and retrieval quality still dominates final bundle quality.
 - Topic/entity resolution is now ChEMBL-first plus alias/fuzzy fallback. It still needs richer biomedical vocabularies before Tier 1 full-text work.
 - Tier 1 full-text coverage is Europe PMC-only and DOI/PMID-driven. Closed-access PDFs, figures/tables, and non-PMC papers still fall back to abstract-only behavior.
 - Tier 2 full-text coverage now cascades Europe PMC -> Unpaywall -> CORE, but only Europe PMC and Unpaywall are exercised locally today. CORE is env-gated on `CORE_API_KEY`, and PDF-only Unpaywall hits still need GROBID or another parser before they help extraction.
@@ -37,7 +37,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Citation-role validation is now logged in `citation_violations`, and high-severity violations trigger one revision pass before the run fails closed. Medium-severity issues remain advisory.
 
 ## Next Validation Step
-Re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site and judge three things only: bundle relevance, extraction-to-prose quality, and whether direct trials stay centered without topic-specific code.
+ Re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site and judge four things only: bundle relevance, evidence-tier separation, extraction-to-prose quality, and whether direct trials stay centered without topic-specific code.
 
 ## Hardening Status
 | Step | What | Status |
@@ -76,6 +76,7 @@ Re-run `metformin aging older adults`, `rapamycin aging older adults`, and one b
 - **Metformin cleanup pass:** longevity bundles now drop explicit off-domain leaks such as embryo/antiseizure/ocular/COVID/exercise-timing records, `direct` requires a real topic token in title rather than generic aging words, prompt evidence lines now include titles, and Key Findings are instructed to center the top direct published metformin trials.
 - **Semantic Scholar graph wiring:** Brief 8 is now partially integrated — `agent/sources/semantic_scholar.py` is live, `run_agent()` expands retrieval from review reference lists on longevity/anti-aging topics, and full-text enrichment now accepts `semantic_scholar` entries so cited DOI hits can flow into Europe PMC / Unpaywall / CORE.
 - **Generic longevity fit gate:** the old metformin-only retention path is gone. Topic handling now flows through canonical entity resolution (`canonical_term`, aliases, class terms), generic topic-fit scoring, generic claim-fit gating, and a shared human-only filter that now rejects nonhuman primate studies.
+- **MiMo editor pass + evidence tiers:** a bounded second MiMo pass now edits the assembled draft for abstract completeness, duplicate hook removal, and clearer Tier A/B/C evidence separation; the source bundle now carries generic `evidence_tier` labels instead of relying on topic-specific prose hacks.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
