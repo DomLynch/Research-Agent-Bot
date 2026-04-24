@@ -56,7 +56,7 @@ ROLE_LANGUAGE_RULES: dict[CitationRole, dict[str, Any]] = {
     "mechanistic": {
         "forbidden": ["patients", "older adults", "participants"],
         "requires_numeric": False,
-        "requires_hedge": r"\b(mechanistic|mechanism|pathway|compound|preclinical)\b",
+        "requires_hedge": r"\b(mechanistic|mechanism|pathway|compound|preclinical|systems model(?:ing)?|computational|in silico|simulation)\b",
     },
     "unknown": {"forbidden": [], "requires_numeric": False},
 }
@@ -98,6 +98,10 @@ _ANIMAL_RE = re.compile(
 )
 _IN_VITRO_RE = re.compile(
     r"\b(in vitro|cell culture|fibroblast|fibroblasts|organoid|organoids|cell line|cell lines|sa-β-gal|sa-beta-gal)\b",
+    re.IGNORECASE,
+)
+_MECHANISTIC_RE = re.compile(
+    r"\b(systems modeling|systems model(?:ing)?|computational model(?:ing)?|in silico|simulation study|mathematical model(?:ing)?|network model(?:ing)?)\b",
     re.IGNORECASE,
 )
 _GENERIC_TOPIC_TOKENS = {
@@ -211,6 +215,8 @@ def classify_citation_role(
     if _ANIMAL_RE.search(text):
         return "animal_model"
     if _IN_VITRO_RE.search(text):
+        return "mechanistic"
+    if _MECHANISTIC_RE.search(text):
         return "mechanistic"
     if _off_domain_match(item, card, domain_slug):
         return "off_domain_indirect"

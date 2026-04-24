@@ -1,4 +1,4 @@
-from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness, _entry_result_sentence
+from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness, _entry_result_sentence, _trim_singular_mixed_citations
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
 from agent.validator import validate_citations
@@ -132,6 +132,24 @@ class SplitMashupProvider(CaptureProvider):
                 "limitations": "The evidence base remains small and underpowered.",
                 "gaps_identified": "Long-duration trials remain sparse.",
                 "conclusion": "Metformin remains inconclusive for broad healthspan benefit [1].",
+            },
+            {},
+        )
+
+
+class MixedSingularCitationProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of metformin on healthspan outcomes in older adults, compared to placebo, and what does recent direct trial evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+                "search_summary": "Recent direct and disease-context studies were reviewed.",
+                "landscape": "The evidence includes one direct trial and one observational disease-context study.",
+                "findings": "One trial in insulin-resistant elderly found no significant benefit of metformin on brain energy metabolism or cognitive function over 10 months [1, 2].",
+                "limitations": "The evidence base remains small and underpowered.",
+                "gaps_identified": "Long-duration trials remain sparse.",
+                "conclusion": "Metformin remains inconclusive for broad healthspan benefit [1, 2].",
             },
             {},
         )
@@ -889,6 +907,112 @@ def test_drafter_assigns_a1_a2_b_tiers_for_metformin_generically() -> None:
     assert tiers["Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials."] == "Tier B supporting human evidence"
 
 
+def test_bundle_entry_demotes_systems_modeling_to_mechanistic() -> None:
+    entry = _bundle_entry(
+        {
+            "title": "Metformin Regulation of the Liver Circadian Clock and Metabolic Aging: A Systems Modeling Study.",
+            "excerpt": "A systems modeling study describing metformin pathway effects on the liver circadian clock and metabolic aging.",
+            "evidence_type": "primary",
+            "source_type": "europepmc",
+            "year": 2026,
+            "url": "https://europepmc.org/article/PMC/PMC13027763",
+        },
+        topic_tokens=["metformin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    assert entry["role"] == "mechanistic"
+    assert entry["directness"] == "mechanistic"
+    assert entry["evidence_tier"] == "Tier C protocol/mechanistic support"
+
+
+def test_bundle_entry_demotes_active_comparator_claims_to_tier_b() -> None:
+    entry = _bundle_entry(
+        {
+            "title": "Real-World Harm Reduction of Metformin Plus DPP4 Inhibitors versus Metformin Plus Sulfonylureas in Older Adults: A Target Trial Emulation Using German Claims Data.",
+            "excerpt": "A target trial emulation comparing metformin plus DPP4 inhibitors versus metformin plus sulfonylureas in older adults using German claims data.",
+            "evidence_type": "observational",
+            "source_type": "europepmc",
+            "year": 2025,
+            "url": "https://europepmc.org/article/PMC/PMC12254066",
+        },
+        topic_tokens=["metformin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    assert entry["evidence_tier"] == "Tier B supporting human evidence"
+
+
+def test_drafter_drops_procedural_trials_that_mention_older_adults_but_not_longevity_intent() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Metformin and physical performance in older people with probable sarcopenia and physical prefrailty or frailty in England (MET-PREVENT): a double-blind, randomised, placebo-controlled trial.",
+            "excerpt": "Randomized placebo-controlled metformin trial in older adults with gait and physical performance outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+        },
+        {
+            "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+            "excerpt": "Older adults receiving metformin had frailty outcomes assessed over two years.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2024,
+            "url": "https://clinicaltrials.gov/study/NCT02570672",
+        },
+        {
+            "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
+            "excerpt": "Metformin trial in insulin-resistant elderly people with brain-energy outcomes.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2023,
+            "url": "https://clinicaltrials.gov/study/NCT03733132",
+        },
+        {
+            "title": "REMAP Trial for Optimizing Surgical Outcomes at UPMC in older adults",
+            "excerpt": "Adults aged 65 years and older undergoing elective surgery received short-course metformin, with hospital free days at day 90 and ICU admission after surgery as outcomes.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2022,
+            "url": "https://clinicaltrials.gov/study/NCT03861767",
+        },
+        {
+            "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials.",
+            "excerpt": "A multi-drug review in older people that includes metformin among glucose-lowering interventions.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+        },
+        {
+            "title": "Diet and Exercise Plus Metformin to Treat Frailty in Obese Seniors",
+            "excerpt": "Registered protocol of metformin plus lifestyle intervention for frailty in obese seniors.",
+            "evidence_type": "protocol",
+            "source_type": "clinicaltrials",
+            "has_results": False,
+            "year": 2025,
+            "url": "https://clinicaltrials.gov/study/NCT999001",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2022 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    titles = [str(item.get("title", "")).lower() for item in artifact["source_bundle"]]
+    assert not any("optimizing surgical outcomes at upmc" in title for title in titles)
+
+
 def test_drafter_replaces_broken_vs_mashup_with_grounded_result_sentence() -> None:
     provider = BrokenNumericProvider()
     drafter = RapidEvidenceDrafter(provider=provider)
@@ -977,6 +1101,39 @@ def test_drafter_drops_split_vs_mashup_prefix_before_grounded_sentence() -> None
     findings = artifact["sections"]["Key Findings"]
     assert "mean change: metformin -0.0002 vs." not in findings
     assert "Published results [1] report Frailty Index Based on Deficit Accumulation" in findings
+
+
+def test_drafter_trims_mixed_singular_citation_clusters() -> None:
+    published = _bundle_entry(
+        {
+            "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
+            "excerpt": "Insulin-resistant elderly people were randomized to metformin or placebo for brain-energy and cognitive outcomes.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2023,
+            "url": "https://clinicaltrials.gov/study/NCT03733132",
+        },
+        topic_tokens=["metformin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    observational = _bundle_entry(
+        {
+            "title": "APOE4-dependent association between metformin use and Alzheimer's disease-related cortical thickness in older adults with type 2 diabetes.",
+            "excerpt": "Cross-sectional metformin exposure study in older adults with diabetes and cortical thickness outcomes.",
+            "evidence_type": "observational",
+            "source_type": "europepmc",
+            "year": 2026,
+            "url": "https://europepmc.org/article/MED/41761644",
+        },
+        topic_tokens=["metformin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    text = "One trial in insulin-resistant elderly found no significant benefit of metformin on brain energy metabolism or cognitive function over 10 months [1, 2]."
+    trimmed = _trim_singular_mixed_citations(text, [published, observational])
+    assert "[1, 2]" not in trimmed
+    assert "[1]" in trimmed
 
 
 def test_drafter_grounds_from_structured_pubmed_results_excerpt() -> None:

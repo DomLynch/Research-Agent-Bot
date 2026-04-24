@@ -154,6 +154,20 @@ _LONGEVITY_SUPPORT_RE = re.compile(
     r"healthspan|aging|ageing|cognitive|brain aging|physical performance|gait|mobility)",
     re.IGNORECASE,
 )
+_PROCEDURAL_ACUTE_RE = re.compile(
+    r"(?:surgery|surgical|peri-?operat|post-?operat|icu admission|hospital free days?|elective surgery|hospital admission|length of stay)",
+    re.IGNORECASE,
+)
+_ACTIVE_COMPARATOR_RE = re.compile(
+    r"\b(vs\.?|versus|compared with|comparison|target trial emulation)\b",
+    re.IGNORECASE,
+)
+_CONTROL_COMPARATOR_RE = re.compile(
+    r"\b(placebo|usual care|standard care|control group|control arm|sham)\b",
+    re.IGNORECASE,
+)
+_SINGULAR_STUDY_RE = re.compile(r"\b(one|single|a)\s+(trial|study|rct|cohort)\b", re.IGNORECASE)
+_CITATION_CLUSTER_RE = re.compile(r"\[((?:\d+\s*,\s*)+\d+)\]")
 
 _SYNONYM_CANONICALS = {
     alias: canonical
@@ -285,6 +299,44 @@ def _longevity_support_signal(entry: dict[str, Any]) -> bool:
         )
     )
     return bool(_LONGEVITY_SUPPORT_RE.search(blob) or _aging_outcome_signal(blob))
+
+
+def _active_comparator_signal(item: dict[str, Any], card: dict[str, Any]) -> bool:
+    blob = " ".join(
+        str(v or "")
+        for v in (
+            item.get("title"),
+            item.get("excerpt"),
+            card.get("intervention"),
+            card.get("comparator"),
+            card.get("outcomes"),
+        )
+    )
+    return bool(_ACTIVE_COMPARATOR_RE.search(blob) and not _CONTROL_COMPARATOR_RE.search(blob))
+
+
+def _longevity_intent_signal(entry: dict[str, Any]) -> bool:
+    card = entry.get("card") or {}
+    blob = " ".join(
+        str(v or "")
+        for v in (
+            entry.get("title"),
+            entry.get("excerpt"),
+            card.get("population"),
+            card.get("outcomes"),
+            card.get("context"),
+            card.get("methods_summary"),
+        )
+    )
+    has_longevity_signal = bool(_LONGEVITY_SUPPORT_RE.search(blob) or _aging_outcome_signal(blob))
+    has_disease_context = _disease_context_signal(entry, card)
+    if not has_longevity_signal and not has_disease_context:
+        return False
+    if _PROCEDURAL_ACUTE_RE.search(blob) and not _aging_outcome_signal(blob):
+        return False
+    if _active_comparator_signal(entry, card) and not _aging_outcome_signal(blob):
+        return False
+    return True
 
 
 def _core_topic_tokens(topic_tokens: list[str]) -> list[str]:
@@ -524,6 +576,8 @@ def _evidence_tier(
     )
     study_type = str(card.get("study_type") or "").lower()
     exact_fit = intervention_fit == "exact"
+    if _active_comparator_signal(item, card) and not _aging_outcome_signal(blob):
+        return _TIER_B
     if directness == "direct" and exact_fit and topic_fit_bucket == "core":
         if study_type in {"cohort", "observational", "case-control", "cross-sectional"} or _disease_context_signal(item, card):
             return _TIER_A2
@@ -646,6 +700,39 @@ def _strip_offtopic_claims(text: str, source_bundle: list[dict[str, Any]], topic
             continue
         kept.append(sentence)
     return " ".join(kept).strip()
+
+
+def _trim_singular_mixed_citations(text: str, source_bundle: list[dict[str, Any]]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    kept: list[str] = []
+    for sentence in _split_sentences(cleaned):
+        cluster = _CITATION_CLUSTER_RE.search(sentence)
+        if cluster:
+            refs = [int(match) for match in re.findall(r"\d+", cluster.group(1)) if 1 <= int(match) <= len(source_bundle)]
+        else:
+            refs = [ref for ref in _sentence_refs(sentence) if 1 <= ref <= len(source_bundle)]
+        if len(refs) < 2 or not cluster or not _SINGULAR_STUDY_RE.search(sentence):
+            kept.append(sentence)
+            continue
+        entries = [source_bundle[ref - 1] for ref in refs]
+        mixed = (
+            len({str(entry.get("role") or "unknown") for entry in entries}) > 1
+            or len({str(entry.get("evidence_tier") or "unknown") for entry in entries}) > 1
+            or len({str((entry.get("card") or {}).get("study_type") or "unknown") for entry in entries}) > 1
+        )
+        if not mixed:
+            kept.append(sentence)
+            continue
+        preferred = [
+            ref for ref in refs
+            if source_bundle[ref - 1].get("role") == "published_results"
+            and source_bundle[ref - 1].get("directness") == "direct"
+        ]
+        chosen = preferred[0] if preferred else refs[0]
+        kept.append(f"{sentence[:cluster.start()]}[{chosen}]{sentence[cluster.end():]}")
+    return " ".join(part for part in kept if part).strip()
 
 
 def _entry_result_sentence(entry: dict[str, Any]) -> str:
@@ -1125,6 +1212,7 @@ def _postprocess_sections(
         if heading in polished:
             polished[heading] = _ground_required_numeric_sentences(polished[heading], source_bundle)
             polished[heading] = _clean_grounding_mashups(polished[heading], source_bundle)
+            polished[heading] = _trim_singular_mixed_citations(polished[heading], source_bundle)
             polished[heading] = _strip_offtopic_claims(polished[heading], source_bundle, topic_tokens)
             polished[heading] = _strip_unsupported_numeric_claims(polished[heading], source_bundle)
     if has_effect_data and not _has_quantitative_content(polished.get("Key Findings", "")) and first_effect_entry:
@@ -1318,7 +1406,7 @@ def _select_source_bundle(bundle_candidates: list[dict[str, Any]], *, domain_slu
         return candidates[:RESEARKA_MIN_SOURCES]
     candidates = [
         entry for entry in candidates
-        if str(entry.get("evidence_tier") or "") in {_TIER_A2, _TIER_C} or _longevity_support_signal(entry)
+        if str(entry.get("evidence_tier") or "") == _TIER_C or _longevity_intent_signal(entry)
     ]
     targets = (
         (_TIER_A1, 4),
