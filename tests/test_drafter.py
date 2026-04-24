@@ -292,6 +292,42 @@ class CitationStrippingRefinementProvider(CaptureProvider):
         )
 
 
+class StableRefMappingProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of metformin on aging-relevant outcomes in older adults, compared with placebo, and how should direct trials versus supporting human evidence be interpreted for efficacy and uncertainty in longevity research?",
+                "search_summary": "Direct trials and supporting human evidence were reviewed.",
+                "landscape": "One trial in insulin-resistant older adults found no significant effect on brain energy metabolism or cognitive function [3]. A broad meta-analysis provided supporting context rather than direct proof [4].",
+                "findings": "The strongest direct signal remained limited [1].",
+                "limitations": "The evidence base remains small and heterogeneous [1].",
+                "gaps_identified": "More long-duration trials are needed.",
+                "conclusion": "Metformin remains inconclusive for broad geroprotection [1].",
+            },
+            {},
+        )
+
+
+class BrokenStableRefProvider(CaptureProvider):
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        return (
+            {
+                "question": "What are the effects of metformin on frailty and cognition outcomes in older adults, compared with placebo, and what does the retained evidence imply about efficacy and remaining uncertainty in healthy aging?",
+                "search_summary": "Direct trials were reviewed.",
+                "landscape": "The evidence base includes recent direct trials [R9].",
+                "findings": "Published results remained limited [R9].",
+                "limitations": "The evidence base remains small [R9].",
+                "gaps_identified": "More long-duration trials are needed.",
+                "conclusion": "Metformin remains investigational [R9].",
+            },
+            {},
+        )
+
+
 class JudgmentProvider(CaptureProvider):
     supports_reranking = True
     supports_labeling = True
@@ -520,7 +556,7 @@ def test_drafter_prioritizes_direct_published_results_in_prompt() -> None:
         all_evidence=[indirect_review, direct_1, direct_2, direct_3],
     )
     assert not artifact.get("error")
-    assert "KEY FINDINGS PRIORITY: focus mainly on direct published-results citations [1], [2]." in provider.user_prompt
+    assert "KEY FINDINGS PRIORITY: focus mainly on direct published-results citations [R1], [R2]." in provider.user_prompt
     assert direct_1["title"] in provider.user_prompt
     assert direct_2["title"] in provider.user_prompt
     assert direct_3["title"] in provider.user_prompt
@@ -1565,6 +1601,118 @@ def test_drafter_preserves_cited_sections_when_editor_strips_citations() -> None
     assert "[" in artifact["sections"]["Evidence Landscape"]
     assert "[" in artifact["sections"]["Key Findings"]
     assert "[" in artifact["sections"]["Conclusion"]
+
+
+def test_drafter_maps_prompt_local_citations_to_final_bundle_indices() -> None:
+    provider = StableRefMappingProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Metformin and physical performance in older adults with frailty",
+            "excerpt": "Randomized trial in older adults with frailty outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/101/",
+        },
+        {
+            "title": "Metformin in pre-frail older adults: direct randomized trial",
+            "excerpt": "Randomized placebo-controlled trial in pre-frail older adults with aging outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/102/",
+        },
+        {
+            "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
+            "excerpt": "Interventional trial in insulin resistant older adults with brain metabolism and cognition outcomes.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2023,
+            "url": "https://clinicaltrials.gov/study/NCT03733132",
+        },
+        {
+            "title": "Metformin and APOE4-related cortical thickness in type 2 diabetes",
+            "excerpt": "Cross-sectional study of cortical thickness in adults with type 2 diabetes and APOE4.",
+            "evidence_type": "observational",
+            "source_type": "europepmc",
+            "year": 2024,
+            "url": "https://europepmc.org/article/MED/400004",
+        },
+        {
+            "title": "Metformin administration improves adverse outcomes in older adult burn patients",
+            "excerpt": "Cohort study of metformin in older adults after burn injury with mortality and recovery outcomes.",
+            "evidence_type": "observational",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/103/",
+        },
+        {
+            "title": "Metformin and brain aging in older adults with diabetes",
+            "excerpt": "Observational disease-context study of diabetes, metformin, and brain aging in older adults.",
+            "evidence_type": "observational",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/104/",
+        },
+        {
+            "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+            "excerpt": "A broad comparative meta-analysis in older adults that includes metformin among several interventions.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2022 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    landscape = artifact["sections"]["Evidence Landscape"]
+    assert "[3]" in landscape
+    assert "[6]" in landscape
+    assert "[4]" not in landscape
+    assert "[R" not in landscape
+
+
+def test_drafter_fails_closed_on_unresolved_internal_refs() -> None:
+    provider = BrokenStableRefProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Metformin and physical performance in older adults with frailty",
+            "excerpt": "Randomized trial in older adults with frailty outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/101/",
+        },
+        {
+            "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
+            "excerpt": "Interventional trial in insulin resistant older adults with brain metabolism and cognition outcomes.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2023,
+            "url": "https://clinicaltrials.gov/study/NCT03733132",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2022 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    assert artifact["error"] == "Internal citation rendering failed for refs: R9."
 
 
 def test_entry_result_sentence_rejects_fragmentary_claim_sentence() -> None:

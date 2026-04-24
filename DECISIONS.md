@@ -1,5 +1,19 @@
 # DECISION JOURNAL
 
+## 2026-04-24 — Freeze final bundle before drafting and bind citations to stable internal refs
+**Decision:** The drafter/renderer citation contract now freezes the final source bundle before draft generation, assigns immutable internal refs (`R1`, `R2`, ...), drafts against those refs, and only converts them to display indices (`[1]`, `[2]`) after all post-processing/editor passes are complete.
+**Why:** The prior flow built prompt numbering from a prompt subset before the final source list was frozen. Later tiering/dedup/selection could reorder the rendered bundle, which let body claims point at the wrong source numbers even when the prose itself was otherwise good. This was a structural interface violation, not a topic-specific prompt bug.
+**What shipped:**
+- `agent/drafter.py` now freezes `source_bundle` before prompt construction and stamps `stable_ref` on each retained source.
+- Draft generation and editor refinement now normalize citations onto stable refs internally, including a compatibility remap for models that still emit prompt-local numeric refs.
+- Final artifact rendering now deterministically converts stable refs back to numeric display citations and fails closed if any internal refs cannot be resolved.
+- `tests/test_drafter.py` now includes discriminating regressions for local-number citation remapping and unresolved-internal-ref fail-closed behavior.
+**Alternatives rejected:**
+- More prompt wording only — rejected; prompt changes alone do not enforce the contract.
+- Semantic citation tags (`[brain_RCT]`) — rejected; extra complexity and another hallucination surface for little gain.
+- Keep numeric refs internally and hope the prompt/source order stays aligned — rejected; that was the bug.
+**Revisit if:** the live model keeps producing conceptually wrong citations even after stable ref binding, at which point a claim-to-source validator becomes the next judge layer rather than more index plumbing.
+
 ## 2026-04-23 — Source substrate + 12-citation intake alignment
 **Decision:** Keep the existing public-source scaffold, but deepen the source substrate instead of adding generic-volume databases. Europe PMC becomes a direct retrieval source, OpenAlex and Semantic Scholar contribute richer metadata/signals, NIH RePORTER becomes an optional Tier C/project-context source, DOAJ becomes a journal-quality validator, and the stale 8-source submission gate is raised to the actual 12-source Researka house rule already documented in `AGENTS.md`.
 **Why:** The repo contract already required `12+` retained sources, but runtime code still blocked only below 8 and even capped longevity bundles at 10. At the same time, OpenAlex/Semantic Scholar were being underused, Europe PMC was only helping full-text fetch, and the next retrieval gain for longevity topics was better biomedical substrate, not more grey-literature volume.

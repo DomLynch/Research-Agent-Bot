@@ -96,7 +96,7 @@ _RESULT_MARKER_RE = re.compile(
     r"\bor\b|odds ratio|\brr\b|placebo\b|control\b|\d+(?:\.\d+)?\s*%)",
     re.IGNORECASE,
 )
-_CITATION_TOKEN_RE = re.compile(r"\[(\d+)\]")
+_CITATION_TOKEN_RE = re.compile(r"\[(R?\d+)\]", re.IGNORECASE)
 _PUBLISHED_RESULT_REPAIRS = {
     "is investigating": "evaluated",
     "is evaluating": "evaluated",
@@ -168,8 +168,8 @@ _CONTROL_COMPARATOR_RE = re.compile(
 )
 _NEGATED_TOPIC_RE_TEMPLATE = r"\b(?:not|rather than|instead of)\s+(?:the\s+)?{term}\b"
 _SINGULAR_STUDY_RE = re.compile(r"\b(one|single|a)\s+(trial|study|rct|cohort)\b", re.IGNORECASE)
-_CITATION_CLUSTER_RE = re.compile(r"\[((?:\d+\s*,\s*)+\d+)\]")
-_ANY_CITATION_RE = re.compile(r"\[((?:\d+\s*,\s*)*\d+)\]")
+_CITATION_CLUSTER_RE = re.compile(r"\[((?:R?\d+\s*,\s*)+R?\d+)\]", re.IGNORECASE)
+_ANY_CITATION_RE = re.compile(r"\[((?:R?\d+\s*,\s*)*R?\d+)\]", re.IGNORECASE)
 
 _SYNONYM_CANONICALS = {
     alias: canonical
@@ -460,8 +460,97 @@ def _split_sentences(text: str, *, limit: int = 4000) -> list[str]:
     return [part.strip() for part in _SENTENCE_SPLIT_RE.split(_clean(text, limit=limit)) if part.strip()]
 
 
+def _citation_index(token: str) -> int | None:
+    match = re.fullmatch(r"R?(\d+)", str(token or "").strip(), re.IGNORECASE)
+    if not match:
+        return None
+    return int(match.group(1))
+
+
+def _stable_ref(entry: dict[str, Any] | None = None, index: int | None = None) -> str:
+    candidate = str((entry or {}).get("stable_ref") or "").upper()
+    if re.fullmatch(r"R\d+", candidate):
+        return candidate
+    if index is None:
+        return ""
+    return f"R{index}"
+
+
+def _citation_bracket(*, entry: dict[str, Any] | None = None, index: int | None = None) -> str:
+    ref = _stable_ref(entry, index)
+    return f"[{ref}]" if ref else ""
+
+
+def _assign_stable_refs(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    for idx, entry in enumerate(entries, start=1):
+        entry["stable_ref"] = f"R{idx}"
+    return entries
+
+
+def _normalize_citation_refs(text: str, reference_entries: list[dict[str, Any]], *, bundle_size: int) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    local_map = {idx: _stable_ref(entry, idx) for idx, entry in enumerate(reference_entries, start=1)}
+
+    def _replace(match: re.Match[str]) -> str:
+        tokens = re.findall(r"R?\d+", match.group(1), flags=re.IGNORECASE)
+        normalized: list[str] = []
+        for token in tokens:
+            idx = _citation_index(token)
+            if idx is None:
+                continue
+            if token.upper().startswith("R"):
+                normalized.append(f"R{idx}")
+                continue
+            if idx in local_map:
+                normalized.append(local_map[idx])
+                continue
+            if 1 <= idx <= bundle_size:
+                normalized.append(f"R{idx}")
+                continue
+            normalized.append(token)
+        if not normalized:
+            return match.group(0)
+        return f"[{', '.join(normalized)}]"
+
+    return _ANY_CITATION_RE.sub(_replace, cleaned)
+
+
+def _render_numeric_citations(text: str, source_bundle: list[dict[str, Any]]) -> tuple[str, list[str]]:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned, []
+    unresolved: list[str] = []
+
+    def _replace(match: re.Match[str]) -> str:
+        tokens = re.findall(r"R?\d+", match.group(1), flags=re.IGNORECASE)
+        numeric_refs: list[str] = []
+        local_unresolved: list[str] = []
+        for token in tokens:
+            idx = _citation_index(token)
+            if idx is None or not (1 <= idx <= len(source_bundle)):
+                local_unresolved.append(token.upper())
+                continue
+            numeric_refs.append(str(idx))
+        if local_unresolved:
+            unresolved.extend(local_unresolved)
+            return match.group(0)
+        if not numeric_refs:
+            return match.group(0)
+        return f"[{', '.join(numeric_refs)}]"
+
+    rendered = _ANY_CITATION_RE.sub(_replace, cleaned)
+    return rendered, unresolved
+
+
 def _sentence_refs(sentence: str) -> list[int]:
-    return [int(match.group(1)) for match in _CITATION_TOKEN_RE.finditer(sentence)]
+    refs: list[int] = []
+    for match in _CITATION_TOKEN_RE.finditer(sentence):
+        idx = _citation_index(match.group(1))
+        if idx is not None:
+            refs.append(idx)
+    return refs
 
 
 def _claim_sentence_quality_ok(sentence: str) -> bool:
@@ -1090,7 +1179,7 @@ def _sanitize_registry_claims(text: str, blocked_refs: list[int]) -> str:
     cleaned = _clean(text, limit=4000)
     if not cleaned or not blocked_refs:
         return cleaned
-    blocked_tags = [f"[{idx}]" for idx in blocked_refs]
+    blocked_tags = list(dict.fromkeys(tag for idx in blocked_refs for tag in (f"[R{idx}]", f"[{idx}]")))
     sentences = _split_sentences(cleaned)
     kept = []
     hit_tags: list[str] = []
@@ -1135,15 +1224,16 @@ def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
     claim = entry.get("claim") or _claim_from_entry(entry)
     if not _claim_schema_ok(claim):
         return ""
+    citation = _citation_bracket(entry=entry, index=index)
     if source_span := _claim_sentence(claim):
         lead = "Meta-analysis" if entry.get("role") == "meta_analysis" else "Published results"
-        return f"{lead} [{index}] reported {source_span.rstrip('.')}."
+        return f"{lead} {citation} reported {source_span.rstrip('.')}."
     outcome = _normalize_numeric_phrase(str(claim.get("endpoint") or "reported outcome"), limit=90)
     metric = _normalize_numeric_phrase(str(claim.get("metric") or ""), limit=40).lower()
     effect = _normalize_numeric_phrase(str(claim.get("effect") or ""), limit=140)
     p_value = _clean(claim.get("p_value"), limit=20)
     n = _clean(claim.get("n"), limit=80)
-    bits = [f"Published results [{index}] report {outcome}"]
+    bits = [f"Published results {citation} report {outcome}"]
     if metric and effect:
         bits.append(f"{metric} {effect}")
     elif effect:
@@ -1159,7 +1249,7 @@ def _excerpt_numeric_sentence(index: int, entry: dict[str, Any]) -> str:
     if claim := _claim_from_entry(entry):
         if source_span := _claim_sentence(claim):
             lead = "Meta-analysis" if str(entry.get("role") or "unknown") == "meta_analysis" else "Published results"
-            return f"{lead} [{index}] reported {source_span.rstrip('.')}."
+            return f"{lead} {_citation_bracket(entry=entry, index=index)} reported {source_span.rstrip('.')}."
     return ""
 
 
@@ -1174,7 +1264,7 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
         if not refs:
             kept.append(sentence)
             continue
-        bare = re.sub(r"\[\d+\]", "", sentence)
+        bare = _strip_citations(sentence, limit=1200)
         replacement = ""
         drop_sentence = False
         grounded = _NUMERIC_CLAIM_RE.search(bare) and _EFFECT_STYLE_RE.search(bare)
@@ -1215,15 +1305,16 @@ def _clean_grounding_mashups(text: str, source_bundle: list[dict[str, Any]]) -> 
     for idx, sentence in enumerate(sentences):
         next_sentence = sentences[idx + 1] if idx + 1 < len(sentences) else ""
         if sentence.rstrip().lower().endswith("vs.") and re.match(
-            r"^(Published results \[\d+\] report|Meta-analysis \[\d+\] reported)",
+            r"^(Published results \[R?\d+\] report|Meta-analysis \[R?\d+\] reported)",
             next_sentence,
+            re.IGNORECASE,
         ):
             continue
-        match = re.search(r"(Published results \[\d+\] report .*|Meta-analysis \[\d+\] reported .*)", sentence)
+        match = re.search(r"(Published results \[R?\d+\] report .*|Meta-analysis \[R?\d+\] reported .*)", sentence, re.IGNORECASE)
         if match and "vs." in sentence:
             kept.append(match.group(1).strip())
             continue
-        refs = [int(m.group(1)) for m in _CITATION_TOKEN_RE.finditer(sentence)]
+        refs = [ref for ref in _sentence_refs(sentence)]
         roles = {
             str(source_bundle[ref - 1].get("role") or "unknown")
             for ref in refs
@@ -1250,12 +1341,12 @@ def _strip_unsupported_numeric_claims(text: str, source_bundle: list[dict[str, A
 
 
 def _has_quantitative_content(text: str) -> bool:
-    cleaned = re.sub(r"\[\d+\]", "", _clean(text, limit=4000))
+    cleaned = _strip_citations(_clean(text, limit=4000), limit=4000)
     return bool(_EFFECT_STYLE_RE.search(cleaned))
 
 
 def _strip_citations(text: str, *, limit: int = 1200) -> str:
-    cleaned = re.sub(r"\[\d+\]", "", text)
+    cleaned = re.sub(r"\[R?\d+(?:\s*,\s*R?\d+)*\]", "", text, flags=re.IGNORECASE)
     cleaned = re.sub(r"\(\s*[;,]?\s*\)", "", cleaned)
     cleaned = re.sub(r"\bin\s*[,)]", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\s+,", ",", cleaned)
@@ -1357,7 +1448,7 @@ def _editor_bundle_lines(source_bundle: list[dict[str, Any]]) -> str:
     lines: list[str] = []
     for idx, entry in enumerate(source_bundle[:12], start=1):
         line = (
-            f"[{idx}] tier={entry.get('evidence_tier', 'unknown')}; role={entry.get('role', 'unknown')}; "
+            f"[{_stable_ref(entry, idx)}] tier={entry.get('evidence_tier', 'unknown')}; role={entry.get('role', 'unknown')}; "
             f"directness={entry.get('directness', 'indirect')}; year={entry.get('year', 'unknown')}; "
             f"title={entry.get('title', 'unknown')}"
         )
@@ -1636,7 +1727,8 @@ class RapidEvidenceDrafter:
         system_prompt = (
             "You are the final editor for a rapid evidence synthesis. Return JSON only with plain-string keys: "
             "abstract, landscape, findings, conclusion. Improve clarity without inventing facts or citations. "
-            "Use only the cited evidence already in the draft. Preserve inline citations in landscape, findings, and conclusion; do not return uncited factual sentences. The Abstract must contain 4-5 complete sentences, "
+            "Use only the cited evidence already in the draft. Preserve inline citations in landscape, findings, and conclusion using the provided stable refs like [R1]; do not renumber them yourself. "
+            "Do not return uncited factual sentences. The Abstract must contain 4-5 complete sentences, "
             "lead with the overall direction, include the strongest direct result, and avoid truncated fragments. "
             "Do not repeat the same sentence verbatim in both the abstract and Key Findings. "
             "When broader human disease-context evidence appears, label it as Tier A2 disease-context human evidence rather than Tier A1 core aging evidence. "
@@ -1706,22 +1798,26 @@ class RapidEvidenceDrafter:
         )
         if labeling_applied:
             bundle_candidates = sorted(bundle_candidates, key=_entry_sort_key, reverse=True)
-        kept_candidates = [entry for entry in bundle_candidates if _keep_bundle_entry(entry)]
-        selected = _select_prompt_entries(kept_candidates)
+        source_bundle = _assign_stable_refs(_select_source_bundle(bundle_candidates, domain_slug=domain_slug))
+        selected = _select_prompt_entries(source_bundle)
         prompt_entries = [entry for entry in selected if _is_reported_finding(entry)] + [
             entry for entry in selected if not _is_reported_finding(entry)
         ]
-        registered_refs = [i for i, entry in enumerate(prompt_entries, start=1) if not _is_reported_finding(entry)]
+        registered_refs = [
+            _citation_index(_stable_ref(entry)) or 0
+            for entry in prompt_entries
+            if not _is_reported_finding(entry)
+        ]
         first_effect_entry = next(
             (
-                (i, entry)
-                for i, entry in enumerate(prompt_entries, start=1)
+                ((_citation_index(_stable_ref(entry)) or 0), entry)
+                for entry in prompt_entries
                 if _is_reported_finding(entry) and ((entry.get("extraction") or {}).get("effects") or [])
             ),
             None,
         )
 
-        if len(selected) < 2:
+        if len(prompt_entries) < 2:
             return (
                 {
                     "error": "Insufficient evidence for synthesis (fewer than 2 relevant sources retained).",
@@ -1731,8 +1827,6 @@ class RapidEvidenceDrafter:
                 },
                 None,
             )
-
-        source_bundle = _select_source_bundle(bundle_candidates, domain_slug=domain_slug)
 
         rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")
         pc = sum(1 for e in source_bundle if e.get("evidence_type") in {"primary", "interventional", "observational", "mechanism"})
@@ -1744,11 +1838,12 @@ class RapidEvidenceDrafter:
         system_prompt = (
             "You write cautious research drafts grounded in the supplied evidence. "
             "Return JSON only. Do not use placeholders or revision instructions. "
-            "Cite sources inline using [1], [2], etc. to refer to the numbered evidence list. "
+            "Cite sources inline using the stable refs from the evidence list, such as [R1], [R2], etc. "
+            "Do not invent local numeric citations; stable refs will be renumbered for display later. "
             "The Abstract must read like a journal abstract in plain language and must not mention pipeline statistics, receipt counts, or structured extraction counts. "
             "The evidence is grouped by citation role. "
             "Treat the retained bundle as an evidence pyramid: Tier A1 drives the answer, Tier A2 adds one clearly labeled human qualifier, Tier B gives context, and Tier C shows future or mechanistic support. "
-            "Every factual sentence in Evidence Landscape, Key Findings, and Conclusion must include at least one inline citation [n]. "
+            "Every factual sentence in Evidence Landscape, Key Findings, and Conclusion must include at least one inline citation [R#]. "
             "For published results and meta-analyses, use past-tense outcome language and cite numbers when provided. "
             "Spend most of the Abstract, Key Findings, and Conclusion on Tier A1 direct evidence. "
             "When citing published results or meta-analyses, name the endpoint and include effect direction or numeric outcome, sample size, and duration when available. "
@@ -1773,7 +1868,7 @@ class RapidEvidenceDrafter:
         grouped_lines: dict[str, list[str]] = {role: [] for role in ROLE_ORDER}
         for i, e in enumerate(prompt_entries, start=1):
             card = e["card"]
-            parts = [f"title={e.get('title', 'unknown')}", f"cite={card.get('citation', 'unknown')}"]
+            parts = [f"ref={_stable_ref(e, i)}", f"title={e.get('title', 'unknown')}", f"cite={card.get('citation', 'unknown')}"]
             parts.append(f"role={e.get('role', 'unknown')}")
             parts.append(f"type={card.get('study_type', 'unknown')}")
             parts.append(f"grade={card.get('evidence_grade', 'L')}")
@@ -1807,7 +1902,7 @@ class RapidEvidenceDrafter:
                 top_span = _clean((e.get("extraction") or {}).get("effects", [{}])[0].get("source_span"), limit=220)
                 if top_span:
                     parts.append(f"results_excerpt={top_span}")
-            line = f"{i}. {'; '.join(parts)}"
+            line = "; ".join(parts)
             grouped_lines.setdefault(str(e.get("role") or "unknown"), []).append(line)
         evidence_blocks = []
         for role in ROLE_ORDER:
@@ -1817,7 +1912,7 @@ class RapidEvidenceDrafter:
             evidence_blocks.append(role_section_title(role))
             evidence_blocks.extend(lines)
         priority_refs = [
-            str(i)
+            _stable_ref(entry, i)
             for i, entry in enumerate(prompt_entries, start=1)
             if entry.get("role") == "published_results" and entry.get("directness") == "direct"
         ][:3]
@@ -1860,7 +1955,7 @@ class RapidEvidenceDrafter:
             picked = fallback if not c or any(t in c.lower() for t in LEAKY_PHRASES) else c
             if picked == fallback:
                 fallback_count += 1
-            sections[heading] = picked
+            sections[heading] = _normalize_citation_refs(picked, prompt_entries, bundle_size=len(source_bundle))
 
         raw_sections = dict(sections)
         sections = _postprocess_sections(
@@ -1905,6 +2000,14 @@ class RapidEvidenceDrafter:
             source_bundle=source_bundle,
         )
         if editor_updates:
+            if editor_updates.get("abstract"):
+                editor_updates["abstract"] = _normalize_citation_refs(editor_updates["abstract"], source_bundle, bundle_size=len(source_bundle))
+            if editor_updates.get("landscape"):
+                editor_updates["landscape"] = _normalize_citation_refs(editor_updates["landscape"], source_bundle, bundle_size=len(source_bundle))
+            if editor_updates.get("findings"):
+                editor_updates["findings"] = _normalize_citation_refs(editor_updates["findings"], source_bundle, bundle_size=len(source_bundle))
+            if editor_updates.get("conclusion"):
+                editor_updates["conclusion"] = _normalize_citation_refs(editor_updates["conclusion"], source_bundle, bundle_size=len(source_bundle))
             if editor_updates.get("landscape"):
                 sections["Evidence Landscape"] = editor_updates["landscape"]
             if editor_updates.get("findings"):
@@ -1932,6 +2035,25 @@ class RapidEvidenceDrafter:
             abstract = _drop_shared_sentences(abstract, sections.get("Key Findings", ""), limit=1200)
         if not abstract:
             abstract = _human_abstract(topic, domain_slug, sections, source_bundle)
+        rendered_abstract, abstract_ref_errors = _render_numeric_citations(abstract, source_bundle)
+        rendered_sections: dict[str, str] = {}
+        section_ref_errors: list[str] = []
+        for heading, body in sections.items():
+            rendered_body, errors = _render_numeric_citations(body, source_bundle)
+            rendered_sections[heading] = rendered_body
+            section_ref_errors.extend(errors)
+        if abstract_ref_errors or section_ref_errors:
+            unresolved = sorted(set([*abstract_ref_errors, *section_ref_errors]))
+            return (
+                {
+                    "error": f"Internal citation rendering failed for refs: {', '.join(unresolved)}.",
+                    "source_bundle": source_bundle,
+                    "rerank_applied": rerank_applied,
+                    "labeling_applied": labeling_applied,
+                    "editor_refinement_applied": bool(result.get('editor_refinement_applied')),
+                },
+                raw_payload,
+            )
         if editor_payload:
             result["usage"] = _merge_usage(result.get("usage", {}), editor_payload.get("usage", {}))
             result["estimated_cost_usd"] = float(result.get("estimated_cost_usd", 0.0) or 0.0) + float(editor_payload.get("estimated_cost_usd", 0.0) or 0.0)
@@ -1956,9 +2078,9 @@ class RapidEvidenceDrafter:
             )
         artifact = {
             "title": f"Rapid Evidence Synthesis: {_clean(topic, limit=120)}",
-            "abstract": abstract,
+            "abstract": rendered_abstract,
             "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
-            "sections": sections,
+            "sections": rendered_sections,
             "source_bundle": source_bundle,
             "bundle_profile": {
                 "review_count": rc,
