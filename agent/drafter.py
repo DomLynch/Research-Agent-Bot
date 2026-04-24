@@ -96,10 +96,6 @@ _COMPARATOR_NUMBER_RE = re.compile(
     r"(?:\b\d+(?:\.\d+)?\b[^.]{0,40}\b(?:vs\.?|versus)\b|\b(?:vs\.?|versus)\b[^.]{0,40}\b\d+(?:\.\d+)?\b)",
     re.IGNORECASE,
 )
-_MEAN_MEDIAN_NUMBER_RE = re.compile(
-    r"\b(?:mean|median)\b[^.]{0,40}\b\d+(?:\.\d+)?\b",
-    re.IGNORECASE,
-)
 _NUMERIC_EFFECT_STAT_RE = re.compile(
     r"(?:95%\s*ci|confidence interval|p\s*[<=>]|hazard ratio|odds ratio|\bor\b|\brr\b|\d+(?:\.\d+)?\s*%)",
     re.IGNORECASE,
@@ -1467,7 +1463,6 @@ def _has_numeric_effect_surface(text: str) -> bool:
         and (
             _NUMERIC_EFFECT_STAT_RE.search(cleaned)
             or _COMPARATOR_NUMBER_RE.search(cleaned)
-            or _MEAN_MEDIAN_NUMBER_RE.search(cleaned)
         )
     )
 

@@ -16,10 +16,6 @@ _COMPARATOR_NUMBER_RE = re.compile(
     r"(?:\b\d+(?:\.\d+)?\b[^.]{0,40}\b(?:vs\.?|versus)\b|\b(?:vs\.?|versus)\b[^.]{0,40}\b\d+(?:\.\d+)?\b)",
     re.IGNORECASE,
 )
-_MEAN_MEDIAN_NUMBER_RE = re.compile(
-    r"\b(?:mean|median)\b[^.]{0,40}\b\d+(?:\.\d+)?\b",
-    re.IGNORECASE,
-)
 _NUMERIC_SECTIONS = {"Key Findings", "Conclusion"}
 _REQUIRED_CITATION_SECTIONS = {"Key Findings"}
 _RAW_EXTRACTION_RE = re.compile(r"\b(?:Published results|Meta-analysis)\s+\[\d+\]\s+(?:report|reported)\b", re.IGNORECASE)
@@ -98,7 +94,6 @@ def _has_numeric_effect_surface(text: str) -> bool:
         and (
             _NUMERIC_EFFECT_STAT_RE.search(stripped)
             or _COMPARATOR_NUMBER_RE.search(stripped)
-            or _MEAN_MEDIAN_NUMBER_RE.search(stripped)
         )
     )
 
