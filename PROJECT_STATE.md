@@ -35,11 +35,12 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Tier 1 full-text coverage is Europe PMC-only and DOI/PMID-driven. Closed-access PDFs, figures/tables, and non-PMC papers still fall back to abstract-only behavior.
 - Tier 2 full-text coverage now cascades Europe PMC -> Unpaywall -> CORE, but only Europe PMC and Unpaywall are exercised locally today. CORE is env-gated on `CORE_API_KEY`, and PDF-only Unpaywall hits still need GROBID or another parser before they help extraction.
 - Tier 1.5 extraction is cached and real, but quantitative fidelity is still uneven. Unsupported numbers are now scrubbed and high-severity citation-role violations trigger one revision pass plus fail-closed behavior, but medium-severity numeric misses still need a richer rewrite loop.
+- A draft-quality judge layer now blocks missing numeric abstracts, extractor-template leakage, and unsupported support-tier intervention drift, but conceptual claim-to-source misattribution still needs a higher-order validator if it reappears.
 - ClinicalTrials.gov registry records are now split into `trial_registered` versus `trial_results`, and posted registry results can supply structured effects without an LLM extraction call. Registry-only studies are design-only in the prompt and get scrubbed if the drafter tries to state outcomes.
 - Citation-role validation is now logged in `citation_violations`, and high-severity violations trigger one revision pass before the run fails closed. Medium-severity issues remain advisory.
 
 ## Next Validation Step
- Re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site and judge four things only: bundle relevance, evidence-tier separation, extraction-to-prose quality, and whether direct trials stay centered without topic-specific code.
+ Re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site and judge five things only: bundle relevance, evidence-tier separation, extraction-to-prose quality, abstract numeric grounding, and whether direct trials stay centered without topic-specific code.
 
 ## Hardening Status
 | Step | What | Status |

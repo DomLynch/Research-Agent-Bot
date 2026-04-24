@@ -23,7 +23,7 @@ from agent.sources.reporter import NIHReporterClient
 from agent.sources.rxiv import RxivClient
 from agent.sources.semantic_scholar import SemanticScholarClient
 from agent.submit import submit
-from agent.validator import validate_citations
+from agent.validator import validate_citations, validate_draft_quality
 
 _CLINICAL_DOMAINS = {"oncology", "longevity"}
 _CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
@@ -176,12 +176,15 @@ def _high_severity_violations(violations: list[dict[str, Any]]) -> list[dict[str
     return [violation for violation in violations if violation.get("severity") == "high"]
 
 
-def _citation_revision_feedback(violations: list[dict[str, Any]]) -> str:
+def _draft_revision_feedback(violations: list[dict[str, Any]]) -> str:
     lines = [
-        "Rewrite every cited sentence so the language matches the cited source role.",
+        "Rewrite the draft so every section stays faithful to the retained evidence bundle.",
+        "Keep inline citations on factual sentences in Key Findings and preserve citation/source alignment.",
         "Published results and meta-analyses must use past-tense reported/evaluated language.",
         "Registered or protocol studies must stay design-only and must not claim outcomes.",
-        "Key Findings must keep inline citations on every factual sentence; do not return uncited evidence claims.",
+        "Abstract should include at least one numeric effect when structured trial results are retained.",
+        "Do not leak raw extractor templates like 'Published results [n] report ...' into the Abstract or Conclusion.",
+        "If a support/meta-analysis sentence mentions another intervention or drug class, frame it explicitly as contextual rather than as evidence for the queried topic.",
     ]
     for violation in violations[:5]:
         ref = violation.get("citation")
@@ -196,6 +199,18 @@ def _citation_revision_feedback(violations: list[dict[str, Any]]) -> str:
             detail += f" phrase='{phrase}'"
         lines.append(detail)
     return "\n".join(lines)
+
+
+def _validate_artifact(artifact: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+    source_bundle = artifact.get("source_bundle", [])
+    citation_violations = validate_citations(artifact, source_bundle)
+    draft_quality_violations = validate_draft_quality(artifact, source_bundle)
+    return (
+        citation_violations,
+        draft_quality_violations,
+        _high_severity_violations(citation_violations),
+        _high_severity_violations(draft_quality_violations),
+    )
 
 
 def _semantic_graph_hits(
@@ -517,8 +532,13 @@ def run_agent(
             run_dir_p.mkdir(parents=True, exist_ok=True)
             stem = _run_stem(started_at, topic)
             (run_dir_p / f"{stem}.raw.json").write_text(json.dumps(raw_output, indent=2), encoding="utf-8")
-        citation_violations = validate_citations(artifact, artifact.get("source_bundle", []))
-        high_severity = _high_severity_violations(citation_violations)
+        (
+            citation_violations,
+            draft_quality_violations,
+            high_severity_citation,
+            high_severity_draft_quality,
+        ) = _validate_artifact(artifact)
+        high_severity = [*high_severity_citation, *high_severity_draft_quality]
         if high_severity and not artifact.get("error"):
             artifact, retry_raw = drafter.draft(
                 topic=resolved_topic,
@@ -528,21 +548,32 @@ def run_agent(
                 evidence=evidence,
                 all_evidence=all_evidence,
                 topic_profile=entity,
-                revision_feedback=_citation_revision_feedback(high_severity),
+                revision_feedback=_draft_revision_feedback(high_severity),
             )
             run_log["citation_retry_count"] = 1
+            run_log["quality_retry_count"] = 1
             if retry_raw:
                 run_dir_p = Path(run_dir)
                 run_dir_p.mkdir(parents=True, exist_ok=True)
                 stem = _run_stem(started_at, topic)
                 (run_dir_p / f"{stem}.retry.raw.json").write_text(json.dumps(retry_raw, indent=2), encoding="utf-8")
-            citation_violations = validate_citations(artifact, artifact.get("source_bundle", []))
-            high_severity = _high_severity_violations(citation_violations)
+            (
+                citation_violations,
+                draft_quality_violations,
+                high_severity_citation,
+                high_severity_draft_quality,
+            ) = _validate_artifact(artifact)
+            high_severity = [*high_severity_citation, *high_severity_draft_quality]
             if high_severity and not artifact.get("error"):
-                artifact["error"] = "High-severity citation-role violations remained after one revision pass."
-                artifact["gate_reason"] = "citation_role_violation"
+                if high_severity_draft_quality:
+                    artifact["error"] = "High-severity draft-quality violations remained after one revision pass."
+                    artifact["gate_reason"] = "draft_quality_violation"
+                else:
+                    artifact["error"] = "High-severity citation-role violations remained after one revision pass."
+                    artifact["gate_reason"] = "citation_role_violation"
         else:
             run_log["citation_retry_count"] = 0
+            run_log["quality_retry_count"] = 0
         run_log["bundle_stages"]["final_bundle"] = len(artifact.get("source_bundle", []))
         run_log["bundle_stages"]["excluded_after_filter"] = max(
             0, run_log["bundle_stages"].get("after_domain_filter", 0) - run_log["bundle_stages"]["final_bundle"]
@@ -558,7 +589,9 @@ def run_agent(
             artifact["error"] = f"Insufficient evidence: no direct evidence for '{resolved_topic}' in the {domain} domain."
             artifact["gate_reason"] = "insufficient_direct_evidence"
         artifact["citation_violations"] = citation_violations
-        artifact["high_severity_citation_count"] = len(high_severity)
+        artifact["draft_quality_violations"] = draft_quality_violations
+        artifact["high_severity_citation_count"] = len(high_severity_citation)
+        artifact["high_severity_draft_quality_count"] = len(high_severity_draft_quality)
         artifact["source_bundle"] = doaj_client.annotate_entries(artifact.get("source_bundle", []))
         for entry in artifact["source_bundle"]:
             if entry.get("card") is not None and entry.get("journal_quality"):

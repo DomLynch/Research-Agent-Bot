@@ -1,5 +1,19 @@
 # DECISION JOURNAL
 
+## 2026-04-24 — Add draft-quality judge layer after stable citation binding
+**Decision:** Keep the stable-ref citation contract as the identity layer, then add a second bounded judge layer that validates prose quality before release. The new gate checks for missing numeric abstract grounding when structured effects exist, raw extractor-template leakage into end-user sections, and support/meta-analysis sentences that mention other interventions without explicitly framing them as contextual.
+**Why:** Stable internal refs solved citation-index drift, but live drafts were still oscillating in the same quality band because prose regressions could replace one another run to run: numbers disappearing from the abstract, extractor dumps leaking into the conclusion, or support-tier claims softening the topic focus. Those are not retrieval bugs; they are unjudged draft-shape bugs.
+**What shipped:**
+- `agent/validator.py` now exposes `validate_draft_quality()` alongside citation-role validation.
+- `agent/cli.py` now runs both validator layers, retries once with explicit revision feedback, and fails closed if high-severity draft-quality issues survive.
+- `agent/drafter.py` now naturalizes structured-result prose into narrative sentences, strengthens abstracts with numeric result grounding when possible, and keeps support/meta-analysis output contextual instead of letting it dominate headline sections.
+- Focused CLI tests now cover retry/fail-closed behavior for draft-quality violations, not just citation-role violations.
+**Alternatives rejected:**
+- More prompt-only tightening — rejected; prompt edits alone were causing axis-by-axis oscillation.
+- Dual-draft / multi-seed comparison — rejected for now; too much complexity before a deterministic judge layer existed.
+- An immediate extra LLM editor stage — deferred; the deterministic judge/naturalizer pair is cheaper and more auditable as the first end-game layer.
+**Revisit if:** drafts still make conceptually wrong attributions after this layer. At that point the next judge is a claim-to-source validator, not more numbering or abstract-shape work.
+
 ## 2026-04-24 — Freeze final bundle before drafting and bind citations to stable internal refs
 **Decision:** The drafter/renderer citation contract now freezes the final source bundle before draft generation, assigns immutable internal refs (`R1`, `R2`, ...), drafts against those refs, and only converts them to display indices (`[1]`, `[2]`) after all post-processing/editor passes are complete.
 **Why:** The prior flow built prompt numbering from a prompt subset before the final source list was frozen. Later tiering/dedup/selection could reorder the rendered bundle, which let body claims point at the wrong source numbers even when the prose itself was otherwise good. This was a structural interface violation, not a topic-specific prompt bug.

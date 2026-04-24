@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from agent.validator import validate_citations
+from agent.validator import validate_citations, validate_draft_quality
 
 
 def _bundle(role: str) -> list[dict]:
@@ -83,3 +83,44 @@ def test_validator_flags_missing_inline_citation_in_key_findings() -> None:
     draft = {"sections": {"Key Findings": "Published results showed no significant difference in frailty after two years."}}
     violations = validate_citations(draft, _bundle("published_results"))
     assert any(v["severity"] == "high" and v["issue"] == "missing_inline_citation" for v in violations)
+
+
+def test_draft_quality_validator_requires_numeric_abstract_when_structured_effects_exist() -> None:
+    draft = {
+        "title": "Rapid Evidence Synthesis: metformin aging older adults",
+        "abstract": "This rapid review evaluates metformin in older adults and finds mixed evidence.",
+        "sections": {"Key Findings": "One trial found no significant difference in frailty [1]."},
+    }
+    bundle = [
+        {
+            "role": "published_results",
+            "extraction": {"effects": [{"outcome": "frailty index", "metric": "MEAN", "value": "metformin -0.1 vs placebo 0.0"}]},
+        }
+    ]
+    violations = validate_draft_quality(draft, bundle)
+    assert any(v["issue"] == "abstract_missing_numeric_effect" and v["severity"] == "high" for v in violations)
+
+
+def test_draft_quality_validator_flags_raw_extraction_leak_in_conclusion() -> None:
+    draft = {
+        "title": "Rapid Evidence Synthesis: metformin aging older adults",
+        "abstract": "One trial reported no significant difference (0.57 vs 0.58) [1].",
+        "sections": {
+            "Conclusion": "Published results [1] report Change From Baseline in Brain PCr/ATP Ratio; mean Placebo -0.045; Metformin -0.016; p=0.854."
+        },
+    }
+    violations = validate_draft_quality(draft, _bundle("published_results"))
+    assert any(v["issue"] == "raw_extraction_template" and v["severity"] == "high" for v in violations)
+
+
+def test_draft_quality_validator_flags_support_claim_missing_topic_distinction() -> None:
+    draft = {
+        "title": "Rapid Evidence Synthesis: metformin aging older adults",
+        "abstract": "One trial reported 0.57 versus 0.58 m/s [1].",
+        "sections": {
+            "Key Findings": "Meta-analysis [1] reported GLP-1RAs reduced major adverse cardiovascular events."
+        },
+    }
+    bundle = [{"role": "meta_analysis", "evidence_tier": "Tier B supporting human evidence"}]
+    violations = validate_draft_quality(draft, bundle)
+    assert any(v["issue"] == "missing_topic_distinction" for v in violations)

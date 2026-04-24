@@ -77,6 +77,24 @@ class AlwaysBadViolationProvider(RetryingViolationProvider):
         return (data, {"choices": [{"message": {"content": "raw-bad"}}], "usage": {}})
 
 
+class RetryingDraftQualityProvider(FakeProvider):
+    def __init__(self) -> None:
+        self.calls = 0
+
+    def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
+        self.calls += 1
+        data = {
+            "question": "What are the effects of metformin on healthy aging outcomes in older adults, compared with placebo, and what does the retained evidence imply for efficacy, safety, and uncertainty over at least six months of follow-up?",
+            "search_summary": "The evidence included a published trial and a review.",
+            "landscape": "The bundle mixes direct evidence and contextual synthesis.",
+            "findings": "The direct trial remained the main signal [1]. The review stayed contextual [2].",
+            "limitations": "Cross-species translation remains limited.",
+            "gaps_identified": "More human RCTs are needed.",
+            "conclusion": "The evidence remains mixed [1].",
+        }
+        return (data, {"choices": [{"message": {"content": f"raw-quality-{self.calls}"}}], "usage": {}})
+
+
 class GoodSource:
     """Returns enough entries to pass the 12-entry source gate (RESEARKA_URL on VPS)."""
 
@@ -660,6 +678,7 @@ def test_run_agent_retries_high_severity_citation_violations(tmp_path: Path, mon
     monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
     monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: provider))
+    monkeypatch.setattr(cli, "validate_draft_quality", lambda artifact, source_bundle: [])
 
     run = cli.run_agent(
         topic="metformin aging older adults",
@@ -685,6 +704,7 @@ def test_run_agent_fails_closed_when_high_severity_citation_violations_survive_r
     monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
     monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
     monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: provider))
+    monkeypatch.setattr(cli, "validate_draft_quality", lambda artifact, source_bundle: [])
 
     run = cli.run_agent(
         topic="metformin aging older adults",
@@ -698,6 +718,71 @@ def test_run_agent_fails_closed_when_high_severity_citation_violations_survive_r
     assert provider.calls == 2
     assert run["citation_retry_count"] == 1
     assert run["high_severity_citation_count"] >= 1
+    assert "markdown" not in run
+
+
+def test_run_agent_retries_high_severity_draft_quality_violations(tmp_path: Path, monkeypatch) -> None:
+    provider = RetryingDraftQualityProvider()
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: PublishedAndReviewSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: provider))
+
+    def fake_validate_draft_quality(artifact, source_bundle):
+        if provider.calls == 1:
+            return [{"section": "Conclusion", "severity": "high", "issue": "raw_extraction_template"}]
+        return []
+
+    monkeypatch.setattr(cli, "validate_draft_quality", fake_validate_draft_quality)
+
+    run = cli.run_agent(
+        topic="metformin aging older adults",
+        domain="longevity",
+        criteria="",
+        run_dir=str(tmp_path),
+    )
+
+    assert not run.get("error")
+    assert provider.calls == 2
+    assert run["citation_retry_count"] == 1
+    assert run["quality_retry_count"] == 1
+    assert run["high_severity_citation_count"] == 0
+    assert run["high_severity_draft_quality_count"] == 0
+    assert run["draft_quality_violations"] == []
+
+
+def test_run_agent_fails_closed_when_high_severity_draft_quality_violations_survive_retry(tmp_path: Path, monkeypatch) -> None:
+    provider = RetryingDraftQualityProvider()
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "ChEMBLClient", lambda: ResolverOnlySource())
+    monkeypatch.setattr(cli, "PubMedClient", lambda: PublishedAndReviewSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "RxivClient", lambda: FailingSource())
+    monkeypatch.setattr(cli, "ClinicalTrialsClient", lambda: FailingSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: provider))
+    monkeypatch.setattr(
+        cli,
+        "validate_draft_quality",
+        lambda artifact, source_bundle: [{"section": "Abstract", "severity": "high", "issue": "abstract_missing_numeric_effect"}],
+    )
+
+    run = cli.run_agent(
+        topic="metformin aging older adults",
+        domain="longevity",
+        criteria="",
+        run_dir=str(tmp_path),
+    )
+
+    assert "High-severity draft-quality violations remained" in run.get("error", "")
+    assert run.get("gate_reason") == "draft_quality_violation"
+    assert provider.calls == 2
+    assert run["citation_retry_count"] == 1
+    assert run["quality_retry_count"] == 1
+    assert run["high_severity_citation_count"] == 0
+    assert run["high_severity_draft_quality_count"] >= 1
     assert "markdown" not in run
 
 

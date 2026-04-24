@@ -10,6 +10,15 @@ _CITATION_RE = re.compile(r"\[(\d+)\]")
 _NUMBER_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
 _NUMERIC_SECTIONS = {"Key Findings", "Conclusion"}
 _REQUIRED_CITATION_SECTIONS = {"Key Findings"}
+_RAW_EXTRACTION_RE = re.compile(r"\b(?:Published results|Meta-analysis)\s+\[\d+\]\s+(?:report|reported)\b", re.IGNORECASE)
+_RAW_EXTRACTION_VALUE_RE = re.compile(r"\b(?:mean|median|sd|n=|95%\s*ci|p\s*[<=>]|change from baseline)\b", re.IGNORECASE)
+_TOPIC_FROM_TITLE_RE = re.compile(r"^Rapid Evidence Synthesis:\s*(.+)$")
+_INTERVENTION_SIGNAL_RE = re.compile(
+    r"\b(?:glp-?1(?:ras?)?|sglt2|dpp-?4|semaglutide|liraglutide|tirzepatide|acarbose|"
+    r"everolimus|sirolimus|rapamycin|metformin|statin(?:s)?|gliflozin(?:s)?)\b",
+    re.IGNORECASE,
+)
+_CONTRAST_CUE_RE = re.compile(r"\b(?:not|rather than|instead of|contextual only|did not establish|supporting context)\b", re.IGNORECASE)
 
 
 def _window(text: str, start: int, end: int, *, radius: int = 120) -> str:
@@ -21,7 +30,111 @@ def _severity(issue: str) -> str:
         "forbidden_phrase": "high",
         "missing_inline_citation": "high",
         "citation_out_of_range": "low",
+        "abstract_missing_numeric_effect": "high",
+        "raw_extraction_template": "high",
+        "missing_topic_distinction": "medium",
     }.get(issue, "medium")
+
+
+def _topic_terms(draft: dict[str, Any]) -> set[str]:
+    title = str(draft.get("title") or "")
+    match = _TOPIC_FROM_TITLE_RE.match(title)
+    topic = match.group(1) if match else title
+    return {
+        token
+        for token in re.findall(r"[a-z0-9\-]+", topic.lower())
+        if len(token) > 3 and token not in {"aging", "older", "adults", "adult", "longevity", "rapid", "evidence", "synthesis"}
+    }
+
+
+def _has_structured_effects(source_bundle: list[dict[str, Any]]) -> bool:
+    for entry in source_bundle:
+        if str(entry.get("role") or "") not in {"published_results", "meta_analysis"}:
+            continue
+        extraction = entry.get("extraction") or {}
+        if extraction.get("effects"):
+            return True
+        claim = entry.get("claim") or {}
+        if any(claim.get(field) for field in ("effect", "metric", "p_value", "n")):
+            return True
+    return False
+
+
+def _sentence_spans(text: str) -> list[tuple[int, int, str]]:
+    spans: list[tuple[int, int, str]] = []
+    start = 0
+    for match in re.finditer(r"(?<=[.!?])\s+", text):
+        end = match.start()
+        sentence = text[start:end].strip()
+        if sentence:
+            spans.append((start, end, sentence))
+        start = match.end()
+    tail = text[start:].strip()
+    if tail:
+        spans.append((start, len(text), tail))
+    return spans
+
+
+def validate_draft_quality(draft: dict[str, Any], source_bundle: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    violations: list[dict[str, Any]] = []
+    abstract = str(draft.get("abstract") or "")
+    sections = draft.get("sections") or {}
+    topic_terms = _topic_terms(draft)
+
+    if source_bundle and _has_structured_effects(source_bundle) and abstract.strip() and not _NUMBER_RE.search(re.sub(r"\[\d+\]", "", abstract)):
+        violations.append(
+            {
+                "section": "Abstract",
+                "severity": _severity("abstract_missing_numeric_effect"),
+                "issue": "abstract_missing_numeric_effect",
+                "window": _window(abstract, 0, min(len(abstract), 160)),
+            }
+        )
+
+    for heading in ("Abstract", "Key Findings", "Conclusion"):
+        body = abstract if heading == "Abstract" else str(sections.get(heading) or "")
+        if not body:
+            continue
+        for start, end, sentence in _sentence_spans(body):
+            if _RAW_EXTRACTION_RE.search(sentence) and _RAW_EXTRACTION_VALUE_RE.search(sentence):
+                severity = "high" if heading in {"Abstract", "Conclusion"} else "medium"
+                violations.append(
+                    {
+                        "section": heading,
+                        "severity": severity,
+                        "issue": "raw_extraction_template",
+                        "window": _window(body, start, end),
+                    }
+                )
+            refs = [int(match.group(1)) for match in _CITATION_RE.finditer(sentence)]
+            if not refs or not topic_terms:
+                continue
+            cited = [source_bundle[ref - 1] for ref in refs if 1 <= ref <= len(source_bundle)]
+            if not cited:
+                continue
+            support_only = all(
+                str(entry.get("role") or "") in {"meta_analysis", "review"}
+                or str(entry.get("evidence_tier") or "").startswith("Tier B")
+                or str(entry.get("evidence_tier") or "").startswith("Tier C")
+                for entry in cited
+            )
+            if not support_only:
+                continue
+            if not _INTERVENTION_SIGNAL_RE.search(sentence):
+                continue
+            if any(term in sentence.lower() for term in topic_terms):
+                continue
+            if _CONTRAST_CUE_RE.search(sentence):
+                continue
+            violations.append(
+                {
+                    "section": heading,
+                    "severity": _severity("missing_topic_distinction"),
+                    "issue": "missing_topic_distinction",
+                    "window": _window(body, start, end),
+                }
+            )
+    return violations
 
 
 def validate_citations(draft: dict[str, Any], source_bundle: list[dict[str, Any]], *, strict: bool = False) -> list[dict[str, Any]]:

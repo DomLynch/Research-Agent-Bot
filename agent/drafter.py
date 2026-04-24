@@ -70,6 +70,7 @@ _INJECTION_PATTERNS = (
     r"ENDCHAT",
 )
 _INJECTION_RE = re.compile("|".join(_INJECTION_PATTERNS), re.IGNORECASE)
+_NUMBER_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
 _NUMERIC_CLAIM_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
 _QUANT_LITERAL_RE = re.compile(
     r"\d+(?:\.\d+)?\s*(?:%|ppm|mg|fold|x|years?|months?|days?|patients?|subjects?|participants?|kg|mg/kg|ug|l|ml|nm|um|ul|mmhg|bpm)",
@@ -94,6 +95,10 @@ _EFFECT_STYLE_RE = re.compile(
 _RESULT_MARKER_RE = re.compile(
     r"(?:p\s*[<=>]|n\s*=|95%\s*ci|confidence interval|\bhr\b|hazard ratio|"
     r"\bor\b|odds ratio|\brr\b|placebo\b|control\b|\d+(?:\.\d+)?\s*%)",
+    re.IGNORECASE,
+)
+_RAW_RESULT_SENTENCE_RE = re.compile(
+    r"^(?:Published results|Meta-analysis)\s+\[R?\d+\]\s+(?:report|reported)\b",
     re.IGNORECASE,
 )
 _CITATION_TOKEN_RE = re.compile(r"\[(R?\d+)\]", re.IGNORECASE)
@@ -1220,40 +1225,137 @@ def _sanitize_published_result_language(text: str, source_bundle: list[dict[str,
     return " ".join(part for part in kept if part).strip()
 
 
-def _numeric_effect_sentence(index: int, entry: dict[str, Any]) -> str:
+def _claim_null_signal(entry: dict[str, Any], claim: dict[str, Any] | None) -> bool:
+    p_value = _clean((claim or {}).get("p_value"), limit=16)
+    if p_value:
+        numeric = re.sub(r"[^0-9.]+", "", p_value)
+        try:
+            if numeric and float(numeric) >= 0.05:
+                return True
+        except ValueError:
+            pass
+    hay = " ".join(
+        str(v or "").lower()
+        for v in (
+            (claim or {}).get("source_span"),
+            entry.get("excerpt"),
+            (entry.get("card") or {}).get("outcomes"),
+        )
+    )
+    return any(
+        phrase in hay
+        for phrase in (
+            "no significant",
+            "did not improve",
+            "did not change",
+            "no meaningful effect",
+            "no difference",
+            "did not support",
+        )
+    )
+
+
+def _compact_claim_component(text: str) -> str:
+    cleaned = _normalize_numeric_phrase(_clean(text, limit=220), limit=220)
+    if not cleaned:
+        return ""
+    cleaned = re.sub(r"\s*=\s*", " ", cleaned)
+    cleaned = re.sub(r"\s*;\s*", " vs ", cleaned)
+    cleaned = re.sub(r"\bspread\b", "SD", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\b([A-Z][A-Za-z0-9+/\-]+)\b", lambda m: m.group(1).lower(), cleaned)
+    return _clean(cleaned, limit=220)
+
+
+def _claim_detail_text(claim: dict[str, Any] | None, *, include_p: bool, include_n: bool) -> str:
+    if not claim:
+        return ""
+    parts: list[str] = []
+    metric = _normalize_numeric_phrase(_clean(claim.get("metric"), limit=40), limit=40).lower()
+    effect = _compact_claim_component(str(claim.get("effect") or ""))
+    if effect:
+        parts.append(f"{metric} {effect}".strip())
+    elif metric:
+        parts.append(metric)
+    p_value = _clean(claim.get("p_value"), limit=16)
+    if include_p and p_value:
+        parts.append(f"p={p_value}")
+    n_value = _compact_claim_component(str(claim.get("n") or ""))
+    if include_n and n_value:
+        parts.append(n_value)
+    return "; ".join(part for part in parts if part)
+
+
+def _support_context_sentence(index: int, entry: dict[str, Any], *, section: str, topic_label: str) -> str:
+    citation = _citation_bracket(entry=entry, index=index)
+    role = str(entry.get("role") or "review")
+    label = "meta-analysis" if role == "meta_analysis" else "supporting review"
+    topic_phrase = _clean(topic_label, limit=60) or "queried intervention"
+    if section == "Conclusion":
+        return f"Supporting {label} evidence remained contextual rather than definitive {citation}."
+    return f"A broader {label} provided context but did not establish a clear {topic_phrase}-specific geroprotective effect {citation}."
+
+
+def _support_context_only(entry: dict[str, Any]) -> bool:
+    role = str(entry.get("role") or "unknown")
+    if role in {"meta_analysis", "review", "published_protocol", "registered_pending", "mechanistic", "animal_model", "off_domain_indirect", "unknown"}:
+        return True
+    return str(entry.get("evidence_tier") or "") == _TIER_C
+
+
+def _narrative_numeric_sentence(index: int, entry: dict[str, Any], *, section: str, topic_label: str = "") -> str:
     claim = entry.get("claim") or _claim_from_entry(entry)
     if not _claim_schema_ok(claim):
         return ""
     citation = _citation_bracket(entry=entry, index=index)
+    if _support_context_only(entry):
+        return _support_context_sentence(index, entry, section=section, topic_label=topic_label)
     if source_span := _claim_sentence(claim):
-        lead = "Meta-analysis" if entry.get("role") == "meta_analysis" else "Published results"
-        return f"{lead} {citation} reported {source_span.rstrip('.')}."
+        if section == "Conclusion":
+            endpoint = _normalize_numeric_phrase(str(claim.get("endpoint") or "reported outcome"), limit=120).lower()
+            return f"One trial found no significant difference in {endpoint} compared with placebo {citation}."
+        return f"{source_span.rstrip('.')} {citation}."
     outcome = _normalize_numeric_phrase(str(claim.get("endpoint") or "reported outcome"), limit=90)
-    metric = _normalize_numeric_phrase(str(claim.get("metric") or ""), limit=40).lower()
-    effect = _normalize_numeric_phrase(str(claim.get("effect") or ""), limit=140)
-    p_value = _clean(claim.get("p_value"), limit=20)
-    n = _clean(claim.get("n"), limit=80)
-    bits = [f"Published results {citation} report {outcome}"]
-    if metric and effect:
-        bits.append(f"{metric} {effect}")
-    elif effect:
-        bits.append(effect)
-    if p_value:
-        bits.append(f"p={p_value}")
-    if n:
-        bits.append(n)
-    return "; ".join(bits).strip() + "."
+    outcome = outcome or "reported outcome"
+    null_signal = _claim_null_signal(entry, claim)
+    if section == "Conclusion":
+        if null_signal:
+            return f"One trial found no significant difference in {outcome} compared with placebo {citation}."
+        return f"One trial reported changes in {outcome}, but the overall direct evidence remains limited {citation}."
+    lead = "One direct trial" if section == "Abstract" else "One trial"
+    if null_signal:
+        sentence = f"{lead} found no significant difference in {outcome}"
+    else:
+        sentence = f"{lead} reported results for {outcome}"
+    details = _claim_detail_text(claim, include_p=True, include_n=(section == 'Key Findings'))
+    if details:
+        sentence += f" ({details})"
+    return f"{sentence} {citation}."
 
 
-def _excerpt_numeric_sentence(index: int, entry: dict[str, Any]) -> str:
+def _excerpt_numeric_sentence(index: int, entry: dict[str, Any], *, section: str, topic_label: str = "") -> str:
+    if _support_context_only(entry):
+        return _support_context_sentence(index, entry, section=section, topic_label=topic_label)
     if claim := _claim_from_entry(entry):
         if source_span := _claim_sentence(claim):
-            lead = "Meta-analysis" if str(entry.get("role") or "unknown") == "meta_analysis" else "Published results"
-            return f"{lead} {_citation_bracket(entry=entry, index=index)} reported {source_span.rstrip('.')}."
-    return ""
+            if section == "Conclusion":
+                endpoint = _normalize_numeric_phrase(str(claim.get("endpoint") or "reported outcome"), limit=120).lower()
+                return f"One trial found no significant difference in {endpoint} compared with placebo {_citation_bracket(entry=entry, index=index)}."
+            return f"{source_span.rstrip('.')} {_citation_bracket(entry=entry, index=index)}."
+    sentence = _entry_result_sentence(entry)
+    if not sentence:
+        return ""
+    if section == "Conclusion":
+        outcome = _normalize_numeric_phrase(str((entry.get("card") or {}).get("outcomes") or "reported outcome"), limit=120).lower()
+        if outcome:
+            return f"One trial found no significant difference in {outcome} compared with placebo {_citation_bracket(entry=entry, index=index)}."
+    return f"{_strip_citations(sentence, limit=500).rstrip('.')} {_citation_bracket(entry=entry, index=index)}."
 
 
-def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, Any]]) -> str:
+def _numeric_effect_sentence(index: int, entry: dict[str, Any], *, topic_label: str = "") -> str:
+    return _narrative_numeric_sentence(index, entry, section="Key Findings", topic_label=topic_label)
+
+
+def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, Any]], *, section: str, topic_label: str = "") -> str:
     cleaned = _clean(text, limit=4000)
     if not cleaned:
         return cleaned
@@ -1268,6 +1370,7 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
         replacement = ""
         drop_sentence = False
         grounded = _NUMERIC_CLAIM_RE.search(bare) and _EFFECT_STYLE_RE.search(bare)
+        raw_template = bool(_RAW_RESULT_SENTENCE_RE.search(sentence))
         for ref in refs:
             if not (1 <= ref <= len(source_bundle)):
                 continue
@@ -1275,13 +1378,13 @@ def _ground_required_numeric_sentences(text: str, source_bundle: list[dict[str, 
             role = str(entry.get("role") or "unknown")
             if role in {"published_results", "meta_analysis"}:
                 effects = ((entry.get("extraction") or {}).get("effects") or [])
-                if grounded and (role != "published_results" or _RESULT_MARKER_RE.search(bare)):
+                if grounded and not raw_template and (role != "published_results" or _RESULT_MARKER_RE.search(bare)):
                     replacement = sentence
                     break
                 if effects:
-                    replacement = _numeric_effect_sentence(ref, entry)
+                    replacement = _narrative_numeric_sentence(ref, entry, section=section, topic_label=topic_label)
                     break
-                replacement = _excerpt_numeric_sentence(ref, entry)
+                replacement = _excerpt_numeric_sentence(ref, entry, section=section, topic_label=topic_label)
                 if replacement:
                     break
                 if role == "meta_analysis":
@@ -1372,6 +1475,35 @@ def _human_abstract(topic: str, domain_slug: str, sections: dict[str, str], sour
     return _complete_sentences(abstract, max_sentences=5, limit=1200)
 
 
+def _ensure_numeric_abstract(abstract: str, source_bundle: list[dict[str, Any]], *, topic_label: str) -> str:
+    cleaned = _clean(abstract, limit=1200)
+    if not cleaned or _NUMBER_RE.search(_strip_citations(cleaned, limit=1200)):
+        return cleaned
+    candidates: list[tuple[int, dict[str, Any]]] = []
+    for idx, entry in enumerate(source_bundle, start=1):
+        if str(entry.get("role") or "") != "published_results":
+            continue
+        if not (((entry.get("extraction") or {}).get("effects") or []) or _claim_schema_ok(entry.get("claim") or _claim_from_entry(entry))):
+            continue
+        candidates.append((idx, entry))
+    candidates.sort(
+        key=lambda pair: (
+            1 if str(pair[1].get("directness") or "") == "direct" else 0,
+            1 if str(pair[1].get("evidence_tier") or "") == _TIER_A1 else 0,
+            1 if _claim_has_structured_fields(pair[1].get("claim") or _claim_from_entry(pair[1])) else 0,
+            float(pair[1].get("topic_fit") or 0.0),
+            float(pair[1].get("relevance") or 0.0),
+            int(pair[1].get("year") or 0),
+        ),
+        reverse=True,
+    )
+    for idx, entry in candidates:
+        sentence = _narrative_numeric_sentence(idx, entry, section="Abstract", topic_label=topic_label)
+        if sentence and _NUMBER_RE.search(_strip_citations(sentence, limit=400)):
+            return _complete_sentences(_dedupe_repeated_sentences(f"{cleaned} {sentence}"), max_sentences=5, limit=1200)
+    return cleaned
+
+
 def _postprocess_sections(
     sections: dict[str, str],
     *,
@@ -1380,6 +1512,7 @@ def _postprocess_sections(
     topic_tokens: list[str],
     has_effect_data: bool,
     first_effect_entry: tuple[int, dict[str, Any]] | None,
+    topic_label: str = "",
 ) -> dict[str, str]:
     polished = dict(sections)
     for heading in ("Search Summary", "Evidence Landscape", "Key Findings", "Limitations", "Conclusion"):
@@ -1390,7 +1523,7 @@ def _postprocess_sections(
             polished[heading] = _sanitize_registry_claims(polished[heading], registered_refs)
     for heading in ("Key Findings", "Conclusion"):
         if heading in polished:
-            polished[heading] = _ground_required_numeric_sentences(polished[heading], source_bundle)
+            polished[heading] = _ground_required_numeric_sentences(polished[heading], source_bundle, section=heading, topic_label=topic_label)
             polished[heading] = _clean_grounding_mashups(polished[heading], source_bundle)
             polished[heading] = _retarget_singular_trial_citations(polished[heading], source_bundle)
             polished[heading] = _trim_singular_mixed_citations(polished[heading], source_bundle)
@@ -1965,6 +2098,7 @@ class RapidEvidenceDrafter:
             topic_tokens=topic_tokens,
             has_effect_data=has_effect_data,
             first_effect_entry=first_effect_entry,
+            topic_label=str(topic_meta.get("canonical_term") or topic),
         )
         sections = _preserve_cited_sections(
             sections,
@@ -2021,6 +2155,7 @@ class RapidEvidenceDrafter:
                 topic_tokens=topic_tokens,
                 has_effect_data=has_effect_data,
                 first_effect_entry=first_effect_entry,
+                topic_label=str(topic_meta.get("canonical_term") or topic),
             )
             sections = _preserve_cited_sections(
                 sections,
@@ -2035,6 +2170,11 @@ class RapidEvidenceDrafter:
             abstract = _drop_shared_sentences(abstract, sections.get("Key Findings", ""), limit=1200)
         if not abstract:
             abstract = _human_abstract(topic, domain_slug, sections, source_bundle)
+        abstract = _ensure_numeric_abstract(
+            abstract,
+            source_bundle,
+            topic_label=str(topic_meta.get("canonical_term") or topic),
+        )
         rendered_abstract, abstract_ref_errors = _render_numeric_citations(abstract, source_bundle)
         rendered_sections: dict[str, str] = {}
         section_ref_errors: list[str] = []

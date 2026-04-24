@@ -841,7 +841,7 @@ def test_drafter_drops_vague_meta_analysis_sentence_without_numeric_grounding() 
     )
     findings = artifact["sections"]["Key Findings"]
     assert "A meta-analysis from 2024 synthesized outcomes" not in findings
-    assert "mean Metformin -0.0002; Placebo 0.0002" in findings
+    assert "mean metformin -0.0002 vs placebo 0.0002" in findings
     assert "No retained study directly addresses integrated healthspan" in findings
 
 
@@ -1203,7 +1203,9 @@ def test_drafter_replaces_broken_vs_mashup_with_grounded_result_sentence() -> No
     )
     findings = artifact["sections"]["Key Findings"]
     assert "vs. [1]" not in findings
-    assert "Published results [1] report Frailty Index Based on Deficit Accumulation" in findings
+    assert "Published results [1] report" not in findings
+    assert "One trial reported results for Frailty Index Based on Deficit Accumulation" in findings
+    assert "[1]" in findings
 
 
 def test_drafter_drops_split_vs_mashup_prefix_before_grounded_sentence() -> None:
@@ -1248,7 +1250,9 @@ def test_drafter_drops_split_vs_mashup_prefix_before_grounded_sentence() -> None
     )
     findings = artifact["sections"]["Key Findings"]
     assert "mean change: metformin -0.0002 vs." not in findings
-    assert "Published results [1] report Frailty Index Based on Deficit Accumulation" in findings
+    assert "Published results [1] report" not in findings
+    assert "One trial reported results for Frailty Index Based on Deficit Accumulation" in findings
+    assert "[1]" in findings
 
 
 def test_drafter_trims_mixed_singular_citation_clusters() -> None:
