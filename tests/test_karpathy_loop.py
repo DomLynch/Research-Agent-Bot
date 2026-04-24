@@ -7,6 +7,7 @@ from scripts.karpathy_loop import (
     direction_agreement,
     limitation_overlap,
     quantitative_fidelity,
+    bundle_contract_score,
     composite_score,
     score_topic,
     load_topics,
@@ -33,6 +34,8 @@ _GOLD = {
 }
 
 _DRAFT = {
+    "canonical_term": "metformin",
+    "canonical_topic": "metformin aging older adults",
     "sections": {
         "Key Findings": (
             "Three studies with 45 participants showed significant improvement "
@@ -48,14 +51,36 @@ _DRAFT = {
         ),
     },
     "source_bundle": [
-        {"doi": "10.1234/test1", "excerpt": "45 participants showed 85% improvement"},
-        {"doi": "10.1234/test2", "excerpt": "5 mg dose over 12 weeks"},
-        {"doi": "10.5678/test3", "excerpt": "10 mg dose over 12 weeks"},
-        {"doi": "10.9999/irrelevant", "excerpt": "unrelated finding"},
+        {
+            "doi": "10.1234/test1",
+            "title": "Metformin trial in older adults",
+            "excerpt": "45 participants showed 85% improvement with metformin in older adults",
+            "role": "published_results",
+            "directness": "direct",
+            "evidence_tier": "Tier A1 direct aging evidence",
+        },
+        {
+            "doi": "10.1234/test2",
+            "title": "Metformin systematic review in aging",
+            "excerpt": "5 mg dose over 12 weeks in metformin aging studies",
+            "role": "meta_analysis",
+            "directness": "indirect",
+            "evidence_tier": "Tier B supporting human evidence",
+        },
+        {
+            "doi": "10.5678/test3",
+            "title": "Metformin protocol in frail older adults",
+            "excerpt": "10 mg dose over 12 weeks planned for metformin protocol",
+            "role": "published_protocol",
+            "directness": "indirect",
+            "evidence_tier": "Tier C protocol/mechanistic support",
+        },
     ],
 }
 
 _DRAFT_NO_FINDINGS = {
+    "canonical_term": "metformin",
+    "canonical_topic": "metformin aging older adults",
     "sections": {
         "Key Findings": "",
         "Conclusion": "Insufficient evidence.",
@@ -212,9 +237,10 @@ class TestCompositeScore:
         result = composite_score(_DRAFT, _GOLD)
         expected = (
             0.10 * study_overlap(_DRAFT, _GOLD)
-            + 0.40 * quantitative_fidelity(_DRAFT, _GOLD)
-            + 0.30 * direction_agreement(_DRAFT, _GOLD)
-            + 0.20 * limitation_overlap(_DRAFT, _GOLD)
+            + 0.25 * quantitative_fidelity(_DRAFT, _GOLD)
+            + 0.20 * direction_agreement(_DRAFT, _GOLD)
+            + 0.15 * limitation_overlap(_DRAFT, _GOLD)
+            + 0.30 * bundle_contract_score(_DRAFT, _GOLD)
         )
         assert abs(result - expected) < 1e-6
 
@@ -223,10 +249,18 @@ class TestCompositeScore:
         assert 0.0 <= result <= 1.0
 
 
+class TestBundleContractScore:
+    def test_clean_bundle_scores_high(self):
+        assert bundle_contract_score(_DRAFT, _GOLD) == 1.0
+
+    def test_empty_bundle_scores_zero(self):
+        assert bundle_contract_score(_DRAFT_NO_FINDINGS, _GOLD) == 0.0
+
+
 class TestScoreTopic:
     def test_returns_all_keys(self):
         result = score_topic(_DRAFT, _GOLD)
-        expected_keys = {"study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "composite_score"}
+        expected_keys = {"study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "bundle_contract_score", "composite_score"}
         assert set(result.keys()) == expected_keys
 
     def test_values_are_rounded(self):
@@ -318,6 +352,7 @@ class TestDiffSubcommand:
                     "direction_agreement": 0.7,
                     "limitation_overlap": 0.8,
                     "quantitative_fidelity": 0.4,
+                    "bundle_contract_score": 0.3,
                 }
             },
             "averages": {
@@ -326,6 +361,7 @@ class TestDiffSubcommand:
                 "direction_agreement": 0.7,
                 "limitation_overlap": 0.8,
                 "quantitative_fidelity": 0.4,
+                "bundle_contract_score": 0.3,
             },
         }))
         after.write_text(json.dumps({
@@ -338,6 +374,7 @@ class TestDiffSubcommand:
                     "direction_agreement": 0.7,
                     "limitation_overlap": 0.9,
                     "quantitative_fidelity": 0.5,
+                    "bundle_contract_score": 0.8,
                 }
             },
             "averages": {
@@ -346,6 +383,7 @@ class TestDiffSubcommand:
                 "direction_agreement": 0.7,
                 "limitation_overlap": 0.9,
                 "quantitative_fidelity": 0.5,
+                "bundle_contract_score": 0.8,
             },
         }))
 
@@ -363,6 +401,7 @@ class TestDiffSubcommand:
         assert data["topics"]["topic_a"]["composite_score"] == 0.1
         assert data["topics"]["topic_a"]["study_overlap"] == 0.1
         assert data["topics"]["topic_a"]["direction_agreement"] == 0.0
+        assert data["topics"]["topic_a"]["bundle_contract_score"] == 0.5
         assert data["average_delta"]["composite_score"] == 0.1
 
 
@@ -381,6 +420,7 @@ class TestReportSubcommand:
                     "quantitative_fidelity": 0.02,
                     "direction_agreement": 0.0,
                     "limitation_overlap": -0.03,
+                    "bundle_contract_score": 0.25,
                 }
             },
             "average_delta": {
@@ -389,6 +429,7 @@ class TestReportSubcommand:
                 "quantitative_fidelity": 0.02,
                 "direction_agreement": 0.0,
                 "limitation_overlap": -0.03,
+                "bundle_contract_score": 0.25,
             },
         }))
 
@@ -419,5 +460,5 @@ class TestLoaders:
         assert len(shared) == 15
         for slug in shared:
             result = score_topic(fixtures[slug], topics[slug])
-            for key in ("study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "composite_score"):
+            for key in ("study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "bundle_contract_score", "composite_score"):
                 assert 0.0 <= result[key] <= 1.0

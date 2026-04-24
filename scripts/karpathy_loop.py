@@ -1,6 +1,6 @@
 """Karpathy loop harness — local scoring against gold fixtures.
 
-Snapshots composite_score (plus 4 sub-metrics) for every gold topic.
+Snapshots composite_score (plus 5 sub-metrics) for every gold topic.
 Subcommands:
   snapshot  — score all topics, write timestamped JSON
   diff      — compare two snapshots
@@ -27,6 +27,11 @@ DIFFS_DIR = _HERE / "karpathy-loop" / "diffs"
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"]}
+_GENERIC_TOPIC_TOKENS = {
+    "aging", "ageing", "older", "adult", "adults", "elderly", "longevity",
+    "healthspan", "frailty", "prefrailty", "sarcopenia", "cognition", "cognitive",
+    "function", "physical", "performance", "domain", "older-adult",
+}
 
 _POSITIVE_KW = {
     "suggest", "suggests", "suggested", "could", "may", "might", "can",
@@ -222,13 +227,95 @@ def quantitative_fidelity(draft: dict, gold: dict) -> float:
     return supported / len(numeric_claims)
 
 
+def _norm_title(title: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", title.lower())[:120]
+
+
+def _topic_terms(draft: dict) -> set[str]:
+    terms: set[str] = set()
+    canonical = str(draft.get("canonical_term") or "").lower().strip()
+    if canonical:
+        terms.add(canonical)
+        terms.update(_SYNONYMS.get(canonical, []))
+    for field in ("canonical_topic", "raw_topic"):
+        text = str(draft.get(field) or "").lower()
+        for token in re.findall(r"[a-z0-9+.-]+", text):
+            if token in _STOPWORDS or token in _GENERIC_TOPIC_TOKENS or len(token) < 3:
+                continue
+            terms.add(token)
+            terms.update(_SYNONYMS.get(token, []))
+    return terms
+
+
+def _inferred_tier(entry: dict) -> str:
+    tier = str(entry.get("evidence_tier") or "").strip()
+    if tier:
+        return tier
+    role = str(entry.get("role") or "")
+    directness = str(entry.get("directness") or "")
+    if role in {"registered_pending", "published_protocol", "animal_model", "mechanistic", "off_domain_indirect", "unknown"}:
+        return "Tier C protocol/mechanistic support"
+    if role in {"meta_analysis", "review"}:
+        return "Tier B supporting human evidence"
+    if role == "observational":
+        return "Tier A2 disease-context human evidence"
+    if role == "published_results" and directness == "direct":
+        return "Tier A1 direct aging evidence"
+    if role == "published_results":
+        return "Tier A2 disease-context human evidence"
+    return "Tier B supporting human evidence"
+
+
+def bundle_contract_score(draft: dict, gold: dict | None = None) -> float:
+    """Score bundle hygiene on the retained evidence set."""
+    del gold
+    bundle = draft.get("source_bundle", []) or []
+    if not bundle:
+        return 0.0
+    titles = [_norm_title(str(entry.get("title") or "")) for entry in bundle]
+    size_compliance = 1.0 if 1 <= len(bundle) <= 12 else 0.0
+    dedup_compliance = len(set(titles)) / len(titles) if titles else 0.0
+    terms = _topic_terms(draft)
+    scoped_entries = [entry for entry in bundle if _inferred_tier(entry) != "Tier C protocol/mechanistic support"]
+    if not scoped_entries:
+        topic_fit_compliance = 0.0
+    else:
+        matched = 0
+        for entry in scoped_entries:
+            hay = f"{entry.get('title', '')} {entry.get('excerpt', '')}".lower()
+            if any(term in hay for term in terms):
+                matched += 1
+        topic_fit_compliance = matched / len(scoped_entries)
+    tiers = [_inferred_tier(entry) for entry in bundle]
+    a1 = tiers.count("Tier A1 direct aging evidence")
+    a2 = tiers.count("Tier A2 disease-context human evidence")
+    b = tiers.count("Tier B supporting human evidence")
+    c = tiers.count("Tier C protocol/mechanistic support")
+    tier_distribution_compliance = 1.0 if (1 <= a1 <= 4 and 0 <= a2 <= 3 and 0 <= b <= 3 and 0 <= c <= 2) else 0.0
+    a1_rct_present = 1.0 if any(
+        _inferred_tier(entry) == "Tier A1 direct aging evidence"
+        and str(entry.get("role") or "") == "published_results"
+        for entry in bundle
+    ) else 0.0
+    return sum(
+        (
+            size_compliance,
+            dedup_compliance,
+            topic_fit_compliance,
+            tier_distribution_compliance,
+            a1_rct_present,
+        )
+    ) / 5.0
+
+
 def composite_score(draft: dict, gold: dict) -> float:
-    """Weighted composite: study=0.10, quant=0.40, direction=0.30, limitation=0.20."""
+    """Weighted composite with explicit bundle-hygiene coverage."""
     return (
         0.10 * study_overlap(draft, gold)
-        + 0.40 * quantitative_fidelity(draft, gold)
-        + 0.30 * direction_agreement(draft, gold)
-        + 0.20 * limitation_overlap(draft, gold)
+        + 0.25 * quantitative_fidelity(draft, gold)
+        + 0.20 * direction_agreement(draft, gold)
+        + 0.15 * limitation_overlap(draft, gold)
+        + 0.30 * bundle_contract_score(draft, gold)
     )
 
 
@@ -266,12 +353,13 @@ def load_fixtures(fixtures_dir: Path) -> dict[str, dict]:
 
 
 def score_topic(draft: dict, gold: dict) -> dict[str, float]:
-    """Compute all 5 metrics for one topic."""
+    """Compute all metrics for one topic."""
     return {
         "study_overlap": round(study_overlap(draft, gold), 4),
         "direction_agreement": round(direction_agreement(draft, gold), 4),
         "limitation_overlap": round(limitation_overlap(draft, gold), 4),
         "quantitative_fidelity": round(quantitative_fidelity(draft, gold), 4),
+        "bundle_contract_score": round(bundle_contract_score(draft, gold), 4),
         "composite_score": round(composite_score(draft, gold), 4),
     }
 
@@ -364,8 +452,8 @@ def cmd_report(args: argparse.Namespace) -> int:
         print("  No topic diffs found.")
         return 0
 
-    print(f"  {'Topic':<30} {'Composite':>9} {'Study':>7} {'Quant':>7} {'Dir':>7} {'Limit':>7}")
-    print(f"  {'-'*30} {'-'*9} {'-'*7} {'-'*7} {'-'*7} {'-'*7}")
+    print(f"  {'Topic':<30} {'Composite':>9} {'Study':>7} {'Quant':>7} {'Dir':>7} {'Limit':>7} {'Bundle':>8}")
+    print(f"  {'-'*30} {'-'*9} {'-'*7} {'-'*7} {'-'*7} {'-'*7} {'-'*8}")
 
     improved = 0
     regressed = 0
@@ -384,7 +472,8 @@ def cmd_report(args: argparse.Namespace) -> int:
             f"{d.get('study_overlap', 0):>+7.4f} "
             f"{d.get('quantitative_fidelity', 0):>+7.4f} "
             f"{d.get('direction_agreement', 0):>+7.4f} "
-            f"{d.get('limitation_overlap', 0):>+7.4f}{marker}"
+            f"{d.get('limitation_overlap', 0):>+7.4f} "
+            f"{d.get('bundle_contract_score', 0):>+8.4f}{marker}"
         )
 
     print()
@@ -395,6 +484,7 @@ def cmd_report(args: argparse.Namespace) -> int:
     print(f"    quantitative_fidelity:    {avg.get('quantitative_fidelity', 0):+.4f}")
     print(f"    direction_agreement:      {avg.get('direction_agreement', 0):+.4f}")
     print(f"    limitation_overlap:       {avg.get('limitation_overlap', 0):+.4f}")
+    print(f"    bundle_contract_score:    {avg.get('bundle_contract_score', 0):+.4f}")
     print()
     print(f"  Improved: {improved}  Regressed: {regressed}  Unchanged: {len(topic_diffs) - improved - regressed}")
     return 0
