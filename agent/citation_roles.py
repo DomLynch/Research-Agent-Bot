@@ -104,6 +104,18 @@ _MECHANISTIC_RE = re.compile(
     r"\b(systems modeling|systems model(?:ing)?|computational model(?:ing)?|in silico|simulation study|mathematical model(?:ing)?|network model(?:ing)?)\b",
     re.IGNORECASE,
 )
+_REVIEWISH_PRIMARY_RE = re.compile(
+    r"\b(review|overview|perspective|commentary|therapeutic paradox|narrative)\b",
+    re.IGNORECASE,
+)
+_SYNTHESIS_LANGUAGE_RE = re.compile(
+    r"\b(observational and epidemiological studies suggest|evidence suggests|accumulating evidence|existing studies|prior studies|has attracted increasing interest|growing interest)\b",
+    re.IGNORECASE,
+)
+_PRIMARY_RESULT_MARKER_RE = re.compile(
+    r"\b(randomized|randomised|participants?|n\s*=|double-blind|placebo|cohort|cross-sectional|prospective|retrospective|trial|follow-up|weeks?|months?|years?)\b",
+    re.IGNORECASE,
+)
 _GENERIC_TOPIC_TOKENS = {
     "aging", "ageing", "older", "adult", "adults", "elderly", "longevity",
     "healthspan", "frailty", "prefrailty", "sarcopenia", "cognition", "cognitive",
@@ -228,6 +240,11 @@ def classify_citation_role(
         return "meta_analysis"
     if evidence_type == "review" and _META_ANALYSIS_RE.search(title):
         return "meta_analysis"
+    if evidence_type == "primary" and (
+        _REVIEWISH_PRIMARY_RE.search(title)
+        or (_SYNTHESIS_LANGUAGE_RE.search(text) and not _PRIMARY_RESULT_MARKER_RE.search(text))
+    ):
+        return "review"
     if (study_type in _RESULT_TYPES or evidence_type in _RESULT_TYPES or quality == "rct") and (
         _title_match(item, topic_tokens) or _aging_signal(card, item)
     ):

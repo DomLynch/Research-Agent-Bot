@@ -77,3 +77,9 @@ def test_validator_clean_draft_returns_empty() -> None:
     bundle = [{"role": "published_results"}, {"role": "observational"}]
     violations = validate_citations(draft, bundle)
     assert violations == []
+
+
+def test_validator_flags_missing_inline_citation_in_key_findings() -> None:
+    draft = {"sections": {"Key Findings": "Published results showed no significant difference in frailty after two years."}}
+    violations = validate_citations(draft, _bundle("published_results"))
+    assert any(v["severity"] == "high" and v["issue"] == "missing_inline_citation" for v in violations)

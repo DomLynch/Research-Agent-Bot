@@ -181,13 +181,17 @@ def _citation_revision_feedback(violations: list[dict[str, Any]]) -> str:
         "Rewrite every cited sentence so the language matches the cited source role.",
         "Published results and meta-analyses must use past-tense reported/evaluated language.",
         "Registered or protocol studies must stay design-only and must not claim outcomes.",
+        "Key Findings must keep inline citations on every factual sentence; do not return uncited evidence claims.",
     ]
     for violation in violations[:5]:
         ref = violation.get("citation")
         role = violation.get("role", "unknown")
         issue = violation.get("issue", "unknown")
         phrase = violation.get("phrase")
-        detail = f"[{ref}] role={role} issue={issue}"
+        if ref is None:
+            detail = f"section={violation.get('section', 'unknown')} issue={issue}"
+        else:
+            detail = f"[{ref}] role={role} issue={issue}"
         if phrase:
             detail += f" phrase='{phrase}'"
         lines.append(detail)

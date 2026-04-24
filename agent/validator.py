@@ -9,6 +9,7 @@ from agent.citation_roles import ROLE_LANGUAGE_RULES
 _CITATION_RE = re.compile(r"\[(\d+)\]")
 _NUMBER_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
 _NUMERIC_SECTIONS = {"Key Findings", "Conclusion"}
+_REQUIRED_CITATION_SECTIONS = {"Key Findings"}
 
 
 def _window(text: str, start: int, end: int, *, radius: int = 120) -> str:
@@ -16,7 +17,11 @@ def _window(text: str, start: int, end: int, *, radius: int = 120) -> str:
 
 
 def _severity(issue: str) -> str:
-    return {"forbidden_phrase": "high", "citation_out_of_range": "low"}.get(issue, "medium")
+    return {
+        "forbidden_phrase": "high",
+        "missing_inline_citation": "high",
+        "citation_out_of_range": "low",
+    }.get(issue, "medium")
 
 
 def validate_citations(draft: dict[str, Any], source_bundle: list[dict[str, Any]], *, strict: bool = False) -> list[dict[str, Any]]:
@@ -24,6 +29,20 @@ def validate_citations(draft: dict[str, Any], source_bundle: list[dict[str, Any]
     sections = draft.get("sections") or {}
     for heading, text in sections.items():
         body = str(text or "")
+        if (
+            heading in _REQUIRED_CITATION_SECTIONS
+            and source_bundle
+            and body.strip()
+            and not _CITATION_RE.search(body)
+        ):
+            violations.append(
+                {
+                    "section": heading,
+                    "severity": _severity("missing_inline_citation"),
+                    "issue": "missing_inline_citation",
+                    "window": _window(body, 0, min(len(body), 120)),
+                }
+            )
         for match in _CITATION_RE.finditer(body):
             ref = int(match.group(1))
             if ref < 1 or ref > len(source_bundle):

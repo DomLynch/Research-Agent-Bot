@@ -90,6 +90,17 @@ def test_review_is_review_role() -> None:
     assert role == "review"
 
 
+def test_reviewish_primary_entry_is_review_role() -> None:
+    entry = {
+        "title": "Metformin for Longevity and Sarcopenia: A Therapeutic Paradox in Aging.",
+        "excerpt": "Metformin has attracted increasing interest as a geroprotective therapy. Observational and epidemiological studies suggest lower sarcopenia prevalence in metabolically compromised populations.",
+        "evidence_type": "primary",
+        "source_type": "europepmc",
+    }
+    role = classify_citation_role(entry, _card(entry), "longevity", ["metformin", "aging", "older", "adults"])
+    assert role == "review"
+
+
 def test_off_domain_longevity_entry_is_off_domain_indirect() -> None:
     entry = {
         "title": "Metformin in pregnancy and gestational diabetes",

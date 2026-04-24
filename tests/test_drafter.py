@@ -257,6 +257,41 @@ class RefinementProvider(CaptureProvider):
         )
 
 
+class CitationStrippingRefinementProvider(CaptureProvider):
+    supports_refinement = True
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.calls = 0
+
+    def complete_json(self, *, system_prompt: str, user_prompt: str):
+        self.calls += 1
+        self.system_prompt = system_prompt
+        self.user_prompt = user_prompt
+        if self.calls == 1:
+            return (
+                {
+                    "question": "What are the effects of metformin on frailty and cognition outcomes in older adults, compared to placebo, and what does direct and supporting human evidence imply about efficacy, safety, and remaining uncertainty for healthy aging?",
+                    "search_summary": "Direct and supporting studies were reviewed.",
+                    "landscape": "Tier A1 evidence comes from direct older-adult trials [1]. Tier B context comes from broader syntheses [2].",
+                    "findings": "Published results [1] reported no significant difference in frailty versus placebo [1]. Supporting review evidence remained contextual only [2].",
+                    "limitations": "The evidence base remains limited.",
+                    "gaps_identified": "Longer trials remain needed.",
+                    "conclusion": "Direct trial evidence remains inconclusive for broad geroprotection [1].",
+                },
+                {},
+            )
+        return (
+            {
+                "abstract": "The evidence remains limited.",
+                "landscape": "Tier A1 evidence comes from direct older-adult trials. Tier B context comes from broader syntheses.",
+                "findings": "Published results reported no significant difference in frailty versus placebo. Supporting review evidence remained contextual only.",
+                "conclusion": "Direct trial evidence remains inconclusive for broad geroprotection.",
+            },
+            {},
+        )
+
+
 class JudgmentProvider(CaptureProvider):
     supports_reranking = True
     supports_labeling = True
@@ -907,6 +942,39 @@ def test_drafter_assigns_a1_a2_b_tiers_for_metformin_generically() -> None:
     assert tiers["Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials."] == "Tier B supporting human evidence"
 
 
+def test_drafter_drops_broad_disease_review_without_longevity_signal() -> None:
+    provider = CaptureProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Metformin and physical performance in older people with probable sarcopenia and physical prefrailty or frailty in England (MET-PREVENT): a double-blind, randomised, placebo-controlled trial.",
+            "excerpt": "Randomized placebo-controlled metformin trial in older adults with gait and physical performance outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2025,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+        },
+        {
+            "title": "Antidiabetic Agents as Antioxidant and Anti-Inflammatory Therapies in Neurological and Cardiovascular Diseases.",
+            "excerpt": "Neurological disorders and cardiovascular disease share inflammatory pathways, and metformin is discussed among antidiabetic agents.",
+            "evidence_type": "review",
+            "source_type": "europepmc",
+            "year": 2025,
+            "url": "https://europepmc.org/article/PMC/PMC12729538",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2022 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    titles = [str(item.get("title", "")).lower() for item in artifact["source_bundle"]]
+    assert not any("neurological and cardiovascular diseases" in title for title in titles)
+
+
 def test_bundle_entry_demotes_systems_modeling_to_mechanistic() -> None:
     entry = _bundle_entry(
         {
@@ -1011,6 +1079,50 @@ def test_drafter_drops_procedural_trials_that_mention_older_adults_but_not_longe
     )
     titles = [str(item.get("title", "")).lower() for item in artifact["source_bundle"]]
     assert not any("optimizing surgical outcomes at upmc" in title for title in titles)
+
+
+def test_drafter_drops_contrastive_support_sentence_for_other_intervention() -> None:
+    provider = VagueMetaProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+        "excerpt": "Interventional study in older adults.",
+        "evidence_type": "interventional",
+        "source_type": "clinicaltrials",
+        "has_results": True,
+        "trial_status": "results",
+        "year": 2024,
+        "url": "https://clinicaltrials.gov/study/NCT00000001",
+        "extraction": {
+            "effects": [
+                {
+                    "outcome": "Frailty Index Based on Deficit Accumulation",
+                    "metric": "MEAN",
+                    "value": "Metformin=-0.0002; Placebo=0.0002",
+                    "n": "Metformin N=58; Placebo N=67",
+                    "source_span": "Frailty Index Based on Deficit Accumulation. 2 years. Metformin=-0.0002; Placebo=0.0002. Metformin N=58; Placebo N=67",
+                }
+            ]
+        },
+    }
+    meta = {
+        "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+        "excerpt": "GLP-1RAs, not metformin, reduced major adverse cardiovascular events in a broad multi-drug meta-analysis of older adults.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, meta],
+        all_evidence=[published, meta],
+    )
+    findings = artifact["sections"]["Key Findings"]
+    assert "GLP-1RAs, not metformin" not in findings
 
 
 def test_drafter_replaces_broken_vs_mashup_with_grounded_result_sentence() -> None:
@@ -1407,6 +1519,52 @@ def test_drafter_uses_editor_refinement_and_bundle_tiers_generically() -> None:
     assert tiers["Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results"] == "Tier A1 direct aging evidence"
     assert tiers["Efficacy and safety of sirolimus in the treatment of gastrointestinal angiodysplasias."] == "Tier A2 disease-context human evidence"
     assert tiers["A single-center randomized placebo-controlled study to evaluate once-weekly sirolimus in older adults"] == "Tier C protocol/mechanistic support"
+
+
+def test_drafter_preserves_cited_sections_when_editor_strips_citations() -> None:
+    provider = CitationStrippingRefinementProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    evidence = [
+        {
+            "title": "Metformin for Preventing Frailty in High-risk Older Adults",
+            "excerpt": "Frailty outcomes in older adults assigned to metformin or placebo over two years.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2024,
+            "url": "https://clinicaltrials.gov/study/NCT02570672",
+            "extraction": {
+                "effects": [
+                    {
+                        "outcome": "Frailty Index Based on Deficit Accumulation",
+                        "metric": "MEAN",
+                        "value": "Metformin=-0.0002; Placebo=0.0002",
+                        "source_span": "Frailty Index Based on Deficit Accumulation. 2 years. Metformin=-0.0002; Placebo=0.0002.",
+                    }
+                ]
+            },
+        },
+        {
+            "title": "Evaluation of glucose-lowering medications in older people: a comprehensive systematic review and network meta-analysis of randomized controlled trials",
+            "excerpt": "A broad comparative meta-analysis in older adults that includes metformin among several interventions.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39137064/",
+        },
+    ]
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=evidence,
+        all_evidence=evidence,
+    )
+    assert "[" in artifact["sections"]["Evidence Landscape"]
+    assert "[" in artifact["sections"]["Key Findings"]
+    assert "[" in artifact["sections"]["Conclusion"]
 
 
 def test_entry_result_sentence_rejects_fragmentary_claim_sentence() -> None:

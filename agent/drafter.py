@@ -166,6 +166,7 @@ _CONTROL_COMPARATOR_RE = re.compile(
     r"\b(placebo|usual care|standard care|control group|control arm|sham)\b",
     re.IGNORECASE,
 )
+_NEGATED_TOPIC_RE_TEMPLATE = r"\b(?:not|rather than|instead of)\s+(?:the\s+)?{term}\b"
 _SINGULAR_STUDY_RE = re.compile(r"\b(one|single|a)\s+(trial|study|rct|cohort)\b", re.IGNORECASE)
 _CITATION_CLUSTER_RE = re.compile(r"\[((?:\d+\s*,\s*)+\d+)\]")
 _ANY_CITATION_RE = re.compile(r"\[((?:\d+\s*,\s*)*\d+)\]")
@@ -318,6 +319,7 @@ def _active_comparator_signal(item: dict[str, Any], card: dict[str, Any]) -> boo
 
 def _longevity_intent_signal(entry: dict[str, Any]) -> bool:
     card = entry.get("card") or {}
+    role = str(entry.get("role") or "")
     blob = " ".join(
         str(v or "")
         for v in (
@@ -331,6 +333,8 @@ def _longevity_intent_signal(entry: dict[str, Any]) -> bool:
     )
     has_longevity_signal = bool(_LONGEVITY_SUPPORT_RE.search(blob) or _aging_outcome_signal(blob))
     has_disease_context = _disease_context_signal(entry, card)
+    if role in {"review", "meta_analysis"} and not has_longevity_signal:
+        return False
     if not has_longevity_signal and not has_disease_context:
         return False
     if _PROCEDURAL_ACUTE_RE.search(blob) and not _aging_outcome_signal(blob):
@@ -698,6 +702,37 @@ def _strip_offtopic_claims(text: str, source_bundle: list[dict[str, Any]], topic
             if _mentions_topic(sentence, topic_tokens) or any(_entry_title_mentions_topic(entry, topic_tokens) for entry in entries):
                 kept.append(sentence)
                 continue
+            continue
+        kept.append(sentence)
+    return " ".join(kept).strip()
+
+
+def _sentence_negates_topic(sentence: str, topic_tokens: list[str]) -> bool:
+    lowered = sentence.lower()
+    for token in _core_topic_tokens(topic_tokens):
+        if len(token) < 4:
+            continue
+        if re.search(_NEGATED_TOPIC_RE_TEMPLATE.format(term=re.escape(token)), lowered, re.IGNORECASE):
+            return True
+    return False
+
+
+def _strip_contrastive_support_claims(text: str, source_bundle: list[dict[str, Any]], topic_tokens: list[str]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    kept: list[str] = []
+    support_roles = {"meta_analysis", "review"}
+    support_tiers = {_TIER_B, _TIER_C}
+    for sentence in _split_sentences(cleaned):
+        refs = [ref for ref in _sentence_refs(sentence) if 1 <= ref <= len(source_bundle)]
+        if not refs:
+            kept.append(sentence)
+            continue
+        entries = [source_bundle[ref - 1] for ref in refs]
+        roles = {str(entry.get("role") or "unknown") for entry in entries}
+        tiers = {str(entry.get("evidence_tier") or "") for entry in entries}
+        if roles.issubset(support_roles) and tiers.issubset(support_tiers) and _sentence_negates_topic(sentence, topic_tokens):
             continue
         kept.append(sentence)
     return " ".join(kept).strip()
@@ -1268,6 +1303,7 @@ def _postprocess_sections(
             polished[heading] = _clean_grounding_mashups(polished[heading], source_bundle)
             polished[heading] = _retarget_singular_trial_citations(polished[heading], source_bundle)
             polished[heading] = _trim_singular_mixed_citations(polished[heading], source_bundle)
+            polished[heading] = _strip_contrastive_support_claims(polished[heading], source_bundle, topic_tokens)
             polished[heading] = _strip_offtopic_claims(polished[heading], source_bundle, topic_tokens)
             polished[heading] = _strip_unsupported_numeric_claims(polished[heading], source_bundle)
     if has_effect_data and not _has_quantitative_content(polished.get("Key Findings", "")) and first_effect_entry:
@@ -1287,6 +1323,34 @@ def _merge_usage(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]:
     for key in ("input_tokens", "output_tokens", "total_tokens"):
         merged[key] = int(merged.get(key, 0) or 0) + int(extra.get(key, 0) or 0)
     return merged
+
+
+def _has_inline_citations(text: str) -> bool:
+    return bool(_CITATION_TOKEN_RE.search(str(text or "")))
+
+
+def _preserve_cited_sections(
+    current: dict[str, str],
+    baseline: dict[str, str],
+    *,
+    source_bundle: list[dict[str, Any]],
+    topic_tokens: list[str],
+) -> dict[str, str]:
+    preserved = dict(current)
+    for heading in ("Evidence Landscape", "Key Findings", "Conclusion"):
+        before = str(baseline.get(heading) or "")
+        after = str(preserved.get(heading) or "")
+        if not (before and _has_inline_citations(before) and after and not _has_inline_citations(after)):
+            continue
+        if _strip_unsupported_numeric_claims(before, source_bundle) != before:
+            continue
+        if _strip_contrastive_support_claims(before, source_bundle, topic_tokens) != before:
+            continue
+        if _strip_offtopic_claims(before, source_bundle, topic_tokens) != before:
+            continue
+        if before and _has_inline_citations(before) and after and not _has_inline_citations(after):
+            preserved[heading] = before
+    return preserved
 
 
 def _editor_bundle_lines(source_bundle: list[dict[str, Any]]) -> str:
@@ -1572,12 +1636,13 @@ class RapidEvidenceDrafter:
         system_prompt = (
             "You are the final editor for a rapid evidence synthesis. Return JSON only with plain-string keys: "
             "abstract, landscape, findings, conclusion. Improve clarity without inventing facts or citations. "
-            "Use only the cited evidence already in the draft. The Abstract must contain 4-5 complete sentences, "
+            "Use only the cited evidence already in the draft. Preserve inline citations in landscape, findings, and conclusion; do not return uncited factual sentences. The Abstract must contain 4-5 complete sentences, "
             "lead with the overall direction, include the strongest direct result, and avoid truncated fragments. "
             "Do not repeat the same sentence verbatim in both the abstract and Key Findings. "
             "When broader human disease-context evidence appears, label it as Tier A2 disease-context human evidence rather than Tier A1 core aging evidence. "
             "Treat Tier A1 as direct aging evidence, Tier A2 as disease-context human evidence, Tier B as supporting human evidence, and Tier C as protocol/mechanistic support. "
-            "Do not cite both a published paper and its preprint variant as parallel flagship evidence if one published version is already present."
+            "Do not cite both a published paper and its preprint variant as parallel flagship evidence if one published version is already present. "
+            "If a support review mainly highlights a different intervention rather than the queried intervention, keep it out of Key Findings and Conclusion."
         )
         user_prompt = (
             f"Topic: {topic}\nDomain: {domain_slug}\nCriteria: {_clean(criteria, limit=240) or 'None'}\n\n"
@@ -1683,10 +1748,12 @@ class RapidEvidenceDrafter:
             "The Abstract must read like a journal abstract in plain language and must not mention pipeline statistics, receipt counts, or structured extraction counts. "
             "The evidence is grouped by citation role. "
             "Treat the retained bundle as an evidence pyramid: Tier A1 drives the answer, Tier A2 adds one clearly labeled human qualifier, Tier B gives context, and Tier C shows future or mechanistic support. "
+            "Every factual sentence in Evidence Landscape, Key Findings, and Conclusion must include at least one inline citation [n]. "
             "For published results and meta-analyses, use past-tense outcome language and cite numbers when provided. "
             "Spend most of the Abstract, Key Findings, and Conclusion on Tier A1 direct evidence. "
             "When citing published results or meta-analyses, name the endpoint and include effect direction or numeric outcome, sample size, and duration when available. "
             "Key Findings must open with one synthesis sentence naming the overall direction of the evidence, group the evidence by conclusion rather than listing one study per sentence, and end with one sentence stating what remains unsupported. "
+            "Do not let Tier B or Tier C support items drive the headline claim. If a broad review mainly highlights a different intervention or class than the queried intervention, omit that sentence from Key Findings and Conclusion. "
             "For registered or protocol studies, describe only the study design or aim. "
             "Do not say they found, showed, reported, demonstrated, improved, reduced, or increased outcomes. "
             "For animal-model evidence, explicitly hedge with 'in animal models' or 'preclinical'. "
@@ -1795,6 +1862,7 @@ class RapidEvidenceDrafter:
                 fallback_count += 1
             sections[heading] = picked
 
+        raw_sections = dict(sections)
         sections = _postprocess_sections(
             sections,
             source_bundle=source_bundle,
@@ -1803,6 +1871,13 @@ class RapidEvidenceDrafter:
             has_effect_data=has_effect_data,
             first_effect_entry=first_effect_entry,
         )
+        sections = _preserve_cited_sections(
+            sections,
+            raw_sections,
+            source_bundle=source_bundle,
+            topic_tokens=topic_tokens,
+        )
+        pre_editor_sections = dict(sections)
 
         if fallback_count >= 6:
             return (
@@ -1843,6 +1918,12 @@ class RapidEvidenceDrafter:
                 topic_tokens=topic_tokens,
                 has_effect_data=has_effect_data,
                 first_effect_entry=first_effect_entry,
+            )
+            sections = _preserve_cited_sections(
+                sections,
+                pre_editor_sections,
+                source_bundle=source_bundle,
+                topic_tokens=topic_tokens,
             )
             if editor_updates.get("abstract"):
                 abstract = editor_updates["abstract"]
