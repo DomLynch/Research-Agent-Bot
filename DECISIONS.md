@@ -1,5 +1,20 @@
 # DECISION JOURNAL
 
+## 2026-04-24 — Default every draft through Hermes-style MoA+Spar plus evidence-object fields
+**Decision:** Make the model-producing paths use a Hermes-derived MoA+Spar bridge by default: MiMo builds/synthesizes, MiniMax reviews, DeepSeek judges, and deterministic validators still make the final ship/no-ship call. Every rendered draft now includes a standard evidence table with tier, design, strict eligibility, confidence, risk-of-bias, and role fields.
+**Why:** The latest three-topic bridge test showed the remaining failures were not retrieval volume problems; they were evidence-object gaps and conclusion consistency failures. A single frontier model can still optimize one prose axis while regressing another. The bridge adds model diversity, while the deterministic validator/evidence table makes the output auditable.
+**What shipped:**
+- `agent/moa_spar_bridge.py` ports the bounded Hermes pattern for JSON-producing calls using `MIMO_API_KEY`, `MINIMAX_API_KEY`, and `DEEPSEEK_API_KEY` from env only.
+- `agent/extractor.py` and `agent/cli.py` now use the bridge for production extraction/drafting calls while keeping test stubs direct.
+- `agent/cli.py` now routes production drafting through the bridge and renders a MoA+Spar reasoning stamp plus a standard evidence table.
+- `agent/drafter.py` annotates each final source with strict eligibility, evidence confidence, and risk-of-bias labels, and clamps preprints/mechanistic sources away from Tier A1 while preserving strict direct-result evidence through domain profiles rather than topic-specific rules.
+- `agent/moa_spar_bridge.py` degrades explicitly to the MiMo builder output with `_bridge` error metadata when an external reviewer/judge is unavailable, instead of crashing the run.
+- `agent/validator.py` now blocks conclusion/key-finding contradictions on the same citation when a significant positive finding is later described as no significant difference.
+**Alternatives rejected:**
+- Keep MiMo-only and continue prompt tuning — rejected; the observed 8.5 oscillation was already a judge/orchestration problem, not a wording problem.
+- Hardcode rapamycin/metformin patches — rejected; tier clamps and validators use source role/design/directness metadata instead.
+**Revisit if:** cost or latency becomes unacceptable. The first fallback should be fewer bridge calls on rerank/label steps, not removing deterministic validators.
+
 ## 2026-04-24 — Add draft-quality judge layer after stable citation binding
 **Decision:** Keep the stable-ref citation contract as the identity layer, then add a second bounded judge layer that validates prose quality before release. The new gate checks for missing numeric abstract grounding when structured effects exist, raw extractor-template leakage into end-user sections, and support/meta-analysis sentences that mention other interventions without explicitly framing them as contextual.
 **Why:** Stable internal refs solved citation-index drift, but live drafts were still oscillating in the same quality band because prose regressions could replace one another run to run: numbers disappearing from the abstract, extractor dumps leaking into the conclusion, or support-tier claims softening the topic focus. Those are not retrieval bugs; they are unjudged draft-shape bugs.

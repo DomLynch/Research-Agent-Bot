@@ -27,6 +27,12 @@ _INTERVENTION_SIGNAL_RE = re.compile(
     re.IGNORECASE,
 )
 _CONTRAST_CUE_RE = re.compile(r"\b(?:not|rather than|instead of|contextual only|did not establish|supporting context)\b", re.IGNORECASE)
+_POSITIVE_EFFECT_RE = re.compile(r"\b(improved?|increased?|reduced?|decreased?|better|benefit|significant(?:ly)?)\b", re.IGNORECASE)
+_NO_SIGNIFICANT_RE = re.compile(
+    r"\b(no significant difference|no significant effect|no clear benefit|did not improve|did not differ|not significant)\b",
+    re.IGNORECASE,
+)
+_P_VALUE_RE = re.compile(r"\bp\s*[=<]\s*0?\.(\d+)\b", re.IGNORECASE)
 
 
 def _window(text: str, start: int, end: int, *, radius: int = 120) -> str:
@@ -41,6 +47,7 @@ def _severity(issue: str) -> str:
         "abstract_missing_numeric_effect": "high",
         "raw_extraction_template": "high",
         "missing_topic_distinction": "medium",
+        "conclusion_contradicts_positive_finding": "high",
     }.get(issue, "medium")
 
 
@@ -96,6 +103,26 @@ def _has_numeric_effect_surface(text: str) -> bool:
             or _COMPARATOR_NUMBER_RE.search(stripped)
         )
     )
+
+
+def _has_significant_p_value(text: str) -> bool:
+    for match in _P_VALUE_RE.finditer(text):
+        try:
+            if float(f"0.{match.group(1)}") < 0.05:
+                return True
+        except ValueError:
+            continue
+    return False
+
+
+def _positive_significant_refs(text: str) -> dict[int, str]:
+    refs: dict[int, str] = {}
+    for _, _, sentence in _sentence_spans(text):
+        if not (_POSITIVE_EFFECT_RE.search(sentence) and _has_significant_p_value(sentence)):
+            continue
+        for ref in (int(match.group(1)) for match in _CITATION_RE.finditer(sentence)):
+            refs[ref] = sentence
+    return refs
 
 
 def validate_draft_quality(draft: dict[str, Any], source_bundle: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -157,6 +184,25 @@ def validate_draft_quality(draft: dict[str, Any], source_bundle: list[dict[str, 
                     "window": _window(body, start, end),
                 }
             )
+    positive_refs = _positive_significant_refs(str(sections.get("Key Findings") or ""))
+    conclusion = str(sections.get("Conclusion") or "")
+    if positive_refs and conclusion:
+        for start, end, sentence in _sentence_spans(conclusion):
+            if not _NO_SIGNIFICANT_RE.search(sentence):
+                continue
+            for ref in (int(match.group(1)) for match in _CITATION_RE.finditer(sentence)):
+                if ref not in positive_refs:
+                    continue
+                violations.append(
+                    {
+                        "section": "Conclusion",
+                        "citation": ref,
+                        "severity": _severity("conclusion_contradicts_positive_finding"),
+                        "issue": "conclusion_contradicts_positive_finding",
+                        "window": _window(conclusion, start, end),
+                        "positive_finding": positive_refs[ref],
+                    }
+                )
     return violations
 
 

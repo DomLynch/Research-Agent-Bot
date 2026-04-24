@@ -1,4 +1,4 @@
-from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness, _entry_result_sentence, _retarget_singular_trial_citations, _trim_singular_mixed_citations
+from agent.drafter import RapidEvidenceDrafter, _annotate_source_bundle, _apply_mimo_labels, _bundle_entry, _classify_directness, _entry_result_sentence, _retarget_singular_trial_citations, _trim_singular_mixed_citations
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
 from agent.validator import validate_citations
@@ -1043,6 +1043,64 @@ def test_bundle_entry_demotes_active_comparator_claims_to_tier_b() -> None:
         domain_slug="longevity",
     )
     assert entry["evidence_tier"] == "Tier B supporting human evidence"
+
+
+def test_preprint_direct_human_result_cannot_be_tier_a1() -> None:
+    entry = _bundle_entry(
+        {
+            "title": "Rapamycin healthspan results in older adults: randomized placebo-controlled preprint",
+            "excerpt": "Preprint reporting weekly rapamycin in older adults with strength and endurance outcomes.",
+            "evidence_type": "primary",
+            "source_type": "rxiv",
+            "year": 2026,
+            "url": "https://www.biorxiv.org/content/10.1101/example",
+        },
+        topic_tokens=["rapamycin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    assert entry["evidence_tier"] != "Tier A1 direct aging evidence"
+
+
+def test_mimo_tier_label_clamp_promotes_strict_direct_result_signal() -> None:
+    entry = _bundle_entry(
+        {
+            "title": "Exercise and Weekly Sirolimus (Rapamycin) in Older Adults: RAPA-EX-01 Randomised, Double-Blind, Placebo-Controlled Trial.",
+            "excerpt": "Older adults completed a randomized placebo-controlled sirolimus trial with strength and endurance outcomes.",
+            "evidence_type": "primary",
+            "source_type": "pubmed",
+            "year": 2026,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41985884/",
+        },
+        topic_tokens=["rapamycin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    _apply_mimo_labels(
+        [entry],
+        [{"id": 1, "role": "published_results", "directness": "direct", "evidence_tier": "Tier C protocol/mechanistic support"}],
+    )
+    assert entry["evidence_tier"] == "Tier A1 direct aging evidence"
+
+
+def test_strict_direct_result_signal_is_domain_profile_based_outside_longevity() -> None:
+    entry = _bundle_entry(
+        {
+            "title": "Onboarding email A/B test improves user conversion",
+            "excerpt": "A controlled A/B test in users reported conversion outcomes for onboarding emails.",
+            "evidence_type": "primary",
+            "source_type": "openalex",
+            "year": 2026,
+            "url": "https://example.com/ab-test",
+        },
+        topic_tokens=["onboarding", "email", "conversion"],
+        domain_slug="marketing",
+    )
+    _apply_mimo_labels(
+        [entry],
+        [{"id": 1, "role": "published_results", "directness": "direct", "evidence_tier": "Tier C protocol/mechanistic support"}],
+    )
+    _annotate_source_bundle([entry])
+    assert entry["evidence_tier"] == "Tier A1 direct aging evidence"
+    assert entry["strict_eligibility_met"] is True
 
 
 def test_drafter_drops_procedural_trials_that_mention_older_adults_but_not_longevity_intent() -> None:

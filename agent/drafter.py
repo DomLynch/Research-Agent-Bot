@@ -110,6 +110,22 @@ _RAW_RESULT_SENTENCE_RE = re.compile(
     re.IGNORECASE,
 )
 _CITATION_TOKEN_RE = re.compile(r"\[(R?\d+)\]", re.IGNORECASE)
+_PREPRINT_SIGNAL_RE = re.compile(r"\b(preprint|biorxiv|medrxiv)\b", re.IGNORECASE)
+_RCT_SIGNAL_RE = re.compile(r"\b(randomi[sz]ed|double-blind|placebo-controlled|rct)\b", re.IGNORECASE)
+_CONTROLLED_RESULT_RE = re.compile(
+    r"\b(randomi[sz]ed|double-blind|placebo-controlled|controlled|field experiment|"
+    r"a/b test|ab test|benchmark|comparative evaluation|prospective cohort|trial)\b",
+    re.IGNORECASE,
+)
+_GENERIC_POPULATION_RE = re.compile(
+    r"\b(participants?|patients?|users?|customers?|firms?|companies?|sites?|systems?|datasets?|cohort|sample)\b",
+    re.IGNORECASE,
+)
+_GENERIC_OUTCOME_RE = re.compile(
+    r"\b(outcomes?|endpoints?|efficacy|safety|performance|accuracy|latency|cost|revenue|"
+    r"conversion|retention|mortality|quality|risk|effect|results?)\b",
+    re.IGNORECASE,
+)
 _PUBLISHED_RESULT_REPAIRS = {
     "is investigating": "evaluated",
     "is evaluating": "evaluated",
@@ -207,6 +223,44 @@ _DISEASE_CONTEXT_RE = re.compile(
     r"cardiovascular|renal|kidney|liver disease|retinopathy|glaucoma)",
     re.IGNORECASE,
 )
+_DEFAULT_DOMAIN_PROFILE = {
+    "design": _CONTROLLED_RESULT_RE,
+    "population": _GENERIC_POPULATION_RE,
+    "outcome": _GENERIC_OUTCOME_RE,
+    "exclude_context": None,
+    "require_population": False,
+    "require_outcome": False,
+    "require_intervention_fit": False,
+}
+_DOMAIN_PROFILES = {
+    "longevity": {
+        "design": _CONTROLLED_RESULT_RE,
+        "population": _POPULATION_SIGNAL_RE,
+        "outcome": _LONGEVITY_OUTCOME_RE,
+        "exclude_context": _DISEASE_CONTEXT_RE,
+        "require_population": True,
+        "require_outcome": True,
+        "require_intervention_fit": True,
+    },
+    "anti-aging": {
+        "design": _CONTROLLED_RESULT_RE,
+        "population": _POPULATION_SIGNAL_RE,
+        "outcome": _LONGEVITY_OUTCOME_RE,
+        "exclude_context": _DISEASE_CONTEXT_RE,
+        "require_population": True,
+        "require_outcome": True,
+        "require_intervention_fit": True,
+    },
+    "anti aging": {
+        "design": _CONTROLLED_RESULT_RE,
+        "population": _POPULATION_SIGNAL_RE,
+        "outcome": _LONGEVITY_OUTCOME_RE,
+        "exclude_context": _DISEASE_CONTEXT_RE,
+        "require_population": True,
+        "require_outcome": True,
+        "require_intervention_fit": True,
+    },
+}
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -355,6 +409,53 @@ def _longevity_intent_signal(entry: dict[str, Any]) -> bool:
     if _active_comparator_signal(entry, card) and not _aging_outcome_signal(blob):
         return False
     return True
+
+
+def _domain_profile(domain_slug: str) -> dict[str, Any]:
+    return _DOMAIN_PROFILES.get((domain_slug or "").strip().lower(), _DEFAULT_DOMAIN_PROFILE)
+
+
+def _entry_evidence_blob(entry: dict[str, Any], card: dict[str, Any] | None = None) -> str:
+    card = card or entry.get("card") or {}
+    return " ".join(
+        str(v or "")
+        for v in (
+            entry.get("title"),
+            entry.get("excerpt"),
+            card.get("population"),
+            card.get("outcomes"),
+            card.get("context"),
+            card.get("methods_summary"),
+            card.get("study_type"),
+            card.get("quality_signal"),
+        )
+    )
+
+
+def _profile_context_excluded(entry: dict[str, Any], profile: dict[str, Any], card: dict[str, Any] | None = None) -> bool:
+    exclude_re = profile.get("exclude_context")
+    return bool(exclude_re and exclude_re.search(_entry_evidence_blob(entry, card)))
+
+
+def strict_direct_result_signal(domain_profile: dict[str, Any], entry: dict[str, Any]) -> bool:
+    card = entry.get("card") or {}
+    blob = _entry_evidence_blob(entry, card)
+    design_re = domain_profile.get("design") or _CONTROLLED_RESULT_RE
+    population_re = domain_profile.get("population") or _GENERIC_POPULATION_RE
+    outcome_re = domain_profile.get("outcome") or _GENERIC_OUTCOME_RE
+    population_hit = bool(population_re.search(blob))
+    outcome_hit = bool(outcome_re.search(blob))
+    return (
+        str(entry.get("role") or "") == "published_results"
+        and str(entry.get("directness") or "") == "direct"
+        and (str(entry.get("intervention_fit") or "exact") != "none" or not domain_profile.get("require_intervention_fit"))
+        and bool(design_re.search(blob))
+        and not _preprint_signal(entry, card)
+        and not _profile_context_excluded(entry, domain_profile, card)
+        and (population_hit or not domain_profile.get("require_population"))
+        and (outcome_hit or not domain_profile.get("require_outcome"))
+        and (population_hit or outcome_hit)
+    )
 
 
 def _core_topic_tokens(topic_tokens: list[str]) -> list[str]:
@@ -666,6 +767,7 @@ def _evidence_tier(
     directness: str,
     topic_fit_bucket: str,
     intervention_fit: str,
+    domain_slug: str = "general",
 ) -> str:
     if role in {"registered_pending", "published_protocol", "animal_model", "mechanistic", "off_domain_indirect", "unknown"}:
         return _TIER_C
@@ -683,22 +785,101 @@ def _evidence_tier(
     )
     study_type = str(card.get("study_type") or "").lower()
     exact_fit = intervention_fit == "exact"
+    entry_view = {
+        **item,
+        "card": card,
+        "role": role,
+        "directness": directness,
+        "intervention_fit": intervention_fit,
+        "domain_slug": domain_slug,
+    }
+    if _preprint_signal(item, card):
+        return _TIER_B if directness == "direct" and role == "published_results" else _TIER_C
     if _active_comparator_signal(item, card) and not _aging_outcome_signal(blob):
         return _TIER_B
     if directness == "direct" and exact_fit and topic_fit_bucket == "core":
         if study_type in {"cohort", "observational", "case-control", "cross-sectional"} or _disease_context_signal(item, card):
             return _TIER_A2
-        if _aging_outcome_signal(blob) and (
-            role == "published_results"
-            or study_type in {"rct", "clinical-trial"}
-            or str(item.get("evidence_type") or "") == "interventional"
-        ):
+        if strict_direct_result_signal(_domain_profile(domain_slug), entry_view):
             return _TIER_A1
     if exact_fit and role in {"published_results", "observational"} and (
         study_type in {"cohort", "observational", "case-control", "cross-sectional"} or _disease_context_signal(item, card)
     ):
         return _TIER_A2
     return _TIER_B
+
+
+def _preprint_signal(item: dict[str, Any], card: dict[str, Any] | None = None) -> bool:
+    card = card or item.get("card") or {}
+    source_type = str(item.get("source_type") or "").lower()
+    text = " ".join(
+        str(v or "")
+        for v in (
+            source_type,
+            item.get("title"),
+            item.get("excerpt"),
+            card.get("quality_signal"),
+            card.get("journal"),
+        )
+    )
+    return source_type in {"rxiv", "biorxiv", "medrxiv"} or bool(_PREPRINT_SIGNAL_RE.search(text))
+
+
+def _clamp_evidence_tier(entry: dict[str, Any], tier: str) -> str:
+    card = entry.get("card") or {}
+    role = str(entry.get("role") or "")
+    if role in {"registered_pending", "published_protocol", "animal_model", "mechanistic", "off_domain_indirect", "unknown"}:
+        return _TIER_C
+    if _preprint_signal(entry, card) and tier == _TIER_A1:
+        return _TIER_B if role == "published_results" and entry.get("directness") == "direct" else _TIER_C
+    if strict_direct_result_signal(_domain_profile(str(entry.get("domain_slug") or "")), entry):
+        return _TIER_A1
+    return tier
+
+
+def _strict_eligibility_met(entry: dict[str, Any]) -> bool:
+    return strict_direct_result_signal(_domain_profile(str(entry.get("domain_slug") or "")), entry)
+
+
+def _evidence_confidence(entry: dict[str, Any]) -> str:
+    grade = str((entry.get("card") or {}).get("evidence_grade") or "").upper()
+    tier = str(entry.get("evidence_tier") or "")
+    role = str(entry.get("role") or "")
+    if role in {"registered_pending", "published_protocol", "mechanistic", "animal_model", "off_domain_indirect"}:
+        return "Low"
+    if tier == _TIER_A1 and grade == "H":
+        return "High"
+    if tier in {_TIER_A1, _TIER_A2} and grade in {"H", "M"}:
+        return "Moderate"
+    if tier == _TIER_B and grade == "H":
+        return "Moderate"
+    return "Low"
+
+
+def _risk_of_bias_label(entry: dict[str, Any]) -> str:
+    card = entry.get("card") or {}
+    if card.get("risk_of_bias"):
+        return _clean(card.get("risk_of_bias"), limit=80)
+    role = str(entry.get("role") or "")
+    grade = str(card.get("evidence_grade") or "").upper()
+    if role in {"registered_pending", "published_protocol"}:
+        return "not yet assessable"
+    if _preprint_signal(entry, card):
+        return "unclear (preprint)"
+    if role in {"mechanistic", "animal_model", "off_domain_indirect"}:
+        return "indirect/high concern"
+    if grade == "H" and role == "published_results":
+        return "lower concern"
+    return "some concerns"
+
+
+def _annotate_source_bundle(source_bundle: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    for entry in source_bundle:
+        entry["evidence_tier"] = _clamp_evidence_tier(entry, str(entry.get("evidence_tier") or ""))
+        entry["strict_eligibility_met"] = _strict_eligibility_met(entry)
+        entry["evidence_confidence"] = _evidence_confidence(entry)
+        entry["risk_of_bias"] = _risk_of_bias_label(entry)
+    return source_bundle
 
 
 def _claim_from_entry(entry: dict[str, Any]) -> dict[str, Any] | None:
@@ -1128,6 +1309,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         directness=directness,
         topic_fit_bucket=topic_fit_bucket,
         intervention_fit=intervention_fit,
+        domain_slug=domain_slug,
     )
     claim = _claim_from_entry({"excerpt": _bundle_excerpt(item), "extraction": item.get("extraction") or {}, "card": card})
     return {
@@ -1155,6 +1337,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "directness": directness,
         "claim": claim if _claim_schema_ok(claim) else None,
         "intervention_fit": intervention_fit,
+        "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
         "card": card,
     }
 
@@ -1699,7 +1882,9 @@ def _apply_mimo_labels(candidates: list[dict[str, Any]], labels: list[dict[str, 
                 directness=str(entry.get("directness") or "indirect"),
                 topic_fit_bucket=str(entry.get("topic_fit_bucket") or "drop"),
                 intervention_fit=str(entry.get("intervention_fit") or "none"),
+                domain_slug=str(entry.get("domain_slug") or "general"),
             )
+        tier = _clamp_evidence_tier(entry, tier)
         entry["llm_evidence_tier"] = tier
         entry["evidence_tier"] = tier
 
@@ -1958,7 +2143,7 @@ class RapidEvidenceDrafter:
         )
         if labeling_applied:
             bundle_candidates = sorted(bundle_candidates, key=_entry_sort_key, reverse=True)
-        source_bundle = _assign_stable_refs(_select_source_bundle(bundle_candidates, domain_slug=domain_slug))
+        source_bundle = _annotate_source_bundle(_assign_stable_refs(_select_source_bundle(bundle_candidates, domain_slug=domain_slug)))
         selected = _select_prompt_entries(source_bundle)
         prompt_entries = [entry for entry in selected if _is_reported_finding(entry)] + [
             entry for entry in selected if not _is_reported_finding(entry)
@@ -1993,6 +2178,7 @@ class RapidEvidenceDrafter:
         direct_ct = sum(1 for e in source_bundle if e.get("directness") == "direct")
         indirect_ct = sum(1 for e in source_bundle if e.get("directness") == "indirect")
         mechanistic_ct = sum(1 for e in source_bundle if e.get("directness") == "mechanistic")
+        strict_ct = sum(1 for e in source_bundle if e.get("strict_eligibility_met"))
 
         has_effect_data = any((entry.get("extraction") or {}).get("effects") for entry in prompt_entries if _is_reported_finding(entry))
         system_prompt = (
@@ -2255,6 +2441,7 @@ class RapidEvidenceDrafter:
                 "direct_count": direct_ct,
                 "indirect_count": indirect_ct,
                 "mechanistic_count": mechanistic_ct,
+                "strict_eligibility_met_count": strict_ct,
             },
             "prompt_version": result.get("prompt_version", getattr(self.provider, "prompt_version", "unknown")),
             "usage": result.get("usage", {}),
@@ -2264,6 +2451,8 @@ class RapidEvidenceDrafter:
             "labeling_applied": labeling_applied,
             "editor_refinement_applied": bool(result.get("editor_refinement_applied")),
         }
+        if result.get("_bridge"):
+            artifact["bridge"] = result["_bridge"]
         artifact["citation_violations"] = validate_citations(artifact, source_bundle)
         artifact["high_severity_citation_count"] = sum(
             1 for violation in artifact["citation_violations"] if violation.get("severity") == "high"

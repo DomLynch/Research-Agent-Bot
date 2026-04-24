@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from agent import extractor as extractor_module
 from agent.extractor import StructuredExtractor
+from agent.moa_spar_bridge import MoaSparBridgeClient
+from agent.provider import MimoClient
 
 
 class FakeProvider:
@@ -78,3 +81,11 @@ def test_structured_extractor_enriches_entries(tmp_path: Path) -> None:
     assert stats["found"] == 1
     assert enriched[0]["extraction"]["population"] == "older adults with diabetes"
     assert "extraction" not in enriched[1]
+
+
+def test_structured_extractor_from_env_uses_moa_spar_bridge(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(extractor_module.MimoClient, "from_env", staticmethod(lambda: MimoClient()))
+
+    extractor = StructuredExtractor.from_env(cache_dir=tmp_path)
+
+    assert isinstance(extractor.provider, MoaSparBridgeClient)

@@ -14,11 +14,12 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~5,200 LOC (raised from 3,500 — see DECISIONS.md 2026-04-23 "Source substrate + 12-citation intake alignment").
-  Hard ceiling: 5,800 LOC. Actual: ~5,515 LOC.
+- Runtime target: ~6,700 LOC (raised for the 2026-04-24 Hermes-style MoA+Spar bridge plus evidence-object fields).
+  Hard ceiling: 7,200 LOC. Actual: ~7,047 LOC.
+- LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
-- Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
+- Provider path uses Hermes-style MoA+Spar by default: MiMo v2 Pro builder/synthesizer, MiniMax 2.7 reviewer, DeepSeek judge. Required env vars: `MIMO_API_KEY`, `MINIMAX_API_KEY`, `DEEPSEEK_API_KEY`; unavailable reviewer/judge calls degrade explicitly instead of crashing a run.
 
 ## Winning Path
 Deterministic planner + bounded public literature queries + directness-aware bundle + MiMo draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.
@@ -35,12 +36,12 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Tier 1 full-text coverage is Europe PMC-only and DOI/PMID-driven. Closed-access PDFs, figures/tables, and non-PMC papers still fall back to abstract-only behavior.
 - Tier 2 full-text coverage now cascades Europe PMC -> Unpaywall -> CORE, but only Europe PMC and Unpaywall are exercised locally today. CORE is env-gated on `CORE_API_KEY`, and PDF-only Unpaywall hits still need GROBID or another parser before they help extraction.
 - Tier 1.5 extraction is cached and real, but quantitative fidelity is still uneven. Unsupported numbers are now scrubbed and high-severity citation-role violations trigger one revision pass plus fail-closed behavior, but medium-severity numeric misses still need a richer rewrite loop.
-- A draft-quality judge layer now blocks missing numeric abstracts, extractor-template leakage, and unsupported support-tier intervention drift, but conceptual claim-to-source misattribution still needs a higher-order validator if it reappears.
+- A draft-quality judge layer now blocks missing numeric abstracts, extractor-template leakage, unsupported support-tier intervention drift, and conclusion/key-finding contradictions on the same citation. Source bundles now expose strict eligibility, evidence confidence, and risk-of-bias fields in a standard evidence table.
 - ClinicalTrials.gov registry records are now split into `trial_registered` versus `trial_results`, and posted registry results can supply structured effects without an LLM extraction call. Registry-only studies are design-only in the prompt and get scrubbed if the drafter tries to state outcomes.
 - Citation-role validation is now logged in `citation_violations`, and high-severity violations trigger one revision pass before the run fails closed. Medium-severity issues remain advisory.
 
 ## Next Validation Step
- Re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site and judge five things only: bundle relevance, evidence-tier separation, extraction-to-prose quality, abstract numeric grounding, and whether direct trials stay centered without topic-specific code.
+ Re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site with `MIMO_API_KEY`, `MINIMAX_API_KEY`, and `DEEPSEEK_API_KEY` configured. Judge six things only: bundle relevance, evidence-tier separation, strict eligibility table accuracy, extraction-to-prose quality, abstract numeric grounding, and whether direct trials stay centered without topic-specific code.
 
 ## Hardening Status
 | Step | What | Status |

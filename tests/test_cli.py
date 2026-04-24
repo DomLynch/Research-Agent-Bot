@@ -9,6 +9,38 @@ from agent import cli
 import pytest
 
 
+def test_payload_markdown_includes_standard_evidence_table() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: metformin aging older adults",
+            "domain_slug": "longevity",
+            "abstract": "A direct trial found no significant difference (0.57 vs 0.58 m/s) [1].",
+            "sections": {"Key Findings": "Direct evidence remained null [1]."},
+            "source_bundle": [
+                {
+                    "title": "Metformin randomized trial in older adults",
+                    "year": 2025,
+                    "evidence_type": "primary",
+                    "source_type": "pubmed",
+                    "role": "published_results",
+                    "directness": "direct",
+                    "evidence_tier": "Tier A1 direct aging evidence",
+                    "strict_eligibility_met": True,
+                    "evidence_confidence": "High",
+                    "risk_of_bias": "lower concern",
+                    "card": {"study_type": "rct"},
+                }
+            ],
+        },
+        topic="metformin aging older adults",
+        criteria="2022 onwards",
+    )
+    assert "## Evidence Table" in markdown
+    assert "Strict eligibility met: 1/1 retained sources." in markdown
+    assert "| [1] | Tier A1 direct aging evidence | rct | Yes | High | lower concern | published_results |" in markdown
+    assert "strict eligibility yes" in markdown
+
+
 class FakeProvider:
     prompt_version = "test-prompt/v1"
     model = "MiniMax-M2.7-highspeed"

@@ -11,6 +11,7 @@ from agent.drafter import RapidEvidenceDrafter
 from agent.entity_resolver import resolve_topic, topic_match_ratio
 from agent.extractor import StructuredExtractor
 from agent.fulltext import FullTextFetcher, entry_identity
+from agent.moa_spar_bridge import MoaSparBridgeClient
 from agent.planner import QueryPlanner
 from agent.provider import MimoClient
 from agent.sources.chembl import ChEMBLClient
@@ -109,6 +110,15 @@ def _is_submit_enabled() -> bool:
     return val in {"true", "1", "yes", "on"}
 
 
+def _drafter_provider() -> Any:
+    builder = MimoClient.from_env()
+    # Tests patch MimoClient.from_env with lightweight fake providers. Keep
+    # those direct while production uses the Hermes-derived MoA+Spar bridge.
+    if not isinstance(builder, MimoClient):
+        return builder
+    return MoaSparBridgeClient.from_env(builder=builder)
+
+
 def _slug(value: str) -> str:
     return "-".join(part for part in "".join(ch.lower() if ch.isalnum() else " " for ch in value).split() if part)[:80]
 
@@ -170,6 +180,44 @@ def _count_by(entries: list[dict[str, Any]], key: str) -> dict[str, int]:
         value = str(entry.get(key) or "unknown")
         counts[value] = counts.get(value, 0) + 1
     return counts
+
+
+def _md_cell(value: Any) -> str:
+    return str(value or "n/a").replace("|", "/").replace("\n", " ").strip() or "n/a"
+
+
+def _evidence_table_lines(source_bundle: list[dict[str, Any]]) -> list[str]:
+    total = len(source_bundle)
+    strict = sum(1 for item in source_bundle if item.get("strict_eligibility_met"))
+    lines = [
+        "## Evidence Table",
+        "",
+        f"Strict eligibility met: {strict}/{total} retained sources.",
+        "",
+        "| Ref | Tier | Design | Strict eligibility? | Confidence | Risk of bias | Role |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    for i, item in enumerate(source_bundle, start=1):
+        card = item.get("card") or {}
+        design = card.get("study_type") or item.get("evidence_type") or "unknown"
+        strict_label = "Yes" if item.get("strict_eligibility_met") else "No"
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    f"[{i}]",
+                    _md_cell(item.get("evidence_tier")),
+                    _md_cell(design),
+                    strict_label,
+                    _md_cell(item.get("evidence_confidence") or card.get("evidence_grade")),
+                    _md_cell(item.get("risk_of_bias") or card.get("risk_of_bias")),
+                    _md_cell(item.get("role")),
+                ]
+            )
+            + " |"
+        )
+    lines.append("")
+    return lines
 
 
 def _high_severity_violations(violations: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -316,6 +364,10 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         f"- Topic: {topic}",
         f"- Domain: {payload['domain_slug']}",
     ]
+    if payload.get("bridge"):
+        bridge = payload["bridge"]
+        models = ", ".join((bridge.get("moa") or {}).get("reference_models") or [])
+        lines.append(f"- Reasoning: MoA+Spar ({models})")
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
     lines.extend(["", "## Abstract", "", payload["abstract"], ""])
@@ -326,6 +378,7 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
             continue
         lines.extend([f"## {heading}", "", body, ""])
     if payload.get("source_bundle"):
+        lines.extend(_evidence_table_lines(payload["source_bundle"]))
         lines.extend(["## Sources", ""])
         for i, item in enumerate(payload["source_bundle"], start=1):
             title = item.get("title", "Untitled")
@@ -342,6 +395,9 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
             grade = card.get("evidence_grade", "")
             directness = item.get("directness", "")
             evidence_tier = item.get("evidence_tier", "")
+            strict_eligibility = "yes" if item.get("strict_eligibility_met") else "no"
+            confidence = item.get("evidence_confidence", "")
+            risk = item.get("risk_of_bias", "")
             card_str = ""
             if citation:
                 card_str += f" | {citation}"
@@ -357,6 +413,11 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
                 card_str += f" | {directness}"
             if evidence_tier:
                 card_str += f" | {evidence_tier}"
+            card_str += f" | strict eligibility {strict_eligibility}"
+            if confidence:
+                card_str += f" | confidence {confidence}"
+            if risk:
+                card_str += f" | risk of bias {risk}"
             lines.append(f"[{i}] {title} ({year}), {etype}{src_str}{card_str}{url_str}")
         lines.append("")
     return "\n".join(lines).strip() + "\n"
@@ -517,7 +578,7 @@ def run_agent(
         run_log["run_log"] = str(_write_json(Path(run_dir), run_log))
         return run_log
     try:
-        drafter = RapidEvidenceDrafter(provider=MimoClient.from_env())
+        drafter = RapidEvidenceDrafter(provider=_drafter_provider())
         artifact, raw_output = drafter.draft(
             topic=resolved_topic,
             domain_slug=domain,

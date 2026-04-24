@@ -156,3 +156,16 @@ def test_draft_quality_validator_flags_support_claim_missing_topic_distinction()
     bundle = [{"role": "meta_analysis", "evidence_tier": "Tier B supporting human evidence"}]
     violations = validate_draft_quality(draft, bundle)
     assert any(v["issue"] == "missing_topic_distinction" for v in violations)
+
+
+def test_draft_quality_validator_flags_conclusion_contradicting_positive_cited_finding() -> None:
+    draft = {
+        "title": "Rapid Evidence Synthesis: rapamycin aging older adults",
+        "abstract": "One trial reported emotional well-being improved (p=0.023) [1].",
+        "sections": {
+            "Key Findings": "One trial found emotional well-being improved with rapamycin (p=0.023) [1].",
+            "Conclusion": "One trial found no significant difference in healthspan compared with placebo [1].",
+        },
+    }
+    violations = validate_draft_quality(draft, _bundle("published_results"))
+    assert any(v["issue"] == "conclusion_contradicts_positive_finding" and v["severity"] == "high" for v in violations)

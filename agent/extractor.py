@@ -70,7 +70,12 @@ class StructuredExtractor:
 
     @classmethod
     def from_env(cls, *, cache_dir: str | Path) -> "StructuredExtractor":
-        return cls(cache_dir=cache_dir, provider=MimoClient.from_env())
+        builder = MimoClient.from_env()
+        if isinstance(builder, MimoClient):
+            from agent.moa_spar_bridge import MoaSparBridgeClient
+
+            return cls(cache_dir=cache_dir, provider=MoaSparBridgeClient.from_env(builder=builder))
+        return cls(cache_dir=cache_dir, provider=builder)
 
     def extract(self, entry: dict[str, Any]) -> dict[str, Any] | None:
         cache_path = _cache_path(self.cache_dir, entry, self.version)
