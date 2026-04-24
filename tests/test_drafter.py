@@ -1470,6 +1470,66 @@ def test_drafter_strengthens_abstract_with_strongest_direct_numeric_result_and_a
     assert "·" not in artifact["abstract"]
 
 
+def test_drafter_preserves_numeric_abstract_sentence_when_abstract_is_already_long() -> None:
+    class VerboseAbstractProvider(CaptureProvider):
+        def complete_json(self, *, system_prompt: str, user_prompt: str):
+            self.system_prompt = system_prompt
+            self.user_prompt = user_prompt
+            return (
+                {
+                    "abstract": (
+                        "This rapid review evaluates metformin in older adults. "
+                        "Direct evidence from randomized trials is limited and mostly null. "
+                        "One trial assessed 4-month walk speed in prefrail older adults. "
+                        "Another trial assessed frailty prevention over two years. "
+                        "The main limitation is the small number of completed studies."
+                    ),
+                    "question": "What are the effects of metformin on aging-related outcomes in older adults?",
+                    "search_summary": "Recent direct trials were reviewed.",
+                    "landscape": "The evidence includes direct trials.",
+                    "findings": "The direct signal remains limited [1].",
+                    "limitations": "The evidence base remains small and underpowered.",
+                    "gaps_identified": "Long-duration trials remain sparse.",
+                    "conclusion": "Metformin remains inconclusive for broad healthspan benefit [1].",
+                },
+                {},
+            )
+
+    provider = VerboseAbstractProvider()
+    drafter = RapidEvidenceDrafter(provider=provider)
+    published = {
+        "title": "Metformin and physical performance in older people (MET-PREVENT)",
+        "excerpt": (
+            "BACKGROUND: Background sentence. METHODS: Methods sentence. "
+            "FINDINGS: Mean 4-m walk speed at 4 months was 0.57 m/s in metformin versus 0.58 m/s in placebo "
+            "(adjusted treatment effect 0.001 m/s [95% CI -0.06 to 0.06]; p=0.96). "
+            "INTERPRETATION: Metformin did not improve 4-m walk speed."
+        ),
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+    }
+    support = {
+        "title": "Metformin in aging adults: narrative review",
+        "excerpt": "Broader supporting review of metformin in aging adults.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+        "year": 2024,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40147476/",
+    }
+    artifact, _ = drafter.draft(
+        topic="metformin aging older adults",
+        domain_slug="longevity",
+        criteria="2023 onwards human studies relevance",
+        queries=["metformin aging older adults"],
+        evidence=[published, support],
+        all_evidence=[published, support],
+    )
+    assert "0.001 m/s [95% CI -0.06 to 0.06]; p=0.96" in artifact["abstract"]
+    assert artifact["abstract"].startswith("This rapid review evaluates")
+
+
 def test_drafter_drops_truncated_sentence_from_human_abstract() -> None:
     provider = CaptureProvider()
     drafter = RapidEvidenceDrafter(provider=provider)

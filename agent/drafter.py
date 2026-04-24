@@ -1519,7 +1519,15 @@ def _ensure_numeric_abstract(abstract: str, source_bundle: list[dict[str, Any]],
     for idx, entry in candidates:
         sentence = _narrative_numeric_sentence(idx, entry, section="Abstract", topic_label=topic_label)
         if sentence and _NUMBER_RE.search(_strip_citations(sentence, limit=400)):
-            return _complete_sentences(_dedupe_repeated_sentences(f"{cleaned} {sentence}"), max_sentences=5, limit=1200)
+            base_sentences = _split_sentences(cleaned, limit=1200)
+            if not base_sentences:
+                return _complete_sentences(sentence, max_sentences=5, limit=1200)
+            rebuilt = [base_sentences[0], sentence]
+            for existing in base_sentences[1:]:
+                if existing == sentence:
+                    continue
+                rebuilt.append(existing)
+            return _complete_sentences(_dedupe_repeated_sentences(" ".join(rebuilt)), max_sentences=5, limit=1200)
     return cleaned
 
 
