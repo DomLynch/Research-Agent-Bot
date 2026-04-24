@@ -69,6 +69,10 @@ def _has_structured_effects(source_bundle: list[dict[str, Any]]) -> bool:
         claim = entry.get("claim") or {}
         if any(claim.get(field) for field in ("effect", "metric", "p_value", "n")):
             return True
+        if _has_numeric_effect_surface(str(claim.get("source_span") or "")):
+            return True
+        if _has_numeric_effect_surface(str(entry.get("excerpt") or "")):
+            return True
     return False
 
 

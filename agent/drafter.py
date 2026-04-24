@@ -100,6 +100,10 @@ _MEAN_MEDIAN_NUMBER_RE = re.compile(
     r"\b(?:mean|median)\b[^.]{0,40}\b\d+(?:\.\d+)?\b",
     re.IGNORECASE,
 )
+_NUMERIC_EFFECT_STAT_RE = re.compile(
+    r"(?:95%\s*ci|confidence interval|p\s*[<=>]|hazard ratio|odds ratio|\bor\b|\brr\b|\d+(?:\.\d+)?\s*%)",
+    re.IGNORECASE,
+)
 _RESULT_MARKER_RE = re.compile(
     r"(?:p\s*[<=>]|n\s*=|95%\s*ci|confidence interval|\bhr\b|hazard ratio|"
     r"\bor\b|odds ratio|\brr\b|placebo\b|control\b|\d+(?:\.\d+)?\s*%)",
@@ -1461,7 +1465,7 @@ def _has_numeric_effect_surface(text: str) -> bool:
     return bool(
         _NUMBER_RE.search(cleaned)
         and (
-            _RESULT_MARKER_RE.search(cleaned)
+            _NUMERIC_EFFECT_STAT_RE.search(cleaned)
             or _COMPARATOR_NUMBER_RE.search(cleaned)
             or _MEAN_MEDIAN_NUMBER_RE.search(cleaned)
         )
