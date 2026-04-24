@@ -8,6 +8,18 @@ from agent.citation_roles import ROLE_LANGUAGE_RULES
 
 _CITATION_RE = re.compile(r"\[(\d+)\]")
 _NUMBER_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
+_NUMERIC_EFFECT_STAT_RE = re.compile(
+    r"(?:95%\s*ci|confidence interval|p\s*[<=>]|hazard ratio|odds ratio|\bor\b|\brr\b|\d+(?:\.\d+)?\s*%)",
+    re.IGNORECASE,
+)
+_COMPARATOR_NUMBER_RE = re.compile(
+    r"(?:\b\d+(?:\.\d+)?\b[^.]{0,40}\b(?:vs\.?|versus)\b|\b(?:vs\.?|versus)\b[^.]{0,40}\b\d+(?:\.\d+)?\b)",
+    re.IGNORECASE,
+)
+_MEAN_MEDIAN_NUMBER_RE = re.compile(
+    r"\b(?:mean|median)\b[^.]{0,40}\b\d+(?:\.\d+)?\b",
+    re.IGNORECASE,
+)
 _NUMERIC_SECTIONS = {"Key Findings", "Conclusion"}
 _REQUIRED_CITATION_SECTIONS = {"Key Findings"}
 _RAW_EXTRACTION_RE = re.compile(r"\b(?:Published results|Meta-analysis)\s+\[\d+\]\s+(?:report|reported)\b", re.IGNORECASE)
@@ -75,13 +87,25 @@ def _sentence_spans(text: str) -> list[tuple[int, int, str]]:
     return spans
 
 
+def _has_numeric_effect_surface(text: str) -> bool:
+    stripped = re.sub(r"\[\d+\]", "", text)
+    return bool(
+        _NUMBER_RE.search(stripped)
+        and (
+            _NUMERIC_EFFECT_STAT_RE.search(stripped)
+            or _COMPARATOR_NUMBER_RE.search(stripped)
+            or _MEAN_MEDIAN_NUMBER_RE.search(stripped)
+        )
+    )
+
+
 def validate_draft_quality(draft: dict[str, Any], source_bundle: list[dict[str, Any]]) -> list[dict[str, Any]]:
     violations: list[dict[str, Any]] = []
     abstract = str(draft.get("abstract") or "")
     sections = draft.get("sections") or {}
     topic_terms = _topic_terms(draft)
 
-    if source_bundle and _has_structured_effects(source_bundle) and abstract.strip() and not _NUMBER_RE.search(re.sub(r"\[\d+\]", "", abstract)):
+    if source_bundle and _has_structured_effects(source_bundle) and abstract.strip() and not _has_numeric_effect_surface(abstract):
         violations.append(
             {
                 "section": "Abstract",

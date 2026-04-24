@@ -101,6 +101,22 @@ def test_draft_quality_validator_requires_numeric_abstract_when_structured_effec
     assert any(v["issue"] == "abstract_missing_numeric_effect" and v["severity"] == "high" for v in violations)
 
 
+def test_draft_quality_validator_rejects_incidental_abstract_numbers_without_effect_size() -> None:
+    draft = {
+        "title": "Rapid Evidence Synthesis: metformin aging older adults",
+        "abstract": "One trial found no significant difference in 4-month walk speed in older adults [1].",
+        "sections": {"Key Findings": "One trial found no significant difference in frailty [1]."},
+    }
+    bundle = [
+        {
+            "role": "published_results",
+            "extraction": {"effects": [{"outcome": "walk speed", "metric": "MEAN", "value": "0.57 vs 0.58", "p_value": "0.96"}]},
+        }
+    ]
+    violations = validate_draft_quality(draft, bundle)
+    assert any(v["issue"] == "abstract_missing_numeric_effect" and v["severity"] == "high" for v in violations)
+
+
 def test_draft_quality_validator_flags_raw_extraction_leak_in_conclusion() -> None:
     draft = {
         "title": "Rapid Evidence Synthesis: metformin aging older adults",

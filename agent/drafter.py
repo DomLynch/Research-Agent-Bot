@@ -92,6 +92,14 @@ _EFFECT_STYLE_RE = re.compile(
     r"\d+(?:\.\d+)?\s*%)",
     re.IGNORECASE,
 )
+_COMPARATOR_NUMBER_RE = re.compile(
+    r"(?:\b\d+(?:\.\d+)?\b[^.]{0,40}\b(?:vs\.?|versus)\b|\b(?:vs\.?|versus)\b[^.]{0,40}\b\d+(?:\.\d+)?\b)",
+    re.IGNORECASE,
+)
+_MEAN_MEDIAN_NUMBER_RE = re.compile(
+    r"\b(?:mean|median)\b[^.]{0,40}\b\d+(?:\.\d+)?\b",
+    re.IGNORECASE,
+)
 _RESULT_MARKER_RE = re.compile(
     r"(?:p\s*[<=>]|n\s*=|95%\s*ci|confidence interval|\bhr\b|hazard ratio|"
     r"\bor\b|odds ratio|\brr\b|placebo\b|control\b|\d+(?:\.\d+)?\s*%)",
@@ -1448,6 +1456,18 @@ def _has_quantitative_content(text: str) -> bool:
     return bool(_EFFECT_STYLE_RE.search(cleaned))
 
 
+def _has_numeric_effect_surface(text: str) -> bool:
+    cleaned = _strip_citations(_clean(text, limit=1200), limit=1200)
+    return bool(
+        _NUMBER_RE.search(cleaned)
+        and (
+            _RESULT_MARKER_RE.search(cleaned)
+            or _COMPARATOR_NUMBER_RE.search(cleaned)
+            or _MEAN_MEDIAN_NUMBER_RE.search(cleaned)
+        )
+    )
+
+
 def _strip_citations(text: str, *, limit: int = 1200) -> str:
     cleaned = re.sub(r"\[R?\d+(?:\s*,\s*R?\d+)*\]", "", text, flags=re.IGNORECASE)
     cleaned = re.sub(r"\(\s*[;,]?\s*\)", "", cleaned)
@@ -1477,7 +1497,7 @@ def _human_abstract(topic: str, domain_slug: str, sections: dict[str, str], sour
 
 def _ensure_numeric_abstract(abstract: str, source_bundle: list[dict[str, Any]], *, topic_label: str) -> str:
     cleaned = _clean(abstract, limit=1200)
-    if not cleaned or _NUMBER_RE.search(_strip_citations(cleaned, limit=1200)):
+    if not cleaned or _has_numeric_effect_surface(cleaned):
         return cleaned
     candidates: list[tuple[int, dict[str, Any]]] = []
     for idx, entry in enumerate(source_bundle, start=1):
