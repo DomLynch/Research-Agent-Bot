@@ -1,4 +1,4 @@
-from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness, _entry_result_sentence, _trim_singular_mixed_citations
+from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness, _entry_result_sentence, _retarget_singular_trial_citations, _trim_singular_mixed_citations
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
 from agent.validator import validate_citations
@@ -1134,6 +1134,39 @@ def test_drafter_trims_mixed_singular_citation_clusters() -> None:
     trimmed = _trim_singular_mixed_citations(text, [published, observational])
     assert "[1, 2]" not in trimmed
     assert "[1]" in trimmed
+
+
+def test_drafter_retargets_singular_trial_sentence_from_observational_ref() -> None:
+    published = _bundle_entry(
+        {
+            "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
+            "excerpt": "Insulin-resistant elderly people were randomized to metformin or placebo for brain-energy and cognitive outcomes.",
+            "evidence_type": "interventional",
+            "source_type": "clinicaltrials",
+            "has_results": True,
+            "trial_status": "results",
+            "year": 2023,
+            "url": "https://clinicaltrials.gov/study/NCT03733132",
+        },
+        topic_tokens=["metformin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    observational = _bundle_entry(
+        {
+            "title": "APOE4-dependent association between metformin use and Alzheimer's disease-related cortical thickness in older adults with type 2 diabetes.",
+            "excerpt": "Cross-sectional metformin exposure study in older adults with diabetes and cortical thickness outcomes.",
+            "evidence_type": "observational",
+            "source_type": "europepmc",
+            "year": 2026,
+            "url": "https://europepmc.org/article/MED/41761644",
+        },
+        topic_tokens=["metformin", "aging", "older", "adults"],
+        domain_slug="longevity",
+    )
+    text = "One trial on brain function in insulin-resistant elderly showed no significant benefit of metformin over placebo on brain energy metabolism or cognitive function after 10 months [2]."
+    retargeted = _retarget_singular_trial_citations(text, [published, observational])
+    assert "[2]" not in retargeted
+    assert "[1]" in retargeted
 
 
 def test_drafter_grounds_from_structured_pubmed_results_excerpt() -> None:

@@ -168,6 +168,7 @@ _CONTROL_COMPARATOR_RE = re.compile(
 )
 _SINGULAR_STUDY_RE = re.compile(r"\b(one|single|a)\s+(trial|study|rct|cohort)\b", re.IGNORECASE)
 _CITATION_CLUSTER_RE = re.compile(r"\[((?:\d+\s*,\s*)+\d+)\]")
+_ANY_CITATION_RE = re.compile(r"\[((?:\d+\s*,\s*)*\d+)\]")
 
 _SYNONYM_CANONICALS = {
     alias: canonical
@@ -735,6 +736,59 @@ def _trim_singular_mixed_citations(text: str, source_bundle: list[dict[str, Any]
     return " ".join(part for part in kept if part).strip()
 
 
+def _retarget_singular_trial_citations(text: str, source_bundle: list[dict[str, Any]]) -> str:
+    cleaned = _clean(text, limit=4000)
+    if not cleaned:
+        return cleaned
+    kept: list[str] = []
+    for sentence in _split_sentences(cleaned):
+        if not _SINGULAR_STUDY_RE.search(sentence):
+            kept.append(sentence)
+            continue
+        cluster = _ANY_CITATION_RE.search(sentence)
+        if not cluster:
+            kept.append(sentence)
+            continue
+        refs = [int(match) for match in re.findall(r"\d+", cluster.group(1)) if 1 <= int(match) <= len(source_bundle)]
+        if not refs:
+            kept.append(sentence)
+            continue
+        cited_entries = [source_bundle[ref - 1] for ref in refs]
+        if any(
+            entry.get("role") == "published_results" and entry.get("directness") == "direct"
+            for entry in cited_entries
+        ):
+            kept.append(sentence)
+            continue
+        tokens = [
+            token for token in re.findall(r"[a-z0-9]+", _strip_citations(sentence, limit=600).lower())
+            if len(token) > 3 and token not in _STOPWORDS and token not in _GENERIC_TOPIC_TOKENS
+        ]
+        best_ref = 0
+        best_score = 0
+        for idx, entry in enumerate(source_bundle, start=1):
+            if entry.get("role") != "published_results" or entry.get("directness") != "direct":
+                continue
+            hay = " ".join(
+                str(v or "").lower()
+                for v in (
+                    entry.get("title"),
+                    entry.get("excerpt"),
+                    (entry.get("card") or {}).get("outcomes"),
+                    (entry.get("card") or {}).get("population"),
+                )
+            )
+            score = sum(1 for token in tokens if token in hay)
+            if score > best_score:
+                best_ref = idx
+                best_score = score
+        if best_ref and best_score >= 2:
+            kept.append(f"{sentence[:cluster.start()]}[{best_ref}]{sentence[cluster.end():]}")
+            continue
+        kept.append(sentence)
+    return " ".join(part for part in kept if part).strip()
+
+
 def _entry_result_sentence(entry: dict[str, Any]) -> str:
     if claim := _claim_from_entry(entry):
         if sentence := _claim_sentence(claim):
@@ -1212,6 +1266,7 @@ def _postprocess_sections(
         if heading in polished:
             polished[heading] = _ground_required_numeric_sentences(polished[heading], source_bundle)
             polished[heading] = _clean_grounding_mashups(polished[heading], source_bundle)
+            polished[heading] = _retarget_singular_trial_citations(polished[heading], source_bundle)
             polished[heading] = _trim_singular_mixed_citations(polished[heading], source_bundle)
             polished[heading] = _strip_offtopic_claims(polished[heading], source_bundle, topic_tokens)
             polished[heading] = _strip_unsupported_numeric_claims(polished[heading], source_bundle)
