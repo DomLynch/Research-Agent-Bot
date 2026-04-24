@@ -1,4 +1,4 @@
-"""MoA+Spar JSON provider bridge for higher-integrity model outputs."""
+"""Optional MoA+Spar adapter for manual use; not wired into the V0 CLI path."""
 
 from __future__ import annotations
 
@@ -127,18 +127,6 @@ def _parse_review(payload: dict[str, Any]) -> SparReview:
     return SparReview(approved, summary, issues, fix)
 
 
-def _safe_parse_review(payload: dict[str, Any]) -> SparReview:
-    try:
-        return _parse_review(payload)
-    except Exception as exc:
-        return SparReview(
-            approved=False,
-            summary=f"Invalid review payload: {exc}",
-            issues=[f"review_payload_invalid:{exc}"],
-            fix="Return corrected JSON only and preserve all material factual claims.",
-        )
-
-
 def _sum_usage(*payloads: dict[str, Any]) -> dict[str, int]:
     input_tokens = sum(int((payload.get("usage") or {}).get("input_tokens", 0) or 0) for payload in payloads)
     output_tokens = sum(int((payload.get("usage") or {}).get("output_tokens", 0) or 0) for payload in payloads)
@@ -194,12 +182,12 @@ class MoaSparBridgeClient:
     model: str = "moa-spar-bridge"
 
     @classmethod
-    def from_env(cls, *, builder: JsonProvider | None = None) -> "MoaSparBridgeClient":
+    def from_env(cls) -> "MoaSparBridgeClient":
         return cls(
-            builder=builder or MimoClient.from_env(),
+            builder=MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
                 model=os.getenv("MINIMAX_MODEL", "MiniMax-M2.7-highspeed"),
-                base_url=os.getenv("MINIMAX_BASE_URL", "https://api.minimax.io/v1"),
+                base_url=os.getenv("MINIMAX_BASE_URL", "https://api.minimax.chat/v1"),
                 api_key_env="MINIMAX_API_KEY",
                 prompt_version="research-agent-bot/minimax-review-v1",
             ),
@@ -211,45 +199,10 @@ class MoaSparBridgeClient:
             ),
         )
 
-    def _degraded_result(
-        self,
-        candidate: dict[str, Any],
-        raw: dict[str, Any],
-        exc: Exception,
-    ) -> tuple[dict[str, Any], dict[str, Any]]:
-        result = dict(candidate)
-        result.setdefault("usage", candidate.get("usage", {}))
-        result.setdefault("estimated_cost_usd", candidate.get("estimated_cost_usd", 0.0))
-        result["prompt_version"] = self.prompt_version
-        result["model"] = self.model
-        result["_bridge"] = {
-            "mode": "moa_spar_degraded",
-            "error": str(exc),
-            "moa": {
-                "reference_models": [
-                    _route_label(self.builder),
-                    _route_label(self.reviewer),
-                    _route_label(self.judge),
-                ],
-                "aggregator_model": _route_label(self.builder),
-            },
-            "spar": {
-                "approved": False,
-                "summary": "Bridge degraded after external model failure.",
-                "issues": [f"bridge_provider_error:{exc}"],
-                "fix": None,
-                "judge": None,
-            },
-        }
-        return result, {"degraded": True, "error": str(exc), "builder_raw": raw}
-
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
         self_draft, self_raw = self.builder.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
-        try:
-            reviewer_draft, reviewer_raw = self.reviewer.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
-            judge_draft, judge_raw = self.judge.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
-        except Exception as exc:
-            return self._degraded_result(self_draft, self_raw, exc)
+        reviewer_draft, reviewer_raw = self.reviewer.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        judge_draft, judge_raw = self.judge.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
 
         synth_system = _build_moa_synth_system(
             system_prompt,
@@ -272,7 +225,7 @@ class MoaSparBridgeClient:
                 indent=2,
             ),
         )
-        review = _safe_parse_review(review_raw_result)
+        review = _parse_review(review_raw_result)
 
         judge_payload = None
         candidate_payloads = [self_draft, reviewer_draft, judge_draft, candidate, review_raw_result]
@@ -310,13 +263,12 @@ class MoaSparBridgeClient:
                     indent=2,
                 ),
             )
-            judge_payload = _safe_parse_review(judge_raw_result)
+            judge_payload = _parse_review(judge_raw_result)
             candidate_payloads.append(judge_raw_result)
             raw_payload["spar"] = {"review_raw": review_raw, "judge_raw": judge_raw}
 
             if not review.approved:
                 for _ in range(max(0, min(self.max_fix_rounds, 1))):
-                    fix_raw: dict[str, Any]
                     candidate, fix_raw = self.builder.complete_json(
                         system_prompt=system_prompt,
                         user_prompt=_build_fix_prompt(user_prompt, candidate, review),
@@ -332,7 +284,7 @@ class MoaSparBridgeClient:
                             indent=2,
                         ),
                     )
-                    review = _safe_parse_review(review_raw_result)
+                    review = _parse_review(review_raw_result)
                     candidate_payloads.extend([candidate, review_raw_result])
                     raw_payload["spar"]["fix_raw"] = fix_raw
                     raw_payload["spar"]["review_raw_after_fix"] = review_raw

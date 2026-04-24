@@ -11,7 +11,6 @@ from agent.drafter import RapidEvidenceDrafter
 from agent.entity_resolver import resolve_topic, topic_match_ratio
 from agent.extractor import StructuredExtractor
 from agent.fulltext import FullTextFetcher, entry_identity
-from agent.moa_spar_bridge import MoaSparBridgeClient
 from agent.planner import QueryPlanner
 from agent.provider import MimoClient
 from agent.sources.chembl import ChEMBLClient
@@ -20,7 +19,7 @@ from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
 from agent.sources.rxiv import RxivClient
 from agent.submit import submit
-from agent.validator import validate_citations, validate_draft_quality
+from agent.validator import validate_citations
 
 _CLINICAL_DOMAINS = {"oncology", "longevity"}
 _CLINICAL_KEYWORDS = ("trial", "intervention", "therapy", "clinical")
@@ -28,13 +27,6 @@ _RXIV_DOMAINS = {"longevity", "oncology", "metabolic", "general"}
 _CHEMBL_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "statin")
 _CHEMBL_STOPWORDS = {"and", "or", "anti", "aging", "anti-aging", "longevity", "healthspan", "effects", "outcomes"}
 _TOPIC_MATCH_FLOOR = 0.50
-
-
-def _llm_provider() -> Any:
-    provider = MimoClient.from_env()
-    if isinstance(provider, MimoClient):
-        return MoaSparBridgeClient.from_env(builder=provider)
-    return provider
 
 
 def _should_use_clinical_trials(domain: str, topic: str) -> bool:
@@ -217,34 +209,11 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         f"- Topic: {topic}",
         f"- Domain: {payload['domain_slug']}",
     ]
-    if payload.get("_bridge"):
-        bridge = payload["_bridge"]
-        models = ", ".join(bridge.get("moa", {}).get("reference_models", []))
-        lines.append(f"- Reasoning: MoA+Spar ({models})")
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
     lines.extend(["", "## Abstract", "", payload["abstract"], ""])
     if payload.get("methods"):
         lines.extend(["## Methods", "", payload["methods"], ""])
-    if payload.get("source_bundle"):
-        strict_ct = sum(1 for item in payload["source_bundle"] if item.get("strict_eligibility_met"))
-        lines.extend(
-            [
-                "## Evidence Table",
-                "",
-                f"Strict eligibility met: {strict_ct}/{len(payload['source_bundle'])} retained sources.",
-                "",
-                "| Ref | Tier | Role | Strict eligibility? | Confidence | Risk of bias |",
-                "|---|---|---|---|---|---|",
-            ]
-        )
-        for i, item in enumerate(payload["source_bundle"], start=1):
-            lines.append(
-                f"| [{i}] | {item.get('evidence_tier', 'Unclassified')} | {item.get('role', 'unknown')} | "
-                f"{'yes' if item.get('strict_eligibility_met') else 'no'} | "
-                f"{item.get('evidence_confidence', 'low')} | {item.get('risk_of_bias', 'not assessed')} |"
-            )
-        lines.append("")
     for heading, body in payload.get("sections", {}).items():
         if heading == "Methods" and payload.get("methods"):
             continue
@@ -413,7 +382,7 @@ def run_agent(
         run_log["run_log"] = str(_write_json(Path(run_dir), run_log))
         return run_log
     try:
-        artifact, raw_output = RapidEvidenceDrafter(provider=_llm_provider()).draft(
+        artifact, raw_output = RapidEvidenceDrafter(provider=MimoClient.from_env()).draft(
             topic=resolved_topic,
             domain_slug=domain,
             criteria=criteria,
@@ -442,14 +411,9 @@ def run_agent(
             artifact["error"] = f"Insufficient direct evidence for '{resolved_topic}' in the {domain} domain."
             artifact["gate_reason"] = "insufficient_direct_evidence"
         citation_violations = validate_citations(artifact, artifact.get("source_bundle", []))
-        draft_quality_violations = validate_draft_quality(artifact, artifact.get("source_bundle", []))
         artifact["citation_violations"] = citation_violations
-        artifact["draft_quality_violations"] = draft_quality_violations
         artifact["high_severity_citation_count"] = sum(
             1 for violation in citation_violations if violation.get("severity") == "high"
-        )
-        artifact["high_severity_quality_count"] = sum(
-            1 for violation in draft_quality_violations if violation.get("severity") == "high"
         )
         run_log.update(artifact)
         run_log["source_telemetry"] = {

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from agent.validator import validate_citations, validate_draft_quality
+from agent.validator import validate_citations
 
 
 def _bundle(role: str) -> list[dict]:
@@ -71,26 +71,3 @@ def test_validator_clean_draft_returns_empty() -> None:
     bundle = [{"role": "published_results"}, {"role": "observational"}]
     violations = validate_citations(draft, bundle)
     assert violations == []
-
-
-def test_draft_quality_flags_missing_body_citations() -> None:
-    draft = {"sections": {"Key Findings": "The evidence is promising but uncertain."}}
-    violations = validate_draft_quality(draft, [{"role": "published_results"}])
-    assert any(v["issue"] == "missing_inline_citations" and v["severity"] == "high" for v in violations)
-
-
-def test_draft_quality_flags_raw_extraction_leak_in_conclusion() -> None:
-    draft = {"sections": {"Key Findings": "Trial improved outcomes [1].", "Conclusion": "Published results [1] report Change From Baseline."}}
-    violations = validate_draft_quality(draft, [{"role": "published_results"}])
-    assert any(v["issue"] == "raw_extraction_leak" for v in violations)
-
-
-def test_draft_quality_flags_conclusion_contradicting_same_positive_ref() -> None:
-    draft = {
-        "sections": {
-            "Key Findings": "Trial improved emotional well-being significantly (p=0.023) [1].",
-            "Conclusion": "The same trial showed no significant difference compared with placebo [1].",
-        }
-    }
-    violations = validate_draft_quality(draft, [{"role": "published_results"}])
-    assert any(v["issue"] == "conclusion_contradicts_positive_finding" for v in violations)

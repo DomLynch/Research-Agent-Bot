@@ -16,11 +16,6 @@ class StubProvider:
         return payload, {"choices": [{"message": {"content": "raw"}}], "usage": {}}
 
 
-class FailingProvider(StubProvider):
-    def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
-        raise RuntimeError("provider unavailable")
-
-
 def test_moa_spar_bridge_happy_path_preserves_provider_contract():
     builder = StubProvider(
         model="mimo-v2-pro",
@@ -102,61 +97,3 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
     assert "moa" in raw
     assert "spar" in raw
-
-
-def test_moa_spar_bridge_invalid_review_json_triggers_single_fix():
-    builder = StubProvider(
-        model="mimo-v2-pro",
-        prompt_version="test/mimo",
-        responses=[
-            {"findings": "self"},
-            {"findings": "synth"},
-            {"findings": "fixed", "conclusion": "fixed conclusion"},
-        ],
-    )
-    reviewer = StubProvider(
-        model="MiniMax-M2.7-highspeed",
-        prompt_version="test/minimax",
-        responses=[
-            {"findings": "reviewer"},
-            {"summary": "missing approved boolean"},
-            {"approved": True, "summary": "fixed", "issues": [], "fix": None},
-        ],
-    )
-    judge = StubProvider(
-        model="deepseek-reasoner",
-        prompt_version="test/deepseek",
-        responses=[
-            {"findings": "judge"},
-            {"approved": True, "summary": "judge ok", "issues": [], "fix": None},
-        ],
-    )
-
-    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(
-        system_prompt="system",
-        user_prompt="user",
-    )
-
-    assert result["findings"] == "fixed"
-    assert result["_bridge"]["spar"]["approved"] is True
-    assert raw["spar"]["fix_raw"]
-
-
-def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails():
-    builder = StubProvider(
-        model="mimo-v2-pro",
-        prompt_version="test/mimo",
-        responses=[{"findings": "builder result", "usage": {"input_tokens": 1, "output_tokens": 1}}],
-    )
-    reviewer = StubProvider(model="MiniMax-M2.7-highspeed", prompt_version="test/minimax", responses=[{"findings": "reviewer"}])
-    judge = FailingProvider(model="deepseek-reasoner", prompt_version="test/deepseek", responses=[])
-
-    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(
-        system_prompt="system",
-        user_prompt="user",
-    )
-
-    assert result["findings"] == "builder result"
-    assert result["_bridge"]["mode"] == "moa_spar_degraded"
-    assert result["_bridge"]["spar"]["approved"] is False
-    assert raw["degraded"] is True

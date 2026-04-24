@@ -7,12 +7,12 @@
 
 ## Non-Negotiables
 - Python only.
-- Provider path is MoA+Spar by default: MiMo v2 Pro builder/synthesizer, MiniMax reviewer, DeepSeek judge.
+- Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var).
 - V0 pipeline: plan -> retrieve -> draft -> markdown/log -> dashboard.
 - Submit path enabled: optional POST to Researka /submissions when RESEARKA_URL is set. Async: returns queued immediately, status checked via /status/<id>.
 - Source bundle must have 12+ entries with relevance scores for Researka intake.
-- No unbounded model loops in V0; MoA+Spar is capped to one review/fix pass.
-- No frameworks, no persistence beyond run logs.
+- No fallback model in V0.
+- No frameworks, no multi-agent orchestration, no persistence beyond run logs.
 
 ## Safety Rails (Step 1)
 Three env-gate controls checked before expensive work begins:

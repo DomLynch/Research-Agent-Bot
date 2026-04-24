@@ -14,15 +14,14 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~4,200 LOC (raised from 3,200 — see DECISIONS.md 2026-04-24 "MoA+Spar default + draft-quality validators").
-  Hard ceiling: 4,500 LOC. Actual: ~4,210 LOC.
-- LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
+- Runtime target: ~3,200 LOC (raised from 2,400 — see DECISIONS.md 2026-04-22 "Tier 2 citation roles + validator + multi-source full-text cascade").
+  Hard ceiling: 3,600 LOC. Actual: ~3,405 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
-- Provider path is MoA+Spar by default for model-producing stages: MiMo v2 Pro builder/synthesizer, MiniMax reviewer, and DeepSeek judge.
+- Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
 
 ## Winning Path
-Deterministic planner + bounded public literature queries + directness-aware bundle + MoA+Spar extraction/draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.
+Deterministic planner + bounded public literature queries + directness-aware bundle + MiMo draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.
 
 ## Open Risks
 - PubMed/OpenAlex relevance ranking must stay simple without becoming naive.
@@ -35,10 +34,10 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Tier 2 full-text coverage now cascades Europe PMC -> Unpaywall -> CORE, but only Europe PMC and Unpaywall are exercised locally today. CORE is env-gated on `CORE_API_KEY`, and PDF-only Unpaywall hits still need GROBID or another parser before they help extraction.
 - Tier 1.5 extraction is cached and real, but numeric validation is not yet a hard gate. The model now sees extracted facts from a subset of papers; it is still possible to draft unsupported numbers until a validator pass lands.
 - ClinicalTrials.gov registry records are now split into `trial_registered` versus `trial_results`, and posted registry results can supply structured effects without an LLM extraction call. Registry-only studies are design-only in the prompt and get scrubbed if the drafter tries to state outcomes.
-- Citation-role and draft-quality validation are logged in `citation_violations` and `draft_quality_violations`; they catch missing inline citations, raw extraction leaks, and conclusion contradictions.
+- Citation-role validation is now advisory and logged in `citation_violations`; it is not yet a hard gate, and the live gold-fixture rerun is still blocked in this shell because `MIMO_API_KEY` is unset.
 
 ## Next Validation Step
-Set `MIMO_API_KEY`, `MINIMAX_API_KEY`, and `DEEPSEEK_API_KEY` in this shell, run a live metformin/rapamycin/D+Q bridge test, then regenerate fixtures via `scripts/generate_fixtures.py --all` and rerun the Karpathy-loop diff.
+Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/generate_fixtures.py --all`, and rerun the Karpathy-loop diff to measure the real Tier 2 delta on citation-role violations and quantitative fidelity.
 
 ## Hardening Status
 | Step | What | Status |

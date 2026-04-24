@@ -252,9 +252,6 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
     assert run["source_telemetry"]["extraction"]["found"] == 2
     assert "citation_violations" in run
     assert isinstance(run["citation_violations"], list)
-    assert "draft_quality_violations" in run
-    assert "## Evidence Table" in run["markdown"]
-    assert "Strict eligibility met:" in run["markdown"]
     for item in run["source_bundle"]:
         assert "evidence_type" in item
         assert "year" in item
@@ -263,10 +260,6 @@ def test_run_agent_scope_filters_retained_evidence(tmp_path: Path, monkeypatch) 
         assert item.get("source_type")
         assert item.get("role")
         assert item.get("directness") in {"direct", "indirect", "mechanistic"}
-        assert item.get("evidence_tier")
-        assert "strict_eligibility_met" in item
-        assert item.get("evidence_confidence") in {"high", "medium", "low"}
-        assert item.get("risk_of_bias")
         assert item.get("card", {}).get("evidence_grade") in {"H", "M", "L"}
         if item.get("card", {}).get("full_text_found"):
             assert item.get("card", {}).get("extraction_found") is True
@@ -396,14 +389,6 @@ def test_source_routing_helpers() -> None:
     assert cli._should_use_rxiv("longevity", "rapamycin")
     assert cli._should_use_chembl("everolimus")
     assert not cli._should_use_chembl("time restricted eating")
-
-
-def test_llm_provider_wraps_real_mimo_with_moa_spar(monkeypatch) -> None:
-    base = cli.MimoClient()
-    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: base))
-    monkeypatch.setattr(cli.MoaSparBridgeClient, "from_env", staticmethod(lambda *, builder: ("bridge", builder)))
-
-    assert cli._llm_provider() == ("bridge", base)
 
 
 def test_run_agent_canonicalizes_typo_topic(tmp_path: Path, monkeypatch) -> None:
