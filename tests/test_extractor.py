@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import agent.extractor as extractor_mod
 from agent.extractor import StructuredExtractor
 
 
@@ -78,3 +79,13 @@ def test_structured_extractor_enriches_entries(tmp_path: Path) -> None:
     assert stats["found"] == 1
     assert enriched[0]["extraction"]["population"] == "older adults with diabetes"
     assert "extraction" not in enriched[1]
+
+
+def test_structured_extractor_from_env_wraps_real_mimo_with_moa_spar(tmp_path: Path, monkeypatch) -> None:
+    base = extractor_mod.MimoClient()
+    monkeypatch.setattr(extractor_mod.MimoClient, "from_env", staticmethod(lambda: base))
+    monkeypatch.setattr(extractor_mod.MoaSparBridgeClient, "from_env", staticmethod(lambda *, builder: ("bridge", builder)))
+
+    extractor = StructuredExtractor.from_env(cache_dir=tmp_path)
+
+    assert extractor.provider == ("bridge", base)

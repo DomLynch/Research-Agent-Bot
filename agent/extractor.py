@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from agent.fulltext import entry_identity
+from agent.moa_spar_bridge import MoaSparBridgeClient
 from agent.provider import MimoClient
 
 
@@ -70,7 +71,10 @@ class StructuredExtractor:
 
     @classmethod
     def from_env(cls, *, cache_dir: str | Path) -> "StructuredExtractor":
-        return cls(cache_dir=cache_dir, provider=MimoClient.from_env())
+        provider = MimoClient.from_env()
+        if isinstance(provider, MimoClient):
+            provider = MoaSparBridgeClient.from_env(builder=provider)
+        return cls(cache_dir=cache_dir, provider=provider)
 
     def extract(self, entry: dict[str, Any]) -> dict[str, Any] | None:
         cache_path = _cache_path(self.cache_dir, entry, self.version)

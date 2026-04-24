@@ -75,6 +75,12 @@ _NUMERIC_SENTENCE_RE = re.compile(
     r"p\s*[<=>]|n\s*=|\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?\s*(?:months?|years?|weeks?|days?|kg|mg|mmhg))",
     re.IGNORECASE,
 )
+_STRICT_RESULT_RE = re.compile(
+    r"\b(randomi[sz]ed|controlled|placebo|trial|experiment|a/b test|ab test|benchmark|"
+    r"comparative|cohort|participants?|patients?|users?|customers?|sample|outcomes?|"
+    r"endpoints?|effect|efficacy|safety|performance|conversion|retention|mortality|results?)\b",
+    re.IGNORECASE,
+)
 
 
 def _clean(value: Any, limit: int = 2000) -> str:
@@ -207,6 +213,7 @@ def _bundle_entry(item: dict[str, Any], topic_tokens: list[str], domain_slug: st
         "role": role,
         "directness": directness,
         "card": card,
+        "domain_slug": _clean(domain_slug, limit=48).lower() or "general",
     }
 
 
@@ -309,6 +316,67 @@ def _entry_sort_key(entry: dict[str, Any]) -> tuple[int, float, int, int]:
     )
 
 
+def _strict_direct_result_signal(entry: dict[str, Any]) -> bool:
+    role = str(entry.get("role") or "")
+    if role != "published_results" or entry.get("directness") != "direct":
+        return False
+    if entry.get("evidence_type") == "review":
+        return False
+    if (entry.get("extraction") or {}).get("effects") or entry.get("has_results"):
+        return True
+    blob = " ".join(str(v or "") for v in (entry.get("title"), entry.get("excerpt"), entry.get("query")))
+    return bool(_STRICT_RESULT_RE.search(blob))
+
+
+def _evidence_tier(entry: dict[str, Any]) -> str:
+    role = str(entry.get("role") or "")
+    if role in {"registered_pending", "published_protocol", "animal_model", "mechanistic"}:
+        return "Tier C forward-looking/mechanistic support"
+    if role == "off_domain_indirect":
+        return "Tier C indirect context"
+    if _strict_direct_result_signal(entry):
+        return "Tier A1 direct result evidence"
+    if entry.get("directness") == "direct" and role in {"observational", "published_results"}:
+        return "Tier A2 direct supporting evidence"
+    if role in {"meta_analysis", "review", "observational"}:
+        return "Tier B contextual/synthesis evidence"
+    return "Tier C indirect/uncertain support"
+
+
+def _evidence_confidence(entry: dict[str, Any]) -> str:
+    role = str(entry.get("role") or "")
+    if _strict_direct_result_signal(entry) and ((entry.get("extraction") or {}).get("effects") or entry.get("has_results")):
+        return "high"
+    if role in {"published_results", "meta_analysis", "observational", "review"}:
+        return "medium"
+    return "low"
+
+
+def _risk_of_bias(entry: dict[str, Any]) -> str:
+    extracted = _clean((entry.get("extraction") or {}).get("risk_of_bias"), limit=80)
+    if extracted:
+        return extracted
+    role = str(entry.get("role") or "")
+    if role == "published_results":
+        return "not assessed; primary result"
+    if role in {"meta_analysis", "review"}:
+        return "not assessed; synthesis"
+    if role == "observational":
+        return "confounding risk"
+    if role in {"registered_pending", "published_protocol"}:
+        return "not applicable; no results"
+    return "not assessed"
+
+
+def _annotate_entry(entry: dict[str, Any]) -> dict[str, Any]:
+    annotated = dict(entry)
+    annotated["strict_eligibility_met"] = _strict_direct_result_signal(annotated)
+    annotated["evidence_tier"] = _evidence_tier(annotated)
+    annotated["evidence_confidence"] = _evidence_confidence(annotated)
+    annotated["risk_of_bias"] = _risk_of_bias(annotated)
+    return annotated
+
+
 class RapidEvidenceDrafter:
     def __init__(self, *, provider: Any) -> None:
         self.provider = provider
@@ -362,6 +430,7 @@ class RapidEvidenceDrafter:
         ][:20]
         if len(source_bundle) < 8:
             source_bundle = [entry for entry in bundle_candidates if entry.get("evidence_type") in accepted_types][:20]
+        source_bundle = [_annotate_entry(entry) for entry in source_bundle]
 
         years = [int(e["year"]) for e in source_bundle if isinstance(e.get("year"), int)]
         rc = sum(1 for e in source_bundle if e.get("evidence_type") == "review")
@@ -512,10 +581,13 @@ class RapidEvidenceDrafter:
                 "direct_count": direct_ct,
                 "indirect_count": indirect_ct,
                 "mechanistic_count": mechanistic_ct,
+                "strict_eligibility_met_count": sum(1 for e in source_bundle if e.get("strict_eligibility_met")),
             },
             "prompt_version": result.get("prompt_version", getattr(self.provider, "prompt_version", "unknown")),
             "usage": result.get("usage", {}),
             "estimated_cost_usd": float(result.get("estimated_cost_usd", 0.0) or 0.0),
             "model": result.get("model", getattr(self.provider, "model", "unknown")),
         }
+        if result.get("_bridge"):
+            artifact["_bridge"] = result["_bridge"]
         return (artifact, raw_payload)

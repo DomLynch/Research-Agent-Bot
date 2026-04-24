@@ -1,4 +1,4 @@
-from agent.drafter import RapidEvidenceDrafter, _bundle_entry, _classify_directness
+from agent.drafter import RapidEvidenceDrafter, _annotate_entry, _bundle_entry, _classify_directness
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
 
@@ -264,6 +264,28 @@ def test_bundle_entry_keeps_numeric_result_sentence_from_later_in_excerpt():
     )
     assert "20% (HR 0.80, 95% CI 0.72-0.90)" in entry["excerpt"]
     assert "39.8 months" in entry["excerpt"]
+
+
+def test_generic_strict_direct_result_profile_works_outside_biomedicine():
+    entry = _annotate_entry(
+        _bundle_entry(
+            {
+                "title": "Onboarding email A/B test improves user conversion",
+                "excerpt": "A controlled A/B test in users reported conversion outcomes for onboarding emails.",
+                "evidence_type": "primary",
+                "source_type": "openalex",
+                "year": 2026,
+                "url": "https://example.com/ab-test",
+            },
+            ["onboarding", "email", "conversion"],
+            "marketing",
+        )
+    )
+
+    assert entry["role"] == "published_results"
+    assert entry["directness"] == "direct"
+    assert entry["strict_eligibility_met"] is True
+    assert entry["evidence_tier"] == "Tier A1 direct result evidence"
 
 
 def test_quality_gate_fires_on_classifier_generated_indirect_only_bundle():
