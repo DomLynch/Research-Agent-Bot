@@ -181,4 +181,4 @@ def test_draft_quality_validator_flags_duplicate_abstract_claim_for_same_citatio
         "sections": {"Key Findings": "One trial found emotional well-being improved with rapamycin (p=0.023) [1]."},
     }
     violations = validate_draft_quality(draft, _bundle("published_results"))
-    assert any(v["issue"] == "abstract_duplicate_cited_claim" and v["severity"] == "high" for v in violations)
+    assert any(v["issue"] == "abstract_duplicate_cited_claim" and v["severity"] == "medium" for v in violations)

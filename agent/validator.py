@@ -48,7 +48,7 @@ def _severity(issue: str) -> str:
         "raw_extraction_template": "high",
         "missing_topic_distinction": "medium",
         "conclusion_contradicts_positive_finding": "high",
-        "abstract_duplicate_cited_claim": "high",
+        "abstract_duplicate_cited_claim": "medium",
     }.get(issue, "medium")
 
 
