@@ -54,6 +54,7 @@ class OpenAICompatJsonClient:
     api_key_env: str
     prompt_version: str
     timeout_sec: float = 45.0
+    max_tokens: int = 2400
     transport: httpx.BaseTransport | None = None
     client: httpx.Client = field(init=False)
 
@@ -73,6 +74,7 @@ class OpenAICompatJsonClient:
             json={
                 "model": self.model,
                 "temperature": 0.2,
+                "max_tokens": self.max_tokens,
                 "response_format": {"type": "json_object"},
                 "messages": [
                     {"role": "system", "content": system_prompt},

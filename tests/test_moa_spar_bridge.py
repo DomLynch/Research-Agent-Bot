@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from typing import Any
 
 import httpx
@@ -178,8 +179,10 @@ def test_moa_spar_bridge_from_env_defaults_to_openrouter_models(monkeypatch) -> 
 
 def test_openrouter_client_records_reported_cost(monkeypatch) -> None:
     monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter")
+    requests = []
 
-    def handler(_: httpx.Request) -> httpx.Response:
+    def handler(request: httpx.Request) -> httpx.Response:
+        requests.append(request)
         return httpx.Response(
             200,
             json={
@@ -200,6 +203,7 @@ def test_openrouter_client_records_reported_cost(monkeypatch) -> None:
 
     assert result["ok"] is True
     assert result["estimated_cost_usd"] == 0.0
+    assert json.loads(requests[0].content)["max_tokens"] == 2400
 
 
 def test_openrouter_client_allows_reported_cost_for_paid_models(monkeypatch) -> None:
