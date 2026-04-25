@@ -40,8 +40,8 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
         ],
     )
     reviewer = StubProvider(
-        model="nvidia/nemotron-3-super-120b-a12b",
-        prompt_version="test/nemotron",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma-4-31b-review",
         responses=[
             {
                 "question": "Reviewer draft question",
@@ -60,8 +60,8 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
         ],
     )
     judge = StubProvider(
-        model="google/gemma-4-31b-it",
-        prompt_version="test/gemma-4-31b",
+        model="mistralai/mistral-small-2603",
+        prompt_version="test/mistral-small-2603",
         responses=[
             {
                 "question": "Judge draft question",
@@ -93,8 +93,8 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
     assert result["_bridge"]["mode"] == "moa_spar"
     assert result["_bridge"]["moa"]["reference_models"] == [
         "mimo-v2.5-pro",
-        "nvidia/nemotron-3-super-120b-a12b",
         "google/gemma-4-31b-it",
+        "mistralai/mistral-small-2603",
     ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
@@ -110,8 +110,8 @@ def test_moa_spar_bridge_from_env_uses_openrouter_review_panel(monkeypatch):
     client = MoaSparBridgeClient.from_env()
 
     assert client.builder.model == "mimo-v2.5-pro"
-    assert client.reviewer.model == "nvidia/nemotron-3-super-120b-a12b"
-    assert client.judge.model == "google/gemma-4-31b-it"
+    assert client.reviewer.model == "google/gemma-4-31b-it"
+    assert client.judge.model == "mistralai/mistral-small-2603"
     assert client.reviewer.base_url == "https://openrouter.ai/api/v1"
     assert client.judge.base_url == "https://openrouter.ai/api/v1"
     assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"

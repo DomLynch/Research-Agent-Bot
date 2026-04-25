@@ -37,7 +37,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Citation-role validation is now advisory and logged in `citation_violations`; it is not yet a hard gate, and the live gold-fixture rerun is still blocked in this shell because `MIMO_API_KEY` is unset.
 
 ## Next Validation Step
-Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/generate_fixtures.py --all`, and rerun the Karpathy-loop diff to measure the real Tier 2 delta on citation-role violations and quantitative fidelity. For optional MoA/Spar checks, set `OPENROUTER_API_KEY` and use Nemotron/Gemma OpenRouter slots.
+Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/generate_fixtures.py --all`, and rerun the Karpathy-loop diff to measure the real Tier 2 delta on citation-role violations and quantitative fidelity. For optional MoA/Spar checks, set `OPENROUTER_API_KEY` and use Gemma/Mistral OpenRouter slots.
 
 ## Hardening Status
 | Step | What | Status |

@@ -1,12 +1,13 @@
 # DECISION JOURNAL
 
 ## 2026-04-25 — Replace MiniMax/DeepSeek bridge slots with OpenRouter paid models
-**Decision:** Keep MiMo V2.5 Pro as the builder/synthesizer, move the optional MoA/Spar reviewer slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b`, and move the judge slot to OpenRouter `google/gemma-4-31b-it`.
-**Why:** The optional bridge needs non-Xiaomi adjudication diversity without MiniMax subscription or DeepSeek pricing exposure. OpenRouter currently lists both target slugs as paid via OpenRouter, and its chat API supports OpenAI-compatible JSON mode.
+**Decision:** Keep MiMo V2.5 Pro as the builder/synthesizer, move the optional MoA/Spar reviewer slot to OpenRouter `google/gemma-4-31b-it`, and move the judge slot to OpenRouter `mistralai/mistral-small-2603`.
+**Why:** The optional bridge needs non-Xiaomi adjudication diversity without MiniMax subscription or DeepSeek pricing exposure. A/B feedback favored Gemma as reviewer and Mistral as judge; OpenRouter currently lists both target slugs as paid with 262K context.
 **Alternatives rejected:**
 - MiMo Flash as reviewer/judge — rejected because it shares too many builder-family blind spots.
 - Keep DeepSeek for judge — rejected because uncontrolled pricing is now an explicit operational risk.
 - Keep MiniMax as reviewer — rejected because the subscription is being cancelled and would force a second migration later.
+- Keep Nemotron as reviewer — rejected because Gemma reviewer + Mistral judge scored slightly better in A/B feedback at similar wall time.
 **Revisit if:** either paid endpoint disappears, JSON mode fails in live probes, or the gold corpus shows more than a 10% quality regression.
 
 ## 2026-04-22 — Tier 2 citation roles + validator + multi-source full-text cascade
