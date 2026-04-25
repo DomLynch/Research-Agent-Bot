@@ -1,4 +1,4 @@
-from agent.drafter import RapidEvidenceDrafter, _annotate_source_bundle, _apply_mimo_labels, _bundle_entry, _classify_directness, _entry_result_sentence, _retarget_singular_trial_citations, _trim_singular_mixed_citations
+from agent.drafter import RapidEvidenceDrafter, _annotate_source_bundle, _apply_mimo_labels, _bundle_entry, _classify_directness, _dedupe, _entry_result_sentence, _retarget_singular_trial_citations, _trim_singular_mixed_citations
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
 from agent.validator import validate_citations
@@ -933,6 +933,54 @@ def test_drafter_drops_remap_and_collapses_med_pmc_duplicate_records() -> None:
     titles = [str(item.get("title", "")).lower() for item in artifact["source_bundle"]]
     assert not any("remap" in title for title in titles)
     assert sum("therapeutic paradox in aging" in title for title in titles) == 1
+
+
+def test_drafter_dedupes_shared_clinical_trial_identifier() -> None:
+    registry = {
+        "title": "Metformin trial in older adults",
+        "excerpt": "ClinicalTrials.gov record for NCT12345678.",
+        "evidence_type": "interventional",
+        "source_type": "clinicaltrials",
+        "year": 2024,
+        "url": "https://clinicaltrials.gov/study/NCT12345678",
+    }
+    publication = {
+        "title": "Metformin trial results in older adults",
+        "excerpt": "Published results from NCT12345678 reported frailty outcomes.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12345678/",
+    }
+
+    kept = _dedupe([registry, publication])
+
+    assert len(kept) == 1
+    assert kept[0]["source_type"] == "pubmed"
+
+
+def test_drafter_dedupes_secondary_analysis_from_same_trial_cohort() -> None:
+    secondary = {
+        "title": "Evaluation of Exploratory Fluid Biomarker Results from a Phase 1 Senolytic Trial in Mild Alzheimer's Disease",
+        "excerpt": "Exploratory biomarker analysis from the phase 1 senolytic trial in mild Alzheimer's disease.",
+        "evidence_type": "primary",
+        "source_type": "europepmc",
+        "year": 2025,
+        "url": "https://example.org/biomarker-analysis",
+    }
+    parent_trial = {
+        "title": "Senolytic therapy in mild Alzheimer's disease: a phase 1 feasibility trial",
+        "excerpt": "A phase 1 feasibility trial of senolytic therapy in mild Alzheimer's disease.",
+        "evidence_type": "primary",
+        "source_type": "pubmed",
+        "year": 2023,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/parent-trial/",
+    }
+
+    kept = _dedupe([secondary, parent_trial])
+
+    assert len(kept) == 1
+    assert kept[0]["title"].startswith("Senolytic therapy")
 
 
 def test_drafter_assigns_a1_a2_b_tiers_for_metformin_generically() -> None:

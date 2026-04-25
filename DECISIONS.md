@@ -1,5 +1,12 @@
 # DECISION JOURNAL
 
+## 2026-04-25 — Semantic trial/cohort dedup layer
+**Decision:** Extend raw evidence dedup beyond DOI/URL/title mirrors with two generic identity layers: shared clinical trial IDs (`NCT...`) and conservative parent/secondary cohort signatures for early-phase trial biomarker/substudy/follow-up records.
+
+**Why:** D+Q surfaced a real credibility gap: a parent phase 1 trial and a later exploratory biomarker analysis from the same cohort can have different titles, authors, URLs, and DOIs. Treating them as independent evidence pads the 12-source bundle and inflates disease-context support. The fix must identify shared trial/cohort provenance, not blacklist specific Gonzales/Garbarino records.
+
+**Audit:** Added discriminating tests for shared-NCT dedup and phase-trial parent/secondary cohort dedup. Local verification: `501 passed, 6 skipped, 5 xfailed`; ruff clean.
+
 ## 2026-04-25 — Bridge metadata and review-like source hardening
 **Decision:** Normalize nullable model-review fields at the bridge boundary, render unresolved adjudication issues in markdown, and classify review-like primary records by title patterns such as "role of", "pathophysiology", "therapeutic frontiers", "therapeutic potential", and "path to the clinic".
 

@@ -275,6 +275,146 @@ def _normalized_title_key(value: Any) -> str:
     return re.sub(r"[^a-z0-9]+", " ", text).strip()
 
 
+_NCT_ID_RE = re.compile(r"\bNCT\d{8}\b", re.IGNORECASE)
+_TRIAL_COHORT_SIGNAL_RE = re.compile(
+    r"\b(phase\s*(?:0|1|i|2|ii|3|iii|4|iv)|randomi[sz]ed|placebo[- ]controlled|clinical trial|trial|pilot|feasibility|cohort)\b",
+    re.IGNORECASE,
+)
+_SECONDARY_COHORT_SIGNAL_RE = re.compile(
+    r"\b(biomarkers?|exploratory|secondary analysis|post[- ]hoc|sub[- ]?study|ancillary|extension|follow[- ]up|"
+    r"from (?:the )?(?:same )?(?:phase\s*(?:0|1|i|2|ii|3|iii|4|iv)\s*)?(?:clinical )?trial|parent trial)\b",
+    re.IGNORECASE,
+)
+_COHORT_STOPWORDS = {
+    "a",
+    "an",
+    "and",
+    "analyses",
+    "analysis",
+    "as",
+    "at",
+    "by",
+    "biomarker",
+    "biomarkers",
+    "clinical",
+    "controlled",
+    "double",
+    "effect",
+    "effects",
+    "efficacy",
+    "evaluation",
+    "exploratory",
+    "feasibility",
+    "fluid",
+    "for",
+    "from",
+    "hoc",
+    "in",
+    "into",
+    "of",
+    "on",
+    "or",
+    "outcome",
+    "outcomes",
+    "parent",
+    "patients",
+    "phase",
+    "pilot",
+    "placebo",
+    "post",
+    "randomised",
+    "randomized",
+    "report",
+    "reported",
+    "result",
+    "results",
+    "s",
+    "safety",
+    "secondary",
+    "single",
+    "study",
+    "sub",
+    "substudy",
+    "the",
+    "therapeutic",
+    "therapy",
+    "treatment",
+    "to",
+    "trial",
+    "versus",
+    "vs",
+    "with",
+}
+
+
+def _identity_blob(item: dict[str, Any]) -> str:
+    extraction = item.get("extraction") if isinstance(item.get("extraction"), dict) else {}
+    parts = [
+        item.get("id"),
+        item.get("url"),
+        item.get("doi"),
+        item.get("source_doi"),
+        item.get("nct_id"),
+        item.get("trial_id"),
+        item.get("title"),
+        item.get("excerpt"),
+        item.get("summary"),
+        extraction.get("source_doi"),
+        extraction.get("trial_id"),
+        extraction.get("nct_id"),
+    ]
+    return _clean(" ".join(str(part) for part in parts if part), limit=5000)
+
+
+def _trial_id_keys(item: dict[str, Any]) -> list[str]:
+    seen: set[str] = set()
+    keys: list[str] = []
+    for match in _NCT_ID_RE.finditer(_identity_blob(item)):
+        trial_id = match.group(0).upper()
+        if trial_id not in seen:
+            seen.add(trial_id)
+            keys.append(f"trial:{trial_id}")
+    return keys
+
+
+def _phase_token(text: str) -> str:
+    match = re.search(r"\bphase\s*(0|1|i|2|ii|3|iii|4|iv)\b", text, re.IGNORECASE)
+    if not match:
+        return "phase_unknown"
+    value = match.group(1).lower()
+    roman = {"i": "1", "ii": "2", "iii": "3", "iv": "4"}
+    return f"phase{roman.get(value, value)}"
+
+
+def _secondary_cohort_signal(item: dict[str, Any]) -> bool:
+    return bool(_SECONDARY_COHORT_SIGNAL_RE.search(_identity_blob(item)))
+
+
+def _parent_trial_signal(item: dict[str, Any]) -> bool:
+    title = _clean(item.get("title"), limit=500)
+    return bool(_TRIAL_COHORT_SIGNAL_RE.search(title)) and not _secondary_cohort_signal(item)
+
+
+def _cohort_identity_key(item: dict[str, Any]) -> str:
+    text = _identity_blob(item)
+    if not _TRIAL_COHORT_SIGNAL_RE.search(text):
+        return ""
+    if not (_SECONDARY_COHORT_SIGNAL_RE.search(text) or _TRIAL_COHORT_SIGNAL_RE.search(_clean(item.get("title"), limit=500))):
+        return ""
+    normalized = _normalized_title_key(f"{item.get('title', '')} {item.get('excerpt', '')}")
+    tokens: list[str] = []
+    for token in normalized.split():
+        if token in _COHORT_STOPWORDS or token.isdigit() or len(token) < 3:
+            continue
+        if re.fullmatch(r"i{1,3}|iv", token):
+            continue
+        if token not in tokens:
+            tokens.append(token)
+    if len(tokens) < 3:
+        return ""
+    return f"cohort:{_phase_token(text)}:{':'.join(tokens[:8])}"
+
+
 def _duplicate_keys(item: dict[str, Any]) -> list[str]:
     keys: list[str] = []
     doi = _clean(item.get("doi"), limit=200).lower()
@@ -289,19 +429,25 @@ def _duplicate_keys(item: dict[str, Any]) -> list[str]:
         keys.append(f"title:{title_key}")
         if year:
             keys.append(f"title_year:{title_key}:{year}")
+    keys.extend(_trial_id_keys(item))
+    cohort_key = _cohort_identity_key(item)
+    if cohort_key:
+        keys.append(cohort_key)
     return keys
 
 
-def _raw_evidence_rank(item: dict[str, Any]) -> tuple[int, int, int, int, int]:
+def _raw_evidence_rank(item: dict[str, Any]) -> tuple[int, ...]:
     source_type = str(item.get("source_type") or "")
     url = str(item.get("url") or "").lower()
     source_bonus = 3 if source_type == "pubmed" else 2 if source_type == "clinicaltrials" else 1
     if source_type == "europepmc" and "/med/" in url:
         source_bonus += 1
     return (
-        int(item.get("year") or 0),
-        1 if _clean(item.get("doi"), limit=120) else 0,
+        1 if not _secondary_cohort_signal(item) else 0,
+        1 if _parent_trial_signal(item) else 0,
         source_bonus,
+        1 if _clean(item.get("doi"), limit=120) else 0,
+        int(item.get("year") or 0),
         len(_clean(item.get("excerpt"), limit=1600)),
         len(item.get("authors") or []),
     )
