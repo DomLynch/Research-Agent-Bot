@@ -54,7 +54,7 @@ class OpenAICompatJsonClient:
     api_key_env: str
     prompt_version: str
     timeout_sec: float = 45.0
-    max_tokens: int = 2400
+    max_tokens: int = 900
     transport: httpx.BaseTransport | None = None
     client: httpx.Client = field(init=False)
 
@@ -178,6 +178,10 @@ def _build_fix_prompt(user_prompt: str, candidate: dict[str, Any], review: SparR
     )
 
 
+def _build_review_payload(candidate: dict[str, Any]) -> str:
+    return json.dumps({"candidate": candidate}, ensure_ascii=False, indent=2)
+
+
 @dataclass(slots=True)
 class MoaSparBridgeClient:
     builder: JsonProvider
@@ -266,11 +270,11 @@ class MoaSparBridgeClient:
                 payloads.extend([reviewer_draft, judge_draft, candidate])
             review_raw_result, review_raw = self.reviewer.complete_json(
                 system_prompt=REVIEW_SYSTEM_PROMPT,
-                user_prompt=json.dumps({"user_prompt": user_prompt, "candidate": candidate}, ensure_ascii=False, indent=2),
+                user_prompt=_build_review_payload(candidate),
             )
             judge_raw_result, spar_judge_raw = self.judge.complete_json(
                 system_prompt=REVIEW_SYSTEM_PROMPT,
-                user_prompt=json.dumps({"user_prompt": user_prompt, "candidate": candidate}, ensure_ascii=False, indent=2),
+                user_prompt=_build_review_payload(candidate),
             )
         except Exception as exc:
             self.degraded_error = str(exc)
@@ -286,7 +290,7 @@ class MoaSparBridgeClient:
                 )
                 review_raw_result, review_raw = self.reviewer.complete_json(
                     system_prompt=REVIEW_SYSTEM_PROMPT,
-                    user_prompt=json.dumps({"user_prompt": user_prompt, "candidate": candidate}, ensure_ascii=False, indent=2),
+                    user_prompt=_build_review_payload(candidate),
                 )
                 review = _safe_parse_review(review_raw_result)
                 payloads.extend([candidate, review_raw_result])

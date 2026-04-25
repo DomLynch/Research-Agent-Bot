@@ -235,7 +235,7 @@ def test_openrouter_client_records_reported_cost(monkeypatch) -> None:
 
     assert result["ok"] is True
     assert result["estimated_cost_usd"] == 0.0
-    assert json.loads(requests[0].content)["max_tokens"] == 2400
+    assert json.loads(requests[0].content)["max_tokens"] == 900
 
 
 def test_openrouter_client_allows_reported_cost_for_paid_models(monkeypatch) -> None:
