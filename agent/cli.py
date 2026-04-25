@@ -53,6 +53,21 @@ def _listish(value: Any) -> list[Any]:
     return [value]
 
 
+def _adjudication_metrics(bridge: dict[str, Any]) -> dict[str, Any]:
+    spar = bridge.get("spar") or {}
+    judge = spar.get("judge") if isinstance(spar.get("judge"), dict) else {}
+    reviewer_issues = [str(item) for item in _listish(spar.get("issues")) if str(item).strip()]
+    judge_issues = [str(item) for item in _listish(judge.get("issues")) if str(item).strip()]
+    return {
+        "reviewer_approved": bool(spar.get("approved")),
+        "judge_approved": bool(judge.get("approved")) if judge else None,
+        "agreement": (bool(spar.get("approved")) == bool(judge.get("approved"))) if judge else None,
+        "reviewer_issue_count": len(reviewer_issues),
+        "judge_issue_count": len(judge_issues),
+        "judge_unique_issue_count": len(set(judge_issues) - set(reviewer_issues)),
+    }
+
+
 def _emit_progress(
     progress: ProgressCallback | None,
     *,
@@ -101,6 +116,9 @@ def _repair_conclusion_contradictions(artifact: dict[str, Any], violations: list
         p_value = _P_VALUE_RE.search(positive)
         numeric = p_value.group(0) if p_value else "a statistically significant result"
         kept.append(f"The significant positive signal ({numeric}) should be interpreted cautiously rather than as definitive broad efficacy evidence [{ref}].")
+    if len(kept) == 1:
+        ref = sorted(refs)[0]
+        kept.append(f"Overall, the available direct evidence supports continued controlled study rather than broad adoption based on a single positive signal [{ref}].")
     sections["Conclusion"] = " ".join(kept).strip()
     artifact["sections"] = sections
     artifact["draft_quality_auto_repair"] = "conclusion_contradiction"
@@ -181,13 +199,27 @@ def _is_submit_enabled() -> bool:
     return val in {"true", "1", "yes", "on"}
 
 
-def _drafter_provider() -> Any:
+def _bridge_progress(progress: ProgressCallback | None, percent_map: dict[str, int]) -> ProgressCallback | None:
+    if not progress:
+        return None
+
+    def _callback(event: dict[str, Any]) -> None:
+        payload = dict(event)
+        step = str(payload.pop("step", "adjudication"))
+        message = str(payload.pop("message", ""))
+        percent = percent_map.get(step, int(payload.pop("percent", 72) or 72))
+        _emit_progress(progress, percent=percent, step=step, message=message, **payload)
+
+    return _callback
+
+
+def _drafter_provider(progress: ProgressCallback | None = None) -> Any:
     builder = MimoClient.from_env()
     # Tests patch MimoClient.from_env with lightweight fake providers. Keep
     # those direct while production uses the Hermes-derived multi-model bridge.
     if not isinstance(builder, MimoClient):
         return builder
-    return MoaSparBridgeClient.from_env(builder=builder)
+    return MoaSparBridgeClient.from_env(builder=builder, progress=progress)
 
 
 def _slug(value: str) -> str:
@@ -302,6 +334,7 @@ def _draft_revision_feedback(violations: list[dict[str, Any]]) -> str:
         "Published results and meta-analyses must use past-tense reported/evaluated language.",
         "Registered or protocol studies must stay design-only and must not claim outcomes.",
         "Abstract should include at least one numeric effect when structured trial results are retained.",
+        "Do not repeat the same cited finding twice in the Abstract.",
         "Do not leak raw extractor templates like 'Published results [n] report ...' into the Abstract or Conclusion.",
         "If a support/meta-analysis sentence mentions another intervention or drug class, frame it explicitly as contextual rather than as evidence for the queried topic.",
     ]
@@ -446,27 +479,32 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     ]
     bridge = payload.get("bridge") if isinstance(payload.get("bridge"), dict) else {}
     issue_list: list[str] = []
+    judge_issues: list[str] = []
+    judge: dict[str, Any] = {}
     status = ""
     if bridge:
         models = ", ".join(str(item) for item in _listish((bridge.get("moa") or {}).get("reference_models"))) or "not reported"
         spar = bridge.get("spar") or {}
+        judge = spar.get("judge") if isinstance(spar.get("judge"), dict) else {}
         issue_list = [str(item) for item in _listish(spar.get("issues")) if str(item).strip()]
+        judge_issues = [str(item) for item in _listish(judge.get("issues")) if str(item).strip()]
         operational_issues = [item for item in issue_list if item.startswith("bridge_provider_error:")]
         substantive_issues = [item for item in issue_list if item not in operational_issues]
         issues = len(substantive_issues)
+        judge_substantive_issues = [item for item in judge_issues if not item.startswith("bridge_provider_error:")]
         status = "adjudicated" if spar.get("approved") else "machine-reviewed with unresolved/degraded review"
         draft_mode = "multi-model drafting" if len(_listish((bridge.get("moa") or {}).get("reference_models"))) > 1 else "MiMo drafting"
         review_models = ", ".join(str(item) for item in _listish(spar.get("review_models"))) or "not reported"
         lines.append(f"- Generation: {models} ({draft_mode})")
         note = f"; operational degradation: {len(operational_issues)}" if operational_issues else ""
-        lines.append(f"- Adjudication: {review_models}; reviewer issues flagged: {issues}; status: {status}{note}")
+        lines.append(f"- Adjudication: {review_models}; reviewer issues flagged: {issues}; judge issues flagged: {len(judge_substantive_issues)}; status: {status}{note}")
         lines.append("- Human peer review: false")
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
     lines.extend(["", "## Abstract", "", payload["abstract"], ""])
     if payload.get("methods"):
         lines.extend(["## Methods", "", payload["methods"], ""])
-    if bridge and issue_list:
+    if bridge and (issue_list or judge_issues or judge):
         lines.extend(["## Adjudication Notes", ""])
         lines.append(f"Machine-adjudication status: {status}.")
         if substantive_issues:
@@ -475,6 +513,12 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         if operational_issues:
             lines.append("Operational degradation:")
             lines.extend(f"- {_md_cell(item)}" for item in operational_issues[:5])
+        if judge_issues:
+            lines.append("Judge issues:")
+            lines.extend(f"- {_md_cell(item)}" for item in judge_issues[:5])
+        elif judge:
+            state = "approved" if judge.get("approved") else "not approved"
+            lines.append(f"Judge: {state} (no additional issues flagged).")
         lines.append("")
     for heading, body in payload.get("sections", {}).items():
         if heading == "Methods" and payload.get("methods"):
@@ -697,14 +741,24 @@ def run_agent(
         _emit_progress(progress, percent=100, step="blocked", message=run_log["error"], error=run_log["error"])
         return run_log
     try:
-        _emit_progress(
-            progress,
-            percent=72,
-            step="adjudication",
-            message="Drafting with MiMo V2.5 Pro, then adjudicating with OpenRouter Gemma 4 31B and OpenRouter Mistral Small 2603; degraded mode is explicit if a provider is unavailable.",
-            models=["mimo-v2.5-pro", "google/gemma-4-31b-it", "mistralai/mistral-small-2603"],
+        provider = _drafter_provider(
+            progress=_bridge_progress(
+                progress,
+                {
+                    "draft": 72,
+                    "reference_review": 74,
+                    "reference_judge": 76,
+                    "synth": 78,
+                    "review": 78,
+                    "judge": 82,
+                    "bridge_revision": 83,
+                    "review_recheck": 83,
+                },
+            )
         )
-        drafter = RapidEvidenceDrafter(provider=_drafter_provider())
+        if not isinstance(provider, MoaSparBridgeClient):
+            _emit_progress(progress, percent=72, step="draft", message="Drafting the evidence synthesis.", models=[getattr(provider, "model", "provider")])
+        drafter = RapidEvidenceDrafter(provider=provider)
         artifact, raw_output = drafter.draft(
             topic=resolved_topic,
             domain_slug=domain,
@@ -738,6 +792,24 @@ def run_agent(
                 high_severity = [*high_severity_citation, *high_severity_draft_quality]
         if high_severity and not artifact.get("error"):
             _emit_progress(progress, percent=88, step="revise", message="Running one bounded revision pass for high-severity validator findings.")
+            retry_provider = _drafter_provider(
+                progress=_bridge_progress(
+                    progress,
+                    {
+                        "draft": 89,
+                        "reference_review": 90,
+                        "reference_judge": 91,
+                        "synth": 92,
+                        "review": 92,
+                        "judge": 93,
+                        "bridge_revision": 94,
+                        "review_recheck": 94,
+                    },
+                )
+            )
+            if not isinstance(retry_provider, MoaSparBridgeClient):
+                _emit_progress(progress, percent=89, step="draft", message="Re-drafting the evidence synthesis.", models=[getattr(retry_provider, "model", "provider")])
+            retry_drafter = RapidEvidenceDrafter(provider=retry_provider)
             original_artifact = artifact
             original_validation = (
                 citation_violations,
@@ -745,7 +817,7 @@ def run_agent(
                 high_severity_citation,
                 high_severity_draft_quality,
             )
-            retry_artifact, retry_raw = drafter.draft(
+            retry_artifact, retry_raw = retry_drafter.draft(
                 topic=resolved_topic,
                 domain_slug=domain,
                 criteria=criteria,
@@ -826,6 +898,8 @@ def run_agent(
         artifact["draft_quality_violations"] = draft_quality_violations
         artifact["high_severity_citation_count"] = len(high_severity_citation)
         artifact["high_severity_draft_quality_count"] = len(high_severity_draft_quality)
+        if isinstance(artifact.get("bridge"), dict):
+            artifact["adjudication_metrics"] = _adjudication_metrics(artifact["bridge"])
         artifact["source_bundle"] = doaj_client.annotate_entries(artifact.get("source_bundle", []))
         for entry in artifact["source_bundle"]:
             if entry.get("card") is not None and entry.get("journal_quality"):

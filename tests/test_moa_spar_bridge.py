@@ -115,6 +115,33 @@ def test_moa_spar_bridge_defaults_to_fast_review_only_path() -> None:
     assert "timings_sec" in raw
 
 
+def test_moa_spar_bridge_emits_provider_progress_events() -> None:
+    events: list[dict[str, Any]] = []
+    builder = StubProvider(
+        model="mimo-v2.5-pro",
+        prompt_version="test/mimo",
+        responses=[{"question": "Builder draft"}],
+    )
+    reviewer = StubProvider(
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
+        responses=[{"approved": True, "summary": "Looks complete.", "issues": [], "fix": None}],
+    )
+    judge = StubProvider(
+        model="mistralai/mistral-small-2603",
+        prompt_version="test/mistral",
+        responses=[{"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None}],
+    )
+
+    MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge, progress=events.append).complete_json(system_prompt="system", user_prompt="user")
+
+    assert [event["step"] for event in events] == ["draft", "review", "judge"]
+    assert [event["percent"] for event in events] == [72, 78, 82]
+    assert events[0]["message"] == "MiMo V2.5 Pro drafting the evidence synthesis."
+    assert events[1]["message"] == "Gemma 4 31B reviewing evidence, citations, and completeness."
+    assert events[2]["message"] == "Mistral Small 2603 judging the reviewer findings."
+
+
 def test_moa_spar_bridge_reviews_raw_draft_schema_not_final_artifact_schema() -> None:
     builder = StubProvider(
         model="mimo-v2.5-pro",

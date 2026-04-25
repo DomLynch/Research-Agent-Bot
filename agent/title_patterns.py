@@ -9,7 +9,16 @@ REVIEWISH_TITLE_RE = re.compile(
     r"therapeutic frontiers?|therapeutic potential|path to the clinic|current perspectives?)\b",
     re.IGNORECASE,
 )
+PROTOCOLISH_TITLE_RE = re.compile(
+    r"\b(study protocol|trial protocol|protocol for|trial design|study design|rationale and (?:study )?design|"
+    r"design and rationale|(?:study|trial)\s+to\s+evaluate)\b",
+    re.IGNORECASE,
+)
 
 
 def is_reviewish_title(value: Any) -> bool:
     return bool(REVIEWISH_TITLE_RE.search(str(value or "")))
+
+
+def is_protocolish_title(value: Any) -> bool:
+    return bool(PROTOCOLISH_TITLE_RE.search(str(value or "")))

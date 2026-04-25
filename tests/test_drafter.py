@@ -1129,6 +1129,29 @@ def test_mimo_tier_label_clamp_promotes_strict_direct_result_signal() -> None:
     assert entry["evidence_tier"] == "Tier A1 direct aging evidence"
 
 
+def test_mimo_labels_cannot_promote_protocol_design_paper_to_strict_results() -> None:
+    entry = _bundle_entry(
+        {
+            "title": "A single-center randomized placebo-controlled study to evaluate once-weekly sirolimus in older adults",
+            "excerpt": "Trial protocol in older adults with planned strength and endurance outcomes.",
+            "evidence_type": "review",
+            "source_type": "pubmed",
+            "year": 2024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/example/",
+        },
+        topic_tokens=["rapamycin", "sirolimus", "older", "adults"],
+        domain_slug="longevity",
+    )
+    _apply_mimo_labels(
+        [entry],
+        [{"id": 1, "role": "published_results", "directness": "direct", "evidence_tier": "Tier A1 direct aging evidence"}],
+    )
+    _annotate_source_bundle([entry])
+    assert entry["role"] == "published_protocol"
+    assert entry["evidence_tier"] == "Tier C protocol/mechanistic support"
+    assert entry["strict_eligibility_met"] is False
+
+
 def test_strict_direct_result_signal_is_domain_profile_based_outside_longevity() -> None:
     entry = _bundle_entry(
         {

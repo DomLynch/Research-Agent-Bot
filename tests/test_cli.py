@@ -54,6 +54,7 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
                 "spar": {
                     "approved": True,
                     "issues": ["fix abstract"],
+                    "judge": {"approved": True, "issues": []},
                     "review_models": ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"],
                 },
             },
@@ -63,7 +64,8 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
     )
 
     assert "Generation: mimo-v2.5-pro, google/gemma-4-31b-it, mistralai/mistral-small-2603 (multi-model drafting)" in markdown
-    assert "Adjudication: google/gemma-4-31b-it, mistralai/mistral-small-2603; reviewer issues flagged: 1; status: adjudicated" in markdown
+    assert "Adjudication: google/gemma-4-31b-it, mistralai/mistral-small-2603; reviewer issues flagged: 1; judge issues flagged: 0; status: adjudicated" in markdown
+    assert "Judge: approved (no additional issues flagged)." in markdown
     assert "Human peer review: false" in markdown
     assert "Reasoning: MoA+Spar" not in markdown
 
@@ -84,6 +86,52 @@ def test_payload_markdown_tolerates_null_bridge_lists() -> None:
 
     assert "Generation: not reported (MiMo drafting)" in markdown
     assert "reviewer issues flagged: 0" in markdown
+
+
+def test_payload_markdown_renders_judge_issues() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: rapamycin",
+            "domain_slug": "longevity",
+            "abstract": "A direct trial reported a positive signal (p=0.023) [1].",
+            "sections": {"Key Findings": "Signal reported [1]."},
+            "source_bundle": [],
+            "bridge": {
+                "moa": {"reference_models": ["mimo-v2.5-pro"]},
+                "spar": {
+                    "approved": False,
+                    "issues": ["Reviewer issue."],
+                    "review_models": ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"],
+                    "judge": {"approved": False, "issues": ["Judge unique issue."]},
+                },
+            },
+        },
+        topic="rapamycin",
+        criteria="",
+    )
+
+    assert "judge issues flagged: 1" in markdown
+    assert "Reviewer issues:" in markdown
+    assert "- Reviewer issue." in markdown
+    assert "Judge issues:" in markdown
+    assert "- Judge unique issue." in markdown
+
+
+def test_adjudication_metrics_tracks_judge_agreement() -> None:
+    metrics = cli._adjudication_metrics(
+        {
+            "spar": {
+                "approved": False,
+                "issues": ["Reviewer issue."],
+                "judge": {"approved": True, "issues": ["Judge unique issue."]},
+            }
+        }
+    )
+
+    assert metrics["reviewer_approved"] is False
+    assert metrics["judge_approved"] is True
+    assert metrics["agreement"] is False
+    assert metrics["judge_unique_issue_count"] == 1
 
 
 def test_payload_markdown_renders_adjudication_issue_notes() -> None:
@@ -128,7 +176,7 @@ def test_payload_markdown_separates_operational_bridge_failures() -> None:
         criteria="",
     )
 
-    assert "reviewer issues flagged: 0; status: machine-reviewed with unresolved/degraded review; operational degradation: 1" in markdown
+    assert "reviewer issues flagged: 0; judge issues flagged: 0; status: machine-reviewed with unresolved/degraded review; operational degradation: 1" in markdown
     assert "Operational degradation:" in markdown
     assert "Reviewer issues:" not in markdown
 
@@ -952,7 +1000,7 @@ def test_run_agent_emits_deterministic_progress_events(tmp_path: Path, monkeypat
     assert events[0]["percent"] == 0
     assert events[-1]["percent"] == 100
     assert [event["percent"] for event in events] == sorted(event["percent"] for event in events)
-    assert {"retrieve", "adjudication", "validate", "complete"}.issubset({event["step"] for event in events})
+    assert {"retrieve", "draft", "validate", "complete"}.issubset({event["step"] for event in events})
 
 
 def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monkeypatch) -> None:

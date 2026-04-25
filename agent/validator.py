@@ -48,6 +48,7 @@ def _severity(issue: str) -> str:
         "raw_extraction_template": "high",
         "missing_topic_distinction": "medium",
         "conclusion_contradicts_positive_finding": "high",
+        "abstract_duplicate_cited_claim": "high",
     }.get(issue, "medium")
 
 
@@ -125,6 +126,49 @@ def _positive_significant_refs(text: str) -> dict[int, str]:
     return refs
 
 
+_DUPLICATE_STOPWORDS = {
+    "also", "among", "between", "could", "effect", "effects", "evidence", "found",
+    "general", "health", "human", "older", "outcome", "outcomes", "rapid", "reported",
+    "review", "significant", "study", "trial", "using", "with",
+}
+
+
+def _claim_terms(sentence: str) -> set[str]:
+    cleaned = re.sub(r"\[\d+\]", "", sentence.lower())
+    return {
+        token
+        for token in re.findall(r"[a-z][a-z0-9\-]{3,}", cleaned)
+        if token not in _DUPLICATE_STOPWORDS
+    }
+
+
+def _abstract_duplicate_citations(abstract: str) -> list[dict[str, Any]]:
+    violations: list[dict[str, Any]] = []
+    seen: dict[int, tuple[set[str], str]] = {}
+    for start, end, sentence in _sentence_spans(abstract):
+        terms = _claim_terms(sentence)
+        if not terms:
+            continue
+        for ref in (int(match.group(1)) for match in _CITATION_RE.finditer(sentence)):
+            prior = seen.get(ref)
+            if not prior:
+                seen[ref] = (terms, sentence)
+                continue
+            overlap = len(prior[0] & terms) / max(1, min(len(prior[0]), len(terms)))
+            if overlap >= 0.5:
+                violations.append(
+                    {
+                        "section": "Abstract",
+                        "citation": ref,
+                        "severity": _severity("abstract_duplicate_cited_claim"),
+                        "issue": "abstract_duplicate_cited_claim",
+                        "window": _window(abstract, start, end),
+                        "prior": prior[1],
+                    }
+                )
+    return violations
+
+
 def validate_draft_quality(draft: dict[str, Any], source_bundle: list[dict[str, Any]]) -> list[dict[str, Any]]:
     violations: list[dict[str, Any]] = []
     abstract = str(draft.get("abstract") or "")
@@ -140,6 +184,7 @@ def validate_draft_quality(draft: dict[str, Any], source_bundle: list[dict[str, 
                 "window": _window(abstract, 0, min(len(abstract), 160)),
             }
         )
+    violations.extend(_abstract_duplicate_citations(abstract))
 
     for heading in ("Abstract", "Key Findings", "Conclusion"):
         body = abstract if heading == "Abstract" else str(sections.get(heading) or "")

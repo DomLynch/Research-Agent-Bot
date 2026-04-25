@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from agent.title_patterns import is_reviewish_title
+from agent.title_patterns import is_protocolish_title, is_reviewish_title
 
 
 _STUDY_TYPES = (
@@ -82,7 +82,9 @@ def _infer_quality_signal(entry: dict[str, Any]) -> str:
     if entry.get("source_type") == "nih_reporter":
         return "funded-project"
     text = f"{entry.get('title', '')} {entry.get('excerpt', '')}".lower()
-    if any(term in text for term in ("study protocol", "protocol for", "trial design", "study design", "rationale and design", "design and rationale")):
+    if is_protocolish_title(entry.get("title")) or any(
+        term in text for term in ("study protocol", "protocol for", "trial design", "study design", "rationale and design", "design and rationale")
+    ):
         return "protocol"
     title = str(entry.get("title") or "")
     title_lower = title.lower()
@@ -111,12 +113,17 @@ def _infer_quality_signal(entry: dict[str, Any]) -> str:
 
 def _infer_study_type(entry: dict[str, Any]) -> str:
     """Infer study type from title/excerpt."""
+    etype = str(entry.get("evidence_type") or "").lower()
     title = str(entry.get("title") or "")
     title_lower = title.lower()
+    if is_protocolish_title(title):
+        return "protocol"
     if "meta-analysis" in title_lower:
         return "meta-analysis"
     if "systematic review" in title_lower:
         return "systematic-review"
+    if etype == "review":
+        return "review"
     if is_reviewish_title(title):
         return "review"
     text = f"{entry.get('title', '')} {entry.get('excerpt', '')}".lower()

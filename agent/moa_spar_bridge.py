@@ -7,7 +7,7 @@ import os
 import re
 import time
 from dataclasses import dataclass, field
-from typing import Any, Protocol
+from typing import Any, Callable, Protocol
 
 import httpx
 
@@ -48,6 +48,9 @@ class JsonProvider(Protocol):
     prompt_version: str
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]: ...
+
+
+ProgressCallback = Callable[[dict[str, Any]], None]
 
 
 @dataclass(slots=True)
@@ -128,6 +131,18 @@ class SparReview:
 
 def _route_label(provider: JsonProvider) -> str:
     return str(getattr(provider, "model", provider.__class__.__name__))
+
+
+def _display_label(provider: JsonProvider) -> str:
+    model = _route_label(provider)
+    lower = model.lower()
+    if "mimo" in lower:
+        return "MiMo V2.5 Pro"
+    if "gemma-4-31b" in lower:
+        return "Gemma 4 31B"
+    if "mistral-small-2603" in lower:
+        return "Mistral Small 2603"
+    return model
 
 
 def _listish(value: Any) -> list[Any]:
@@ -274,10 +289,11 @@ class MoaSparBridgeClient:
     reference_drafts: bool = False
     prompt_version: str = "research-agent-bot/moa-spar-bridge-v1"
     model: str = "moa-spar-bridge"
+    progress: ProgressCallback | None = None
     degraded_error: str | None = field(default=None, init=False)
 
     @classmethod
-    def from_env(cls, *, builder: JsonProvider | None = None) -> "MoaSparBridgeClient":
+    def from_env(cls, *, builder: JsonProvider | None = None, progress: ProgressCallback | None = None) -> "MoaSparBridgeClient":
         openrouter_base = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
         openrouter_key_env = os.getenv("OPENROUTER_API_KEY_ENV", "OPENROUTER_API_KEY")
         return cls(
@@ -299,7 +315,23 @@ class MoaSparBridgeClient:
                 retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),
             reference_drafts=os.getenv("MOA_REFERENCE_DRAFTS", "").strip().lower() in {"1", "true", "yes"},
+            progress=progress,
         )
+
+    def _progress(self, *, percent: int, step: str, message: str, provider: JsonProvider | None = None) -> None:
+        if not self.progress:
+            return
+        try:
+            self.progress(
+                {
+                    "percent": percent,
+                    "step": step,
+                    "message": message,
+                    "model": _route_label(provider) if provider else None,
+                }
+            )
+        except Exception:
+            pass
 
     def _degraded_result(
         self,
@@ -337,6 +369,7 @@ class MoaSparBridgeClient:
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
         timings: dict[str, float] = {}
+        self._progress(percent=72, step="draft", message=f"{_display_label(self.builder)} drafting the evidence synthesis.", provider=self.builder)
         started = time.monotonic()
         self_draft, self_raw = self.builder.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
         timings["builder_sec"] = round(time.monotonic() - started, 3)
@@ -348,9 +381,11 @@ class MoaSparBridgeClient:
         synth_raw: dict[str, Any] = {"skipped": "reference_drafts_disabled"}
         try:
             if self.reference_drafts:
+                self._progress(percent=74, step="reference_review", message=f"{_display_label(self.reviewer)} drafting an independent reference.", provider=self.reviewer)
                 started = time.monotonic()
                 reviewer_draft, reviewer_raw = self.reviewer.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
                 timings["reference_reviewer_sec"] = round(time.monotonic() - started, 3)
+                self._progress(percent=76, step="reference_judge", message=f"{_display_label(self.judge)} drafting an independent reference.", provider=self.judge)
                 started = time.monotonic()
                 judge_draft, judge_raw = self.judge.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
                 timings["reference_judge_sec"] = round(time.monotonic() - started, 3)
@@ -358,6 +393,7 @@ class MoaSparBridgeClient:
                     (_route_label(self.reviewer), reviewer_draft),
                     (_route_label(self.judge), judge_draft),
                 ])
+                self._progress(percent=78, step="synth", message=f"{_display_label(self.builder)} synthesizing the reference drafts.", provider=self.builder)
                 started = time.monotonic()
                 candidate, synth_raw = self.builder.complete_json(
                     system_prompt=_build_moa_synth_system(system_prompt, proposals),
@@ -365,12 +401,14 @@ class MoaSparBridgeClient:
                 )
                 timings["synth_sec"] = round(time.monotonic() - started, 3)
                 payloads.extend([reviewer_draft, judge_draft, candidate])
+            self._progress(percent=78, step="review", message=f"{_display_label(self.reviewer)} reviewing evidence, citations, and completeness.", provider=self.reviewer)
             started = time.monotonic()
             review_raw_result, review_raw = self.reviewer.complete_json(
                 system_prompt=REVIEW_SYSTEM_PROMPT,
                 user_prompt=_build_review_payload(candidate, system_prompt=system_prompt, user_prompt=user_prompt),
             )
             timings["reviewer_sec"] = round(time.monotonic() - started, 3)
+            self._progress(percent=82, step="judge", message=f"{_display_label(self.judge)} judging the reviewer findings.", provider=self.judge)
             started = time.monotonic()
             judge_raw_result, spar_judge_raw = self.judge.complete_json(
                 system_prompt=REVIEW_SYSTEM_PROMPT,
@@ -386,6 +424,7 @@ class MoaSparBridgeClient:
         if not review.approved:
             for _ in range(max(0, min(self.max_fix_rounds, 1))):
                 previous = candidate
+                self._progress(percent=83, step="bridge_revision", message=f"{_display_label(self.builder)} applying one bounded bridge revision.", provider=self.builder)
                 started = time.monotonic()
                 fixed_candidate, fix_raw = self.builder.complete_json(
                     system_prompt=system_prompt,
@@ -398,6 +437,7 @@ class MoaSparBridgeClient:
                     payloads.append(fixed_candidate)
                     break
                 candidate = fixed_candidate
+                self._progress(percent=83, step="review_recheck", message=f"{_display_label(self.reviewer)} rechecking the revised draft.", provider=self.reviewer)
                 started = time.monotonic()
                 review_raw_result, review_raw = self.reviewer.complete_json(
                     system_prompt=REVIEW_SYSTEM_PROMPT,

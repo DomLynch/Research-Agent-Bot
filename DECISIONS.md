@@ -1,5 +1,12 @@
 # DECISION JOURNAL
 
+## 2026-04-25 — Break out provider progress and expose judge forensics
+**Decision:** Emit provider-level progress events inside the adjudication bridge, render judge issues/approval in the markdown, record adjudication agreement metrics in the run log, and harden generic protocol/result evidence typing.
+
+**Why:** The dashboard stalled at a single 72% "adjudication" line even though MiMo, Gemma, and Mistral were doing distinct work. Rapamycin also showed a protocol/design paper counted as strict result evidence, a published result-like RCT demoted by labels, duplicate abstract claims, and an invisible judge contribution.
+
+**Audit:** Added tests for bridge progress events, judge issue rendering, judge agreement metrics, protocol-like titles, sticky protocol roles, strict result protection, review design normalization, and duplicate abstract detection. Local verification: `525 passed, 6 skipped, 5 xfailed`; ruff clean. Runtime count is 7,849 agent LOC; hard ceiling raised to 8,000 for this trust-layer slice.
+
 ## 2026-04-25 — Use Gemma reviewer and Mistral judge after A/B bridge test
 **Decision:** Keep Xiaomi `mimo-v2.5-pro` as builder/synthesizer, set OpenRouter `google/gemma-4-31b-it` as reviewer, and set OpenRouter `mistralai/mistral-small-2603` as judge.
 

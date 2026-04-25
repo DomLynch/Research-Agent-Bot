@@ -169,3 +169,16 @@ def test_draft_quality_validator_flags_conclusion_contradicting_positive_cited_f
     }
     violations = validate_draft_quality(draft, _bundle("published_results"))
     assert any(v["issue"] == "conclusion_contradicts_positive_finding" and v["severity"] == "high" for v in violations)
+
+
+def test_draft_quality_validator_flags_duplicate_abstract_claim_for_same_citation() -> None:
+    draft = {
+        "title": "Rapid Evidence Synthesis: rapamycin aging older adults",
+        "abstract": (
+            "Self-reported emotional well-being and general health improved for those using 5 mg rapamycin [1]. "
+            "A one-year randomized trial found emotional well-being and general health improved for those using 5 mg rapamycin [1]."
+        ),
+        "sections": {"Key Findings": "One trial found emotional well-being improved with rapamycin (p=0.023) [1]."},
+    }
+    violations = validate_draft_quality(draft, _bundle("published_results"))
+    assert any(v["issue"] == "abstract_duplicate_cited_claim" and v["severity"] == "high" for v in violations)

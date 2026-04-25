@@ -1992,7 +1992,7 @@ def _apply_mimo_rerank(candidates: list[dict[str, Any]], assessments: list[dict[
 
 
 def _apply_mimo_labels(candidates: list[dict[str, Any]], labels: list[dict[str, Any]]) -> None:
-    sticky_roles = {"off_domain_indirect", "animal_model"}
+    sticky_roles = {"off_domain_indirect", "animal_model", "registered_pending", "published_protocol", "mechanistic"}
     for label in labels:
         idx = int(label.get("id") or 0)
         if idx < 1 or idx > len(candidates):
@@ -2000,7 +2000,8 @@ def _apply_mimo_labels(candidates: list[dict[str, Any]], labels: list[dict[str, 
         entry = candidates[idx - 1]
         current_role = str(entry.get("role") or "unknown")
         role = str(label.get("role") or "").strip()
-        if current_role not in sticky_roles and role in ROLE_ORDER:
+        strict_result = strict_direct_result_signal(_domain_profile(str(entry.get("domain_slug") or "")), entry)
+        if current_role not in sticky_roles and role in ROLE_ORDER and not (strict_result and role in {"registered_pending", "published_protocol"}):
             entry["llm_role"] = role
             entry["role"] = role
             if entry.get("card"):
@@ -2351,6 +2352,7 @@ class RapidEvidenceDrafter:
             "When citing published results or meta-analyses, name the endpoint and include effect direction or numeric outcome, sample size, and duration when available. "
             "Key Findings must open with one synthesis sentence naming the overall direction of the evidence, group the evidence by conclusion rather than listing one study per sentence, and end with one sentence stating what remains unsupported. "
             "Do not let Tier B or Tier C support items drive the headline claim. If a broad review mainly highlights a different intervention or class than the queried intervention, omit that sentence from Key Findings and Conclusion. "
+            "Conclusion must be a 2-4 sentence verdict covering direct evidence, uncertainty, and actionability; do not return only a single caveat sentence. "
             "For registered or protocol studies, describe only the study design or aim. "
             "Do not say they found, showed, reported, demonstrated, improved, reduced, or increased outcomes. "
             "For animal-model evidence, explicitly hedge with 'in animal models' or 'preclinical'. "

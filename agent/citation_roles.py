@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any, Literal
 
-from agent.title_patterns import is_reviewish_title
+from agent.title_patterns import is_protocolish_title, is_reviewish_title
 
 
 CitationRole = Literal[
@@ -90,7 +90,7 @@ ROLE_ORDER: tuple[CitationRole, ...] = (
 )
 
 _PROTOCOL_RE = re.compile(
-    r"(study protocol|protocol for|trial design|study design|rationale and (study )?design|design and rationale)",
+    r"(study protocol|protocol for|trial design|study design|rationale and (study )?design|design and rationale|(?:study|trial)\s+to\s+evaluate)",
     re.IGNORECASE,
 )
 _META_ANALYSIS_RE = re.compile(r"\b(meta-analysis|network meta-analysis|systematic review)\b", re.IGNORECASE)
@@ -214,12 +214,17 @@ def classify_citation_role(
     quality = str(card.get("quality_signal") or "")
     study_type = str(card.get("study_type") or "")
     title = str(item.get("title") or "")
+    strong_result_title = (
+        not is_protocolish_title(title)
+        and (study_type in _RESULT_TYPES or evidence_type in _RESULT_TYPES or quality == "rct")
+        and _PRIMARY_RESULT_MARKER_RE.search(title)
+    )
 
     if source_type == "chembl" or evidence_type == "mechanism":
         return "mechanistic"
     if source_type == "nih_reporter":
         return "published_protocol"
-    if _PROTOCOL_RE.search(title) or quality == "protocol" or study_type == "protocol":
+    if (_PROTOCOL_RE.search(title) or quality == "protocol" or study_type == "protocol") and not strong_result_title:
         return "published_protocol"
     text = " ".join(str(v or "") for v in (title, item.get("excerpt"), card.get("context"), card.get("outcomes")))
     if _ANIMAL_RE.search(text):

@@ -50,6 +50,17 @@ def test_protocol_title_is_published_protocol() -> None:
     assert role == "published_protocol"
 
 
+def test_study_to_evaluate_title_is_published_protocol() -> None:
+    entry = {
+        "title": "A single-center, double-blind, randomized, placebo-controlled, two-arm study to evaluate the safety and efficacy of once-weekly sirolimus on muscle strength and endurance in older adults",
+        "excerpt": "Protocol paper in Trials describing design and planned endpoints.",
+        "evidence_type": "review",
+        "source_type": "pubmed",
+    }
+    role = classify_citation_role(entry, _card(entry), "longevity", ["rapamycin", "sirolimus", "older", "adults"])
+    assert role == "published_protocol"
+
+
 def test_animal_title_is_animal_model() -> None:
     entry = {
         "title": "Metformin improves frailty in MitoPark mice",
@@ -154,7 +165,7 @@ def test_published_aging_trial_is_published_results() -> None:
 def test_rct_like_review_entry_is_promoted_to_published_results() -> None:
     entry = {
         "title": "Exercise and Weekly Sirolimus (Rapamycin) in Older Adults: RAPA-EX-01 Randomised, Double-Blind, Placebo-Controlled Trial",
-        "excerpt": "Older adults completed a randomized placebo-controlled sirolimus trial with strength outcomes.",
+        "excerpt": "Older adults completed a randomized placebo-controlled sirolimus trial with strength outcomes. Protocol language may appear in indexing metadata.",
         "evidence_type": "review",
     }
     card = _card(entry)

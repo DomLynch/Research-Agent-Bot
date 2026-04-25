@@ -163,6 +163,24 @@ def test_build_card_infer_study_type_protocol():
     assert _infer_study_type(entry) == "protocol"
 
 
+def test_study_to_evaluate_infers_protocol_type():
+    entry = {
+        "title": "A double-blind two-arm study to evaluate weekly sirolimus in older adults",
+        "evidence_type": "review",
+    }
+    assert _infer_quality_signal(entry) == "protocol"
+    assert _infer_study_type(entry) == "protocol"
+
+
+def test_review_evidence_type_does_not_become_cohort_from_excerpt():
+    entry = {
+        "title": "What is the clinical evidence to support off-label rapamycin therapy in healthy adults?",
+        "excerpt": "The review discusses cohort data and trial evidence.",
+        "evidence_type": "review",
+    }
+    assert _infer_study_type(entry) == "review"
+
+
 def test_build_card_empty_fields_when_no_match():
     entry = {"title": "Some unrelated paper", "evidence_type": "primary"}
     card = build_card(entry)

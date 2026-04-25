@@ -14,8 +14,8 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~7,600 LOC (raised for the 2026-04-25 async dashboard progress bridge and contradiction repair).
-  Hard ceiling: 7,800 LOC. Actual: 7,667 LOC.
+- Runtime target: ~7,850 LOC (raised for provider-level progress, judge forensics, and generic evidence-type hygiene).
+  Hard ceiling: 8,000 LOC. Actual: 7,849 LOC.
 - LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
@@ -86,6 +86,8 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Bundle hygiene repair under the 12-source rule:** final bundle selection now hard-drops entries with no canonical intervention fit, collapses MED/PMC mirror duplicates by normalized title/URL/DOI, and uses `Tier A1 / A2 / B / C` labels so direct older-adult RCTs outrank disease-context cohorts, reviews, and protocol/mechanistic support without reverting the Researka 12-citation floor.
 - **Semantic trial/cohort dedup:** raw evidence dedup now also collapses shared clinical trial identifiers such as `NCT...` and conservative parent/secondary cohort signatures, so biomarker/substudy papers from the same early-phase trial do not pad the 12-source bundle as independent evidence.
 - **A+ eval cleanup:** review-like title detection now has one shared source of truth, and the golden/Karpathy harnesses now expose bundle-contract and machine-adjudication audit-trail scoring so future quality gains are measured instead of inferred from prose.
+- **Provider progress + judge forensics:** the long adjudication phase now emits separate MiMo draft, Gemma review, Mistral judge, bridge-revision, and recheck milestones; markdown and run logs now expose judge issues/agreement metrics instead of hiding the judge contribution.
+- **Generic protocol/result hygiene:** protocol-like study-design papers are sticky Tier C support, strict direct result signals cannot be demoted by model labels, review design labels stay normalized, and duplicate abstract claims are high-severity draft-quality violations.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
