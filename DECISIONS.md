@@ -1,7 +1,7 @@
 # DECISION JOURNAL
 
 ## 2026-04-25 — Replace MiniMax/DeepSeek bridge slots with OpenRouter paid models
-**Decision:** Keep MiMo V2.5 Pro as the builder/synthesizer, but move the optional MoA/Spar reviewer slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b` and the judge slot to `deepseek/deepseek-v4-flash`.
+**Decision:** Keep MiMo V2.5 Pro as the builder/synthesizer, move the optional MoA/Spar reviewer slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b`, and move the judge slot to OpenRouter `google/gemma-4-31b-it`.
 **Why:** The optional bridge needs non-Xiaomi adjudication diversity without MiniMax subscription or DeepSeek pricing exposure. OpenRouter currently lists both target slugs as paid via OpenRouter, and its chat API supports OpenAI-compatible JSON mode.
 **Alternatives rejected:**
 - MiMo Flash as reviewer/judge — rejected because it shares too many builder-family blind spots.

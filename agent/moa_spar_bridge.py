@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
@@ -54,6 +55,9 @@ class OpenAICompatJsonClient:
     api_key_env: str
     prompt_version: str
     timeout_sec: float = 45.0
+    max_tokens: int = 900
+    retries: int = 1
+    retry_backoff_sec: float = 1.0
     transport: httpx.BaseTransport | None = None
     client: httpx.Client = field(init=False)
 
@@ -68,27 +72,38 @@ class OpenAICompatJsonClient:
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
         if not os.getenv(self.api_key_env, "").strip():
             raise RuntimeError(f"missing {self.api_key_env}")
-        response = self.client.post(
-            "/chat/completions",
-            json={
-                "model": self.model,
-                "temperature": 0.2,
-                "response_format": {"type": "json_object"},
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-            },
-        )
-        response.raise_for_status()
-        payload = response.json()
-        message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
-        content = _extract_json(message)
-        content["usage"] = _usage(payload)
-        content["estimated_cost_usd"] = 0.0
-        content["prompt_version"] = self.prompt_version
-        content["model"] = self.model
-        return content, payload
+        request_json = {
+            "model": self.model,
+            "temperature": 0.2,
+            "max_tokens": self.max_tokens,
+            "response_format": {"type": "json_object"},
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+        }
+        last_error: Exception | None = None
+        for attempt in range(self.retries + 1):
+            try:
+                response = self.client.post("/chat/completions", json=request_json)
+                response.raise_for_status()
+                payload = response.json()
+                message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
+                content = _extract_json(message)
+                content["usage"] = _usage(payload)
+                content["estimated_cost_usd"] = float((payload.get("usage") or {}).get("cost") or 0.0)
+                content["prompt_version"] = self.prompt_version
+                content["model"] = self.model
+                return content, payload
+            except (httpx.TimeoutException, httpx.TransportError, httpx.HTTPStatusError, json.JSONDecodeError, KeyError) as exc:
+                last_error = exc
+                retryable = isinstance(exc, (httpx.TimeoutException, httpx.TransportError, json.JSONDecodeError, KeyError))
+                if isinstance(exc, httpx.HTTPStatusError):
+                    retryable = exc.response.status_code in {408, 409, 425, 429, 500, 502, 503, 504}
+                if not retryable or attempt >= self.retries:
+                    raise RuntimeError(f"provider_error:{self.model}:{exc}") from exc
+                time.sleep(self.retry_backoff_sec * (attempt + 1))
+        raise RuntimeError(f"provider_error:{self.model}:{last_error}") from last_error
 
 
 @dataclass(slots=True)
@@ -191,12 +206,14 @@ class MoaSparBridgeClient:
                 base_url=openrouter_base_url,
                 api_key_env="OPENROUTER_API_KEY",
                 prompt_version="research-agent-bot/nemotron-review-v1",
+                retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),
             judge=OpenAICompatJsonClient(
-                model=os.getenv("JUDGE_MODEL", "deepseek/deepseek-v4-flash"),
+                model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it"),
                 base_url=openrouter_base_url,
                 api_key_env="OPENROUTER_API_KEY",
-                prompt_version="research-agent-bot/deepseek-v4-flash-judge-v1",
+                prompt_version="research-agent-bot/gemma-4-31b-judge-v1",
+                retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),
         )
 

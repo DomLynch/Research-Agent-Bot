@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from typing import Any
 
+import httpx
+
+from agent.moa_spar_bridge import OpenAICompatJsonClient
 from agent.moa_spar_bridge import MoaSparBridgeClient
 
 
@@ -57,8 +60,8 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
         ],
     )
     judge = StubProvider(
-        model="deepseek/deepseek-v4-flash",
-        prompt_version="test/deepseek-v4-flash",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma-4-31b",
         responses=[
             {
                 "question": "Judge draft question",
@@ -91,7 +94,7 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
     assert result["_bridge"]["moa"]["reference_models"] == [
         "mimo-v2.5-pro",
         "nvidia/nemotron-3-super-120b-a12b",
-        "deepseek/deepseek-v4-flash",
+        "google/gemma-4-31b-it",
     ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
@@ -108,8 +111,42 @@ def test_moa_spar_bridge_from_env_uses_openrouter_review_panel(monkeypatch):
 
     assert client.builder.model == "mimo-v2.5-pro"
     assert client.reviewer.model == "nvidia/nemotron-3-super-120b-a12b"
-    assert client.judge.model == "deepseek/deepseek-v4-flash"
+    assert client.judge.model == "google/gemma-4-31b-it"
     assert client.reviewer.base_url == "https://openrouter.ai/api/v1"
     assert client.judge.base_url == "https://openrouter.ai/api/v1"
     assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"
     assert client.judge.api_key_env == "OPENROUTER_API_KEY"
+
+
+def test_openrouter_client_retries_retryable_429(monkeypatch):
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter")
+    calls = 0
+
+    def handler(_: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            return httpx.Response(429, json={"error": "temporary rate limit"})
+        return httpx.Response(
+            200,
+            json={
+                "choices": [{"message": {"content": '{"ok": true}'}}],
+                "usage": {"prompt_tokens": 2, "completion_tokens": 3, "cost": 0.01},
+            },
+        )
+
+    client = OpenAICompatJsonClient(
+        model="google/gemma-4-31b-it",
+        base_url="https://openrouter.ai/api/v1",
+        api_key_env="OPENROUTER_API_KEY",
+        prompt_version="test/openrouter",
+        retries=1,
+        retry_backoff_sec=0,
+        transport=httpx.MockTransport(handler),
+    )
+
+    result, _ = client.complete_json(system_prompt="system", user_prompt="user")
+
+    assert result["ok"] is True
+    assert result["estimated_cost_usd"] == 0.01
+    assert calls == 2
