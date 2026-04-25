@@ -19,7 +19,7 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
-- Provider path uses multi-model drafting plus structured model adjudication by default: MiMo v2 Pro builder/synthesizer, MiniMax 2.7 reviewer, DeepSeek judge. Required env vars: `MIMO_API_KEY`, `MINIMAX_API_KEY`, `DEEPSEEK_API_KEY`; unavailable reviewer/judge calls degrade explicitly instead of crashing a run.
+- Provider path uses multi-model drafting plus structured model adjudication by default: MiMo v2 Pro builder/synthesizer, OpenRouter Nemotron 3 Super reviewer, OpenRouter Gemma 4 31B judge. Required env vars: `MIMO_API_KEY`, `OPENROUTER_API_KEY`; unavailable reviewer/judge calls degrade explicitly instead of crashing a run.
 
 ## Winning Path
 Deterministic planner + bounded public literature queries + directness-aware bundle + MiMo draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.
@@ -41,7 +41,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Citation-role validation is now logged in `citation_violations`, and high-severity violations trigger one revision pass before the run fails closed. Medium-severity issues remain advisory.
 
 ## Next Validation Step
- Deploy the async dashboard progress bridge, then re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site with `MIMO_API_KEY`, `MINIMAX_API_KEY`, and `DEEPSEEK_API_KEY` configured. Judge six things only: bundle relevance, evidence-tier separation, strict eligibility table accuracy, extraction-to-prose quality, abstract numeric grounding, and whether direct trials stay centered without topic-specific code.
+ Deploy the OpenRouter reviewer/judge bridge, then re-run `metformin aging older adults`, `rapamycin aging older adults`, and one blind longevity topic (for example `senolytics dasatinib quercetin older adults`) on the live site with `MIMO_API_KEY` and `OPENROUTER_API_KEY` configured. Judge six things only: bundle relevance, evidence-tier separation, strict eligibility table accuracy, extraction-to-prose quality, abstract numeric grounding, and whether direct trials stay centered without topic-specific code.
 
 ## Hardening Status
 | Step | What | Status |
@@ -98,7 +98,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 506 passed, 6 skipped, 5 xfailed
+- MacBook: 509 passed, 6 skipped, 5 xfailed
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

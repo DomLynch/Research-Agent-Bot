@@ -85,7 +85,9 @@ class OpenAICompatJsonClient:
         message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
         content = _extract_json(message)
         content["usage"] = _usage(payload)
-        content["estimated_cost_usd"] = 0.0
+        content["estimated_cost_usd"] = float((payload.get("usage") or {}).get("cost") or 0.0)
+        if self.model.endswith(":free") and content["estimated_cost_usd"] > 0:
+            raise RuntimeError(f"free model reported nonzero cost: {self.model}")
         content["prompt_version"] = self.prompt_version
         content["model"] = self.model
         return content, payload
@@ -192,19 +194,21 @@ class MoaSparBridgeClient:
 
     @classmethod
     def from_env(cls, *, builder: JsonProvider | None = None) -> "MoaSparBridgeClient":
+        openrouter_base = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
+        openrouter_key_env = os.getenv("OPENROUTER_API_KEY_ENV", "OPENROUTER_API_KEY")
         return cls(
             builder=builder or MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
-                model=os.getenv("MINIMAX_MODEL", "MiniMax-M2.7-highspeed"),
-                base_url=os.getenv("MINIMAX_BASE_URL", "https://api.minimax.io/v1"),
-                api_key_env="MINIMAX_API_KEY",
-                prompt_version="research-agent-bot/minimax-review-v1",
+                model=os.getenv("REVIEWER_MODEL", "nvidia/nemotron-3-super-120b-a12b:free"),
+                base_url=os.getenv("REVIEWER_BASE_URL", openrouter_base),
+                api_key_env=os.getenv("REVIEWER_API_KEY_ENV", openrouter_key_env),
+                prompt_version="research-agent-bot/nemotron-review-v1",
             ),
             judge=OpenAICompatJsonClient(
-                model=os.getenv("DEEPSEEK_MODEL", "deepseek-reasoner"),
-                base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
-                api_key_env="DEEPSEEK_API_KEY",
-                prompt_version="research-agent-bot/deepseek-judge-v1",
+                model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it:free"),
+                base_url=os.getenv("JUDGE_BASE_URL", openrouter_base),
+                api_key_env=os.getenv("JUDGE_API_KEY_ENV", openrouter_key_env),
+                prompt_version="research-agent-bot/gemma4-judge-v1",
             ),
         )
 

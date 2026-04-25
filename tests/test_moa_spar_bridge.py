@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from typing import Any
 
+import httpx
+
+from agent.moa_spar_bridge import OpenAICompatJsonClient
 from agent.moa_spar_bridge import MoaSparBridgeClient
 
 
@@ -35,16 +38,16 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
         ],
     )
     reviewer = StubProvider(
-        model="MiniMax-M2.7-highspeed",
-        prompt_version="test/minimax",
+        model="nvidia/nemotron-3-super-120b-a12b:free",
+        prompt_version="test/nemotron",
         responses=[
             {"question": "Reviewer draft", "usage": {"input_tokens": 9, "output_tokens": 4}, "estimated_cost_usd": 0.03},
             {"approved": True, "summary": "Looks complete.", "issues": [], "fix": None, "usage": {"input_tokens": 8, "output_tokens": 3}, "estimated_cost_usd": 0.04},
         ],
     )
     judge = StubProvider(
-        model="deepseek-reasoner",
-        prompt_version="test/deepseek",
+        model="google/gemma-4-31b-it:free",
+        prompt_version="test/gemma4",
         responses=[
             {"question": "Judge draft", "usage": {"input_tokens": 11, "output_tokens": 6}, "estimated_cost_usd": 0.05},
             {"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None, "usage": {"input_tokens": 7, "output_tokens": 2}, "estimated_cost_usd": 0.06},
@@ -58,7 +61,11 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
     assert result["model"] == "moa-spar-bridge"
     assert result["usage"] == {"input_tokens": 57, "output_tokens": 27, "total_tokens": 84}
     assert result["estimated_cost_usd"] == 0.21
-    assert result["_bridge"]["moa"]["reference_models"] == ["mimo-v2-pro", "MiniMax-M2.7-highspeed", "deepseek-reasoner"]
+    assert result["_bridge"]["moa"]["reference_models"] == [
+        "mimo-v2-pro",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-31b-it:free",
+    ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
     assert "moa" in raw
@@ -76,8 +83,8 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
         ],
     )
     reviewer = StubProvider(
-        model="MiniMax-M2.7-highspeed",
-        prompt_version="test/minimax",
+        model="nvidia/nemotron-3-super-120b-a12b:free",
+        prompt_version="test/nemotron",
         responses=[
             {"question": "Reviewer"},
             {"summary": "Missing approved boolean"},
@@ -85,8 +92,8 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
         ],
     )
     judge = StubProvider(
-        model="deepseek-reasoner",
-        prompt_version="test/deepseek",
+        model="google/gemma-4-31b-it:free",
+        prompt_version="test/gemma4",
         responses=[
             {"question": "Judge"},
             {"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None},
@@ -107,13 +114,13 @@ def test_moa_spar_bridge_accepts_null_review_issues() -> None:
         responses=[{"question": "Self"}, {"question": "Candidate"}],
     )
     reviewer = StubProvider(
-        model="MiniMax-M2.7-highspeed",
-        prompt_version="test/minimax",
+        model="nvidia/nemotron-3-super-120b-a12b:free",
+        prompt_version="test/nemotron",
         responses=[{"question": "Reviewer"}, {"approved": True, "summary": "No material issues.", "issues": None, "fix": None}],
     )
     judge = StubProvider(
-        model="deepseek-reasoner",
-        prompt_version="test/deepseek",
+        model="google/gemma-4-31b-it:free",
+        prompt_version="test/gemma4",
         responses=[{"question": "Judge"}, {"approved": True, "summary": "Judge agrees.", "issues": None, "fix": None}],
     )
 
@@ -132,8 +139,8 @@ def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails() -> Non
             {"question": "Fast degraded fallback", "findings": "usable"},
         ],
     )
-    reviewer = StubProvider(model="MiniMax-M2.7-highspeed", prompt_version="test/minimax", responses=[{"question": "Reviewer"}])
-    judge = FailingProvider(model="deepseek-reasoner", prompt_version="test/deepseek", responses=[])
+    reviewer = StubProvider(model="nvidia/nemotron-3-super-120b-a12b:free", prompt_version="test/nemotron", responses=[{"question": "Reviewer"}])
+    judge = FailingProvider(model="google/gemma-4-31b-it:free", prompt_version="test/gemma4", responses=[])
     client = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge)
 
     result, raw = client.complete_json(system_prompt="system", user_prompt="user")
@@ -146,3 +153,78 @@ def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails() -> Non
     assert second["question"] == "Fast degraded fallback"
     assert second_raw["degraded"] is True
     assert reviewer.remaining == 0
+
+
+def test_moa_spar_bridge_from_env_defaults_to_openrouter_free_models(monkeypatch) -> None:
+    monkeypatch.setenv("MIMO_API_KEY", "test-mimo")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter")
+    monkeypatch.delenv("REVIEWER_MODEL", raising=False)
+    monkeypatch.delenv("JUDGE_MODEL", raising=False)
+    monkeypatch.delenv("REVIEWER_BASE_URL", raising=False)
+    monkeypatch.delenv("JUDGE_BASE_URL", raising=False)
+    monkeypatch.delenv("REVIEWER_API_KEY_ENV", raising=False)
+    monkeypatch.delenv("JUDGE_API_KEY_ENV", raising=False)
+
+    client = MoaSparBridgeClient.from_env()
+
+    assert client.builder.model == "mimo-v2-pro"
+    assert client.reviewer.model == "nvidia/nemotron-3-super-120b-a12b:free"
+    assert client.judge.model == "google/gemma-4-31b-it:free"
+    assert client.reviewer.base_url == "https://openrouter.ai/api/v1"
+    assert client.judge.base_url == "https://openrouter.ai/api/v1"
+    assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"
+    assert client.judge.api_key_env == "OPENROUTER_API_KEY"
+
+
+def test_openrouter_free_client_records_zero_cost(monkeypatch) -> None:
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter")
+
+    def handler(_: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "choices": [{"message": {"content": '{"ok": true}'}}],
+                "usage": {"prompt_tokens": 2, "completion_tokens": 3, "cost": 0},
+            },
+        )
+
+    client = OpenAICompatJsonClient(
+        model="google/gemma-4-31b-it:free",
+        base_url="https://openrouter.ai/api/v1",
+        api_key_env="OPENROUTER_API_KEY",
+        prompt_version="test/free",
+        transport=httpx.MockTransport(handler),
+    )
+
+    result, _ = client.complete_json(system_prompt="system", user_prompt="user")
+
+    assert result["ok"] is True
+    assert result["estimated_cost_usd"] == 0.0
+
+
+def test_openrouter_free_client_rejects_nonzero_reported_cost(monkeypatch) -> None:
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter")
+
+    def handler(_: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "choices": [{"message": {"content": '{"ok": true}'}}],
+                "usage": {"prompt_tokens": 2, "completion_tokens": 3, "cost": 0.01},
+            },
+        )
+
+    client = OpenAICompatJsonClient(
+        model="nvidia/nemotron-3-super-120b-a12b:free",
+        base_url="https://openrouter.ai/api/v1",
+        api_key_env="OPENROUTER_API_KEY",
+        prompt_version="test/free",
+        transport=httpx.MockTransport(handler),
+    )
+
+    try:
+        client.complete_json(system_prompt="system", user_prompt="user")
+    except RuntimeError as exc:
+        assert "free model reported nonzero cost" in str(exc)
+    else:
+        raise AssertionError("expected nonzero free-model cost to fail")
