@@ -240,7 +240,11 @@ class MoaSparBridgeClient:
             "mode": "moa_spar_degraded",
             "error": str(exc),
             "moa": {
-                "reference_models": [_route_label(self.builder), _route_label(self.reviewer), _route_label(self.judge)],
+                "reference_models": (
+                    [_route_label(self.builder), _route_label(self.reviewer), _route_label(self.judge)]
+                    if self.reference_drafts
+                    else [_route_label(self.builder)]
+                ),
                 "aggregator_model": _route_label(self.builder),
             },
             "spar": {
