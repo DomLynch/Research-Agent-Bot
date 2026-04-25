@@ -993,6 +993,17 @@ class LeakyProvider:
         return (data, {"choices": [{"message": {"content": "raw"}}], "usage": {}})
 
 
+class GoodThenLeakyProvider(FakeProvider):
+    def __init__(self) -> None:
+        self.calls = 0
+
+    def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
+        self.calls += 1
+        if self.calls == 1:
+            return super().complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        return LeakyProvider().complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+
+
 def test_all_fallback_raises_error(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
     monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
@@ -1001,6 +1012,27 @@ def test_all_fallback_raises_error(tmp_path: Path, monkeypatch) -> None:
     run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
 
     assert "all sections fell back" in run.get("error", "")
+
+
+def test_revision_failure_does_not_replace_original_artifact(tmp_path: Path, monkeypatch) -> None:
+    provider = GoodThenLeakyProvider()
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "PubMedClient", lambda: GoodSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: provider))
+    monkeypatch.setattr(
+        cli,
+        "validate_draft_quality",
+        lambda artifact, source_bundle: [{"section": "Abstract", "severity": "high", "issue": "abstract_missing_numeric_effect"}],
+    )
+
+    run = cli.run_agent(topic="rapamycin", domain="anti-aging", criteria="", run_dir=str(tmp_path))
+
+    assert provider.calls == 2
+    assert "High-severity draft-quality violations remained" in run.get("error", "")
+    assert "all sections fell back" not in run.get("error", "")
+    assert run.get("revision_error") == "Model contributed no usable content — all sections fell back to templates."
+    assert run["source_bundle"]
 
 
 def test_insufficient_evidence(tmp_path: Path, monkeypatch) -> None:

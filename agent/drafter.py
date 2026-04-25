@@ -2137,6 +2137,13 @@ class RapidEvidenceDrafter:
     def __init__(self, *, provider: Any) -> None:
         self.provider = provider
 
+    def _aux_provider(self) -> Any:
+        # Reranking, labeling, and final polishing are small control tasks.
+        # If the main provider is the adjudication bridge, use its builder
+        # directly here so these microtasks do not trigger full reviewer/judge
+        # rounds and dominate latency.
+        return getattr(self.provider, "builder", self.provider)
+
     def _rerank_with_mimo(
         self,
         *,
@@ -2145,7 +2152,8 @@ class RapidEvidenceDrafter:
         criteria: str,
         candidates: list[dict[str, Any]],
     ) -> tuple[bool, dict[str, Any] | None]:
-        if not getattr(self.provider, "supports_reranking", False) or not candidates:
+        provider = self._aux_provider()
+        if not getattr(provider, "supports_reranking", False) or not candidates:
             return False, None
         system_prompt = (
             "You are a relevance judge for a biomedical evidence bundle. Return JSON only with key 'assessments'. "
@@ -2163,7 +2171,7 @@ class RapidEvidenceDrafter:
             "drop = too weak, off-scope, or not decision-relevant\n\n"
             f"Candidates:\n{_candidate_summary_lines(candidates, limit=16)}"
         )
-        result, _ = self.provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        result, _ = provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
         result = {str(k).lower(): v for k, v in result.items()}
         assessments = result.get("assessments")
         if not isinstance(assessments, list):
@@ -2179,7 +2187,8 @@ class RapidEvidenceDrafter:
         criteria: str,
         candidates: list[dict[str, Any]],
     ) -> tuple[bool, dict[str, Any] | None]:
-        if not getattr(self.provider, "supports_labeling", False) or not candidates:
+        provider = self._aux_provider()
+        if not getattr(provider, "supports_labeling", False) or not candidates:
             return False, None
         system_prompt = (
             "You are a citation-role and evidence-tier classifier for a biomedical review. Return JSON only with key 'labels'. "
@@ -2195,7 +2204,7 @@ class RapidEvidenceDrafter:
             "Do not invent IDs or add explanation.\n\n"
             f"Candidates:\n{_candidate_summary_lines(candidates, limit=12)}"
         )
-        result, _ = self.provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        result, _ = provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
         result = {str(k).lower(): v for k, v in result.items()}
         labels = result.get("labels")
         if not isinstance(labels, list):
@@ -2213,7 +2222,8 @@ class RapidEvidenceDrafter:
         sections: dict[str, str],
         source_bundle: list[dict[str, Any]],
     ) -> tuple[dict[str, str], dict[str, Any] | None]:
-        if not getattr(self.provider, "supports_refinement", False):
+        provider = self._aux_provider()
+        if not getattr(provider, "supports_refinement", False):
             return {}, None
         system_prompt = (
             "You are the final editor for a rapid evidence synthesis. Return JSON only with plain-string keys: "
@@ -2235,7 +2245,7 @@ class RapidEvidenceDrafter:
             f"Current Conclusion:\n{sections.get('Conclusion', '')}\n\n"
             f"Bundle summary:\n{_editor_bundle_lines(source_bundle)}"
         )
-        result, _ = self.provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        result, _ = provider.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
         result = {str(k).lower(): v for k, v in result.items()}
         updates = {
             "abstract": _clean(result.get("abstract"), limit=1600),

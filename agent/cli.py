@@ -320,6 +320,15 @@ def _draft_revision_feedback(violations: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
+def _artifact_has_renderable_content(artifact: dict[str, Any]) -> bool:
+    sections = artifact.get("sections")
+    return bool(
+        artifact.get("abstract")
+        or (isinstance(sections, dict) and any(str(value or "").strip() for value in sections.values()))
+        or artifact.get("source_bundle")
+    )
+
+
 def _validate_artifact(artifact: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     source_bundle = artifact.get("source_bundle", [])
     citation_violations = validate_citations(artifact, source_bundle)
@@ -719,8 +728,24 @@ def run_agent(
         high_severity = [*high_severity_citation, *high_severity_draft_quality]
         _emit_progress(progress, percent=84, step="validate", message="Running deterministic citation, tier, and draft-quality validators.", high_severity=len(high_severity))
         if high_severity and not artifact.get("error"):
+            if _repair_conclusion_contradictions(artifact, high_severity_draft_quality):
+                (
+                    citation_violations,
+                    draft_quality_violations,
+                    high_severity_citation,
+                    high_severity_draft_quality,
+                ) = _validate_artifact(artifact)
+                high_severity = [*high_severity_citation, *high_severity_draft_quality]
+        if high_severity and not artifact.get("error"):
             _emit_progress(progress, percent=88, step="revise", message="Running one bounded revision pass for high-severity validator findings.")
-            artifact, retry_raw = drafter.draft(
+            original_artifact = artifact
+            original_validation = (
+                citation_violations,
+                draft_quality_violations,
+                high_severity_citation,
+                high_severity_draft_quality,
+            )
+            retry_artifact, retry_raw = drafter.draft(
                 topic=resolved_topic,
                 domain_slug=domain,
                 criteria=criteria,
@@ -737,12 +762,32 @@ def run_agent(
                 run_dir_p.mkdir(parents=True, exist_ok=True)
                 stem = _run_stem(started_at, topic)
                 (run_dir_p / f"{stem}.retry.raw.json").write_text(json.dumps(retry_raw, indent=2), encoding="utf-8")
-            (
-                citation_violations,
-                draft_quality_violations,
-                high_severity_citation,
-                high_severity_draft_quality,
-            ) = _validate_artifact(artifact)
+            if retry_artifact.get("error") or not _artifact_has_renderable_content(retry_artifact):
+                artifact = original_artifact
+                artifact["revision_error"] = retry_artifact.get("error") or "Revision returned no renderable content."
+                (
+                    citation_violations,
+                    draft_quality_violations,
+                    high_severity_citation,
+                    high_severity_draft_quality,
+                ) = original_validation
+            else:
+                artifact = retry_artifact
+                (
+                    citation_violations,
+                    draft_quality_violations,
+                    high_severity_citation,
+                    high_severity_draft_quality,
+                ) = _validate_artifact(artifact)
+                high_severity = [*high_severity_citation, *high_severity_draft_quality]
+                if high_severity and not artifact.get("error"):
+                    if _repair_conclusion_contradictions(artifact, high_severity_draft_quality):
+                        (
+                            citation_violations,
+                            draft_quality_violations,
+                            high_severity_citation,
+                            high_severity_draft_quality,
+                        ) = _validate_artifact(artifact)
             high_severity = [*high_severity_citation, *high_severity_draft_quality]
             if high_severity and not artifact.get("error"):
                 if _repair_conclusion_contradictions(artifact, high_severity_draft_quality):

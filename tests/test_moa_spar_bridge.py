@@ -29,6 +29,16 @@ class FailingProvider(StubProvider):
         raise RuntimeError("provider unavailable")
 
 
+class PromptCapturingProvider(StubProvider):
+    def __init__(self, *, model: str, prompt_version: str, responses: list[dict[str, Any]]) -> None:
+        super().__init__(model=model, prompt_version=prompt_version, responses=responses)
+        self.prompts: list[str] = []
+
+    def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
+        self.prompts.append(user_prompt)
+        return super().complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+
+
 def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
     builder = StubProvider(
         model="mimo-v2.5-pro",
@@ -102,6 +112,35 @@ def test_moa_spar_bridge_defaults_to_fast_review_only_path() -> None:
     assert raw["moa"]["raw"]["synth"] == {"skipped": "reference_drafts_disabled"}
     assert reviewer.remaining == 0
     assert judge.remaining == 0
+    assert "timings_sec" in raw
+
+
+def test_moa_spar_bridge_reviews_raw_draft_schema_not_final_artifact_schema() -> None:
+    builder = StubProvider(
+        model="mimo-v2.5-pro",
+        prompt_version="test/mimo",
+        responses=[{"question": "Draft question", "findings": "Draft findings", "conclusion": "Draft conclusion"}],
+    )
+    reviewer = PromptCapturingProvider(
+        model="nvidia/nemotron-3-super-120b-a12b",
+        prompt_version="test/nemotron",
+        responses=[{"approved": True, "summary": "Raw draft schema is complete.", "issues": [], "fix": None}],
+    )
+    judge = StubProvider(
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
+        responses=[{"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None}],
+    )
+
+    result, _ = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(
+        system_prompt="Return exactly these JSON keys: question, findings, conclusion.",
+        user_prompt="Topic: rapamycin",
+    )
+
+    assert result["question"] == "Draft question"
+    assert "task_system_excerpt" in reviewer.prompts[0]
+    assert "question" in reviewer.prompts[0]
+    assert "source_bundle" not in reviewer.prompts[0]
 
 
 def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:

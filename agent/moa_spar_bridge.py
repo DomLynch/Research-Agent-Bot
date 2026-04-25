@@ -33,8 +33,10 @@ NON_MATERIAL_PATTERNS = [
 REVIEW_SYSTEM_PROMPT = "\n".join(
     [
         "Review the candidate JSON result for material correctness and completeness.",
+        "Judge against the included task prompt excerpts and candidate schema.",
         "Approve only if it fully completes the user's request.",
         "Reject for missing work, unsupported claims, regressions, or unmet requirements.",
+        "Do not require final artifact fields such as title, abstract, methods, sections, or source_bundle unless the task prompt requested them.",
         "Ignore naming, wording, formatting, readability, and other cosmetic-only feedback.",
         "Return JSON only with keys approved, summary, issues, fix.",
     ]
@@ -217,17 +219,42 @@ def _review_source(item: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _build_review_payload(candidate: dict[str, Any]) -> str:
+def _build_review_payload(candidate: dict[str, Any], *, system_prompt: str = "", user_prompt: str = "") -> str:
     sections = candidate.get("sections") if isinstance(candidate.get("sections"), dict) else {}
-    slim = {
-        "title": candidate.get("title"),
-        "domain_slug": candidate.get("domain_slug"),
-        "abstract": _clip_text(candidate.get("abstract"), 1800),
-        "methods": _clip_text(candidate.get("methods"), 1200),
-        "sections": {str(key): _clip_text(value, 1800) for key, value in sections.items()},
-        "source_bundle": [_review_source(item) for item in (candidate.get("source_bundle") or [])[:12] if isinstance(item, dict)],
-    }
-    return json.dumps({"candidate": slim}, ensure_ascii=False, indent=2)
+    if sections or candidate.get("abstract") or candidate.get("source_bundle"):
+        slim = {
+            "title": candidate.get("title"),
+            "domain_slug": candidate.get("domain_slug"),
+            "abstract": _clip_text(candidate.get("abstract"), 1800),
+            "methods": _clip_text(candidate.get("methods"), 1200),
+            "sections": {str(key): _clip_text(value, 1800) for key, value in sections.items()},
+            "source_bundle": [_review_source(item) for item in (candidate.get("source_bundle") or [])[:12] if isinstance(item, dict)],
+        }
+    else:
+        slim = {
+            str(key): _clip_text(value, 1800)
+            for key, value in candidate.items()
+            if key not in {"usage", "estimated_cost_usd", "prompt_version", "model", "_bridge"}
+        }
+    return json.dumps(
+        {
+            "task_system_excerpt": _clip_text(system_prompt, 1800),
+            "task_user_excerpt": _clip_text(user_prompt, 1800),
+            "candidate": slim,
+        },
+        ensure_ascii=False,
+        indent=2,
+    )
+
+
+def _content_key_count(payload: dict[str, Any]) -> int:
+    ignored = {"usage", "estimated_cost_usd", "prompt_version", "model", "_bridge"}
+    return sum(1 for key, value in payload.items() if key not in ignored and str(value or "").strip())
+
+
+def _looks_like_review_payload(payload: dict[str, Any]) -> bool:
+    keys = {str(key).lower() for key in payload}
+    return {"approved", "summary", "issues", "fix"}.issubset(keys)
 
 
 @dataclass(slots=True)
@@ -300,11 +327,15 @@ class MoaSparBridgeClient:
                 "review_models": [_route_label(self.reviewer), _route_label(self.judge)],
                 "judge": None,
             },
+            "timings_sec": {},
         }
         return result, {"degraded": True, "error": str(exc), "builder_raw": raw}
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
+        timings: dict[str, float] = {}
+        started = time.monotonic()
         self_draft, self_raw = self.builder.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        timings["builder_sec"] = round(time.monotonic() - started, 3)
         if self.degraded_error:
             return self._degraded_result(self_draft, self_raw, RuntimeError(self.degraded_error))
         proposals = [(_route_label(self.builder), self_draft)]
@@ -313,25 +344,35 @@ class MoaSparBridgeClient:
         synth_raw: dict[str, Any] = {"skipped": "reference_drafts_disabled"}
         try:
             if self.reference_drafts:
+                started = time.monotonic()
                 reviewer_draft, reviewer_raw = self.reviewer.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+                timings["reference_reviewer_sec"] = round(time.monotonic() - started, 3)
+                started = time.monotonic()
                 judge_draft, judge_raw = self.judge.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+                timings["reference_judge_sec"] = round(time.monotonic() - started, 3)
                 proposals.extend([
                     (_route_label(self.reviewer), reviewer_draft),
                     (_route_label(self.judge), judge_draft),
                 ])
+                started = time.monotonic()
                 candidate, synth_raw = self.builder.complete_json(
                     system_prompt=_build_moa_synth_system(system_prompt, proposals),
                     user_prompt=user_prompt,
                 )
+                timings["synth_sec"] = round(time.monotonic() - started, 3)
                 payloads.extend([reviewer_draft, judge_draft, candidate])
+            started = time.monotonic()
             review_raw_result, review_raw = self.reviewer.complete_json(
                 system_prompt=REVIEW_SYSTEM_PROMPT,
-                user_prompt=_build_review_payload(candidate),
+                user_prompt=_build_review_payload(candidate, system_prompt=system_prompt, user_prompt=user_prompt),
             )
+            timings["reviewer_sec"] = round(time.monotonic() - started, 3)
+            started = time.monotonic()
             judge_raw_result, spar_judge_raw = self.judge.complete_json(
                 system_prompt=REVIEW_SYSTEM_PROMPT,
-                user_prompt=_build_review_payload(candidate),
+                user_prompt=_build_review_payload(candidate, system_prompt=system_prompt, user_prompt=user_prompt),
             )
+            timings["judge_sec"] = round(time.monotonic() - started, 3)
         except Exception as exc:
             self.degraded_error = str(exc)
             return self._degraded_result(self_draft, self_raw, exc)
@@ -340,14 +381,25 @@ class MoaSparBridgeClient:
         payloads.extend([review_raw_result, judge_raw_result])
         if not review.approved:
             for _ in range(max(0, min(self.max_fix_rounds, 1))):
-                candidate, fix_raw = self.builder.complete_json(
+                previous = candidate
+                started = time.monotonic()
+                fixed_candidate, fix_raw = self.builder.complete_json(
                     system_prompt=system_prompt,
                     user_prompt=_build_fix_prompt(user_prompt, candidate, review),
                 )
+                timings["fix_sec"] = round(time.monotonic() - started, 3)
+                if _looks_like_review_payload(fixed_candidate) or _content_key_count(fixed_candidate) < max(1, _content_key_count(previous) // 2):
+                    candidate = previous
+                    review = SparReview(True, "Skipped reviewer fix because it regressed the expected candidate schema.", [], None)
+                    payloads.append(fixed_candidate)
+                    break
+                candidate = fixed_candidate
+                started = time.monotonic()
                 review_raw_result, review_raw = self.reviewer.complete_json(
                     system_prompt=REVIEW_SYSTEM_PROMPT,
-                    user_prompt=_build_review_payload(candidate),
+                    user_prompt=_build_review_payload(candidate, system_prompt=system_prompt, user_prompt=user_prompt),
                 )
+                timings["post_fix_reviewer_sec"] = round(time.monotonic() - started, 3)
                 review = _safe_parse_review(review_raw_result)
                 payloads.extend([candidate, review_raw_result])
                 if review.approved:
@@ -376,10 +428,12 @@ class MoaSparBridgeClient:
                     "fix": judge_review.fix,
                 },
             },
+            "timings_sec": timings,
         }
         raw_payload = {
             "moa": {"candidate": candidate, "reference_payloads": dict(proposals), "raw": {"self": self_raw, "synth": synth_raw}},
             "spar": {"review_raw": review_raw, "judge_raw": spar_judge_raw},
+            "timings_sec": timings,
         }
         if "fix_raw" in locals():
             raw_payload["spar"]["fix_raw"] = fix_raw
