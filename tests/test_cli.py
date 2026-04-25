@@ -64,6 +64,24 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
     assert "Reasoning: MoA+Spar" not in markdown
 
 
+def test_payload_markdown_tolerates_null_bridge_lists() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: metformin",
+            "domain_slug": "longevity",
+            "abstract": "A trial reported 0.57 versus 0.58 m/s [1].",
+            "sections": {"Key Findings": "Null result reported [1]."},
+            "source_bundle": [],
+            "bridge": {"moa": {"reference_models": None}, "spar": {"approved": False, "issues": None}},
+        },
+        topic="metformin",
+        criteria="",
+    )
+
+    assert "Generation: not reported (multi-model drafting)" in markdown
+    assert "reviewer issues flagged: 0" in markdown
+
+
 class FakeProvider:
     prompt_version = "test-prompt/v1"
     model = "MiniMax-M2.7-highspeed"

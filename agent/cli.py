@@ -45,6 +45,14 @@ _CITATION_RE = re.compile(r"\[(\d+)\]")
 _P_VALUE_RE = re.compile(r"\bp\s*[<=>]\s*0?\.\d+", re.IGNORECASE)
 
 
+def _listish(value: Any) -> list[Any]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    return [value]
+
+
 def _emit_progress(
     progress: ProgressCallback | None,
     *,
@@ -429,9 +437,9 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     ]
     if payload.get("bridge"):
         bridge = payload["bridge"]
-        models = ", ".join((bridge.get("moa") or {}).get("reference_models") or [])
+        models = ", ".join(str(item) for item in _listish((bridge.get("moa") or {}).get("reference_models"))) or "not reported"
         spar = bridge.get("spar") or {}
-        issues = len(spar.get("issues") or [])
+        issues = len(_listish(spar.get("issues")))
         status = "adjudicated" if spar.get("approved") else "machine-reviewed with unresolved/degraded review"
         lines.append(f"- Generation: {models} (multi-model drafting)")
         lines.append(f"- Adjudication: structured model adjudication; reviewer issues flagged: {issues}; status: {status}")
