@@ -207,6 +207,24 @@ def test_moa_spar_bridge_from_env_defaults_to_openrouter_models(monkeypatch) -> 
     assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"
     assert client.judge.api_key_env == "OPENROUTER_API_KEY"
     assert client.reference_drafts is False
+    assert client.reviewer.timeout_sec == 65
+    assert client.judge.timeout_sec == 65
+    assert client.reviewer.retries == 1
+    assert client.judge.retries == 1
+
+
+def test_moa_spar_bridge_from_env_honors_openrouter_timeout_and_retries(monkeypatch) -> None:
+    monkeypatch.setenv("MIMO_API_KEY", "test-mimo")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter")
+    monkeypatch.setenv("OPENROUTER_TIMEOUT_SEC", "12")
+    monkeypatch.setenv("OPENROUTER_RETRIES", "2")
+
+    client = MoaSparBridgeClient.from_env()
+
+    assert client.reviewer.timeout_sec == 12
+    assert client.judge.timeout_sec == 12
+    assert client.reviewer.retries == 2
+    assert client.judge.retries == 2
 
 
 def test_openrouter_client_records_reported_cost(monkeypatch) -> None:
@@ -262,3 +280,36 @@ def test_openrouter_client_allows_reported_cost_for_paid_models(monkeypatch) -> 
 
     assert result["ok"] is True
     assert result["estimated_cost_usd"] == 0.01
+
+
+def test_openrouter_client_retries_retryable_transport_error(monkeypatch) -> None:
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter")
+    calls = 0
+
+    def handler(_: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            raise httpx.ConnectError("temporary connect failure")
+        return httpx.Response(
+            200,
+            json={
+                "choices": [{"message": {"content": '{"ok": true}'}}],
+                "usage": {"prompt_tokens": 2, "completion_tokens": 3, "cost": 0.01},
+            },
+        )
+
+    client = OpenAICompatJsonClient(
+        model="google/gemma-4-31b-it",
+        base_url="https://openrouter.ai/api/v1",
+        api_key_env="OPENROUTER_API_KEY",
+        prompt_version="test/openrouter",
+        retries=1,
+        retry_backoff_sec=0,
+        transport=httpx.MockTransport(handler),
+    )
+
+    result, _ = client.complete_json(system_prompt="system", user_prompt="user")
+
+    assert result["ok"] is True
+    assert calls == 2

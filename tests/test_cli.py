@@ -107,6 +107,32 @@ def test_payload_markdown_renders_adjudication_issue_notes() -> None:
     assert "Strict target eligibility was not met." in markdown
 
 
+def test_payload_markdown_separates_operational_bridge_failures() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: metformin",
+            "domain_slug": "longevity",
+            "abstract": "A trial reported no benefit [1].",
+            "sections": {"Key Findings": "Null result reported [1]."},
+            "source_bundle": [],
+            "bridge": {
+                "moa": {"reference_models": ["mimo-v2.5-pro"]},
+                "spar": {
+                    "approved": False,
+                    "issues": ["bridge_provider_error:nvidia/nemotron exceeded timeout"],
+                    "review_models": ["nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"],
+                },
+            },
+        },
+        topic="metformin",
+        criteria="",
+    )
+
+    assert "reviewer issues flagged: 0; status: machine-reviewed with unresolved/degraded review; operational degradation: 1" in markdown
+    assert "Operational degradation:" in markdown
+    assert "Reviewer issues:" not in markdown
+
+
 class FakeProvider:
     prompt_version = "test-prompt/v1"
     model = "nvidia/nemotron-3-super-120b-a12b"

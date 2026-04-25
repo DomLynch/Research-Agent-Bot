@@ -56,6 +56,8 @@ class OpenAICompatJsonClient:
     prompt_version: str
     timeout_sec: float = 45.0
     max_tokens: int = 900
+    retries: int = 1
+    retry_backoff_sec: float = 1.5
     transport: httpx.BaseTransport | None = None
     client: httpx.Client = field(init=False)
 
@@ -80,22 +82,34 @@ class OpenAICompatJsonClient:
                 {"role": "user", "content": user_prompt},
             ],
         }
-        started = time.monotonic()
-        chunks: list[bytes] = []
-        with self.client.stream("POST", "/chat/completions", json=request_json) as response:
-            response.raise_for_status()
-            for chunk in response.iter_bytes():
-                chunks.append(chunk)
-                if time.monotonic() - started > self.timeout_sec:
-                    raise httpx.TimeoutException(f"{self.model} exceeded {self.timeout_sec:.0f}s wall timeout")
-        payload = json.loads(b"".join(chunks))
-        message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
-        content = _extract_json(message)
-        content["usage"] = _usage(payload)
-        content["estimated_cost_usd"] = float((payload.get("usage") or {}).get("cost") or 0.0)
-        content["prompt_version"] = self.prompt_version
-        content["model"] = self.model
-        return content, payload
+        last_error: Exception | None = None
+        for attempt in range(self.retries + 1):
+            started = time.monotonic()
+            chunks: list[bytes] = []
+            try:
+                with self.client.stream("POST", "/chat/completions", json=request_json) as response:
+                    response.raise_for_status()
+                    for chunk in response.iter_bytes():
+                        chunks.append(chunk)
+                        if time.monotonic() - started > self.timeout_sec:
+                            raise httpx.TimeoutException(f"{self.model} exceeded {self.timeout_sec:.0f}s wall timeout")
+                payload = json.loads(b"".join(chunks))
+                message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
+                content = _extract_json(message)
+                content["usage"] = _usage(payload)
+                content["estimated_cost_usd"] = float((payload.get("usage") or {}).get("cost") or 0.0)
+                content["prompt_version"] = self.prompt_version
+                content["model"] = self.model
+                return content, payload
+            except (httpx.TimeoutException, httpx.HTTPStatusError, httpx.TransportError, json.JSONDecodeError, KeyError) as exc:
+                last_error = exc
+                retryable = isinstance(exc, (httpx.TimeoutException, httpx.TransportError, json.JSONDecodeError, KeyError))
+                if isinstance(exc, httpx.HTTPStatusError):
+                    retryable = exc.response.status_code in {408, 409, 425, 429, 500, 502, 503, 504}
+                if not retryable or attempt >= self.retries:
+                    raise RuntimeError(f"provider_error:{self.model}:{exc}") from exc
+                time.sleep(self.retry_backoff_sec * (attempt + 1))
+        raise RuntimeError(f"provider_error:{self.model}:{last_error}") from last_error
 
 
 @dataclass(slots=True)
@@ -242,14 +256,16 @@ class MoaSparBridgeClient:
                 base_url=os.getenv("REVIEWER_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("REVIEWER_API_KEY_ENV", openrouter_key_env),
                 prompt_version="research-agent-bot/nemotron-review-v1",
-                timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "20")),
+                timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "65")),
+                retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),
             judge=OpenAICompatJsonClient(
                 model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it"),
                 base_url=os.getenv("JUDGE_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("JUDGE_API_KEY_ENV", openrouter_key_env),
                 prompt_version="research-agent-bot/gemma4-31b-judge-v1",
-                timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "20")),
+                timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "65")),
+                retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),
             reference_drafts=os.getenv("MOA_REFERENCE_DRAFTS", "").strip().lower() in {"1", "true", "yes"},
         )

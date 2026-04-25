@@ -109,7 +109,7 @@ _RAW_RESULT_SENTENCE_RE = re.compile(
     r"^(?:Published results|Meta-analysis)\s+\[R?\d+\]\s+(?:report|reported)\b",
     re.IGNORECASE,
 )
-_CITATION_TOKEN_RE = re.compile(r"\[(R?\d+)\]", re.IGNORECASE)
+_CITATION_TOKEN_RE = re.compile(r"\[(R*\d+)\]", re.IGNORECASE)
 _PREPRINT_SIGNAL_RE = re.compile(r"\b(preprint|biorxiv|medrxiv)\b", re.IGNORECASE)
 _RCT_SIGNAL_RE = re.compile(r"\b(randomi[sz]ed|double-blind|placebo-controlled|rct)\b", re.IGNORECASE)
 _CONTROLLED_RESULT_RE = re.compile(
@@ -197,8 +197,8 @@ _CONTROL_COMPARATOR_RE = re.compile(
 )
 _NEGATED_TOPIC_RE_TEMPLATE = r"\b(?:not|rather than|instead of)\s+(?:the\s+)?{term}\b"
 _SINGULAR_STUDY_RE = re.compile(r"\b(one|single|a)\s+(trial|study|rct|cohort)\b", re.IGNORECASE)
-_CITATION_CLUSTER_RE = re.compile(r"\[((?:R?\d+\s*,\s*)+R?\d+)\]", re.IGNORECASE)
-_ANY_CITATION_RE = re.compile(r"\[((?:R?\d+\s*,\s*)*R?\d+)\]", re.IGNORECASE)
+_CITATION_CLUSTER_RE = re.compile(r"\[((?:R*\d+\s*,\s*)+R*\d+)\]", re.IGNORECASE)
+_ANY_CITATION_RE = re.compile(r"\[((?:R*\d+\s*,\s*)*R*\d+)\]", re.IGNORECASE)
 
 _SYNONYM_CANONICALS = {
     alias: canonical
@@ -721,7 +721,7 @@ def _split_sentences(text: str, *, limit: int = 4000) -> list[str]:
 
 
 def _citation_index(token: str) -> int | None:
-    match = re.fullmatch(r"R?(\d+)", str(token or "").strip(), re.IGNORECASE)
+    match = re.fullmatch(r"R*(\d+)", str(token or "").strip(), re.IGNORECASE)
     if not match:
         return None
     return int(match.group(1))
@@ -754,7 +754,7 @@ def _normalize_citation_refs(text: str, reference_entries: list[dict[str, Any]],
     local_map = {idx: _stable_ref(entry, idx) for idx, entry in enumerate(reference_entries, start=1)}
 
     def _replace(match: re.Match[str]) -> str:
-        tokens = re.findall(r"R?\d+", match.group(1), flags=re.IGNORECASE)
+        tokens = re.findall(r"R*\d+", match.group(1), flags=re.IGNORECASE)
         normalized: list[str] = []
         for token in tokens:
             idx = _citation_index(token)
@@ -784,7 +784,7 @@ def _render_numeric_citations(text: str, source_bundle: list[dict[str, Any]]) ->
     unresolved: list[str] = []
 
     def _replace(match: re.Match[str]) -> str:
-        tokens = re.findall(r"R?\d+", match.group(1), flags=re.IGNORECASE)
+        tokens = re.findall(r"R*\d+", match.group(1), flags=re.IGNORECASE)
         numeric_refs: list[str] = []
         local_unresolved: list[str] = []
         for token in tokens:

@@ -1,4 +1,4 @@
-from agent.drafter import RapidEvidenceDrafter, _annotate_source_bundle, _apply_mimo_labels, _bundle_entry, _classify_directness, _dedupe, _entry_result_sentence, _retarget_singular_trial_citations, _trim_singular_mixed_citations
+from agent.drafter import RapidEvidenceDrafter, _annotate_source_bundle, _apply_mimo_labels, _bundle_entry, _classify_directness, _dedupe, _entry_result_sentence, _render_numeric_citations, _retarget_singular_trial_citations, _trim_singular_mixed_citations
 from agent.evidence_cards import build_card
 from agent.submit import _quality_gate
 from agent.validator import validate_citations
@@ -1849,6 +1849,13 @@ def test_drafter_maps_prompt_local_citations_to_final_bundle_indices() -> None:
     assert "[6]" in landscape
     assert "[4]" not in landscape
     assert "[R" not in landscape
+
+
+def test_render_numeric_citations_normalizes_repeated_r_refs() -> None:
+    rendered, errors = _render_numeric_citations("Two trials were retained [R1, RR2].", [{"stable_ref": "R1"}, {"stable_ref": "R2"}])
+
+    assert rendered == "Two trials were retained [1, 2]."
+    assert errors == []
 
 
 def test_drafter_fails_closed_on_unresolved_internal_refs() -> None:

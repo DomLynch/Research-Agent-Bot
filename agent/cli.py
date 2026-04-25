@@ -442,12 +442,15 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         models = ", ".join(str(item) for item in _listish((bridge.get("moa") or {}).get("reference_models"))) or "not reported"
         spar = bridge.get("spar") or {}
         issue_list = [str(item) for item in _listish(spar.get("issues")) if str(item).strip()]
-        issues = len(issue_list)
+        operational_issues = [item for item in issue_list if item.startswith("bridge_provider_error:")]
+        substantive_issues = [item for item in issue_list if item not in operational_issues]
+        issues = len(substantive_issues)
         status = "adjudicated" if spar.get("approved") else "machine-reviewed with unresolved/degraded review"
         draft_mode = "multi-model drafting" if len(_listish((bridge.get("moa") or {}).get("reference_models"))) > 1 else "MiMo drafting"
         review_models = ", ".join(str(item) for item in _listish(spar.get("review_models"))) or "not reported"
         lines.append(f"- Generation: {models} ({draft_mode})")
-        lines.append(f"- Adjudication: {review_models}; reviewer issues flagged: {issues}; status: {status}")
+        note = f"; operational degradation: {len(operational_issues)}" if operational_issues else ""
+        lines.append(f"- Adjudication: {review_models}; reviewer issues flagged: {issues}; status: {status}{note}")
         lines.append("- Human peer review: false")
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
@@ -457,8 +460,12 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     if bridge and issue_list:
         lines.extend(["## Adjudication Notes", ""])
         lines.append(f"Machine-adjudication status: {status}.")
-        lines.append("Reviewer issues:")
-        lines.extend(f"- {_md_cell(item)}" for item in issue_list[:5])
+        if substantive_issues:
+            lines.append("Reviewer issues:")
+            lines.extend(f"- {_md_cell(item)}" for item in substantive_issues[:5])
+        if operational_issues:
+            lines.append("Operational degradation:")
+            lines.extend(f"- {_md_cell(item)}" for item in operational_issues[:5])
         lines.append("")
     for heading, body in payload.get("sections", {}).items():
         if heading == "Methods" and payload.get("methods"):
