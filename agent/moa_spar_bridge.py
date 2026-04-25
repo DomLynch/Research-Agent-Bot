@@ -183,8 +183,37 @@ def _build_fix_prompt(user_prompt: str, candidate: dict[str, Any], review: SparR
     )
 
 
+def _clip_text(value: Any, limit: int = 1400) -> str:
+    text = str(value or "").strip()
+    return text if len(text) <= limit else text[: limit - 12].rstrip() + " [truncated]"
+
+
+def _review_source(item: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "ref": item.get("display_ref") or item.get("stable_ref"),
+        "title": _clip_text(item.get("title"), 240),
+        "year": item.get("year"),
+        "tier": item.get("tier"),
+        "role": item.get("role"),
+        "design": item.get("design"),
+        "directness": item.get("directness"),
+        "strict_eligibility_met": item.get("strict_eligibility_met"),
+        "evidence_confidence": item.get("evidence_confidence"),
+        "risk_of_bias": item.get("risk_of_bias"),
+    }
+
+
 def _build_review_payload(candidate: dict[str, Any]) -> str:
-    return json.dumps({"candidate": candidate}, ensure_ascii=False, indent=2)
+    sections = candidate.get("sections") if isinstance(candidate.get("sections"), dict) else {}
+    slim = {
+        "title": candidate.get("title"),
+        "domain_slug": candidate.get("domain_slug"),
+        "abstract": _clip_text(candidate.get("abstract"), 1800),
+        "methods": _clip_text(candidate.get("methods"), 1200),
+        "sections": {str(key): _clip_text(value, 1800) for key, value in sections.items()},
+        "source_bundle": [_review_source(item) for item in (candidate.get("source_bundle") or [])[:12] if isinstance(item, dict)],
+    }
+    return json.dumps({"candidate": slim}, ensure_ascii=False, indent=2)
 
 
 @dataclass(slots=True)
