@@ -14,8 +14,8 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~7,850 LOC (raised for provider-level progress, judge forensics, and generic evidence-type hygiene).
-  Hard ceiling: 8,000 LOC. Actual: 7,849 LOC.
+- Runtime target: ~8,000 LOC (raised for final-artifact QA reconciliation and provider forensics).
+  Hard ceiling: 8,000 LOC. Actual: 7,991 LOC.
 - LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
