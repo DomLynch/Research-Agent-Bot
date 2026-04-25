@@ -199,6 +199,9 @@ _NEGATED_TOPIC_RE_TEMPLATE = r"\b(?:not|rather than|instead of)\s+(?:the\s+)?{te
 _SINGULAR_STUDY_RE = re.compile(r"\b(one|single|a)\s+(trial|study|rct|cohort)\b", re.IGNORECASE)
 _CITATION_CLUSTER_RE = re.compile(r"\[((?:R*\d+\s*,\s*)+R*\d+)\]", re.IGNORECASE)
 _ANY_CITATION_RE = re.compile(r"\[((?:R*\d+\s*,\s*)*R*\d+)\]", re.IGNORECASE)
+_PAREN_STABLE_REF_CLUSTER_RE = re.compile(r"\((R\d+(?:\s*,\s*R\d+)*)\)", re.IGNORECASE)
+_BARE_STABLE_REF_CLUSTER_RE = re.compile(r"\bR\d+(?:\s*,\s*R\d+)+\b", re.IGNORECASE)
+_BARE_STABLE_REF_RE = re.compile(r"(?<![\w-])R(\d+)(?![\w-])", re.IGNORECASE)
 
 _SYNONYM_CANONICALS = {
     alias: canonical
@@ -783,8 +786,8 @@ def _render_numeric_citations(text: str, source_bundle: list[dict[str, Any]]) ->
         return cleaned, []
     unresolved: list[str] = []
 
-    def _replace(match: re.Match[str]) -> str:
-        tokens = re.findall(r"R*\d+", match.group(1), flags=re.IGNORECASE)
+    def _render_tokens(raw: str, original: str) -> str:
+        tokens = re.findall(r"R*\d+", raw, flags=re.IGNORECASE)
         numeric_refs: list[str] = []
         local_unresolved: list[str] = []
         for token in tokens:
@@ -795,12 +798,26 @@ def _render_numeric_citations(text: str, source_bundle: list[dict[str, Any]]) ->
             numeric_refs.append(str(idx))
         if local_unresolved:
             unresolved.extend(local_unresolved)
-            return match.group(0)
+            return original
         if not numeric_refs:
-            return match.group(0)
+            return original
         return f"[{', '.join(numeric_refs)}]"
 
+    def _replace(match: re.Match[str]) -> str:
+        return _render_tokens(match.group(1), match.group(0))
+
     rendered = _ANY_CITATION_RE.sub(_replace, cleaned)
+    rendered = _PAREN_STABLE_REF_CLUSTER_RE.sub(lambda match: _render_tokens(match.group(1), match.group(0)), rendered)
+    rendered = _BARE_STABLE_REF_CLUSTER_RE.sub(lambda match: _render_tokens(match.group(0), match.group(0)), rendered)
+
+    def _replace_bare(match: re.Match[str]) -> str:
+        idx = _citation_index(match.group(0))
+        if idx is None or not (1 <= idx <= len(source_bundle)):
+            unresolved.append(match.group(0).upper())
+            return match.group(0)
+        return f"[{idx}]"
+
+    rendered = _BARE_STABLE_REF_RE.sub(_replace_bare, rendered)
     return rendered, unresolved
 
 

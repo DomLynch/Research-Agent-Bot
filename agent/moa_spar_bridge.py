@@ -36,7 +36,8 @@ REVIEW_SYSTEM_PROMPT = "\n".join(
         "Judge against the included task prompt excerpts and candidate schema.",
         "Approve only if it fully completes the user's request.",
         "Reject for missing work, unsupported claims, regressions, or unmet requirements.",
-        "Do not require final artifact fields such as title, abstract, methods, sections, or source_bundle unless the task prompt requested them.",
+        "This review happens before final deterministic markdown assembly.",
+        "Do not flag missing final artifact fields such as title, abstract, methods, sections, or source_bundle unless the candidate schema explicitly includes them.",
         "Ignore naming, wording, formatting, readability, and other cosmetic-only feedback.",
         "Return JSON only with keys approved, summary, issues, fix.",
     ]
@@ -360,6 +361,7 @@ class MoaSparBridgeClient:
                 "summary": "Bridge degraded after external model failure.",
                 "issues": [f"bridge_provider_error:{exc}"],
                 "fix": None,
+                "review_stage": "pre_render_candidate",
                 "review_models": [_route_label(self.reviewer), _route_label(self.judge)],
                 "judge": None,
             },
@@ -464,6 +466,7 @@ class MoaSparBridgeClient:
                 "summary": review.summary,
                 "issues": review.issues,
                 "fix": review.fix,
+                "review_stage": "pre_render_candidate",
                 "review_models": [_route_label(self.reviewer), _route_label(self.judge)],
                 "judge": {
                     "approved": judge_review.approved,

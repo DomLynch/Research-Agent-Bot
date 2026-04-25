@@ -43,6 +43,8 @@ _NO_SIGNIFICANT_CLAIM_RE = re.compile(
 )
 _CITATION_RE = re.compile(r"\[(\d+)\]")
 _P_VALUE_RE = re.compile(r"\bp\s*[<=>]\s*0?\.\d+", re.IGNORECASE)
+_DUPLICATE_PHRASE_RE = re.compile(r"\b([a-z][a-z -]{2,40}),\s*\1\b", re.IGNORECASE)
+_TRIAL_NO_EFFECT_RE = re.compile(r"\b(?:one|a|single)\s+(?:trial|study|rct)\s+found\s+no\s+significant", re.IGNORECASE)
 
 
 def _listish(value: Any) -> list[Any]:
@@ -122,6 +124,102 @@ def _repair_conclusion_contradictions(artifact: dict[str, Any], violations: list
     sections["Conclusion"] = " ".join(kept).strip()
     artifact["sections"] = sections
     artifact["draft_quality_auto_repair"] = "conclusion_contradiction"
+    return True
+
+
+def _source_is_direct_result(entry: dict[str, Any]) -> bool:
+    tier = str(entry.get("evidence_tier") or "")
+    return (
+        bool(entry.get("strict_eligibility_met"))
+        or (
+            str(entry.get("role") or "") == "published_results"
+            and str(entry.get("directness") or "") == "direct"
+            and tier.startswith("Tier A1")
+        )
+    )
+
+
+def _source_is_support_only(entry: dict[str, Any]) -> bool:
+    role = str(entry.get("role") or "")
+    tier = str(entry.get("evidence_tier") or "")
+    return role in {"meta_analysis", "review", "registered_pending", "published_protocol", "mechanistic", "animal_model", "off_domain_indirect", "unknown"} or tier.startswith(("Tier B", "Tier C"))
+
+
+def _sentence_refs(sentence: str) -> list[int]:
+    return [int(match.group(1)) for match in _CITATION_RE.finditer(sentence)]
+
+
+def _topic_label(artifact: dict[str, Any]) -> str:
+    title = str(artifact.get("title") or "")
+    return re.sub(r"^Rapid Evidence Synthesis:\s*", "", title).strip() or "the queried intervention"
+
+
+def _ref_list(refs: list[int]) -> str:
+    return "[" + ", ".join(str(ref) for ref in refs) + "]"
+
+
+def _build_verdict_conclusion(artifact: dict[str, Any]) -> str:
+    bundle = artifact.get("source_bundle") or []
+    direct_refs = [i for i, entry in enumerate(bundle, start=1) if _source_is_direct_result(entry)]
+    support_refs = [i for i, entry in enumerate(bundle, start=1) if _source_is_support_only(entry)][:2]
+    findings = str((artifact.get("sections") or {}).get("Key Findings") or "")
+    positive_refs = sorted(set(ref for ref, sentence in _positive_ref_sentences(findings).items() if sentence))
+    null_refs = sorted(
+        {
+            ref
+            for sentence in _split_sentences_for_repair(findings)
+            if _NO_SIGNIFICANT_CLAIM_RE.search(sentence)
+            for ref in _sentence_refs(sentence)
+        }
+    )
+    topic = _topic_label(artifact)
+    anchor = direct_refs[:3] or sorted(set(positive_refs + null_refs))[:3]
+    sentences: list[str] = []
+    if anchor:
+        sentences.append(f"Verdict: current direct published-results evidence for {topic} remains limited and does not establish broad healthspan efficacy {_ref_list(anchor)}.")
+    else:
+        sentences.append(f"Verdict: current retained evidence for {topic} remains insufficient to establish broad efficacy.")
+    if positive_refs and null_refs:
+        sentences.append(f"Positive signals {_ref_list(positive_refs[:2])} should be interpreted alongside null or nonsignificant direct findings {_ref_list(null_refs[:2])}.")
+    elif positive_refs:
+        sentences.append(f"Positive signals {_ref_list(positive_refs[:2])} should be treated as preliminary until replicated in larger, direct trials.")
+    elif null_refs:
+        sentences.append(f"The retained direct trial findings are largely null or nonsignificant {_ref_list(null_refs[:2])}.")
+    if support_refs:
+        sentences.append(f"Protocol, mechanistic, disease-context, and review evidence should be treated as context for future testing rather than evidence for broad adoption {_ref_list(support_refs)}.")
+    return " ".join(sentences)
+
+
+def _positive_ref_sentences(text: str) -> dict[int, str]:
+    positives: dict[int, str] = {}
+    for sentence in _split_sentences_for_repair(text):
+        if not (re.search(r"\b(improved?|increased?|reduced?|better|benefit|significant(?:ly)?)\b", sentence, re.IGNORECASE) and _P_VALUE_RE.search(sentence)):
+            continue
+        for ref in _sentence_refs(sentence):
+            positives[ref] = sentence
+    return positives
+
+
+def _repair_final_conclusion_hygiene(artifact: dict[str, Any]) -> bool:
+    sections = artifact.get("sections") or {}
+    conclusion = str(sections.get("Conclusion") or "")
+    bundle = artifact.get("source_bundle") or []
+    if not conclusion or not bundle:
+        return False
+    bad = False
+    kept: list[str] = []
+    for sentence in _split_sentences_for_repair(conclusion):
+        refs = _sentence_refs(sentence)
+        cited = [bundle[ref - 1] for ref in refs if 1 <= ref <= len(bundle)]
+        support_trial_claim = bool(cited) and all(_source_is_support_only(entry) for entry in cited) and _TRIAL_NO_EFFECT_RE.search(sentence)
+        if _DUPLICATE_PHRASE_RE.search(sentence) or support_trial_claim:
+            bad = True
+            continue
+        kept.append(sentence)
+    if not bad:
+        return False
+    sections["Conclusion"] = _build_verdict_conclusion(artifact)
+    artifact["draft_quality_auto_repair"] = "final_conclusion_hygiene"
     return True
 
 
@@ -302,7 +400,7 @@ def _evidence_table_lines(source_bundle: list[dict[str, Any]]) -> list[str]:
     ]
     for i, item in enumerate(source_bundle, start=1):
         card = item.get("card") or {}
-        design = card.get("study_type") or item.get("evidence_type") or "unknown"
+        design = _table_design_label(item)
         strict_label = "Yes" if item.get("strict_eligibility_met") else "No"
         lines.append(
             "| "
@@ -321,6 +419,19 @@ def _evidence_table_lines(source_bundle: list[dict[str, Any]]) -> list[str]:
         )
     lines.append("")
     return lines
+
+
+def _table_design_label(item: dict[str, Any]) -> str:
+    card = item.get("card") or {}
+    quality = str(card.get("quality_signal") or "").lower()
+    study_type = str(card.get("study_type") or "").lower()
+    evidence_type = str(item.get("evidence_type") or "").lower()
+    role = str(item.get("role") or "")
+    if role == "published_results" and item.get("strict_eligibility_met") and quality in {"rct", "clinical-trial", "interventional"}:
+        return quality
+    if role in {"published_protocol", "registered_pending"}:
+        return "protocol" if role == "published_protocol" else study_type or evidence_type or "registered"
+    return study_type or evidence_type or "unknown"
 
 
 def _high_severity_violations(violations: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -488,6 +599,7 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         judge = spar.get("judge") if isinstance(spar.get("judge"), dict) else {}
         issue_list = [str(item) for item in _listish(spar.get("issues")) if str(item).strip()]
         judge_issues = [str(item) for item in _listish(judge.get("issues")) if str(item).strip()]
+        pre_render_review = str(spar.get("review_stage") or "pre_render_candidate") != "final_artifact"
         operational_issues = [item for item in issue_list if item.startswith("bridge_provider_error:")]
         substantive_issues = [item for item in issue_list if item not in operational_issues]
         issues = len(substantive_issues)
@@ -497,7 +609,8 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         review_models = ", ".join(str(item) for item in _listish(spar.get("review_models"))) or "not reported"
         lines.append(f"- Generation: {models} ({draft_mode})")
         note = f"; operational degradation: {len(operational_issues)}" if operational_issues else ""
-        lines.append(f"- Adjudication: {review_models}; reviewer issues flagged: {issues}; judge issues flagged: {len(judge_substantive_issues)}; status: {status}{note}")
+        stage = "pre-render" if pre_render_review else "final-artifact"
+        lines.append(f"- Adjudication: {review_models}; {stage} reviewer flags: {issues}; {stage} judge flags: {len(judge_substantive_issues)}; status: {status}{note}")
         lines.append("- Human peer review: false")
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
@@ -507,18 +620,25 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     if bridge and (issue_list or judge_issues or judge):
         lines.extend(["## Adjudication Notes", ""])
         lines.append(f"Machine-adjudication status: {status}.")
-        if substantive_issues:
-            lines.append("Reviewer issues:")
-            lines.extend(f"- {_md_cell(item)}" for item in substantive_issues[:5])
+        pre_render_review = str(((bridge.get("spar") or {}).get("review_stage") or "pre_render_candidate")) != "final_artifact"
+        if pre_render_review:
+            lines.append(
+                "Model adjudication reviewed the pre-render draft JSON; final markdown was assembled and checked by deterministic validators afterward. "
+                "Raw model issues are retained in the run log and are not treated as final-artifact findings."
+            )
+        else:
+            if substantive_issues:
+                lines.append("Reviewer issues:")
+                lines.extend(f"- {_md_cell(item)}" for item in substantive_issues[:5])
+            if judge_issues:
+                lines.append("Judge issues:")
+                lines.extend(f"- {_md_cell(item)}" for item in judge_issues[:5])
+            elif judge:
+                state = "approved" if judge.get("approved") else "not approved"
+                lines.append(f"Judge: {state} (no additional issues flagged).")
         if operational_issues:
             lines.append("Operational degradation:")
             lines.extend(f"- {_md_cell(item)}" for item in operational_issues[:5])
-        if judge_issues:
-            lines.append("Judge issues:")
-            lines.extend(f"- {_md_cell(item)}" for item in judge_issues[:5])
-        elif judge:
-            state = "approved" if judge.get("approved") else "not approved"
-            lines.append(f"Judge: {state} (no additional issues flagged).")
         lines.append("")
     for heading, body in payload.get("sections", {}).items():
         if heading == "Methods" and payload.get("methods"):
@@ -768,6 +888,7 @@ def run_agent(
             all_evidence=all_evidence,
             topic_profile=entity,
         )
+        _repair_final_conclusion_hygiene(artifact)
         if raw_output:
             run_dir_p = Path(run_dir)
             run_dir_p.mkdir(parents=True, exist_ok=True)
@@ -827,6 +948,7 @@ def run_agent(
                 topic_profile=entity,
                 revision_feedback=_draft_revision_feedback(high_severity),
             )
+            _repair_final_conclusion_hygiene(retry_artifact)
             run_log["citation_retry_count"] = 1
             run_log["quality_retry_count"] = 1
             if retry_raw:

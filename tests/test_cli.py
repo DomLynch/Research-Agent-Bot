@@ -41,6 +41,33 @@ def test_payload_markdown_includes_standard_evidence_table() -> None:
     assert "strict eligibility yes" in markdown
 
 
+def test_evidence_table_prefers_result_quality_over_stale_protocol_design() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: rapamycin",
+            "domain_slug": "longevity",
+            "abstract": "A direct RCT reported outcomes [1].",
+            "sections": {"Key Findings": "A direct RCT reported outcomes [1]."},
+            "source_bundle": [
+                {
+                    "title": "Published RCT",
+                    "year": 2026,
+                    "evidence_type": "primary",
+                    "role": "published_results",
+                    "directness": "direct",
+                    "evidence_tier": "Tier A1 direct aging evidence",
+                    "strict_eligibility_met": True,
+                    "card": {"study_type": "protocol", "quality_signal": "rct"},
+                }
+            ],
+        },
+        topic="rapamycin",
+        criteria="",
+    )
+
+    assert "| [1] | Tier A1 direct aging evidence | rct | Yes |" in markdown
+
+
 def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
     markdown = cli._payload_to_markdown(
         {
@@ -54,6 +81,7 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
                 "spar": {
                     "approved": True,
                     "issues": ["fix abstract"],
+                    "review_stage": "final_artifact",
                     "judge": {"approved": True, "issues": []},
                     "review_models": ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"],
                 },
@@ -64,7 +92,7 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
     )
 
     assert "Generation: mimo-v2.5-pro, google/gemma-4-31b-it, mistralai/mistral-small-2603 (multi-model drafting)" in markdown
-    assert "Adjudication: google/gemma-4-31b-it, mistralai/mistral-small-2603; reviewer issues flagged: 1; judge issues flagged: 0; status: adjudicated" in markdown
+    assert "Adjudication: google/gemma-4-31b-it, mistralai/mistral-small-2603; final-artifact reviewer flags: 1; final-artifact judge flags: 0; status: adjudicated" in markdown
     assert "Judge: approved (no additional issues flagged)." in markdown
     assert "Human peer review: false" in markdown
     assert "Reasoning: MoA+Spar" not in markdown
@@ -85,7 +113,7 @@ def test_payload_markdown_tolerates_null_bridge_lists() -> None:
     )
 
     assert "Generation: not reported (MiMo drafting)" in markdown
-    assert "reviewer issues flagged: 0" in markdown
+    assert "pre-render reviewer flags: 0" in markdown
 
 
 def test_payload_markdown_renders_judge_issues() -> None:
@@ -101,6 +129,7 @@ def test_payload_markdown_renders_judge_issues() -> None:
                 "spar": {
                     "approved": False,
                     "issues": ["Reviewer issue."],
+                    "review_stage": "final_artifact",
                     "review_models": ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"],
                     "judge": {"approved": False, "issues": ["Judge unique issue."]},
                 },
@@ -110,7 +139,7 @@ def test_payload_markdown_renders_judge_issues() -> None:
         criteria="",
     )
 
-    assert "judge issues flagged: 1" in markdown
+    assert "final-artifact judge flags: 1" in markdown
     assert "Reviewer issues:" in markdown
     assert "- Reviewer issue." in markdown
     assert "Judge issues:" in markdown
@@ -144,7 +173,7 @@ def test_payload_markdown_renders_adjudication_issue_notes() -> None:
             "source_bundle": [],
             "bridge": {
                 "moa": {"reference_models": ["mimo-v2.5-pro"]},
-                "spar": {"approved": False, "issues": ["Strict target eligibility was not met."]},
+                "spar": {"approved": False, "issues": ["Strict target eligibility was not met."], "review_stage": "final_artifact"},
             },
         },
         topic="senolytics",
@@ -153,6 +182,34 @@ def test_payload_markdown_renders_adjudication_issue_notes() -> None:
 
     assert "## Adjudication Notes" in markdown
     assert "Strict target eligibility was not met." in markdown
+
+
+def test_payload_markdown_hides_pre_render_model_issue_text() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: rapamycin",
+            "domain_slug": "longevity",
+            "abstract": "The final artifact has an abstract [1].",
+            "sections": {"Key Findings": "Signal reported [1]."},
+            "source_bundle": [],
+            "bridge": {
+                "moa": {"reference_models": ["mimo-v2.5-pro"]},
+                "spar": {
+                    "approved": False,
+                    "issues": ["Abstract is entirely missing."],
+                    "review_stage": "pre_render_candidate",
+                    "judge": {"approved": False, "issues": ["Conclusion is too short."]},
+                },
+            },
+        },
+        topic="rapamycin",
+        criteria="",
+    )
+
+    assert "pre-render reviewer flags: 1" in markdown
+    assert "Raw model issues are retained in the run log" in markdown
+    assert "Abstract is entirely missing." not in markdown
+    assert "Conclusion is too short." not in markdown
 
 
 def test_payload_markdown_separates_operational_bridge_failures() -> None:
@@ -176,7 +233,7 @@ def test_payload_markdown_separates_operational_bridge_failures() -> None:
         criteria="",
     )
 
-    assert "reviewer issues flagged: 0; judge issues flagged: 0; status: machine-reviewed with unresolved/degraded review; operational degradation: 1" in markdown
+    assert "pre-render reviewer flags: 0; pre-render judge flags: 0; status: machine-reviewed with unresolved/degraded review; operational degradation: 1" in markdown
     assert "Operational degradation:" in markdown
     assert "Reviewer issues:" not in markdown
 
@@ -946,6 +1003,31 @@ def test_repair_conclusion_contradiction_removes_null_sentence() -> None:
         violation["issue"] == "conclusion_contradicts_positive_finding"
         for violation in cli.validate_draft_quality(artifact, artifact["source_bundle"])
     )
+
+
+def test_final_conclusion_hygiene_replaces_support_only_trial_noise() -> None:
+    artifact = {
+        "title": "Rapid Evidence Synthesis: rapamycin aging older adults",
+        "abstract": "A direct trial reported mixed evidence [1].",
+        "sections": {
+            "Key Findings": (
+                "One trial reported emotional well-being improved with rapamycin (p=0.023) [2]. "
+                "Another direct trial reported no significant difference in 6MWD (p=0.706) [1]."
+            ),
+            "Conclusion": "One trial found no significant difference in ageing, ageing compared with placebo [3].",
+        },
+        "source_bundle": [
+            {"role": "published_results", "directness": "direct", "evidence_tier": "Tier A1 direct aging evidence", "strict_eligibility_met": True},
+            {"role": "published_results", "directness": "direct", "evidence_tier": "Tier A1 direct aging evidence", "strict_eligibility_met": True},
+            {"role": "published_results", "directness": "direct", "evidence_tier": "Tier B supporting human evidence", "strict_eligibility_met": False},
+        ],
+    }
+
+    assert cli._repair_final_conclusion_hygiene(artifact)
+    conclusion = artifact["sections"]["Conclusion"]
+    assert "ageing, ageing" not in conclusion
+    assert "Verdict:" in conclusion
+    assert "[1, 2]" in conclusion
 
 
 def test_run_agent_fails_closed_when_high_severity_draft_quality_violations_survive_retry(tmp_path: Path, monkeypatch) -> None:

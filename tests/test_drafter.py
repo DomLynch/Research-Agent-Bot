@@ -1881,6 +1881,16 @@ def test_render_numeric_citations_normalizes_repeated_r_refs() -> None:
     assert errors == []
 
 
+def test_render_numeric_citations_normalizes_bare_stable_refs() -> None:
+    rendered, errors = _render_numeric_citations(
+        "The PEARL trial (R2) and RAPA-EX-01 R1 were retained.",
+        [{"stable_ref": "R1"}, {"stable_ref": "R2"}],
+    )
+
+    assert rendered == "The PEARL trial [2] and RAPA-EX-01 [1] were retained."
+    assert errors == []
+
+
 def test_drafter_fails_closed_on_unresolved_internal_refs() -> None:
     provider = BrokenStableRefProvider()
     drafter = RapidEvidenceDrafter(provider=provider)
