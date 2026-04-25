@@ -100,6 +100,29 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
     assert "fix_raw" in raw["spar"]
 
 
+def test_moa_spar_bridge_accepts_null_review_issues() -> None:
+    builder = StubProvider(
+        model="mimo-v2-pro",
+        prompt_version="test/mimo",
+        responses=[{"question": "Self"}, {"question": "Candidate"}],
+    )
+    reviewer = StubProvider(
+        model="MiniMax-M2.7-highspeed",
+        prompt_version="test/minimax",
+        responses=[{"question": "Reviewer"}, {"approved": True, "summary": "No material issues.", "issues": None, "fix": None}],
+    )
+    judge = StubProvider(
+        model="deepseek-reasoner",
+        prompt_version="test/deepseek",
+        responses=[{"question": "Judge"}, {"approved": True, "summary": "Judge agrees.", "issues": None, "fix": None}],
+    )
+
+    result, _ = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(system_prompt="system", user_prompt="user")
+
+    assert result["_bridge"]["spar"]["issues"] == []
+    assert result["_bridge"]["spar"]["judge"]["issues"] == []
+
+
 def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails() -> None:
     builder = StubProvider(
         model="mimo-v2-pro",

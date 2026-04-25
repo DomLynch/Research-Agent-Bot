@@ -435,11 +435,14 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         f"- Topic: {topic}",
         f"- Domain: {payload['domain_slug']}",
     ]
-    if payload.get("bridge"):
-        bridge = payload["bridge"]
+    bridge = payload.get("bridge") if isinstance(payload.get("bridge"), dict) else {}
+    issue_list: list[str] = []
+    status = ""
+    if bridge:
         models = ", ".join(str(item) for item in _listish((bridge.get("moa") or {}).get("reference_models"))) or "not reported"
         spar = bridge.get("spar") or {}
-        issues = len(_listish(spar.get("issues")))
+        issue_list = [str(item) for item in _listish(spar.get("issues")) if str(item).strip()]
+        issues = len(issue_list)
         status = "adjudicated" if spar.get("approved") else "machine-reviewed with unresolved/degraded review"
         lines.append(f"- Generation: {models} (multi-model drafting)")
         lines.append(f"- Adjudication: structured model adjudication; reviewer issues flagged: {issues}; status: {status}")
@@ -449,6 +452,12 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     lines.extend(["", "## Abstract", "", payload["abstract"], ""])
     if payload.get("methods"):
         lines.extend(["## Methods", "", payload["methods"], ""])
+    if bridge and issue_list:
+        lines.extend(["## Adjudication Notes", ""])
+        lines.append(f"Machine-adjudication status: {status}.")
+        lines.append("Reviewer issues:")
+        lines.extend(f"- {_md_cell(item)}" for item in issue_list[:5])
+        lines.append("")
     for heading, body in payload.get("sections", {}).items():
         if heading == "Methods" and payload.get("methods"):
             continue

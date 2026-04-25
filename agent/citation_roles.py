@@ -105,7 +105,7 @@ _MECHANISTIC_RE = re.compile(
     re.IGNORECASE,
 )
 _REVIEWISH_PRIMARY_RE = re.compile(
-    r"\b(review|overview|perspective|commentary|therapeutic paradox|narrative)\b",
+    r"\b(review|overview|perspective|commentary|therapeutic paradox|narrative|role of|pathophysiology|therapeutic frontiers?|therapeutic potential|path to the clinic|current perspectives?)\b",
     re.IGNORECASE,
 )
 _SYNTHESIS_LANGUAGE_RE = re.compile(

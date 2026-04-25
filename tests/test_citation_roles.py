@@ -101,6 +101,16 @@ def test_reviewish_primary_entry_is_review_role() -> None:
     assert role == "review"
 
 
+def test_pathophysiology_frontier_primary_entry_is_review_role() -> None:
+    entry = {
+        "title": "Vascular Dementia: From Pathophysiology to Therapeutic Frontiers",
+        "excerpt": "This article reviews mechanisms and therapeutic opportunities.",
+        "evidence_type": "primary",
+    }
+    role = classify_citation_role(entry, _card(entry), "longevity", ["senolytic", "dasatinib", "quercetin"])
+    assert role == "review"
+
+
 def test_off_domain_longevity_entry_is_off_domain_indirect() -> None:
     entry = {
         "title": "Metformin in pregnancy and gestational diabetes",

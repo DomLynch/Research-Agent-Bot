@@ -15,7 +15,7 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 
 ## Constraints
 - Runtime target: ~7,400 LOC (raised for the 2026-04-25 async dashboard progress bridge and contradiction repair).
-  Hard ceiling: 7,600 LOC. Actual: ~7,268 LOC.
+  Hard ceiling: 7,600 LOC. Actual: ~7,309 LOC.
 - LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
@@ -96,7 +96,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 494 passed, 6 skipped, 5 xfailed
+- MacBook: 499 passed, 6 skipped, 5 xfailed
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

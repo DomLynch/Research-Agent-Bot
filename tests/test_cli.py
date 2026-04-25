@@ -82,6 +82,27 @@ def test_payload_markdown_tolerates_null_bridge_lists() -> None:
     assert "reviewer issues flagged: 0" in markdown
 
 
+def test_payload_markdown_renders_adjudication_issue_notes() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: senolytics",
+            "domain_slug": "longevity",
+            "abstract": "Strict eligibility was not met [1].",
+            "sections": {"Key Findings": "Disease-context evidence remained limited [1]."},
+            "source_bundle": [],
+            "bridge": {
+                "moa": {"reference_models": ["mimo-v2-pro"]},
+                "spar": {"approved": False, "issues": ["Strict target eligibility was not met."]},
+            },
+        },
+        topic="senolytics",
+        criteria="",
+    )
+
+    assert "## Adjudication Notes" in markdown
+    assert "Strict target eligibility was not met." in markdown
+
+
 class FakeProvider:
     prompt_version = "test-prompt/v1"
     model = "MiniMax-M2.7-highspeed"

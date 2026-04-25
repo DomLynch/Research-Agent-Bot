@@ -1,5 +1,12 @@
 # DECISION JOURNAL
 
+## 2026-04-25 — Bridge metadata and review-like source hardening
+**Decision:** Normalize nullable model-review fields at the bridge boundary, render unresolved adjudication issues in markdown, and classify review-like primary records by title patterns such as "role of", "pathophysiology", "therapeutic frontiers", "therapeutic potential", and "path to the clinic".
+
+**Why:** Live runs showed provider JSON can return null for fields that are logically lists, and D+Q surfaced review/perspective papers that OpenAlex labeled as primary. The fix is schema hardening plus generic role detection, not topic-specific removal.
+
+**Audit:** Added regression coverage for null reviewer issues, null bridge metadata, rendered adjudication notes, and review-like primary titles. Local verification: `499 passed, 6 skipped, 5 xfailed`; ruff clean.
+
 ## 2026-04-25 — Async progress UI and machine-adjudication framing
 **Decision:** Dashboard runs now execute as background jobs with deterministic milestone progress and polling, so long multi-model/adjudication runs do not block the browser request path. Public-facing draft metadata now says "multi-model drafting" and "structured model adjudication" rather than "MoA+Spar" to avoid the biomedical "mechanism of action" naming collision and to avoid implying human peer review.
 

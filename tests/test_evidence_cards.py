@@ -135,6 +135,15 @@ def test_build_card_infer_study_type_meta():
     assert _infer_study_type(entry) == "meta-analysis"
 
 
+def test_reviewish_primary_title_infers_review_type():
+    entry = {
+        "title": "The Role of Cellular Senescence and SASP in Atherosclerosis and the Therapeutic Potential of Senolytic Strategies",
+        "evidence_type": "primary",
+    }
+    assert _infer_quality_signal(entry) == "review"
+    assert _infer_study_type(entry) == "review"
+
+
 def test_build_card_infer_study_type_cohort():
     entry = {"title": "Prospective cohort study of exercise", "evidence_type": "primary"}
     assert _infer_study_type(entry) == "cohort"

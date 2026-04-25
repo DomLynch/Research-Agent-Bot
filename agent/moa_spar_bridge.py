@@ -103,6 +103,14 @@ def _route_label(provider: JsonProvider) -> str:
     return str(getattr(provider, "model", provider.__class__.__name__))
 
 
+def _listish(value: Any) -> list[Any]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    return [value]
+
+
 def _is_non_material(text: str) -> bool:
     return any(pattern.search(str(text or "")) for pattern in NON_MATERIAL_PATTERNS)
 
@@ -110,10 +118,7 @@ def _is_non_material(text: str) -> bool:
 def _parse_review(payload: dict[str, Any]) -> SparReview:
     approved = payload.get("approved")
     summary = str(payload.get("summary") or "").strip()
-    raw_issues = payload.get("issues", [])
-    if isinstance(raw_issues, str):
-        raw_issues = [raw_issues]
-    issues = [str(item).strip() for item in raw_issues if str(item).strip()]
+    issues = [str(item).strip() for item in _listish(payload.get("issues")) if str(item).strip()]
     fix = str(payload.get("fix") or "").strip() or None
     if not isinstance(approved, bool):
         raise ValueError("review payload must include boolean approved")
