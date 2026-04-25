@@ -5,7 +5,7 @@ from agent.submit import _quality_gate
 
 class CaptureProvider:
     prompt_version = "test-prompt/v1"
-    model = "mimo-v2-pro"
+    model = "mimo-v2.5-pro"
 
     def __init__(self) -> None:
         self.system_prompt = ""

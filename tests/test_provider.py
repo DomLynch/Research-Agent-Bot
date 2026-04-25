@@ -69,7 +69,7 @@ def test_client_complete_json_handles_prose_and_sets_usage(monkeypatch):
     assert result["question"] == "ok"
     assert result["findings"] == "stable"
     assert result["usage"] == {"input_tokens": 11, "output_tokens": 7, "total_tokens": 18}
-    assert result["model"] == "mimo-v2-pro"
+    assert result["model"] == "mimo-v2.5-pro"
     assert raw["choices"][0]["message"]["content"] is not None
 
 
@@ -90,4 +90,4 @@ def test_mimo_client_from_env(monkeypatch):
     client.__post_init__()
     result, _ = client.complete_json(system_prompt="system", user_prompt="user")
 
-    assert result["model"] == "mimo-v2-pro"
+    assert result["model"] == "mimo-v2.5-pro"

@@ -5,7 +5,7 @@ def test_render_page_urlencodes_download_filename() -> None:
     html = _render_page(
         form={},
         result={
-            "model": "mimo-v2-pro",
+            "model": "mimo-v2.5-pro",
             "evidence_selected": 1,
             "evidence_retrieved": 1,
             "source_errors": [],
@@ -23,7 +23,7 @@ def test_render_page_uses_manual_status_refresh_instead_of_meta_refresh() -> Non
     html = _render_page(
         form={"topic": "metformin", "domain": "longevity", "criteria": "2023 onwards"},
         result={
-            "model": "mimo-v2-pro",
+            "model": "mimo-v2.5-pro",
             "evidence_selected": 12,
             "evidence_retrieved": 15,
             "source_errors": [],

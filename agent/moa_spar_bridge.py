@@ -187,16 +187,16 @@ class MoaSparBridgeClient:
         return cls(
             builder=MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
-                model=os.getenv("REVIEWER_MODEL", "nvidia/nemotron-3-super-120b-a12b:free"),
+                model=os.getenv("REVIEWER_MODEL", "nvidia/nemotron-3-super-120b-a12b"),
                 base_url=openrouter_base_url,
                 api_key_env="OPENROUTER_API_KEY",
                 prompt_version="research-agent-bot/nemotron-review-v1",
             ),
             judge=OpenAICompatJsonClient(
-                model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it:free"),
+                model=os.getenv("JUDGE_MODEL", "deepseek/deepseek-v4-flash"),
                 base_url=openrouter_base_url,
                 api_key_env="OPENROUTER_API_KEY",
-                prompt_version="research-agent-bot/gemma4-judge-v1",
+                prompt_version="research-agent-bot/deepseek-v4-flash-judge-v1",
             ),
         )
 

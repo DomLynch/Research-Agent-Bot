@@ -42,7 +42,7 @@ def _usage(payload: dict[str, Any]) -> dict[str, int]:
 
 @dataclass(slots=True)
 class MimoClient:
-    model: str = "mimo-v2-pro"
+    model: str = "mimo-v2.5-pro"
     base_url: str = "https://token-plan-sgp.xiaomimimo.com/v1"
     api_key_env: str = "MIMO_API_KEY"
     prompt_version: str = "research-agent-bot/mimo-v0"
@@ -63,7 +63,7 @@ class MimoClient:
     @classmethod
     def from_env(cls) -> MimoClient:
         return cls(
-            model=os.getenv("MIMO_MODEL", "mimo-v2-pro"),
+            model=os.getenv("MIMO_MODEL", "mimo-v2.5-pro"),
             base_url=os.getenv("MIMO_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"),
         )
 
