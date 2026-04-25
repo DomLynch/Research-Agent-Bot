@@ -1,6 +1,10 @@
 from __future__ import annotations
 
 import html
+import json
+import threading
+import time
+import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, quote, urlparse
@@ -27,16 +31,110 @@ CSS = (
     ".button.secondary{background:#5f8186}"
     ".actions{margin:18px 0}"
     ".error{background:#fff1ed;color:var(--error);border-color:#d7a39a}"
+    ".status-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px}"
+    ".bar{height:12px;background:#c8dcdd;border:1px solid var(--line);border-radius:999px;overflow:hidden}"
+    ".bar>div{height:100%;width:0;background:linear-gradient(90deg,#295b62,#7ba8a8);transition:width .25s ease}"
+    ".log{margin-top:12px;display:grid;gap:6px;color:var(--muted);font-size:14px}"
+    ".log div{padding:6px 8px;border-left:3px solid var(--line);background:rgba(255,255,255,.35);border-radius:8px}"
     "pre{overflow:auto;background:#fbf8f3;padding:16px;border-radius:12px;border:1px solid var(--line);white-space:pre-wrap}"
 )
+
+_JOBS: dict[str, dict] = {}
+_JOBS_LOCK = threading.Lock()
+_MAX_JOBS = 50
 
 
 def _esc(value: object) -> str:
     return html.escape(str(value or ""))
 
 
-def _render_page(*, form: dict[str, str], result: dict | None = None, error: str = "") -> str:
+def _trim_jobs_locked() -> None:
+    if len(_JOBS) <= _MAX_JOBS:
+        return
+    old_done = sorted(
+        (item for item in _JOBS.items() if item[1].get("status") in {"done", "error"}),
+        key=lambda item: float(item[1].get("updated_at", 0)),
+    )
+    for job_id, _ in old_done[: max(0, len(_JOBS) - _MAX_JOBS)]:
+        _JOBS.pop(job_id, None)
+
+
+def _job_snapshot(job_id: str) -> dict:
+    with _JOBS_LOCK:
+        job = dict(_JOBS.get(job_id) or {})
+        if not job:
+            return {}
+        return {"id": job_id, "status": job.get("status", "unknown"), "done": job.get("status") in {"done", "error"}, "progress": job.get("progress") or {}, "events": list(job.get("events") or [])[-12:], "error": job.get("error", ""), "result_error": (job.get("result") or {}).get("error", "")}
+
+
+def _update_job(job_id: str, event: dict) -> None:
+    safe = {"percent": int(event.get("percent", 0) or 0), "step": str(event.get("step") or "running"), "message": str(event.get("message") or ""), "time": time.strftime("%H:%M:%S")}
+    for key in ("retrieved", "selected", "queries", "high_severity"):
+        if key in event:
+            safe[key] = event[key]
+    with _JOBS_LOCK:
+        job = _JOBS.get(job_id)
+        if not job:
+            return
+        job["progress"] = safe
+        job.setdefault("events", []).append(safe)
+        job["updated_at"] = time.time()
+
+
+def _start_job(form: dict[str, str]) -> str:
+    job_id = uuid.uuid4().hex
+    with _JOBS_LOCK:
+        _JOBS[job_id] = {"form": dict(form), "status": "running", "progress": {"percent": 0, "step": "queued", "message": "Run accepted by dashboard."}, "events": [], "result": None, "error": "", "updated_at": time.time()}
+        _trim_jobs_locked()
+
+    def worker() -> None:
+        try:
+            result = run_agent(topic=form.get("topic", ""), domain=form.get("domain", ""), criteria=form.get("criteria", ""), progress=lambda event: _update_job(job_id, event))
+            with _JOBS_LOCK:
+                job = _JOBS[job_id]
+                job["result"] = result
+                job["status"] = "done"
+                job["error"] = str(result.get("error") or "")
+                job["updated_at"] = time.time()
+        except Exception as exc:
+            _update_job(job_id, {"percent": 100, "step": "error", "message": str(exc)})
+            with _JOBS_LOCK:
+                job = _JOBS[job_id]
+                job["status"] = "error"
+                job["error"] = str(exc)
+                job["updated_at"] = time.time()
+
+    threading.Thread(target=worker, daemon=True).start()
+    return job_id
+
+
+def _render_page(*, form: dict[str, str], result: dict | None = None, error: str = "", job_id: str = "") -> str:
     error_block = f'<section class="panel error"><strong>{_esc(error)}</strong></section>' if error else ""
+    status_block = ""
+    if job_id:
+        job_json = json.dumps(job_id)
+        status_block = (
+            '<section class="panel" id="run-status">'
+            '<div class="status-head"><h2>Run Status</h2><strong id="pct">0%</strong></div>'
+            '<div class="bar"><div id="bar"></div></div>'
+            '<p id="status-msg">Queued.</p>'
+            '<div class="log" id="status-log"></div>'
+            "<script>"
+            f"const jobId={job_json};"
+            "function esc(s){return String(s||'').replace(/[&<>\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[m]));}"
+            "async function poll(){"
+            "const r=await fetch('/job/'+jobId,{cache:'no-store'});"
+            "if(!r.ok){document.getElementById('status-msg').textContent='Status unavailable.';return;}"
+            "const j=await r.json(); const p=j.progress||{}; const pct=Math.max(0,Math.min(100,p.percent||0));"
+            "document.getElementById('pct').textContent=pct+'%';"
+            "document.getElementById('bar').style.width=pct+'%';"
+            "document.getElementById('status-msg').textContent=(p.step? p.step+': ':'')+(p.message||'Running.');"
+            "document.getElementById('status-log').innerHTML=(j.events||[]).map(e=>'<div><strong>'+esc(e.time)+'</strong> '+esc(e.step)+': '+esc(e.message)+'</div>').join('');"
+            "if(j.done){window.location='/result/'+jobId;return;}"
+            "setTimeout(poll,1500);"
+            "} poll();"
+            "</script></section>"
+        )
     result_block = ""
     if result:
         download_block = ""
@@ -101,13 +199,31 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
         "</div><div><label>Criteria / Scope</label>"
         f"<textarea name='criteria' placeholder='Example: human studies only, 2020+, safety signals, avoid animal-only evidence.'>{_esc(form.get('criteria', ''))}</textarea>"
         "</div><button type='submit'>Run</button></form></section>"
-        f"{result_block}</div></body></html>"
+        f"{status_block}{result_block}</div></body></html>"
     )
 
 
 class DashboardHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
+        if parsed.path.startswith("/job/"):
+            job_id = parsed.path.split("/job/", 1)[1]
+            snapshot = _job_snapshot(job_id)
+            if not snapshot:
+                self._send(b'{"error":"job not found"}', status=404, content_type="application/json; charset=utf-8")
+                return
+            self._send(json.dumps(snapshot).encode("utf-8"), content_type="application/json; charset=utf-8")
+            return
+        if parsed.path.startswith("/result/"):
+            job_id = parsed.path.split("/result/", 1)[1]
+            with _JOBS_LOCK:
+                job = dict(_JOBS.get(job_id) or {})
+            if not job:
+                self.send_error(404)
+                return
+            result = job.get("result") or {}
+            self._send(_render_page(form=job.get("form") or {}, result=result, error=str(result.get("error") or job.get("error") or "")).encode("utf-8"))
+            return
         if parsed.path == "/download":
             params = parse_qs(parsed.query, keep_blank_values=True)
             name = Path((params.get("file") or [""])[0]).name
@@ -154,8 +270,8 @@ class DashboardHandler(BaseHTTPRequestHandler):
         body = self.rfile.read(int(self.headers.get("Content-Length", "0"))).decode("utf-8")
         parsed = parse_qs(body, keep_blank_values=True)
         form = {key: values[0] for key, values in parsed.items()}
-        result = run_agent(topic=form.get("topic", ""), domain=form.get("domain", ""), criteria=form.get("criteria", ""))
-        self._send(_render_page(form=form, result=result, error=result.get("error", "")).encode("utf-8"))
+        job_id = _start_job(form)
+        self._send(_render_page(form=form, job_id=job_id).encode("utf-8"), status=202)
 
     def log_message(self, format: str, *args: object) -> None:
         return

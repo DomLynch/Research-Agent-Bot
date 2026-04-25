@@ -41,6 +41,29 @@ def test_payload_markdown_includes_standard_evidence_table() -> None:
     assert "strict eligibility yes" in markdown
 
 
+def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
+    markdown = cli._payload_to_markdown(
+        {
+            "title": "Rapid Evidence Synthesis: rapamycin",
+            "domain_slug": "longevity",
+            "abstract": "A direct trial reported a positive signal (p=0.023) [1].",
+            "sections": {"Key Findings": "Signal reported [1]."},
+            "source_bundle": [],
+            "bridge": {
+                "moa": {"reference_models": ["mimo-v2-pro", "MiniMax-M2.7-highspeed", "deepseek-reasoner"]},
+                "spar": {"approved": True, "issues": ["fix abstract"]},
+            },
+        },
+        topic="rapamycin",
+        criteria="",
+    )
+
+    assert "Generation: mimo-v2-pro, MiniMax-M2.7-highspeed, deepseek-reasoner (multi-model drafting)" in markdown
+    assert "Adjudication: structured model adjudication; reviewer issues flagged: 1; status: adjudicated" in markdown
+    assert "Human peer review: false" in markdown
+    assert "Reasoning: MoA+Spar" not in markdown
+
+
 class FakeProvider:
     prompt_version = "test-prompt/v1"
     model = "MiniMax-M2.7-highspeed"
@@ -786,6 +809,28 @@ def test_run_agent_retries_high_severity_draft_quality_violations(tmp_path: Path
     assert run["draft_quality_violations"] == []
 
 
+def test_repair_conclusion_contradiction_removes_null_sentence() -> None:
+    artifact = {
+        "title": "Rapid Evidence Synthesis: rapamycin aging older adults",
+        "abstract": "One trial reported emotional well-being improved (p=0.023) [1].",
+        "sections": {
+            "Key Findings": "One trial found emotional well-being improved with rapamycin (p=0.023) [1].",
+            "Conclusion": "One trial found no significant difference in healthspan compared with placebo [1].",
+        },
+        "source_bundle": [{"role": "published_results"}],
+    }
+    violations = cli.validate_draft_quality(artifact, artifact["source_bundle"])
+
+    assert cli._repair_conclusion_contradictions(artifact, violations)
+    repaired = artifact["sections"]["Conclusion"]
+    assert "no significant difference" not in repaired
+    assert "p=0.023" in repaired
+    assert not any(
+        violation["issue"] == "conclusion_contradicts_positive_finding"
+        for violation in cli.validate_draft_quality(artifact, artifact["source_bundle"])
+    )
+
+
 def test_run_agent_fails_closed_when_high_severity_draft_quality_violations_survive_retry(tmp_path: Path, monkeypatch) -> None:
     provider = RetryingDraftQualityProvider()
     monkeypatch.delenv("RESEARKA_URL", raising=False)
@@ -816,6 +861,29 @@ def test_run_agent_fails_closed_when_high_severity_draft_quality_violations_surv
     assert run["high_severity_citation_count"] == 0
     assert run["high_severity_draft_quality_count"] >= 1
     assert "markdown" not in run
+
+
+def test_run_agent_emits_deterministic_progress_events(tmp_path: Path, monkeypatch) -> None:
+    events: list[dict] = []
+    monkeypatch.delenv("RESEARKA_URL", raising=False)
+    monkeypatch.setattr(cli, "PubMedClient", lambda: MixedSource())
+    monkeypatch.setattr(cli, "OpenAlexClient", lambda: GoodSource())
+    monkeypatch.setattr(cli, "DOAJClient", lambda *args, **kwargs: StubDOAJClient())
+    monkeypatch.setattr(cli.MimoClient, "from_env", staticmethod(lambda: FakeProvider()))
+
+    run = cli.run_agent(
+        topic="senolytics and healthspan",
+        domain="longevity",
+        criteria="recent human evidence",
+        run_dir=str(tmp_path),
+        progress=events.append,
+    )
+
+    assert not run.get("error")
+    assert events[0]["percent"] == 0
+    assert events[-1]["percent"] == 100
+    assert [event["percent"] for event in events] == sorted(event["percent"] for event in events)
+    assert {"retrieve", "adjudication", "validate", "complete"}.issubset({event["step"] for event in events})
 
 
 def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monkeypatch) -> None:

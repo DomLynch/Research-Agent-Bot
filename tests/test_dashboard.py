@@ -39,3 +39,15 @@ def test_render_page_uses_manual_status_refresh_instead_of_meta_refresh() -> Non
     assert 'http-equiv="refresh"' not in html
     assert '/status/abc12345xyz' in html
     assert "Refresh status" in html
+
+
+def test_render_page_includes_live_progress_panel_for_jobs() -> None:
+    html = _render_page(
+        form={"topic": "rapamycin", "domain": "longevity", "criteria": "2022 onwards"},
+        job_id="abc123",
+    )
+
+    assert "Run Status" in html
+    assert "/job/'+jobId" in html
+    assert "bar" in html
+    assert "Queued." in html

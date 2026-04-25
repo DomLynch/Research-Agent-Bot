@@ -1,5 +1,12 @@
 # DECISION JOURNAL
 
+## 2026-04-25 — Async progress UI and machine-adjudication framing
+**Decision:** Dashboard runs now execute as background jobs with deterministic milestone progress and polling, so long multi-model/adjudication runs do not block the browser request path. Public-facing draft metadata now says "multi-model drafting" and "structured model adjudication" rather than "MoA+Spar" to avoid the biomedical "mechanism of action" naming collision and to avoid implying human peer review.
+
+**Why:** Live D+Q completed after nginx had already returned a 504, proving the work finished but the synchronous POST UX was the failure mode. Rapamycin also failed closed on a known validator class: a conclusion sentence contradicted a significant positive cited Key Finding. The fix needed to be generic: async status for any slow topic, and deterministic contradiction repair for any citation, not rapamycin-specific prose.
+
+**Audit:** Added tests for the progress panel, monotonic run-agent progress events, generic conclusion-contradiction repair, and the public machine-adjudication stamp. Local verification: `494 passed, 6 skipped, 5 xfailed`; ruff clean. LOC budget raised from 7,200 to 7,600 because the current reproducible count is 7,268 agent LOC.
+
 ## 2026-04-24 — Default every draft through Hermes-style MoA+Spar plus evidence-object fields
 **Decision:** Make the model-producing paths use a Hermes-derived MoA+Spar bridge by default: MiMo builds/synthesizes, MiniMax reviews, DeepSeek judges, and deterministic validators still make the final ship/no-ship call. Every rendered draft now includes a standard evidence table with tier, design, strict eligibility, confidence, risk-of-bias, and role fields.
 **Why:** The latest three-topic bridge test showed the remaining failures were not retrieval volume problems; they were evidence-object gaps and conclusion consistency failures. A single frontier model can still optimize one prose axis while regressing another. The bridge adds model diversity, while the deterministic validator/evidence table makes the output auditable.

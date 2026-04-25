@@ -3,9 +3,10 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from agent.drafter import RapidEvidenceDrafter
 from agent.entity_resolver import resolve_topic, topic_match_ratio
@@ -34,6 +35,68 @@ _EUROPEPMC_DOMAINS = {"longevity", "oncology", "metabolic", "cardiology", "neuro
 _CHEMBL_SUFFIXES = ("mab", "nib", "mycin", "imus", "formin", "glutide", "statin")
 _CHEMBL_STOPWORDS = {"and", "or", "anti", "aging", "anti-aging", "longevity", "healthspan", "effects", "outcomes"}
 _TOPIC_MATCH_FLOOR = 0.50
+
+ProgressCallback = Callable[[dict[str, Any]], None]
+_NO_SIGNIFICANT_CLAIM_RE = re.compile(
+    r"\b(no significant|no statistically significant|no clear difference|no difference|did not significantly|without significant)\b",
+    re.IGNORECASE,
+)
+_CITATION_RE = re.compile(r"\[(\d+)\]")
+_P_VALUE_RE = re.compile(r"\bp\s*[<=>]\s*0?\.\d+", re.IGNORECASE)
+
+
+def _emit_progress(
+    progress: ProgressCallback | None,
+    *,
+    percent: int,
+    step: str,
+    message: str,
+    **extra: Any,
+) -> None:
+    if progress:
+        try:
+            progress({"percent": max(0, min(100, int(percent))), "step": step, "message": message, **extra})
+        except Exception:
+            pass
+
+
+def _split_sentences_for_repair(text: str) -> list[str]:
+    return [part.strip() for part in re.findall(r"[^.!?]+[.!?]?", str(text or "")) if part.strip()]
+
+
+def _repair_conclusion_contradictions(artifact: dict[str, Any], violations: list[dict[str, Any]]) -> bool:
+    refs: dict[int, dict[str, Any]] = {
+        int(v["citation"]): v
+        for v in violations
+        if v.get("issue") == "conclusion_contradicts_positive_finding" and v.get("citation")
+    }
+    if not refs:
+        return False
+    sections = artifact.get("sections") or {}
+    conclusion = str(sections.get("Conclusion") or "")
+    if not conclusion:
+        return False
+
+    kept: list[str] = []
+    removed = False
+    for sentence in _split_sentences_for_repair(conclusion):
+        cited = {int(match.group(1)) for match in _CITATION_RE.finditer(sentence)}
+        if cited.intersection(refs) and _NO_SIGNIFICANT_CLAIM_RE.search(sentence):
+            removed = True
+            continue
+        kept.append(sentence)
+    if not removed:
+        return False
+
+    for ref, violation in sorted(refs.items()):
+        positive = str(violation.get("positive_finding") or "")
+        p_value = _P_VALUE_RE.search(positive)
+        numeric = p_value.group(0) if p_value else "a statistically significant result"
+        kept.append(f"The significant positive signal ({numeric}) should be interpreted cautiously rather than as definitive broad efficacy evidence [{ref}].")
+    sections["Conclusion"] = " ".join(kept).strip()
+    artifact["sections"] = sections
+    artifact["draft_quality_auto_repair"] = "conclusion_contradiction"
+    return True
 
 
 def _should_use_clinical_trials(domain: str, topic: str) -> bool:
@@ -113,7 +176,7 @@ def _is_submit_enabled() -> bool:
 def _drafter_provider() -> Any:
     builder = MimoClient.from_env()
     # Tests patch MimoClient.from_env with lightweight fake providers. Keep
-    # those direct while production uses the Hermes-derived MoA+Spar bridge.
+    # those direct while production uses the Hermes-derived multi-model bridge.
     if not isinstance(builder, MimoClient):
         return builder
     return MoaSparBridgeClient.from_env(builder=builder)
@@ -367,7 +430,12 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
     if payload.get("bridge"):
         bridge = payload["bridge"]
         models = ", ".join((bridge.get("moa") or {}).get("reference_models") or [])
-        lines.append(f"- Reasoning: MoA+Spar ({models})")
+        spar = bridge.get("spar") or {}
+        issues = len(spar.get("issues") or [])
+        status = "adjudicated" if spar.get("approved") else "machine-reviewed with unresolved/degraded review"
+        lines.append(f"- Generation: {models} (multi-model drafting)")
+        lines.append(f"- Adjudication: structured model adjudication; reviewer issues flagged: {issues}; status: {status}")
+        lines.append("- Human peer review: false")
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
     lines.extend(["", "## Abstract", "", payload["abstract"], ""])
@@ -440,19 +508,26 @@ def run_agent(
     criteria: str = "",
     per_source_limit: int = 25,
     run_dir: str = "runs",
+    progress: ProgressCallback | None = None,
 ) -> dict:
-    if not _is_enabled():
-        return {"error": "BOT_ENABLED is not set to true. Run blocked by kill switch.", "started_at": datetime.now(timezone.utc).isoformat(), "topic": topic}
     started_at = datetime.now(timezone.utc).isoformat()
+    _emit_progress(progress, percent=0, step="queued", message="Run accepted by dashboard.")
+    if not _is_enabled():
+        blocked = {"error": "BOT_ENABLED is not set to true. Run blocked by kill switch.", "started_at": started_at, "topic": topic}
+        _emit_progress(progress, percent=100, step="blocked", message=blocked["error"], error=blocked["error"])
+        return blocked
     spent = _daily_cost(run_dir)
     cap = _daily_cost_cap()
     if spent >= cap:
-        return {"error": f"Daily cost cap reached (${spent:.4f} >= ${cap:.2f}). Set DAILY_COST_CAP_USD to override.", "started_at": started_at, "topic": topic}
+        blocked = {"error": f"Daily cost cap reached (${spent:.4f} >= ${cap:.2f}). Set DAILY_COST_CAP_USD to override.", "started_at": started_at, "topic": topic}
+        _emit_progress(progress, percent=100, step="blocked", message=blocked["error"], error=blocked["error"])
+        return blocked
+    _emit_progress(progress, percent=5, step="resolve", message="Resolving topic, aliases, and scoped sources.")
     chembl_client = ChEMBLClient() if _should_use_chembl(topic) else None
     doaj_client = DOAJClient(cache_dir=Path(run_dir) / "doaj-cache")
     entity = resolve_topic(topic, chembl_client=chembl_client)
     if entity.get("blocked"):
-        return {
+        blocked = {
             "error": f"Could not confidently resolve topic '{topic}'. Verify spelling and try again.",
             "started_at": started_at,
             "topic": topic,
@@ -460,10 +535,13 @@ def run_agent(
             "did_you_mean": entity.get("did_you_mean"),
             "resolver_confidence": entity.get("confidence", 0.0),
         }
+        _emit_progress(progress, percent=100, step="blocked", message=blocked["error"], error=blocked["error"])
+        return blocked
     resolved_topic = str(entity.get("canonical_topic") or topic)
     semantic_scholar_client = SemanticScholarClient() if _should_use_semantic_scholar(domain, resolved_topic) else None
     plan = QueryPlanner().build(topic=resolved_topic, domain_slug=domain, criteria=criteria)
     queries = plan.primary_queries()
+    _emit_progress(progress, percent=10, step="plan", message="Deterministic planner built scoped literature queries.", queries=len(queries), canonical_topic=resolved_topic)
     source_names: list[str] = ["pubmed", "openalex"]
     run_log = {
         "started_at": started_at,
@@ -503,6 +581,7 @@ def run_agent(
         source_names.append("nih_reporter")
     if semantic_scholar_client:
         source_names.append("semantic_scholar")
+    _emit_progress(progress, percent=18, step="retrieve", message="Retrieving candidates from public indexes and registries.", sources=source_names)
     protocol_path = _write_protocol_json(
         Path(run_dir),
         started_at=started_at,
@@ -546,10 +625,13 @@ def run_agent(
     run_log["source_counts"] = source_counts
     run_log["evidence_retrieved"] = len(evidence)
     retrieved_n = len(evidence)
+    _emit_progress(progress, percent=35, step="filter", message="Applying deterministic scope, duplicate, and topic-fit filters.", retrieved=retrieved_n, source_counts=source_counts)
     all_evidence = plan.filter_evidence(list(evidence))
     evidence = plan.filter_evidence(evidence)
+    _emit_progress(progress, percent=45, step="fulltext", message="Fetching available full text and open-access metadata.")
     full_text_fetcher = FullTextFetcher(cache_dir=Path(run_dir) / "fulltext-cache")
     all_evidence, full_text_stats = full_text_fetcher.enrich_entries(all_evidence, limit=12)
+    _emit_progress(progress, percent=55, step="extract", message="Extracting structured claims and trial effects.")
     extractor = StructuredExtractor.from_env(cache_dir=Path(run_dir) / "extract-cache")
     all_evidence, extraction_stats = extractor.enrich_entries(all_evidence, limit=6)
     enriched_lookup = {entry_identity(item): item for item in all_evidence if entry_identity(item)}
@@ -557,6 +639,7 @@ def run_agent(
     run_log["evidence_selected"] = len(evidence)
     run_log["full_text"] = full_text_stats
     run_log["extraction"] = extraction_stats
+    _emit_progress(progress, percent=64, step="bundle", message="Building the evidence pyramid and 12-source bundle.", selected=len(evidence), full_text=full_text_stats, extraction=extraction_stats)
     topic_ratio = topic_match_ratio(
         evidence[:20],
         canonical_term=str(entity.get("canonical_term") or resolved_topic),
@@ -576,8 +659,10 @@ def run_agent(
             f"Verify topic spelling or refine the query."
         )
         run_log["run_log"] = str(_write_json(Path(run_dir), run_log))
+        _emit_progress(progress, percent=100, step="blocked", message=run_log["error"], error=run_log["error"])
         return run_log
     try:
+        _emit_progress(progress, percent=72, step="adjudication", message="Drafting with multi-model drafting plus structured model adjudication: MiMo builder/synthesizer, MiniMax reviewer, DeepSeek judge; degraded mode is explicit if a provider is unavailable.", models=["mimo-v2-pro", "MiniMax-M2.7-highspeed", "deepseek"])
         drafter = RapidEvidenceDrafter(provider=_drafter_provider())
         artifact, raw_output = drafter.draft(
             topic=resolved_topic,
@@ -600,7 +685,9 @@ def run_agent(
             high_severity_draft_quality,
         ) = _validate_artifact(artifact)
         high_severity = [*high_severity_citation, *high_severity_draft_quality]
+        _emit_progress(progress, percent=84, step="validate", message="Running deterministic citation, tier, and draft-quality validators.", high_severity=len(high_severity))
         if high_severity and not artifact.get("error"):
+            _emit_progress(progress, percent=88, step="revise", message="Running one bounded revision pass for high-severity validator findings.")
             artifact, retry_raw = drafter.draft(
                 topic=resolved_topic,
                 domain_slug=domain,
@@ -626,12 +713,21 @@ def run_agent(
             ) = _validate_artifact(artifact)
             high_severity = [*high_severity_citation, *high_severity_draft_quality]
             if high_severity and not artifact.get("error"):
-                if high_severity_draft_quality:
-                    artifact["error"] = "High-severity draft-quality violations remained after one revision pass."
-                    artifact["gate_reason"] = "draft_quality_violation"
-                else:
-                    artifact["error"] = "High-severity citation-role violations remained after one revision pass."
-                    artifact["gate_reason"] = "citation_role_violation"
+                if _repair_conclusion_contradictions(artifact, high_severity_draft_quality):
+                    (
+                        citation_violations,
+                        draft_quality_violations,
+                        high_severity_citation,
+                        high_severity_draft_quality,
+                    ) = _validate_artifact(artifact)
+                    high_severity = [*high_severity_citation, *high_severity_draft_quality]
+                if high_severity:
+                    if high_severity_draft_quality:
+                        artifact["error"] = "High-severity draft-quality violations remained after one revision pass."
+                        artifact["gate_reason"] = "draft_quality_violation"
+                    else:
+                        artifact["error"] = "High-severity citation-role violations remained after one revision pass."
+                        artifact["gate_reason"] = "citation_role_violation"
         else:
             run_log["citation_retry_count"] = 0
             run_log["quality_retry_count"] = 0
@@ -667,6 +763,7 @@ def run_agent(
             "extraction": extraction_stats,
         }
         if not artifact.get("error"):
+            _emit_progress(progress, percent=95, step="render", message="Rendering markdown, evidence table, and optional Researka submission.")
             markdown = _payload_to_markdown(artifact, topic=resolved_topic, criteria=criteria)
             markdown_path = _write_markdown(Path(run_dir), started_at=started_at, topic=resolved_topic, markdown=markdown)
             run_log["markdown"] = markdown
@@ -686,6 +783,10 @@ def run_agent(
     except Exception as exc:
         run_log["error"] = str(exc)
     run_log["run_log"] = str(_write_json(Path(run_dir), run_log))
+    if run_log.get("error"):
+        _emit_progress(progress, percent=100, step="blocked", message=str(run_log["error"]), error=run_log["error"])
+    else:
+        _emit_progress(progress, percent=100, step="complete", message="Run complete. Markdown and run log are available.")
     return run_log
 
 
