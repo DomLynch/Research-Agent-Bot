@@ -183,6 +183,7 @@ class MoaSparBridgeClient:
     max_fix_rounds: int = 1
     prompt_version: str = "research-agent-bot/moa-spar-bridge-v1"
     model: str = "moa-spar-bridge"
+    degraded_error: str | None = field(default=None, init=False)
 
     @classmethod
     def from_env(cls, *, builder: JsonProvider | None = None) -> "MoaSparBridgeClient":
@@ -232,10 +233,13 @@ class MoaSparBridgeClient:
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
         self_draft, self_raw = self.builder.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        if self.degraded_error:
+            return self._degraded_result(self_draft, self_raw, RuntimeError(self.degraded_error))
         try:
             reviewer_draft, reviewer_raw = self.reviewer.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
             judge_draft, judge_raw = self.judge.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
         except Exception as exc:
+            self.degraded_error = str(exc)
             return self._degraded_result(self_draft, self_raw, exc)
         proposals = [
             (_route_label(self.builder), self_draft),

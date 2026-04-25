@@ -15,6 +15,10 @@ class StubProvider:
         payload = self._responses.pop(0)
         return payload, {"choices": [{"message": {"content": "raw"}}], "usage": {}}
 
+    @property
+    def remaining(self) -> int:
+        return len(self._responses)
+
 
 class FailingProvider(StubProvider):
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
@@ -100,14 +104,22 @@ def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails() -> Non
     builder = StubProvider(
         model="mimo-v2-pro",
         prompt_version="test/mimo",
-        responses=[{"question": "Builder fallback", "findings": "usable"}],
+        responses=[
+            {"question": "Builder fallback", "findings": "usable"},
+            {"question": "Fast degraded fallback", "findings": "usable"},
+        ],
     )
     reviewer = StubProvider(model="MiniMax-M2.7-highspeed", prompt_version="test/minimax", responses=[{"question": "Reviewer"}])
     judge = FailingProvider(model="deepseek-reasoner", prompt_version="test/deepseek", responses=[])
+    client = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge)
 
-    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(system_prompt="system", user_prompt="user")
+    result, raw = client.complete_json(system_prompt="system", user_prompt="user")
+    second, second_raw = client.complete_json(system_prompt="system", user_prompt="user")
 
     assert result["question"] == "Builder fallback"
     assert result["_bridge"]["mode"] == "moa_spar_degraded"
     assert result["_bridge"]["spar"]["approved"] is False
     assert raw["degraded"] is True
+    assert second["question"] == "Fast degraded fallback"
+    assert second_raw["degraded"] is True
+    assert reviewer.remaining == 0
