@@ -1,11 +1,11 @@
 # DECISION JOURNAL
 
-## 2026-04-25 — Route bridge reviewer and judge through OpenRouter paid models
-**Decision:** Keep MiMo V2.5 Pro as builder/synthesizer, but route the structured review slot to `nvidia/nemotron-3-super-120b-a12b` and the judge slot to `deepseek/deepseek-v4-flash` through OpenRouter.
+## 2026-04-25 — Upgrade default model route to MiMo V2.5 Pro + OpenRouter adjudication
+**Decision:** Upgrade the builder/synthesizer to Xiaomi `mimo-v2.5-pro`, route the structured review slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b`, and route the judge slot to OpenRouter `deepseek/deepseek-v4-flash`.
 
-**Why:** DeepSeek billing attribution proved unsafe for this project budget, and OpenRouter currently lists both Nemotron 3 Super and DeepSeek V4 Flash as paid OpenRouter models. The defaults preserve model-family diversity without using direct DeepSeek or MiniMax subscription keys.
+**Why:** The project has a Xiaomi monthly token plan for MiMo, and V2.5 Pro is the current flagship builder path. DeepSeek direct billing attribution proved unsafe, so DeepSeek V4 Flash now runs only through OpenRouter, while Nemotron remains an orthogonal NVIDIA reviewer.
 
-**Audit:** Runtime defaults now use generic `REVIEWER_*` / `JUDGE_*` env vars with OpenRouter paid OpenRouter slugs. Bridge regression tests assert the exact default route, shared `OPENROUTER_API_KEY` path, OpenRouter cost parsing for paid routes.
+**Audit:** Runtime defaults now use generic `REVIEWER_*` / `JUDGE_*` env vars with OpenRouter slugs. Bridge regression tests assert the exact default route and shared `OPENROUTER_API_KEY` path; provider tests assert MiMo V2.5 Pro defaulting and updated cost accounting. Local verification: `509 passed, 6 skipped, 5 xfailed`; ruff clean.
 
 ## 2026-04-25 — A+ eval and review-pattern cleanup
 **Decision:** Move review-like title detection into one shared helper and extend the gold/Karpathy scoring surfaces with explicit machine-adjudication audit-trail scoring.

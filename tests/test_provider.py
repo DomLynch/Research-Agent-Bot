@@ -70,6 +70,7 @@ def test_client_complete_json_handles_prose_and_sets_usage(monkeypatch):
     assert result["findings"] == "stable"
     assert result["usage"] == {"input_tokens": 11, "output_tokens": 7, "total_tokens": 18}
     assert result["model"] == "mimo-v2.5-pro"
+    assert round(result["estimated_cost_usd"], 8) == 0.000032
     assert raw["choices"][0]["message"]["content"] is not None
 
 

@@ -93,9 +93,10 @@ class MimoClient:
                 message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
                 content = _extract_json(message)
                 content["usage"] = _usage(payload)
+                price = (0.000001, 0.000003) if self.model == "mimo-v2.5-pro" else (0.00000014, 0.00000028)
                 content["estimated_cost_usd"] = (
-                    (payload.get("usage", {}).get("prompt_tokens", 0) or 0) / 1000 * 0.00014
-                    + (payload.get("usage", {}).get("completion_tokens", 0) or 0) / 1000 * 0.00028
+                    (payload.get("usage", {}).get("prompt_tokens", 0) or 0) * price[0]
+                    + (payload.get("usage", {}).get("completion_tokens", 0) or 0) * price[1]
                 )
                 content["prompt_version"] = self.prompt_version
                 content["model"] = self.model
