@@ -1,11 +1,11 @@
 # DECISION JOURNAL
 
-## 2026-04-25 — Replace Nemotron reviewer with OpenRouter Mistral Small 2603
-**Decision:** Keep Xiaomi `mimo-v2.5-pro` as builder/synthesizer and `google/gemma-4-31b-it` as judge, but replace the default reviewer route from `nvidia/nemotron-3-super-120b-a12b` to OpenRouter `mistralai/mistral-small-2603`.
+## 2026-04-25 — Use Gemma reviewer and Mistral judge after A/B bridge test
+**Decision:** Keep Xiaomi `mimo-v2.5-pro` as builder/synthesizer, set OpenRouter `google/gemma-4-31b-it` as reviewer, and set OpenRouter `mistralai/mistral-small-2603` as judge.
 
-**Why:** Live timing/quality probes showed Nemotron taking 39-54 seconds per review and sometimes returning invalid review JSON. Mistral Small 2603 is a fast, orthogonal OpenRouter reviewer candidate and is safer for the default quick-synthesis path.
+**Why:** Live A/B on rapamycin showed the same full-report runtime as the opposite route, but slightly stronger output with Gemma in the reviewer slot. Mistral is fast and valid as a judge; Gemma catches higher-signal review issues.
 
-**Audit:** Defaults, dashboard copy, docs, and tests now use `mistralai/mistral-small-2603`. The reviewer remains fully env-overridable through `REVIEWER_MODEL`.
+**Audit:** Defaults, dashboard copy, docs, and tests now use Gemma reviewer plus Mistral judge. Both remain env-overridable through `REVIEWER_MODEL` and `JUDGE_MODEL`. LOC audit found the prior state file stale; runtime count is 7,667 agent LOC with no runtime LOC increase from this route swap.
 
 ## 2026-04-25 — Upgrade default model route to MiMo V2.5 Pro + OpenRouter adjudication
 **Decision:** Upgrade the builder/synthesizer to Xiaomi `mimo-v2.5-pro`, route the structured review slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b`, and route the judge slot to OpenRouter `google/gemma-4-31b-it`.

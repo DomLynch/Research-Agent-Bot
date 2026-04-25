@@ -49,16 +49,16 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
         ],
     )
     reviewer = StubProvider(
-        model="mistralai/mistral-small-2603",
-        prompt_version="test/mistral",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[
             {"question": "Reviewer draft", "usage": {"input_tokens": 9, "output_tokens": 4}, "estimated_cost_usd": 0.03},
             {"approved": True, "summary": "Looks complete.", "issues": [], "fix": None, "usage": {"input_tokens": 8, "output_tokens": 3}, "estimated_cost_usd": 0.04},
         ],
     )
     judge = StubProvider(
-        model="google/gemma-4-31b-it",
-        prompt_version="test/gemma4-31b",
+        model="mistralai/mistral-small-2603",
+        prompt_version="test/mistral",
         responses=[
             {"question": "Judge draft", "usage": {"input_tokens": 11, "output_tokens": 6}, "estimated_cost_usd": 0.05},
             {"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None, "usage": {"input_tokens": 7, "output_tokens": 2}, "estimated_cost_usd": 0.06},
@@ -74,14 +74,14 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
     assert result["estimated_cost_usd"] == 0.21
     assert result["_bridge"]["moa"]["reference_models"] == [
         "mimo-v2.5-pro",
-        "mistralai/mistral-small-2603",
         "google/gemma-4-31b-it",
+        "mistralai/mistral-small-2603",
     ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
     assert result["_bridge"]["spar"]["review_models"] == [
-        "mistralai/mistral-small-2603",
         "google/gemma-4-31b-it",
+        "mistralai/mistral-small-2603",
     ]
     assert "moa" in raw
     assert "spar" in raw
@@ -94,13 +94,13 @@ def test_moa_spar_bridge_defaults_to_fast_review_only_path() -> None:
         responses=[{"question": "Builder draft", "usage": {"input_tokens": 10, "output_tokens": 5}, "estimated_cost_usd": 0.01}],
     )
     reviewer = StubProvider(
-        model="mistralai/mistral-small-2603",
-        prompt_version="test/mistral",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[{"approved": True, "summary": "Looks complete.", "issues": [], "fix": None, "usage": {"input_tokens": 8, "output_tokens": 3}, "estimated_cost_usd": 0.04}],
     )
     judge = StubProvider(
-        model="google/gemma-4-31b-it",
-        prompt_version="test/gemma4-31b",
+        model="mistralai/mistral-small-2603",
+        prompt_version="test/mistral",
         responses=[{"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None, "usage": {"input_tokens": 7, "output_tokens": 2}, "estimated_cost_usd": 0.06}],
     )
 
@@ -122,13 +122,13 @@ def test_moa_spar_bridge_reviews_raw_draft_schema_not_final_artifact_schema() ->
         responses=[{"question": "Draft question", "findings": "Draft findings", "conclusion": "Draft conclusion"}],
     )
     reviewer = PromptCapturingProvider(
-        model="mistralai/mistral-small-2603",
-        prompt_version="test/mistral",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[{"approved": True, "summary": "Raw draft schema is complete.", "issues": [], "fix": None}],
     )
     judge = StubProvider(
-        model="google/gemma-4-31b-it",
-        prompt_version="test/gemma4-31b",
+        model="mistralai/mistral-small-2603",
+        prompt_version="test/mistral",
         responses=[{"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None}],
     )
 
@@ -154,8 +154,8 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
         ],
     )
     reviewer = StubProvider(
-        model="mistralai/mistral-small-2603",
-        prompt_version="test/mistral",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[
             {"question": "Reviewer"},
             {"summary": "Missing approved boolean"},
@@ -163,8 +163,8 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
         ],
     )
     judge = StubProvider(
-        model="google/gemma-4-31b-it",
-        prompt_version="test/gemma4-31b",
+        model="mistralai/mistral-small-2603",
+        prompt_version="test/mistral",
         responses=[
             {"question": "Judge"},
             {"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None},
@@ -185,13 +185,13 @@ def test_moa_spar_bridge_accepts_null_review_issues() -> None:
         responses=[{"question": "Self"}, {"question": "Candidate"}],
     )
     reviewer = StubProvider(
-        model="mistralai/mistral-small-2603",
-        prompt_version="test/mistral",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[{"question": "Reviewer"}, {"approved": True, "summary": "No material issues.", "issues": None, "fix": None}],
     )
     judge = StubProvider(
-        model="google/gemma-4-31b-it",
-        prompt_version="test/gemma4-31b",
+        model="mistralai/mistral-small-2603",
+        prompt_version="test/mistral",
         responses=[{"question": "Judge"}, {"approved": True, "summary": "Judge agrees.", "issues": None, "fix": None}],
     )
 
@@ -210,8 +210,8 @@ def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails() -> Non
             {"question": "Fast degraded fallback", "findings": "usable"},
         ],
     )
-    reviewer = StubProvider(model="mistralai/mistral-small-2603", prompt_version="test/mistral", responses=[{"question": "Reviewer"}])
-    judge = FailingProvider(model="google/gemma-4-31b-it", prompt_version="test/gemma4-31b", responses=[])
+    reviewer = StubProvider(model="google/gemma-4-31b-it", prompt_version="test/gemma4-31b", responses=[{"question": "Reviewer"}])
+    judge = FailingProvider(model="mistralai/mistral-small-2603", prompt_version="test/mistral", responses=[])
     client = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge)
 
     result, raw = client.complete_json(system_prompt="system", user_prompt="user")
@@ -239,8 +239,8 @@ def test_moa_spar_bridge_from_env_defaults_to_openrouter_models(monkeypatch) -> 
     client = MoaSparBridgeClient.from_env()
 
     assert client.builder.model == "mimo-v2.5-pro"
-    assert client.reviewer.model == "mistralai/mistral-small-2603"
-    assert client.judge.model == "google/gemma-4-31b-it"
+    assert client.reviewer.model == "google/gemma-4-31b-it"
+    assert client.judge.model == "mistralai/mistral-small-2603"
     assert client.reviewer.base_url == "https://openrouter.ai/api/v1"
     assert client.judge.base_url == "https://openrouter.ai/api/v1"
     assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"
@@ -281,7 +281,7 @@ def test_openrouter_client_records_reported_cost(monkeypatch) -> None:
         )
 
     client = OpenAICompatJsonClient(
-        model="google/gemma-4-31b-it",
+        model="mistralai/mistral-small-2603",
         base_url="https://openrouter.ai/api/v1",
         api_key_env="OPENROUTER_API_KEY",
         prompt_version="test/openrouter",
@@ -308,7 +308,7 @@ def test_openrouter_client_allows_reported_cost_for_paid_models(monkeypatch) -> 
         )
 
     client = OpenAICompatJsonClient(
-        model="mistralai/mistral-small-2603",
+        model="google/gemma-4-31b-it",
         base_url="https://openrouter.ai/api/v1",
         api_key_env="OPENROUTER_API_KEY",
         prompt_version="test/openrouter",
@@ -339,7 +339,7 @@ def test_openrouter_client_retries_retryable_transport_error(monkeypatch) -> Non
         )
 
     client = OpenAICompatJsonClient(
-        model="google/gemma-4-31b-it",
+        model="mistralai/mistral-small-2603",
         base_url="https://openrouter.ai/api/v1",
         api_key_env="OPENROUTER_API_KEY",
         prompt_version="test/openrouter",
@@ -380,7 +380,7 @@ def test_openrouter_client_falls_back_when_json_mode_unsupported(monkeypatch) ->
         )
 
     client = OpenAICompatJsonClient(
-        model="mistralai/mistral-small-2603",
+        model="google/gemma-4-31b-it",
         base_url="https://openrouter.ai/api/v1",
         api_key_env="OPENROUTER_API_KEY",
         prompt_version="test/openrouter",

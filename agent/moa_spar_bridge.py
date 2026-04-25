@@ -283,18 +283,18 @@ class MoaSparBridgeClient:
         return cls(
             builder=builder or MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
-                model=os.getenv("REVIEWER_MODEL", "mistralai/mistral-small-2603"),
+                model=os.getenv("REVIEWER_MODEL", "google/gemma-4-31b-it"),
                 base_url=os.getenv("REVIEWER_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("REVIEWER_API_KEY_ENV", openrouter_key_env),
-                prompt_version="research-agent-bot/mistral-small-review-v1",
+                prompt_version="research-agent-bot/gemma4-31b-review-v1",
                 timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "65")),
                 retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),
             judge=OpenAICompatJsonClient(
-                model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it"),
+                model=os.getenv("JUDGE_MODEL", "mistralai/mistral-small-2603"),
                 base_url=os.getenv("JUDGE_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("JUDGE_API_KEY_ENV", openrouter_key_env),
-                prompt_version="research-agent-bot/gemma4-31b-judge-v1",
+                prompt_version="research-agent-bot/mistral-small-judge-v1",
                 timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "65")),
                 retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),

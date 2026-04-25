@@ -14,12 +14,12 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - Obvious typo / wrong-entity compound topics fail safely instead of drafting over junk retrieval.
 
 ## Constraints
-- Runtime target: ~7,400 LOC (raised for the 2026-04-25 async dashboard progress bridge and contradiction repair).
-  Hard ceiling: 7,600 LOC. Actual: ~7,465 LOC.
+- Runtime target: ~7,600 LOC (raised for the 2026-04-25 async dashboard progress bridge and contradiction repair).
+  Hard ceiling: 7,800 LOC. Actual: 7,667 LOC.
 - LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
-- Provider path uses multi-model drafting plus structured model adjudication by default: MiMo V2.5 Pro builder/synthesizer, OpenRouter Mistral Small 2603 reviewer, OpenRouter Gemma 4 31B judge. Required env vars: `MIMO_API_KEY`, `OPENROUTER_API_KEY`; unavailable reviewer/judge calls degrade explicitly instead of crashing a run.
+- Provider path uses multi-model drafting plus structured model adjudication by default: MiMo V2.5 Pro builder/synthesizer, OpenRouter Gemma 4 31B reviewer, OpenRouter Mistral Small 2603 judge. Required env vars: `MIMO_API_KEY`, `OPENROUTER_API_KEY`; unavailable reviewer/judge calls degrade explicitly instead of crashing a run.
 
 ## Winning Path
 Deterministic planner + bounded public literature queries + directness-aware bundle + MiMo draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.

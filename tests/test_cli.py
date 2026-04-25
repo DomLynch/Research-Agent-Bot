@@ -50,11 +50,11 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
             "sections": {"Key Findings": "Signal reported [1]."},
             "source_bundle": [],
             "bridge": {
-                "moa": {"reference_models": ["mimo-v2.5-pro", "mistralai/mistral-small-2603", "google/gemma-4-31b-it"]},
+                "moa": {"reference_models": ["mimo-v2.5-pro", "google/gemma-4-31b-it", "mistralai/mistral-small-2603"]},
                 "spar": {
                     "approved": True,
                     "issues": ["fix abstract"],
-                    "review_models": ["mistralai/mistral-small-2603", "google/gemma-4-31b-it"],
+                    "review_models": ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"],
                 },
             },
         },
@@ -62,8 +62,8 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
         criteria="",
     )
 
-    assert "Generation: mimo-v2.5-pro, mistralai/mistral-small-2603, google/gemma-4-31b-it (multi-model drafting)" in markdown
-    assert "Adjudication: mistralai/mistral-small-2603, google/gemma-4-31b-it; reviewer issues flagged: 1; status: adjudicated" in markdown
+    assert "Generation: mimo-v2.5-pro, google/gemma-4-31b-it, mistralai/mistral-small-2603 (multi-model drafting)" in markdown
+    assert "Adjudication: google/gemma-4-31b-it, mistralai/mistral-small-2603; reviewer issues flagged: 1; status: adjudicated" in markdown
     assert "Human peer review: false" in markdown
     assert "Reasoning: MoA+Spar" not in markdown
 
@@ -120,7 +120,7 @@ def test_payload_markdown_separates_operational_bridge_failures() -> None:
                 "spar": {
                     "approved": False,
                     "issues": ["bridge_provider_error:mistralai/mistral-small-2603 exceeded timeout"],
-                    "review_models": ["mistralai/mistral-small-2603", "google/gemma-4-31b-it"],
+                    "review_models": ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"],
                 },
             },
         },
