@@ -37,8 +37,8 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
         ],
     )
     reviewer = StubProvider(
-        model="MiniMax-M2.7-highspeed",
-        prompt_version="test/minimax",
+        model="nvidia/nemotron-3-super-120b-a12b:free",
+        prompt_version="test/nemotron",
         responses=[
             {
                 "question": "Reviewer draft question",
@@ -57,8 +57,8 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
         ],
     )
     judge = StubProvider(
-        model="deepseek-reasoner",
-        prompt_version="test/deepseek",
+        model="google/gemma-4-31b-it:free",
+        prompt_version="test/gemma4",
         responses=[
             {
                 "question": "Judge draft question",
@@ -90,10 +90,26 @@ def test_moa_spar_bridge_happy_path_preserves_provider_contract():
     assert result["_bridge"]["mode"] == "moa_spar"
     assert result["_bridge"]["moa"]["reference_models"] == [
         "mimo-v2-pro",
-        "MiniMax-M2.7-highspeed",
-        "deepseek-reasoner",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-31b-it:free",
     ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
     assert "moa" in raw
     assert "spar" in raw
+
+
+def test_moa_spar_bridge_from_env_uses_openrouter_free_review_panel(monkeypatch):
+    monkeypatch.delenv("REVIEWER_MODEL", raising=False)
+    monkeypatch.delenv("JUDGE_MODEL", raising=False)
+    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+
+    client = MoaSparBridgeClient.from_env()
+
+    assert client.builder.model == "mimo-v2-pro"
+    assert client.reviewer.model == "nvidia/nemotron-3-super-120b-a12b:free"
+    assert client.judge.model == "google/gemma-4-31b-it:free"
+    assert client.reviewer.base_url == "https://openrouter.ai/api/v1"
+    assert client.judge.base_url == "https://openrouter.ai/api/v1"
+    assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"
+    assert client.judge.api_key_env == "OPENROUTER_API_KEY"

@@ -18,7 +18,7 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
   Hard ceiling: 3,600 LOC. Actual: ~3,405 LOC.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
-- Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). No multi-model switching.
+- Main V0 provider is MiMo v2 Pro only (`MIMO_API_KEY` env var). Optional manual MoA/Spar bridge uses OpenRouter free reviewer/judge models, not MiniMax or DeepSeek.
 
 ## Winning Path
 Deterministic planner + bounded public literature queries + directness-aware bundle + MiMo draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.
@@ -37,7 +37,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - Citation-role validation is now advisory and logged in `citation_violations`; it is not yet a hard gate, and the live gold-fixture rerun is still blocked in this shell because `MIMO_API_KEY` is unset.
 
 ## Next Validation Step
-Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/generate_fixtures.py --all`, and rerun the Karpathy-loop diff to measure the real Tier 2 delta on citation-role violations and quantitative fidelity.
+Set `MIMO_API_KEY` in this shell, regenerate the 10 gold fixtures via `scripts/generate_fixtures.py --all`, and rerun the Karpathy-loop diff to measure the real Tier 2 delta on citation-role violations and quantitative fidelity. For optional MoA/Spar checks, set `OPENROUTER_API_KEY` and use Nemotron/Gemma free slots.
 
 ## Hardening Status
 | Step | What | Status |

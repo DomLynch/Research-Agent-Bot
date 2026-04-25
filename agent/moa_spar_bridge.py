@@ -183,19 +183,20 @@ class MoaSparBridgeClient:
 
     @classmethod
     def from_env(cls) -> "MoaSparBridgeClient":
+        openrouter_base_url = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
         return cls(
             builder=MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
-                model=os.getenv("MINIMAX_MODEL", "MiniMax-M2.7-highspeed"),
-                base_url=os.getenv("MINIMAX_BASE_URL", "https://api.minimax.chat/v1"),
-                api_key_env="MINIMAX_API_KEY",
-                prompt_version="research-agent-bot/minimax-review-v1",
+                model=os.getenv("REVIEWER_MODEL", "nvidia/nemotron-3-super-120b-a12b:free"),
+                base_url=openrouter_base_url,
+                api_key_env="OPENROUTER_API_KEY",
+                prompt_version="research-agent-bot/nemotron-review-v1",
             ),
             judge=OpenAICompatJsonClient(
-                model=os.getenv("DEEPSEEK_MODEL", "deepseek-reasoner"),
-                base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
-                api_key_env="DEEPSEEK_API_KEY",
-                prompt_version="research-agent-bot/deepseek-judge-v1",
+                model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it:free"),
+                base_url=openrouter_base_url,
+                api_key_env="OPENROUTER_API_KEY",
+                prompt_version="research-agent-bot/gemma4-judge-v1",
             ),
         )
 

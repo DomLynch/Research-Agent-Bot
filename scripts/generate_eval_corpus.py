@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Generate adversarial and breadth eval corpus via MiniMax bulk.
+"""Generate adversarial and breadth eval corpus via MiMo bulk.
 
 Usage:
     python scripts/generate_eval_corpus.py --adversarial 30 --breadth 60
     python scripts/generate_eval_corpus.py --adversarial 30 --breadth 60 --api-key $MIMO_API_KEY
 
 This script generates:
-- adversarial/: trap/drift/injection cases (MiniMax-generated)
-- breadth/: regression-matrix topics (MiniMax-generated)
+- adversarial/: trap/drift/injection cases (MiMo-generated)
+- breadth/: regression-matrix topics (MiMo-generated)
 
 Quota cost: ~100 calls = 0.7% of 15k/day budget.
 """
@@ -68,7 +68,7 @@ BREADTH_DOMAINS = [
 
 
 def generate_topic(provider, seed: str, domain: str, tier: str, failure_mode: str | None = None) -> dict:
-    """Generate a single eval topic via MiniMax."""
+    """Generate a single eval topic via MiMo."""
     system_prompt = (
         "You generate test cases for evaluating a research agent bot. "
         "Return JSON only with keys: topic, domain, criteria, tier, failure_mode, expected_behavior. "
@@ -92,7 +92,7 @@ def generate_topic(provider, seed: str, domain: str, tier: str, failure_mode: st
             "failure_mode": failure_mode if tier == "adversarial" else None,
             "expected_behavior": result.get("expected_behavior", "retrieve_and_synthesize"),
             "last_validated": datetime.now(timezone.utc).date().isoformat(),
-            "generated_by": "minimax-bulk-v1",
+            "generated_by": "mimo-bulk-v1",
         }
     except Exception as e:
         print(f"Error generating topic for {seed}: {e}", file=sys.stderr)
@@ -114,7 +114,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate adversarial and breadth eval corpus")
     parser.add_argument("--adversarial", type=int, default=0, help="Number of adversarial topics to generate")
     parser.add_argument("--breadth", type=int, default=0, help="Number of breadth topics to generate")
-    parser.add_argument("--api-key", type=str, default=os.getenv("MIMO_API_KEY"), help="MiniMax API key")
+    parser.add_argument("--api-key", type=str, default=os.getenv("MIMO_API_KEY"), help="MiMo API key")
     parser.add_argument("--output-dir", default="tests/golden", help="Output directory")
     args = parser.parse_args()
 

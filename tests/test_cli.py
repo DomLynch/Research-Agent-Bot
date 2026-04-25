@@ -11,7 +11,7 @@ import pytest
 
 class FakeProvider:
     prompt_version = "test-prompt/v1"
-    model = "MiniMax-M2.7-highspeed"
+    model = "mimo-v2-pro"
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
         data = {
@@ -289,7 +289,7 @@ def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monk
 
 class LeakyProvider:
     prompt_version = "test-prompt/v1"
-    model = "MiniMax-M2.7-highspeed"
+    model = "mimo-v2-pro"
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
         data = {

@@ -5,7 +5,7 @@ def test_render_page_urlencodes_download_filename() -> None:
     html = _render_page(
         form={},
         result={
-            "model": "MiniMax-M2.7-highspeed",
+            "model": "mimo-v2-pro",
             "evidence_selected": 1,
             "evidence_retrieved": 1,
             "source_errors": [],

@@ -47,8 +47,6 @@ def test_brace_noise_before_real_json():
 
 
 def test_client_complete_json_handles_prose_and_sets_usage(monkeypatch):
-    monkeypatch.setenv("MINIMAX_API_KEY", "test-key")
-
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(
             200,
