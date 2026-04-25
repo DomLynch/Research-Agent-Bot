@@ -8,6 +8,8 @@ from tests.golden.harness import (
     direction_agreement,
     limitation_overlap,
     quantitative_fidelity,
+    bundle_contract_score,
+    audit_trail_score,
     composite_score,
 )
 
@@ -323,10 +325,25 @@ def test_quantitative_fidelity_no_numbers():
 
 
 def test_composite_score_calculation():
-    """Composite equals weighted sum of 4 components."""
+    """Composite equals weighted sum including bundle and audit metrics."""
     draft = {
+        "canonical_term": "rapamycin",
+        "canonical_topic": "rapamycin healthspan",
+        "human_peer_review": False,
+        "bridge": {
+            "mode": "moa_spar",
+            "moa": {"reference_models": ["mimo-v2-pro", "MiniMax-M2.7-highspeed", "deepseek-reasoner"]},
+            "spar": {"approved": True, "issues": []},
+        },
         "source_bundle": [
-            {"doi": "10.1038/s41586-021-xxxxx", "excerpt": "11% increase"},
+            {
+                "doi": "10.1038/s41586-021-xxxxx",
+                "title": "Rapamycin trial in healthspan",
+                "excerpt": "11% increase",
+                "role": "published_results",
+                "directness": "direct",
+                "evidence_tier": "Tier A1 direct aging evidence",
+            },
         ],
         "sections": {
             "Key Findings": "Evidence supports benefit. 11% increase in lifespan.",
@@ -339,9 +356,48 @@ def test_composite_score_calculation():
     da = direction_agreement(draft, gold)
     lo = limitation_overlap(draft, gold)
     qf = quantitative_fidelity(draft, gold)
-    expected = 0.10 * so + 0.40 * qf + 0.30 * da + 0.20 * lo
+    bc = bundle_contract_score(draft, gold)
+    at = audit_trail_score(draft, gold)
+    expected = 0.10 * so + 0.25 * qf + 0.20 * da + 0.15 * lo + 0.20 * bc + 0.10 * at
     actual = composite_score(draft, gold)
     assert abs(actual - expected) < 0.001, f"Composite mismatch: {actual} vs {expected}"
+
+
+def test_bundle_contract_score_penalizes_duplicate_titles():
+    draft = {
+        "canonical_topic": "metformin aging",
+        "source_bundle": [
+            {
+                "title": "Metformin aging trial",
+                "excerpt": "metformin aging",
+                "role": "published_results",
+                "directness": "direct",
+                "evidence_tier": "Tier A1 direct aging evidence",
+            },
+            {
+                "title": "Metformin aging trial",
+                "excerpt": "metformin aging",
+                "role": "published_results",
+                "directness": "direct",
+                "evidence_tier": "Tier A1 direct aging evidence",
+            },
+        ],
+    }
+    assert bundle_contract_score(draft, GOLD_TOPIC) < 1.0
+
+
+def test_audit_trail_score_requires_visible_unresolved_issues():
+    draft = {
+        "bridge": {
+            "mode": "moa_spar",
+            "moa": {"reference_models": ["mimo-v2-pro"]},
+            "spar": {"approved": False, "issues": ["strict eligibility not met"]},
+        },
+        "markdown": "Adjudication: structured model adjudication\nHuman peer review: false",
+    }
+    assert audit_trail_score(draft, GOLD_TOPIC) == pytest.approx(0.8)
+    draft["markdown"] += "\n\n## Adjudication Notes\n- strict eligibility not met"
+    assert audit_trail_score(draft, GOLD_TOPIC) == pytest.approx(1.0)
 
 
 def test_bad_fixture_scores_low():
@@ -359,10 +415,17 @@ def test_bad_fixture_scores_low():
 def test_good_fixture_scores_high():
     """A deliberately good fixture should score >= 0.6."""
     good_draft = {
+        "canonical_topic": "rapamycin healthspan",
+        "human_peer_review": False,
+        "bridge": {
+            "mode": "moa_spar",
+            "moa": {"reference_models": ["mimo-v2-pro"]},
+            "spar": {"approved": True, "issues": []},
+        },
         "source_bundle": [
-            {"doi": "10.1038/s41586-021-xxxxx", "title": "Study A"},
-            {"doi": "10.1016/j.cell.2022-xxxxx", "title": "Study B"},
-            {"doi": "10.1111/acel.13492", "title": "Study C"},
+            {"doi": "10.1038/s41586-021-xxxxx", "title": "Rapamycin healthspan RCT", "excerpt": "rapamycin healthspan", "role": "published_results", "directness": "direct", "evidence_tier": "Tier A1 direct aging evidence"},
+            {"doi": "10.1016/j.cell.2022-xxxxx", "title": "Rapamycin healthspan cohort", "excerpt": "rapamycin healthspan", "role": "observational", "directness": "indirect", "evidence_tier": "Tier A2 disease-context human evidence"},
+            {"doi": "10.1111/acel.13492", "title": "Rapamycin healthspan review", "excerpt": "rapamycin healthspan", "role": "review", "directness": "indirect", "evidence_tier": "Tier B supporting human evidence"},
         ],
         "sections": {
             "Key Findings": "The evidence supports rapamycin benefit for healthspan, though data is limited and preliminary. Studies show a directional benefit with heterogeneous dosing regimens across trials.",

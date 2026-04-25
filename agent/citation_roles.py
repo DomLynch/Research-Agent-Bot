@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from typing import Any, Literal
 
+from agent.title_patterns import is_reviewish_title
+
 
 CitationRole = Literal[
     "published_results",
@@ -102,10 +104,6 @@ _IN_VITRO_RE = re.compile(
 )
 _MECHANISTIC_RE = re.compile(
     r"\b(systems modeling|systems model(?:ing)?|computational model(?:ing)?|in silico|simulation study|mathematical model(?:ing)?|network model(?:ing)?)\b",
-    re.IGNORECASE,
-)
-_REVIEWISH_PRIMARY_RE = re.compile(
-    r"\b(review|overview|perspective|commentary|therapeutic paradox|narrative|role of|pathophysiology|therapeutic frontiers?|therapeutic potential|path to the clinic|current perspectives?)\b",
     re.IGNORECASE,
 )
 _SYNTHESIS_LANGUAGE_RE = re.compile(
@@ -241,7 +239,7 @@ def classify_citation_role(
     if evidence_type == "review" and _META_ANALYSIS_RE.search(title):
         return "meta_analysis"
     if evidence_type == "primary" and (
-        _REVIEWISH_PRIMARY_RE.search(title)
+        is_reviewish_title(title)
         or (_SYNTHESIS_LANGUAGE_RE.search(text) and not _PRIMARY_RESULT_MARKER_RE.search(text))
     ):
         return "review"

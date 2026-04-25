@@ -1,6 +1,6 @@
 """Karpathy loop harness — local scoring against gold fixtures.
 
-Snapshots composite_score (plus 5 sub-metrics) for every gold topic.
+Snapshots composite_score (plus 6 sub-metrics) for every gold topic.
 Subcommands:
   snapshot  — score all topics, write timestamped JSON
   diff      — compare two snapshots
@@ -308,14 +308,37 @@ def bundle_contract_score(draft: dict, gold: dict | None = None) -> float:
     ) / 5.0
 
 
+def audit_trail_score(draft: dict, gold: dict | None = None) -> float:
+    """Score machine-adjudication audit visibility."""
+    del gold
+    bridge = draft.get("bridge") if isinstance(draft.get("bridge"), dict) else draft.get("_bridge")
+    markdown = str(draft.get("markdown") or "")
+    if not isinstance(bridge, dict) or not bridge:
+        return 1.0 if "Human peer review: false" in markdown and "Adjudication:" in markdown else 0.0
+    moa = bridge.get("moa") if isinstance(bridge.get("moa"), dict) else {}
+    spar = bridge.get("spar") if isinstance(bridge.get("spar"), dict) else {}
+    issues = spar.get("issues") if isinstance(spar.get("issues"), list) else []
+    score = 0.0
+    if moa.get("reference_models") or bridge.get("mode"):
+        score += 0.3
+    if isinstance(spar.get("approved"), bool):
+        score += 0.3
+    if "Human peer review: false" in markdown or draft.get("human_peer_review") is False:
+        score += 0.2
+    if not issues or "## Adjudication Notes" in markdown:
+        score += 0.2
+    return score
+
+
 def composite_score(draft: dict, gold: dict) -> float:
-    """Weighted composite with explicit bundle-hygiene coverage."""
+    """Weighted composite with bundle-hygiene and audit-trail coverage."""
     return (
         0.10 * study_overlap(draft, gold)
         + 0.25 * quantitative_fidelity(draft, gold)
         + 0.20 * direction_agreement(draft, gold)
         + 0.15 * limitation_overlap(draft, gold)
-        + 0.30 * bundle_contract_score(draft, gold)
+        + 0.20 * bundle_contract_score(draft, gold)
+        + 0.10 * audit_trail_score(draft, gold)
     )
 
 
@@ -360,6 +383,7 @@ def score_topic(draft: dict, gold: dict) -> dict[str, float]:
         "limitation_overlap": round(limitation_overlap(draft, gold), 4),
         "quantitative_fidelity": round(quantitative_fidelity(draft, gold), 4),
         "bundle_contract_score": round(bundle_contract_score(draft, gold), 4),
+        "audit_trail_score": round(audit_trail_score(draft, gold), 4),
         "composite_score": round(composite_score(draft, gold), 4),
     }
 
@@ -452,8 +476,8 @@ def cmd_report(args: argparse.Namespace) -> int:
         print("  No topic diffs found.")
         return 0
 
-    print(f"  {'Topic':<30} {'Composite':>9} {'Study':>7} {'Quant':>7} {'Dir':>7} {'Limit':>7} {'Bundle':>8}")
-    print(f"  {'-'*30} {'-'*9} {'-'*7} {'-'*7} {'-'*7} {'-'*7} {'-'*8}")
+    print(f"  {'Topic':<30} {'Composite':>9} {'Study':>7} {'Quant':>7} {'Dir':>7} {'Limit':>7} {'Bundle':>8} {'Audit':>7}")
+    print(f"  {'-'*30} {'-'*9} {'-'*7} {'-'*7} {'-'*7} {'-'*7} {'-'*8} {'-'*7}")
 
     improved = 0
     regressed = 0
@@ -473,7 +497,8 @@ def cmd_report(args: argparse.Namespace) -> int:
             f"{d.get('quantitative_fidelity', 0):>+7.4f} "
             f"{d.get('direction_agreement', 0):>+7.4f} "
             f"{d.get('limitation_overlap', 0):>+7.4f} "
-            f"{d.get('bundle_contract_score', 0):>+8.4f}{marker}"
+            f"{d.get('bundle_contract_score', 0):>+8.4f} "
+            f"{d.get('audit_trail_score', 0):>+7.4f}{marker}"
         )
 
     print()
@@ -485,6 +510,7 @@ def cmd_report(args: argparse.Namespace) -> int:
     print(f"    direction_agreement:      {avg.get('direction_agreement', 0):+.4f}")
     print(f"    limitation_overlap:       {avg.get('limitation_overlap', 0):+.4f}")
     print(f"    bundle_contract_score:    {avg.get('bundle_contract_score', 0):+.4f}")
+    print(f"    audit_trail_score:        {avg.get('audit_trail_score', 0):+.4f}")
     print()
     print(f"  Improved: {improved}  Regressed: {regressed}  Unchanged: {len(topic_diffs) - improved - regressed}")
     return 0

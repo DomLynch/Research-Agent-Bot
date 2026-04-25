@@ -8,6 +8,7 @@ from scripts.karpathy_loop import (
     limitation_overlap,
     quantitative_fidelity,
     bundle_contract_score,
+    audit_trail_score,
     composite_score,
     score_topic,
     load_topics,
@@ -76,6 +77,12 @@ _DRAFT = {
             "evidence_tier": "Tier C protocol/mechanistic support",
         },
     ],
+    "bridge": {
+        "mode": "moa_spar",
+        "moa": {"reference_models": ["mimo-v2-pro", "MiniMax-M2.7-highspeed", "deepseek-reasoner"]},
+        "spar": {"approved": True, "issues": []},
+    },
+    "human_peer_review": False,
 }
 
 _DRAFT_NO_FINDINGS = {
@@ -240,7 +247,8 @@ class TestCompositeScore:
             + 0.25 * quantitative_fidelity(_DRAFT, _GOLD)
             + 0.20 * direction_agreement(_DRAFT, _GOLD)
             + 0.15 * limitation_overlap(_DRAFT, _GOLD)
-            + 0.30 * bundle_contract_score(_DRAFT, _GOLD)
+            + 0.20 * bundle_contract_score(_DRAFT, _GOLD)
+            + 0.10 * audit_trail_score(_DRAFT, _GOLD)
         )
         assert abs(result - expected) < 1e-6
 
@@ -257,10 +265,28 @@ class TestBundleContractScore:
         assert bundle_contract_score(_DRAFT_NO_FINDINGS, _GOLD) == 0.0
 
 
+class TestAuditTrailScore:
+    def test_complete_bridge_scores_high(self):
+        assert audit_trail_score(_DRAFT, _GOLD) == 1.0
+
+    def test_unresolved_issue_requires_notes(self):
+        draft = {
+            "bridge": {
+                "mode": "moa_spar",
+                "moa": {"reference_models": ["mimo-v2-pro"]},
+                "spar": {"approved": False, "issues": ["strict eligibility not met"]},
+            },
+            "markdown": "Adjudication: structured model adjudication\nHuman peer review: false",
+        }
+        assert audit_trail_score(draft, _GOLD) == 0.8
+        draft["markdown"] += "\n\n## Adjudication Notes\n- strict eligibility not met"
+        assert audit_trail_score(draft, _GOLD) == 1.0
+
+
 class TestScoreTopic:
     def test_returns_all_keys(self):
         result = score_topic(_DRAFT, _GOLD)
-        expected_keys = {"study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "bundle_contract_score", "composite_score"}
+        expected_keys = {"study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "bundle_contract_score", "audit_trail_score", "composite_score"}
         assert set(result.keys()) == expected_keys
 
     def test_values_are_rounded(self):
@@ -353,6 +379,7 @@ class TestDiffSubcommand:
                     "limitation_overlap": 0.8,
                     "quantitative_fidelity": 0.4,
                     "bundle_contract_score": 0.3,
+                    "audit_trail_score": 0.2,
                 }
             },
             "averages": {
@@ -362,6 +389,7 @@ class TestDiffSubcommand:
                 "limitation_overlap": 0.8,
                 "quantitative_fidelity": 0.4,
                 "bundle_contract_score": 0.3,
+                "audit_trail_score": 0.2,
             },
         }))
         after.write_text(json.dumps({
@@ -375,6 +403,7 @@ class TestDiffSubcommand:
                     "limitation_overlap": 0.9,
                     "quantitative_fidelity": 0.5,
                     "bundle_contract_score": 0.8,
+                    "audit_trail_score": 0.2,
                 }
             },
             "averages": {
@@ -384,6 +413,7 @@ class TestDiffSubcommand:
                 "limitation_overlap": 0.9,
                 "quantitative_fidelity": 0.5,
                 "bundle_contract_score": 0.8,
+                "audit_trail_score": 0.2,
             },
         }))
 
@@ -402,6 +432,7 @@ class TestDiffSubcommand:
         assert data["topics"]["topic_a"]["study_overlap"] == 0.1
         assert data["topics"]["topic_a"]["direction_agreement"] == 0.0
         assert data["topics"]["topic_a"]["bundle_contract_score"] == 0.5
+        assert data["topics"]["topic_a"]["audit_trail_score"] == 0.0
         assert data["average_delta"]["composite_score"] == 0.1
 
 
@@ -421,6 +452,7 @@ class TestReportSubcommand:
                     "direction_agreement": 0.0,
                     "limitation_overlap": -0.03,
                     "bundle_contract_score": 0.25,
+                    "audit_trail_score": 0.1,
                 }
             },
             "average_delta": {
@@ -430,6 +462,7 @@ class TestReportSubcommand:
                 "direction_agreement": 0.0,
                 "limitation_overlap": -0.03,
                 "bundle_contract_score": 0.25,
+                "audit_trail_score": 0.1,
             },
         }))
 
@@ -460,5 +493,5 @@ class TestLoaders:
         assert len(shared) == 15
         for slug in shared:
             result = score_topic(fixtures[slug], topics[slug])
-            for key in ("study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "bundle_contract_score", "composite_score"):
+            for key in ("study_overlap", "direction_agreement", "limitation_overlap", "quantitative_fidelity", "bundle_contract_score", "audit_trail_score", "composite_score"):
                 assert 0.0 <= result[key] <= 1.0

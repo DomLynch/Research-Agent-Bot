@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from agent.title_patterns import is_reviewish_title
+
 
 _STUDY_TYPES = (
     ("study protocol", "protocol"),
@@ -71,11 +73,6 @@ _OUTCOMES_RE = re.compile(
     r"survival|outcome|endpoint|efficacy|safety|adverse\s+event|toxicity)",
     re.IGNORECASE,
 )
-_REVIEWISH_TITLE_RE = re.compile(
-    r"\b(review|overview|perspective|commentary|narrative|role of|pathophysiology|therapeutic frontiers?|therapeutic potential|path to the clinic|current perspectives?)\b",
-    re.IGNORECASE,
-)
-
 
 def _infer_quality_signal(entry: dict[str, Any]) -> str:
     """Return a quality signal label for the entry."""
@@ -99,7 +96,7 @@ def _infer_quality_signal(entry: dict[str, Any]) -> str:
         return "meta-analysis"
     if "systematic review" in title_lower:
         return "systematic-review"
-    if _REVIEWISH_TITLE_RE.search(title):
+    if is_reviewish_title(title):
         return "review"
     title_lower = str(entry.get("title") or "").lower()
     abstract = str(entry.get("excerpt") or "").lower()
@@ -120,7 +117,7 @@ def _infer_study_type(entry: dict[str, Any]) -> str:
         return "meta-analysis"
     if "systematic review" in title_lower:
         return "systematic-review"
-    if _REVIEWISH_TITLE_RE.search(title):
+    if is_reviewish_title(title):
         return "review"
     text = f"{entry.get('title', '')} {entry.get('excerpt', '')}".lower()
     for keyword, label in _STUDY_TYPES:

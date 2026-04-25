@@ -33,6 +33,10 @@ from agent.drafter import _rank, _relevance, _clean  # noqa: E402
 
 _STOPWORDS = {"and", "in", "for", "of", "the", "with", "on", "to", "a", "an"}
 _SYNONYMS = {"rapamycin": ["sirolimus"], "metformin": ["glucophage"]}
+_GENERIC_TOPIC_TOKENS = {
+    "adult", "adults", "ageing", "aging", "cognition", "cognitive", "elderly", "frailty",
+    "function", "healthspan", "longevity", "older", "performance", "physical", "sarcopenia",
+}
 
 _INJECTION_PATTERNS = (
     r"ignore previous instructions",
@@ -333,17 +337,116 @@ def quantitative_fidelity(draft: dict[str, Any], gold: dict[str, Any]) -> float:
     return supported / len(numeric_claims)
 
 
-def composite_score(draft: dict[str, Any], gold: dict[str, Any]) -> float:
-    """Weighted composite of 4 scoring functions.
+def _norm_title(title: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", title.lower())[:120]
 
-    Weights: study_overlap=0.10, quantitative_fidelity=0.40,
-             direction_agreement=0.30, limitation_overlap=0.20
+
+def _topic_terms(draft: dict[str, Any]) -> set[str]:
+    terms: set[str] = set()
+    canonical = str(draft.get("canonical_term") or "").lower().strip()
+    if canonical:
+        terms.add(canonical)
+        terms.update(_SYNONYMS.get(canonical, []))
+    for field in ("canonical_topic", "raw_topic", "topic"):
+        text = str(draft.get(field) or "").lower()
+        for token in re.findall(r"[a-z0-9+.-]+", text):
+            if token in _STOPWORDS or token in _GENERIC_TOPIC_TOKENS or len(token) < 3:
+                continue
+            terms.add(token)
+            terms.update(_SYNONYMS.get(token, []))
+    return terms
+
+
+def _inferred_tier(entry: dict[str, Any]) -> str:
+    tier = str(entry.get("evidence_tier") or "").strip()
+    if tier:
+        return tier
+    role = str(entry.get("role") or "")
+    directness = str(entry.get("directness") or "")
+    if role in {"registered_pending", "published_protocol", "animal_model", "mechanistic", "off_domain_indirect", "unknown"}:
+        return "Tier C protocol/mechanistic support"
+    if role in {"meta_analysis", "review"}:
+        return "Tier B supporting human evidence"
+    if role == "observational":
+        return "Tier A2 disease-context human evidence"
+    if role == "published_results" and directness == "direct":
+        return "Tier A1 direct aging evidence"
+    if role == "published_results":
+        return "Tier A2 disease-context human evidence"
+    return ""
+
+
+def bundle_contract_score(draft: dict[str, Any], gold: dict[str, Any] | None = None) -> float:
+    """Score retained-bundle hygiene without calling external services."""
+    del gold
+    bundle = draft.get("source_bundle", []) or []
+    if not bundle:
+        return 0.0
+    titles = [_norm_title(str(entry.get("title") or "")) for entry in bundle if str(entry.get("title") or "").strip()]
+    size_compliance = 1.0 if 1 <= len(bundle) <= 12 else 0.0
+    dedup_compliance = len(set(titles)) / len(titles) if titles else 0.0
+    terms = _topic_terms(draft)
+    scoped = [entry for entry in bundle if _inferred_tier(entry) != "Tier C protocol/mechanistic support"]
+    if not terms or not scoped:
+        topic_fit_compliance = 1.0
+    else:
+        topic_fit_compliance = sum(
+            1 for entry in scoped
+            if any(term in f"{entry.get('title', '')} {entry.get('excerpt', '')}".lower() for term in terms)
+        ) / len(scoped)
+    tiers = [_inferred_tier(entry) for entry in bundle]
+    if not any(tiers):
+        tier_distribution_compliance = 1.0
+        a1_result_present = 1.0
+    else:
+        a1 = tiers.count("Tier A1 direct aging evidence")
+        a2 = tiers.count("Tier A2 disease-context human evidence")
+        b = tiers.count("Tier B supporting human evidence")
+        c = tiers.count("Tier C protocol/mechanistic support")
+        tier_distribution_compliance = 1.0 if (1 <= a1 <= 4 and 0 <= a2 <= 3 and 0 <= b <= 3 and 0 <= c <= 2) else 0.0
+        a1_result_present = 1.0 if any(
+            _inferred_tier(entry) == "Tier A1 direct aging evidence"
+            and str(entry.get("role") or "") == "published_results"
+            for entry in bundle
+        ) else 0.0
+    return (size_compliance + dedup_compliance + topic_fit_compliance + tier_distribution_compliance + a1_result_present) / 5.0
+
+
+def audit_trail_score(draft: dict[str, Any], gold: dict[str, Any] | None = None) -> float:
+    """Score machine-adjudication audit visibility."""
+    del gold
+    bridge = draft.get("bridge") if isinstance(draft.get("bridge"), dict) else draft.get("_bridge")
+    markdown = str(draft.get("markdown") or "")
+    if not isinstance(bridge, dict) or not bridge:
+        return 1.0 if "Human peer review: false" in markdown and "Adjudication:" in markdown else 0.0
+    moa = bridge.get("moa") if isinstance(bridge.get("moa"), dict) else {}
+    spar = bridge.get("spar") if isinstance(bridge.get("spar"), dict) else {}
+    issues = spar.get("issues") if isinstance(spar.get("issues"), list) else []
+    score = 0.0
+    if moa.get("reference_models") or bridge.get("mode"):
+        score += 0.3
+    if isinstance(spar.get("approved"), bool):
+        score += 0.3
+    if "Human peer review: false" in markdown or draft.get("human_peer_review") is False:
+        score += 0.2
+    if not issues or "## Adjudication Notes" in markdown:
+        score += 0.2
+    return score
+
+
+def composite_score(draft: dict[str, Any], gold: dict[str, Any]) -> float:
+    """Weighted composite with bundle hygiene and audit-trail coverage.
+
+    Weights: overlap=0.10, quantitative=0.25, direction=0.20,
+             limitations=0.15, bundle=0.20, audit=0.10
     """
     return (
         0.10 * study_overlap(draft, gold)
-        + 0.40 * quantitative_fidelity(draft, gold)
-        + 0.30 * direction_agreement(draft, gold)
-        + 0.20 * limitation_overlap(draft, gold)
+        + 0.25 * quantitative_fidelity(draft, gold)
+        + 0.20 * direction_agreement(draft, gold)
+        + 0.15 * limitation_overlap(draft, gold)
+        + 0.20 * bundle_contract_score(draft, gold)
+        + 0.10 * audit_trail_score(draft, gold)
     )
 
 

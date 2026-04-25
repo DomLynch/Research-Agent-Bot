@@ -144,6 +144,15 @@ def test_reviewish_primary_title_infers_review_type():
     assert _infer_study_type(entry) == "review"
 
 
+def test_shared_reviewish_title_pattern_includes_therapeutic_paradox():
+    entry = {
+        "title": "Metformin for Longevity and Sarcopenia: A Therapeutic Paradox in Aging",
+        "evidence_type": "primary",
+    }
+    assert _infer_quality_signal(entry) == "review"
+    assert _infer_study_type(entry) == "review"
+
+
 def test_build_card_infer_study_type_cohort():
     entry = {"title": "Prospective cohort study of exercise", "evidence_type": "primary"}
     assert _infer_study_type(entry) == "cohort"

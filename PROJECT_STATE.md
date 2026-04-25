@@ -15,7 +15,7 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 
 ## Constraints
 - Runtime target: ~7,400 LOC (raised for the 2026-04-25 async dashboard progress bridge and contradiction repair).
-  Hard ceiling: 7,600 LOC. Actual: ~7,455 LOC.
+  Hard ceiling: 7,600 LOC. Actual: ~7,465 LOC.
 - LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
@@ -85,6 +85,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Source substrate + intake alignment:** Europe PMC is now a first-class retrieval adapter, OpenAlex/Semantic Scholar now carry richer metadata into ranking, Semantic Scholar graph expansion now includes recommendations, source bundles can include protocol-type support records, NIH RePORTER is available as Tier C/project-context retrieval, DOAJ can mark indexed journals in the final bundle, and the Researka submission floor is now correctly enforced at 12 retained sources instead of the stale 8-source gate.
 - **Bundle hygiene repair under the 12-source rule:** final bundle selection now hard-drops entries with no canonical intervention fit, collapses MED/PMC mirror duplicates by normalized title/URL/DOI, and uses `Tier A1 / A2 / B / C` labels so direct older-adult RCTs outrank disease-context cohorts, reviews, and protocol/mechanistic support without reverting the Researka 12-citation floor.
 - **Semantic trial/cohort dedup:** raw evidence dedup now also collapses shared clinical trial identifiers such as `NCT...` and conservative parent/secondary cohort signatures, so biomarker/substudy papers from the same early-phase trial do not pad the 12-source bundle as independent evidence.
+- **A+ eval cleanup:** review-like title detection now has one shared source of truth, and the golden/Karpathy harnesses now expose bundle-contract and machine-adjudication audit-trail scoring so future quality gains are measured instead of inferred from prose.
 
 ## Eval Corpus (Step 13)
 - **3-tier structure**: 15 gold + 30 adversarial + 60 breadth
@@ -97,7 +98,7 @@ Deterministic planner + bounded public literature queries + directness-aware bun
 - **Scripts**: `scripts/curate_gold.py` (re-populate gold), `scripts/verify_dois.py` (CrossRef check), `scripts/generate_eval_corpus.py` (adversarial+breadth), `scripts/generate_fixtures.py` (live bot drafts — needs MIMO_API_KEY)
 
 ## Test Coverage
-- MacBook: 501 passed, 6 skipped, 5 xfailed
+- MacBook: 506 passed, 6 skipped, 5 xfailed
 - ruff clean
 - Gold corpus: 15/15 topic-matched, 207/207 CrossRef-verified DOIs, 0 dead
 - Main is current. See DECISIONS.md 2026-04-21 for the quant-fidelity honesty fix and the Phase 1 credibility-layer budget raise.

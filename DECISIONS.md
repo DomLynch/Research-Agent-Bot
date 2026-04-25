@@ -1,5 +1,12 @@
 # DECISION JOURNAL
 
+## 2026-04-25 — A+ eval and review-pattern cleanup
+**Decision:** Move review-like title detection into one shared helper and extend the gold/Karpathy scoring surfaces with explicit machine-adjudication audit-trail scoring.
+
+**Why:** The same review-title regex lived in citation-role and evidence-card paths, which could drift. Separately, bundle hygiene was already visible in the Karpathy loop, but the protected golden harness still mostly rewarded prose/numeric axes and did not measure adjudication transparency. This patch keeps the runtime change tiny while making the evaluator score the trust-layer work directly.
+
+**Audit:** Added regression coverage for the shared `therapeutic paradox` review pattern, bundle duplicate scoring, and unresolved reviewer-issue visibility. Local verification: `506 passed, 6 skipped, 5 xfailed`; ruff clean.
+
 ## 2026-04-25 — Semantic trial/cohort dedup layer
 **Decision:** Extend raw evidence dedup beyond DOI/URL/title mirrors with two generic identity layers: shared clinical trial IDs (`NCT...`) and conservative parent/secondary cohort signatures for early-phase trial biomarker/substudy/follow-up records.
 
