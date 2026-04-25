@@ -86,8 +86,6 @@ class OpenAICompatJsonClient:
         content = _extract_json(message)
         content["usage"] = _usage(payload)
         content["estimated_cost_usd"] = float((payload.get("usage") or {}).get("cost") or 0.0)
-        if self.model.endswith(":free") and content["estimated_cost_usd"] > 0:
-            raise RuntimeError(f"free model reported nonzero cost: {self.model}")
         content["prompt_version"] = self.prompt_version
         content["model"] = self.model
         return content, payload
@@ -199,16 +197,16 @@ class MoaSparBridgeClient:
         return cls(
             builder=builder or MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
-                model=os.getenv("REVIEWER_MODEL", "nvidia/nemotron-3-super-120b-a12b:free"),
+                model=os.getenv("REVIEWER_MODEL", "nvidia/nemotron-3-super-120b-a12b"),
                 base_url=os.getenv("REVIEWER_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("REVIEWER_API_KEY_ENV", openrouter_key_env),
                 prompt_version="research-agent-bot/nemotron-review-v1",
             ),
             judge=OpenAICompatJsonClient(
-                model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it:free"),
+                model=os.getenv("JUDGE_MODEL", "deepseek/deepseek-v4-flash"),
                 base_url=os.getenv("JUDGE_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("JUDGE_API_KEY_ENV", openrouter_key_env),
-                prompt_version="research-agent-bot/gemma4-judge-v1",
+                prompt_version="research-agent-bot/deepseek-v4-flash-judge-v1",
             ),
         )
 

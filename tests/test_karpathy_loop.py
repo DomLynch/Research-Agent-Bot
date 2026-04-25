@@ -79,7 +79,7 @@ _DRAFT = {
     ],
     "bridge": {
         "mode": "moa_spar",
-        "moa": {"reference_models": ["mimo-v2-pro", "nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-31b-it:free"]},
+        "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"]},
         "spar": {"approved": True, "issues": []},
     },
     "human_peer_review": False,
@@ -273,7 +273,7 @@ class TestAuditTrailScore:
         draft = {
             "bridge": {
                 "mode": "moa_spar",
-                "moa": {"reference_models": ["mimo-v2-pro"]},
+                "moa": {"reference_models": ["mimo-v2.5-pro"]},
                 "spar": {"approved": False, "issues": ["strict eligibility not met"]},
             },
             "markdown": "Adjudication: structured model adjudication\nHuman peer review: false",

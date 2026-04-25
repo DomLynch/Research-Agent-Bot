@@ -1,11 +1,11 @@
 # DECISION JOURNAL
 
-## 2026-04-25 — Replace DeepSeek/MiniMax bridge slots with OpenRouter free reviewers
-**Decision:** Keep MiMo v2 Pro as builder/synthesizer, but route the structured review slot to `nvidia/nemotron-3-super-120b-a12b:free` and the judge slot to `google/gemma-4-31b-it:free` through OpenRouter.
+## 2026-04-25 — Route bridge reviewer and judge through OpenRouter paid models
+**Decision:** Keep MiMo V2.5 Pro as builder/synthesizer, but route the structured review slot to `nvidia/nemotron-3-super-120b-a12b` and the judge slot to `deepseek/deepseek-v4-flash` through OpenRouter.
 
-**Why:** DeepSeek billing attribution proved unsafe for this project budget, and OpenRouter currently lists both Nemotron 3 Super and Gemma 4 31B as free 262K-context models. The defaults preserve model-family diversity without depending on DeepSeek or MiniMax subscription keys.
+**Why:** DeepSeek billing attribution proved unsafe for this project budget, and OpenRouter currently lists both Nemotron 3 Super and DeepSeek V4 Flash as paid OpenRouter models. The defaults preserve model-family diversity without using direct DeepSeek or MiniMax subscription keys.
 
-**Audit:** Runtime defaults now use generic `REVIEWER_*` / `JUDGE_*` env vars with OpenRouter free slugs. Bridge regression tests assert the exact default route, shared `OPENROUTER_API_KEY` path, zero-cost OpenRouter usage parsing, and fail-fast behavior if a `:free` model reports nonzero cost.
+**Audit:** Runtime defaults now use generic `REVIEWER_*` / `JUDGE_*` env vars with OpenRouter paid OpenRouter slugs. Bridge regression tests assert the exact default route, shared `OPENROUTER_API_KEY` path, OpenRouter cost parsing for paid routes.
 
 ## 2026-04-25 — A+ eval and review-pattern cleanup
 **Decision:** Move review-like title detection into one shared helper and extend the gold/Karpathy scoring surfaces with explicit machine-adjudication audit-trail scoring.

@@ -332,7 +332,7 @@ def test_composite_score_calculation():
         "human_peer_review": False,
         "bridge": {
             "mode": "moa_spar",
-            "moa": {"reference_models": ["mimo-v2-pro", "nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-31b-it:free"]},
+            "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"]},
             "spar": {"approved": True, "issues": []},
         },
         "source_bundle": [
@@ -390,7 +390,7 @@ def test_audit_trail_score_requires_visible_unresolved_issues():
     draft = {
         "bridge": {
             "mode": "moa_spar",
-            "moa": {"reference_models": ["mimo-v2-pro"]},
+            "moa": {"reference_models": ["mimo-v2.5-pro"]},
             "spar": {"approved": False, "issues": ["strict eligibility not met"]},
         },
         "markdown": "Adjudication: structured model adjudication\nHuman peer review: false",
@@ -419,7 +419,7 @@ def test_good_fixture_scores_high():
         "human_peer_review": False,
         "bridge": {
             "mode": "moa_spar",
-            "moa": {"reference_models": ["mimo-v2-pro"]},
+            "moa": {"reference_models": ["mimo-v2.5-pro"]},
             "spar": {"approved": True, "issues": []},
         },
         "source_bundle": [

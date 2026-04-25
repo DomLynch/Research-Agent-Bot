@@ -7,7 +7,7 @@ from agent.drafter import RapidEvidenceDrafter
 
 class BundleContractProvider:
     prompt_version = "bundle-contract/v1"
-    model = "mimo-v2-pro"
+    model = "mimo-v2.5-pro"
 
     def complete_json(self, *, system_prompt: str, user_prompt: str):
         return (

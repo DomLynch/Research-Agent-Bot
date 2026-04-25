@@ -50,7 +50,7 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
             "sections": {"Key Findings": "Signal reported [1]."},
             "source_bundle": [],
             "bridge": {
-                "moa": {"reference_models": ["mimo-v2-pro", "nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-31b-it:free"]},
+                "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"]},
                 "spar": {"approved": True, "issues": ["fix abstract"]},
             },
         },
@@ -58,7 +58,7 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
         criteria="",
     )
 
-    assert "Generation: mimo-v2-pro, nvidia/nemotron-3-super-120b-a12b:free, google/gemma-4-31b-it:free (multi-model drafting)" in markdown
+    assert "Generation: mimo-v2.5-pro, nvidia/nemotron-3-super-120b-a12b, deepseek/deepseek-v4-flash (multi-model drafting)" in markdown
     assert "Adjudication: structured model adjudication; reviewer issues flagged: 1; status: adjudicated" in markdown
     assert "Human peer review: false" in markdown
     assert "Reasoning: MoA+Spar" not in markdown
@@ -91,7 +91,7 @@ def test_payload_markdown_renders_adjudication_issue_notes() -> None:
             "sections": {"Key Findings": "Disease-context evidence remained limited [1]."},
             "source_bundle": [],
             "bridge": {
-                "moa": {"reference_models": ["mimo-v2-pro"]},
+                "moa": {"reference_models": ["mimo-v2.5-pro"]},
                 "spar": {"approved": False, "issues": ["Strict target eligibility was not met."]},
             },
         },
@@ -105,7 +105,7 @@ def test_payload_markdown_renders_adjudication_issue_notes() -> None:
 
 class FakeProvider:
     prompt_version = "test-prompt/v1"
-    model = "nvidia/nemotron-3-super-120b-a12b:free"
+    model = "nvidia/nemotron-3-super-120b-a12b"
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
         data = {
@@ -126,7 +126,7 @@ class FakeProvider:
 
 class RetryingViolationProvider:
     prompt_version = "test-prompt/v1"
-    model = "nvidia/nemotron-3-super-120b-a12b:free"
+    model = "nvidia/nemotron-3-super-120b-a12b"
 
     def __init__(self) -> None:
         self.calls = 0
@@ -944,7 +944,7 @@ def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monk
 
 class LeakyProvider:
     prompt_version = "test-prompt/v1"
-    model = "nvidia/nemotron-3-super-120b-a12b:free"
+    model = "nvidia/nemotron-3-super-120b-a12b"
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
         data = {

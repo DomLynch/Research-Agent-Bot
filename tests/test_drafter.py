@@ -6,7 +6,7 @@ from agent.validator import validate_citations
 
 class CaptureProvider:
     prompt_version = "test-prompt/v1"
-    model = "mimo-v2-pro"
+    model = "mimo-v2.5-pro"
 
     def __init__(self) -> None:
         self.system_prompt = ""

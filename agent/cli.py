@@ -679,7 +679,7 @@ def run_agent(
         _emit_progress(progress, percent=100, step="blocked", message=run_log["error"], error=run_log["error"])
         return run_log
     try:
-        _emit_progress(progress, percent=72, step="adjudication", message="Drafting with multi-model drafting plus structured model adjudication: MiMo builder/synthesizer, OpenRouter Nemotron reviewer, OpenRouter Gemma judge; degraded mode is explicit if a provider is unavailable.", models=["mimo-v2-pro", "nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-31b-it:free"])
+        _emit_progress(progress, percent=72, step="adjudication", message="Drafting with multi-model drafting plus structured model adjudication: MiMo builder/synthesizer, OpenRouter Nemotron reviewer, OpenRouter DeepSeek V4 Flash judge; degraded mode is explicit if a provider is unavailable.", models=["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"])
         drafter = RapidEvidenceDrafter(provider=_drafter_provider())
         artifact, raw_output = drafter.draft(
             topic=resolved_topic,
