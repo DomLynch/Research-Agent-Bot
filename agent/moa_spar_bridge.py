@@ -188,6 +188,7 @@ class MoaSparBridgeClient:
     supports_refinement: bool = True
     mode: str = "moa_spar"
     max_fix_rounds: int = 1
+    reference_drafts: bool = False
     prompt_version: str = "research-agent-bot/moa-spar-bridge-v1"
     model: str = "moa-spar-bridge"
     degraded_error: str | None = field(default=None, init=False)
@@ -210,6 +211,7 @@ class MoaSparBridgeClient:
                 api_key_env=os.getenv("JUDGE_API_KEY_ENV", openrouter_key_env),
                 prompt_version="research-agent-bot/deepseek-v4-flash-judge-v1",
             ),
+            reference_drafts=os.getenv("MOA_REFERENCE_DRAFTS", "").strip().lower() in {"1", "true", "yes"},
         )
 
     def _degraded_result(
@@ -235,6 +237,7 @@ class MoaSparBridgeClient:
                 "summary": "Bridge degraded after external model failure.",
                 "issues": [f"bridge_provider_error:{exc}"],
                 "fix": None,
+                "review_models": [_route_label(self.reviewer), _route_label(self.judge)],
                 "judge": None,
             },
         }
@@ -244,32 +247,37 @@ class MoaSparBridgeClient:
         self_draft, self_raw = self.builder.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
         if self.degraded_error:
             return self._degraded_result(self_draft, self_raw, RuntimeError(self.degraded_error))
+        proposals = [(_route_label(self.builder), self_draft)]
+        payloads = [self_draft]
+        candidate = self_draft
+        synth_raw: dict[str, Any] = {"skipped": "reference_drafts_disabled"}
         try:
-            reviewer_draft, reviewer_raw = self.reviewer.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
-            judge_draft, judge_raw = self.judge.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+            if self.reference_drafts:
+                reviewer_draft, reviewer_raw = self.reviewer.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+                judge_draft, judge_raw = self.judge.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+                proposals.extend([
+                    (_route_label(self.reviewer), reviewer_draft),
+                    (_route_label(self.judge), judge_draft),
+                ])
+                candidate, synth_raw = self.builder.complete_json(
+                    system_prompt=_build_moa_synth_system(system_prompt, proposals),
+                    user_prompt=user_prompt,
+                )
+                payloads.extend([reviewer_draft, judge_draft, candidate])
+            review_raw_result, review_raw = self.reviewer.complete_json(
+                system_prompt=REVIEW_SYSTEM_PROMPT,
+                user_prompt=json.dumps({"user_prompt": user_prompt, "candidate": candidate}, ensure_ascii=False, indent=2),
+            )
+            judge_raw_result, spar_judge_raw = self.judge.complete_json(
+                system_prompt=REVIEW_SYSTEM_PROMPT,
+                user_prompt=json.dumps({"user_prompt": user_prompt, "candidate": candidate}, ensure_ascii=False, indent=2),
+            )
         except Exception as exc:
             self.degraded_error = str(exc)
             return self._degraded_result(self_draft, self_raw, exc)
-        proposals = [
-            (_route_label(self.builder), self_draft),
-            (_route_label(self.reviewer), reviewer_draft),
-            (_route_label(self.judge), judge_draft),
-        ]
-        candidate, synth_raw = self.builder.complete_json(
-            system_prompt=_build_moa_synth_system(system_prompt, proposals),
-            user_prompt=user_prompt,
-        )
-        review_raw_result, review_raw = self.reviewer.complete_json(
-            system_prompt=REVIEW_SYSTEM_PROMPT,
-            user_prompt=json.dumps({"user_prompt": user_prompt, "candidate": candidate}, ensure_ascii=False, indent=2),
-        )
         review = _safe_parse_review(review_raw_result)
-        judge_raw_result, spar_judge_raw = self.judge.complete_json(
-            system_prompt=REVIEW_SYSTEM_PROMPT,
-            user_prompt=json.dumps({"user_prompt": user_prompt, "candidate": candidate}, ensure_ascii=False, indent=2),
-        )
         judge_review = _safe_parse_review(judge_raw_result)
-        payloads = [self_draft, reviewer_draft, judge_draft, candidate, review_raw_result, judge_raw_result]
+        payloads.extend([review_raw_result, judge_raw_result])
         if not review.approved:
             for _ in range(max(0, min(self.max_fix_rounds, 1))):
                 candidate, fix_raw = self.builder.complete_json(
@@ -292,7 +300,7 @@ class MoaSparBridgeClient:
         result["_bridge"] = {
             "mode": self.mode,
             "moa": {
-                "reference_models": [_route_label(self.builder), _route_label(self.reviewer), _route_label(self.judge)],
+                "reference_models": [label for label, _ in proposals],
                 "aggregator_model": _route_label(self.builder),
             },
             "spar": {
@@ -300,6 +308,7 @@ class MoaSparBridgeClient:
                 "summary": review.summary,
                 "issues": review.issues,
                 "fix": review.fix,
+                "review_models": [_route_label(self.reviewer), _route_label(self.judge)],
                 "judge": {
                     "approved": judge_review.approved,
                     "summary": judge_review.summary,
@@ -309,7 +318,7 @@ class MoaSparBridgeClient:
             },
         }
         raw_payload = {
-            "moa": {"candidate": candidate, "reference_payloads": dict(proposals), "raw": {"self": self_raw, "reviewer": reviewer_raw, "judge": judge_raw, "synth": synth_raw}},
+            "moa": {"candidate": candidate, "reference_payloads": dict(proposals), "raw": {"self": self_raw, "synth": synth_raw}},
             "spar": {"review_raw": review_raw, "judge_raw": spar_judge_raw},
         }
         if "fix_raw" in locals():

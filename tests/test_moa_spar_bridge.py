@@ -55,7 +55,7 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
         ],
     )
 
-    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(system_prompt="system", user_prompt="user")
+    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge, reference_drafts=True).complete_json(system_prompt="system", user_prompt="user")
 
     assert result["question"] == "Synthesized"
     assert result["conclusion"] == "Done."
@@ -69,8 +69,39 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
     ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
+    assert result["_bridge"]["spar"]["review_models"] == [
+        "nvidia/nemotron-3-super-120b-a12b",
+        "deepseek/deepseek-v4-flash",
+    ]
     assert "moa" in raw
     assert "spar" in raw
+
+
+def test_moa_spar_bridge_defaults_to_fast_review_only_path() -> None:
+    builder = StubProvider(
+        model="mimo-v2.5-pro",
+        prompt_version="test/mimo",
+        responses=[{"question": "Builder draft", "usage": {"input_tokens": 10, "output_tokens": 5}, "estimated_cost_usd": 0.01}],
+    )
+    reviewer = StubProvider(
+        model="nvidia/nemotron-3-super-120b-a12b",
+        prompt_version="test/nemotron",
+        responses=[{"approved": True, "summary": "Looks complete.", "issues": [], "fix": None, "usage": {"input_tokens": 8, "output_tokens": 3}, "estimated_cost_usd": 0.04}],
+    )
+    judge = StubProvider(
+        model="deepseek/deepseek-v4-flash",
+        prompt_version="test/deepseek-v4-flash",
+        responses=[{"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None, "usage": {"input_tokens": 7, "output_tokens": 2}, "estimated_cost_usd": 0.06}],
+    )
+
+    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(system_prompt="system", user_prompt="user")
+
+    assert result["question"] == "Builder draft"
+    assert result["_bridge"]["moa"]["reference_models"] == ["mimo-v2.5-pro"]
+    assert result["_bridge"]["spar"]["approved"] is True
+    assert raw["moa"]["raw"]["synth"] == {"skipped": "reference_drafts_disabled"}
+    assert reviewer.remaining == 0
+    assert judge.remaining == 0
 
 
 def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
@@ -101,7 +132,7 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
         ],
     )
 
-    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(system_prompt="system", user_prompt="user")
+    result, raw = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge, reference_drafts=True).complete_json(system_prompt="system", user_prompt="user")
 
     assert result["question"] == "Fixed candidate"
     assert result["_bridge"]["spar"]["approved"] is True
@@ -125,7 +156,7 @@ def test_moa_spar_bridge_accepts_null_review_issues() -> None:
         responses=[{"question": "Judge"}, {"approved": True, "summary": "Judge agrees.", "issues": None, "fix": None}],
     )
 
-    result, _ = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge).complete_json(system_prompt="system", user_prompt="user")
+    result, _ = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge, reference_drafts=True).complete_json(system_prompt="system", user_prompt="user")
 
     assert result["_bridge"]["spar"]["issues"] == []
     assert result["_bridge"]["spar"]["judge"]["issues"] == []
@@ -175,6 +206,7 @@ def test_moa_spar_bridge_from_env_defaults_to_openrouter_models(monkeypatch) -> 
     assert client.judge.base_url == "https://openrouter.ai/api/v1"
     assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"
     assert client.judge.api_key_env == "OPENROUTER_API_KEY"
+    assert client.reference_drafts is False
 
 
 def test_openrouter_client_records_reported_cost(monkeypatch) -> None:

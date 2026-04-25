@@ -51,7 +51,11 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
             "source_bundle": [],
             "bridge": {
                 "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"]},
-                "spar": {"approved": True, "issues": ["fix abstract"]},
+                "spar": {
+                    "approved": True,
+                    "issues": ["fix abstract"],
+                    "review_models": ["nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"],
+                },
             },
         },
         topic="rapamycin",
@@ -59,7 +63,7 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
     )
 
     assert "Generation: mimo-v2.5-pro, nvidia/nemotron-3-super-120b-a12b, deepseek/deepseek-v4-flash (multi-model drafting)" in markdown
-    assert "Adjudication: structured model adjudication; reviewer issues flagged: 1; status: adjudicated" in markdown
+    assert "Adjudication: nvidia/nemotron-3-super-120b-a12b, deepseek/deepseek-v4-flash; reviewer issues flagged: 1; status: adjudicated" in markdown
     assert "Human peer review: false" in markdown
     assert "Reasoning: MoA+Spar" not in markdown
 
@@ -78,7 +82,7 @@ def test_payload_markdown_tolerates_null_bridge_lists() -> None:
         criteria="",
     )
 
-    assert "Generation: not reported (multi-model drafting)" in markdown
+    assert "Generation: not reported (MiMo drafting)" in markdown
     assert "reviewer issues flagged: 0" in markdown
 
 

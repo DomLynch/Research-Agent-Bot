@@ -444,8 +444,10 @@ def _payload_to_markdown(payload: dict, *, topic: str, criteria: str) -> str:
         issue_list = [str(item) for item in _listish(spar.get("issues")) if str(item).strip()]
         issues = len(issue_list)
         status = "adjudicated" if spar.get("approved") else "machine-reviewed with unresolved/degraded review"
-        lines.append(f"- Generation: {models} (multi-model drafting)")
-        lines.append(f"- Adjudication: structured model adjudication; reviewer issues flagged: {issues}; status: {status}")
+        draft_mode = "multi-model drafting" if len(_listish((bridge.get("moa") or {}).get("reference_models"))) > 1 else "MiMo drafting"
+        review_models = ", ".join(str(item) for item in _listish(spar.get("review_models"))) or "not reported"
+        lines.append(f"- Generation: {models} ({draft_mode})")
+        lines.append(f"- Adjudication: {review_models}; reviewer issues flagged: {issues}; status: {status}")
         lines.append("- Human peer review: false")
     if criteria.strip():
         lines.append(f"- Criteria: {criteria.strip()}")
@@ -683,7 +685,7 @@ def run_agent(
             progress,
             percent=72,
             step="adjudication",
-            message="Drafting with multi-model drafting plus structured model adjudication: MiMo V2.5 Pro builder/synthesizer, OpenRouter Nemotron reviewer, OpenRouter DeepSeek V4 Flash judge; degraded mode is explicit if a provider is unavailable.",
+            message="Drafting with MiMo V2.5 Pro, then adjudicating with OpenRouter Nemotron and OpenRouter DeepSeek V4 Flash; degraded mode is explicit if a provider is unavailable.",
             models=["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"],
         )
         drafter = RapidEvidenceDrafter(provider=_drafter_provider())
