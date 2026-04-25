@@ -107,6 +107,10 @@ class OpenAICompatJsonClient:
                 last_error = exc
                 retryable = isinstance(exc, (httpx.TimeoutException, httpx.TransportError, json.JSONDecodeError, KeyError))
                 if isinstance(exc, httpx.HTTPStatusError):
+                    body = exc.response.text.lower()
+                    if "response format is not supported" in body and "response_format" in request_json:
+                        request_json.pop("response_format", None)
+                        continue
                     retryable = exc.response.status_code in {408, 409, 425, 429, 500, 502, 503, 504}
                 if not retryable or attempt >= self.retries:
                     raise RuntimeError(f"provider_error:{self.model}:{exc}") from exc
@@ -279,10 +283,10 @@ class MoaSparBridgeClient:
         return cls(
             builder=builder or MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
-                model=os.getenv("REVIEWER_MODEL", "stepfun/step-3.5-flash"),
+                model=os.getenv("REVIEWER_MODEL", "mistralai/mistral-small-2603"),
                 base_url=os.getenv("REVIEWER_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("REVIEWER_API_KEY_ENV", openrouter_key_env),
-                prompt_version="research-agent-bot/stepfun-review-v1",
+                prompt_version="research-agent-bot/mistral-small-review-v1",
                 timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "65")),
                 retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),

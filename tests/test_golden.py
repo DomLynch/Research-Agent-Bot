@@ -332,7 +332,7 @@ def test_composite_score_calculation():
         "human_peer_review": False,
         "bridge": {
             "mode": "moa_spar",
-            "moa": {"reference_models": ["mimo-v2.5-pro", "stepfun/step-3.5-flash", "google/gemma-4-31b-it"]},
+            "moa": {"reference_models": ["mimo-v2.5-pro", "mistralai/mistral-small-2603", "google/gemma-4-31b-it"]},
             "spar": {"approved": True, "issues": []},
         },
         "source_bundle": [

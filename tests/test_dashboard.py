@@ -5,7 +5,7 @@ def test_render_page_urlencodes_download_filename() -> None:
     html = _render_page(
         form={},
         result={
-            "model": "stepfun/step-3.5-flash",
+            "model": "mistralai/mistral-small-2603",
             "evidence_selected": 1,
             "evidence_retrieved": 1,
             "source_errors": [],

@@ -701,8 +701,8 @@ def run_agent(
             progress,
             percent=72,
             step="adjudication",
-            message="Drafting with MiMo V2.5 Pro, then adjudicating with OpenRouter StepFun Step 3.5 Flash and OpenRouter Gemma 4 31B; degraded mode is explicit if a provider is unavailable.",
-            models=["mimo-v2.5-pro", "stepfun/step-3.5-flash", "google/gemma-4-31b-it"],
+            message="Drafting with MiMo V2.5 Pro, then adjudicating with OpenRouter Mistral Small 2603 and OpenRouter Gemma 4 31B; degraded mode is explicit if a provider is unavailable.",
+            models=["mimo-v2.5-pro", "mistralai/mistral-small-2603", "google/gemma-4-31b-it"],
         )
         drafter = RapidEvidenceDrafter(provider=_drafter_provider())
         artifact, raw_output = drafter.draft(
