@@ -79,7 +79,7 @@ _DRAFT = {
     ],
     "bridge": {
         "mode": "moa_spar",
-        "moa": {"reference_models": ["mimo-v2-pro", "MiniMax-M2.7-highspeed", "deepseek-reasoner"]},
+        "moa": {"reference_models": ["mimo-v2-pro", "nvidia/nemotron-3-super-120b-a12b:free", "google/gemma-4-31b-it:free"]},
         "spar": {"approved": True, "issues": []},
     },
     "human_peer_review": False,
