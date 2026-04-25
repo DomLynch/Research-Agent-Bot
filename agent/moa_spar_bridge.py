@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
@@ -69,21 +70,25 @@ class OpenAICompatJsonClient:
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple[dict[str, Any], dict[str, Any]]:
         if not os.getenv(self.api_key_env, "").strip():
             raise RuntimeError(f"missing {self.api_key_env}")
-        response = self.client.post(
-            "/chat/completions",
-            json={
-                "model": self.model,
-                "temperature": 0.2,
-                "max_tokens": self.max_tokens,
-                "response_format": {"type": "json_object"},
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-            },
-        )
-        response.raise_for_status()
-        payload = response.json()
+        request_json = {
+            "model": self.model,
+            "temperature": 0.2,
+            "max_tokens": self.max_tokens,
+            "response_format": {"type": "json_object"},
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+        }
+        started = time.monotonic()
+        chunks: list[bytes] = []
+        with self.client.stream("POST", "/chat/completions", json=request_json) as response:
+            response.raise_for_status()
+            for chunk in response.iter_bytes():
+                chunks.append(chunk)
+                if time.monotonic() - started > self.timeout_sec:
+                    raise httpx.TimeoutException(f"{self.model} exceeded {self.timeout_sec:.0f}s wall timeout")
+        payload = json.loads(b"".join(chunks))
         message = payload["choices"][0]["message"].get("content") or payload["choices"][0]["message"].get("reasoning_content") or "{}"
         content = _extract_json(message)
         content["usage"] = _usage(payload)
@@ -208,12 +213,14 @@ class MoaSparBridgeClient:
                 base_url=os.getenv("REVIEWER_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("REVIEWER_API_KEY_ENV", openrouter_key_env),
                 prompt_version="research-agent-bot/nemotron-review-v1",
+                timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "20")),
             ),
             judge=OpenAICompatJsonClient(
                 model=os.getenv("JUDGE_MODEL", "deepseek/deepseek-v4-flash"),
                 base_url=os.getenv("JUDGE_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("JUDGE_API_KEY_ENV", openrouter_key_env),
                 prompt_version="research-agent-bot/deepseek-v4-flash-judge-v1",
+                timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "20")),
             ),
             reference_drafts=os.getenv("MOA_REFERENCE_DRAFTS", "").strip().lower() in {"1", "true", "yes"},
         )
