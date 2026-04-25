@@ -50,11 +50,11 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
             "sections": {"Key Findings": "Signal reported [1]."},
             "source_bundle": [],
             "bridge": {
-                "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"]},
+                "moa": {"reference_models": ["mimo-v2.5-pro", "stepfun/step-3.5-flash", "google/gemma-4-31b-it"]},
                 "spar": {
                     "approved": True,
                     "issues": ["fix abstract"],
-                    "review_models": ["nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"],
+                    "review_models": ["stepfun/step-3.5-flash", "google/gemma-4-31b-it"],
                 },
             },
         },
@@ -62,8 +62,8 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
         criteria="",
     )
 
-    assert "Generation: mimo-v2.5-pro, nvidia/nemotron-3-super-120b-a12b, google/gemma-4-31b-it (multi-model drafting)" in markdown
-    assert "Adjudication: nvidia/nemotron-3-super-120b-a12b, google/gemma-4-31b-it; reviewer issues flagged: 1; status: adjudicated" in markdown
+    assert "Generation: mimo-v2.5-pro, stepfun/step-3.5-flash, google/gemma-4-31b-it (multi-model drafting)" in markdown
+    assert "Adjudication: stepfun/step-3.5-flash, google/gemma-4-31b-it; reviewer issues flagged: 1; status: adjudicated" in markdown
     assert "Human peer review: false" in markdown
     assert "Reasoning: MoA+Spar" not in markdown
 
@@ -119,8 +119,8 @@ def test_payload_markdown_separates_operational_bridge_failures() -> None:
                 "moa": {"reference_models": ["mimo-v2.5-pro"]},
                 "spar": {
                     "approved": False,
-                    "issues": ["bridge_provider_error:nvidia/nemotron exceeded timeout"],
-                    "review_models": ["nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"],
+                    "issues": ["bridge_provider_error:stepfun/step-3.5-flash exceeded timeout"],
+                    "review_models": ["stepfun/step-3.5-flash", "google/gemma-4-31b-it"],
                 },
             },
         },
@@ -135,7 +135,7 @@ def test_payload_markdown_separates_operational_bridge_failures() -> None:
 
 class FakeProvider:
     prompt_version = "test-prompt/v1"
-    model = "nvidia/nemotron-3-super-120b-a12b"
+    model = "stepfun/step-3.5-flash"
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
         data = {
@@ -156,7 +156,7 @@ class FakeProvider:
 
 class RetryingViolationProvider:
     prompt_version = "test-prompt/v1"
-    model = "nvidia/nemotron-3-super-120b-a12b"
+    model = "stepfun/step-3.5-flash"
 
     def __init__(self) -> None:
         self.calls = 0
@@ -974,7 +974,7 @@ def test_run_agent_does_not_silently_fallback_outside_scope(tmp_path: Path, monk
 
 class LeakyProvider:
     prompt_version = "test-prompt/v1"
-    model = "nvidia/nemotron-3-super-120b-a12b"
+    model = "stepfun/step-3.5-flash"
 
     def complete_json(self, *, system_prompt: str, user_prompt: str) -> tuple:
         data = {

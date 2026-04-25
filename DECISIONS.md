@@ -1,5 +1,12 @@
 # DECISION JOURNAL
 
+## 2026-04-25 — Replace Nemotron reviewer with OpenRouter StepFun Step 3.5 Flash
+**Decision:** Keep Xiaomi `mimo-v2.5-pro` as builder/synthesizer and `google/gemma-4-31b-it` as judge, but replace the default reviewer route from `nvidia/nemotron-3-super-120b-a12b` to OpenRouter `stepfun/step-3.5-flash`.
+
+**Why:** Live timing/quality probes showed Nemotron taking 39-54 seconds per review and sometimes returning invalid review JSON. StepFun Step 3.5 Flash has a 262k context window and is positioned as a fast reasoning/review model on OpenRouter, so it is the better default candidate for the reviewer slot.
+
+**Audit:** Defaults, dashboard copy, docs, and tests now use `stepfun/step-3.5-flash`. The reviewer remains fully env-overridable through `REVIEWER_MODEL`.
+
 ## 2026-04-25 — Upgrade default model route to MiMo V2.5 Pro + OpenRouter adjudication
 **Decision:** Upgrade the builder/synthesizer to Xiaomi `mimo-v2.5-pro`, route the structured review slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b`, and route the judge slot to OpenRouter `google/gemma-4-31b-it`.
 

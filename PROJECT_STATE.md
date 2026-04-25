@@ -19,7 +19,7 @@ Ship a minimal Python V0 that turns `topic + domain + criteria` into a credible 
 - LOC methodology: `find agent -name '*.py' -print0 | xargs -0 wc -l | tail -1`; tests excluded.
 - Use only `httpx` as a runtime dependency.
 - Keep the code obvious enough for a customer to customize in under an hour.
-- Provider path uses multi-model drafting plus structured model adjudication by default: MiMo V2.5 Pro builder/synthesizer, OpenRouter Nemotron 3 Super reviewer, OpenRouter Gemma 4 31B judge. Required env vars: `MIMO_API_KEY`, `OPENROUTER_API_KEY`; unavailable reviewer/judge calls degrade explicitly instead of crashing a run.
+- Provider path uses multi-model drafting plus structured model adjudication by default: MiMo V2.5 Pro builder/synthesizer, OpenRouter StepFun Step 3.5 Flash reviewer, OpenRouter Gemma 4 31B judge. Required env vars: `MIMO_API_KEY`, `OPENROUTER_API_KEY`; unavailable reviewer/judge calls degrade explicitly instead of crashing a run.
 
 ## Winning Path
 Deterministic planner + bounded public literature queries + directness-aware bundle + MiMo draft pass + PRISMA/grade/protocol surfacing + Researka submission + dedup + publication surfacing + tiny dashboard.

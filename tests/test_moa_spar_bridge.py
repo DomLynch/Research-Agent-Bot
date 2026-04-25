@@ -49,8 +49,8 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
         ],
     )
     reviewer = StubProvider(
-        model="nvidia/nemotron-3-super-120b-a12b",
-        prompt_version="test/nemotron",
+        model="stepfun/step-3.5-flash",
+        prompt_version="test/stepfun",
         responses=[
             {"question": "Reviewer draft", "usage": {"input_tokens": 9, "output_tokens": 4}, "estimated_cost_usd": 0.03},
             {"approved": True, "summary": "Looks complete.", "issues": [], "fix": None, "usage": {"input_tokens": 8, "output_tokens": 3}, "estimated_cost_usd": 0.04},
@@ -74,13 +74,13 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
     assert result["estimated_cost_usd"] == 0.21
     assert result["_bridge"]["moa"]["reference_models"] == [
         "mimo-v2.5-pro",
-        "nvidia/nemotron-3-super-120b-a12b",
+        "stepfun/step-3.5-flash",
         "google/gemma-4-31b-it",
     ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
     assert result["_bridge"]["spar"]["review_models"] == [
-        "nvidia/nemotron-3-super-120b-a12b",
+        "stepfun/step-3.5-flash",
         "google/gemma-4-31b-it",
     ]
     assert "moa" in raw
@@ -94,8 +94,8 @@ def test_moa_spar_bridge_defaults_to_fast_review_only_path() -> None:
         responses=[{"question": "Builder draft", "usage": {"input_tokens": 10, "output_tokens": 5}, "estimated_cost_usd": 0.01}],
     )
     reviewer = StubProvider(
-        model="nvidia/nemotron-3-super-120b-a12b",
-        prompt_version="test/nemotron",
+        model="stepfun/step-3.5-flash",
+        prompt_version="test/stepfun",
         responses=[{"approved": True, "summary": "Looks complete.", "issues": [], "fix": None, "usage": {"input_tokens": 8, "output_tokens": 3}, "estimated_cost_usd": 0.04}],
     )
     judge = StubProvider(
@@ -122,8 +122,8 @@ def test_moa_spar_bridge_reviews_raw_draft_schema_not_final_artifact_schema() ->
         responses=[{"question": "Draft question", "findings": "Draft findings", "conclusion": "Draft conclusion"}],
     )
     reviewer = PromptCapturingProvider(
-        model="nvidia/nemotron-3-super-120b-a12b",
-        prompt_version="test/nemotron",
+        model="stepfun/step-3.5-flash",
+        prompt_version="test/stepfun",
         responses=[{"approved": True, "summary": "Raw draft schema is complete.", "issues": [], "fix": None}],
     )
     judge = StubProvider(
@@ -154,8 +154,8 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
         ],
     )
     reviewer = StubProvider(
-        model="nvidia/nemotron-3-super-120b-a12b",
-        prompt_version="test/nemotron",
+        model="stepfun/step-3.5-flash",
+        prompt_version="test/stepfun",
         responses=[
             {"question": "Reviewer"},
             {"summary": "Missing approved boolean"},
@@ -185,8 +185,8 @@ def test_moa_spar_bridge_accepts_null_review_issues() -> None:
         responses=[{"question": "Self"}, {"question": "Candidate"}],
     )
     reviewer = StubProvider(
-        model="nvidia/nemotron-3-super-120b-a12b",
-        prompt_version="test/nemotron",
+        model="stepfun/step-3.5-flash",
+        prompt_version="test/stepfun",
         responses=[{"question": "Reviewer"}, {"approved": True, "summary": "No material issues.", "issues": None, "fix": None}],
     )
     judge = StubProvider(
@@ -210,7 +210,7 @@ def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails() -> Non
             {"question": "Fast degraded fallback", "findings": "usable"},
         ],
     )
-    reviewer = StubProvider(model="nvidia/nemotron-3-super-120b-a12b", prompt_version="test/nemotron", responses=[{"question": "Reviewer"}])
+    reviewer = StubProvider(model="stepfun/step-3.5-flash", prompt_version="test/stepfun", responses=[{"question": "Reviewer"}])
     judge = FailingProvider(model="google/gemma-4-31b-it", prompt_version="test/gemma4-31b", responses=[])
     client = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge)
 
@@ -239,7 +239,7 @@ def test_moa_spar_bridge_from_env_defaults_to_openrouter_models(monkeypatch) -> 
     client = MoaSparBridgeClient.from_env()
 
     assert client.builder.model == "mimo-v2.5-pro"
-    assert client.reviewer.model == "nvidia/nemotron-3-super-120b-a12b"
+    assert client.reviewer.model == "stepfun/step-3.5-flash"
     assert client.judge.model == "google/gemma-4-31b-it"
     assert client.reviewer.base_url == "https://openrouter.ai/api/v1"
     assert client.judge.base_url == "https://openrouter.ai/api/v1"
@@ -308,7 +308,7 @@ def test_openrouter_client_allows_reported_cost_for_paid_models(monkeypatch) -> 
         )
 
     client = OpenAICompatJsonClient(
-        model="nvidia/nemotron-3-super-120b-a12b",
+        model="stepfun/step-3.5-flash",
         base_url="https://openrouter.ai/api/v1",
         api_key_env="OPENROUTER_API_KEY",
         prompt_version="test/openrouter",

@@ -279,10 +279,10 @@ class MoaSparBridgeClient:
         return cls(
             builder=builder or MimoClient.from_env(),
             reviewer=OpenAICompatJsonClient(
-                model=os.getenv("REVIEWER_MODEL", "nvidia/nemotron-3-super-120b-a12b"),
+                model=os.getenv("REVIEWER_MODEL", "stepfun/step-3.5-flash"),
                 base_url=os.getenv("REVIEWER_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("REVIEWER_API_KEY_ENV", openrouter_key_env),
-                prompt_version="research-agent-bot/nemotron-review-v1",
+                prompt_version="research-agent-bot/stepfun-review-v1",
                 timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "65")),
                 retries=int(os.getenv("OPENROUTER_RETRIES", "1")),
             ),
