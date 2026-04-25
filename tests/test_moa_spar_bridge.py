@@ -47,8 +47,8 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
         ],
     )
     judge = StubProvider(
-        model="deepseek/deepseek-v4-flash",
-        prompt_version="test/deepseek-v4-flash",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[
             {"question": "Judge draft", "usage": {"input_tokens": 11, "output_tokens": 6}, "estimated_cost_usd": 0.05},
             {"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None, "usage": {"input_tokens": 7, "output_tokens": 2}, "estimated_cost_usd": 0.06},
@@ -65,13 +65,13 @@ def test_moa_spar_bridge_preserves_json_provider_contract() -> None:
     assert result["_bridge"]["moa"]["reference_models"] == [
         "mimo-v2.5-pro",
         "nvidia/nemotron-3-super-120b-a12b",
-        "deepseek/deepseek-v4-flash",
+        "google/gemma-4-31b-it",
     ]
     assert result["_bridge"]["spar"]["approved"] is True
     assert result["_bridge"]["spar"]["judge"]["approved"] is True
     assert result["_bridge"]["spar"]["review_models"] == [
         "nvidia/nemotron-3-super-120b-a12b",
-        "deepseek/deepseek-v4-flash",
+        "google/gemma-4-31b-it",
     ]
     assert "moa" in raw
     assert "spar" in raw
@@ -89,8 +89,8 @@ def test_moa_spar_bridge_defaults_to_fast_review_only_path() -> None:
         responses=[{"approved": True, "summary": "Looks complete.", "issues": [], "fix": None, "usage": {"input_tokens": 8, "output_tokens": 3}, "estimated_cost_usd": 0.04}],
     )
     judge = StubProvider(
-        model="deepseek/deepseek-v4-flash",
-        prompt_version="test/deepseek-v4-flash",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[{"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None, "usage": {"input_tokens": 7, "output_tokens": 2}, "estimated_cost_usd": 0.06}],
     )
 
@@ -124,8 +124,8 @@ def test_moa_spar_bridge_repairs_invalid_review_json_once() -> None:
         ],
     )
     judge = StubProvider(
-        model="deepseek/deepseek-v4-flash",
-        prompt_version="test/deepseek-v4-flash",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[
             {"question": "Judge"},
             {"approved": True, "summary": "Judge agrees.", "issues": [], "fix": None},
@@ -151,8 +151,8 @@ def test_moa_spar_bridge_accepts_null_review_issues() -> None:
         responses=[{"question": "Reviewer"}, {"approved": True, "summary": "No material issues.", "issues": None, "fix": None}],
     )
     judge = StubProvider(
-        model="deepseek/deepseek-v4-flash",
-        prompt_version="test/deepseek-v4-flash",
+        model="google/gemma-4-31b-it",
+        prompt_version="test/gemma4-31b",
         responses=[{"question": "Judge"}, {"approved": True, "summary": "Judge agrees.", "issues": None, "fix": None}],
     )
 
@@ -172,7 +172,7 @@ def test_moa_spar_bridge_degrades_to_builder_when_reference_model_fails() -> Non
         ],
     )
     reviewer = StubProvider(model="nvidia/nemotron-3-super-120b-a12b", prompt_version="test/nemotron", responses=[{"question": "Reviewer"}])
-    judge = FailingProvider(model="deepseek/deepseek-v4-flash", prompt_version="test/deepseek-v4-flash", responses=[])
+    judge = FailingProvider(model="google/gemma-4-31b-it", prompt_version="test/gemma4-31b", responses=[])
     client = MoaSparBridgeClient(builder=builder, reviewer=reviewer, judge=judge)
 
     result, raw = client.complete_json(system_prompt="system", user_prompt="user")
@@ -201,7 +201,7 @@ def test_moa_spar_bridge_from_env_defaults_to_openrouter_models(monkeypatch) -> 
 
     assert client.builder.model == "mimo-v2.5-pro"
     assert client.reviewer.model == "nvidia/nemotron-3-super-120b-a12b"
-    assert client.judge.model == "deepseek/deepseek-v4-flash"
+    assert client.judge.model == "google/gemma-4-31b-it"
     assert client.reviewer.base_url == "https://openrouter.ai/api/v1"
     assert client.judge.base_url == "https://openrouter.ai/api/v1"
     assert client.reviewer.api_key_env == "OPENROUTER_API_KEY"
@@ -224,7 +224,7 @@ def test_openrouter_client_records_reported_cost(monkeypatch) -> None:
         )
 
     client = OpenAICompatJsonClient(
-        model="deepseek/deepseek-v4-flash",
+        model="google/gemma-4-31b-it",
         base_url="https://openrouter.ai/api/v1",
         api_key_env="OPENROUTER_API_KEY",
         prompt_version="test/openrouter",

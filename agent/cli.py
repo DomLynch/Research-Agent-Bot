@@ -685,8 +685,8 @@ def run_agent(
             progress,
             percent=72,
             step="adjudication",
-            message="Drafting with MiMo V2.5 Pro, then adjudicating with OpenRouter Nemotron and OpenRouter DeepSeek V4 Flash; degraded mode is explicit if a provider is unavailable.",
-            models=["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"],
+            message="Drafting with MiMo V2.5 Pro, then adjudicating with OpenRouter Nemotron and OpenRouter Gemma 4 31B; degraded mode is explicit if a provider is unavailable.",
+            models=["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"],
         )
         drafter = RapidEvidenceDrafter(provider=_drafter_provider())
         artifact, raw_output = drafter.draft(

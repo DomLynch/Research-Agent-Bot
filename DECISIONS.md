@@ -1,9 +1,9 @@
 # DECISION JOURNAL
 
 ## 2026-04-25 — Upgrade default model route to MiMo V2.5 Pro + OpenRouter adjudication
-**Decision:** Upgrade the builder/synthesizer to Xiaomi `mimo-v2.5-pro`, route the structured review slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b`, and route the judge slot to OpenRouter `deepseek/deepseek-v4-flash`.
+**Decision:** Upgrade the builder/synthesizer to Xiaomi `mimo-v2.5-pro`, route the structured review slot to OpenRouter `nvidia/nemotron-3-super-120b-a12b`, and route the judge slot to OpenRouter `google/gemma-4-31b-it`.
 
-**Why:** The project has a Xiaomi monthly token plan for MiMo, and V2.5 Pro is the current flagship builder path. DeepSeek direct billing attribution proved unsafe, so DeepSeek V4 Flash now runs only through OpenRouter, while Nemotron remains an orthogonal NVIDIA reviewer.
+**Why:** The project has a Xiaomi monthly token plan for MiMo, and V2.5 Pro is the current flagship builder path. Gemma 4 31B is fast and reliable in the judge slot via OpenRouter, while Nemotron remains an orthogonal NVIDIA reviewer.
 
 **Audit:** Runtime defaults now use generic `REVIEWER_*` / `JUDGE_*` env vars with OpenRouter slugs. Bridge regression tests assert the exact default route and shared `OPENROUTER_API_KEY` path; provider tests assert MiMo V2.5 Pro defaulting and updated cost accounting. Local verification: `509 passed, 6 skipped, 5 xfailed`; ruff clean.
 

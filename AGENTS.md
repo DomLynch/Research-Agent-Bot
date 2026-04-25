@@ -7,7 +7,7 @@
 
 ## Non-Negotiables
 - Python only.
-- Provider path is MoA+Spar by default: MiMo V2.5 Pro builder/synthesizer, OpenRouter Nemotron reviewer, OpenRouter DeepSeek V4 Flash judge.
+- Provider path is MoA+Spar by default: MiMo V2.5 Pro builder/synthesizer, OpenRouter Nemotron reviewer, OpenRouter Gemma 4 31B judge.
 - V0 pipeline: plan -> retrieve -> draft -> markdown/log -> dashboard.
 - Submit path enabled: optional POST to Researka /submissions when RESEARKA_URL is set. Async: returns queued immediately, status checked via /status/<id>.
 - Source bundle must have 12+ entries with relevance scores for Researka intake.

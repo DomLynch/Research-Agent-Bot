@@ -332,7 +332,7 @@ def test_composite_score_calculation():
         "human_peer_review": False,
         "bridge": {
             "mode": "moa_spar",
-            "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"]},
+            "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"]},
             "spar": {"approved": True, "issues": []},
         },
         "source_bundle": [

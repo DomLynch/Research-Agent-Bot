@@ -50,11 +50,11 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
             "sections": {"Key Findings": "Signal reported [1]."},
             "source_bundle": [],
             "bridge": {
-                "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"]},
+                "moa": {"reference_models": ["mimo-v2.5-pro", "nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"]},
                 "spar": {
                     "approved": True,
                     "issues": ["fix abstract"],
-                    "review_models": ["nvidia/nemotron-3-super-120b-a12b", "deepseek/deepseek-v4-flash"],
+                    "review_models": ["nvidia/nemotron-3-super-120b-a12b", "google/gemma-4-31b-it"],
                 },
             },
         },
@@ -62,8 +62,8 @@ def test_payload_markdown_uses_machine_adjudication_stamp() -> None:
         criteria="",
     )
 
-    assert "Generation: mimo-v2.5-pro, nvidia/nemotron-3-super-120b-a12b, deepseek/deepseek-v4-flash (multi-model drafting)" in markdown
-    assert "Adjudication: nvidia/nemotron-3-super-120b-a12b, deepseek/deepseek-v4-flash; reviewer issues flagged: 1; status: adjudicated" in markdown
+    assert "Generation: mimo-v2.5-pro, nvidia/nemotron-3-super-120b-a12b, google/gemma-4-31b-it (multi-model drafting)" in markdown
+    assert "Adjudication: nvidia/nemotron-3-super-120b-a12b, google/gemma-4-31b-it; reviewer issues flagged: 1; status: adjudicated" in markdown
     assert "Human peer review: false" in markdown
     assert "Reasoning: MoA+Spar" not in markdown
 

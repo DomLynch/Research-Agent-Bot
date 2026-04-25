@@ -216,10 +216,10 @@ class MoaSparBridgeClient:
                 timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "20")),
             ),
             judge=OpenAICompatJsonClient(
-                model=os.getenv("JUDGE_MODEL", "deepseek/deepseek-v4-flash"),
+                model=os.getenv("JUDGE_MODEL", "google/gemma-4-31b-it"),
                 base_url=os.getenv("JUDGE_BASE_URL", openrouter_base),
                 api_key_env=os.getenv("JUDGE_API_KEY_ENV", openrouter_key_env),
-                prompt_version="research-agent-bot/deepseek-v4-flash-judge-v1",
+                prompt_version="research-agent-bot/gemma4-31b-judge-v1",
                 timeout_sec=float(os.getenv("OPENROUTER_TIMEOUT_SEC", "20")),
             ),
             reference_drafts=os.getenv("MOA_REFERENCE_DRAFTS", "").strip().lower() in {"1", "true", "yes"},
