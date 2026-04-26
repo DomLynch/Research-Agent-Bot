@@ -1,7 +1,6 @@
 """Tests for agent.judge — verdict parsing, non-material filter, fallback."""
 from __future__ import annotations
 
-import pytest
 
 from agent.judge import _filter_material, _parse, judge_draft
 from agent.settings import Settings

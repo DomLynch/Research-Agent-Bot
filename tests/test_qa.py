@@ -1,7 +1,6 @@
 """Tests for qa.py — typed validation gates."""
 from __future__ import annotations
 
-import pytest
 
 from agent.qa import (
     REQUIRED_SECTIONS,
@@ -105,6 +104,101 @@ def test_role_consistency_blocks_mechanistic_definitive_claim():
     )
     fails = gate_role_prose_consistency(d, {1: item})
     assert any(f.code == "mechanistic_definitive_claim" for f in fails)
+
+
+# --- gate_role_prose_consistency: INVERSE direction (P0 audit fix) --------
+
+
+def test_role_consistency_blocks_results_described_as_pending():
+    """Inverse rapamycin bug: a published_results paper described as if its
+    results are still pending/awaited. Both directions must be caught."""
+    item = _item(1, "published_results", "Trial reported mortality reduction.")
+    d = _draft(
+        sections={"findings": ["The trial results are not yet reported [1]."]},
+        bundle=[item],
+    )
+    fails = gate_role_prose_consistency(d, {1: item})
+    assert any(f.code == "results_described_as_pending" for f in fails), (
+        f"expected results_described_as_pending, got {[f.code for f in fails]}"
+    )
+
+
+def test_role_consistency_blocks_results_called_upcoming():
+    item = _item(1, "published_results", "Trial reported X.")
+    d = _draft(
+        sections={"findings": ["This upcoming trial will examine X [1]."]},
+        bundle=[item],
+    )
+    fails = gate_role_prose_consistency(d, {1: item})
+    assert any(f.code == "results_described_as_pending" for f in fails)
+
+
+def test_role_consistency_passes_for_published_results_described_as_results():
+    item = _item(1, "published_results", "Trial reduced X by 22% (p=0.01).")
+    d = _draft(
+        sections={"findings": ["The trial showed X fell by 22% [1]."]},
+        bundle=[item],
+    )
+    assert not gate_role_prose_consistency(d, {1: item})
+
+
+# --- gate_invariants_hold: type-level spine (P1 audit fix) ----------------
+
+
+def test_invariants_block_when_prose_kind_disagrees_with_role_protocol():
+    """Prose says outcome ('22% (p=0.01)') -> infers kind=result. Bundle says
+    role=published_protocol. assert_invariants raises -> gate fails."""
+    item = _item(1, "published_protocol", "study protocol.")
+    d = _draft(
+        sections={"findings": ["The trial reduced X by 22% (p=0.01) [1]."]},
+        bundle=[item],
+    )
+    from agent.qa import gate_invariants_hold
+    fails = gate_invariants_hold(d, {1: item})
+    assert any(f.code == "invariant_violation" for f in fails)
+
+
+def test_invariants_block_when_prose_kind_disagrees_with_role_results():
+    """Prose says pending -> infers kind=protocol. Bundle says
+    role=published_results. assert_invariants raises -> gate fails."""
+    item = _item(1, "published_results", "Trial reported X.")
+    d = _draft(
+        sections={"findings": ["Trial results are not yet reported [1]."]},
+        bundle=[item],
+    )
+    from agent.qa import gate_invariants_hold
+    fails = gate_invariants_hold(d, {1: item})
+    assert any(f.code == "invariant_violation" for f in fails)
+
+
+def test_invariants_pass_when_prose_kind_matches_role():
+    item = _item(1, "published_results", "Trial reduced X by 22% (p=0.01).")
+    d = _draft(
+        sections={"findings": ["Trial showed X fell 22% [1]."]},
+        bundle=[item],
+    )
+    from agent.qa import gate_invariants_hold
+    assert not gate_invariants_hold(d, {1: item})
+    # Bonus: facts populated as a side effect
+    assert d.facts
+    assert d.facts[0].kind == "result"
+    assert d.facts[0].ref == 1
+
+
+def test_invariants_skip_uncited_bundle_items():
+    """Reverse-direction completeness check applies only to CITED refs,
+    so a bundle with 5 results papers and the LLM only cites 1 doesn't fail."""
+    bundle = [
+        _item(1, "published_results", "trial 1 reduced X by 22%."),
+        _item(2, "published_results", "trial 2 reduced Y by 18%."),
+        _item(3, "published_results", "trial 3 reduced Z by 12%."),
+    ]
+    d = _draft(
+        sections={"findings": ["Only [1] reduced X by 22%."]},  # only [1] cited
+        bundle=bundle,
+    )
+    from agent.qa import gate_invariants_hold
+    assert not gate_invariants_hold(d, {it.source.ref: it for it in bundle})
 
 
 # --- gate_numbers_traceable ------------------------------------------------

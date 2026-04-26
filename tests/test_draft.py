@@ -16,7 +16,7 @@ import pytest
 from agent import draft as draft_mod
 from agent.llm import WriterUsage
 from agent.settings import Settings
-from agent.types import RawHit, Source
+from agent.types import Source
 
 
 def _settings(tmp_path: Path, **overrides) -> Settings:
