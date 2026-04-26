@@ -130,9 +130,10 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
         "</div><div><label>Criteria / Scope</label>"
         f"<textarea name='criteria' placeholder='Example: human studies only, 2020+, safety signals.'>{_esc(form.get('criteria', ''))}</textarea>"
         "</div>"
-        '<div><label style="display:inline-flex;align-items:center;gap:8px;text-transform:none;letter-spacing:normal">'
-        f"<input type='checkbox' name='judge' value='1'{'checked' if form.get('judge') == '1' else ''}> "
-        "Run Judge (Gemma 4, Ministral fallback) — adds ~$0.002 + 5–10s</label></div>"
+        '<div style="font-size:12px;color:var(--muted)">'
+        "Pipeline: relevance pre-filter (MiMo) → writer (MiMo) → QA gates → "
+        "Judge (Gemma 4) second-layer quality control."
+        "</div>"
         "<button type='submit'>Run</button></form></section>"
         f"{result_block}</div></body></html>"
     )
@@ -171,7 +172,6 @@ class DashboardHandler(BaseHTTPRequestHandler):
             topic=form.get("topic", ""),
             domain=form.get("domain", ""),
             criteria=form.get("criteria", ""),
-            use_judge=form.get("judge") == "1",
         )
         error = str(result.get("error", "")) if result.get("error") else ""
         self._send(_render_page(form=form, result=result, error=error).encode("utf-8"))
@@ -193,7 +193,6 @@ class DashboardHandler(BaseHTTPRequestHandler):
 def cli_run(args: argparse.Namespace) -> int:
     result = run_draft(
         topic=args.topic, domain=args.domain, criteria=args.criteria,
-        use_judge=args.judge,
     )
     if result.get("error"):
         print(f"ERROR: {result['error']}", file=sys.stderr)
@@ -224,8 +223,6 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--topic", required=True)
     r.add_argument("--domain", required=True)
     r.add_argument("--criteria", default="")
-    r.add_argument("--judge", action="store_true",
-                   help="run Gemma 4 judge (Ministral fallback) after QA approves")
     r.add_argument("--json", action="store_true", help="print full JSON result")
     d = sub.add_parser("dashboard", help="serve the HTTP dashboard")
     s = load_settings()

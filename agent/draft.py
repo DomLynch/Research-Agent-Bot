@@ -113,9 +113,11 @@ async def run_async(
     settings: Settings | None = None,
     sources: list | None = None,
     write_log: bool = True,
-    use_judge: bool = False,
     use_smart_relevance: bool = True,
 ) -> dict:
+    """Judge always runs when OPENROUTER_API_KEY is configured (mandatory
+    safety net — catches semantic hallucinations the regex gates can't).
+    Without the key, judge silently no-ops and the QA-only path ships."""
     settings = settings or load_settings()
     if not settings.bot_enabled:
         return {"error": "BOT_ENABLED is false"}
@@ -184,10 +186,13 @@ async def run_async(
             usage = _merge_usage(usage, usage2)
             attempts = 2
 
-        # Optional Judge pass: only after QA approves. If Judge requests
-        # revision, do ONE more writer round (no second judge call) to
-        # keep cost bounded.
-        if use_judge and result.approved:
+        # Mandatory second layer of quality control after QA approves.
+        # Judge runs whenever OPENROUTER_API_KEY is configured; catches
+        # semantic hallucinations (mis-attributed claims, fabricated trial
+        # names) that the regex gates can't see. Graceful no-op without
+        # the key. If Judge requests revision, do ONE more writer round
+        # (no second judge call) to keep cost bounded.
+        if result.approved:
             verdict = await judge_draft(
                 parsed, items, topic, domain, settings=settings, client=client,
             )

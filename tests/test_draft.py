@@ -66,7 +66,7 @@ def stub_retrieve_and_llm(monkeypatch):
 
     state = {"calls": 0, "responses": [_approved_draft_json()]}
 
-    async def fake_write_draft(items, topic, domain, criteria, *, settings, client, correction=None):
+    async def fake_write_draft(items, topic, domain, criteria, *, settings, client, correction=None, previous_draft=None):
         idx = min(state["calls"], len(state["responses"]) - 1)
         state["calls"] += 1
         usage = WriterUsage(input_tokens=100, output_tokens=50,
