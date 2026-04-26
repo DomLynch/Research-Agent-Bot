@@ -56,6 +56,25 @@ def _esc(value: object) -> str:
     return html.escape(str(value or ""))
 
 
+def _judge_block(verdict: dict | None) -> str:
+    if not verdict:
+        return ""
+    score = verdict.get("score") or 0
+    color = "#2c6e3e" if verdict.get("approved") else "var(--error)"
+    issues = verdict.get("blocking_issues") or []
+    issues_html = (
+        "<ul>" + "".join(f"<li>{_esc(i)}</li>" for i in issues[:5]) + "</ul>"
+        if issues else ""
+    )
+    return (
+        '<div><label>Judge</label>'
+        f'<strong style="color:{color}">{_esc(verdict.get("model"))} '
+        f'· score {_esc(score)}/10</strong></div>'
+        f'<div><label>Judge summary</label><strong>{_esc(verdict.get("summary"))}</strong></div>'
+        + (f'<div style="grid-column:1/-1"><label>Material issues</label>{issues_html}</div>' if issues else "")
+    )
+
+
 def _render_page(*, form: dict[str, str], result: dict | None = None, error: str = "") -> str:
     error_block = (
         f'<section class="panel error"><strong>{_esc(error)}</strong></section>'
@@ -91,6 +110,7 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
             f"<div><label>Cost</label><strong>${_esc(round(float(result.get('estimated_cost_usd') or 0), 4))}</strong></div>"
             f"<div><label>Model</label><strong>{_esc(result.get('model', 'n/a'))}</strong></div>"
             f"<div><label>Elapsed</label><strong>{_esc(result.get('elapsed_sec', 0))}s</strong></div>"
+            f"{_judge_block(result.get('judge'))}"
             f"</div>{failures_block}"
             f'<div class="actions">{download_block}</div>'
             f"<h3>Draft</h3>{md_block}</section>"
@@ -109,7 +129,11 @@ def _render_page(*, form: dict[str, str], result: dict | None = None, error: str
         f"<div><label>Domain</label><input name='domain' value='{_esc(form.get('domain', 'longevity older adults'))}' required></div>"
         "</div><div><label>Criteria / Scope</label>"
         f"<textarea name='criteria' placeholder='Example: human studies only, 2020+, safety signals.'>{_esc(form.get('criteria', ''))}</textarea>"
-        "</div><button type='submit'>Run</button></form></section>"
+        "</div>"
+        '<div><label style="display:inline-flex;align-items:center;gap:8px;text-transform:none;letter-spacing:normal">'
+        f"<input type='checkbox' name='judge' value='1'{'checked' if form.get('judge') == '1' else ''}> "
+        "Run Judge (Gemma 4, Ministral fallback) — adds ~$0.002 + 5–10s</label></div>"
+        "<button type='submit'>Run</button></form></section>"
         f"{result_block}</div></body></html>"
     )
 
@@ -147,6 +171,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
             topic=form.get("topic", ""),
             domain=form.get("domain", ""),
             criteria=form.get("criteria", ""),
+            use_judge=form.get("judge") == "1",
         )
         error = str(result.get("error", "")) if result.get("error") else ""
         self._send(_render_page(form=form, result=result, error=error).encode("utf-8"))
@@ -166,7 +191,10 @@ class DashboardHandler(BaseHTTPRequestHandler):
 
 
 def cli_run(args: argparse.Namespace) -> int:
-    result = run_draft(topic=args.topic, domain=args.domain, criteria=args.criteria)
+    result = run_draft(
+        topic=args.topic, domain=args.domain, criteria=args.criteria,
+        use_judge=args.judge,
+    )
     if result.get("error"):
         print(f"ERROR: {result['error']}", file=sys.stderr)
         return 1
@@ -196,6 +224,8 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--topic", required=True)
     r.add_argument("--domain", required=True)
     r.add_argument("--criteria", default="")
+    r.add_argument("--judge", action="store_true",
+                   help="run Gemma 4 judge (Ministral fallback) after QA approves")
     r.add_argument("--json", action="store_true", help="print full JSON result")
     d = sub.add_parser("dashboard", help="serve the HTTP dashboard")
     s = load_settings()

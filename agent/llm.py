@@ -1,13 +1,18 @@
-"""MiMo writer — takes a typed bundle, returns structured draft JSON.
+"""MiMo writer + shared OpenAI-compatible chat helper.
 
 The LLM never decides role / citation / numeric facts. The bundle is the
 ground truth and the prompt forbids contradicting it. QA validates the
 output against bundle invariants. If QA rejects, draft.py re-calls write_draft
 with a `correction=...` argument that appends the failure as a user message.
+
+If MiMo errors (timeout, 5xx, malformed JSON), the writer falls back to
+the OpenRouter shared model (Ministral by default) when OPENROUTER_API_KEY
+is set. This is the same helper that judge.py uses for Gemma + its fallback.
 """
 from __future__ import annotations
 
 import json
+import logging
 import re
 from dataclasses import dataclass
 from typing import Any
@@ -25,6 +30,8 @@ _FENCE_RE = re.compile(r"```(?:json)?\s*\n?(.*?)\n?\s*```", re.DOTALL)
 # Pricing for cost estimation (MiMo 2.5 Pro, USD per 1K tokens).
 _INPUT_PRICE_PER_1K = 0.00014
 _OUTPUT_PRICE_PER_1K = 0.00028
+
+logger = logging.getLogger(__name__)
 
 SYSTEM_PROMPT = """You are a research-paper drafter for a peer-review-adjacent
 publication system. Strict rules — violation produces a rejected draft.
@@ -134,6 +141,49 @@ def extract_json(text: str) -> dict[str, Any]:
     raise ValueError("LLM response contained no JSON object")
 
 
+async def openai_chat_json(
+    *,
+    client: httpx.AsyncClient,
+    base_url: str,
+    api_key: str,
+    model: str,
+    messages: list[dict[str, str]],
+    timeout: float = 60.0,
+    max_tokens: int | None = None,
+) -> tuple[dict[str, Any], dict[str, int]]:
+    """Generic OpenAI-compatible chat-completion call returning JSON content.
+
+    Both MiMo (writer) and OpenRouter (judge + fallbacks) speak this protocol.
+    Returns (parsed_json, raw_usage_dict).
+    """
+    if not api_key:
+        raise RuntimeError(f"missing api_key for model={model}")
+    payload: dict[str, Any] = {
+        "model": model,
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"},
+        "messages": messages,
+    }
+    if max_tokens is not None:
+        payload["max_tokens"] = max_tokens
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    url = base_url.rstrip("/") + "/chat/completions"
+    response = await client.post(url, json=payload, headers=headers, timeout=timeout)
+    response.raise_for_status()
+    body = response.json()
+    choice = body["choices"][0]["message"]
+    text = choice.get("content") or choice.get("reasoning_content") or "{}"
+    parsed = extract_json(text)
+    usage = body.get("usage", {}) or {}
+    return parsed, {
+        "input_tokens": int(usage.get("prompt_tokens", 0) or 0),
+        "output_tokens": int(usage.get("completion_tokens", 0) or 0),
+    }
+
+
 async def write_draft(
     items: list[EvidenceItem],
     topic: str,
@@ -144,13 +194,14 @@ async def write_draft(
     client: httpx.AsyncClient | None = None,
     correction: str | None = None,
 ) -> tuple[dict[str, Any], WriterUsage]:
-    """Call MiMo. Returns (parsed_json, usage).
+    """Call MiMo. Falls back to OpenRouter (Ministral) on transport/parse error
+    when OPENROUTER_API_KEY is set. Returns (parsed_json, usage).
 
     `correction` appends a user message instructing a fix — used by draft.py
     on QA-rejection retry.
     """
-    if not settings.mimo_api_key:
-        raise RuntimeError("MIMO_API_KEY is not set")
+    if not settings.mimo_api_key and not settings.openrouter_api_key:
+        raise RuntimeError("MIMO_API_KEY (or OPENROUTER_API_KEY for fallback) required")
 
     user_prompt = _build_user_prompt(items, topic, domain, criteria)
     messages: list[dict[str, str]] = [
@@ -163,43 +214,53 @@ async def write_draft(
             "content": f"REJECTED. Fix: {correction}\nReturn the same JSON shape, corrected.",
         })
 
-    body_payload = {
-        "model": settings.mimo_model,
-        "temperature": 0.2,
-        "response_format": {"type": "json_object"},
-        "messages": messages,
-    }
-    headers = {
-        "Authorization": f"Bearer {settings.mimo_api_key}",
-        "Content-Type": "application/json",
-    }
-    url = settings.mimo_base_url.rstrip("/") + "/chat/completions"
-
     own_client = client is None
     c = client or httpx.AsyncClient(timeout=settings.mimo_timeout_sec)
     try:
-        response = await c.post(url, json=body_payload, headers=headers)
-        response.raise_for_status()
-        body = response.json()
+        # Primary: MiMo
+        if settings.mimo_api_key:
+            try:
+                parsed, raw_usage = await openai_chat_json(
+                    client=c,
+                    base_url=settings.mimo_base_url,
+                    api_key=settings.mimo_api_key,
+                    model=settings.mimo_model,
+                    messages=messages,
+                    timeout=settings.mimo_timeout_sec,
+                )
+                return parsed, _usage(raw_usage, settings.mimo_model)
+            except (httpx.HTTPError, ValueError, KeyError) as exc:
+                if not settings.openrouter_api_key:
+                    raise
+                logger.warning(
+                    "writer primary %s failed (%s: %s); falling back to %s",
+                    settings.mimo_model, type(exc).__name__, exc, settings.fallback_model,
+                )
+        # Fallback: OpenRouter shared model (Ministral)
+        parsed, raw_usage = await openai_chat_json(
+            client=c,
+            base_url=settings.openrouter_base_url,
+            api_key=settings.openrouter_api_key,
+            model=settings.fallback_model,
+            messages=messages,
+            timeout=settings.mimo_timeout_sec,
+        )
+        return parsed, _usage(raw_usage, settings.fallback_model)
     finally:
         if own_client:
             await c.aclose()
 
-    choice = body["choices"][0]["message"]
-    text = choice.get("content") or choice.get("reasoning_content") or "{}"
-    parsed = extract_json(text)
 
-    usage_raw = body.get("usage", {}) or {}
-    in_tok = int(usage_raw.get("prompt_tokens", 0) or 0)
-    out_tok = int(usage_raw.get("completion_tokens", 0) or 0)
-    usage = WriterUsage(
+def _usage(raw: dict[str, int], model: str) -> WriterUsage:
+    in_tok = int(raw.get("input_tokens", 0))
+    out_tok = int(raw.get("output_tokens", 0))
+    return WriterUsage(
         input_tokens=in_tok,
         output_tokens=out_tok,
         estimated_cost_usd=(
             in_tok / 1000 * _INPUT_PRICE_PER_1K
             + out_tok / 1000 * _OUTPUT_PRICE_PER_1K
         ),
-        model=settings.mimo_model,
+        model=model,
         prompt_version=PROMPT_VERSION,
     )
-    return parsed, usage

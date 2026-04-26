@@ -25,6 +25,10 @@ def _settings(tmp_path: Path, **overrides) -> Settings:
         mimo_model="mimo-test",
         mimo_base_url="http://example.test",
         mimo_timeout_sec=5.0,
+        openrouter_api_key="",
+        openrouter_base_url="http://or.example.test",
+        judge_model="google/gemma-4-4b-it",
+        fallback_model="mistralai/mistral-small-2603",
         bot_enabled=True,
         daily_cost_cap_usd=10.0,
         dashboard_host="127.0.0.1",
@@ -85,12 +89,12 @@ def test_run_blocks_when_bot_disabled(tmp_path):
     assert out["error"] == "BOT_ENABLED is false"
 
 
-def test_run_blocks_without_api_key(tmp_path):
+def test_run_blocks_without_any_provider_key(tmp_path):
     out = draft_mod.run(
         topic="t", domain="d",
-        settings=_settings(tmp_path, mimo_api_key=""),
+        settings=_settings(tmp_path, mimo_api_key="", openrouter_api_key=""),
     )
-    assert out["error"] == "MIMO_API_KEY is not set"
+    assert "MIMO_API_KEY" in out["error"] or "OPENROUTER" in out["error"]
 
 
 def test_run_blocks_when_daily_cost_cap_reached(tmp_path):

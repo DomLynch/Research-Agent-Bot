@@ -29,11 +29,17 @@ def _float(name: str, default: float) -> float:
 
 @dataclass(frozen=True, slots=True)
 class Settings:
-    # Provider
+    # Provider — primary writer
     mimo_api_key: str
     mimo_model: str
     mimo_base_url: str
     mimo_timeout_sec: float
+
+    # OpenRouter — judge primary + shared fallback for writer & judge
+    openrouter_api_key: str
+    openrouter_base_url: str
+    judge_model: str       # Gemma 4 (primary judge)
+    fallback_model: str    # Ministral — shared fallback for MiMo writer AND Gemma judge
 
     # Safety rails
     bot_enabled: bool
@@ -55,6 +61,12 @@ def load_settings() -> Settings:
             "MIMO_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"
         ),
         mimo_timeout_sec=_float("MIMO_TIMEOUT_SEC", 60.0),
+        openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
+        openrouter_base_url=os.environ.get(
+            "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"
+        ),
+        judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-4b-it"),
+        fallback_model=os.environ.get("FALLBACK_MODEL", "mistralai/mistral-small-2603"),
         bot_enabled=_bool("BOT_ENABLED", True),
         daily_cost_cap_usd=_float("DAILY_COST_CAP_USD", 10.0),
         dashboard_host=os.environ.get("DASHBOARD_HOST", "127.0.0.1"),

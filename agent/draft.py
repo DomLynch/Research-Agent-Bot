@@ -19,6 +19,7 @@ from pathlib import Path
 import httpx
 
 from agent.bundle import bundle as build_bundle
+from agent.judge import JudgeVerdict, judge_draft
 from agent.llm import WriterUsage, write_draft
 from agent.qa import correction_prompt, qa
 from agent.render import render
@@ -111,18 +112,20 @@ async def run_async(
     settings: Settings | None = None,
     sources: list | None = None,
     write_log: bool = True,
+    use_judge: bool = False,
 ) -> dict:
     settings = settings or load_settings()
     if not settings.bot_enabled:
         return {"error": "BOT_ENABLED is false"}
-    if not settings.mimo_api_key:
-        return {"error": "MIMO_API_KEY is not set"}
+    if not settings.mimo_api_key and not settings.openrouter_api_key:
+        return {"error": "MIMO_API_KEY (or OPENROUTER_API_KEY) is not set"}
     if _today_cost(settings) >= settings.daily_cost_cap_usd:
         return {"error": f"daily cost cap ${settings.daily_cost_cap_usd} reached"}
 
     sources = sources or default_sources()
     started = time.time()
     headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
+    verdict: JudgeVerdict | None = None
 
     async with httpx.AsyncClient(timeout=settings.mimo_timeout_sec, headers=headers) as client:
         sources_list, abstracts, raw_signals = await retrieve(
@@ -144,17 +147,39 @@ async def run_async(
         attempts = 1
 
         if not result.approved:
-            parsed2, usage2 = await write_draft(
+            parsed, usage2 = await write_draft(
                 items, topic, domain, criteria,
                 settings=settings, client=client,
                 correction=correction_prompt(result.failures),
             )
-            draft = _build_draft(parsed2, items, topic, domain, criteria)
+            draft = _build_draft(parsed, items, topic, domain, criteria)
             result = qa(draft)
             usage = _merge_usage(usage, usage2)
             attempts = 2
 
+        # Optional Judge pass: only after QA approves. If Judge requests
+        # revision, do ONE more writer round (no second judge call) to
+        # keep cost bounded.
+        if use_judge and result.approved:
+            verdict = await judge_draft(
+                parsed, items, topic, domain, settings=settings, client=client,
+            )
+            if verdict and not verdict.approved and verdict.revision_notes:
+                parsed_rev, usage_rev = await write_draft(
+                    items, topic, domain, criteria,
+                    settings=settings, client=client,
+                    correction=verdict.revision_notes,
+                )
+                draft = _build_draft(parsed_rev, items, topic, domain, criteria)
+                result = qa(draft)
+                usage = _merge_usage(usage, usage_rev)
+                attempts += 1
+
     meta: dict[str, object] = asdict(usage)
+    if verdict is not None:
+        meta["judge_model"] = verdict.model
+        meta["judge_score"] = verdict.score
+        meta["estimated_cost_usd"] = float(meta["estimated_cost_usd"]) + verdict.estimated_cost_usd
     markdown = render(draft, meta=meta) if result.approved else ""
 
     out: dict[str, object] = {
@@ -174,7 +199,21 @@ async def run_async(
         "prompt_version": usage.prompt_version,
         "input_tokens": usage.input_tokens,
         "output_tokens": usage.output_tokens,
-        "estimated_cost_usd": usage.estimated_cost_usd,
+        "estimated_cost_usd": float(meta.get("estimated_cost_usd", usage.estimated_cost_usd)),
+        "judge": (
+            {
+                "model": verdict.model,
+                "approved": verdict.approved,
+                "score": verdict.score,
+                "summary": verdict.summary,
+                "blocking_issues": list(verdict.blocking_issues),
+                "input_tokens": verdict.input_tokens,
+                "output_tokens": verdict.output_tokens,
+                "estimated_cost_usd": verdict.estimated_cost_usd,
+            }
+            if verdict is not None
+            else None
+        ),
         "markdown": markdown,
     }
 

@@ -37,6 +37,15 @@ The deterministic Draft must be publishable before the LLM ever touches it. Poli
 - `tests/`: snapshot harness (fails loud on missing baseline unless `UPDATE_SNAPSHOTS=1`), types contract (18 cases), LOC budget enforcer, legacy-import guard.
 - pyproject `packages.find` now `["agent", "agent.*"]` — `agent_legacy` never ships.
 
+## V1.1 Status — opt-in Judge added (Gemma 4 → Ministral fallback)
+- `agent/judge.py` (156 LOC) — single second-pass Judge after QA approval. Default off.
+- `--judge` CLI flag + dashboard checkbox enable it.
+- Writer also has Ministral fallback now (via OpenRouter) when MiMo errors.
+- Shared OpenAI-compatible helper `openai_chat_json` in `llm.py` powers both writer and judge.
+- `agent/` runtime: **2,094 / 2,500 LOC** (406 headroom). Largest file: bundle.py 298.
+- **139 tests** green in 0.13s.
+- Live smoke for judge needs `OPENROUTER_API_KEY` — set it and rerun the metformin command with `--judge`.
+
 ## V1 Status — feature-complete (`agent/app.py dashboard` ready to deploy)
 - **133 tests green in 0.15s** across types, sources, retrieve, bundle, qa, render, draft.
 - **agent/ runtime: 1,810 / 2,500 LOC** (690 headroom). Largest file: bundle.py 298. Every file under 500.
