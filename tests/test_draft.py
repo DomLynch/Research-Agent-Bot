@@ -27,7 +27,7 @@ def _settings(tmp_path: Path, **overrides) -> Settings:
         mimo_timeout_sec=5.0,
         openrouter_api_key="",
         openrouter_base_url="http://or.example.test",
-        judge_model="google/gemma-4-4b-it",
+        judge_model="google/gemma-4-31b-it",
         fallback_model="mistralai/mistral-small-2603",
         bot_enabled=True,
         daily_cost_cap_usd=10.0,

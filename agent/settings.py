@@ -65,7 +65,7 @@ def load_settings() -> Settings:
         openrouter_base_url=os.environ.get(
             "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"
         ),
-        judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-4b-it"),
+        judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-31b-it"),
         fallback_model=os.environ.get("FALLBACK_MODEL", "mistralai/mistral-small-2603"),
         bot_enabled=_bool("BOT_ENABLED", True),
         daily_cost_cap_usd=_float("DAILY_COST_CAP_USD", 10.0),
