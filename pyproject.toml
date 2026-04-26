@@ -23,4 +23,6 @@ testpaths = ["tests"]
 pythonpath = ["."]
 
 [tool.setuptools.packages.find]
-include = ["agent*", "agent_legacy*"]
+# Only ship the V1 runtime. agent_legacy/ stays on disk for git archaeology
+# and is reachable via pythonpath = ["."], but must never be installed.
+include = ["agent", "agent.*"]

@@ -32,12 +32,21 @@ def _src(ref: int) -> Source:
     )
 
 
+_ROLE_TO_DESIGN = {
+    "published_results": "rct",
+    "published_protocol": "protocol",
+    "registered_pending": "registry",
+    "review": "review",
+    "mechanistic": "mechanistic",
+    "off_domain": "other",
+}
+
+
 def _item(ref: int, role) -> EvidenceItem:
-    design = "rct" if role == "published_results" else "protocol"
     return EvidenceItem(
         source=_src(ref),
         abstract="Trial of intervention X.",
-        design=design,
+        design=_ROLE_TO_DESIGN[role],
         role=role,
         tier="A1",
         direct=True,
@@ -140,3 +149,36 @@ def test_invariant_blocks_unknown_ref():
     facts = [Fact(ref=99, kind="result", claim="orphan")]
     with pytest.raises(InvariantError, match="unknown source ref=99"):
         assert_invariants(bundle, facts)
+
+
+# --- Reverse direction: per-item completeness ------------------------------
+
+
+def test_invariant_blocks_results_item_with_no_result_fact():
+    """An EvidenceItem typed as published_results MUST carry a result fact;
+    otherwise the prose silently drops the finding (data-loss bug class)."""
+    bundle = [_item(1, "published_results")]
+    facts: list[Fact] = []  # nothing extracted
+    with pytest.raises(InvariantError, match="role='published_results' has no"):
+        assert_invariants(bundle, facts)
+
+
+def test_invariant_blocks_protocol_item_with_no_protocol_fact():
+    bundle = [_item(1, "published_protocol")]
+    facts: list[Fact] = []
+    with pytest.raises(InvariantError, match="role='published_protocol' has no"):
+        assert_invariants(bundle, facts)
+
+
+def test_invariant_blocks_registered_pending_item_with_no_protocol_fact():
+    bundle = [_item(1, "registered_pending")]
+    facts: list[Fact] = []
+    with pytest.raises(InvariantError, match="role='registered_pending' has no"):
+        assert_invariants(bundle, facts)
+
+
+def test_invariant_allows_review_item_without_facts():
+    """Review/mechanistic items don't require facts — context extraction
+    is best-effort, not load-bearing."""
+    bundle = [_item(1, "review")]
+    assert_invariants(bundle, facts=[])  # does not raise

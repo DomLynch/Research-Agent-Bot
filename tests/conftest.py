@@ -44,8 +44,18 @@ def snapshot(request: pytest.FixtureRequest):
     def _check(actual: object, name: str | None = None) -> None:
         path = _snapshot_path(request.node.nodeid, name)
         rendered = _serialize(actual)
-        if UPDATE or not path.exists():
+        if not path.exists():
+            if not UPDATE:
+                raise AssertionError(
+                    f"\nSnapshot missing: {path}\n"
+                    f"Run with UPDATE_SNAPSHOTS=1 to create the baseline, "
+                    f"then commit it.\n"
+                    f"--- would-be content ---\n{rendered}\n"
+                )
             path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(rendered, encoding="utf-8")
+            return
+        if UPDATE:
             path.write_text(rendered, encoding="utf-8")
             return
         expected = path.read_text(encoding="utf-8")

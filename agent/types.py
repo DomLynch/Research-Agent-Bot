@@ -191,11 +191,20 @@ _CONTEXT_ROLES = {"review", "mechanistic"}
 def assert_invariants(bundle: list[EvidenceItem], facts: list[Fact]) -> None:
     """Raise InvariantError if the role <-> fact-kind pairing rule is violated.
 
-    This is the single function that makes the rapamycin bug class structurally
-    impossible. Call it after bundle() and after facts() in the pipeline.
+    Enforces TWO directions:
+      Forward (per-fact): a Fact's kind must match its EvidenceItem's role.
+      Reverse (per-item completeness): an item with role='published_results'
+        must carry at least one Fact of kind='result'; an item with role in
+        {published_protocol, registered_pending} must carry at least one Fact
+        of kind='protocol'. Otherwise the prose can either contradict the
+        bundle or silently drop a key finding.
+
+    Call this after bundle() AND after facts() in the pipeline. Calling it
+    before facts() are extracted will raise on the completeness check.
     """
     by_ref: dict[int, EvidenceItem] = {item.source.ref: item for item in bundle}
 
+    # Forward direction: every Fact must pair with the right role.
     for fact in facts:
         item = by_ref.get(fact.ref)
         if item is None:
@@ -216,4 +225,21 @@ def assert_invariants(bundle: list[EvidenceItem], facts: list[Fact]) -> None:
             raise InvariantError(
                 f"Fact ref={fact.ref} kind='context' but EvidenceItem.role={item.role!r}; "
                 f"context facts require role in {_CONTEXT_ROLES}"
+            )
+
+    # Reverse direction: every result/protocol item must carry its kind of fact.
+    refs_with_result = {f.ref for f in facts if f.kind == "result"}
+    refs_with_protocol = {f.ref for f in facts if f.kind == "protocol"}
+    for item in bundle:
+        ref = item.source.ref
+        if item.role == _RESULT_ONLY and ref not in refs_with_result:
+            raise InvariantError(
+                f"EvidenceItem ref={ref} role='published_results' has no "
+                f"Fact(kind='result'); the bundle would silently drop this finding"
+            )
+        if item.role in _PROTOCOL_ROLES and ref not in refs_with_protocol:
+            raise InvariantError(
+                f"EvidenceItem ref={ref} role={item.role!r} has no "
+                f"Fact(kind='protocol'); the bundle would carry a registered "
+                f"trial with no protocol detail"
             )
