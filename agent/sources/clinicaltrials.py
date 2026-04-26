@@ -46,7 +46,8 @@ class ClinicalTrialsClient:
             limit=300,
         )
         desc = (protocol.get("descriptionModule") or {}).get("briefSummary")
-        abstract = clean_text(desc)
+        # 4000-char window keeps trial description intact for classification.
+        abstract = clean_text(desc, limit=4000)
         if not nct or not title:
             return None
         # CT.gov registered-pending trials sometimes have empty briefSummary.

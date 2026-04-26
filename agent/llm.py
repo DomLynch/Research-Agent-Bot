@@ -19,6 +19,7 @@ from typing import Any
 
 import httpx
 
+from agent.bundle import DEFAULT_WRITER_BUDGET, rank_for_writer
 from agent.settings import Settings
 from agent.types import EvidenceItem
 
@@ -107,17 +108,19 @@ def _format_item(item: EvidenceItem) -> str:
 def _build_user_prompt(
     items: list[EvidenceItem], topic: str, domain: str, criteria: str
 ) -> str:
-    tier_order = {"A1": 0, "A2": 1, "B": 2, "C": 3}
-    sorted_items = sorted(
-        items,
-        key=lambda it: (not it.direct, tier_order.get(it.tier, 9), it.source.ref),
-    )
+    """Build the writer prompt from the top-N ranked subset of the bundle.
+
+    The full bundle still flows to render (evidence table + bibliography);
+    the LLM sees only the strongest evidence so it doesn't drown in old
+    mechanistic noise. Top-N truncation is bundle.rank_for_writer's job.
+    """
+    ranked = rank_for_writer(items, n=DEFAULT_WRITER_BUDGET)
     return USER_PROMPT_TEMPLATE.format(
         topic=topic,
         domain=domain,
         criteria=criteria,
-        n_sources=len(items),
-        bundle_block="\n".join(_format_item(it) for it in sorted_items),
+        n_sources=len(ranked),
+        bundle_block="\n".join(_format_item(it) for it in ranked),
     )
 
 

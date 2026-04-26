@@ -15,12 +15,12 @@
     },
     {
       "design": "mechanistic",
-      "direct": false,
+      "direct": true,
       "ident": "10.1001/jama.2025.11289",
       "ref": 2,
       "role": "mechanistic",
       "src": "pubmed",
-      "strict": false,
+      "strict": true,
       "tier": "C",
       "title": "Geroscience: A Translational Review.",
       "year": 2025
@@ -99,12 +99,12 @@
     },
     {
       "design": "mechanistic",
-      "direct": false,
+      "direct": true,
       "ident": "10.1038/s43587-025-00896-0",
       "ref": 9,
       "role": "mechanistic",
       "src": "pubmed",
-      "strict": false,
+      "strict": true,
       "tier": "C",
       "title": "Single-cell profiling identifies hair cell SLC35F1 deficiency as a signature of ",
       "year": 2025
@@ -123,12 +123,12 @@
     },
     {
       "design": "mechanistic",
-      "direct": false,
+      "direct": true,
       "ident": "10.1152/ajpcell.00469.2020",
       "ref": 11,
       "role": "mechanistic",
       "src": "pubmed",
-      "strict": false,
+      "strict": true,
       "tier": "C",
       "title": "Short-term metformin ingestion by healthy older adults improves myoblast functio",
       "year": 2021
@@ -183,12 +183,12 @@
     },
     {
       "design": "mechanistic",
-      "direct": false,
+      "direct": true,
       "ident": "10.1093/gerona/glaa056",
       "ref": 16,
       "role": "mechanistic",
       "src": "openalex",
-      "strict": false,
+      "strict": true,
       "tier": "C",
       "title": "Metformin Reduces Aging-Related Leaky Gut and Improves Cognitive Function by Ben",
       "year": 2020
@@ -314,14 +314,14 @@
       "year": 2025
     },
     {
-      "design": "mechanistic",
+      "design": "rct",
       "direct": true,
       "ident": "10.1016/j.eclinm.2026.103874",
       "ref": 27,
-      "role": "mechanistic",
+      "role": "published_results",
       "src": "europepmc",
       "strict": true,
-      "tier": "C",
+      "tier": "A2",
       "title": "Metformin and epigenetic age in non-diabetic older people with HIV in Madrid (ME",
       "year": 2026
     },
@@ -471,12 +471,12 @@
     },
     {
       "design": "observational",
-      "direct": false,
+      "direct": true,
       "ident": "NCT02432287",
       "ref": 40,
       "role": "published_results",
       "src": "clinicaltrials",
-      "strict": false,
+      "strict": true,
       "tier": "A2",
       "title": "Metformin in Longevity Study (MILES).",
       "year": 2015
@@ -485,27 +485,27 @@
   "topic_query": "metformin aging older adults",
   "totals": {
     "design_counts": {
-      "mechanistic": 22,
+      "mechanistic": 21,
       "meta_analysis": 2,
       "observational": 4,
       "protocol": 1,
-      "rct": 5,
+      "rct": 6,
       "registry": 6
     },
-    "direct_count": 29,
+    "direct_count": 34,
     "role_counts": {
-      "mechanistic": 22,
+      "mechanistic": 21,
       "published_protocol": 1,
-      "published_results": 9,
+      "published_results": 10,
       "registered_pending": 6,
       "review": 2
     },
-    "strict_count": 29,
+    "strict_count": 34,
     "tier_counts": {
       "A1": 2,
-      "A2": 9,
+      "A2": 10,
       "B": 7,
-      "C": 22
+      "C": 21
     }
   },
   "unique_sources": 40

@@ -74,4 +74,7 @@ class OpenAlexClient:
                     positions[int(idx)] = str(word)
                 except (TypeError, ValueError):
                     continue
-        return clean_text(" ".join(positions[i] for i in sorted(positions)))
+        return clean_text(
+            " ".join(positions[i] for i in sorted(positions)),
+            limit=4000,
+        )

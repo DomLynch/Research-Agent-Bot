@@ -157,6 +157,50 @@ _PEDIATRIC_RE = re.compile(
     r"\b(pediatric|paediatric|children|adolescen[ct]|infants?|neonatal)\b",
     re.IGNORECASE,
 )
+
+# High-confidence human-only signals — when present, override an
+# _ANIMAL_RE / _CELL_RE match in the same abstract. 'we treated' /
+# 'we administered' deliberately excluded because labs say those of mice
+# too. Only research-jargon for human trials and explicit population
+# descriptors are listed.
+_HUMAN_TRIAL_SIGNAL_RE = re.compile(
+    r"\b(?:"
+    r"we\s+(?:randomi[sz]ed|enrolled|recruited|randomly\s+assigned)"
+    r"|(?:older|elderly|adult|aged)\s+(?:adults|men|women|patients|participants|subjects)"
+    r"|patients\s+(?:were\s+)?(?:randomi[sz]ed|enrolled|recruited)"
+    r"|participants\s*\(\s*n\s*=\s*\d{2,}"
+    r"|men\s+and\s+women|male\s+and\s+female\s+(?:patients|participants)"
+    r"|n\s*=\s*\d{2,}\s+(?:patients|participants|subjects|adults|older)"
+    r"|in\s+(?:patients|participants|subjects|adults|older\s+adults)\s+with"
+    r"|in\s+a\s+(?:randomi[sz]ed|placebo[-\s]controlled|double[-\s]blind)\s+trial\s+(?:of|in)\s+(?:patients|adults|participants)"
+    r")\b",
+    re.IGNORECASE,
+)
+
+# Trial-design markers — even without a numeric outcome, these phrases plus
+# any qualitative effect verb (improved/reduced/decreased/increased) flag a
+# real human trial paper. Examples this catches: 'first clinical trial of',
+# 'open-label phase I pilot', 'we administered ... 100 mg'. Used in
+# _classify_role as a fast path so qualitative-outcome trials don't fall
+# through to the mechanistic default.
+_TRIAL_DESIGN_RE = re.compile(
+    r"(?:first|pivotal|seminal)\s+clinical\s+trial"
+    r"|phase\s+(?:i{1,3}|1|2|3|iv|4)\b"
+    r"|open[-\s]label\s+(?:trial|study|phase|pilot)"
+    r"|(?:double|single)[-\s]blind\s+(?:randomi[sz]ed|trial|placebo)"
+    r"|placebo[-\s]controlled\s+(?:trial|study|pilot|phase)"
+    r"|we\s+(?:randomi[sz]ed|administered|treated|assigned)\s+\w+"
+    r"|in\s+this\s+(?:open[-\s]label|double[-\s]blind|randomi[sz]ed|placebo[-\s]controlled|pilot)\s+",
+    re.IGNORECASE,
+)
+
+# Qualitative outcome verbs — paired with trial-design markers, signal a
+# results paper even without numeric effect markers in _REPORTED_OUTCOME_RE.
+_QUALITATIVE_OUTCOME_RE = re.compile(
+    r"\b(?:improved|reduced|decreased|increased|enhanced|attenuated|"
+    r"reversed|lowered|raised|cleared|eliminated|prolonged)\s+\w+",
+    re.IGNORECASE,
+)
 # High-impact venues for tier A1 promotion. Conservative seed list; expand
 # only when a fixture proves the omission is hurting tier accuracy.
 _HIGH_IMPACT_VENUES = (
@@ -198,6 +242,20 @@ _TOPIC_STOPWORDS = frozenset({
 # preserves the compound entity. Single-char tokens that aren't stopwords
 # survive into _topic_anchors only when paired with another content token.
 _TOPIC_TOKEN_RE = re.compile(r"\b[a-z][a-z0-9-]*\b")
+
+# Writer-budget defaults — prevents the LLM from drowning in 30+ item
+# bundles where mechanistic/old context dilutes the strongest evidence.
+DEFAULT_WRITER_BUDGET = 16
+
+_ROLE_WRITER_PRIORITY = {
+    "published_results": 0,
+    "review": 1,
+    "registered_pending": 2,
+    "published_protocol": 3,
+    "mechanistic": 4,
+    "off_domain": 5,
+}
+_TIER_WRITER_PRIORITY = {"A1": 0, "A2": 1, "B": 2, "C": 3}
 
 
 # --- Public entry point ----------------------------------------------------
@@ -249,6 +307,34 @@ def bundle(
     return items
 
 
+def rank_for_writer(
+    items: list[EvidenceItem], n: int = DEFAULT_WRITER_BUDGET
+) -> list[EvidenceItem]:
+    """Sort items by writer priority and return the top N.
+
+    Priority key (smaller = higher rank):
+      direct=True before direct=False
+      tier   A1 < A2 < B < C
+      role   published_results < review < registered_pending < protocol < mechanistic
+      year   newer first
+      ref    ascending (stable tie-break)
+
+    The LLM sees only this top-N slice; the full bundle still flows to render
+    so the evidence table and bibliography stay complete.
+    """
+
+    def key(it: EvidenceItem) -> tuple:
+        return (
+            not it.direct,
+            _TIER_WRITER_PRIORITY.get(it.tier, 9),
+            _ROLE_WRITER_PRIORITY.get(it.role, 9),
+            -(it.source.year or 0),
+            it.source.ref,
+        )
+
+    return sorted(items, key=key)[:n]
+
+
 def _topic_anchors(topic: str) -> tuple[str, ...]:
     """Extract content-bearing topic phrases for the relevance gate.
 
@@ -288,9 +374,22 @@ def _classify_role(src: Source, abstract: str, sig: Mapping[str, object]) -> Rol
         return "review"
     has_protocol = any(token in haystack for token in _PROTOCOL)
     has_outcome = bool(_REPORTED_OUTCOME_RE.search(abstract))
+    # Protocol markers DOMINATE — a paper saying 'this study evaluates' or
+    # 'we will assess' is a protocol regardless of trial-design phrasing
+    # (protocols always describe their planned design). Only a hard numeric
+    # outcome marker overrides this. Without that, protocol -> protocol.
     if has_protocol and not has_outcome:
         return "published_protocol"
     if has_outcome:
+        return "published_results"
+    # Trial-design fast path: a paper with explicit trial-design markers
+    # (Phase I/II/III, open-label, randomized double-blind, placebo-controlled,
+    # 'we randomized/administered') plus a qualitative outcome verb is a
+    # results paper even when the abstract uses only qualitative effect
+    # language. Catches the Hickson IPF senolytics pilot and similar real
+    # RCTs whose abstracts don't carry p-values. Runs ONLY when no protocol
+    # markers are present (otherwise the protocol branch above already won).
+    if _TRIAL_DESIGN_RE.search(abstract) and _QUALITATIVE_OUTCOME_RE.search(abstract):
         return "published_results"
     if _MECHANISTIC_RE.search(haystack):
         return "mechanistic"
@@ -347,10 +446,20 @@ def _is_direct(
     Topic anchors are matched with word boundaries so 'vitamin' as an anchor
     does not match 'multivitamin', and a 'vitamin d' bigram anchor does not
     match 'Vitamin K' (the K isn't part of the bigram).
+
+    Animal/cell match is OVERRIDDEN when the abstract carries an explicit
+    human-trial signal ('we randomized N patients', 'older adults',
+    'placebo-controlled', etc.). Real human RCTs routinely cite preclinical
+    mouse work in their introduction; the override prevents a real human
+    trial from being marked indirect just because its background mentions
+    'mice'.
     """
     domain_human = any(marker in domain for marker in _HUMAN_DOMAIN_MARKERS)
     domain_adult = any(marker in domain for marker in _ADULT_DOMAIN_MARKERS)
-    if domain_human and (_ANIMAL_RE.search(abstract) or _CELL_RE.search(abstract)):
+    has_human_signal = bool(_HUMAN_TRIAL_SIGNAL_RE.search(abstract))
+    if domain_human and not has_human_signal and (
+        _ANIMAL_RE.search(abstract) or _CELL_RE.search(abstract)
+    ):
         return False
     if domain_adult and _PEDIATRIC_RE.search(abstract):
         return False

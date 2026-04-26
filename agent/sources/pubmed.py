@@ -80,7 +80,10 @@ class PubMedClient:
             "".join(node.itertext())
             for node in article.findall(".//Abstract/AbstractText")
         )
-        abstract = clean_text(abstract_text)
+        # 4000 char window keeps the results section intact for classification.
+        # Earlier 1600 cap clipped 47% of abstracts mid-methodology, hiding
+        # outcome markers and forcing real RCTs into the mechanistic default.
+        abstract = clean_text(abstract_text, limit=4000)
         if not title or not abstract:
             return None
         doi: str | None = None

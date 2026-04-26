@@ -42,7 +42,9 @@ class EuropePMCClient:
 
     def _parse_record(self, record: dict[str, Any], *, query: str) -> RawHit | None:
         title = clean_text(record.get("title"), limit=300)
-        abstract = clean_text(record.get("abstractText"))
+        # 4000-char window keeps result sections intact (was 1600; clipped 47%
+        # of abstracts mid-methodology and forced real RCTs into mechanistic).
+        abstract = clean_text(record.get("abstractText"), limit=4000)
         if not title or not abstract:
             return None
         doi = normalize_doi(record.get("doi"))
