@@ -176,10 +176,17 @@ def _qa_failures_block(meta: dict[str, object]) -> str:
 
 
 def _adjudication_block(meta: dict[str, object]) -> str:
-    """Surface the judge's verdict when --judge ran."""
+    """Surface the judge's verdict, or visibly mark a skipped judge."""
     judge = meta.get("judge") if isinstance(meta, dict) else None
+    # Visibly mark when judge was skipped — silent skip would hide the
+    # second QC layer being missing.
     if not isinstance(judge, dict) or not judge.get("model"):
-        return ""
+        return (
+            "## Adjudication\n\n"
+            "_Judge SKIPPED — `OPENROUTER_API_KEY` not configured. The second "
+            "layer of quality control is not active for this run; treat the "
+            "draft as QA-approved but not externally adjudicated._"
+        )
     parts = [
         "## Adjudication",
         "",

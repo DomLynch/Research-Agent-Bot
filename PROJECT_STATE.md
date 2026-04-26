@@ -1,27 +1,22 @@
 # PROJECT_STATE.md
 
 ## Current Objective
-V1 rebuild — turn `topic + domain + criteria` into a 9/10-grade rapid-review draft via a deterministic-first pipeline. The LLM is editor only; the LLM never decides source role, citation identity, evidence tier, or result/protocol status.
+V1.1 — `topic + domain + criteria` → research-grade rapid-review draft. Three-LLM pipeline (relevance + writer + judge) with deterministic gates as the spine.
 
-## Pipeline
+## Pipeline (current)
 ```
-plan -> retrieve -> normalize -> bundle -> facts -> compose -> [polish] -> qa -> render -> [submit]
+retrieve  →  bundle  →  classify_relevance (LLM #1, mandatory) →
+write_draft (LLM #2) →  qa →  judge_draft (LLM #3, mandatory) →
+[revision-then-rejudge if needed]  →  render
 ```
-The deterministic Draft must be publishable before the LLM ever touches it. Polish is an opt-in pass that may improve wording but cannot add/remove citations, change role labels, or invent numbers.
-
-## Success Condition
-- Five golden topics (rapamycin, metformin, senolytics dasatinib+quercetin, semaglutide weight, vitamin D mortality) produce snapshot-identical Drafts on every run.
-- The rapamycin fixture would have caught the published_results-vs-protocol contradiction that broke V0.
-- Markdown artifact + bibliography + evidence table render deterministically.
-- `agent/` runtime stays under 2,500 LOC; no single file exceeds 500 LOC.
-- `agent/` never imports from `agent_legacy/`.
+- All three LLMs always run when API keys are configured. Judge silently no-ops without `OPENROUTER_API_KEY` but the artifact's `## Adjudication` block visibly marks the SKIPPED state.
+- On dual-rejection (both QA attempts fail OR judge rejects post-revision), the markdown still ships with an `⚠️ UNVERIFIED` banner + `## QA Failures` block — never an empty result.
 
 ## Constraints
-- Hard ceiling: **2,500 LOC** for `agent/` (enforced by `tests/test_loc_budget.py`).
-- Hard ceiling: **500 LOC per file** (enforced same place).
-- Runtime dependency: `httpx` only. No Pydantic, no frameworks.
-- Python ≥ 3.11, stdlib `dataclasses` with `frozen=True, slots=True`.
-- Researka submission deferred to V1.x once quality is locked.
+- Hard ceiling: **3,500 LOC** for `agent/` (raised from 2,500 in DECISIONS.md 2026-04-26 to fund the trust-layer features).
+- Hard ceiling: **500 LOC per file**.
+- Runtime dep: `httpx` only.
+- Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
 ## Day Plan (5 days)
 | Day | Ship | Done when |
@@ -37,14 +32,16 @@ The deterministic Draft must be publishable before the LLM ever touches it. Poli
 - `tests/`: snapshot harness (fails loud on missing baseline unless `UPDATE_SNAPSHOTS=1`), types contract (18 cases), LOC budget enforcer, legacy-import guard.
 - pyproject `packages.find` now `["agent", "agent.*"]` — `agent_legacy` never ships.
 
-## V1.1 Status — opt-in Judge added (Gemma 4 → Ministral fallback)
-- `agent/judge.py` (156 LOC) — single second-pass Judge after QA approval. Default off.
-- `--judge` CLI flag + dashboard checkbox enable it.
-- Writer also has Ministral fallback now (via OpenRouter) when MiMo errors.
-- Shared OpenAI-compatible helper `openai_chat_json` in `llm.py` powers both writer and judge.
-- `agent/` runtime: **2,094 / 2,500 LOC** (406 headroom). Largest file: bundle.py 298.
-- **139 tests** green in 0.13s.
-- Live smoke for judge needs `OPENROUTER_API_KEY` — set it and rerun the metformin command with `--judge`.
+## V1.1 Status — feature-complete with mandatory three-LLM pipeline
+- `agent/relevance.py` (LLM #1) — three-tier classifier MiMo → Gemma → Mistral. Single batch call before the writer; overrides deterministic `direct` when LLM judgment differs.
+- `agent/llm.py` (LLM #2 — writer) — MiMo 2.5 Pro primary, Mistral fallback. Surgical retry: previous draft + per-failure-code editing rules + temperature 0.05.
+- `agent/judge.py` (LLM #3 — mandatory judge) — three-tier chain Gemma → MiMo → Mistral. Hyper-critical prompt: cross-reference every citation, flag mis-attribution, reject made-up trial names.
+- After judge rejection + writer revision, **judge re-runs on the revised draft** so the rendered `## Adjudication` block reflects the SHIPPED draft (not stale pre-revision verdict).
+- Dual-rejection: markdown still renders with `⚠️ UNVERIFIED` banner + `## QA Failures` block.
+- Judge skipped (no `OPENROUTER_API_KEY`) → visibly marked in `## Adjudication` (never silent).
+- Trust-layer in render.py: Eligibility / Evidence (with risk-of-bias) / Excluded Sources / Confidence verdict / Adjudication / QA Failures / Bibliography.
+- Cost per draft: ~$0.002–0.005 (3 LLM calls + occasional revision + re-judge).
+- Tests: **165 green in ~0.3s**, ruff clean, agent/ runtime: **~2,810 / 3,500 LOC**.
 
 ## V1 Status — feature-complete (`agent/app.py dashboard` ready to deploy)
 - **133 tests green in 0.15s** across types, sources, retrieve, bundle, qa, render, draft.

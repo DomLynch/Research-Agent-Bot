@@ -190,8 +190,10 @@ async def run_async(
         # Judge runs whenever OPENROUTER_API_KEY is configured; catches
         # semantic hallucinations (mis-attributed claims, fabricated trial
         # names) that the regex gates can't see. Graceful no-op without
-        # the key. If Judge requests revision, do ONE more writer round
-        # (no second judge call) to keep cost bounded.
+        # the key. If Judge requests revision, the writer revises once
+        # AND the judge re-runs on the revised draft — otherwise the
+        # rendered Adjudication block would show the stale pre-revision
+        # rejection alongside an approved final draft.
         if result.approved:
             verdict = await judge_draft(
                 parsed, items, topic, domain, settings=settings, client=client,
@@ -207,6 +209,41 @@ async def run_async(
                 result = qa(draft)
                 usage = _merge_usage(usage, usage_rev)
                 attempts += 1
+                # Re-judge the revised draft so the artifact's adjudication
+                # block reflects the SHIPPED draft, not the rejected one.
+                # If the second judgment also rejects, the dual-rejection
+                # path takes over and the markdown ships UNVERIFIED.
+                if result.approved:
+                    parsed = parsed_rev
+                    verdict_rev = await judge_draft(
+                        parsed_rev, items, topic, domain,
+                        settings=settings, client=client,
+                    )
+                    if verdict_rev is not None:
+                        verdict = verdict_rev
+                        if not verdict_rev.approved:
+                            # Treat as rejection for the dual-rejection path
+                            # so the user sees the UNVERIFIED banner.
+                            from agent.types import GateFailure, QAResult
+                            judge_failures = tuple(
+                                GateFailure(
+                                    code="judge_rejected_post_revision",
+                                    message=f"[{verdict_rev.model}] {issue}",
+                                    severity="block",
+                                )
+                                for issue in verdict_rev.blocking_issues
+                            ) or (
+                                GateFailure(
+                                    code="judge_rejected_post_revision",
+                                    message=verdict_rev.summary or "rejected",
+                                    severity="block",
+                                ),
+                            )
+                            result = QAResult(
+                                approved=False,
+                                failures=tuple(result.failures) + judge_failures,
+                                score=result.score,
+                            )
 
     meta: dict[str, object] = asdict(usage)
     if verdict is not None:
