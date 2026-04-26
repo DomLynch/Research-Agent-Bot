@@ -165,6 +165,7 @@ async def openai_chat_json(
     timeout: float = 60.0,
     max_tokens: int | None = None,
     enforce_json: bool = True,
+    temperature: float = 0.2,
 ) -> tuple[dict[str, Any], dict[str, int]]:
     """Generic OpenAI-compatible chat-completion call returning JSON content.
 
@@ -180,7 +181,7 @@ async def openai_chat_json(
         raise RuntimeError(f"missing api_key for model={model}")
     payload: dict[str, Any] = {
         "model": model,
-        "temperature": 0.2,
+        "temperature": temperature,
         "messages": messages,
     }
     if enforce_json:
@@ -214,12 +215,16 @@ async def write_draft(
     settings: Settings,
     client: httpx.AsyncClient | None = None,
     correction: str | None = None,
+    previous_draft: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], WriterUsage]:
     """Call MiMo. Falls back to OpenRouter (Ministral) on transport/parse error
     when OPENROUTER_API_KEY is set. Returns (parsed_json, usage).
 
-    `correction` appends a user message instructing a fix — used by draft.py
-    on QA-rejection retry.
+    `correction` appends a user message instructing a fix.
+    `previous_draft` (when retrying) is the rejected draft — included verbatim
+    so the LLM can edit surgically rather than rewrite from scratch with the
+    same prior-knowledge biases (which is why HR 0.54 etc. kept appearing
+    on retries even after the failure was reported).
     """
     if not settings.mimo_api_key and not settings.openrouter_api_key:
         raise RuntimeError("MIMO_API_KEY (or OPENROUTER_API_KEY for fallback) required")
@@ -230,10 +235,37 @@ async def write_draft(
         {"role": "user", "content": user_prompt},
     ]
     if correction:
+        prior = (
+            "Previous draft (edit surgically — do NOT rewrite from scratch):\n"
+            f"{json.dumps(previous_draft, indent=2, ensure_ascii=False)}\n\n"
+            if previous_draft else ""
+        )
         messages.append({
             "role": "user",
-            "content": f"REJECTED. Fix: {correction}\nReturn the same JSON shape, corrected.",
+            "content": (
+                "Your previous draft was REJECTED. Issues:\n"
+                f"{correction}\n\n"
+                f"{prior}"
+                "Editing rules:\n"
+                "- For [number_not_in_source]: REMOVE the invented number from "
+                "the sentence and replace with qualitative language: "
+                "'an effect was reported', 'a benefit was observed', "
+                "'no significant effect was found'. Do NOT substitute another "
+                "number unless you can quote it verbatim from the cited abstract.\n"
+                "- For [protocol_described_as_results] / "
+                "[results_described_as_pending]: rewrite the sentence to match "
+                "the ref's role from the bundle.\n"
+                "- For [citation_unresolved]: use only refs that exist in the bundle.\n"
+                "- Keep every UNFLAGGED sentence and citation unchanged.\n"
+                "- Return the same JSON shape, fully corrected."
+            ),
         })
+
+    # Lower temperature on the correction retry — the failure mode is the
+    # LLM pulling numbers from prior knowledge ("HR 0.54"), and 0.2 still
+    # leaves room for that variability. 0.05 keeps the retry close to the
+    # prior draft modulo the flagged edits.
+    temperature = 0.05 if correction else 0.2
 
     own_client = client is None
     c = client or httpx.AsyncClient(timeout=settings.mimo_timeout_sec)
@@ -248,6 +280,7 @@ async def write_draft(
                     model=settings.mimo_model,
                     messages=messages,
                     timeout=settings.mimo_timeout_sec,
+                    temperature=temperature,
                 )
                 return parsed, _usage(raw_usage, settings.mimo_model)
             except (httpx.HTTPError, ValueError, KeyError) as exc:
@@ -265,6 +298,7 @@ async def write_draft(
             model=settings.fallback_model,
             messages=messages,
             timeout=settings.mimo_timeout_sec,
+            temperature=temperature,
         )
         return parsed, _usage(raw_usage, settings.fallback_model)
     finally:

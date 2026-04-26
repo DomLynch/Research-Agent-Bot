@@ -172,10 +172,12 @@ async def run_async(
         attempts = 1
 
         if not result.approved:
+            previous_parsed = parsed
             parsed, usage2 = await write_draft(
                 items, topic, domain, criteria,
                 settings=settings, client=client,
                 correction=correction_prompt(result.failures),
+                previous_draft=previous_parsed,
             )
             draft = _build_draft(parsed, items, topic, domain, criteria)
             result = qa(draft)
@@ -194,6 +196,7 @@ async def run_async(
                     items, topic, domain, criteria,
                     settings=settings, client=client,
                     correction=verdict.revision_notes,
+                    previous_draft=parsed,
                 )
                 draft = _build_draft(parsed_rev, items, topic, domain, criteria)
                 result = qa(draft)
