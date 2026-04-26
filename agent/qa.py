@@ -58,10 +58,16 @@ _PROTOCOL_BANNED = re.compile(
     re.IGNORECASE,
 )
 
-# Definitive-claim verbs banned for mechanistic (Tier C) refs.
+# Definitive-claim phrasings banned for mechanistic (Tier C) refs.
+# Tightened to require pairing with an efficacy noun — bare 'definitive'
+# in 'definitive human trials are needed' (a legitimate limitation
+# statement) used to false-fire. The banned form is e.g. 'established
+# efficacy', 'proven benefit', 'conclusively demonstrated reduction'.
 _MECHANISTIC_BANNED = re.compile(
-    r"\b(established|proven|definitive|conclusively (?:shows?|demonstrates?)|"
-    r"clearly (?:shows?|demonstrates?))\b",
+    r"(?:established|proven|definitive)\s+(?:that\s+|the\s+|a\s+|an\s+)?"
+    r"(?:efficacy|benefit|effect|reduction|improvement|outcome|treatment\s+option)"
+    r"|conclusively\s+(?:shows?|showed|demonstrates?|demonstrated|proves?|proved|reduces?|reduced|improves?|improved)"
+    r"|clearly\s+(?:shows?|showed|demonstrates?|demonstrated|proves?|proved)",
     re.IGNORECASE,
 )
 
@@ -226,7 +232,14 @@ def _infer_fact_kind(sent: str, item: EvidenceItem) -> FactKind:
     if is_outcome_lang and not is_pending_lang:
         return "result"
     if is_pending_lang and not is_outcome_lang:
-        return "protocol"
+        # Pending language is appropriate for protocol/registered refs and
+        # is the INVERSE BUG class for published_results (must surface as
+        # protocol kind so assert_invariants raises). For mechanistic/review
+        # pending lang is just legitimate hedging of an unfinished study —
+        # treat as context citation (no violation).
+        if item.role in {"published_protocol", "registered_pending", "published_results"}:
+            return "protocol"
+        return "context"
     # Sentence has neither marker (or both, ambiguous): fall back to bundle
     # role so we don't manufacture spurious invariant violations.
     if item.role == "published_results":

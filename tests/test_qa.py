@@ -99,11 +99,23 @@ def test_role_consistency_passes_when_protocol_described_as_pending():
 def test_role_consistency_blocks_mechanistic_definitive_claim():
     item = _item(1, "mechanistic", "in vitro study.")
     d = _draft(
-        sections={"findings": ["The mechanism is conclusively established [1]."]},
+        sections={"findings": ["The trial conclusively demonstrated efficacy [1]."]},
         bundle=[item],
     )
     fails = gate_role_prose_consistency(d, {1: item})
     assert any(f.code == "mechanistic_definitive_claim" for f in fails)
+
+
+def test_role_consistency_does_not_fire_on_legitimate_hedging():
+    """Tightened mechanistic regex: 'definitive human trials are needed' is
+    a legitimate limitation, not a banned efficacy claim."""
+    item = _item(1, "mechanistic", "in vitro study.")
+    d = _draft(
+        sections={"limitations": ["Definitive human trials are needed [1]."]},
+        bundle=[item],
+    )
+    fails = gate_role_prose_consistency(d, {1: item})
+    assert not any(f.code == "mechanistic_definitive_claim" for f in fails)
 
 
 # --- gate_role_prose_consistency: INVERSE direction (P0 audit fix) --------
@@ -183,6 +195,20 @@ def test_invariants_pass_when_prose_kind_matches_role():
     assert d.facts
     assert d.facts[0].kind == "result"
     assert d.facts[0].ref == 1
+
+
+def test_invariants_allow_pending_lang_on_mechanistic():
+    """A mechanistic ref correctly hedged as 'pending/investigating' is
+    legitimate context, not an invariant violation. Caught live in the
+    metformin run where the classifier mis-classified a real RCT as
+    mechanistic — the LLM hedged correctly and shouldn't be punished."""
+    item = _item(1, "mechanistic", "trial of metformin in older adults.")
+    d = _draft(
+        sections={"findings": ["A pilot trial is investigating metformin's effect on epigenetic age, with results pending [1]."]},
+        bundle=[item],
+    )
+    from agent.qa import gate_invariants_hold
+    assert not gate_invariants_hold(d, {1: item})
 
 
 def test_invariants_skip_uncited_bundle_items():
