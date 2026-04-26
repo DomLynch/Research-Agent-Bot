@@ -150,10 +150,16 @@ async def openai_chat_json(
     messages: list[dict[str, str]],
     timeout: float = 60.0,
     max_tokens: int | None = None,
+    enforce_json: bool = True,
 ) -> tuple[dict[str, Any], dict[str, int]]:
     """Generic OpenAI-compatible chat-completion call returning JSON content.
 
     Both MiMo (writer) and OpenRouter (judge + fallbacks) speak this protocol.
+    `enforce_json=False` drops `response_format: json_object` from the request
+    — required for OpenRouter models that don't list it as supported (e.g.
+    google/gemma-4-31b-it). The prompt + extract_json handle robust JSON
+    recovery from prose/fence-wrapped output, so this is safe.
+
     Returns (parsed_json, raw_usage_dict).
     """
     if not api_key:
@@ -161,9 +167,10 @@ async def openai_chat_json(
     payload: dict[str, Any] = {
         "model": model,
         "temperature": 0.2,
-        "response_format": {"type": "json_object"},
         "messages": messages,
     }
+    if enforce_json:
+        payload["response_format"] = {"type": "json_object"}
     if max_tokens is not None:
         payload["max_tokens"] = max_tokens
     headers = {
