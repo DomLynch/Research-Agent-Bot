@@ -41,7 +41,7 @@ write_draft (LLM #2) →  qa →  judge_draft (LLM #3, mandatory) →
 - Judge skipped (no `OPENROUTER_API_KEY`) → visibly marked in `## Adjudication` (never silent).
 - Trust-layer in render.py: Eligibility / Evidence (with risk-of-bias) / Excluded Sources / Confidence verdict / Adjudication / QA Failures / Bibliography.
 - Cost per draft: ~$0.002–0.005 (3 LLM calls + occasional revision + re-judge).
-- Tests: **165 green in ~0.3s**, ruff clean, agent/ runtime: **~2,810 / 3,500 LOC**.
+- Tests: **166 green in ~0.3s** (incl. orchestrator tests for re-judge happy path + re-judge dual-rejection path), ruff clean.
 
 ## V1 Status — feature-complete (`agent/app.py dashboard` ready to deploy)
 - **133 tests green in 0.15s** across types, sources, retrieve, bundle, qa, render, draft.

@@ -156,6 +156,100 @@ def test_run_retries_once_when_qa_rejects(stub_retrieve_and_llm, tmp_path):
     assert "# A clean draft" in out["markdown"]
 
 
+# --- judge re-judge after revision (P0 reviewer flagged) ------------------
+
+
+@pytest.fixture
+def stub_with_judge(monkeypatch, stub_retrieve_and_llm):
+    """Layer a configurable judge stub on top of stub_retrieve_and_llm.
+
+    `state["judge_responses"]` is a list of (approved, score, summary,
+    blocking_issues, revision_notes) tuples consumed in order. Default
+    is empty -> judge returns None (skipped path)."""
+    state = stub_retrieve_and_llm
+    state.setdefault("judge_responses", [])
+    state.setdefault("judge_calls", 0)
+
+    async def fake_judge(candidate, items, topic, domain, *, settings, client):
+        if not state["judge_responses"]:
+            return None
+        idx = min(state["judge_calls"], len(state["judge_responses"]) - 1)
+        state["judge_calls"] += 1
+        approved, score, summary, blocking, notes = state["judge_responses"][idx]
+        from agent.judge import JudgeVerdict
+        return JudgeVerdict(
+            approved=approved, score=score, summary=summary,
+            blocking_issues=tuple(blocking), revision_notes=notes,
+            model="judge-test", input_tokens=10, output_tokens=10,
+            estimated_cost_usd=0.0001,
+        )
+
+    monkeypatch.setattr(draft_mod, "judge_draft", fake_judge)
+    return state
+
+
+def test_judge_rejects_then_revision_passes_re_judge(stub_with_judge, tmp_path):
+    """Judge rejects -> writer revises -> judge re-runs on the REVISED draft
+    and approves -> ship with the new approved verdict (not the stale
+    rejection). This is the P0 reviewer flag."""
+    revised = {
+        "title": "Revised draft",
+        "abstract": ["Revised abstract [1]."],
+        "sections": {
+            "introduction": ["intro [1]."],
+            "methods": ["methods."],
+            "findings": ["The cited trial reduced mortality 22% [1]."],
+            "limitations": ["limits."],
+            "conclusion": ["calibrated."],
+        },
+    }
+    stub_with_judge["responses"] = [_approved_draft_json(), revised]
+    stub_with_judge["judge_responses"] = [
+        # Call 1: reject the first draft, request revision
+        (False, 4, "stale issue", ["[1] mis-attributed"], "fix the attribution"),
+        # Call 2: approve the revised draft
+        (True, 9, "revised draft is clean", [], ""),
+    ]
+    out = draft_mod.run(
+        topic="rapamycin", domain="aging older adults",
+        settings=_settings(tmp_path),
+    )
+    assert out["approved"] is True
+    assert out["judge"]["approved"] is True, "judge verdict should reflect REVISED draft, not stale rejection"
+    assert out["judge"]["score"] == 9
+    assert stub_with_judge["judge_calls"] == 2, "judge must run a second time on revised draft"
+
+
+def test_judge_rejects_revision_too_dual_rejection_path(stub_with_judge, tmp_path):
+    """Judge rejects, writer revises, judge re-runs and STILL rejects:
+    ship UNVERIFIED markdown so the user sees what the judge caught."""
+    revised = {
+        "title": "Still bad",
+        "abstract": ["Same problem [1]."],
+        "sections": {
+            "introduction": ["[1]."], "methods": ["x."], "findings": ["[1]."],
+            "limitations": ["x."], "conclusion": ["x."],
+        },
+    }
+    stub_with_judge["responses"] = [_approved_draft_json(), revised]
+    stub_with_judge["judge_responses"] = [
+        (False, 4, "first reject", ["[1] still wrong"], "fix the attribution"),
+        (False, 5, "second reject still bad", ["[1] still wrong post-revision"], ""),
+    ]
+    out = draft_mod.run(
+        topic="rapamycin", domain="aging older adults",
+        settings=_settings(tmp_path),
+    )
+    assert out["approved"] is False, "dual-judge rejection -> approved=False"
+    assert out["markdown"], "markdown still ships (UNVERIFIED) so user sees what was flagged"
+    assert "UNVERIFIED" in out["markdown"]
+    assert "judge_rejected_post_revision" in out["markdown"]
+    assert stub_with_judge["judge_calls"] == 2
+
+
+# --- pre-existing dual-rejection (QA both attempts fail) -------------------
+
+
 def test_run_ships_unverified_markdown_when_both_attempts_fail(
     stub_retrieve_and_llm, tmp_path,
 ):
