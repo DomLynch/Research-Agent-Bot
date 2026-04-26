@@ -13,6 +13,10 @@ scripts/karpathy-loop/snapshots/
 scripts/karpathy-loop/diffs/
 
 .DS_Store
+# macOS / iCloud auto-versioning leaves "<name> 2.<ext>" duplicates next to
+# files when they're rewritten. They've snuck into commits before — block them.
+* 2.*
+* [0-9].*
 
 scripts/karpathy-loop/snapshots/
 scripts/karpathy-loop/diffs/
