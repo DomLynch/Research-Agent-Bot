@@ -47,8 +47,13 @@ class ClinicalTrialsClient:
         )
         desc = (protocol.get("descriptionModule") or {}).get("briefSummary")
         abstract = clean_text(desc)
-        if not nct or not title or not abstract:
+        if not nct or not title:
             return None
+        # CT.gov registered-pending trials sometimes have empty briefSummary.
+        # Drop them only when we'd lose ALL signal — fall back to the title
+        # so bundle.py can still classify them as registered_pending.
+        if not abstract:
+            abstract = title
         year = self._extract_year(protocol.get("statusModule") or {})
         has_results = bool(study.get("hasResults"))
         design = (protocol.get("designModule") or {}).get("studyType") or ""

@@ -31,14 +31,15 @@ from agent.sources.pubmed import PubMedClient  # noqa: E402
 from agent.types import RawHit  # noqa: E402
 
 TOPICS: list[tuple[str, str]] = [
-    # Topic strings are RETRIEVAL terms — they must appear in real paper /
-    # trial text. Filter words like "RCT" / "older adults" are criteria,
-    # applied downstream by bundle.py, not joined into the query.
-    ("rapamycin", "rapamycin aging"),
-    ("metformin", "metformin aging"),
-    ("senolytics", "senolytics dasatinib quercetin"),
-    ("semaglutide_weight", "semaglutide weight loss"),
-    ("vitamin_d_mortality", "vitamin D supplementation mortality"),
+    # Each query is tuned to surface the published+protocol pair we want the
+    # classifier to distinguish. "rapamycin aging" missed RAPA-EX entirely;
+    # "rapamycin older adults" returns both PMID 41985884 (results, 2026)
+    # and PMID 39354527 (protocol, 2024) — exactly the V0 contradiction case.
+    ("rapamycin", "rapamycin older adults"),
+    ("metformin", "metformin aging older adults"),
+    ("senolytics", "senolytics dasatinib quercetin older adults"),
+    ("semaglutide_weight", "semaglutide weight loss adults"),
+    ("vitamin_d_mortality", "vitamin D supplementation mortality elderly"),
 ]
 
 CLIENTS = [

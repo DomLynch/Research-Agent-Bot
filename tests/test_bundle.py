@@ -203,40 +203,216 @@ def test_strict_false_when_directness_fails():
     assert item.strict is False
 
 
+# --- Topic relevance gate --------------------------------------------------
+
+
+def test_off_topic_paper_marked_indirect():
+    """Topic 'rapamycin' against an abstract that's about RTB101 only —
+    even though it's human-clinical evidence, it doesn't mention rapamycin
+    so it must NOT be marked direct."""
+    src = Source(ref=1, title="RTB101 in older adults", year=2024, url="", source="pubmed")
+    items = bundle(
+        [src],
+        {1: "We randomized 200 older adults to RTB101 or placebo. RTB101 reduced respiratory infections by 22% (p=0.01)."},
+        topic="rapamycin",
+        domain="aging older adults human",
+    )
+    assert items[0].direct is False
+    assert items[0].strict is False
+
+
+def test_on_topic_paper_marked_direct():
+    src = Source(ref=1, title="Rapamycin trial", year=2024, url="", source="pubmed")
+    items = bundle(
+        [src],
+        {1: "We randomized 200 older adults to rapamycin or placebo. Rapamycin reduced X by 22% (p=0.01)."},
+        topic="rapamycin",
+        domain="aging older adults human",
+    )
+    assert items[0].direct is True
+
+
+# --- Tightened outcome regex (P0 audit fix) --------------------------------
+
+
+def test_protocol_with_percentage_does_not_classify_as_results():
+    """Real-world: a protocol abstract that mentions enrollment demographics
+    ('60% female') used to flip role to published_results because the regex
+    matched any digit-percentage pair. The bug class we rebuilt to prevent."""
+    item = _bundle_one(
+        title="A study to evaluate sirolimus in older adults: protocol",
+        abstract="This study to evaluate sirolimus enrolls 200 patients (60% female) over 12 months.",
+    )
+    assert item.role == "published_protocol", (
+        f"protocol misclassified as {item.role} (this is the rapamycin bug class)"
+    )
+
+
+def test_mechanistic_with_n_count_does_not_classify_as_results():
+    """'n=24 mice' used to trip the n=\\d{2,} branch of the outcome regex."""
+    item = _bundle_one(
+        abstract="n=24 mice were treated; 80% showed reduced expression in cell culture."
+    )
+    assert item.role == "mechanistic"
+
+
+# --- Protocol marker expansion (caught by audit) ---------------------------
+
+
+def test_protocol_evaluates_safety_and_efficacy_phrasing():
+    """RAPA-EX protocol paper PMID 39354527 used this exact phrasing and was
+    misclassified as mechanistic before the audit fix."""
+    item = _bundle_one(
+        title="Sirolimus in older adults",
+        abstract="This study evaluates the safety and efficacy of once-weekly sirolimus on muscle strength.",
+    )
+    assert item.role == "published_protocol"
+
+
+def test_protocol_we_will_assess_phrasing():
+    item = _bundle_one(
+        abstract="We will assess functional outcomes in older adults randomized to drug or placebo."
+    )
+    assert item.role == "published_protocol"
+
+
+# --- clean_text math characters (P1 audit fix) -----------------------------
+
+
+def test_clean_text_preserves_pvalue_inequality():
+    """clean_text used to strip '<' and '>' as HTML, destroying 'p<0.05'."""
+    from agent.sources._base import clean_text
+
+    assert clean_text("p<0.05") == "p<0.05"
+    assert clean_text("x>2") == "x>2"
+    # But still strips real HTML tags
+    assert clean_text("<i>in vitro</i> study") == "in vitro study"
+    assert clean_text("<sup>13</sup>C-labeled") == "13C-labeled"
+
+
+# --- RAPA-EX regression — the actual V0 bug case ---------------------------
+
+
+def test_rapamycin_fixture_contains_rapaex_papers():
+    """The fixture must include both RAPA-EX papers; otherwise the role/protocol
+    distinction can't be tested against real data and the regression coverage
+    is theatrical."""
+    hits = _load_topic("rapamycin")
+    pmids = {h.pmid for h in hits if h.pmid}
+    assert "41985884" in pmids, "RAPA-EX-01 results paper missing from rapamycin fixture"
+    assert "39354527" in pmids, "RAPA-EX protocol paper missing from rapamycin fixture"
+
+
+def test_rapamycin_fixture_classifies_rapaex_correctly():
+    """End-to-end: the published RAPA-EX paper must classify as published_results
+    and the protocol paper must classify as published_protocol. Same NCT
+    must NOT cause them to dedup into a single ref."""
+    hits = _load_topic("rapamycin")
+    sources, abstracts, raw_signals = normalize_and_dedup(hits)
+    items = bundle(
+        sources,
+        abstracts,
+        topic="rapamycin older adults",
+        domain="aging older adults human",
+        raw_signals=raw_signals,
+    )
+    by_pmid = {it.source.pmid: it for it in items if it.source.pmid}
+
+    results_item = by_pmid.get("41985884")
+    assert results_item is not None, (
+        "RAPA-EX-01 results paper not in bundle — likely lost to OpenAlex/EuropePMC "
+        "winning dedup over PubMed; check adapter priority"
+    )
+    assert results_item.role == "published_results", (
+        f"RAPA-EX results paper classified as {results_item.role!r}"
+    )
+    assert results_item.design == "rct"
+
+    protocol_item = by_pmid.get("39354527")
+    assert protocol_item is not None, "RAPA-EX protocol paper not in bundle"
+    assert protocol_item.role == "published_protocol", (
+        f"RAPA-EX protocol paper classified as {protocol_item.role!r} "
+        f"— this is the V0 bug class that bundle.py was rebuilt to prevent"
+    )
+
+
 # --- Snapshot tests: full pipeline against real fixtures -------------------
+
+
+# Mirror the adapter priority used by capture_fixtures.py and the production
+# retrieve.py call site. PubMed first ensures PMIDs survive cross-source dedup
+# (OpenAlex carries the same DOI but no PMID — alphabetical ordering would
+# silently let it win and drop the PMID).
+_ADAPTER_PRIORITY = ("pubmed", "openalex", "europepmc", "clinicaltrials")
 
 
 def _load_topic(slug: str) -> list[RawHit]:
     hits: list[RawHit] = []
-    for path in sorted((FIXTURES / slug).glob("*.json")):
+    for source in _ADAPTER_PRIORITY:
+        path = FIXTURES / slug / f"{source}.json"
+        if not path.exists():
+            continue
         for entry in json.loads(path.read_text(encoding="utf-8")):
             hits.append(RawHit(**entry))
     return hits
 
 
+# Topic queries that match the capture script. These also drive topic-anchor
+# relevance gating in bundle() so the snapshot reflects production behavior.
+SNAPSHOT_TOPIC_QUERIES = {
+    "rapamycin": "rapamycin older adults",
+    "metformin": "metformin aging older adults",
+    "senolytics": "senolytics dasatinib quercetin older adults",
+    "semaglutide_weight": "semaglutide weight loss adults",
+    "vitamin_d_mortality": "vitamin D supplementation mortality elderly",
+}
+
+
 @pytest.mark.parametrize("topic", TOPICS)
 def test_bundle_snapshot_per_topic(topic: str, snapshot):
-    """Per-topic bundle classification distributions are captured as snapshots.
+    """Per-source classification snapshot.
 
-    A change to the classifier rules will surface here as a diff. Refresh with
-    UPDATE_SNAPSHOTS=1 only after reviewing whether the new distribution is
-    intentional and improves accuracy.
+    Per-source rows (not aggregate counts) so a role swap between two
+    individual sources is visible — aggregates can mask them. Refresh with
+    UPDATE_SNAPSHOTS=1 only after reviewing whether the new rows are
+    intentional improvements.
     """
     hits = _load_topic(topic)
     sources, abstracts, raw_signals = normalize_and_dedup(hits)
     items = bundle(
         sources,
         abstracts,
+        topic=SNAPSHOT_TOPIC_QUERIES[topic],
         domain="aging older adults human",
         raw_signals=raw_signals,
     )
+    rows = [
+        {
+            "ref": it.source.ref,
+            "src": it.source.source,
+            "ident": it.source.doi or it.source.pmid or it.source.nct or "",
+            "year": it.source.year,
+            "role": it.role,
+            "design": it.design,
+            "tier": it.tier,
+            "direct": it.direct,
+            "strict": it.strict,
+            # Title trimmed for snapshot readability; full title is in the fixture.
+            "title": it.source.title[:80],
+        }
+        for it in items
+    ]
     summary = {
+        "topic_query": SNAPSHOT_TOPIC_QUERIES[topic],
         "raw_hits": len(hits),
         "unique_sources": len(sources),
-        "role_counts": dict(Counter(it.role for it in items)),
-        "design_counts": dict(Counter(it.design for it in items)),
-        "tier_counts": dict(Counter(it.tier for it in items)),
-        "direct_count": sum(1 for it in items if it.direct),
-        "strict_count": sum(1 for it in items if it.strict),
+        "totals": {
+            "role_counts": dict(Counter(it.role for it in items)),
+            "design_counts": dict(Counter(it.design for it in items)),
+            "tier_counts": dict(Counter(it.tier for it in items)),
+            "direct_count": sum(1 for it in items if it.direct),
+            "strict_count": sum(1 for it in items if it.strict),
+        },
+        "rows": rows,
     }
     snapshot(summary)

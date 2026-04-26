@@ -48,7 +48,11 @@ class EuropePMCClient:
         doi = normalize_doi(record.get("doi"))
         pmid = clean_text(record.get("pmid"), limit=32) or None
         venue = clean_text(record.get("journalTitle"), limit=200) or None
+        # pubYear is most reliable but missing on some ahead-of-print and
+        # preprint records — fall back to firstPublicationDate (YYYY-MM-DD).
         year_raw = clean_text(record.get("pubYear"), limit=8)
+        if not year_raw.isdigit():
+            year_raw = clean_text(record.get("firstPublicationDate"), limit=10)[:4]
         year: int | None = int(year_raw) if year_raw.isdigit() else None
         # Prefer explicit DOI URL when available, else fall back to Europe PMC
         # article page so the link is always resolvable.

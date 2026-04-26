@@ -27,16 +27,15 @@ def _load(topic: str, source: str) -> list[RawHit]:
 @pytest.mark.parametrize("topic", TOPICS)
 @pytest.mark.parametrize("source", SOURCES)
 def test_fixture_loads_as_raw_hits(topic: str, source: str):
+    """Every captured fixture must round-trip into typed RawHit objects with
+    non-empty title and abstract. Per-adapter identifier guarantees live in
+    the dedicated tests below."""
     hits = _load(topic, source)
     assert hits, f"{topic}/{source}.json captured 0 hits — capture probably failed"
     for hit in hits:
         assert hit.source == source
         assert hit.title.strip(), f"empty title in {topic}/{source}"
         assert hit.abstract.strip(), f"empty abstract in {topic}/{source}"
-        # Every hit must carry at least one strong identifier OR a non-empty title.
-        assert any([hit.doi, hit.pmid, hit.nct, hit.title.strip()]), (
-            f"{topic}/{source}: hit has no identifier"
-        )
 
 
 @pytest.mark.parametrize("topic", TOPICS)

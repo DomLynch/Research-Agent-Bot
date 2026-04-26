@@ -37,7 +37,9 @@ class PubMedClient:
         params = {
             "db": "pubmed",
             "retmode": "json",
-            "retmax": str(max(limit * 3, limit)),
+            # Earlier code over-fetched 3x as a "buffer" that was then discarded
+            # in _efetch, wasting bandwidth and quota for no benefit.
+            "retmax": str(max(1, limit)),
             "sort": "relevance",
             "term": clean_text(query, limit=240),
         }

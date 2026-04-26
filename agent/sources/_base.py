@@ -18,10 +18,23 @@ from agent.types import RawHit
 USER_AGENT = "research-agent/1.0 (+https://research-agent.domlynch.com)"
 
 
+_HTML_TAG_RE = re.compile(
+    r"</?(?:i|b|sup|sub|u|em|strong|br|p|span|div|tt|small|big)"
+    r"(?:\s[^>]*)?/?>",
+    re.IGNORECASE,
+)
+
+
 def clean_text(value: object, *, limit: int = 1600) -> str:
-    """Strip HTML tags, decode entities, collapse whitespace, cap length."""
+    """Strip recognized HTML tags, decode entities, collapse whitespace.
+
+    Earlier versions stripped anything between '<' and '>', which destroyed
+    inequalities ('p<0.05' became 'p') and broke the outcome-regex matcher
+    that depends on that exact form. This now strips ONLY known formatting
+    tags so 'p<0.05' and 'x>2' survive as written.
+    """
     text = str(value or "")
-    text = re.sub(r"<[^>]+>", "", text)
+    text = _HTML_TAG_RE.sub("", text)
     text = html.unescape(text)
     return " ".join(text.split()).strip()[:limit]
 

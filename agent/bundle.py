@@ -39,12 +39,17 @@ Step 3 - tier   (evidence quality, A1 best)
 | role in {published_protocol, registered_pending}         | B    |
 | role=mechanistic                                         | C    |
 
-Step 4 - direct (binary, defaults True; degraded by mismatch with domain)
+Step 4 - direct (binary, defaults True; degraded by mismatch with domain or topic)
 | condition                                                       | direct |
 |-----------------------------------------------------------------|--------|
 | ANIMAL or CELL marker AND domain looks human-focused            | False  |
 | PEDIATRIC marker AND domain mentions adult/older                | False  |
+| topic provided AND no topic anchor appears in title+abstract    | False  |
 | otherwise                                                       | True   |
+
+The topic-anchor gate prevents off-topic candidates (RTB101 in a rapamycin
+query, young-plasma trials in a senolytics query) from being marked as
+direct evidence just because they're human studies.
 
 Step 5 - strict (whether the item meets criteria's strict-eligibility bar)
 | condition                                                       | strict |
@@ -84,6 +89,25 @@ _PROTOCOL = (
     "design of a randomized",
     "design of a randomised",
     "design of an open-label",
+    # Real-world protocol-paper phrasings caught during day 2 audit
+    # (PMID 39354527 RAPA-EX-01 protocol paper missed by the original list).
+    "study to evaluate",
+    "study evaluates the safety and efficacy",
+    "evaluates the safety and efficacy",
+    "trial investigating",
+    "trial designed to",
+    "this study examines whether",
+    "we will assess",
+    "we will evaluate",
+    "we will examine",
+    "study will assess",
+    "study will evaluate",
+    "study will examine",
+    "study will test",
+    "this study aims to",
+    "study is to assess",
+    "study is to evaluate",
+    "study is to determine",
 )
 # Patterns use word boundaries (\b) so "Mice were treated" matches as well
 # as "transgenic mice." String containment (" mice ") was too brittle —
@@ -92,12 +116,26 @@ _RANDOMIZED_RE = re.compile(
     r"\b(randomi[sz]ed|rct|double[-\s]blind|placebo[-\s]controlled)\b",
     re.IGNORECASE,
 )
-# Numeric outcome regex: e.g. "p = 0.03", "95% CI", "HR 0.85", "reduced by 12%".
+# Numeric outcome regex: must signal a *reported result*, not an enrollment
+# count or a population descriptor. Markers retained from day 2:
+#   - p-values (p = 0.03, p<0.05)
+#   - confidence intervals
+#   - effect-size verbs paired with a number ("reduced by 22%", "increased 3x")
+#   - hazard / odds / risk ratios
+#   - explicit "mean difference" / "mean change" pairs
+# Markers removed in audit:
+#   - bare \d+\s*% (matched "60% female" in protocol abstracts)
+#   - bare n=\d{2,} (matched "n=24 mice" in mechanistic abstracts)
+# The bare patterns are now gated behind effect-verb proximity.
 _REPORTED_OUTCOME_RE = re.compile(
-    r"\b(p\s*[=<>]\s*0\.\d+|95%\s*ci|hazard ratio|odds ratio|risk ratio|"
-    r"\bhr\s*=?\s*\d|\bor\s*=?\s*\d|\brr\s*=?\s*\d|"
-    r"reduced by \d|increased by \d|\d+\s*%|mean (difference|change)|"
-    r"\bn\s*=\s*\d{2,})",
+    r"(\bp\s*[=<>]\s*0?\.\d+"
+    r"|95\s*%\s*ci"
+    r"|\bhazard\s+ratio|\bodds\s+ratio|\brisk\s+ratio"
+    r"|\bhr\s*=?\s*\d|\bor\s*=?\s*\d|\brr\s*=?\s*\d"
+    r"|(?:reduced|increased|improved|decreased|lowered|raised|"
+    r"declined|reversed|attenuated)\s+(?:by\s+)?\d+(?:\.\d+)?\s*%"
+    r"|\bmean\s+(?:difference|change|reduction|increase)"
+    r"|\b(?:participants|patients|subjects|adults)\s+\(\s*n\s*=\s*\d{2,}\s*\))",
     re.IGNORECASE,
 )
 _MECHANISTIC_RE = re.compile(
@@ -145,6 +183,19 @@ _HUMAN_DOMAIN_MARKERS = (
 )
 _ADULT_DOMAIN_MARKERS = ("adult", "older", "elderly", "geriatric")
 
+# Topic stopwords stripped before extracting topic anchors. These words appear
+# in queries as filters or population descriptors but don't anchor the subject
+# matter. Anchors are how we tell rapamycin papers from RTB101 papers.
+_TOPIC_STOPWORDS = frozenset({
+    "older", "adults", "adult", "elderly", "human", "humans",
+    "aging", "ageing", "longevity", "old", "young",
+    "healthy", "patient", "patients", "subjects",
+    "supplementation", "treatment", "therapy",
+    "mortality", "loss", "weight", "and", "or", "of", "in", "the",
+    "for", "with", "on", "by", "to",
+})
+_TOPIC_TOKEN_RE = re.compile(r"\b[a-z][a-z0-9-]+\b")
+
 
 # --- Public entry point ----------------------------------------------------
 
@@ -153,17 +204,25 @@ def bundle(
     sources: list[Source],
     abstracts: Mapping[int, str],
     *,
+    topic: str = "",
     domain: str = "",
     criteria_min_year: int | None = None,
     raw_signals: Mapping[int, Mapping[str, object]] | None = None,
 ) -> list[EvidenceItem]:
     """Map (Source, abstract) -> EvidenceItem with role/tier/design/direct/strict.
 
+    `topic`   anchors topic-relevance — items whose title+abstract contains no
+              topic anchor are marked direct=False (and therefore strict=False).
+              Empty topic disables the gate.
+    `domain`  anchors population/setting fit (human, adult, etc.).
     `raw_signals` is the per-ref `RawHit.raw` dict from the adapter (e.g.
-    clinicaltrials passes `has_results`). Pure function; deterministic.
+              clinicaltrials passes `has_results`).
+
+    Pure function; deterministic.
     """
     items: list[EvidenceItem] = []
     domain_lower = (domain or "").lower()
+    topic_anchors = _topic_anchors(topic)
     signals = raw_signals or {}
     for src in sources:
         abstract = abstracts.get(src.ref, "")
@@ -171,7 +230,7 @@ def bundle(
         role = _classify_role(src, abstract, sig)
         design = _classify_design(role, abstract)
         tier = _classify_tier(role, design, src.venue)
-        direct = _is_direct(abstract, domain_lower)
+        direct = _is_direct(src.title, abstract, domain_lower, topic_anchors)
         strict = _is_strict(direct, src.year, criteria_min_year)
         items.append(
             EvidenceItem(
@@ -185,6 +244,20 @@ def bundle(
             )
         )
     return items
+
+
+def _topic_anchors(topic: str) -> tuple[str, ...]:
+    """Extract content-bearing topic terms for the relevance gate.
+
+    Returns the first up-to-3 non-stopword tokens (length >= 4) from the topic
+    string. Empty tuple disables the gate (back-compat, used by tests that
+    don't care about topic).
+    """
+    if not topic:
+        return ()
+    tokens = _TOPIC_TOKEN_RE.findall(topic.lower())
+    content = [t for t in tokens if t not in _TOPIC_STOPWORDS and len(t) >= 4]
+    return tuple(content[:3])
 
 
 # --- Step 1: role ----------------------------------------------------------
@@ -246,13 +319,23 @@ def _classify_tier(role: Role, design: Design, venue: str | None) -> Tier:
 # --- Step 4: direct --------------------------------------------------------
 
 
-def _is_direct(abstract: str, domain: str) -> bool:
+def _is_direct(
+    title: str,
+    abstract: str,
+    domain: str,
+    topic_anchors: tuple[str, ...],
+) -> bool:
+    """Direct = on-topic AND on-population. Off either axis -> indirect."""
     domain_human = any(marker in domain for marker in _HUMAN_DOMAIN_MARKERS)
     domain_adult = any(marker in domain for marker in _ADULT_DOMAIN_MARKERS)
     if domain_human and (_ANIMAL_RE.search(abstract) or _CELL_RE.search(abstract)):
         return False
     if domain_adult and _PEDIATRIC_RE.search(abstract):
         return False
+    if topic_anchors:
+        haystack = f"{title} {abstract}".lower()
+        if not any(anchor in haystack for anchor in topic_anchors):
+            return False
     return True
 
 

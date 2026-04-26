@@ -5,15 +5,16 @@ connections and the polite User-Agent header are reused across the fan-out.
 Adapters do not own clients; they receive one.
 
 Pipeline:
-  topic + criteria -> plan_queries() -> per-source query strings
+  topic -> plan_queries() -> per-source query strings
   asyncio.gather(adapter.search(client, q) for adapter, q in plan)
   -> flat list[RawHit]
-  -> dedup by DOI / PMID / NCT / normalized-title
-  -> 1-indexed list[Source] + abstracts_by_ref dict
+  -> dedup by DOI / PMID / NCT (incl. NCT-in-abstract) / normalized-title
+  -> 1-indexed list[Source] + abstracts_by_ref + raw_signals_by_ref
 """
 from __future__ import annotations
 
 import asyncio
+import logging
 import re
 from collections.abc import Sequence
 
@@ -24,6 +25,13 @@ from agent.types import RawHit, Source
 
 DEFAULT_LIMIT_PER_SOURCE = 8
 TIMEOUT_SEC = 20.0
+
+# NCT identifiers like "NCT04098874" found in PubMed / Europe PMC abstracts
+# allow us to merge a literature paper with its CT.gov registry entry — the
+# same trial would otherwise be cited as two independent sources.
+_NCT_IN_ABSTRACT_RE = re.compile(r"\bNCT\d{7,9}\b")
+
+logger = logging.getLogger(__name__)
 
 
 def plan_queries(topic: str, criteria: str) -> list[str]:
@@ -45,7 +53,6 @@ def plan_queries(topic: str, criteria: str) -> list[str]:
 
 async def retrieve(
     topic: str,
-    domain: str,
     criteria: str,
     *,
     sources: Sequence[SourceClient],
@@ -61,20 +68,32 @@ async def retrieve(
     `client` is exposed for tests/scripts that want to inject a custom transport
     (mock, captured-fixture replay, custom timeout). When None, a fresh
     AsyncClient is created and torn down.
+
+    Adapter ordering matters: when two adapters return the same study (matched
+    via DOI / PMID / NCT, including NCT-in-abstract), the FIRST adapter wins.
+    Pass adapters in priority order — typically PubMed first (best abstracts),
+    then OpenAlex, EuropePMC, ClinicalTrials.gov.
     """
     queries = plan_queries(topic, criteria)
     headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
 
     async def _run(c: httpx.AsyncClient) -> list[RawHit]:
-        tasks = [
-            adapter.search(c, q, limit=limit_per_source)
+        plan = [
+            (adapter, q)
             for adapter in sources
             for q in queries
         ]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
+        results = await asyncio.gather(
+            *(adapter.search(c, q, limit=limit_per_source) for adapter, q in plan),
+            return_exceptions=True,
+        )
         flat: list[RawHit] = []
-        for r in results:
+        for (adapter, q), r in zip(plan, results, strict=True):
             if isinstance(r, Exception):
+                logger.warning(
+                    "source %s failed for query %r: %s",
+                    adapter.name, q, type(r).__name__ + ": " + str(r),
+                )
                 continue
             flat.extend(r)
         return flat
@@ -91,26 +110,34 @@ async def retrieve(
 def normalize_and_dedup(
     hits: Sequence[RawHit],
 ) -> tuple[list[Source], dict[int, str], dict[int, dict]]:
-    """Deduplicate by strongest available identity key, then assign refs.
+    """Deduplicate by all available identity keys, first hit wins.
 
-    Identity-key precedence (strongest first):
-      DOI  > PMID > NCT > normalized-title (lowercased, alphanumeric only)
+    Each hit yields one or more identity keys (DOI, PMID, NCT explicit, NCT
+    found in abstract, or normalized title). A hit is kept only if NONE of
+    its keys have already been claimed by an earlier hit. This collapses the
+    PubMed paper for an RCT and its CT.gov registry entry into one source
+    when the abstract cites the NCT — preventing the same study from being
+    cited twice as if it were independent corroboration.
 
     Returns (sources, abstracts_by_ref, raw_signals_by_ref). The raw signals
     are the original adapter `RawHit.raw` dicts, preserved so bundle.py can
     read adapter-specific signals (e.g. `has_results` from CT.gov).
     """
-    seen: dict[str, RawHit] = {}
+    claimed: set[str] = set()
+    kept: list[RawHit] = []
     for hit in hits:
-        key = _identity_key(hit)
-        if not key or key in seen:
+        keys = _identity_keys(hit)
+        if not keys:
             continue
-        seen[key] = hit
+        if any(k in claimed for k in keys):
+            continue
+        kept.append(hit)
+        claimed.update(keys)
 
     sources: list[Source] = []
     abstracts: dict[int, str] = {}
     raw_signals: dict[int, dict] = {}
-    for ref, hit in enumerate(seen.values(), start=1):
+    for ref, hit in enumerate(kept, start=1):
         sources.append(
             Source(
                 ref=ref,
@@ -129,12 +156,21 @@ def normalize_and_dedup(
     return sources, abstracts, raw_signals
 
 
-def _identity_key(hit: RawHit) -> str:
+def _identity_keys(hit: RawHit) -> list[str]:
+    """All identity keys this hit owns. First key is the canonical strongest."""
+    keys: list[str] = []
     if hit.doi:
-        return f"doi:{hit.doi.lower()}"
+        keys.append(f"doi:{hit.doi.lower()}")
     if hit.pmid:
-        return f"pmid:{hit.pmid}"
+        keys.append(f"pmid:{hit.pmid.lstrip('0') or '0'}")
     if hit.nct:
-        return f"nct:{hit.nct.upper()}"
-    title = re.sub(r"[^a-z0-9]+", "", (hit.title or "").lower())
-    return f"title:{title}" if title else ""
+        keys.append(f"nct:{hit.nct.upper()}")
+    # Cross-source link: a literature paper that cites an NCT identifier in its
+    # abstract is the same study as the CT.gov registry record for that NCT.
+    for match in _NCT_IN_ABSTRACT_RE.finditer(hit.abstract or ""):
+        keys.append(f"nct:{match.group(0).upper()}")
+    if not keys:
+        title = re.sub(r"[^a-z0-9]+", "", (hit.title or "").lower())
+        if title:
+            keys.append(f"title:{title}")
+    return keys
