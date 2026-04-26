@@ -194,7 +194,10 @@ _TOPIC_STOPWORDS = frozenset({
     "mortality", "loss", "weight", "and", "or", "of", "in", "the",
     "for", "with", "on", "by", "to",
 })
-_TOPIC_TOKEN_RE = re.compile(r"\b[a-z][a-z0-9-]+\b")
+# Allow single-character tokens (the 'd' in 'vitamin d') so the bigram
+# preserves the compound entity. Single-char tokens that aren't stopwords
+# survive into _topic_anchors only when paired with another content token.
+_TOPIC_TOKEN_RE = re.compile(r"\b[a-z][a-z0-9-]*\b")
 
 
 # --- Public entry point ----------------------------------------------------
@@ -247,17 +250,31 @@ def bundle(
 
 
 def _topic_anchors(topic: str) -> tuple[str, ...]:
-    """Extract content-bearing topic terms for the relevance gate.
+    """Extract content-bearing topic phrases for the relevance gate.
 
-    Returns the first up-to-3 non-stopword tokens (length >= 4) from the topic
-    string. Empty tuple disables the gate (back-compat, used by tests that
-    don't care about topic).
+    Rules:
+      0 content tokens   -> () (gate disabled)
+      1 content token    -> single unigram   ("rapamycin",)
+      2 content tokens   -> single BIGRAM    ("vitamin d",) — keeps the
+                            compound entity intact so "Vitamin K" doesn't
+                            falsely match a Vitamin D topic.
+      3+ content tokens  -> individual unigrams (>=3 chars)
+                            ("senolytics", "dasatinib", "quercetin"). The
+                            user is naming alternatives, not a single
+                            multi-word entity.
+
+    All matches against title+abstract use \\b word boundaries (in
+    _is_direct) so "vitamin" in "multivitamin" does not match.
     """
     if not topic:
         return ()
     tokens = _TOPIC_TOKEN_RE.findall(topic.lower())
-    content = [t for t in tokens if t not in _TOPIC_STOPWORDS and len(t) >= 4]
-    return tuple(content[:3])
+    content = [t for t in tokens if t not in _TOPIC_STOPWORDS]
+    if not content:
+        return ()
+    if len(content) == 2:
+        return (f"{content[0]} {content[1]}",)
+    return tuple(t for t in content[:3] if len(t) >= 3)
 
 
 # --- Step 1: role ----------------------------------------------------------
@@ -325,7 +342,12 @@ def _is_direct(
     domain: str,
     topic_anchors: tuple[str, ...],
 ) -> bool:
-    """Direct = on-topic AND on-population. Off either axis -> indirect."""
+    """Direct = on-topic AND on-population. Off either axis -> indirect.
+
+    Topic anchors are matched with word boundaries so 'vitamin' as an anchor
+    does not match 'multivitamin', and a 'vitamin d' bigram anchor does not
+    match 'Vitamin K' (the K isn't part of the bigram).
+    """
     domain_human = any(marker in domain for marker in _HUMAN_DOMAIN_MARKERS)
     domain_adult = any(marker in domain for marker in _ADULT_DOMAIN_MARKERS)
     if domain_human and (_ANIMAL_RE.search(abstract) or _CELL_RE.search(abstract)):
@@ -334,7 +356,10 @@ def _is_direct(
         return False
     if topic_anchors:
         haystack = f"{title} {abstract}".lower()
-        if not any(anchor in haystack for anchor in topic_anchors):
+        anchor_re = re.compile(
+            r"\b(?:" + "|".join(re.escape(a) for a in topic_anchors) + r")\b"
+        )
+        if not anchor_re.search(haystack):
             return False
     return True
 

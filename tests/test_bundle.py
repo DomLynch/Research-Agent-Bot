@@ -232,6 +232,84 @@ def test_on_topic_paper_marked_direct():
     assert items[0].direct is True
 
 
+# --- Phrase-aware topic gate (P1 audit fix) --------------------------------
+
+
+def test_topic_anchors_compound_entity_kept_as_bigram():
+    """Vitamin D and Vitamin K differ by one letter — the topic gate must
+    treat the 2-content-token topic as a single phrase anchor, not fall
+    back to 'vitamin' alone (which over-matches Vitamin K, multivitamin).
+
+    The bigram heuristic fires only when exactly 2 content tokens remain
+    after stopword removal. Topics with 3+ content tokens use unigrams
+    (the user is naming alternatives, e.g. dasatinib/quercetin) — known
+    limitation: 'vitamin a deficiency' (3 content tokens) loses the
+    compound-entity preservation. Acceptable for V1; revisit if a fixture
+    proves the limitation hurts.
+    """
+    from agent.bundle import _topic_anchors
+
+    assert _topic_anchors("vitamin D supplementation mortality elderly") == ("vitamin d",)
+    assert _topic_anchors("rapamycin older adults") == ("rapamycin",)
+    # 3+ content words: list of compounds, unigrams only (>=3 chars).
+    assert _topic_anchors("senolytics dasatinib quercetin older adults") == (
+        "senolytics", "dasatinib", "quercetin",
+    )
+    # Empty / stopwords-only -> gate disabled
+    assert _topic_anchors("") == ()
+    assert _topic_anchors("older adults aging human") == ()
+
+
+def test_vitamin_k_paper_indirect_for_vitamin_d_topic():
+    """The exact reviewer-flagged P1: Vitamin K trial under a Vitamin D topic
+    must NOT be marked direct."""
+    src = Source(
+        ref=1,
+        title="Vitamin K Supplementation in Elderly Adults",
+        year=2024, url="", source="pubmed",
+    )
+    items = bundle(
+        [src],
+        {1: "Trial of phytomenadione (vitamin K) in 200 elderly adults reduced fractures by 22% (p=0.01)."},
+        topic="vitamin D supplementation mortality elderly",
+        domain="aging older adults human",
+    )
+    assert items[0].direct is False
+
+
+def test_multivitamin_paper_indirect_for_vitamin_d_topic():
+    """Word-boundary matching: 'vitamin' inside 'multivitamin' must NOT trip
+    the anchor (and the bigram 'vitamin d' wouldn't either)."""
+    src = Source(
+        ref=1,
+        title="Multivitamin Supplementation in Older Adults",
+        year=2024, url="", source="pubmed",
+    )
+    items = bundle(
+        [src],
+        {1: "Trial of multivitamin in 200 older adults reduced fractures by 22% (p=0.01)."},
+        topic="vitamin D supplementation mortality elderly",
+        domain="aging older adults human",
+    )
+    assert items[0].direct is False
+
+
+def test_vitamin_d_paper_direct_for_vitamin_d_topic():
+    """Sanity: the actual on-topic paper IS direct."""
+    src = Source(
+        ref=1,
+        title="Vitamin D Supplementation in Older Adults",
+        year=2024, url="", source="pubmed",
+    )
+    items = bundle(
+        [src],
+        {1: "Trial of cholecalciferol (vitamin D) in 200 older adults reduced mortality by 22% (p=0.01)."},
+        topic="vitamin D supplementation mortality elderly",
+        domain="aging older adults human",
+    )
+    assert items[0].direct is True
+
+
 # --- Tightened outcome regex (P0 audit fix) --------------------------------
 
 
