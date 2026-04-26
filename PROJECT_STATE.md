@@ -32,11 +32,21 @@ The deterministic Draft must be publishable before the LLM ever touches it. Poli
 | 4 | qa.py + optional llm.py + invariants | All 5 golden topics produce 9/10 artifacts; polish opt-in and provably safe |
 | 5 | app.py + dashboard + smoke deploy | CLI works; dashboard renders; ready for submit.py later |
 
-## Day 1 Status
-- `agent/` package: `__init__.py`, `types.py` (161 LOC, frozen dataclasses + `assert_invariants`).
-- `tests/`: snapshot harness, types contract (14 cases), LOC budget enforcer, legacy-import guard.
-- All 14 tests green. Total `agent/` LOC: 163 / 2,500.
-- Old code preserved at `agent_legacy/`, old tests at `tests_legacy/` (excluded from default pytest run).
+## Day 1 Status — DONE
+- `agent/` package: `__init__.py`, `types.py` (183 LOC after review fixes; frozen dataclasses + `assert_invariants` enforcing both forward and reverse role↔fact-kind pairings).
+- `tests/`: snapshot harness (fails loud on missing baseline unless `UPDATE_SNAPSHOTS=1`), types contract (18 cases), LOC budget enforcer, legacy-import guard.
+- pyproject `packages.find` now `["agent", "agent.*"]` — `agent_legacy` never ships.
+
+## Day 2 Status — DONE
+- 4 source adapters (pubmed, openalex, europepmc, clinicaltrials) behind shared `SourceClient` Protocol; ~340 LOC total.
+- `agent/retrieve.py` (116 LOC) — single shared `httpx.AsyncClient`, parallel fanout via `asyncio.gather`, 4-key dedup (DOI > PMID > NCT > normalized title), 1-indexed refs, raw_signals propagation.
+- `agent/bundle.py` (216 LOC) — deterministic role/tier/design/direct/strict classifier with truth-table docstring. Word-boundary regex markers (not substring).
+- `scripts/capture_fixtures.py` — captured **real** PubMed/OpenAlex/EuropePMC/ClinicalTrials responses for the 5 golden topics (148 hits across 20 fixture files, sort_keys=True for stable diffs).
+- `tests/test_sources.py` — parser regression against real fixtures (40 parametrized cases).
+- `tests/test_retrieve.py` — plan_queries + dedup logic (9 cases).
+- `tests/test_bundle.py` — truth-table cases (23) + per-topic snapshot baselines (5).
+- Bugs caught and fixed during capture: EuropePMC `resultType=lite` silently dropped abstracts; CT.gov barfed on "RCT" filter token (fix: `plan_queries` no longer joins criteria into the retrieval query). Bundle marker matching was substring-based and missed sentence-initial "Mice"/"Rats" — switched to word-boundary regex.
+- 93 tests green in 0.08s. Total `agent/` LOC: 859 / 2,500 (1,641 headroom).
 
 ## Legacy
 The pre-rebuild package lives at `agent_legacy/` for git archaeology. New code MUST NOT import from it. CI guard: `tests/test_no_legacy_imports.py`.
