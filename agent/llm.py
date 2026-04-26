@@ -77,8 +77,12 @@ USER_PROMPT_TEMPLATE = """Topic: {topic}
 Domain: {domain}
 Criteria: {criteria}
 
-Bundle ({n_sources} sources, sorted by direct/tier):
+Bundle ({n_sources} sources, segregated by directness):
 {bundle_block}
+
+Anchor the synthesis on the DIRECT EVIDENCE block. The BACKGROUND block
+is for mechanistic context only — refs there must not carry outcome
+claims, effect sizes, or efficacy framing.
 
 Produce a research-grade draft as a JSON object with this exact shape:
 {{
@@ -121,17 +125,36 @@ def _build_user_prompt(
 ) -> str:
     """Build the writer prompt from the top-N ranked subset of the bundle.
 
-    The full bundle still flows to render (evidence table + bibliography);
-    the LLM sees only the strongest evidence so it doesn't drown in old
-    mechanistic noise. Top-N truncation is bundle.rank_for_writer's job.
+    The block is SEGREGATED into 'DIRECT EVIDENCE' (cite for outcomes)
+    and 'BACKGROUND' (mention as context only). The visual split is
+    harder for the LLM to ignore than rule text — written prompt rules
+    alone repeatedly failed to stop the writer from citing mechanistic
+    refs for outcome claims (triggering invariant_violation in QA).
     """
     ranked = rank_for_writer(items, n=DEFAULT_WRITER_BUDGET)
+    direct = [it for it in ranked if it.direct]
+    indirect = [it for it in ranked if not it.direct]
+    direct_block = (
+        "\n".join(_format_item(it) for it in direct)
+        if direct else "(no direct evidence in this bundle)"
+    )
+    indirect_block = (
+        "\n".join(_format_item(it) for it in indirect)
+        if indirect else "(no background sources surfaced)"
+    )
+    bundle_block = (
+        "## DIRECT EVIDENCE (cite for outcome claims)\n"
+        f"{direct_block}\n\n"
+        "## BACKGROUND (mention as context only — do NOT cite for outcome "
+        "claims, do NOT attribute effect sizes to these refs)\n"
+        f"{indirect_block}"
+    )
     return USER_PROMPT_TEMPLATE.format(
         topic=topic,
         domain=domain,
         criteria=criteria,
         n_sources=len(ranked),
-        bundle_block="\n".join(_format_item(it) for it in ranked),
+        bundle_block=bundle_block,
     )
 
 
