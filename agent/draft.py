@@ -213,7 +213,25 @@ async def run_async(
         meta["judge_model"] = verdict.model
         meta["judge_score"] = verdict.score
         meta["estimated_cost_usd"] = float(meta["estimated_cost_usd"]) + verdict.estimated_cost_usd
-    markdown = render(draft, meta=meta) if result.approved else ""
+    # Surface qa failures + judge verdict to the renderer so the
+    # ## QA Failures and ## Adjudication blocks always reflect the
+    # true state of validation — even on dual-rejection.
+    meta["qa_failures"] = [asdict(f) for f in result.failures]
+    meta["qa_approved"] = result.approved
+    if verdict is not None:
+        meta["judge"] = {
+            "model": verdict.model,
+            "approved": verdict.approved,
+            "score": verdict.score,
+            "summary": verdict.summary,
+            "blocking_issues": list(verdict.blocking_issues),
+        }
+    # Always render — the user gets the draft + an UNVERIFIED warning when
+    # validation fails, never an empty result. Blank markdown was the
+    # 'dual-rejection undefined' bug the reviewer flagged.
+    markdown = render(draft, meta=meta)
+    if not result.approved and draft.title.strip():
+        markdown = _unverified_banner(result.failures) + "\n\n" + markdown
 
     out: dict[str, object] = {
         "topic": topic,
@@ -263,6 +281,19 @@ def _counter(values: list[str]) -> dict[str, int]:
     for v in values:
         result[v] = result.get(v, 0) + 1
     return result
+
+
+def _unverified_banner(failures) -> str:
+    """Top-of-document warning when dual-rejection ships markdown."""
+    blocks = [f for f in failures if f.severity == "block"]
+    n = len(blocks)
+    return (
+        "> ⚠️ **UNVERIFIED — DRAFT FAILED VALIDATION**\n>\n"
+        f"> This draft did not pass the deterministic QA gates after one\n"
+        f"> revision attempt ({n} blocking issue{'s' if n != 1 else ''}). The\n"
+        "> material issues are listed in `## QA Failures` below. Treat this\n"
+        "> as research material for human review, not a publishable artifact."
+    )
 
 
 def run(**kwargs) -> dict:

@@ -156,7 +156,12 @@ def test_run_retries_once_when_qa_rejects(stub_retrieve_and_llm, tmp_path):
     assert "# A clean draft" in out["markdown"]
 
 
-def test_run_returns_unrendered_when_both_attempts_fail(stub_retrieve_and_llm, tmp_path):
+def test_run_ships_unverified_markdown_when_both_attempts_fail(
+    stub_retrieve_and_llm, tmp_path,
+):
+    """Dual-rejection path: rather than shipping nothing, the system writes
+    out the failed draft with an UNVERIFIED banner + ## QA Failures block
+    so the human reviewer can see what went wrong."""
     bad = {
         "title": "Bad",
         "abstract": ["Mortality fell 47% [1]."],
@@ -174,5 +179,8 @@ def test_run_returns_unrendered_when_both_attempts_fail(stub_retrieve_and_llm, t
     )
     assert out["attempts"] == 2
     assert out["approved"] is False
-    assert out["markdown"] == ""
     assert out["qa_failures"]
+    # Dual-rejection: markdown IS rendered, with UNVERIFIED banner + QA block
+    assert out["markdown"]
+    assert "UNVERIFIED" in out["markdown"]
+    assert "## QA Failures" in out["markdown"]

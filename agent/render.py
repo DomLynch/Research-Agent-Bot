@@ -149,6 +149,32 @@ def _confidence_block(items: list[EvidenceItem]) -> str:
     )
 
 
+def _qa_failures_block(meta: dict[str, object]) -> str:
+    """When QA fails (even after revision), surface every blocking failure
+    so the human reviewer can see exactly what the deterministic gates
+    flagged. Empty when QA approved."""
+    if meta.get("qa_approved", True):
+        return ""
+    failures = meta.get("qa_failures") or []
+    if not isinstance(failures, list):
+        return ""
+    blocks = [f for f in failures if isinstance(f, dict) and f.get("severity") == "block"]
+    if not blocks:
+        return ""
+    lines = [
+        "## QA Failures",
+        "",
+        f"_{len(blocks)} blocking issue{'s' if len(blocks) != 1 else ''} "
+        "remained after one revision attempt._",
+        "",
+    ]
+    for f in blocks:
+        code = str(f.get("code", "?"))
+        msg = str(f.get("message", ""))[:300]
+        lines.append(f"- **`{code}`**: {msg}")
+    return "\n".join(lines)
+
+
 def _adjudication_block(meta: dict[str, object]) -> str:
     """Surface the judge's verdict when --judge ran."""
     judge = meta.get("judge") if isinstance(meta, dict) else None
@@ -227,6 +253,7 @@ def render(draft: Draft, *, meta: dict[str, object] | None = None) -> str:
         _excluded_sources_block(draft.bundle, meta),
         _confidence_block(draft.bundle),
         _adjudication_block(meta),
+        _qa_failures_block(meta),
         _bibliography(draft.bundle),
     ]
     footer = _footer(meta)

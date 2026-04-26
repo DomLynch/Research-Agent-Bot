@@ -28,32 +28,53 @@ logger = logging.getLogger(__name__)
 
 JUDGE_PROMPT_VERSION = "research-agent-v1/judge-2026-04-26"
 
-JUDGE_SYSTEM_PROMPT = """You are the Judge for a research-paper drafting system.
-Your job: review a candidate draft for MATERIAL correctness against the
-typed evidence bundle.
+JUDGE_SYSTEM_PROMPT = """You are the Judge — second-layer quality control for
+a research-paper drafting system. Be HYPER-CRITICAL. A lenient judge is
+worse than no judge — it creates false confidence and lets hallucinations
+ship to publication.
 
-APPROVE if the draft:
-  - Cites only refs from the bundle.
-  - Describes each ref consistently with its declared role
-    (results vs protocol vs review vs mechanistic).
-  - Makes no headline efficacy claim from Tier C / mechanistic refs.
-  - Quotes effect-size numbers that appear in the cited abstract.
-  - Has a calibrated conclusion given the evidence quality.
+For EVERY citation [N] in the draft:
+  1. Cross-reference the cited claim against the source's title and
+     abstract in the bundle.
+  2. If the claim is not directly supported by the cited abstract, flag
+     it as a hallucination — even if the claim is plausible or true in
+     general medical knowledge.
+  3. Verify the source's role matches the prose (a 'published_protocol'
+     can't be described as having reported outcomes; a 'mechanistic'
+     primate study can't carry a definitive human efficacy claim).
+  4. Verify every numeric effect (HR, OR, RR, %, p-value, n=, CI) appears
+     verbatim in the cited abstract. Made-up numbers are a hard reject.
+  5. Flag mis-attribution: a draft that says 'ref [X] is a study of Y'
+     when [X] is actually about Z is a hallucination, even if Y exists
+     somewhere in the bundle under a different ref.
 
-REJECT only for material problems:
-  - Over-claims, hallucinated effects, role/protocol contradictions,
-    missed direct evidence, biased framing.
+APPROVE only when:
+  - Every cited claim is directly supported by the cited abstract
+  - Roles and prose are consistent
+  - Numeric claims are traceable
+  - Conclusion is calibrated to the actual evidence base shown
+  - No invented trial names, programs, or studies (e.g. don't introduce
+    'TAME' or 'CALERIE' from prior knowledge if not in the bundle)
 
-DO NOT reject for: wording, phrasing, naming, formatting, readability,
-style, length, organization preferences.
+DO NOT reject for:
+  - wording, phrasing, naming, formatting, readability
+  - style, length, organization preferences
+  - the choice to discuss certain refs over others (that's the writer's call)
 
 Output ONE JSON object:
   {"approved": bool, "score": 1-10, "summary": "...",
-   "blocking_issues": ["..."], "revision_notes": "..." }
-- score: 1=ship-blocker, 10=publishable as-is.
-- blocking_issues: short list of MATERIAL problems. Empty if approved.
-- revision_notes: concrete instruction for the writer if approved=false.
-                   Empty string if approved=true.
+   "blocking_issues": ["..."], "revision_notes": "..."}
+
+Scoring:
+  10 — publishable as-is, every claim traceable
+  8-9 — minor calibration tweaks, no material errors
+  6-7 — at least one cited claim not supported by abstract; needs revision
+  1-5 — material hallucinations or role/numeric contradictions; reject
+
+blocking_issues: ONE LINE per material problem. Cite the ref and the
+specific unsupported claim. Empty list if approved.
+revision_notes: concrete instruction for the writer, listing which
+sentences to rewrite and how. Empty string if approved.
 """
 
 # Cosmetic / non-material critique patterns — filtered out before deciding.
@@ -155,31 +176,39 @@ async def judge_draft(
         {"role": "system", "content": JUDGE_SYSTEM_PROMPT},
         {"role": "user", "content": user},
     ]
+    # Three-tier judge chain. MiMo's 1M context is genuinely useful for
+    # source-heavy adjudication; placing it between Gemma and Mistral
+    # means a Gemma transport hiccup degrades to a stronger model first,
+    # not a weaker one.
+    tiers: list[tuple[str, str, str]] = [
+        ("gemma", settings.openrouter_base_url, settings.openrouter_api_key),
+    ]
+    if settings.mimo_api_key:
+        tiers.append(("mimo", settings.mimo_base_url, settings.mimo_api_key))
+    tiers.append(("mistral", settings.openrouter_base_url, settings.openrouter_api_key))
+    tier_models = {
+        "gemma": settings.judge_model,
+        "mimo": settings.mimo_model,
+        "mistral": settings.fallback_model,
+    }
     own_client = client is None
     c = client or httpx.AsyncClient(timeout=settings.mimo_timeout_sec)
     try:
-        for slot, model in (("primary", settings.judge_model),
-                            ("fallback", settings.fallback_model)):
+        for slot, base, key in tiers:
+            model = tier_models[slot]
             try:
                 parsed, raw_usage = await openai_chat_json(
-                    client=c,
-                    base_url=settings.openrouter_base_url,
-                    api_key=settings.openrouter_api_key,
-                    model=model,
-                    messages=messages,
-                    timeout=settings.mimo_timeout_sec,
+                    client=c, base_url=base, api_key=key, model=model,
+                    messages=messages, timeout=settings.mimo_timeout_sec,
                     max_tokens=1200,
                 )
                 return _parse(parsed, model, raw_usage)
             except (httpx.HTTPError, ValueError, KeyError) as exc:
-                if slot == "primary":
-                    logger.warning(
-                        "judge primary %s failed (%s); falling back to %s",
-                        model, type(exc).__name__, settings.fallback_model,
-                    )
-                    continue
-                logger.warning("judge fallback %s also failed (%s); skipping", model, exc)
-                return None
+                logger.warning(
+                    "judge %s (%s) failed: %s",
+                    slot, model, type(exc).__name__,
+                )
+                continue
         return None
     finally:
         if own_client:
