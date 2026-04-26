@@ -1,0 +1,197 @@
+"""End-to-end orchestrator: topic + domain + criteria -> markdown draft.
+
+Pipeline:
+  retrieve -> bundle -> write_draft -> qa -> (retry once if rejected) -> render
+
+Per-run telemetry (queries, source counts, role distribution, cost, QA score)
+is written to runs/<UTC>-<slug>.json. The markdown artifact, if QA-approved,
+goes to runs/<UTC>-<slug>.md.
+"""
+from __future__ import annotations
+
+import asyncio
+import json
+import re
+import time
+from dataclasses import asdict
+from pathlib import Path
+
+import httpx
+
+from agent.bundle import bundle as build_bundle
+from agent.llm import WriterUsage, write_draft
+from agent.qa import correction_prompt, qa
+from agent.render import render
+from agent.retrieve import retrieve
+from agent.settings import Settings, load_settings
+from agent.sources._base import USER_AGENT
+from agent.sources.clinicaltrials import ClinicalTrialsClient
+from agent.sources.europepmc import EuropePMCClient
+from agent.sources.openalex import OpenAlexClient
+from agent.sources.pubmed import PubMedClient
+from agent.types import Draft, EvidenceItem
+
+
+def default_sources() -> list:
+    return [PubMedClient(), OpenAlexClient(), EuropePMCClient(), ClinicalTrialsClient()]
+
+
+def _slugify(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:60]
+
+
+def _build_draft(
+    parsed: dict, items: list[EvidenceItem], topic: str, domain: str, criteria: str
+) -> Draft:
+    return Draft(
+        topic=topic,
+        domain=domain,
+        criteria=criteria,
+        title=str(parsed.get("title", "")).strip(),
+        abstract=[str(s) for s in (parsed.get("abstract") or [])],
+        sections={
+            str(k): [str(s) for s in (v or [])]
+            for k, v in (parsed.get("sections") or {}).items()
+        },
+        bundle=items,
+        facts=[],  # V1 does not populate facts; qa.py enforces via gates.
+    )
+
+
+def _merge_usage(a: WriterUsage, b: WriterUsage) -> WriterUsage:
+    return WriterUsage(
+        input_tokens=a.input_tokens + b.input_tokens,
+        output_tokens=a.output_tokens + b.output_tokens,
+        estimated_cost_usd=a.estimated_cost_usd + b.estimated_cost_usd,
+        model=a.model,
+        prompt_version=a.prompt_version,
+    )
+
+
+def _today_cost(settings: Settings) -> float:
+    runs = Path(settings.runs_dir)
+    if not runs.exists():
+        return 0.0
+    today = time.strftime("%Y-%m-%d", time.gmtime())
+    total = 0.0
+    for p in runs.glob(f"{today}*.json"):
+        try:
+            data = json.loads(p.read_text(encoding="utf-8"))
+            total += float(data.get("estimated_cost_usd", 0) or 0)
+        except (OSError, json.JSONDecodeError, TypeError, ValueError):
+            continue
+    return total
+
+
+def _stamp() -> str:
+    return time.strftime("%Y-%m-%dT%H-%M-%SZ", time.gmtime())
+
+
+def _write_log(settings: Settings, topic: str, out: dict) -> str:
+    runs = Path(settings.runs_dir)
+    runs.mkdir(parents=True, exist_ok=True)
+    path = runs / f"{_stamp()}-{_slugify(topic)}.json"
+    path.write_text(json.dumps(out, indent=2, default=str), encoding="utf-8")
+    return str(path)
+
+
+def _write_markdown(settings: Settings, topic: str, markdown: str) -> str:
+    runs = Path(settings.runs_dir)
+    runs.mkdir(parents=True, exist_ok=True)
+    path = runs / f"{_stamp()}-{_slugify(topic)}.md"
+    path.write_text(markdown, encoding="utf-8")
+    return str(path)
+
+
+async def run_async(
+    *,
+    topic: str,
+    domain: str,
+    criteria: str = "",
+    settings: Settings | None = None,
+    sources: list | None = None,
+    write_log: bool = True,
+) -> dict:
+    settings = settings or load_settings()
+    if not settings.bot_enabled:
+        return {"error": "BOT_ENABLED is false"}
+    if not settings.mimo_api_key:
+        return {"error": "MIMO_API_KEY is not set"}
+    if _today_cost(settings) >= settings.daily_cost_cap_usd:
+        return {"error": f"daily cost cap ${settings.daily_cost_cap_usd} reached"}
+
+    sources = sources or default_sources()
+    started = time.time()
+    headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
+
+    async with httpx.AsyncClient(timeout=settings.mimo_timeout_sec, headers=headers) as client:
+        sources_list, abstracts, raw_signals = await retrieve(
+            topic, criteria, sources=sources, client=client,
+        )
+        if not sources_list:
+            return {"error": "no sources retrieved", "topic": topic}
+
+        items = build_bundle(
+            sources_list, abstracts,
+            topic=topic, domain=domain, raw_signals=raw_signals,
+        )
+
+        parsed, usage = await write_draft(
+            items, topic, domain, criteria, settings=settings, client=client,
+        )
+        draft = _build_draft(parsed, items, topic, domain, criteria)
+        result = qa(draft)
+        attempts = 1
+
+        if not result.approved:
+            parsed2, usage2 = await write_draft(
+                items, topic, domain, criteria,
+                settings=settings, client=client,
+                correction=correction_prompt(result.failures),
+            )
+            draft = _build_draft(parsed2, items, topic, domain, criteria)
+            result = qa(draft)
+            usage = _merge_usage(usage, usage2)
+            attempts = 2
+
+    meta: dict[str, object] = asdict(usage)
+    markdown = render(draft, meta=meta) if result.approved else ""
+
+    out: dict[str, object] = {
+        "topic": topic,
+        "domain": domain,
+        "criteria": criteria,
+        "approved": result.approved,
+        "qa_score": result.score,
+        "qa_failures": [asdict(f) for f in result.failures],
+        "attempts": attempts,
+        "n_sources": len(items),
+        "n_direct": sum(1 for it in items if it.direct),
+        "role_counts": _counter([it.role for it in items]),
+        "tier_counts": _counter([it.tier for it in items]),
+        "elapsed_sec": round(time.time() - started, 2),
+        "model": usage.model,
+        "prompt_version": usage.prompt_version,
+        "input_tokens": usage.input_tokens,
+        "output_tokens": usage.output_tokens,
+        "estimated_cost_usd": usage.estimated_cost_usd,
+        "markdown": markdown,
+    }
+
+    if write_log:
+        out["log_path"] = _write_log(settings, topic, out)
+        if markdown:
+            out["markdown_file"] = _write_markdown(settings, topic, markdown)
+    return out
+
+
+def _counter(values: list[str]) -> dict[str, int]:
+    result: dict[str, int] = {}
+    for v in values:
+        result[v] = result.get(v, 0) + 1
+    return result
+
+
+def run(**kwargs) -> dict:
+    """Sync wrapper for CLI / dashboard / tests."""
+    return asyncio.run(run_async(**kwargs))

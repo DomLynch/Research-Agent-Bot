@@ -7,7 +7,7 @@ Wants=network-online.target
 Type=simple
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/opt/research-agent-bot/.venv/bin/python -m agent.dashboard --host 127.0.0.1 --port 8791
+ExecStart=/opt/research-agent-bot/.venv/bin/python -m agent.app dashboard --host 127.0.0.1 --port 8791
 Restart=always
 RestartSec=3
 Environment=PYTHONUNBUFFERED=1

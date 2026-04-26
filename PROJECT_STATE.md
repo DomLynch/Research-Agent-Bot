@@ -37,6 +37,28 @@ The deterministic Draft must be publishable before the LLM ever touches it. Poli
 - `tests/`: snapshot harness (fails loud on missing baseline unless `UPDATE_SNAPSHOTS=1`), types contract (18 cases), LOC budget enforcer, legacy-import guard.
 - pyproject `packages.find` now `["agent", "agent.*"]` — `agent_legacy` never ships.
 
+## V1 Status — feature-complete (`agent/app.py dashboard` ready to deploy)
+- **133 tests green in 0.15s** across types, sources, retrieve, bundle, qa, render, draft.
+- **agent/ runtime: 1,810 / 2,500 LOC** (690 headroom). Largest file: bundle.py 298. Every file under 500.
+- **End-to-end pipeline**: `topic + domain + criteria → retrieve (4 sources, parallel) → bundle (deterministic role/tier/topic gate) → llm (MiMo 2.5 Pro, JSON output, strict prompt) → qa (4 typed gates, retry once) → render (markdown + bibliography + evidence table)`.
+- **CLI**: `python -m agent.app run --topic ... --domain ... --criteria ...` prints markdown.
+- **Dashboard**: `python -m agent.app dashboard --port 8791` — same cream/teal V0 look, 187 LOC stdlib http.server, no Flask/FastAPI.
+- **Safety rails**: `BOT_ENABLED`, `MIMO_API_KEY` required, `DAILY_COST_CAP_USD` blocks runs over today's cap.
+- **Pivot from day-3 plan**: dropped `compose.py` templated-skeleton + `facts.py` standalone extractor. Frontier LLM (MiMo 2.5 Pro) writes prose given typed bundle + strict prompt; QA gates catch any drift. Saves ~600 LOC vs the original templated-compose plan.
+
+## Deploy steps (for the user to run on the VPS)
+```bash
+ssh root@<vps>
+cd /opt/research-agent-bot
+git pull
+.venv/bin/pip install -e .   # in case pyproject.toml changed
+sudo cp deploy/research-agent-bot.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl restart research-agent-bot
+sudo systemctl status research-agent-bot --no-pager
+# Verify: curl -s https://research-agent.domlynch.com/ | head -20
+```
+
 ## Day 2 Status — DONE (with audit fixes applied)
 - 4 source adapters (pubmed, openalex, europepmc, clinicaltrials) behind shared `SourceClient` Protocol.
 - `agent/retrieve.py` (144 LOC) — single shared `httpx.AsyncClient`, parallel fanout via `asyncio.gather`, multi-key dedup (DOI > PMID > NCT > NCT-in-abstract > normalized title), 1-indexed refs, `logger.warning` on swallowed adapter errors.
