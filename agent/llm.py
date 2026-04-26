@@ -60,6 +60,17 @@ Numbers
 - If no numeric effect is in the abstract, state qualitatively only ('an
   improvement in X was reported').
 
+Evidence hierarchy
+- LEAD the synthesis with refs marked direct=true. Those are the studies
+  that actually answer the question.
+- Treat refs marked direct=false as BACKGROUND ONLY — useful for mechanism
+  or related-context, never as evidence FOR the question. Do not let them
+  carry the headline finding.
+- If direct evidence is thin, say so explicitly in the Findings/Limitations
+  sections. Do NOT pad with background to compensate.
+- For role=registered_pending and role=published_protocol, describe as
+  pending/in-progress; never frame as published efficacy.
+
 Output: exactly ONE JSON object. No prose outside the JSON. No markdown fences."""
 
 USER_PROMPT_TEMPLATE = """Topic: {topic}

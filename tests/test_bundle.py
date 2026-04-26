@@ -294,6 +294,74 @@ def test_multivitamin_paper_indirect_for_vitamin_d_topic():
     assert items[0].direct is False
 
 
+def test_aging_domain_excludes_pcos_paper_with_topic_in_title():
+    """PCOS paper that mentions metformin in its title still has zero aging
+    relevance markers — for an aging domain, that's noise that should not
+    appear as direct evidence."""
+    src = Source(
+        ref=1,
+        title="Serum Biomarker Levels Improvement in Polycystic Ovarian Syndrome: Impact of Metformin Compared to Healthy Controls",
+        year=2025, url="", source="clinicaltrials",
+    )
+    items = bundle(
+        [src],
+        {1: "Trial of metformin in PCOS patients to assess insulin resistance markers."},
+        topic="metformin aging older adults",
+        domain="aging older adults longevity",
+    )
+    assert items[0].direct is False
+
+
+def test_aging_domain_excludes_pediatric_swallowing_study():
+    """Pediatric swallowing/PK study is off-question for longevity."""
+    src = Source(
+        ref=1,
+        title="Pediatric Participants With Type 2 Diabetes to Swallow MK-0431A XR Tablets",
+        year=2014, url="", source="clinicaltrials",
+    )
+    items = bundle(
+        [src],
+        {1: "Pharmacokinetic study in children with type 2 diabetes."},
+        topic="metformin aging older adults",
+        domain="aging older adults longevity",
+    )
+    assert items[0].direct is False
+
+
+def test_aging_domain_keeps_frailty_trial_direct():
+    """Direct aging-relevance markers (frailty, sarcopenia, healthspan,
+    physical function) keep a paper as direct evidence."""
+    src = Source(
+        ref=1,
+        title="Metformin for Preventing Frailty in High-risk Older Adults",
+        year=2024, url="", source="clinicaltrials",
+    )
+    items = bundle(
+        [src],
+        {1: "RCT of metformin to prevent frailty in adults aged 65 and older."},
+        topic="metformin aging older adults",
+        domain="aging older adults longevity",
+    )
+    assert items[0].direct is True
+
+
+def test_non_aging_domain_skips_aging_relevance_gate():
+    """Obesity / weight-loss domain: aging relevance check should NOT fire,
+    so a real semaglutide weight RCT stays direct even without aging markers."""
+    src = Source(
+        ref=1,
+        title="Once-Weekly Semaglutide in Adults with Overweight or Obesity",
+        year=2024, url="", source="europepmc",
+    )
+    items = bundle(
+        [src],
+        {1: "We randomized 200 adults to semaglutide 2.4 mg or placebo for 68 weeks."},
+        topic="semaglutide weight loss adults",
+        domain="obesity adults",
+    )
+    assert items[0].direct is True
+
+
 def test_vitamin_d_paper_direct_for_vitamin_d_topic():
     """Sanity: the actual on-topic paper IS direct."""
     src = Source(

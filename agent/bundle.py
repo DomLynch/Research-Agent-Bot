@@ -226,6 +226,27 @@ _HUMAN_DOMAIN_MARKERS = (
     "clinical",
 )
 _ADULT_DOMAIN_MARKERS = ("adult", "older", "elderly", "geriatric")
+_AGING_DOMAIN_MARKERS = (
+    "aging", "ageing", "longevity", "older", "elderly", "geriatric",
+    "healthspan", "lifespan", "geroscience",
+)
+# Aging-relevance markers in titles/abstracts. When the domain is aging-
+# focused, papers about the topic in a DIFFERENT clinical context (PCOS,
+# ACS, cancer, pediatric, pure pharmacokinetics) carry the topic anchor
+# but no aging signal; they're demoted to indirect so they don't dominate
+# the writer's top-N slice. Non-aging domains (obesity, mental health) skip
+# this gate.
+_AGING_RELEVANCE_RE = re.compile(
+    r"\b(?:longevity|aging|ageing|older|elderly|geriatric|frailty|sarcopen[a-z]+|"
+    r"healthspan|lifespan|epigenetic\s+(?:age|clock)|senescen[a-z]+|geroscience|"
+    r"cognitive[-\s](?:decline|aging|impairment)|brain[-\s]aging|mortality|survival|"
+    r"biological\s+age|aging[-\s]related|age[-\s]related|"
+    r"geroprotective|gerotherapeutic|hallmarks?\s+of\s+aging|"
+    r"physical\s+(?:function|performance)|gait\s+speed|walk\s+speed|grip\s+strength|"
+    r"(?:adult|men|women|patients|participants)\s+aged|aged\s+\d{2,}|"
+    r"in\s+(?:older|elderly)\s+(?:adults|men|women|patients))\b",
+    re.IGNORECASE,
+)
 
 # Topic stopwords stripped before extracting topic anchors. These words appear
 # in queries as filters or population descriptors but don't anchor the subject
@@ -469,6 +490,14 @@ def _is_direct(
             r"\b(?:" + "|".join(re.escape(a) for a in topic_anchors) + r")\b"
         )
         if not anchor_re.search(haystack):
+            return False
+    # Aging-domain relevance: when the user asks about longevity/aging, a
+    # paper that mentions the topic IN A DIFFERENT CLINICAL CONTEXT (PCOS,
+    # ACS, cancer, pediatric, pharmacokinetics) carries the topic anchor
+    # but no aging signal — demote to indirect so it falls out of the
+    # writer's top-N. Non-aging domains skip this check.
+    if any(m in domain for m in _AGING_DOMAIN_MARKERS):
+        if not _AGING_RELEVANCE_RE.search(f"{title} {abstract}"):
             return False
     return True
 
