@@ -57,8 +57,9 @@ def test_render_includes_evidence_table():
     assert "| [2] | registered_pending |" in md
 
 
-def test_render_evidence_table_filters_to_direct_only():
-    """Indirect items are quarantined to the Sources bibliography."""
+def test_render_evidence_table_split_into_two_sections():
+    """Direct human evidence and mechanistic support each get their own
+    sub-table — reviewer flagged that mixing them inflates the evidence base."""
     from agent.types import EvidenceItem, Source
     direct = EvidenceItem(
         source=Source(ref=1, title="Direct trial", year=2024, url="", source="pubmed"),
@@ -73,9 +74,14 @@ def test_render_evidence_table_filters_to_direct_only():
     d = _draft()
     d.bundle = [direct, indirect]
     md = render(d)
+    # Both sub-tables present
+    assert "### Direct Human Outcomes" in md
+    assert "### Mechanistic / Preclinical Support" in md
+    # Direct ref in the human section, mechanistic ref in the support section
     assert "| [1] | published_results |" in md
-    assert "| [2] |" not in md.split("## Sources")[0]  # not in evidence table
-    assert "1 additional source" in md  # quarantine note
+    assert "| [2] | mechanistic |" in md
+    # Mechanistic background note is present
+    assert "Background only" in md or "biological plausibility" in md
 
 
 def test_render_includes_bibliography_with_links():

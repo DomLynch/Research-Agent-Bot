@@ -70,6 +70,13 @@ Evidence hierarchy
   sections. Do NOT pad with background to compensate.
 - For role=registered_pending and role=published_protocol, describe as
   pending/in-progress; never frame as published efficacy.
+- Observational cohorts (role=published_results, design=observational) MUST
+  be hedged for confounding risk and population specificity. Phrases like
+  'most robust' or 'definitive' are forbidden for observational data — use
+  'the strongest signal in this bundle, but observational and population-
+  specific' or similar calibrated language.
+- Never describe a mechanistic / preclinical paper as direct human evidence,
+  even when its title mentions 'aging', 'lifespan', or 'healthspan'.
 
 Output: exactly ONE JSON object. No prose outside the JSON. No markdown fences."""
 

@@ -314,6 +314,14 @@ def bundle(
         design = _classify_design(role, abstract)
         tier = _classify_tier(role, design, src.venue)
         direct = _is_direct(src.title, abstract, domain_lower, topic_anchors)
+        # Mechanistic role = preclinical / animal / cell / pathway. Such
+        # papers cannot be 'direct human evidence' regardless of how
+        # 'aging'-flavored their title is ('Metformin improves healthspan
+        # in mice' has 'healthspan' but is not direct human evidence).
+        # This forces the eligibility counts and evidence tables to stay
+        # honest — strict count is direct HUMAN evidence only.
+        if role == "mechanistic":
+            direct = False
         strict = _is_strict(direct, src.year, criteria_min_year)
         items.append(
             EvidenceItem(

@@ -56,6 +56,19 @@ APPROVE only when:
   - No invented trial names, programs, or studies (e.g. don't introduce
     'TAME' or 'CALERIE' from prior knowledge if not in the bundle)
 
+Categorization audit (especially important):
+  - Direct human evidence = role in {published_results, review,
+    registered_pending, published_protocol} on a real human population.
+    role=mechanistic is preclinical / animal / cell / pathway and
+    does NOT count as direct human evidence even when the title
+    mentions 'aging' or 'lifespan'.
+  - Reject if the draft conflates mechanistic refs with direct human
+    evidence (e.g. counts 'Metformin in C. elegans' or 'aging clock in
+    mice' as direct).
+  - Observational studies (RESORT-style cohorts) MUST be hedged for
+    confounding risk and population specificity. If the prose says
+    'most robust evidence' without that caveat, flag it.
+
 DO NOT reject for:
   - wording, phrasing, naming, formatting, readability
   - style, length, organization preferences

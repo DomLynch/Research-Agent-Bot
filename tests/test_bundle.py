@@ -349,7 +349,9 @@ def test_aging_domain_keeps_frailty_trial_direct():
 
 def test_non_aging_domain_skips_aging_relevance_gate():
     """Obesity / weight-loss domain: aging relevance check should NOT fire,
-    so a real semaglutide weight RCT stays direct even without aging markers."""
+    so a real semaglutide weight RCT stays direct even without aging markers.
+    Abstract carries qualitative outcome verbs so role classifies as
+    published_results (not the mechanistic default for sparse abstracts)."""
     src = Source(
         ref=1,
         title="Once-Weekly Semaglutide in Adults with Overweight or Obesity",
@@ -357,7 +359,9 @@ def test_non_aging_domain_skips_aging_relevance_gate():
     )
     items = bundle(
         [src],
-        {1: "We randomized 200 adults to semaglutide 2.4 mg or placebo for 68 weeks."},
+        {1: "In this randomized double-blind placebo-controlled trial we "
+            "randomized 200 adults to semaglutide 2.4 mg or placebo for 68 "
+            "weeks. Semaglutide reduced body weight by 14.9% (p<0.001)."},
         topic="semaglutide weight loss adults",
         domain="obesity adults",
     )

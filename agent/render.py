@@ -45,68 +45,108 @@ def _section_block(draft: Draft) -> str:
 
 
 def _eligibility_block(items: list[EvidenceItem], meta: dict[str, object]) -> str:
-    """Counts that anchor the audit: how many sources made which cut."""
+    """Counts that anchor the audit. Strict = direct HUMAN evidence only —
+    mechanistic / preclinical papers do NOT count toward the strict total
+    even if their titles contain aging-relevance markers."""
     n_total = len(items)
-    n_direct = sum(1 for it in items if it.direct)
-    n_strict = sum(1 for it in items if it.strict)
-    n_results = sum(1 for it in items if it.role == "published_results")
-    n_pending = sum(
-        1 for it in items if it.role in {"registered_pending", "published_protocol"}
+    n_direct_human = sum(
+        1 for it in items
+        if it.direct and it.role in {"published_results", "review", "registered_pending", "published_protocol"}
     )
-    n_review = sum(1 for it in items if it.role == "review")
+    n_strict = sum(1 for it in items if it.strict)
+    n_published_results = sum(
+        1 for it in items if it.direct and it.role == "published_results"
+    )
+    n_pending = sum(
+        1 for it in items
+        if it.direct and it.role in {"registered_pending", "published_protocol"}
+    )
+    n_review = sum(1 for it in items if it.direct and it.role == "review")
+    n_mechanistic = sum(1 for it in items if it.role == "mechanistic")
+    n_excluded_other = n_total - n_direct_human - n_mechanistic
     relevance = meta.get("relevance") if isinstance(meta, dict) else None
     rel_line = ""
     if isinstance(relevance, dict) and relevance.get("applied"):
         rel_line = (
-            f" — relevance pre-filter: {relevance.get('core', 0)} core, "
+            f"\n- **LLM relevance pre-filter**: {relevance.get('core', 0)} core, "
             f"{relevance.get('background', 0)} background, "
             f"{relevance.get('excluded', 0)} excluded"
         )
     return (
         "## Eligibility\n\n"
         f"- **Total sources**: {n_total}\n"
-        f"- **Direct evidence**: {n_direct}\n"
-        f"- **Strict (passes year + directness gates)**: {n_strict}\n"
-        f"- **Published results**: {n_results}; **registered/protocol**: "
-        f"{n_pending}; **reviews**: {n_review}{rel_line}"
+        f"- **Direct human evidence**: {n_direct_human} "
+        f"(published_results: {n_published_results}; "
+        f"reviews: {n_review}; registered/protocol: {n_pending})\n"
+        f"- **Mechanistic / preclinical support**: {n_mechanistic}\n"
+        f"- **Other indirect / excluded**: {n_excluded_other}\n"
+        f"- **Strict (post-criteria-year direct human)**: {n_strict}"
+        f"{rel_line}"
     )
 
 
 def _evidence_table(items: list[EvidenceItem]) -> str:
-    """Direct-only evidence table with risk-of-bias column."""
-    direct = [it for it in items if it.direct]
-    indirect_count = len(items) - len(direct)
+    """Two evidence tables: Direct Human Outcomes vs Mechanistic Support.
+    Reviewer flagged that conflating mechanistic and direct human evidence
+    in one table inflates the apparent evidence base — split is honest.
+    """
+    direct_human = [
+        it for it in items
+        if it.direct and it.role in {
+            "published_results", "review", "registered_pending", "published_protocol",
+        }
+    ]
+    mechanistic = [it for it in items if it.role == "mechanistic"]
+    other_indirect = [
+        it for it in items
+        if not it.direct and it.role != "mechanistic"
+    ]
     header = (
         "| Ref | Role | Tier | Design | RoB | Source | Year |\n"
         "|-----|------|------|--------|-----|--------|------|"
     )
-    if not direct:
+
+    def _row(it: EvidenceItem) -> str:
         return (
-            "## Evidence\n\n"
-            f"_No direct evidence in the eligible bundle. {indirect_count} "
-            "sources are indirect / off-topic; see Excluded Sources._"
+            f"| [{it.source.ref}] | {it.role} | {it.tier} | {it.design} | "
+            f"{risk_of_bias(it)} | {it.source.source} | "
+            f"{it.source.year if it.source.year else '—'} |"
         )
-    rows = [
-        f"| [{it.source.ref}] | {it.role} | {it.tier} | {it.design} | "
-        f"{risk_of_bias(it)} | {it.source.source} | "
-        f"{it.source.year if it.source.year else '—'} |"
-        for it in direct
-    ]
-    note = ""
-    if indirect_count:
-        note = (
-            f"\n\n_{indirect_count} additional source"
-            f"{'s' if indirect_count != 1 else ''} excluded as indirect / "
-            "off-topic — see Excluded Sources below._"
+
+    sections: list[str] = ["## Evidence"]
+    if direct_human:
+        sections.append(
+            "### Direct Human Outcomes\n\n"
+            f"{header}\n" + "\n".join(_row(it) for it in direct_human)
         )
-    return "## Evidence\n\n" + header + "\n" + "\n".join(rows) + note
+    else:
+        sections.append(
+            "### Direct Human Outcomes\n\n"
+            "_No direct human evidence in the eligible bundle for this question._"
+        )
+    if mechanistic:
+        sections.append(
+            "### Mechanistic / Preclinical Support\n\n"
+            "_Background only — biological plausibility, not evidence for the "
+            "human question._\n\n"
+            f"{header}\n" + "\n".join(_row(it) for it in mechanistic)
+        )
+    if other_indirect:
+        sections.append(
+            f"_{len(other_indirect)} additional indirect source"
+            f"{'s' if len(other_indirect) != 1 else ''} listed in "
+            "Excluded Sources below._"
+        )
+    return "\n\n".join(sections)
 
 
 def _excluded_sources_block(
     items: list[EvidenceItem], meta: dict[str, object]
 ) -> str:
-    """List of indirect sources with rationale."""
-    indirect = [it for it in items if not it.direct]
+    """Off-topic indirect sources only — mechanistic items already appear in
+    their own Mechanistic Support table; listing them again here would
+    double-count."""
+    indirect = [it for it in items if not it.direct and it.role != "mechanistic"]
     if not indirect:
         return ""
     relevance = meta.get("relevance") if isinstance(meta, dict) else None
