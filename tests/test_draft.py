@@ -59,7 +59,7 @@ def stub_retrieve_and_llm(monkeypatch):
     src = Source(ref=1, title="Trial X", year=2024, url="https://example.org/1",
                  source="pubmed", doi="10.1/x", pmid="1")
 
-    async def fake_retrieve(topic, criteria, *, sources, client, limit_per_source=8):
+    async def fake_retrieve(topic, criteria, *, sources, client, limit_per_source=8, domain=""):
         return ([src], {1: "Trial reduced mortality by 22% (p=0.01)."}, {1: {}})
 
     monkeypatch.setattr(draft_mod, "retrieve", fake_retrieve)

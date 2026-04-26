@@ -1,5 +1,13 @@
 # DECISION JOURNAL
 
+## 2026-04-26 — Raise LOC ceiling to 3,500 for V1.x trust-layer features
+**Decision:** Raise the `tests/test_loc_budget.py` `TOTAL_LIMIT` from 2,500 → 3,500. Per-file 500 LOC cap unchanged.
+**Why:** V1 shipped at 2,200 LOC with the bare deterministic-first pipeline. Reviewer feedback (regression from 8.5/10 → 6.1/10 on metformin synthesis) pushed for: LLM relevance pre-filter (eliminates regex-tuning treadmill on directness classification), risk-of-bias column, confidence verdict, excluded-sources rationale, and adjudication block. These are real architectural improvements, not bloat. Trimming docstrings to fit a 2,500 self-imposed cap was process theater.
+**Alternatives rejected:**
+- Stay at 2,500 ceiling, trim documentation — rejected; the new modules need their docstrings to remain auditable.
+- Skip the trust-layer features — rejected; reviewer flagged them as the gap between 6.1/10 and 8+/10.
+**Revisit if:** runtime grows past 3,200 LOC without a corresponding score improvement on the golden corpus, or any single file approaches 500 LOC.
+
 ## 2026-04-26 — V1 rebuild: deterministic-first pipeline, 2,500 LOC ceiling
 **Decision:** Stop extending the V0 codebase. Rename `agent/` → `agent_legacy/`, `tests/` → `tests_legacy/`, and build a new `agent/` package from scratch with a deterministic-first pipeline. The deterministic Draft must be publishable before the LLM ever touches it; the LLM is editor only. Hard ceilings: 2,500 LOC total in `agent/`, 500 LOC per file, enforced by `tests/test_loc_budget.py`.
 **Why:** V0 hit ~3,405 LOC and still produced credibility-fatal contradictions — a single artifact would describe `[1]` as both a published RCT with reported outcomes and as an unpublished protocol. Rerunning the validator-and-repair pattern was treating symptoms; the bug class was structural. Letting the LLM generate prose that contradicts typed source metadata is the root cause. Fixing it requires a different pipeline shape, not more validators.

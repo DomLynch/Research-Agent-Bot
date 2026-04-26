@@ -146,7 +146,8 @@ _MECHANISTIC_RE = re.compile(
 )
 _ANIMAL_RE = re.compile(
     r"\b(mice|mouse|rats?|murine|canine|porcine|bovine|zebrafish|drosophila|"
-    r"c\.\s*elegans)\b",
+    r"c\.\s*elegans|monkeys?|primates?|cynomolgus|macaque|baboon|marmoset|"
+    r"non[-\s]human\s+primate)\b",
     re.IGNORECASE,
 )
 _CELL_RE = re.compile(
@@ -328,6 +329,74 @@ def bundle(
     return items
 
 
+def risk_of_bias(item: EvidenceItem) -> str:
+    """Deterministic risk-of-bias label from (role, design, tier).
+
+    Conservative: uses only structural signals (no per-paper RoB scoring).
+    'low' is reserved for A1 RCTs / well-conducted meta-analyses.
+    'n/a' marks items without reported human outcomes.
+    """
+    if item.role == "published_results":
+        if item.design == "rct":
+            return "low" if item.tier == "A1" else "moderate"
+        return "moderate-high"  # observational
+    if item.role == "review":
+        return "moderate" if item.design == "meta_analysis" else "moderate-high"
+    if item.role in {"registered_pending", "published_protocol"}:
+        return "n/a (no results)"
+    return "n/a (preclinical)"
+
+
+def confidence_verdict(items: list[EvidenceItem]) -> tuple[str, str]:
+    """Overall evidence confidence label + one-line rationale.
+
+    Returns (label, rationale) where label is one of:
+      high     — multiple A1/A2 direct RCTs converge
+      moderate — at least one direct A1/A2 published RCT or recent meta-analysis
+      low      — only registered trials / observational / single small pilot
+      very low — only mechanistic / preclinical / off-topic
+    """
+    direct_a_results_rcts = [
+        it for it in items
+        if it.direct and it.role == "published_results"
+        and it.design == "rct" and it.tier in {"A1", "A2"}
+    ]
+    direct_a_meta = [
+        it for it in items
+        if it.direct and it.role == "review" and it.design == "meta_analysis"
+    ]
+    direct_results_any = [
+        it for it in items
+        if it.direct and it.role == "published_results"
+    ]
+    direct_pending = [
+        it for it in items
+        if it.direct and it.role in {"registered_pending", "published_protocol"}
+    ]
+    if len(direct_a_results_rcts) >= 3:
+        return "high", (
+            f"{len(direct_a_results_rcts)} direct A-tier RCTs converge in the bundle."
+        )
+    if direct_a_results_rcts or direct_a_meta:
+        return "moderate", (
+            f"{len(direct_a_results_rcts)} direct A-tier RCT(s) and "
+            f"{len(direct_a_meta)} meta-analysis/-es support the verdict."
+        )
+    if direct_results_any:
+        return "low", (
+            f"only {len(direct_results_any)} direct human-results paper(s) "
+            f"(observational or small/pilot)."
+        )
+    if direct_pending:
+        return "low", (
+            f"{len(direct_pending)} registered trial(s) pending; no published "
+            "human results in the eligible bundle."
+        )
+    return "very low", (
+        "no direct human evidence; only mechanistic / off-topic sources."
+    )
+
+
 def rank_for_writer(
     items: list[EvidenceItem], n: int = DEFAULT_WRITER_BUDGET
 ) -> list[EvidenceItem]:
@@ -494,10 +563,11 @@ def _is_direct(
     # Aging-domain relevance: when the user asks about longevity/aging, a
     # paper that mentions the topic IN A DIFFERENT CLINICAL CONTEXT (PCOS,
     # ACS, cancer, pediatric, pharmacokinetics) carries the topic anchor
-    # but no aging signal — demote to indirect so it falls out of the
-    # writer's top-N. Non-aging domains skip this check.
+    # but tangentially mentions 'age-related' once in the abstract — that's
+    # not aging-focused. Require the aging marker in the TITLE so subject
+    # matter is explicit. Non-aging domains skip this gate.
     if any(m in domain for m in _AGING_DOMAIN_MARKERS):
-        if not _AGING_RELEVANCE_RE.search(f"{title} {abstract}"):
+        if not _AGING_RELEVANCE_RE.search(title):
             return False
     return True
 

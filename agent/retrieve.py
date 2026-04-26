@@ -34,21 +34,39 @@ _NCT_IN_ABSTRACT_RE = re.compile(r"\bNCT\d{7,9}\b")
 logger = logging.getLogger(__name__)
 
 
-def plan_queries(topic: str, criteria: str) -> list[str]:
-    """Translate (topic, criteria) into one or more retrieval query strings.
+_DOMAIN_QUERY_STOPWORDS = frozenset({
+    "human", "humans", "and", "or", "the", "a", "an", "in", "of", "for",
+    "with", "on", "by", "to",
+})
+
+
+def plan_queries(topic: str, criteria: str, domain: str = "") -> list[str]:
+    """Translate (topic, domain, criteria) into one or more retrieval queries.
 
     Mental model:
-      `topic`    = terms that should appear in real paper / trial text (sent
-                   to source adapters).
+      `topic`    = primary subject ("metformin", "rapamycin"). Always sent.
+      `domain`   = research context anchor ("longevity", "aging older adults",
+                   "obesity"). Joined into the retrieval query so a topic of
+                   just "metformin" with domain "longevity" pulls aging-
+                   relevant trials, not generic diabetes results.
       `criteria` = downstream filters interpreted by bundle.py (year cutoff,
-                   strict-eligibility rules, directness checks). NOT joined
-                   into the retrieval query because filter words like "RCT"
-                   match poorly in some indexes (e.g. ClinicalTrials.gov).
+                   strict-eligibility, directness). NOT joined into the
+                   retrieval query because filter words like "RCT" match
+                   poorly in some indexes (e.g. ClinicalTrials.gov).
 
-    V1 intentionally keeps this simple: one query, just the topic.
+    Stopwords ('human', 'in', 'the', 'and') are stripped from domain so
+    'aging older adults human' becomes 'aging older adults'.
     """
     base = topic.strip()
-    return [base] if base else []
+    if not base:
+        return []
+    domain_tokens = [
+        t for t in re.findall(r"\b[a-z][a-z0-9-]+\b", domain.lower())
+        if t not in _DOMAIN_QUERY_STOPWORDS
+    ]
+    if domain_tokens:
+        return [f"{base} {' '.join(domain_tokens)}"]
+    return [base]
 
 
 async def retrieve(
@@ -58,6 +76,7 @@ async def retrieve(
     sources: Sequence[SourceClient],
     limit_per_source: int = DEFAULT_LIMIT_PER_SOURCE,
     client: httpx.AsyncClient | None = None,
+    domain: str = "",
 ) -> tuple[list[Source], dict[int, str], dict[int, dict]]:
     """Run the fanout and return (sources, abstracts_by_ref, raw_signals_by_ref).
 
@@ -74,7 +93,7 @@ async def retrieve(
     Pass adapters in priority order — typically PubMed first (best abstracts),
     then OpenAlex, EuropePMC, ClinicalTrials.gov.
     """
-    queries = plan_queries(topic, criteria)
+    queries = plan_queries(topic, criteria, domain)
     headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
 
     async def _run(c: httpx.AsyncClient) -> list[RawHit]:

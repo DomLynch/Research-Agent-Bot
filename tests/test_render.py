@@ -50,11 +50,32 @@ def test_render_includes_all_required_sections():
 def test_render_includes_evidence_table():
     md = render(_draft())
     assert "## Evidence" in md
-    # Header row
-    assert "| Ref | Role | Tier | Design | Direct | Source | Year |" in md
-    # Both refs surfaced
+    # Header row now includes risk-of-bias column; direct column dropped.
+    assert "| Ref | Role | Tier | Design | RoB | Source | Year |" in md
+    # Both refs are direct=True so both surface
     assert "| [1] | published_results |" in md
     assert "| [2] | registered_pending |" in md
+
+
+def test_render_evidence_table_filters_to_direct_only():
+    """Indirect items are quarantined to the Sources bibliography."""
+    from agent.types import EvidenceItem, Source
+    direct = EvidenceItem(
+        source=Source(ref=1, title="Direct trial", year=2024, url="", source="pubmed"),
+        abstract="x", design="rct", role="published_results", tier="A2",
+        direct=True, strict=True,
+    )
+    indirect = EvidenceItem(
+        source=Source(ref=2, title="Animal study", year=2024, url="", source="pubmed"),
+        abstract="x", design="mechanistic", role="mechanistic", tier="C",
+        direct=False, strict=False,
+    )
+    d = _draft()
+    d.bundle = [direct, indirect]
+    md = render(d)
+    assert "| [1] | published_results |" in md
+    assert "| [2] |" not in md.split("## Sources")[0]  # not in evidence table
+    assert "1 additional source" in md  # quarantine note
 
 
 def test_render_includes_bibliography_with_links():
@@ -73,7 +94,7 @@ def test_render_footer_carries_meta_when_provided():
         "input_tokens": 500,
         "output_tokens": 200,
     })
-    assert "model=mimo-v2.5-pro" in md
+    assert "writer=mimo-v2.5-pro" in md
     assert "cost=$0.0123" in md
     assert "in=500" in md
 

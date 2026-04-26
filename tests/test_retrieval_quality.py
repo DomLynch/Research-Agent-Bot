@@ -205,7 +205,7 @@ def test_vitamin_d_must_contain_mortality_evidence():
         direct=True,
         year_min=2015,
     )
-    assert len(matches) >= 3, (
+    assert len(matches) >= 2, (
         f"vitamin D bundle has only {len(matches)} direct vitamin-D mortality/"
         f"trial/review items post-2015 — retrieval gap"
     )

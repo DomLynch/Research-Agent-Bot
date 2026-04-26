@@ -22,6 +22,7 @@ from agent.bundle import bundle as build_bundle
 from agent.judge import JudgeVerdict, judge_draft
 from agent.llm import WriterUsage, write_draft
 from agent.qa import correction_prompt, qa
+from agent.relevance import apply_classifications, classify_relevance
 from agent.render import render
 from agent.retrieve import retrieve
 from agent.settings import Settings, load_settings
@@ -113,6 +114,7 @@ async def run_async(
     sources: list | None = None,
     write_log: bool = True,
     use_judge: bool = False,
+    use_smart_relevance: bool = True,
 ) -> dict:
     settings = settings or load_settings()
     if not settings.bot_enabled:
@@ -129,7 +131,7 @@ async def run_async(
 
     async with httpx.AsyncClient(timeout=settings.mimo_timeout_sec, headers=headers) as client:
         sources_list, abstracts, raw_signals = await retrieve(
-            topic, criteria, sources=sources, client=client,
+            topic, criteria, sources=sources, client=client, domain=domain,
         )
         if not sources_list:
             return {"error": "no sources retrieved", "topic": topic}
@@ -138,6 +140,29 @@ async def run_async(
             sources_list, abstracts,
             topic=topic, domain=domain, raw_signals=raw_signals,
         )
+
+        # Optional LLM relevance pre-filter (Gemma 4) — overrides
+        # deterministic direct=True/False with semantic judgment.
+        # Catches what regex misses: monkey aging clock papers (background,
+        # not core), vitamin-D meta-analyses on mortality (core, not just
+        # 'has aging marker'), cancer-therapy papers with the topic drug
+        # (excluded for longevity). Single LLM call, ~$0.0005.
+        relevance_meta: dict[str, object] | None = None
+        if use_smart_relevance and (
+            settings.mimo_api_key or settings.openrouter_api_key
+        ):
+            classifications = await classify_relevance(
+                items, topic, domain, settings=settings, client=client,
+            )
+            if classifications:
+                items = apply_classifications(items, classifications)
+                relevance_meta = {
+                    "applied": True,
+                    "core": sum(1 for v in classifications.values() if v == "core"),
+                    "background": sum(1 for v in classifications.values() if v == "background"),
+                    "excluded": sum(1 for v in classifications.values() if v == "excluded"),
+                    "by_ref": {str(k): v for k, v in classifications.items()},
+                }
 
         parsed, usage = await write_draft(
             items, topic, domain, criteria, settings=settings, client=client,
@@ -214,6 +239,7 @@ async def run_async(
             if verdict is not None
             else None
         ),
+        "relevance": relevance_meta,
         "markdown": markdown,
     }
 

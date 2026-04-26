@@ -159,6 +159,7 @@ def test_direct_false_for_animal_study_in_human_domain():
 
 def test_direct_true_for_human_study_in_human_domain():
     item = _bundle_one(
+        title="RCT in older adults",
         domain="aging human older adults",
         abstract="We randomized 200 adult patients; mortality reduced by 22% (p=0.01).",
     )
@@ -187,6 +188,7 @@ def test_strict_false_when_year_below_min():
 
 def test_strict_true_when_year_above_min():
     item = _bundle_one(
+        title="Randomized trial in older adults",
         year=2024,
         min_year=2015,
         abstract="Randomized trial; mortality reduced 22% (p=0.01).",
@@ -222,7 +224,7 @@ def test_off_topic_paper_marked_indirect():
 
 
 def test_on_topic_paper_marked_direct():
-    src = Source(ref=1, title="Rapamycin trial", year=2024, url="", source="pubmed")
+    src = Source(ref=1, title="Rapamycin trial in older adults", year=2024, url="", source="pubmed")
     items = bundle(
         [src],
         {1: "We randomized 200 older adults to rapamycin or placebo. Rapamycin reduced X by 22% (p=0.01)."},

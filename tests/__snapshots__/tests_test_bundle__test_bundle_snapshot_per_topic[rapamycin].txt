@@ -51,12 +51,12 @@
     },
     {
       "design": "mechanistic",
-      "direct": true,
+      "direct": false,
       "ident": "10.18632/aging.206300",
       "ref": 5,
       "role": "mechanistic",
       "src": "pubmed",
-      "strict": true,
+      "strict": false,
       "tier": "C",
       "title": "What is the clinical evidence to support off-label rapamycin therapy in healthy ",
       "year": 2025
@@ -111,12 +111,12 @@
     },
     {
       "design": "mechanistic",
-      "direct": true,
+      "direct": false,
       "ident": "10.1007/s11357-024-01221-0",
       "ref": 10,
       "role": "mechanistic",
       "src": "pubmed",
-      "strict": true,
+      "strict": false,
       "tier": "C",
       "title": "Evaluation of off-label rapamycin use on oral health.",
       "year": 2024
@@ -171,12 +171,12 @@
     },
     {
       "design": "observational",
-      "direct": true,
+      "direct": false,
       "ident": "10.1152/japplphysiol.91234.2008",
       "ref": 15,
       "role": "published_results",
       "src": "openalex",
-      "strict": true,
+      "strict": false,
       "tier": "A2",
       "title": "Translational signaling responses preceding resistance training-mediated myofibe",
       "year": 2009
@@ -195,12 +195,12 @@
     },
     {
       "design": "observational",
-      "direct": true,
+      "direct": false,
       "ident": "10.1042/cs20100597",
       "ref": 17,
       "role": "published_results",
       "src": "openalex",
-      "strict": true,
+      "strict": false,
       "tier": "A2",
       "title": "Omega-3 polyunsaturated fatty acids augment the muscle protein anabolic response",
       "year": 2011
@@ -219,12 +219,12 @@
     },
     {
       "design": "mechanistic",
-      "direct": true,
+      "direct": false,
       "ident": "10.3390/nu12010261",
       "ref": 19,
       "role": "mechanistic",
       "src": "openalex",
-      "strict": true,
+      "strict": false,
       "tier": "C",
       "title": "Regulation of Skeletal Muscle Function by Amino Acids",
       "year": 2020
@@ -351,12 +351,12 @@
     },
     {
       "design": "registry",
-      "direct": true,
+      "direct": false,
       "ident": "NCT04629495",
       "ref": 30,
       "role": "registered_pending",
       "src": "clinicaltrials",
-      "strict": true,
+      "strict": false,
       "tier": "B",
       "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
       "year": 2026
@@ -399,12 +399,12 @@
     },
     {
       "design": "registry",
-      "direct": true,
+      "direct": false,
       "ident": "NCT04994561",
       "ref": 34,
       "role": "registered_pending",
       "src": "clinicaltrials",
-      "strict": true,
+      "strict": false,
       "tier": "B",
       "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional",
       "year": 2023
@@ -443,14 +443,14 @@
       "rct": 2,
       "registry": 8
     },
-    "direct_count": 19,
+    "direct_count": 12,
     "role_counts": {
       "mechanistic": 17,
       "published_protocol": 1,
       "published_results": 10,
       "registered_pending": 8
     },
-    "strict_count": 19,
+    "strict_count": 12,
     "tier_counts": {
       "A2": 10,
       "B": 9,
