@@ -1,5 +1,24 @@
 # DECISION JOURNAL
 
+## 2026-04-26 — V1 rebuild: deterministic-first pipeline, 2,500 LOC ceiling
+**Decision:** Stop extending the V0 codebase. Rename `agent/` → `agent_legacy/`, `tests/` → `tests_legacy/`, and build a new `agent/` package from scratch with a deterministic-first pipeline. The deterministic Draft must be publishable before the LLM ever touches it; the LLM is editor only. Hard ceilings: 2,500 LOC total in `agent/`, 500 LOC per file, enforced by `tests/test_loc_budget.py`.
+**Why:** V0 hit ~3,405 LOC and still produced credibility-fatal contradictions — a single artifact would describe `[1]` as both a published RCT with reported outcomes and as an unpublished protocol. Rerunning the validator-and-repair pattern was treating symptoms; the bug class was structural. Letting the LLM generate prose that contradicts typed source metadata is the root cause. Fixing it requires a different pipeline shape, not more validators.
+**What ships in V1:**
+- 4 source adapters (PubMed, OpenAlex, EuropePMC, ClinicalTrials) behind a `SourceClient` protocol.
+- `bundle.py` — deterministic role/tier/directness/strict-eligibility classification, no LLM.
+- `facts.py` — numeric/protocol fact extraction (regex first, LLM only when needed).
+- `compose.py` — templated-sentence skeleton built from the typed bundle + facts. Publishable on its own.
+- `llm.py` (optional) — wording polish only, with bidirectional citation/number/role invariants.
+- `qa.py` — typed gates; the role/fact pairing rule is enforced by `assert_invariants` in `agent/types.py`.
+- 5 golden fixtures with snapshot tests (rapamycin, metformin, senolytics, semaglutide weight, vitamin D mortality) — using **real captured API responses**, not synthetic data.
+**Alternatives rejected:**
+- Refactor V0 in place — rejected; the drafter monolith (2,635 LOC) is the source of the bug class and any in-place fix re-anchors to it.
+- Build a 6.5k-LOC pipeline for 5–15k-word synthesis papers — rejected for V1; correct architecture for V2 but a different product. Rapid review fits 2.5k LOC and ships in 5 days.
+- Spawn a new GitHub repo — rejected; rename in-place preserves git history for adapter archaeology, reuses nginx + systemd + domain, and CI can enforce the boundary structurally.
+- Build a `Domain` overlay system for cross-sector scalability — rejected as premature abstraction (playbook rule 52). Build biomedical cleanly; add ML/AI etc. as one config + adapter when actually needed.
+- Keep Researka submit in V1 — rejected; ~300 LOC with no quality contribution. Slot in once 9/10 artifacts are locked.
+**Revisit if:** snapshot tests fail to catch a regression we expected them to catch, or if the per-file 500 LOC ceiling forces awkward splits more than once.
+
 ## 2026-04-25 — Replace MiniMax/DeepSeek bridge slots with OpenRouter paid models
 **Decision:** Keep MiMo V2.5 Pro as the builder/synthesizer, move the optional MoA/Spar reviewer slot to OpenRouter `google/gemma-4-31b-it`, and move the judge slot to OpenRouter `mistralai/mistral-small-2603`.
 **Why:** The optional bridge needs non-Xiaomi adjudication diversity without MiniMax subscription or DeepSeek pricing exposure. A/B feedback favored Gemma as reviewer and Mistral as judge; OpenRouter currently lists both target slugs as paid with 262K context.
