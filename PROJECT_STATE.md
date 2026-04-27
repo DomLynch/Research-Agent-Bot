@@ -32,7 +32,7 @@ LLM PROPOSES. CODE DISPOSES.
 
 ## Status — 2026-04-27 — Day 3.0 closes live-smoke finding (MASTERS now pinned via abstract NCT scan); Day 3.1+ proceeding
 
-**State verified through:** `555c73a` on `origin/main`
+**State verified through:** `979055b` on `origin/main`
 *(field describes state up to and including the most recent commit listed
 in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
@@ -60,6 +60,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `c0cc11e` | 2026-04-27 | Day 2.5: E2E metformin smoke (fixture replay; 8 tests) |
 | `7fe3c02` | 2026-04-27 | Day 2.5b: live-API smoke + honest fixture-vs-live distinction (script + baseline) |
 | `555c73a` | 2026-04-27 | Day 3.0: registry override scans abstract for NCT/ISRCTN — closes live-smoke finding (MASTERS now pinned via abstract) |
+| `979055b` | 2026-04-27 | Day 3.0 fixes: case-insensitive registry IDs (P2) + PROJECT_STATE refresh (P3) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -87,7 +88,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 | State | What's there | How to verify |
 |---|---|---|
-| **GitHub `main`** (`555c73a`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
+| **GitHub `main`** (`979055b`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
 | **VPS live (`research-agent.domlynch.com`)** | **Still V1.1** — deploy step pending since Day 0 push (2026-04-27). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` → `200` until the VPS pulls. |
 
 To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && systemctl restart research-agent-bot`. Reverts to V1.1 via `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
@@ -138,40 +139,17 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 
 ## Next validation step
 
-Day 2.1+2.2+2.3+2.4 SHIPPED:
-- `0ffcd5a` — bundle.py 4-file split + registry-override moat (case 1 double-locked)
-- `9918c12` — validators.py + 22 tests (case 1 triple-locked, cases 3/4 local layers, case 5 directness contract)
-- `e1bb56f` — trace_clients.py + 26 tests (3 Protocol interfaces, fixture backends, env-var selectors; cases 2 & 4 fixture-layer absences confirmed)
+**Day 3.1 — `agent/citation_trace.py`** (~220 LOC + tests). The orchestrator that connects validators (already built) with trace_clients (already built). For each `Claim`'s cited refs, walks through `TrialRegistryClient.get_trial`, `DrugAliasClient.lookup`, and `LiteratureClient.fetch`, writing a `CitationTrace` record per check. Closes the **external layers** for planted cases:
+- Case 2 (fabricated NCT): trace_nct returns `passed=False, code=NCT_NOT_FOUND` when registry returns None
+- Case 3 (inflated p-value): cross-source check against fetched abstract
+- Case 4 (alias drift): trace_drug_alias via ChEMBL
 
-254/254 tests green. Runtime LOC 3,320 / 4,800.
+Done-when:
+- Each planted case has a citation_trace.py path that catches it given the fixture-backend.
+- CitationTrace records are appendable to `claim_graph.json` for paper.md rendering.
+- Performance baseline added (per-claim trace time, total trace time for the metformin corpus).
 
-Day 2 SHIPPED — fixture-replay E2E complete; live-API smoke run with one finding for Day 3.
-
-**Day 2 ship criterion (DESIGN-001 §19) — fixture replay vs live retrieval:**
-
-| Criterion | Fixture replay (V1.1 captures) | Live API (2026-04-27 smoke) |
-|---|---|---|
-| ≥12 sources retrieved | ✅ 40 deduped | ✅ 23 retrieved |
-| Cards classify correctly | ✅ MASTERS → published_results / rct / A1 (override pinned) | ⚠ MASTERS → mechanistic / C (override didn't fire — see finding below) |
-| Planted case 1 caught at evidence_cards | ✅ TRIPLE-LOCKED at topic_pack + evidence_cards + validators (plus fixture has_results=False at trace_clients) | not exercised in live (no TAME hit) |
-
-**Day 3 live-smoke finding — RESOLVED at Day 3.0 (this slice):**
-- ~~Live API surfaces MASTERS (NCT02308228) via PubMed/OpenAlex with the NCT in the **abstract**, not in `source.nct`. The registry override in `agent/registry_overrides.py` only checks `source.nct`, so it didn't fire on live MASTERS.~~
-- **Fix shipped:** `lookup_override` now scans `abstract` for NCT/ISRCTN patterns after the source.nct + source.url checks. New `_NCT_RE = re.compile(r"\bNCT\d{8}\b")` plus the existing `_ISRCTN_RE` cover both registry id formats. 8 new regression tests in `test_registry_overrides.py` lock the contract (precedence, word-boundary, multiple-NCTs-first-match-wins, backward compat, plus an E2E shape test).
-- **Live re-run verified:** post-fix smoke run at 2026-04-27T18:04:57Z shows MASTERS classified as `published_results / A1 (pinned via override)`, role distribution shifted from `9 published_results / 0 A1` to `10 published_results / 1 A1`, direct count 6 → 7. The other 3 canonical NCTs (TAME, MILES NCT01765946, MET-PREVENT ISRCTN29932357) still don't surface for the bare "metformin" query — that's a *retrieval* problem (query planning), not an override problem, and is a separate Day 3+ enhancement.
-
-**Fixture-replay performance baseline (v4 Rule 16):**
-- normalize_and_dedup: 0.4 ms on 40 raw hits
-- bundle (with topic_pack): 11.1 ms on 40 sources
-- Role distribution: 10 published_results, 6 registered_pending, 2 review, 1 published_protocol, 21 mechanistic
-- Tier distribution: 2 A1, 10 A2, 7 B, 21 C; direct + strict: 15 each
-
-**Live-API smoke baseline (2026-04-27T17:53:36Z):**
-- runs/e2e-baselines/metformin-20260427T175336Z.json
-- 23 sources (pubmed=8, europepmc=7, openalex=6, clinicaltrials=2)
-- retrieve: 1.89s; bundle: 15.3 ms
-- Roles: 13 mechanistic, 9 published_results, 1 review
-- Canonical hits: 1/4 (only MASTERS — surfaced but mis-classified per the finding above)
+After Day 3.1: Day 3.2 ships `compiler.py` deterministic part + the **first LLM stage** (fact extraction; LLM proposes facts, schema disposes via `validators.check_p_value_in_source`). Day 3.3 wires real httpx + MCP backends for `trace_clients.py`. Day 3.4 final E2E + commit.
 
 Day 3 PENDING (the first LLM stage):
 - **`agent/citation_trace.py`** (~220 LOC + tests): connects validators.py and trace_clients.py. Each claim's cited refs are walked through `TrialRegistryClient.get_trial`, `DrugAliasClient.lookup`, `LiteratureClient.fetch`. Translates `None` from the trace clients into `CitationTrace(passed=False, code=NCT_NOT_FOUND)` etc. Cases 2 + 4 finally caught at the external layer.
