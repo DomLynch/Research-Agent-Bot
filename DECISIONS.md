@@ -1,5 +1,25 @@
 # DECISION JOURNAL
 
+## 2026-04-27 — Proof 001 rebuild: archive LLM-coupled spine, deterministic-first claim court
+**Decision:** Tag V1.1 as `v1.1-final` (commit `89ee064`). Archive 6 LLM-coupled modules (`relevance`, `llm`, `judge`, `draft`, `qa`, `app`) and their 3 test files (`test_judge`, `test_draft`, `test_qa`) to `agent_archived/proof001/`. Build Proof 001 — a deterministic claim-court pipeline that produces one publishable metformin artifact end-to-end — per `docs/DESIGN-001.md` (DRAFT v2, all 5 audit amendments applied). Hard runtime ceiling raised to 4,800 LOC (current footprint planned at ~3,853 LOC with 947 LOC headroom).
+**Why:** V1.1 shipped 166 tests green and produced rapid-review markdown at $0.002–0.005/run, but the architecture had three load-bearing LLMs (relevance / writer / judge) inside the trust spine. Three failure modes never fully closed: protocol-cited-as-results, mechanism-inflated-to-clinic, off-domain extrapolation. Each fix shipped (3-tier fallback chains, hyper-critical judge prompts, judge re-runs after revision, dual-rejection banners) but the bug class is structural — categorical decisions (role assignment, citation identity, final adjudication) cannot be reliably routed through model judgment. The deeper confusion was treating markdown as the source of truth rather than the rendering of a structured claim graph. Full post-mortem in `FAILURES/research-agent-v1.md`.
+**What ships in Proof 001 (per `docs/DESIGN-001.md`):**
+- Six frozen-dataclass schemas (`Claim` / `ClaimEdge` / `ClaimGraph` / `CitationTrace` / `JudgeReview` / `SPARReview`) — `claim_graph.json` is the source of truth; markdown is downstream rendering.
+- `topic_packs/metformin.toml` (stdlib `tomllib`, no PyYAML — honors httpx-only dep) with hard-coded `known_role_overrides` for canonical NCTs (MASTERS, MET-PREVENT, TAME, MILES). Code disposes; LLM proposes.
+- `trace_clients.py` Protocol layer with three swappable backends (MCP / direct httpx / fixture) — citation-trace works on VPS and CI without MCP availability.
+- 3-agent SPAR court (Evidence Auditor / Domain Skeptic / Final Judge) with explicit tie-breaking and *always-published dissent*.
+- 7-PDF Quality Reference Corpus (MASTERS, Konopka, MILES, MET-PREVENT, Kulkarni 2022, Keys 2025, Mohammed 2021) as the prose quality bar — metadata at `docs/quality-reference/metformin/README.md`. PDFs not in repo (binary bloat).
+- 5-case planted-failure regression corpus that the pipeline must catch before Day 5 closes.
+- Gates: 100% role + citation accuracy, all 5 planted failures caught, final artifact 8.5+/10 quality, 8/8 mandatory receipts. `gap_analysis.json` is optional (non-gating).
+- Stop conditions: Proof 001 fail → iterate metformin, do not start rapamycin. Three greens (metformin/rapamycin/everolimus) before any RFC outreach.
+**Alternatives rejected:**
+- Two-repo split (Researka platform + writer agent) — rejected; v4 Rule 52 (vertical slice) and Rule 49 (one reason to change) push for one repo with deterministic spine. Researka platform deferred until 3 green proofs.
+- Continue extending V1.1 with more validators — rejected; the bug class is structural, not procedural. Each fix added complexity without closing the failure modes.
+- Skip thesis tournament + gap analysis — rejected for thesis tournament (locked in for "groundbreaking" bar); accepted for gap_analysis (optional in v0, defers to Proof 002 if Day 4 is squeezed).
+- YAML topic packs — rejected post-audit; conflicts with httpx-only runtime dep. TOML via stdlib `tomllib`.
+- MCP-only citation-trace — rejected post-audit; would lock the bot to dev-environment availability. `trace_clients.py` Protocol layer with MCP/httpx/fixture backends.
+**Revisit if:** Proof 001 metformin run fails the eval gate after one revision cycle, runtime LOC approaches the 4,800 ceiling without a corresponding capability gain, or the SPAR judge consensus rate on uncontested submissions drops below 0.9 on the planted-failure corpus.
+
 ## 2026-04-26 — Raise LOC ceiling to 3,500 for V1.x trust-layer features
 **Decision:** Raise the `tests/test_loc_budget.py` `TOTAL_LIMIT` from 2,500 → 3,500. Per-file 500 LOC cap unchanged.
 **Why:** V1 shipped at 2,200 LOC with the bare deterministic-first pipeline. Reviewer feedback (regression from 8.5/10 → 6.1/10 on metformin synthesis) pushed for: LLM relevance pre-filter (eliminates regex-tuning treadmill on directness classification), risk-of-bias column, confidence verdict, excluded-sources rationale, and adjudication block. These are real architectural improvements, not bloat. Trimming docstrings to fit a 2,500 self-imposed cap was process theater.

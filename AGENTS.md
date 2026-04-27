@@ -1,26 +1,71 @@
 # AGENTS.md
 
 ## Purpose
-- Research Agent Bot: minimal V0 research draft tool with optional Researka submission.
-- Optimize for readability, reversibility, and low LOC.
-- Keep the runtime lean and obvious enough to fork quickly.
+Research Agent Bot — Proof 001 build window. The bot compiles deterministic evidence (`claim_graph.json`); SPAR adjudicates; markdown is rendering, not source of truth. Optimize for correctness, reversibility, and low LOC. The deployed runtime is currently a paused-stub (see PROJECT_STATE.md "Deployed runtime status").
+
+Read [`docs/DESIGN-001.md`](docs/DESIGN-001.md) (DRAFT v2) for the full architecture before any code change. Read [`FAILURES/research-agent-v1.md`](FAILURES/research-agent-v1.md) before re-architecting any LLM-touching component.
+
+## Hard rule (posted at top of every prompt that touches the trust spine)
+```
+LLM PROPOSES. CODE DISPOSES.
+- Role assignment: registry override > deterministic abstract classifier. Never LLM.
+- Fact identity: extracted by LLM, schema-validated, source-text-traced.
+- Claim membership in paper.md: gated by claim_graph.json. LLM cannot add claims.
+```
 
 ## Non-Negotiables
-- Python only.
-- Provider is MiMo v2 Pro only (`MIMO_API_KEY` env var).
-- V0 pipeline: plan -> retrieve -> draft -> markdown/log -> dashboard.
-- Submit path enabled: optional POST to Researka /submissions when RESEARKA_URL is set. Async: returns queued immediately, status checked via /status/<id>.
-- Source bundle must have 12+ entries with relevance scores for Researka intake.
-- No fallback model in V0.
-- No frameworks, no multi-agent orchestration, no persistence beyond run logs.
+- Python ≥ 3.11 only.
+- Runtime dep: `httpx` only. Topic packs use stdlib `tomllib` (TOML, not YAML — no PyYAML).
+- Hard ceiling: **4,800 LOC runtime** in `agent/` (per DECISIONS.md 2026-04-27).
+- Soft per-file budget 300 LOC; per-function 50 LOC (v4 Rule 54).
+- All cross-stage objects are frozen dataclasses (`@dataclass(frozen=True, slots=True)`).
+- Source of truth is `claim_graph.json`. Markdown is downstream rendering only.
+- Three judge agents in SPAR (Evidence Auditor, Domain Skeptic, Final Judge); Methodologist / Statistician / Domain Advocate / Translation Judge / Editor are deferred to Proof 002+.
+- Dissent in any 2-1 SPAR verdict is **always published** verbatim in `spar_review.json`.
+- `citation_trace.py` is backend-agnostic via `trace_clients.py` Protocol layer (TrialRegistryClient / DrugAliasClient / LiteratureClient). Backend selected by env var `TRACE_BACKEND ∈ {mcp, http, fixture}`.
+- No imports from `agent_legacy/` or `agent_archived/`. CI guard: `tests/test_no_legacy_imports.py` (Day 1: extend to also block `agent_archived`).
+- Multiple LLMs are allowed — but only outside the categorical-decision spine. They generate prose, score thesis candidates, and serve as SPAR voices. They never assign roles, decide citation identity, or rule on tier elevation.
 
-## Safety Rails (Step 1)
+## Pipeline (Proof 001)
+```
+Stage 0  topic_pack ingest          DETERMINISTIC (tomllib)
+Stage 1  source retrieve+normalize  DETERMINISTIC (existing retrieve.py + sources/)
+Stage 2  evidence_cards             DETERMINISTIC + REGISTRY OVERRIDE
+Stage 3  fact extraction            LLM proposes, schema disposes
+Stage 4  claim graph compile        DETERMINISTIC edges + LLM attack surfaces
+Stage 5  thesis tournament          LLM generates, deterministic selector
+Stage 6  citation_trace             DETERMINISTIC (trace_clients backends)
+Stage 7  SPAR adjudication          3 LLM agents, deterministic tie-break
+Stage 8  drafting                   LLM writes prose from claim_graph only
+Stage 9  render + bundle            DETERMINISTIC
+```
+
+## Safety Rails (preserved from V1)
 Three env-gate controls checked before expensive work begins:
 
 | Env var | Default | Effect |
 |---|---|---|
 | `BOT_ENABLED` | `true` | Kill switch — `false`/`0`/`no`/`off` blocks all runs immediately |
-| `BOT_SUBMIT_ENABLED` | `true` | Submit switch — `false`/`0`/`no`/`off` skips Researka POST even when `RESEARKA_URL` is set |
+| `BOT_SUBMIT_ENABLED` | `true` | Submit switch — currently routes to Researka stub adapter only |
 | `DAILY_COST_CAP_USD` | `10.0` | Cost cap — blocks run if today's `runs/*.json` costs already >= cap |
 
-All three accept `true`, `1`, `yes`, `on` (case-insensitive) as truthy values.
+Plus added in Proof 001:
+
+| Env var | Default | Effect |
+|---|---|---|
+| `TRACE_BACKEND` | `fixture` | Selects `trace_clients` backend: `fixture` (CI default), `http` (VPS), `mcp` (dev/Codex) |
+
+All `BOT_*` flags accept `true`, `1`, `yes`, `on` (case-insensitive) as truthy.
+
+## Quality bar
+The 7-paper Quality Reference Corpus at [`docs/quality-reference/metformin/README.md`](docs/quality-reference/metformin/README.md) defines the prose standard. Embedded gold passages from MASTERS, Konopka 2019, MILES, MET-PREVENT, Mohammed 2021 feed `agent/prompts/writer_quality_bar.md` and `agent/prompts/judge_quality_checklist.md` at runtime. The bot retrieves its own evidence; quality is judged against these 7.
+
+## Stop conditions
+- Proof 001 fails any eval gate → iterate Proof 001. **Do not start rapamycin.**
+- All 3 proofs (metformin / rapamycin / everolimus) green → publish RFCs. Until then, no outreach.
+- Cost per run >$0.05 sustained → re-route to Gemma self-host before continuing.
+
+## Archive policy (v4 Rule 58)
+- `agent_legacy/` — pre-V1.1 codebase, retained for adapter archaeology.
+- `agent_archived/proof001/` — V1.1 LLM-coupled spine, retained for prompt/pattern archaeology. README at root explains contents and replacement modules.
+- New code in `agent/` MUST NOT import from either archive directory.

@@ -1,102 +1,89 @@
 # PROJECT_STATE.md
 
 ## Current Objective
-V1.1 — `topic + domain + criteria` → research-grade rapid-review draft. Three-LLM pipeline (relevance + writer + judge) with deterministic gates as the spine.
+**Proof 001 — Metformin Claim Court.** Build a deterministic claim-court pipeline that produces one publishable metformin artifact end-to-end (`paper.md` + 7 mandatory JSON receipts). The agent compiles structured evidence; SPAR adjudicates; markdown is rendering, not source of truth. Three greens (metformin → rapamycin → everolimus) before any RFC outreach.
 
-## Pipeline (current)
+Full design: [`docs/DESIGN-001.md`](docs/DESIGN-001.md) (DRAFT v2, sign-off pending).
+
+## Pipeline (Proof 001, 9 stages)
 ```
-retrieve  →  bundle  →  classify_relevance (LLM #1, mandatory) →
-write_draft (LLM #2) →  qa →  judge_draft (LLM #3, mandatory) →
-[revision-then-rejudge if needed]  →  render
+topic_pack ingest (toml)  →  retrieve  →  evidence_cards (registry override → deterministic) →
+fact extraction (LLM proposes, schema disposes)  →  claim_graph compile  →
+thesis tournament (6-dim, deterministic selector)  →  citation_trace (TrialRegistryClient /
+DrugAliasClient / LiteratureClient — MCP/httpx/fixture backends)  →  SPAR (3 agents,
+explicit tie-break, dissent always published)  →  drafting (claim-graph-guarded prose)  →
+render + bundle
 ```
-- All three LLMs always run when API keys are configured. Judge silently no-ops without `OPENROUTER_API_KEY` but the artifact's `## Adjudication` block visibly marks the SKIPPED state.
-- On dual-rejection (both QA attempts fail OR judge rejects post-revision), the markdown still ships with an `⚠️ UNVERIFIED` banner + `## QA Failures` block — never an empty result.
+
+## Hard rule
+```
+LLM PROPOSES. CODE DISPOSES.
+- Role assignment: registry override > deterministic abstract classifier. Never LLM.
+- Fact identity: extracted by LLM, schema-validated, source-text-traced.
+- Claim membership in paper.md: gated by claim_graph.json. LLM cannot add claims.
+```
 
 ## Constraints
-- Hard ceiling: **3,500 LOC** for `agent/` (raised from 2,500 in DECISIONS.md 2026-04-26 to fund the trust-layer features).
-- Hard ceiling: **500 LOC per file**.
-- Runtime dep: `httpx` only.
+- Hard ceiling: **4,800 LOC runtime** for `agent/` (raised from 3,500 to fund the claim-court features per DECISIONS.md 2026-04-27). Test LOC budgeted separately.
+- Soft per-file budget: **300 LOC** (v4 Rule 54).
+- Soft per-function budget: **50 LOC** (v4 Rule 54).
+- Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Day Plan (5 days)
+## Status — 2026-04-27 (Day 0 of Proof 001 rebuild) — IN PROGRESS
+
+**Tag:** `v1.1-final` → `89ee064` (preserves the deployed V1.1 LLM-coupled state for archaeology).
+
+**Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
+- 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
+- 3 test files: `test_judge.py`, `test_draft.py`, `test_qa.py`
+- Reason: LLMs were inside the trust spine; structural bug class V1.1 could not close.
+
+**Active `agent/` after Day 0** (deterministic spine + bundle/render slated for Day 1+ refactor):
+- `types.py` (KEEP — frozen-dataclass invariants, role↔fact-kind pairing)
+- `retrieve.py` + `sources/` (KEEP — async parallel retrieval, 4 adapters)
+- `bundle.py` (GUT Day 1 — split into `evidence_cards.py` + `role_classifier.py` + `registry_overrides.py` + `text_signals.py`)
+- `render.py` (GUT Day 5 — pure claim_graph → markdown, no LLM hooks)
+- `settings.py` (KEEP, may be extended for `TRACE_BACKEND` env var)
+- `app.py` (**Proof 001 deploy-safe stub** — serves a 503 paused page so the systemd unit stays healthy until Day 5 ships the new claim-graph-driven app)
+
+**Deployed runtime status:** **NON-FUNCTIONAL until Day 5.** The deployed `agent.app` is a placeholder that returns HTTP 503 "service paused" to all requests. Do not deploy V1.1-style requests against this branch. Operators visiting `research-agent.domlynch.com` see a clear "Proof 001 rebuild in progress" page.
+
+**Tests:** 128/128 deterministic tests pass in 0.25s (down from V1.1's 166; 38 archived tests live in `agent_archived/proof001/tests/`). `test_no_legacy_imports.py` still green.
+
+## Day plan (5 days, target — not deadline)
 | Day | Ship | Done when |
 |---|---|---|
-| 1 | Scaffold + types + harness | This file. Pytest green. ✅ |
-| 2 | sources/ + retrieve.py + bundle.py + real fixture capture | Deterministic role/tier passes on all 5 fixtures |
-| 3 | facts.py + compose.py + render.py | Markdown deterministic; rapamycin end-to-end without LLM |
-| 4 | qa.py + optional llm.py + invariants | All 5 golden topics produce 9/10 artifacts; polish opt-in and provably safe |
-| 5 | app.py + dashboard + smoke deploy | CLI works; dashboard renders; ready for submit.py later |
+| **0** ✅ | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; 128 deterministic tests green; `agent.app dashboard` runs as paused-stub |
+| 1 | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests for schemas. Refactor `bundle.py` into 4 files. **No LLM yet.** | All 6 schemas frozen-dataclassed; `tomllib` parses topic pack; deterministic-gate planted failures (cases 1, 4, 5) caught |
+| 2 | `evidence_cards.py` + `validators.py` + `compiler.py` (deterministic part) + `trace_clients.py` fixture backend. Real metformin retrieval E2E via existing `retrieve.py`. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards |
+| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov |
+| 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus |
+| 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard |
 
-## Day 1 Status — DONE
-- `agent/` package: `__init__.py`, `types.py` (183 LOC after review fixes; frozen dataclasses + `assert_invariants` enforcing both forward and reverse role↔fact-kind pairings).
-- `tests/`: snapshot harness (fails loud on missing baseline unless `UPDATE_SNAPSHOTS=1`), types contract (18 cases), LOC budget enforcer, legacy-import guard.
-- pyproject `packages.find` now `["agent", "agent.*"]` — `agent_legacy` never ships.
+## Eval gates (Proof 001 ship criteria)
+- Role accuracy 10/10 (no protocol cited as result; every NCT in topic pack hits override)
+- Citation accuracy 10/10 (every NCT/DOI resolves; every numeric traces to source)
+- Numeric fidelity 9/10
+- Directness discipline 10/10
+- Planted failures 5/5 caught at the gate they should be caught at
+- Final artifact quality 8.5+/10 against the 7-paper Quality Reference Corpus
+- Receipt completeness 8/8 mandatory (paper.md + 7 JSON; gap_analysis.json bonus 9th)
 
-## V1.1 Status — feature-complete with mandatory three-LLM pipeline
-- `agent/relevance.py` (LLM #1) — three-tier classifier MiMo → Gemma → Mistral. Single batch call before the writer; overrides deterministic `direct` when LLM judgment differs.
-- `agent/llm.py` (LLM #2 — writer) — MiMo 2.5 Pro primary, Mistral fallback. Surgical retry: previous draft + per-failure-code editing rules + temperature 0.05.
-- `agent/judge.py` (LLM #3 — mandatory judge) — three-tier chain Gemma → MiMo → Mistral. Hyper-critical prompt: cross-reference every citation, flag mis-attribution, reject made-up trial names.
-- After judge rejection + writer revision, **judge re-runs on the revised draft** so the rendered `## Adjudication` block reflects the SHIPPED draft (not stale pre-revision verdict).
-- Dual-rejection: markdown still renders with `⚠️ UNVERIFIED` banner + `## QA Failures` block.
-- Judge skipped (no `OPENROUTER_API_KEY`) → visibly marked in `## Adjudication` (never silent).
-- Trust-layer in render.py: Eligibility / Evidence (with risk-of-bias) / Excluded Sources / Confidence verdict / Adjudication / QA Failures / Bibliography.
-- Cost per draft: ~$0.002–0.005 (3 LLM calls + occasional revision + re-judge).
-- Tests: **166 green in ~0.3s** (incl. orchestrator tests for re-judge happy path + re-judge dual-rejection path), ruff clean.
+## Stop conditions
+- Proof 001 fails any gate → iterate Proof 001. **Do not start rapamycin.**
+- 001 + 002 green, 003 (everolimus) red → likely topic-pack issue (RAD001 alias, oncology indirectness). Fix and re-run.
+- All 3 green → publish RFCs. Until then, no outreach.
+- Cost per run >$0.05 sustained → re-route Mistral judge calls; if still >$0.05, switch to Gemma self-host before continuing.
 
-## V1 Status — feature-complete (`agent/app.py dashboard` ready to deploy)
-- **133 tests green in 0.15s** across types, sources, retrieve, bundle, qa, render, draft.
-- **agent/ runtime: 1,810 / 2,500 LOC** (690 headroom). Largest file: bundle.py 298. Every file under 500.
-- **End-to-end pipeline**: `topic + domain + criteria → retrieve (4 sources, parallel) → bundle (deterministic role/tier/topic gate) → llm (MiMo 2.5 Pro, JSON output, strict prompt) → qa (4 typed gates, retry once) → render (markdown + bibliography + evidence table)`.
-- **CLI**: `python -m agent.app run --topic ... --domain ... --criteria ...` prints markdown.
-- **Dashboard**: `python -m agent.app dashboard --port 8791` — same cream/teal V0 look, 187 LOC stdlib http.server, no Flask/FastAPI.
-- **Safety rails**: `BOT_ENABLED`, `MIMO_API_KEY` required, `DAILY_COST_CAP_USD` blocks runs over today's cap.
-- **Pivot from day-3 plan**: dropped `compose.py` templated-skeleton + `facts.py` standalone extractor. Frontier LLM (MiMo 2.5 Pro) writes prose given typed bundle + strict prompt; QA gates catch any drift. Saves ~600 LOC vs the original templated-compose plan.
-
-## Deploy steps (for the user to run on the VPS)
-```bash
-ssh root@<vps>
-cd /opt/research-agent-bot
-git pull
-.venv/bin/pip install -e .   # in case pyproject.toml changed
-sudo cp deploy/research-agent-bot.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl restart research-agent-bot
-sudo systemctl status research-agent-bot --no-pager
-# Verify: curl -s https://research-agent.domlynch.com/ | head -20
-```
-
-## Day 2 Status — DONE (with audit fixes applied)
-- 4 source adapters (pubmed, openalex, europepmc, clinicaltrials) behind shared `SourceClient` Protocol.
-- `agent/retrieve.py` (144 LOC) — single shared `httpx.AsyncClient`, parallel fanout via `asyncio.gather`, multi-key dedup (DOI > PMID > NCT > NCT-in-abstract > normalized title), 1-indexed refs, `logger.warning` on swallowed adapter errors.
-- `agent/bundle.py` (278 LOC) — deterministic role/tier/design/direct/strict classifier with truth-table docstring. Topic-anchor gate prevents off-topic candidates from being marked direct.
-- `scripts/capture_fixtures.py` — captured **real** PubMed/OpenAlex/EuropePMC/ClinicalTrials responses for the 5 golden topics. Topic queries tuned to surface the actual published+protocol pair (e.g. `rapamycin older adults` returns PMIDs 41985884 and 39354527 — the V0 contradiction case).
-- 102 tests green in 0.11s. Total `agent/` LOC: 963 / 2,500 (1,537 headroom). Max file: bundle.py at 278 LOC.
-
-### Day 2 audit fixes (the second pass)
-- `_REPORTED_OUTCOME_RE` was too greedy — `\d+%` matched "60% female" in protocol abstracts and flipped role to `published_results`. Now requires effect-verb proximity ("reduced by 22%") or `participants(n=...)`, not bare percentages or `n=24 mice`.
-- `_PROTOCOL` markers expanded to catch "study to evaluate", "evaluates the safety and efficacy", "we will assess", etc. — the RAPA-EX-01 protocol paper (PMID 39354527) was misclassified as `mechanistic` before this fix.
-- `clean_text` only strips recognized HTML tag names now (was stripping anything between `<` and `>`, which destroyed `p<0.05`).
-- `bundle()` now takes `topic` and gates `direct` on topic-anchor presence — RTB101 in a rapamycin query is no longer marked direct evidence.
-- `normalize_and_dedup` scans abstracts for NCT identifiers — a PubMed paper citing `NCT04098874` and the CT.gov registry entry for that NCT now collapse into one source instead of being cited twice as independent evidence.
-- Bundle snapshots are per-source rows (ref, title, role, design, tier, direct, strict) — aggregate counts could mask role swaps between two sources.
-- Test fixture loader iterates in adapter priority order (PubMed first), not alphabetical, so PMIDs survive cross-source dedup.
-- PubMed `retmax` no longer over-fetches 3×; EuropePMC year falls back to `firstPublicationDate`; CT.gov empty `briefSummary` no longer drops the trial; `retrieve()` lost its unused `domain` param.
-
-### Regression coverage for the V0 bug class
-- `test_rapamycin_fixture_contains_rapaex_papers` — PMIDs 41985884 and 39354527 must be in the fixture
-- `test_rapamycin_fixture_classifies_rapaex_correctly` — full pipeline asserts results→`published_results/rct`, protocol→`published_protocol/protocol`
-- `test_protocol_with_percentage_does_not_classify_as_results` — the exact bug class repro
-- `test_protocol_evaluates_safety_and_efficacy_phrasing` — RAPA-EX phrasing locked in
-- `test_off_topic_paper_marked_indirect` — RTB101 ≠ rapamycin
-- `test_clean_text_preserves_pvalue_inequality` — `p<0.05` survives
+## Archived V1.1 status (preserved for archaeology)
+- V1.1 shipped 2026-04-26 at commit `89ee064` (now tagged `v1.1-final`).
+- Three-LLM pipeline: relevance (MiMo→Gemma→Mistral) + writer (MiMo→Mistral) + judge (Gemma→MiMo→Mistral).
+- 166 tests green, deployed at `research-agent.domlynch.com`, $0.002–0.005 per draft.
+- **Why archived:** LLMs were inside the trust spine; categorical decisions (role assignment, citation identity, final adjudication) cannot be reliably routed through model judgment. Three failure modes never closed: protocol-as-results, mechanism-inflated-to-clinic, off-domain extrapolation. Full post-mortem in [`FAILURES/research-agent-v1.md`](FAILURES/research-agent-v1.md).
 
 ## Legacy
-The pre-rebuild package lives at `agent_legacy/` for git archaeology. New code MUST NOT import from it. CI guard: `tests/test_no_legacy_imports.py`.
+The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 V1.1 archive is at `agent_archived/proof001/`. New code MUST NOT import from either. CI guard: `tests/test_no_legacy_imports.py` (Day 1: extend to also block `agent_archived` imports).
 
-## Open Risks
-- Day-2 source adapters need to be ported clean from `agent_legacy/sources/` without inheriting drafter coupling.
-- Real fixture capture (day 2) requires live API calls — rate limits and quotas to respect.
-- The role/tier classifier in `bundle.py` (day 2) is the most complex single module — must stay under 500 LOC.
-
-## Next Validation Step
-Day 2: port PubMed/OpenAlex/EuropePMC/ClinicalTrials adapters behind a `SourceClient` protocol; capture real responses for the 5 golden topics into `tests/fixtures/`; build deterministic `bundle.py` and prove role/tier classification against captured fixtures.
+## Next validation step
+Day 1: ship `schemas.py` (six frozen-dataclasses per DESIGN-001 §4) + `topic_pack.py` (stdlib `tomllib`) + `topic_packs/metformin.toml` (with `known_role_overrides` for canonical NCTs) + `tests/planted_failures/metformin/` (5-case corpus). Refactor `bundle.py` into 4 single-purpose files per v4 Rule 54. No LLM stages active yet.
