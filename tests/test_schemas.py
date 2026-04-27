@@ -292,3 +292,87 @@ def test_spar_invariant_passes_when_verdict_matches() -> None:
             final_judge_resolution="r",
         )
         assert_spar_invariants(r)  # no raise
+
+
+# --- Dissent membership + minority-verdict checks (P1 reviewer fix) -------
+
+
+def test_spar_dissent_must_be_one_of_the_three_reviews() -> None:
+    """A fabricated dissent (not equal to any of the 3 reviews) must be rejected."""
+    reviews = (_judge("evidence_auditor", "accept"),
+               _judge("domain_skeptic", "reject"),
+               _judge("final_judge", "accept"))
+    fabricated = JudgeReview(
+        judge_role="domain_skeptic", model="m", verdict="reject",
+        score=2,
+        # Distinguishing rationale ensures __eq__ rejects it as not-in-reviews
+        # (the real domain_skeptic has rationale='ok').
+        rationale="totally fabricated rationale that doesn't match any real review",
+        flagged_claims=("C99",),
+    )
+    r = SPARReview(
+        submission_id="m1", reviews=reviews,
+        verdict="accept_caveated", dissent=fabricated,
+        final_judge_resolution="r",
+    )
+    with pytest.raises(SPARInvariantError, match="not present in reviews"):
+        assert_spar_invariants(r)
+
+
+def test_spar_dissent_with_majority_verdict_is_rejected() -> None:
+    """Dissent must be the MINORITY voice. A majority review labelled as dissent
+    corrupts the audit trail."""
+    reviews = (_judge("evidence_auditor", "accept"),
+               _judge("domain_skeptic", "reject"),
+               _judge("final_judge", "accept"))
+    # majority = accept; dissent should be a 'reject' review. Pass an 'accept'
+    # review (the auditor) and assert the invariant catches it.
+    r = SPARReview(
+        submission_id="m1", reviews=reviews,
+        verdict="accept_caveated", dissent=reviews[0],  # auditor accepted (majority)
+        final_judge_resolution="r",
+    )
+    with pytest.raises(SPARInvariantError, match="matches the majority"):
+        assert_spar_invariants(r)
+
+
+def test_spar_dissent_with_majority_verdict_in_reject_split() -> None:
+    """Same check on the reject side: a 'reject' review labelled as dissent in
+    a 1-2 reject split is invalid."""
+    reviews = (_judge("evidence_auditor", "accept"),
+               _judge("domain_skeptic", "reject"),
+               _judge("final_judge", "reject"))
+    # majority = reject; dissent should be the auditor (accept). Pass the
+    # skeptic (reject — majority) instead.
+    r = SPARReview(
+        submission_id="m1", reviews=reviews,
+        verdict="reject_majority", dissent=reviews[1],  # skeptic rejected (majority)
+        final_judge_resolution="r",
+    )
+    with pytest.raises(SPARInvariantError, match="matches the majority"):
+        assert_spar_invariants(r)
+
+
+def test_spar_dissent_correctly_identified_as_minority_passes() -> None:
+    """Happy path: minority voice correctly placed as dissent."""
+    # 2-1 accept: skeptic dissents (reject vote)
+    reviews = (_judge("evidence_auditor", "accept"),
+               _judge("domain_skeptic", "reject"),
+               _judge("final_judge", "accept"))
+    r = SPARReview(
+        submission_id="m1", reviews=reviews,
+        verdict="accept_caveated", dissent=reviews[1],  # skeptic = minority
+        final_judge_resolution="resolved",
+    )
+    assert_spar_invariants(r)
+
+    # 1-2 reject: auditor dissents (accept vote)
+    reviews2 = (_judge("evidence_auditor", "accept"),
+                _judge("domain_skeptic", "reject"),
+                _judge("final_judge", "reject"))
+    r2 = SPARReview(
+        submission_id="m2", reviews=reviews2,
+        verdict="reject_majority", dissent=reviews2[0],  # auditor = minority
+        final_judge_resolution="resolved",
+    )
+    assert_spar_invariants(r2)

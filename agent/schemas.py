@@ -229,13 +229,32 @@ def assert_spar_invariants(review: SPARReview) -> None:
         )
 
     is_split = review.verdict in ("accept_caveated", "reject_majority")
-    if is_split and review.dissent is None:
+    if not is_split:
+        if review.dissent is not None:
+            raise SPARInvariantError(
+                f"verdict={review.verdict!r} (unanimous) requires dissent=None"
+            )
+        return  # unanimous path complete
+
+    # Split path — dissent must be populated AND must be the actual minority voice.
+    if review.dissent is None:
         raise SPARInvariantError(
             f"verdict={review.verdict!r} (split) requires dissent to be populated"
         )
-    if not is_split and review.dissent is not None:
+    if review.dissent not in review.reviews:
         raise SPARInvariantError(
-            f"verdict={review.verdict!r} (unanimous) requires dissent=None"
+            f"dissent must be one of the three reviews; got dissent with "
+            f"judge_role={review.dissent.judge_role!r} not present in "
+            f"reviews. Fabricated or copy-edited dissent suspected."
+        )
+    majority_verdict: JudgeVerdict = (
+        "accept" if review.verdict == "accept_caveated" else "reject"
+    )
+    if review.dissent.verdict == majority_verdict:
+        raise SPARInvariantError(
+            f"dissent.verdict={review.dissent.verdict!r} matches the majority "
+            f"({majority_verdict!r}); dissent must be the minority voice. "
+            f"A majority review labelled as dissent corrupts the auditability trail."
         )
 
 

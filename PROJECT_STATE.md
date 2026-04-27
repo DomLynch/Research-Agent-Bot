@@ -30,43 +30,56 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 (Day 0 of Proof 001 rebuild) — IN PROGRESS
+## Status — 2026-04-27 — Day 1 + reviewer fixes complete; Day 2 unblocked
 
-**Tag:** `v1.1-final` → `89ee064` (preserves the deployed V1.1 LLM-coupled state for archaeology).
+**HEAD:** `941f21c` on `origin/main`
+**Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
+**Tests:** 186/186 passing in 0.28s. ruff clean. git diff --check clean.
+**Runtime LOC:** 2,519 / 4,800 ceiling (47% headroom)
+
+**Commit log of the rebuild:**
+
+| Commit | Date | What |
+|---|---|---|
+| `89ee064` | 2026-04-26 | V1.1 final (tagged `v1.1-final`) |
+| `d941ae2` | 2026-04-27 | Day 0: archive LLM-coupled spine, deploy-safe stub |
+| `a9eb7ab` | 2026-04-27 | Day 1: schemas, topic_pack TOML, planted-failure corpus |
+| `941f21c` | 2026-04-27 | Day 1 fixes: 4 P1 + 1 P2 reviewer blockers |
+| (P1.A/B fixes) | 2026-04-27 | This commit — stale state claims, SPAR dissent membership/minority |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
 - 3 test files: `test_judge.py`, `test_draft.py`, `test_qa.py`
 - Reason: LLMs were inside the trust spine; structural bug class V1.1 could not close.
 
-**Active `agent/` after Day 0** (deterministic spine + bundle/render slated for Day 1+ refactor):
+**Active `agent/`:**
 - `types.py` (KEEP — frozen-dataclass invariants, role↔fact-kind pairing)
 - `retrieve.py` + `sources/` (KEEP — async parallel retrieval, 4 adapters)
-- `bundle.py` (GUT Day 1 — split into `evidence_cards.py` + `role_classifier.py` + `registry_overrides.py` + `text_signals.py`)
-- `render.py` (GUT Day 5 — pure claim_graph → markdown, no LLM hooks)
-- `settings.py` (KEEP, may be extended for `TRACE_BACKEND` env var)
-- `app.py` (**Proof 001 deploy-safe stub** — serves a 503 paused page so the systemd unit stays healthy until Day 5 ships the new claim-graph-driven app)
+- `schemas.py` (NEW Day 1 — 6 frozen-dataclasses, ClaimGraph + SPAR invariants, tie-break)
+- `topic_pack.py` (NEW Day 1 — stdlib `tomllib` loader, MappingProxyType-protected overrides)
+- `bundle.py` (GUT on Day 2 — split into evidence_cards / role_classifier / registry_overrides / text_signals)
+- `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
+- `settings.py` (KEEP, may extend for `TRACE_BACKEND` env var)
+- `app.py` (deploy-safe stub — HTTP 503 paused page)
 
-**Runtime status — distinguish two states:**
+**Runtime status — distinguish two states (P1.4 fix from reviewer audit):**
 
 | State | What's there | How to verify |
 |---|---|---|
-| **GitHub `main`** (commit `a9eb7ab`) | Deploy-safe stub. `agent.app` returns HTTP 503 "service paused" page. | `git checkout main && python -m agent.app dashboard --port 8791` then `curl :8791/` |
-| **VPS live (`research-agent.domlynch.com`)** | **Currently still serving V1.1 dashboard** (deploy step has NOT been run since the Day 0 push). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` returns `200` until the VPS pulls. |
+| **GitHub `main`** (`941f21c`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
+| **VPS live (`research-agent.domlynch.com`)** | **Still V1.1** — deploy step pending since Day 0 push (2026-04-27). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` → `200` until the VPS pulls. |
 
-Until the VPS runs `git pull && systemctl restart research-agent-bot`, the live site continues to serve the previous V1.1 dashboard. The stub is **safe to deploy** at any time (Day 1 or later); rolling back to V1.1 is `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
-
-**Tests:** 128/128 deterministic tests pass in 0.25s (down from V1.1's 166; 38 archived tests live in `agent_archived/proof001/tests/`). `test_no_legacy_imports.py` still green.
+To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && systemctl restart research-agent-bot`. Reverts to V1.1 via `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
 
 ## Day plan (5 days, target — not deadline)
-| Day | Ship | Done when |
-|---|---|---|
-| **0** ✅ | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; 128 deterministic tests green; `agent.app dashboard` runs as paused-stub |
-| 1 | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests for schemas. Refactor `bundle.py` into 4 files. **No LLM yet.** | All 6 schemas frozen-dataclassed; `tomllib` parses topic pack; deterministic-gate planted failures (cases 1, 4, 5) caught |
-| 2 | `evidence_cards.py` + `validators.py` + `compiler.py` (deterministic part) + `trace_clients.py` fixture backend. Real metformin retrieval E2E via existing `retrieve.py`. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards |
-| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov |
-| 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus |
-| 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard |
+| Day | Ship | Done when | Status |
+|---|---|---|---|
+| **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
+| **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` (fixes) + this commit |
+| **2** | `evidence_cards.py` (refactor of bundle.py) + `role_classifier.py`, `registry_overrides.py`, `text_signals.py` (split) + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | 🟢 Ready |
+| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | — |
+| 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
+| 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 
 ## Eval gates (Proof 001 ship criteria)
 - Role accuracy 10/10 (no protocol cited as result; every NCT in topic pack hits override)
@@ -90,7 +103,7 @@ Until the VPS runs `git pull && systemctl restart research-agent-bot`, the live 
 - **Why archived:** LLMs were inside the trust spine; categorical decisions (role assignment, citation identity, final adjudication) cannot be reliably routed through model judgment. Three failure modes never closed: protocol-as-results, mechanism-inflated-to-clinic, off-domain extrapolation. Full post-mortem in [`FAILURES/research-agent-v1.md`](FAILURES/research-agent-v1.md).
 
 ## Legacy
-The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 V1.1 archive is at `agent_archived/proof001/`. New code MUST NOT import from either. CI guard: `tests/test_no_legacy_imports.py` (Day 1: extend to also block `agent_archived` imports).
+The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 V1.1 archive is at `agent_archived/proof001/`. New code MUST NOT import from either. CI guard: `tests/test_no_legacy_imports.py` blocks both packages with three targeted tests (combined, legacy-only, archived-only).
 
 ## Next validation step
-Day 1: ship `schemas.py` (six frozen-dataclasses per DESIGN-001 §4) + `topic_pack.py` (stdlib `tomllib`) + `topic_packs/metformin.toml` (with `known_role_overrides` for canonical NCTs) + `tests/planted_failures/metformin/` (5-case corpus). Refactor `bundle.py` into 4 single-purpose files per v4 Rule 54. No LLM stages active yet.
+Day 2: ship `evidence_cards.py` (refactor of `bundle.py` adding the registry-override layer) + the 4-file split (`role_classifier.py`, `registry_overrides.py`, `text_signals.py`) + `validators.py` (verb-ban / role-match pure functions consuming topic_pack outputs) + `compiler.py` deterministic part + `trace_clients.py` fixture backend. Run real metformin retrieval end-to-end via existing `retrieve.py`; verify ≥12 sources surface and cards classify correctly. **Done-when:** planted case 1 caught at `evidence_cards` (second layer of defense in addition to the topic_pack layer that already catches it).
