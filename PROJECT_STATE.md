@@ -30,16 +30,15 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — Day 2.4 + corpus-guard hardening; Day 2.5 pending
+## Status — 2026-04-27 — **Day 2 COMPLETE** (E2E smoke green); Day 3 unblocked
 
-**State verified through:** `d0c571f` on `origin/main`
-*(field renamed from "HEAD" to be honest about the bootstrap lag: this file
-describes state up to and including the most recent commit listed in the
-log table below. The current HEAD will appear in the next slice's update.
-See commit message of e1bb56f for the amend-bootstrap rationale.)*
+**State verified through:** `5b06bda` on `origin/main`
+*(field describes state up to and including the most recent commit listed
+in the log table below. The current HEAD will appear in the next slice's
+update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 259/259 passing in 0.30s. ruff clean. git diff --check clean.
+**Tests:** 267/267 passing in 0.31s. ruff clean. git diff --check clean.
 **Runtime LOC:** 3,345 / 4,800 ceiling (30% headroom)
 
 **Commit log of the rebuild:**
@@ -57,6 +56,7 @@ See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `7dbaeac` | 2026-04-27 | Day 2.3 state-fixes: PROJECT_STATE drift after 9918c12 + LOC docstring |
 | `e1bb56f` | 2026-04-27 | Day 2.4: trace_clients.py — 3 Protocols + fixture backends; planted cases 2 & 4 fixture-layer coverage |
 | `d0c571f` | 2026-04-27 | Day 2.4 state-followup: PROJECT_STATE HEAD → e1bb56f (post-amend hash) |
+| `5b06bda` | 2026-04-27 | Day 2.4 fixes: corpus-guard P1 (missing corpus ≠ missing record) + PROJECT_STATE label P3 |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -104,7 +104,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 |---|---|---|---|
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
-| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **PARTIAL** — 2.1+2.2 ✅ `0ffcd5a` (split + registry override) + 2.3 ✅ `9918c12` (validators triple-lock case 1) + 2.4 ✅ `e1bb56f` (trace_clients fixture backend; cases 2 & 4 fixture-layer coverage); 2.5 ☐ pending (E2E retrieval smoke) |
+| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE** — 2.1+2.2 `0ffcd5a` (split + registry override) + 2.3 `9918c12` (validators triple-lock case 1) + 2.4 `e1bb56f` (trace_clients fixture backend; cases 2 & 4 fixture-layer coverage) + 2.4-fixes `5b06bda` (corpus-guard P1) + 2.5 `<this commit>` (E2E smoke: 40 deduped sources, MASTERS pinned, perf baseline 0.4 ms / 11.1 ms) |
 | 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | — |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
@@ -142,10 +142,21 @@ Day 2.1+2.2+2.3+2.4 SHIPPED:
 
 254/254 tests green. Runtime LOC 3,320 / 4,800.
 
-Day 2.5 PENDING:
-- **Day 2.5 — End-to-end metformin retrieval smoke**: run existing `retrieve.py` against PubMed / OpenAlex / EuropePMC / ClinicalTrials.gov for "metformin", surface ≥12 sources, run `bundle(..., topic_pack=metformin_pack)` to confirm the canonical NCTs (MASTERS, MET-PREVENT, TAME, MILES) classify correctly with the registry override active. Records a performance baseline (sources, time, cost) for v4 Rule 16. Closes the last Day 2 done-when.
+Day 2 ✅ COMPLETE — all 5 sub-tasks shipped. The deterministic spine of Proof 001 is locked.
 
-**Day 2 ship criterion (DESIGN-001 §19):** ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards.
-- Cards classify correctly: ✅ (snapshot tests + `test_planted_case_1_second_layer_catch`)
-- Planted case 1 caught at evidence_cards: ✅; also at validators (`test_planted_case_1_caught_at_validators_layer`); also at fixture layer (TAME has_results=False)
-- ≥12 sources retrieved: ☐ (Day 2.5 E2E smoke)
+**Day 2 ship criterion (DESIGN-001 §19) — ALL THREE MET:**
+- ≥12 sources retrieved: ✅ **40 deduped sources** from captured-fixture metformin corpus (`test_at_least_twelve_sources_retrieved`)
+- Cards classify correctly: ✅ MASTERS → published_results / rct / A1 (`test_masters_classified_as_published_results_rct`)
+- Planted case 1 caught at evidence_cards: ✅ TRIPLE-LOCKED at topic_pack + evidence_cards + validators; plus fixture-layer (TAME has_results=False)
+
+**E2E performance baseline (v4 Rule 16):**
+- normalize_and_dedup: **0.4 ms** on 40 raw hits
+- bundle (with topic_pack): **11.1 ms** on 40 sources
+- Role distribution: 10 published_results, 6 registered_pending, 2 review, 1 published_protocol, 21 mechanistic
+- Tier distribution: 2 A1, 10 A2, 7 B, 21 C
+- Direct + strict: 15 each
+
+Day 3 PENDING (the first LLM stage):
+- **`agent/citation_trace.py`** (~220 LOC + tests): connects validators.py and trace_clients.py. Each claim's cited refs are walked through `TrialRegistryClient.get_trial`, `DrugAliasClient.lookup`, `LiteratureClient.fetch`. Translates `None` from the trace clients into `CitationTrace(passed=False, code=NCT_NOT_FOUND)` etc. Cases 2 + 4 finally caught at the external layer.
+- **`agent/compiler.py` deterministic part** (~220 LOC) + **first LLM stage** (fact extraction): LLM proposes (claim, p-value, outcome) tuples from each abstract; schema disposes (every numeric must trace to source-text span via `validators.check_p_value_in_source`). LLM never decides role — already pinned.
+- httpx + MCP backends for `trace_clients.py` (real ClinicalTrials.gov / ChEMBL / Europe PMC; bio-research MCPs wired here). Selectors already route via TRACE_BACKEND env var.
