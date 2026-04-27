@@ -14,8 +14,10 @@ Code disposes; this file is the table the code reads.
 from __future__ import annotations
 
 import tomllib
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
+from types import MappingProxyType
 from typing import Literal
 
 __all__ = [
@@ -90,7 +92,12 @@ class TopicPack:
     forbidden_verbs_for_protocol_role: frozenset[str]
     forbidden_verbs_for_results_role_with_protocol_keywords: frozenset[str]
     canonical_trials: tuple[CanonicalTrial, ...]
-    known_role_overrides: dict[str, OverrideRecord]   # registry id -> override
+    # MappingProxyType — read-only view; mutation raises TypeError. The
+    # frozen dataclass alone does NOT make the dict immutable; we need a
+    # proxy wrapper so the registry-pinned roles cannot be overwritten at
+    # runtime by any caller (defensive against accidental writes from
+    # downstream stages — the table is sacred).
+    known_role_overrides: Mapping[str, OverrideRecord]
 
     # --- Lookups (intentionally explicit, not __contains__-style) ----------
 
@@ -172,7 +179,7 @@ def _build_canonical_trials(rows: list[dict], path: Path) -> tuple[CanonicalTria
     return tuple(out)
 
 
-def _build_overrides(raw: dict, path: Path) -> dict[str, OverrideRecord]:
+def _build_overrides(raw: dict, path: Path) -> Mapping[str, OverrideRecord]:
     out: dict[str, OverrideRecord] = {}
     for registry_id, row in raw.items():
         for key in ("role", "design", "tier"):
@@ -195,7 +202,9 @@ def _build_overrides(raw: dict, path: Path) -> dict[str, OverrideRecord]:
         out[registry_id] = OverrideRecord(
             role=row["role"], design=row["design"], tier=row["tier"],
         )
-    return out
+    # Wrap in MappingProxyType so the registry-pinned roles are read-only.
+    # Any attempt to mutate raises TypeError at runtime.
+    return MappingProxyType(out)
 
 
 def load_topic_pack(path: str | Path) -> TopicPack:

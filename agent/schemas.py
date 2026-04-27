@@ -200,6 +200,11 @@ def assert_spar_invariants(review: SPARReview) -> None:
     - The 3 judge_roles must be unique and cover {auditor, skeptic, final_judge}.
     - 2-1 verdicts MUST have dissent populated; unanimous MUST have dissent=None.
     - final_judge_resolution non-empty.
+    - **Verdict matches the votes**: review.verdict must equal
+      `compute_spar_verdict(review.reviews)`. This is the consistency check
+      that prevents stale or hand-edited verdicts from contradicting the
+      published vote tally — a re-judging artifact would otherwise slip
+      through and corrupt the audit trail.
     """
     if len(review.reviews) != 3:
         raise SPARInvariantError(
@@ -213,6 +218,15 @@ def assert_spar_invariants(review: SPARReview) -> None:
         )
     if not review.final_judge_resolution.strip():
         raise SPARInvariantError("final_judge_resolution must not be empty")
+
+    expected_verdict = compute_spar_verdict(review.reviews)
+    if review.verdict != expected_verdict:
+        accepts = sum(1 for r in review.reviews if r.verdict == "accept")
+        raise SPARInvariantError(
+            f"SPARReview.verdict={review.verdict!r} contradicts the votes "
+            f"({accepts} accepts / {3 - accepts} rejects → expected "
+            f"{expected_verdict!r}). Hand-edited or stale verdict suspected."
+        )
 
     is_split = review.verdict in ("accept_caveated", "reject_majority")
     if is_split and review.dissent is None:

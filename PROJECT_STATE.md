@@ -47,7 +47,14 @@ LLM PROPOSES. CODE DISPOSES.
 - `settings.py` (KEEP, may be extended for `TRACE_BACKEND` env var)
 - `app.py` (**Proof 001 deploy-safe stub** — serves a 503 paused page so the systemd unit stays healthy until Day 5 ships the new claim-graph-driven app)
 
-**Deployed runtime status:** **NON-FUNCTIONAL until Day 5.** The deployed `agent.app` is a placeholder that returns HTTP 503 "service paused" to all requests. Do not deploy V1.1-style requests against this branch. Operators visiting `research-agent.domlynch.com` see a clear "Proof 001 rebuild in progress" page.
+**Runtime status — distinguish two states:**
+
+| State | What's there | How to verify |
+|---|---|---|
+| **GitHub `main`** (commit `a9eb7ab`) | Deploy-safe stub. `agent.app` returns HTTP 503 "service paused" page. | `git checkout main && python -m agent.app dashboard --port 8791` then `curl :8791/` |
+| **VPS live (`research-agent.domlynch.com`)** | **Currently still serving V1.1 dashboard** (deploy step has NOT been run since the Day 0 push). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` returns `200` until the VPS pulls. |
+
+Until the VPS runs `git pull && systemctl restart research-agent-bot`, the live site continues to serve the previous V1.1 dashboard. The stub is **safe to deploy** at any time (Day 1 or later); rolling back to V1.1 is `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
 
 **Tests:** 128/128 deterministic tests pass in 0.25s (down from V1.1's 166; 38 archived tests live in `agent_archived/proof001/tests/`). `test_no_legacy_imports.py` still green.
 

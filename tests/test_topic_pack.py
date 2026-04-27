@@ -200,3 +200,42 @@ def test_override_record_is_typed() -> None:
     pack = load_topic_pack(METFORMIN_PATH)
     rec = pack.lookup_role_override("NCT04264897")
     assert isinstance(rec, OverrideRecord)
+
+
+# --- Immutability of the override map (P1 reviewer fix) -------------------
+
+
+def test_known_role_overrides_is_runtime_immutable() -> None:
+    """The frozen dataclass alone does NOT lock the dict. We wrap with
+    MappingProxyType so the registry-pinned roles cannot be overwritten at
+    runtime by any downstream caller. This is the defensive layer that
+    keeps the table sacred even if a misbehaving caller tries to mutate it.
+    """
+    pack = load_topic_pack(METFORMIN_PATH)
+    # All three mutation paths must raise.
+    with pytest.raises(TypeError):
+        pack.known_role_overrides["NCT99999999"] = OverrideRecord(
+            role="published_results", design="rct", tier="A1"
+        )  # type: ignore[index]
+    with pytest.raises(TypeError):
+        del pack.known_role_overrides["NCT04264897"]  # type: ignore[attr-defined]
+    # Attempting to overwrite an existing override is also a write.
+    with pytest.raises(TypeError):
+        pack.known_role_overrides["NCT04264897"] = OverrideRecord(
+            role="published_results", design="rct", tier="A1"
+        )  # type: ignore[index]
+
+
+def test_known_role_overrides_still_iterable_and_readable() -> None:
+    """Immutability must not break read access — that's the whole point."""
+    pack = load_topic_pack(METFORMIN_PATH)
+    # Iteration works
+    assert "NCT04264897" in pack.known_role_overrides
+    # Subscript read works
+    rec = pack.known_role_overrides["NCT04264897"]
+    assert rec.role == "registered_pending"
+    # Length, keys, items all work
+    assert len(pack.known_role_overrides) == 4
+    assert set(pack.known_role_overrides.keys()) == {
+        "NCT02308228", "ISRCTN29932357", "NCT04264897", "NCT01765946",
+    }

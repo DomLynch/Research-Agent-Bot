@@ -226,3 +226,69 @@ def test_compute_spar_verdict_0_3_reject() -> None:
 def test_compute_spar_verdict_requires_three() -> None:
     with pytest.raises(SPARInvariantError, match="exactly 3"):
         compute_spar_verdict((_judge("evidence_auditor"), _judge("final_judge")))
+
+
+# --- Verdict-vs-vote consistency (P1 reviewer fix) -------------------------
+
+
+def test_spar_invariant_rejects_verdict_contradicting_three_accepts() -> None:
+    """3 accept votes with verdict='reject_critical' is the canonical
+    stale/hand-edited case. The invariant must catch it."""
+    reviews = (_judge("evidence_auditor", "accept"),
+               _judge("domain_skeptic", "accept"),
+               _judge("final_judge", "accept"))
+    r = SPARReview(
+        submission_id="m1", reviews=reviews,
+        verdict="reject_critical",  # WRONG — three accepts mean accept_clean
+        dissent=None, final_judge_resolution="r",
+    )
+    with pytest.raises(SPARInvariantError, match="contradicts the votes"):
+        assert_spar_invariants(r)
+
+
+def test_spar_invariant_rejects_verdict_contradicting_three_rejects() -> None:
+    reviews = (_judge("evidence_auditor", "reject"),
+               _judge("domain_skeptic", "reject"),
+               _judge("final_judge", "reject"))
+    r = SPARReview(
+        submission_id="m1", reviews=reviews,
+        verdict="accept_clean",  # WRONG
+        dissent=None, final_judge_resolution="r",
+    )
+    with pytest.raises(SPARInvariantError, match="contradicts the votes"):
+        assert_spar_invariants(r)
+
+
+def test_spar_invariant_rejects_split_with_wrong_direction() -> None:
+    """2 accepts should be 'accept_caveated', not 'reject_majority'."""
+    reviews = (_judge("evidence_auditor", "accept"),
+               _judge("domain_skeptic", "reject"),
+               _judge("final_judge", "accept"))
+    r = SPARReview(
+        submission_id="m1", reviews=reviews,
+        verdict="reject_majority",  # WRONG — 2 accepts means accept_caveated
+        dissent=reviews[1], final_judge_resolution="r",
+    )
+    with pytest.raises(SPARInvariantError, match="contradicts the votes"):
+        assert_spar_invariants(r)
+
+
+def test_spar_invariant_passes_when_verdict_matches() -> None:
+    """All 4 valid (vote, verdict) pairs from the tie-break table pass."""
+    pairs = [
+        (("accept", "accept", "accept"), "accept_clean", None),
+        (("accept", "reject", "accept"), "accept_caveated", "domain_skeptic"),
+        (("accept", "reject", "reject"), "reject_majority", "evidence_auditor"),
+        (("reject", "reject", "reject"), "reject_critical", None),
+    ]
+    for votes, verdict, dissent_role in pairs:
+        reviews = (_judge("evidence_auditor", votes[0]),
+                   _judge("domain_skeptic", votes[1]),
+                   _judge("final_judge", votes[2]))
+        dissent = next((r for r in reviews if r.judge_role == dissent_role), None)
+        r = SPARReview(
+            submission_id="m1", reviews=reviews,
+            verdict=verdict, dissent=dissent,
+            final_judge_resolution="r",
+        )
+        assert_spar_invariants(r)  # no raise
