@@ -32,7 +32,12 @@ LLM PROPOSES. CODE DISPOSES.
 
 ## Status — 2026-04-27 — Day 3.1 trust-spine fixes (3 P1s) shipped; Day 3.2 pending
 
-**State verified through:** `788868a` on `origin/main`
+**State verified through:** the most recent entry in the commit log table below.
+*Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
+field was reintroducing drift on every slice because each slice's commit hash
+isn't known until after the commit lands. The commit log table IS the canonical
+source of truth — pointing at "the most recent entry" is self-correcting:
+`git log -1 --oneline` matches the table's bottom row, no manual sync required.*
 *(field describes state up to and including the most recent commit listed
 in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
@@ -63,6 +68,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `979055b` | 2026-04-27 | Day 3.0 fixes: case-insensitive registry IDs (P2) + PROJECT_STATE refresh (P3) |
 | `361f5f7` | 2026-04-27 | Day 3.0 state cleanup: state-through 979055b + drop stale lower section |
 | `788868a` | 2026-04-27 | Day 3.1: citation_trace.py — moat orchestrator; cases 2/3/4 external layer |
+| `af2e329` | 2026-04-27 | Day 3.1 fixes: 3 P1 trust-spine bugs in citation_trace + PROJECT_STATE drift (P2) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -91,7 +97,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 | State | What's there | How to verify |
 |---|---|---|
-| **GitHub `main`** (`788868a`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
+| **GitHub `main`** (latest commit-log entry) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
 | **VPS live (`research-agent.domlynch.com`)** | **Still V1.1** — deploy step pending since Day 0 push (2026-04-27). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` → `200` until the VPS pulls. |
 
 To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && systemctl restart research-agent-bot`. Reverts to V1.1 via `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
@@ -100,7 +106,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 
 | Case | What | Local layers (live) | Fixture layer (Day 2.4) | External layer (Day 3.1) |
 |---|---|---|---|---|
-| 1 | TAME protocol cited as results | **TRIPLE-LOCKED:** ✅ `topic_pack` whitelist + ✅ `evidence_cards` registry override (incl. abstract NCT scan) + ✅ `validators.check_verb_ban` prose-level | ✅ `FixtureTrialRegistryClient` returns TAME with `has_results=False` | ✅ `citation_trace.trace_nct_exists` records the registry status |
+| 1 | TAME protocol cited as results | **TRIPLE-LOCKED:** ✅ `topic_pack` whitelist + ✅ `evidence_cards` registry override (incl. abstract NCT scan) + ✅ `validators.check_verb_ban` prose-level | ✅ `FixtureTrialRegistryClient` returns TAME with `has_results=False` | ✅ **`citation_trace.trace_nct_exists` FAILS** when `item.role='published_results'` AND `record.has_results=False` (4th defense — protocol-as-results contradiction at trace layer) |
 | 2 | Fabricated NCT | — | ✅ `FixtureTrialRegistryClient.get_trial("NCT99999999") → None` (planted absence) | ✅ **`citation_trace.trace_nct_exists` → `passed=False`** |
 | 3 | Inflated p-value | ✅ `validators.check_p_value_in_source` (local exact-match) | — | ✅ **`citation_trace.trace_p_value_in_text` per-pvalue trace** |
 | 4 | Alias drift ("Glufomin") | ✅ `topic_pack` alias whitelist + ✅ `validators.check_alias_drift` (apposition pattern) | ✅ `FixtureDrugAliasClient.lookup("Glufomin") → None` | ✅ **`citation_trace.trace_alias_match` → `passed=False`** |
@@ -112,7 +118,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
-| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` (abstract NCT scan) + 3.0-fixes `979055b` (case-insensitive) + 3.0-state `361f5f7` + 3.1 (this slice) `<this commit>` (citation_trace.py: cases 2/3/4 caught at external layer); 3.2 + 3.3 + 3.4 ☐ pending |
+| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` (abstract NCT scan) + 3.0-fixes `979055b` (case-insensitive) + 3.0-state `361f5f7` + 3.1 `788868a` (citation_trace.py: cases 2/3/4 caught at external layer) + 3.1-fixes `af2e329` (3 P1 trust-spine fixes); 3.2 + 3.3 + 3.4 ☐ pending |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 
@@ -164,8 +170,3 @@ Done-when:
 - Performance baseline: per-fact extraction cost + total compile time
 
 After 3.2: 3.3 wires real httpx + MCP backends for `trace_clients.py`. 3.4 final Day 3 E2E.
-
-Day 3 PENDING (the first LLM stage):
-- **`agent/citation_trace.py`** (~220 LOC + tests): connects validators.py and trace_clients.py. Each claim's cited refs are walked through `TrialRegistryClient.get_trial`, `DrugAliasClient.lookup`, `LiteratureClient.fetch`. Translates `None` from the trace clients into `CitationTrace(passed=False, code=NCT_NOT_FOUND)` etc. Cases 2 + 4 finally caught at the external layer.
-- **`agent/compiler.py` deterministic part** (~220 LOC) + **first LLM stage** (fact extraction): LLM proposes (claim, p-value, outcome) tuples from each abstract; schema disposes (every numeric must trace to source-text span via `validators.check_p_value_in_source`). LLM never decides role — already pinned.
-- httpx + MCP backends for `trace_clients.py` (real ClinicalTrials.gov / ChEMBL / Europe PMC; bio-research MCPs wired here). Selectors already route via TRACE_BACKEND env var.
