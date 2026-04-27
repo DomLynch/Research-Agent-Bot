@@ -11,7 +11,7 @@ The artifact carries the trust-layer fields requested by reviewers:
 """
 from __future__ import annotations
 
-from agent.bundle import confidence_verdict, risk_of_bias
+from agent.evidence_cards import confidence_verdict, risk_of_bias
 from agent.types import Draft, EvidenceItem
 
 SECTION_ORDER = ("introduction", "methods", "findings", "limitations", "conclusion")

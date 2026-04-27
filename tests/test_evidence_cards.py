@@ -1,4 +1,5 @@
-"""Tests for bundle.py — deterministic role / tier / direct / strict classifier.
+"""Tests for evidence_cards.py (and the role_classifier / text_signals split) —
+deterministic role / tier / direct / strict classifier.
 
 Two layers:
   1. Truth-table cases: synthetic minimal inputs probing one rule at a time.
@@ -14,7 +15,7 @@ from pathlib import Path
 
 import pytest
 
-from agent.bundle import bundle
+from agent.evidence_cards import bundle
 from agent.retrieve import normalize_and_dedup
 from agent.types import EvidenceItem, RawHit, Source
 
@@ -249,7 +250,7 @@ def test_topic_anchors_compound_entity_kept_as_bigram():
     compound-entity preservation. Acceptable for V1; revisit if a fixture
     proves the limitation hurts.
     """
-    from agent.bundle import _topic_anchors
+    from agent.evidence_cards import _topic_anchors
 
     assert _topic_anchors("vitamin D supplementation mortality elderly") == ("vitamin d",)
     assert _topic_anchors("rapamycin older adults") == ("rapamycin",)
@@ -484,7 +485,7 @@ def test_rapamycin_fixture_classifies_rapaex_correctly():
     assert protocol_item is not None, "RAPA-EX protocol paper not in bundle"
     assert protocol_item.role == "published_protocol", (
         f"RAPA-EX protocol paper classified as {protocol_item.role!r} "
-        f"— this is the V0 bug class that bundle.py was rebuilt to prevent"
+        f"— this is the V0 bug class that evidence_cards (formerly bundle.py) was rebuilt to prevent"
     )
 
 

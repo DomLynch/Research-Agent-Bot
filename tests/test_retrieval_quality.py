@@ -21,7 +21,7 @@ from pathlib import Path
 
 import pytest
 
-from agent.bundle import bundle, rank_for_writer
+from agent.evidence_cards import bundle, rank_for_writer
 from agent.retrieve import normalize_and_dedup
 from agent.types import EvidenceItem, RawHit
 
