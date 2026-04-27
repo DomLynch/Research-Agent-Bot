@@ -1,0 +1,422 @@
+"""Tests for agent/llm_client.py — extract_json + CostLedger + chat_json chain.
+
+httpx.MockTransport drives all chat_json tests offline (no network). Tests
+are sync def + asyncio.run() rather than introducing a pytest-anyio config
+just for this module.
+"""
+from __future__ import annotations
+
+import asyncio
+import json
+
+import httpx
+import pytest
+
+from agent.llm_client import (
+    CallSpec,
+    CostLedger,
+    LLMError,
+    LLMResponse,
+    build_extract_chain,
+    chat_json,
+    extract_json,
+)
+from agent.settings import Settings
+
+
+# --- extract_json ---------------------------------------------------------
+
+
+def test_extract_json_clean_object() -> None:
+    assert extract_json('{"a": 1}') == {"a": 1}
+
+
+def test_extract_json_strips_think_block() -> None:
+    text = '<think>weighing options</think>{"a": 1}'
+    assert extract_json(text) == {"a": 1}
+
+
+def test_extract_json_strips_json_fence() -> None:
+    text = '```json\n{"a": 1}\n```'
+    assert extract_json(text) == {"a": 1}
+
+
+def test_extract_json_strips_plain_fence() -> None:
+    text = '```\n{"a": 1}\n```'
+    assert extract_json(text) == {"a": 1}
+
+
+def test_extract_json_handles_prose_prefix() -> None:
+    text = 'Here is the result: {"a": 1, "b": [2, 3]}. Hope that helps.'
+    assert extract_json(text) == {"a": 1, "b": [2, 3]}
+
+
+def test_extract_json_picks_first_valid_object_after_garbage() -> None:
+    """Decoder walks `{` positions until one parses cleanly."""
+    text = '{"oops": broken {"a": 1} {"b": 2}'
+    assert extract_json(text) == {"a": 1}
+
+
+def test_extract_json_no_object_raises() -> None:
+    with pytest.raises(ValueError, match="no JSON object"):
+        extract_json("just prose, no JSON")
+
+
+def test_extract_json_array_only_raises() -> None:
+    """A top-level array is valid JSON but not an *object* — fact extraction
+    requires an object so this must raise."""
+    with pytest.raises(ValueError, match="no JSON object"):
+        extract_json("[1, 2, 3]")
+
+
+# --- CostLedger -----------------------------------------------------------
+
+
+def _resp(model: str, cost: float) -> LLMResponse:
+    return LLMResponse(
+        text="", parsed={}, model=model,
+        input_tokens=0, output_tokens=0,
+        estimated_cost_usd=cost,
+    )
+
+
+def test_cost_ledger_total_sums_calls() -> None:
+    led = CostLedger()
+    led.add(_resp("a", 0.01))
+    led.add(_resp("b", 0.02))
+    assert led.total_usd() == pytest.approx(0.03)
+
+
+def test_cost_ledger_by_model_groups() -> None:
+    led = CostLedger()
+    led.add(_resp("a", 0.01))
+    led.add(_resp("a", 0.02))
+    led.add(_resp("b", 0.04))
+    grouped = led.by_model()
+    assert grouped["a"] == pytest.approx(0.03)
+    assert grouped["b"] == pytest.approx(0.04)
+
+
+def test_cost_ledger_to_dict_is_json_serializable() -> None:
+    led = CostLedger()
+    led.add(_resp("a", 0.012345678))  # exercise rounding
+    d = led.to_dict()
+    json.dumps(d)  # raises if not serializable
+    assert d["total_usd"] == pytest.approx(0.012346, abs=1e-7)
+    assert "a" in d["by_model"]
+    assert d["calls"][0]["model"] == "a"
+
+
+def test_cost_ledger_empty_state_is_clean() -> None:
+    led = CostLedger()
+    assert led.total_usd() == 0.0
+    assert led.by_model() == {}
+    assert led.to_dict()["calls"] == []
+
+
+# --- chat_json: mock transport patterns ----------------------------------
+
+
+def _spec(model: str = "test/model", api_key: str = "k") -> CallSpec:
+    return CallSpec(
+        base_url="https://api.example.com/v1",
+        api_key=api_key,
+        model=model,
+        timeout_sec=5.0,
+    )
+
+
+def _ok_body(content: str = '{"x": 1}', prompt_tok: int = 10, comp_tok: int = 20) -> dict:
+    return {
+        "choices": [{"message": {"content": content}}],
+        "usage": {"prompt_tokens": prompt_tok, "completion_tokens": comp_tok},
+    }
+
+
+def _run(coro):
+    return asyncio.run(coro)
+
+
+def test_chat_json_happy_path_returns_parsed() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json=_ok_body())
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec(),),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.parsed == {"x": 1}
+    assert resp.input_tokens == 10
+    assert resp.output_tokens == 20
+    assert resp.model == "test/model"
+
+
+def test_chat_json_falls_back_on_5xx() -> None:
+    """First spec returns 500; second spec succeeds — fallback path proven."""
+    call_count = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        call_count["n"] += 1
+        if call_count["n"] == 1:
+            return httpx.Response(500, text="boom")
+        return httpx.Response(200, json=_ok_body('{"y": 2}'))
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("primary"), _spec("fallback")),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.parsed == {"y": 2}
+    assert resp.model == "fallback"
+    assert call_count["n"] == 2
+
+
+def test_chat_json_skips_specs_without_api_key() -> None:
+    """A spec with empty api_key is skipped without an HTTP attempt."""
+    http_calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        http_calls["n"] += 1
+        return httpx.Response(200, json=_ok_body('{"z": 3}'))
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("primary", api_key=""), _spec("fallback")),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.model == "fallback"
+    assert resp.parsed == {"z": 3}
+    assert http_calls["n"] == 1  # primary skipped at api_key gate, no HTTP
+
+
+def test_chat_json_all_specs_fail_raises_llm_error() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(500, text="boom")
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("a"), _spec("b")),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    with pytest.raises(LLMError, match="every spec in chain failed"):
+        _run(go())
+
+
+def test_chat_json_empty_chain_raises() -> None:
+    async def go() -> None:
+        await chat_json(
+            messages=[{"role": "user", "content": "hi"}], chain=(),
+        )
+
+    with pytest.raises(LLMError, match="empty chain"):
+        _run(go())
+
+
+def test_chat_json_records_to_ledger_when_provided() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json=_ok_body())
+
+    led = CostLedger()
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec(),),
+                client=client,
+                ledger=led,
+            )
+        finally:
+            await client.aclose()
+
+    _run(go())
+    assert len(led.calls) == 1
+    assert led.calls[0].model == "test/model"
+
+
+def test_chat_json_unparseable_response_falls_back() -> None:
+    """First model emits prose with no JSON; chat_json must fall through."""
+    call_count = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        call_count["n"] += 1
+        if call_count["n"] == 1:
+            return httpx.Response(200, json=_ok_body("just prose, no JSON"))
+        return httpx.Response(200, json=_ok_body('{"saved": true}'))
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("primary"), _spec("fallback")),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.parsed == {"saved": True}
+    assert resp.model == "fallback"
+
+
+def test_chat_json_estimates_cost_for_known_model() -> None:
+    """A known-priced model produces a non-zero cost; unknown is 0."""
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200, json=_ok_body(prompt_tok=1000, comp_tok=1000),
+        )
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("mimo-v2.5-pro"),),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    # 1k input * $0.00014/1k + 1k output * $0.00028/1k = $0.00042
+    assert resp.estimated_cost_usd == pytest.approx(0.00042, abs=1e-7)
+
+
+def test_chat_json_unknown_model_costs_zero() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200, json=_ok_body(prompt_tok=1000, comp_tok=1000),
+        )
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("never/heard/of"),),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.estimated_cost_usd == 0.0
+
+
+def test_chat_json_request_includes_response_format_when_enforce_json() -> None:
+    """Verify the wire-level payload has response_format=json_object set."""
+    captured: dict[str, dict] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["payload"] = json.loads(request.content)
+        return httpx.Response(200, json=_ok_body())
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec(),),
+                client=client,
+                enforce_json=True,
+            )
+        finally:
+            await client.aclose()
+
+    _run(go())
+    assert captured["payload"]["response_format"] == {"type": "json_object"}
+
+
+def test_chat_json_request_omits_response_format_when_not_enforce_json() -> None:
+    """Some OpenRouter models reject response_format; toggle must remove it."""
+    captured: dict[str, dict] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["payload"] = json.loads(request.content)
+        return httpx.Response(200, json=_ok_body())
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec(),),
+                client=client,
+                enforce_json=False,
+            )
+        finally:
+            await client.aclose()
+
+    _run(go())
+    assert "response_format" not in captured["payload"]
+
+
+# --- build_extract_chain --------------------------------------------------
+
+
+def _settings(
+    mimo_key: str = "mimo-key", openrouter_key: str = "or-key",
+) -> Settings:
+    return Settings(
+        mimo_api_key=mimo_key, mimo_model="mimo-v2.5-pro",
+        mimo_base_url="https://m.example/v1", mimo_timeout_sec=30.0,
+        openrouter_api_key=openrouter_key,
+        openrouter_base_url="https://or.example/v1",
+        judge_model="google/gemma-4-31b-it",
+        fallback_model="mistralai/mistral-small-2603",
+        bot_enabled=True, daily_cost_cap_usd=10.0,
+        dashboard_host="127.0.0.1", dashboard_port=8791,
+        runs_dir="runs",
+    )
+
+
+def test_build_extract_chain_yields_mimo_then_mistral() -> None:
+    chain = build_extract_chain(_settings())
+    assert len(chain) == 2
+    assert chain[0].model == "mimo-v2.5-pro"
+    assert chain[1].model == "mistralai/mistral-small-2603"
+
+
+def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
+    """Specs with empty api_keys stay in the chain — chat_json skips them."""
+    chain = build_extract_chain(_settings(mimo_key=""))
+    assert len(chain) == 2
+    assert chain[0].api_key == ""  # unset, will be skipped at call time
+    assert chain[1].api_key == "or-key"
+
+
+def test_build_extract_chain_uses_settings_timeout() -> None:
+    s = _settings()
+    chain = build_extract_chain(s)
+    assert chain[0].timeout_sec == s.mimo_timeout_sec
+    assert chain[1].timeout_sec == s.mimo_timeout_sec  # both share MiMo timeout
