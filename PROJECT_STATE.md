@@ -32,7 +32,7 @@ LLM PROPOSES. CODE DISPOSES.
 
 ## Status — 2026-04-27 — Day 2.4 complete (trace_clients fixture backend); Day 2.5 pending
 
-**HEAD:** `af6a58f` on `origin/main`
+**HEAD:** `e1bb56f` on `origin/main`
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
 **Tests:** 254/254 passing in 0.28s. ruff clean. git diff --check clean.
 **Runtime LOC:** 3,320 / 4,800 ceiling (31% headroom)
@@ -50,7 +50,7 @@ LLM PROPOSES. CODE DISPOSES.
 | `25dd964` | 2026-04-27 | Day 2 state-fixes: PROJECT_STATE + AGENTS handover drift after 0ffcd5a |
 | `9918c12` | 2026-04-27 | Day 2.3: validators.py — case 1 triple-locked + cases 3/4 local layers |
 | `7dbaeac` | 2026-04-27 | Day 2.3 state-fixes: PROJECT_STATE drift after 9918c12 + LOC docstring |
-| `af6a58f` | 2026-04-27 | Day 2.4: trace_clients.py — 3 Protocols + fixture backends; planted cases 2 & 4 fixture-layer coverage |
+| `e1bb56f` | 2026-04-27 | Day 2.4: trace_clients.py — 3 Protocols + fixture backends; planted cases 2 & 4 fixture-layer coverage |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -78,7 +78,7 @@ LLM PROPOSES. CODE DISPOSES.
 
 | State | What's there | How to verify |
 |---|---|---|
-| **GitHub `main`** (`af6a58f`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
+| **GitHub `main`** (`e1bb56f`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
 | **VPS live (`research-agent.domlynch.com`)** | **Still V1.1** — deploy step pending since Day 0 push (2026-04-27). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` → `200` until the VPS pulls. |
 
 To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && systemctl restart research-agent-bot`. Reverts to V1.1 via `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
@@ -98,7 +98,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 |---|---|---|---|
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
-| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **PARTIAL** — 2.1+2.2 ✅ `0ffcd5a` (split + registry override) + 2.3 ✅ `9918c12` (validators triple-lock case 1) + 2.4 ✅ `af6a58f` (trace_clients fixture backend; cases 2 & 4 fixture-layer coverage); 2.5 ☐ pending (E2E retrieval smoke) |
+| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **PARTIAL** — 2.1+2.2 ✅ `0ffcd5a` (split + registry override) + 2.3 ✅ `9918c12` (validators triple-lock case 1) + 2.4 ✅ `e1bb56f` (trace_clients fixture backend; cases 2 & 4 fixture-layer coverage); 2.5 ☐ pending (E2E retrieval smoke) |
 | 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | — |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
@@ -132,7 +132,7 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 Day 2.1+2.2+2.3+2.4 SHIPPED:
 - `0ffcd5a` — bundle.py 4-file split + registry-override moat (case 1 double-locked)
 - `9918c12` — validators.py + 22 tests (case 1 triple-locked, cases 3/4 local layers, case 5 directness contract)
-- `af6a58f` — trace_clients.py + 26 tests (3 Protocol interfaces, fixture backends, env-var selectors; cases 2 & 4 fixture-layer absences confirmed)
+- `e1bb56f` — trace_clients.py + 26 tests (3 Protocol interfaces, fixture backends, env-var selectors; cases 2 & 4 fixture-layer absences confirmed)
 
 254/254 tests green. Runtime LOC 3,320 / 4,800.
 
