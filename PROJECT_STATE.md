@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — Day 3.2b llm_client shipped; Day 3.2c (LLM fact-extraction) pending
+## Status — 2026-04-27 — Day 3.2c LLM fact-extraction shipped; Day 3.3 (httpx/MCP backends) next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,8 +43,8 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 367/367 passing in 0.35s. ruff clean. git diff --check clean.
-**Runtime LOC:** 4,387 / 4,800 ceiling (8.5% headroom — tight, watch 3.2c)
+**Tests:** 396/396 passing in 0.36s. ruff clean. git diff --check clean.
+**Runtime LOC:** 4,715 / 4,800 ceiling (1.8% headroom — must trim or raise before 3.3)
 
 **Commit log of the rebuild:**
 
@@ -71,6 +71,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `af2e329` | 2026-04-27 | Day 3.1 fixes: 3 P1 trust-spine bugs in citation_trace + PROJECT_STATE drift (P2) |
 | `0a2c263` | 2026-04-27 | Day 3.1 fixes-2: structural break on state-through drift + 2 P3 doc cleanups |
 | `1537196` | 2026-04-27 | Day 3.2a: deterministic compiler — facts → Claims → ClaimGraph (1:1, thesis-pick by score tuple) |
+| `325afb9` | 2026-04-27 | Day 3.2b: llm_client.py — single-dep LLM surface (chat_json + chain + CostLedger) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -91,6 +92,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `citation_trace.py` (Day 3.1 — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4. Day 3.1-fixes: nct_exists yields per-id traces from source.nct + URL ISRCTN + abstract-NCTs; flags has_results=False contradiction for published_results role; alias_match skips canonical trial acronyms)
 - `compiler.py` (Day 3.2a — deterministic facts → Claims → ClaimGraph: 1:1 fact-to-claim mapping, kind→claim_type / role+direct→directness / (role,design,tier)→confidence; thesis-pick by score tuple (directness, tier, confidence, claim_id); CompileError on orphan refs; LLM fact-extraction lands in 3.2c)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
+- `fact_extractor.py` (Day 3.2c — first LLM in the spine. `extract_facts_from_item / from_bundle` proposes facts via `chat_json`; CODE DISPOSES via (1) ref/kind PINNED from item.source.ref + role (LLM never proposes either), (2) schema check on claim, (3) `validators.check_verb_ban` (planted case 1's 5th defense), (4) `validators.check_p_value_in_source` (planted case 3 at extraction time), (5) within-item dedupe; off_domain skipped pre-call; FactRejection captures every dropped proposal with reason code for run logs)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
 - `settings.py` (KEEP, may extend `TRACE_BACKEND` documentation)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
@@ -122,7 +124,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
-| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` (abstract NCT scan) + 3.0-fixes `979055b` (case-insensitive) + 3.0-state `361f5f7` + 3.1 `788868a` (citation_trace.py: cases 2/3/4 caught at external layer) + 3.1-fixes `af2e329` (3 P1 trust-spine fixes) + 3.1-fixes-2 `0a2c263` (state-drift structural break) + 3.2a `1537196` (deterministic compiler: facts → Claims → ClaimGraph) + **3.2b llm_client** (this slice — single-dep `chat_json` + chain fallback + CostLedger); 3.2c LLM fact-extraction + 3.3 httpx/MCP backends + 3.4 E2E ☐ pending |
+| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` (abstract NCT scan) + 3.0-fixes `979055b` (case-insensitive) + 3.0-state `361f5f7` + 3.1 `788868a` (citation_trace.py: cases 2/3/4 caught at external layer) + 3.1-fixes `af2e329` (3 P1 trust-spine fixes) + 3.1-fixes-2 `0a2c263` (state-drift structural break) + 3.2a `1537196` (deterministic compiler) + 3.2b `325afb9` (llm_client.py — single-dep `chat_json` + chain + CostLedger) + **3.2c fact_extractor.py** (this slice — first LLM in spine, ref/kind PINNED, verb-ban + p-value trace as code-disposes); 3.3 httpx/MCP backends + 3.4 E2E ☐ pending |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 
@@ -161,26 +163,36 @@ deterministic claim_id (C001…); kind→claim_type, (role+direct)→directness,
 (directness, tier, confidence, claim_id) — direct A1 high wins. CompileError
 on orphan refs / empty input. Edges populated by Day 4 SPAR.
 
-(b) **`agent/llm_client.py`** ✅ (this slice — 299 LOC + 26 tests): single-dep
+(b) **`agent/llm_client.py`** ✅ `325afb9` (299 LOC + 26 tests): single-dep
 LLM surface. `chat_json(messages, chain, ledger=None) → LLMResponse` calls
 OpenAI-compatible providers via httpx. `CallSpec` chain falls through on
 HTTPError / JSON-parse failure / missing api_key (skip silently for
 partial-config envs). `CostLedger.to_dict()` is the wire-shape for
 `runs/<topic>/cost_log.json`. `extract_json` strips `<think>` / ``` fences
 / prose so real LLM output parses. `build_extract_chain(settings)` yields
-MiMo (primary) → Mistral (fallback). `build_judge_chain` /
-`build_write_chain` land Day 4.
+MiMo → Mistral. `build_judge_chain` / `build_write_chain` land Day 4.
 
-(c) **First LLM stage — fact extraction** ☐ (next): LLM prompt that reads
-the abstract of each `published_results` evidence item and proposes
-(claim_text, p_value, outcome, estimate) tuples. **LLM never decides role
-or claim_type** — those are pinned by upstream layers. Schema disposes:
-every numeric must trace via `validators.check_p_value_in_source` or
-`citation_trace.trace_p_value_in_text` before the fact is accepted.
+(c) **First LLM stage — fact extraction** ✅ (this slice — `agent/fact_extractor.py`,
+328 LOC + 29 tests). The first LLM in the trust spine.
+`extract_facts_from_item(item, *, pack, chain, ledger)` calls the LLM with
+the abstract; **the LLM never proposes `ref` or `kind`** (`ref` pinned to
+`item.source.ref`, `kind` pinned by `_kind_for_role(item.role)`). CODE
+DISPOSES via four layers: schema check on claim, `check_verb_ban` (planted
+case 1's 5th defense — extraction-time), `check_p_value_in_source`
+(planted case 3 at extraction-time before the value enters the graph),
+and within-item dedupe. `off_domain` items short-circuit before the LLM
+call. Returns `(accepted_facts, rejections)` — every dropped proposal
+captured with reason code. `extract_facts_from_bundle` fans out across
+items with a Semaphore-bounded `max_concurrency=4` cap.
 
 Done-when (3.2 as a whole):
-- Compiler builds a ClaimGraph from real metformin evidence (≥6 claims) ✅ (deterministic path proven, fact source pending 3.2c)
-- First-LLM stage proposes facts + schema rejects fabrications ☐
-- Performance baseline: per-fact extraction cost + total compile time ☐
+- Compiler builds a ClaimGraph from real metformin evidence (≥6 claims) ✅ (deterministic + extraction layers proven; live E2E in 3.4)
+- First-LLM stage proposes facts + schema rejects fabrications ✅ (29-test coverage of all four code-disposes layers)
+- Performance baseline: per-fact extraction cost + total compile time ☐ (3.4 live smoke)
 
-After 3.2: 3.3 wires real httpx + MCP backends for `trace_clients.py`. 3.4 final Day 3 E2E.
+**3.2 complete pending live smoke.** Next: 3.3 wires real httpx + MCP backends for `trace_clients.py`; 3.4 final Day 3 E2E + first metformin run.
+
+⚠️ **LOC headroom:** runtime at 4,715 / 4,800 (1.8% remaining). Day 3.3 will
+need a ceiling raise OR a refactor pass. Trim candidates: split `trace_clients.py`
+into per-protocol modules + per-backend modules; trim docstrings in
+`fact_extractor.py` and `citation_trace.py`.
