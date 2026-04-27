@@ -43,6 +43,7 @@ __all__ = [
     "check_role_claim_match",
     "check_alias_drift",
     "check_p_value_in_source",
+    "PVALUE_RE",  # public so citation_trace.py can reuse the canonical regex
 ]
 
 # --- Regex helpers ---------------------------------------------------------
@@ -50,7 +51,7 @@ __all__ = [
 # Match `p <op> <digits>` with optional whitespace and an optional leading
 # zero. Captures (op, digits) — e.g., 'p<0.001' → ('<', '001'). Used by
 # both check_p_value_in_source and (later) citation_trace.py.
-_PVALUE_RE = re.compile(r"\bp\s*([=<>])\s*0?\.(\d+)", re.IGNORECASE)
+PVALUE_RE = re.compile(r"\bp\s*([=<>])\s*0?\.(\d+)", re.IGNORECASE)
 
 
 # --- check_verb_ban — planted case 1's third layer ------------------------
@@ -240,16 +241,16 @@ def check_p_value_in_source(
 
     Catches planted case 3: claim cites 'p<0.001' but source actually says
     'p=0.08'. Match is on the (operator, digits) tuple — exact, not fuzzy
-    — so 'p<0.001' and 'p=0.08' do NOT match. The `_PVALUE_RE` normalizes
+    — so 'p<0.001' and 'p=0.08' do NOT match. The `PVALUE_RE` normalizes
     whitespace and an optional leading zero before the decimal.
 
     Returns None when no p-values are cited (nothing to verify).
     """
-    claim_pvs = set(_PVALUE_RE.findall(claim_text))
+    claim_pvs = set(PVALUE_RE.findall(claim_text))
     if not claim_pvs:
         return None
 
-    source_pvs = set(_PVALUE_RE.findall(source_abstract))
+    source_pvs = set(PVALUE_RE.findall(source_abstract))
     missing = claim_pvs - source_pvs
     if not missing:
         return None
