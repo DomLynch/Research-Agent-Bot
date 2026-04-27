@@ -30,12 +30,12 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — Day 2.1 + 2.2 complete (bundle.py split + registry-override moat); Day 2.3-2.5 pending
+## Status — 2026-04-27 — Day 2.3 complete (validators triple-lock case 1); Day 2.4-2.5 pending
 
-**HEAD:** `0ffcd5a` on `origin/main`
+**HEAD:** `9918c12` on `origin/main`
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 206/206 passing in 0.29s. ruff clean. git diff --check clean.
-**Runtime LOC:** 2,768 / 4,800 ceiling (42% headroom)
+**Tests:** 228/228 passing in 0.28s. ruff clean. git diff --check clean.
+**Runtime LOC:** 3,038 / 4,800 ceiling (37% headroom)
 
 **Commit log of the rebuild:**
 
@@ -46,53 +46,56 @@ LLM PROPOSES. CODE DISPOSES.
 | `a9eb7ab` | 2026-04-27 | Day 1: schemas, topic_pack TOML, planted-failure corpus |
 | `941f21c` | 2026-04-27 | Day 1 fixes: 4 P1 + 1 P2 reviewer blockers |
 | `9cff619` | 2026-04-27 | Day 1 fixes 2: PROJECT_STATE drift + SPAR dissent membership/minority |
-| `0ffcd5a` | 2026-04-27 | Day 2.1+2.2: bundle.py 4-file split + registry-override moat (planted case 1 double-locked) |
+| `0ffcd5a` | 2026-04-27 | Day 2.1+2.2: bundle.py 4-file split + registry-override moat (case 1 double-locked) |
+| `25dd964` | 2026-04-27 | Day 2 state-fixes: PROJECT_STATE + AGENTS handover drift after 0ffcd5a |
+| `9918c12` | 2026-04-27 | Day 2.3: validators.py — case 1 triple-locked + cases 3/4 local layers |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
 - 3 test files: `test_judge.py`, `test_draft.py`, `test_qa.py`
 - Reason: LLMs were inside the trust spine; structural bug class V1.1 could not close.
 
-**Active `agent/` (post-Day 2.1+2.2):**
+**Active `agent/` (post-Day 2.3):**
 - `types.py` (KEEP — frozen-dataclass invariants, role↔fact-kind pairing)
 - `retrieve.py` + `sources/` (KEEP — async parallel retrieval, 4 adapters)
 - `schemas.py` (Day 1 — 6 frozen-dataclasses, ClaimGraph + SPAR invariants, tie-break, dissent membership/minority guard)
 - `topic_pack.py` (Day 1 — stdlib `tomllib` loader, MappingProxyType-protected overrides)
-- `text_signals.py` (Day 2.1 NEW — regex/marker constants extracted from bundle.py)
-- `role_classifier.py` (Day 2.1 NEW — `classify_role` + `classify_design`)
-- `evidence_cards.py` (Day 2.1 — renamed from bundle.py; high-level `bundle()` builder + tier/direct/strict + risk_of_bias + confidence_verdict + rank_for_writer)
-- `registry_overrides.py` (Day 2.2 NEW — registry-pinned override layer; the moat)
+- `text_signals.py` (Day 2.1 — regex/marker constants extracted from bundle.py)
+- `role_classifier.py` (Day 2.1 — `classify_role` + `classify_design`)
+- `evidence_cards.py` (Day 2.1 — renamed from bundle.py; high-level `bundle()` builder + tier/direct/strict + risk_of_bias + confidence_verdict + rank_for_writer + topic_pack-aware override gate)
+- `registry_overrides.py` (Day 2.2 — registry-pinned override layer; the moat)
+- `validators.py` (Day 2.3 NEW — pure-function gates: verb-ban, role-claim-match, alias-drift, p-value-in-source)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
 - `settings.py` (KEEP, may extend for `TRACE_BACKEND` env var)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
 
-`bundle.py` was renamed via `git mv` to `evidence_cards.py` and refactored to import from the 3 new sibling modules. No behavior change in the rename; the registry-override layer is the only behavioral addition.
+`bundle.py` was renamed via `git mv` to `evidence_cards.py` and refactored to import from the 3 new sibling modules.
 
 **Runtime status — distinguish two states:**
 
 | State | What's there | How to verify |
 |---|---|---|
-| **GitHub `main`** (`0ffcd5a`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
+| **GitHub `main`** (`9918c12`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
 | **VPS live (`research-agent.domlynch.com`)** | **Still V1.1** — deploy step pending since Day 0 push (2026-04-27). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` → `200` until the VPS pulls. |
 
 To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && systemctl restart research-agent-bot`. Reverts to V1.1 via `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
 
-**Planted-failure case status:**
+**Planted-failure case status (post-Day 2.3):**
 
-| Case | What | Layer 1 | Layer 2 | Layer 3 (Day 2.3) |
-|---|---|---|---|---|
-| 1 | TAME protocol cited as results | ✅ `topic_pack` registry whitelist | ✅ `evidence_cards` registry override during `bundle()` | ☐ `validators.py` verb-ban on prose claims |
-| 2 | Fabricated NCT | — | — | (Day 3 `citation_trace` via `TrialRegistryClient`) |
-| 3 | Inflated p-value | — | — | (Day 3 `citation_trace` p-value text-grep) |
-| 4 | Alias drift ("Glufomin") | ✅ `topic_pack` alias whitelist | (Day 3 `DrugAliasClient`) | — |
-| 5 | Off-domain extrapolation | (Day 2.3) `validators` directness check | (Day 2.5 E2E surfaces it) | — |
+| Case | What | Local layers (live now) | External layer (Day 3) |
+|---|---|---|---|
+| 1 | TAME protocol cited as results | **TRIPLE-LOCKED:** ✅ `topic_pack` whitelist + ✅ `evidence_cards` registry override + ✅ `validators.check_verb_ban` prose-level | — |
+| 2 | Fabricated NCT | — | ☐ `citation_trace` via `TrialRegistryClient` |
+| 3 | Inflated p-value | ✅ `validators.check_p_value_in_source` (local exact-match) | ☐ `citation_trace.trace_pvalue` (broader text-grep) |
+| 4 | Alias drift ("Glufomin") | ✅ `topic_pack` alias whitelist + ✅ `validators.check_alias_drift` (apposition pattern) | ☐ `DrugAliasClient.lookup` (ChEMBL) |
+| 5 | Off-domain extrapolation | ✅ `evidence_cards` topic-anchor gate (existing V1.1 logic) + ✅ `validators.check_role_claim_match` directness contract | (Day 2.5 E2E surfaces it on real corpus) |
 
 ## Day plan (5 days, target — not deadline)
 | Day | Ship | Done when | Status |
 |---|---|---|---|
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
-| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **PARTIAL** — 2.1+2.2 ✅ `0ffcd5a` (bundle split + registry override; planted case 1 double-locked); 2.3+2.4+2.5 ☐ pending |
+| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **PARTIAL** — 2.1+2.2 ✅ `0ffcd5a` (split + registry override) + 2.3 ✅ `9918c12` (validators triple-lock case 1); 2.4 + 2.5 ☐ pending |
 | 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | — |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
@@ -123,17 +126,17 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 
 ## Next validation step
 
-Day 2.1+2.2 SHIPPED at `0ffcd5a`: bundle.py 4-file split (text_signals, role_classifier, evidence_cards) + registry-override moat (registry_overrides). Planted case 1 double-locked at topic_pack and evidence_cards layers. 206/206 tests green.
+Day 2.1+2.2+2.3 SHIPPED:
+- `0ffcd5a` — bundle.py 4-file split + registry-override moat (case 1 double-locked)
+- `9918c12` — validators.py + 22 tests (case 1 triple-locked, cases 3/4 local layers, case 5 directness contract)
 
-Day 2.3-2.5 PENDING:
-- **Day 2.3 — `agent/validators.py`** (~180 LOC): pure-function gates that consume topic_pack outputs. Three checks for v0:
-  - `check_verb_ban(claim_text, evidence_item, pack)` — case 1's third defense layer (catches "TAME demonstrated…" in prose if the registry override didn't already)
-  - `check_role_claim_match(claim, evidence_item)` — direct/indirect/mechanistic must align with the evidence role
-  - `check_alias_drift(claim_text, pack)` — case 4's belt-and-suspenders against unrecognized drug aliases in prose
-- **Day 2.4 — `agent/trace_clients.py`** (~150 LOC) fixture backend: 3 Protocol interfaces (TrialRegistryClient / DrugAliasClient / LiteratureClient) + fixture-backed implementations for CI/dev. httpx + MCP backends are Day 3.
-- **Day 2.5 — End-to-end smoke**: real metformin retrieval via existing `retrieve.py` → `bundle()` with topic_pack → assert ≥12 sources surfaced, classifications correct. This closes the Day 2 done-when criterion that's still ☐.
+228/228 tests green. Runtime LOC 3,038 / 4,800.
+
+Day 2.4-2.5 PENDING:
+- **Day 2.4 — `agent/trace_clients.py`** (~150 LOC, may grow to ~250 per Day 1/2 pattern): 3 Protocol interfaces (`TrialRegistryClient` / `DrugAliasClient` / `LiteratureClient`) + fixture-backed implementations for CI/dev. httpx + MCP backends are Day 3.
+- **Day 2.5 — End-to-end smoke**: real metformin retrieval via existing `retrieve.py` → `bundle(..., topic_pack=...)` → assert ≥12 sources surfaced, canonical NCTs (MASTERS, MET-PREVENT, TAME) appear correctly classified. Closes the last Day 2 done-when criterion.
 
 **Day 2 ship criterion (DESIGN-001 §19):** ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards.
-- Cards classify correctly: ✅ (snapshot tests + new layered test)
-- Planted case 1 caught at evidence_cards: ✅ (`test_planted_case_1_second_layer_catch`)
+- Cards classify correctly: ✅
+- Planted case 1 caught at evidence_cards: ✅ (`test_planted_case_1_second_layer_catch`); also caught at validators layer (`test_planted_case_1_caught_at_validators_layer`)
 - ≥12 sources retrieved: ☐ (Day 2.5 E2E smoke)

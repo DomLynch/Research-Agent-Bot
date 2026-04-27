@@ -11,9 +11,10 @@ them requires a DECISIONS.md entry justifying the new ceiling.
 Current ceiling: 4,800 LOC (set by DECISIONS.md 2026-04-27 — Proof 001 rebuild
 funds the trust-layer features: schemas, topic_pack, citation_trace, spar,
 compiler, thesis_tournament, gap_analysis, validators, submit_adapter,
-trace_clients). Per-file cap raised from 500 to 600 to match v4 Rule 54
-soft cap of 300 plus rare-but-justified exceptions (bundle.py at 591 awaits
-the Day 2 evidence_cards refactor that splits it into 4 files <300 each).
+trace_clients). Per-file cap of 600 LOC sits above the v4 Rule 54 soft cap
+of 300; the head-room covers files like evidence_cards.py (305 LOC after
+the Day 2.1 4-file split) where consolidating tier/direct/strict logic in
+one place is more legible than splitting further.
 """
 from __future__ import annotations
 
