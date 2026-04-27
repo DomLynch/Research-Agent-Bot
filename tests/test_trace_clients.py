@@ -251,6 +251,86 @@ def test_malformed_fixture_raises(
         client.get_trial("NCT12345")
 
 
+# --- Missing-corpus guard (P1 reviewer fix) -------------------------------
+
+
+def test_missing_corpus_root_raises_for_trial_lookup(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """If the fixture corpus directory doesn't exist at all (e.g. packaged
+    non-repo runtime), every lookup must RAISE — not silently return None.
+    Otherwise Day 3 citation_trace would falsely report every real NCT
+    as fabricated."""
+    fake_root = tmp_path / "no_fixtures_here"  # NOT created
+    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+
+    client = FixtureTrialRegistryClient()
+    with pytest.raises(TraceBackendError, match="fixture corpus subdirectory missing"):
+        client.get_trial("NCT04264897")
+
+
+def test_missing_corpus_root_raises_for_drug_lookup(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    fake_root = tmp_path / "no_fixtures_here"
+    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+
+    client = FixtureDrugAliasClient()
+    with pytest.raises(TraceBackendError, match="fixture corpus subdirectory missing"):
+        client.lookup("metformin")
+
+
+def test_missing_corpus_root_raises_for_literature_lookup(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    fake_root = tmp_path / "no_fixtures_here"
+    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+
+    client = FixtureLiteratureClient()
+    with pytest.raises(TraceBackendError, match="fixture corpus subdirectory missing"):
+        client.fetch("10.1111/acel.13039")
+
+
+def test_present_corpus_with_absent_record_returns_none(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """The complementary half of the contract: a corpus that EXISTS but
+    has no fixture for the requested id must return None (legitimate
+    'not found'). This is what planted cases 2 and 4 rely on."""
+    fake_root = tmp_path / "fixtures"
+    (fake_root / "trials").mkdir(parents=True)
+    (fake_root / "compounds").mkdir(parents=True)
+    (fake_root / "literature").mkdir(parents=True)
+    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+
+    # Each backend with empty subdirs should return None, NOT raise.
+    assert FixtureTrialRegistryClient().get_trial("NCT04264897") is None
+    assert FixtureDrugAliasClient().lookup("metformin") is None
+    assert FixtureLiteratureClient().fetch("10.1111/acel.13039") is None
+
+
+def test_partial_corpus_raises_only_for_missing_subdirs(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Only the SPECIFIC subdirectory needs to exist. If trials/ exists
+    but compounds/ doesn't, trial lookups work and drug lookups raise."""
+    fake_root = tmp_path / "fixtures"
+    (fake_root / "trials").mkdir(parents=True)
+    # compounds/ deliberately NOT created
+    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+
+    # Trial lookup succeeds (returns None, since no fixtures under trials/).
+    assert FixtureTrialRegistryClient().get_trial("NCT04264897") is None
+    # Drug lookup raises (compounds/ is missing entirely).
+    with pytest.raises(TraceBackendError, match="compounds"):
+        FixtureDrugAliasClient().lookup("metformin")
+
+
 # --- Fixture corpus discipline -------------------------------------------
 
 

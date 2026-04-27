@@ -146,8 +146,30 @@ def _safe_filename(stem: str) -> str:
 
 
 def _read_fixture(directory: str, stem: str) -> dict | None:
-    """Return parsed JSON for `directory/<stem>.json`, or None if missing."""
-    path = _FIXTURES_ROOT / directory / f"{_safe_filename(stem)}.json"
+    """Return parsed JSON for `directory/<stem>.json`, or None if missing.
+
+    Raises TraceBackendError when the fixture corpus subdirectory itself is
+    absent — this distinguishes "no fixture for this id" (legitimate None,
+    used by planted cases 2 + 4) from "fixture corpus not present at all"
+    (a packaging/runtime configuration error). Without this guard, a missing
+    corpus directory in a packaged runtime would silently make every lookup
+    return None, and Day 3 citation_trace would falsely report every real
+    NCT/compound/DOI as fabricated.
+
+    Operational guidance baked into the error: in non-repo runtimes, set
+    TRACE_BACKEND=http or =mcp instead of the fixture default.
+    """
+    dir_path = _FIXTURES_ROOT / directory
+    if not dir_path.exists():
+        raise TraceBackendError(
+            f"fixture corpus subdirectory missing: {dir_path}. "
+            f"This is NOT 'record not found' (returns None); it's "
+            f"'corpus not configured'. In packaged runtimes, set "
+            f"TRACE_BACKEND=http or =mcp. The fixture backend requires "
+            f"tests/fixtures/trace_clients/{{trials,compounds,literature}}/ "
+            f"to exist."
+        )
+    path = dir_path / f"{_safe_filename(stem)}.json"
     if not path.exists():
         return None
     try:
@@ -193,12 +215,15 @@ class FixtureDrugAliasClient:
     def lookup(self, name_or_alias: str) -> CompoundRecord | None:
         candidate = name_or_alias.strip().lower()
         # Try canonical-name lookup first (most fixtures filed under canonical).
+        # _read_fixture raises TraceBackendError if the compounds/ directory
+        # is missing entirely — that's a configuration error, not a miss.
         data = _read_fixture("compounds", candidate)
         if data is None:
-            # Scan all fixtures for any whose aliases include the candidate.
+            # Canonical file absent — scan all fixtures for any whose aliases
+            # include the candidate. The compounds/ directory is guaranteed to
+            # exist at this point because _read_fixture would have raised if
+            # it didn't.
             compounds_dir = _FIXTURES_ROOT / "compounds"
-            if not compounds_dir.exists():
-                return None
             for path in compounds_dir.glob("*.json"):
                 with path.open("r", encoding="utf-8") as fh:
                     fixture = json.load(fh)

@@ -30,12 +30,17 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — Day 2.4 complete (trace_clients fixture backend); Day 2.5 pending
+## Status — 2026-04-27 — Day 2.4 + corpus-guard hardening; Day 2.5 pending
 
-**HEAD:** `e1bb56f` on `origin/main`
+**State verified through:** `d0c571f` on `origin/main`
+*(field renamed from "HEAD" to be honest about the bootstrap lag: this file
+describes state up to and including the most recent commit listed in the
+log table below. The current HEAD will appear in the next slice's update.
+See commit message of e1bb56f for the amend-bootstrap rationale.)*
+
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 254/254 passing in 0.28s. ruff clean. git diff --check clean.
-**Runtime LOC:** 3,320 / 4,800 ceiling (31% headroom)
+**Tests:** 259/259 passing in 0.30s. ruff clean. git diff --check clean.
+**Runtime LOC:** 3,345 / 4,800 ceiling (30% headroom)
 
 **Commit log of the rebuild:**
 
@@ -51,6 +56,7 @@ LLM PROPOSES. CODE DISPOSES.
 | `9918c12` | 2026-04-27 | Day 2.3: validators.py — case 1 triple-locked + cases 3/4 local layers |
 | `7dbaeac` | 2026-04-27 | Day 2.3 state-fixes: PROJECT_STATE drift after 9918c12 + LOC docstring |
 | `e1bb56f` | 2026-04-27 | Day 2.4: trace_clients.py — 3 Protocols + fixture backends; planted cases 2 & 4 fixture-layer coverage |
+| `d0c571f` | 2026-04-27 | Day 2.4 state-followup: PROJECT_STATE HEAD → e1bb56f (post-amend hash) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
