@@ -1,0 +1,25 @@
+{
+  "case_id": "C4",
+  "name": "alias-drift",
+  "description": "Submission introduces 'Glufomin' as an alleged metformin alias. The topic_pack alias whitelist (case-insensitive) does not contain it; DrugAliasClient.lookup() against ChEMBL also returns None. Both layers reject independently.",
+  "synthetic_source": {
+    "ref": 4,
+    "title": "Glufomin reduces frailty incidence in older adults",
+    "abstract": "Glufomin, a biguanide-class glucose-lowering agent, was associated with a 20% reduction in incident frailty over 3 years in a cohort of older adults with prediabetes.",
+    "doi": "10.0000/fake.glufomin",
+    "pmid": null,
+    "nct": null,
+    "year": 2024,
+    "url": "https://example.invalid/glufomin",
+    "source": "fabricated",
+    "venue": "Imaginary Journal of Aging"
+  },
+  "synthetic_claim_text": "Glufomin, a metformin equivalent, reduced incident frailty by 20% over 3 years.",
+  "synthetic_claim_verb": "reduced",
+  "expected_catch": {
+    "gate_primary": "topic_pack",
+    "gate_secondary": "citation_trace",
+    "code": "ALIAS_NOT_IN_WHITELIST",
+    "detail_pattern": "Glufomin"
+  }
+}

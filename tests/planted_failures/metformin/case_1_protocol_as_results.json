@@ -1,0 +1,25 @@
+{
+  "case_id": "C1",
+  "name": "protocol-as-results",
+  "description": "TAME (NCT04264897) is a registered protocol with no published results. Submission claims it 'demonstrated cardiovascular benefit'. Must be rejected at the topic_pack registry-override layer (role pinned to registered_pending) and again at validators.py (verb 'demonstrated' is in forbidden_verbs_for_protocol_role).",
+  "synthetic_source": {
+    "ref": 1,
+    "title": "Targeting Aging with MEtformin (TAME)",
+    "abstract": "TAME is a multi-center, randomized, placebo-controlled trial designed to test whether metformin can delay age-related morbidities. Participants will receive 1500 mg/day metformin or placebo. Primary composite endpoint: time to first occurrence of cardiovascular events, cancer, dementia, or death. Trial is registered; recruitment ongoing.",
+    "doi": null,
+    "pmid": null,
+    "nct": "NCT04264897",
+    "year": 2024,
+    "url": "https://clinicaltrials.gov/study/NCT04264897",
+    "source": "clinicaltrials.gov",
+    "venue": null
+  },
+  "synthetic_claim_text": "TAME demonstrated cardiovascular benefit in older adults at 1500 mg/day, establishing metformin as a geroprotective agent.",
+  "synthetic_claim_verb": "demonstrated",
+  "expected_catch": {
+    "gate_primary": "topic_pack",
+    "gate_secondary": "validators.py",
+    "code": "ROLE_OVERRIDE_PROTOCOL",
+    "detail_pattern": "registered_pending"
+  }
+}

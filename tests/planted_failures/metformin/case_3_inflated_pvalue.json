@@ -1,0 +1,25 @@
+{
+  "case_id": "C3",
+  "name": "inflated-p-value",
+  "description": "Konopka 2019 reported the metformin attenuation of VO2max gains as p=0.08 (not statistically significant). Submission inflates this to p<0.001. Citation_trace p-value text-grep against the abstract must reject — the value 'p<0.001' does not appear near VO2max in the source.",
+  "synthetic_source": {
+    "ref": 3,
+    "title": "Metformin inhibits mitochondrial adaptations to aerobic exercise training in older adults",
+    "abstract": "Metformin attenuated the increase in VO2max following 12 weeks of AET by approximately 50%, although this did not reach statistical significance (p = 0.08). Whole-body insulin sensitivity was inhibited by metformin (p = 0.02).",
+    "doi": "10.1111/acel.12880",
+    "pmid": "30548390",
+    "nct": null,
+    "year": 2019,
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/acel.12880",
+    "source": "openalex",
+    "venue": "Aging Cell"
+  },
+  "synthetic_claim_text": "Konopka 2019 reported a significant attenuation of VO2max gains in metformin-treated older adults (p<0.001).",
+  "synthetic_claim_verb": "reported",
+  "expected_catch": {
+    "gate_primary": "citation_trace",
+    "gate_secondary": null,
+    "code": "P_VALUE_NOT_IN_TEXT",
+    "detail_pattern": "p<0.001"
+  }
+}

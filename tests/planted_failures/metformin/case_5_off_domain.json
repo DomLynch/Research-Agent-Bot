@@ -1,0 +1,25 @@
+{
+  "case_id": "C5",
+  "name": "off-domain-extrapolation",
+  "description": "An oncology-context metformin study (breast cancer adjuvant) is cited as evidence of geroprotection in healthy older adults. The topic-anchor gate in evidence_cards.py (carried forward from V1.1 bundle.py logic) must mark this as INDIRECT — the special_rules entry 'oncology / transplant evidence is INDIRECT; tier B at best for longevity claims' applies.",
+  "synthetic_source": {
+    "ref": 5,
+    "title": "Adjuvant metformin in early-stage HER2-negative breast cancer: a randomized phase 3 trial",
+    "abstract": "Among 3,649 women with non-metastatic breast cancer, addition of metformin to standard adjuvant therapy did not improve invasive disease-free survival (HR 1.01, 95% CI 0.84-1.21, p=0.92) compared to placebo over a median 5.0 years follow-up.",
+    "doi": "10.1001/jama.2022.6147",
+    "pmid": "35639319",
+    "nct": "NCT01101438",
+    "year": 2022,
+    "url": "https://jamanetwork.com/journals/jama/fullarticle/2792984",
+    "source": "pubmed",
+    "venue": "JAMA"
+  },
+  "synthetic_claim_text": "A large RCT in 3,649 participants found no benefit of metformin on disease-free survival (p=0.92), arguing against metformin as a geroprotective intervention in healthy older adults.",
+  "synthetic_claim_verb": "found",
+  "expected_catch": {
+    "gate_primary": "evidence_cards",
+    "gate_secondary": "validators.py",
+    "code": "OFF_DOMAIN_INDIRECT",
+    "detail_pattern": "oncology"
+  }
+}

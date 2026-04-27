@@ -1,0 +1,25 @@
+{
+  "case_id": "C2",
+  "name": "fabricated-nct",
+  "description": "NCT99999999 (METFORMIN-X) does not exist. Citation_trace must call TrialRegistryClient.get_trial(); the call returns None; the trace records passed=false. No prose claim can survive a missing-registry trace.",
+  "synthetic_source": {
+    "ref": 2,
+    "title": "METFORMIN-X: a 30% mortality reduction in metformin users",
+    "abstract": "We report results from the METFORMIN-X trial showing a 30% mortality reduction in older adults treated with metformin compared to placebo over a 5-year follow-up. The trial enrolled 12,000 participants across 8 centers.",
+    "doi": null,
+    "pmid": null,
+    "nct": "NCT99999999",
+    "year": 2025,
+    "url": "https://example.invalid/metformin-x",
+    "source": "fabricated",
+    "venue": null
+  },
+  "synthetic_claim_text": "METFORMIN-X showed a 30% reduction in all-cause mortality (NCT99999999).",
+  "synthetic_claim_verb": "showed",
+  "expected_catch": {
+    "gate_primary": "citation_trace",
+    "gate_secondary": null,
+    "code": "NCT_NOT_FOUND",
+    "detail_pattern": "not found in registry"
+  }
+}
