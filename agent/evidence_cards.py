@@ -82,13 +82,19 @@ def bundle(
     for src in sources:
         abstract = abstracts.get(src.ref, "")
         sig = signals.get(src.ref, {}) or {}
-        # Registry-override gate (Day 2 NEW). When the pack pins this NCT/
-        # ISRCTN, role/design/tier come from the override and the abstract
-        # classifier is bypassed entirely. The abstract still flows through
-        # for storage on EvidenceItem and for the direct/strict checks
-        # below — a registry hit pins the categorical decision but does
-        # not bypass topic-anchor or population-fit gates.
-        override = lookup_override(src, topic_pack)
+        # Registry-override gate (Day 2 + Day 3.0). When the pack pins this
+        # NCT/ISRCTN, role/design/tier come from the override and the
+        # abstract classifier is bypassed entirely. The abstract still
+        # flows through for storage on EvidenceItem and for the
+        # direct/strict checks below — a registry hit pins the categorical
+        # decision but does not bypass topic-anchor or population-fit
+        # gates.
+        #
+        # Day 3.0 added the `abstract` arg so the override fires when a
+        # canonical NCT/ISRCTN is in the abstract text only (e.g., live
+        # OpenAlex returns MASTERS with NCT02308228 in abstract but no
+        # source.nct because the dedup-merge with CT.gov didn't fire).
+        override = lookup_override(src, topic_pack, abstract=abstract)
         if override is not None:
             role: Role = override.role
             design: Design = override.design

@@ -30,16 +30,16 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — Day 2 fixture-replay complete + live smoke run (with one Day 3 finding)
+## Status — 2026-04-27 — Day 3.0 closes live-smoke finding (MASTERS now pinned via abstract NCT scan); Day 3.1+ proceeding
 
-**State verified through:** `5b06bda` on `origin/main`
+**State verified through:** `7fe3c02` on `origin/main`
 *(field describes state up to and including the most recent commit listed
 in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 267/267 passing in 0.31s. ruff clean. git diff --check clean.
-**Runtime LOC:** 3,345 / 4,800 ceiling (30% headroom)
+**Tests:** 275/275 passing in 0.28s. ruff clean. git diff --check clean.
+**Runtime LOC:** 3,392 / 4,800 ceiling (29% headroom)
 
 **Commit log of the rebuild:**
 
@@ -57,6 +57,8 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `e1bb56f` | 2026-04-27 | Day 2.4: trace_clients.py — 3 Protocols + fixture backends; planted cases 2 & 4 fixture-layer coverage |
 | `d0c571f` | 2026-04-27 | Day 2.4 state-followup: PROJECT_STATE HEAD → e1bb56f (post-amend hash) |
 | `5b06bda` | 2026-04-27 | Day 2.4 fixes: corpus-guard P1 (missing corpus ≠ missing record) + PROJECT_STATE label P3 |
+| `c0cc11e` | 2026-04-27 | Day 2.5: E2E metformin smoke (fixture replay; 8 tests) |
+| `7fe3c02` | 2026-04-27 | Day 2.5b: live-API smoke + honest fixture-vs-live distinction (script + baseline) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -152,10 +154,10 @@ Day 2 SHIPPED — fixture-replay E2E complete; live-API smoke run with one findi
 | Cards classify correctly | ✅ MASTERS → published_results / rct / A1 (override pinned) | ⚠ MASTERS → mechanistic / C (override didn't fire — see finding below) |
 | Planted case 1 caught at evidence_cards | ✅ TRIPLE-LOCKED at topic_pack + evidence_cards + validators (plus fixture has_results=False at trace_clients) | not exercised in live (no TAME hit) |
 
-**Day 3 finding from live smoke (real, named, scoped):**
-- Live API surfaces MASTERS (NCT02308228) via PubMed/OpenAlex with the NCT in the **abstract**, not in `source.nct`. The registry override in `agent/registry_overrides.py` only checks `source.nct`, so it didn't fire on live MASTERS.
-- The retrieve.py dedup logic ALREADY scans abstracts for NCTs (it merges OpenAlex paper + CT.gov registry on NCT-in-abstract match). But that merge requires CT.gov to also return the same NCT in the same query — which it didn't for MASTERS in this live run.
-- **Day 3 enhancement:** extend `lookup_override` to scan `evidence_item.abstract` for NCTs after the source.nct check, so the override fires whenever a registry id appears anywhere in the source. Or: extend the dedup-merge to look up CT.gov by NCT-in-abstract even when CT.gov didn't return that NCT for the topic query.
+**Day 3 live-smoke finding — RESOLVED at Day 3.0 (this slice):**
+- ~~Live API surfaces MASTERS (NCT02308228) via PubMed/OpenAlex with the NCT in the **abstract**, not in `source.nct`. The registry override in `agent/registry_overrides.py` only checks `source.nct`, so it didn't fire on live MASTERS.~~
+- **Fix shipped:** `lookup_override` now scans `abstract` for NCT/ISRCTN patterns after the source.nct + source.url checks. New `_NCT_RE = re.compile(r"\bNCT\d{8}\b")` plus the existing `_ISRCTN_RE` cover both registry id formats. 8 new regression tests in `test_registry_overrides.py` lock the contract (precedence, word-boundary, multiple-NCTs-first-match-wins, backward compat, plus an E2E shape test).
+- **Live re-run verified:** post-fix smoke run at 2026-04-27T18:04:57Z shows MASTERS classified as `published_results / A1 (pinned via override)`, role distribution shifted from `9 published_results / 0 A1` to `10 published_results / 1 A1`, direct count 6 → 7. The other 3 canonical NCTs (TAME, MILES NCT01765946, MET-PREVENT ISRCTN29932357) still don't surface for the bare "metformin" query — that's a *retrieval* problem (query planning), not an override problem, and is a separate Day 3+ enhancement.
 
 **Fixture-replay performance baseline (v4 Rule 16):**
 - normalize_and_dedup: 0.4 ms on 40 raw hits
