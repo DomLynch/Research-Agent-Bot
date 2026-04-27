@@ -44,6 +44,7 @@ from __future__ import annotations
 import re
 from collections.abc import Iterable, Iterator, Mapping
 
+from agent.registry_overrides import _ISRCTN_RE, _NCT_RE
 from agent.schemas import CitationTrace, Claim, ClaimGraph, TraceType
 from agent.topic_pack import TopicPack
 from agent.trace_clients import (
@@ -121,34 +122,96 @@ _RESULTS_AVAILABLE_STATUSES: frozenset[TrialStatus] = frozenset({
 # --- Per-check trace functions --------------------------------------------
 
 
+def _registry_ids_for(item: EvidenceItem) -> list[str]:
+    """Collect all registry IDs (NCT/ISRCTN) from an EvidenceItem's surfaces.
+
+    Mirrors the lookup-precedence in registry_overrides.lookup_override:
+    source.nct first, then ISRCTN-in-source.url, then NCT/ISRCTN scanned
+    from the abstract text. Deduplicates while preserving first-seen
+    order so the trace records list reads predictably.
+
+    Day 3.0 added the abstract scan to lookup_override; Day 3.1 P1.2
+    follow-up makes citation_trace consult the same surfaces. Without
+    this, a live MASTERS-style record (NCT only in abstract, source.nct=None)
+    would have its role pinned by the override but receive NO external
+    citation trace — silently inconsistent.
+    """
+    ids: list[str] = []
+    seen: set[str] = set()
+
+    def _add(candidate: str | None) -> None:
+        if not candidate:
+            return
+        canonical = candidate.strip().upper()
+        if canonical in seen:
+            return
+        seen.add(canonical)
+        ids.append(canonical)
+
+    if item.source.nct:
+        _add(item.source.nct)
+    if item.source.url:
+        for digits in _ISRCTN_RE.findall(item.source.url):
+            _add(f"ISRCTN{digits}")
+    if item.abstract:
+        for nct in _NCT_RE.findall(item.abstract):
+            _add(nct)
+        for digits in _ISRCTN_RE.findall(item.abstract):
+            _add(f"ISRCTN{digits}")
+    return ids
+
+
 def trace_nct_exists(
     claim: Claim,
     item: EvidenceItem,
     registry: TrialRegistryClient,
-) -> CitationTrace | None:
-    """Verify that an NCT cited via source.nct resolves in the trial registry.
+) -> Iterator[CitationTrace]:
+    """Yield one CitationTrace per registry id found across the item's
+    source.nct + source.url + abstract surfaces.
 
-    Returns None when there's nothing to trace (source has no NCT). When
-    the registry returns None for a populated NCT, that's planted-failure
-    case 2 — fabricated NCT — caught at the external layer.
+    Three outcomes per id:
+      1. registry has no record       → passed=False (case 2 fab NCT)
+      2. registry has record, but
+         item.role='published_results'
+         AND record.has_results=False → passed=False (P1.1: case 1
+         protocol-as-results — the registry says no results but the
+         pipeline classified the cite as a published-results citation;
+         contradiction caught at trace layer)
+      3. registry has record, and
+         (role != 'published_results'
+          OR record.has_results)      → passed=True
+
+    Yields nothing when no registry IDs exist on any surface — there's
+    nothing to trace, which is not a failure.
     """
-    nct = item.source.nct
-    if not nct:
-        return None  # nothing to trace; not a failure
-    record = registry.get_trial(nct)
-    if record is None:
-        return CitationTrace(
+    for nct in _registry_ids_for(item):
+        record = registry.get_trial(nct)
+        if record is None:
+            yield CitationTrace(
+                claim_id=claim.claim_id, ref=item.source.ref,
+                trace_type="nct_exists", passed=False,
+                detail=f"NCT {nct!r} not found in registry (fabricated or stale)",
+            )
+            continue
+        if item.role == "published_results" and not record.has_results:
+            yield CitationTrace(
+                claim_id=claim.claim_id, ref=item.source.ref,
+                trace_type="nct_exists", passed=False,
+                detail=(
+                    f"{nct} role='published_results' but registry says "
+                    f"has_results=False (status={record.status}). "
+                    f"Protocol-as-results contradiction at trace layer."
+                ),
+            )
+            continue
+        yield CitationTrace(
             claim_id=claim.claim_id, ref=item.source.ref,
-            trace_type="nct_exists", passed=False,
-            detail=f"NCT {nct!r} not found in registry (fabricated or stale)",
+            trace_type="nct_exists", passed=True,
+            detail=(
+                f"{nct} found: status={record.status}, "
+                f"has_results={record.has_results}"
+            ),
         )
-    return CitationTrace(
-        claim_id=claim.claim_id, ref=item.source.ref,
-        trace_type="nct_exists", passed=True,
-        detail=(
-            f"{nct} found: status={record.status}, has_results={record.has_results}"
-        ),
-    )
 
 
 def trace_role_match(
@@ -231,6 +294,25 @@ def trace_percentage_in_text(
         )
 
 
+def _trial_name_tokens(pack: TopicPack) -> frozenset[str]:
+    """Build the set of capitalized tokens appearing in canonical_trial
+    names. Used by trace_alias_match to avoid false-flagging trial
+    acronyms (MASTERS, TAME, MILES, etc.) as drug-alias drift.
+
+    For multi-word names like 'MET-PREVENT', extracts each capitalized
+    fragment (≥3 chars) so 'PREVENT' alone in prose also passes.
+    Includes the full name uppercased so the regex's stricter ≥4-char
+    rule still skips short fragments embedded in matches.
+    """
+    out: set[str] = set()
+    for ct in pack.canonical_trials:
+        out.add(ct.name.upper())
+        # Extract capitalized fragments (allow 3+ chars to cover TAME, MET)
+        for fragment in re.findall(r"[A-Za-z]{3,}", ct.name):
+            out.add(fragment.upper())
+    return frozenset(out)
+
+
 def trace_alias_match(
     claim: Claim,
     pack: TopicPack,
@@ -240,16 +322,23 @@ def trace_alias_match(
     up the alias in DrugAliasClient. None response = case 4 (alias drift)
     caught at the external layer.
 
-    Skips tokens already in the pack alias whitelist (those are valid by
-    definition) and common false-positive stopwords (Trial, Study, etc.).
+    Skips:
+      - tokens already in the pack alias whitelist (valid by definition)
+      - common false-positive stopwords (Trial, Study, etc.)
+      - canonical trial-name tokens (P1.3 fix: prose like 'MASTERS
+        demonstrated...' was false-flagging MASTERS as a drug drift
+        because trial acronyms look like drug names to the regex)
     """
     seen: set[str] = set()
+    trial_tokens = _trial_name_tokens(pack)
     for raw_token in _DRUG_CANDIDATE_RE.findall(claim.text):
         token = raw_token
         if token.lower() in _DRUG_CANDIDATE_STOPWORDS:
             continue
         if pack.has_alias(token):
             continue  # known topic alias — already validated
+        if token.upper() in trial_tokens:
+            continue  # canonical trial acronym — not a drug-alias claim
         if token.lower() in seen:
             continue
         seen.add(token.lower())
@@ -301,9 +390,7 @@ def trace_claim(
                 detail=f"ref={ref} not present in evidence_items_by_ref",
             ))
             continue
-        nct_trace = trace_nct_exists(claim, item, registry)
-        if nct_trace is not None:
-            traces.append(nct_trace)
+        traces.extend(trace_nct_exists(claim, item, registry))
         traces.extend(trace_p_value_in_text(claim, item))
         traces.extend(trace_percentage_in_text(claim, item))
 

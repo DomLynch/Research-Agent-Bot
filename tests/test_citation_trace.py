@@ -94,9 +94,10 @@ def test_trace_nct_exists_pass_for_real_nct(
 ) -> None:
     """MASTERS NCT02308228 is in the fixture registry."""
     claim = _claim()
-    item = _item(nct="NCT02308228")
-    rec = trace_nct_exists(claim, item, registry)
-    assert rec is not None
+    item = _item(nct="NCT02308228")  # role=published_results, has_results=True
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1
+    rec = traces[0]
     assert rec.passed is True
     assert rec.trace_type == "nct_exists"
     assert "NCT02308228" in rec.detail
@@ -108,18 +109,132 @@ def test_trace_nct_exists_planted_case_2(
     """Planted case 2: fabricated NCT99999999."""
     claim = _claim()
     item = _item(nct="NCT99999999")
-    rec = trace_nct_exists(claim, item, registry)
-    assert rec is not None and rec.passed is False
-    assert "not found" in rec.detail.lower() or "fabricated" in rec.detail.lower()
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1 and traces[0].passed is False
+    assert "not found" in traces[0].detail.lower()
 
 
-def test_trace_nct_exists_returns_none_when_no_nct(
+def test_trace_nct_exists_yields_nothing_when_no_registry_id(
     registry: FixtureTrialRegistryClient,
 ) -> None:
-    """Source has no NCT — nothing to trace; returns None (not a failure)."""
+    """No NCT, no ISRCTN, no abstract — nothing to trace."""
     claim = _claim()
     item = _item(nct=None)
-    assert trace_nct_exists(claim, item, registry) is None
+    assert list(trace_nct_exists(claim, item, registry)) == []
+
+
+# --- P1.1 + P1.2 regression tests (reviewer fixes) ------------------------
+
+
+def test_trace_nct_exists_fails_when_published_results_has_no_results(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """P1.1: TAME (NCT04264897) registry says has_results=False. If
+    upstream classified the cite as role='published_results', the trace
+    must fail — that's the protocol-as-results contradiction caught at
+    the trace layer (4th defense for case 1)."""
+    claim = _claim()
+    # Construct an EvidenceItem with role='published_results' citing TAME
+    # — this is the contradiction shape: registry says recruiting/no
+    # results but the pipeline classified the cite as a results-paper.
+    item = _item(role="published_results", nct="NCT04264897")
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1
+    assert traces[0].passed is False
+    assert "has_results=False" in traces[0].detail
+    assert "Protocol-as-results" in traces[0].detail
+
+
+def test_trace_nct_exists_passes_when_role_protocol_and_no_results(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """The complementary half of P1.1: when the role correctly says
+    registered_pending and the registry agrees has_results=False, the
+    trace passes (registry just records the pending status)."""
+    claim = _claim()
+    item = _item(role="registered_pending", nct="NCT04264897")
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1 and traces[0].passed is True
+
+
+def test_trace_nct_exists_finds_nct_in_abstract(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """P1.2: live MASTERS shape — source.nct=None but NCT02308228 in
+    abstract. The trace must still be emitted."""
+    claim = _claim()
+    item = _item(
+        nct=None,
+        abstract="ClinicalTrials.gov Identifier: NCT02308228.",
+    )
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1
+    assert traces[0].passed is True
+    assert "NCT02308228" in traces[0].detail
+
+
+def test_trace_nct_exists_finds_isrctn_in_url(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """ISRCTN in URL also fires (MET-PREVENT shape)."""
+    claim = _claim()
+    item = _item(
+        nct=None,
+        # _item helper doesn't take url, build directly
+    )
+    item = EvidenceItem(
+        source=Source(
+            ref=1, title="", year=2024,
+            url="https://www.isrctn.com/ISRCTN29932357",
+            source="pubmed", nct=None,
+        ),
+        abstract="",
+        design="rct", role="published_results", tier="A1",
+        direct=True, strict=True,
+    )
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1 and traces[0].passed is True
+    assert "ISRCTN29932357" in traces[0].detail
+
+
+def test_trace_nct_exists_emits_one_per_id_when_multiple(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """Multiple NCTs across surfaces → multiple traces. Order: source.nct
+    first, then URL, then abstract."""
+    claim = _claim()
+    item = EvidenceItem(
+        source=Source(
+            ref=1, title="", year=2024, url="",
+            source="pubmed", nct="NCT02308228",  # MASTERS
+        ),
+        abstract="See also NCT01765946 (MILES).",  # MILES NCT
+        design="rct", role="published_results", tier="A1",
+        direct=True, strict=True,
+    )
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 2
+    # First trace: from source.nct
+    assert "NCT02308228" in traces[0].detail
+    # Second: from abstract
+    assert "NCT01765946" in traces[1].detail
+
+
+def test_trace_nct_exists_dedupes_repeated_id() -> None:
+    """Same NCT in source.nct AND abstract → emit once (deduped)."""
+    registry = FixtureTrialRegistryClient()
+    claim = _claim()
+    item = EvidenceItem(
+        source=Source(
+            ref=1, title="", year=2024, url="",
+            source="pubmed", nct="NCT02308228",
+        ),
+        abstract="ClinicalTrials.gov Identifier: NCT02308228.",
+        design="rct", role="published_results", tier="A1",
+        direct=True, strict=True,
+    )
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1, f"expected one trace, got {len(traces)}"
 
 
 # --- trace_role_match -----------------------------------------------------
@@ -266,6 +381,41 @@ def test_trace_alias_match_filters_stopwords(
             assert noise not in t.detail, (
                 f"stopword {noise!r} should not appear in alias_match trace"
             )
+
+
+def test_trace_alias_match_skips_canonical_trial_names(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """P1.3: MASTERS, TAME, MILES, MET-PREVENT in claim prose are TRIAL
+    acronyms, not drug names. Must NOT fire alias drift even though they
+    look like capitalized drug-name-shape tokens."""
+    claim = _claim(
+        text="MASTERS demonstrated muscle blunting; TAME is in progress.",
+    )
+    traces = list(trace_alias_match(claim, metformin_pack, drug_client))
+    drift = [t for t in traces if not t.passed]
+    for t in drift:
+        for trial_name in ("MASTERS", "TAME", "MILES", "PREVENT"):
+            assert trial_name not in t.detail, (
+                f"canonical trial token {trial_name!r} false-flagged as "
+                f"drug drift: {t.detail!r}"
+            )
+
+
+def test_trace_alias_match_skips_met_prevent_fragments(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """The MET-PREVENT name has multi-word capitalized fragments. Each
+    fragment ('MET' is too short for the regex; 'PREVENT' qualifies)
+    should be skipped via the trial-name token set."""
+    claim = _claim(text="PREVENT was completed in 2022.")
+    traces = list(trace_alias_match(claim, metformin_pack, drug_client))
+    drift = [t for t in traces if not t.passed]
+    assert all("PREVENT" not in t.detail for t in drift), (
+        f"PREVENT (fragment of MET-PREVENT) false-flagged: {[t.detail for t in drift]}"
+    )
 
 
 # --- trace_claim orchestrator --------------------------------------------

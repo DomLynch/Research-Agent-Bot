@@ -30,16 +30,16 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — Day 3.1 ships citation_trace.py (the moat orchestrator); Day 3.2+ pending
+## Status — 2026-04-27 — Day 3.1 trust-spine fixes (3 P1s) shipped; Day 3.2 pending
 
-**State verified through:** `361f5f7` on `origin/main`
+**State verified through:** `788868a` on `origin/main`
 *(field describes state up to and including the most recent commit listed
 in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 307/307 passing in 0.30s. ruff clean. git diff --check clean.
-**Runtime LOC:** 3,768 / 4,800 ceiling (21% headroom)
+**Tests:** 315/315 passing in 0.33s. ruff clean. git diff --check clean.
+**Runtime LOC:** 3,855 / 4,800 ceiling (20% headroom)
 
 **Commit log of the rebuild:**
 
@@ -62,6 +62,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `555c73a` | 2026-04-27 | Day 3.0: registry override scans abstract for NCT/ISRCTN — closes live-smoke finding (MASTERS now pinned via abstract) |
 | `979055b` | 2026-04-27 | Day 3.0 fixes: case-insensitive registry IDs (P2) + PROJECT_STATE refresh (P3) |
 | `361f5f7` | 2026-04-27 | Day 3.0 state cleanup: state-through 979055b + drop stale lower section |
+| `788868a` | 2026-04-27 | Day 3.1: citation_trace.py — moat orchestrator; cases 2/3/4 external layer |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -79,7 +80,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `registry_overrides.py` (Day 2.2 — registry-pinned override layer; the moat)
 - `validators.py` (Day 2.3 — pure-function gates: verb-ban, role-claim-match, alias-drift, p-value-in-source; Day 3.1 promoted `PVALUE_RE` to public for citation_trace reuse)
 - `trace_clients.py` (Day 2.4 — 3 Protocols (TrialRegistryClient / DrugAliasClient / LiteratureClient) + fixture backends + env-var selectors; httpx + MCP backends ship Day 3.3)
-- `citation_trace.py` (Day 3.1 NEW — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4)
+- `citation_trace.py` (Day 3.1 — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4. Day 3.1-fixes: nct_exists yields per-id traces from source.nct + URL ISRCTN + abstract-NCTs; flags has_results=False contradiction for published_results role; alias_match skips canonical trial acronyms)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
 - `settings.py` (KEEP, may extend `TRACE_BACKEND` documentation)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
@@ -90,7 +91,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 | State | What's there | How to verify |
 |---|---|---|
-| **GitHub `main`** (`361f5f7`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
+| **GitHub `main`** (`788868a`) | Deploy-safe stub. `agent.app dashboard` serves HTTP 503 "service paused". | `python -m agent.app dashboard --port 8791` then `curl :8791/` → 503 |
 | **VPS live (`research-agent.domlynch.com`)** | **Still V1.1** — deploy step pending since Day 0 push (2026-04-27). | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` → `200` until the VPS pulls. |
 
 To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && systemctl restart research-agent-bot`. Reverts to V1.1 via `git checkout v1.1-final && systemctl restart research-agent-bot`. Either path is reversible.
