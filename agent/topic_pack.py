@@ -106,10 +106,16 @@ class TopicPack:
         return candidate.strip().lower() in self.aliases
 
     def lookup_role_override(self, registry_id: str | None) -> OverrideRecord | None:
-        """Return the pinned override for an NCT/ISRCTN, or None if not in pack."""
+        """Return the pinned override for an NCT/ISRCTN, or None if not in pack.
+
+        Case-insensitive: input is uppercased before the dict lookup, and
+        the dict itself is built with uppercase keys at TOML load time
+        (see _build_overrides). Both layers must agree on the canonical
+        form so misformatted TOML or adapter output cannot silently miss.
+        """
         if not registry_id:
             return None
-        return self.known_role_overrides.get(registry_id.strip())
+        return self.known_role_overrides.get(registry_id.strip().upper())
 
     def is_protocol_verb_forbidden(self, verb: str) -> bool:
         return verb.strip().lower() in self.forbidden_verbs_for_protocol_role
@@ -180,8 +186,23 @@ def _build_canonical_trials(rows: list[dict], path: Path) -> tuple[CanonicalTria
 
 
 def _build_overrides(raw: dict, path: Path) -> Mapping[str, OverrideRecord]:
+    """Build the override map with UPPERCASE keys.
+
+    Canonicalizing the keys at load time means lookup_role_override only
+    needs to upper-case its input — both layers agree on the canonical
+    form. Without this, a TOML file with lowercase `nctXXX` keys would
+    silently fail every lookup. Detecting duplicate keys after
+    upper-casing also catches accidental case-only duplicates.
+    """
     out: dict[str, OverrideRecord] = {}
     for registry_id, row in raw.items():
+        canonical_id = registry_id.strip().upper()
+        if canonical_id in out:
+            raise TopicPackError(
+                f"{path}: duplicate override id {canonical_id!r} "
+                f"(after case normalization). Original keys produced this clash."
+            )
+        registry_id = canonical_id  # use canonical form going forward in this iter
         for key in ("role", "design", "tier"):
             if key not in row:
                 raise TopicPackError(

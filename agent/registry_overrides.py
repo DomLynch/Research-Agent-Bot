@@ -56,7 +56,10 @@ _ISRCTN_RE = re.compile(r"ISRCTN(\d+)", re.IGNORECASE)
 # Match standard NCT ids: literal `NCT` followed by exactly 8 digits, with
 # word boundaries so `NCT01765946abc` doesn't match as a long id. Used to
 # scan abstracts for trial registrations not already in source.nct.
-_NCT_RE = re.compile(r"\bNCT\d{8}\b")
+# Case-insensitive: lowercase `nct…` and mixed-case `NcT…` are valid PubMed
+# / OpenAlex outputs and must hit the override; pack.lookup_role_override
+# normalizes its input to uppercase before the dict lookup.
+_NCT_RE = re.compile(r"\bNCT\d{8}\b", re.IGNORECASE)
 
 
 def lookup_override(

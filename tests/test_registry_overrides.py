@@ -233,6 +233,95 @@ def test_lookup_override_abstract_scan_returns_none_for_no_known_ids(
     assert rec is None
 
 
+# --- Day 3.0 follow-up: case-insensitivity of registry IDs (P2 fix) -------
+
+
+def test_lookup_override_lowercase_source_nct_hits(metformin_pack: TopicPack) -> None:
+    """Adapters might one day emit lowercase `nct…`. The override must
+    pin regardless. Both the regex and the dict lookup canonicalize."""
+    src = _src(nct="nct02308228")
+    rec = lookup_override(src, metformin_pack)
+    assert rec is not None and rec.role == "published_results"
+
+
+def test_lookup_override_mixed_case_source_nct_hits(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NcT02308228")
+    rec = lookup_override(src, metformin_pack)
+    assert rec is not None
+
+
+def test_lookup_override_lowercase_nct_in_abstract_hits(
+    metformin_pack: TopicPack,
+) -> None:
+    """The Day 3.0 abstract scan now uses re.IGNORECASE."""
+    src = _src(nct=None)
+    abstract = "Trial registered as nct02308228 in clinicaltrials.gov."
+    rec = lookup_override(src, metformin_pack, abstract=abstract)
+    assert rec is not None and rec.role == "published_results"
+
+
+def test_lookup_override_lowercase_isrctn_in_abstract_hits(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct=None)
+    abstract = "Trial registered as isrctn29932357 in the registry."
+    rec = lookup_override(src, metformin_pack, abstract=abstract)
+    assert rec is not None and rec.role == "published_results"
+
+
+def test_lookup_role_override_input_normalization() -> None:
+    """Direct test of the canonical-helper normalization. Hits the dict
+    lookup itself rather than going through registry_overrides."""
+    pack = load_topic_pack(METFORMIN_PATH)
+    for variant in (
+        "NCT02308228", "nct02308228", "NCT02308228 ", " NCT02308228",
+        "  nct02308228  ", "NcT02308228",
+    ):
+        rec = pack.lookup_role_override(variant)
+        assert rec is not None, f"variant {variant!r} should hit"
+        assert rec.role == "published_results"
+
+
+def test_topic_pack_load_canonicalizes_keys_to_uppercase() -> None:
+    """Keys in known_role_overrides are uppercased at load time so the
+    canonical form is invariant under TOML formatting choices. Storing
+    'nct04264897' in TOML still produces 'NCT04264897' as the key."""
+    pack = load_topic_pack(METFORMIN_PATH)
+    keys = set(pack.known_role_overrides.keys())
+    # Every key must be uppercase form
+    for k in keys:
+        assert k == k.upper(), f"key {k!r} not uppercase after load"
+
+
+def test_topic_pack_load_rejects_case_only_duplicate_overrides(
+    tmp_path: "Path",
+) -> None:
+    """If a TOML lists both 'NCT04264897' and 'nct04264897', after
+    canonicalization they collide. Must raise instead of silently picking
+    one — that's a content bug worth surfacing."""
+    from pathlib import Path as _P
+    p = _P(tmp_path) / "dup.toml"
+    p.write_text(
+        'topic = "x"\n'
+        'class_ = "x"\n'
+        'aliases = ["x"]\n'
+        'expected_evidence_slots = []\n'
+        'special_rules = []\n'
+        'forbidden_verbs_for_protocol_role = []\n'
+        'forbidden_verbs_for_results_role_with_protocol_keywords = []\n'
+        'canonical_trials = []\n'
+        '[known_role_overrides.NCT04264897]\n'
+        'role = "registered_pending"\ndesign = "rct"\ntier = "A1"\n'
+        '[known_role_overrides.nct04264897]\n'
+        'role = "published_results"\ndesign = "rct"\ntier = "A1"\n'
+    )
+    from agent.topic_pack import TopicPackError
+    with pytest.raises(TopicPackError, match="duplicate override id"):
+        load_topic_pack(p)
+
+
 def test_lookup_override_master_pinned_via_nct_in_abstract_e2e(
     metformin_pack: TopicPack,
 ) -> None:
