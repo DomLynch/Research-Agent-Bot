@@ -2,7 +2,12 @@
 __pycache__/
 .pytest_cache/
 *.pyc
-runs/
+# Ignore runs/ contents EXCEPT e2e-baselines (v4 Rule 26 metric-loop artifacts).
+# Note: must use runs/* not runs/ so the negation pattern can re-include
+# subdirectories — git won't recurse into a wholly-ignored dir.
+runs/*
+!runs/e2e-baselines/
+runs/e2e-baselines/*.tmp
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

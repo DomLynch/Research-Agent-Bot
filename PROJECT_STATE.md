@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — **Day 2 COMPLETE** (E2E smoke green); Day 3 unblocked
+## Status — 2026-04-27 — Day 2 fixture-replay complete + live smoke run (with one Day 3 finding)
 
 **State verified through:** `5b06bda` on `origin/main`
 *(field describes state up to and including the most recent commit listed
@@ -104,7 +104,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 |---|---|---|---|
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
-| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE** — 2.1+2.2 `0ffcd5a` (split + registry override) + 2.3 `9918c12` (validators triple-lock case 1) + 2.4 `e1bb56f` (trace_clients fixture backend; cases 2 & 4 fixture-layer coverage) + 2.4-fixes `5b06bda` (corpus-guard P1) + 2.5 `<this commit>` (E2E smoke: 40 deduped sources, MASTERS pinned, perf baseline 0.4 ms / 11.1 ms) |
+| **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ FIXTURE-REPLAY COMPLETE + ⚠ LIVE SMOKE FINDING** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay (40 sources, MASTERS pinned via override, perf 0.4 ms / 11.1 ms) + 2.5b live smoke `<this commit>` (23 sources, pipeline E2E clean, but **1/4 canonical NCTs surfaced** and MASTERS classified as mechanistic — finding for Day 3) |
 | 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | — |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
@@ -142,19 +142,33 @@ Day 2.1+2.2+2.3+2.4 SHIPPED:
 
 254/254 tests green. Runtime LOC 3,320 / 4,800.
 
-Day 2 ✅ COMPLETE — all 5 sub-tasks shipped. The deterministic spine of Proof 001 is locked.
+Day 2 SHIPPED — fixture-replay E2E complete; live-API smoke run with one finding for Day 3.
 
-**Day 2 ship criterion (DESIGN-001 §19) — ALL THREE MET:**
-- ≥12 sources retrieved: ✅ **40 deduped sources** from captured-fixture metformin corpus (`test_at_least_twelve_sources_retrieved`)
-- Cards classify correctly: ✅ MASTERS → published_results / rct / A1 (`test_masters_classified_as_published_results_rct`)
-- Planted case 1 caught at evidence_cards: ✅ TRIPLE-LOCKED at topic_pack + evidence_cards + validators; plus fixture-layer (TAME has_results=False)
+**Day 2 ship criterion (DESIGN-001 §19) — fixture replay vs live retrieval:**
 
-**E2E performance baseline (v4 Rule 16):**
-- normalize_and_dedup: **0.4 ms** on 40 raw hits
-- bundle (with topic_pack): **11.1 ms** on 40 sources
+| Criterion | Fixture replay (V1.1 captures) | Live API (2026-04-27 smoke) |
+|---|---|---|
+| ≥12 sources retrieved | ✅ 40 deduped | ✅ 23 retrieved |
+| Cards classify correctly | ✅ MASTERS → published_results / rct / A1 (override pinned) | ⚠ MASTERS → mechanistic / C (override didn't fire — see finding below) |
+| Planted case 1 caught at evidence_cards | ✅ TRIPLE-LOCKED at topic_pack + evidence_cards + validators (plus fixture has_results=False at trace_clients) | not exercised in live (no TAME hit) |
+
+**Day 3 finding from live smoke (real, named, scoped):**
+- Live API surfaces MASTERS (NCT02308228) via PubMed/OpenAlex with the NCT in the **abstract**, not in `source.nct`. The registry override in `agent/registry_overrides.py` only checks `source.nct`, so it didn't fire on live MASTERS.
+- The retrieve.py dedup logic ALREADY scans abstracts for NCTs (it merges OpenAlex paper + CT.gov registry on NCT-in-abstract match). But that merge requires CT.gov to also return the same NCT in the same query — which it didn't for MASTERS in this live run.
+- **Day 3 enhancement:** extend `lookup_override` to scan `evidence_item.abstract` for NCTs after the source.nct check, so the override fires whenever a registry id appears anywhere in the source. Or: extend the dedup-merge to look up CT.gov by NCT-in-abstract even when CT.gov didn't return that NCT for the topic query.
+
+**Fixture-replay performance baseline (v4 Rule 16):**
+- normalize_and_dedup: 0.4 ms on 40 raw hits
+- bundle (with topic_pack): 11.1 ms on 40 sources
 - Role distribution: 10 published_results, 6 registered_pending, 2 review, 1 published_protocol, 21 mechanistic
-- Tier distribution: 2 A1, 10 A2, 7 B, 21 C
-- Direct + strict: 15 each
+- Tier distribution: 2 A1, 10 A2, 7 B, 21 C; direct + strict: 15 each
+
+**Live-API smoke baseline (2026-04-27T17:53:36Z):**
+- runs/e2e-baselines/metformin-20260427T175336Z.json
+- 23 sources (pubmed=8, europepmc=7, openalex=6, clinicaltrials=2)
+- retrieve: 1.89s; bundle: 15.3 ms
+- Roles: 13 mechanistic, 9 published_results, 1 review
+- Canonical hits: 1/4 (only MASTERS — surfaced but mis-classified per the finding above)
 
 Day 3 PENDING (the first LLM stage):
 - **`agent/citation_trace.py`** (~220 LOC + tests): connects validators.py and trace_clients.py. Each claim's cited refs are walked through `TrialRegistryClient.get_trial`, `DrugAliasClient.lookup`, `LiteratureClient.fetch`. Translates `None` from the trace clients into `CitationTrace(passed=False, code=NCT_NOT_FOUND)` etc. Cases 2 + 4 finally caught at the external layer.
