@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 3.3c live smoke green; Day 3.4 final E2E next (citation_trace × real APIs × first metformin claim graph)
+## Status — 2026-04-28 — Day 3 COMPLETE (3.4 E2E green: real metformin corpus → ClaimGraph → traces); Day 4 (SPAR + thesis tournament + writer) next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,7 +43,7 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 448/448 passing in 0.38s. ruff clean. git diff --check clean.
+**Tests:** 455/455 passing in 0.41s. ruff clean. git diff --check clean.
 **Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 4,089 / 4,800 ceiling (15% headroom). `wc -l` reports higher because it counts docstrings; the budget test excludes blanks + comment-only lines.
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
@@ -85,6 +85,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `acfe508` | 2026-04-28 | 3.1-fixes-3: verb-boundary + yield-zero design-decision docs + regression tests (428 tests) |
 | `211592c` | 2026-04-28 | Day 3.3a: split `trace_clients.py` → package (`__init__` / `protocols` / `_fixture`); refactor only |
 | `c6328a9` | 2026-04-28 | Day 3.3b: httpx backends — `_httpx.py` (CT.gov v2 / ChEMBL / Europe PMC) + 20 MockTransport tests |
+| `70e897a` | 2026-04-28 | Day 3.3c: live smoke 6/6 green vs CT.gov / ChEMBL / Europe PMC |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -137,7 +138,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
-| 3 | `citation_trace.py` against `trace_clients/*` (fixture + httpx backends). MCP backend optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 → 3.2c-fix-2 → 3.1-fixes-3 → 3.3a `211592c` → 3.3b `c6328a9` + **3.3c live smoke** (this slice — `scripts/e2e_trace_clients_smoke.py` runs 6 real probes; CT.gov MASTERS `NCT02308228` returns `completed` + `has_results=True`; ChEMBL `metformin` returns `CHEMBL1431` + 10 synonyms; Europe PMC `10.1111/acel.13039` returns abstract with `p<.001 / p=.003 / p=.005 / p=.020` — the corpus citation_trace will exercise; all 3 known-bad probes return None as expected); 3.4 E2E ☐ pending |
+| 3 | `citation_trace.py` against `trace_clients/*` (fixture + httpx backends). MCP backend optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **✅ COMPLETE** — 3.0 → 3.2c-fix-2 → 3.1-fixes-3 → 3.3a → 3.3b → 3.3c live smoke 6/6 green + **3.4 Day-3 E2E** (this slice — `tests/test_e2e_day3_pipeline.py` 7 tests: fixture-replay corpus → bundle → hand-curated Facts → compile_claims → compile_claim_graph → trace_claim_graph; verifies thesis-pick selects MASTERS direct A1; nct_exists fires for canonical NCT02308228; planted case 4 (Glufomin drift) flagged via trace_alias_match; sub-second perf baseline). LLM extraction stage covered by Day 3.2c unit tests + opt-in live smoke; Day 4 (SPAR + thesis tournament + writer) next. |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 
