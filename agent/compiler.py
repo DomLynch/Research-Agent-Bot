@@ -169,7 +169,11 @@ def compile_claims(
 # --- compile_claim_graph --------------------------------------------------
 
 
-def _largest_cohesive_cluster(claims: Sequence[Claim]) -> tuple[Claim, ...]:
+def _largest_cohesive_cluster(
+    claims: Sequence[Claim],
+    *,
+    canonical_refs: frozenset[int] = frozenset(),
+) -> tuple[Claim, ...]:
     """Group claims by their source paper(s) and return the largest cluster.
 
     Day 6.3: a heterogeneous live corpus produces claims from disparate
@@ -223,21 +227,32 @@ def _largest_cohesive_cluster(claims: Sequence[Claim]) -> tuple[Claim, ...]:
         # arbitrarily drop most of the corpus to keep one singleton.
         return tuple(claims)
 
-    # Day 6.3 / 8.0: cluster preference order:
-    #   1. directness — direct beats mechanistic (V1.1 mechanism-to-clinic
+    # Day 6.3 / 8.0 / 8.1: cluster preference order:
+    #   1. canonical-trial bonus — clusters containing a topic_pack
+    #      canonical NCT win over equally-tiered non-canonical clusters.
+    #      Without this, two A1 direct papers tie on directness+tier and
+    #      the smallest-ref tiebreaker is fragile (Day 8 Proof 001
+    #      regression: a non-canonical metformin paper out-tied MASTERS
+    #      because the LLM happened to extract one extra fact for it).
+    #   2. directness — direct beats mechanistic (V1.1 mechanism-to-clinic
     #      failure mode caught at the cluster level)
-    #   2. tier — A1 beats A2 beats B beats C. Topic packs pin oncology /
-    #      transplant evidence to tier B as a deliberate "indirect for
-    #      aging" signal; without this rank, an everolimus run picks the
-    #      4-claim renal-cell-carcinoma RCT cluster over the 1-claim
-    #      PROTECTOR aging RCT (Day 8 Proof 003 finding).
-    #   3. larger size wins.
-    #   4. smallest min(ref) for determinism.
-    # Fallback (below): if the winner is a singleton AND a multi-claim
-    # cluster exists at any tier, fall back to the legacy "largest
-    # regardless" so the artifact has body.
+    #   3. tier — A1 beats A2 beats B beats C. Topic packs pin oncology /
+    #      transplant evidence to tier B; without this rank, an everolimus
+    #      run picks the 4-claim renal-cell-carcinoma RCT cluster over
+    #      the 1-claim PROTECTOR aging RCT.
+    #   4. larger size wins.
+    #   5. smallest min(ref) for determinism.
     _DIRECTNESS_RANK = {"direct": 0, "indirect": 1, "mechanistic": 2}
     _TIER_RANK = {"A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4}
+
+    def cluster_has_canonical(idx_list: list[int]) -> int:
+        """0 when the cluster contains a canonical-trial ref, else 1."""
+        if not canonical_refs:
+            return 0  # no pack data — neutral
+        for i in idx_list:
+            if any(r in canonical_refs for r in claims[i].supporting_refs):
+                return 0
+        return 1
 
     def cluster_directness(idx_list: list[int]) -> int:
         return min(
@@ -245,16 +260,16 @@ def _largest_cohesive_cluster(claims: Sequence[Claim]) -> tuple[Claim, ...]:
         )
 
     def cluster_tier(idx_list: list[int]) -> int:
-        """Best (lowest) tier rank among claims in cluster."""
         return min(
             _TIER_RANK.get(claims[i].evidence_tier, 9) for i in idx_list
         )
 
-    def cluster_sort_key(idx_list: list[int]) -> tuple[int, int, int, int]:
+    def cluster_sort_key(idx_list: list[int]) -> tuple[int, int, int, int, int]:
         return (
-            cluster_directness(idx_list),  # 1: direct beats mechanistic
-            cluster_tier(idx_list),        # 2: A1 beats A2 beats B
-            -len(idx_list),                # 3: more claims wins
+            cluster_has_canonical(idx_list),  # 1: canonical-trial cluster wins
+            cluster_directness(idx_list),     # 2: direct beats mechanistic
+            cluster_tier(idx_list),           # 3: A1 beats A2 beats B
+            -len(idx_list),                   # 4: more claims wins
             min(min(claims[i].supporting_refs) for i in idx_list),  # tiebreak
         )
 
@@ -275,6 +290,7 @@ def compile_claim_graph(
     items_by_ref: Mapping[int, EvidenceItem] | None = None,
     thesis_claim_id: str | None = None,
     cohesive_cluster_only: bool = True,
+    canonical_refs: frozenset[int] = frozenset(),
 ) -> ClaimGraph:
     """Bundle Claims into a ClaimGraph with a chosen thesis spine.
 
@@ -301,7 +317,7 @@ def compile_claim_graph(
         raise CompileError("compile_claim_graph requires at least one claim")
 
     selected: tuple[Claim, ...] = (
-        _largest_cohesive_cluster(claims)
+        _largest_cohesive_cluster(claims, canonical_refs=canonical_refs)
         if cohesive_cluster_only else tuple(claims)
     )
     chosen = thesis_claim_id or pick_thesis(selected, items_by_ref=items_by_ref)

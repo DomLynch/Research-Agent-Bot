@@ -119,6 +119,12 @@ _DRUG_CANDIDATE_STOPWORDS = frozenset({
     "indeed", "notably", "specifically", "importantly", "interestingly",
     "overall", "finally", "first", "second", "third", "fourth", "next",
     "subsequently", "previously", "recently", "currently", "initially",
+    # Body-composition / outcome terms commonly capitalized at sentence
+    # start in clinical abstracts (Day 8.1 from rapamycin run regression)
+    "lean", "visceral", "fat", "self", "muscle", "body", "weight",
+    "mean", "median", "average", "total", "primary", "secondary",
+    "compared", "using", "both", "either", "neither", "such",
+    "treatment", "patients", "subjects", "control", "placebo",
 })
 
 # Trial-status set indicating "results are publicly accessible". A claim

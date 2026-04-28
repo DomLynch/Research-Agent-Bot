@@ -47,7 +47,7 @@ import httpx
 
 from collections import Counter
 
-from agent.citation_trace import trace_claim_graph
+from agent.citation_trace import registry_ids_for, trace_claim_graph
 from agent.compiler import CompileError, compile_claim_graph, compile_claims
 from agent.fact_extractor import (
     PROMPT_VERSION as EXTRACT_PROMPT_VERSION,
@@ -291,7 +291,20 @@ async def run_proof(
         try:
             claims = compile_claims(accepted_facts, items)
             items_by_ref = {it.source.ref: it for it in items}
-            graph = compile_claim_graph(claims, items_by_ref=items_by_ref)
+            # Day 8.1: refs whose source paper has a canonical NCT
+            # (per topic_pack). The compiler uses this to break ties
+            # between equally-strong clusters in favor of the canonical
+            # trial cluster — fixes Proof 001 regression where a
+            # non-canonical metformin paper out-tied MASTERS by ref index.
+            canonical_ids = {trial.id.upper() for trial in pack.canonical_trials}
+            canonical_refs = frozenset(
+                ref for ref, item in items_by_ref.items()
+                if any(rid in canonical_ids for rid in registry_ids_for(item))
+            )
+            graph = compile_claim_graph(
+                claims, items_by_ref=items_by_ref,
+                canonical_refs=canonical_refs,
+            )
         except (CompileError, ClaimGraphInvariantError) as exc:
             raise OrchestratorError(
                 f"compile stage failed: {type(exc).__name__}: {exc}"
