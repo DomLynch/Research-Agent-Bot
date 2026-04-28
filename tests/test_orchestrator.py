@@ -1,0 +1,658 @@
+"""Tests for agent/orchestrator.py — single-call pipeline driver.
+
+Fixture-replay only — no network, no real LLM keys. Mocks the two
+LLM call layers (fact extraction + SPAR) via httpx.MockTransport,
+uses fixture trace clients (FixtureTrialRegistryClient +
+FixtureDrugAliasClient), and asserts the 8 receipts are produced
+and JSON-loadable.
+
+The live counterpart is `scripts/e2e_metformin_proof_001.py` (Day 5.3),
+which calls retrieve + bundle + run_proof against real APIs and a
+real LLM chain.
+"""
+from __future__ import annotations
+
+import asyncio
+import json
+from pathlib import Path
+from types import MappingProxyType
+
+import httpx
+import pytest
+
+from agent.llm_client import CallSpec
+from agent.orchestrator import OrchestratorError, RunReceipts, run_proof
+from agent.topic_pack import TopicPack
+from agent.trace_clients import (
+    FixtureDrugAliasClient,
+    FixtureTrialRegistryClient,
+)
+from agent.types import EvidenceItem, Source
+
+
+# --- Fixtures -------------------------------------------------------------
+
+
+def _src(ref: int = 1, *, nct: str | None = None) -> Source:
+    return Source(
+        ref=ref, title=f"Trial {ref}", year=2024,
+        url=f"https://x.example/{ref}", source="pubmed", nct=nct,
+    )
+
+
+def _item(
+    ref: int = 1, *,
+    role: str = "published_results",
+    nct: str | None = None,
+    abstract: str = "Metformin reduced HbA1c by 0.5% (p=0.003).",
+) -> EvidenceItem:
+    return EvidenceItem(
+        source=_src(ref, nct=nct), abstract=abstract,
+        design="rct",  # type: ignore[arg-type]
+        role=role,  # type: ignore[arg-type]
+        tier="A1", direct=True, strict=True,
+    )
+
+
+def _pack() -> TopicPack:
+    return TopicPack(
+        topic="metformin",
+        drug_class="biguanide",
+        aliases=frozenset({"metformin", "biguanide", "glucophage"}),
+        aliases_display=("metformin", "biguanide", "Glucophage"),
+        expected_evidence_slots=(),
+        special_rules=(),
+        forbidden_verbs_for_protocol_role=frozenset(
+            {"demonstrated", "showed", "reduced", "improved"}
+        ),
+        forbidden_verbs_for_results_role_with_protocol_keywords=frozenset(
+            {"planned", "pending", "will assess"}
+        ),
+        canonical_trials=(),
+        known_role_overrides=MappingProxyType({}),
+    )
+
+
+def _spec() -> CallSpec:
+    return CallSpec(
+        base_url="https://api.example.com/v1",
+        api_key="k", model="test/model", timeout_sec=5.0,
+    )
+
+
+def _extractor_response(claim: str, p_value: str = "0.003") -> dict:
+    """Mock fact_extractor LLM response — one valid Fact."""
+    return {
+        "choices": [{"message": {"content": json.dumps({
+            "facts": [{
+                "claim": claim,
+                "outcome": "HbA1c", "estimate": None,
+                "p_value": p_value, "ci": None,
+            }],
+        })}}],
+        "usage": {"prompt_tokens": 100, "completion_tokens": 50},
+    }
+
+
+def _judge_response(verdict: str = "accept") -> dict:
+    """Mock SPAR judge response."""
+    return {
+        "choices": [{"message": {"content": json.dumps({
+            "verdict": verdict, "score": 8,
+            "rationale": f"{verdict} rationale", "flagged_claims": [],
+        })}}],
+        "usage": {"prompt_tokens": 100, "completion_tokens": 50},
+    }
+
+
+def _make_handler(
+    extract_claim: str = "metformin reduced HbA1c (p=0.003).",
+    extract_pvalue: str = "0.003",
+    judge_verdict: str = "accept",
+) -> callable:
+    """Compose a single MockTransport handler that routes by system
+    prompt content — fact extractor vs. SPAR judges."""
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        text = sys_msg["content"]
+        if "extract structured FACTS" in text:
+            return httpx.Response(200, json=_extractor_response(
+                extract_claim, p_value=extract_pvalue,
+            ))
+        # All three judges return the same canned verdict
+        return httpx.Response(200, json=_judge_response(judge_verdict))
+    return handler
+
+
+def _run(coro):
+    return asyncio.run(coro)
+
+
+# --- Happy path ----------------------------------------------------------
+
+
+def test_run_proof_happy_path_emits_all_eight_receipts(tmp_path: Path) -> None:
+    """Clean scenario: 1 item + LLM extracts 1 valid fact + 3 judges
+    all accept + no failed traces. All 8 receipts produced and the
+    paper is rendered."""
+    handler = _make_handler()
+    items = [_item(1, abstract="Metformin reduced HbA1c by 0.5% (p=0.003).")]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-happy-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    receipts: RunReceipts = _run(go())
+
+    # All 8 receipts exist on disk
+    for path in (
+        receipts.paper_md, receipts.claim_graph, receipts.citation_traces,
+        receipts.spar_review, receipts.evidence_cards, receipts.cost_log,
+        receipts.fact_extraction_log, receipts.run_metadata,
+    ):
+        assert path.exists(), f"missing receipt: {path.name}"
+
+    # paper.md has thesis content
+    paper = receipts.paper_md.read_text()
+    assert "# " in paper  # has a title
+    assert "## Thesis" in paper
+    assert "accept_clean" in paper
+
+    # claim_graph.json reloads cleanly
+    cg = json.loads(receipts.claim_graph.read_text())
+    assert "thesis_claim_id" in cg
+    assert isinstance(cg["claims"], list)
+    assert len(cg["claims"]) >= 1
+
+    # spar_review.json has the verdict
+    sr = json.loads(receipts.spar_review.read_text())
+    assert sr["verdict"] == "accept_clean"
+    assert sr["gate_override"] is None
+
+    # run_metadata has the right summary
+    md = json.loads(receipts.run_metadata.read_text())
+    assert md["submission_id"] == "run-happy-001"
+    assert md["topic"] == "metformin"
+    assert md["spar_verdict"] == "accept_clean"
+    assert md["gate_override"] is False
+    assert md["n_claims"] >= 1
+    assert "started_at" in md and "finished_at" in md
+
+
+# --- Gate-override path --------------------------------------------------
+
+
+def test_run_proof_gate_override_path_renders_rejection(tmp_path: Path) -> None:
+    """Trace gate fires: judges all accept, but one trace fails.
+    paper.md is the rejection notice; run_metadata.gate_override=True."""
+    # Use a fabricated NCT so the fixture registry returns None →
+    # trace_nct_exists yields passed=False, the trust-spine gate fires.
+    items = [_item(
+        1, role="published_results", nct="NCT99999999",
+        abstract="Trial NCT99999999 reported metformin outcomes (p=0.003).",
+    )]
+    handler = _make_handler(
+        extract_claim="metformin reduced HbA1c (p=0.003).",
+        judge_verdict="accept",
+    )
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-gate-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    receipts: RunReceipts = _run(go())
+    paper = receipts.paper_md.read_text()
+    assert "TRUST-SPINE TRACE GATE TRIGGERED" in paper
+    assert "reject_critical" in paper
+
+    md = json.loads(receipts.run_metadata.read_text())
+    assert md["spar_verdict"] == "reject_critical"
+    assert md["gate_override"] is True
+    assert md["n_failed_traces"] >= 1
+
+    sr = json.loads(receipts.spar_review.read_text())
+    assert sr["gate_override"] is not None
+    assert sr["gate_override"]["pre_gate_verdict"] == "accept_clean"
+
+
+# --- Reject panel path ---------------------------------------------------
+
+
+def test_run_proof_unanimous_reject_renders_rejection(tmp_path: Path) -> None:
+    """Judges all reject → reject_critical, no gate fired (panel
+    rejected on its own). paper.md is rejection notice."""
+    handler = _make_handler(judge_verdict="reject")
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-reject-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    receipts: RunReceipts = _run(go())
+    paper = receipts.paper_md.read_text()
+    assert "DRAFT REJECTED" in paper
+    md = json.loads(receipts.run_metadata.read_text())
+    assert md["spar_verdict"] == "reject_critical"
+    assert md["gate_override"] is False  # panel rejected; gate didn't fire
+
+
+# --- Empty-extraction failure path ---------------------------------------
+
+
+def test_run_proof_zero_facts_raises_orchestrator_error(tmp_path: Path) -> None:
+    """LLM extracts no usable facts (e.g., all malformed) → orchestrator
+    fails loud rather than producing an empty paper. Caller decides
+    retry vs surface."""
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        if "extract structured FACTS" in sys_msg["content"]:
+            # Empty facts list — schema-valid but no usable output
+            return httpx.Response(200, json={
+                "choices": [{"message": {"content": '{"facts": []}'}}],
+                "usage": {"prompt_tokens": 50, "completion_tokens": 10},
+            })
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-empty-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    with pytest.raises(OrchestratorError, match="0 accepted facts"):
+        _run(go())
+
+
+# --- Cost log + fact log shape -------------------------------------------
+
+
+def test_run_proof_cost_log_separates_extract_and_spar(tmp_path: Path) -> None:
+    """cost_log.json records both LLM stages independently for audit."""
+    handler = _make_handler()
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-cost-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    receipts = _run(go())
+    cost = json.loads(receipts.cost_log.read_text())
+    assert "extract" in cost
+    assert "spar" in cost
+    assert "total_usd" in cost
+    # Extract path: 1 LLM call (1 item)
+    assert len(cost["extract"]["calls"]) == 1
+    # SPAR path: 3 LLM calls (3 judges)
+    assert len(cost["spar"]["calls"]) == 3
+
+
+def test_run_proof_fact_log_includes_accepted_and_rejected(tmp_path: Path) -> None:
+    """fact_extraction_log.json carries BOTH accepted facts and the
+    full rejection list for audit. The orchestrator doesn't filter
+    rejections away."""
+    # Make the extractor propose both a valid fact and a malformed one
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        if "extract structured FACTS" in sys_msg["content"]:
+            return httpx.Response(200, json={
+                "choices": [{"message": {"content": json.dumps({
+                    "facts": [
+                        {  # valid
+                            "claim": "metformin reduced HbA1c (p=0.003).",
+                            "outcome": "HbA1c", "estimate": None,
+                            "p_value": "0.003", "ci": None,
+                        },
+                        {},  # missing claim → rejection
+                    ],
+                })}}],
+                "usage": {"prompt_tokens": 100, "completion_tokens": 50},
+            })
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-faclog-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    receipts = _run(go())
+    fact_log = json.loads(receipts.fact_extraction_log.read_text())
+    assert "accepted" in fact_log
+    assert "rejected" in fact_log
+    assert len(fact_log["accepted"]) == 1
+    assert len(fact_log["rejected"]) == 1
+    assert fact_log["rejected"][0]["reason"] == "missing_or_empty_claim"
+
+
+# --- Output dir handling -------------------------------------------------
+
+
+def test_run_proof_invariant_violation_when_published_results_has_no_facts(
+    tmp_path: Path,
+) -> None:
+    """P1-1 fix: a published_results item with no extracted result-fact
+    is a silent audit-trail break (the bundle says it has reportable
+    findings, but those findings won't appear in the paper). The
+    orchestrator must call `assert_invariants` and surface the violation
+    as OrchestratorError with diagnostic receipts written."""
+    # Two items: the LLM extracts a fact for ref=1 but NOT for ref=2.
+    # ref=2 is published_results, so the invariant requires it carry a
+    # result-kind fact. assert_invariants must fire.
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        if "extract structured FACTS" in sys_msg["content"]:
+            user_msg = next(m for m in body["messages"] if m["role"] == "user")
+            if "[1]" in user_msg["content"]:
+                # ref=1 → emit a valid fact
+                return httpx.Response(200, json=_extractor_response(
+                    "metformin reduced HbA1c (p=0.003).",
+                ))
+            # ref=2 → emit zero facts (silent drop)
+            return httpx.Response(200, json={
+                "choices": [{"message": {"content": '{"facts": []}'}}],
+                "usage": {"prompt_tokens": 50, "completion_tokens": 10},
+            })
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [
+        _item(1, abstract="Metformin reduced HbA1c (p=0.003)."),
+        _item(2, abstract="Another results paper."),
+    ]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-invariant-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    with pytest.raises(OrchestratorError, match="invariant violated"):
+        _run(go())
+    # Diagnostic receipts written for the operator
+    assert (tmp_path / "fact_extraction_log.json").exists()
+    assert (tmp_path / "cost_log.json").exists()
+
+
+def test_run_proof_refuses_to_overwrite_existing_receipts(tmp_path: Path) -> None:
+    """P1-3 fix: a prior run's receipts must not be silently clobbered.
+    Audit-trail integrity over write-throughput convenience."""
+    # Pre-create one of the receipt files in the target dir
+    (tmp_path / "paper.md").write_text("# Old run\n", encoding="utf-8")
+
+    handler = _make_handler()
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-clobber-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    with pytest.raises(OrchestratorError, match="Refusing to overwrite"):
+        _run(go())
+
+
+def test_run_proof_zero_facts_error_includes_rejection_histogram(
+    tmp_path: Path,
+) -> None:
+    """P2-2 fix: zero-facts error message must surface the rejection
+    category histogram, not just the first 3 reasons. An operator
+    seeing `{'llm_error': 5}` knows immediately that the LLM is down,
+    rather than seeing three unrelated rejection reasons by chance."""
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        if "extract structured FACTS" in sys_msg["content"]:
+            return httpx.Response(200, json={
+                "choices": [{"message": {"content": '{"facts": []}'}}],
+                "usage": {"prompt_tokens": 50, "completion_tokens": 10},
+            })
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-hist-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    with pytest.raises(OrchestratorError, match="by category:") as exc_info:
+        _run(go())
+    # Histogram is a dict literal in the message
+    assert "{" in str(exc_info.value)
+
+
+def test_run_proof_extract_failure_writes_diagnostic_receipts(
+    tmp_path: Path,
+) -> None:
+    """P2-3 fix: even when extraction fails, fact_extraction_log and
+    cost_log are written so the operator can debug WHY without re-running."""
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        if "extract structured FACTS" in sys_msg["content"]:
+            return httpx.Response(200, json={
+                "choices": [{"message": {"content": '{"facts": []}'}}],
+                "usage": {"prompt_tokens": 50, "completion_tokens": 10},
+            })
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-diag-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    with pytest.raises(OrchestratorError):
+        _run(go())
+    # Two diagnostic receipts on disk
+    fact_log = json.loads((tmp_path / "fact_extraction_log.json").read_text())
+    assert fact_log["accepted"] == []
+    cost = json.loads((tmp_path / "cost_log.json").read_text())
+    assert "extract" in cost
+    assert "spar" in cost  # always present; zero on this path
+    # The 6 non-diagnostic receipts MUST NOT exist (no full run happened)
+    assert not (tmp_path / "paper.md").exists()
+    assert not (tmp_path / "claim_graph.json").exists()
+    assert not (tmp_path / "spar_review.json").exists()
+
+
+def test_run_proof_compile_error_wraps_in_orchestrator_error(
+    tmp_path: Path,
+) -> None:
+    """P1-2 fix: CompileError from compile_claims (orphan ref) must be
+    wrapped as OrchestratorError per the documented contract."""
+    # The LLM returns a fact whose ref=99 doesn't exist in the bundle
+    # (ref=1 is the only item). compile_claims raises CompileError.
+    # NOTE: fact_extractor pins fact.ref to item.source.ref, so this is
+    # hard to trigger via the real extraction path. We can simulate by
+    # having two items but extracting facts that don't satisfy the
+    # invariant. Easier: monkey-patch compile_claims to raise.
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        if "extract structured FACTS" in sys_msg["content"]:
+            return httpx.Response(200, json=_extractor_response(
+                "metformin reduced HbA1c (p=0.003).",
+            ))
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [_item(1)]
+
+    # Patch compile_claims to raise to exercise the wrapper.
+    import agent.orchestrator as orch
+    from agent.compiler import CompileError as _CE
+
+    def fake_compile_claims(*a, **kw):
+        raise _CE("synthetic orphan ref for the test")
+
+    real = orch.compile_claims
+    orch.compile_claims = fake_compile_claims
+    try:
+        async def go():
+            client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+            try:
+                await run_proof(
+                    items,
+                    topic="metformin", domain="aging",
+                    pack=_pack(), output_dir=tmp_path,
+                    submission_id="run-compile-001",
+                    extract_chain=(_spec(),), spar_chain=(_spec(),),
+                    registry=FixtureTrialRegistryClient(),
+                    drug_client=FixtureDrugAliasClient(),
+                    client=client,
+                )
+            finally:
+                await client.aclose()
+
+        with pytest.raises(OrchestratorError, match="compile stage failed"):
+            _run(go())
+    finally:
+        orch.compile_claims = real
+
+
+def test_run_proof_creates_output_dir_if_missing(tmp_path: Path) -> None:
+    """`output_dir` doesn't need to pre-exist — orchestrator creates it
+    (with parents) before writing receipts."""
+    target = tmp_path / "deeply" / "nested" / "run-001"
+    assert not target.exists()
+    handler = _make_handler()
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=target,
+                submission_id="run-mkdir-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    receipts = _run(go())
+    assert target.is_dir()
+    assert receipts.paper_md.parent == target
