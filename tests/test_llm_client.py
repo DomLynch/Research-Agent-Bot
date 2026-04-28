@@ -18,6 +18,7 @@ from agent.llm_client import (
     LLMError,
     LLMResponse,
     build_extract_chain,
+    build_judge_chain,
     chat_json,
     extract_json,
 )
@@ -420,3 +421,27 @@ def test_build_extract_chain_uses_settings_timeout() -> None:
     chain = build_extract_chain(s)
     assert chain[0].timeout_sec == s.mimo_timeout_sec
     assert chain[1].timeout_sec == s.mimo_timeout_sec  # both share MiMo timeout
+
+
+# --- build_judge_chain (Day 5.3) -----------------------------------------
+
+
+def test_build_judge_chain_yields_gemma_mimo_mistral() -> None:
+    """SPAR judge chain: Gemma 4 (primary) → MiMo (fallback) → Mistral.
+    Different cognitive style than extract chain — judges benefit from
+    the stronger reasoning model."""
+    chain = build_judge_chain(_settings())
+    assert len(chain) == 3
+    assert chain[0].model == "google/gemma-4-31b-it"
+    assert chain[1].model == "mimo-v2.5-pro"
+    assert chain[2].model == "mistralai/mistral-small-2603"
+
+
+def test_build_judge_chain_keeps_empty_keys_in_chain() -> None:
+    """Specs with empty api_keys remain in the chain — chat_json skips
+    them at call time. Partial-config envs still produce useful work."""
+    chain = build_judge_chain(_settings(openrouter_key=""))
+    assert len(chain) == 3
+    assert chain[0].api_key == ""  # Gemma: skipped at call time
+    assert chain[1].api_key == "mimo-key"  # MiMo: fires
+    assert chain[2].api_key == ""  # Mistral: also under openrouter, skipped

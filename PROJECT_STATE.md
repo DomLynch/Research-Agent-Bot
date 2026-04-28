@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 5.2-fix shipped (P1 verbatim source_quote replaces bag-of-words overlap; novel claims structurally impossible at extractor); Day 5.3 next
+## Status — 2026-04-28 — Day 5.3 shipped (live first-metformin-run script with canonical-pin + random-suffix dirs + distinct exit codes; reviewer-cleared 3 P1s + 4 P2s); Day 5.4 next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,8 +43,8 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 578/578 passing in 0.49s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,233 / **5,500** ceiling (4.8% headroom; saved 24 cloc by replacing bag-of-words overlap gate with verbatim quote check).
+**Tests:** 580/580 passing in 0.50s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,260 / **5,500** ceiling (4.4% headroom; +27 cloc for `build_judge_chain` in llm_client.py).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
 - `spar.py` 397, `citation_trace.py` 355, `fact_extractor.py` 327 — all over soft cap; all under 600 hard cap. Each carries load-bearing prompts and/or trust-spine gates. Splitting would couple tightly-related logic.
@@ -100,6 +100,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `1987105` | 2026-04-28 | Day 5.1: orchestrator — single-call pipeline + 8 mandatory receipts (3 P1 + 4 P2 reviewer-cleared) |
 | `2a01f17` | 2026-04-28 | Day 5.1-fix: claim-text overlap gate (P1) + atomic paper.md (P2) + force_overwrite (Gap-1) + state drift (P3) |
 | `8a487da` | 2026-04-28 | Day 5.2: full-pipeline fixture-replay E2E (specificity proof + sensitivity reaffirmed) |
+| `d8b9dec` | 2026-04-28 | Day 5.2-fix: verbatim source_quote replaces bag-of-words overlap (closes endpoint-swap bypass) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -195,7 +196,8 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 | **5.1** | `agent/orchestrator.py` — single-call pipeline + 8 mandatory receipts | ✅ `1987105` |
 | **5.1-fix** | P1 fact_extractor claim-text overlap gate + P2 atomic paper.md + Gap-1 force_overwrite + P3 doc drift | ✅ `2a01f17` |
 | **5.2** | fixture-replay full-pipeline E2E (clean + gate-fired scenarios end-to-end) | ✅ `8a487da` |
-| **5.2-fix** | P1 verbatim source_quote replaces bag-of-words overlap (closes endpoint-swap bypass) | ✅ this slice |
+| **5.2-fix** | P1 verbatim source_quote replaces bag-of-words overlap (closes endpoint-swap bypass) | ✅ `d8b9dec` |
+| **5.3** | `scripts/e2e_metformin_proof_001.py` — live first metformin run + `build_judge_chain` in llm_client.py | ✅ this slice |
 | **5.3** | `scripts/e2e_metformin_proof_001.py` — first LIVE metformin run | ☐ |
 | **5.4** | gut `render.py` V1.1 stub (saves ~278 cloc) | ☐ |
 

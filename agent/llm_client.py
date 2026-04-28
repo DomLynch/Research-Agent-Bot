@@ -46,6 +46,7 @@ __all__ = [
     "chat_json",
     "extract_json",
     "build_extract_chain",
+    "build_judge_chain",
 ]
 
 logger = logging.getLogger(__name__)
@@ -284,6 +285,35 @@ def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
     still produces useful work without crashing the pipeline.
     """
     return (
+        CallSpec(
+            base_url=settings.mimo_base_url,
+            api_key=settings.mimo_api_key,
+            model=settings.mimo_model,
+            timeout_sec=settings.mimo_timeout_sec,
+        ),
+        CallSpec(
+            base_url=settings.openrouter_base_url,
+            api_key=settings.openrouter_api_key,
+            model=settings.fallback_model,
+            timeout_sec=settings.mimo_timeout_sec,
+        ),
+    )
+
+
+def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
+    """SPAR judge chain: Gemma 4 (primary) → MiMo (fallback) → Mistral.
+
+    Different cognitive style than `build_extract_chain` — judges
+    benefit from a stronger reasoning model. Empty-api_key specs are
+    skipped at call time so a partial-config env still produces output.
+    """
+    return (
+        CallSpec(
+            base_url=settings.openrouter_base_url,
+            api_key=settings.openrouter_api_key,
+            model=settings.judge_model,
+            timeout_sec=settings.mimo_timeout_sec,
+        ),
         CallSpec(
             base_url=settings.mimo_base_url,
             api_key=settings.mimo_api_key,
