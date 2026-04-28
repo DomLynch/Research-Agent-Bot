@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 4.3-fix shipped (P1 claim-binding contract — sentences MUST declare claim_ids); Day 4.4 planted-failures-through-SPAR next
+## Status — 2026-04-28 — Day 4 ✅ COMPLETE (4.4 planted-failures-end-to-end shipped; all 5 cases caught at trust-spine gate); Day 5 (first metformin run + orchestrator) next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,7 +43,7 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 551/551 passing in 0.45s. ruff clean. git diff --check clean.
+**Tests:** 560/560 passing in 0.45s. ruff clean. git diff --check clean.
 **Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,093 / **5,500** ceiling (7.4% headroom; ceiling raised 2026-04-28 — see DECISIONS.md).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
@@ -93,6 +93,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `bc5e080` | 2026-04-28 | Day 4.2-fix: trust-spine trace gate (GateOverride schema) + strict flagged_claims + state drift |
 | `dd73dd7` | 2026-04-28 | Day 4-prep: raise LOC ceiling 4,800 → 5,500 (DECISIONS.md) + state drift |
 | `57a8e30` | 2026-04-28 | Day 4.3: writer.py — claim-graph-gated prose with gate_override prominence |
+| `132d552` | 2026-04-28 | Day 4.3-fix: strict claim-binding contract — sentences are `{claim_ids, text}` objects |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -149,8 +150,8 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
 | 3 | `citation_trace.py` against `trace_clients/*` (fixture + httpx backends). MCP backend optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **✅ COMPLETE** — 3.0 → 3.2c-fix-2 → 3.1-fixes-3 → 3.3a → 3.3b → 3.3c live smoke 6/6 green + **3.4 Day-3 E2E** (this slice — `tests/test_e2e_day3_pipeline.py` 7 tests: fixture-replay corpus → bundle → hand-curated Facts → compile_claims → compile_claim_graph → trace_claim_graph; verifies thesis-pick selects MASTERS direct A1; nct_exists fires for canonical NCT02308228; planted case 4 (Glufomin drift) flagged via trace_alias_match; sub-second perf baseline). LLM extraction stage covered by Day 3.2c unit tests + opt-in live smoke; Day 4 (SPAR + thesis tournament + writer) next. |
-| 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | **PARTIAL** — 4.1 `49677b2` + 4.2 `a1dfcf4` + 4.2-fix `bc5e080` + 4-prep `dd73dd7` + 4.3 `57a8e30` + **4.3-fix** (this slice — P1 strict claim-binding contract: each sentence is `{claim_ids, text}` object, ≥1 claim_id from graph, ≥1 cite in text, cites must be subset of declared claims' supporting_refs; closes the V1.1-style hole where the LLM could cite a valid `[N]` while making a novel claim outside the graph; 6 new tests, 551/551 total); 4.4 planted-failures-through-SPAR ☐ pending |
-| 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
+| 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | **✅ COMPLETE** — 4.1 `49677b2` + 4.2 `a1dfcf4` + 4.2-fix `bc5e080` + 4-prep `dd73dd7` + 4.3 `57a8e30` + 4.3-fix `132d552` + **4.4 planted-failures-E2E** (this slice — `tests/test_planted_failures_e2e.py`; 5 parametrized cases prove all trace failure modes (nct_exists / p_value_in_text / alias_match / role_match) trigger the trust-spine gate when judges all vote accept; 1 e2e through writer (gate banner rendered prominently in markdown); 3 defense-in-depth tests showing writer's verb-ban / p-value / alias gates catch interior layers; 9 new tests, 560/560 total); thesis tournament defensible-thesis criterion proven in Day 3.4 E2E + Day 4.1 wire-in. |
+| 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | ☐ next |
 
 ## Eval gates (Proof 001 ship criteria)
 - Role accuracy 10/10 (no protocol cited as result; every NCT in topic pack hits override)
@@ -196,8 +197,9 @@ Next: **Day 4 — thesis tournament + SPAR + writer.**
 | **4.1** | `thesis_tournament.py` 6-dim selector + compiler wire-in | ✅ `49677b2` |
 | **4.2** | `spar.py` — 3-judge panel + dissent always published | ✅ `a1dfcf4` |
 | **4.2-fix** | P1 trace gate + P2 strict flagged + GateOverride schema | ✅ this slice |
-| **4.3** | `writer.py` — claim-graph-gated prose drafter | ✅ this slice |
-| **4.4** | All 5 planted failures through SPAR → assert each caught | ☐ next |
+| **4.3** | `writer.py` — claim-graph-gated prose drafter | ✅ `57a8e30` |
+| **4.3-fix** | strict claim-binding contract (P1 + P3) | ✅ `132d552` |
+| **4.4** | All 5 planted failures through SPAR → assert each caught | ✅ this slice |
 
 ### LOC budget — ceiling raised to 5,500 (DECISIONS.md 2026-04-28)
 Current: **4,656 / 5,500 cloc** (15% headroom). Day 4.3 writer is
