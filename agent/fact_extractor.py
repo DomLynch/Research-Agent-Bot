@@ -288,12 +288,16 @@ def _validate_proposed(
     endpoint swaps like "Metformin reduced dementia" against an
     HbA1c abstract).
 
-    `require_source_trace=True` enforces FIVE source-tracing layers:
+    `require_source_trace=True` enforces source-tracing layers:
       0. source_quote appears verbatim in the abstract (Day 5.2-fix P1)
       1. p-values embedded in the quote → check_p_value_in_source
       2. proposed `p_value` field → synthesized + PVALUE_RE-traced
-      3. proposed `estimate` field → whitespace-normalized substring
-      4. proposed `ci` field → whitespace-normalized substring
+      3. proposed `estimate` / `ci` fields → kept only when they appear
+         as substrings of the verified source_quote; otherwise NULLED.
+         Day 8.2 (reviewer P2): nulling instead of rejecting the whole
+         fact preserves the verified quote while keeping unverified
+         metadata out of the audit log. The receipt's structured fields
+         now match the trust contract: present iff verified.
     """
     raw_quote = proposed.get("source_quote")
     if not isinstance(raw_quote, str) or not raw_quote.strip():
@@ -330,17 +334,17 @@ def _validate_proposed(
         # number in the structured field instead of inside the quote.
         if p_value is not None and not _check_p_value_field(p_value, item.abstract):
             return None, "p_value_field_not_in_source"
-        # Day 8.0: estimate / ci substring traces dropped. They were
-        # added in Day 3.2c-fix when the LLM emitted free-form claims
-        # that could smuggle unsupported numerics. Day 5.2-fix replaced
-        # the free-form claim with a VERBATIM source_quote that IS the
-        # trust anchor, and the writer renders only source_quote — the
-        # structured estimate / ci fields never reach paper.md. Keeping
-        # the substring trace just rejected legitimate extractions where
-        # the LLM stripped a bracket ("OR 0.601" vs the abstract's
-        # "[OR] 0.601") or rephrased — without protecting any reader-
-        # facing surface. The verbatim quote and p_value field check
-        # are sufficient.
+        # 3. estimate / ci — null instead of reject when they don't trace
+        # to the VERIFIED source_quote (not the full abstract). Day 8.2
+        # closes the reviewer P2 gap: pre-fix, an LLM could write an
+        # arbitrary 'HR 0.10' into Fact.estimate and it would flow into
+        # fact_extraction_log.json as if it were source-backed metadata.
+        # Now we keep the verified quote (which IS the trust anchor) but
+        # null any estimate/ci that isn't a contiguous substring of it.
+        if estimate is not None and not _trace_field_in_source(estimate, quote):
+            estimate = None
+        if ci is not None and not _trace_field_in_source(ci, quote):
+            ci = None
 
     return Fact(
         ref=item.source.ref,

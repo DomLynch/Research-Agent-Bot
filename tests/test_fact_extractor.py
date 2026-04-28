@@ -282,14 +282,13 @@ def test_validate_proposed_p_value_field_bare_number_in_source_accepts() -> None
     assert fact.p_value == "0.003"
 
 
-def test_validate_proposed_accepts_estimate_even_when_not_clean_substring() -> None:
-    """Day 8.0: estimate / ci substring traces dropped — they were redundant
-    once source_quote became verbatim (Day 5.2-fix). The structured
-    metadata fields never reach paper.md (writer renders only source_quote),
-    so even a slightly-rephrased estimate doesn't pollute the artifact.
-    The substring trace was rejecting legitimate extractions where the
-    LLM stripped a bracket form ('OR 0.601' vs the abstract's '[OR] 0.601')
-    without protecting any reader-facing surface."""
+def test_validate_proposed_nulls_untraced_estimate_keeps_fact() -> None:
+    """Day 8.2 (reviewer P2): the LLM's `estimate` is kept only when it
+    appears as a substring of the verified source_quote. When it doesn't,
+    the field is NULLED — not rejected. This preserves the verified
+    quote while keeping unverified metadata out of fact_extraction_log.
+    Pre-fix the field flowed into the audit log as if it were
+    source-backed."""
     item = _item(abstract="Metformin reduced X by a small reduction.")
     fact, reason = _validate_proposed(
         {"source_quote": "Metformin reduced X", "estimate": "HR 0.10"},
@@ -297,11 +296,28 @@ def test_validate_proposed_accepts_estimate_even_when_not_clean_substring() -> N
     )
     assert reason is None
     assert fact is not None
-    assert fact.estimate == "HR 0.10"
+    assert fact.estimate is None, (
+        "estimate must be nulled when not a substring of source_quote — "
+        "the audit log shouldn't contain LLM-fabricated numerics"
+    )
 
 
-def test_validate_proposed_accepts_ci_even_when_not_in_source() -> None:
-    """Same rationale as estimate — see docstring above."""
+def test_validate_proposed_keeps_estimate_when_in_source_quote() -> None:
+    """When the LLM's estimate IS a substring of the verified source_quote,
+    keep it — that's source-backed metadata."""
+    item = _item(abstract="Metformin reduced X with hazard ratio HR 0.79.")
+    fact, reason = _validate_proposed(
+        {"source_quote": "Metformin reduced X with hazard ratio HR 0.79", "estimate": "HR 0.79"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+    assert fact.estimate == "HR 0.79"
+
+
+def test_validate_proposed_nulls_untraced_ci_keeps_fact() -> None:
+    """Same contract for `ci` — nulled when not in source_quote, fact
+    survives with the verified quote."""
     item = _item(abstract="Metformin reduced X but no CI was reported.")
     fact, reason = _validate_proposed(
         {"source_quote": "Metformin reduced X", "ci": "0.01-0.02"},
@@ -309,7 +325,18 @@ def test_validate_proposed_accepts_ci_even_when_not_in_source() -> None:
     )
     assert reason is None
     assert fact is not None
-    assert fact.ci == "0.01-0.02"
+    assert fact.ci is None
+
+
+def test_validate_proposed_keeps_ci_when_in_source_quote() -> None:
+    item = _item(abstract="Metformin reduced X (95% CI 0.66-0.95).")
+    fact, reason = _validate_proposed(
+        {"source_quote": "Metformin reduced X (95% CI 0.66-0.95)", "ci": "0.66-0.95"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+    assert fact.ci == "0.66-0.95"
 
 
 def test_validate_proposed_source_trace_disabled_bypasses_all_field_traces() -> None:

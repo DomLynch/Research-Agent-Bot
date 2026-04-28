@@ -30,19 +30,28 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — 🎯 ALL THREE PROOFS PIPELINE-GREEN
+## Status — 2026-04-28 — Pipeline executes with principled SPAR outcomes (NOT "three deterministic greens")
 
-**The trust-spine pipeline produces 8 mandatory receipts for all three drugs end-to-end.** Cost ~$0.025 / topic / run.
+**Honest reframing after reviewer audit (downgraded from claimed "AAA / three green proofs" to A-minus / "pipeline produces principled SPAR outcomes"):** the trust-spine pipeline produces 8 mandatory receipts for all three drugs every run, but the accept/reject verdict varies between runs because MiMo at temperature 0 still has slight stochasticity in which subset of facts it surfaces. Cost ~$0.009 / topic / run.
 
-**Latest run-by-run receipts** (LLM at temperature 0 still has slight non-determinism, so the specific verdict varies; a single run is a sample from a distribution):
+**Saved receipts at this commit (single-attempt run-rate, not best-of-N):**
 
-| Proof | Best observed verdict | Pipeline status | Notes |
-|---|---|---|---|
-| 001 metformin | `accept_clean` | ✅ green | thesis pinned to MASTERS via canonical-trial cluster priority (Day 8.1). Fixture-replay reproducible. |
-| 002 rapamycin | `accept_clean` | ✅ green | RAPA-EX-01 thesis with 5 statistical findings, all p-values + CIs cited verbatim. Sometimes flips to reject when MiMo lands on PEARL — auditor correctly flags untraced ηp2 effect sizes (eta partial squared isn't a trace type). |
-| 003 everolimus | `accept_caveated` | ✅ green | PROTECTOR / NCT03373903 (Mannick RTB101+everolimus). Sometimes flips to reject_majority — skeptic correctly identifies that PROTECTOR cherry-picks phase-2b lab-marker positive over phase-3 clinical-endpoint negative. SPAR is doing its job either way. |
+| Proof | Saved verdict | Receipt | Trial anchored | Run-rate observed |
+|---|---|---|---|---|
+| 001 metformin | `accept_clean` | `runs/metformin-001-2026-04-28T17-42-13Z-29dd/` | MASTERS (NCT02308228) | reproducible — canonical-trial priority pins MASTERS deterministically when fact extraction includes it |
+| 002 rapamycin | `accept_caveated` | `runs/rapamycin-002-2026-04-28T17-43-13Z-89e6/` (also `…17-37-47Z-ecd5`) | PEARL (NCT04488601) | **1 of 4 attempts** produced accept_*; the other 3 were `reject_critical` because MiMo's extraction of PEARL ηp2 effect-size data isn't traced (no `eta_squared` trace type) so the auditor correctly flags untraced numerics |
+| 003 everolimus | `reject_critical` (latest) / `accept_caveated` (prior) | `runs/everolimus-003-2026-04-28T17-44-06Z-15a3/` (latest); `…17-22-15Z-288e` (earlier accept) | PROTECTOR (NCT03373903) | varies; skeptic correctly identifies that PROTECTOR's phase-2b lab-marker positive vs phase-3 clinical-endpoint negative is contestable |
 
-**What "pipeline-green" means:** the pipeline produces a defensible artifact (8 receipts, structured evidence, traced numerics, principled SPAR judgment) every run. The specific accept/reject verdict is a function of (a) which subset of facts the LLM happens to surface that run, and (b) genuine scientific contestability in the underlying corpus — both of which the design treats as features, not bugs.
+**What "pipeline executes with principled outcomes" means:** every run produces 8 mandatory receipts, structured evidence, traced numerics for what we can trace, and principled SPAR judgments. What it does NOT mean:
+  - It is NOT deterministic across runs (MiMo at T=0 has variance).
+  - It is NOT yet ready for unattended production use — a single run can land on `reject_critical` for principled reasons.
+  - It is NOT validated on live retrieval — fixture-replay is the proof surface; live mode pulls a heterogeneous corpus where canonical trials don't always surface.
+
+**What's still required for unconditional "three green":**
+  1. Generic numeric-trace types (currently only p-values + percentages — ηp², eta squared, OR brackets, hazard ratio prose forms aren't traced)
+  2. Canonical-NCT-anchored live retrieval (so PROTECTOR / MASTERS / PEARL always surface in live mode)
+  3. Either temperature-0 LLM determinism guarantees, OR a "best-of-N" wrapper that takes N samples and picks the highest-quality run
+  4. Trace coverage for the auditor judge to see WHY a numeric was deemed "verified" (currently the trace receipt only shows pass/fail per check; the auditor sometimes rejects on "I can't see what's been verified")
 
 **Architecture milestones of Days 6-8:**
 - Day 6.1: real-LLM lessons (strict-substring prompt, tolerated-orphans invariant, alias stopwords)
@@ -62,7 +71,7 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 587/587 passing in 0.49s. ruff clean. git diff --check clean.
+**Tests:** 592/592 passing in 0.50s. ruff clean. git diff --check clean.
 **Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,013 / **5,500** ceiling (8.9% headroom; net −247 cloc since Day 5.3 from `render.py` deletion (−278) offset by `settings.py` dotenv loader (+27) and `citation_trace.py` `registry_ids_for` promotion (+5)).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
@@ -126,9 +135,11 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `b729b70` | 2026-04-28 | Day 5.5: stdlib `.env` auto-loader in `settings.py` (live script runs from fresh shell) |
 | `423429c` | 2026-04-28 | Day 6.1: real-LLM live-run lessons — strict prompt (substring-only metadata), `tolerated_orphans` invariant, synthetic empty-facts rejection, expanded alias stopwords |
 | `2b5eff3` | 2026-04-28 | **Day 6.3: cohesive cluster filter + all-caps acronym alias-skip → 🎯 PROOF 001 GREEN** (`accept_caveated` on MASTERS, 0 failed traces, fixture mode) |
-| `7defaf8` | 2026-04-28 | **Day 7: rapamycin pack + script generalization → 🎯 PROOF 002 GREEN** (`accept_clean` on RAPA-EX-01, 16 traces 0 failed, unanimous accept) |
-| `6473755` | 2026-04-28 | **Day 8: everolimus pack + 5 trust-spine refinements** (drop estimate/ci substring traces, Unicode middle-dot normalization, tier-aware cluster filter, fact-multiplicity prompt, acronym-plural filter); Proof 003 pipeline-validated. |
-| `db6c02a` | 2026-04-28 | Day 8.1: canonical-trial cluster priority + extended body-composition alias stopwords (stabilizes Proof 001 onto MASTERS across LLM-non-determinism). |
+| `7defaf8` | 2026-04-28 | Day 7: rapamycin pack + script generalization (`--topic` flag drives all three proofs from one entry point) |
+| `6473755` | 2026-04-28 | Day 8: everolimus pack + 5 trust-spine refinements (drop estimate/ci substring rejection, Unicode middle-dot normalization, tier-aware cluster filter, fact-multiplicity prompt, acronym-plural filter) |
+| `db6c02a` | 2026-04-28 | Day 8.1: canonical-trial cluster priority + extended body-composition alias stopwords (stabilizes Proof 001 onto MASTERS across LLM-non-determinism) |
+| `54ff453` | 2026-04-28 | Day 8.1-state: PROJECT_STATE refresh (since-corrected — claimed "three green proofs" without saved rapamycin green receipt; downgraded in next slice after reviewer audit) |
+| _next_   | 2026-04-28 | Day 8.2 (this slice): reviewer audit response — null untraced estimate/ci before they enter the audit log (P2 trust-spine bug); save rapamycin green receipt + downgrade status language to "pipeline executes with principled outcomes"; refresh commit table + test count (P1 + P3) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -228,10 +239,13 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 | **5.3-fix** | P1 `_CapTooSmallError` + promote `registry_ids_for` + P1 `_format_path` outside-repo | ✅ `25c1349` |
 | **5.4** | gut `render.py` V1.1 stub (writer.py is now the renderer; saved 278 cloc) | ✅ `f920d75` |
 | **5.5** | `settings.py` stdlib `.env` auto-loader so live script runs without manual export | ✅ this slice |
-| **6** | first metformin run = Proof 001 GREEN | ✅ `2b5eff3` — fixture mode `accept_caveated` on MASTERS (canonical NCT02308228); 8/8 receipts; 0 failed traces; SPAR 2-1 with skeptic dissent published per design. Cost $0.0085 / 78s. Live mode reject_critical on a real scientific issue in a real AMD paper (judges correctly flag CI-vs-framing inconsistency) — pipeline is sound, the source paper itself has a framing issue. |
-| **7** | `topic_packs/rapamycin.toml` + Proof 002 fixture + live run | ☐ |
-| **8** | `topic_packs/everolimus.toml` + Proof 003 fixture + live run | ☐ |
-| **9** | live-mode retrieval improvements (anchor queries on canonical NCT IDs so MASTERS / TAME / etc. always surface) — stretch goal for full live green | ☐ |
+| **6** | first metformin run produces 8 receipts | ✅ `2b5eff3` — fixture mode reproduces `accept_clean` / `accept_caveated` on MASTERS; receipts saved. |
+| **7** | rapamycin pack + Proof 002 fixture | ✅ `7defaf8` (pack + script generalization). Saved receipts: 1 of 4 attempts produces `accept_caveated` on PEARL; the other 3 reject on untraced ηp² effect sizes. Pipeline executes; verdict not deterministic. |
+| **8** | everolimus pack + Proof 003 fixture | ✅ `6473755` + `db6c02a` (pack + 5 trust-spine refinements + canonical-priority tiebreaker). Saved receipts: latest `reject_critical`, prior `accept_caveated`. Skeptic correctly flags PROTECTOR's lab-vs-clinical-endpoint cherry-picking. |
+| **8.2** | reviewer audit response: null untraced estimate/ci before audit log; downgrade status from "three green" to "principled SPAR outcomes"; refresh state | ☑ this slice |
+| **9** (stretch) | live-mode retrieval anchored on canonical NCT IDs | ☐ |
+| **10** (stretch) | generic numeric-trace types (ηp², HR, OR brackets) — closes auditor "untraced numeric" rejections | ☐ |
+| **11** (stretch) | best-of-N runner OR captured-LLM-response goldens for CI determinism | ☐ |
 
 ### LOC budget after 5.5
 Current: **5,013 / 5,500 cloc** (8.9% headroom). The `render.py` gut
@@ -241,14 +255,36 @@ remains for the optional `submit_adapter.py` / `mcp_server.py` from
 the original Day 5 plan if they're needed. They're NOT required for
 the "first metformin run produces all 8 receipts" done-when.
 
-### What's left before final release
-1. ✅ **Proof 001 GREEN** — `accept_clean` / `accept_caveated` on MASTERS (canonical-priority pinned).
-2. ✅ **Proof 002 GREEN** — `accept_clean` on RAPA-EX-01.
-3. ✅ **Proof 003 PIPELINE-GREEN** — `accept_caveated` on PROTECTOR when MiMo lands on it; `reject_majority` on cherry-picking when LLM picks a contested fact pair. Both outcomes are principled SPAR behavior on genuinely contested aging evidence.
-4. **LLM determinism stretch goal** — at temperature 0, MiMo still has slight run-to-run variance in which subset of facts it surfaces. Shipping a fixture-replay golden (where the LLM responses are also captured) would give CI-deterministic test runs. Live runs remain probabilistic, which the design treats as acceptable.
-5. **Trace coverage gaps** — ηp2 (eta partial squared) and other effect-size statistic types aren't currently traced. The auditor judge correctly flags these as "untraced numerics" → reject. Adding generic numeric-trace types would let more rapamycin / everolimus runs land at accept_*.
-6. **Live-mode retrieval improvement** — anchor live queries on the topic pack's canonical_trials NCT IDs so canonical trials always surface (currently only 1 of 4 surfaces in live metformin with the broad `criteria` query).
-7. **RFC outreach** — pipeline is ready; the user can run `python -m scripts.e2e_metformin_proof_001 --topic <metformin|rapamycin|everolimus>` to produce 8 receipts on demand and share the highest-quality output in RFCs.
+### What's left before final release (post reviewer-audit)
+
+The pipeline produces principled SPAR outcomes every run, but the
+reviewer correctly downgraded the earlier "three green proofs" claim.
+Genuine release-readiness needs:
+
+1. **Trace coverage for non-p-value statistics.** ηp², HR, OR-bracket
+   forms, eta squared aren't traced. The auditor judge correctly
+   rejects when it sees these as "untraced numerics in claim". Generic
+   numeric-trace types are the path to a deterministic accept on
+   rapamycin (PEARL) and would also stabilize everolimus (PROTECTOR).
+2. **Determinism guarantee.** Either a captured-LLM-response fixture
+   golden (LLM at T=0 still has variance, so capturing the response
+   makes the receipt reproducible), OR a `--best-of N` wrapper that
+   runs the pipeline N times and saves the highest-quality receipt.
+   Without one of these, "Proof X green" requires saying "1 of N
+   attempts" honestly, not just naming the best outcome.
+3. **Live-retrieval canonical anchoring.** Live queries currently use a
+   broad `criteria` string and only 1 of 4 metformin canonical trials
+   surface. Anchoring on `topic_pack.canonical_trials` NCT IDs would
+   make live mode reproduce fixture-mode greens.
+4. **RFC outreach** — premature until 1-3 land. Right now: the script
+   produces 8 receipts on demand, but a single run can land at
+   `reject_critical` for principled reasons. Sharing one good
+   single-run output without disclosing the run-rate would
+   misrepresent the system.
+
+To run any topic on demand (single sample from the verdict
+distribution): `.venv/bin/python -m scripts.e2e_metformin_proof_001
+--topic <metformin|rapamycin|everolimus>`. Receipts land in `runs/`.
 
 ### Day 5.2 design notes — closes Day 4's specificity gap
 The fixture-replay E2E must include BOTH scenarios explicitly:
