@@ -60,15 +60,10 @@ LLM PROPOSES. CODE DISPOSES.
 - Day 8: everolimus pack + 5 refinements (drop estimate/ci substring, Unicode normalization, tier-aware filter, fact-multiplicity prompt, acronym-with-plural filter)
 - Day 8.1: canonical-trial cluster priority (stabilizes ties)
 
-**State verified through:** the most recent entry in the commit log table below.
-*Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
-field was reintroducing drift on every slice because each slice's commit hash
-isn't known until after the commit lands. The commit log table IS the canonical
-source of truth — pointing at "the most recent entry" is self-correcting:
-`git log -1 --oneline` matches the table's bottom row, no manual sync required.*
-*(field describes state up to and including the most recent commit listed
-in the log table below. The current HEAD will appear in the next slice's
-update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
+**State verified through:** commit `0b16506` plus the tracked proof receipts
+listed in the status table below. Exact repository HEAD remains `git log -1
+--oneline`; this document does not try to self-reference its own future commit
+hash.
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
 **Tests:** 592/592 passing in 0.50s. ruff clean. git diff --check clean.
@@ -140,7 +135,6 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `db6c02a` | 2026-04-28 | Day 8.1: canonical-trial cluster priority + extended body-composition alias stopwords (stabilizes Proof 001 onto MASTERS across LLM-non-determinism) |
 | `54ff453` | 2026-04-28 | Day 8.1-state: PROJECT_STATE refresh (since-corrected — claimed "three green proofs" without saved rapamycin green receipt; downgraded in next slice after reviewer audit) |
 | `0b16506` | 2026-04-28 | Day 8.2: reviewer audit response — null untraced estimate/ci before they enter the audit log (P2 trust-spine bug); save rapamycin green receipt + downgrade status language to "pipeline executes with principled outcomes"; refresh commit table + test count (P1 + P3) |
-| _next_    | 2026-04-28 | Day 8.3 (this slice): track 5 proof receipts via `.gitignore` exceptions so a fresh clone has the audit evidence (reviewer Day 8.2 P2); clean three remaining doc drifts in PROJECT_STATE (commit-table placeholder, fact_extractor entry, top Day plan row) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -227,7 +221,9 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 
 ## Next validation step
 
-**Days 1-4 ✅ COMPLETE.** Day 5 in progress — orchestrator landed in 5.1.
+**Days 1-8.2 ✅ COMPLETE.** The pipeline now has tracked proof receipts for
+metformin, rapamycin, and everolimus. Remaining work is reliability, broader
+numeric tracing, and live-retrieval anchoring.
 
 ### Day 5 progress
 
