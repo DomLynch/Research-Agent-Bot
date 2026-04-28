@@ -146,14 +146,16 @@ _RECEIPT_NAMES: tuple[str, ...] = (
 def _check_no_existing_receipts(output_dir: Path) -> None:
     """Audit-trail integrity: refuse to overwrite a prior run's receipts.
     A clobbered receipt set silently destroys the audit record.
-    Callers must use a fresh output_dir per submission."""
+    Callers either use a fresh output_dir per submission OR pass
+    `force_overwrite=True` to `run_proof` for explicit re-runs."""
     existing = [
         name for name in _RECEIPT_NAMES if (output_dir / name).exists()
     ]
     if existing:
         raise OrchestratorError(
             f"output_dir={output_dir} already contains receipts {existing}. "
-            f"Refusing to overwrite. Use a per-submission directory."
+            f"Refusing to overwrite. Use a per-submission directory or pass "
+            f"force_overwrite=True to retry (e.g., after a partial-write crash)."
         )
 
 
@@ -192,6 +194,7 @@ async def run_proof(
     registry: TrialRegistryClient,
     drug_client: DrugAliasClient,
     client: httpx.AsyncClient | None = None,
+    force_overwrite: bool = False,
 ) -> RunReceipts:
     """Run the full Proof 001 pipeline; emit 8 receipts to output_dir.
 
@@ -201,13 +204,28 @@ async def run_proof(
     to evolve, and lets fixture-replay tests inject items without
     network or schema overhead.
 
+    `force_overwrite=False` (default) refuses to start when
+    `output_dir` already contains any receipt — the safe audit-trail
+    default. Pass True for controlled re-runs (e.g., after a
+    partial-write crash); the operator opts in explicitly.
+
+    Idempotency / crash recovery: a crash mid-pipeline leaves the
+    receipts written so far on disk. Re-running into the same
+    `output_dir` requires `force_overwrite=True`. The orchestrator
+    does NOT itself attempt resume — each call is a fresh end-to-end
+    pipeline run.
+
     Raises OrchestratorError when the pipeline can't produce a valid
-    receipt set (zero accepted facts, SPAR transport error, etc.).
+    receipt set (zero accepted facts, invariant violation, compile
+    error, writer regression). SPARError, LLMError, and httpx errors
+    propagate uncaught per their own contracts.
     """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    # P1-3: refuse to clobber a prior run's audit receipts.
-    _check_no_existing_receipts(output_dir)
+    # P1-3 + Gap-1 escape hatch: refuse to clobber a prior run's audit
+    # receipts unless the caller explicitly opts in via force_overwrite.
+    if not force_overwrite:
+        _check_no_existing_receipts(output_dir)
     started_at = datetime.now(timezone.utc).isoformat()
 
     extract_ledger = CostLedger()
@@ -307,7 +325,10 @@ async def run_proof(
         run_metadata=output_dir / "run_metadata.json",
     )
 
-    paths.paper_md.write_text(paper_md, encoding="utf-8")
+    # P2: paper.md must be atomic too — same audit-trail integrity
+    # rule as the JSON receipts. A partial-paper write can strand the
+    # output directory and a re-run then refuses to clobber.
+    _atomic_write_text(paths.paper_md, paper_md)
     _write_json(paths.claim_graph, _claim_graph_to_dict(graph))
     _write_json(paths.citation_traces, [dataclasses.asdict(t) for t in traces])
     _write_json(paths.spar_review, reviews_to_dict(spar_review))

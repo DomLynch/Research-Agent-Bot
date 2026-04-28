@@ -38,6 +38,36 @@ from agent.validators import PVALUE_RE, check_p_value_in_source, check_verb_ban
 # a malformed proposal ('NS', 'not reported', '0', '1.2', etc.).
 _PVALUE_DECIMAL_RE = re.compile(r"^0?\.(\d+)$")
 
+# Content-token regex: words ≥3 chars OR decimal numbers OR uppercase
+# acronyms ≥2 chars (HbA1c, NCT, etc.). Used by the claim-text source
+# trace below to compare claim and abstract on substantive vocabulary.
+_CONTENT_TOKEN_RE = re.compile(r"\b[A-Za-z][A-Za-z0-9-]*\b|\b\d+\.\d+\b")
+
+# Common English stopwords that don't carry semantic content. A claim and
+# its source can share many of these by accident; filtering them prevents
+# the overlap check from passing on stopword coincidence alone.
+_STOPWORDS: frozenset[str] = frozenset({
+    "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
+    "of", "with", "by", "from", "as", "is", "was", "were", "be", "been",
+    "being", "are", "this", "that", "these", "those", "it", "its", "their",
+    "his", "her", "our", "we", "they", "them", "us", "you", "he", "she",
+    "had", "has", "have", "having", "do", "does", "did", "doing",
+    "will", "would", "should", "could", "may", "might", "can",
+    "than", "then", "so", "if", "while", "during", "after", "before",
+    "into", "through", "across", "between", "among", "over", "under",
+    "again", "more", "most", "less", "least", "some", "any", "no", "not",
+    "only", "also", "other", "another", "such", "same", "very", "well",
+    "when", "where", "which", "who", "whom", "whose", "what", "why", "how",
+})
+
+# Threshold for the claim-text source trace: at least 50% of the claim's
+# content tokens must appear in the source abstract (case-insensitive,
+# stopwords removed). Catches novel claims like "metformin prevents
+# dementia" against an HbA1c abstract while allowing reasonable
+# paraphrases like "metformin lowered HbA1c" against "metformin reduced
+# HbA1c". Tuned empirically on the planted-failure corpus.
+_CLAIM_OVERLAP_THRESHOLD: float = 0.5
+
 __all__ = [
     "FactRejection",
     "PROMPT_VERSION",
@@ -156,6 +186,46 @@ def _trace_field_in_source(value: str, abstract: str) -> bool:
     return needle in haystack
 
 
+def _content_tokens(text: str) -> frozenset[str]:
+    """Lowercased content tokens — non-stopword words ≥3 chars OR decimal
+    numbers. Used by the claim-source overlap gate to compare on
+    substantive vocabulary only."""
+    tokens = _CONTENT_TOKEN_RE.findall(text.lower())
+    return frozenset(
+        t for t in tokens
+        if t not in _STOPWORDS and (len(t) >= 3 or (t and t[0].isdigit()))
+    )
+
+
+def _claim_supported_by_abstract(claim: str, abstract: str) -> bool:
+    """Verify the proposed claim's content tokens substantially overlap
+    with the source abstract.
+
+    Day 5.1-fix P1: closes the trust-spine hole where the LLM could emit
+    a claim like "Metformin prevents dementia in healthy older adults"
+    from an abstract that only says "Metformin reduced HbA1c by 0.5%
+    (p=0.003)". The deterministic writer renders Claim.text verbatim, so
+    a novel claim text that survives extraction reaches the published
+    paper unchanged.
+
+    Bag-of-words content overlap: ≥50% of the claim's content tokens
+    must appear in the abstract. The threshold is tuned to (a) catch
+    novel claims that share only the topic name with the source, while
+    (b) allowing reasonable paraphrases (`lowered` for `reduced`,
+    additional modifiers like `approximately` / `significantly`).
+
+    Returns True on accept, False on reject. The empty-claim case
+    returns False (no content to overlap), but other gates upstream
+    catch empty claims first via the schema check.
+    """
+    claim_tokens = _content_tokens(claim)
+    if not claim_tokens:
+        return False
+    abstract_tokens = _content_tokens(abstract)
+    overlap = claim_tokens & abstract_tokens
+    return len(overlap) / len(claim_tokens) >= _CLAIM_OVERLAP_THRESHOLD
+
+
 def _check_p_value_field(p_value: str, abstract: str) -> bool:
     """Verify proposed `p_value` is a real p-value AND traces to abstract.
 
@@ -228,6 +298,12 @@ def _validate_proposed(
     outcome = _coerce_str_or_none(proposed.get("outcome"))
 
     if require_source_trace:
+        # 0. Claim-text source trace (Day 5.1-fix P1) — closes the
+        # novel-claim hole left at the extractor stage. The deterministic
+        # writer renders Claim.text verbatim, so a novel claim that
+        # survives extraction reaches the paper unchanged.
+        if not _claim_supported_by_abstract(claim_text, item.abstract):
+            return None, "claim_not_supported_by_abstract"
         # 1. p-values embedded in claim text
         pval_in_claim = check_p_value_in_source(claim_text, item.abstract)
         if pval_in_claim is not None:

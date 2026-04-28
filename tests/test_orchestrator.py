@@ -487,6 +487,43 @@ def test_run_proof_refuses_to_overwrite_existing_receipts(tmp_path: Path) -> Non
         _run(go())
 
 
+def test_run_proof_force_overwrite_re_runs_into_existing_directory(
+    tmp_path: Path,
+) -> None:
+    """5.1-fix Gap-1: `force_overwrite=True` is the controlled escape
+    hatch for re-running into a partially-written output_dir (e.g.,
+    after a crash). The operator opts in explicitly; the safe default
+    still refuses to clobber."""
+    # Pre-create an old paper.md as if from a partial run
+    (tmp_path / "paper.md").write_text("# Old run\n", encoding="utf-8")
+
+    handler = _make_handler()
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="run-force-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+                force_overwrite=True,
+            )
+        finally:
+            await client.aclose()
+
+    receipts = _run(go())
+    # New paper.md has replaced the old one
+    new_paper = receipts.paper_md.read_text()
+    assert "Old run" not in new_paper
+    assert "## Thesis" in new_paper
+
+
 def test_run_proof_zero_facts_error_includes_rejection_histogram(
     tmp_path: Path,
 ) -> None:

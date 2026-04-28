@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 5.1 orchestrator shipped (single-call pipeline + 8 mandatory receipts; reviewer-cleared 3 P1s + 4 P2s); Day 5.2 next
+## Status — 2026-04-28 — Day 5.1-fix shipped (claim-text overlap gate + atomic paper.md + force_overwrite escape hatch + AGENTS/state drift); Day 5.2 next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,8 +43,8 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 571/571 passing in 0.46s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,192 / **5,500** ceiling (5.6% headroom; orchestrator added 277 cloc).
+**Tests:** 575/575 passing in 0.48s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,257 / **5,500** ceiling (4.4% headroom; Day 5.4 render gut reclaims ~270 cloc).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
 - `spar.py` 397, `citation_trace.py` 355, `fact_extractor.py` 327 — all over soft cap; all under 600 hard cap. Each carries load-bearing prompts and/or trust-spine gates. Splitting would couple tightly-related logic.
@@ -97,6 +97,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `132d552` | 2026-04-28 | Day 4.3-fix: strict claim-binding contract — sentences are `{claim_ids, text}` objects |
 | `a110178` | 2026-04-28 | Day 4.4: planted-failures end-to-end — Day 4 done-when criteria met (later supersededby 4-fix P2 real-pipeline rewrite) |
 | `2b21319` | 2026-04-28 | Day 4-fix: gut writer LLM (P1 deterministic) + real-pipeline planted-failure E2E (P2) + specificity proof |
+| `1987105` | 2026-04-28 | Day 5.1: orchestrator — single-call pipeline + 8 mandatory receipts (3 P1 + 4 P2 reviewer-cleared) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -117,11 +118,11 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `citation_trace.py` (Day 3.1 — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4. Day 3.1-fixes: nct_exists yields per-id traces from source.nct + URL ISRCTN + abstract-NCTs; flags has_results=False contradiction for published_results role; alias_match skips canonical trial acronyms)
 - `compiler.py` (Day 3.2a + Day 4.1b — deterministic facts → Claims → ClaimGraph: 1:1 fact-to-claim mapping, kind→claim_type / role+direct→directness / (role,design,tier)→confidence; CompileError on orphan refs. Day 4.1b wired in `thesis_tournament.pick_thesis` and dropped the in-module 3-dim heuristic. `compile_claim_graph` now accepts optional `items_by_ref` to enable the 6th dim (recency))
 - `thesis_tournament.py` (Day 4.1 — 6-dim deterministic thesis selector: directness > tier > confidence > replication (-len(supporting_refs)) > recency (baseline_year - latest_year) > specificity (-min(50, word_count)), tiebreak by claim_id. `pick_thesis(claims, items_by_ref=None)` returns the chosen claim_id; `score_all` exposes per-claim scores for SPAR audit consumption.)
-- `orchestrator.py` (Day 5.1 — 277 cloc — single-call pipeline driver. `run_proof(items, *, topic, domain, pack, output_dir, submission_id, extract_chain, spar_chain, registry, drug_client, client) -> RunReceipts`. Wires extract → compile → trace → SPAR → write; emits 8 mandatory JSON receipts (paper.md / claim_graph / citation_traces / spar_review / evidence_cards / cost_log / fact_extraction_log / run_metadata). Audit-trail guards: refuses to clobber existing receipts (P1-3); calls `assert_invariants` post-extraction so a published_results item with no fact fails loud (P1-1); wraps CompileError + ClaimGraphInvariantError as OrchestratorError per the contract (P1-2); writes diagnostic `fact_extraction_log` + `cost_log` even on extraction failure (P2-3); zero-facts error surfaces a rejection-category histogram (P2-2); writer rejections on the deterministic path raise (P2-4 — should be impossible per writer contract, but the guard catches regressions); atomic writes via tmp+rename (P2-1). Caller does retrieve+bundle; orchestrator does trust-spine.)
+- `orchestrator.py` (Day 5.1 + 5.1-fix — 285 cloc — single-call pipeline driver. `run_proof(items, *, topic, domain, pack, output_dir, submission_id, extract_chain, spar_chain, registry, drug_client, client, force_overwrite=False) -> RunReceipts`. 5.1-fix P2 made paper.md atomic via `_atomic_write_text` (was `write_text` — partial-paper crash could strand output dir). 5.1-fix Gap-1 added `force_overwrite` opt-in for controlled re-runs (default False refuses to clobber prior receipts). Wires extract → compile → trace → SPAR → write; emits 8 mandatory JSON receipts (paper.md / claim_graph / citation_traces / spar_review / evidence_cards / cost_log / fact_extraction_log / run_metadata). Audit-trail guards: refuses to clobber existing receipts (P1-3); calls `assert_invariants` post-extraction so a published_results item with no fact fails loud (P1-1); wraps CompileError + ClaimGraphInvariantError as OrchestratorError per the contract (P1-2); writes diagnostic `fact_extraction_log` + `cost_log` even on extraction failure (P2-3); zero-facts error surfaces a rejection-category histogram (P2-2); writer rejections on the deterministic path raise (P2-4 — should be impossible per writer contract, but the guard catches regressions); atomic writes via tmp+rename (P2-1). Caller does retrieve+bundle; orchestrator does trust-spine.)
 - `writer.py` (Day 4.3 → 4.3-fix → **4-fix P1** — 259 cloc, **down from 437** because the LLM was removed entirely. The reviewer caught that even strict per-sentence `claim_ids` binding could be circumvented: an LLM declaring a valid claim_id and citing a valid `[N]` could STILL write a novel claim text outside the graph (self-declared binding without text-to-claim verification is insufficient). Fix: writer is now PURELY DETERMINISTIC. Every sentence in the output is a `Claim.text` from the graph, attached to its `supporting_refs`. No LLM call at write time → no novel claims possible. `write_paper(graph, items, traces, spar, *, pack, topic) -> tuple[str, list[WriterRejection]]` is now SYNC. Routes by SPAR verdict: `accept_*` renders the paper (Title + Thesis + Findings + Background + References, with within-section sort by directness > tier > confidence > claim_id matching the thesis tournament); `reject_*` / any `gate_override` renders a structured rejection notice with the gate banner prominent. RENDER_VERSION = "writer/2026-04-28-deterministic".)
 - `spar.py` (Day 4.2 + 4.2-fix — 397 cloc — 3-judge panel orchestration. `run_spar(graph, traces, *, topic, submission_id, chain, ledger)`: Auditor + Skeptic in `asyncio.gather`; Final Judge runs after both with their reviews appended as PANEL CONTEXT. Each judge returns `{verdict, score, rationale, flagged_claims}`; `_parse_judge_review` validates strictly (verdict ∈ {accept,reject}, score 1-10 int, non-empty rationale, list-typed flagged_claims with **strict reject of non-string entries** per 4.2-fix P2 — pre-fix silently filtered them, hiding malformed signal). `_validate_flagged_against_graph` rejects unknown claim_ids (4.2-fix P2 second half — hallucinated ids corrupt the audit). Verdict by deterministic `compute_spar_verdict`; `_identify_dissent` for 2-1 splits. **`_enforce_trace_gate` (4.2-fix P1) — TRUST-SPINE GATE**: when traces failed AND panel returned accept_*, code disposes with a `GateOverride` (schema-validated): canonical verdict forced to `reject_critical`, dissent suppressed, panel votes preserved verbatim in `reviews`, original `pre_gate_verdict` recorded for audit. PROMPT_VERSION = "spar/2026-04-28". `reviews_to_dict` is the wire shape for `runs/<topic>/spar_review.json` and surfaces `gate_override` for trail visibility.)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
-- `fact_extractor.py` (Day 3.2c + 3.2c-fix + 3.2c-fix-2 — first LLM in the spine. `extract_facts_from_item / from_bundle` proposes facts via `chat_json`; CODE DISPOSES via SEVEN layers: (1) ref/kind PINNED from item.source.ref + role (LLM never proposes either), (2) schema check on claim, (3) `check_verb_ban` (planted case 1's 5th defense), (4) `check_p_value_in_source` on claim text, (5) `_check_p_value_field` — TWO-stage: grammar gate via `_PVALUE_DECIMAL_RE` rejects malformed values ('NS', 'not reported', '0', '1.2', etc.) BEFORE source-tracing (3.2c-fix-2 closes the vacuous-success bypass); then (operator, digits) tuple must appear in abstract via PVALUE_RE, (6) `_trace_field_in_source` whitespace-normalized substring match for `estimate` (3.2c-fix P2), (7) same for `ci`, plus within-item dedupe. `require_source_trace` flag (renamed from `require_p_value_trace` after fix expanded scope). off_domain skipped pre-call.)
+- `fact_extractor.py` (Day 3.2c → 3.2c-fix-2 → **5.1-fix P1** — first LLM in the spine. CODE DISPOSES via EIGHT layers: (0) **claim-text source trace** via `_claim_supported_by_abstract` — bag-of-words content overlap ≥50% (5.1-fix P1 closes the "novel claim with no numeric fields" hole — pre-fix, the LLM could emit `Metformin prevents dementia` from an HbA1c abstract because no field-level traces fired and the deterministic writer rendered Claim.text verbatim), (1) ref/kind PINNED, (2) schema check on claim, (3) `check_verb_ban`, (4) `check_p_value_in_source` on claim text, (5) `_check_p_value_field` two-stage (grammar gate + tuple match), (6) estimate substring trace, (7) ci substring trace, plus within-item dedupe.)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
 - `settings.py` (KEEP, may extend `TRACE_BACKEND` documentation)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
@@ -183,44 +184,35 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 
 ## Next validation step
 
-**Day 3 ✅ COMPLETE.** All four done-when criteria met (commits below).
-Next: **Day 4 — thesis tournament + SPAR + writer.**
+**Days 1-4 ✅ COMPLETE.** Day 5 in progress — orchestrator landed in 5.1.
 
-### Day 3 close summary (for reviewer audit)
-- ✅ Citation_trace catches planted cases 2, 3, 4 (multi-layer defense)
-- ✅ httpx backend smoke-tested live against CT.gov / ChEMBL / Europe PMC (`70e897a`)
-- ✅ First LLM stage shipped + tested: 7 trust-spine layers, all source-traced
-  (3.2c `207ffbf` + 3.2c-fix `848dba6` + 3.2c-fix-2 `743b35e`)
-- ✅ Day-3 E2E green (`9e3caf8`): real metformin corpus → 8-claim ClaimGraph,
-  MASTERS thesis-pick correct, sub-second perf
-
-### Day 4 progress
+### Day 5 progress
 
 | Slice | Ship | Status |
 |---|---|---|
-| **4.1** | `thesis_tournament.py` 6-dim selector + compiler wire-in | ✅ `49677b2` |
-| **4.2** | `spar.py` — 3-judge panel + dissent always published | ✅ `a1dfcf4` |
-| **4.2-fix** | P1 trace gate + P2 strict flagged + GateOverride schema | ✅ this slice |
-| **4.3** | `writer.py` — claim-graph-gated prose drafter | ✅ `57a8e30` |
-| **4.3-fix** | strict claim-binding contract (P1 + P3) | ✅ `132d552` |
-| **4.4** | All 5 planted failures through SPAR → assert each caught | ✅ `a110178` |
-| **4-fix** | deterministic writer (P1) + real-pipeline planted-failure E2E (P2) + specificity proof | ✅ this slice |
+| **5.1** | `agent/orchestrator.py` — single-call pipeline + 8 mandatory receipts | ✅ `1987105` |
+| **5.1-fix** | P1 fact_extractor claim-text overlap gate + P2 atomic paper.md + Gap-1 force_overwrite + P3 doc drift | ✅ this slice |
+| **5.2** | fixture-replay full-pipeline E2E (clean + gate-fired scenarios end-to-end) | ☐ next |
+| **5.3** | `scripts/e2e_metformin_proof_001.py` — first LIVE metformin run | ☐ |
+| **5.4** | gut `render.py` V1.1 stub (saves ~278 cloc) | ☐ |
 
-### LOC budget — ceiling raised to 5,500 (DECISIONS.md 2026-04-28)
-Current: **4,656 / 5,500 cloc** (15% headroom). Day 4.3 writer is
-estimated 300-400 cloc + matching tests, comfortably under. The three
-over-soft-cap files (spar.py 397, citation_trace.py 355, fact_extractor.py
-327) all carry load-bearing prompts or trust-spine logic; all under the
-600 hard per-file cap. Justification mirrors the prior 3,500 → 4,800
-raise: constraint exists to prevent unbounded sprawl, not to block real
-work that closes trust-spine holes.
+### LOC budget after 5.1-fix
+Current: **5,257 / 5,500 cloc** (4.4% headroom). Gut of `render.py`
+(Day 5.4) reclaims ~270 cloc — gives plenty of headroom for the
+optional `submit_adapter.py` / `app.py` / `mcp_server.py` from the
+original Day 5 plan if they're needed. They're NOT required for the
+"first metformin run produces all 8 receipts" done-when.
 
-### Writer design notes (per reviewer 4.2-fix audit)
-The Day 4.3 writer must surface `gate_override` PROMINENTLY in the
-rendered audit trail. When `SPARReview.gate_override` is non-None, the
-output (`paper.md` + `spar_review.json`) must show: (a) the canonical
-`reject_critical` verdict, (b) the panel's original `pre_gate_verdict`
-clearly labeled, (c) the `failed_trace_count`, (d) the gate's
-`rationale`. This preserves the audit trail the reviewer flagged
-("make sure render/writer displays `gate_override` prominently; that's
-now part of the audit trail").
+### Day 5.2 design notes — closes Day 4's specificity gap
+The fixture-replay E2E must include BOTH scenarios explicitly:
+1. **Clean path** — real metformin corpus, mocked LLM extracts valid
+   facts, mocked SPAR judges accept, NO failed traces. Asserts
+   `accept_clean` verdict, gate does NOT fire, `paper.md` renders the
+   thesis cleanly. This closes the specificity gap the reviewer flagged
+   on Day 4 (sensitivity proven; specificity unproven without a clean
+   passthrough test).
+2. **Gate-fired path** — same corpus but with one trace deliberately
+   failing (e.g., a fabricated NCT injected). Asserts gate fires,
+   `paper.md` is the rejection notice with `gate_override` prominent.
+
+Both scenarios verify all 8 receipts produce JSON-loadable output.
