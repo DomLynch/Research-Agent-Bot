@@ -134,16 +134,58 @@ def _coerce_str_or_none(value: Any) -> str | None:
     return None
 
 
+def _trace_field_in_source(value: str, abstract: str) -> bool:
+    """Whitespace-normalized, case-insensitive substring match.
+
+    Used for `estimate` and `ci` — the prompt requires verbatim, but real
+    LLMs collapse whitespace inconsistently. Normalize both sides before
+    matching so 'HR  0.79' (LLM, double space) traces against 'HR 0.79'
+    (abstract). False on miss; True on hit.
+    """
+    needle = " ".join(value.split()).lower()
+    if not needle:
+        return True
+    haystack = " ".join(abstract.split()).lower()
+    return needle in haystack
+
+
+def _check_p_value_field(p_value: str, abstract: str) -> bool:
+    """Verify the proposed `p_value` field traces back via PVALUE_RE.
+
+    The Fact.p_value field is a bare number ('0.003') or operator+number
+    ('<0.001'); PVALUE_RE expects a 'p' prefix, so synthesize one before
+    delegating to check_p_value_in_source. Strips a leading 'p'/'P' if
+    the model included one — both 'p<0.001' and '<0.001' are accepted
+    inputs and produce the same synthetic 'p<0.001'.
+    """
+    pv = p_value.strip()
+    if pv.lower().startswith("p"):
+        pv = pv[1:].strip()
+    if pv.startswith(("<", ">", "=")):
+        synthetic = f"p{pv}"
+    else:
+        synthetic = f"p={pv}"
+    return check_p_value_in_source(synthetic, abstract) is None
+
+
 def _validate_proposed(
     proposed: Mapping[str, Any],
     *,
     item: EvidenceItem,
     pack: TopicPack,
-    require_p_value_trace: bool,
+    require_source_trace: bool,
 ) -> tuple[Fact | None, str | None]:
     """Apply code-disposes to a single LLM-proposed fact dict.
 
     Returns (Fact, None) on accept, (None, reason_code) on reject.
+
+    `require_source_trace=True` enforces FOUR layers of source-tracing
+    (closes the v1 gap where only claim-embedded p-values were checked):
+      1. p-values embedded in claim text → check_p_value_in_source
+      2. proposed `p_value` field (bare or operator+number) → synthesized
+         and re-checked via the same regex layer
+      3. proposed `estimate` field → whitespace-normalized substring match
+      4. proposed `ci` field → whitespace-normalized substring match
     """
     raw_claim = proposed.get("claim")
     if not isinstance(raw_claim, str) or not raw_claim.strip():
@@ -162,19 +204,35 @@ def _validate_proposed(
     if verb_fail is not None:
         return None, f"verb_ban:{verb_fail.code}"
 
-    if require_p_value_trace:
-        pval_fail = check_p_value_in_source(claim_text, item.abstract)
-        if pval_fail is not None:
-            return None, f"p_value_not_in_source:{pval_fail.code}"
+    p_value = _coerce_str_or_none(proposed.get("p_value"))
+    estimate = _coerce_str_or_none(proposed.get("estimate"))
+    ci = _coerce_str_or_none(proposed.get("ci"))
+    outcome = _coerce_str_or_none(proposed.get("outcome"))
+
+    if require_source_trace:
+        # 1. p-values embedded in claim text
+        pval_in_claim = check_p_value_in_source(claim_text, item.abstract)
+        if pval_in_claim is not None:
+            return None, f"p_value_not_in_source:{pval_in_claim.code}"
+        # 2. p_value field — bypasses claim-text check when LLM puts the
+        # number in the structured field instead of inside the prose.
+        if p_value is not None and not _check_p_value_field(p_value, item.abstract):
+            return None, "p_value_field_not_in_source"
+        # 3. estimate — verbatim per prompt; whitespace-normalized match
+        if estimate is not None and not _trace_field_in_source(estimate, item.abstract):
+            return None, "estimate_not_in_source"
+        # 4. ci — verbatim per prompt; whitespace-normalized match
+        if ci is not None and not _trace_field_in_source(ci, item.abstract):
+            return None, "ci_not_in_source"
 
     return Fact(
         ref=item.source.ref,
         kind=kind,
         claim=claim_text,
-        outcome=_coerce_str_or_none(proposed.get("outcome")),
-        estimate=_coerce_str_or_none(proposed.get("estimate")),
-        p_value=_coerce_str_or_none(proposed.get("p_value")),
-        ci=_coerce_str_or_none(proposed.get("ci")),
+        outcome=outcome,
+        estimate=estimate,
+        p_value=p_value,
+        ci=ci,
     ), None
 
 
@@ -188,7 +246,7 @@ async def extract_facts_from_item(
     chain: Sequence[CallSpec],
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
-    require_p_value_trace: bool = True,
+    require_source_trace: bool = True,
     temperature: float = 0.0,
 ) -> tuple[list[Fact], list[FactRejection]]:
     """Extract facts from one abstract via the LLM chain.
@@ -256,7 +314,7 @@ async def extract_facts_from_item(
             continue
         fact, reason = _validate_proposed(
             raw, item=item, pack=pack,
-            require_p_value_trace=require_p_value_trace,
+            require_source_trace=require_source_trace,
         )
         if fact is None:
             rejected.append(FactRejection(
@@ -289,7 +347,7 @@ async def extract_facts_from_bundle(
     chain: Sequence[CallSpec],
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
-    require_p_value_trace: bool = True,
+    require_source_trace: bool = True,
     temperature: float = 0.0,
     max_concurrency: int = 4,
 ) -> tuple[list[Fact], list[FactRejection]]:
@@ -310,7 +368,7 @@ async def extract_facts_from_bundle(
         async with sem:
             return await extract_facts_from_item(
                 item, pack=pack, chain=chain, client=c, ledger=ledger,
-                require_p_value_trace=require_p_value_trace,
+                require_source_trace=require_source_trace,
                 temperature=temperature,
             )
 

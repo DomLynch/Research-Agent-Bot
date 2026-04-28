@@ -122,7 +122,7 @@ def test_validate_proposed_happy_path_pins_ref_and_kind() -> None:
     item = _item(ref=42, role="published_results")
     proposed = {"claim": "metformin lowered HbA1c by 0.5% (p=0.003)."}
     fact, reason = _validate_proposed(
-        proposed, item=item, pack=_pack(), require_p_value_trace=True,
+        proposed, item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
     assert fact is not None
@@ -137,7 +137,7 @@ def test_validate_proposed_pins_kind_even_if_llm_attempts_override() -> None:
     item = _item(ref=1, role="published_results")
     proposed = {"claim": "reduced X.", "kind": "protocol", "ref": 999}  # both are noise
     fact, reason = _validate_proposed(
-        proposed, item=item, pack=_pack(), require_p_value_trace=False,
+        proposed, item=item, pack=_pack(), require_source_trace=False,
     )
     assert reason is None
     assert fact is not None
@@ -148,7 +148,7 @@ def test_validate_proposed_pins_kind_even_if_llm_attempts_override() -> None:
 def test_validate_proposed_missing_claim_rejects() -> None:
     item = _item()
     fact, reason = _validate_proposed(
-        {}, item=item, pack=_pack(), require_p_value_trace=False,
+        {}, item=item, pack=_pack(), require_source_trace=False,
     )
     assert fact is None
     assert reason == "missing_or_empty_claim"
@@ -157,7 +157,7 @@ def test_validate_proposed_missing_claim_rejects() -> None:
 def test_validate_proposed_empty_claim_rejects() -> None:
     item = _item()
     fact, reason = _validate_proposed(
-        {"claim": "   "}, item=item, pack=_pack(), require_p_value_trace=False,
+        {"claim": "   "}, item=item, pack=_pack(), require_source_trace=False,
     )
     assert fact is None
     assert reason == "missing_or_empty_claim"
@@ -167,7 +167,7 @@ def test_validate_proposed_oversized_claim_rejects() -> None:
     item = _item()
     fact, reason = _validate_proposed(
         {"claim": "x" * 501}, item=item, pack=_pack(),
-        require_p_value_trace=False,
+        require_source_trace=False,
     )
     assert fact is None
     assert reason == "claim_too_long"
@@ -178,7 +178,7 @@ def test_validate_proposed_off_domain_rejects_no_kind() -> None:
     item = _item(role="off_domain")
     fact, reason = _validate_proposed(
         {"claim": "anything"}, item=item, pack=_pack(),
-        require_p_value_trace=False,
+        require_source_trace=False,
     )
     assert fact is None
     assert reason is not None
@@ -191,7 +191,7 @@ def test_validate_proposed_verb_ban_on_protocol_role_rejects() -> None:
     item = _item(role="registered_pending")
     fact, reason = _validate_proposed(
         {"claim": "TAME demonstrated cardiovascular benefit."},
-        item=item, pack=_pack(), require_p_value_trace=False,
+        item=item, pack=_pack(), require_source_trace=False,
     )
     assert fact is None
     assert reason is not None
@@ -204,7 +204,7 @@ def test_validate_proposed_p_value_not_in_source_rejects() -> None:
     item = _item(abstract="Some effect was observed (p=0.08).")
     fact, reason = _validate_proposed(
         {"claim": "metformin lowered HbA1c (p<0.001)."},
-        item=item, pack=_pack(), require_p_value_trace=True,
+        item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None
     assert reason is not None
@@ -212,12 +212,12 @@ def test_validate_proposed_p_value_not_in_source_rejects() -> None:
 
 
 def test_validate_proposed_p_value_trace_can_be_disabled() -> None:
-    """`require_p_value_trace=False` lets the fact through even with a
+    """`require_source_trace=False` lets the fact through even with a
     mismatched p-value. Used for tests/dev flows; production uses True."""
     item = _item(abstract="Some effect was observed (p=0.08).")
     fact, reason = _validate_proposed(
         {"claim": "metformin lowered HbA1c (p<0.001)."},
-        item=item, pack=_pack(), require_p_value_trace=False,
+        item=item, pack=_pack(), require_source_trace=False,
     )
     assert reason is None
     assert fact is not None
@@ -231,12 +231,155 @@ def test_validate_proposed_coerces_optional_field_types() -> None:
             "claim": "x reduced (p=0.003).",
             "outcome": None, "estimate": None, "p_value": None, "ci": None,
         },
-        item=item, pack=_pack(), require_p_value_trace=True,
+        item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
     assert fact is not None
     assert fact.outcome is None
     assert fact.estimate is None
+
+
+# --- Field-level source tracing (closes 3.2c P1/P2) ----------------------
+
+
+def test_validate_proposed_p_value_field_not_in_source_rejects() -> None:
+    """3.2c P1: separate p_value field (not embedded in claim) must trace
+    back to abstract. Pre-fix, code only checked claim-embedded p-values
+    so {claim: 'X reduced.', p_value: '<0.001'} bypassed source-trace."""
+    item = _item(abstract="Some effect was observed (p=0.08).")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": "<0.001"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert fact is None
+    assert reason == "p_value_field_not_in_source"
+
+
+def test_validate_proposed_p_value_field_in_source_accepts() -> None:
+    """Same field, p-value present in abstract → accepted."""
+    item = _item(abstract="Result was significant (p<0.001).")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": "<0.001"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+    assert fact.p_value == "<0.001"
+
+
+def test_validate_proposed_p_value_field_with_p_prefix_accepts() -> None:
+    """LLM emits p_value='p<0.001' (with prefix); synthetic builder strips
+    the prefix and re-applies, matching the abstract's verbatim form."""
+    item = _item(abstract="Result (p<0.001) was significant.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": "p<0.001"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+
+
+def test_validate_proposed_p_value_field_bare_number_in_source_accepts() -> None:
+    """LLM emits bare '0.003'; synthesizer wraps as 'p=0.003'."""
+    item = _item(abstract="Effect reported (p=0.003).")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": "0.003"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+    assert fact.p_value == "0.003"
+
+
+def test_validate_proposed_estimate_field_not_in_source_rejects() -> None:
+    """3.2c P2: estimate field must trace verbatim to abstract. Pre-fix,
+    estimate='HR 0.10' was accepted with no source-text check."""
+    item = _item(abstract="A small reduction was reported.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin reduced X.", "estimate": "HR 0.10"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert fact is None
+    assert reason == "estimate_not_in_source"
+
+
+def test_validate_proposed_estimate_field_in_source_accepts() -> None:
+    item = _item(abstract="The hazard ratio was HR 0.79 over 5 years.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin reduced X.", "estimate": "HR 0.79"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+    assert fact.estimate == "HR 0.79"
+
+
+def test_validate_proposed_estimate_whitespace_normalized() -> None:
+    """LLM emits 'HR  0.79' (double space); abstract has 'HR 0.79' —
+    whitespace-normalized match still hits."""
+    item = _item(abstract="The hazard ratio was HR 0.79.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin reduced X.", "estimate": "HR  0.79"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+
+
+def test_validate_proposed_ci_field_not_in_source_rejects() -> None:
+    """3.2c P2: CI field must trace verbatim to abstract."""
+    item = _item(abstract="A small effect was reported with no CI.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin reduced X.", "ci": "0.01-0.02"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert fact is None
+    assert reason == "ci_not_in_source"
+
+
+def test_validate_proposed_ci_field_in_source_accepts() -> None:
+    item = _item(abstract="HR 0.79 (95% CI 0.66-0.95) over 5 years.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin reduced X.", "ci": "0.66-0.95"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+    assert fact.ci == "0.66-0.95"
+
+
+def test_validate_proposed_source_trace_disabled_bypasses_all_field_traces() -> None:
+    """`require_source_trace=False` bypasses ALL four trace layers — claim
+    p-values, p_value field, estimate field, ci field. Useful for dev
+    flows; production always passes True."""
+    item = _item(abstract="A small effect was reported.")
+    fact, reason = _validate_proposed(
+        {
+            "claim": "metformin had an effect.",
+            "p_value": "<0.001",
+            "estimate": "HR 0.10",
+            "ci": "0.01-0.02",
+        },
+        item=item, pack=_pack(), require_source_trace=False,
+    )
+    assert reason is None
+    assert fact is not None
+    assert fact.p_value == "<0.001"
+    assert fact.estimate == "HR 0.10"
+    assert fact.ci == "0.01-0.02"
+
+
+def test_validate_proposed_field_trace_runs_when_claim_has_no_pvalue() -> None:
+    """Direct exercise of the P1 bug: claim has NO p-value, so the existing
+    check_p_value_in_source on claim_text returns None (no failure). The
+    new field-level trace must still catch the unsupported p_value field."""
+    item = _item(abstract="A modest signal was reported.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had a modest effect.", "p_value": "0.001"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert fact is None
+    assert reason == "p_value_field_not_in_source"
 
 
 # --- build_user_prompt ----------------------------------------------------

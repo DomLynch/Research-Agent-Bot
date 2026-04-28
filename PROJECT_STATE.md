@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-27 — Day 3.2c LLM fact-extraction shipped; Day 3.3 (httpx/MCP backends) next
+## Status — 2026-04-28 — Day 3.2c-fix: P1/P2 trust-spine bugs closed (field-level source tracing); LOC ceiling raise next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,8 +43,8 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 396/396 passing in 0.36s. ruff clean. git diff --check clean.
-**Runtime LOC:** 4,715 / 4,800 ceiling (1.8% headroom — must trim or raise before 3.3)
+**Tests:** 407/407 passing in 0.35s. ruff clean. git diff --check clean.
+**Runtime LOC:** 4,773 / 4,800 ceiling (0.6% headroom — ceiling raise to 5,500 in next slice, blocks Day 3.3)
 
 **Commit log of the rebuild:**
 
@@ -72,6 +72,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `0a2c263` | 2026-04-27 | Day 3.1 fixes-2: structural break on state-through drift + 2 P3 doc cleanups |
 | `1537196` | 2026-04-27 | Day 3.2a: deterministic compiler — facts → Claims → ClaimGraph (1:1, thesis-pick by score tuple) |
 | `325afb9` | 2026-04-27 | Day 3.2b: llm_client.py — single-dep LLM surface (chat_json + chain + CostLedger) |
+| `207ffbf` | 2026-04-27 | Day 3.2c: fact_extractor.py — first LLM in spine; ref/kind PINNED + 4 code-disposes layers |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -92,7 +93,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `citation_trace.py` (Day 3.1 — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4. Day 3.1-fixes: nct_exists yields per-id traces from source.nct + URL ISRCTN + abstract-NCTs; flags has_results=False contradiction for published_results role; alias_match skips canonical trial acronyms)
 - `compiler.py` (Day 3.2a — deterministic facts → Claims → ClaimGraph: 1:1 fact-to-claim mapping, kind→claim_type / role+direct→directness / (role,design,tier)→confidence; thesis-pick by score tuple (directness, tier, confidence, claim_id); CompileError on orphan refs; LLM fact-extraction lands in 3.2c)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
-- `fact_extractor.py` (Day 3.2c — first LLM in the spine. `extract_facts_from_item / from_bundle` proposes facts via `chat_json`; CODE DISPOSES via (1) ref/kind PINNED from item.source.ref + role (LLM never proposes either), (2) schema check on claim, (3) `validators.check_verb_ban` (planted case 1's 5th defense), (4) `validators.check_p_value_in_source` (planted case 3 at extraction time), (5) within-item dedupe; off_domain skipped pre-call; FactRejection captures every dropped proposal with reason code for run logs)
+- `fact_extractor.py` (Day 3.2c + 3.2c-fix — first LLM in the spine. `extract_facts_from_item / from_bundle` proposes facts via `chat_json`; CODE DISPOSES via SEVEN layers: (1) ref/kind PINNED from item.source.ref + role (LLM never proposes either), (2) schema check on claim, (3) `check_verb_ban` (planted case 1's 5th defense), (4) `check_p_value_in_source` on claim text, (5) `_check_p_value_field` on separate `p_value` field — synthesizes `p=X` / `p<X` form then re-runs PVALUE_RE check (3.2c-fix P1), (6) `_trace_field_in_source` whitespace-normalized substring match for `estimate` (3.2c-fix P2), (7) same for `ci` (3.2c-fix P2), plus within-item dedupe. `require_source_trace` flag (renamed from `require_p_value_trace` after the fix expanded scope). off_domain skipped pre-call.)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
 - `settings.py` (KEEP, may extend `TRACE_BACKEND` documentation)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
@@ -124,7 +125,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
-| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` (abstract NCT scan) + 3.0-fixes `979055b` (case-insensitive) + 3.0-state `361f5f7` + 3.1 `788868a` (citation_trace.py: cases 2/3/4 caught at external layer) + 3.1-fixes `af2e329` (3 P1 trust-spine fixes) + 3.1-fixes-2 `0a2c263` (state-drift structural break) + 3.2a `1537196` (deterministic compiler) + 3.2b `325afb9` (llm_client.py — single-dep `chat_json` + chain + CostLedger) + **3.2c fact_extractor.py** (this slice — first LLM in spine, ref/kind PINNED, verb-ban + p-value trace as code-disposes); 3.3 httpx/MCP backends + 3.4 E2E ☐ pending |
+| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` + 3.0-fixes `979055b` + 3.0-state `361f5f7` + 3.1 `788868a` + 3.1-fixes `af2e329` + 3.1-fixes-2 `0a2c263` + 3.2a `1537196` + 3.2b `325afb9` + 3.2c `207ffbf` (first LLM, ref/kind PINNED) + **3.2c-fix** (this slice — P1 `p_value` field bypass + P2 `estimate`/`ci` field bypass; 4 trace layers → 7); 3.3 httpx/MCP backends + 3.4 E2E ☐ pending |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 
@@ -192,7 +193,11 @@ Done-when (3.2 as a whole):
 
 **3.2 complete pending live smoke.** Next: 3.3 wires real httpx + MCP backends for `trace_clients.py`; 3.4 final Day 3 E2E + first metformin run.
 
-⚠️ **LOC headroom:** runtime at 4,715 / 4,800 (1.8% remaining). Day 3.3 will
-need a ceiling raise OR a refactor pass. Trim candidates: split `trace_clients.py`
-into per-protocol modules + per-backend modules; trim docstrings in
-`fact_extractor.py` and `citation_trace.py`.
+⚠️ **LOC headroom (3.2c-fix):** runtime at 4,773 / 4,800 (0.6% remaining).
+Next slice raises ceiling to **5,500** with a DECISIONS.md entry — same
+justification as the prior 3,500→4,800 raise (claim-court features add LOC;
+constraint exists to prevent unbounded sprawl, not to block real work).
+Day 3.3 also splits `trace_clients.py` (290 LOC + 150-200 LOC of new
+backends) into a package: `trace_clients/protocols.py`, `_fixture.py`,
+`_httpx.py`, `_mcp.py` — per-backend modules keep the soft 300 LOC cap
+intact and let backends evolve independently.
