@@ -202,18 +202,20 @@ def test_explicit_fixture_backend(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 def test_http_backend_not_yet_implemented(monkeypatch: pytest.MonkeyPatch) -> None:
-    """Day 3 will implement; Day 2.4 raises so call sites fail loud
-    instead of silently using a wrong backend."""
+    """Day 3.3a (this split) keeps the http selector unimplemented;
+    Day 3.3b ships the httpx backends and replaces this assertion with
+    a positive existence test. Until then the selector must raise so
+    call sites fail loud rather than silently using a wrong backend."""
     monkeypatch.setenv("TRACE_BACKEND", "http")
     for getter in (get_trial_registry_client, get_drug_alias_client,
                    get_literature_client):
-        with pytest.raises(TraceBackendError, match="not implemented in Day 2.4"):
+        with pytest.raises(TraceBackendError, match="not yet implemented"):
             getter()
 
 
 def test_mcp_backend_not_yet_implemented(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("TRACE_BACKEND", "mcp")
-    with pytest.raises(TraceBackendError, match="not implemented"):
+    with pytest.raises(TraceBackendError, match="not yet implemented"):
         get_trial_registry_client()
 
 
@@ -242,9 +244,9 @@ def test_malformed_fixture_raises(
     bad = fake_root / "trials" / "NCT12345.json"
     bad.write_text("{ not: valid }")  # malformed JSON
 
-    # Repoint the module-level _FIXTURES_ROOT to the tmp dir.
-    import agent.trace_clients as tc
-    monkeypatch.setattr(tc, "_FIXTURES_ROOT", fake_root)
+    # Repoint the fixture-module _FIXTURES_ROOT to the tmp dir. Lives in
+    # agent.trace_clients._fixture after the Day 3.3a package split.
+    monkeypatch.setattr("agent.trace_clients._fixture._FIXTURES_ROOT", fake_root)
 
     client = FixtureTrialRegistryClient()
     with pytest.raises(TraceBackendError, match="malformed fixture"):
@@ -263,7 +265,7 @@ def test_missing_corpus_root_raises_for_trial_lookup(
     Otherwise Day 3 citation_trace would falsely report every real NCT
     as fabricated."""
     fake_root = tmp_path / "no_fixtures_here"  # NOT created
-    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+    monkeypatch.setattr("agent.trace_clients._fixture._FIXTURES_ROOT", fake_root)
 
     client = FixtureTrialRegistryClient()
     with pytest.raises(TraceBackendError, match="fixture corpus subdirectory missing"):
@@ -275,7 +277,7 @@ def test_missing_corpus_root_raises_for_drug_lookup(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     fake_root = tmp_path / "no_fixtures_here"
-    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+    monkeypatch.setattr("agent.trace_clients._fixture._FIXTURES_ROOT", fake_root)
 
     client = FixtureDrugAliasClient()
     with pytest.raises(TraceBackendError, match="fixture corpus subdirectory missing"):
@@ -287,7 +289,7 @@ def test_missing_corpus_root_raises_for_literature_lookup(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     fake_root = tmp_path / "no_fixtures_here"
-    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+    monkeypatch.setattr("agent.trace_clients._fixture._FIXTURES_ROOT", fake_root)
 
     client = FixtureLiteratureClient()
     with pytest.raises(TraceBackendError, match="fixture corpus subdirectory missing"):
@@ -305,7 +307,7 @@ def test_present_corpus_with_absent_record_returns_none(
     (fake_root / "trials").mkdir(parents=True)
     (fake_root / "compounds").mkdir(parents=True)
     (fake_root / "literature").mkdir(parents=True)
-    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+    monkeypatch.setattr("agent.trace_clients._fixture._FIXTURES_ROOT", fake_root)
 
     # Each backend with empty subdirs should return None, NOT raise.
     assert FixtureTrialRegistryClient().get_trial("NCT04264897") is None
@@ -322,7 +324,7 @@ def test_partial_corpus_raises_only_for_missing_subdirs(
     fake_root = tmp_path / "fixtures"
     (fake_root / "trials").mkdir(parents=True)
     # compounds/ deliberately NOT created
-    monkeypatch.setattr("agent.trace_clients._FIXTURES_ROOT", fake_root)
+    monkeypatch.setattr("agent.trace_clients._fixture._FIXTURES_ROOT", fake_root)
 
     # Trial lookup succeeds (returns None, since no fixtures under trials/).
     assert FixtureTrialRegistryClient().get_trial("NCT04264897") is None
