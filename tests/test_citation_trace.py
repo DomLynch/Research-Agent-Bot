@@ -117,9 +117,44 @@ def test_trace_nct_exists_planted_case_2(
 def test_trace_nct_exists_yields_nothing_when_no_registry_id(
     registry: FixtureTrialRegistryClient,
 ) -> None:
-    """No NCT, no ISRCTN, no abstract — nothing to trace."""
+    """**Design decision (documented):** when no registry ID is found on
+    any surface (source.nct, ISRCTN-in-URL, NCT-in-abstract), the
+    generator yields NOTHING — empty iterator, not a synthetic failure
+    trace.
+
+    Rationale: trace_nct_exists is one of several trace types the
+    orchestrator runs per item. An item without a registry ID is not
+    contradictory by itself — it just means *this* check has nothing
+    to verify. Other traces (role_match, alias_match, p_value_in_text,
+    percentage_in_text) still run and gate the claim. The orchestrator
+    composes the gates; trace_nct_exists doesn't.
+
+    Trade-off: an item that *should* have a registry ID but doesn't
+    won't fail here. Upstream (`evidence_cards.bundle()` + the topic
+    pack's role assignment) is responsible for ensuring published_results
+    items carry an NCT or equivalent. If they don't, the bundle invariant
+    in types.py catches it before this stage runs.
+    """
     claim = _claim()
     item = _item(nct=None)
+    assert list(trace_nct_exists(claim, item, registry)) == []
+
+
+def test_trace_nct_exists_yields_nothing_when_abstract_has_prose_but_no_registry_id(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """Boundary check on yield-zero: empty *output* requires empty
+    *registry IDs*, NOT empty *abstract*. An abstract with substantive
+    prose but no NCT/ISRCTN must still yield nothing — the check is
+    'no IDs to trace', not 'no text at all'."""
+    claim = _claim()
+    item = _item(
+        nct=None,
+        abstract=(
+            "Metformin reduced HbA1c by 0.5% over 12 weeks in a "
+            "randomized cohort. No registration ID was reported."
+        ),
+    )
     assert list(trace_nct_exists(claim, item, registry)) == []
 
 
@@ -415,6 +450,62 @@ def test_trace_alias_match_skips_met_prevent_fragments(
     drift = [t for t in traces if not t.passed]
     assert all("PREVENT" not in t.detail for t in drift), (
         f"PREVENT (fragment of MET-PREVENT) false-flagged: {[t.detail for t in drift]}"
+    )
+
+
+def test_trace_alias_match_lowercase_verb_does_not_enter_candidate_loop(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """Verb-boundary documentation: lowercase verbs that happen to share
+    spelling with trial fragments ('prevent' as English verb vs. PREVENT
+    fragment of MET-PREVENT) are NEVER candidates. The drug-name regex
+    `\\b[A-Z][a-zA-Z]{3,}\\b` requires a capital first letter, so prose
+    like 'metformin can prevent inflammation' has zero candidates → the
+    trial-token skip is moot for that token. This is the boundary between
+    'verb prevent' (no-op) and 'PREVENT shorthand' (skipped via trial
+    token set) — both arrive at the same correct outcome via different
+    paths."""
+    claim = _claim(text="metformin can prevent further complications.")
+    traces = list(trace_alias_match(claim, metformin_pack, drug_client))
+    # No drift traces emitted because the only word that could match a
+    # trial fragment is 'prevent' (lowercase) and the regex doesn't
+    # consider it a candidate at all.
+    assert all("prevent" not in t.detail.lower() for t in traces if not t.passed), (
+        f"lowercase verb 'prevent' should never enter the candidate loop: "
+        f"{[t.detail for t in traces if not t.passed]}"
+    )
+
+
+def test_trace_alias_match_uppercase_non_trial_word_still_flagged(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """Boundary documentation: the trial-fragment skip is *narrow*. A
+    capitalized word that ISN'T a trial fragment (and isn't a known
+    alias / stopword) still flows to the drug-alias lookup. No global
+    skip just because a word starts with a capital letter.
+
+    This proves the skip doesn't over-suppress — only words explicitly
+    in `_trial_name_tokens(pack)` get the bypass. 'Glufomin' (the case 4
+    planted-failure drug-drift example) starts with a capital, isn't a
+    trial fragment, isn't a metformin alias, isn't a stopword → reaches
+    the drug client → returns None (not in ChEMBL) → drift trace fires.
+
+    Combined design rationale (with the fragment-skip test above): we
+    accept the false-negative risk that a fake drug named after a trial
+    fragment ('Prevent') would slip past, in exchange for the
+    false-positive cost of flagging legitimate trial shorthand
+    ('PREVENT showed lower mortality') in real prose. Trial shorthand
+    is far more common than fake-drug-as-trial-fragment attacks."""
+    claim = _claim(
+        text="Glufomin is presented as a metformin equivalent for diabetes.",
+    )
+    traces = list(trace_alias_match(claim, metformin_pack, drug_client))
+    drift = [t for t in traces if not t.passed]
+    assert any("Glufomin" in t.detail for t in drift), (
+        f"capitalized non-trial-fragment 'Glufomin' must reach drug client: "
+        f"got {[t.detail for t in traces]}"
     )
 
 
