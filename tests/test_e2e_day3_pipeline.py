@@ -84,7 +84,7 @@ def _hand_curated_facts(items: list[EvidenceItem]) -> list[Fact]:
     MASTERS surfaces via the OpenAlex paper hit, NOT the CT.gov registry
     entry — so its `source.nct` is None even though the NCT is in the
     abstract. We search abstracts for the canonical NCT to find it.
-    `trace_nct_exists` does the same thing (`_registry_ids_for` extracts
+    `trace_nct_exists` does the same thing (`registry_ids_for` extracts
     NCTs from source.nct + URL + abstract).
     """
     facts: list[Fact] = []

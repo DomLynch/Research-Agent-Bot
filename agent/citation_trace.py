@@ -57,6 +57,7 @@ from agent.types import EvidenceItem
 from agent.validators import PVALUE_RE, check_role_claim_match
 
 __all__ = [
+    "registry_ids_for",
     "trace_nct_exists",
     "trace_role_match",
     "trace_p_value_in_text",
@@ -122,7 +123,7 @@ _RESULTS_AVAILABLE_STATUSES: frozenset[TrialStatus] = frozenset({
 # --- Per-check trace functions --------------------------------------------
 
 
-def _registry_ids_for(item: EvidenceItem) -> list[str]:
+def registry_ids_for(item: EvidenceItem) -> list[str]:
     """Collect all registry IDs (NCT/ISRCTN) from an EvidenceItem's surfaces.
 
     Mirrors the lookup-precedence in registry_overrides.lookup_override:
@@ -135,6 +136,11 @@ def _registry_ids_for(item: EvidenceItem) -> list[str]:
     this, a live MASTERS-style record (NCT only in abstract, source.nct=None)
     would have its role pinned by the override but receive NO external
     citation trace — silently inconsistent.
+
+    Day 5.3-fix-2 promoted this from private — `scripts/e2e_metformin_proof_001.py`
+    uses it for canonical-trial detection in `--max-items` capping. Keeping
+    the surface-scan logic in one place avoids drift between the script
+    and trace_nct_exists.
     """
     ids: list[str] = []
     seen: set[str] = set()
@@ -184,7 +190,7 @@ def trace_nct_exists(
     Yields nothing when no registry IDs exist on any surface — there's
     nothing to trace, which is not a failure.
     """
-    for nct in _registry_ids_for(item):
+    for nct in registry_ids_for(item):
         record = registry.get_trial(nct)
         if record is None:
             yield CitationTrace(

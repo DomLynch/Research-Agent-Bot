@@ -55,6 +55,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+from agent.citation_trace import registry_ids_for
 from agent.evidence_cards import bundle
 from agent.llm_client import build_extract_chain, build_judge_chain
 from agent.orchestrator import RunReceipts, run_proof
@@ -118,6 +119,13 @@ async def _retrieve_live() -> tuple[list[Source], dict[int, str], dict[int, dict
     )
 
 
+class _CapTooSmallError(ValueError):
+    """Raised when `--max-items` is less than the number of canonical
+    trials in the topic pack. The pin-canonical-then-slice approach
+    cannot honor "canonical never dropped" if the cap itself is below
+    the canonical set's size — better to fail loud than silently drop."""
+
+
 def _ranked_for_extraction(
     items: list[EvidenceItem],
     max_items: int | None,
@@ -127,14 +135,35 @@ def _ranked_for_extraction(
     """Cap the corpus by canonical-pin → role → tier → ref priority.
 
     Day 5.3-fix P1: canonical_trials from the topic_pack are PINNED to
-    the head of the list so MASTERS / TAME / etc. are never dropped by
-    `--max-items`. The remaining items sort by role priority
-    (published_results > protocol > review > mechanistic), tier, then
-    ref for stable ordering.
+    the head so they're never dropped by `--max-items`.
+
+    Day 5.3-fix-2 P1: pinning isn't sufficient if `max_items <
+    len(canonical_trials)` — the slice would still drop some canonical
+    items. Now: raise `_CapTooSmallError` so the operator sees the
+    contradiction with the "never dropped" promise. The metformin pack
+    has 4 canonical trials; `--max-items 4` is the floor.
     """
     if max_items is None:
         return items
-    canonical_ids = {trial.id for trial in pack.canonical_trials}
+
+    canonical_ids = {trial.id.upper() for trial in pack.canonical_trials}
+
+    def _is_canonical(it: EvidenceItem) -> bool:
+        # registry_ids_for scans source.nct + source.url + abstract — same
+        # surfaces lookup_override and trace_nct_exists use. Without this,
+        # a MASTERS-style record (NCT only in the abstract, source.nct=None)
+        # would NOT be detected as canonical, and `--max-items 1` could
+        # silently drop it before the orchestrator ever saw it.
+        return any(rid in canonical_ids for rid in registry_ids_for(it))
+
+    canonical = [it for it in items if _is_canonical(it)]
+    if max_items < len(canonical):
+        raise _CapTooSmallError(
+            f"--max-items={max_items} would drop canonical trials "
+            f"({len(canonical)} present in this corpus). The 'canonical "
+            f"never dropped' promise requires --max-items >= "
+            f"{len(canonical)}."
+        )
 
     def _role_rank(role: str) -> int:
         return (
@@ -145,16 +174,24 @@ def _ranked_for_extraction(
             else 4
         )
 
-    def _is_canonical(it: EvidenceItem) -> bool:
-        return bool(it.source.nct) and it.source.nct in canonical_ids
-
-    canonical = [it for it in items if _is_canonical(it)]
     others = sorted(
         (it for it in items if not _is_canonical(it)),
         key=lambda it: (_role_rank(it.role), it.tier, it.source.ref),
     )
     out = canonical + others
     return out[:max_items]
+
+
+def _format_path(path: Path) -> str:
+    """Render a path for logging: relative to the repo if it's under
+    REPO_ROOT, otherwise absolute. The unconditional `relative_to`
+    in the previous version raised ValueError for any path outside
+    the repo (e.g., `--output-dir /tmp/run-001`), crashing before the
+    pipeline even started."""
+    try:
+        return str(path.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
 
 
 def _resolve_output_dir(override: str | None) -> Path:
@@ -244,12 +281,16 @@ async def _run(args: argparse.Namespace) -> int:
     print(f"Bundle: {len(items)} items {dict(sorted(role_counts.items()))}")
 
     # Cost containment with canonical-trial pinning (5.3-fix P1)
-    selected = _ranked_for_extraction(items, args.max_items, pack=pack)
+    try:
+        selected = _ranked_for_extraction(items, args.max_items, pack=pack)
+    except _CapTooSmallError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
     if args.max_items is not None:
-        canonical_ids = {trial.id for trial in pack.canonical_trials}
+        canonical_ids = {trial.id.upper() for trial in pack.canonical_trials}
         n_canonical = sum(
             1 for it in selected
-            if it.source.nct and it.source.nct in canonical_ids
+            if any(rid in canonical_ids for rid in registry_ids_for(it))
         )
         print(f"Capped at --max-items={args.max_items}: "
               f"{len(selected)} items going to LLM extraction "
@@ -259,7 +300,7 @@ async def _run(args: argparse.Namespace) -> int:
     output_dir = _resolve_output_dir(args.output_dir)
     submission_id = output_dir.name  # path's leaf doubles as the submission id
     force_overwrite = args.output_dir is not None  # only relevant when reusing a dir
-    print(f"\nRunning trust-spine pipeline → {output_dir.relative_to(REPO_ROOT)}")
+    print(f"\nRunning trust-spine pipeline → {_format_path(output_dir)}")
     print()
 
     t1 = time.perf_counter()
@@ -300,7 +341,7 @@ async def _run(args: argparse.Namespace) -> int:
     print(f"  total cost USD:      ${cost['total_usd']:.6f}")
     print(f"    extract:           ${cost['extract']['total_usd']:.6f}")
     print(f"    spar:              ${cost['spar']['total_usd']:.6f}")
-    print(f"\nReceipts: {receipts.output_dir.relative_to(REPO_ROOT)}/")
+    print(f"\nReceipts: {_format_path(receipts.output_dir)}/")
     for name in (
         "paper.md", "claim_graph.json", "spar_review.json",
         "citation_traces.json", "evidence_cards.json",
