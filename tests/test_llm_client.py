@@ -118,9 +118,13 @@ def test_cost_ledger_empty_state_is_clean() -> None:
 # --- chat_json: mock transport patterns ----------------------------------
 
 
-def _spec(model: str = "test/model", api_key: str = "k") -> CallSpec:
+def _spec(
+    model: str = "test/model",
+    api_key: str = "k",
+    base_url: str = "https://api.example.com/v1",
+) -> CallSpec:
     return CallSpec(
-        base_url="https://api.example.com/v1",
+        base_url=base_url,
         api_key=api_key,
         model=model,
         timeout_sec=5.0,
@@ -380,6 +384,100 @@ def test_chat_json_request_omits_response_format_when_not_enforce_json() -> None
 
     _run(go())
     assert "response_format" not in captured["payload"]
+
+
+# --- Day 9.4: seed forwarding for zero-variance --------------------------
+
+
+def test_chat_json_seed_forwarded_to_payload() -> None:
+    """Day 9.4: the OpenAI-compatible `seed` parameter must reach the
+    wire payload. With temperature 0 + same seed + same prompt, MiMo
+    and OpenRouter return byte-identical responses — the foundation
+    for zero-variance receipts."""
+    captured: dict[str, dict] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["payload"] = json.loads(request.content)
+        return httpx.Response(200, json=_ok_body())
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec(),),
+                client=client,
+                seed=42,
+            )
+        finally:
+            await client.aclose()
+
+    _run(go())
+    assert captured["payload"]["seed"] == 42
+
+
+def test_chat_json_seed_omitted_when_none() -> None:
+    """Default `seed=None` must NOT include the field in the payload —
+    some providers reject explicit nulls. Backward-compatibility for
+    pre-Day-9.4 callers."""
+    captured: dict[str, dict] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["payload"] = json.loads(request.content)
+        return httpx.Response(200, json=_ok_body())
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec(),),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    _run(go())
+    assert "seed" not in captured["payload"]
+
+
+def test_chat_json_seed_forwarded_to_every_chain_spec() -> None:
+    """Fallback path: when the primary fails and the chain advances to
+    the secondary, the same seed must be forwarded. Otherwise the
+    fallback would draw from a different RNG state and break
+    determinism."""
+    seen: list[int | None] = []
+
+    def primary_handler(request: httpx.Request) -> httpx.Response:
+        seen.append(json.loads(request.content).get("seed"))
+        return httpx.Response(503, json={"error": "down"})
+
+    def fallback_handler(request: httpx.Request) -> httpx.Response:
+        seen.append(json.loads(request.content).get("seed"))
+        return httpx.Response(200, json=_ok_body())
+
+    def router(request: httpx.Request) -> httpx.Response:
+        if "primary" in str(request.url):
+            return primary_handler(request)
+        return fallback_handler(request)
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(router))
+        try:
+            await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(
+                    _spec(base_url="https://primary.example/v1"),
+                    _spec(base_url="https://fallback.example/v1"),
+                ),
+                client=client,
+                seed=99,
+            )
+        finally:
+            await client.aclose()
+
+    _run(go())
+    assert seen == [99, 99]
 
 
 # --- build_extract_chain --------------------------------------------------

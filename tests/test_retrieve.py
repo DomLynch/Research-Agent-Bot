@@ -2,12 +2,10 @@
 from __future__ import annotations
 
 import asyncio
-from collections.abc import Sequence
 
 import httpx
 
 from agent.retrieve import normalize_and_dedup, plan_queries, retrieve
-from agent.sources._base import SourceClient
 from agent.types import RawHit
 
 

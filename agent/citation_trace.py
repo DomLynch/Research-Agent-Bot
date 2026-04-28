@@ -148,6 +148,71 @@ def _normalize_numeric_text(text: str) -> str:
         text.replace("·", ".").replace("–", "-").replace("—", "-").split()
     ).lower()
 
+
+# Day 9.4 (reviewer P1 trust-spine fix): the previous numeric trace
+# accepted ANY value substring in the abstract — `HR 0.79` falsely
+# passed against an abstract that mentioned `0.79 kg` of weight loss
+# with no HR context. Real label-value pairs in clinical abstracts
+# co-occur within tight proximity (parentheses, brackets, "of"), so
+# we require the label OR a known synonym to appear within ±60 chars
+# of the value. The window is generous enough to cross "(HR, 0.79)"
+# and "hazard ratio of 0.79" but tight enough to reject "HR" appearing
+# elsewhere in the abstract while "0.79" is in an unrelated context.
+_LABEL_PROXIMITY_WINDOW = 60
+
+# Compact-form synonyms (lowercased, whitespace stripped). When the
+# claim says "HR" the abstract may say "hazard ratio"; both must trace.
+_LABEL_SYNONYMS: Mapping[str, tuple[str, ...]] = {
+    "hr": ("hazardratio",),
+    "ahr": ("adjustedhr", "adjustedhazardratio", "hazardratio", "hr"),
+    "or": ("oddsratio",),
+    "aor": ("adjustedor", "adjustedoddsratio", "oddsratio", "or"),
+    "rr": ("relativerisk",),
+    "arr": ("absoluteriskreduction",),
+    "nnt": ("numberneededtotreat",),
+    "smd": ("standardizedmeandifference",),
+    "ηp2": ("ηp²", "partialη²", "partialη2", "partialetasquared"),
+    "ηp²": ("ηp2", "partialη²", "partialη2", "partialetasquared"),
+    "η2": ("η²", "etasquared"),
+    "η²": ("η2", "etasquared"),
+    "β": ("beta",),
+    "beta": ("β",),
+    "95%ci": ("95%confidenceinterval", "95ci"),
+    "90%ci": ("90%confidenceinterval", "90ci"),
+    "99%ci": ("99%confidenceinterval", "99ci"),
+}
+
+
+def _label_value_co_occurs(
+    label_raw: str,
+    value_raw: str,
+    abstract: str,
+) -> bool:
+    """Strict co-occurrence check: label (or a known synonym) within
+    ±60 normalized-chars of the value in the source abstract.
+
+    Compact form (whitespace stripped) is used for substring matching
+    so range separators like `0.66 - 0.95` (claim) and `0.66-0.95`
+    (abstract) match. Returns False when either the value isn't found
+    OR no occurrence has a nearby label — closes the false-positive
+    bypass where the value alone passed.
+    """
+    abstract_compact = _normalize_numeric_text(abstract).replace(" ", "")
+    label_compact = _normalize_numeric_text(label_raw).replace(" ", "")
+    value_compact = _normalize_numeric_text(value_raw).replace(" ", "")
+    if not value_compact or not abstract_compact:
+        return False
+    variants = (label_compact, *_LABEL_SYNONYMS.get(label_compact, ()))
+    for m in re.finditer(re.escape(value_compact), abstract_compact):
+        v_start, v_end = m.start(), m.end()
+        window = abstract_compact[
+            max(0, v_start - _LABEL_PROXIMITY_WINDOW):
+            min(len(abstract_compact), v_end + _LABEL_PROXIMITY_WINDOW)
+        ]
+        if any(variant and variant in window for variant in variants):
+            return True
+    return False
+
 # Drug-name-like tokens in claim prose: capitalized words ≥4 chars. The
 # alias_match trace looks each candidate up in the DrugAliasClient. Common
 # false positives (Trial, Study, Older, etc.) are filtered. This is
@@ -409,21 +474,8 @@ def trace_numeric_in_text(
     matches = list(_NUMERIC_RE.findall(claim.text))
     if not matches:
         return
-    abstract_norm = _normalize_numeric_text(item.abstract or "")
     for name_raw, value_raw in matches:
-        # Look for the value (or the (name, value) pair) in normalized abstract.
-        # Day 9.1: pass if EITHER the bare value substring appears (most
-        # journals format effect sizes as "(HR 0.79; ...)" so the value
-        # alone is reliable proof) OR the name+value pair appears verbatim.
-        value_norm = _normalize_numeric_text(value_raw)
-        name_norm = _normalize_numeric_text(name_raw)
-        # Strip whitespace inside the value (e.g. "0.66 - 0.95" → "0.66-0.95")
-        # so range separators normalize too.
-        value_compact = value_norm.replace(" ", "")
-        passed = (
-            value_compact in abstract_norm.replace(" ", "")
-            or f"{name_norm} {value_norm}" in abstract_norm
-        )
+        passed = _label_value_co_occurs(name_raw, value_raw, item.abstract or "")
         canonical = f"{name_raw} {value_raw}".strip()
         excerpt = (item.abstract or "")[:200] if not passed else None
         yield CitationTrace(
@@ -431,7 +483,8 @@ def trace_numeric_in_text(
             trace_type="numeric_in_text", passed=passed,
             detail=(
                 f"{canonical} {'found in' if passed else 'NOT found in'} "
-                f"source abstract"
+                f"source abstract (label+value co-occurrence within "
+                f"{_LABEL_PROXIMITY_WINDOW} chars)"
             ),
             source_excerpt=excerpt,
         )

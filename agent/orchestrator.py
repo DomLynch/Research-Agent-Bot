@@ -205,6 +205,7 @@ async def run_proof(
     drug_client: DrugAliasClient,
     client: httpx.AsyncClient | None = None,
     force_overwrite: bool = False,
+    seed: int | None = None,
 ) -> RunReceipts:
     """Run the full Proof 001 pipeline; emit 8 receipts to output_dir.
 
@@ -249,6 +250,7 @@ async def run_proof(
         accepted_facts, rejections = await extract_facts_from_bundle(
             items, pack=pack, chain=extract_chain,
             client=c, ledger=extract_ledger,
+            seed=seed,
         )
         if not accepted_facts:
             # P2-2 + P2-3: emit diagnostic receipts so the operator can
@@ -322,6 +324,7 @@ async def run_proof(
             graph, traces,
             topic=topic, submission_id=submission_id,
             chain=spar_chain, client=c, ledger=spar_ledger,
+            seed=seed,
         )
 
         # Stage 5: deterministic write. P2-4 — the writer is documented

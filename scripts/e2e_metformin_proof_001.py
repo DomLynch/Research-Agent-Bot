@@ -413,7 +413,20 @@ async def _run(args: argparse.Namespace) -> int:
         )
         submission_id = output_dir.name
         force_overwrite = override is not None
-        print(f"Running trust-spine pipeline → {_format_path(output_dir)}")
+        # Day 9.4: per-attempt seed derivation so a single run is
+        # reproducible AND each --best-of attempt is distinct. base_seed
+        # = None means stochastic (legacy); base_seed = N gives the i-th
+        # attempt seed=N+i so re-running the same args produces the same
+        # N receipts in the same order.
+        attempt_seed = (
+            None if args.seed is None
+            else (args.seed + i)
+        )
+        if attempt_seed is not None:
+            print(f"Running trust-spine pipeline → {_format_path(output_dir)} "
+                  f"(seed={attempt_seed})")
+        else:
+            print(f"Running trust-spine pipeline → {_format_path(output_dir)}")
 
         t1 = time.perf_counter()
         try:
@@ -429,6 +442,7 @@ async def _run(args: argparse.Namespace) -> int:
                 registry=get_trial_registry_client(),
                 drug_client=get_drug_alias_client(),
                 force_overwrite=force_overwrite,
+                seed=attempt_seed,
             )
         except Exception as exc:  # noqa: BLE001
             elapsed = time.perf_counter() - t1
@@ -543,6 +557,14 @@ def main() -> int:
              "pick the highest-ranked SPAR verdict. Each attempt's "
              "receipts stay on disk; the chosen run also carries a "
              "best_of_n_manifest.json. Default 1 (single run, no manifest).",
+    )
+    parser.add_argument(
+        "--seed", type=int, default=None,
+        help="Forward an OpenAI-compatible seed to every LLM call. With "
+             "temperature 0 + same seed + same prompt, MiMo + OpenRouter "
+             "produce byte-identical responses. With --best-of N, attempt "
+             "i uses seed=base+i, so the N receipts are reproducible. "
+             "Default: None (stochastic legacy behavior).",
     )
     parser.add_argument(
         "--output-dir", type=str, default=None,

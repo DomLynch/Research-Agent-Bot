@@ -421,6 +421,46 @@ def test_trace_numeric_no_numerics_in_claim_yields_nothing() -> None:
     assert traces == []
 
 
+def test_trace_numeric_rejects_value_with_no_label_context() -> None:
+    """Day 9.4 reviewer P1 trust-spine fix: claim says `HR 0.79` but the
+    abstract only contains `0.79 kg` of weight loss with no HR context.
+    Pre-fix the bare-value substring fallback false-passed this. Now the
+    label and value must co-occur within ±60 normalized chars."""
+    claim = _claim(text="The hazard ratio was HR 0.79.")
+    item = _item(abstract=(
+        "Participants on metformin lost 0.79 kg of body weight over "
+        "12 weeks. No survival outcomes were reported."
+    ))
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces and not traces[0].passed
+    assert "HR 0.79" in traces[0].detail
+
+
+def test_trace_numeric_synonym_hazard_ratio_long_form_pass() -> None:
+    """Claim writes `HR 0.79`; abstract uses long form `hazard ratio of
+    0.79`. Synonym expansion must let it trace (PROTECTOR-style real
+    abstracts use both forms inconsistently)."""
+    claim = _claim(text="Mortality reduced (HR 0.79).")
+    item = _item(abstract="Metformin produced a hazard ratio of 0.79 for mortality.")
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces and traces[0].passed
+
+
+def test_trace_numeric_label_far_from_value_rejects() -> None:
+    """Even if both label AND value appear in the abstract, they must
+    be within ±60 chars. A label at the start and a value 200 chars
+    later (talking about a different statistic) should NOT pass."""
+    claim = _claim(text="HR 0.50 for primary endpoint.")
+    item = _item(abstract=(
+        "We measured HR for the secondary cardiovascular composite "
+        "endpoint and found a clear protective effect. "
+        + ("Lorem ipsum dolor sit amet consectetur adipiscing elit. " * 3)
+        + "Body weight decreased by 0.50 kg in the treatment arm."
+    ))
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces and not traces[0].passed
+
+
 def test_trace_numeric_hazard_ratio_aHR_pass() -> None:
     """Adjusted HR (aHR) is a separate alternation in the regex; verify
     it traces correctly."""

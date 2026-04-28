@@ -30,15 +30,21 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 9.1 + 9.2 + 9.3 = AAA push complete
+## Status — 2026-04-28 — Day 9.1 → 9.4: AAA push (with one honest provider-side limit)
 
-**Three structural slices shipped.**
+**Four slices shipped.**
 
 **Day 9.1** added `trace_numeric_in_text` covering HR / aHR / OR / aOR / RR / aRR / NNT / β / ηp² / partial η² / 95% CI / SMD effect-size statistics with Unicode normalization (Lancet/BMJ middle-dot `0·02` → ASCII `0.02`). Closed the auditor's main rejection cause; rapamycin per-attempt rate jumped from 1/4 to 4/5.
 
-**Day 9.2** added `--best-of N` — the script runs the orchestrator N times against the same corpus and picks the highest-ranked SPAR run (sort key: verdict_rank, gate_override, failed_traces, -n_claims, submission_id). Each attempt's receipts persist as audit evidence; the chosen run carries a `best_of_n_manifest.json`. With `--best-of 5`, all three drugs produce deterministic accept_*.
+**Day 9.2** added `--best-of N` — the script runs the orchestrator N times against the same corpus and picks the highest-ranked SPAR run (sort key: verdict_rank, gate_override, failed_traces, -n_claims, submission_id). Each attempt's receipts persist as audit evidence; the chosen run carries a `best_of_n_manifest.json`. **Best-of-N is variance-bounded sampling, NOT zero-variance determinism** — a single best-of-5 run reliably produces an accept_* artifact, but two best-of-5 runs at the same args may pick different attempts.
 
-**Day 9.3** added canonical-NCT-anchored live retrieval — `agent.retrieve.retrieve()` now accepts an `extra_queries: Sequence[str]` kwarg, and `_retrieve_live` in the e2e script populates it with one `f"{topic} {trial.id}"` query per `pack.canonical_trials` entry. Dramatic effect on live metformin: corpus jumped from 23 → 44 items, canonical coverage from **1/4 → 4/4** (MASTERS + MET-PREVENT + TAME + MILES all surface), single-attempt verdict from `reject_critical` → `accept_clean` with 0 failed traces.
+**Day 9.3** added canonical-NCT-anchored live retrieval — `agent.retrieve.retrieve()` accepts an `extra_queries: Sequence[str]` kwarg, and `_retrieve_live` populates it with one `f"{topic} {trial.id}"` query per `pack.canonical_trials` entry. Live metformin canonical coverage jumped 1/4 → 4/4, single-attempt verdict from `reject_critical` → `accept_clean`.
+
+**Day 9.4** addressed reviewer P1 (false-positive in numeric trace) + reviewer P2/P3 (overclaim + ruff drift) + the user's "Ivy League / zero-variance" challenge:
+  - **P1 trust-spine fix:** `trace_numeric_in_text` now requires label+value co-occurrence within ±60 normalized chars (with synonym expansion for HR↔hazard ratio etc.), plus 3 new regression tests including the false-positive case `HR 0.79` vs unrelated `0.79 kg`. Pre-fix the bare-value substring fallback could falsely pass any numeric appearing anywhere in the abstract.
+  - **Seed plumbing:** `seed: int | None` now flows from `--seed N` through `chat_json` → `_call_one` payload → fact_extractor (per-item seed = `seed * 100003 + ref`) → SPAR (per-judge seed = `seed * 1000003 + role_idx`). When seed is set, SPAR temperature is forced to 0.0 (was 0.2). Wire-level correctness verified by 3 unit tests.
+  - **Honest provider limit (documented):** I tested empirically — MiMo's API *accepts* `seed` but does NOT consistently honor it (3 same-prompt-same-seed calls produced 2 matching outputs and 1 differing). True zero-variance receipts therefore require **capture-and-replay** (record once, play back via httpx mock transport), which is a future ~150 cloc slice. Until that ships, `--seed N` is best-effort: deterministic for compliant providers, partially honored on MiMo.
+  - **Ruff clean:** removed 2 unused imports in `tests/test_retrieve.py`.
 
 **The AAA discriminating test — `--best-of 5` on all three drugs at this commit:**
 
@@ -69,8 +75,9 @@ Each best-of-5 receipt directory contains `best_of_n_manifest.json` listing all 
 
 **AAA push status:**
   1. ✅ **Day 9.1 — generic numeric-trace types**. Closes the auditor's main rejection cause.
-  2. ✅ **Day 9.2 — best-of-N runner**. `--best-of 5` produces deterministic accept_* on all three drugs.
+  2. ✅ **Day 9.2 — best-of-N runner**. Variance-bounded sampling (NOT zero-variance): `--best-of 5` reliably produces accept_* on all three drugs by selecting the highest-ranked attempt.
   3. ✅ **Day 9.3 — canonical-NCT-anchored live retrieval**. Live metformin canonical coverage 1/4 → 4/4; single-attempt verdict reject → accept_clean.
+  4. ✅ **Day 9.4 — trust-spine bug fix + seed plumbing**. P1 numeric-trace false-positive closed; `--seed N` plumbed through (best-effort; MiMo's seed honoring is partial). True zero-variance pending capture-replay (future slice).
 
 **Architecture milestones of Days 6-8:**
 - Day 6.1: real-LLM lessons (strict-substring prompt, tolerated-orphans invariant, alias stopwords)
@@ -85,7 +92,7 @@ listed in the status table below. Exact repository HEAD remains `git log -1
 hash.
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 607/607 passing in 0.52s. ruff clean. git diff --check clean.
+**Tests:** 613/613 passing in 0.47s. ruff clean (2 unused imports removed). git diff --check clean.
 **Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,013 / **5,500** ceiling (8.9% headroom; net −247 cloc since Day 5.3 from `render.py` deletion (−278) offset by `settings.py` dotenv loader (+27) and `citation_trace.py` `registry_ids_for` promotion (+5)).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
@@ -154,6 +161,12 @@ hash.
 | `db6c02a` | 2026-04-28 | Day 8.1: canonical-trial cluster priority + extended body-composition alias stopwords (stabilizes Proof 001 onto MASTERS across LLM-non-determinism) |
 | `54ff453` | 2026-04-28 | Day 8.1-state: PROJECT_STATE refresh (since-corrected — claimed "three green proofs" without saved rapamycin green receipt; downgraded in next slice after reviewer audit) |
 | `0b16506` | 2026-04-28 | Day 8.2: reviewer audit response — null untraced estimate/ci before they enter the audit log (P2 trust-spine bug); save rapamycin green receipt + downgrade status language to "pipeline executes with principled outcomes"; refresh commit table + test count (P1 + P3) |
+| `f056435` | 2026-04-28 | Day 8.3: track 5 proof receipts via `.gitignore` exceptions + clean three doc drifts |
+| `9835411` | 2026-04-28 | Day 8.3-state: PROJECT_STATE polish (drop _next_ row, condense structural-break paragraph) |
+| `e0e69bc` | 2026-04-28 | Day 9.1: `trace_numeric_in_text` — HR / OR / RR / aHR / aOR / ηp² / β / 95% CI with Unicode normalization; auditor's main rejection cause closed; rapamycin per-attempt rate 1/4 → 4/5 |
+| `10fbc82` | 2026-04-28 | Day 9.2: `--best-of N` runner with deterministic ranking (verdict, gate_override, failed_traces, -n_claims, submission_id) and per-best `best_of_n_manifest.json`; variance-bounded sampling produces accept_* on all 3 drugs at --best-of 5 |
+| `987db83` | 2026-04-28 | Day 9.3: canonical-NCT-anchored live retrieval (`extra_queries` kwarg on `retrieve()`); live metformin canonical coverage 1/4 → 4/4 |
+| _next_    | 2026-04-28 | Day 9.4: P1 trust-spine fix in `trace_numeric_in_text` (label+value co-occurrence, was bare-value substring → false-positive); `--seed N` plumbed through chat_json → fact_extractor (per-item seed) → SPAR (per-judge seed, temp 0 forced); ruff cleanup; PROJECT_STATE refresh with honest "variance-bounded" framing |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`

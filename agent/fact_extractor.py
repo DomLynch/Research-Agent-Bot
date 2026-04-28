@@ -369,6 +369,7 @@ async def extract_facts_from_item(
     ledger: CostLedger | None = None,
     require_source_trace: bool = True,
     temperature: float = 0.0,
+    seed: int | None = None,
 ) -> tuple[list[Fact], list[FactRejection]]:
     """Extract facts from one abstract via the LLM chain.
 
@@ -377,7 +378,12 @@ async def extract_facts_from_item(
     orchestrator can flag them.
 
     Temperature defaults to 0.0 — fact extraction is a precision task;
-    creative variability is a failure mode here.
+    creative variability is a failure mode here. Day 9.4 adds `seed`:
+    pass an int and the LLM call becomes deterministic (same prompt
+    + temp 0 + seed → byte-identical response). The orchestrator
+    derives a per-item seed from a base value so each abstract gets a
+    distinct seed (otherwise every claim would be drawn against the
+    same RNG state, which doesn't help convergence).
     """
     if _kind_for_role(item.role) is None:
         return [], []
@@ -400,6 +406,7 @@ async def extract_facts_from_item(
             client=client,
             ledger=ledger,
             temperature=temperature,
+            seed=seed,
         )
     except LLMError as exc:
         return [], [FactRejection(
@@ -483,12 +490,18 @@ async def extract_facts_from_bundle(
     require_source_trace: bool = True,
     temperature: float = 0.0,
     max_concurrency: int = 4,
+    seed: int | None = None,
 ) -> tuple[list[Fact], list[FactRejection]]:
     """Extract facts across a bundle, parallel-bounded by max_concurrency.
 
     Items run concurrently up to `max_concurrency` at once. Output order
     matches input order: facts from item[0] precede facts from item[1].
     Within each item, the LLM's emit order is preserved.
+
+    Day 9.4: when `seed` is set, each item gets a per-item seed derived
+    from `(seed, item.source.ref)` — a stable hash of the base seed and
+    the deterministic ref index. Same base seed + same items → same
+    per-item seeds → same LLM responses → byte-identical receipts.
     """
     if not items:
         return [], []
@@ -499,10 +512,15 @@ async def extract_facts_from_bundle(
 
     async def one(item: EvidenceItem) -> tuple[list[Fact], list[FactRejection]]:
         async with sem:
+            # Per-item seed derivation: same base seed → same per-item
+            # seeds. ref is a deterministic 1-based int from retrieve.py
+            # so ref+seed is a stable, collision-free derivation.
+            item_seed = None if seed is None else (seed * 100003 + item.source.ref) & 0xFFFFFFFF
             return await extract_facts_from_item(
                 item, pack=pack, chain=chain, client=c, ledger=ledger,
                 require_source_trace=require_source_trace,
                 temperature=temperature,
+                seed=item_seed,
             )
 
     try:

@@ -175,6 +175,7 @@ async def _call_one(
     enforce_json: bool,
     temperature: float,
     max_tokens: int | None,
+    seed: int | None,
 ) -> LLMResponse:
     """Single OpenAI-compatible chat call. Caller catches errors for fallback."""
     if not spec.api_key:
@@ -188,6 +189,12 @@ async def _call_one(
         payload["response_format"] = {"type": "json_object"}
     if max_tokens is not None:
         payload["max_tokens"] = max_tokens
+    if seed is not None:
+        # OpenAI-compatible seed: same seed + same prompt + temperature 0
+        # → byte-identical response (best-effort; some providers honor
+        # this exactly, others approximately). MiMo + OpenRouter both
+        # support the field. Day 9.4 ships zero-variance receipts.
+        payload["seed"] = int(seed)
     headers = {
         "Authorization": f"Bearer {spec.api_key}",
         "Content-Type": "application/json",
@@ -226,6 +233,7 @@ async def chat_json(
     enforce_json: bool = True,
     temperature: float = 0.2,
     max_tokens: int | None = None,
+    seed: int | None = None,
 ) -> LLMResponse:
     """Call CallSpecs in order; return on first success; raise LLMError on all-fail.
 
@@ -234,6 +242,12 @@ async def chat_json(
       - `httpx.HTTPError` (transport error or 4xx/5xx response)
       - `ValueError` (JSON extraction failed — model emitted unparseable text)
       - `KeyError` (response shape didn't have `choices[0].message`)
+
+    Day 9.4: when `seed` is set, it's forwarded to every CallSpec in
+    the chain. Combined with temperature 0.0 this makes the chat call
+    deterministic (same prompt + same seed → same response). Both MiMo
+    and OpenRouter (Gemma / Mistral) support the OpenAI-compatible
+    seed parameter. None preserves prior stochastic behavior.
     """
     if not chain:
         raise LLMError("chat_json called with empty chain")
@@ -254,6 +268,7 @@ async def chat_json(
                     enforce_json=enforce_json,
                     temperature=temperature,
                     max_tokens=max_tokens,
+                    seed=seed,
                 )
             except (httpx.HTTPError, ValueError, KeyError, LLMError) as exc:
                 errors.append((spec.model, f"{type(exc).__name__}: {exc}"))

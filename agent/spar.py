@@ -259,6 +259,7 @@ async def _run_judge(
     client: httpx.AsyncClient,
     ledger: CostLedger | None,
     temperature: float,
+    seed: int | None = None,
 ) -> JudgeReview:
     """Single judge call: chat_json → parse → JudgeReview."""
     response = await chat_json(
@@ -270,6 +271,7 @@ async def _run_judge(
         client=client,
         ledger=ledger,
         temperature=temperature,
+        seed=seed,
     )
     return _parse_judge_review(
         response.parsed, judge_role=role, model=response.model,
@@ -366,6 +368,7 @@ async def run_spar(
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
     temperature: float = 0.2,
+    seed: int | None = None,
 ) -> SPARReview:
     """Run the 3-judge panel; return a structurally valid SPARReview.
 
@@ -375,10 +378,28 @@ async def run_spar(
     Raises SPARError on any judge parse/transport failure — a caller
     that wants resilience can wrap with retry, but the default is
     fail-loud so trust-spine failures don't get silently swallowed.
+
+    Day 9.4: when `seed` is set, each judge gets a per-judge seed
+    derived from `(seed, judge_role_index)` so different judges receive
+    DIFFERENT seeds (otherwise three "auditor"-style models would all
+    produce the same answer at temp 0). Same base seed + same brief
+    → same per-judge seeds → same panel verdict → byte-identical
+    spar_review.json. When seed is set, temperature is also forced to
+    0.0 — at temp 0.2 (the default for stochastic-judge mode), seed
+    alone doesn't pin the output even when the provider honors it.
     """
     base_brief = render_brief(
         graph, traces, topic=topic, submission_id=submission_id,
     )
+
+    # When seed is set, force temperature to 0.0 — seed has no
+    # determinism contract at the default 0.2.
+    effective_temp = 0.0 if seed is not None else temperature
+
+    # Per-judge seed derivation. Auditor=+1, Skeptic=+2, Final=+3.
+    auditor_seed = None if seed is None else (seed * 1000003 + 1) & 0xFFFFFFFF
+    skeptic_seed = None if seed is None else (seed * 1000003 + 2) & 0xFFFFFFFF
+    final_seed = None if seed is None else (seed * 1000003 + 3) & 0xFFFFFFFF
 
     own_client = client is None
     c = client or httpx.AsyncClient()
@@ -387,12 +408,12 @@ async def run_spar(
             _run_judge(
                 "evidence_auditor", base_brief,
                 chain=chain, client=c, ledger=ledger,
-                temperature=temperature,
+                temperature=effective_temp, seed=auditor_seed,
             ),
             _run_judge(
                 "domain_skeptic", base_brief,
                 chain=chain, client=c, ledger=ledger,
-                temperature=temperature,
+                temperature=effective_temp, seed=skeptic_seed,
             ),
         )
         final_user_prompt = (
@@ -401,7 +422,7 @@ async def run_spar(
         final_judge = await _run_judge(
             "final_judge", final_user_prompt,
             chain=chain, client=c, ledger=ledger,
-            temperature=temperature,
+            temperature=effective_temp, seed=final_seed,
         )
     finally:
         if own_client:
