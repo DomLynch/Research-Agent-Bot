@@ -344,6 +344,11 @@ def trace_alias_match(
       - canonical trial-name tokens (P1.3 fix: prose like 'MASTERS
         demonstrated...' was false-flagging MASTERS as a drug drift
         because trial acronyms look like drug names to the regex)
+      - all-caps acronyms ≤6 chars (Day 6.3): VSMCs, SASP, AMPK, mTOR-
+        style biological abbreviations are never drug names. Real drugs
+        are mixed-case (Glucophage, Rapamycin) or trade-name proper
+        nouns. The all-caps short-token shape is reserved for acronyms
+        in scientific prose, never for drug aliases.
     """
     seen: set[str] = set()
     trial_tokens = _trial_name_tokens(pack)
@@ -355,6 +360,8 @@ def trace_alias_match(
             continue  # known topic alias — already validated
         if token.upper() in trial_tokens:
             continue  # canonical trial acronym — not a drug-alias claim
+        if token.isupper() and len(token) <= 6:
+            continue  # biological/scientific acronym, not a drug name
         if token.lower() in seen:
             continue
         seen.add(token.lower())

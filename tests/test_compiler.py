@@ -244,6 +244,70 @@ def test_compile_claim_graph_edges_default_empty() -> None:
     assert graph.edges == ()
 
 
+# --- Day 6.3: cohesive cluster filter -------------------------------------
+
+
+def test_cohesive_cluster_keeps_largest_when_one_paper_dominates() -> None:
+    """3 claims from paper [3] + 2 claims from paper [5] + 1 from paper [8].
+    The cluster filter must keep the 3-claim group (paper [3]) and drop
+    the rest, so the writer renders a coherent artifact rather than a
+    shotgun mix of 6 unrelated findings."""
+    items = [
+        _item(ref=3, role="published_results", tier="A2", direct=True),
+        _item(ref=5, role="published_results", tier="A2", direct=True),
+        _item(ref=8, role="published_results", tier="A1", direct=True),
+    ]
+    facts = [
+        _fact(ref=3, claim="ref-3 claim 1"),
+        _fact(ref=3, claim="ref-3 claim 2"),
+        _fact(ref=3, claim="ref-3 claim 3"),
+        _fact(ref=5, claim="ref-5 claim 1"),
+        _fact(ref=5, claim="ref-5 claim 2"),
+        _fact(ref=8, claim="ref-8 claim 1"),
+    ]
+    graph = compile_claim_graph(compile_claims(facts, items))
+    refs_in_graph = {r for c in graph.claims for r in c.supporting_refs}
+    assert refs_in_graph == {3}, (
+        f"cluster filter must drop refs 5 and 8, kept {refs_in_graph}"
+    )
+    assert len(graph.claims) == 3
+
+
+def test_cohesive_cluster_no_filter_when_all_singletons() -> None:
+    """When every claim has its own paper (no shared supporting_refs),
+    the filter would arbitrarily keep one and drop the rest. Activation
+    rule: only kicks in when at least one cluster has ≥2 members."""
+    items = [
+        _item(ref=1, role="published_results", tier="A1", direct=True),
+        _item(ref=2, role="published_results", tier="A2", direct=True),
+        _item(ref=3, role="published_results", tier="A2", direct=True),
+    ]
+    facts = [_fact(ref=1), _fact(ref=2), _fact(ref=3)]
+    graph = compile_claim_graph(compile_claims(facts, items))
+    assert len(graph.claims) == 3, "all 3 singletons must remain"
+
+
+def test_cohesive_cluster_can_be_disabled() -> None:
+    """`cohesive_cluster_only=False` preserves the legacy 'render every
+    claim' behavior — useful for tests that assemble synthetic
+    cross-paper graphs and want them all to surface."""
+    items = [
+        _item(ref=3, role="published_results", tier="A2", direct=True),
+        _item(ref=3, role="published_results", tier="A2", direct=True),
+        _item(ref=8, role="published_results", tier="A1", direct=True),
+    ]
+    facts = [
+        _fact(ref=3, claim="a"), _fact(ref=3, claim="b"),
+        _fact(ref=8, claim="c"),
+    ]
+    graph = compile_claim_graph(
+        compile_claims(facts, items),
+        cohesive_cluster_only=False,
+    )
+    refs_in_graph = {r for c in graph.claims for r in c.supporting_refs}
+    assert refs_in_graph == {3, 8}
+
+
 # Thesis-score determinism + tiebreak tests moved to
 # tests/test_thesis_tournament.py after Day 4.1b wired pick_thesis into
 # compile_claim_graph and dropped the in-module _thesis_score/_pick_thesis
