@@ -24,13 +24,13 @@ LLM PROPOSES. CODE DISPOSES.
 ```
 
 ## Constraints
-- Hard ceiling: **4,800 LOC runtime** for `agent/` (raised from 3,500 to fund the claim-court features per DECISIONS.md 2026-04-27). Test LOC budgeted separately.
-- Soft per-file budget: **300 LOC** (v4 Rule 54).
+- Hard ceiling: **5,500 LOC runtime** for `agent/` (raised 2026-04-28 to fund Day 4 writer + GateOverride trust-spine; previous 3,500 → 4,800 → 5,500 history in DECISIONS.md). Test LOC budgeted separately.
+- Soft per-file budget: **300 LOC** (v4 Rule 54). Hard per-file cap: **600 LOC**.
 - Soft per-function budget: **50 LOC** (v4 Rule 54).
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 4.2-fix shipped (P1 trace gate + P2 strict flagged + schema GateOverride); Day 4.3 writer next (after LOC ceiling raise)
+## Status — 2026-04-28 — LOC ceiling raised to 5,500 (DECISIONS.md); Day 4.3 writer cleared to ship next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -44,7 +44,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
 **Tests:** 519/519 passing in 0.41s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 4,656 / 4,800 ceiling (3% headroom — Day 4.3 writer requires raising to 5,500 with a DECISIONS.md entry FIRST; same pattern as prior 3,500 → 4,800 raise).
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 4,656 / **5,500** ceiling (15% headroom; ceiling raised 2026-04-28 — see DECISIONS.md).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
 - `spar.py` 397 (over soft cap — 3-judge prompts + orchestration + gate-override; load-bearing trust-spine module)
@@ -93,6 +93,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `2ac7ad1` | 2026-04-28 | Day 3 cleanup: 3 reviewer P2 niggles (≥6 claims + e2e_day3_pipeline.py + state drift) |
 | `49677b2` | 2026-04-28 | Day 4.1: thesis tournament — 6-dim deterministic selector + compiler wire-in (drops `_pick_thesis`) |
 | `a1dfcf4` | 2026-04-28 | Day 4.2: SPAR — 3-judge panel orchestration with dissent always published |
+| `bc5e080` | 2026-04-28 | Day 4.2-fix: trust-spine trace gate (GateOverride schema) + strict flagged_claims + state drift |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -198,13 +199,21 @@ Next: **Day 4 — thesis tournament + SPAR + writer.**
 | **4.3** | `writer.py` — claim-graph-gated prose drafter | ☐ next (after LOC ceiling raise) |
 | **4.4** | All 5 planted failures through SPAR → assert each caught | ☐ pending |
 
-### LOC budget — ceiling raise REQUIRED before 4.3
-Current: **4,656 / 4,800 cloc** (3% headroom). Day 4.3 writer is
-estimated 300-400 cloc + matching tests, which would push total to
-**~5,000+** runtime. Next slice raises ceiling to **5,500** with a
-DECISIONS.md entry — same justification as the prior 3,500 → 4,800
-raise (claim-court features add LOC; constraint exists to prevent
-unbounded sprawl, not to block real work). The three over-soft-cap
-files (spar.py 397, citation_trace.py 355, fact_extractor.py 327)
-all carry load-bearing prompts or trust-spine logic; all under the
-600 hard per-file cap.
+### LOC budget — ceiling raised to 5,500 (DECISIONS.md 2026-04-28)
+Current: **4,656 / 5,500 cloc** (15% headroom). Day 4.3 writer is
+estimated 300-400 cloc + matching tests, comfortably under. The three
+over-soft-cap files (spar.py 397, citation_trace.py 355, fact_extractor.py
+327) all carry load-bearing prompts or trust-spine logic; all under the
+600 hard per-file cap. Justification mirrors the prior 3,500 → 4,800
+raise: constraint exists to prevent unbounded sprawl, not to block real
+work that closes trust-spine holes.
+
+### Writer design notes (per reviewer 4.2-fix audit)
+The Day 4.3 writer must surface `gate_override` PROMINENTLY in the
+rendered audit trail. When `SPARReview.gate_override` is non-None, the
+output (`paper.md` + `spar_review.json`) must show: (a) the canonical
+`reject_critical` verdict, (b) the panel's original `pre_gate_verdict`
+clearly labeled, (c) the `failed_trace_count`, (d) the gate's
+`rationale`. This preserves the audit trail the reviewer flagged
+("make sure render/writer displays `gate_override` prominently; that's
+now part of the audit trail").

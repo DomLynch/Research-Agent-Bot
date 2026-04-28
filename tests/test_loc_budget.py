@@ -8,19 +8,18 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 4,800 LOC (set by DECISIONS.md 2026-04-27 — Proof 001 rebuild
-funds the trust-layer features: schemas, topic_pack, citation_trace, spar,
-compiler, thesis_tournament, gap_analysis, validators, submit_adapter,
-trace_clients). Per-file cap of 600 LOC sits above the v4 Rule 54 soft cap
-of 300; the head-room covers files like evidence_cards.py (305 LOC after
-the Day 2.1 4-file split) where consolidating tier/direct/strict logic in
-one place is more legible than splitting further.
+Current ceiling: 5,500 LOC (set by DECISIONS.md 2026-04-28 — Day 4 writer
++ GateOverride schema extension; raised from 4,800 after Day 4.2-fix
+shipped the trust-spine trace gate). Per-file cap of 600 LOC sits above
+the v4 Rule 54 soft cap of 300; the head-room covers load-bearing
+trust-spine modules that carry rich docstrings and prompts (spar.py 397,
+citation_trace.py 355, fact_extractor.py 327).
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 4800
+TOTAL_LIMIT = 5500
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
