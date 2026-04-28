@@ -167,38 +167,119 @@ def _run(coro):
     return asyncio.run(coro)
 
 
-# --- _validate_sentence --------------------------------------------------
+# --- _validate_sentence (Day 4.3-fix P1: claim-binding contract) ---------
+
+
+def _sent(text: str, claim_ids: list[str] | None = None) -> dict:
+    """Build a sentence object in the new claim-bound shape."""
+    return {"claim_ids": claim_ids if claim_ids is not None else ["C001"], "text": text}
 
 
 def test_validate_sentence_happy_path() -> None:
-    """Cite in bundle, no verb-ban, p-value matches abstract → passes."""
+    """Claim-bound, cite in claim's supporting_refs, no other gate
+    failures → passes; returns the cleaned text."""
+    g = _graph(_claim("C001", refs=(1,)))
     items = {1: _item(1)}
-    sentence = "metformin reduced HbA1c (p=0.003) [1]."
-    reason = _validate_sentence(
-        sentence, valid_refs={1}, items_by_ref=items, pack=_pack(),
+    sent = _sent("metformin reduced HbA1c (p=0.003) [1].")
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
     )
     assert reason is None
+    assert text == "metformin reduced HbA1c (p=0.003) [1]."
 
 
-def test_validate_sentence_cite_not_in_bundle_rejects() -> None:
-    """LLM hallucinated [99] — not in graph's supporting_refs."""
+def test_validate_sentence_missing_claim_ids_rejects() -> None:
+    """No claim_ids → reject. The LLM cannot produce claim-free prose."""
+    g = _graph(_claim("C001"))
     items = {1: _item(1)}
-    sentence = "metformin reduced X [99]."
-    reason = _validate_sentence(
-        sentence, valid_refs={1}, items_by_ref=items, pack=_pack(),
+    text, reason = _validate_sentence(
+        {"text": "uncited claim [1]."},
+        graph=g, items_by_ref=items, pack=_pack(),
     )
+    assert text is None
+    assert reason == "missing_claim_ids"
+
+
+def test_validate_sentence_empty_claim_ids_rejects() -> None:
+    """Explicit empty list also rejects."""
+    g = _graph(_claim("C001"))
+    items = {1: _item(1)}
+    text, reason = _validate_sentence(
+        {"claim_ids": [], "text": "uncited claim [1]."},
+        graph=g, items_by_ref=items, pack=_pack(),
+    )
+    assert text is None
+    assert reason == "missing_claim_ids"
+
+
+def test_validate_sentence_unknown_claim_id_rejects() -> None:
+    """LLM hallucinated a claim_id not in the graph."""
+    g = _graph(_claim("C001"))
+    items = {1: _item(1)}
+    sent = _sent("anything [1].", claim_ids=["C999"])
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
+    )
+    assert text is None
     assert reason is not None
-    assert "cite_not_in_bundle" in reason
-    assert "99" in reason
+    assert reason.startswith("unknown_claim_id:")
+    assert "C999" in reason
+
+
+def test_validate_sentence_no_citation_in_text_rejects() -> None:
+    """Day 4.3-fix P1: a claim-of-fact without `[N]` is rejected.
+    Reviewer's example: `Metformin prevents dementia in healthy older
+    adults.` would slip through the old gate; now it's stopped here."""
+    g = _graph(_claim("C001"))
+    items = {1: _item(1)}
+    sent = _sent("Metformin prevents dementia in healthy older adults.")
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
+    )
+    assert text is None
+    assert reason == "missing_citation"
+
+
+def test_validate_sentence_cite_not_supported_by_claim_rejects() -> None:
+    """LLM declares C001 (supports ref 1) but cites [2] which isn't in
+    C001's supporting_refs. The cite-to-claim subset rule catches this."""
+    g = _graph(_claim("C001", refs=(1,)), _claim("C002", refs=(2,)))
+    items = {1: _item(1), 2: _item(2)}
+    sent = _sent("metformin reduced X [2].", claim_ids=["C001"])
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
+    )
+    assert text is None
+    assert reason is not None
+    assert reason.startswith("cite_not_supported_by_claim:")
+    assert "[2]" in reason or "2" in reason
+
+
+def test_validate_sentence_multi_claim_binding_allows_union_of_refs() -> None:
+    """Sentence binds to two claims; cites in text must be in the UNION
+    of their supporting_refs. [1] (from C001) and [2] (from C002) both ok."""
+    g = _graph(_claim("C001", refs=(1,)), _claim("C002", refs=(2,)))
+    items = {1: _item(1), 2: _item(2)}
+    sent = _sent(
+        "metformin reduced both X [1] and Y [2].",
+        claim_ids=["C001", "C002"],
+    )
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
+    )
+    assert reason is None
+    assert text is not None
 
 
 def test_validate_sentence_verb_ban_on_protocol_role_rejects() -> None:
     """[1] is registered_pending; sentence uses 'demonstrated' → reject."""
+    g = _graph(_claim("C001", refs=(1,)))
     items = {1: _item(1, role="registered_pending")}
-    sentence = "metformin demonstrated cardiovascular benefit [1]."
-    reason = _validate_sentence(
-        sentence, valid_refs={1}, items_by_ref=items, pack=_pack(),
+    sent = _sent("metformin demonstrated cardiovascular benefit [1].")
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
     )
+    assert text is None
     assert reason is not None
     assert reason.startswith("verb_ban:")
     assert ":ref=1" in reason
@@ -206,72 +287,89 @@ def test_validate_sentence_verb_ban_on_protocol_role_rejects() -> None:
 
 def test_validate_sentence_p_value_not_in_source_rejects() -> None:
     """Sentence cites p<0.001 but abstract only has p=0.08."""
+    g = _graph(_claim("C001", refs=(1,)))
     items = {1: _item(1, abstract="Some effect was observed (p=0.08).")}
-    sentence = "metformin lowered X (p<0.001) [1]."
-    reason = _validate_sentence(
-        sentence, valid_refs={1}, items_by_ref=items, pack=_pack(),
+    sent = _sent("metformin lowered X (p<0.001) [1].")
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
     )
+    assert text is None
     assert reason is not None
     assert reason.startswith("p_value_not_in_source:")
 
 
 def test_validate_sentence_alias_drift_rejects() -> None:
     """Sentence presents 'Glufomin' (planted case 4) as a metformin alias."""
+    g = _graph(_claim("C001", refs=(1,)))
     items = {1: _item(1)}
-    sentence = "Glufomin, a metformin alias, was tested [1]."
-    reason = _validate_sentence(
-        sentence, valid_refs={1}, items_by_ref=items, pack=_pack(),
+    sent = _sent("Glufomin, a metformin alias, was tested [1].")
+    text, reason = _validate_sentence(
+        sent, graph=g, items_by_ref=items, pack=_pack(),
     )
+    assert text is None
     assert reason is not None
     assert reason.startswith("alias_drift:")
 
 
-def test_validate_sentence_with_no_cites_passes() -> None:
-    """A sentence without [N] cites is just prose; no membership check
-    fires. Verb-ban / p-value / alias still apply but don't fail here."""
+def test_validate_sentence_non_string_claim_id_rejects() -> None:
+    """Non-string claim_ids reject (no silent coercion)."""
+    g = _graph(_claim("C001"))
     items = {1: _item(1)}
-    sentence = "the field of geroscience is rapidly evolving."
-    reason = _validate_sentence(
-        sentence, valid_refs={1}, items_by_ref=items, pack=_pack(),
+    text, reason = _validate_sentence(
+        {"claim_ids": [42, "C001"], "text": "x [1]."},
+        graph=g, items_by_ref=items, pack=_pack(),
     )
-    assert reason is None
+    assert text is None
+    assert reason is not None
+    assert reason.startswith("non_string_claim_id:")
 
 
 # --- _filter_sentences ---------------------------------------------------
 
 
 def test_filter_sentences_keeps_valid_drops_invalid() -> None:
+    g = _graph(_claim("C001", refs=(1,)), _claim("C002", refs=(2,)))
     items = {1: _item(1), 2: _item(2)}
     parsed = {
         "title": "Test",
         "abstract": [
-            "good [1].",
-            "metformin reduced X [99].",
-            "Glufomin, a metformin alias, was tested [2].",  # apposition → alias_drift
+            _sent("good [1].", claim_ids=["C001"]),
+            _sent("metformin reduced X [99].", claim_ids=["C001"]),  # cite not supported
+            _sent(  # alias-drift
+                "Glufomin, a metformin alias, was tested [2].",
+                claim_ids=["C002"],
+            ),
         ],
         "sections": {
-            "findings": ["another good [1].", 42],  # 42 is non-string, silently skipped
-            "limitations": ["bad cite [99]."],
+            "findings": [
+                _sent("another good [1].", claim_ids=["C001"]),
+                42,  # non-object → non_object_sentence rejection
+            ],
+            "limitations": [
+                _sent("bad cite [99].", claim_ids=["C002"]),
+            ],
         },
     }
     filtered, rejections = _filter_sentences(
-        parsed, valid_refs={1, 2}, items_by_ref=items, pack=_pack(),
+        parsed, graph=g, items_by_ref=items, pack=_pack(),
     )
     assert filtered["title"] == "Test"
     assert filtered["abstract"] == ["good [1]."]
     assert filtered["sections"]["findings"] == ["another good [1]."]
     assert filtered["sections"]["limitations"] == []
     reasons = [r.reason for r in rejections]
-    assert any("cite_not_in_bundle" in r for r in reasons)
+    assert any("cite_not_supported_by_claim" in r for r in reasons)
     assert any("alias_drift" in r for r in reasons)
+    assert any(r == "non_object_sentence" for r in reasons)
 
 
 def test_filter_sentences_handles_missing_keys() -> None:
     """LLM emits an object without abstract / sections — no crash."""
+    g = _graph(_claim("C001", refs=(1,)))
     items = {1: _item(1)}
     parsed: dict = {"title": "Bare"}
     filtered, rejections = _filter_sentences(
-        parsed, valid_refs={1}, items_by_ref=items, pack=_pack(),
+        parsed, graph=g, items_by_ref=items, pack=_pack(),
     )
     assert filtered["title"] == "Bare"
     assert filtered["abstract"] == []
@@ -280,10 +378,11 @@ def test_filter_sentences_handles_missing_keys() -> None:
 
 
 def test_filter_sentences_strips_title_whitespace() -> None:
+    g = _graph(_claim("C001", refs=(1,)))
     items = {1: _item(1)}
     parsed = {"title": "   Padded   ", "abstract": [], "sections": {}}
     filtered, _ = _filter_sentences(
-        parsed, valid_refs={1}, items_by_ref=items, pack=_pack(),
+        parsed, graph=g, items_by_ref=items, pack=_pack(),
     )
     assert filtered["title"] == "Padded"
 
@@ -455,10 +554,16 @@ def test_write_paper_accept_clean_calls_llm_and_renders() -> None:
         captured["payload"] = json.loads(request.content)
         return httpx.Response(200, json=_writer_response({
             "title": "Metformin and HbA1c",
-            "abstract": ["metformin reduced HbA1c (p=0.003) [1]."],
+            "abstract": [
+                {"claim_ids": ["C001"], "text": "metformin reduced HbA1c (p=0.003) [1]."},
+            ],
             "sections": {
-                "findings": ["the trial reported a reduction (p=0.003) [1]."],
-                "limitations": ["small sample size."],
+                "findings": [
+                    {"claim_ids": ["C001"], "text": "the trial reported a reduction (p=0.003) [1]."},
+                ],
+                # An uncited "small sample size." sentence would be rejected
+                # by the new claim-binding gate; the test here proves the
+                # happy path on bound sentences.
             },
         }))
 
@@ -560,7 +665,10 @@ def test_write_paper_drops_invalid_sentences_and_records_rejections() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json=_writer_response({
             "title": "T",
-            "abstract": ["good cite [1].", "bad cite [99]."],
+            "abstract": [
+                {"claim_ids": ["C001"], "text": "good cite [1]."},
+                {"claim_ids": ["C001"], "text": "bad cite [99]."},  # not in C001's refs
+            ],
             "sections": {},
         }))
 
@@ -581,7 +689,42 @@ def test_write_paper_drops_invalid_sentences_and_records_rejections() -> None:
     assert "bad cite [99]." not in md
     assert len(rejections) == 1
     assert rejections[0].section == "abstract"
-    assert "cite_not_in_bundle" in rejections[0].reason
+    assert "cite_not_supported_by_claim" in rejections[0].reason
+
+
+def test_write_paper_drops_uncited_claim_sentence() -> None:
+    """Day 4.3-fix P1 end-to-end: the LLM tries to slip in
+    `Metformin prevents dementia in healthy older adults.` (the
+    reviewer's exact reproduction case, with no `[N]` cite). The
+    claim-binding gate rejects it. Only a properly bound + cited
+    sentence makes it into the paper."""
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json=_writer_response({
+            "title": "T",
+            "abstract": [
+                {"claim_ids": ["C001"], "text": "metformin reduced HbA1c [1]."},
+                {"claim_ids": ["C001"],
+                 "text": "Metformin prevents dementia in healthy older adults."},
+            ],
+            "sections": {},
+        }))
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await write_paper(
+                _graph(_claim("C001", refs=(1,))), [_item(1)], [],
+                _spar("accept_clean"),
+                pack=_pack(), topic="metformin",
+                chain=(_spec(),), client=client,
+            )
+        finally:
+            await client.aclose()
+
+    md, rejections = _run(go())
+    assert "metformin reduced HbA1c [1]." in md
+    assert "prevents dementia" not in md
+    assert any(r.reason == "missing_citation" for r in rejections)
 
 
 def test_write_paper_non_object_response_raises() -> None:

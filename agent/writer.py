@@ -1,25 +1,37 @@
 """Writer — claim-graph-gated prose drafter.
 
 Hard rule: LLM PROPOSES. CODE DISPOSES. The LLM proposes prose for
-accepted ClaimGraphs; code gates which sentences survive based on:
-  1. Claim-graph membership: every `[N]` citation must reference a
-     supporting_ref of a real claim in the graph (LLM cannot invent
-     citations or refer to refs the spine didn't approve).
-  2. Per-cited-ref verb-ban + p-value source-trace via `validators.*`.
-  3. Topic-pack alias-drift on the whole sentence.
-  4. SPAR verdict routing: `reject_*` and `gate_override` paths skip
-     the LLM entirely and render a structured rejection notice.
+accepted ClaimGraphs; the writer FORCES every sentence to be bound
+to one or more claims from `claim_graph.json`, then gates the prose
+through five layers:
 
-The output is a markdown string suitable for `runs/<topic>/paper.md`.
-Rejected sentences are surfaced as `WriterRejection` records for the
-run log — the run accepts a partial draft (drop-and-record) rather
-than re-prompting; orchestrators can decide whether to retry.
+  1. **Claim binding** (Day 4.3-fix P1): each sentence is an object
+     `{"claim_ids": [...], "text": "..."}`. The LLM must declare
+     which claim(s) the sentence is asserting; the writer rejects
+     sentences with no claim_ids, unknown claim_ids, or missing
+     `text`. This closes the V1.1 hole where the LLM could cite a
+     valid `[N]` while making a novel claim that wasn't in the graph.
+  2. **Citation-to-claim subset**: every `[N]` in `text` must be in
+     the union of the declared claims' `supporting_refs`. The LLM
+     can't repurpose a paper's citation to support an unrelated
+     claim from the same paper; the spine pinned each fact-to-ref
+     mapping at compile time.
+  3. **Verb-ban** per-cited-ref via `validators.check_verb_ban`.
+  4. **P-value source trace** per-cited-ref via
+     `validators.check_p_value_in_source`.
+  5. **Alias drift** on the whole sentence via
+     `validators.check_alias_drift`.
 
-`gate_override` is rendered PROMINENTLY in any output where it appears
-(per the reviewer's audit-trail requirement after Day 4.2-fix): the
-banner shows the panel's original `pre_gate_verdict`, the
-`failed_trace_count`, and the gate's rationale, so a reader can see
-both the LLM panel's call AND why the deterministic spine overrode it.
+SPAR verdict routing: `reject_*` and any `gate_override` skip the LLM
+entirely and render a structured rejection notice; `accept_clean` /
+`accept_caveated` invoke the LLM and gate every sentence.
+
+`gate_override` is rendered PROMINENTLY (per the reviewer's audit-trail
+requirement after Day 4.2-fix): the banner shows the panel's original
+`pre_gate_verdict`, the `failed_trace_count`, and the gate's rationale.
+
+Failed sentences become `WriterRejection` records (drop-and-record,
+no re-prompt); orchestrators decide whether to retry on heavy rates.
 """
 from __future__ import annotations
 
@@ -75,32 +87,44 @@ class WriterRejection:
 _SYSTEM_PROMPT = """You draft a research paper from a vetted CLAIM GRAPH.
 
 HARD RULES (any violation drops the offending sentence):
-1. Cite ONLY refs in the bundle below. `[N]` citations referencing
-   refs not in the bundle are dropped.
-2. Cite ONLY claims listed in the CLAIM GRAPH. Don't invent facts
-   beyond what's there.
-3. Verb-ban discipline:
-   - For role=registered_pending or role=published_protocol refs,
-     do NOT use "showed", "demonstrated", "reduced", "improved",
-     "lowered", "raised". Those imply outcomes the paper hasn't
-     reported. Use "is studying", "plans to assess", "in progress".
-   - For role=published_results refs, do NOT describe as "planned",
-     "pending", "will assess".
-4. Numeric values must be VERBATIM from the abstracts. Don't paraphrase
-   p-values, effect sizes, or CIs.
-5. Don't introduce drug names that aren't in the topic pack's alias
-   whitelist; if you need to mention a comparator drug, use a generic
-   description.
+
+1. **Every sentence must be CLAIM-BOUND.** Each entry in `abstract` and
+   in any `sections.*` array is an OBJECT with two fields:
+       {"claim_ids": ["C001", ...], "text": "the sentence with [N] cites."}
+   - `claim_ids` lists ≥1 claim_id from the CLAIM GRAPH. It declares
+     which claim(s) this sentence is asserting. Empty / missing /
+     unknown claim_ids drop the sentence.
+   - `text` must contain ≥1 `[N]` citation. Sentences with no `[N]`
+     are dropped (you cannot make a claim-of-fact without sourcing).
+2. **Citations must match the declared claim's evidence.** Every `[N]`
+   in `text` must be in the union of `supporting_refs` across the
+   declared `claim_ids`. You cannot repurpose a paper's `[N]` to
+   support a claim it wasn't pinned to in the graph.
+3. **Don't invent facts beyond the graph.** If the graph doesn't
+   contain a claim for what you want to say, omit that sentence. Do
+   not extrapolate, generalize, or extend.
+4. Verb-ban discipline:
+   - role=registered_pending / published_protocol refs: NEVER use
+     "showed" / "demonstrated" / "reduced" / "improved" / "lowered" /
+     "raised". Use "is studying", "plans to assess", "in progress".
+   - role=published_results refs: NEVER use "planned" / "pending" /
+     "will assess".
+5. Numeric values are VERBATIM from the cited abstract — no paraphrasing
+   of p-values, effect sizes, or CIs.
+6. Don't introduce drug names outside the topic pack alias whitelist.
 
 Output exactly ONE JSON object, no prose outside it, no markdown fences:
 {
   "title": "concise paper title",
-  "abstract": ["sentence with [N] cites", ...],
+  "abstract": [
+    {"claim_ids": ["C001"], "text": "metformin reduced X (p=0.003) [1]."},
+    ...
+  ],
   "sections": {
-    "introduction": ["sentence with [N] cites", ...],
-    "findings": ["sentence with [N] cites", ...],
-    "limitations": ["sentence with [N] cites", ...],
-    "conclusion": ["sentence with [N] cites", ...]
+    "introduction": [{"claim_ids": [...], "text": "..."}, ...],
+    "findings":     [{"claim_ids": [...], "text": "..."}, ...],
+    "limitations":  [{"claim_ids": [...], "text": "..."}, ...],
+    "conclusion":   [{"claim_ids": [...], "text": "..."}, ...]
   }
 }"""
 
@@ -155,71 +179,116 @@ def _valid_refs(graph: ClaimGraph) -> set[int]:
 
 
 def _validate_sentence(
-    sentence: str,
+    sentence: Mapping[str, Any],
     *,
-    valid_refs: set[int],
+    graph: ClaimGraph,
     items_by_ref: Mapping[int, EvidenceItem],
     pack: TopicPack,
-) -> str | None:
-    """Return None if the sentence passes all gates, else a reason code.
+) -> tuple[str | None, str | None]:
+    """Return `(text, None)` on accept, `(None, reason)` on reject.
 
-    Each gate runs in priority order; the first failure short-circuits
-    so the rejection reason is the most informative one (membership
-    bugs surface as cite_not_in_bundle rather than as a downstream
-    verb-ban or p-value miss).
+    The strict claim-binding contract (Day 4.3-fix P1):
+      1. `text` must be a non-empty string.
+      2. `claim_ids` must be a non-empty list of strings, all in the
+         graph (LLM cannot invent claim_ids or skip the binding).
+      3. `text` must contain ≥1 `[N]` citation (no uncited claims).
+      4. Every `[N]` in `text` must be in the union of the declared
+         claims' `supporting_refs` (cite-to-claim subset rule).
+      5. (existing) per-cited-ref `check_verb_ban`.
+      6. (existing) per-cited-ref `check_p_value_in_source`.
+      7. (existing) `check_alias_drift` on the whole sentence.
+
+    Gates run in this order; the first failure short-circuits so the
+    rejection reason is the most informative.
     """
-    cited_refs = [int(m.group(1)) for m in _CITE_RE.finditer(sentence)]
-    bad_cites = [c for c in cited_refs if c not in valid_refs]
-    if bad_cites:
-        return f"cite_not_in_bundle:{bad_cites}"
+    raw_text = sentence.get("text", "")
+    if not isinstance(raw_text, str) or not raw_text.strip():
+        return None, "empty_or_non_string_text"
+    text = raw_text.strip()
 
-    for ref in cited_refs:
+    raw_claim_ids = sentence.get("claim_ids")
+    if not isinstance(raw_claim_ids, list) or not raw_claim_ids:
+        return None, "missing_claim_ids"
+    claims_by_id = {c.claim_id: c for c in graph.claims}
+    declared_claims = []
+    for cid in raw_claim_ids:
+        if not isinstance(cid, str):
+            return None, f"non_string_claim_id:{cid!r}"
+        claim = claims_by_id.get(cid)
+        if claim is None:
+            return None, f"unknown_claim_id:{cid}"
+        declared_claims.append(claim)
+
+    cite_nums = [int(m.group(1)) for m in _CITE_RE.finditer(text)]
+    if not cite_nums:
+        return None, "missing_citation"
+
+    allowed_refs: set[int] = set()
+    for claim in declared_claims:
+        allowed_refs.update(claim.supporting_refs)
+    bad_cites = [n for n in cite_nums if n not in allowed_refs]
+    if bad_cites:
+        return None, (
+            f"cite_not_supported_by_claim:{bad_cites}:declared="
+            f"{[c.claim_id for c in declared_claims]}"
+        )
+
+    for ref in cite_nums:
         item = items_by_ref.get(ref)
         if item is None:
-            continue  # validator-side guard: shouldn't happen post-membership
-        verb_fail = check_verb_ban(sentence, item, pack)
+            continue
+        verb_fail = check_verb_ban(text, item, pack)
         if verb_fail is not None:
-            return f"verb_ban:{verb_fail.code}:ref={ref}"
-        pval_fail = check_p_value_in_source(sentence, item.abstract)
+            return None, f"verb_ban:{verb_fail.code}:ref={ref}"
+        pval_fail = check_p_value_in_source(text, item.abstract)
         if pval_fail is not None:
-            return f"p_value_not_in_source:{pval_fail.code}:ref={ref}"
+            return None, f"p_value_not_in_source:{pval_fail.code}:ref={ref}"
 
-    alias_fail = check_alias_drift(sentence, pack)
+    alias_fail = check_alias_drift(text, pack)
     if alias_fail is not None:
-        return f"alias_drift:{alias_fail.code}"
+        return None, f"alias_drift:{alias_fail.code}"
 
-    return None
+    return text, None
 
 
 def _filter_sentences(
     parsed: Mapping[str, Any],
     *,
-    valid_refs: set[int],
+    graph: ClaimGraph,
     items_by_ref: Mapping[int, EvidenceItem],
     pack: TopicPack,
 ) -> tuple[dict[str, Any], list[WriterRejection]]:
     """Walk the LLM's structured output; drop sentences that fail gates.
 
-    Sentences that aren't strings are silently skipped (the LLM
-    occasionally emits null / nested objects in arrays); strings are
-    validated and either kept or recorded as a WriterRejection.
+    Each entry in `abstract` / `sections.*` must be an object with
+    `claim_ids` and `text`. Bare strings (legacy format) and other
+    non-Mapping entries are recorded as `non_object_sentence`
+    rejections — the LLM is on a strict contract, not a permissive one.
     """
     rejections: list[WriterRejection] = []
 
     def _filter(section: str, items: list) -> list[str]:
         kept: list[str] = []
         for sent in items:
-            if not isinstance(sent, str):
+            if not isinstance(sent, Mapping):
+                rejections.append(WriterRejection(
+                    section=section,
+                    sentence=str(sent)[:200],
+                    reason="non_object_sentence",
+                ))
                 continue
-            reason = _validate_sentence(
-                sent, valid_refs=valid_refs,
+            text, reason = _validate_sentence(
+                sent, graph=graph,
                 items_by_ref=items_by_ref, pack=pack,
             )
-            if reason is None:
-                kept.append(sent)
+            if text is not None:
+                kept.append(text)
             else:
+                snippet = sent.get("text") if isinstance(sent.get("text"), str) else str(sent)
                 rejections.append(WriterRejection(
-                    section=section, sentence=sent, reason=reason,
+                    section=section,
+                    sentence=str(snippet)[:200],
+                    reason=reason or "unknown",
                 ))
         return kept
 
@@ -435,9 +504,8 @@ async def write_paper(
         )
 
     items_by_ref = {it.source.ref: it for it in items}
-    valid_refs = _valid_refs(graph)
     filtered, rejections = _filter_sentences(
-        parsed, valid_refs=valid_refs,
+        parsed, graph=graph,
         items_by_ref=items_by_ref, pack=pack,
     )
     return _render_paper(filtered, items, spar), rejections
