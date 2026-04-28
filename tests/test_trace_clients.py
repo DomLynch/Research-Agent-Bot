@@ -1,13 +1,13 @@
-"""Tests for agent/trace_clients.py — Protocol shapes + fixture backends + selectors.
+"""Tests for agent/trace_clients/* — Protocol shapes + fixture + httpx backends + selectors.
 
-Day 2.4 ships only the fixture backend; httpx + MCP backends are Day 3. The
-selector tests here verify that http/mcp routes correctly raise
-TraceBackendError so future Day 3 work can drop in implementations without
-changing call sites.
+Day 3.3a split the monolithic module into a package. Day 3.3b adds the
+httpx backends (CT.gov v2 / ChEMBL / Europe PMC). MCP is the only
+backend still raising TraceBackendError on selection; httpx is now
+positively wired up.
 
 Planted cases 2 (fabricated NCT) and 4 (alias drift) are exercised here at
-the BACKEND layer. Day 3's citation_trace.py will combine these with the
-Protocol contract to produce CitationTrace records.
+the BACKEND layer. citation_trace.py combines these with the Protocol
+contract to produce CitationTrace records.
 """
 from __future__ import annotations
 
@@ -201,19 +201,22 @@ def test_explicit_fixture_backend(monkeypatch: pytest.MonkeyPatch) -> None:
     assert isinstance(get_trial_registry_client(), FixtureTrialRegistryClient)
 
 
-def test_http_backend_not_yet_implemented(monkeypatch: pytest.MonkeyPatch) -> None:
-    """Day 3.3a (this split) keeps the http selector unimplemented;
-    Day 3.3b ships the httpx backends and replaces this assertion with
-    a positive existence test. Until then the selector must raise so
-    call sites fail loud rather than silently using a wrong backend."""
+def test_http_backend_returns_httpx_clients(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Day 3.3b: the http backend now returns Httpx* instances, not raises."""
+    from agent.trace_clients._httpx import (
+        HttpxDrugAliasClient,
+        HttpxLiteratureClient,
+        HttpxTrialRegistryClient,
+    )
     monkeypatch.setenv("TRACE_BACKEND", "http")
-    for getter in (get_trial_registry_client, get_drug_alias_client,
-                   get_literature_client):
-        with pytest.raises(TraceBackendError, match="not yet implemented"):
-            getter()
+    assert isinstance(get_trial_registry_client(), HttpxTrialRegistryClient)
+    assert isinstance(get_drug_alias_client(), HttpxDrugAliasClient)
+    assert isinstance(get_literature_client(), HttpxLiteratureClient)
 
 
 def test_mcp_backend_not_yet_implemented(monkeypatch: pytest.MonkeyPatch) -> None:
+    """MCP is intentionally optional / deferred. The selector must raise
+    so call sites fail loud rather than silently using a wrong backend."""
     monkeypatch.setenv("TRACE_BACKEND", "mcp")
     with pytest.raises(TraceBackendError, match="not yet implemented"):
         get_trial_registry_client()

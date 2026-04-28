@@ -65,7 +65,7 @@ def _backend() -> str:
 def _unimplemented(backend: str, kind: str) -> TraceBackendError:
     return TraceBackendError(
         f"TRACE_BACKEND={backend!r} for {kind}: not yet implemented. "
-        f"Day 3.3b ships httpx; MCP is optional."
+        f"Available: 'fixture', 'http'. MCP is optional."
     )
 
 
@@ -74,6 +74,13 @@ def get_trial_registry_client() -> TrialRegistryClient:
     backend = _backend()
     if backend == "fixture":
         return FixtureTrialRegistryClient()
+    if backend == "http":
+        # Lazy import keeps the fixture path zero-cost on systems without
+        # httpx in the import path (httpx is the runtime's only dep, so
+        # this is mostly principled tidiness — `_httpx` only loads when
+        # the http backend is actually selected).
+        from agent.trace_clients._httpx import HttpxTrialRegistryClient
+        return HttpxTrialRegistryClient()
     raise _unimplemented(backend, "TrialRegistryClient")
 
 
@@ -81,6 +88,9 @@ def get_drug_alias_client() -> DrugAliasClient:
     backend = _backend()
     if backend == "fixture":
         return FixtureDrugAliasClient()
+    if backend == "http":
+        from agent.trace_clients._httpx import HttpxDrugAliasClient
+        return HttpxDrugAliasClient()
     raise _unimplemented(backend, "DrugAliasClient")
 
 
@@ -88,4 +98,7 @@ def get_literature_client() -> LiteratureClient:
     backend = _backend()
     if backend == "fixture":
         return FixtureLiteratureClient()
+    if backend == "http":
+        from agent.trace_clients._httpx import HttpxLiteratureClient
+        return HttpxLiteratureClient()
     raise _unimplemented(backend, "LiteratureClient")

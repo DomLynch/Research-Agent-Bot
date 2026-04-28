@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 3.3a trace_clients package split shipped; 3.3b httpx backends next
+## Status — 2026-04-28 — Day 3.3b httpx backends shipped (CT.gov + ChEMBL + Europe PMC); 3.3c live smoke next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,8 +43,8 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 428/428 passing in 0.37s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 3,855 / 4,800 ceiling (20% headroom). `wc -l` reports higher because it counts docstrings; the budget test excludes blanks + comment-only lines.
+**Tests:** 448/448 passing in 0.38s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 4,089 / 4,800 ceiling (15% headroom). `wc -l` reports higher because it counts docstrings; the budget test excludes blanks + comment-only lines.
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
 - `citation_trace.py` 355 (over soft cap — Day 3.1 trace orchestrator; trim or split with Day 3.3)
@@ -83,6 +83,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `f66a4ca` | 2026-04-28 | Day 3.2c-fix-state: LOC counter correction (cloc-style 3,799/4,800; 21% headroom) |
 | `743b35e` | 2026-04-28 | Day 3.2c-fix-2: malformed p_value grammar gate (rejects `'NS'`/`'1.2'`/`'not reported'` BEFORE source-trace) + commit table drift |
 | `acfe508` | 2026-04-28 | 3.1-fixes-3: verb-boundary + yield-zero design-decision docs + regression tests (428 tests) |
+| `211592c` | 2026-04-28 | Day 3.3a: split `trace_clients.py` → package (`__init__` / `protocols` / `_fixture`); refactor only |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -99,7 +100,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `evidence_cards.py` (Day 2.1 — renamed from bundle.py; `bundle()` builder + tier/direct/strict + risk_of_bias + confidence_verdict + rank_for_writer + topic_pack-aware override gate)
 - `registry_overrides.py` (Day 2.2 — registry-pinned override layer; the moat)
 - `validators.py` (Day 2.3 — pure-function gates: verb-ban, role-claim-match, alias-drift, p-value-in-source; Day 3.1 promoted `PVALUE_RE` to public for citation_trace reuse)
-- `trace_clients/` package (Day 3.3a split — was monolithic `trace_clients.py` 228 cloc; now `protocols.py` (75 cloc — Protocols + result dataclasses + TraceBackendError + TrialStatus), `_fixture.py` (126 cloc — fixture backends + corpus loader + missing-corpus guard), `__init__.py` (70 cloc — public re-exports + env-var selectors). All callers (`agent/citation_trace.py`, `tests/test_trace_clients.py`, `tests/test_citation_trace.py`) work unchanged via re-export. httpx backends `_httpx.py` ship Day 3.3b)
+- `trace_clients/` package (Day 3.3a split + Day 3.3b httpx — `protocols.py` (75 cloc — Protocols + result dataclasses + TraceBackendError + TrialStatus), `_fixture.py` (126 cloc — fixture backends + corpus loader + missing-corpus guard), `_httpx.py` (225 cloc — `HttpxTrialRegistryClient` (CT.gov v2 `/studies/{nctId}`, ISRCTN skipped), `HttpxDrugAliasClient` (ChEMBL `/molecule/search`), `HttpxLiteratureClient` (Europe PMC `/search?query=DOI:...|EXT_ID:...`); 4xx/5xx → TraceBackendError; 404/empty → None; `_get_json` shared error mapper), `__init__.py` (79 cloc — public re-exports + env-var selectors with lazy `_httpx` import). `TRACE_BACKEND=http` now positively wired; `mcp` still raises (optional / deferred))
 - `citation_trace.py` (Day 3.1 — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4. Day 3.1-fixes: nct_exists yields per-id traces from source.nct + URL ISRCTN + abstract-NCTs; flags has_results=False contradiction for published_results role; alias_match skips canonical trial acronyms)
 - `compiler.py` (Day 3.2a — deterministic facts → Claims → ClaimGraph: 1:1 fact-to-claim mapping, kind→claim_type / role+direct→directness / (role,design,tier)→confidence; thesis-pick by score tuple (directness, tier, confidence, claim_id); CompileError on orphan refs; LLM fact-extraction lands in 3.2c)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
@@ -135,7 +136,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
-| 3 | `citation_trace.py` against `trace_clients/*` (fixture + httpx backends). MCP backend optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 → 3.2c-fix-2 → 3.1-fixes-3 `acfe508` + **3.3a trace_clients package split** (this slice — `trace_clients.py` 228 cloc → `trace_clients/{__init__,protocols,_fixture}.py` 70+75+126 cloc; refactor only, no functional change; tests updated to monkeypatch `_fixture._FIXTURES_ROOT`); 3.3b httpx backends + 3.3c live smoke + 3.4 E2E ☐ pending |
+| 3 | `citation_trace.py` against `trace_clients/*` (fixture + httpx backends). MCP backend optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 → 3.2c-fix-2 → 3.1-fixes-3 `acfe508` + 3.3a `211592c` (package split) + **3.3b httpx backends** (this slice — `_httpx.py` 225 cloc, three sync httpx-backed Protocols + selector wire-up; 20 new MockTransport tests; `TRACE_BACKEND=http` positively wired; MCP still optional / deferred); 3.3c live smoke + 3.4 E2E ☐ pending |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 
