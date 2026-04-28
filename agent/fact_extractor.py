@@ -114,14 +114,36 @@ def build_user_prompt(item: EvidenceItem, topic: str) -> str:
     """
     src = item.source
     venue = f", venue={src.venue!r}" if src.venue else ""
+    role_hint = (
+        " This source has role='published_results' — the abstract WILL contain"
+        " reported findings (effect sizes, p-values, ORs, HRs, percentages,"
+        " etc.). Extract at least one source_quote covering a primary finding."
+        if item.role == "published_results" else
+        " This source has role='published_protocol' or 'registered_pending' —"
+        " quote design/objective spans, not outcome spans."
+        if item.role in ("published_protocol", "registered_pending") else
+        ""
+    )
     return (
         f"Topic: {topic}\n\n"
         f"Source [{src.ref}] (role={item.role}, design={item.design}, "
         f"year={src.year}{venue}):\n"
         f"Title: {src.title}\n"
         f"Abstract: {item.abstract}\n\n"
-        f"Extract facts about {topic} from this abstract. If the abstract "
-        f"is unrelated to {topic}, return an empty facts list."
+        f"Extract facts about {topic} from this abstract.{role_hint}\n"
+        f"Return an empty facts list ONLY when the abstract is genuinely"
+        f" off-topic (does not mention {topic} or any of its standard"
+        f" aliases). When the abstract IS about {topic}:\n"
+        f" - surface every distinct claim-bearing quote: a separate fact"
+        f"   per primary outcome, per secondary outcome, per trial phase,"
+        f"   per arm comparison. Do not collapse multiple findings into"
+        f"   one quote — code dedupes byte-identical quotes, so finer"
+        f"   granularity is strictly safer than coarser.\n"
+        f" - do not stop at one fact when the abstract reports multiple"
+        f"   findings. A typical RCT abstract yields 3-8 distinct facts.\n"
+        f" - emit at least one fact when the abstract is on-topic, even if"
+        f"   you have to set every metadata field (estimate / p_value / ci)"
+        f"   to null — better one bare quote than a silent drop."
     )
 
 
@@ -159,18 +181,39 @@ def _coerce_str_or_none(value: Any) -> str | None:
     return None
 
 
+def _normalize_unicode(text: str) -> str:
+    """Normalize Unicode punctuation that British medical journals use.
+
+    Day 8.0: PROTECTOR (Lancet Healthy Longevity) writes p-values as
+    `p=0·02` with MIDDLE DOT (U+00B7), not ASCII period. The LLM
+    reasonably rewrites to `0.02` but the substring trace fails. Apply
+    the same normalization to both sides so the trust-spine substring
+    checks treat `0·02` and `0.02` as the same numeric. Same for en-dash
+    / em-dash → hyphen (CIs like `0·391–0·922` use en-dash).
+    """
+    return (
+        text
+        .replace("·", ".")  # middle dot
+        .replace("–", "-")  # en-dash
+        .replace("—", "-")  # em-dash
+        .replace("−", "-")  # minus sign
+    )
+
+
 def _trace_field_in_source(value: str, abstract: str) -> bool:
     """Whitespace-normalized, case-insensitive substring match.
 
     Used for `estimate` and `ci` — the prompt requires verbatim, but real
     LLMs collapse whitespace inconsistently. Normalize both sides before
     matching so 'HR  0.79' (LLM, double space) traces against 'HR 0.79'
-    (abstract). False on miss; True on hit.
+    (abstract). Day 8.0: also normalize Unicode middle-dot → period and
+    en-dash → hyphen for British-journal-format compatibility. False
+    on miss; True on hit.
     """
-    needle = " ".join(value.split()).lower()
+    needle = " ".join(_normalize_unicode(value).split()).lower()
     if not needle:
         return True
-    haystack = " ".join(abstract.split()).lower()
+    haystack = " ".join(_normalize_unicode(abstract).split()).lower()
     return needle in haystack
 
 
@@ -179,7 +222,10 @@ def _quote_in_abstract(quote: str, abstract: str) -> bool:
 
     Whitespace-normalized + case-insensitive: tolerates the LLM's
     typical reformatting (collapsed whitespace, sentence-case
-    differences) while rejecting any semantic edit. This is the
+    differences) while rejecting any semantic edit. Day 8.0: also
+    normalizes Unicode middle-dot / en-dash / em-dash so a quote
+    rendered with ASCII punctuation traces against a British-journal
+    abstract that uses Unicode equivalents. This is the
     Day 5.2-fix P1 replacement for the previous bag-of-words overlap
     gate, which accepted endpoint swaps like "Metformin reduced
     dementia" against an abstract that only said "Metformin reduced
@@ -187,10 +233,10 @@ def _quote_in_abstract(quote: str, abstract: str) -> bool:
     CONSTRUCTION a verbatim span of the source — there's no
     novel-claim attack surface at the extraction stage.
     """
-    needle = " ".join(quote.split()).lower()
+    needle = " ".join(_normalize_unicode(quote).split()).lower()
     if not needle:
         return False
-    haystack = " ".join(abstract.split()).lower()
+    haystack = " ".join(_normalize_unicode(abstract).split()).lower()
     return needle in haystack
 
 
@@ -210,7 +256,7 @@ def _check_p_value_field(p_value: str, abstract: str) -> bool:
          that PVALUE_RE extracts. Default operator is '=' when the
          field is a bare decimal.
     """
-    pv = p_value.strip()
+    pv = _normalize_unicode(p_value).strip()
     if pv.lower().startswith("p"):
         pv = pv[1:].strip()
     operator = "="
@@ -221,7 +267,7 @@ def _check_p_value_field(p_value: str, abstract: str) -> bool:
     if m is None:
         return False
     proposed = (operator, m.group(1))
-    return proposed in set(PVALUE_RE.findall(abstract))
+    return proposed in set(PVALUE_RE.findall(_normalize_unicode(abstract)))
 
 
 def _validate_proposed(
@@ -284,12 +330,17 @@ def _validate_proposed(
         # number in the structured field instead of inside the quote.
         if p_value is not None and not _check_p_value_field(p_value, item.abstract):
             return None, "p_value_field_not_in_source"
-        # 3. estimate — verbatim per prompt; whitespace-normalized match
-        if estimate is not None and not _trace_field_in_source(estimate, item.abstract):
-            return None, "estimate_not_in_source"
-        # 4. ci — verbatim per prompt; whitespace-normalized match
-        if ci is not None and not _trace_field_in_source(ci, item.abstract):
-            return None, "ci_not_in_source"
+        # Day 8.0: estimate / ci substring traces dropped. They were
+        # added in Day 3.2c-fix when the LLM emitted free-form claims
+        # that could smuggle unsupported numerics. Day 5.2-fix replaced
+        # the free-form claim with a VERBATIM source_quote that IS the
+        # trust anchor, and the writer renders only source_quote — the
+        # structured estimate / ci fields never reach paper.md. Keeping
+        # the substring trace just rejected legitimate extractions where
+        # the LLM stripped a bracket ("OR 0.601" vs the abstract's
+        # "[OR] 0.601") or rephrased — without protecting any reader-
+        # facing surface. The verbatim quote and p_value field check
+        # are sufficient.
 
     return Fact(
         ref=item.source.ref,

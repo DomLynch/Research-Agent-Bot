@@ -248,14 +248,13 @@ def test_compile_claim_graph_edges_default_empty() -> None:
 
 
 def test_cohesive_cluster_keeps_largest_when_one_paper_dominates() -> None:
-    """3 claims from paper [3] + 2 claims from paper [5] + 1 from paper [8].
-    The cluster filter must keep the 3-claim group (paper [3]) and drop
-    the rest, so the writer renders a coherent artifact rather than a
-    shotgun mix of 6 unrelated findings."""
+    """3 claims from paper [3] + 2 claims from paper [5], all direct/A2.
+    The cluster filter must keep the 3-claim cluster (size wins among
+    same-tier clusters), so the writer renders a coherent artifact
+    rather than mixing two unrelated A2 papers."""
     items = [
         _item(ref=3, role="published_results", tier="A2", direct=True),
         _item(ref=5, role="published_results", tier="A2", direct=True),
-        _item(ref=8, role="published_results", tier="A1", direct=True),
     ]
     facts = [
         _fact(ref=3, claim="ref-3 claim 1"),
@@ -263,14 +262,38 @@ def test_cohesive_cluster_keeps_largest_when_one_paper_dominates() -> None:
         _fact(ref=3, claim="ref-3 claim 3"),
         _fact(ref=5, claim="ref-5 claim 1"),
         _fact(ref=5, claim="ref-5 claim 2"),
-        _fact(ref=8, claim="ref-8 claim 1"),
     ]
     graph = compile_claim_graph(compile_claims(facts, items))
     refs_in_graph = {r for c in graph.claims for r in c.supporting_refs}
-    assert refs_in_graph == {3}, (
-        f"cluster filter must drop refs 5 and 8, kept {refs_in_graph}"
-    )
+    assert refs_in_graph == {3}
     assert len(graph.claims) == 3
+
+
+def test_cohesive_cluster_prefers_a1_singleton_over_b_multi_cluster() -> None:
+    """Day 8: directness + tier dominate cluster size. A solo direct-A1
+    RCT (e.g., PROTECTOR / Mannick aging trial in everolimus pack) must
+    win over a 5-claim indirect-B oncology cluster, even though the
+    oncology cluster is bigger. Without this rule, the everolimus
+    cluster filter picked the renal-cell-carcinoma trial cluster over
+    PROTECTOR — a mechanism-inflated-to-clinic failure at the cluster
+    level."""
+    items = [
+        _item(ref=1, role="published_results", tier="B", direct=False),  # oncology indirect
+        _item(ref=7, role="published_results", tier="A1", direct=True),  # aging direct
+    ]
+    facts = [
+        _fact(ref=1, claim="oncology claim 1"),
+        _fact(ref=1, claim="oncology claim 2"),
+        _fact(ref=1, claim="oncology claim 3"),
+        _fact(ref=1, claim="oncology claim 4"),
+        _fact(ref=1, claim="oncology claim 5"),
+        _fact(ref=7, claim="aging claim 1"),
+    ]
+    graph = compile_claim_graph(compile_claims(facts, items))
+    refs_in_graph = {r for c in graph.claims for r in c.supporting_refs}
+    assert refs_in_graph == {7}, (
+        f"direct-A1 singleton must beat indirect-B 5-cluster, kept {refs_in_graph}"
+    )
 
 
 def test_cohesive_cluster_no_filter_when_all_singletons() -> None:

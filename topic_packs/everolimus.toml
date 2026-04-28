@@ -1,0 +1,137 @@
+# Everolimus topic pack — Proof 003
+#
+# Loaded by agent/topic_pack.py via stdlib `tomllib` (Python 3.11+). No PyYAML.
+# `known_role_overrides` is the hard-coded source of truth for canonical NCTs;
+# evidence_cards.py checks this BEFORE any abstract-classifier runs. If a
+# registry ID hits here, the role is fixed. LLM cannot override.
+#
+# Everolimus has the most aggressive indication-bias problem of the three
+# proofs: oncology (RAD001 / Afinitor) + transplant rejection are FDA-approved,
+# while aging-relevant evidence is narrow (Mannick RTB101 immune-function
+# trials). The topic pack must aggressively flag oncology / transplant as
+# INDIRECT for healthy-aging claims so the trust spine doesn't promote a
+# breast-cancer outcome to a longevity finding.
+
+topic   = "everolimus"
+class_  = "mtor_inhibitor"
+
+aliases = [
+  "everolimus",
+  "RAD001",
+  "Afinitor",
+  "Zortress",
+  "RTB101",
+  "mTOR inhibitor",
+  "mTORC1 inhibitor",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "safety_tolerability",
+  "dosing_regimen",
+  "immune_function_outcomes",   # the aging-specific cluster (Mannick et al.)
+  "ongoing_trials",
+  "oncology_indication_bias",   # everolimus's primary FDA indication
+  "transplant_indication_bias", # everolimus's secondary FDA indication
+]
+
+special_rules = [
+  "ONCOLOGY (RCC / TNBC / NET / angiomyolipoma) trials are INDIRECT for aging — tier B at best",
+  "TRANSPLANT-IMMUNOSUPPRESSION trials are INDIRECT for aging — tier B at best; daily-dosing regimens",
+  "RTB101 / low-dose intermittent everolimus is the aging-relevant regimen — Mannick et al. phase 2/3",
+  "Mannick 2014 (mTOR inhibition improves immune function in the elderly) is the primary direct-evidence anchor",
+  "any claim citing oncology RCTs (renal-cell carcinoma, etc.) for aging endpoints must be flagged as cross-domain",
+]
+
+# If a source.role is published_protocol or registered_pending, prose claims
+# referencing that source MUST NOT use any of these verbs:
+forbidden_verbs_for_protocol_role = [
+  "found",
+  "showed",
+  "improved",
+  "reduced",
+  "demonstrated",
+  "established",
+  "proved",
+]
+
+# If a source.role is published_results, prose claims referencing it MUST NOT
+# use any of these protocol-keywords near the citation:
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned",
+  "will assess",
+  "pending",
+  "ongoing",
+  "awaiting",
+]
+
+
+# --- Canonical trials (informational; surface-check feeds qa_report) -------
+
+# Mannick et al. — phase 2b/3 RTB101 in older adults; the only randomized
+# human aging-relevant data with adequate sample size in the everolimus class.
+[[canonical_trials]]
+id            = "NCT03373903"
+name          = "PROTECTOR"
+expected_role = "published_results"
+design        = "rct"
+
+
+# --- Hard-coded role overrides (the moat) ----------------------------------
+# evidence_cards.py checks this map BEFORE running the deterministic abstract
+# classifier. A hit here pins role/design/tier irrevocably. LLM never sees
+# this — code disposes.
+
+[known_role_overrides.NCT03373903]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+# Oncology RCTs are INDIRECT for aging endpoints — pin tier B so the
+# tournament can't promote a renal-cell carcinoma outcome to a longevity
+# finding by topic-pack-blind classification.
+[known_role_overrides.NCT01668784]
+role   = "published_results"
+design = "rct"
+tier   = "B"
+
+[known_role_overrides.NCT04195750]
+role   = "published_results"
+design = "rct"
+tier   = "B"
+
+[known_role_overrides.NCT00790400]
+role   = "published_results"
+design = "rct"
+tier   = "B"
+
+# Lenvatinib + pembro vs sunitinib in advanced RCC — oncology, indirect
+# for aging.
+[known_role_overrides.NCT02811861]
+role   = "published_results"
+design = "rct"
+tier   = "B"
+
+# CABOMAYO — cabozantinib in metastatic renal carcinoma in elderly
+# fragile patients. Oncology, indirect.
+[known_role_overrides.NCT04134390]
+role   = "published_results"
+design = "rct"
+tier   = "B"
+
+# FUTURE-SUPER — TNBC subtyping-based therapy. Oncology, indirect.
+[known_role_overrides.NCT04395989]
+role   = "published_results"
+design = "rct"
+tier   = "B"
+
+# Renal transplant immunosuppression — direct evidence for transplant,
+# INDIRECT for healthy aging. Daily-dosing regimen, distinct from the
+# aging-relevant intermittent dosing Mannick et al. used.
+[known_role_overrides.NCT01950819]
+role   = "published_results"
+design = "rct"
+tier   = "B"

@@ -40,6 +40,11 @@ TOPICS: list[tuple[str, str]] = [
     ("senolytics", "senolytics dasatinib quercetin older adults"),
     ("semaglutide_weight", "semaglutide weight loss adults"),
     ("vitamin_d_mortality", "vitamin D supplementation mortality elderly"),
+    # Day 8: everolimus / RTB101 — aging-relevant evidence cluster.
+    # Mannick 2014/2018 (RTB101) + everolimus low-dose immune outcomes
+    # in older adults are the aging signal; oncology + transplant are
+    # INDIRECT for aging claims (topic_pack flags them tier B).
+    ("everolimus", "everolimus older adults immune"),
 ]
 
 CLIENTS = [

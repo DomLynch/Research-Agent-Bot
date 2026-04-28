@@ -360,8 +360,11 @@ def trace_alias_match(
             continue  # known topic alias — already validated
         if token.upper() in trial_tokens:
             continue  # canonical trial acronym — not a drug-alias claim
-        if token.isupper() and len(token) <= 6:
-            continue  # biological/scientific acronym, not a drug name
+        # All-caps acronym OR all-caps-with-trailing-lowercase-plural
+        # ('RTIs', 'VSMCs') — biological acronyms, not drugs.
+        core = token.rstrip("s") if token.endswith("s") else token
+        if core.isupper() and len(token) <= 7:
+            continue
         if token.lower() in seen:
             continue
         seen.add(token.lower())

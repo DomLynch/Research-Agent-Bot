@@ -244,13 +244,17 @@ def check_p_value_in_source(
     — so 'p<0.001' and 'p=0.08' do NOT match. The `PVALUE_RE` normalizes
     whitespace and an optional leading zero before the decimal.
 
+    Day 8.0: Unicode middle-dot (U+00B7) normalized to ASCII period before
+    matching, so a claim with `p=0.02` traces against an abstract that
+    writes `p=0·02` (British medical journal style — Lancet, BMJ, etc.).
+
     Returns None when no p-values are cited (nothing to verify).
     """
-    claim_pvs = set(PVALUE_RE.findall(claim_text))
+    claim_pvs = set(PVALUE_RE.findall(claim_text.replace("·", ".")))
     if not claim_pvs:
         return None
 
-    source_pvs = set(PVALUE_RE.findall(source_abstract))
+    source_pvs = set(PVALUE_RE.findall(source_abstract.replace("·", ".")))
     missing = claim_pvs - source_pvs
     if not missing:
         return None

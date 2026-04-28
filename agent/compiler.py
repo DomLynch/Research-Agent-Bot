@@ -223,38 +223,49 @@ def _largest_cohesive_cluster(claims: Sequence[Claim]) -> tuple[Claim, ...]:
         # arbitrarily drop most of the corpus to keep one singleton.
         return tuple(claims)
 
-    # Day 6.3: prefer DIRECT clusters over mechanistic. A mechanistic
-    # paper with 4 in-vitro claims should NOT outrank a clinical
-    # cluster of 2 direct claims — the V1.1 mechanism-inflated-to-clinic
-    # failure mode caught at the cluster level. Within direct clusters,
-    # larger wins. Within size ties, smallest min(ref) wins
-    # (deterministic). With NO direct cluster of ≥2, fall through to
-    # the earlier behavior so the artifact doesn't disappear.
+    # Day 6.3 / 8.0: cluster preference order:
+    #   1. directness — direct beats mechanistic (V1.1 mechanism-to-clinic
+    #      failure mode caught at the cluster level)
+    #   2. tier — A1 beats A2 beats B beats C. Topic packs pin oncology /
+    #      transplant evidence to tier B as a deliberate "indirect for
+    #      aging" signal; without this rank, an everolimus run picks the
+    #      4-claim renal-cell-carcinoma RCT cluster over the 1-claim
+    #      PROTECTOR aging RCT (Day 8 Proof 003 finding).
+    #   3. larger size wins.
+    #   4. smallest min(ref) for determinism.
+    # Fallback (below): if the winner is a singleton AND a multi-claim
+    # cluster exists at any tier, fall back to the legacy "largest
+    # regardless" so the artifact has body.
     _DIRECTNESS_RANK = {"direct": 0, "indirect": 1, "mechanistic": 2}
+    _TIER_RANK = {"A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4}
 
     def cluster_directness(idx_list: list[int]) -> int:
-        """Best (lowest) directness rank among claims in cluster."""
         return min(
             _DIRECTNESS_RANK.get(claims[i].directness, 9) for i in idx_list
         )
 
-    def cluster_sort_key(idx_list: list[int]) -> tuple[int, int, int]:
+    def cluster_tier(idx_list: list[int]) -> int:
+        """Best (lowest) tier rank among claims in cluster."""
+        return min(
+            _TIER_RANK.get(claims[i].evidence_tier, 9) for i in idx_list
+        )
+
+    def cluster_sort_key(idx_list: list[int]) -> tuple[int, int, int, int]:
         return (
-            cluster_directness(idx_list),  # primary: direct beats mechanistic
-            -len(idx_list),                # secondary: more claims wins
+            cluster_directness(idx_list),  # 1: direct beats mechanistic
+            cluster_tier(idx_list),        # 2: A1 beats A2 beats B
+            -len(idx_list),                # 3: more claims wins
             min(min(claims[i].supporting_refs) for i in idx_list),  # tiebreak
         )
 
     best_indices = min(clusters.values(), key=cluster_sort_key)
-    # Edge case: if the chosen cluster has only 1 claim AND a multi-claim
-    # mechanistic cluster exists, the original "no shotgun" goal isn't
-    # served by dropping good mechanistic context. Fall back to the
-    # legacy choice (largest, regardless of directness) so the artifact
-    # has body. Singletons are fine when there's nothing larger.
-    if len(best_indices) < 2 and largest_size >= 2:
-        def legacy_key(idx_list: list[int]) -> tuple[int, int]:
-            return (-len(idx_list), min(min(claims[i].supporting_refs) for i in idx_list))
-        best_indices = min(clusters.values(), key=legacy_key)
+    # Day 8.0: the earlier "fall back to largest if winner is singleton"
+    # rule was too aggressive — it overrode a direct A1 singleton with
+    # an indirect B 5-claim cluster on the everolimus run, exactly the
+    # signal-vs-volume failure mode the directness+tier ranks were
+    # meant to fix. Trust the sort: a strong singleton outranks weaker
+    # body. Empty graphs are still impossible because the largest_size<2
+    # guard above returns the full list when no cluster has ≥2 members.
     return tuple(claims[i] for i in best_indices)
 
 
