@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 5.1-fix shipped (claim-text overlap gate + atomic paper.md + force_overwrite escape hatch + AGENTS/state drift); Day 5.2 next
+## Status — 2026-04-28 — Day 5.2 shipped (full-pipeline E2E + specificity proof + sensitivity reaffirmed; reviewer-cleared); Day 5.3 next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,7 +43,7 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 575/575 passing in 0.48s. ruff clean. git diff --check clean.
+**Tests:** 578/578 passing in 0.49s. ruff clean. git diff --check clean.
 **Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,257 / **5,500** ceiling (4.4% headroom; Day 5.4 render gut reclaims ~270 cloc).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
@@ -98,6 +98,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `a110178` | 2026-04-28 | Day 4.4: planted-failures end-to-end — Day 4 done-when criteria met (later supersededby 4-fix P2 real-pipeline rewrite) |
 | `2b21319` | 2026-04-28 | Day 4-fix: gut writer LLM (P1 deterministic) + real-pipeline planted-failure E2E (P2) + specificity proof |
 | `1987105` | 2026-04-28 | Day 5.1: orchestrator — single-call pipeline + 8 mandatory receipts (3 P1 + 4 P2 reviewer-cleared) |
+| `2a01f17` | 2026-04-28 | Day 5.1-fix: claim-text overlap gate (P1) + atomic paper.md (P2) + force_overwrite (Gap-1) + state drift (P3) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -191,8 +192,8 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 | Slice | Ship | Status |
 |---|---|---|
 | **5.1** | `agent/orchestrator.py` — single-call pipeline + 8 mandatory receipts | ✅ `1987105` |
-| **5.1-fix** | P1 fact_extractor claim-text overlap gate + P2 atomic paper.md + Gap-1 force_overwrite + P3 doc drift | ✅ this slice |
-| **5.2** | fixture-replay full-pipeline E2E (clean + gate-fired scenarios end-to-end) | ☐ next |
+| **5.1-fix** | P1 fact_extractor claim-text overlap gate + P2 atomic paper.md + Gap-1 force_overwrite + P3 doc drift | ✅ `2a01f17` |
+| **5.2** | fixture-replay full-pipeline E2E (clean + gate-fired scenarios end-to-end) | ✅ this slice |
 | **5.3** | `scripts/e2e_metformin_proof_001.py` — first LIVE metformin run | ☐ |
 | **5.4** | gut `render.py` V1.1 stub (saves ~278 cloc) | ☐ |
 
