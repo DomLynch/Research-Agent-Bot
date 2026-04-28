@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 3.2c-fix shipped + LOC counter corrected; Day 3.3 (trace_clients package split + httpx backends) next
+## Status — 2026-04-28 — Day 3.2c-fix-2 shipped (malformed p_value grammar gate); audit-debt + Day 3.3 next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,8 +43,8 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 407/407 passing in 0.35s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 3,799 / 4,800 ceiling (21% headroom). `wc -l` reports 4,773 because it counts docstrings; the budget test correctly excludes blanks + comment-only lines. The earlier "0.6% headroom" line was wrong-math against the wrong counter.
+**Tests:** 425/425 passing in 0.36s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 3,812 / 4,800 ceiling (21% headroom). `wc -l` reports higher because it counts docstrings; the budget test excludes blanks + comment-only lines.
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
 - `citation_trace.py` 355 (over soft cap — Day 3.1 trace orchestrator; trim or split with Day 3.3)
@@ -79,6 +79,8 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `1537196` | 2026-04-27 | Day 3.2a: deterministic compiler — facts → Claims → ClaimGraph (1:1, thesis-pick by score tuple) |
 | `325afb9` | 2026-04-27 | Day 3.2b: llm_client.py — single-dep LLM surface (chat_json + chain + CostLedger) |
 | `207ffbf` | 2026-04-27 | Day 3.2c: fact_extractor.py — first LLM in spine; ref/kind PINNED + 4 code-disposes layers |
+| `848dba6` | 2026-04-28 | Day 3.2c-fix: P1 p_value field bypass + P2 estimate/ci field bypass; 4 trace layers → 7 |
+| `f66a4ca` | 2026-04-28 | Day 3.2c-fix-state: LOC counter correction (cloc-style 3,799/4,800; 21% headroom) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -99,7 +101,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `citation_trace.py` (Day 3.1 — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4. Day 3.1-fixes: nct_exists yields per-id traces from source.nct + URL ISRCTN + abstract-NCTs; flags has_results=False contradiction for published_results role; alias_match skips canonical trial acronyms)
 - `compiler.py` (Day 3.2a — deterministic facts → Claims → ClaimGraph: 1:1 fact-to-claim mapping, kind→claim_type / role+direct→directness / (role,design,tier)→confidence; thesis-pick by score tuple (directness, tier, confidence, claim_id); CompileError on orphan refs; LLM fact-extraction lands in 3.2c)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
-- `fact_extractor.py` (Day 3.2c + 3.2c-fix — first LLM in the spine. `extract_facts_from_item / from_bundle` proposes facts via `chat_json`; CODE DISPOSES via SEVEN layers: (1) ref/kind PINNED from item.source.ref + role (LLM never proposes either), (2) schema check on claim, (3) `check_verb_ban` (planted case 1's 5th defense), (4) `check_p_value_in_source` on claim text, (5) `_check_p_value_field` on separate `p_value` field — synthesizes `p=X` / `p<X` form then re-runs PVALUE_RE check (3.2c-fix P1), (6) `_trace_field_in_source` whitespace-normalized substring match for `estimate` (3.2c-fix P2), (7) same for `ci` (3.2c-fix P2), plus within-item dedupe. `require_source_trace` flag (renamed from `require_p_value_trace` after the fix expanded scope). off_domain skipped pre-call.)
+- `fact_extractor.py` (Day 3.2c + 3.2c-fix + 3.2c-fix-2 — first LLM in the spine. `extract_facts_from_item / from_bundle` proposes facts via `chat_json`; CODE DISPOSES via SEVEN layers: (1) ref/kind PINNED from item.source.ref + role (LLM never proposes either), (2) schema check on claim, (3) `check_verb_ban` (planted case 1's 5th defense), (4) `check_p_value_in_source` on claim text, (5) `_check_p_value_field` — TWO-stage: grammar gate via `_PVALUE_DECIMAL_RE` rejects malformed values ('NS', 'not reported', '0', '1.2', etc.) BEFORE source-tracing (3.2c-fix-2 closes the vacuous-success bypass); then (operator, digits) tuple must appear in abstract via PVALUE_RE, (6) `_trace_field_in_source` whitespace-normalized substring match for `estimate` (3.2c-fix P2), (7) same for `ci`, plus within-item dedupe. `require_source_trace` flag (renamed from `require_p_value_trace` after fix expanded scope). off_domain skipped pre-call.)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
 - `settings.py` (KEEP, may extend `TRACE_BACKEND` documentation)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
@@ -131,7 +133,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **0** | Tag `v1.1-final`. Archive 6 LLM-coupled modules + 3 test files. Deploy-safe `app.py` stub. Post-mortem. DECISIONS.md entry. | Tag exists; deterministic tests green; `agent.app dashboard` runs as paused-stub. | ✅ `d941ae2` |
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
-| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` + 3.0-fixes `979055b` + 3.0-state `361f5f7` + 3.1 `788868a` + 3.1-fixes `af2e329` + 3.1-fixes-2 `0a2c263` + 3.2a `1537196` + 3.2b `325afb9` + 3.2c `207ffbf` (first LLM, ref/kind PINNED) + **3.2c-fix** (this slice — P1 `p_value` field bypass + P2 `estimate`/`ci` field bypass; 4 trace layers → 7); 3.3 httpx/MCP backends + 3.4 E2E ☐ pending |
+| 3 | `citation_trace.py` against `trace_clients.py` (fixture + httpx backends). MCP backend wired but optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **PARTIAL** — 3.0 `555c73a` + 3.0-fixes `979055b` + 3.0-state `361f5f7` + 3.1 `788868a` + 3.1-fixes `af2e329` + 3.1-fixes-2 `0a2c263` + 3.2a `1537196` + 3.2b `325afb9` + 3.2c `207ffbf` + 3.2c-fix `848dba6` (P1/P2 field bypass) + 3.2c-fix-state `f66a4ca` (LOC counter) + **3.2c-fix-2** (this slice — malformed p_value grammar gate; pre-fix `'NS'`/`'1.2'`/`'not reported'` slipped through via vacuous PVALUE_RE no-match); audit-debt + 3.3 httpx backends + 3.4 E2E ☐ pending |
 | 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | — |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 

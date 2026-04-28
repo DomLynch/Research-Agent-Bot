@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import re
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any
@@ -29,7 +30,13 @@ from agent.llm_client import (
 )
 from agent.topic_pack import TopicPack
 from agent.types import EvidenceItem, Fact, FactKind
-from agent.validators import check_p_value_in_source, check_verb_ban
+from agent.validators import PVALUE_RE, check_p_value_in_source, check_verb_ban
+
+# A bare p-value decimal: `0.NNN` or `.NNN`. Matches the (digits) capture
+# of `validators.PVALUE_RE` in shape — both must agree on what counts as
+# a recognizable p-value or the field-trace can vacuously succeed against
+# a malformed proposal ('NS', 'not reported', '0', '1.2', etc.).
+_PVALUE_DECIMAL_RE = re.compile(r"^0?\.(\d+)$")
 
 __all__ = [
     "FactRejection",
@@ -150,22 +157,33 @@ def _trace_field_in_source(value: str, abstract: str) -> bool:
 
 
 def _check_p_value_field(p_value: str, abstract: str) -> bool:
-    """Verify the proposed `p_value` field traces back via PVALUE_RE.
+    """Verify proposed `p_value` is a real p-value AND traces to abstract.
 
-    The Fact.p_value field is a bare number ('0.003') or operator+number
-    ('<0.001'); PVALUE_RE expects a 'p' prefix, so synthesize one before
-    delegating to check_p_value_in_source. Strips a leading 'p'/'P' if
-    the model included one — both 'p<0.001' and '<0.001' are accepted
-    inputs and produce the same synthetic 'p<0.001'.
+    Two-stage check (3.2c-fix-2 closes the v1 bypass where only the second
+    stage ran):
+      1. **Grammar gate:** strip optional leading 'p'/'P' and an optional
+         operator (`<`, `>`, `=`). What remains MUST match `0?.NNN`. Any
+         non-decimal value ('NS', 'not reported', '0', '1.2', 'abc') is
+         rejected here — without this, the synthetic 'p=NS' fed into
+         `check_p_value_in_source` finds no PVALUE_RE matches and
+         vacuously succeeds, slipping unsupported numerics into Fact.
+      2. **Source trace:** the (operator, digits) tuple this proposal
+         claims must appear verbatim in the abstract — same tuple shape
+         that PVALUE_RE extracts. Default operator is '=' when the
+         field is a bare decimal.
     """
     pv = p_value.strip()
     if pv.lower().startswith("p"):
         pv = pv[1:].strip()
+    operator = "="
     if pv.startswith(("<", ">", "=")):
-        synthetic = f"p{pv}"
-    else:
-        synthetic = f"p={pv}"
-    return check_p_value_in_source(synthetic, abstract) is None
+        operator = pv[0]
+        pv = pv[1:].strip()
+    m = _PVALUE_DECIMAL_RE.match(pv)
+    if m is None:
+        return False
+    proposed = (operator, m.group(1))
+    return proposed in set(PVALUE_RE.findall(abstract))
 
 
 def _validate_proposed(

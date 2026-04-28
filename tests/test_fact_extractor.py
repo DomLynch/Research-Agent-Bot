@@ -14,6 +14,7 @@ import json
 from types import MappingProxyType
 
 import httpx
+import pytest
 
 from agent.fact_extractor import (
     PROMPT_VERSION,
@@ -380,6 +381,76 @@ def test_validate_proposed_field_trace_runs_when_claim_has_no_pvalue() -> None:
     )
     assert fact is None
     assert reason == "p_value_field_not_in_source"
+
+
+# --- Malformed p_value grammar gate (3.2c-fix-2) -------------------------
+
+
+@pytest.mark.parametrize("malformed", [
+    "not reported",
+    "NS",
+    "ns",
+    "n.s.",
+    "0",          # no decimal point
+    "1.2",        # > 1 and no leading zero — not a p-value form
+    "1.0",        # > 1 (also: real abstracts never report p=1.0)
+    "abc",        # non-numeric
+    "-0.05",      # negative
+    "0.",         # decimal point with no digits after
+    "p=",         # bare prefix
+    "<",          # bare operator
+    "0.05.5",     # multiple decimal points
+    "3e-5",       # scientific notation — not the verbatim form abstracts use
+    "p<.001 (NS)", # extra trailing prose
+])
+def test_validate_proposed_malformed_p_value_field_rejects(malformed: str) -> None:
+    """3.2c-fix-2: malformed p_value field MUST be rejected before source-trace.
+    Pre-fix: synthesized 'p=<malformed>' was passed to check_p_value_in_source,
+    which returned None (vacuous success) because PVALUE_RE found no
+    recognizable tuple. Bypass — the field entered Fact.p_value with no
+    actual source check. New grammar gate rejects these before tracing."""
+    item = _item(abstract="Effect reported (p=0.003) significantly.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": malformed},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert fact is None, f"expected reject for p_value={malformed!r}"
+    assert reason == "p_value_field_not_in_source"
+
+
+def test_validate_proposed_p_value_field_must_match_operator() -> None:
+    """Tracing requires both operator AND digits to match. Abstract has
+    `p<0.001`; LLM proposes p_value='=0.001' (different operator). The
+    (=, '001') tuple is NOT in abstract → reject."""
+    item = _item(abstract="Effect was significant (p<0.001).")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": "=0.001"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert fact is None
+    assert reason == "p_value_field_not_in_source"
+
+
+def test_validate_proposed_p_value_field_normalizes_whitespace() -> None:
+    """LLM emits 'p = 0.003' with spaces; grammar gate strips them."""
+    item = _item(abstract="Effect (p=0.003) was significant.")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": "p = 0.003"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
+
+
+def test_validate_proposed_p_value_field_dot_only_form_accepts() -> None:
+    """LLM emits '.001' (no leading zero); grammar gate accepts via 0?\\.NNN."""
+    item = _item(abstract="Result was significant (p<.001).")
+    fact, reason = _validate_proposed(
+        {"claim": "metformin had an effect.", "p_value": "<.001"},
+        item=item, pack=_pack(), require_source_trace=True,
+    )
+    assert reason is None
+    assert fact is not None
 
 
 # --- build_user_prompt ----------------------------------------------------
