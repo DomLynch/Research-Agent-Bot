@@ -131,19 +131,37 @@ def _load_fixture_hits(fixtures_dir: Path) -> list[RawHit]:
 
 async def _retrieve_live(
     topic: str, criteria: str, domain: str,
+    *,
+    pack: TopicPack | None = None,
 ) -> tuple[list[Source], dict[int, str], dict[int, dict]]:
-    """Fan out to live PubMed / OpenAlex / EuropePMC / CT.gov."""
+    """Fan out to live PubMed / OpenAlex / EuropePMC / CT.gov.
+
+    Day 9.3: when `pack` is provided, also issue one focused query per
+    canonical_trials NCT id (e.g. `metformin NCT02308228`). This closes
+    the live-retrieval gap that left only 1 of 4 metformin canonicals
+    in the broad-query corpus — without this, --live runs are gated on
+    whether the broad query happens to surface the trial that drives
+    the topic's strongest evidence cluster.
+    """
     sources_clients = [
         PubMedClient(),
         OpenAlexClient(),
         EuropePMCClient(),
         ClinicalTrialsClient(),
     ]
+    extra_queries: list[str] = []
+    if pack is not None:
+        for trial in pack.canonical_trials:
+            # Each NCT-anchored query carries the topic so the adapter
+            # has both signals — pure NCT queries return all hits about
+            # that trial regardless of drug, which is too broad.
+            extra_queries.append(f"{topic} {trial.id}")
     return await retrieve(
         topic=topic,
         criteria=criteria,
         sources=sources_clients,
         domain=domain,
+        extra_queries=tuple(extra_queries),
     )
 
 
@@ -331,6 +349,7 @@ async def _run(args: argparse.Namespace) -> int:
         if args.live:
             sources, abstracts, raw_signals = await _retrieve_live(
                 topic=args.topic, criteria=criteria, domain=domain,
+                pack=pack,
             )
         else:
             hits = _load_fixture_hits(fixtures_dir)

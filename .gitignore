@@ -30,6 +30,10 @@ runs/e2e-baselines/*.tmp
 !runs/metformin-001-2026-04-28T18-38-21Z-fdcc/
 !runs/rapamycin-002-2026-04-28T18-41-35Z-dc46/
 !runs/everolimus-003-2026-04-28T18-47-44Z-734c/
+# Day 9.3 live-retrieval canonical-anchoring receipt — first --live run
+# where ALL 4 metformin canonical trials (MASTERS / MET-PREVENT / TAME /
+# MILES) surface in the corpus + accept_clean on a single attempt:
+!runs/metformin-001-2026-04-28T19-01-44Z-d1f4/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

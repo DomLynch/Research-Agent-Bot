@@ -1,7 +1,13 @@
 """Tests for retrieve.py — query plan, dedup, ref assignment."""
 from __future__ import annotations
 
-from agent.retrieve import normalize_and_dedup, plan_queries
+import asyncio
+from collections.abc import Sequence
+
+import httpx
+
+from agent.retrieve import normalize_and_dedup, plan_queries, retrieve
+from agent.sources._base import SourceClient
 from agent.types import RawHit
 
 
@@ -89,3 +95,73 @@ def test_raw_signals_propagate_clinicaltrials_has_results():
     ]
     _, _, raw_signals = normalize_and_dedup(hits)
     assert raw_signals[1] == {"has_results": True, "study_type": "Interventional"}
+
+
+# --- Day 9.3: extra_queries (canonical-NCT anchoring) --------------------
+
+
+class _RecordingClient:
+    """Test double — captures every (query, limit) pair the orchestrator
+    sends. Returns one synthetic RawHit per query so dedup behavior is
+    visible in the result."""
+
+    name = "recorder"
+
+    def __init__(self) -> None:
+        self.queries: list[str] = []
+
+    async def search(
+        self,
+        client: httpx.AsyncClient,
+        query: str,
+        *,
+        limit: int,
+    ) -> list[RawHit]:
+        self.queries.append(query)
+        return [_hit(doi=f"10.test/{query}", title=f"hit for {query}")]
+
+
+def test_retrieve_extra_queries_appended_to_plan():
+    """Canonical-NCT anchoring (Day 9.3): extra queries flow through the
+    same per-adapter fanout as the planned broad query, and their hits
+    end up in the final dedup pass."""
+    rec = _RecordingClient()
+
+    async def go():
+        async with httpx.AsyncClient() as c:
+            return await retrieve(
+                topic="metformin", criteria="",
+                sources=[rec],  # type: ignore[list-item]
+                client=c,
+                domain="longevity older adults",
+                extra_queries=("metformin NCT02308228", "metformin NCT04264897"),
+            )
+
+    sources, _, _ = asyncio.run(go())
+    # 1 broad + 2 extra = 3 distinct queries hit the adapter.
+    assert rec.queries == [
+        "metformin longevity older adults",
+        "metformin NCT02308228",
+        "metformin NCT04264897",
+    ]
+    # Each query returned a unique-doi hit, so dedup keeps all 3.
+    assert len(sources) == 3
+
+
+def test_retrieve_extra_queries_default_empty_unchanged_behavior():
+    """Default `extra_queries=()` preserves the previous behavior — only
+    the broad-query result lands in the corpus."""
+    rec = _RecordingClient()
+
+    async def go():
+        async with httpx.AsyncClient() as c:
+            return await retrieve(
+                topic="metformin", criteria="",
+                sources=[rec],  # type: ignore[list-item]
+                client=c,
+                domain="longevity older adults",
+            )
+
+    sources, _, _ = asyncio.run(go())
+    assert rec.queries == ["metformin longevity older adults"]
+    assert len(sources) == 1

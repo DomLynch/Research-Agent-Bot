@@ -77,6 +77,7 @@ async def retrieve(
     limit_per_source: int = DEFAULT_LIMIT_PER_SOURCE,
     client: httpx.AsyncClient | None = None,
     domain: str = "",
+    extra_queries: Sequence[str] = (),
 ) -> tuple[list[Source], dict[int, str], dict[int, dict]]:
     """Run the fanout and return (sources, abstracts_by_ref, raw_signals_by_ref).
 
@@ -88,12 +89,19 @@ async def retrieve(
     (mock, captured-fixture replay, custom timeout). When None, a fresh
     AsyncClient is created and torn down.
 
+    `extra_queries` is appended to the broad query list (Day 9.3 — used by
+    the e2e script to anchor live retrieval on the topic_pack's canonical
+    NCT IDs so MASTERS / PEARL / PROTECTOR always surface, not just
+    1-of-N at the broad query's mercy). Each extra query goes through the
+    same per-adapter fan-out as the planned queries; results merge into
+    the same dedup pass so duplicates across queries collapse cleanly.
+
     Adapter ordering matters: when two adapters return the same study (matched
     via DOI / PMID / NCT, including NCT-in-abstract), the FIRST adapter wins.
     Pass adapters in priority order — typically PubMed first (best abstracts),
     then OpenAlex, EuropePMC, ClinicalTrials.gov.
     """
-    queries = plan_queries(topic, criteria, domain)
+    queries = list(plan_queries(topic, criteria, domain)) + list(extra_queries)
     headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
 
     async def _run(c: httpx.AsyncClient) -> list[RawHit]:
