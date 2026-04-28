@@ -52,6 +52,7 @@ TraceType = Literal[
     "nct_exists",
     "percentage_in_text",
     "p_value_in_text",
+    "numeric_in_text",
     "alias_match",
     "role_match",
 ]

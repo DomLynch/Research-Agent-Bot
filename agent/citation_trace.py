@@ -62,6 +62,7 @@ __all__ = [
     "trace_role_match",
     "trace_p_value_in_text",
     "trace_percentage_in_text",
+    "trace_numeric_in_text",
     "trace_alias_match",
     "trace_claim",
     "trace_claim_graph",
@@ -74,6 +75,78 @@ __all__ = [
 # we want EVERY percentage cited in a claim, on the assumption that
 # claims don't cite irrelevant population descriptors.
 _PERCENTAGE_RE = re.compile(r"(\d+(?:\.\d+)?)\s*%")
+
+# --- Numeric effect-size trace --------------------------------------------
+#
+# Day 9.1 (AAA push): the auditor judge was rejecting rapamycin / everolimus
+# runs at ~75% of attempts because PEARL ηp² and PROTECTOR HR / OR effect
+# sizes weren't traced — only p-values + percentages were. The auditor
+# correctly read "untraced numeric in claim" as a verification gap.
+#
+# This trace covers the common effect-size statistics that appear in
+# clinical trial claim text: hazard ratios, odds ratios, relative risks,
+# absolute risk reductions, NNT, partial eta squared, beta coefficients,
+# and confidence-interval ranges. Each detected numeric in the claim is
+# verified against the source abstract (Unicode-normalized — abstracts
+# from Lancet/BMJ-style journals use middle-dot 0·02 instead of 0.02).
+#
+# Match shape: NAME OPTIONAL_PUNCT VALUE — e.g. "HR 0.79", "HR=0.79",
+# "HR, 0.79", "OR 0.601", "ηp² = 0.202", "95% CI 0.66-0.95",
+# "(aHR 0.85)". Captures (name, value) tuples. Order-of-pattern matters:
+# the longer / more-specific names (95% CI, partial η²) come first so a
+# bare HR pattern doesn't swallow the numeric out of a longer expression.
+#
+# Names supported (alternation, case-insensitive):
+#   - 95% CI / 90% CI / 99% CI                  (confidence intervals)
+#   - HR / aHR (adjusted HR)                    (hazard ratio)
+#   - OR / aOR                                  (odds ratio)
+#   - RR / aRR                                  (relative risk)
+#   - ARR                                       (absolute risk reduction)
+#   - NNT                                       (number needed to treat)
+#   - β / beta                                  (regression coefficient)
+#   - ηp² / partial η² / partial eta squared    (effect size, ANOVA)
+#   - SMD                                       (standardized mean difference)
+#
+# Value capture:
+#   - Single point estimate: "HR 0.79"
+#   - Range: "95% CI 0.66-0.95" / "95% CI 0.66 to 0.95"
+#
+# Trace logic mirrors trace_p_value_in_text: one CitationTrace per
+# detected numeric, passed=True iff the (normalized) value appears in
+# the (normalized) abstract.
+
+# Effect-size names — case-insensitive alternation. Order matters: longer
+# patterns first so "95% CI" doesn't get partially matched as a bare CI.
+_EFFECT_NAME_PATTERN = (
+    r"95\s*%\s*CI|90\s*%\s*CI|99\s*%\s*CI"
+    r"|partial\s+η[2²]|partial\s+eta\s+squared|η[p]?[2²]|eta\s+squared"
+    r"|aHR|aOR|aRR|HR|OR|RR|ARR|NNT|SMD"
+    r"|β|beta"
+)
+# Value: a number (possibly negative) optionally followed by a range
+# separator (-, –, 'to') and a second number. Captures the full string
+# including range so we can look it up verbatim in the source.
+_NUMERIC_VALUE_PATTERN = (
+    r"-?\d+(?:[.·]\d+)?"
+    r"(?:\s*(?:[-–]|to)\s*-?\d+(?:[.·]\d+)?)?"
+)
+# Glue: optional punctuation between name and value (= , : - or just space)
+_NUMERIC_RE = re.compile(
+    rf"\b({_EFFECT_NAME_PATTERN})\s*[=:,\-]?\s*({_NUMERIC_VALUE_PATTERN})",
+    re.IGNORECASE,
+)
+
+
+def _normalize_numeric_text(text: str) -> str:
+    """Lowercase + collapse whitespace + Unicode middle-dot/en-dash → ASCII.
+
+    Mirrors fact_extractor._normalize_unicode but keeps the trace layer
+    self-contained (no cross-module import for one helper). Applied to
+    both claim and abstract before substring comparison.
+    """
+    return " ".join(
+        text.replace("·", ".").replace("–", "-").replace("—", "-").split()
+    ).lower()
 
 # Drug-name-like tokens in claim prose: capitalized words ≥4 chars. The
 # alias_match trace looks each candidate up in the DrugAliasClient. Common
@@ -316,6 +389,54 @@ def trace_percentage_in_text(
         )
 
 
+def trace_numeric_in_text(
+    claim: Claim,
+    item: EvidenceItem,
+) -> Iterator[CitationTrace]:
+    """One CitationTrace per effect-size numeric (HR / OR / RR / ηp² / β /
+    CI / etc.) cited in the claim text. Each verifies the (name, value)
+    pair appears in the source abstract — Unicode-normalized so a claim
+    rendered with ASCII `0.79` traces against an abstract that writes
+    `0·79` (Lancet / BMJ middle-dot convention).
+
+    Yields nothing when the claim has no detected numeric tokens — that's
+    not a failure. Day 9.1 added this trace to close the auditor's
+    main rejection reason: "untraced numeric in claim" was firing on
+    every PEARL run (rapamycin) and every PROTECTOR run (everolimus)
+    because their primary outcomes are reported as ηp² / HR / OR pairs
+    rather than p-values + percentages.
+    """
+    matches = list(_NUMERIC_RE.findall(claim.text))
+    if not matches:
+        return
+    abstract_norm = _normalize_numeric_text(item.abstract or "")
+    for name_raw, value_raw in matches:
+        # Look for the value (or the (name, value) pair) in normalized abstract.
+        # Day 9.1: pass if EITHER the bare value substring appears (most
+        # journals format effect sizes as "(HR 0.79; ...)" so the value
+        # alone is reliable proof) OR the name+value pair appears verbatim.
+        value_norm = _normalize_numeric_text(value_raw)
+        name_norm = _normalize_numeric_text(name_raw)
+        # Strip whitespace inside the value (e.g. "0.66 - 0.95" → "0.66-0.95")
+        # so range separators normalize too.
+        value_compact = value_norm.replace(" ", "")
+        passed = (
+            value_compact in abstract_norm.replace(" ", "")
+            or f"{name_norm} {value_norm}" in abstract_norm
+        )
+        canonical = f"{name_raw} {value_raw}".strip()
+        excerpt = (item.abstract or "")[:200] if not passed else None
+        yield CitationTrace(
+            claim_id=claim.claim_id, ref=item.source.ref,
+            trace_type="numeric_in_text", passed=passed,
+            detail=(
+                f"{canonical} {'found in' if passed else 'NOT found in'} "
+                f"source abstract"
+            ),
+            source_excerpt=excerpt,
+        )
+
+
 def _trial_name_tokens(pack: TopicPack) -> frozenset[str]:
     """Build the set of capitalized tokens appearing in canonical_trial
     names. Used by trace_alias_match to avoid false-flagging trial
@@ -406,6 +527,7 @@ def trace_claim(
          a. nct_exists (if source.nct populated)
          b. p_value_in_text (per p-value)
          c. percentage_in_text (per percentage)
+         d. numeric_in_text (per HR/OR/RR/ηp²/β/CI/etc — Day 9.1)
       3. alias_match (claim-level, per drug-name candidate)
 
     `literature` is wired for Day 3.2+ (fact-extraction will fetch
@@ -425,6 +547,7 @@ def trace_claim(
         traces.extend(trace_nct_exists(claim, item, registry))
         traces.extend(trace_p_value_in_text(claim, item))
         traces.extend(trace_percentage_in_text(claim, item))
+        traces.extend(trace_numeric_in_text(claim, item))
 
     traces.extend(trace_alias_match(claim, pack, drug_client))
     return traces

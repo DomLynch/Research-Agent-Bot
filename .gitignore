@@ -13,11 +13,17 @@ runs/*
 !runs/e2e-baselines/
 runs/e2e-baselines/*.tmp
 # Proof receipts referenced in PROJECT_STATE — tracked as audit evidence.
+# Pre-Day-9.1 receipts (baseline run-rates that motivated the AAA push):
 !runs/metformin-001-2026-04-28T17-42-13Z-29dd/
 !runs/rapamycin-002-2026-04-28T17-43-13Z-89e6/
 !runs/rapamycin-002-2026-04-28T17-37-47Z-ecd5/
 !runs/everolimus-003-2026-04-28T17-44-06Z-15a3/
 !runs/everolimus-003-2026-04-28T17-22-15Z-288e/
+# Post-Day-9.1 receipts (numeric_in_text trace closes auditor's main
+# rejection; rapamycin run-rate jumped from 1/4 to 4/5 accept):
+!runs/metformin-001-2026-04-28T18-26-46Z-c1e0/
+!runs/rapamycin-002-2026-04-28T18-23-28Z-2f4e/
+!runs/everolimus-003-2026-04-28T18-28-43Z-0088/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

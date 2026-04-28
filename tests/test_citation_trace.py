@@ -20,6 +20,7 @@ from agent.citation_trace import (
     trace_claim,
     trace_claim_graph,
     trace_nct_exists,
+    trace_numeric_in_text,
     trace_p_value_in_text,
     trace_percentage_in_text,
     trace_role_match,
@@ -360,6 +361,108 @@ def test_trace_percentage_handles_decimals() -> None:
     item = _item(abstract="Treatment yielded 1.5% improvement.")
     traces = list(trace_percentage_in_text(claim, item))
     assert traces and traces[0].passed is True
+
+
+# --- trace_numeric_in_text (Day 9.1) --------------------------------------
+
+
+def test_trace_numeric_pearl_eta_squared_unicode_middledot_pass() -> None:
+    """PEARL trial regression: claim cites ηp² values in ASCII, source
+    abstract uses Lancet middle-dot. Unicode normalization must let them
+    trace. This is the exact case that drove rapamycin's 1/4 accept rate
+    at temperature 0 — auditor was correctly flagging "untraced numeric"
+    on every run."""
+    claim = _claim(text="Lean tissue mass (ηp2 = 0.202) and pain (ηp2 = 0.168) improved.")
+    item = _item(abstract=(
+        "Lean tissue mass (ηp2 = 0·202, p = 0·013) and self-reported pain "
+        "(ηp2 = 0·168, p = 0·015) improved significantly for women using "
+        "10 mg rapamycin"
+    ))
+    traces = list(trace_numeric_in_text(claim, item))
+    assert len(traces) == 2
+    assert all(t.passed for t in traces)
+    assert "0.202" in traces[0].detail
+    assert "0.168" in traces[1].detail
+
+
+def test_trace_numeric_protector_or_with_brackets_pass() -> None:
+    """PROTECTOR regression: source uses bracketed OR form `odds ratio
+    [OR] 0·601 [90% CI 0·391-0·922]`; claim uses naked `OR 0.601`.
+    Bare-value substring fallback must catch this."""
+    claim = _claim(text="OR 0.601 (90% CI 0.391-0.922) for laboratory-confirmed RTIs.")
+    item = _item(abstract=(
+        "treatment group (34 [19%] of 176) compared with the pooled placebo "
+        "group (50 [28%] of 180; odds ratio [OR] 0·601 [90% CI 0·391-0·922]; "
+        "p=0·02)"
+    ))
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces, "OR + CI must be detected"
+    assert all(t.passed for t in traces), [t.detail for t in traces]
+
+
+def test_trace_numeric_fabricated_hr_fails() -> None:
+    """Hostile case: claim invents `HR 5.0`; source has `HR 0.79`.
+    Must fail. This is the planted-failure analogue for case 3 (inflated
+    p-value), now extended to effect-size statistics."""
+    claim = _claim(text="Metformin reduced mortality (HR 5.0).")
+    item = _item(abstract="Metformin reduced mortality (HR 0.79; 95% CI 0.66-0.95).")
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces and not traces[0].passed
+    assert "HR 5.0" in traces[0].detail
+
+
+def test_trace_numeric_no_numerics_in_claim_yields_nothing() -> None:
+    """No false positives: a claim with no detectable effect-size token
+    must yield zero traces — not a synthetic 'pass' that blesses claims
+    without numerics."""
+    claim = _claim(text="Metformin improved overall outcomes.")
+    item = _item(abstract="Metformin improved overall outcomes significantly.")
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces == []
+
+
+def test_trace_numeric_hazard_ratio_aHR_pass() -> None:
+    """Adjusted HR (aHR) is a separate alternation in the regex; verify
+    it traces correctly."""
+    claim = _claim(text="aHR 0.85 for cardiovascular events.")
+    item = _item(abstract="adjusted HR (aHR 0.85; 95% CI 0.78-0.92) for CV events")
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces and traces[0].passed
+
+
+def test_trace_numeric_ci_range_pass() -> None:
+    """95% CI range expression must trace as a single unit."""
+    claim = _claim(text="The 95% CI 0.66-0.95 excluded null.")
+    item = _item(abstract="95% CI 0.66-0.95 indicated a protective effect")
+    traces = list(trace_numeric_in_text(claim, item))
+    assert traces and traces[0].passed
+
+
+def test_trace_numeric_wired_into_trace_claim(
+    metformin_pack: TopicPack,
+    registry: FixtureTrialRegistryClient,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """The orchestrator (`trace_claim`) must call trace_numeric_in_text —
+    otherwise the new trace doesn't reach the citation_traces.json
+    receipt. Discriminating test: claim has an HR, abstract has the same
+    HR, expect at least one numeric_in_text trace in the output."""
+    claim = _claim(
+        text="Metformin reduced mortality (HR 0.79; 95% CI 0.66-0.95).",
+        refs=(1,),
+    )
+    item = _item(
+        ref=1,
+        abstract="Metformin reduced mortality (HR 0.79; 95% CI 0.66-0.95) over 5 years.",
+    )
+    items_by_ref = {1: item}
+    traces = trace_claim(
+        claim, items_by_ref, metformin_pack,
+        registry=registry, drug_client=drug_client,
+    )
+    numeric_traces = [t for t in traces if t.trace_type == "numeric_in_text"]
+    assert numeric_traces, "trace_claim must emit numeric_in_text traces"
+    assert all(t.passed for t in numeric_traces)
 
 
 # --- trace_alias_match ----------------------------------------------------
