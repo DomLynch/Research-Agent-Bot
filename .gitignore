@@ -2,12 +2,22 @@
 __pycache__/
 .pytest_cache/
 *.pyc
-# Ignore runs/ contents EXCEPT e2e-baselines (v4 Rule 26 metric-loop artifacts).
+# Ignore runs/ contents EXCEPT e2e-baselines (v4 Rule 26 metric-loop artifacts)
+# AND the small set of "proof receipts" PROJECT_STATE references as evidence
+# of the trust-spine claims (Day 8.2 reviewer P2: a fresh clone must include
+# the audit artifacts that back the status table; otherwise the docs cite
+# evidence the cloner can't see).
 # Note: must use runs/* not runs/ so the negation pattern can re-include
 # subdirectories — git won't recurse into a wholly-ignored dir.
 runs/*
 !runs/e2e-baselines/
 runs/e2e-baselines/*.tmp
+# Proof receipts referenced in PROJECT_STATE — tracked as audit evidence.
+!runs/metformin-001-2026-04-28T17-42-13Z-29dd/
+!runs/rapamycin-002-2026-04-28T17-43-13Z-89e6/
+!runs/rapamycin-002-2026-04-28T17-37-47Z-ecd5/
+!runs/everolimus-003-2026-04-28T17-44-06Z-15a3/
+!runs/everolimus-003-2026-04-28T17-22-15Z-288e/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/
