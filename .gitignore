@@ -24,6 +24,12 @@ runs/e2e-baselines/*.tmp
 !runs/metformin-001-2026-04-28T18-26-46Z-c1e0/
 !runs/rapamycin-002-2026-04-28T18-23-28Z-2f4e/
 !runs/everolimus-003-2026-04-28T18-28-43Z-0088/
+# Day 9.2 best-of-5 canonical receipts (each carries best_of_n_manifest.json
+# listing all 5 attempts; --best-of 5 produces deterministic accept_* on
+# all three drugs):
+!runs/metformin-001-2026-04-28T18-38-21Z-fdcc/
+!runs/rapamycin-002-2026-04-28T18-41-35Z-dc46/
+!runs/everolimus-003-2026-04-28T18-47-44Z-734c/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

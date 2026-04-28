@@ -25,6 +25,7 @@ from agent.types import EvidenceItem, Source
 from scripts.e2e_metformin_proof_001 import (
     REPO_ROOT,
     _CapTooSmallError,
+    _attempt_sort_key,
     _format_path,
     _ranked_for_extraction,
 )
@@ -134,3 +135,73 @@ def test_format_path_absolute_for_outside_repo() -> None:
     string instead of crashing the run."""
     outside = Path("/tmp/proof001-elsewhere").resolve()
     assert _format_path(outside) == str(outside)
+
+
+# ----- Day 9.2: best-of-N attempt ranking --------------------------------
+
+
+def _md(verdict: str, *, gate=False, claims=4, failed=0, sid="r-1") -> dict:
+    return {
+        "spar_verdict": verdict,
+        "gate_override": gate,
+        "n_claims": claims,
+        "n_failed_traces": failed,
+        "submission_id": sid,
+    }
+
+
+def test_attempt_sort_accept_clean_beats_accept_caveated() -> None:
+    """Verdict rank dominates: any accept_clean wins over any
+    accept_caveated, regardless of claim count or trace stats."""
+    clean = _md("accept_clean", claims=2, sid="A")
+    caveated = _md("accept_caveated", claims=10, failed=0, sid="B")
+    best = min([clean, caveated], key=_attempt_sort_key)
+    assert best["submission_id"] == "A"
+
+
+def test_attempt_sort_accept_beats_reject_even_with_failed_traces() -> None:
+    """An accept with 1 failed trace still beats a reject with 0
+    failed traces — verdict is the primary axis, not trace count."""
+    accept = _md("accept_caveated", failed=1, sid="A")
+    reject = _md("reject_critical", failed=0, sid="B")
+    best = min([accept, reject], key=_attempt_sort_key)
+    assert best["submission_id"] == "A"
+
+
+def test_attempt_sort_gate_override_breaks_tie_within_verdict() -> None:
+    """Two accept_caveated runs — the one without gate_override wins
+    because gate_override=True means SPAR was forced (code-disposed)
+    rather than judges genuinely accepting."""
+    natural = _md("accept_caveated", gate=False, sid="A")
+    gated = _md("accept_caveated", gate=True, sid="B")
+    best = min([natural, gated], key=_attempt_sort_key)
+    assert best["submission_id"] == "A"
+
+
+def test_attempt_sort_more_claims_wins_at_equal_quality() -> None:
+    """When verdict + gate + failed-traces all tie, the run with more
+    claims (richer artifact) wins. This is what makes the picker
+    prefer a substantive paper over a thin one."""
+    thin = _md("accept_caveated", claims=2, sid="A")
+    rich = _md("accept_caveated", claims=8, sid="B")
+    best = min([thin, rich], key=_attempt_sort_key)
+    assert best["submission_id"] == "B"
+
+
+def test_attempt_sort_deterministic_on_full_tie() -> None:
+    """Identical metadata except submission_id: the lexicographically
+    smaller submission_id wins. This is the deterministic tiebreak so
+    repeating the same N runs picks the same best receipt every time."""
+    a = _md("accept_clean", sid="zzz-aaa")
+    b = _md("accept_clean", sid="aaa-zzz")
+    best = min([a, b], key=_attempt_sort_key)
+    assert best["submission_id"] == "aaa-zzz"
+
+
+def test_attempt_sort_unknown_verdict_ranks_last() -> None:
+    """Defensive: a metadata blob with a missing/unknown verdict must
+    not silently win over a real verdict. It's ranked at the bottom."""
+    unknown = _md("", sid="A")  # empty / missing
+    reject = _md("reject_critical", sid="B")
+    best = min([unknown, reject], key=_attempt_sort_key)
+    assert best["submission_id"] == "B"
