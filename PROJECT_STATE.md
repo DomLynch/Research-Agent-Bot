@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 3.2c-fix: P1/P2 trust-spine bugs closed (field-level source tracing); LOC ceiling raise next
+## Status — 2026-04-28 — Day 3.2c-fix shipped + LOC counter corrected; Day 3.3 (trace_clients package split + httpx backends) next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -44,7 +44,13 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
 **Tests:** 407/407 passing in 0.35s. ruff clean. git diff --check clean.
-**Runtime LOC:** 4,773 / 4,800 ceiling (0.6% headroom — ceiling raise to 5,500 in next slice, blocks Day 3.3)
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 3,799 / 4,800 ceiling (21% headroom). `wc -l` reports 4,773 because it counts docstrings; the budget test correctly excludes blanks + comment-only lines. The earlier "0.6% headroom" line was wrong-math against the wrong counter.
+
+**Per-file (cloc-style, soft cap 300, hard cap 600):**
+- `citation_trace.py` 355 (over soft cap — Day 3.1 trace orchestrator; trim or split with Day 3.3)
+- `fact_extractor.py` 314 (just over soft cap — 7-layer trace + load-bearing prompt)
+- `render.py` 278, `evidence_cards.py` 261, `llm_client.py` 239, `trace_clients.py` 228, `schemas.py` 226, `topic_pack.py` 218, `validators.py` 207
+- Day 3.3 will push `trace_clients.py` past the 300 soft cap with httpx backends → split into a package then.
 
 **Commit log of the rebuild:**
 
@@ -193,11 +199,12 @@ Done-when (3.2 as a whole):
 
 **3.2 complete pending live smoke.** Next: 3.3 wires real httpx + MCP backends for `trace_clients.py`; 3.4 final Day 3 E2E + first metformin run.
 
-⚠️ **LOC headroom (3.2c-fix):** runtime at 4,773 / 4,800 (0.6% remaining).
-Next slice raises ceiling to **5,500** with a DECISIONS.md entry — same
-justification as the prior 3,500→4,800 raise (claim-court features add LOC;
-constraint exists to prevent unbounded sprawl, not to block real work).
-Day 3.3 also splits `trace_clients.py` (290 LOC + 150-200 LOC of new
-backends) into a package: `trace_clients/protocols.py`, `_fixture.py`,
-`_httpx.py`, `_mcp.py` — per-backend modules keep the soft 300 LOC cap
-intact and let backends evolve independently.
+**LOC plan revised after counter correction (cloc-style, not wc -l):**
+- Total ceiling 4,800 stays. Current 3,799 → +~480 for Day 3.3 httpx
+  backends → ~4,280, comfortably under. Raise only if Day 4 SPAR + thesis
+  tournament need it.
+- `trace_clients.py` (228 cloc) + ~240 LOC of httpx backends would breach
+  the 300 soft cap. Split into a package as part of Day 3.3:
+  `trace_clients/__init__.py` (re-exports), `protocols.py` (Protocols +
+  env-var selectors), `_fixture.py` (current fixture backends),
+  `_httpx.py` (new httpx backends). MCP backends optional / deferred.
