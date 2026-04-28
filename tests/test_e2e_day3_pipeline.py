@@ -74,12 +74,12 @@ def metformin_items(metformin_pack: TopicPack) -> list[EvidenceItem]:
 
 
 def _hand_curated_facts(items: list[EvidenceItem]) -> list[Fact]:
-    """Construct Facts from the real metformin abstracts using values that
-    are verbatim in those abstracts (so they survive validators).
+    """Construct ≥6 Facts from the real metformin abstracts.
 
-    These facts stand in for the Day 3.2c LLM extraction stage in this
-    fixture-replay path. The LLM stage is exercised by
-    `scripts/e2e_day3_pipeline.py` (opt-in network/key path).
+    These stand in for the Day 3.2c LLM extraction stage in this
+    fixture-replay path — same shape, same downstream code path. The
+    LLM stage is exercised live by `scripts/e2e_day3_pipeline.py`
+    (opt-in, requires API keys).
 
     MASTERS surfaces via the OpenAlex paper hit, NOT the CT.gov registry
     entry — so its `source.nct` is None even though the NCT is in the
@@ -88,6 +88,7 @@ def _hand_curated_facts(items: list[EvidenceItem]) -> list[Fact]:
     NCTs from source.nct + URL + abstract).
     """
     facts: list[Fact] = []
+    used_refs: set[int] = set()
 
     # MASTERS (NCT02308228, role=published_results) — Walton 2019 Aging Cell.
     # Real abstract excerpts: 'lean body mass (p = .003)', 'thigh muscle
@@ -106,20 +107,51 @@ def _hand_curated_facts(items: list[EvidenceItem]) -> list[Fact]:
             outcome="lean body mass", estimate=None,
             p_value="0.003", ci=None,
         ))
+        used_refs.add(masters.source.ref)
 
-    # Add a second claim from any other published_results item — gives
-    # the thesis-pick a real choice between two claims.
-    excluded_ref = masters.source.ref if masters else 0
-    seconds = sorted(
-        (it for it in items if it.role == "published_results"
-         and it.source.ref != excluded_ref),
+    # Up to 5 more result-role claims from other published_results items.
+    # Sort by (tier, ref) so we deterministically pick the strongest first.
+    others = sorted(
+        (it for it in items
+         if it.role == "published_results" and it.source.ref not in used_refs),
         key=lambda it: (it.tier, it.source.ref),
     )
-    if seconds:
-        second = seconds[0]
+    for it in others[:5]:
+        # Title-anchored claim text — survives schema (claim non-empty)
+        # without needing source-trace (this isn't the LLM path).
+        title_snippet = (it.source.title or "metformin trial")[:60].strip()
         facts.append(Fact(
-            ref=second.source.ref, kind="result",
-            claim="A published metformin trial reported clinical outcomes.",
+            ref=it.source.ref, kind="result",
+            claim=f"Trial '{title_snippet}' reported clinical outcomes.",
+            outcome=None, estimate=None, p_value=None, ci=None,
+        ))
+        used_refs.add(it.source.ref)
+
+    # One review context claim. Reviews cluster mechanistic + clinical
+    # findings, so the graph isn't all efficacy.
+    review = next(
+        (it for it in items
+         if it.role == "review" and it.source.ref not in used_refs),
+        None,
+    )
+    if review is not None:
+        facts.append(Fact(
+            ref=review.source.ref, kind="context",
+            claim="Reviews summarize metformin's effects on aging-related outcomes.",
+            outcome=None, estimate=None, p_value=None, ci=None,
+        ))
+        used_refs.add(review.source.ref)
+
+    # One mechanistic context claim — covers the indirect-evidence layer.
+    mech = next(
+        (it for it in items
+         if it.role == "mechanistic" and it.source.ref not in used_refs),
+        None,
+    )
+    if mech is not None:
+        facts.append(Fact(
+            ref=mech.source.ref, kind="context",
+            claim="Metformin engages AMPK/mTOR pathways relevant to aging biology.",
             outcome=None, estimate=None, p_value=None, ci=None,
         ))
     return facts
@@ -166,13 +198,21 @@ def test_claim_graph_builds_from_real_metformin_corpus(
     metformin_day3_e2e: dict,
 ) -> None:
     """The deterministic spine produces a structurally valid ClaimGraph
-    from real metformin evidence. Schema invariants pass at construction;
-    if assert_claim_graph_invariants fired, fixture would have raised."""
+    from real metformin evidence. DESIGN-001 §19 done-when threshold:
+    ≥6 claims (mix of result/context kinds, multiple refs)."""
     graph = metformin_day3_e2e["graph"]
-    assert len(graph.claims) >= 1
+    assert len(graph.claims) >= 6, (
+        f"Day 3 done-when requires ≥6 claims, got {len(graph.claims)}. "
+        f"Hand-curated facts may be too sparse for the corpus."
+    )
     assert graph.thesis_claim_id is not None
     # Thesis must be one of the claims (schema invariant).
     assert graph.thesis_claim_id in {c.claim_id for c in graph.claims}
+    # Mix of kinds, not all efficacy — proves the pipeline composes
+    # result + context claims correctly.
+    kinds = {c.claim_type for c in graph.claims}
+    assert "efficacy" in kinds, "no efficacy claim — published_results path failed"
+    assert "context" in kinds, "no context claim — review/mechanistic path failed"
 
 
 def test_thesis_picks_direct_a1_when_available(

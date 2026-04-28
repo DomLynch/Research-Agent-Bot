@@ -86,6 +86,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `211592c` | 2026-04-28 | Day 3.3a: split `trace_clients.py` → package (`__init__` / `protocols` / `_fixture`); refactor only |
 | `c6328a9` | 2026-04-28 | Day 3.3b: httpx backends — `_httpx.py` (CT.gov v2 / ChEMBL / Europe PMC) + 20 MockTransport tests |
 | `70e897a` | 2026-04-28 | Day 3.3c: live smoke 6/6 green vs CT.gov / ChEMBL / Europe PMC |
+| `9e3caf8` | 2026-04-28 | Day 3.4: Day-3 E2E pipeline test (real corpus → ClaimGraph → traces) — Day 3 ✅ COMPLETE |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -168,50 +169,39 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 
 ## Next validation step
 
-**Day 3.2 — split into 3.2a / 3.2b / 3.2c.** 3.2a shipped (this slice). Next: 3.2b.
+**Day 3 ✅ COMPLETE.** All four done-when criteria met (commits below).
+Next: **Day 4 — thesis tournament + SPAR + writer.**
 
-(a) **Deterministic compiler** ✅ `1537196` (`agent/compiler.py`, 233 LOC + 26 tests):
-facts → Claims → ClaimGraph. Pure function; no LLM. 1:1 mapping by Fact;
-deterministic claim_id (C001…); kind→claim_type, (role+direct)→directness,
-(role,design,tier)→confidence. Thesis pick by score tuple
-(directness, tier, confidence, claim_id) — direct A1 high wins. CompileError
-on orphan refs / empty input. Edges populated by Day 4 SPAR.
+### Day 3 close summary (for reviewer audit)
+- ✅ Citation_trace catches planted cases 2, 3, 4 (multi-layer defense)
+- ✅ httpx backend smoke-tested live against CT.gov / ChEMBL / Europe PMC (`70e897a`)
+- ✅ First LLM stage shipped + tested: 7 trust-spine layers, all source-traced
+  (3.2c `207ffbf` + 3.2c-fix `848dba6` + 3.2c-fix-2 `743b35e`)
+- ✅ Day-3 E2E green (`9e3caf8`): real metformin corpus → 8-claim ClaimGraph,
+  MASTERS thesis-pick correct, sub-second perf
 
-(b) **`agent/llm_client.py`** ✅ `325afb9` (299 LOC + 26 tests): single-dep
-LLM surface. `chat_json(messages, chain, ledger=None) → LLMResponse` calls
-OpenAI-compatible providers via httpx. `CallSpec` chain falls through on
-HTTPError / JSON-parse failure / missing api_key (skip silently for
-partial-config envs). `CostLedger.to_dict()` is the wire-shape for
-`runs/<topic>/cost_log.json`. `extract_json` strips `<think>` / ``` fences
-/ prose so real LLM output parses. `build_extract_chain(settings)` yields
-MiMo → Mistral. `build_judge_chain` / `build_write_chain` land Day 4.
+### Day 4 plan (per reviewer-suggested commit sequence)
 
-(c) **First LLM stage — fact extraction** ✅ (this slice — `agent/fact_extractor.py`,
-328 LOC + 29 tests). The first LLM in the trust spine.
-`extract_facts_from_item(item, *, pack, chain, ledger)` calls the LLM with
-the abstract; **the LLM never proposes `ref` or `kind`** (`ref` pinned to
-`item.source.ref`, `kind` pinned by `_kind_for_role(item.role)`). CODE
-DISPOSES via four layers: schema check on claim, `check_verb_ban` (planted
-case 1's 5th defense — extraction-time), `check_p_value_in_source`
-(planted case 3 at extraction-time before the value enters the graph),
-and within-item dedupe. `off_domain` items short-circuit before the LLM
-call. Returns `(accepted_facts, rejections)` — every dropped proposal
-captured with reason code. `extract_facts_from_bundle` fans out across
-items with a Semaphore-bounded `max_concurrency=4` cap.
+| Slice | Ship | Risk |
+|---|---|---|
+| **4.1a** | `agent/thesis_tournament.py` — 6-dim deterministic scorer + selector + tests | Low (pure function, no LLM) |
+| **4.1b** | Wire tournament into `compiler.compile_claim_graph`; drop the temporary `_pick_thesis` heuristic; E2E still green | Low (integration swap) |
+| **4.2** | `agent/spar.py` — 3-judge panel (Evidence Auditor / Domain Skeptic / Final Judge), explicit tie-break, dissent always published | Medium (LLM orchestration) |
+| **4.3** | `agent/writer.py` — claim-graph-gated prose drafter; LLM proposes prose, gate rejects any claim not in `claim_graph.json` | Medium (LLM + guard) |
+| **4.4** | All 5 planted failures through SPAR → assert each caught at expected gate | Low (orchestration test) |
 
-Done-when (3.2 as a whole):
-- Compiler builds a ClaimGraph from real metformin evidence (≥6 claims) ✅ (deterministic + extraction layers proven; live E2E in 3.4)
-- First-LLM stage proposes facts + schema rejects fabrications ✅ (29-test coverage of all four code-disposes layers)
-- Performance baseline: per-fact extraction cost + total compile time ☐ (3.4 live smoke)
+**Why thesis_tournament first:** deterministic (no LLM mocking hell);
+property-test the 6-dim scoring math first; SPAR consumes its output, so
+locking the interface first lets judge prompts be tuned against a stable
+contract; replaces real debt (the temporary `_pick_thesis` in compiler.py).
 
-**3.2 complete pending live smoke.** Next: 3.3 wires real httpx + MCP backends for `trace_clients.py`; 3.4 final Day 3 E2E + first metformin run.
+**Reviewer cadence:** save the next reviewer pass for after 4.2 or 4.3 —
+that's where the LLM prompts and tie-break logic live; tournament is
+straightforward enough to ship without review.
 
-**LOC plan revised after counter correction (cloc-style, not wc -l):**
-- Total ceiling 4,800 stays. Current 3,799 → +~480 for Day 3.3 httpx
-  backends → ~4,280, comfortably under. Raise only if Day 4 SPAR + thesis
-  tournament need it.
-- `trace_clients.py` (228 cloc) + ~240 LOC of httpx backends would breach
-  the 300 soft cap. Split into a package as part of Day 3.3:
-  `trace_clients/__init__.py` (re-exports), `protocols.py` (Protocols +
-  env-var selectors), `_fixture.py` (current fixture backends),
-  `_httpx.py` (new httpx backends). MCP backends optional / deferred.
+### LOC budget for Day 4
+Current: 4,089 / 4,800 cloc (15% headroom). Day 4 estimated 600-800 cloc
+of runtime + matching tests. Total projected ~4,700-4,900 cloc — at or
+near the ceiling. Plan: ship Day 4.1a/b first (small additions), then
+re-evaluate before 4.2. If the SPAR module pushes us over, raise to 5,500
+with a DECISIONS.md entry following the pattern from 2026-04-27.
