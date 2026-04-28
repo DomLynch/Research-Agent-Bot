@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 5.3 shipped (live first-metformin-run script with canonical-pin + random-suffix dirs + distinct exit codes; reviewer-cleared 3 P1s + 4 P2s); Day 5.4 next
+## Status — 2026-04-28 — Days 5.3 / 5.3-fix / 5.4 / 5.5 shipped; live metformin run (Day 6) is the next gate
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,15 +43,15 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 580/580 passing in 0.50s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,260 / **5,500** ceiling (4.4% headroom; +27 cloc for `build_judge_chain` in llm_client.py).
+**Tests:** 587/587 passing in 0.49s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,013 / **5,500** ceiling (8.9% headroom; net −247 cloc since Day 5.3 from `render.py` deletion (−278) offset by `settings.py` dotenv loader (+27) and `citation_trace.py` `registry_ids_for` promotion (+5)).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
-- `spar.py` 397, `citation_trace.py` 355, `fact_extractor.py` 327 — all over soft cap; all under 600 hard cap. Each carries load-bearing prompts and/or trust-spine gates. Splitting would couple tightly-related logic.
-- `writer.py` 259 — **back under the soft cap** after Day 4-fix P1 removed the LLM call layer (was 437).
-- `schemas.py` 280, `render.py` 278, `evidence_cards.py` 261, `llm_client.py` 239
-- `trace_clients/_httpx.py` 225, `topic_pack.py` 218, `validators.py` 207
+- `spar.py` 397, `citation_trace.py` 360, `fact_extractor.py` 353 — all over soft cap; all under 600 hard cap. Each carries load-bearing prompts and/or trust-spine gates. Splitting would couple tightly-related logic.
+- `orchestrator.py` 292, `schemas.py` 280, `llm_client.py` 266, `evidence_cards.py` 261, `writer.py` 259 — `writer.py` stayed under the soft cap after Day 4-fix removed the LLM call layer.
+- `trace_clients/_httpx.py` 225, `topic_pack.py` 218, `validators.py` 207, `text_signals.py` 193, `types.py` 183, `retrieve.py` 161, `compiler.py` 160
 - `thesis_tournament.py` 139, `trace_clients/_fixture.py` 126, `trace_clients/__init__.py` 79, `trace_clients/protocols.py` 75
+- `render.py` deleted Day 5.4 (V1.1 stub orphaned by deterministic writer; saved 278 cloc).
 
 **Commit log of the rebuild:**
 
@@ -101,6 +101,9 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `2a01f17` | 2026-04-28 | Day 5.1-fix: claim-text overlap gate (P1) + atomic paper.md (P2) + force_overwrite (Gap-1) + state drift (P3) |
 | `8a487da` | 2026-04-28 | Day 5.2: full-pipeline fixture-replay E2E (specificity proof + sensitivity reaffirmed) |
 | `d8b9dec` | 2026-04-28 | Day 5.2-fix: verbatim source_quote replaces bag-of-words overlap (closes endpoint-swap bypass) |
+| `cf96bff` | 2026-04-28 | Day 5.3: live first-metformin-run script + `build_judge_chain` helper |
+| `25c1349` | 2026-04-28 | Day 5.3-fix: `_CapTooSmallError` + promote `registry_ids_for` + `_format_path` outside-repo (2 reviewer P1s, AAA-cleared) |
+| `f920d75` | 2026-04-28 | Day 5.4: gut V1.1 `render.py` (writer.py is now the renderer; −423 LOC, −278 cloc) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -126,8 +129,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `spar.py` (Day 4.2 + 4.2-fix — 397 cloc — 3-judge panel orchestration. `run_spar(graph, traces, *, topic, submission_id, chain, ledger)`: Auditor + Skeptic in `asyncio.gather`; Final Judge runs after both with their reviews appended as PANEL CONTEXT. Each judge returns `{verdict, score, rationale, flagged_claims}`; `_parse_judge_review` validates strictly (verdict ∈ {accept,reject}, score 1-10 int, non-empty rationale, list-typed flagged_claims with **strict reject of non-string entries** per 4.2-fix P2 — pre-fix silently filtered them, hiding malformed signal). `_validate_flagged_against_graph` rejects unknown claim_ids (4.2-fix P2 second half — hallucinated ids corrupt the audit). Verdict by deterministic `compute_spar_verdict`; `_identify_dissent` for 2-1 splits. **`_enforce_trace_gate` (4.2-fix P1) — TRUST-SPINE GATE**: when traces failed AND panel returned accept_*, code disposes with a `GateOverride` (schema-validated): canonical verdict forced to `reject_critical`, dissent suppressed, panel votes preserved verbatim in `reviews`, original `pre_gate_verdict` recorded for audit. PROMPT_VERSION = "spar/2026-04-28". `reviews_to_dict` is the wire shape for `runs/<topic>/spar_review.json` and surfaces `gate_override` for trail visibility.)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
 - `fact_extractor.py` (Day 3.2c → 5.1-fix → **5.2-fix P1** — 353 cloc — first LLM in the spine. The LLM no longer emits a `claim` field; it emits `source_quote` — a VERBATIM SPAN copied from the abstract — and code uses that quote AS `Fact.claim`. Closes the novel-claim attack surface structurally: pre-5.2-fix bag-of-words overlap ≥50% accepted endpoint swaps like "Metformin reduced dementia" because they shared 2/3 content tokens with "Metformin reduced HbA1c" (67% > 50%). Now: source_quote MUST appear verbatim in the abstract (whitespace-normalized, case-insensitive). CODE DISPOSES via FIVE remaining gates: (0) `_quote_in_abstract` verbatim check, (1) ref/kind PINNED, (2) `check_verb_ban`, (3) `check_p_value_in_source` on quote text, (4) `_check_p_value_field` (grammar gate + tuple match), (5) estimate / ci substring traces, plus within-item dedupe.)
-- `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
-- `settings.py` (KEEP, may extend `TRACE_BACKEND` documentation)
+- `settings.py` (KEEP — Day 5.5 added stdlib `_load_dotenv_if_present()` so a `.env` at repo root populates os.environ for unset keys at `load_settings()` time. Existing env always wins (CI / explicit `export` unaffected). Closes the gap that previously required a manual `export` before the live metformin script could find `MIMO_API_KEY`. May extend `TRACE_BACKEND` documentation later.)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
 
 `bundle.py` was renamed via `git mv` to `evidence_cards.py` and refactored to import from the 3 new sibling modules.
@@ -197,16 +199,31 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 | **5.1-fix** | P1 fact_extractor claim-text overlap gate + P2 atomic paper.md + Gap-1 force_overwrite + P3 doc drift | ✅ `2a01f17` |
 | **5.2** | fixture-replay full-pipeline E2E (clean + gate-fired scenarios end-to-end) | ✅ `8a487da` |
 | **5.2-fix** | P1 verbatim source_quote replaces bag-of-words overlap (closes endpoint-swap bypass) | ✅ `d8b9dec` |
-| **5.3** | `scripts/e2e_metformin_proof_001.py` — live first metformin run + `build_judge_chain` in llm_client.py | ✅ this slice |
-| **5.3** | `scripts/e2e_metformin_proof_001.py` — first LIVE metformin run | ☐ |
-| **5.4** | gut `render.py` V1.1 stub (saves ~278 cloc) | ☐ |
+| **5.3** | `scripts/e2e_metformin_proof_001.py` + `build_judge_chain` helper | ✅ `cf96bff` |
+| **5.3-fix** | P1 `_CapTooSmallError` + promote `registry_ids_for` + P1 `_format_path` outside-repo | ✅ `25c1349` |
+| **5.4** | gut `render.py` V1.1 stub (writer.py is now the renderer; saved 278 cloc) | ✅ `f920d75` |
+| **5.5** | `settings.py` stdlib `.env` auto-loader so live script runs without manual export | ✅ this slice |
+| **6** | live first metformin run (Proof 001 green) + receipt audit vs eval gates | ☐ blocked on `OPENROUTER_API_KEY` for full SPAR (Gemma + Mistral fallback). MiMo-only run is technically possible but collapses the 3-judge panel to one model — fails the trust-spine independence the design assumes. |
+| **7** | `topic_packs/rapamycin.toml` + Proof 002 live run | ☐ |
+| **8** | `topic_packs/everolimus.toml` + Proof 003 live run | ☐ |
 
-### LOC budget after 5.1-fix
-Current: **5,257 / 5,500 cloc** (4.4% headroom). Gut of `render.py`
-(Day 5.4) reclaims ~270 cloc — gives plenty of headroom for the
-optional `submit_adapter.py` / `app.py` / `mcp_server.py` from the
-original Day 5 plan if they're needed. They're NOT required for the
-"first metformin run produces all 8 receipts" done-when.
+### LOC budget after 5.5
+Current: **5,013 / 5,500 cloc** (8.9% headroom). The `render.py` gut
+in Day 5.4 reclaimed 278 cloc; the `settings.py` dotenv loader added
+27 cloc; the `registry_ids_for` promotion added 5. Plenty of headroom
+remains for the optional `submit_adapter.py` / `mcp_server.py` from
+the original Day 5 plan if they're needed. They're NOT required for
+the "first metformin run produces all 8 receipts" done-when.
+
+### What's left before final release
+1. **OPENROUTER_API_KEY** must land in the operator's env (or `.env`).
+   Without it, `build_judge_chain` collapses to MiMo-only — same model
+   wears all 3 judge hats, breaking the multi-model independence the
+   trust spine assumes. Hard prerequisite for Proof 001 green.
+2. **Proof 001 live metformin run** — single `MIMO_API_KEY=… OPENROUTER_API_KEY=… .venv/bin/python -m scripts.e2e_metformin_proof_001 --live` produces the 8 receipts. Audit against the 7-eval gates (DESIGN-001 §0).
+3. **Proof 002 rapamycin** — needs `topic_packs/rapamycin.toml` (mirror metformin.toml shape: aliases, expected_evidence_slots, special_rules, forbidden_verbs, canonical_trials [PEARL, MILES-2, etc.], registry overrides). Then live run.
+4. **Proof 003 everolimus** — needs `topic_packs/everolimus.toml` (RAD001 alias, oncology-direct vs aging-indirect roles, BENEFIT / RAD001-trial canonical entries). Then live run.
+5. RFC outreach — only after 3/3 green.
 
 ### Day 5.2 design notes — closes Day 4's specificity gap
 The fixture-replay E2E must include BOTH scenarios explicitly:

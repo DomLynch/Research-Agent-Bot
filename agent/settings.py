@@ -2,12 +2,41 @@
 
 Single source of truth for every env var the V1 runtime reads. Defaults are
 sensible for local dev; production overrides come from the systemd unit's
-EnvironmentFile.
+EnvironmentFile. For local dev a `.env` at the repo root is loaded into
+os.environ at `load_settings()` time — already-set vars always win, so
+CI / test envs that export keys explicitly are unaffected.
 """
 from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+from pathlib import Path
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _load_dotenv_if_present() -> None:
+    """Read `.env` at REPO_ROOT and populate os.environ for UNSET keys.
+
+    Stdlib-only KEY=VALUE parser. Existing env vars are NEVER overridden,
+    so test isolation and explicit `export FOO=bar` always win. Lines
+    starting with `#`, blank lines, and lines without `=` are skipped;
+    surrounding quotes on values are stripped. Silent no-op if no .env
+    exists — the systemd unit on production sets vars via EnvironmentFile,
+    no .env there.
+    """
+    env_path = _REPO_ROOT / ".env"
+    if not env_path.exists():
+        return
+    for raw in env_path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        if not key or key in os.environ:
+            continue
+        os.environ[key] = value.strip().strip('"').strip("'")
 
 
 def _bool(name: str, default: bool) -> bool:
@@ -54,6 +83,7 @@ class Settings:
 
 
 def load_settings() -> Settings:
+    _load_dotenv_if_present()
     return Settings(
         mimo_api_key=os.environ.get("MIMO_API_KEY", "").strip(),
         mimo_model=os.environ.get("MIMO_MODEL", "mimo-v2.5-pro"),
