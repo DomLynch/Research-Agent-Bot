@@ -165,12 +165,16 @@ def metformin_day3_e2e(
     """Run the Day-3 deterministic stages once, return everything."""
     facts = _hand_curated_facts(metformin_items)
 
+    items_by_ref = {it.source.ref: it for it in metformin_items}
+
     t_compile = time.perf_counter()
     claims = compile_claims(facts, metformin_items)
-    graph = compile_claim_graph(claims)
+    # Day 4.1b — pass items_by_ref so the tournament uses the recency
+    # dimension (real publication years from the bundle) in addition
+    # to the five always-available dims.
+    graph = compile_claim_graph(claims, items_by_ref=items_by_ref)
     t_compile = time.perf_counter() - t_compile
 
-    items_by_ref = {it.source.ref: it for it in metformin_items}
     registry = FixtureTrialRegistryClient()
     drug_client = FixtureDrugAliasClient()
 

@@ -13,12 +13,9 @@ from agent.compiler import (
     _derive_claim_type,
     _derive_confidence,
     _derive_directness,
-    _pick_thesis,
-    _thesis_score,
     compile_claim_graph,
     compile_claims,
 )
-from agent.schemas import Claim
 from agent.types import EvidenceItem, Fact, Source
 
 
@@ -247,47 +244,8 @@ def test_compile_claim_graph_edges_default_empty() -> None:
     assert graph.edges == ()
 
 
-# --- Thesis-score determinism --------------------------------------------
-
-
-def test_thesis_score_orders_by_directness_then_tier_then_confidence() -> None:
-    """Verify the score tuple's ordering produces sensible results."""
-    direct_a1_high = Claim(
-        claim_id="C100", text="x", claim_type="efficacy",
-        supporting_refs=(1,), opposing_refs=(),
-        directness="direct", evidence_tier="A1", confidence="high",
-        attack_surface=(),
-    )
-    direct_a2_high = Claim(
-        claim_id="C200", text="x", claim_type="efficacy",
-        supporting_refs=(1,), opposing_refs=(),
-        directness="direct", evidence_tier="A2", confidence="high",
-        attack_surface=(),
-    )
-    indirect_a1_high = Claim(
-        claim_id="C300", text="x", claim_type="indirect",
-        supporting_refs=(1,), opposing_refs=(),
-        directness="indirect", evidence_tier="A1", confidence="high",
-        attack_surface=(),
-    )
-    # direct A1 < direct A2 < indirect A1 (directness dominates over tier)
-    assert _thesis_score(direct_a1_high) < _thesis_score(direct_a2_high)
-    assert _thesis_score(direct_a2_high) < _thesis_score(indirect_a1_high)
-
-
-def test_pick_thesis_breaks_ties_lexically_by_claim_id() -> None:
-    """Two identical-quality claims → lower claim_id wins."""
-    c_a = Claim(
-        claim_id="C001", text="a", claim_type="efficacy",
-        supporting_refs=(1,), opposing_refs=(),
-        directness="direct", evidence_tier="A1", confidence="high",
-        attack_surface=(),
-    )
-    c_b = Claim(
-        claim_id="C002", text="b", claim_type="efficacy",
-        supporting_refs=(1,), opposing_refs=(),
-        directness="direct", evidence_tier="A1", confidence="high",
-        attack_surface=(),
-    )
-    assert _pick_thesis([c_a, c_b]) == "C001"
-    assert _pick_thesis([c_b, c_a]) == "C001"  # order-independent
+# Thesis-score determinism + tiebreak tests moved to
+# tests/test_thesis_tournament.py after Day 4.1b wired pick_thesis into
+# compile_claim_graph and dropped the in-module _thesis_score/_pick_thesis
+# helpers. The integration-level guarantees (compile_claim_graph delegates
+# to the tournament correctly) are covered by the tests above.

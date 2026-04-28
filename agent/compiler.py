@@ -54,9 +54,9 @@ from agent.schemas import (
     ClaimGraph,
     Confidence,
     Directness,
-    EvidenceTier,
     assert_claim_graph_invariants,
 )
+from agent.thesis_tournament import pick_thesis
 from agent.types import EvidenceItem, Fact
 
 __all__ = [
@@ -169,59 +169,28 @@ def compile_claims(
 # --- compile_claim_graph --------------------------------------------------
 
 
-_TIER_RANK: Mapping[EvidenceTier, int] = {"A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4}
-_CONFIDENCE_RANK: Mapping[Confidence, int] = {"high": 0, "moderate": 1, "low": 2}
-
-
-def _thesis_score(claim: Claim) -> tuple[int, int, int, str]:
-    """Tuple suitable for sorted() ascending — lowest score = best thesis.
-
-    Priority order (smaller = higher rank):
-      1. directness — direct < indirect < mechanistic
-      2. evidence_tier — A1 < A2 < B < C < mixed
-      3. confidence — high < moderate < low
-      4. claim_id — lexical (stable tie-break)
-    """
-    direct_rank = {"direct": 0, "indirect": 1, "mechanistic": 2}.get(
-        claim.directness, 3,
-    )
-    tier_rank = _TIER_RANK.get(claim.evidence_tier, 9)
-    conf_rank = _CONFIDENCE_RANK.get(claim.confidence, 9)
-    return (direct_rank, tier_rank, conf_rank, claim.claim_id)
-
-
-def _pick_thesis(claims: Sequence[Claim]) -> str:
-    """Pick the strongest claim by deterministic score.
-
-    Day 4 thesis tournament will replace this with the LLM-scored
-    selector; for now we always have a defensible default that matches
-    the "direct A1 RCT first" heuristic the rest of the pipeline uses.
-    """
-    if not claims:
-        raise CompileError("cannot pick thesis from empty claim list")
-    return min(claims, key=_thesis_score).claim_id
-
-
 def compile_claim_graph(
     claims: Sequence[Claim],
     *,
+    items_by_ref: Mapping[int, EvidenceItem] | None = None,
     thesis_claim_id: str | None = None,
 ) -> ClaimGraph:
     """Bundle Claims into a ClaimGraph with a chosen thesis spine.
 
-    Day 3.2a leaves `edges` empty — Day 4 SPAR + thesis tournament will
-    populate `supports` / `contradicts` / `qualifies` / `mechanism_of`
-    edges between claims. The graph is structurally valid (per
-    `assert_claim_graph_invariants`) regardless: thesis_claim_id must
-    point at one of the claims, claim_ids must be unique.
+    Day 3.2a left `edges` empty; Day 4 SPAR will populate `supports` /
+    `contradicts` / `qualifies` / `mechanism_of` edges. The graph is
+    structurally valid (per `assert_claim_graph_invariants`) regardless:
+    thesis_claim_id must point at one of the claims, claim_ids unique.
 
-    `thesis_claim_id` defaults to the deterministic _pick_thesis output;
-    pass an explicit id when overriding (e.g., when the LLM thesis
-    tournament has selected a different spine in Day 4).
+    `thesis_claim_id` defaults to `agent.thesis_tournament.pick_thesis`
+    (Day 4.1b wired in — replaced the old in-module 3-dim heuristic).
+    Pass `items_by_ref` to enable the recency dimension in the tournament;
+    omit when it's not available (e.g., synthetic test cases) and the
+    tournament gracefully drops to 5 dims.
     """
     if not claims:
         raise CompileError("compile_claim_graph requires at least one claim")
-    chosen = thesis_claim_id or _pick_thesis(claims)
+    chosen = thesis_claim_id or pick_thesis(claims, items_by_ref=items_by_ref)
     graph = ClaimGraph(
         claims=tuple(claims),
         edges=(),
