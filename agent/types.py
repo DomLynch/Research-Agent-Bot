@@ -188,7 +188,12 @@ _PROTOCOL_ROLES = {"published_protocol", "registered_pending"}
 _CONTEXT_ROLES = {"review", "mechanistic"}
 
 
-def assert_invariants(bundle: list[EvidenceItem], facts: list[Fact]) -> None:
+def assert_invariants(
+    bundle: list[EvidenceItem],
+    facts: list[Fact],
+    *,
+    tolerated_orphans: frozenset[int] = frozenset(),
+) -> None:
     """Raise InvariantError if the role <-> fact-kind pairing rule is violated.
 
     Enforces TWO directions:
@@ -198,6 +203,12 @@ def assert_invariants(bundle: list[EvidenceItem], facts: list[Fact]) -> None:
         {published_protocol, registered_pending} must carry at least one Fact
         of kind='protocol'. Otherwise the prose can either contradict the
         bundle or silently drop a key finding.
+
+    `tolerated_orphans` suppresses the reverse-direction check for the
+    given set of refs. Used by the orchestrator: if a published_results
+    item produced 0 facts but ≥1 LOGGED REJECTION, that is NOT a silent
+    drop — it's a documented extraction failure visible in the audit log.
+    Forward-direction checks always run regardless.
 
     Call this after bundle() AND after facts() in the pipeline. Calling it
     before facts() are extracted will raise on the completeness check.
@@ -232,6 +243,8 @@ def assert_invariants(bundle: list[EvidenceItem], facts: list[Fact]) -> None:
     refs_with_protocol = {f.ref for f in facts if f.kind == "protocol"}
     for item in bundle:
         ref = item.source.ref
+        if ref in tolerated_orphans:
+            continue
         if item.role == _RESULT_ONLY and ref not in refs_with_result:
             raise InvariantError(
                 f"EvidenceItem ref={ref} role='published_results' has no "

@@ -163,12 +163,22 @@ def _emit_partial_diagnostics(
     output_dir: Path,
     extract_ledger: CostLedger,
     rejections: list,
+    accepted_facts: list | None = None,
 ) -> None:
     """Write the two diagnostic receipts (fact_extraction_log,
     cost_log) even on extraction failure — they're independent of
-    the rest of the pipeline and the operator needs them to debug."""
+    the rest of the pipeline and the operator needs them to debug.
+
+    Day 6.1c: include any accepted facts too. Pre-fix the receipt
+    always wrote `accepted: []` even when invariant-failure happened
+    AFTER some facts had been validated — masking real progress and
+    making the audit trail misleading.
+    """
     _write_json(output_dir / "fact_extraction_log.json", {
-        "accepted": [],
+        "accepted": (
+            [dataclasses.asdict(f) for f in accepted_facts]
+            if accepted_facts else []
+        ),
         "rejected": [dataclasses.asdict(r) for r in rejections],
     })
     _write_json(output_dir / "cost_log.json", {
@@ -244,7 +254,7 @@ async def run_proof(
             # P2-2 + P2-3: emit diagnostic receipts so the operator can
             # debug WHY extraction failed; surface a histogram, not just
             # the first 3 rejection reasons.
-            _emit_partial_diagnostics(output_dir, extract_ledger, rejections)
+            _emit_partial_diagnostics(output_dir, extract_ledger, rejections, list(accepted_facts) if accepted_facts else None)
             histogram = Counter(
                 r.reason.split(":", 1)[0] for r in rejections
             )
@@ -258,10 +268,18 @@ async def run_proof(
         # P1-1: invariants must hold between bundle items and accepted
         # facts. A published_results item with no extracted result-fact
         # is a silent audit-trail break — fail loud.
+        # Day 6.1b: an item with no fact AND ≥1 LOGGED REJECTION is a
+        # DOCUMENTED extraction failure (auditable in fact_extraction_log),
+        # not a silent drop — tolerate those orphans so a real-LLM run
+        # with a few rejected items can still produce an artifact.
+        rejected_refs = frozenset(r.item_ref for r in rejections)
         try:
-            assert_invariants(list(items), list(accepted_facts))
+            assert_invariants(
+                list(items), list(accepted_facts),
+                tolerated_orphans=rejected_refs,
+            )
         except InvariantError as exc:
-            _emit_partial_diagnostics(output_dir, extract_ledger, rejections)
+            _emit_partial_diagnostics(output_dir, extract_ledger, rejections, list(accepted_facts) if accepted_facts else None)
             raise OrchestratorError(
                 f"role/fact-kind invariant violated post-extraction: {exc}. "
                 f"This usually means an LLM-extractable item produced no "

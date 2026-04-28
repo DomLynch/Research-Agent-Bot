@@ -529,7 +529,7 @@ def test_build_user_prompt_is_deterministic() -> None:
 
 def test_prompt_version_is_anchored() -> None:
     """Anchored constant — cost_log.json records this for reproducibility."""
-    assert PROMPT_VERSION == "fact-extractor/2026-04-27"
+    assert PROMPT_VERSION == "fact-extractor/2026-04-28-strict-substring"
 
 
 # --- extract_facts_from_item ---------------------------------------------
@@ -823,7 +823,12 @@ def test_extract_facts_from_bundle_skips_off_domain_no_call_for_those() -> None:
 
     accepted, rejected = _run(go())
     assert accepted == []
-    assert rejected == []
+    # Day 6.1c: ref=1 (published_results) with empty LLM facts list
+    # produces a synthetic rejection so the orchestrator can tolerate
+    # it as a documented orphan. ref=3 (review) does NOT — review
+    # items don't require facts. ref=2 was off_domain (skipped pre-call).
+    assert [r.item_ref for r in rejected] == [1]
+    assert rejected[0].reason == "llm_returned_empty_facts_for_results_role"
     # 2 items hit the LLM (refs 1, 3); ref 2 skipped pre-call
     assert http_calls["n"] == 2
 

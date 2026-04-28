@@ -106,9 +106,19 @@ _DRUG_CANDIDATE_STOPWORDS = frozenset({
     "aging", "ageing", "longevity", "geroscience", "geroprotective",
     "cardiovascular", "mortality", "morbidity", "hazard", "risk",
     "frailty", "sarcopenia", "healthspan", "lifespan",
-    # Common transition / connecting words capitalized at sentence start
+    # Common transition / connecting words capitalized at sentence start.
+    # Day 6.1 added the second batch after a live metformin run flagged
+    # "After" + "Similarly" as drug-aliases, false-positive-rejecting two
+    # legitimate result claims. These are PROSE CONNECTIVES, never drug
+    # names — adding them is safe for any topic pack.
     "this", "these", "those", "their", "there", "when", "where", "what",
     "which", "while", "with", "from", "the", "and", "but",
+    "after", "before", "during", "however", "moreover", "furthermore",
+    "similarly", "likewise", "additionally", "consequently", "therefore",
+    "although", "despite", "whereas", "while", "since", "because",
+    "indeed", "notably", "specifically", "importantly", "interestingly",
+    "overall", "finally", "first", "second", "third", "fourth", "next",
+    "subsequently", "previously", "recently", "currently", "initially",
 })
 
 # Trial-status set indicating "results are publicly accessible". A claim

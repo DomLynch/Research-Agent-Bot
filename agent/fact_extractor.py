@@ -48,7 +48,7 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 
-PROMPT_VERSION = "fact-extractor/2026-04-27"
+PROMPT_VERSION = "fact-extractor/2026-04-28-strict-substring"
 
 _MAX_CLAIM_LEN = 500
 
@@ -67,9 +67,9 @@ Output one JSON object with this exact shape:
     {
       "source_quote": "verbatim span copied from the abstract — typically a single claim-bearing sentence or fragment, ≤500 chars",
       "outcome": "endpoint name like 'lean body mass' or null",
-      "estimate": "verbatim effect size like '+5.2 kg' or 'HR 0.79' or null",
-      "p_value": "verbatim like '0.003' or '<0.001' or null",
-      "ci": "verbatim CI like '0.66-0.95' or null"
+      "estimate": "CONTIGUOUS substring of source_quote like '+5.2 kg' or 'HR 0.79' — or null if not a clean substring",
+      "p_value": "CONTIGUOUS substring of source_quote like '0.003' or '<0.001' — or null if not a clean substring",
+      "ci": "CONTIGUOUS substring of source_quote like '0.66-0.95' — or null if not a clean substring"
     }
   ]
 }
@@ -79,7 +79,23 @@ Rules:
    abstract. Whitespace differences are tolerated; semantic edits are
    NOT. Code rejects any quote that doesn't appear verbatim in the
    abstract.
-2. `p_value`, `estimate`, `ci` must be VERBATIM from the abstract too.
+2. `estimate`, `p_value`, `ci` MUST appear as a CONTIGUOUS substring of
+   the source_quote you chose. If you cannot copy a clean contiguous
+   substring, set the field to null. DO NOT rephrase. DO NOT compute.
+   DO NOT combine values from multiple spans. DO NOT split a value out
+   of a parenthetical.
+   - GOOD: source_quote contains "(HR 0.79; 95% CI 0.66-0.95; p=0.003)"
+     → you may emit estimate="HR 0.79" if "HR 0.79" appears as a clean
+     contiguous substring of the quote, OR set estimate=null otherwise.
+   - BAD: source_quote contains "(RR, 0.94; 95% CI, 0.90-0.99) and 10
+     years (RR, 0.91; 95% CI, 0.87-0.94)" → emitting
+     estimate="RR, 0.94 at 5 years; RR, 0.91 at 10 years" is REPHRASING
+     and will be rejected. Set estimate=null instead.
+   - BAD: source_quote says "30% lower risk of death" → emitting
+     estimate="HR 0.70" is COMPUTATION (30% lower → HR 0.70) and will
+     be rejected. Set estimate=null instead.
+   - When in doubt, set the field to null. A null structured field with
+     a verifiable source_quote is ALWAYS preferred over a rejected fact.
 3. The `source_quote` should be self-contained and ≤500 chars; no
    '[N]' citation brackets.
 4. Choose source_quotes that are claim-bearing — the SUBSTANCE of the
@@ -349,6 +365,18 @@ async def extract_facts_from_item(
             item_ref=item.source.ref,
             proposed={"facts_was": type(raw_facts).__name__},
             reason="facts_field_not_a_list",
+        )]
+
+    # Day 6.1c: an empty facts list from the LLM for a results-role
+    # item is a documented "no findings extractable" signal — log it
+    # as a synthetic rejection so the orchestrator can tolerate it as
+    # a documented orphan rather than treating it as a silent drop.
+    # Review/mechanistic items don't require facts, so empty there is
+    # genuinely fine and we don't pollute the log.
+    if not raw_facts and item.role in ("published_results", "published_protocol", "registered_pending"):
+        return [], [FactRejection(
+            item_ref=item.source.ref, proposed={},
+            reason="llm_returned_empty_facts_for_results_role",
         )]
 
     accepted: list[Fact] = []

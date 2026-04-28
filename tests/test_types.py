@@ -182,3 +182,29 @@ def test_invariant_allows_review_item_without_facts():
     is best-effort, not load-bearing."""
     bundle = [_item(1, "review")]
     assert_invariants(bundle, facts=[])  # does not raise
+
+
+def test_invariant_tolerated_orphans_suppresses_reverse_direction():
+    """Day 6.1b: a published_results item with no fact is tolerated when
+    the orchestrator passes it as a 'tolerated orphan' — meaning the
+    extractor logged ≥1 rejection for that ref. The audit log captures
+    why extraction failed; the invariant treats it as documented, not
+    silent. Forward-direction checks remain in force regardless."""
+    bundle = [_item(1, "published_results"), _item(2, "published_results")]
+    fact = Fact(ref=2, kind="result", claim="ref 2 produced a fact")
+    # Without tolerated_orphans → ref=1 fails reverse check.
+    with pytest.raises(InvariantError, match="ref=1 .*has no"):
+        assert_invariants(bundle, [fact])
+    # With ref=1 in tolerated_orphans → passes (documented rejection
+    # would be in fact_extraction_log.json on a real run).
+    assert_invariants(bundle, [fact], tolerated_orphans=frozenset({1}))
+
+
+def test_invariant_tolerated_orphans_does_not_relax_forward_direction():
+    """A Fact with the wrong kind for its EvidenceItem.role must still
+    fail forward-direction even if its ref is in tolerated_orphans —
+    the orphan tolerance is ONLY a reverse-direction relaxation."""
+    bundle = [_item(1, "review")]
+    bad_fact = Fact(ref=1, kind="result", claim="result fact on review item")
+    with pytest.raises(InvariantError, match="kind='result' but EvidenceItem.role"):
+        assert_invariants(bundle, [bad_fact], tolerated_orphans=frozenset({1}))

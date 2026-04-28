@@ -402,28 +402,30 @@ def test_run_proof_fact_log_includes_accepted_and_rejected(tmp_path: Path) -> No
 # --- Output dir handling -------------------------------------------------
 
 
-def test_run_proof_invariant_violation_when_published_results_has_no_facts(
+def test_run_proof_published_results_with_empty_llm_facts_is_documented_orphan(
     tmp_path: Path,
 ) -> None:
-    """P1-1 fix: a published_results item with no extracted result-fact
-    is a silent audit-trail break (the bundle says it has reportable
-    findings, but those findings won't appear in the paper). The
-    orchestrator must call `assert_invariants` and surface the violation
-    as OrchestratorError with diagnostic receipts written."""
-    # Two items: the LLM extracts a fact for ref=1 but NOT for ref=2.
-    # ref=2 is published_results, so the invariant requires it carry a
-    # result-kind fact. assert_invariants must fire.
+    """Day 6.1c: a published_results item where the LLM returns an empty
+    facts list now produces a SYNTHETIC rejection
+    (`llm_returned_empty_facts_for_results_role`), which the orchestrator
+    treats as a tolerated orphan — the audit trail captures the failure,
+    so it isn't a silent drop. The pipeline continues with the items
+    that DID extract.
+
+    Pre-Day-6.1: the orchestrator failed loud here (OrchestratorError:
+    invariant violated). The change recognizes that "LLM said nothing
+    extractable" is a documented event, not a silent one — failing
+    loud blocked real-LLM runs where one paper in fifteen produces no
+    facts."""
     def handler(request: httpx.Request) -> httpx.Response:
         body = json.loads(request.content)
         sys_msg = next(m for m in body["messages"] if m["role"] == "system")
         if "extract structured FACTS" in sys_msg["content"]:
             user_msg = next(m for m in body["messages"] if m["role"] == "user")
             if "[1]" in user_msg["content"]:
-                # ref=1 → emit a valid fact (verbatim span of abstract)
                 return httpx.Response(200, json=_extractor_response(
                     "Metformin reduced HbA1c (p=0.003)",
                 ))
-            # ref=2 → emit zero facts (silent drop)
             return httpx.Response(200, json={
                 "choices": [{"message": {"content": '{"facts": []}'}}],
                 "usage": {"prompt_tokens": 50, "completion_tokens": 10},
@@ -438,11 +440,11 @@ def test_run_proof_invariant_violation_when_published_results_has_no_facts(
     async def go():
         client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
         try:
-            await run_proof(
+            return await run_proof(
                 items,
                 topic="metformin", domain="aging",
                 pack=_pack(), output_dir=tmp_path,
-                submission_id="run-invariant-001",
+                submission_id="run-orphan-001",
                 extract_chain=(_spec(),), spar_chain=(_spec(),),
                 registry=FixtureTrialRegistryClient(),
                 drug_client=FixtureDrugAliasClient(),
@@ -451,11 +453,15 @@ def test_run_proof_invariant_violation_when_published_results_has_no_facts(
         finally:
             await client.aclose()
 
-    with pytest.raises(OrchestratorError, match="invariant violated"):
-        _run(go())
-    # Diagnostic receipts written for the operator
-    assert (tmp_path / "fact_extraction_log.json").exists()
-    assert (tmp_path / "cost_log.json").exists()
+    receipts = _run(go())
+    assert receipts.paper_md.exists()
+    fact_log = json.loads(receipts.fact_extraction_log.read_text())
+    # ref=1 produced the fact, ref=2 produced the synthetic rejection
+    assert len(fact_log["accepted"]) == 1
+    assert fact_log["accepted"][0]["ref"] == 1
+    rejected_for_2 = [r for r in fact_log["rejected"] if r["item_ref"] == 2]
+    assert len(rejected_for_2) == 1
+    assert rejected_for_2[0]["reason"] == "llm_returned_empty_facts_for_results_role"
 
 
 def test_run_proof_refuses_to_overwrite_existing_receipts(tmp_path: Path) -> None:
