@@ -34,6 +34,7 @@ from agent.llm_client import CallSpec, CostLedger, chat_json
 from agent.schemas import (
     CitationTrace,
     ClaimGraph,
+    GateOverride,
     JudgeReview,
     JudgeRole,
     SPARReview,
@@ -234,11 +235,19 @@ def _parse_judge_review(
             f"judge={judge_role}: flagged_claims must be a list; "
             f"got {type(flagged_raw).__name__}"
         )
-    flagged = tuple(c for c in flagged_raw if isinstance(c, str))
+    # Strict: any non-string entry rejects the whole review. Pre-fix this
+    # silently filtered, hiding malformed signal — a judge that emits
+    # `[42, null]` is broken and the orchestrator should know, not patch.
+    bad_entries = [c for c in flagged_raw if not isinstance(c, str)]
+    if bad_entries:
+        raise SPARError(
+            f"judge={judge_role}: flagged_claims must contain only strings; "
+            f"got non-string entries {bad_entries[:3]!r}"
+        )
     return JudgeReview(
         judge_role=judge_role, model=model, verdict=verdict,
         score=raw_score, rationale=rationale.strip(),
-        flagged_claims=flagged,
+        flagged_claims=tuple(flagged_raw),
     )
 
 
@@ -283,6 +292,65 @@ def _identify_dissent(
         return None
     minority_verdict = "reject" if verdict == "accept_caveated" else "accept"
     return next((r for r in reviews if r.verdict == minority_verdict), None)
+
+
+def _validate_flagged_against_graph(
+    reviews: tuple[JudgeReview, ...],
+    graph: ClaimGraph,
+) -> None:
+    """Reject any review whose flagged_claims reference unknown claim_ids.
+
+    The Auditor / Skeptic / Final Judge see the full claim graph in
+    their prompt, so a flagged_claim that isn't in the graph is either
+    a hallucinated id or a typo — either way it corrupts the audit
+    trail. Code disposes: SPARError, caller decides retry vs skip.
+    """
+    valid_ids = {c.claim_id for c in graph.claims}
+    for r in reviews:
+        unknown = [cid for cid in r.flagged_claims if cid not in valid_ids]
+        if unknown:
+            raise SPARError(
+                f"judge={r.judge_role}: flagged_claims contain ids not in "
+                f"the ClaimGraph: {unknown!r}. Valid ids: {sorted(valid_ids)!r}."
+            )
+
+
+def _enforce_trace_gate(
+    panel_verdict: SPARVerdict,
+    traces: Sequence[CitationTrace],
+) -> GateOverride | None:
+    """Trust-spine gate: failed citation traces force reject regardless
+    of the LLM panel's votes.
+
+    The Auditor's prompt instructs judges to reject on failed traces,
+    but code cannot rely on LLM compliance — if all three voted accept
+    while traces failed, the deterministic spine overrides. Returns a
+    GateOverride record when triggered; None otherwise (the panel's
+    verdict stands).
+
+    Triggers ONLY when (a) any trace failed AND (b) the panel verdict
+    points at accept_*. If the panel already rejects, no override
+    needed; if all traces pass, the LLM's accept stands.
+    """
+    if panel_verdict not in ("accept_clean", "accept_caveated"):
+        return None
+    failed = [t for t in traces if not t.passed]
+    if not failed:
+        return None
+    sample = failed[0]
+    rationale = (
+        f"Trust-spine trace gate triggered: panel returned "
+        f"{panel_verdict!r} but {len(failed)} citation trace(s) failed "
+        f"(e.g., {sample.trace_type} on claim={sample.claim_id} "
+        f"ref={sample.ref}: {sample.detail!r}). The Auditor prompt "
+        f"instructs reject on failed traces; code disposes when LLM "
+        f"compliance fails. Verdict forced to reject_critical."
+    )
+    return GateOverride(
+        pre_gate_verdict=panel_verdict,
+        failed_trace_count=len(failed),
+        rationale=rationale,
+    )
 
 
 # --- Orchestrator ---------------------------------------------------------
@@ -340,18 +408,39 @@ async def run_spar(
             await c.aclose()
 
     reviews = (auditor, skeptic, final_judge)
-    verdict = compute_spar_verdict(reviews)
-    dissent = _identify_dissent(reviews, verdict)
+    # Validate flagged_claims against the actual graph before constructing
+    # the SPARReview — a hallucinated claim_id is a parse-level violation
+    # that wouldn't be caught by the schema invariants.
+    _validate_flagged_against_graph(reviews, graph)
+
+    panel_verdict = compute_spar_verdict(reviews)
+    gate = _enforce_trace_gate(panel_verdict, traces)
+    if gate is not None:
+        # Trust-spine gate triggered: panel votes preserved; verdict
+        # forced to reject_critical; dissent suppressed (the gate's
+        # rejection is structurally distinct from any panel minority).
+        canonical_verdict: SPARVerdict = "reject_critical"
+        dissent: JudgeReview | None = None
+        resolution = (
+            f"{final_judge.rationale}\n\n[Trace-gate override] "
+            f"{gate.rationale}"
+        )
+    else:
+        canonical_verdict = panel_verdict
+        dissent = _identify_dissent(reviews, panel_verdict)
+        resolution = final_judge.rationale
+
     spar_review = SPARReview(
         submission_id=submission_id,
         reviews=reviews,
-        verdict=verdict,
+        verdict=canonical_verdict,
         dissent=dissent,
-        final_judge_resolution=final_judge.rationale,
+        final_judge_resolution=resolution,
+        gate_override=gate,
     )
     # Defense-in-depth: the schema invariant re-checks vote-vs-verdict
-    # consistency, dissent membership, role uniqueness. A bug in
-    # _identify_dissent or compute_spar_verdict surfaces here.
+    # consistency, dissent membership, role uniqueness, AND the
+    # gate-override consistency rules.
     assert_spar_invariants(spar_review)
     return spar_review
 
@@ -382,5 +471,13 @@ def reviews_to_dict(review: SPARReview) -> dict[str, Any]:
             if review.dissent else None
         ),
         "final_judge_resolution": review.final_judge_resolution,
+        "gate_override": (
+            {
+                "pre_gate_verdict": review.gate_override.pre_gate_verdict,
+                "failed_trace_count": review.gate_override.failed_trace_count,
+                "rationale": review.gate_override.rationale,
+            }
+            if review.gate_override else None
+        ),
         "prompt_version": PROMPT_VERSION,
     }

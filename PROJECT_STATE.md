@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 4.2 SPAR shipped (3-judge panel + dissent always published); Day 4.3 writer next
+## Status — 2026-04-28 — Day 4.2-fix shipped (P1 trace gate + P2 strict flagged + schema GateOverride); Day 4.3 writer next (after LOC ceiling raise)
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -43,14 +43,17 @@ in the log table below. The current HEAD will appear in the next slice's
 update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 504/504 passing in 0.43s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 4,523 / 4,800 ceiling (5.8% headroom — tight; Day 4.3 writer will likely need a ceiling raise to 5,500 with a DECISIONS.md entry, same pattern as the prior 3,500 → 4,800 raise).
+**Tests:** 519/519 passing in 0.41s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 4,656 / 4,800 ceiling (3% headroom — Day 4.3 writer requires raising to 5,500 with a DECISIONS.md entry FIRST; same pattern as prior 3,500 → 4,800 raise).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
-- `citation_trace.py` 355 (over soft cap — Day 3.1 trace orchestrator; trim or split with Day 3.3)
-- `fact_extractor.py` 314 (just over soft cap — 7-layer trace + load-bearing prompt)
-- `render.py` 278, `evidence_cards.py` 261, `llm_client.py` 239, `trace_clients.py` 228, `schemas.py` 226, `topic_pack.py` 218, `validators.py` 207
-- Day 3.3 will push `trace_clients.py` past the 300 soft cap with httpx backends → split into a package then.
+- `spar.py` 397 (over soft cap — 3-judge prompts + orchestration + gate-override; load-bearing trust-spine module)
+- `citation_trace.py` 355 (over soft cap — Day 3.1 trace orchestrator)
+- `fact_extractor.py` 327 (over soft cap — 7-layer trace + load-bearing prompt)
+- `schemas.py` 280, `render.py` 278, `evidence_cards.py` 261
+- `trace_clients/_httpx.py` 225, `llm_client.py` 239, `topic_pack.py` 218, `validators.py` 207
+- `trace_clients/_fixture.py` 126, `trace_clients/__init__.py` 79, `trace_clients/protocols.py` 75
+- Three over-soft-cap files (spar / citation_trace / fact_extractor) all carry load-bearing prompts or trust-spine logic; splitting would couple tightly-related modules. None are over the 600 hard cap.
 
 **Commit log of the rebuild:**
 
@@ -89,6 +92,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `9e3caf8` | 2026-04-28 | Day 3.4: Day-3 E2E pipeline test (real corpus → ClaimGraph → traces) — Day 3 ✅ COMPLETE |
 | `2ac7ad1` | 2026-04-28 | Day 3 cleanup: 3 reviewer P2 niggles (≥6 claims + e2e_day3_pipeline.py + state drift) |
 | `49677b2` | 2026-04-28 | Day 4.1: thesis tournament — 6-dim deterministic selector + compiler wire-in (drops `_pick_thesis`) |
+| `a1dfcf4` | 2026-04-28 | Day 4.2: SPAR — 3-judge panel orchestration with dissent always published |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -109,7 +113,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `citation_trace.py` (Day 3.1 — moat orchestrator; 5 trace functions [nct_exists, role_match, p_value_in_text, percentage_in_text, alias_match] + trace_claim + trace_claim_graph + summary; closes external layers for planted cases 2/3/4. Day 3.1-fixes: nct_exists yields per-id traces from source.nct + URL ISRCTN + abstract-NCTs; flags has_results=False contradiction for published_results role; alias_match skips canonical trial acronyms)
 - `compiler.py` (Day 3.2a + Day 4.1b — deterministic facts → Claims → ClaimGraph: 1:1 fact-to-claim mapping, kind→claim_type / role+direct→directness / (role,design,tier)→confidence; CompileError on orphan refs. Day 4.1b wired in `thesis_tournament.pick_thesis` and dropped the in-module 3-dim heuristic. `compile_claim_graph` now accepts optional `items_by_ref` to enable the 6th dim (recency))
 - `thesis_tournament.py` (Day 4.1 — 6-dim deterministic thesis selector: directness > tier > confidence > replication (-len(supporting_refs)) > recency (baseline_year - latest_year) > specificity (-min(50, word_count)), tiebreak by claim_id. `pick_thesis(claims, items_by_ref=None)` returns the chosen claim_id; `score_all` exposes per-claim scores for SPAR audit consumption.)
-- `spar.py` (Day 4.2 — 318 cloc — 3-judge panel orchestration. `run_spar(graph, traces, *, topic, submission_id, chain, ledger)`: Auditor + Skeptic in `asyncio.gather`; Final Judge runs after both with their reviews appended as PANEL CONTEXT in its user prompt. Each judge returns `{verdict, score, rationale, flagged_claims}`; `_parse_judge_review` validates against the JudgeReview schema (verdict ∈ {accept,reject}, score 1-10 int, non-empty rationale, list-typed flagged_claims). Verdict computed by deterministic `compute_spar_verdict` (3-0 / 2-1 / 1-2 / 0-3 → 4 SPARVerdict values). `_identify_dissent` returns the minority-voice review for any 2-1 split, None for unanimous; the schema's `assert_spar_invariants` re-validates the result post-orchestration. Three role-bound system prompts pinned at PROMPT_VERSION = "spar/2026-04-28". `reviews_to_dict` is the wire shape for `runs/<topic>/spar_review.json`.)
+- `spar.py` (Day 4.2 + 4.2-fix — 397 cloc — 3-judge panel orchestration. `run_spar(graph, traces, *, topic, submission_id, chain, ledger)`: Auditor + Skeptic in `asyncio.gather`; Final Judge runs after both with their reviews appended as PANEL CONTEXT. Each judge returns `{verdict, score, rationale, flagged_claims}`; `_parse_judge_review` validates strictly (verdict ∈ {accept,reject}, score 1-10 int, non-empty rationale, list-typed flagged_claims with **strict reject of non-string entries** per 4.2-fix P2 — pre-fix silently filtered them, hiding malformed signal). `_validate_flagged_against_graph` rejects unknown claim_ids (4.2-fix P2 second half — hallucinated ids corrupt the audit). Verdict by deterministic `compute_spar_verdict`; `_identify_dissent` for 2-1 splits. **`_enforce_trace_gate` (4.2-fix P1) — TRUST-SPINE GATE**: when traces failed AND panel returned accept_*, code disposes with a `GateOverride` (schema-validated): canonical verdict forced to `reject_critical`, dissent suppressed, panel votes preserved verbatim in `reviews`, original `pre_gate_verdict` recorded for audit. PROMPT_VERSION = "spar/2026-04-28". `reviews_to_dict` is the wire shape for `runs/<topic>/spar_review.json` and surfaces `gate_override` for trail visibility.)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
 - `fact_extractor.py` (Day 3.2c + 3.2c-fix + 3.2c-fix-2 — first LLM in the spine. `extract_facts_from_item / from_bundle` proposes facts via `chat_json`; CODE DISPOSES via SEVEN layers: (1) ref/kind PINNED from item.source.ref + role (LLM never proposes either), (2) schema check on claim, (3) `check_verb_ban` (planted case 1's 5th defense), (4) `check_p_value_in_source` on claim text, (5) `_check_p_value_field` — TWO-stage: grammar gate via `_PVALUE_DECIMAL_RE` rejects malformed values ('NS', 'not reported', '0', '1.2', etc.) BEFORE source-tracing (3.2c-fix-2 closes the vacuous-success bypass); then (operator, digits) tuple must appear in abstract via PVALUE_RE, (6) `_trace_field_in_source` whitespace-normalized substring match for `estimate` (3.2c-fix P2), (7) same for `ci`, plus within-item dedupe. `require_source_trace` flag (renamed from `require_p_value_trace` after fix expanded scope). off_domain skipped pre-call.)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
@@ -144,7 +148,7 @@ To deploy the stub: SSH into VPS, `cd /opt/research-agent-bot && git pull && sys
 | **1** | `schemas.py` + `topic_pack.py` + `topic_packs/metformin.toml` + planted-failure fixtures + tests. Bundle.py 4-file split DEFERRED to Day 2 (paired with evidence_cards rename). | All 6 schemas frozen, `tomllib` parses topic pack, planted-failure cases 1+4 caught at topic_pack layer. | ✅ `a9eb7ab` + `941f21c` + `9cff619` |
 | **2** | `evidence_cards.py` (refactor of bundle.py) + 4-file split + registry_overrides + `validators.py` + `compiler.py` (deterministic) + `trace_clients.py` fixture backend. Real metformin retrieval E2E. | ≥12 sources retrieved; cards classify correctly; planted case 1 caught at evidence_cards (in addition to topic_pack layer). | **✅ COMPLETE (fixture + live both green after Day 3.0)** — 2.1+2.2 `0ffcd5a` + 2.3 `9918c12` + 2.4 `e1bb56f` + 2.4-fixes `5b06bda` + 2.5 fixture-replay `c0cc11e` (40 sources, MASTERS pinned, perf 0.4 ms / 11.1 ms) + 2.5b live `7fe3c02` (script + baseline) + Day 3.0 abstract-NCT fix `555c73a` (live MASTERS now pinned to published_results / A1) |
 | 3 | `citation_trace.py` against `trace_clients/*` (fixture + httpx backends). MCP backend optional. **First LLM stage:** fact extraction (LLM proposes, schema disposes). | Citation_trace catches planted cases 2, 3; httpx backend smoke-tests against clinicaltrials.gov. | **✅ COMPLETE** — 3.0 → 3.2c-fix-2 → 3.1-fixes-3 → 3.3a → 3.3b → 3.3c live smoke 6/6 green + **3.4 Day-3 E2E** (this slice — `tests/test_e2e_day3_pipeline.py` 7 tests: fixture-replay corpus → bundle → hand-curated Facts → compile_claims → compile_claim_graph → trace_claim_graph; verifies thesis-pick selects MASTERS direct A1; nct_exists fires for canonical NCT02308228; planted case 4 (Glufomin drift) flagged via trace_alias_match; sub-second perf baseline). LLM extraction stage covered by Day 3.2c unit tests + opt-in live smoke; Day 4 (SPAR + thesis tournament + writer) next. |
-| 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | **PARTIAL** — 4.1 `49677b2` (thesis_tournament 6-dim, wired into compiler) + **4.2 SPAR** (this slice — `spar.py` 318 cloc, 3-judge panel orchestration via existing `chat_json` chain, dissent always published, schema invariants re-enforced post-orchestration; 29 mock tests); 4.3 writer + 4.4 planted-failures-through-SPAR ☐ pending |
+| 4 | `thesis_tournament.py` + `spar.py` + writer prompt with quality-bar block + judge checklist. Plant-corpus prompt iteration. `gap_analysis.py` only if time permits (non-gating). | All 5 planted failures caught; thesis tournament selects defensible thesis on real corpus. | **PARTIAL** — 4.1 `49677b2` (thesis_tournament 6-dim) + 4.2 `a1dfcf4` (SPAR 3-judge orchestration) + **4.2-fix** (this slice — P1 deterministic trace gate (failed traces force reject_critical via `GateOverride` schema extension regardless of LLM votes — closes V1.1-style "LLM accepts despite failed traces" hole), P2 strict flagged_claims (reject non-string entries + validate against ClaimGraph), P3 doc drift; 15 new tests, 519/519 total); 4.3 writer + 4.4 planted-failures-through-SPAR ☐ pending |
 | 5 | `submit_adapter.py` + gutted `render.py` + new `app.py` + `mcp_server.py` + first end-to-end metformin run. | `runs/metformin-001/` contains 8 mandatory outputs; SPAR verdict accept_clean or accept_caveated; quality bar met against MASTERS / MET-PREVENT / Konopka 2019 standard. | — |
 
 ## Eval gates (Proof 001 ship criteria)
@@ -189,17 +193,18 @@ Next: **Day 4 — thesis tournament + SPAR + writer.**
 | Slice | Ship | Status |
 |---|---|---|
 | **4.1** | `thesis_tournament.py` 6-dim selector + compiler wire-in | ✅ `49677b2` |
-| **4.2** | `spar.py` — 3-judge panel + dissent always published | ✅ this slice |
-| **4.3** | `writer.py` — claim-graph-gated prose drafter | ☐ next |
+| **4.2** | `spar.py` — 3-judge panel + dissent always published | ✅ `a1dfcf4` |
+| **4.2-fix** | P1 trace gate + P2 strict flagged + GateOverride schema | ✅ this slice |
+| **4.3** | `writer.py` — claim-graph-gated prose drafter | ☐ next (after LOC ceiling raise) |
 | **4.4** | All 5 planted failures through SPAR → assert each caught | ☐ pending |
 
-**Reviewer cadence:** the previous round explicitly said save the next
-reviewer pass for after 4.2 or 4.3 (where the LLM orchestration lives).
-4.2 just landed — natural pause point if you want the audit before 4.3.
-
-### LOC budget after 4.2
-Current: 4,523 / 4,800 cloc (5.8% headroom — tight). Day 4.3 writer is
-estimated 300-400 cloc + tests. Plan: raise the ceiling to **5,500** with
-a DECISIONS.md entry before shipping 4.3 — same pattern as the prior
-3,500 → 4,800 raise (claim-court features add LOC; the constraint exists
-to prevent unbounded sprawl, not to block real work).
+### LOC budget — ceiling raise REQUIRED before 4.3
+Current: **4,656 / 4,800 cloc** (3% headroom). Day 4.3 writer is
+estimated 300-400 cloc + matching tests, which would push total to
+**~5,000+** runtime. Next slice raises ceiling to **5,500** with a
+DECISIONS.md entry — same justification as the prior 3,500 → 4,800
+raise (claim-court features add LOC; constraint exists to prevent
+unbounded sprawl, not to block real work). The three over-soft-cap
+files (spar.py 397, citation_trace.py 355, fact_extractor.py 327)
+all carry load-bearing prompts or trust-spine logic; all under the
+600 hard per-file cap.

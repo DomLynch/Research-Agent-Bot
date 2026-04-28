@@ -32,6 +32,7 @@ __all__ = [
     "ClaimGraph",
     "CitationTrace",
     "JudgeReview",
+    "GateOverride",
     "SPARReview",
     "ClaimGraphInvariantError",
     "SPARInvariantError",
@@ -140,11 +141,35 @@ class JudgeReview:
 
 
 @dataclass(frozen=True, slots=True)
+class GateOverride:
+    """Records when the deterministic trace gate overrode the panel verdict.
+
+    The LLM panel's votes are preserved verbatim in `SPARReview.reviews`;
+    the panel's natural verdict is captured in `pre_gate_verdict`; the
+    canonical `SPARReview.verdict` reflects the gate's decision (always
+    a `reject_*` value when this is non-None).
+
+    This exists because the Auditor's prompt instructs judges to reject
+    on failed citation traces, but the deterministic spine cannot rely
+    on LLM compliance — if all three judges vote accept while traces
+    have failed, code must dispose.
+    """
+
+    pre_gate_verdict: SPARVerdict
+    failed_trace_count: int
+    rationale: str
+
+
+@dataclass(frozen=True, slots=True)
 class SPARReview:
     """Three role-bound agents + deterministic tie-break. Dissent always public.
 
     `dissent` is populated when verdict is `accept_caveated` or `reject_majority`
     (any 2-1 split); None for unanimous outcomes.
+
+    `gate_override` is populated when the deterministic trace gate forced
+    a reject_* verdict despite the panel's vote tally pointing at accept_*;
+    None on the normal path.
     """
 
     submission_id: str
@@ -152,6 +177,7 @@ class SPARReview:
     verdict: SPARVerdict
     dissent: JudgeReview | None
     final_judge_resolution: str
+    gate_override: GateOverride | None = None
 
 
 # --- Invariants ------------------------------------------------------------
@@ -219,14 +245,56 @@ def assert_spar_invariants(review: SPARReview) -> None:
     if not review.final_judge_resolution.strip():
         raise SPARInvariantError("final_judge_resolution must not be empty")
 
-    expected_verdict = compute_spar_verdict(review.reviews)
-    if review.verdict != expected_verdict:
-        accepts = sum(1 for r in review.reviews if r.verdict == "accept")
-        raise SPARInvariantError(
-            f"SPARReview.verdict={review.verdict!r} contradicts the votes "
-            f"({accepts} accepts / {3 - accepts} rejects → expected "
-            f"{expected_verdict!r}). Hand-edited or stale verdict suspected."
-        )
+    panel_verdict = compute_spar_verdict(review.reviews)
+    if review.gate_override is None:
+        # Normal path — verdict matches the panel's vote tally exactly.
+        if review.verdict != panel_verdict:
+            accepts = sum(1 for r in review.reviews if r.verdict == "accept")
+            raise SPARInvariantError(
+                f"SPARReview.verdict={review.verdict!r} contradicts the votes "
+                f"({accepts} accepts / {3 - accepts} rejects → expected "
+                f"{panel_verdict!r}). Hand-edited or stale verdict suspected."
+            )
+    else:
+        # Gate-override path — panel pointed at accept_*, gate forced reject_*.
+        # Both halves must hold or the override is structurally invalid.
+        if review.gate_override.pre_gate_verdict != panel_verdict:
+            raise SPARInvariantError(
+                f"gate_override.pre_gate_verdict="
+                f"{review.gate_override.pre_gate_verdict!r} does not match "
+                f"the actual panel tally {panel_verdict!r}."
+            )
+        if panel_verdict not in ("accept_clean", "accept_caveated"):
+            raise SPARInvariantError(
+                f"gate_override only applies when the panel would have "
+                f"accepted (got panel_verdict={panel_verdict!r})."
+            )
+        if review.verdict not in ("reject_majority", "reject_critical"):
+            raise SPARInvariantError(
+                f"gate_override must produce a reject_* verdict; "
+                f"got {review.verdict!r}."
+            )
+        if review.gate_override.failed_trace_count <= 0:
+            raise SPARInvariantError(
+                f"gate_override.failed_trace_count must be > 0; "
+                f"got {review.gate_override.failed_trace_count}."
+            )
+        if not review.gate_override.rationale.strip():
+            raise SPARInvariantError(
+                "gate_override.rationale must not be empty."
+            )
+        # On the gate path, dissent must be None — the gate itself is the
+        # rejection signal, distinct from any panel-level minority voice.
+        # The panel's underlying split/unanimous shape is preserved in
+        # `pre_gate_verdict` for the audit trail; dissent semantics
+        # only apply to the panel verdict, which the gate has overridden.
+        if review.dissent is not None:
+            raise SPARInvariantError(
+                "gate_override path requires dissent=None — the panel's "
+                "internal split is captured in pre_gate_verdict; the "
+                "gate's rejection is not itself a panel vote."
+            )
+        return  # gate-override path complete; skip the panel-dissent rules
 
     is_split = review.verdict in ("accept_caveated", "reject_majority")
     if not is_split:
