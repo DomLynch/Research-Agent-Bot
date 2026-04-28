@@ -85,7 +85,7 @@ def _extractor_response(claim: str, p_value: str = "0.003") -> dict:
     return {
         "choices": [{"message": {"content": json.dumps({
             "facts": [{
-                "claim": claim,
+                "source_quote": claim,
                 "outcome": "HbA1c", "estimate": None,
                 "p_value": p_value, "ci": None,
             }],
@@ -106,7 +106,7 @@ def _judge_response(verdict: str = "accept") -> dict:
 
 
 def _make_handler(
-    extract_claim: str = "metformin reduced HbA1c (p=0.003).",
+    extract_claim: str = "Metformin reduced HbA1c by 0.5%",
     extract_pvalue: str = "0.003",
     judge_verdict: str = "accept",
 ) -> callable:
@@ -205,7 +205,7 @@ def test_run_proof_gate_override_path_renders_rejection(tmp_path: Path) -> None:
         abstract="Trial NCT99999999 reported metformin outcomes (p=0.003).",
     )]
     handler = _make_handler(
-        extract_claim="metformin reduced HbA1c (p=0.003).",
+        extract_claim="metformin outcomes",  # verbatim span of the abstract
         judge_verdict="accept",
     )
 
@@ -360,12 +360,12 @@ def test_run_proof_fact_log_includes_accepted_and_rejected(tmp_path: Path) -> No
             return httpx.Response(200, json={
                 "choices": [{"message": {"content": json.dumps({
                     "facts": [
-                        {  # valid
-                            "claim": "metformin reduced HbA1c (p=0.003).",
+                        {  # valid: verbatim span of default abstract
+                            "source_quote": "Metformin reduced HbA1c by 0.5%",
                             "outcome": "HbA1c", "estimate": None,
                             "p_value": "0.003", "ci": None,
                         },
-                        {},  # missing claim → rejection
+                        {},  # missing source_quote → rejection
                     ],
                 })}}],
                 "usage": {"prompt_tokens": 100, "completion_tokens": 50},
@@ -396,7 +396,7 @@ def test_run_proof_fact_log_includes_accepted_and_rejected(tmp_path: Path) -> No
     assert "rejected" in fact_log
     assert len(fact_log["accepted"]) == 1
     assert len(fact_log["rejected"]) == 1
-    assert fact_log["rejected"][0]["reason"] == "missing_or_empty_claim"
+    assert fact_log["rejected"][0]["reason"] == "missing_or_empty_source_quote"
 
 
 # --- Output dir handling -------------------------------------------------
@@ -419,9 +419,9 @@ def test_run_proof_invariant_violation_when_published_results_has_no_facts(
         if "extract structured FACTS" in sys_msg["content"]:
             user_msg = next(m for m in body["messages"] if m["role"] == "user")
             if "[1]" in user_msg["content"]:
-                # ref=1 → emit a valid fact
+                # ref=1 → emit a valid fact (verbatim span of abstract)
                 return httpx.Response(200, json=_extractor_response(
-                    "metformin reduced HbA1c (p=0.003).",
+                    "Metformin reduced HbA1c (p=0.003)",
                 ))
             # ref=2 → emit zero facts (silent drop)
             return httpx.Response(200, json={
@@ -628,7 +628,7 @@ def test_run_proof_compile_error_wraps_in_orchestrator_error(
         sys_msg = next(m for m in body["messages"] if m["role"] == "system")
         if "extract structured FACTS" in sys_msg["content"]:
             return httpx.Response(200, json=_extractor_response(
-                "metformin reduced HbA1c (p=0.003).",
+                "Metformin reduced HbA1c by 0.5%",  # verbatim span
             ))
         return httpx.Response(200, json=_judge_response("accept"))
 

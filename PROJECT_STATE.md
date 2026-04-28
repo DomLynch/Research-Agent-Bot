@@ -30,7 +30,7 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 5.2 shipped (full-pipeline E2E + specificity proof + sensitivity reaffirmed; reviewer-cleared); Day 5.3 next
+## Status — 2026-04-28 — Day 5.2-fix shipped (P1 verbatim source_quote replaces bag-of-words overlap; novel claims structurally impossible at extractor); Day 5.3 next
 
 **State verified through:** the most recent entry in the commit log table below.
 *Structural break (Day 3.1-fixes-2): the previous "State verified through: \<hash\>"
@@ -44,7 +44,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
 **Tests:** 578/578 passing in 0.49s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,257 / **5,500** ceiling (4.4% headroom; Day 5.4 render gut reclaims ~270 cloc).
+**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,233 / **5,500** ceiling (4.8% headroom; saved 24 cloc by replacing bag-of-words overlap gate with verbatim quote check).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600):**
 - `spar.py` 397, `citation_trace.py` 355, `fact_extractor.py` 327 — all over soft cap; all under 600 hard cap. Each carries load-bearing prompts and/or trust-spine gates. Splitting would couple tightly-related logic.
@@ -99,6 +99,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 | `2b21319` | 2026-04-28 | Day 4-fix: gut writer LLM (P1 deterministic) + real-pipeline planted-failure E2E (P2) + specificity proof |
 | `1987105` | 2026-04-28 | Day 5.1: orchestrator — single-call pipeline + 8 mandatory receipts (3 P1 + 4 P2 reviewer-cleared) |
 | `2a01f17` | 2026-04-28 | Day 5.1-fix: claim-text overlap gate (P1) + atomic paper.md (P2) + force_overwrite (Gap-1) + state drift (P3) |
+| `8a487da` | 2026-04-28 | Day 5.2: full-pipeline fixture-replay E2E (specificity proof + sensitivity reaffirmed) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -123,7 +124,7 @@ update. See commit message of e1bb56f for the amend-bootstrap rationale.)*
 - `writer.py` (Day 4.3 → 4.3-fix → **4-fix P1** — 259 cloc, **down from 437** because the LLM was removed entirely. The reviewer caught that even strict per-sentence `claim_ids` binding could be circumvented: an LLM declaring a valid claim_id and citing a valid `[N]` could STILL write a novel claim text outside the graph (self-declared binding without text-to-claim verification is insufficient). Fix: writer is now PURELY DETERMINISTIC. Every sentence in the output is a `Claim.text` from the graph, attached to its `supporting_refs`. No LLM call at write time → no novel claims possible. `write_paper(graph, items, traces, spar, *, pack, topic) -> tuple[str, list[WriterRejection]]` is now SYNC. Routes by SPAR verdict: `accept_*` renders the paper (Title + Thesis + Findings + Background + References, with within-section sort by directness > tier > confidence > claim_id matching the thesis tournament); `reject_*` / any `gate_override` renders a structured rejection notice with the gate banner prominent. RENDER_VERSION = "writer/2026-04-28-deterministic".)
 - `spar.py` (Day 4.2 + 4.2-fix — 397 cloc — 3-judge panel orchestration. `run_spar(graph, traces, *, topic, submission_id, chain, ledger)`: Auditor + Skeptic in `asyncio.gather`; Final Judge runs after both with their reviews appended as PANEL CONTEXT. Each judge returns `{verdict, score, rationale, flagged_claims}`; `_parse_judge_review` validates strictly (verdict ∈ {accept,reject}, score 1-10 int, non-empty rationale, list-typed flagged_claims with **strict reject of non-string entries** per 4.2-fix P2 — pre-fix silently filtered them, hiding malformed signal). `_validate_flagged_against_graph` rejects unknown claim_ids (4.2-fix P2 second half — hallucinated ids corrupt the audit). Verdict by deterministic `compute_spar_verdict`; `_identify_dissent` for 2-1 splits. **`_enforce_trace_gate` (4.2-fix P1) — TRUST-SPINE GATE**: when traces failed AND panel returned accept_*, code disposes with a `GateOverride` (schema-validated): canonical verdict forced to `reject_critical`, dissent suppressed, panel votes preserved verbatim in `reviews`, original `pre_gate_verdict` recorded for audit. PROMPT_VERSION = "spar/2026-04-28". `reviews_to_dict` is the wire shape for `runs/<topic>/spar_review.json` and surfaces `gate_override` for trail visibility.)
 - `llm_client.py` (Day 3.2b — single-dep LLM surface: httpx OpenAI-compatible `chat_json` + `CallSpec` chain with skip-on-empty-key fallback + `CostLedger` (cost_log.json shape) + robust `extract_json` (strips `<think>` / fences / prose); `build_extract_chain(settings)` yields MiMo→Mistral; judge/write chains land Day 4)
-- `fact_extractor.py` (Day 3.2c → 3.2c-fix-2 → **5.1-fix P1** — first LLM in the spine. CODE DISPOSES via EIGHT layers: (0) **claim-text source trace** via `_claim_supported_by_abstract` — bag-of-words content overlap ≥50% (5.1-fix P1 closes the "novel claim with no numeric fields" hole — pre-fix, the LLM could emit `Metformin prevents dementia` from an HbA1c abstract because no field-level traces fired and the deterministic writer rendered Claim.text verbatim), (1) ref/kind PINNED, (2) schema check on claim, (3) `check_verb_ban`, (4) `check_p_value_in_source` on claim text, (5) `_check_p_value_field` two-stage (grammar gate + tuple match), (6) estimate substring trace, (7) ci substring trace, plus within-item dedupe.)
+- `fact_extractor.py` (Day 3.2c → 5.1-fix → **5.2-fix P1** — 353 cloc — first LLM in the spine. The LLM no longer emits a `claim` field; it emits `source_quote` — a VERBATIM SPAN copied from the abstract — and code uses that quote AS `Fact.claim`. Closes the novel-claim attack surface structurally: pre-5.2-fix bag-of-words overlap ≥50% accepted endpoint swaps like "Metformin reduced dementia" because they shared 2/3 content tokens with "Metformin reduced HbA1c" (67% > 50%). Now: source_quote MUST appear verbatim in the abstract (whitespace-normalized, case-insensitive). CODE DISPOSES via FIVE remaining gates: (0) `_quote_in_abstract` verbatim check, (1) ref/kind PINNED, (2) `check_verb_ban`, (3) `check_p_value_in_source` on quote text, (4) `_check_p_value_field` (grammar gate + tuple match), (5) estimate / ci substring traces, plus within-item dedupe.)
 - `render.py` (GUT on Day 5 — pure claim_graph → markdown, no LLM hooks)
 - `settings.py` (KEEP, may extend `TRACE_BACKEND` documentation)
 - `app.py` (deploy-safe stub — HTTP 503 paused page)
@@ -193,7 +194,8 @@ The pre-V1.1 codebase remains at `agent_legacy/` for git archaeology. The Day 0 
 |---|---|---|
 | **5.1** | `agent/orchestrator.py` — single-call pipeline + 8 mandatory receipts | ✅ `1987105` |
 | **5.1-fix** | P1 fact_extractor claim-text overlap gate + P2 atomic paper.md + Gap-1 force_overwrite + P3 doc drift | ✅ `2a01f17` |
-| **5.2** | fixture-replay full-pipeline E2E (clean + gate-fired scenarios end-to-end) | ✅ this slice |
+| **5.2** | fixture-replay full-pipeline E2E (clean + gate-fired scenarios end-to-end) | ✅ `8a487da` |
+| **5.2-fix** | P1 verbatim source_quote replaces bag-of-words overlap (closes endpoint-swap bypass) | ✅ this slice |
 | **5.3** | `scripts/e2e_metformin_proof_001.py` — first LIVE metformin run | ☐ |
 | **5.4** | gut `render.py` V1.1 stub (saves ~278 cloc) | ☐ |
 

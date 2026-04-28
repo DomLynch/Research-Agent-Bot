@@ -121,7 +121,9 @@ def test_validate_proposed_happy_path_pins_ref_and_kind() -> None:
     """The LLM dict has no `ref` or `kind` field; the validator pins both
     from the EvidenceItem. This is the core LLM-PROPOSES/CODE-DISPOSES test."""
     item = _item(ref=42, role="published_results")
-    proposed = {"claim": "metformin lowered HbA1c by 0.5% (p=0.003)."}
+    # source_quote is a verbatim span of the default abstract
+    # "Metformin reduced HbA1c by 0.5% (p=0.003)."
+    proposed = {"source_quote": "Metformin reduced HbA1c by 0.5% (p=0.003)"}
     fact, reason = _validate_proposed(
         proposed, item=item, pack=_pack(), require_source_trace=True,
     )
@@ -129,14 +131,14 @@ def test_validate_proposed_happy_path_pins_ref_and_kind() -> None:
     assert fact is not None
     assert fact.ref == 42  # pinned from item.source.ref
     assert fact.kind == "result"  # pinned from item.role
-    assert fact.claim == "metformin lowered HbA1c by 0.5% (p=0.003)."
+    assert fact.claim == "Metformin reduced HbA1c by 0.5% (p=0.003)"
 
 
 def test_validate_proposed_pins_kind_even_if_llm_attempts_override() -> None:
     """A malicious / confused LLM emits {'kind': 'protocol'} on a published_results
     item. The validator IGNORES it and pins kind='result' from the role."""
     item = _item(ref=1, role="published_results")
-    proposed = {"claim": "reduced X.", "kind": "protocol", "ref": 999}  # both are noise
+    proposed = {"source_quote": "reduced X.", "kind": "protocol", "ref": 999}  # both are noise
     fact, reason = _validate_proposed(
         proposed, item=item, pack=_pack(), require_source_trace=False,
     )
@@ -152,33 +154,33 @@ def test_validate_proposed_missing_claim_rejects() -> None:
         {}, item=item, pack=_pack(), require_source_trace=False,
     )
     assert fact is None
-    assert reason == "missing_or_empty_claim"
+    assert reason == "missing_or_empty_source_quote"
 
 
 def test_validate_proposed_empty_claim_rejects() -> None:
     item = _item()
     fact, reason = _validate_proposed(
-        {"claim": "   "}, item=item, pack=_pack(), require_source_trace=False,
+        {"source_quote": "   "}, item=item, pack=_pack(), require_source_trace=False,
     )
     assert fact is None
-    assert reason == "missing_or_empty_claim"
+    assert reason == "missing_or_empty_source_quote"
 
 
 def test_validate_proposed_oversized_claim_rejects() -> None:
     item = _item()
     fact, reason = _validate_proposed(
-        {"claim": "x" * 501}, item=item, pack=_pack(),
+        {"source_quote": "x" * 501}, item=item, pack=_pack(),
         require_source_trace=False,
     )
     assert fact is None
-    assert reason == "claim_too_long"
+    assert reason == "source_quote_too_long"
 
 
 def test_validate_proposed_off_domain_rejects_no_kind() -> None:
     """Defense-in-depth: even if caller didn't skip, validator rejects."""
     item = _item(role="off_domain")
     fact, reason = _validate_proposed(
-        {"claim": "anything"}, item=item, pack=_pack(),
+        {"source_quote": "anything"}, item=item, pack=_pack(),
         require_source_trace=False,
     )
     assert fact is None
@@ -191,7 +193,7 @@ def test_validate_proposed_verb_ban_on_protocol_role_rejects() -> None:
     'demonstrated' — verb-ban catches it BEFORE the fact enters the graph."""
     item = _item(role="registered_pending")
     fact, reason = _validate_proposed(
-        {"claim": "TAME demonstrated cardiovascular benefit."},
+        {"source_quote": "TAME demonstrated cardiovascular benefit."},
         item=item, pack=_pack(), require_source_trace=False,
     )
     assert fact is None
@@ -199,27 +201,13 @@ def test_validate_proposed_verb_ban_on_protocol_role_rejects() -> None:
     assert reason.startswith("verb_ban:")
 
 
-def test_validate_proposed_p_value_not_in_source_rejects() -> None:
-    """Planted case 3 at extraction time: claim cites p<0.001 but abstract
-    says p=0.08. P-value trace catches it before the value enters the graph."""
-    # Abstract shares enough content tokens with the claim to clear the
-    # 5.1-fix P1 claim-overlap gate; the test isolates the p-value check.
-    item = _item(abstract="Metformin reduced HbA1c with an effect (p=0.08).")
-    fact, reason = _validate_proposed(
-        {"claim": "metformin reduced HbA1c (p<0.001)."},
-        item=item, pack=_pack(), require_source_trace=True,
-    )
-    assert fact is None
-    assert reason is not None
-    assert reason.startswith("p_value_not_in_source:")
-
-
 def test_validate_proposed_p_value_trace_can_be_disabled() -> None:
-    """`require_source_trace=False` lets the fact through even with a
-    mismatched p-value. Used for tests/dev flows; production uses True."""
-    item = _item(abstract="Some effect was observed (p=0.08).")
+    """`require_source_trace=False` lets the fact through even when the
+    source_quote doesn't appear in the abstract. Used for tests/dev
+    flows; production uses True."""
+    item = _item(abstract="Some effect was observed.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin lowered HbA1c (p<0.001)."},
+        {"source_quote": "metformin had a totally novel effect."},
         item=item, pack=_pack(), require_source_trace=False,
     )
     assert reason is None
@@ -228,10 +216,10 @@ def test_validate_proposed_p_value_trace_can_be_disabled() -> None:
 
 def test_validate_proposed_coerces_optional_field_types() -> None:
     """Non-string p_value/estimate/ci/outcome (e.g. JSON null, numeric) → None."""
-    item = _item()
+    item = _item()  # default abstract: "Metformin reduced HbA1c by 0.5% (p=0.003)."
     fact, reason = _validate_proposed(
         {
-            "claim": "x reduced (p=0.003).",
+            "source_quote": "Metformin reduced HbA1c by 0.5% (p=0.003)",
             "outcome": None, "estimate": None, "p_value": None, "ci": None,
         },
         item=item, pack=_pack(), require_source_trace=True,
@@ -246,12 +234,12 @@ def test_validate_proposed_coerces_optional_field_types() -> None:
 
 
 def test_validate_proposed_p_value_field_not_in_source_rejects() -> None:
-    """3.2c P1: separate p_value field (not embedded in claim) must trace
-    back to abstract. Pre-fix, code only checked claim-embedded p-values
-    so {claim: 'X reduced.', p_value: '<0.001'} bypassed source-trace."""
+    """3.2c P1: separate p_value field (not embedded in source_quote)
+    must trace back to abstract. The source_quote is verbatim in the
+    abstract; the structured p_value field is fabricated."""
     item = _item(abstract="Some effect was observed (p=0.08).")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had an effect.", "p_value": "<0.001"},
+        {"source_quote": "Some effect was observed", "p_value": "<0.001"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None
@@ -262,7 +250,7 @@ def test_validate_proposed_p_value_field_in_source_accepts() -> None:
     """Same field, p-value present in abstract → accepted."""
     item = _item(abstract="Metformin had a significant effect (p<0.001).")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had a significant effect.", "p_value": "<0.001"},
+        {"source_quote": "Metformin had a significant effect", "p_value": "<0.001"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -275,7 +263,7 @@ def test_validate_proposed_p_value_field_with_p_prefix_accepts() -> None:
     the prefix and re-applies, matching the abstract's verbatim form."""
     item = _item(abstract="Metformin had a significant effect (p<0.001).")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had a significant effect.", "p_value": "p<0.001"},
+        {"source_quote": "Metformin had a significant effect", "p_value": "p<0.001"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -286,7 +274,7 @@ def test_validate_proposed_p_value_field_bare_number_in_source_accepts() -> None
     """LLM emits bare '0.003'; synthesizer wraps as 'p=0.003'."""
     item = _item(abstract="Effect reported (p=0.003).")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had an effect.", "p_value": "0.003"},
+        {"source_quote": "Effect reported", "p_value": "0.003"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -299,7 +287,7 @@ def test_validate_proposed_estimate_field_not_in_source_rejects() -> None:
     estimate='HR 0.10' was accepted with no source-text check."""
     item = _item(abstract="Metformin reduced X by a small reduction.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin reduced X.", "estimate": "HR 0.10"},
+        {"source_quote": "Metformin reduced X", "estimate": "HR 0.10"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None
@@ -309,7 +297,7 @@ def test_validate_proposed_estimate_field_not_in_source_rejects() -> None:
 def test_validate_proposed_estimate_field_in_source_accepts() -> None:
     item = _item(abstract="Metformin reduced X with hazard ratio HR 0.79.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin reduced X.", "estimate": "HR 0.79"},
+        {"source_quote": "Metformin reduced X", "estimate": "HR 0.79"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -322,7 +310,7 @@ def test_validate_proposed_estimate_whitespace_normalized() -> None:
     whitespace-normalized match still hits."""
     item = _item(abstract="Metformin reduced X with HR 0.79.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin reduced X.", "estimate": "HR  0.79"},
+        {"source_quote": "Metformin reduced X", "estimate": "HR  0.79"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -333,7 +321,7 @@ def test_validate_proposed_ci_field_not_in_source_rejects() -> None:
     """3.2c P2: CI field must trace verbatim to abstract."""
     item = _item(abstract="Metformin reduced X but no CI was reported.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin reduced X.", "ci": "0.01-0.02"},
+        {"source_quote": "Metformin reduced X", "ci": "0.01-0.02"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None
@@ -343,7 +331,7 @@ def test_validate_proposed_ci_field_not_in_source_rejects() -> None:
 def test_validate_proposed_ci_field_in_source_accepts() -> None:
     item = _item(abstract="Metformin reduced X (95% CI 0.66-0.95).")
     fact, reason = _validate_proposed(
-        {"claim": "metformin reduced X.", "ci": "0.66-0.95"},
+        {"source_quote": "Metformin reduced X", "ci": "0.66-0.95"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -358,7 +346,7 @@ def test_validate_proposed_source_trace_disabled_bypasses_all_field_traces() -> 
     item = _item(abstract="A small effect was reported.")
     fact, reason = _validate_proposed(
         {
-            "claim": "metformin had an effect.",
+            "source_quote": "metformin had an effect.",
             "p_value": "<0.001",
             "estimate": "HR 0.10",
             "ci": "0.01-0.02",
@@ -373,56 +361,79 @@ def test_validate_proposed_source_trace_disabled_bypasses_all_field_traces() -> 
 
 
 def test_validate_proposed_novel_claim_outside_abstract_rejects() -> None:
-    """5.1-fix P1: closes the trust-spine hole at the extractor stage.
-    Pre-fix, the LLM could emit a claim like 'Metformin prevents
-    dementia in healthy older adults.' against an abstract about
-    HbA1c — no numeric fields, no verb-ban issue, so all gates passed
-    and the novel claim entered the graph. The deterministic writer
-    then renders Claim.text verbatim, so a novel claim survives to
-    the published paper."""
+    """5.2-fix P1: closes the novel-claim hole structurally. Pre-fix
+    (Day 5.1-fix bag-of-words gate), an LLM-proposed `claim` like
+    'Metformin reduced dementia.' (endpoint swap) passed because it
+    shared two of three content tokens with `Metformin reduced HbA1c`.
+    Now `source_quote` MUST appear verbatim in the abstract — endpoint
+    swaps reject because the swapped endpoint is not in the source
+    text by definition."""
     item = _item(abstract="Metformin reduced HbA1c by 0.5% (p=0.003).")
     fact, reason = _validate_proposed(
-        {"claim": "Metformin prevents dementia in healthy older adults."},
+        # Endpoint-swapped claim — content tokens overlap with abstract
+        # (metformin, reduced) but the SPAN is not verbatim in the source.
+        {"source_quote": "Metformin reduced dementia."},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None
-    assert reason == "claim_not_supported_by_abstract"
+    assert reason == "source_quote_not_in_abstract"
 
 
-def test_validate_proposed_paraphrased_claim_accepts() -> None:
-    """The overlap gate must allow REASONABLE paraphrases — `lowered`
-    for `reduced`, additional modifiers like `significantly`. Tests
-    that the threshold isn't so tight it blocks legitimate prose."""
+def test_validate_proposed_verbatim_quote_accepts() -> None:
+    """Happy path: a verbatim span of the abstract passes the source-trace
+    gate. Whitespace-normalized + case-insensitive comparison handles the
+    LLM's typical reformatting (sentence-case, collapsed whitespace)."""
     item = _item(
         abstract="Metformin reduced HbA1c by 0.5% (p=0.003) significantly."
     )
     fact, reason = _validate_proposed(
-        {"claim": "metformin reduced HbA1c by 0.5% significantly."},
+        # Verbatim span; case-insensitive match → accepted
+        {"source_quote": "metformin reduced HbA1c by 0.5%"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
     assert fact is not None
 
 
-def test_validate_proposed_claim_trace_skipped_when_flag_off() -> None:
-    """`require_source_trace=False` bypasses the claim-overlap gate
+def test_validate_proposed_quote_trace_skipped_when_flag_off() -> None:
+    """`require_source_trace=False` bypasses the verbatim-quote gate
     along with the field-level traces. Used for dev / testing flows."""
     item = _item(abstract="Metformin reduced HbA1c by 0.5%.")
     fact, reason = _validate_proposed(
-        {"claim": "Metformin prevents dementia in healthy older adults."},
+        {"source_quote": "Metformin prevents dementia in healthy older adults."},
         item=item, pack=_pack(), require_source_trace=False,
     )
     assert reason is None
     assert fact is not None
 
 
-def test_validate_proposed_field_trace_runs_when_claim_has_no_pvalue() -> None:
-    """Direct exercise of the P1 bug: claim has NO p-value, so the existing
-    check_p_value_in_source on claim_text returns None (no failure). The
-    new field-level trace must still catch the unsupported p_value field."""
+def test_validate_proposed_endpoint_swap_rejects() -> None:
+    """Day 5.2-fix P1 specific reproduction: the reviewer's exact bypass
+    cases. Each shares 2/3 content tokens with the abstract (`metformin`
+    + `reduced`) — the bag-of-words 50% threshold accepted them. The
+    verbatim-quote gate rejects all three."""
+    abstract = "Metformin reduced HbA1c by 0.5% (p=0.003)."
+    item = _item(abstract=abstract)
+    for endpoint_swap in (
+        "Metformin reduced dementia.",
+        "Metformin reduced cancer risk.",
+        "Metformin reduced mortality.",
+    ):
+        fact, reason = _validate_proposed(
+            {"source_quote": endpoint_swap},
+            item=item, pack=_pack(), require_source_trace=True,
+        )
+        assert fact is None, f"endpoint swap {endpoint_swap!r} accepted!"
+        assert reason == "source_quote_not_in_abstract"
+
+
+def test_validate_proposed_field_trace_runs_when_quote_has_no_pvalue() -> None:
+    """Direct exercise of the P1 bug: source_quote has NO p-value, so the
+    quote-text p-value check returns None. The structured `p_value` field
+    trace must still catch a fabricated value."""
     item = _item(abstract="Metformin reported a modest signal in this study.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin reported a modest signal.", "p_value": "0.001"},
+        {"source_quote": "Metformin reported a modest signal", "p_value": "0.001"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None
@@ -457,7 +468,7 @@ def test_validate_proposed_malformed_p_value_field_rejects(malformed: str) -> No
     actual source check. New grammar gate rejects these before tracing."""
     item = _item(abstract="Effect reported (p=0.003) significantly.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had an effect.", "p_value": malformed},
+        {"source_quote": "Effect reported", "p_value": malformed},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None, f"expected reject for p_value={malformed!r}"
@@ -466,11 +477,10 @@ def test_validate_proposed_malformed_p_value_field_rejects(malformed: str) -> No
 
 def test_validate_proposed_p_value_field_must_match_operator() -> None:
     """Tracing requires both operator AND digits to match. Abstract has
-    `p<0.001`; LLM proposes p_value='=0.001' (different operator). The
-    (=, '001') tuple is NOT in abstract → reject."""
+    `p<0.001`; LLM proposes p_value='=0.001' (different operator)."""
     item = _item(abstract="Effect was significant (p<0.001).")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had an effect.", "p_value": "=0.001"},
+        {"source_quote": "Effect was significant", "p_value": "=0.001"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert fact is None
@@ -481,7 +491,7 @@ def test_validate_proposed_p_value_field_normalizes_whitespace() -> None:
     """LLM emits 'p = 0.003' with spaces; grammar gate strips them."""
     item = _item(abstract="Effect (p=0.003) was significant.")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had an effect.", "p_value": "p = 0.003"},
+        {"source_quote": "Effect (p=0.003) was significant", "p_value": "p = 0.003"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -492,7 +502,7 @@ def test_validate_proposed_p_value_field_dot_only_form_accepts() -> None:
     """LLM emits '.001' (no leading zero); grammar gate accepts via 0?\\.NNN."""
     item = _item(abstract="Metformin had a significant effect (p<.001).")
     fact, reason = _validate_proposed(
-        {"claim": "metformin had a significant effect.", "p_value": "<.001"},
+        {"source_quote": "Metformin had a significant effect", "p_value": "<.001"},
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -532,7 +542,7 @@ def test_extract_facts_from_item_happy_path() -> None:
         return httpx.Response(200, json=_ok_body({
             "facts": [
                 {
-                    "claim": "metformin reduced HbA1c by 0.5% (p=0.003).",
+                    "source_quote": "Metformin reduced HbA1c by 0.5%",
                     "outcome": "HbA1c", "estimate": "0.5%",
                     "p_value": "0.003", "ci": None,
                 },
@@ -648,25 +658,31 @@ def test_extract_facts_from_item_facts_not_a_list_rejects() -> None:
 
 def test_extract_facts_from_item_mix_of_valid_and_invalid() -> None:
     """One valid, one missing claim, one not-a-dict, one verb-ban —
-    accepted gets the valid one; rejected lists the rest with reasons."""
-    # Abstract shares enough content tokens with the "valid" claim that
-    # the 5.1-fix P1 claim-overlap gate passes; the verb-ban claim has
-    # its own token overlap but still trips verb_ban first.
+    accepted gets the valid one; rejected lists the rest with reasons.
+    Abstract includes both the "valid" span and the "verb-ban" span as
+    verbatim text so each rejection reason fires AT THE EXPECTED layer
+    (not at source_quote_not_in_abstract)."""
     item = _item(
         role="registered_pending",
         abstract=(
             "Trial registered older adults at risk of CV events; "
-            "metformin will be assessed in the plan."
+            "investigators recall an earlier paper claimed "
+            "'metformin demonstrated benefit' but this trial is "
+            "still in the planning stage."
         ),
     )
 
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json=_ok_body({
             "facts": [
-                {"claim": "trial enrolls older adults at risk of CV events."},
-                {},  # missing claim
+                # Valid: verbatim span; doesn't trip verb-ban
+                {"source_quote": "Trial registered older adults at risk of CV events"},
+                {},  # missing source_quote
                 "not a dict",
-                {"claim": "metformin demonstrated CV benefit (p=0.05)."},  # verb-ban
+                # Verb-ban: 'demonstrated' is forbidden for registered_pending;
+                # this span is verbatim in the abstract so source-quote check
+                # passes, then verb-ban catches it.
+                {"source_quote": "metformin demonstrated benefit"},
             ],
         }))
 
@@ -681,22 +697,23 @@ def test_extract_facts_from_item_mix_of_valid_and_invalid() -> None:
 
     accepted, rejected = _run(go())
     assert len(accepted) == 1
-    assert accepted[0].claim.startswith("trial enrolls")
+    assert accepted[0].claim.startswith("Trial registered")
     assert accepted[0].kind == "protocol"  # pinned from registered_pending
     reasons = sorted(r.reason for r in rejected)
     assert any(r.startswith("verb_ban:") for r in reasons)
-    assert "missing_or_empty_claim" in reasons
+    assert "missing_or_empty_source_quote" in reasons
     assert "not_a_dict" in reasons
 
 
 def test_extract_facts_from_item_dedupes_within_item() -> None:
-    """LLM emits two paraphrases of the same claim. One survives; the
-    duplicate is logged as 'duplicate_claim'."""
+    """LLM emits two case-different versions of the same verbatim span.
+    One survives; the duplicate is logged as 'duplicate_claim'. The
+    source_quote check is case-insensitive so both pass that gate."""
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json=_ok_body({
             "facts": [
-                {"claim": "metformin reduced HbA1c."},
-                {"claim": "Metformin Reduced HbA1c."},  # case-only diff
+                {"source_quote": "Metformin reduced HbA1c"},
+                {"source_quote": "METFORMIN REDUCED HBA1C"},  # case-only diff
             ],
         }))
 
@@ -762,10 +779,10 @@ def test_extract_facts_from_bundle_preserves_item_order() -> None:
         user_msg = next(m for m in body["messages"] if m["role"] == "user")
         if "aspirin" in user_msg["content"]:
             return httpx.Response(200, json=_ok_body({
-                "facts": [{"claim": "aspirin reduced X (p=0.01).", "p_value": "0.01"}],
+                "facts": [{"source_quote": "aspirin reduced X (p=0.01).", "p_value": "0.01"}],
             }))
         return httpx.Response(200, json=_ok_body({
-            "facts": [{"claim": "metformin reduced Y (p=0.02).", "p_value": "0.02"}],
+            "facts": [{"source_quote": "metformin reduced Y (p=0.02).", "p_value": "0.02"}],
         }))
 
     async def go():
@@ -820,7 +837,7 @@ def test_extract_facts_from_bundle_aggregates_rejections() -> None:
 
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json=_ok_body({
-            "facts": [{"claim": "demonstrated CV benefit."}],
+            "facts": [{"source_quote": "demonstrated CV benefit."}],
         }))
 
     async def go():

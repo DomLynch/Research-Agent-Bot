@@ -61,10 +61,11 @@ def _all_receipt_paths(receipts: RunReceipts) -> list[Path]:
 
 METFORMIN_PACK_PATH = Path(__file__).parent.parent / "topic_packs" / "metformin.toml"
 
-# A mocked claim derived from MASTERS' real abstract. Overlap > 50%
-# with the abstract; cites the real p-value verbatim; uses
-# "metformin reduced" which doesn't trip any verb-ban.
-_MASTERS_CLAIM = "metformin reduced lean body mass (p=0.003) in older adults"
+# A verbatim source quote from MASTERS' abstract. Day 5.2-fix P1
+# requires `source_quote` to appear verbatim in the abstract — the
+# whitespace-normalized check is case-insensitive but otherwise
+# requires literal substring match.
+_MASTERS_CLAIM = "metformin reduced lean body mass (p=0.003)"
 _MASTERS_ABSTRACT = (
     "In a randomized trial, metformin reduced lean body mass (p=0.003) "
     "and thigh muscle area in older adults during progressive resistance "
@@ -152,7 +153,7 @@ def _make_proof_handler(
             return httpx.Response(200, json={
                 "choices": [{"message": {"content": json.dumps({
                     "facts": [{
-                        "claim": claim,
+                        "source_quote": claim,
                         "outcome": None,
                         "estimate": None,
                         "p_value": p_value,
@@ -304,7 +305,8 @@ def test_proof_001_gate_fires_on_fabricated_nct(
     ]
     handler = _make_proof_handler(
         extract_claims_by_ref={
-            1: "metformin reduced HbA1c (p=0.003) in adults at risk",
+            # Verbatim span of the abstract above
+            1: "reduced HbA1c (p=0.003) in adults at risk",
         },
         extract_pvalues_by_ref={1: "0.003"},
         judge_verdict="accept",  # judges fooled; gate must catch

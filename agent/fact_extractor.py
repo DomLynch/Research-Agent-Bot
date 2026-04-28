@@ -38,36 +38,6 @@ from agent.validators import PVALUE_RE, check_p_value_in_source, check_verb_ban
 # a malformed proposal ('NS', 'not reported', '0', '1.2', etc.).
 _PVALUE_DECIMAL_RE = re.compile(r"^0?\.(\d+)$")
 
-# Content-token regex: words ≥3 chars OR decimal numbers OR uppercase
-# acronyms ≥2 chars (HbA1c, NCT, etc.). Used by the claim-text source
-# trace below to compare claim and abstract on substantive vocabulary.
-_CONTENT_TOKEN_RE = re.compile(r"\b[A-Za-z][A-Za-z0-9-]*\b|\b\d+\.\d+\b")
-
-# Common English stopwords that don't carry semantic content. A claim and
-# its source can share many of these by accident; filtering them prevents
-# the overlap check from passing on stopword coincidence alone.
-_STOPWORDS: frozenset[str] = frozenset({
-    "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
-    "of", "with", "by", "from", "as", "is", "was", "were", "be", "been",
-    "being", "are", "this", "that", "these", "those", "it", "its", "their",
-    "his", "her", "our", "we", "they", "them", "us", "you", "he", "she",
-    "had", "has", "have", "having", "do", "does", "did", "doing",
-    "will", "would", "should", "could", "may", "might", "can",
-    "than", "then", "so", "if", "while", "during", "after", "before",
-    "into", "through", "across", "between", "among", "over", "under",
-    "again", "more", "most", "less", "least", "some", "any", "no", "not",
-    "only", "also", "other", "another", "such", "same", "very", "well",
-    "when", "where", "which", "who", "whom", "whose", "what", "why", "how",
-})
-
-# Threshold for the claim-text source trace: at least 50% of the claim's
-# content tokens must appear in the source abstract (case-insensitive,
-# stopwords removed). Catches novel claims like "metformin prevents
-# dementia" against an HbA1c abstract while allowing reasonable
-# paraphrases like "metformin lowered HbA1c" against "metformin reduced
-# HbA1c". Tuned empirically on the planted-failure corpus.
-_CLAIM_OVERLAP_THRESHOLD: float = 0.5
-
 __all__ = [
     "FactRejection",
     "PROMPT_VERSION",
@@ -85,14 +55,17 @@ _MAX_CLAIM_LEN = 500
 
 SYSTEM_PROMPT = """You extract structured FACTS from a single research-paper abstract.
 
-You may propose ONLY facts explicitly stated in the abstract. Do NOT
-infer, generalize, or import knowledge from outside the abstract.
+Each fact you emit is anchored to a VERBATIM SOURCE QUOTE from the
+abstract — you do not paraphrase the central claim. You only choose
+WHICH spans of the abstract to surface and tag them with structured
+numeric fields. Code uses your `source_quote` directly as the claim
+text; novel prose cannot enter the pipeline through this stage.
 
 Output one JSON object with this exact shape:
 {
   "facts": [
     {
-      "claim": "single declarative sentence paraphrasing the abstract",
+      "source_quote": "verbatim span copied from the abstract — typically a single claim-bearing sentence or fragment, ≤500 chars",
       "outcome": "endpoint name like 'lean body mass' or null",
       "estimate": "verbatim effect size like '+5.2 kg' or 'HR 0.79' or null",
       "p_value": "verbatim like '0.003' or '<0.001' or null",
@@ -102,19 +75,18 @@ Output one JSON object with this exact shape:
 }
 
 Rules:
-1. `claim` is REQUIRED — non-empty string under 500 characters. Every
-   other field is optional; emit null when the abstract doesn't state it.
-2. `p_value`, `estimate`, `ci` must be VERBATIM from the abstract — do
-   not reformat or convert units.
-3. `claim` must be self-contained — no '[N]' citation brackets.
-4. If the abstract describes a PROTOCOL or registered study with NO
-   reported outcomes, describe DESIGN only. Never use 'showed',
-   'demonstrated', 'reduced', 'improved', 'lowered', 'increased' —
-   those imply outcomes the paper has not reported.
-5. For REVIEWS, summarize pooled findings; attribute to the review,
-   not the underlying trials. For MECHANISTIC / preclinical abstracts,
-   describe the mechanism only and do not claim human relevance unless
-   the abstract makes that claim itself.
+1. `source_quote` is REQUIRED — a verbatim span COPIED from the
+   abstract. Whitespace differences are tolerated; semantic edits are
+   NOT. Code rejects any quote that doesn't appear verbatim in the
+   abstract.
+2. `p_value`, `estimate`, `ci` must be VERBATIM from the abstract too.
+3. The `source_quote` should be self-contained and ≤500 chars; no
+   '[N]' citation brackets.
+4. Choose source_quotes that are claim-bearing — the SUBSTANCE of the
+   paper's findings, not boilerplate. For PROTOCOL or registered
+   studies, quote the design / objective spans, not outcome spans.
+   For REVIEWS, quote pooled-finding spans. For MECHANISTIC / preclinical
+   abstracts, quote mechanism spans, not human-outcome speculation.
 
 No prose outside the JSON. No markdown fences."""
 
@@ -186,44 +158,24 @@ def _trace_field_in_source(value: str, abstract: str) -> bool:
     return needle in haystack
 
 
-def _content_tokens(text: str) -> frozenset[str]:
-    """Lowercased content tokens — non-stopword words ≥3 chars OR decimal
-    numbers. Used by the claim-source overlap gate to compare on
-    substantive vocabulary only."""
-    tokens = _CONTENT_TOKEN_RE.findall(text.lower())
-    return frozenset(
-        t for t in tokens
-        if t not in _STOPWORDS and (len(t) >= 3 or (t and t[0].isdigit()))
-    )
+def _quote_in_abstract(quote: str, abstract: str) -> bool:
+    """Verify a verbatim source quote appears in the abstract.
 
-
-def _claim_supported_by_abstract(claim: str, abstract: str) -> bool:
-    """Verify the proposed claim's content tokens substantially overlap
-    with the source abstract.
-
-    Day 5.1-fix P1: closes the trust-spine hole where the LLM could emit
-    a claim like "Metformin prevents dementia in healthy older adults"
-    from an abstract that only says "Metformin reduced HbA1c by 0.5%
-    (p=0.003)". The deterministic writer renders Claim.text verbatim, so
-    a novel claim text that survives extraction reaches the published
-    paper unchanged.
-
-    Bag-of-words content overlap: ≥50% of the claim's content tokens
-    must appear in the abstract. The threshold is tuned to (a) catch
-    novel claims that share only the topic name with the source, while
-    (b) allowing reasonable paraphrases (`lowered` for `reduced`,
-    additional modifiers like `approximately` / `significantly`).
-
-    Returns True on accept, False on reject. The empty-claim case
-    returns False (no content to overlap), but other gates upstream
-    catch empty claims first via the schema check.
+    Whitespace-normalized + case-insensitive: tolerates the LLM's
+    typical reformatting (collapsed whitespace, sentence-case
+    differences) while rejecting any semantic edit. This is the
+    Day 5.2-fix P1 replacement for the previous bag-of-words overlap
+    gate, which accepted endpoint swaps like "Metformin reduced
+    dementia" against an abstract that only said "Metformin reduced
+    HbA1c". With this stricter check, the claim text is BY
+    CONSTRUCTION a verbatim span of the source — there's no
+    novel-claim attack surface at the extraction stage.
     """
-    claim_tokens = _content_tokens(claim)
-    if not claim_tokens:
+    needle = " ".join(quote.split()).lower()
+    if not needle:
         return False
-    abstract_tokens = _content_tokens(abstract)
-    overlap = claim_tokens & abstract_tokens
-    return len(overlap) / len(claim_tokens) >= _CLAIM_OVERLAP_THRESHOLD
+    haystack = " ".join(abstract.split()).lower()
+    return needle in haystack
 
 
 def _check_p_value_field(p_value: str, abstract: str) -> bool:
@@ -267,20 +219,26 @@ def _validate_proposed(
 
     Returns (Fact, None) on accept, (None, reason_code) on reject.
 
-    `require_source_trace=True` enforces FOUR layers of source-tracing
-    (closes the v1 gap where only claim-embedded p-values were checked):
-      1. p-values embedded in claim text → check_p_value_in_source
-      2. proposed `p_value` field (bare or operator+number) → synthesized
-         and re-checked via the same regex layer
-      3. proposed `estimate` field → whitespace-normalized substring match
-      4. proposed `ci` field → whitespace-normalized substring match
+    The LLM emits `source_quote` — a verbatim span from the abstract —
+    NOT a freeform claim. Code uses the verified quote as `Fact.claim`,
+    closing the novel-claim attack surface at the extraction stage
+    (Day 5.2-fix P1; previous bag-of-words overlap gate accepted
+    endpoint swaps like "Metformin reduced dementia" against an
+    HbA1c abstract).
+
+    `require_source_trace=True` enforces FIVE source-tracing layers:
+      0. source_quote appears verbatim in the abstract (Day 5.2-fix P1)
+      1. p-values embedded in the quote → check_p_value_in_source
+      2. proposed `p_value` field → synthesized + PVALUE_RE-traced
+      3. proposed `estimate` field → whitespace-normalized substring
+      4. proposed `ci` field → whitespace-normalized substring
     """
-    raw_claim = proposed.get("claim")
-    if not isinstance(raw_claim, str) or not raw_claim.strip():
-        return None, "missing_or_empty_claim"
-    claim_text = raw_claim.strip()
-    if len(claim_text) > _MAX_CLAIM_LEN:
-        return None, "claim_too_long"
+    raw_quote = proposed.get("source_quote")
+    if not isinstance(raw_quote, str) or not raw_quote.strip():
+        return None, "missing_or_empty_source_quote"
+    quote = raw_quote.strip()
+    if len(quote) > _MAX_CLAIM_LEN:
+        return None, "source_quote_too_long"
 
     kind = _kind_for_role(item.role)
     if kind is None:
@@ -288,7 +246,7 @@ def _validate_proposed(
         # defense-in-depth: don't construct a Fact that can't pair.
         return None, f"no_kind_for_role:{item.role}"
 
-    verb_fail = check_verb_ban(claim_text, item, pack)
+    verb_fail = check_verb_ban(quote, item, pack)
     if verb_fail is not None:
         return None, f"verb_ban:{verb_fail.code}"
 
@@ -298,18 +256,16 @@ def _validate_proposed(
     outcome = _coerce_str_or_none(proposed.get("outcome"))
 
     if require_source_trace:
-        # 0. Claim-text source trace (Day 5.1-fix P1) — closes the
-        # novel-claim hole left at the extractor stage. The deterministic
-        # writer renders Claim.text verbatim, so a novel claim that
-        # survives extraction reaches the paper unchanged.
-        if not _claim_supported_by_abstract(claim_text, item.abstract):
-            return None, "claim_not_supported_by_abstract"
-        # 1. p-values embedded in claim text
-        pval_in_claim = check_p_value_in_source(claim_text, item.abstract)
-        if pval_in_claim is not None:
-            return None, f"p_value_not_in_source:{pval_in_claim.code}"
-        # 2. p_value field — bypasses claim-text check when LLM puts the
-        # number in the structured field instead of inside the prose.
+        # 0. Source quote MUST appear verbatim in the abstract
+        # (whitespace-normalized, case-insensitive).
+        if not _quote_in_abstract(quote, item.abstract):
+            return None, "source_quote_not_in_abstract"
+        # 1. p-values embedded in the quote
+        pval_in_quote = check_p_value_in_source(quote, item.abstract)
+        if pval_in_quote is not None:
+            return None, f"p_value_not_in_source:{pval_in_quote.code}"
+        # 2. p_value field — bypasses quote-text check when LLM puts the
+        # number in the structured field instead of inside the quote.
         if p_value is not None and not _check_p_value_field(p_value, item.abstract):
             return None, "p_value_field_not_in_source"
         # 3. estimate — verbatim per prompt; whitespace-normalized match
@@ -322,7 +278,7 @@ def _validate_proposed(
     return Fact(
         ref=item.source.ref,
         kind=kind,
-        claim=claim_text,
+        claim=quote,
         outcome=outcome,
         estimate=estimate,
         p_value=p_value,
