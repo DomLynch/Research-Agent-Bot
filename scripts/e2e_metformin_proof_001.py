@@ -73,21 +73,47 @@ from agent.trace_clients import (
 from agent.types import EvidenceItem, RawHit, Source
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-TOPIC_PACK_PATH = REPO_ROOT / "topic_packs" / "metformin.toml"
-FIXTURES_DIR = REPO_ROOT / "tests" / "fixtures" / "metformin"
 RUNS_DIR = REPO_ROOT / "runs"
 ADAPTER_PRIORITY = ("pubmed", "openalex", "europepmc", "clinicaltrials")
 
+# Per-topic config. Day 7+ generalized this script to drive all three
+# proofs (metformin / rapamycin / everolimus); the pack + fixtures dir +
+# proof number are looked up by `--topic`. Keep `metformin` as default
+# so existing call sites and CI smoke remain unchanged.
+_TOPIC_CONFIG: dict[str, dict[str, str]] = {
+    "metformin": {
+        "pack": "metformin.toml",
+        "fixtures": "metformin",
+        "proof": "001",
+        "domain": "longevity older adults",
+        "criteria": "aging OR longevity OR healthspan",
+    },
+    "rapamycin": {
+        "pack": "rapamycin.toml",
+        "fixtures": "rapamycin",
+        "proof": "002",
+        "domain": "longevity older adults",
+        "criteria": "aging OR longevity OR healthspan",
+    },
+    "everolimus": {
+        "pack": "everolimus.toml",
+        "fixtures": "everolimus",
+        "proof": "003",
+        "domain": "longevity older adults",
+        "criteria": "aging OR longevity OR healthspan",
+    },
+}
 
-def _load_fixture_hits() -> list[RawHit]:
-    """Replay the captured metformin RawHits from tests/fixtures.
+
+def _load_fixture_hits(fixtures_dir: Path) -> list[RawHit]:
+    """Replay captured RawHits from tests/fixtures/<topic>/.
 
     Raises FileNotFoundError if NO fixtures are loadable so the operator
     sees the cause clearly (vs. a misleading "0 sources after dedup")."""
     hits: list[RawHit] = []
     missing: list[str] = []
     for adapter in ADAPTER_PRIORITY:
-        path = FIXTURES_DIR / f"{adapter}.json"
+        path = fixtures_dir / f"{adapter}.json"
         if not path.exists():
             missing.append(adapter)
             continue
@@ -95,7 +121,7 @@ def _load_fixture_hits() -> list[RawHit]:
             hits.append(RawHit(**entry))
     if not hits:
         raise FileNotFoundError(
-            f"no fixtures loaded from {FIXTURES_DIR}; missing adapters: "
+            f"no fixtures loaded from {fixtures_dir}; missing adapters: "
             f"{missing}. Either run scripts/capture_fixtures.py or pass --live."
         )
     if missing:
@@ -103,7 +129,9 @@ def _load_fixture_hits() -> list[RawHit]:
     return hits
 
 
-async def _retrieve_live() -> tuple[list[Source], dict[int, str], dict[int, dict]]:
+async def _retrieve_live(
+    topic: str, criteria: str, domain: str,
+) -> tuple[list[Source], dict[int, str], dict[int, dict]]:
     """Fan out to live PubMed / OpenAlex / EuropePMC / CT.gov."""
     sources_clients = [
         PubMedClient(),
@@ -112,10 +140,10 @@ async def _retrieve_live() -> tuple[list[Source], dict[int, str], dict[int, dict
         ClinicalTrialsClient(),
     ]
     return await retrieve(
-        topic="metformin",
-        criteria="aging OR longevity OR healthspan",
+        topic=topic,
+        criteria=criteria,
         sources=sources_clients,
-        domain="longevity older adults",
+        domain=domain,
     )
 
 
@@ -194,10 +222,12 @@ def _format_path(path: Path) -> str:
         return str(path)
 
 
-def _resolve_output_dir(override: str | None) -> Path:
+def _resolve_output_dir(
+    override: str | None, *, topic: str, proof: str,
+) -> Path:
     """Compute the output_dir for this run.
 
-    With no override, use `runs/metformin-001-<UTC>-<rand>` — the random
+    With no override, use `runs/<topic>-<proof>-<UTC>-<rand>` — the random
     suffix eliminates same-second collisions when two invocations land
     in the same UTC second (CI matrix, Up+Enter retries, etc.). The
     operator can pass `--output-dir` to point at a stranded directory
@@ -207,12 +237,19 @@ def _resolve_output_dir(override: str | None) -> Path:
         return Path(override).expanduser().resolve()
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%SZ")
     suffix = secrets.token_hex(2)
-    return RUNS_DIR / f"metformin-001-{ts}-{suffix}"
+    return RUNS_DIR / f"{topic}-{proof}-{ts}-{suffix}"
 
 
 async def _run(args: argparse.Namespace) -> int:
+    cfg = _TOPIC_CONFIG[args.topic]
+    topic_pack_path = REPO_ROOT / "topic_packs" / cfg["pack"]
+    fixtures_dir = REPO_ROOT / "tests" / "fixtures" / cfg["fixtures"]
+    proof = cfg["proof"]
+    domain = cfg["domain"]
+    criteria = cfg["criteria"]
+
     print("=" * 70)
-    print("Proof 001 — first end-to-end metformin run")
+    print(f"Proof {proof} — end-to-end {args.topic} run")
     print("=" * 70)
 
     settings = load_settings()
@@ -242,7 +279,7 @@ async def _run(args: argparse.Namespace) -> int:
             file=sys.stderr,
         )
 
-    pack = load_topic_pack(TOPIC_PACK_PATH)
+    pack = load_topic_pack(topic_pack_path)
     print(f"Topic pack: {pack.topic} ({len(pack.aliases)} aliases, "
           f"{len(pack.canonical_trials)} canonical trials)")
     print(f"Mode: {'LIVE retrieve' if args.live else 'fixture replay'}")
@@ -253,9 +290,11 @@ async def _run(args: argparse.Namespace) -> int:
     t0 = time.perf_counter()
     try:
         if args.live:
-            sources, abstracts, raw_signals = await _retrieve_live()
+            sources, abstracts, raw_signals = await _retrieve_live(
+                topic=args.topic, criteria=criteria, domain=domain,
+            )
         else:
-            hits = _load_fixture_hits()
+            hits = _load_fixture_hits(fixtures_dir)
             sources, abstracts, raw_signals = normalize_and_dedup(hits)
     except (FileNotFoundError, json.JSONDecodeError, TypeError) as exc:
         print(f"ERROR: corpus load failed: {type(exc).__name__}: {exc}",
@@ -273,7 +312,7 @@ async def _run(args: argparse.Namespace) -> int:
     # Stage 2: bundle
     items = bundle(
         sources, abstracts,
-        topic="metformin", domain="longevity older adults",
+        topic=args.topic, domain=domain,
         raw_signals=raw_signals,
         topic_pack=pack,
     )
@@ -297,7 +336,9 @@ async def _run(args: argparse.Namespace) -> int:
               f"({n_canonical} canonical trials pinned)")
 
     # Stage 3-7: orchestrator (extract → invariants → compile → trace → SPAR → write)
-    output_dir = _resolve_output_dir(args.output_dir)
+    output_dir = _resolve_output_dir(
+        args.output_dir, topic=args.topic, proof=proof,
+    )
     submission_id = output_dir.name  # path's leaf doubles as the submission id
     force_overwrite = args.output_dir is not None  # only relevant when reusing a dir
     print(f"\nRunning trust-spine pipeline → {_format_path(output_dir)}")
@@ -307,8 +348,8 @@ async def _run(args: argparse.Namespace) -> int:
     try:
         receipts: RunReceipts = await run_proof(
             selected,
-            topic="metformin",
-            domain="longevity older adults",
+            topic=args.topic,
+            domain=domain,
             pack=pack,
             output_dir=output_dir,
             submission_id=submission_id,
@@ -358,6 +399,10 @@ async def _run(args: argparse.Namespace) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--topic", choices=tuple(_TOPIC_CONFIG), default="metformin",
+        help="Which topic_pack + fixtures to run. Default: metformin.",
+    )
     parser.add_argument(
         "--live", action="store_true",
         help="Hit live PubMed/OpenAlex/EuropePMC/CT.gov adapters "

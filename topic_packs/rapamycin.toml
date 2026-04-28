@@ -1,0 +1,124 @@
+# Rapamycin topic pack — Proof 002
+#
+# Loaded by agent/topic_pack.py via stdlib `tomllib` (Python 3.11+). No PyYAML.
+# `known_role_overrides` is the hard-coded source of truth for canonical NCTs;
+# evidence_cards.py checks this BEFORE any abstract-classifier runs. If a
+# registry ID hits here, the role is fixed. LLM cannot override.
+#
+# TOML scoping note: all top-level scalars/arrays MUST be declared before any
+# [section] or [[array]] marker, otherwise TOML scopes them under the most
+# recent section (silent bug magnet). Keep this layout.
+
+topic   = "rapamycin"
+class_  = "mtor_inhibitor"
+
+aliases = [
+  "rapamycin",
+  "sirolimus",
+  "Rapamune",
+  "mTOR inhibitor",
+  "mTORC1 inhibitor",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "safety_tolerability",
+  "dosing_regimen",
+  "exercise_interaction",
+  "ongoing_trials",
+  "transplant_indication_bias",  # rapamycin's primary FDA indication
+]
+
+special_rules = [
+  "transplant immunosuppression evidence is INDIRECT for healthy aging claims; tier B at best",
+  "oncology (temsirolimus / everolimus chemo combos) is INDIRECT for healthy aging claims",
+  "intermittent / weekly dosing is the aging-relevant regimen — daily dosing is the transplant regimen",
+  "PEARL is the only randomized human trial in healthy older adults at adequate sample size to date",
+  "any claim citing PEARL outcomes must be marked direct + tier A1 (RCT, healthy older adults)",
+  "any claim citing NCT04629495 (Alzheimer's rapamycin) must be marked registered_pending",
+]
+
+# If a source.role is published_protocol or registered_pending, prose claims
+# referencing that source MUST NOT use any of these verbs:
+forbidden_verbs_for_protocol_role = [
+  "found",
+  "showed",
+  "improved",
+  "reduced",
+  "demonstrated",
+  "established",
+  "proved",
+]
+
+# If a source.role is published_results, prose claims referencing it MUST NOT
+# use any of these protocol-keywords near the citation:
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned",
+  "will assess",
+  "pending",
+  "ongoing",
+  "awaiting",
+]
+
+
+# --- Canonical trials (informational; surface-check feeds qa_report) -------
+
+# PEARL — randomized 1-year trial in healthy older adults; the flagship
+# rapamycin / aging human RCT.
+[[canonical_trials]]
+id            = "NCT04488601"
+name          = "PEARL"
+expected_role = "published_results"
+design        = "rct"
+
+# Konopka 2019-style — low-dose rapamycin senescence/physical function
+# in older adults with CAD.
+[[canonical_trials]]
+id            = "NCT01649960"
+name          = "RAP-CAD"
+expected_role = "published_results"
+design        = "rct"
+
+# Alzheimer's / cognitive health rapamycin trial — registered, results not yet read out.
+[[canonical_trials]]
+id            = "NCT04629495"
+name          = "RAP-AD"
+expected_role = "registered_pending"
+design        = "rct"
+
+# VIAging Deceleration Trial — combination intervention (metformin / dasatinib /
+# rapamycin / nutrition); registered, no results yet.
+[[canonical_trials]]
+id            = "NCT04994561"
+name          = "VIAging"
+expected_role = "registered_pending"
+design        = "rct"
+
+
+# --- Hard-coded role overrides (the moat) ----------------------------------
+# evidence_cards.py checks this map BEFORE running the deterministic abstract
+# classifier. A hit here pins role/design/tier irrevocably. LLM never sees
+# this — code disposes.
+
+[known_role_overrides.NCT04488601]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT01649960]
+role   = "published_results"
+design = "rct"
+tier   = "A2"
+
+[known_role_overrides.NCT04629495]
+role   = "registered_pending"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT04994561]
+role   = "registered_pending"
+design = "rct"
+tier   = "A1"
