@@ -25,7 +25,7 @@ LLM PROPOSES. CODE DISPOSES.
 ## Non-Negotiables
 - Python ≥ 3.11 only.
 - Runtime dep: `httpx` only. Topic packs use stdlib `tomllib` (TOML, not YAML — no PyYAML).
-- Hard ceiling: **5,500 LOC runtime** in `agent/` (raised 2026-04-28 per DECISIONS.md; previous 3,500 → 4,800 → 5,500). Per-file hard cap 600 LOC.
+- Hard ceiling: **8,000 LOC runtime** in `agent/` (raised 2026-04-29 per DECISIONS.md Day 10.8a; previous 3,500 → 4,800 → 5,500 → 7,500 → 8,000 to fund the synthesis layer + multi-receipt mode + Day 10.10 trust-spine ordering). Per-file hard cap 600 LOC.
 - Soft per-file budget 300 LOC; per-function 50 LOC (v4 Rule 54).
 - All cross-stage objects are frozen dataclasses (`@dataclass(frozen=True, slots=True)`).
 - Source of truth is `claim_graph.json`. Markdown is downstream rendering only.

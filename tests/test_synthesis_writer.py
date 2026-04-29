@@ -27,14 +27,16 @@ from agent.synthesis_schemas import (
 )
 from agent.synthesis_writer import (
     WRITER_VERSION,
-    _ensure_directness_transition,
     build_direct_evidence_section,
     build_evidence_summary_section,
     build_indirect_evidence_section,
     build_references_section,
+    build_rejected_evidence_section,
     build_spar_adjudication_section,
     build_thesis_section,
     build_title_section,
+    filter_accepted,
+    is_accepted_for_synthesis,
     render_synthesis_paper,
     validate_anchored_sentence,
 )
@@ -195,10 +197,12 @@ def test_indirect_evidence_section_lists_only_mechanistic_or_indirect() -> None:
 
 
 def test_direct_evidence_section_handles_empty_corpus() -> None:
-    """No direct receipts → render placeholder, don't crash."""
+    """No accepted direct receipts → render placeholder, don't crash.
+    Day 10.10 phrasing: 'No SPAR-accepted direct (RCT-tier) receipts'."""
     receipts = [_summary("r-A", directness="mechanistic")]
     sect = build_direct_evidence_section(receipts)
-    assert "No direct" in sect.body_md or "_No direct" in sect.body_md
+    assert "direct" in sect.body_md.lower()
+    assert "no" in sect.body_md.lower()
 
 
 def test_references_section_lists_every_receipt_with_index() -> None:
@@ -278,14 +282,15 @@ def test_render_synthesis_paper_produces_all_required_sections() -> None:
     section_names = {s.name for s in paper.sections}
     expected = {
         "title", "thesis", "evidence_summary", "direct_evidence",
-        "indirect_evidence", "tensions", "synthesis", "limitations",
-        "spar_adjudication", "references",
+        "indirect_evidence", "rejected_evidence", "tensions",
+        "synthesis", "limitations", "spar_adjudication", "references",
     }
     assert section_names == expected
     # body_md should contain every section heading
     for heading in (
         "# metformin", "## Thesis", "## Evidence Summary",
         "## Direct Evidence", "## Indirect / Mechanistic Evidence",
+        "## Rejected / Contested Evidence",
         "## Tensions", "## Synthesis", "## Limitations",
         "## SPAR Adjudication", "## References",
     ):
@@ -392,71 +397,90 @@ def test_render_synthesis_paper_handles_empty_tensions_matrix() -> None:
 
 
 def test_writer_version_is_anchored() -> None:
-    assert WRITER_VERSION == "synthesis-writer/2026-04-29"
+    assert WRITER_VERSION == "synthesis-writer/2026-04-29-day10-10"
 
 
 # ============================================================
-# Day 10.9 — _ensure_directness_transition
+# Day 10.10 — trust-spine ordering: filter_accepted +
+# build_rejected_evidence_section + accepted-only filtering in
+# direct/indirect evidence sections.
 # ============================================================
 
 
-def test_ensure_transition_prepends_mechanistically_for_mixed_with_mechanistic() -> None:
-    """When refs span direct + mechanistic, prepend 'Mechanistically, '
-    so the Q3 audit's transition check passes deterministically."""
-    receipts = [
-        _summary("r-A", directness="direct"),
-        _summary("r-B", directness="mechanistic"),
-    ]
-    out = _ensure_directness_transition(
-        "metformin influences pathways", ("r-A", "r-B"), receipts,
+def test_is_accepted_for_synthesis_only_for_accept_verdicts() -> None:
+    """SPAR is the gate. Only accept_clean and accept_caveated are
+    eligible to be cited as evidence in the synthesis layer."""
+    accepted = _summary("r-A")  # default verdict accept_clean
+    caveated = ReceiptSummary(**{**dataclasses_asdict(accepted), "spar_verdict": "accept_caveated"})
+    rejected_critical = ReceiptSummary(**{**dataclasses_asdict(accepted), "spar_verdict": "reject_critical"})
+    rejected_majority = ReceiptSummary(**{**dataclasses_asdict(accepted), "spar_verdict": "reject_majority"})
+    assert is_accepted_for_synthesis(accepted) is True
+    assert is_accepted_for_synthesis(caveated) is True
+    assert is_accepted_for_synthesis(rejected_critical) is False
+    assert is_accepted_for_synthesis(rejected_majority) is False
+
+
+def test_filter_accepted_keeps_only_accept_verdicts() -> None:
+    accepted = _summary("r-A")
+    rejected = ReceiptSummary(
+        **{**dataclasses_asdict(accepted), "receipt_id": "r-B", "spar_verdict": "reject_critical"}
     )
-    assert out.lower().startswith("mechanistically, ")
+    out = filter_accepted([accepted, rejected])
+    assert len(out) == 1
+    assert out[0].receipt_id == "r-A"
 
 
-def test_ensure_transition_prepends_by_contrast_for_direct_plus_indirect() -> None:
-    """When refs span direct + indirect (no mechanistic), prepend
-    'By contrast, ' — the cross-directness signal isn't mechanism."""
-    receipts = [
-        _summary("r-A", directness="direct"),
-        _summary("r-B", directness="indirect"),
-    ]
-    out = _ensure_directness_transition(
-        "Ongoing research investigates the question",
-        ("r-A", "r-B"), receipts,
-    )
-    assert out.lower().startswith("by contrast, ")
+def test_direct_evidence_section_excludes_spar_rejected() -> None:
+    """Day 10.10 trust-spine ordering: a SPAR-rejected receipt is NOT
+    citable evidence, even if it's `directness=direct`."""
+    accepted = _summary("r-A", directness="direct")
+    rejected_direct = ReceiptSummary(**{
+        **dataclasses_asdict(accepted),
+        "receipt_id": "r-B",
+        "spar_verdict": "reject_critical",
+    })
+    section = build_direct_evidence_section([accepted, rejected_direct])
+    assert "r-A" in section.body_md
+    assert "r-B" not in section.body_md
 
 
-def test_ensure_transition_idempotent_when_phrase_already_present() -> None:
-    """If the LLM already wrote a sentence starting with a transition
-    phrase, don't double-prefix."""
-    receipts = [
-        _summary("r-A", directness="direct"),
-        _summary("r-B", directness="indirect"),
-    ]
-    sentence = "Mechanistically, metformin acts via AMPK"
-    out = _ensure_directness_transition(sentence, ("r-A", "r-B"), receipts)
-    assert out == sentence
+def test_indirect_evidence_section_excludes_spar_rejected() -> None:
+    accepted = _summary("r-A", directness="mechanistic")
+    rejected_mech = ReceiptSummary(**{
+        **dataclasses_asdict(accepted),
+        "receipt_id": "r-B",
+        "spar_verdict": "reject_majority",
+    })
+    section = build_indirect_evidence_section([accepted, rejected_mech])
+    assert "r-A" in section.body_md
+    assert "r-B" not in section.body_md
 
 
-def test_ensure_transition_unchanged_for_all_direct() -> None:
-    """All-direct anchor sets aren't 'mixed' — no transition needed."""
-    receipts = [
-        _summary("r-A", directness="direct"),
-        _summary("r-B", directness="direct"),
-    ]
-    sentence = "Both trials report agreement on muscle outcomes"
-    out = _ensure_directness_transition(sentence, ("r-A", "r-B"), receipts)
-    assert out == sentence
+def test_rejected_evidence_section_lists_only_rejected() -> None:
+    """The quarantine section lists rejected receipts for transparency
+    but explicitly notes they are NOT cited as evidence."""
+    accepted = _summary("alpha")
+    rejected = ReceiptSummary(**{
+        **dataclasses_asdict(accepted),
+        "receipt_id": "beta",
+        "canonical_trial_id": None,
+        "spar_verdict": "reject_critical",
+    })
+    section = build_rejected_evidence_section([accepted, rejected])
+    assert "**alpha**" not in section.body_md
+    assert "**beta**" in section.body_md
+    assert "reject_critical" in section.body_md
+    assert "not cited" in section.body_md.lower()
 
 
-def test_ensure_transition_unchanged_for_all_mechanistic() -> None:
-    """All-mechanistic anchor sets aren't 'mixed' either — there's no
-    direct claim to contrast against, so no transition is required."""
-    receipts = [
-        _summary("r-A", directness="mechanistic"),
-        _summary("r-B", directness="mechanistic"),
-    ]
-    sentence = "Both studies trace the AMPK pathway"
-    out = _ensure_directness_transition(sentence, ("r-A", "r-B"), receipts)
-    assert out == sentence
+def test_rejected_evidence_section_empty_when_all_accepted() -> None:
+    accepted = _summary("r-A")
+    section = build_rejected_evidence_section([accepted])
+    assert "Nothing to quarantine" in section.body_md or "nothing to quarantine" in section.body_md.lower()
+
+
+# Helper for tests above — needed because tests want to mutate a single
+# field of a frozen dataclass.
+def dataclasses_asdict(obj):
+    import dataclasses as _dc
+    return _dc.asdict(obj)

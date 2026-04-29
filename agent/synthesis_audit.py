@@ -33,9 +33,13 @@ __all__ = [
     "MIN_APPLICABLE_CHECKS",
 ]
 
-# Day 10.7: bumped audit version after fixing the three reviewer-P1/P2
-# findings (vacuous-pass scoring, single-trial Q4 bypass, N/A handling).
-AUDIT_VERSION = "synthesis-audit/2026-04-29-rev-p1p2"
+# Day 10.10 reviewer P1/P2:
+#   - Q3 applicability now derives from CORPUS directness diversity, not
+#     just synthesis-section anchor mixes (a uniform synthesis section on
+#     a mixed corpus is failure-to-integrate, not vacuous-pass).
+#   - load-bearing N/A no longer counts as ship pass — load-bearing
+#     checks must be applicable=True AND passed=True for ship-criterion.
+AUDIT_VERSION = "synthesis-audit/2026-04-29-day10-10"
 DAY10_SCORE_FLOOR = 8.5
 # Day 10.7 (reviewer P2): with N/A handling, a corpus that triggers <4
 # applicable checks isn't auditable — the score is computed but the
@@ -198,11 +202,20 @@ def _check_q3(
             passed=True, detail="no synthesis section (N/A)",
             applicable=False,
         )
+    # Day 10.10 reviewer P2: applicability derives from CORPUS directness
+    # diversity, not just synthesis anchor mixes. If the corpus has both
+    # direct and (indirect|mechanistic) receipts, the synthesis is
+    # SUPPOSED to integrate across them — failing to produce any
+    # mixed-directness paragraph is a Q3 fail, not vacuous N/A.
+    corpus_directnesses = {r.directness for r in receipts}
+    has_mixed_corpus = "direct" in corpus_directnesses and (
+        "mechanistic" in corpus_directnesses
+        or "indirect" in corpus_directnesses
+    )
+
     receipts_by_id = {r.receipt_id: r for r in receipts}
     failures: list[str] = []
     mixed_directness_count = 0
-    # Each anchor in the synthesis section is one sentence; check
-    # mixed-directness anchor sets.
     for anchor in syn_section.anchors:
         directnesses = {
             receipts_by_id[rid].directness
@@ -218,16 +231,30 @@ def _check_q3(
                 failures.append(
                     f"mixed-directness sentence missing transition: {anchor.sentence[:80]}"
                 )
-    if mixed_directness_count == 0:
-        # Day 10.7 (reviewer P2): no mixed-directness paragraphs to
-        # check — the corpus is all-direct or all-mechanistic. Q3 is
-        # N/A, not vacuously passing.
+
+    if not has_mixed_corpus:
+        # Genuinely uniform corpus (all-direct or all-mechanistic) — no
+        # cross-directness signal exists, so Q3 is legitimately N/A.
         return QualityCheckResult(
             question_id="Q3-mohammed-direct-vs-indirect",
             question="Mixed-directness paragraphs need transition language",
             passed=True,
-            detail="no mixed-directness paragraphs in corpus (N/A)",
+            detail="corpus is uniform directness — no cross-directness signal (N/A)",
             applicable=False,
+        )
+    if mixed_directness_count == 0:
+        # Corpus IS mixed-directness, but synthesis didn't integrate any
+        # mixed-directness paragraph. That's a synthesis failure to
+        # integrate, not N/A. Day 10.10 reviewer P2 fix.
+        return QualityCheckResult(
+            question_id="Q3-mohammed-direct-vs-indirect",
+            question="Mixed-directness paragraphs need transition language",
+            passed=False,
+            detail=(
+                "corpus has mixed directness "
+                f"({sorted(corpus_directnesses)}) but synthesis section "
+                "produced no mixed-directness paragraph — failure to integrate"
+            ),
         )
     return QualityCheckResult(
         question_id="Q3-mohammed-direct-vs-indirect",
@@ -450,14 +477,13 @@ def audit_synthesis_paper(
       applicable = [c for c in checks if c.applicable]
       score = passed_applicable / max(1, total_applicable) * 10
 
-    Day 10 ship gates (BOTH must hold):
+    Day 10.10 ship gates (ALL must hold):
       1. score ≥ DAY10_SCORE_FLOOR (8.5)
-      2. load-bearing Q1/Q3/Q5 pass (when applicable)
+      2. ALL load-bearing Q1/Q3/Q5 checks: applicable=True AND passed=True
+         (Day 10.10 reviewer P2: load-bearing N/A no longer counts as a
+         pass — it counts as "skipped on a load-bearing question," which
+         blocks ship.)
       3. coverage: total_applicable ≥ MIN_APPLICABLE_CHECKS (4)
-
-    Gate 3 closes the reviewer's P2 — a corpus that triggers only 2-3
-    applicable checks isn't auditable; reporting 10/10 from 2 checks
-    would be misleading.
     """
     checks = (
         _check_q1(paper),
@@ -476,14 +502,22 @@ def audit_synthesis_paper(
         if total_applicable else 0.0
     )
 
-    # Load-bearing checks: only the ones that are applicable count.
-    load_bearing_checks = [
-        c for c in checks
-        if c.question_id in Q_LOAD_BEARING_IDS and c.applicable
+    # Day 10.10 reviewer P2: load-bearing pass requires every load-bearing
+    # check to be applicable=True AND passed=True. A load-bearing N/A
+    # means the corpus or paper is structurally unable to exercise that
+    # invariant — that's not a "pass," that's a coverage gap on a
+    # load-bearing question.
+    load_bearing_all = [
+        c for c in checks if c.question_id in Q_LOAD_BEARING_IDS
     ]
-    load_bearing_pass = all(c.passed for c in load_bearing_checks)
+    load_bearing_pass = all(
+        c.applicable and c.passed for c in load_bearing_all
+    )
     failed_load = [
-        c.question_id for c in load_bearing_checks if not c.passed
+        c.question_id for c in load_bearing_all if not c.passed
+    ]
+    skipped_load = [
+        c.question_id for c in load_bearing_all if not c.applicable
     ]
 
     insufficient_coverage = total_applicable < MIN_APPLICABLE_CHECKS
@@ -495,6 +529,12 @@ def audit_synthesis_paper(
     if failed_load:
         notes_parts.append(
             f"LOAD-BEARING FAIL {failed_load} — ship blocked"
+        )
+    if skipped_load:
+        notes_parts.append(
+            f"LOAD-BEARING SKIPPED (N/A) {skipped_load} — ship blocked "
+            f"(Day 10.10: a load-bearing question that doesn't apply "
+            f"means the synthesis can't be honestly graded on it)"
         )
     if insufficient_coverage:
         notes_parts.append(

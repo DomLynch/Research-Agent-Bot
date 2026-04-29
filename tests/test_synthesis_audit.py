@@ -360,24 +360,47 @@ def test_audit_blocks_ship_when_load_bearing_q_fails_even_with_high_score() -> N
 
 
 def test_audit_passes_clean_paper() -> None:
-    """A paper that satisfies all 7 checks scores 10.0 with ship-criterion-met notes."""
+    """A paper that satisfies all 7 checks scores 10.0 with ship-criterion-met notes.
+
+    Day 10.10: clean paper now requires mixed-directness corpus + a
+    mixed-directness synthesis paragraph with a transition phrase, so
+    Q3 (load-bearing) is applicable AND passes — load-bearing N/A is
+    no longer accepted as a ship pass."""
     receipts = (
-        _summary("r-A", direction="negative", p_values=("p=0.003",)),
-        _summary("r-B", outcome="cardiometabolic", direction="negative", p_values=("p=0.02",)),
-        _summary("r-C", outcome="frailty", direction="null", p_values=()),
+        _summary("r-A", direction="negative", p_values=("p=0.003",), directness="direct"),
+        _summary("r-B", outcome="cardiometabolic", direction="negative", p_values=("p=0.02",), directness="direct"),
+        _summary("r-C", outcome="frailty", direction="null", p_values=(), directness="mechanistic"),
     )
     body = (
         "# Title\n\n"
         "## Thesis\n\nMixed evidence across r-A r-B r-C in older adults.\n\n"
         "## Synthesis\n\n"
         "r-A reports negative effect at p=0.003 on muscle. "
-        "r-B reports negative effect on cardiometabolic outcome at p=0.02. "
+        "Mechanistically, r-A and r-C both implicate AMPK pathway involvement "
+        "in muscle outcomes. "
         "r-C did not improve walk speed (null).\n\n"
         "## Tensions\n\nr-A and r-B agree on negative direction.\n\n"
         "## Limitations\n\n"
         "- The synthesis is single-trial per outcome; replication required.\n"
         "- Direct longevity evidence is missing — geroprotective claims may be premature.\n\n"
         "## References\n\n[1] r-A\n[2] r-B\n[3] r-C\n"
+    )
+    # Synthesis section anchors include a mixed-directness sentence
+    # ("Mechanistically, r-A and r-C..." cites direct + mechanistic
+    # with the required transition phrase).
+    synthesis_anchors = (
+        SynthesisClaimAnchor(
+            sentence="r-A reports negative effect at p=0.003 on muscle.",
+            receipt_ids=("r-A",), numerics=("p=0.003",),
+        ),
+        SynthesisClaimAnchor(
+            sentence="Mechanistically, r-A and r-C both implicate AMPK pathway involvement in muscle outcomes.",
+            receipt_ids=("r-A", "r-C"), numerics=(),
+        ),
+        SynthesisClaimAnchor(
+            sentence="r-C did not improve walk speed (null).",
+            receipt_ids=("r-C",), numerics=(),
+        ),
     )
     paper = _paper(
         body, receipts,
@@ -390,10 +413,11 @@ def test_audit_passes_clean_paper() -> None:
                 body_md=(
                     "## Synthesis\n\n"
                     "r-A reports negative effect at p=0.003 on muscle. "
-                    "r-B reports negative effect on cardiometabolic outcome at p=0.02. "
+                    "Mechanistically, r-A and r-C both implicate AMPK pathway "
+                    "involvement in muscle outcomes. "
                     "r-C did not improve walk speed (null)."
                 ),
-                anchors=(),
+                anchors=synthesis_anchors,
             ),
             SynthesisSection(
                 name="limitations",
@@ -407,14 +431,14 @@ def test_audit_passes_clean_paper() -> None:
         ),
     )
     audit = audit_synthesis_paper(paper, receipts)
-    assert audit.score == 10.0
+    assert audit.score == 10.0, audit.notes
     assert "ship-criterion met" in audit.notes
 
 
 def test_audit_version_is_anchored() -> None:
     """Day 10.7 bumped after the reviewer-P1/P2 fix (dedup, Q4 unique
     trials, N/A handling)."""
-    assert AUDIT_VERSION == "synthesis-audit/2026-04-29-rev-p1p2"
+    assert AUDIT_VERSION == "synthesis-audit/2026-04-29-day10-10"
 
 
 # ============================================================

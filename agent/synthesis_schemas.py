@@ -223,10 +223,12 @@ SectionName = Literal[
     "title",
     "thesis",
     "evidence_summary",     # deterministic table of receipts
-    "direct_evidence",      # deterministic — direct claim receipts rendered in order
-    "indirect_evidence",    # deterministic — mechanistic / review receipts
+    "direct_evidence",      # deterministic — accepted direct receipts
+    "indirect_evidence",    # deterministic — accepted mechanistic / review receipts
+    "rejected_evidence",    # Day 10.10 — quarantine: SPAR-rejected receipts listed
+                            # for transparency but NOT cited as evidence in synthesis
     "tensions",             # mixed — LLM enumerates tensions from matrix
-    "synthesis",            # LLM — paragraphs anchored to receipt_ids
+    "synthesis",            # LLM — paragraphs anchored to ACCEPTED receipts only
     "limitations",          # LLM with template scaffold per evidence tier mix
     "spar_adjudication",    # deterministic from receipt-level + synthesis-level SPAR
     "references",           # deterministic — every receipt's source papers

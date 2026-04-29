@@ -74,6 +74,7 @@ from agent.synthesis import (
     dedupe_receipts,
     load_receipt_summary,
 )
+from agent.synthesis_writer import filter_accepted
 from agent.synthesis_audit import (
     DAY10_SCORE_FLOOR,
     Q_LOAD_BEARING_IDS,
@@ -758,28 +759,45 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
     if n_dedup_dropped:
         print(f"\nDeduped: {len(summaries)} → {len(deduped)} unique evidence "
               f"units ({n_dedup_dropped} duplicate runs dropped)")
-    # Day 10.8a (reviewer P1, gate): the cross-source-synthesis gate
-    # counts UNIQUE TRIALS, not unique evidence units. Three different
-    # endpoints from one trial dedupe to three keys but represent one
-    # source — that's multi-endpoint reporting, not cross-source synthesis.
-    unique_trial_count = count_unique_trials(deduped)
-    print(f"Unique canonical trials in deduped corpus: {unique_trial_count}")
+
+    # Day 10.10 reviewer P1 — TRUST-SPINE ORDERING:
+    # SPAR is the gate. The cross-source synthesis count must be
+    # computed over the SPAR-ACCEPTED slice only. SPAR-rejected
+    # receipts will be quarantined in a transparency section but
+    # cannot contribute to the cross-source gate count or to the
+    # thesis tournament's input.
+    accepted_deduped = list(filter_accepted(deduped))
+    n_rejected = len(deduped) - len(accepted_deduped)
+    print(f"SPAR adjudication: {len(accepted_deduped)} accepted, "
+          f"{n_rejected} rejected (rejected receipts will be quarantined, "
+          f"not cited as evidence)")
+
+    # Cross-source gate counts unique trials AMONG ACCEPTED RECEIPTS only.
+    unique_trial_count = count_unique_trials(accepted_deduped)
+    print(f"Unique canonical trials/sources in ACCEPTED corpus: "
+          f"{unique_trial_count}")
     if unique_trial_count < MIN_UNIQUE_TRIALS_FOR_SYNTHESIS:
         print(
-            f"\nERROR: corpus has {unique_trial_count} unique canonical "
-            f"trial(s); cross-source synthesis requires "
-            f"≥{MIN_UNIQUE_TRIALS_FOR_SYNTHESIS}. The {len(deduped)} deduped "
-            f"receipt(s) under {receipts_dir} either come from the same "
-            f"source paper (same-trial multi-endpoint reporting) or from "
-            f"too few sources to synthesize across. To produce real "
-            f"cross-source synthesis, run the receipt pipeline against "
-            f"corpora anchored on different canonical trials, OR use the "
-            f"multi-receipt mode (Day 10.8b) that emits one receipt per "
-            f"cluster from a single corpus.",
+            f"\nERROR: ACCEPTED corpus has {unique_trial_count} unique "
+            f"canonical trial(s)/source(s); cross-source synthesis "
+            f"requires ≥{MIN_UNIQUE_TRIALS_FOR_SYNTHESIS}. "
+            f"({len(deduped)} deduped receipts total, "
+            f"{n_rejected} rejected by SPAR.) "
+            f"Day 10.10 trust-spine ordering: synthesis cannot run "
+            f"on a corpus where SPAR rejected most receipts. To proceed, "
+            f"either (a) re-run the receipt pipeline with --best-of N to "
+            f"raise the SPAR pass rate, (b) curate a richer corpus, or "
+            f"(c) accept that this corpus does not support cross-source "
+            f"synthesis.",
             file=sys.stderr,
         )
         return 2
-    summaries = deduped
+    # Hand the accepted set forward to thesis tournament + writer.
+    # The full deduped set is still passed to evidence_summary, SPAR
+    # adjudication, references, and the rejected_evidence quarantine
+    # section so audit transparency is preserved.
+    full_deduped = tuple(deduped)
+    summaries = accepted_deduped
 
     # Stage 1: tension matrix — deterministic, no LLM
     matrix = build_tension_matrix(summaries)
@@ -801,6 +819,7 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
 
     t0 = time.perf_counter()
     try:
+        # Thesis tournament sees ACCEPTED receipts only (trust-spine).
         thesis = await synthesize_thesis(
             summaries, matrix,
             chain=judge_chain, topic=topic,
@@ -809,8 +828,15 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
         print(f"\nThesis: {thesis.text}")
         print(f"  picker: {thesis.picker_rationale}")
 
+        # Renderer sees the FULL deduped corpus so the evidence_summary
+        # table, SPAR adjudication, references, and the rejected_evidence
+        # quarantine section can list every receipt for transparency.
+        # Internally render_synthesis_paper applies filter_accepted to
+        # the thesis-aligned sections (tensions / synthesis / limitations
+        # / direct_evidence / indirect_evidence) per Day 10.10
+        # trust-spine ordering.
         paper = await render_synthesis_paper(
-            summaries, matrix, thesis,
+            full_deduped, matrix, thesis,
             topic=topic, submission_id=submission_id,
             chain=judge_chain, ledger=synthesis_ledger, seed=args.seed,
         )

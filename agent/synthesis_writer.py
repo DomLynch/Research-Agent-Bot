@@ -45,13 +45,22 @@ from agent.synthesis_schemas import (
     SynthesisThesis,
     TensionMatrix,
 )
+from agent.synthesis_writer_prompts import (
+    LIMITATIONS_SYSTEM_PROMPT as _LIMITATIONS_SYSTEM_PROMPT,
+    SYNTHESIS_SYSTEM_PROMPT as _SYNTHESIS_SYSTEM_PROMPT,
+    TENSIONS_SYSTEM_PROMPT as _TENSIONS_SYSTEM_PROMPT,
+)
 
 __all__ = [
     "WRITER_VERSION",
+    "ACCEPTED_VERDICTS",
+    "is_accepted_for_synthesis",
+    "filter_accepted",
     "render_synthesis_paper",
     "build_evidence_summary_section",
     "build_direct_evidence_section",
     "build_indirect_evidence_section",
+    "build_rejected_evidence_section",
     "build_references_section",
     "build_spar_adjudication_section",
     "build_thesis_section",
@@ -62,7 +71,29 @@ __all__ = [
     "validate_anchored_sentence",
 ]
 
-WRITER_VERSION = "synthesis-writer/2026-04-29"
+WRITER_VERSION = "synthesis-writer/2026-04-29-day10-10"
+
+# Day 10.10 reviewer P1: trust-spine ordering. SPAR is the gate; only
+# receipts that survive SPAR adjudication may be cited as evidence in
+# synthesis. Rejected receipts are quarantined in their own section
+# for transparency but do NOT contribute to direct/indirect/synthesis
+# bullets, the thesis tournament, or the cross-source gate.
+ACCEPTED_VERDICTS: frozenset[str] = frozenset({
+    "accept_clean", "accept_caveated",
+})
+
+
+def is_accepted_for_synthesis(receipt: ReceiptSummary) -> bool:
+    """Trust-spine gate: a receipt is eligible to be cited as evidence
+    in the synthesis layer iff SPAR accepted it."""
+    return receipt.spar_verdict in ACCEPTED_VERDICTS
+
+
+def filter_accepted(
+    receipts: Sequence[ReceiptSummary],
+) -> tuple[ReceiptSummary, ...]:
+    """Subset to the SPAR-accepted slice. Order-preserving."""
+    return tuple(r for r in receipts if is_accepted_for_synthesis(r))
 
 # Numeric pattern (mirrors synthesis_thesis._NUMERIC_TOKEN_RE).
 _NUMERIC_RE = re.compile(
@@ -166,11 +197,16 @@ def build_evidence_summary_section(receipts: Sequence[ReceiptSummary]) -> Synthe
 
 
 def build_direct_evidence_section(receipts: Sequence[ReceiptSummary]) -> SynthesisSection:
-    """Bullet list of direct receipts. Deterministic — each bullet is
-    the receipt's thesis text + p-values."""
-    direct = [r for r in receipts if r.directness == "direct"]
+    """Bullet list of SPAR-ACCEPTED direct receipts. Day 10.10: receipts
+    that SPAR rejected are not evidence — they appear in the Rejected /
+    Contested Evidence quarantine section, not here."""
+    accepted = filter_accepted(receipts)
+    direct = [r for r in accepted if r.directness == "direct"]
     if not direct:
-        body = "## Direct Evidence\n\n_No direct (RCT-tier) receipts in this corpus._\n"
+        body = (
+            "## Direct Evidence\n\n"
+            "_No SPAR-accepted direct (RCT-tier) receipts in this corpus._\n"
+        )
         return SynthesisSection(name="direct_evidence", body_md=body, anchors=())
     lines = ["## Direct Evidence\n"]
     for r in sorted(direct, key=lambda x: (x.outcome_class, x.receipt_id)):
@@ -178,33 +214,75 @@ def build_direct_evidence_section(receipts: Sequence[ReceiptSummary]) -> Synthes
             f" ({', '.join(r.p_values)})" if r.p_values else ""
         )
         lines.append(
-            f"- **{r.receipt_id}** ({r.outcome_class}, {r.evidence_tier}): "
-            f"{r.thesis_text}{pv_str}"
+            f"- **{r.receipt_id}** ({r.outcome_class}, {r.evidence_tier}, "
+            f"{r.spar_verdict}): {r.thesis_text}{pv_str}"
         )
     body = "\n".join(lines) + "\n"
     return SynthesisSection(name="direct_evidence", body_md=body, anchors=())
 
 
 def build_indirect_evidence_section(receipts: Sequence[ReceiptSummary]) -> SynthesisSection:
-    """Bullet list of mechanistic + indirect receipts. Deterministic."""
+    """Bullet list of SPAR-ACCEPTED mechanistic + indirect receipts.
+    Day 10.10 trust-spine ordering — see `build_direct_evidence_section`."""
+    accepted = filter_accepted(receipts)
     indirect = [
-        r for r in receipts
+        r for r in accepted
         if r.directness in ("mechanistic", "indirect")
     ]
     if not indirect:
         body = (
             "## Indirect / Mechanistic Evidence\n\n"
-            "_No mechanistic or indirect receipts in this corpus._\n"
+            "_No SPAR-accepted mechanistic or indirect receipts in this corpus._\n"
         )
         return SynthesisSection(name="indirect_evidence", body_md=body, anchors=())
     lines = ["## Indirect / Mechanistic Evidence\n"]
     for r in sorted(indirect, key=lambda x: (x.directness, x.receipt_id)):
         lines.append(
-            f"- **{r.receipt_id}** ({r.outcome_class}, {r.directness}): "
-            f"{r.thesis_text}"
+            f"- **{r.receipt_id}** ({r.outcome_class}, {r.directness}, "
+            f"{r.spar_verdict}): {r.thesis_text}"
         )
     body = "\n".join(lines) + "\n"
     return SynthesisSection(name="indirect_evidence", body_md=body, anchors=())
+
+
+def build_rejected_evidence_section(
+    receipts: Sequence[ReceiptSummary],
+) -> SynthesisSection:
+    """Day 10.10 — quarantine zone for SPAR-rejected receipts.
+
+    Trust-spine ordering: SPAR is the gate. Rejected receipts are NOT
+    cited as evidence in the synthesis (no thesis tournament input,
+    no direct/indirect bullets, no synthesis paragraph anchors). They
+    are listed here for transparency — a reviewer can see WHAT was in
+    the corpus and WHY each rejected one was excluded — without those
+    receipts being granted evidentiary weight.
+    """
+    rejected = [r for r in receipts if not is_accepted_for_synthesis(r)]
+    if not rejected:
+        body = (
+            "## Rejected / Contested Evidence\n\n"
+            "_All receipts in this corpus passed SPAR adjudication; "
+            "nothing to quarantine._\n"
+        )
+        return SynthesisSection(name="rejected_evidence", body_md=body, anchors=())
+    lines = [
+        "## Rejected / Contested Evidence\n",
+        "_The receipts below were retrieved and clustered but rejected "
+        "by SPAR. Per Day 10.10 trust-spine ordering, they are listed "
+        "here for transparency but NOT cited as evidence in the thesis, "
+        "synthesis, tensions, or limitations sections._\n",
+    ]
+    for r in sorted(rejected, key=lambda x: (x.spar_verdict, x.receipt_id)):
+        trial = r.canonical_trial_id or "—"
+        lines.append(
+            f"- **{r.receipt_id}** "
+            f"(verdict: `{r.spar_verdict}`, trial: {trial}, "
+            f"outcome: {r.outcome_class}, directness: {r.directness}, "
+            f"failed traces: {r.n_failed_traces}/{r.n_claims}): "
+            f"{r.thesis_text}"
+        )
+    body = "\n".join(lines) + "\n"
+    return SynthesisSection(name="rejected_evidence", body_md=body, anchors=())
 
 
 def build_spar_adjudication_section(
@@ -237,100 +315,9 @@ def build_references_section(receipts: Sequence[ReceiptSummary]) -> SynthesisSec
 
 
 # --- LLM-anchored sections ------------------------------------------------
-
-
-_TENSIONS_SYSTEM_PROMPT = """You write the TENSIONS section of a
-research synthesis paper.
-
-Input: a list of non-orthogonal tensions across receipts. Each
-tension is one of: agreement, disagreement, indirectness_gap,
-null_vs_positive.
-
-Output ONE JSON object with this exact shape:
-
-{
-  "paragraphs": [
-    {
-      "sentence": "<one sentence describing the tension and its implication>",
-      "receipt_ids": ["r-a", "r-b"],
-      "numerics": []
-    },
-    ... one entry per tension
-  ]
-}
-
-Rules:
-- One sentence per input tension, in input order.
-- Each sentence must reference ≥1 receipt_id from the tension.
-- No new numerics. If you cite a value, it must come from receipts.
-- Plain prose. No markdown formatting. No headings.
-- Use hedge language: "suggests", "may", "appears to", not "proves".
-
-Output JSON only. No prose outside the JSON envelope."""
-
-
-_SYNTHESIS_SYSTEM_PROMPT = """You write the SYNTHESIS section of a
-research synthesis paper.
-
-Input: receipt summaries + tension matrix + the picked thesis.
-
-Output ONE JSON object with this exact shape:
-
-{
-  "paragraphs": [
-    {
-      "sentence": "<one synthesis sentence>",
-      "receipt_ids": ["r-a", "r-b"],
-      "numerics": []
-    },
-    ... 6-12 sentences total
-  ]
-}
-
-Rules:
-- Each sentence must reference ≥1 receipt_id.
-- Each sentence's `numerics` must list every numeric token in the
-  sentence; the validator checks they all come from receipts.
-- Synthesis should integrate ACROSS receipts, not summarize each.
-- Surface tensions explicitly when relevant.
-- Keep mechanistic findings separate from clinical findings (use
-  transitions like "Mechanistically", "By contrast,", "Preclinically").
-- Use hedge language for contested evidence.
-
-Output JSON only. No prose outside the JSON envelope."""
-
-
-_LIMITATIONS_SYSTEM_PROMPT = """You write the LIMITATIONS section of a
-research synthesis paper.
-
-Input: receipts + thesis + matrix.
-
-Output ONE JSON object with this exact shape:
-
-{
-  "paragraphs": [
-    {
-      "sentence": "<one limitation as a single sentence>",
-      "receipt_ids": ["r-a"],
-      "numerics": []
-    },
-    ... 3-6 limitation entries
-  ]
-}
-
-Rules:
-- Each limitation sentence must reference ≥1 receipt_id OR name a
-  missing-evidence-type observation (e.g., "no long-term mortality
-  trial in this corpus" → reference no receipts but the sentence
-  itself names the gap).
-- For receipts with `directness != "direct"`, surface the
-  generalization gap.
-- For receipts with `effect_direction == "null"`, name the null result
-  rather than burying it.
-- For single-trial theses, note the replication gap.
-- No new numerics.
-
-Output JSON only. No prose outside the JSON envelope."""
+# System prompts (TENSIONS / SYNTHESIS / LIMITATIONS) live in
+# `agent/synthesis_writer_prompts.py` to keep this module under the
+# per-file LOC cap. They are imported as module-level aliases above.
 
 
 def _parse_paragraphs(parsed: dict) -> list[dict]:
@@ -355,53 +342,6 @@ def _parse_paragraphs(parsed: dict) -> list[dict]:
     return out
 
 
-_MIXED_DIRECTNESS_TRANSITIONS = (
-    "mechanistically",
-    "in vitro",
-    "preclinically",
-    "in contrast",
-    "however,",
-    "by contrast",
-)
-
-
-def _ensure_directness_transition(
-    sentence: str,
-    receipt_ids: Sequence[str],
-    receipts: Sequence[ReceiptSummary],
-) -> str:
-    """Day 10.9 — for synthesis bullets that anchor on mixed directness
-    (some direct + some mechanistic/indirect refs), prepend a transition
-    phrase from the audit's `_TRANSITION_PHRASES` set if none is already
-    present.
-
-    LLM PROPOSES, CODE DISPOSES: rather than retry the LLM until it
-    obeys, the writer surgically fixes the audit-relevant transition.
-    Choice of phrase:
-      - corpus contains any mechanistic ref → "Mechanistically, " (most
-        accurate when the cross-directness signal is mechanism-to-clinic)
-      - else (only direct + indirect mix, no mechanism) → "By contrast, "
-    """
-    rid_to_dir = {r.receipt_id: r.directness for r in receipts}
-    cited_dirs = {rid_to_dir[i] for i in receipt_ids if i in rid_to_dir}
-    is_mixed = "direct" in cited_dirs and (
-        "mechanistic" in cited_dirs or "indirect" in cited_dirs
-    )
-    if not is_mixed:
-        return sentence
-    norm = sentence.strip().lower()
-    if any(t in norm for t in _MIXED_DIRECTNESS_TRANSITIONS):
-        return sentence
-    prefix = (
-        "Mechanistically, "
-        if "mechanistic" in cited_dirs
-        else "By contrast, "
-    )
-    body = sentence.strip()
-    body = body[0].lower() + body[1:] if body else body
-    return f"{prefix}{body}"
-
-
 def _build_anchored_section(
     name: SectionName,
     heading: str,
@@ -409,25 +349,22 @@ def _build_anchored_section(
     receipts: Sequence[ReceiptSummary],
     *,
     fallback_body: str,
-    enforce_directness_transitions: bool = False,
 ) -> SynthesisSection:
     """Validate each paragraph's anchor, drop failures, render
     surviving sentences as bullets. If nothing survives, render the
     fallback body deterministically.
 
-    `enforce_directness_transitions` (Day 10.9): for the synthesis
-    section, auto-prepend a transition phrase to mixed-directness
-    sentences that lack one. Q3 audit then passes deterministically
-    instead of relying on the LLM to obey the prompt rule perfectly.
+    Day 10.10: REVERTED Day 10.9's auto-prefix transition logic. The
+    reviewer correctly observed that prepending "Mechanistically, " /
+    "By contrast, " is cosmetic — it games the Q3 audit without
+    addressing the underlying synthesis quality. If the LLM doesn't
+    produce real transitions, the audit should fail Q3 and the
+    operator should fix the prompt or the corpus, not the markdown.
     """
     valid_anchors: list[SynthesisClaimAnchor] = []
     body_lines: list[str] = []
     for p in paragraphs:
         sentence = p["sentence"]
-        if enforce_directness_transitions:
-            sentence = _ensure_directness_transition(
-                sentence, p["receipt_ids"], receipts,
-            )
         ok, _reason = validate_anchored_sentence(
             sentence, p["receipt_ids"], receipts=receipts,
         )
@@ -574,7 +511,6 @@ async def write_synthesis_section(
     return _build_anchored_section(
         "synthesis", "## Synthesis", paragraphs, receipts,
         fallback_body=fallback,
-        enforce_directness_transitions=True,
     )
 
 
@@ -618,6 +554,7 @@ _SECTION_ORDER: tuple[SectionName, ...] = (
     "evidence_summary",
     "direct_evidence",
     "indirect_evidence",
+    "rejected_evidence",   # Day 10.10 quarantine — listed but not cited
     "tensions",
     "synthesis",
     "limitations",
@@ -650,26 +587,35 @@ async def render_synthesis_paper(
     (`assert_synthesis_invariants`) are not enforced HERE — that's
     Day 10.5's orchestrator responsibility before the file is written.
     """
+    # Day 10.10 reviewer P1: trust-spine ordering. The evidence_summary
+    # table and SPAR adjudication / references / quarantine sections
+    # cover the FULL corpus (audit transparency requires the reader to
+    # see what was rejected); but the LLM-driven thesis-aligned
+    # sections (tensions, synthesis, limitations) and the deterministic
+    # direct/indirect evidence bullets only see the SPAR-ACCEPTED slice.
+    accepted_receipts = filter_accepted(receipts)
+
     sections_by_name: dict[SectionName, SynthesisSection] = {
         "title": build_title_section(thesis, topic=topic),
         "thesis": build_thesis_section(thesis),
         "evidence_summary": build_evidence_summary_section(receipts),
         "direct_evidence": build_direct_evidence_section(receipts),
         "indirect_evidence": build_indirect_evidence_section(receipts),
+        "rejected_evidence": build_rejected_evidence_section(receipts),
         "spar_adjudication": build_spar_adjudication_section(receipts),
         "references": build_references_section(receipts),
     }
 
     sections_by_name["tensions"] = await write_tensions_section(
-        receipts, matrix, thesis, topic=topic,
+        accepted_receipts, matrix, thesis, topic=topic,
         chain=chain, client=client, ledger=ledger, seed=seed,
     )
     sections_by_name["synthesis"] = await write_synthesis_section(
-        receipts, matrix, thesis, topic=topic,
+        accepted_receipts, matrix, thesis, topic=topic,
         chain=chain, client=client, ledger=ledger, seed=seed,
     )
     sections_by_name["limitations"] = await write_limitations_section(
-        receipts, matrix, thesis, topic=topic,
+        accepted_receipts, matrix, thesis, topic=topic,
         chain=chain, client=client, ledger=ledger, seed=seed,
     )
 

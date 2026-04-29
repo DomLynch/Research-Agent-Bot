@@ -72,6 +72,25 @@ _DEFAULT_K = 3
 SYSTEM_PROMPT = """You synthesize multiple structured EVIDENCE RECEIPTS
 into ONE cross-source thesis sentence.
 
+A real synthesis thesis takes a POSITION and offers an EXPLANATORY
+FRAMEWORK — it does not merely note that evidence is mixed. Compare:
+
+  WEAK (rejected):
+    "Metformin's efficacy on cognitive function is inconsistent across
+    studies."
+    — This is a hedged summary of ambiguity. It takes no position and
+    offers no mechanism. A reader learns nothing they couldn't have
+    inferred from the receipts list.
+
+  STRONG (the bar):
+    "Metformin's cognitive effects appear strongest in insulin-resistant
+    cohorts and absent in normoglycemic populations, suggesting
+    insulin-sensitization rather than direct neuroprotection mediates
+    the benefit."
+    — Takes a position (which subgroup benefits). Names a mechanism
+    (insulin-sensitization). The hedge is in WHERE the effect lives,
+    not WHETHER the evidence speaks.
+
 Each receipt represents one source-paper cluster from a real
 retrieval. You will receive: receipts (with id, thesis text, outcome
 class, evidence tier, directness, effect direction, key p-values) and
@@ -83,7 +102,7 @@ Output ONE JSON object with this exact shape:
 {
   "candidates": [
     {
-      "text": "<≤30-word integrating thesis sentence>",
+      "text": "<≤30-word integrating thesis sentence that takes a position>",
       "receipt_ids_referenced": ["r-a", "r-b", "r-c"],
       "tensions_addressed": ["<verbatim tension summary from input>"]
     },
@@ -91,24 +110,32 @@ Output ONE JSON object with this exact shape:
   ]
 }
 
-Candidate rules (every candidate must satisfy all):
+Candidate rules (every candidate MUST satisfy all):
 1. ≤30 words. Reference papers are 14-25 words; longer means overclaim.
 2. Reference at least 3 distinct receipt_ids from the input — synthesis
    means "across sources", not "single trial wrapped in prose".
-3. Address at least 1 non-orthogonal tension from the input matrix.
-   Name the tension by its summary text (verbatim copy).
+3. Address at least 1 non-orthogonal tension from the input matrix by
+   COPYING ITS `summary` STRING VERBATIM into `tensions_addressed`.
+   Do NOT paraphrase. Do NOT shorten. The `summary` strings in the
+   TENSIONS block of the user prompt are the ONLY valid values.
 4. Do NOT introduce numerics absent from the receipts. If you cite a
    p-value or HR, it must come from one of the receipt's `p_values` or
    `thesis_text` fields.
-5. Use hedge language for contested evidence. If the matrix shows
-   a disagreement or null_vs_positive tension, the thesis must NOT
-   claim consensus.
+5. Take a POSITION. Avoid theses of the form "X is mixed across
+   studies" / "X remains contested" / "evidence on X is inconsistent."
+   These are not theses; they are summaries of ambiguity. Instead,
+   name WHICH conditions / mechanisms / populations explain the
+   pattern of evidence.
+6. Where evidence is contested, hedge ON THE MECHANISM OR SUBGROUP,
+   not on the existence of an effect. "Effects appear strongest in
+   X but absent in Y" is hedged AND positional. "Effects are unclear"
+   is unhedged abdication.
 
 Diversity rules (across the K candidates):
-- Candidates should differ in framing, not just word choice. Prefer:
-  candidate 1 emphasizes the strongest agreement,
-  candidate 2 surfaces the strongest tension,
-  candidate 3 frames the indirectness gap.
+- Candidates should differ in WHICH position they take, not in word
+  choice. Prefer: candidate 1 takes the agreement-driven position,
+  candidate 2 surfaces a mechanistic explanation for the tension,
+  candidate 3 frames a population/subgroup boundary.
 
 Output JSON only. No prose outside the JSON."""
 
@@ -232,25 +259,18 @@ def validate_thesis_candidate(
         )
 
     # 4. ≥1 non-orthogonal tension addressed (only if matrix has any).
-    # Day 10.9 — tolerate paraphrase: a candidate addresses a tension
-    # if EITHER (a) `tensions_addressed` contains the verbatim summary,
-    # OR (b) `receipt_ids_referenced` covers both receipt_ids of any
-    # non-orthogonal pair (the thesis is integrating that pair). Reason:
-    # with multi-receipt corpora the tension summaries embed long
-    # receipt-id prefixes (e.g. `metformin-multi-001-2026-04-29T...-c06`)
-    # and LLMs almost always paraphrase to compact form, leaving the
-    # verbatim-only rule unsatisfiable on heterogeneous real corpora.
-    non_orth_pairs = matrix.non_orthogonal()
-    if non_orth_pairs:
-        non_orth_summaries = {t.summary for t in non_orth_pairs}
+    # Day 10.10: REVERTED Day 10.9's pair-coverage relaxation. The
+    # reviewer correctly observed that pair-coverage lets the LLM
+    # avoid taking a substantive position on the tension — referencing
+    # both refs is a structural signal, not a synthesis act. The
+    # verbatim-summary rule forces the candidate to NAME the tension,
+    # which forces it to take a position. Long receipt-id prefixes are
+    # ugly but not unsatisfiable; the user prompt below now compresses
+    # them via short_id mapping so the LLM can copy summaries verbatim.
+    non_orth_summaries = {t.summary for t in matrix.non_orthogonal()}
+    if non_orth_summaries:
         addressed_set = set(candidate.tensions_addressed)
-        verbatim_match = bool(addressed_set & non_orth_summaries)
-        ref_set = set(candidate.receipt_ids_referenced)
-        pair_covered = any(
-            t.receipt_a_id in ref_set and t.receipt_b_id in ref_set
-            for t in non_orth_pairs
-        )
-        if not (verbatim_match or pair_covered):
+        if not (addressed_set & non_orth_summaries):
             return ThesisRejection(
                 candidate.text,
                 "no_tension_addressed",

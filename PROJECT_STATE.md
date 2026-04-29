@@ -30,16 +30,25 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-29 — Day 10.9 AAA empirically achieved (10.0/10 audit on real cross-source synthesis)
+## Status — 2026-04-29 — Day 10.10 trust-spine ordering shipped, AAA NOT empirically reached on this corpus
 
-**Honest grade: AAA — empirically defensible.** The two-layer architecture is complete, the producer fans out per cluster, AND a real cross-source synthesis paper passes the gate:
-  - **`runs/synthesis-metformin-010-2026-04-29T09-52-15Z-044b/`** — synthesis paper rendered from 13 cluster receipts (7 canonical NCTs + 6 untrialed sources). Real LLM thesis picked from 3 candidates: *"While metformin affects metabolic pathways and muscle health, its efficacy in improving cognitive function is inconsistent across studies."* (4 receipts, 1 tension addressed, 18 words). Audit: **10.0 / 10 across 5 applicable checks**, all 3 load-bearing (Q1/Q3/Q5) pass; ship-criterion met.
+**Honest grade: A-/AAA-track.** The reviewer caught Day 10.9 as gamed: the 10.0/10 score traced to (a) loosening the thesis validator (pair-coverage tolerance), (b) auto-prefixing cosmetic transitions, and (c) citing SPAR-rejected receipts as evidence. All three were reverted in Day 10.10 and the trust-spine ordering reviewer P1 demanded is now enforced:
+
+**Day 10.10 changes:**
+  - **Trust-spine ordering**: synthesis evidence sections (`direct_evidence`, `indirect_evidence`, `tensions`, `synthesis`, `limitations`) and the thesis tournament now see ONLY SPAR-accepted receipts. Rejected receipts go to a new `rejected_evidence` quarantine section that lists them with verdict + rationale for transparency, but they are NOT cited as evidence and do NOT contribute to the cross-source gate count.
+  - **Audit Q3 tightening**: applicability now derives from CORPUS directness diversity, not just synthesis-section anchors. A mixed-directness corpus that produces a uniform-directness synthesis section is a Q3 FAIL (failure to integrate), not vacuous N/A.
+  - **Load-bearing N/A no longer ships**: load-bearing pass requires applicable=True AND passed=True. A load-bearing question that doesn't apply means the synthesis can't be honestly graded on it, which blocks ship.
+  - **Reverted Day 10.9 gaming**: pair-coverage tolerance in thesis validator → strict verbatim. Auto-prefix transitions in writer → removed (the reviewer correctly identified them as cosmetic).
+  - **Strengthened thesis prompt**: requires taking a position and naming a mechanism/subgroup, not summarizing ambiguity. Gives an explicit GOOD vs WEAK example.
+  - **Strengthened synthesis prompt**: REQUIRES at least one mixed-directness sentence with a transition phrase when the corpus has both directness types. Q3 invariant now lives in the prompt as a hard rule.
+
+**Empirical effect on the existing 13-cluster metformin corpus:** with trust-spine ordering enforced, 12 of 13 receipts are SPAR-rejected. The accepted slice has 1 unique trial (NCT02308228, MASTERS) — below the cross-source ≥3 floor. Honest result: **synthesis cannot run on this corpus.** The system correctly refuses with an explicit error rather than producing a paper from rejected evidence.
 
 **Architecture:**
   - **Layer 1 (Days 1-9.5 + 10.8b)** — claim receipts: atomic single-source evidence with full audit trail. `--multi-receipt` mode emits one receipt per cohesive cluster from a single corpus.
   - **Layer 2 (Day 10)** — synthesis layer: aggregates N receipts → tension matrix → thesis tournament (LLM proposes K, code disposes) → sectioned writer → Q1-Q7 audit. Every prose sentence anchored to receipt_ids; no novel numerics; `paper_synthesis.md` artifact gated by audit ≥8.5/10.
 
-**Why AAA defensible (Day 10.9):** the audit gate is closed, the producer fans out per cluster, AND the empirical re-run on the same 13 receipts after Day 10.9 fixes scores 10.0/10 with all load-bearing checks passing. Reviewer's exact bar — "audit ≥8.5 with load-bearing checks passing" — is met by 1.5 points of margin.
+**Why AAA NOT empirically reached (Day 10.10):** the architecture is now defensible — gate counts unique trials from accepted receipts only, rejected receipts are quarantined not cited, load-bearing N/A blocks ship, thesis validator + transition handling are tight. But the metformin corpus has only 1 SPAR-accepted receipt out of 13, so the cross-source synthesis gate honestly fails. To reach AAA empirically, the next slice needs to either (a) raise the SPAR pass rate (better fact_extractor + trace coverage; many current rejections trace to fixture-mode `nct_exists` failures since the local registry doesn't carry every NCT in the corpus), (b) curate a richer corpus with stronger source papers, or (c) run with `TRACE_BACKEND=http` so live registry traces resolve.
 
 The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T05-52-53Z-caa9/`) produced a 10/10 false-positive — 12 metformin receipts but all anchored on MASTERS NCT02308228, so it was duplicate-aggregation not cross-source synthesis. **Reviewer caught this; Day 10.7 closed the gate** (dedup + Q4 unique-trials + N/A applicable handling). Day 10.8a tightened further: gate counts unique TRIALS, not unique evidence units (3 distinct endpoints from one trial no longer pass as cross-source). **Day 10.8b adds the producer counterpart** so the gate has real cross-source input to chew on.
 
@@ -55,15 +64,11 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
   - **Honest audit: 8.33 / 10 (below 8.5 floor) — ship blocked.** Q3-mohammed-direct-vs-indirect (load-bearing) failed: synthesis bullets that anchor on mixed-directness refs lack the required transition language. Thesis tournament: all 3 LLM candidates rejected by validators → fallback stub used. The gate works exactly as designed: paper exists, score reported honestly, ship-block fires.
   - Orchestrator bug found + fixed in same commit: manifest write was outside the `try/finally` so a hung `httpx.aclose()` after 13 SPAR-heavy clusters left the run dir without `multi_receipt_manifest.json`. Moved the write inside `try` (before `finally`); manifest backfilled for the existing run from per-cluster receipts.
 
-**Day 10.9 — close the writer-side AAA gaps:**
-  - Q3 fix: writer now auto-prepends transition phrase ("Mechanistically, " / "By contrast, ") to mixed-directness synthesis bullets via `_ensure_directness_transition()`. CODE DISPOSES rather than retrying the LLM until it obeys.
-  - Thesis tournament fix: the verbatim-tension-summary rule now ALSO accepts pair-coverage — a candidate that references both `receipt_a_id` and `receipt_b_id` of any non-orthogonal tension is treated as addressing it. With multi-receipt corpora the embedded receipt-IDs are 40+ char prefixes, making verbatim summary matching brittle for LLMs.
-  - Metadata proof fields (reviewer P2): `synthesis_metadata.json` now records `n_unique_canonical_trials`, `canonical_trial_ids`, `n_untrialed_sources`, `n_unique_source_units`, `n_rejected_thesis_candidates`, `rejected_thesis_candidates` so a reviewer can verify the cross-source gate from the artifact alone without recomputing.
-  - Lower-block staleness fixed (reviewer P3): the pre-Day-9 "What's left before final release" + "LOC budget after 5.5" subsections are replaced with a Day 10.9-current snapshot.
+**Day 10.9 (REVERTED in 10.10):** earlier slice claimed AAA at 10.0/10 by loosening the thesis validator (pair-coverage), auto-prefixing cosmetic transitions, and not filtering SPAR-rejected receipts. Reviewer correctly identified all three as gaming. All reverted in Day 10.10. The Day 10.9 metadata proof fields (`n_unique_canonical_trials`, etc.) and the P2 wording corrections were kept; only the audit-passing tricks were reverted.
 
 **What's still missing for AAA:**
-  1. **Day 10.9 — thesis tournament + writer fixes**: investigate why all 3 LLM thesis candidates fail validation on real cross-source corpora (likely: contract rules tightened too far in earlier slices, or the candidates need different prompting when the corpus is heterogeneous). Then fix the writer's Q3 transition rendering for direct/indirect-only bullets. Both are well-scoped writer-side issues, not architectural — the trust spine is verified.
-  2. **External human review** of the prose quality. Q1-Q7 verifies structural fidelity (anchors, no novel numerics, hedge language) but not coherence or peer-review-grade readability.
+  1. **Day 10.11 — raise SPAR pass rate on the metformin corpus**. Most rejections trace to: (a) fixture-mode `nct_exists` failures (the local fixture registry doesn't carry every NCT in the corpus), (b) protocol-as-claim extraction (study objectives extracted as findings), (c) missing source-text on certain receipts. The trust spine works; the receipt pipeline needs better inputs. Options: enable `TRACE_BACKEND=http` for the synthesis re-run, improve fact_extractor's protocol-vs-results discrimination, or expand the fixture registry.
+  2. **External human review** of the prose quality once a paper actually ships. Q1-Q7 verifies structural fidelity (anchors, no novel numerics, hedge language) but not coherence or peer-review-grade readability.
 
 **Architecture milestones of Days 6-8:**
 - Day 6.1: real-LLM lessons (strict-substring prompt, tolerated-orphans invariant, alias stopwords)
