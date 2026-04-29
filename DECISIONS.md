@@ -1,5 +1,14 @@
 # DECISION JOURNAL
 
+## 2026-04-29 (Day 10.8b) — Multi-receipt mode as a separate orchestrator entry-point, not a `--best-of` reuse
+**Decision:** Add a new top-level `run_proof_multi_receipt()` instead of teaching `run_proof` (or its `--best-of` loop) to also fan out per cluster. The compiler exposes `cluster_all_claims()` (returns ALL clusters, sorted) and `compile_per_cluster_claim_graphs()`; the new orchestrator entry-point shares the LLM extract stage across clusters then iterates trace + SPAR + write per graph.
+**Why:** `--best-of` is "run the same pipeline N times against the same corpus and pick the best verdict" — its semantics are reproducibility/variance, not corpus fan-out. Conflating both modes in one function would confuse the receipts (which `claim_graph` is the canonical one?) and leak best-of's "pick winner" logic into multi-receipt's "emit all" intent. The cost models also differ: best-of is N× the entire pipeline; multi-receipt is 1× extract + N× SPAR. Separate entry-points keep both audit trails clean.
+**Alternatives rejected:**
+- Make `--best-of` automatically multi-cluster when N > #clusters — rejected; silent mode-switching breaks the "the operator opts in explicitly" trust-spine pattern, and reviewers would have no way to read the run_metadata to know which mode fired.
+- Inline the cluster loop into `run_proof` behind a `multi=True` flag — rejected; +50 LOC of branching in a function that has zero today, and the manifest-vs-no-manifest receipt shape diverges enough to warrant a separate function.
+- Refactor `_largest_cohesive_cluster` to call `cluster_all_claims()[0]` and delete the old function — adopted (the old function becomes a thin wrapper; existing 28 compiler tests still pass).
+**Revisit if:** SPAR cost per cluster turns out >2× of the single-receipt baseline (would suggest the per-cluster prompts need pruning), or if the synthesis loader needs cluster_NN/-aware logic (currently it just walks subdirectories looking for the 8-receipt set).
+
 ## 2026-04-29 (Day 10.8a, reviewer-driven) — Raise LOC ceiling to 8,000 for Day 10.7 + 10.8 fixes
 **Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 7,500 → 8,000. Per-file 600 LOC unchanged.
 **Why:** Day 10.7 (reviewer P1+P2 fix: dedup, Q4 unique trials, N/A handling) and Day 10.8a (reviewer P1 fix: gate on unique trials not deduped count) added ~120 cloc to the synthesis layer. The reviewer's P3 explicitly called out "Pretending [the LOC budget will] fit is the kind of self-deception the audit gate was built to prevent" — applies here. Day 10.8b (multi-receipt mode in orchestrator, projected ~150-200 cloc) needs headroom too. 8,000 ceiling covers Day 10.7+10.8 fully with ~370 cloc buffer for any small follow-up corrections.

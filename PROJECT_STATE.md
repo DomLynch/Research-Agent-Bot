@@ -30,28 +30,25 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-29 — Day 10 synthesis layer + reviewer P1+P2 fixes (A-/AAA-track, NOT AAA)
+## Status — 2026-04-29 — Day 10.8b multi-receipt mode shipped (A-/AAA-track, NOT AAA)
 
-**Honest grade: A-/AAA-track.** The two-layer architecture is complete:
-  - **Layer 1 (Days 1-9.5)** — claim receipts: atomic single-source evidence with full audit trail, 8 receipts per run, ~$0.01 / run.
+**Honest grade: A-/AAA-track.** The two-layer architecture is complete and the producer side now fans out per cluster:
+  - **Layer 1 (Days 1-9.5 + 10.8b)** — claim receipts: atomic single-source evidence with full audit trail. **NEW (Day 10.8b):** `--multi-receipt` mode emits one receipt per cohesive cluster from a single corpus, so a single drug run produces N independent receipts (`cluster_NN/`) plus `multi_receipt_manifest.json`.
   - **Layer 2 (Day 10)** — synthesis layer: aggregates N receipts → tension matrix → thesis tournament (LLM proposes K, code disposes) → sectioned writer → Q1-Q7 audit. Every prose sentence anchored to receipt_ids; no novel numerics; `paper_synthesis.md` artifact gated by audit ≥8.5/10.
 
-**Why NOT AAA yet:** The audit gate is correct; the synthesis path hasn't yet shipped a real cross-source paper that passes it.
+**Why NOT AAA yet:** The audit gate is closed and the producer can now feed it; the empirical cross-source paper (Day 10.8c) hasn't been generated yet.
 
-The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T05-52-53Z-caa9/`) produced a 10/10 false-positive — 12 metformin receipts but all anchored on MASTERS NCT02308228, so it was duplicate-aggregation not cross-source synthesis. **Reviewer caught this; Day 10.7 closed the gate** (dedup + Q4 unique-trials + N/A applicable handling). Day 10.8a tightened further: gate now counts unique TRIALS, not unique evidence units (3 distinct endpoints from one trial no longer pass as cross-source).
+The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T05-52-53Z-caa9/`) produced a 10/10 false-positive — 12 metformin receipts but all anchored on MASTERS NCT02308228, so it was duplicate-aggregation not cross-source synthesis. **Reviewer caught this; Day 10.7 closed the gate** (dedup + Q4 unique-trials + N/A applicable handling). Day 10.8a tightened further: gate counts unique TRIALS, not unique evidence units (3 distinct endpoints from one trial no longer pass as cross-source). **Day 10.8b adds the producer counterpart** so the gate has real cross-source input to chew on.
 
-**Empirical verification of the closed gate (this commit):** re-running synthesis on the same 12 metformin receipts now correctly fails with exit code 2:
-```
-Deduped: 12 → 1 unique evidence units (11 duplicate runs dropped)
-Unique canonical trials in deduped corpus: 1
-ERROR: corpus has 1 unique canonical trial(s); cross-source synthesis
-requires ≥3. ...same-trial multi-endpoint reporting, not cross-source...
-```
+**Day 10.8b deliverables (this commit):**
+  - `agent/compiler.py`: factored `_largest_cohesive_cluster` into `cluster_all_claims()` (returns ALL clusters, sorted best-first by canonical/directness/tier/size key) + `compile_per_cluster_claim_graphs()`. Old single-cluster API preserved as a thin wrapper — zero behavior regression on existing callers.
+  - `agent/orchestrator.py`: new `run_proof_multi_receipt()` shares the LLM extract stage across clusters, then runs trace + SPAR + write + emit per cluster. Cost predictable: 1× extract, N× SPAR. Each cluster lands in `cluster_NN/` with full 8-receipt set; parent dir gets `multi_receipt_manifest.json`.
+  - `scripts/e2e_metformin_proof_001.py`: `--multi-receipt` flag (mutually exclusive with `--best-of` and `--synthesize`). `--max-clusters N` caps emission. Output dir is `runs/<topic>-multi-001-<UTC>-<rand>/`.
+  - 11 new tests (4 orchestrator, 7 compiler) covering cluster ordering, canonical bonus, all-singleton fallback, max_clusters cap, manifest refusal-to-clobber.
 
 **What's still missing for AAA:**
-  1. **Day 10.8b — multi-receipt mode** (next slice): the receipt pipeline currently picks ONE cluster per `--topic` run via the Day 6.3 cohesive-cluster filter, so duplicate runs all anchor on MASTERS. To produce receipts from multiple distinct canonical trials in a single corpus, the orchestrator needs a flag to emit one receipt PER cluster.
-  2. **Day 10.8c — empirical cross-source synthesis paper**: with multi-receipt mode, run metformin pipeline once → 4-5 cluster receipts spanning MASTERS / Konopka / MET-PREVENT / etc. → synthesize across them → audit honest score. Until this ships, "AAA-track" is aspirational.
-  3. **External human review** of the prose quality. Q1-Q7 verifies structural fidelity (anchors, no novel numerics, hedge language) but not coherence or peer-review-grade readability.
+  1. **Day 10.8c — empirical cross-source synthesis paper** (next slice): run the metformin pipeline ONCE with `--multi-receipt` → expect 4-5 cluster receipts spanning MASTERS / Konopka / MET-PREVENT / Kulkarni / etc. → `--synthesize` across them → audit honest score. Until this ships, "AAA-track" is aspirational.
+  2. **External human review** of the prose quality. Q1-Q7 verifies structural fidelity (anchors, no novel numerics, hedge language) but not coherence or peer-review-grade readability.
 
 **Architecture milestones of Days 6-8:**
 - Day 6.1: real-LLM lessons (strict-substring prompt, tolerated-orphans invariant, alias stopwords)
@@ -63,8 +60,8 @@ requires ≥3. ...same-trial multi-endpoint reporting, not cross-source...
 **State verified through:** the most recent entry in the commit log table below. Exact repository HEAD remains `git log -1 --oneline`; this document does not try to self-reference its own future commit hash.
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 721/721 passing in 0.50s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, enforced by `tests/test_loc_budget.py`):** ~7,512 / **8,000** ceiling (raised from 7,500 on 2026-04-29 Day 10.8a per DECISIONS.md, after Day 10.7 reviewer-fix slices added ~120 cloc and Day 10.8b multi-receipt mode is projected at ~150-200 cloc more).
+**Tests:** 732/732 passing in 0.70s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, enforced by `tests/test_loc_budget.py`):** 7,765 / **8,000** ceiling (Day 10.8b multi-receipt mode added +253 cloc; budget headroom 235 lines for any Day 10.8c follow-ups).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600 — synthesis layer adds 4 new modules):**
 - Trust-spine: `spar.py` 412, `citation_trace.py` 485, `fact_extractor.py` 435, `orchestrator.py` 325, `schemas.py` 281, `llm_client.py` 276, `evidence_cards.py` 261, `writer.py` 259
@@ -145,7 +142,8 @@ requires ≥3. ...same-trial multi-endpoint reporting, not cross-source...
 | `0102154` | 2026-04-29 | Day 10.5a: synthesis quality audit — Q1-Q7 deterministic checks (18 tests) |
 | `7d3e050` | 2026-04-29 | Day 10.5b + 10.6: `--synthesize` flag + first synthesis paper (12 metformin receipts; reported 10/10 BUT was false-positive — see 10.7) |
 | `5cc931e` | 2026-04-29 | Day 10.7: reviewer P1+P2 fix — dedup receipts + Q4 unique trials + N/A audit handling. Day 10.6 false-positive closed. |
-| _next_    | 2026-04-29 | Day 10.8a: tighten gate to count unique TRIALS not deduped count; PROJECT_STATE refresh; LOC ceiling 7,500 → 8,000 with DECISIONS entry |
+| `4965b68` | 2026-04-29 | Day 10.8a: tighten gate to count unique TRIALS not deduped count; PROJECT_STATE refresh; LOC ceiling 7,500 → 8,000 with DECISIONS entry |
+| _next_    | 2026-04-29 | Day 10.8b: multi-receipt mode — `cluster_all_claims()` exposed + `run_proof_multi_receipt()` + `--multi-receipt` flag (11 new tests, 732/732 pass, 7,765/8,000 LOC) |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`

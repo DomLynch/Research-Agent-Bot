@@ -21,7 +21,12 @@ import httpx
 import pytest
 
 from agent.llm_client import CallSpec
-from agent.orchestrator import OrchestratorError, RunReceipts, run_proof
+from agent.orchestrator import (
+    OrchestratorError,
+    RunReceipts,
+    run_proof,
+    run_proof_multi_receipt,
+)
 from agent.topic_pack import TopicPack
 from agent.trace_clients import (
     FixtureDrugAliasClient,
@@ -670,6 +675,250 @@ def test_run_proof_compile_error_wraps_in_orchestrator_error(
             _run(go())
     finally:
         orch.compile_claims = real
+
+
+# --- Day 10.8b: multi-receipt mode ---------------------------------------
+
+
+def test_run_proof_multi_receipt_emits_one_subdir_per_cluster(
+    tmp_path: Path,
+) -> None:
+    """Two items from distinct refs → compiler clusters into 2 groups
+    (each item's ref forms its own cluster). run_proof_multi_receipt
+    emits cluster_01/ and cluster_02/ subdirs, each with the full
+    8-receipt set, plus a top-level multi_receipt_manifest.json."""
+    handler = _make_handler()
+    # Two items, distinct refs/NCTs → compiler will detect the
+    # all-singleton case and emit one cluster covering both. To force
+    # 2 clusters, we'd need shared refs WITHIN each cluster — but the
+    # mock extractor returns one fact per HTTP call, so each item gives
+    # one claim with its own ref. That's the all-singleton case →
+    # cluster_all_claims returns ((all,),) → ONE cluster receipt.
+    # For a true 2-cluster test, we use the multi-fact path.
+    items = [
+        _item(1, abstract="Metformin reduced HbA1c by 0.5% (p=0.003)."),
+        _item(2, abstract="Metformin reduced HbA1c by 0.5% (p=0.003)."),
+    ]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof_multi_receipt(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="multi-001",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    per_cluster = _run(go())
+    # All-singleton → exactly one cluster, even with 2 items
+    assert len(per_cluster) == 1
+    cluster_dir = per_cluster[0].output_dir
+    assert cluster_dir.name == "cluster_01"
+    assert cluster_dir.parent == tmp_path
+    # Full 8-receipt set in the cluster subdir
+    for name in (
+        "claim_receipt.md", "claim_graph.json", "citation_traces.json",
+        "spar_review.json", "evidence_cards.json", "cost_log.json",
+        "fact_extraction_log.json", "run_metadata.json",
+    ):
+        assert (cluster_dir / name).exists(), f"missing {name}"
+    # Top-level manifest links the clusters
+    manifest = json.loads((tmp_path / "multi_receipt_manifest.json").read_text())
+    assert manifest["n_clusters"] == 1
+    assert manifest["topic"] == "metformin"
+    assert manifest["clusters"][0]["subdir"] == "cluster_01"
+    # Each cluster's run_metadata flags multi-receipt mode
+    md = json.loads(per_cluster[0].run_metadata.read_text())
+    assert md["multi_receipt"] is True
+    assert md["cluster_index"] == 1
+    assert md["parent_submission_id"] == "multi-001"
+
+
+def test_run_proof_multi_receipt_two_clusters_when_refs_overlap(
+    tmp_path: Path,
+) -> None:
+    """When two items SHARE one ref via cross-citation in the abstract,
+    a multi-fact extractor can produce a 2-claim cluster — but our mock
+    extractor produces 1 fact per call. To exercise the 2-cluster path,
+    we directly feed the orchestrator's compile stage by patching the
+    fact extractor's response to return TWO facts from one item (forming
+    a 2-claim cluster with shared refs), plus a singleton from the other
+    item. The orchestrator's all-singleton fallback won't trigger."""
+    multi_fact_resp = {
+        "choices": [{"message": {"content": json.dumps({
+            "facts": [
+                {
+                    "source_quote": "Metformin reduced HbA1c by 0.5%",
+                    "outcome": "HbA1c", "estimate": None,
+                    "p_value": "0.003", "ci": None,
+                },
+                {
+                    "source_quote": "Metformin reduced fasting glucose by 1.0",
+                    "outcome": "fasting glucose", "estimate": None,
+                    "p_value": "0.01", "ci": None,
+                },
+            ],
+        })}}],
+        "usage": {"prompt_tokens": 100, "completion_tokens": 50},
+    }
+    abstract_with_two = (
+        "Metformin reduced HbA1c by 0.5% (p=0.003). "
+        "Metformin reduced fasting glucose by 1.0 (p=0.01)."
+    )
+    call_count = {"extract": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        text = sys_msg["content"]
+        if "extract structured FACTS" in text:
+            call_count["extract"] += 1
+            # First item gets two facts (forms 1-claim cluster of size 2);
+            # second item gets one fact (different ref → singleton).
+            if call_count["extract"] == 1:
+                return httpx.Response(200, json=multi_fact_resp)
+            return httpx.Response(200, json=_extractor_response(
+                "Metformin reduced HbA1c by 0.5%",
+            ))
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [
+        _item(1, abstract=abstract_with_two),
+        _item(2, abstract="Metformin reduced HbA1c by 0.5% (p=0.003)."),
+    ]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof_multi_receipt(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="multi-002",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    per_cluster = _run(go())
+    # Item 1 has 2 claims (same ref) → 1 cluster of size 2.
+    # Item 2 has 1 claim (different ref) → singleton.
+    # Largest cluster has size 2 → multi-cluster path activates →
+    # cluster_all_claims returns 2 clusters.
+    assert len(per_cluster) == 2
+    assert per_cluster[0].output_dir.name == "cluster_01"
+    assert per_cluster[1].output_dir.name == "cluster_02"
+    # Both clusters had SPAR fired
+    for paths in per_cluster:
+        sr = json.loads(paths.spar_review.read_text())
+        assert sr["verdict"] == "accept_clean"
+    # Manifest reflects both
+    manifest = json.loads((tmp_path / "multi_receipt_manifest.json").read_text())
+    assert manifest["n_clusters"] == 2
+
+
+def test_run_proof_multi_receipt_max_clusters_caps_emission(
+    tmp_path: Path,
+) -> None:
+    """`max_clusters=1` truncates output to the top-1 cluster even when
+    the corpus has more — useful for cost containment in cohort runs."""
+    multi_fact_resp = {
+        "choices": [{"message": {"content": json.dumps({
+            "facts": [
+                {
+                    "source_quote": "Metformin reduced HbA1c by 0.5%",
+                    "outcome": "HbA1c", "estimate": None,
+                    "p_value": "0.003", "ci": None,
+                },
+                {
+                    "source_quote": "Metformin reduced fasting glucose by 1.0",
+                    "outcome": "fasting glucose", "estimate": None,
+                    "p_value": "0.01", "ci": None,
+                },
+            ],
+        })}}],
+        "usage": {"prompt_tokens": 100, "completion_tokens": 50},
+    }
+    call_count = {"extract": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = json.loads(request.content)
+        sys_msg = next(m for m in body["messages"] if m["role"] == "system")
+        if "extract structured FACTS" in sys_msg["content"]:
+            call_count["extract"] += 1
+            if call_count["extract"] == 1:
+                return httpx.Response(200, json=multi_fact_resp)
+            return httpx.Response(200, json=_extractor_response(
+                "Metformin reduced HbA1c by 0.5%",
+            ))
+        return httpx.Response(200, json=_judge_response("accept"))
+
+    items = [
+        _item(1, abstract=(
+            "Metformin reduced HbA1c by 0.5% (p=0.003). "
+            "Metformin reduced fasting glucose by 1.0 (p=0.01)."
+        )),
+        _item(2, abstract="Metformin reduced HbA1c by 0.5% (p=0.003)."),
+    ]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof_multi_receipt(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="multi-cap",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+                max_clusters=1,
+            )
+        finally:
+            await client.aclose()
+
+    per_cluster = _run(go())
+    assert len(per_cluster) == 1
+
+
+def test_run_proof_multi_receipt_refuses_existing_manifest(
+    tmp_path: Path,
+) -> None:
+    """Audit-trail integrity: refuse to clobber a prior multi-receipt
+    manifest unless force_overwrite=True."""
+    (tmp_path / "multi_receipt_manifest.json").write_text("{}")
+    handler = _make_handler()
+    items = [_item(1)]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof_multi_receipt(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="multi-existing",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    with pytest.raises(OrchestratorError, match="multi-receipt manifest"):
+        _run(go())
 
 
 def test_run_proof_creates_output_dir_if_missing(tmp_path: Path) -> None:

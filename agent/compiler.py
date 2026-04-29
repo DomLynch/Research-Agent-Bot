@@ -62,6 +62,8 @@ from agent.types import EvidenceItem, Fact
 __all__ = [
     "compile_claims",
     "compile_claim_graph",
+    "compile_per_cluster_claim_graphs",
+    "cluster_all_claims",
     "CompileError",
 ]
 
@@ -169,35 +171,12 @@ def compile_claims(
 # --- compile_claim_graph --------------------------------------------------
 
 
-def _largest_cohesive_cluster(
-    claims: Sequence[Claim],
-    *,
-    canonical_refs: frozenset[int] = frozenset(),
-) -> tuple[Claim, ...]:
-    """Group claims by their source paper(s) and return the largest cluster.
+_DIRECTNESS_RANK = {"direct": 0, "indirect": 1, "mechanistic": 2}
+_TIER_RANK = {"A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4}
 
-    Day 6.3: a heterogeneous live corpus produces claims from disparate
-    papers (PRT muscle / AMD / longevity). Rendering all of them in one
-    artifact yields the "shotgun" pattern SPAR correctly rejects on
-    coherence. The fix: build the artifact from the LARGEST topically-
-    coherent cluster — claims that share source papers — so the writer
-    has a cohesive story to tell.
 
-    Algorithm: union-find over `supporting_refs`. Two claims are in the
-    same cluster iff their supporting_refs sets intersect (they share
-    one source paper). The cluster with the most members wins; ties
-    broken by smallest min(supporting_refs) so the choice is
-    deterministic regardless of input order.
-
-    Activation rule: filter only kicks in when at least one cluster has
-    ≥2 members. With all-singleton clusters (each claim from its own
-    paper, no overlap), filtering would arbitrarily drop everything but
-    one — that scenario has no shotgun risk to begin with, so leave the
-    claim list untouched.
-    """
-    if len(claims) <= 1:
-        return tuple(claims)
-
+def _union_find_clusters(claims: Sequence[Claim]) -> list[list[int]]:
+    """Group claims by union-find over supporting_refs intersection."""
     parent = list(range(len(claims)))
 
     def find(i: int) -> int:
@@ -217,71 +196,103 @@ def _largest_cohesive_cluster(
             if refs[i] & refs[j]:
                 union(i, j)
 
-    clusters: dict[int, list[int]] = {}
+    grouped: dict[int, list[int]] = {}
     for i in range(len(claims)):
-        clusters.setdefault(find(i), []).append(i)
+        grouped.setdefault(find(i), []).append(i)
+    return list(grouped.values())
 
-    largest_size = max(len(idx_list) for idx_list in clusters.values())
+
+def _cluster_sort_key(
+    idx_list: list[int],
+    claims: Sequence[Claim],
+    canonical_refs: frozenset[int],
+) -> tuple[int, int, int, int, int]:
+    """Cluster preference order (Day 6.3 / 8.0 / 8.1):
+      1. canonical-trial bonus — clusters containing a topic_pack
+         canonical NCT win over non-canonical equally-tiered clusters.
+      2. directness — direct beats indirect beats mechanistic.
+      3. tier — A1 beats A2 beats B beats C.
+      4. larger size wins.
+      5. smallest min(ref) for determinism.
+    """
+    has_canonical = 0 if (
+        not canonical_refs
+        or any(
+            r in canonical_refs
+            for i in idx_list
+            for r in claims[i].supporting_refs
+        )
+    ) else 1
+    directness = min(
+        _DIRECTNESS_RANK.get(claims[i].directness, 9) for i in idx_list
+    )
+    tier = min(_TIER_RANK.get(claims[i].evidence_tier, 9) for i in idx_list)
+    return (
+        has_canonical,
+        directness,
+        tier,
+        -len(idx_list),
+        min(min(claims[i].supporting_refs) for i in idx_list),
+    )
+
+
+def cluster_all_claims(
+    claims: Sequence[Claim],
+    *,
+    canonical_refs: frozenset[int] = frozenset(),
+) -> tuple[tuple[Claim, ...], ...]:
+    """Return ALL coherent clusters, sorted best-first by the same key
+    that `_largest_cohesive_cluster` uses to pick its winner.
+
+    Day 10.8b: multi-receipt mode iterates every cluster, emitting one
+    Proof 001 receipt per cluster so the synthesis layer has multiple
+    distinct trial receipts to combine. Without this, a single run
+    yields one receipt and the cross-source gate (≥3 unique trials)
+    can never trip from one corpus.
+
+    Fallback semantics match `_largest_cohesive_cluster`:
+      - empty input → empty tuple (caller decides whether that's an error)
+      - single claim → ((claim,),)
+      - all singletons (no shared refs across any pair) → ((all_claims,),)
+        because filtering to one singleton would arbitrarily drop the
+        rest of the corpus, same logic as the legacy single-cluster fn.
+    """
+    if not claims:
+        return ()
+    if len(claims) == 1:
+        return (tuple(claims),)
+
+    raw_clusters = _union_find_clusters(claims)
+    largest_size = max(len(idx_list) for idx_list in raw_clusters)
     if largest_size < 2:
-        # No paper has multiple claims; activating the filter would
-        # arbitrarily drop most of the corpus to keep one singleton.
-        return tuple(claims)
+        # All-singleton corpus: no clustering signal exists. Hand back
+        # the full list as one cluster so the caller doesn't lose data.
+        return (tuple(claims),)
 
-    # Day 6.3 / 8.0 / 8.1: cluster preference order:
-    #   1. canonical-trial bonus — clusters containing a topic_pack
-    #      canonical NCT win over equally-tiered non-canonical clusters.
-    #      Without this, two A1 direct papers tie on directness+tier and
-    #      the smallest-ref tiebreaker is fragile (Day 8 Proof 001
-    #      regression: a non-canonical metformin paper out-tied MASTERS
-    #      because the LLM happened to extract one extra fact for it).
-    #   2. directness — direct beats mechanistic (V1.1 mechanism-to-clinic
-    #      failure mode caught at the cluster level)
-    #   3. tier — A1 beats A2 beats B beats C. Topic packs pin oncology /
-    #      transplant evidence to tier B; without this rank, an everolimus
-    #      run picks the 4-claim renal-cell-carcinoma RCT cluster over
-    #      the 1-claim PROTECTOR aging RCT.
-    #   4. larger size wins.
-    #   5. smallest min(ref) for determinism.
-    _DIRECTNESS_RANK = {"direct": 0, "indirect": 1, "mechanistic": 2}
-    _TIER_RANK = {"A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4}
+    sorted_clusters = sorted(
+        raw_clusters,
+        key=lambda idx_list: _cluster_sort_key(idx_list, claims, canonical_refs),
+    )
+    return tuple(
+        tuple(claims[i] for i in idx_list) for idx_list in sorted_clusters
+    )
 
-    def cluster_has_canonical(idx_list: list[int]) -> int:
-        """0 when the cluster contains a canonical-trial ref, else 1."""
-        if not canonical_refs:
-            return 0  # no pack data — neutral
-        for i in idx_list:
-            if any(r in canonical_refs for r in claims[i].supporting_refs):
-                return 0
-        return 1
 
-    def cluster_directness(idx_list: list[int]) -> int:
-        return min(
-            _DIRECTNESS_RANK.get(claims[i].directness, 9) for i in idx_list
-        )
+def _largest_cohesive_cluster(
+    claims: Sequence[Claim],
+    *,
+    canonical_refs: frozenset[int] = frozenset(),
+) -> tuple[Claim, ...]:
+    """Group claims by source-paper overlap and return the best cluster.
 
-    def cluster_tier(idx_list: list[int]) -> int:
-        return min(
-            _TIER_RANK.get(claims[i].evidence_tier, 9) for i in idx_list
-        )
-
-    def cluster_sort_key(idx_list: list[int]) -> tuple[int, int, int, int, int]:
-        return (
-            cluster_has_canonical(idx_list),  # 1: canonical-trial cluster wins
-            cluster_directness(idx_list),     # 2: direct beats mechanistic
-            cluster_tier(idx_list),           # 3: A1 beats A2 beats B
-            -len(idx_list),                   # 4: more claims wins
-            min(min(claims[i].supporting_refs) for i in idx_list),  # tiebreak
-        )
-
-    best_indices = min(clusters.values(), key=cluster_sort_key)
-    # Day 8.0: the earlier "fall back to largest if winner is singleton"
-    # rule was too aggressive — it overrode a direct A1 singleton with
-    # an indirect B 5-claim cluster on the everolimus run, exactly the
-    # signal-vs-volume failure mode the directness+tier ranks were
-    # meant to fix. Trust the sort: a strong singleton outranks weaker
-    # body. Empty graphs are still impossible because the largest_size<2
-    # guard above returns the full list when no cluster has ≥2 members.
-    return tuple(claims[i] for i in best_indices)
+    Day 10.8b: thin wrapper over `cluster_all_claims` — picks the
+    first (highest-ranked) cluster. Behavior preserved from Day 6.3:
+    when no cluster has ≥2 members, returns the full list untouched.
+    """
+    all_clusters = cluster_all_claims(claims, canonical_refs=canonical_refs)
+    if not all_clusters:
+        return ()
+    return all_clusters[0]
 
 
 def compile_claim_graph(
@@ -330,3 +341,38 @@ def compile_claim_graph(
     # surfaces before the graph escapes this module.
     assert_claim_graph_invariants(graph)
     return graph
+
+
+def compile_per_cluster_claim_graphs(
+    claims: Sequence[Claim],
+    *,
+    items_by_ref: Mapping[int, EvidenceItem] | None = None,
+    canonical_refs: frozenset[int] = frozenset(),
+) -> tuple[ClaimGraph, ...]:
+    """Build one ClaimGraph per coherent cluster (Day 10.8b multi-receipt).
+
+    Each cluster gets its own thesis pick and structural-invariant check,
+    so downstream stages (citation_trace → SPAR → writer) treat each
+    cluster as an independent atomic claim receipt.
+
+    Returns clusters in the same order as `cluster_all_claims` (best first).
+    Empty input raises CompileError, matching `compile_claim_graph`.
+    """
+    if not claims:
+        raise CompileError(
+            "compile_per_cluster_claim_graphs requires at least one claim"
+        )
+    clusters = cluster_all_claims(claims, canonical_refs=canonical_refs)
+    if not clusters:
+        raise CompileError("clustering produced no groups")
+    graphs: list[ClaimGraph] = []
+    for cluster_claims in clusters:
+        chosen = pick_thesis(cluster_claims, items_by_ref=items_by_ref)
+        g = ClaimGraph(
+            claims=cluster_claims,
+            edges=(),
+            thesis_claim_id=chosen,
+        )
+        assert_claim_graph_invariants(g)
+        graphs.append(g)
+    return tuple(graphs)

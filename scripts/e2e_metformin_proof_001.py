@@ -60,7 +60,7 @@ import dataclasses
 from agent.citation_trace import registry_ids_for
 from agent.evidence_cards import bundle
 from agent.llm_client import CostLedger, build_extract_chain, build_judge_chain
-from agent.orchestrator import RunReceipts, run_proof
+from agent.orchestrator import RunReceipts, run_proof, run_proof_multi_receipt
 from agent.retrieve import normalize_and_dedup, retrieve
 from agent.settings import load_settings
 from agent.sources.clinicaltrials import ClinicalTrialsClient
@@ -413,6 +413,17 @@ async def _run(args: argparse.Namespace) -> int:
               f"{len(selected)} items going to LLM extraction "
               f"({n_canonical} canonical trials pinned)")
 
+    # Day 10.8b: multi-receipt mode short-circuits the best-of loop —
+    # one extract, then one receipt per cohesive cluster. Output dir is
+    # always a fresh timestamped <topic>-multi-001-... so callers don't
+    # accidentally clobber a single-receipt run with a multi-receipt one.
+    if args.multi_receipt:
+        return await _run_multi_receipt(
+            args, selected,
+            domain=domain, pack=pack,
+            extract_chain=extract_chain, judge_chain=judge_chain,
+        )
+
     # Stage 3-7: orchestrator (extract → invariants → compile → trace → SPAR → write)
     # Day 9.2: optionally repeated --best-of N times against the same corpus.
     n_attempts = max(1, args.best_of)
@@ -552,6 +563,93 @@ async def _run(args: argparse.Namespace) -> int:
 
     # Return code: 0 if accept_*, 1 if reject_*.
     return 0 if best_md["spar_verdict"].startswith("accept") else 1
+
+
+# --- Day 10.8b multi-receipt flow -----------------------------------------
+
+
+async def _run_multi_receipt(
+    args: argparse.Namespace,
+    selected: list,
+    *,
+    domain: str,
+    pack: TopicPack,
+    extract_chain,
+    judge_chain,
+) -> int:
+    """Day 10.8b multi-receipt mode: one extract, N per-cluster receipts.
+
+    The synthesis layer's cross-source ≥3-unique-trials gate cannot
+    trip on a single-receipt run because the compiler picks ONE cluster.
+    Multi-receipt mode iterates clusters, producing one receipt set per
+    cluster under cluster_NN/ subdirs of a single parent run dir.
+    """
+    proof = "multi-001"
+    override = args.output_dir
+    output_dir = _resolve_output_dir(override, topic=args.topic, proof=proof)
+    submission_id = output_dir.name
+    force_overwrite = override is not None
+
+    print()
+    print("=" * 70)
+    print(f"Multi-receipt mode → {_format_path(output_dir)}")
+    if args.max_clusters is not None:
+        print(f"  --max-clusters cap: {args.max_clusters}")
+    print("=" * 70)
+
+    t1 = time.perf_counter()
+    try:
+        per_cluster: tuple[RunReceipts, ...] = await run_proof_multi_receipt(
+            selected,
+            topic=args.topic,
+            domain=domain,
+            pack=pack,
+            output_dir=output_dir,
+            submission_id=submission_id,
+            extract_chain=extract_chain,
+            spar_chain=judge_chain,
+            registry=get_trial_registry_client(),
+            drug_client=get_drug_alias_client(),
+            force_overwrite=force_overwrite,
+            seed=args.seed,
+            max_clusters=args.max_clusters,
+        )
+    except Exception as exc:  # noqa: BLE001
+        elapsed = time.perf_counter() - t1
+        print(
+            f"ERROR: multi-receipt run failed after {elapsed:.1f}s: "
+            f"{type(exc).__name__}: {exc}",
+            file=sys.stderr,
+        )
+        return 3
+
+    elapsed = time.perf_counter() - t1
+    print(f"\nEmitted {len(per_cluster)} cluster receipts in {elapsed:.1f}s")
+    accepted = 0
+    for paths in per_cluster:
+        md = json.loads(paths.run_metadata.read_text())
+        verdict = md["spar_verdict"]
+        if verdict.startswith("accept"):
+            accepted += 1
+        print(
+            f"  {paths.output_dir.name}: verdict={verdict} "
+            f"claims={md['n_claims']} "
+            f"failed_traces={md['n_failed_traces']}"
+        )
+    if per_cluster:
+        last_cost = json.loads(per_cluster[-1].cost_log.read_text())
+        print(
+            f"\nTotal cost (extract + all SPAR): "
+            f"${last_cost['total_usd']:.6f}"
+        )
+    print(
+        f"\nNext step: synthesize across these {accepted} accepted "
+        f"receipts:\n"
+        f"  python -m scripts.e2e_metformin_proof_001 "
+        f"--synthesize {output_dir} --topic {args.topic}"
+    )
+    print("=" * 70)
+    return 0 if accepted >= MIN_UNIQUE_TRIALS_FOR_SYNTHESIS else 1
 
 
 # --- Day 10 synthesis flow -------------------------------------------------
@@ -824,6 +922,23 @@ def main() -> int:
              "is implied. Default: runs/metformin-001-<UTC>-<rand>/",
     )
     parser.add_argument(
+        "--multi-receipt", action="store_true",
+        help="Day 10.8b multi-receipt mode: extract facts ONCE, then "
+             "fan out per cohesive cluster — emit one Proof 001 receipt "
+             "set per cluster under runs/<topic>-multi-001-<UTC>/cluster_NN/. "
+             "Produces a multi_receipt_manifest.json. The synthesis layer "
+             "(--synthesize) can then point at the parent dir and consume "
+             "N independent receipts, finally letting the cross-source "
+             "≥3-unique-trials gate fire on a single corpus run. "
+             "Mutually exclusive with --best-of and --synthesize.",
+    )
+    parser.add_argument(
+        "--max-clusters", type=int, default=None,
+        help="With --multi-receipt: cap the number of cluster receipts "
+             "emitted to the top-N (best-first by canonical/directness/"
+             "tier/size). Default: emit all clusters.",
+    )
+    parser.add_argument(
         "--synthesize", type=str, default=None, metavar="RECEIPTS_DIR",
         help="Run the Day 10 synthesis layer: load every claim receipt "
              "subdirectory under RECEIPTS_DIR (each must contain the 8 "
@@ -838,6 +953,22 @@ def main() -> int:
              "--best-of are ignored.",
     )
     args = parser.parse_args()
+    if args.synthesize and args.multi_receipt:
+        print(
+            "ERROR: --synthesize and --multi-receipt are mutually exclusive. "
+            "Multi-receipt is the producer (emits N receipts); synthesize "
+            "is the consumer (loads N receipts). Run them as two steps.",
+            file=sys.stderr,
+        )
+        return 2
+    if args.multi_receipt and args.best_of != 1:
+        print(
+            "ERROR: --multi-receipt and --best-of are mutually exclusive. "
+            "Multi-receipt fans out per cluster; best-of fans out per "
+            "attempt. Pick one.",
+            file=sys.stderr,
+        )
+        return 2
     if args.synthesize:
         return asyncio.run(_run_synthesize(args))
     return asyncio.run(_run(args))

@@ -48,7 +48,12 @@ import httpx
 from collections import Counter
 
 from agent.citation_trace import registry_ids_for, trace_claim_graph
-from agent.compiler import CompileError, compile_claim_graph, compile_claims
+from agent.compiler import (
+    CompileError,
+    compile_claim_graph,
+    compile_claims,
+    compile_per_cluster_claim_graphs,
+)
 from agent.fact_extractor import (
     PROMPT_VERSION as EXTRACT_PROMPT_VERSION,
     extract_facts_from_bundle,
@@ -69,6 +74,7 @@ __all__ = [
     "RunReceipts",
     "OrchestratorError",
     "run_proof",
+    "run_proof_multi_receipt",
 ]
 
 
@@ -412,3 +418,198 @@ async def run_proof(
     })
 
     return paths
+
+
+async def run_proof_multi_receipt(
+    items: Sequence[EvidenceItem],
+    *,
+    topic: str,
+    domain: str,
+    pack: TopicPack,
+    output_dir: Path,
+    submission_id: str,
+    extract_chain: Sequence[CallSpec],
+    spar_chain: Sequence[CallSpec],
+    registry: TrialRegistryClient,
+    drug_client: DrugAliasClient,
+    client: httpx.AsyncClient | None = None,
+    force_overwrite: bool = False,
+    seed: int | None = None,
+    max_clusters: int | None = None,
+) -> tuple[RunReceipts, ...]:
+    """Multi-receipt Day 10.8b mode: one receipt set per cohesive cluster.
+
+    The cross-source synthesis gate (≥3 unique canonical trials) cannot
+    trip on a single-receipt run because the compiler deliberately picks
+    ONE cluster. This entry-point shares the LLM extract stage across
+    all clusters then fans the per-graph stages (trace → SPAR → write →
+    emit receipts) over every cluster the compiler returns. Output:
+      output_dir/cluster_01/<8 receipts>
+      output_dir/cluster_02/<8 receipts>
+      ...
+      output_dir/multi_receipt_manifest.json
+
+    Cost: extract runs once. SPAR runs N times. Predictable scaling.
+
+    `max_clusters` caps emission to the top-N clusters (sorted by the
+    compiler's canonical/directness/tier/size key). None → all.
+    Returns the per-cluster RunReceipts in best-first order.
+    """
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = output_dir / "multi_receipt_manifest.json"
+    if not force_overwrite and manifest_path.exists():
+        raise OrchestratorError(
+            f"output_dir={output_dir} already contains a multi-receipt "
+            f"manifest. Refusing to overwrite. Use force_overwrite=True "
+            f"or pick a fresh dir."
+        )
+    started_at = datetime.now(timezone.utc).isoformat()
+
+    extract_ledger = CostLedger()
+    spar_ledger = CostLedger()
+    own_client = client is None
+    c = client or httpx.AsyncClient()
+    try:
+        accepted_facts, rejections = await extract_facts_from_bundle(
+            items, pack=pack, chain=extract_chain,
+            client=c, ledger=extract_ledger, seed=seed,
+        )
+        if not accepted_facts:
+            histogram = Counter(
+                r.reason.split(":", 1)[0] for r in rejections
+            )
+            raise OrchestratorError(
+                f"fact extraction produced 0 accepted facts (multi-receipt); "
+                f"{len(rejections)} rejections by category: {dict(histogram)}."
+            )
+        rejected_refs = frozenset(r.item_ref for r in rejections)
+        try:
+            assert_invariants(
+                list(items), list(accepted_facts),
+                tolerated_orphans=rejected_refs,
+            )
+        except InvariantError as exc:
+            raise OrchestratorError(
+                f"role/fact-kind invariant violated post-extraction "
+                f"(multi-receipt): {exc}."
+            ) from exc
+
+        try:
+            claims = compile_claims(accepted_facts, items)
+            items_by_ref = {it.source.ref: it for it in items}
+            canonical_ids = {trial.id.upper() for trial in pack.canonical_trials}
+            canonical_refs = frozenset(
+                ref for ref, item in items_by_ref.items()
+                if any(rid in canonical_ids for rid in registry_ids_for(item))
+            )
+            graphs = compile_per_cluster_claim_graphs(
+                claims, items_by_ref=items_by_ref,
+                canonical_refs=canonical_refs,
+            )
+        except (CompileError, ClaimGraphInvariantError) as exc:
+            raise OrchestratorError(
+                f"compile stage failed (multi-receipt): "
+                f"{type(exc).__name__}: {exc}"
+            ) from exc
+
+        if max_clusters is not None and max_clusters > 0:
+            graphs = graphs[:max_clusters]
+
+        per_cluster_receipts: list[RunReceipts] = []
+        for idx, graph in enumerate(graphs, start=1):
+            cluster_dir = output_dir / f"cluster_{idx:02d}"
+            cluster_dir.mkdir(parents=True, exist_ok=True)
+            if not force_overwrite:
+                _check_no_existing_receipts(cluster_dir)
+            traces = list(trace_claim_graph(
+                graph, items_by_ref, pack,
+                registry=registry, drug_client=drug_client,
+            ))
+            spar_review = await run_spar(
+                graph, traces,
+                topic=topic,
+                submission_id=f"{submission_id}-c{idx:02d}",
+                chain=spar_chain, client=c, ledger=spar_ledger, seed=seed,
+            )
+            claim_receipt_md, writer_rejections = write_paper(
+                graph, items, traces, spar_review,
+                pack=pack, topic=topic,
+            )
+            if writer_rejections:
+                raise OrchestratorError(
+                    f"writer regression at cluster {idx}: "
+                    f"{writer_rejections[0]!r}"
+                )
+            paths = RunReceipts(
+                output_dir=cluster_dir,
+                claim_receipt_md=cluster_dir / "claim_receipt.md",
+                claim_graph=cluster_dir / "claim_graph.json",
+                citation_traces=cluster_dir / "citation_traces.json",
+                spar_review=cluster_dir / "spar_review.json",
+                evidence_cards=cluster_dir / "evidence_cards.json",
+                cost_log=cluster_dir / "cost_log.json",
+                fact_extraction_log=cluster_dir / "fact_extraction_log.json",
+                run_metadata=cluster_dir / "run_metadata.json",
+            )
+            _atomic_write_text(paths.claim_receipt_md, claim_receipt_md)
+            _write_json(paths.claim_graph, _claim_graph_to_dict(graph))
+            _write_json(paths.citation_traces, [dataclasses.asdict(t) for t in traces])
+            _write_json(paths.spar_review, reviews_to_dict(spar_review))
+            _write_json(paths.evidence_cards, [_evidence_to_dict(it) for it in items])
+            _write_json(paths.fact_extraction_log, {
+                "accepted": [dataclasses.asdict(f) for f in accepted_facts],
+                "rejected": [dataclasses.asdict(r) for r in rejections],
+            })
+            _write_json(paths.cost_log, {
+                "extract": extract_ledger.to_dict(),
+                "spar": spar_ledger.to_dict(),
+                "total_usd": round(
+                    extract_ledger.total_usd() + spar_ledger.total_usd(), 6,
+                ),
+            })
+            _write_json(paths.run_metadata, {
+                "submission_id": f"{submission_id}-c{idx:02d}",
+                "parent_submission_id": submission_id,
+                "cluster_index": idx,
+                "n_clusters": len(graphs),
+                "topic": topic,
+                "domain": domain,
+                "started_at": started_at,
+                "finished_at": datetime.now(timezone.utc).isoformat(),
+                "n_items": len(items),
+                "n_accepted_facts": len(accepted_facts),
+                "n_rejections": len(rejections),
+                "n_claims": len(graph.claims),
+                "n_traces": len(traces),
+                "n_failed_traces": sum(1 for t in traces if not t.passed),
+                "spar_verdict": spar_review.verdict,
+                "gate_override": spar_review.gate_override is not None,
+                "extract_prompt_version": EXTRACT_PROMPT_VERSION,
+                "spar_prompt_version": SPAR_PROMPT_VERSION,
+                "render_version": RENDER_VERSION,
+                "multi_receipt": True,
+            })
+            per_cluster_receipts.append(paths)
+    finally:
+        if own_client:
+            await c.aclose()
+
+    _write_json(manifest_path, {
+        "submission_id": submission_id,
+        "topic": topic,
+        "domain": domain,
+        "n_clusters": len(per_cluster_receipts),
+        "clusters": [
+            {
+                "cluster_index": i + 1,
+                "subdir": p.output_dir.name,
+                "n_claims": len(graphs[i].claims),
+                "spar_verdict": json.loads(p.spar_review.read_text())["verdict"],
+            }
+            for i, p in enumerate(per_cluster_receipts)
+        ],
+        "started_at": started_at,
+        "finished_at": datetime.now(timezone.utc).isoformat(),
+    })
+    return tuple(per_cluster_receipts)

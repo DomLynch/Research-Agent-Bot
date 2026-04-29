@@ -13,8 +13,10 @@ from agent.compiler import (
     _derive_claim_type,
     _derive_confidence,
     _derive_directness,
+    cluster_all_claims,
     compile_claim_graph,
     compile_claims,
+    compile_per_cluster_claim_graphs,
 )
 from agent.types import EvidenceItem, Fact, Source
 
@@ -336,3 +338,120 @@ def test_cohesive_cluster_can_be_disabled() -> None:
 # compile_claim_graph and dropped the in-module _thesis_score/_pick_thesis
 # helpers. The integration-level guarantees (compile_claim_graph delegates
 # to the tournament correctly) are covered by the tests above.
+
+
+# --- Day 10.8b: multi-cluster output --------------------------------------
+
+
+def test_cluster_all_claims_returns_every_cluster_best_first() -> None:
+    """Two distinct paper-clusters: A1 direct (ref=3, 3 claims) and
+    A2 direct (ref=5, 2 claims). Best-first ranking puts A1 cluster
+    first, A2 cluster second. Multi-receipt mode iterates both."""
+    items = [
+        _item(ref=3, role="published_results", tier="A1", direct=True),
+        _item(ref=5, role="published_results", tier="A2", direct=True),
+    ]
+    facts = [
+        _fact(ref=3, claim="ref-3 c1"),
+        _fact(ref=3, claim="ref-3 c2"),
+        _fact(ref=3, claim="ref-3 c3"),
+        _fact(ref=5, claim="ref-5 c1"),
+        _fact(ref=5, claim="ref-5 c2"),
+    ]
+    claims = compile_claims(facts, items)
+    clusters = cluster_all_claims(claims)
+    assert len(clusters) == 2
+    refs0 = {r for c in clusters[0] for r in c.supporting_refs}
+    refs1 = {r for c in clusters[1] for r in c.supporting_refs}
+    assert refs0 == {3}, "A1 cluster must rank first"
+    assert refs1 == {5}, "A2 cluster must rank second"
+
+
+def test_cluster_all_claims_singleton_corpus_returns_one_cluster() -> None:
+    """When every claim has its own paper, no multi-member cluster
+    exists — return one tuple with all claims so multi-receipt mode
+    doesn't lose data."""
+    items = [
+        _item(ref=1, role="published_results", tier="A1", direct=True),
+        _item(ref=2, role="published_results", tier="A2", direct=True),
+        _item(ref=3, role="published_results", tier="A2", direct=True),
+    ]
+    facts = [_fact(ref=1), _fact(ref=2), _fact(ref=3)]
+    clusters = cluster_all_claims(compile_claims(facts, items))
+    assert len(clusters) == 1
+    assert len(clusters[0]) == 3
+
+
+def test_cluster_all_claims_empty_input_returns_empty() -> None:
+    """Caller decides how to handle empty — cluster_all_claims is pure."""
+    assert cluster_all_claims(()) == ()
+
+
+def test_cluster_all_claims_canonical_cluster_outranks_non_canonical() -> None:
+    """Canonical-trial bonus is the first sort dim. A non-canonical A1
+    direct cluster must NOT outrank a canonical A1 direct cluster of the
+    same size."""
+    items = [
+        _item(ref=1, role="published_results", tier="A1", direct=True),
+        _item(ref=2, role="published_results", tier="A1", direct=True),
+        _item(ref=3, role="published_results", tier="A1", direct=True),
+        _item(ref=4, role="published_results", tier="A1", direct=True),
+    ]
+    facts = [
+        _fact(ref=1, claim="non-canon a"),
+        _fact(ref=1, claim="non-canon b"),
+        _fact(ref=3, claim="canon a"),
+        _fact(ref=3, claim="canon b"),
+    ]
+    claims = compile_claims(facts, items)
+    clusters = cluster_all_claims(claims, canonical_refs=frozenset({3}))
+    refs0 = {r for c in clusters[0] for r in c.supporting_refs}
+    assert refs0 == {3}, "canonical cluster must rank first"
+
+
+def test_compile_per_cluster_claim_graphs_emits_one_graph_per_cluster() -> None:
+    """Each cluster produces its own ClaimGraph with its own thesis pick.
+    Together the graphs cover the SAME claims as the input (no dropping)."""
+    items = [
+        _item(ref=3, role="published_results", tier="A1", direct=True),
+        _item(ref=5, role="published_results", tier="A2", direct=True),
+    ]
+    facts = [
+        _fact(ref=3, claim="alpha"),
+        _fact(ref=3, claim="beta"),
+        _fact(ref=5, claim="gamma"),
+    ]
+    claims = compile_claims(facts, items)
+    items_by_ref = {it.source.ref: it for it in items}
+    graphs = compile_per_cluster_claim_graphs(claims, items_by_ref=items_by_ref)
+    assert len(graphs) == 2
+    all_claim_ids = {c.claim_id for g in graphs for c in g.claims}
+    assert all_claim_ids == {c.claim_id for c in claims}, (
+        "every claim must land in some cluster graph"
+    )
+    for g in graphs:
+        assert g.thesis_claim_id in {c.claim_id for c in g.claims}, (
+            "thesis pick must reference a claim in its own graph"
+        )
+
+
+def test_compile_per_cluster_claim_graphs_empty_input_raises() -> None:
+    with pytest.raises(CompileError):
+        compile_per_cluster_claim_graphs([])
+
+
+def test_largest_cohesive_cluster_still_picks_first_cluster_after_refactor() -> None:
+    """Regression guard: after the Day 10.8b refactor, the existing
+    cohesive_cluster_only=True path on compile_claim_graph must keep
+    picking the same cluster (the highest-ranked one)."""
+    items = [
+        _item(ref=3, role="published_results", tier="A1", direct=True),
+        _item(ref=5, role="published_results", tier="A2", direct=True),
+    ]
+    facts = [
+        _fact(ref=3, claim="a"), _fact(ref=3, claim="b"),
+        _fact(ref=5, claim="c"), _fact(ref=5, claim="d"),
+    ]
+    graph = compile_claim_graph(compile_claims(facts, items))
+    refs = {r for c in graph.claims for r in c.supporting_refs}
+    assert refs == {3}, "compile_claim_graph must still pick the A1 cluster"
