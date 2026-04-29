@@ -43,6 +43,8 @@ __all__ = [
     "check_role_claim_match",
     "check_alias_drift",
     "check_p_value_in_source",
+    "check_objective_as_claim",
+    "OBJECTIVE_PATTERN_RE",
     "PVALUE_RE",  # public so citation_trace.py can reuse the canonical regex
 ]
 
@@ -52,6 +54,43 @@ __all__ = [
 # zero. Captures (op, digits) — e.g., 'p<0.001' → ('<', '001'). Used by
 # both check_p_value_in_source and (later) citation_trace.py.
 PVALUE_RE = re.compile(r"\bp\s*([=<>])\s*0?\.(\d+)", re.IGNORECASE)
+
+
+# Day 10.11 — objective/protocol sentence patterns.
+# A claim quoted by the fact extractor that matches one of these patterns
+# is describing what a study SET OUT TO DO ("To determine whether...",
+# "We aimed to...", "Trial registration:") rather than what it FOUND.
+# Reviewer P1 / SPAR: this was the dominant rejection mode on the Day
+# 10.10 metformin run — fact_extractor pulled abstract objective spans
+# as if they were findings, and SPAR correctly rejected.
+#
+# Patterns are anchored to sentence/clause beginnings (after lowercasing
+# and whitespace normalization). Matches catch:
+#   "To determine whether metformin can improve immune response..."
+#   "The objective of this research is to assess the efficacy..."
+#   "This study aims to evaluate..."
+#   "This research is being done to determine if..."
+#   "We aim/aimed/sought to..."
+#   "The aim/purpose of this study is/was to..."
+#   "Trial registration: ..."
+OBJECTIVE_PATTERN_RE = re.compile(
+    r"(?:^|\.\s+|;\s+)\s*"
+    r"(?:"
+    r"to\s+(?:determine|assess|evaluate|investigate|examine|explore|"
+    r"identify|test|study|compare|measure|characterize)"
+    r"\s+(?:whether|if|the|how)\b"
+    r"|the\s+(?:primary\s+)?(?:objective|aim|purpose|goal)\s+"
+    r"of\s+this\s+(?:study|research|trial|investigation)"
+    r"\s+(?:is|was|are|were)\s+to\b"
+    r"|this\s+(?:study|research|trial|investigation)\s+"
+    r"(?:aims?|aimed|seeks?|sought|is\s+(?:being\s+)?(?:done|conducted)|"
+    r"will|intends?|plans?)\s+to\b"
+    r"|we\s+(?:aim|aimed|sought|seek|hypothesi[sz]ed?|investigate[d]?|"
+    r"will|plan|propose)\s+to\b"
+    r"|trial\s+registration:"
+    r")",
+    re.IGNORECASE,
+)
 
 
 # --- check_verb_ban — planted case 1's third layer ------------------------
@@ -113,6 +152,60 @@ def check_verb_ban(
         return None
 
     # review/mechanistic/off_domain — verb-ban not applicable
+    return None
+
+
+# --- check_objective_as_claim — Day 10.11 -------------------------------
+
+
+def check_objective_as_claim(
+    claim_text: str,
+    evidence_item: EvidenceItem,
+) -> GateFailure | None:
+    """Reject quotes that describe a study's OBJECTIVE / DESIGN / REGISTRATION
+    rather than its findings, when the cited item is `published_results`.
+
+    Day 10.11 reviewer P1 fix: the dominant SPAR rejection mode on the
+    Day 10.10 metformin corpus was protocol-as-claim — the fact extractor
+    pulled abstract spans like "To determine whether metformin can improve
+    the immune response..." or "Trial registration: NCT..." and emitted
+    them as Facts with kind='result'. SPAR judges correctly rejected these
+    as 'not actually claims, but study purposes'.
+
+    Approach: a deterministic regex (`OBJECTIVE_PATTERN_RE`) matches the
+    most common objective/protocol sentence forms ("To determine whether",
+    "We aimed to", "The objective of this study is to", "This study aims
+    to", "Trial registration:", etc.). When a results-role item's quote
+    matches one of those patterns, the validator returns
+    OBJECTIVE_AS_CLAIM_RESULTS so the fact extractor can drop the
+    proposal upstream of SPAR.
+
+    Why not also gate review/mechanistic? Reviews and mechanistic
+    abstracts often legitimately START with "We investigated..." or
+    "This study aimed to..." in the framing sentence, even though their
+    findings appear later. The trust-spine cost of false-positives there
+    is high (legitimate review-of-evidence facts get dropped) while the
+    benefit is low (review-role items already filter to review-style
+    facts elsewhere). Reserve this gate for the published_results role
+    where the failure mode is empirically dominant.
+    """
+    if evidence_item.role != "published_results":
+        return None
+    norm = " ".join(claim_text.split())
+    if OBJECTIVE_PATTERN_RE.search(norm):
+        ref = evidence_item.source.ref
+        snippet = norm[:80]
+        return GateFailure(
+            code="OBJECTIVE_AS_CLAIM_RESULTS",
+            message=(
+                f"quote (ref={ref}) describes the study's OBJECTIVE / "
+                f"DESIGN / REGISTRATION rather than a finding "
+                f"(matched objective-pattern). Quote: {snippet!r}. "
+                f"For published_results items, extract spans that report "
+                f"WHAT WAS FOUND, not WHAT WAS PLANNED."
+            ),
+            severity="block",
+        )
     return None
 
 

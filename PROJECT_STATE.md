@@ -283,33 +283,61 @@ numeric tracing, and live-retrieval anchoring.
 | **10.7-10.8a** | reviewer fixes: dedup + Q4 unique trials + N/A audit + count_unique_trials gate | ✅ |
 | **10.8b** | multi-receipt mode: cluster_all_claims + run_proof_multi_receipt + --multi-receipt | ✅ |
 | **10.8c** | empirical cross-source proof: 13 cluster receipts → synthesis paper, audit 8.33/10 honest | ✅ |
-| **10.9** | writer Q3 transition fix + thesis pair-coverage tolerance + metadata proof fields + reviewer P2/P3 honesty | ☑ this slice |
-| **10.10** (stretch) | external human review of prose quality — outside automated audit | ☐ |
+| **10.9** | writer Q3 transition + thesis pair-coverage tolerance + metadata proof fields | REVERTED in 10.10 (gamed: cosmetic transitions + validator loosening + cited rejected receipts). Metadata fields + P2/P3 honesty kept. |
+| **10.10** | trust-spine ordering: filter accepted, rejected_evidence quarantine, gate counts accepted-only, Q3 corpus-directness, load-bearing N/A blocks ship, prompts strengthened | ✅ |
+| **10.11** (next) | raise SPAR pass rate: fact_extractor protocol-vs-results discrimination (primary) | ☑ this slice |
+| **10.12** (stretch) | external human review of prose quality — outside automated audit | ☐ |
 | **11** (stretch) | RFC outreach + first user-facing artifact | ☐ |
 
-### LOC budget after Day 10.9
-Current: **~7,800 / 8,000 cloc** (~2.5% headroom; precise number in
-`tests/test_loc_budget.py` failure output if exceeded). The 7,500 →
-8,000 raise is documented in DECISIONS.md (2026-04-29 Day 10.8a entry,
-reviewer-driven). Day 10.9 added ~80 cloc for the writer transition
-helper and metadata fields. The next ceiling raise needs another
-DECISIONS entry; for now, Day 10.10 (external human review) is the
-only remaining slice and it requires no runtime LOC.
+### LOC budget after Day 10.10
+Current: **7,922 / 8,000 cloc** (~1% headroom). The 7,500 → 8,000
+raise is documented in DECISIONS.md (2026-04-29 Day 10.8a entry).
+Day 10.10 added net ~110 cloc (trust-spine helpers + quarantine
+section + Q3/load-bearing tightening + prompt module split).
+Day 10.11's protocol-vs-results discrimination is projected at
+~80-150 cloc; if it pushes past 8,000 a DECISIONS entry will raise
+the ceiling honestly per the existing reviewer pattern.
 
 ### What's left before AAA-defensible release
 
-After Day 10.9 the architecture is verified end-to-end and the writer
-can deterministically pass Q3. AAA depends on:
+After Day 10.10 the trust-spine ordering is enforced end-to-end and
+gaming has been reverted. The architecture is defensible; the
+empirical proof on the metformin corpus is NOT yet AAA. The
+remaining gap is upstream of synthesis:
 
-1. **Day 10.9 re-run produces audit ≥8.5 with load-bearing pass.** The
-   fixes are in code; the empirical proof is the next run after this
-   commit. Until that artifact exists, AAA is aspirational, not earned.
-2. **External human review** of `paper_synthesis.md` — Q1-Q7 verifies
-   structural fidelity (anchors, no novel numerics, hedge language)
-   but not coherence or peer-review-grade readability. A second human
-   pair of eyes on the prose is the final unautomatable gate.
+1. **Day 10.11 — raise SPAR pass rate.** Empirical: 1 of 30 clusters
+   accepted on the live-trace re-run. Inspecting the rejection
+   rationales, the dominant failure mode is **protocol-as-claim
+   extraction** — the fact_extractor pulls study OBJECTIVES ("To
+   determine whether...") as if they were findings, and SPAR
+   correctly rejects them. The reviewer's recommended fix: tighten
+   fact_extractor to discriminate protocol/objective sentences from
+   results sentences. Secondary failure modes: mechanism inflation
+   (single-cell extrapolated to clinical), underpowered samples
+   cited as moderate, missing source text on a few receipts. Once
+   the dominant failure mode is fixed, the gate's ≥3 unique-trials
+   floor becomes reachable on the existing metformin corpus.
+2. **Day 10.12 — external human review** of `paper_synthesis.md`
+   once a valid one ships. Q1-Q7 verifies structural fidelity but
+   not peer-review-grade readability.
 
-To reproduce the Day 10.8c+10.9 chain on demand:
+To reproduce the Day 10.10 honest result on demand:
+```
+TRACE_BACKEND=http .venv/bin/python -m scripts.e2e_metformin_proof_001 \
+  --multi-receipt
+.venv/bin/python -m scripts.e2e_metformin_proof_001 \
+  --synthesize runs/metformin-multi-001-<UTC>-<rand> --topic metformin
+```
+Expected: producer emits N cluster_NN/ subdirs (most rejected by
+SPAR); synthesizer refuses to run with an explicit cross-source
+gate-failure error citing "1 unique canonical trial(s)/source(s);
+cross-source synthesis requires ≥3."
+
+After Day 10.11, the same chain should produce ≥3 accepted clusters
+and synthesis should run with an honest audit score (whatever it
+turns out to be — no more games).
+
+To reproduce the Day 10.8c chain on demand (architecture verification):
 ```
 .venv/bin/python -m scripts.e2e_metformin_proof_001 --multi-receipt
 .venv/bin/python -m scripts.e2e_metformin_proof_001 \

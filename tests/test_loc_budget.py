@@ -8,17 +8,17 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 8,000 LOC (set by DECISIONS.md 2026-04-29 Day 10.8a —
-the Day 10.7 + 10.8a reviewer-fix slices added ~120 cloc for dedup,
-unique-trial counting, and N/A audit handling; the projected
-Day 10.8b multi-receipt mode in the orchestrator needs ~150-200 more.
-8,000 ceiling covers Day 10 fully with buffer.
+Current ceiling: 8,500 LOC (set by DECISIONS.md 2026-04-29 Day 10.11 —
+the Day 10.11 fact-extractor protocol-vs-results filter added ~90 cloc
+of validator defense + prompt strengthening + extractor wiring on top
+of Day 10.10's trust-spine ordering. 8,500 covers Day 10 fully with
+buffer for any small follow-up corrections in the synthesis layer.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 8000
+TOTAL_LIMIT = 8500
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

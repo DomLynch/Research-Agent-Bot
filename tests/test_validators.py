@@ -17,7 +17,9 @@ from agent.schemas import Claim
 from agent.topic_pack import TopicPack, load_topic_pack
 from agent.types import EvidenceItem, Source
 from agent.validators import (
+    OBJECTIVE_PATTERN_RE,
     check_alias_drift,
+    check_objective_as_claim,
     check_p_value_in_source,
     check_role_claim_match,
     check_verb_ban,
@@ -341,3 +343,161 @@ def test_planted_case_1_caught_at_validators_layer(
     assert fail is not None
     assert fail.code == "VERB_BAN_PROTOCOL"
     assert case1["synthetic_claim_verb"] in fail.message
+
+
+# --- Day 10.11 — check_objective_as_claim --------------------------------
+#
+# Failure mode: fact extractor pulls "To determine whether metformin..."
+# spans from published_results abstracts and presents them as findings.
+# SPAR rejects them as protocol-as-claim. The validator catches this
+# upstream so the receipt pipeline doesn't waste SPAR cost on
+# unverifiable purpose statements.
+
+
+def test_objective_catches_to_determine_whether_for_results() -> None:
+    """The exact pattern from cluster_07/cluster_09 in Day 10.10 run."""
+    ev = _ev("published_results")
+    fail = check_objective_as_claim(
+        "To determine whether metformin can improve the immune response "
+        "to influenza vaccine in older adults.",
+        ev,
+    )
+    assert fail is not None
+    assert fail.code == "OBJECTIVE_AS_CLAIM_RESULTS"
+    assert "OBJECTIVE / DESIGN / REGISTRATION" in fail.message
+
+
+def test_objective_catches_objective_of_this_research_is_to() -> None:
+    """The exact pattern from cluster_11."""
+    ev = _ev("published_results")
+    fail = check_objective_as_claim(
+        "The objective of this research is to assess the efficacy of oral "
+        "metformin in mitigating the aging process.",
+        ev,
+    )
+    assert fail is not None
+    assert fail.code == "OBJECTIVE_AS_CLAIM_RESULTS"
+
+
+def test_objective_catches_this_study_aims_to() -> None:
+    """The exact pattern from cluster_12."""
+    ev = _ev("published_results")
+    fail = check_objective_as_claim(
+        "This study aims to assess the safety and efficacy of study drugs "
+        "and supplements on clinical signs of aging.",
+        ev,
+    )
+    assert fail is not None
+    assert fail.code == "OBJECTIVE_AS_CLAIM_RESULTS"
+
+
+def test_objective_catches_this_research_is_being_done_to() -> None:
+    """The exact pattern from cluster_09."""
+    ev = _ev("published_results")
+    fail = check_objective_as_claim(
+        "This research is being done to determine if Metformin, an "
+        "FDA-approved diabetes medication, is effective at enhancing "
+        "immune responses to flu vaccine in older men and women.",
+        ev,
+    )
+    assert fail is not None
+    assert fail.code == "OBJECTIVE_AS_CLAIM_RESULTS"
+
+
+def test_objective_catches_we_aimed_to() -> None:
+    ev = _ev("published_results")
+    fail = check_objective_as_claim(
+        "We aimed to evaluate whether metformin reduces frailty in older "
+        "adults with diabetes.",
+        ev,
+    )
+    assert fail is not None
+    assert fail.code == "OBJECTIVE_AS_CLAIM_RESULTS"
+
+
+def test_objective_catches_trial_registration() -> None:
+    """Trial registration spans are classic boilerplate, not findings."""
+    ev = _ev("published_results")
+    fail = check_objective_as_claim(
+        "Trial registration: ClinicalTrials.gov NCT02308228.", ev,
+    )
+    assert fail is not None
+    assert fail.code == "OBJECTIVE_AS_CLAIM_RESULTS"
+
+
+def test_objective_allows_real_finding_clauses() -> None:
+    """Past-tense reporting clauses are the SAFE pattern for results.
+    The validator must not catch legitimate findings."""
+    ev = _ev("published_results")
+    for finding in (
+        "Metformin reduced HbA1c by 0.5% (p=0.003) over 12 months.",
+        "The treatment group showed greater muscle hypertrophy than placebo.",
+        "After 12 weeks, participants in arm A had higher walking speed.",
+        "Increases in thigh muscle area were greater in placebo "
+        "(p=0.005) than in metformin.",
+        "48 adverse events occurred in 16 of 19 metformin participants.",
+    ):
+        assert check_objective_as_claim(finding, ev) is None, (
+            f"validator falsely flagged real finding: {finding}"
+        )
+
+
+def test_objective_skips_protocol_role() -> None:
+    """The validator only fires on `published_results`. Protocol/registered
+    items are SUPPOSED to quote objective spans."""
+    ev = _ev("published_protocol")
+    fail = check_objective_as_claim(
+        "To determine whether metformin can improve immune response.",
+        ev,
+    )
+    assert fail is None
+
+
+def test_objective_skips_review_role() -> None:
+    """Reviews and mechanistic abstracts often legitimately frame their
+    work with objective sentences ('We investigated...'). The validator
+    is reserved for the published_results role where the failure mode
+    is empirically dominant."""
+    ev = _ev("review")
+    fail = check_objective_as_claim(
+        "We sought to evaluate metformin trials across populations.", ev,
+    )
+    assert fail is None
+
+
+def test_objective_pattern_anchors_to_clause_starts() -> None:
+    """The pattern triggers at sentence/clause starts, not arbitrarily.
+    'The trial showed metformin's objective improved...' is a finding,
+    not an objective statement, despite containing the word 'objective'."""
+    # 'objective' appears mid-sentence as a noun, not as a clause-leading
+    # verb. The regex requires "objective ... of this study is to" —
+    # reduce false positives by anchoring.
+    ev = _ev("published_results")
+    fail = check_objective_as_claim(
+        "The trial reported that metformin's objective improvement was "
+        "0.5% reduction in HbA1c.",
+        ev,
+    )
+    # Word 'objective' alone is not enough — the pattern needs the full
+    # objective-of-this-study form.
+    assert fail is None
+
+
+def test_objective_pattern_re_matches_all_targeted_forms() -> None:
+    """Smoke test on the regex itself for each documented form."""
+    targets = [
+        "To determine whether X works.",
+        "To assess the efficacy of Y.",
+        "The objective of this study is to evaluate Z.",
+        "The aim of this research is to test W.",
+        "This study aims to assess A.",
+        "This trial seeks to determine B.",
+        "We aimed to investigate C.",
+        "We sought to characterize D.",
+        "Trial registration: NCT12345678.",
+    ]
+    for t in targets:
+        norm = " ".join(t.split())
+        assert OBJECTIVE_PATTERN_RE.search(norm) is not None, (
+            f"regex missed: {t}"
+        )

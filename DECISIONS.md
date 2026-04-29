@@ -1,5 +1,14 @@
 # DECISION JOURNAL
 
+## 2026-04-29 (Day 10.11) — Raise LOC ceiling to 8,500 for protocol-as-claim filter
+**Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 8,000 → 8,500. Per-file 600 LOC unchanged.
+**Why:** Day 10.10 trust-spine ordering exposed the dominant SPAR rejection mode on the metformin corpus: fact_extractor pulls "To determine whether..." / "Trial registration:" / "We aimed to..." spans from published_results abstracts and presents them as findings. The reviewer's recommended Day 10.11 fix is a fact-extractor-side validator that rejects objective-as-claim quotes upstream of SPAR. Implementation: `OBJECTIVE_PATTERN_RE` (canonical objective/protocol sentence patterns) + `check_objective_as_claim` validator + fact_extractor wiring + prompt expansion. Net add ~90 cloc on top of Day 10.10's 7,922. The ceiling raise to 8,500 covers Day 10.11 with ~480 cloc headroom for any small synthesis-layer follow-ups.
+**Alternatives rejected:**
+- Trim docstrings on the new validator — rejected; the docstring documents the reviewer-attributed failure mode, the reasoning behind only firing on `published_results`, and the false-positive boundary. Removing it would lose the rationale that future debugging needs.
+- Defer Day 10.11 — rejected; the empirical Day 10.10 run shows 1/30 SPAR accept rate, so deferring leaves the producer unable to feed synthesis. The reviewer's actionable next step explicitly named this slice.
+- Compress `OBJECTIVE_PATTERN_RE` to a one-line regex — rejected; the multi-line form documents which sentence forms it catches and why, which is essential for maintainers who need to extend it later (e.g., when a new corpus surfaces a pattern that wasn't in the metformin-rejection rationale set).
+**Revisit if:** runtime LOC approaches 8,300 without a clear capability gain mapped to either the synthesis-quality audit gate or the SPAR pass rate.
+
 ## 2026-04-29 (Day 10.8b) — Multi-receipt mode as a separate orchestrator entry-point, not a `--best-of` reuse
 **Decision:** Add a new top-level `run_proof_multi_receipt()` instead of teaching `run_proof` (or its `--best-of` loop) to also fan out per cluster. The compiler exposes `cluster_all_claims()` (returns ALL clusters, sorted) and `compile_per_cluster_claim_graphs()`; the new orchestrator entry-point shares the LLM extract stage across clusters then iterates trace + SPAR + write per graph.
 **Why:** `--best-of` is "run the same pipeline N times against the same corpus and pick the best verdict" — its semantics are reproducibility/variance, not corpus fan-out. Conflating both modes in one function would confuse the receipts (which `claim_graph` is the canonical one?) and leak best-of's "pick winner" logic into multi-receipt's "emit all" intent. The cost models also differ: best-of is N× the entire pipeline; multi-receipt is 1× extract + N× SPAR. Separate entry-points keep both audit trails clean.

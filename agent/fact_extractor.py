@@ -30,7 +30,12 @@ from agent.llm_client import (
 )
 from agent.topic_pack import TopicPack
 from agent.types import EvidenceItem, Fact, FactKind
-from agent.validators import PVALUE_RE, check_p_value_in_source, check_verb_ban
+from agent.validators import (
+    PVALUE_RE,
+    check_objective_as_claim,
+    check_p_value_in_source,
+    check_verb_ban,
+)
 
 # A bare p-value decimal: `0.NNN` or `.NNN`. Matches the (digits) capture
 # of `validators.PVALUE_RE` in shape — both must agree on what counts as
@@ -48,7 +53,7 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 
-PROMPT_VERSION = "fact-extractor/2026-04-28-strict-substring"
+PROMPT_VERSION = "fact-extractor/2026-04-29-day10-11-objective-filter"
 
 _MAX_CLAIM_LEN = 500
 
@@ -103,6 +108,23 @@ Rules:
    studies, quote the design / objective spans, not outcome spans.
    For REVIEWS, quote pooled-finding spans. For MECHANISTIC / preclinical
    abstracts, quote mechanism spans, not human-outcome speculation.
+
+5. **OBJECTIVE-AS-CLAIM FILTER (CRITICAL for published_results items):**
+   When the source role is `published_results`, do NOT quote sentences
+   describing what the study SET OUT TO DO. These are objectives /
+   protocol descriptions, not findings — code rejects them. Concretely,
+   AVOID source_quotes whose primary clause matches any of these forms:
+     - "To determine whether / if / the ..."
+     - "To assess / evaluate / investigate / examine / explore ..."
+     - "The objective / aim / purpose / goal of this study is/was to ..."
+     - "This study / research / trial aims / aimed / seeks / sought to ..."
+     - "We aim / aimed / sought / hypothesized / will / plan to ..."
+     - "Trial registration: ..."
+   For results items, prefer source_quotes that REPORT what was observed:
+   "Metformin reduced HbA1c by 0.5% (p=0.003)", "The treatment group
+   showed greater muscle hypertrophy (p<0.05)", "After 12 weeks,
+   participants in arm A had higher walking speed", etc. Past-tense
+   reporting clauses are the safe pattern for published_results.
 
 No prose outside the JSON. No markdown fences."""
 
@@ -315,6 +337,12 @@ def _validate_proposed(
     verb_fail = check_verb_ban(quote, item, pack)
     if verb_fail is not None:
         return None, f"verb_ban:{verb_fail.code}"
+
+    # Day 10.11 reviewer P1: drop objective-as-claim extractions on
+    # published_results items (the dominant SPAR rejection mode).
+    objective_fail = check_objective_as_claim(quote, item)
+    if objective_fail is not None:
+        return None, f"objective_as_claim:{objective_fail.code}"
 
     p_value = _coerce_str_or_none(proposed.get("p_value"))
     estimate = _coerce_str_or_none(proposed.get("estimate"))
