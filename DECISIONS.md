@@ -1,5 +1,19 @@
 # DECISION JOURNAL
 
+## 2026-04-29 (revised mid-day) — Raise LOC ceiling to 7,500 for Day 10 synthesis writer
+**Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 7,000 → 7,500. Per-file 600 LOC hard cap unchanged.
+**Why:** The 7,000 ceiling set this morning underestimated Day 10's full footprint by ~500 cloc. The actual breakdown:
+  - synthesis_schemas.py: 258 cloc (vs 280 estimated)
+  - synthesis.py: 459 cloc (vs 280 estimated — the receipt-summary derivation + outcome-class keyword tables came in heavier than expected)
+  - synthesis_thesis.py: 373 cloc (vs 250 estimated — the deterministic validator covers 5 contract rules with reason codes, and the fallback stub adds resilience)
+  - synthesis_writer.py: 433 cloc (vs 250 estimated — sectioned rendering + 3 LLM-anchored sections + per-section validation + fallback stubs)
+  - prompts/ markdown files: not counted (markdown, not .py)
+  Total Day 10 add through 10.4: 1,523 cloc. Pre-Day-10 baseline was 5,295. Current: 6,818. Day 10.5 will add ~250-300 cloc for orchestrator integration + audit pipeline, putting the projection at ~7,100. 7,500 ceiling gives 400 cloc buffer for Day 10.5 + any small corrections.
+**Alternatives rejected:**
+- Trim docstrings from the synthesis modules — rejected, the prompts and contract rules ARE the documentation; trimming them moves the spec out of the code into a separate file that drifts.
+- Combine synthesis.py + synthesis_thesis.py + synthesis_writer.py into one module — rejected, violates Rule 49 (one module / one reason to change). Tension matrix, thesis tournament, and writer are three different responsibilities.
+**Revisit if:** runtime LOC approaches 7,200 without a clear capability gain mapped to the synthesis-quality audit ≥8.5/10 eval gate.
+
 ## 2026-04-29 — Raise LOC ceiling to 7,000 for Day 10 synthesis layer
 **Decision:** Raise the `tests/test_loc_budget.py` `TOTAL_LIMIT` from 5,500 → 7,000. Per-file 600 LOC hard cap unchanged.
 **Why:** Day 10 ships the synthesis paper engine — the layer that aggregates N claim receipts into a publishable research paper, audited against the 7-paper Quality Reference Corpus rubric. This is the architectural piece that was always implicit in DESIGN-001 (`paper.md` → "the artifact, judged against quality reference corpus") but was never built; the Day 1-9 pipeline produces atomic claim receipts, not synthesis papers. The user explicitly named this gap on 2026-04-29 ("we were supposed to use [the 7 reference papers] as a guide to create new research papers"). Estimated Day 10 footprint: synthesis_schemas.py (~280 cloc, shipped this slice), agent/synthesis.py (~400 cloc — tension matrix + thesis tournament + sectioned writer), audit module (~150 cloc), prompt loader + integration glue (~100 cloc). Total Day 10 add ≈ 930 cloc. Headroom needed: agent/ baseline at Day 9.5 was 5,295 + 280 (synthesis_schemas) = 5,575; remaining Day 10 ≈ 650 → 6,225 projected; 7,000 ceiling gives 775 cloc buffer for the audit + integration glue and any Day 11+ slices. Per the prior 4,800 → 5,500 raise pattern: bump only when a capability gain maps to a real eval gate. Day 10's eval gate is the rubric audit (Q1-Q7 in `agent/prompts/judge_quality_checklist.md`), score ≥8.5/10.

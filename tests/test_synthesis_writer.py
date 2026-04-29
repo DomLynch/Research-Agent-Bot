@@ -1,0 +1,394 @@
+"""Tests for agent/synthesis_writer.py — Day 10.4 sectioned renderer.
+
+Discriminating tests:
+  - deterministic sections render expected content (table rows,
+    bullet lists, references) for every input shape
+  - LLM-anchored sections drop sentences that fail validation
+    (unknown receipt_ids, novel numerics, empty)
+  - render_synthesis_paper produces a SynthesisPaper that satisfies
+    assert_synthesis_invariants
+"""
+from __future__ import annotations
+
+import asyncio
+import json
+
+import httpx
+
+from agent.llm_client import CallSpec
+from agent.synthesis_schemas import (
+    EffectDirection,
+    OutcomeClass,
+    ReceiptSummary,
+    SynthesisThesis,
+    Tension,
+    TensionMatrix,
+    assert_synthesis_invariants,
+)
+from agent.synthesis_writer import (
+    WRITER_VERSION,
+    build_direct_evidence_section,
+    build_evidence_summary_section,
+    build_indirect_evidence_section,
+    build_references_section,
+    build_spar_adjudication_section,
+    build_thesis_section,
+    build_title_section,
+    render_synthesis_paper,
+    validate_anchored_sentence,
+)
+
+
+# --- Helpers --------------------------------------------------------------
+
+
+def _summary(
+    rid: str,
+    *,
+    outcome: OutcomeClass = "muscle_function",
+    direction: EffectDirection = "negative",
+    tier: str = "A1",
+    directness: str = "direct",
+    p_values: tuple[str, ...] = ("p=0.003",),
+) -> ReceiptSummary:
+    return ReceiptSummary(
+        receipt_id=rid, receipt_path=f"runs/{rid}",
+        topic="metformin",
+        thesis_text=f"thesis for {rid}",
+        spar_verdict="accept_clean",
+        n_claims=4, n_failed_traces=0,
+        canonical_trial_id=f"NCT-{rid}",
+        evidence_tier=tier, directness=directness,
+        outcome_class=outcome, effect_direction=direction,
+        p_values=p_values,
+        population_summary="older adults",
+    )
+
+
+def _thesis(refs: tuple[str, ...] = ("r-A", "r-B", "r-C")) -> SynthesisThesis:
+    return SynthesisThesis(
+        text="metformin shows mixed evidence across muscle and frailty trials",
+        receipt_ids_referenced=refs,
+        tensions_addressed=("r-A and r-B agree on muscle",),
+        rejected_candidates=(),
+        picker_rationale="picked from 3 candidates",
+    )
+
+
+def _matrix(receipts) -> TensionMatrix:
+    return TensionMatrix(
+        receipts=tuple(receipts),
+        pairs=(
+            Tension(
+                receipt_a_id="r-A", receipt_b_id="r-B",
+                kind="agreement", outcome_class="muscle_function",
+                summary="r-A and r-B agree on muscle", severity=2,
+            ),
+        ),
+    )
+
+
+def _spec() -> CallSpec:
+    return CallSpec(
+        base_url="https://api.example.com/v1",
+        api_key="k", model="test/model", timeout_sec=5.0,
+    )
+
+
+def _mock_handler(paragraphs_payload: dict):
+    """Build an httpx MockTransport handler that always returns the
+    given paragraphs payload."""
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={
+            "choices": [{"message": {
+                "content": json.dumps(paragraphs_payload),
+            }}],
+            "usage": {"prompt_tokens": 50, "completion_tokens": 80},
+        })
+    return handler
+
+
+# ============================================================
+# validate_anchored_sentence
+# ============================================================
+
+
+def test_validate_anchor_passes_well_formed_sentence() -> None:
+    receipts = [_summary("r-A"), _summary("r-B")]
+    ok, _ = validate_anchored_sentence(
+        "Metformin has agreement at p=0.003", ("r-A",), receipts=receipts,
+    )
+    assert ok
+
+
+def test_validate_anchor_rejects_unknown_receipt_id() -> None:
+    receipts = [_summary("r-A")]
+    ok, reason = validate_anchored_sentence(
+        "Some sentence", ("r-FAKE",), receipts=receipts,
+    )
+    assert not ok
+    assert "unknown_receipt_ids" in reason
+
+
+def test_validate_anchor_rejects_novel_numeric() -> None:
+    """Sentence cites p=0.99 but no receipt has it."""
+    receipts = [_summary("r-A", p_values=("p=0.003",))]
+    ok, reason = validate_anchored_sentence(
+        "The result was p=0.99", ("r-A",), receipts=receipts,
+    )
+    assert not ok
+    assert "novel_numeric" in reason
+
+
+def test_validate_anchor_rejects_no_anchor() -> None:
+    receipts = [_summary("r-A")]
+    ok, reason = validate_anchored_sentence(
+        "Some sentence", (), receipts=receipts,
+    )
+    assert not ok
+    assert reason == "no_receipt_anchor"
+
+
+# ============================================================
+# Deterministic sections
+# ============================================================
+
+
+def test_evidence_summary_section_renders_table_for_every_receipt() -> None:
+    receipts = [_summary("r-A"), _summary("r-B"), _summary("r-C")]
+    sect = build_evidence_summary_section(receipts)
+    assert sect.name == "evidence_summary"
+    assert sect.anchors == ()
+    assert "## Evidence Summary" in sect.body_md
+    assert "r-A" in sect.body_md
+    assert "r-B" in sect.body_md
+    assert "r-C" in sect.body_md
+    # Each receipt must show its outcome class
+    assert "muscle_function" in sect.body_md
+
+
+def test_direct_evidence_section_lists_only_direct_receipts() -> None:
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+        _summary("r-C", directness="direct"),
+    ]
+    sect = build_direct_evidence_section(receipts)
+    assert "r-A" in sect.body_md
+    assert "r-C" in sect.body_md
+    # mechanistic receipt does NOT appear in Direct Evidence
+    assert "**r-B**" not in sect.body_md
+
+
+def test_indirect_evidence_section_lists_only_mechanistic_or_indirect() -> None:
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+        _summary("r-C", directness="indirect"),
+    ]
+    sect = build_indirect_evidence_section(receipts)
+    # direct does NOT appear here
+    assert "**r-A**" not in sect.body_md
+    assert "r-B" in sect.body_md
+    assert "r-C" in sect.body_md
+
+
+def test_direct_evidence_section_handles_empty_corpus() -> None:
+    """No direct receipts → render placeholder, don't crash."""
+    receipts = [_summary("r-A", directness="mechanistic")]
+    sect = build_direct_evidence_section(receipts)
+    assert "No direct" in sect.body_md or "_No direct" in sect.body_md
+
+
+def test_references_section_lists_every_receipt_with_index() -> None:
+    receipts = [_summary("r-A"), _summary("r-B")]
+    sect = build_references_section(receipts)
+    assert sect.name == "references"
+    assert "[1]" in sect.body_md
+    assert "[2]" in sect.body_md
+    assert "## References" in sect.body_md
+
+
+def test_spar_adjudication_section_renders_verdict_table() -> None:
+    receipts = [_summary("r-A"), _summary("r-B")]
+    sect = build_spar_adjudication_section(receipts)
+    assert "accept_clean" in sect.body_md
+    assert "## SPAR Adjudication" in sect.body_md
+
+
+def test_thesis_section_includes_rationale_and_anchor() -> None:
+    th = _thesis()
+    sect = build_thesis_section(th)
+    assert sect.name == "thesis"
+    assert th.text in sect.body_md
+    assert th.picker_rationale in sect.body_md
+    assert len(sect.anchors) == 1
+    assert sect.anchors[0].receipt_ids == th.receipt_ids_referenced
+
+
+def test_title_section_uses_thesis_text_as_h1() -> None:
+    th = _thesis()
+    sect = build_title_section(th, topic="metformin")
+    assert sect.name == "title"
+    assert sect.body_md.startswith(f"# {th.text}")
+
+
+# ============================================================
+# render_synthesis_paper — end-to-end with mocked LLM
+# ============================================================
+
+
+def test_render_synthesis_paper_produces_all_required_sections() -> None:
+    """Discriminating test: end-to-end render must produce a
+    SynthesisPaper whose `sections` covers every name in
+    SECTION_ORDER and whose body_md contains all section headings.
+    """
+    receipts = [
+        _summary("r-A", outcome="muscle_function", directness="direct"),
+        _summary("r-B", outcome="muscle_function", directness="mechanistic"),
+        _summary("r-C", outcome="frailty", directness="direct", direction="null"),
+    ]
+    matrix = _matrix(receipts)
+    th = _thesis()
+
+    # Mock LLM returns one valid paragraph per section
+    handler = _mock_handler({
+        "paragraphs": [
+            {
+                "sentence": "Receipt r-A and r-B agree on muscle outcome",
+                "receipt_ids": ["r-A", "r-B"],
+                "numerics": [],
+            },
+        ],
+    })
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await render_synthesis_paper(
+                receipts, matrix, th,
+                topic="metformin", submission_id="syn-001",
+                chain=(_spec(),), client=client,
+            )
+        finally:
+            await client.aclose()
+
+    paper = asyncio.run(go())
+    section_names = {s.name for s in paper.sections}
+    expected = {
+        "title", "thesis", "evidence_summary", "direct_evidence",
+        "indirect_evidence", "tensions", "synthesis", "limitations",
+        "spar_adjudication", "references",
+    }
+    assert section_names == expected
+    # body_md should contain every section heading
+    for heading in (
+        "# metformin", "## Thesis", "## Evidence Summary",
+        "## Direct Evidence", "## Indirect / Mechanistic Evidence",
+        "## Tensions", "## Synthesis", "## Limitations",
+        "## SPAR Adjudication", "## References",
+    ):
+        assert heading in paper.body_md, f"missing: {heading}"
+    # render_version stamped
+    assert paper.render_version == WRITER_VERSION
+    # Schema invariants pass
+    assert_synthesis_invariants(paper)
+
+
+def test_render_synthesis_paper_drops_invalid_anchored_sentences() -> None:
+    """When the LLM returns a sentence with an unknown receipt_id,
+    the writer drops it (not crashes). Section's body_md falls back
+    to the deterministic stub when nothing valid survives."""
+    receipts = [
+        _summary("r-A", outcome="muscle_function", directness="direct"),
+        _summary("r-B", outcome="muscle_function", directness="mechanistic"),
+        _summary("r-C", outcome="frailty", directness="direct", direction="null"),
+    ]
+    matrix = _matrix(receipts)
+    th = _thesis()
+
+    handler = _mock_handler({
+        "paragraphs": [
+            {
+                "sentence": "Made-up sentence about r-FAKE",
+                "receipt_ids": ["r-FAKE"],  # not in input
+                "numerics": [],
+            },
+        ],
+    })
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await render_synthesis_paper(
+                receipts, matrix, th,
+                topic="metformin", submission_id="syn-002",
+                chain=(_spec(),), client=client,
+            )
+        finally:
+            await client.aclose()
+
+    paper = asyncio.run(go())
+    # Tensions / synthesis / limitations all received the same bad
+    # paragraph payload — every LLM-anchored section should fall back
+    # to deterministic stub. body_md must still render without crash.
+    assert "Made-up" not in paper.body_md
+    assert "r-FAKE" not in paper.body_md
+    # Stubs are present
+    assert "validation" in paper.body_md.lower()
+    # Schema invariants STILL hold (no anchor with unknown receipt)
+    assert_synthesis_invariants(paper)
+
+
+def test_render_synthesis_paper_handles_empty_tensions_matrix() -> None:
+    """Matrix with only orthogonal pairs → tensions section renders
+    placeholder text without making any LLM call."""
+    receipts = [
+        _summary("r-A", outcome="muscle_function"),
+        _summary("r-B", outcome="cognitive"),
+        _summary("r-C", outcome="frailty"),
+    ]
+    # All cross-outcome → orthogonal
+    matrix = TensionMatrix(
+        receipts=tuple(receipts),
+        pairs=(
+            Tension(
+                receipt_a_id="r-A", receipt_b_id="r-B",
+                kind="orthogonal", outcome_class="muscle_function",
+                summary="orthogonal", severity=0,
+            ),
+        ),
+    )
+    th = _thesis()
+
+    handler = _mock_handler({
+        "paragraphs": [
+            {
+                "sentence": "Synthesis sentence",
+                "receipt_ids": ["r-A", "r-B"],
+                "numerics": [],
+            },
+        ],
+    })
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await render_synthesis_paper(
+                receipts, matrix, th,
+                topic="metformin", submission_id="syn-003",
+                chain=(_spec(),), client=client,
+            )
+        finally:
+            await client.aclose()
+
+    paper = asyncio.run(go())
+    tensions_section = next(s for s in paper.sections if s.name == "tensions")
+    # Placeholder body, no LLM call needed
+    assert "No non-orthogonal" in tensions_section.body_md
+    # No anchors (deterministic placeholder)
+    assert tensions_section.anchors == ()
+
+
+def test_writer_version_is_anchored() -> None:
+    assert WRITER_VERSION == "synthesis-writer/2026-04-29"

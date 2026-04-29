@@ -8,19 +8,17 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 7,000 LOC (set by DECISIONS.md 2026-04-29 — Day 10
-synthesis layer; raised from 5,500 to fund the synthesis paper engine
-that aggregates N claim receipts into a publishable artifact audited
-against the 7-paper Quality Reference Corpus). Per-file cap of 600 LOC
-sits above the v4 Rule 54 soft cap of 300; the head-room covers
-load-bearing trust-spine modules that carry rich docstrings and
-prompts (spar.py 397, citation_trace.py 360, fact_extractor.py 353).
+Current ceiling: 7,500 LOC (set by DECISIONS.md 2026-04-29 revised —
+Day 10.4 actual footprint exceeded the morning estimate by ~500 cloc;
+the synthesis writer + thesis tournament came in heavier than planned
+because the contract validators and fallback stubs are load-bearing
+for the audit gate). Per-file cap of 600 LOC unchanged.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 7000
+TOTAL_LIMIT = 7500
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
