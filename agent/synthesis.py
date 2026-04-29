@@ -4,16 +4,15 @@ Aggregates N claim receipts (Day 1-9 output) into a synthesis paper
 artifact (`paper_synthesis.md`) audited against the 7-paper Quality
 Reference Corpus rubric.
 
-Day 10.2 (this slice): the deterministic foundation. Two public
-functions:
-
-  build_receipt_summary(...)   — convert one saved receipt directory
-                                 into a structured ReceiptSummary
-  build_tension_matrix(...)    — pairwise tension classification
-                                 across N summaries
+Day 10.2 added the deterministic foundation: build_receipt_summary +
+build_tension_matrix. Day 10.3 (this slice) adds the synthesis thesis
+tournament — LLM proposes K candidates, code disposes:
+  - thesis must reference ≥3 receipts
+  - thesis must address ≥1 non-orthogonal tension
+  - no numerics absent from any receipt
+  - rank by (-receipts_referenced, -tensions_addressed, +word_count)
 
 Subsequent slices add:
-  Day 10.3: synthesize_thesis (LLM proposes K, code disposes)
   Day 10.4: render_synthesis_paper (sectioned writer)
   Day 10.5: orchestration glue + --synthesize flag
   Day 10.6: empirical metformin run + audit ≥8.5/10
@@ -66,6 +65,7 @@ __all__ = [
     "build_tension_matrix",
     "detect_outcome_class",
     "detect_effect_direction",
+    "load_receipt_summary",
 ]
 
 
