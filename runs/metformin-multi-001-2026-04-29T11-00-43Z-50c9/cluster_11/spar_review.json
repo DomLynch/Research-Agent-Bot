@@ -1,0 +1,40 @@
+{
+  "submission_id": "metformin-multi-001-2026-04-29T11-00-43Z-50c9-c11",
+  "verdict": "reject_critical",
+  "reviews": [
+    {
+      "judge_role": "evidence_auditor",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "Claim C074 is marked as 'direct', which requires a published_results citation. However, the citation trace for reference [38] (NCT06459310) explicitly states that the study is still 'recruiting' and 'has_results=False'. A claim cannot be supported by a trial that has not yet produced results, nor can it be a 'direct' evidence claim without a published source.",
+      "flagged_claims": [
+        "C074"
+      ]
+    },
+    {
+      "judge_role": "domain_skeptic",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 2,
+      "rationale": "The submission presents the objective of a clinical trial as a claim of efficacy or a research outcome. However, the supporting evidence (NCT06459310) is for a study that is currently 'recruiting' and has no results. Framing the 'objective' of an ongoing trial as a basis for scientific insight or a claim about mitigating the aging process is a fundamental error in scoping; it mistakes a hypothesis for a result.",
+      "flagged_claims": [
+        "C074"
+      ]
+    },
+    {
+      "judge_role": "final_judge",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "Both the Evidence Auditor and the Domain Skeptic correctly identify a fatal flaw in the submission: the claim is supported by a clinical trial (NCT06459310) that is still in the recruiting phase and has produced no results. A research objective or a hypothesis cannot serve as evidence for the efficacy of an intervention. Because the citation trace confirms 'has_results=False', there is no empirical basis to support the claim, regardless of whether it is framed as an objective or a result. I align with the prior reviewers in that this constitutes a fundamental failure of evidence standards.",
+      "flagged_claims": [
+        "C074"
+      ]
+    }
+  ],
+  "dissent": null,
+  "final_judge_resolution": "Both the Evidence Auditor and the Domain Skeptic correctly identify a fatal flaw in the submission: the claim is supported by a clinical trial (NCT06459310) that is still in the recruiting phase and has produced no results. A research objective or a hypothesis cannot serve as evidence for the efficacy of an intervention. Because the citation trace confirms 'has_results=False', there is no empirical basis to support the claim, regardless of whether it is framed as an objective or a result. I align with the prior reviewers in that this constitutes a fundamental failure of evidence standards.",
+  "gate_override": null,
+  "prompt_version": "spar/2026-04-28"
+}

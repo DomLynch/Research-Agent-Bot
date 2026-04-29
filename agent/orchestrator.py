@@ -517,30 +517,53 @@ async def run_proof_multi_receipt(
             graphs = graphs[:max_clusters]
 
         per_cluster_receipts: list[RunReceipts] = []
+        per_cluster_failures: list[dict] = []
         for idx, graph in enumerate(graphs, start=1):
             cluster_dir = output_dir / f"cluster_{idx:02d}"
             cluster_dir.mkdir(parents=True, exist_ok=True)
             if not force_overwrite:
                 _check_no_existing_receipts(cluster_dir)
-            traces = list(trace_claim_graph(
-                graph, items_by_ref, pack,
-                registry=registry, drug_client=drug_client,
-            ))
-            spar_review = await run_spar(
-                graph, traces,
-                topic=topic,
-                submission_id=f"{submission_id}-c{idx:02d}",
-                chain=spar_chain, client=c, ledger=spar_ledger, seed=seed,
-            )
-            claim_receipt_md, writer_rejections = write_paper(
-                graph, items, traces, spar_review,
-                pack=pack, topic=topic,
-            )
-            if writer_rejections:
-                raise OrchestratorError(
-                    f"writer regression at cluster {idx}: "
-                    f"{writer_rejections[0]!r}"
+            # Day 10.11 robustness: a transient LLM error (judge JSON
+            # parse failure, malformed verdict, network blip) on ONE
+            # cluster's SPAR call killed the whole multi-receipt run
+            # pre-fix. With ~30 clusters × 3 judges = 90 LLM calls per
+            # run, transient failures are unavoidable. Catch the
+            # cluster-scoped exception, record it, leave the empty
+            # cluster_NN/ on disk for audit, and continue with the
+            # remaining clusters. The outer loop's invariants hold:
+            # accepted_receipts can only come from clusters whose
+            # spar_review actually exists on disk.
+            try:
+                traces = list(trace_claim_graph(
+                    graph, items_by_ref, pack,
+                    registry=registry, drug_client=drug_client,
+                ))
+                spar_review = await run_spar(
+                    graph, traces,
+                    topic=topic,
+                    submission_id=f"{submission_id}-c{idx:02d}",
+                    chain=spar_chain, client=c, ledger=spar_ledger, seed=seed,
                 )
+                claim_receipt_md, writer_rejections = write_paper(
+                    graph, items, traces, spar_review,
+                    pack=pack, topic=topic,
+                )
+                if writer_rejections:
+                    raise OrchestratorError(
+                        f"writer regression at cluster {idx}: "
+                        f"{writer_rejections[0]!r}"
+                    )
+            except Exception as exc:  # noqa: BLE001 — robustness across
+                # ANY transient failure in a single cluster's pipeline.
+                # OrchestratorError is re-raised at the top level for
+                # whole-run failures (zero accepted facts, compile
+                # error); cluster-scoped exceptions stay local.
+                per_cluster_failures.append({
+                    "cluster_index": idx,
+                    "error_type": type(exc).__name__,
+                    "error": str(exc)[:300],
+                })
+                continue
             paths = RunReceipts(
                 output_dir=cluster_dir,
                 claim_receipt_md=cluster_dir / "claim_receipt.md",
@@ -604,6 +627,8 @@ async def run_proof_multi_receipt(
             "topic": topic,
             "domain": domain,
             "n_clusters": len(per_cluster_receipts),
+            "n_cluster_failures": len(per_cluster_failures),
+            "cluster_failures": per_cluster_failures,
             "clusters": [
                 {
                     "cluster_index": i + 1,

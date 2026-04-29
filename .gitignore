@@ -61,6 +61,17 @@ runs/e2e-baselines/*.tmp
 # are real claim-quality issues (protocol-as-claim, mechanism
 # inflation, sample-size critiques), not trace coverage gaps.
 !runs/metformin-multi-001-2026-04-29T10-27-39Z-4923/
+# Day 10.11 — TRACE_BACKEND=http re-run AFTER protocol-as-claim filter
+# shipped: 27 clusters, 1 accepted (1 accept_clean + 26 rejected).
+# The Day 10.11 fact_extractor filter (`check_objective_as_claim`)
+# successfully dropped objective-span extractions upstream — visible
+# in the cluster count dropping from 30 to 27 vs Day 10.10. But the
+# SPAR pass rate stayed ~4% because the dominant rejection mode
+# shifted to mechanism inflation / sample-size critiques / missing
+# source text. AAA still not reached on this corpus; the filter is
+# correct but insufficient for the empirical bar. Day 10.12+ needs
+# to address the next dominant failure mode.
+!runs/metformin-multi-001-2026-04-29T11-00-43Z-50c9/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/
