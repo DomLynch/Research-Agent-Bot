@@ -72,6 +72,15 @@ runs/e2e-baselines/*.tmp
 # correct but insufficient for the empirical bar. Day 10.12+ needs
 # to address the next dominant failure mode.
 !runs/metformin-multi-001-2026-04-29T11-00-43Z-50c9/
+# Day 10.12 — TRACE_BACKEND=http re-run AFTER mechanism-inflation guard
+# + protocol-only-cluster filter shipped:
+#   22 clusters (vs 27 pre-fix); 2 accept_caveated, 20 rejected;
+#   7 protocol-only clusters excluded by the new filter (logged in
+#   manifest.protocol_only_excluded_indices). Real progress vs Day 10.11
+#   (accept rate 4% → 9%) but still below the cross-source ≥3 floor.
+# Honest interpretation: the filter+guard slice of work has plateaued
+# on this corpus — remaining accept-rate gap is corpus-quality bound.
+!runs/metformin-multi-001-2026-04-29T11-50-04Z-de47/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

@@ -1,0 +1,40 @@
+{
+  "submission_id": "metformin-multi-001-2026-04-29T11-50-04Z-de47-c22",
+  "verdict": "reject_critical",
+  "reviews": [
+    {
+      "judge_role": "evidence_auditor",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "The submission fails the evidence audit because there is no source abstract provided for reference [9]. As the Evidence Auditor, I cannot verify if the claim regarding metformin delaying cochlear aging in primates is supported by the evidence if the evidence itself is missing from the trace data. Furthermore, the claim is marked as 'mechanistic' and 'direct', but there is no published_results citation or abstract text to validate the numeric or qualitative assertions made in the claim.",
+      "flagged_claims": [
+        "C018"
+      ]
+    },
+    {
+      "judge_role": "domain_skeptic",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 3,
+      "rationale": "The claim is an extreme example of over-claiming and mechanism inflation. It asserts that metformin 'effectively delays cochlear aging,' which is a functional outcome, yet the evidence provided is categorized as 'mechanistic.' There is a fundamental gap between observing a molecular or cellular change (mechanistic evidence) and claiming a delay in the clinical process of aging. Furthermore, the claim lacks any mention of the specific primate species, the duration of 'long-term,' or the specific markers used to define 'cochlear aging,' hiding critical caveats regarding population specificity and outcome measurement.\n\nAdditionally, the submission presents a single mechanistic reference to support a broad functional conclusion. Without data on auditory brainstem responses (ABR) or behavioral hearing tests in these primates, the leap from mechanistic observation to the claim of 'effectively delaying aging' is scientifically unsupported and over-scoped.",
+      "flagged_claims": [
+        "C018"
+      ]
+    },
+    {
+      "judge_role": "final_judge",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "I align with both the Evidence Auditor and the Domain Skeptic. The submission is fundamentally flawed due to a complete absence of source text for reference [9], making the claim unverifiable. Even if the source were present, the Domain Skeptic correctly identifies a critical leap in logic: the claim asserts a functional outcome (delaying cochlear aging) while labeling the evidence as 'mechanistic.' Without specific data on primate species, dosage, duration, or functional hearing metrics (such as ABR), the claim is an unsupported generalization. The lack of transparency and the over-scoped nature of the assertion necessitate a rejection.",
+      "flagged_claims": [
+        "C018"
+      ]
+    }
+  ],
+  "dissent": null,
+  "final_judge_resolution": "I align with both the Evidence Auditor and the Domain Skeptic. The submission is fundamentally flawed due to a complete absence of source text for reference [9], making the claim unverifiable. Even if the source were present, the Domain Skeptic correctly identifies a critical leap in logic: the claim asserts a functional outcome (delaying cochlear aging) while labeling the evidence as 'mechanistic.' Without specific data on primate species, dosage, duration, or functional hearing metrics (such as ABR), the claim is an unsupported generalization. The lack of transparency and the over-scoped nature of the assertion necessitate a rejection.",
+  "gate_override": null,
+  "prompt_version": "spar/2026-04-28"
+}
