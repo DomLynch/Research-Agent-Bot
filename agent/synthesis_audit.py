@@ -30,10 +30,18 @@ __all__ = [
     "Q_LOAD_BEARING_IDS",
     "AUDIT_VERSION",
     "DAY10_SCORE_FLOOR",
+    "MIN_APPLICABLE_CHECKS",
 ]
 
-AUDIT_VERSION = "synthesis-audit/2026-04-29"
+# Day 10.7: bumped audit version after fixing the three reviewer-P1/P2
+# findings (vacuous-pass scoring, single-trial Q4 bypass, N/A handling).
+AUDIT_VERSION = "synthesis-audit/2026-04-29-rev-p1p2"
 DAY10_SCORE_FLOOR = 8.5
+# Day 10.7 (reviewer P2): with N/A handling, a corpus that triggers <4
+# applicable checks isn't auditable — the score is computed but the
+# notes flag "insufficient coverage" so it doesn't ship as 10/10
+# vacuously.
+MIN_APPLICABLE_CHECKS = 4
 
 Q_LOAD_BEARING_IDS = (
     "Q1-konopka-p008-hedging",
@@ -132,10 +140,13 @@ def _check_q2(
     null in the Synthesis or Tensions section."""
     null_receipts = [r for r in receipts if r.effect_direction == "null"]
     if not null_receipts:
+        # Day 10.7 (reviewer P2): no null receipts → check is N/A, not
+        # vacuously passing. Don't count toward score.
         return QualityCheckResult(
             question_id="Q2-witham-null-acknowledgment",
             question="Null primary endpoints must be acknowledged",
-            passed=True, detail="no null receipts in corpus",
+            passed=True, detail="no null receipts in corpus (N/A)",
+            applicable=False,
         )
     syn_or_tension = "\n".join(
         s.body_md for s in paper.sections
@@ -184,10 +195,12 @@ def _check_q3(
         return QualityCheckResult(
             question_id="Q3-mohammed-direct-vs-indirect",
             question="Mixed-directness paragraphs need transition language",
-            passed=True, detail="no synthesis section",
+            passed=True, detail="no synthesis section (N/A)",
+            applicable=False,
         )
     receipts_by_id = {r.receipt_id: r for r in receipts}
     failures: list[str] = []
+    mixed_directness_count = 0
     # Each anchor in the synthesis section is one sentence; check
     # mixed-directness anchor sets.
     for anchor in syn_section.anchors:
@@ -199,17 +212,29 @@ def _check_q3(
         if "direct" in directnesses and (
             "mechanistic" in directnesses or "indirect" in directnesses
         ):
+            mixed_directness_count += 1
             sentence_norm = _normalize(anchor.sentence)
             if not any(t in sentence_norm for t in _TRANSITION_PHRASES):
                 failures.append(
                     f"mixed-directness sentence missing transition: {anchor.sentence[:80]}"
                 )
+    if mixed_directness_count == 0:
+        # Day 10.7 (reviewer P2): no mixed-directness paragraphs to
+        # check — the corpus is all-direct or all-mechanistic. Q3 is
+        # N/A, not vacuously passing.
+        return QualityCheckResult(
+            question_id="Q3-mohammed-direct-vs-indirect",
+            question="Mixed-directness paragraphs need transition language",
+            passed=True,
+            detail="no mixed-directness paragraphs in corpus (N/A)",
+            applicable=False,
+        )
     return QualityCheckResult(
         question_id="Q3-mohammed-direct-vs-indirect",
         question="Mixed-directness paragraphs need transition language",
         passed=not failures,
         detail=(
-            "no mixed-directness paragraphs need correction"
+            f"{mixed_directness_count} mixed-directness paragraphs, all clean"
             if not failures else "; ".join(failures[:2])
         ),
     )
@@ -233,18 +258,44 @@ _REPLICATION_PHRASES = (
 def _check_q4(
     paper: SynthesisPaper, receipts: Sequence[ReceiptSummary],
 ) -> QualityCheckResult:
-    """If thesis references ≤2 receipts AND the corpus is thin
-    (≤4 claims each), Limitations section must include a replication
-    phrase."""
-    n_receipts = len(paper.thesis.receipt_ids_referenced)
-    thin_corpus = all(r.n_claims <= 4 for r in receipts)
-    if n_receipts > 2 or not thin_corpus:
+    """Single-trial theses must name the replication gap in Limitations.
+
+    Day 10.7 (reviewer P1): the load-bearing fix is to count UNIQUE
+    canonical trials, not raw receipt count. Pre-fix, 12 receipts
+    anchored on the same trial passed as "rich corpus" because
+    `n_receipts > 2` was the gate. Now: when fewer than
+    MIN_UNIQUE_TRIALS_FOR_SYNTHESIS distinct trials underlie the
+    referenced receipts, the synthesis is single-trial-equivalent and
+    the Limitations section MUST mention "single-trial" /
+    "replication required" / similar.
+    """
+    referenced_ids = set(paper.thesis.receipt_ids_referenced)
+    referenced_receipts = [
+        r for r in receipts if r.receipt_id in referenced_ids
+    ]
+    unique_trials = {
+        r.canonical_trial_id
+        for r in referenced_receipts
+        if r.canonical_trial_id
+    }
+    # Also count receipts without a canonical trial as their own
+    # "trial" via the thesis signature, so unsignposted single-trial
+    # corpora don't bypass the gate.
+    untrialed = sum(
+        1 for r in referenced_receipts if not r.canonical_trial_id
+    )
+    effective_unique_count = len(unique_trials) + untrialed
+
+    if effective_unique_count >= 3:
         return QualityCheckResult(
             question_id="Q4-miles-replication-gap",
             question="Single-trial / thin theses must name replication gap",
             passed=True,
-            detail=f"thesis references {n_receipts} receipts, corpus is "
-                   f"{'thin' if thin_corpus else 'rich'}",
+            detail=(
+                f"thesis references {len(referenced_ids)} receipts spanning "
+                f"{effective_unique_count} unique trials — synthesis is "
+                f"cross-trial, replication gate not triggered"
+            ),
         )
     lim_section = next(
         (s for s in paper.sections if s.name == "limitations"), None,
@@ -256,9 +307,9 @@ def _check_q4(
         question="Single-trial / thin theses must name replication gap",
         passed=has_phrase,
         detail=(
-            "replication phrase present"
-            if has_phrase
-            else "no replication phrase in Limitations"
+            f"thesis references {len(referenced_ids)} receipts but only "
+            f"{effective_unique_count} unique trial(s); replication "
+            f"phrase {'present' if has_phrase else 'MISSING'} in Limitations"
         ),
     )
 
@@ -329,7 +380,8 @@ def _check_q6(
         return QualityCheckResult(
             question_id="Q6-witham-adverse-event-surfacing",
             question="Safety receipts must appear in Tensions or Limitations",
-            passed=True, detail="no safety receipts in corpus",
+            passed=True, detail="no safety receipts in corpus (N/A)",
+            applicable=False,
         )
     target_text = "\n".join(
         s.body_md for s in paper.sections
@@ -390,8 +442,22 @@ def audit_synthesis_paper(
 ) -> SynthesisQualityAudit:
     """Run all 7 checks and aggregate.
 
-    score = passed_count / total_count * 10
-    Day 10 ship: score ≥ 8.5 AND no failure on the load-bearing IDs.
+    Day 10.7 score formula (reviewer P2 fix): only APPLICABLE checks
+    count toward the score. Vacuous passes (no null receipts to test
+    Q2, no safety receipts for Q6, etc.) score N/A and don't inflate
+    the result.
+
+      applicable = [c for c in checks if c.applicable]
+      score = passed_applicable / max(1, total_applicable) * 10
+
+    Day 10 ship gates (BOTH must hold):
+      1. score ≥ DAY10_SCORE_FLOOR (8.5)
+      2. load-bearing Q1/Q3/Q5 pass (when applicable)
+      3. coverage: total_applicable ≥ MIN_APPLICABLE_CHECKS (4)
+
+    Gate 3 closes the reviewer's P2 — a corpus that triggers only 2-3
+    applicable checks isn't auditable; reporting 10/10 from 2 checks
+    would be misleading.
     """
     checks = (
         _check_q1(paper),
@@ -402,33 +468,52 @@ def audit_synthesis_paper(
         _check_q6(paper, receipts),
         _check_q7(paper, receipts),
     )
-    passed = sum(1 for c in checks if c.passed)
-    score = passed / len(checks) * 10
-    load_bearing_pass = all(
-        c.passed for c in checks if c.question_id in Q_LOAD_BEARING_IDS
+    applicable = [c for c in checks if c.applicable]
+    passed_applicable = sum(1 for c in applicable if c.passed)
+    total_applicable = len(applicable)
+    score = (
+        passed_applicable / total_applicable * 10
+        if total_applicable else 0.0
     )
-    if score >= DAY10_SCORE_FLOOR and load_bearing_pass:
-        notes = (
-            f"{passed}/{len(checks)} checks passed; ship-criterion met "
-            f"(score ≥ {DAY10_SCORE_FLOOR} AND load-bearing Q1/Q3/Q5 pass)"
+
+    # Load-bearing checks: only the ones that are applicable count.
+    load_bearing_checks = [
+        c for c in checks
+        if c.question_id in Q_LOAD_BEARING_IDS and c.applicable
+    ]
+    load_bearing_pass = all(c.passed for c in load_bearing_checks)
+    failed_load = [
+        c.question_id for c in load_bearing_checks if not c.passed
+    ]
+
+    insufficient_coverage = total_applicable < MIN_APPLICABLE_CHECKS
+
+    notes_parts: list[str] = [
+        f"{passed_applicable}/{total_applicable} applicable checks passed "
+        f"(score {score:.2f}/10, {len(checks) - total_applicable} N/A)"
+    ]
+    if failed_load:
+        notes_parts.append(
+            f"LOAD-BEARING FAIL {failed_load} — ship blocked"
         )
-    elif not load_bearing_pass:
-        failed_load = [
-            c.question_id for c in checks
-            if c.question_id in Q_LOAD_BEARING_IDS and not c.passed
-        ]
-        notes = (
-            f"{passed}/{len(checks)} checks passed; LOAD-BEARING FAIL "
-            f"{failed_load} — ship blocked regardless of score"
+    if insufficient_coverage:
+        notes_parts.append(
+            f"INSUFFICIENT COVERAGE: only {total_applicable} applicable "
+            f"checks (floor {MIN_APPLICABLE_CHECKS}) — corpus too narrow "
+            f"for honest synthesis audit"
         )
-    else:
-        notes = (
-            f"{passed}/{len(checks)} checks passed; score {score:.1f} below "
-            f"floor {DAY10_SCORE_FLOOR}"
-        )
+    if (
+        score >= DAY10_SCORE_FLOOR
+        and load_bearing_pass
+        and not insufficient_coverage
+    ):
+        notes_parts.append("ship-criterion met")
+    elif score < DAY10_SCORE_FLOOR:
+        notes_parts.append(f"score below floor {DAY10_SCORE_FLOOR}")
+
     return SynthesisQualityAudit(
         submission_id=paper.submission_id,
         checks=checks,
         score=round(score, 2),
-        notes=notes,
+        notes=" | ".join(notes_parts),
     )

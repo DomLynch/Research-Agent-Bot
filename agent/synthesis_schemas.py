@@ -275,8 +275,13 @@ class QualityCheckResult:
 
     The 7 questions live in `agent/prompts/judge_quality_checklist.md`,
     each keyed to a paper from the 7-paper Quality Reference Corpus.
-    Example: "Does the draft round any p-value to 'essentially zero'?
-    Konopka's p=0.08 must NOT be reported as significant."
+
+    Day 10.7 (reviewer P2): `applicable=False` means the corpus lacks
+    the evidence type this check evaluates (e.g. no null receipts to
+    test Q2, no safety receipts to test Q6). Vacuous passes (corpus
+    has nothing to check) MUST NOT inflate the audit score — the
+    aggregate is `passed_applicable / total_applicable * 10`, with a
+    minimum-applicable floor before the score is meaningful.
     """
 
     question_id: str                # e.g. "Q1-konopka-p008-hedging"
@@ -284,6 +289,7 @@ class QualityCheckResult:
     passed: bool
     detail: str
     excerpt: str | None = None      # passage from synthesis paper, if relevant
+    applicable: bool = True          # False means "corpus lacks this evidence type"
 
 
 @dataclass(frozen=True, slots=True)

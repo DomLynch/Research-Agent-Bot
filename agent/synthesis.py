@@ -66,7 +66,77 @@ __all__ = [
     "detect_outcome_class",
     "detect_effect_direction",
     "load_receipt_summary",
+    "unique_evidence_key",
+    "dedupe_receipts",
+    "InsufficientUniqueEvidenceError",
+    "MIN_UNIQUE_TRIALS_FOR_SYNTHESIS",
 ]
+
+
+# Day 10.7 (reviewer P1): synthesis must operate on UNIQUE evidence
+# units, not duplicate receipts. The first ship of Day 10 fed 12
+# metformin receipts (all anchored on MASTERS NCT02308228) into the
+# tension matrix — that's repeated-receipt aggregation, not
+# cross-source synthesis. Reviewer's load-bearing finding.
+#
+# unique_evidence_key returns a tuple identifying a receipt's evidence
+# content. Two receipts with the same key are duplicates regardless of
+# their submission_id or run timestamp. Dedup uses this to collapse
+# duplicates BEFORE the tension matrix is built.
+#
+# MIN_UNIQUE_TRIALS_FOR_SYNTHESIS is the floor below which synthesis
+# isn't meaningful. Single-trial "synthesis" is a duplicate stack;
+# two-trial synthesis is borderline. Three unique trials is the
+# minimum bar for the Day 10 audit to be honest about coverage.
+MIN_UNIQUE_TRIALS_FOR_SYNTHESIS = 3
+
+
+class InsufficientUniqueEvidenceError(ValueError):
+    """Raised by `_run_synthesize` when fewer than the minimum number
+    of unique evidence units are available after dedup. Carries the
+    unique_keys list so the caller can render a precise diagnostic.
+    """
+
+
+def unique_evidence_key(r: ReceiptSummary) -> tuple[str, str]:
+    """Identify a receipt by its evidence content.
+
+    Two receipts with the same (canonical_trial_id, normalized thesis
+    signature) are duplicates — same source paper, same load-bearing
+    finding. This is stronger than just trial_id (a single trial can
+    yield multiple distinct findings) and stronger than just thesis
+    text (different trials can have similar prose).
+
+    Returns ("", thesis_sig) when the receipt has no canonical_trial_id
+    so receipts without registry anchoring still dedup against each
+    other on thesis text alone.
+    """
+    trial = (r.canonical_trial_id or "").upper()
+    thesis_sig = " ".join(r.thesis_text.lower().split())[:200]
+    return (trial, thesis_sig)
+
+
+def dedupe_receipts(
+    summaries: Sequence[ReceiptSummary],
+) -> tuple[ReceiptSummary, ...]:
+    """Keep one receipt per `unique_evidence_key` (first-seen wins).
+
+    Order-preserving: re-running with the same input order produces
+    the same deduped output. The synthesis orchestrator calls this
+    before `build_tension_matrix` so duplicate runs of the same
+    cluster don't pollute the matrix with same-trial / same-thesis
+    self-pairs that would show as "agreement" but are actually one
+    finding observed N times.
+    """
+    seen: set[tuple[str, str]] = set()
+    out: list[ReceiptSummary] = []
+    for s in summaries:
+        key = unique_evidence_key(s)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(s)
+    return tuple(out)
 
 
 # --- Outcome-class keyword maps ------------------------------------------

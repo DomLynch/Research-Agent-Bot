@@ -412,4 +412,114 @@ def test_audit_passes_clean_paper() -> None:
 
 
 def test_audit_version_is_anchored() -> None:
-    assert AUDIT_VERSION == "synthesis-audit/2026-04-29"
+    """Day 10.7 bumped after the reviewer-P1/P2 fix (dedup, Q4 unique
+    trials, N/A handling)."""
+    assert AUDIT_VERSION == "synthesis-audit/2026-04-29-rev-p1p2"
+
+
+# ============================================================
+# Day 10.7 — reviewer P1/P2 fixes
+# ============================================================
+
+
+def test_q2_marked_not_applicable_when_no_null_receipts() -> None:
+    """Reviewer P2: vacuous passes (no null receipts to check) must
+    not inflate the score. Q2 returns applicable=False instead of
+    pretending the corpus passed."""
+    receipts = (_summary("r-A", direction="negative"),)
+    paper = _paper("body", receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q2 = next(c for c in audit.checks if c.question_id.startswith("Q2"))
+    assert q2.passed is True  # nothing to fail
+    assert q2.applicable is False
+    assert "N/A" in q2.detail
+
+
+def test_q4_fails_for_single_trial_corpus_without_replication_phrase() -> None:
+    """Reviewer P1: 12 receipts from the same trial must not pass Q4
+    as "rich". Q4 now counts UNIQUE trials, not raw receipt count."""
+    same_trial = "NCT02308228"
+    receipts = tuple(
+        ReceiptSummary(
+            receipt_id=f"r-{i}", receipt_path="x", topic="metformin",
+            thesis_text="muscle thesis", spar_verdict="accept_clean",
+            n_claims=4, n_failed_traces=0,
+            canonical_trial_id=same_trial, evidence_tier="A1",
+            directness="direct", outcome_class="muscle_function",
+            effect_direction="negative", p_values=("p=0.003",),
+            population_summary="",
+        )
+        for i in range(12)
+    )
+    # Thesis references all 12 receipts but they're all the same trial.
+    # Limitations section has NO replication phrase → Q4 must fail.
+    paper = _paper(
+        "body without replication phrase",
+        receipts,
+        thesis_refs=tuple(r.receipt_id for r in receipts),
+    )
+    audit = audit_synthesis_paper(paper, receipts)
+    q4 = next(c for c in audit.checks if c.question_id.startswith("Q4"))
+    assert not q4.passed
+    assert "1 unique trial" in q4.detail.lower() or "1 unique" in q4.detail.lower()
+
+
+def test_q4_passes_when_three_unique_trials_referenced() -> None:
+    """Three distinct trials → cross-trial synthesis → Q4 doesn't
+    require a replication phrase."""
+    receipts = tuple(
+        _summary(f"r-{trial}", p_values=("p=0.003",))
+        for trial in ("trial-A", "trial-B", "trial-C")
+    )
+    receipts = tuple(
+        ReceiptSummary(
+            receipt_id=r.receipt_id, receipt_path="x", topic="metformin",
+            thesis_text=r.thesis_text, spar_verdict=r.spar_verdict,
+            n_claims=r.n_claims, n_failed_traces=0,
+            canonical_trial_id=f"NCT-{r.receipt_id}",
+            evidence_tier="A1", directness="direct",
+            outcome_class="muscle_function", effect_direction="negative",
+            p_values=("p=0.003",), population_summary="",
+        )
+        for r in receipts
+    )
+    paper = _paper(
+        "body", receipts,
+        thesis_refs=tuple(r.receipt_id for r in receipts),
+    )
+    audit = audit_synthesis_paper(paper, receipts)
+    q4 = next(c for c in audit.checks if c.question_id.startswith("Q4"))
+    assert q4.passed
+    assert "3 unique trials" in q4.detail or "cross-trial" in q4.detail
+
+
+def test_score_excludes_n_a_checks() -> None:
+    """Reviewer P2: applicable-only score formula. Don't divide by 7
+    when 3 of the 7 checks are N/A — that vacuously inflates the
+    score."""
+    # Single negative receipt — no nulls (Q2 N/A), no safety (Q6 N/A),
+    # no synthesis section in defaults (Q3 N/A). Q1/Q4/Q5/Q7 applicable.
+    receipts = (_summary("r-A", direction="negative", p_values=("p=0.003",)),)
+    body = "Receipt r-A reports negative effect at p=0.003."
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    applicable = [c for c in audit.checks if c.applicable]
+    assert len(applicable) < 7  # some checks are N/A
+    passed_applicable = sum(1 for c in applicable if c.passed)
+    expected_score = passed_applicable / len(applicable) * 10
+    assert audit.score == round(expected_score, 2)
+
+
+def test_insufficient_coverage_blocks_ship_even_at_high_score() -> None:
+    """Reviewer P2: with applicable_count < MIN_APPLICABLE_CHECKS,
+    the audit notes flag insufficient coverage so it doesn't ship as
+    a high score from a narrow corpus."""
+    # Tiny corpus that only triggers a few applicable checks.
+    receipts = (_summary("r-A", direction="negative"),)
+    body = "Receipt r-A reports negative effect at p=0.003."
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    applicable_count = sum(1 for c in audit.checks if c.applicable)
+    if applicable_count < 4:
+        assert "INSUFFICIENT COVERAGE" in audit.notes
+        assert "ship-criterion met" not in audit.notes

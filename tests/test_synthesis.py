@@ -29,10 +29,13 @@ unclear+unclear), the discriminating tests catch it.
 from __future__ import annotations
 
 from agent.synthesis import (
+    MIN_UNIQUE_TRIALS_FOR_SYNTHESIS,
     build_receipt_summary,
     build_tension_matrix,
+    dedupe_receipts,
     detect_effect_direction,
     detect_outcome_class,
+    unique_evidence_key,
 )
 from agent.synthesis_schemas import (
     EffectDirection,
@@ -416,6 +419,104 @@ def test_build_receipt_summary_extracts_thesis_and_outcome_class() -> None:
     assert summary.spar_verdict == "accept_clean"
     assert summary.canonical_trial_id == "NCT02308228"
     assert summary.n_claims == 1
+
+
+# ============================================================
+# Day 10.7: unique_evidence_key + dedupe_receipts
+# ============================================================
+
+
+def test_unique_evidence_key_collapses_same_trial_same_thesis() -> None:
+    """Two receipts with the same canonical_trial_id and same thesis
+    text are duplicates regardless of receipt_id / submission timestamp."""
+    a = _summary("run-1")
+    b = _summary("run-2")  # different receipt_id, but same trial + thesis
+    # Both default to canonical_trial_id="NCT-test", thesis_text="thesis text for {rid}"
+    # The thesis_text differs by rid... let me pin them to be identical.
+    a = ReceiptSummary(
+        receipt_id="run-1", receipt_path="runs/run-1",
+        topic="metformin", thesis_text="metformin blunts hypertrophy",
+        spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+        canonical_trial_id="NCT02308228", evidence_tier="A1",
+        directness="direct", outcome_class="muscle_function",
+        effect_direction="negative", p_values=(),
+        population_summary="older adults",
+    )
+    b = ReceiptSummary(
+        receipt_id="run-2", receipt_path="runs/run-2",
+        topic="metformin", thesis_text="metformin blunts hypertrophy",
+        spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+        canonical_trial_id="NCT02308228", evidence_tier="A1",
+        directness="direct", outcome_class="muscle_function",
+        effect_direction="negative", p_values=(),
+        population_summary="older adults",
+    )
+    assert unique_evidence_key(a) == unique_evidence_key(b)
+
+
+def test_unique_evidence_key_distinct_for_different_trials() -> None:
+    """Different canonical_trial_id → different keys, even with same thesis."""
+    a = ReceiptSummary(
+        receipt_id="run-1", receipt_path="x", topic="metformin",
+        thesis_text="same thesis", spar_verdict="accept_clean",
+        n_claims=4, n_failed_traces=0, canonical_trial_id="NCT02308228",
+        evidence_tier="A1", directness="direct",
+        outcome_class="muscle_function", effect_direction="negative",
+        p_values=(), population_summary="",
+    )
+    b = ReceiptSummary(
+        receipt_id="run-2", receipt_path="x", topic="metformin",
+        thesis_text="same thesis", spar_verdict="accept_clean",
+        n_claims=4, n_failed_traces=0, canonical_trial_id="NCT04264897",
+        evidence_tier="A1", directness="direct",
+        outcome_class="muscle_function", effect_direction="negative",
+        p_values=(), population_summary="",
+    )
+    assert unique_evidence_key(a) != unique_evidence_key(b)
+
+
+def test_dedupe_receipts_collapses_12_runs_of_one_trial_to_one() -> None:
+    """Day 10.7 reviewer P1: 12 metformin receipts all anchored on
+    MASTERS NCT02308228 with the same thesis text must dedupe to 1.
+    This was the false-positive scenario the reviewer flagged."""
+    receipts = [
+        ReceiptSummary(
+            receipt_id=f"run-{i:02d}", receipt_path=f"runs/run-{i:02d}",
+            topic="metformin", thesis_text="metformin blunts hypertrophy",
+            spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+            canonical_trial_id="NCT02308228",
+            evidence_tier="A1", directness="direct",
+            outcome_class="muscle_function", effect_direction="negative",
+            p_values=(), population_summary="",
+        )
+        for i in range(12)
+    ]
+    deduped = dedupe_receipts(receipts)
+    assert len(deduped) == 1
+    assert deduped[0].receipt_id == "run-00"  # first-seen wins
+
+
+def test_dedupe_receipts_keeps_distinct_trials() -> None:
+    """3 different canonical trials → 3 unique keys → 3 surviving receipts."""
+    receipts = [
+        ReceiptSummary(
+            receipt_id=f"run-{trial_id}", receipt_path="x", topic="metformin",
+            thesis_text=f"thesis for {trial_id}",
+            spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+            canonical_trial_id=trial_id, evidence_tier="A1",
+            directness="direct", outcome_class="muscle_function",
+            effect_direction="negative", p_values=(), population_summary="",
+        )
+        for trial_id in ("NCT02308228", "NCT04264897", "NCT01765946")
+    ]
+    deduped = dedupe_receipts(receipts)
+    assert len(deduped) == 3
+
+
+def test_min_unique_trials_for_synthesis_is_three() -> None:
+    """The threshold below which synthesis isn't honest. Pinned for
+    visibility — changing it requires a DECISIONS.md entry."""
+    assert MIN_UNIQUE_TRIALS_FOR_SYNTHESIS == 3
 
 
 def test_build_receipt_summary_pulls_p_values_from_thesis() -> None:

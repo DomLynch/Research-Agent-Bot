@@ -67,7 +67,12 @@ from agent.sources.clinicaltrials import ClinicalTrialsClient
 from agent.sources.europepmc import EuropePMCClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
-from agent.synthesis import build_tension_matrix, load_receipt_summary
+from agent.synthesis import (
+    MIN_UNIQUE_TRIALS_FOR_SYNTHESIS,
+    build_tension_matrix,
+    dedupe_receipts,
+    load_receipt_summary,
+)
 from agent.synthesis_audit import (
     DAY10_SCORE_FLOOR,
     Q_LOAD_BEARING_IDS,
@@ -646,6 +651,32 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
     for s in summaries:
         print(f"  - {s.receipt_id} (outcome={s.outcome_class}, "
               f"direction={s.effect_direction}, verdict={s.spar_verdict})")
+
+    # Day 10.7 (reviewer P1): dedupe receipts by unique_evidence_key
+    # so duplicate runs of the same source-paper cluster don't pollute
+    # the synthesis with same-trial / same-thesis self-pairs.
+    deduped = list(dedupe_receipts(summaries))
+    n_dedup_dropped = len(summaries) - len(deduped)
+    if n_dedup_dropped:
+        print(f"\nDeduped: {len(summaries)} → {len(deduped)} unique receipts "
+              f"({n_dedup_dropped} duplicate runs dropped)")
+    unique_trials = {
+        r.canonical_trial_id for r in deduped if r.canonical_trial_id
+    }
+    print(f"Unique canonical trials in deduped corpus: {len(unique_trials)} → "
+          f"{sorted(unique_trials)}")
+    if len(deduped) < MIN_UNIQUE_TRIALS_FOR_SYNTHESIS:
+        print(
+            f"\nERROR: only {len(deduped)} unique evidence unit(s) after "
+            f"dedup; synthesis requires ≥{MIN_UNIQUE_TRIALS_FOR_SYNTHESIS}. "
+            f"This means the receipts under {receipts_dir} are duplicate "
+            f"runs of the same source-paper cluster, not cross-source "
+            f"evidence. Run the receipt pipeline against multiple "
+            f"corpora / canonical trials before synthesizing.",
+            file=sys.stderr,
+        )
+        return 2
+    summaries = deduped
 
     # Stage 1: tension matrix — deterministic, no LLM
     matrix = build_tension_matrix(summaries)
