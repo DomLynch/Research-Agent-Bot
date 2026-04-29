@@ -24,12 +24,23 @@ discussion happens explicitly in LimitationsFull).
 """
 from __future__ import annotations
 
+import asyncio
+import logging
 from collections.abc import Mapping, Sequence
 from typing import Any
 
 import httpx
 
 from agent.llm_client import CallSpec, CostLedger, chat_json
+from agent.paper_writer_builders import (
+    build_anchored_from_parsed,
+    build_results_from_parsed,
+    build_scoped_from_parsed,
+)
+from agent.paper_writer_deterministic import (
+    build_methods_section,
+    build_references_full_section,
+)
 from agent.paper_writer_prompts import (
     ABSTRACT_SYSTEM_PROMPT,
     BACKGROUND_SYSTEM_PROMPT,
@@ -40,15 +51,6 @@ from agent.paper_writer_prompts import (
     LIMITATIONS_FULL_SYSTEM_PROMPT,
     RESULTS_SYSTEM_PROMPT,
 )
-from agent.paper_writer_builders import (
-    build_anchored_from_parsed,
-    build_results_from_parsed,
-    build_scoped_from_parsed,
-)
-from agent.paper_writer_deterministic import (
-    build_methods_section,
-    build_references_full_section,
-)
 from agent.synthesis_schemas import (
     ReceiptSummary,
     SectionName,
@@ -57,6 +59,16 @@ from agent.synthesis_schemas import (
     TensionMatrix,
 )
 from agent.synthesis_writer import filter_accepted
+
+logger = logging.getLogger(__name__)
+
+
+# Day 10.16d — per-LLM-call timeout. If a single section call to the
+# LLM provider takes longer than this, we treat it as a hang and let
+# the retry loop move on. The real LLM round-trip is 30-90s; 180s
+# accommodates the long-paragraph generations without letting a stuck
+# call wedge the whole render.
+PER_CALL_TIMEOUT_SEC = 180.0
 
 PAPER_WRITER_VERSION = "paper-writer/2026-04-29-day10-16"
 
@@ -82,7 +94,12 @@ SECTION_WORD_FLOORS: Mapping[str, int] = {
 FULL_PAPER_WORD_FLOOR = 5000
 
 # Max LLM retries per section when word count is below floor.
-SECTION_RETRY_BUDGET = 2
+# Day 10.16d (reviewer-driven): cut from 2 → 1 retry. With 2 retries
+# the worst-case render time was ~40min on 8 sections, exceeding
+# operator patience and looking like a hang. One retry per section
+# (so 2 attempts max) is the practical floor: an LLM that under-
+# produces twice in a row is unlikely to magically expand on attempt 3.
+SECTION_RETRY_BUDGET = 1
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
@@ -145,17 +162,29 @@ async def _call_llm_section(
     ledger: CostLedger | None,
     seed: int | None,
 ) -> dict | None:
-    response = await chat_json(
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        chain=chain,
-        client=client,
-        ledger=ledger,
-        temperature=0.0,
-        seed=seed,
-    )
+    """One LLM call returning a parsed JSON dict (or None if malformed
+    or timed out). Per-call timeout enforced via asyncio.wait_for."""
+    try:
+        response = await asyncio.wait_for(
+            chat_json(
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                chain=chain,
+                client=client,
+                ledger=ledger,
+                temperature=0.0,
+                seed=seed,
+            ),
+            timeout=PER_CALL_TIMEOUT_SEC,
+        )
+    except asyncio.TimeoutError:
+        logger.warning(
+            "paper_writer LLM call exceeded %.0fs timeout — moving on",
+            PER_CALL_TIMEOUT_SEC,
+        )
+        return None
     if isinstance(response.parsed, dict):
         return response.parsed
     return None
@@ -449,6 +478,15 @@ async def render_full_paper(
         f"**Submission:** `{submission_id}`\n\n"
     )
     sections: dict[SectionName, SynthesisSection] = {}
+
+    def _log_section_done(name: str, sect: SynthesisSection) -> None:
+        words = _section_word_count(sect)
+        print(
+            f"[paper_writer] {name:25} done — {words} words",
+            flush=True,
+        )
+
+    print("[paper_writer] starting full-paper render", flush=True)
     sections["abstract"] = await _write_anchored_section(
         name="abstract", heading="## Abstract",
         system_prompt=ABSTRACT_SYSTEM_PROMPT, user_prompt=user,
@@ -456,6 +494,7 @@ async def render_full_paper(
         seed=seed,
         fallback_body="## Abstract\n\n_LLM-generated abstract failed validation; see Thesis above._\n",
     )
+    _log_section_done("abstract", sections["abstract"])
     sections["introduction"] = await _write_scoped_section(
         name="introduction", heading="## Introduction",
         system_prompt=INTRODUCTION_SYSTEM_PROMPT, user_prompt=user,
@@ -463,6 +502,7 @@ async def render_full_paper(
         ledger=ledger, seed=seed,
         fallback_body="## Introduction\n\n_Introduction failed scoped validation._\n",
     )
+    _log_section_done("introduction", sections["introduction"])
     sections["background"] = await _write_scoped_section(
         name="background", heading="## Background",
         system_prompt=BACKGROUND_SYSTEM_PROMPT, user_prompt=user,
@@ -470,13 +510,16 @@ async def render_full_paper(
         ledger=ledger, seed=seed,
         fallback_body="## Background\n\n_Background failed scoped validation._\n",
     )
+    _log_section_done("background", sections["background"])
     sections["methods"] = build_methods_section(
         receipts, topic=topic, submission_id=submission_id,
     )
+    _log_section_done("methods (deterministic)", sections["methods"])
     sections["results"] = await write_results_section(
         accepted, rejected, matrix, thesis,
         topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
     )
+    _log_section_done("results", sections["results"])
     sections["cross_domain_synthesis"] = await _write_anchored_section(
         name="cross_domain_synthesis",
         heading="## Cross-Domain Synthesis",
@@ -486,6 +529,7 @@ async def render_full_paper(
         seed=seed,
         fallback_body="## Cross-Domain Synthesis\n\n_Cross-domain synthesis failed validation._\n",
     )
+    _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
     sections["discussion"] = await _write_scoped_section(
         name="discussion", heading="## Discussion",
         system_prompt=DISCUSSION_SYSTEM_PROMPT, user_prompt=user,
@@ -493,6 +537,7 @@ async def render_full_paper(
         ledger=ledger, seed=seed,
         fallback_body="## Discussion\n\n_Discussion failed scoped validation._\n",
     )
+    _log_section_done("discussion", sections["discussion"])
     sections["limitations_full"] = await _write_anchored_section(
         name="limitations_full", heading="## Limitations",
         system_prompt=LIMITATIONS_FULL_SYSTEM_PROMPT, user_prompt=user,
@@ -500,6 +545,7 @@ async def render_full_paper(
         seed=seed,
         fallback_body="## Limitations\n\n_Limitations failed validation._\n",
     )
+    _log_section_done("limitations_full", sections["limitations_full"])
     sections["conclusion"] = await _write_scoped_section(
         name="conclusion", heading="## Conclusion",
         system_prompt=CONCLUSION_SYSTEM_PROMPT, user_prompt=user,
@@ -507,7 +553,9 @@ async def render_full_paper(
         ledger=ledger, seed=seed,
         fallback_body="## Conclusion\n\n_Conclusion failed scoped validation._\n",
     )
+    _log_section_done("conclusion", sections["conclusion"])
     sections["references_full"] = build_references_full_section(receipts)
+    _log_section_done("references_full (deterministic)", sections["references_full"])
     ordered = tuple(sections[n] for n in _FULL_PAPER_SECTION_ORDER)
     body_md = title_md + "\n".join(s.body_md for s in ordered).rstrip() + "\n"
     return body_md, ordered

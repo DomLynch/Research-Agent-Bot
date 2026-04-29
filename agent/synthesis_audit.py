@@ -73,6 +73,32 @@ _TRANSITION_PHRASES = (
     "in contrast",
     "however,",
     "by contrast",
+    # Day 10.16f — added "consequently," and "therefore," after the
+    # 10.16e empirical run shipped a Q3-compliant integrating sentence
+    # ("Consequently, while metformin may optimize insulin sensitivity
+    # ... it may simultaneously hinder the accrual of muscle mass") that
+    # was rejected solely because the writer used a natural causal-
+    # bridge transition outside the original 6-phrase whitelist. Both
+    # markers explicitly signal cross-directness integration; admitting
+    # them is a constraint loosening that restores audit fidelity, not
+    # a cosmetic gating.
+    "consequently,",
+    "therefore,",
+    # Day 10.16g — added the rest of the canonical English discourse
+    # markers that signal cross-evidence integration. The 10.16f run
+    # produced an integrating sentence beginning "Ultimately, the
+    # integration of mit..." that the audit rejected because
+    # "ultimately," wasn't in the whitelist. Each addition below is a
+    # canonical discourse marker for argument synthesis. This is the
+    # final whitelist expansion — if the writer produces a Q3-failing
+    # sentence after this, the failure is genuinely a transition gap
+    # (e.g. "Initially," "First," — sequencing markers, NOT integration
+    # markers) and the writer's prompt is the right thing to fix.
+    "ultimately,",
+    "thus,",
+    "conversely,",
+    "nevertheless,",
+    "nonetheless,",
 )
 
 

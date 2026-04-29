@@ -50,6 +50,11 @@ from agent.synthesis_writer_prompts import (
     SYNTHESIS_SYSTEM_PROMPT as _SYNTHESIS_SYSTEM_PROMPT,
     TENSIONS_SYSTEM_PROMPT as _TENSIONS_SYSTEM_PROMPT,
 )
+from agent.synthesis_writer_q3 import (
+    SYNTHESIS_Q3_RETRY_BUDGET,
+    q3_retry_user_prompt,
+    synthesis_has_mixed_directness_anchor,
+)
 
 __all__ = [
     "WRITER_VERSION",
@@ -497,20 +502,37 @@ async def write_synthesis_section(
     ledger: CostLedger | None = None,
     seed: int | None = None,
 ) -> SynthesisSection:
+    """LLM proposes; code disposes. The standard validator drops
+    individual sentences with bad anchors / novel numerics. Day 10.16e
+    layer: if the corpus is mixed-directness but the rendered section
+    contains no integrating paragraph (Q3 invariant), retry with an
+    explicit Q3 nudge. Pick the first attempt that satisfies Q3,
+    or the last attempt if none do."""
     user = _build_user_prompt(receipts, matrix, thesis, topic=topic)
-    paragraphs = await _llm_section(
-        system_prompt=_SYNTHESIS_SYSTEM_PROMPT, user_prompt=user,
-        chain=chain, client=client, ledger=ledger, seed=seed,
-    )
     fallback = (
         "## Synthesis\n\n"
         "_LLM-generated synthesis failed validation. The thesis above "
         "names the integrating finding; receipt-level claims are in "
         "Direct Evidence and Indirect / Mechanistic Evidence sections._\n"
     )
-    return _build_anchored_section(
-        "synthesis", "## Synthesis", paragraphs, receipts,
-        fallback_body=fallback,
+    current_prompt = user
+    last: SynthesisSection | None = None
+    for attempt in range(SYNTHESIS_Q3_RETRY_BUDGET + 1):
+        paragraphs = await _llm_section(
+            system_prompt=_SYNTHESIS_SYSTEM_PROMPT,
+            user_prompt=current_prompt,
+            chain=chain, client=client, ledger=ledger, seed=seed,
+        )
+        section = _build_anchored_section(
+            "synthesis", "## Synthesis", paragraphs, receipts,
+            fallback_body=fallback,
+        )
+        last = section
+        if synthesis_has_mixed_directness_anchor(section, receipts):
+            return section
+        current_prompt = q3_retry_user_prompt(user, receipts)
+    return last if last is not None else SynthesisSection(
+        name="synthesis", body_md=fallback, anchors=(),
     )
 
 
