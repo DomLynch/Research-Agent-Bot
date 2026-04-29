@@ -30,54 +30,28 @@ LLM PROPOSES. CODE DISPOSES.
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
 - Python ≥ 3.11, stdlib `dataclasses` (frozen+slots).
 
-## Status — 2026-04-28 — Day 9.1 → 9.4: AAA push (with one honest provider-side limit)
+## Status — 2026-04-29 — Day 10 synthesis layer + reviewer P1+P2 fixes (A-/AAA-track, NOT AAA)
 
-**Four slices shipped.**
+**Honest grade: A-/AAA-track.** The two-layer architecture is complete:
+  - **Layer 1 (Days 1-9.5)** — claim receipts: atomic single-source evidence with full audit trail, 8 receipts per run, ~$0.01 / run.
+  - **Layer 2 (Day 10)** — synthesis layer: aggregates N receipts → tension matrix → thesis tournament (LLM proposes K, code disposes) → sectioned writer → Q1-Q7 audit. Every prose sentence anchored to receipt_ids; no novel numerics; `paper_synthesis.md` artifact gated by audit ≥8.5/10.
 
-**Day 9.1** added `trace_numeric_in_text` covering HR / aHR / OR / aOR / RR / aRR / NNT / β / ηp² / partial η² / 95% CI / SMD effect-size statistics with Unicode normalization (Lancet/BMJ middle-dot `0·02` → ASCII `0.02`). Closed the auditor's main rejection cause; rapamycin per-attempt rate jumped from 1/4 to 4/5.
+**Why NOT AAA yet:** The audit gate is correct; the synthesis path hasn't yet shipped a real cross-source paper that passes it.
 
-**Day 9.2** added `--best-of N` — the script runs the orchestrator N times against the same corpus and picks the highest-ranked SPAR run (sort key: verdict_rank, gate_override, failed_traces, -n_claims, submission_id). Each attempt's receipts persist as audit evidence; the chosen run carries a `best_of_n_manifest.json`. **Best-of-N is variance-bounded sampling, NOT zero-variance determinism** — a single best-of-5 run reliably produces an accept_* artifact, but two best-of-5 runs at the same args may pick different attempts.
+The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T05-52-53Z-caa9/`) produced a 10/10 false-positive — 12 metformin receipts but all anchored on MASTERS NCT02308228, so it was duplicate-aggregation not cross-source synthesis. **Reviewer caught this; Day 10.7 closed the gate** (dedup + Q4 unique-trials + N/A applicable handling). Day 10.8a tightened further: gate now counts unique TRIALS, not unique evidence units (3 distinct endpoints from one trial no longer pass as cross-source).
 
-**Day 9.3** added canonical-NCT-anchored live retrieval — `agent.retrieve.retrieve()` accepts an `extra_queries: Sequence[str]` kwarg, and `_retrieve_live` populates it with one `f"{topic} {trial.id}"` query per `pack.canonical_trials` entry. Live metformin canonical coverage jumped 1/4 → 4/4, single-attempt verdict from `reject_critical` → `accept_clean`.
+**Empirical verification of the closed gate (this commit):** re-running synthesis on the same 12 metformin receipts now correctly fails with exit code 2:
+```
+Deduped: 12 → 1 unique evidence units (11 duplicate runs dropped)
+Unique canonical trials in deduped corpus: 1
+ERROR: corpus has 1 unique canonical trial(s); cross-source synthesis
+requires ≥3. ...same-trial multi-endpoint reporting, not cross-source...
+```
 
-**Day 9.4** addressed reviewer P1 (false-positive in numeric trace) + reviewer P2/P3 (overclaim + ruff drift) + the user's "Ivy League / zero-variance" challenge:
-  - **P1 trust-spine fix:** `trace_numeric_in_text` now requires label+value co-occurrence within ±60 normalized chars (with synonym expansion for HR↔hazard ratio etc.), plus 3 new regression tests including the false-positive case `HR 0.79` vs unrelated `0.79 kg`. Pre-fix the bare-value substring fallback could falsely pass any numeric appearing anywhere in the abstract.
-  - **Seed plumbing:** `seed: int | None` now flows from `--seed N` through `chat_json` → `_call_one` payload → fact_extractor (per-item seed = `seed * 100003 + ref`) → SPAR (per-judge seed = `seed * 1000003 + role_idx`). When seed is set, SPAR temperature is forced to 0.0 (was 0.2). Wire-level correctness verified by 3 unit tests.
-  - **Honest provider limit (documented):** I tested empirically — MiMo's API *accepts* `seed` but does NOT consistently honor it (3 same-prompt-same-seed calls produced 2 matching outputs and 1 differing). True zero-variance receipts therefore require **capture-and-replay** (record once, play back via httpx mock transport), which is a future ~150 cloc slice. Until that ships, `--seed N` is best-effort: deterministic for compliant providers, partially honored on MiMo.
-  - **Ruff clean:** removed 2 unused imports in `tests/test_retrieve.py`.
-
-**The AAA discriminating test — `--best-of 5` on all three drugs at this commit:**
-
-| Drug | Best-of-5 result | Distribution | Cost / 5 attempts |
-|---|---|---|---|
-| 001 metformin | `accept_clean` | **5/5 accept_clean** (deterministic) | $0.050 |
-| 002 rapamycin | `accept_caveated` | 3/5 accept_caveated, 2/5 reject | $0.046 |
-| 003 everolimus | `accept_caveated` | 1/5 accept_caveated, 4/5 reject | $0.030 |
-
-All three drugs now produce a deterministic accept_* artifact via one command. The everolimus 1/5 rate confirms the reviewer's earlier framing — PROTECTOR's lab-marker-vs-clinical-endpoint split is genuinely contestable; even with best-of-5 only 1 in 5 attempts surfaces a defensible thesis. But the picker reliably finds that one accept and saves all 5 attempts so a reviewer can re-rank.
-
-**Cost / latency:** ~$0.03–0.05 per `--best-of 5` (3-6 minutes wall) vs ~$0.01 per single run.
-
-**Saved receipts (Day 9.2 best-of-5 canonicals + earlier audit history):**
-
-| Proof | Day 9.2 best-of-5 receipt | Trial anchored | Single-attempt history |
-|---|---|---|---|
-| 001 metformin | `runs/metformin-001-2026-04-28T18-38-21Z-fdcc/` (5/5 accept_clean) | MASTERS (NCT02308228) | Day 9.1: `…18-26-46Z-c1e0` (3/3 accept) — Day 8.2: `…17-42-13Z-29dd` |
-| 002 rapamycin | `runs/rapamycin-002-2026-04-28T18-41-35Z-dc46/` (3/5 accept_caveated) | PEARL (NCT04488601) | Day 9.1: `…18-23-28Z-2f4e` (4/5 accept) — Day 8.2: `…17-43-13Z-89e6`, `…17-37-47Z-ecd5` |
-| 003 everolimus | `runs/everolimus-003-2026-04-28T18-47-44Z-734c/` (1/5 accept_caveated) | PROTECTOR (NCT03373903) | Day 9.1: `…18-28-43Z-0088` — Day 8.2: `…17-44-06Z-15a3` (reject), `…17-22-15Z-288e` (accept) |
-
-Each best-of-5 receipt directory contains `best_of_n_manifest.json` listing all 5 attempts with their verdicts so a reviewer can audit the picker's choice or re-rank.
-
-**What "pipeline executes with principled outcomes" means:** every run produces 8 mandatory receipts, structured evidence, traced numerics for what we can trace, and principled SPAR judgments. What it does NOT mean:
-  - It is NOT deterministic across runs (MiMo at T=0 has variance).
-  - It is NOT yet ready for unattended production use — a single run can land on `reject_critical` for principled reasons.
-  - It is NOT validated on live retrieval — fixture-replay is the proof surface; live mode pulls a heterogeneous corpus where canonical trials don't always surface.
-
-**AAA push status:**
-  1. ✅ **Day 9.1 — generic numeric-trace types**. Closes the auditor's main rejection cause.
-  2. ✅ **Day 9.2 — best-of-N runner**. Variance-bounded sampling (NOT zero-variance): `--best-of 5` reliably produces accept_* on all three drugs by selecting the highest-ranked attempt.
-  3. ✅ **Day 9.3 — canonical-NCT-anchored live retrieval**. Live metformin canonical coverage 1/4 → 4/4; single-attempt verdict reject → accept_clean.
-  4. ✅ **Day 9.4 — trust-spine bug fix + seed plumbing**. P1 numeric-trace false-positive closed; `--seed N` plumbed through (best-effort; MiMo's seed honoring is partial). True zero-variance pending capture-replay (future slice).
+**What's still missing for AAA:**
+  1. **Day 10.8b — multi-receipt mode** (next slice): the receipt pipeline currently picks ONE cluster per `--topic` run via the Day 6.3 cohesive-cluster filter, so duplicate runs all anchor on MASTERS. To produce receipts from multiple distinct canonical trials in a single corpus, the orchestrator needs a flag to emit one receipt PER cluster.
+  2. **Day 10.8c — empirical cross-source synthesis paper**: with multi-receipt mode, run metformin pipeline once → 4-5 cluster receipts spanning MASTERS / Konopka / MET-PREVENT / etc. → synthesize across them → audit honest score. Until this ships, "AAA-track" is aspirational.
+  3. **External human review** of the prose quality. Q1-Q7 verifies structural fidelity (anchors, no novel numerics, hedge language) but not coherence or peer-review-grade readability.
 
 **Architecture milestones of Days 6-8:**
 - Day 6.1: real-LLM lessons (strict-substring prompt, tolerated-orphans invariant, alias stopwords)
@@ -86,20 +60,16 @@ Each best-of-5 receipt directory contains `best_of_n_manifest.json` listing all 
 - Day 8: everolimus pack + 5 refinements (drop estimate/ci substring, Unicode normalization, tier-aware filter, fact-multiplicity prompt, acronym-with-plural filter)
 - Day 8.1: canonical-trial cluster priority (stabilizes ties)
 
-**State verified through:** commit `0b16506` plus the tracked proof receipts
-listed in the status table below. Exact repository HEAD remains `git log -1
---oneline`; this document does not try to self-reference its own future commit
-hash.
+**State verified through:** the most recent entry in the commit log table below. Exact repository HEAD remains `git log -1 --oneline`; this document does not try to self-reference its own future commit hash.
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 613/613 passing in 0.47s. ruff clean (2 unused imports removed). git diff --check clean.
-**Runtime LOC (cloc-style, the canonical count enforced by `tests/test_loc_budget.py`):** 5,013 / **5,500** ceiling (8.9% headroom; net −247 cloc since Day 5.3 from `render.py` deletion (−278) offset by `settings.py` dotenv loader (+27) and `citation_trace.py` `registry_ids_for` promotion (+5)).
+**Tests:** 721/721 passing in 0.50s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, enforced by `tests/test_loc_budget.py`):** ~7,512 / **8,000** ceiling (raised from 7,500 on 2026-04-29 Day 10.8a per DECISIONS.md, after Day 10.7 reviewer-fix slices added ~120 cloc and Day 10.8b multi-receipt mode is projected at ~150-200 cloc more).
 
-**Per-file (cloc-style, soft cap 300, hard cap 600):**
-- `spar.py` 397, `citation_trace.py` 360, `fact_extractor.py` 353 — all over soft cap; all under 600 hard cap. Each carries load-bearing prompts and/or trust-spine gates. Splitting would couple tightly-related logic.
-- `orchestrator.py` 292, `schemas.py` 280, `llm_client.py` 266, `evidence_cards.py` 261, `writer.py` 259 — `writer.py` stayed under the soft cap after Day 4-fix removed the LLM call layer.
-- `trace_clients/_httpx.py` 225, `topic_pack.py` 218, `validators.py` 207, `text_signals.py` 193, `types.py` 183, `retrieve.py` 161, `compiler.py` 160
-- `thesis_tournament.py` 139, `trace_clients/_fixture.py` 126, `trace_clients/__init__.py` 79, `trace_clients/protocols.py` 75
+**Per-file (cloc-style, soft cap 300, hard cap 600 — synthesis layer adds 4 new modules):**
+- Trust-spine: `spar.py` 412, `citation_trace.py` 485, `fact_extractor.py` 435, `orchestrator.py` 325, `schemas.py` 281, `llm_client.py` 276, `evidence_cards.py` 261, `writer.py` 259
+- Synthesis layer (Day 10): `synthesis.py` ~470, `synthesis_thesis.py` 373, `synthesis_writer.py` 432, `synthesis_audit.py` ~210, `synthesis_schemas.py` 258
+- Other: `trace_clients/_httpx.py` 225, `topic_pack.py` 218, `validators.py` 210, `text_signals.py` 193, `types.py` 195, `retrieve.py` 168, `compiler.py` 247, `thesis_tournament.py` 139, `trace_clients/_fixture.py` 126
 - `render.py` deleted Day 5.4 (V1.1 stub orphaned by deterministic writer; saved 278 cloc).
 
 **Commit log of the rebuild:**
@@ -166,7 +136,16 @@ hash.
 | `e0e69bc` | 2026-04-28 | Day 9.1: `trace_numeric_in_text` — HR / OR / RR / aHR / aOR / ηp² / β / 95% CI with Unicode normalization; auditor's main rejection cause closed; rapamycin per-attempt rate 1/4 → 4/5 |
 | `10fbc82` | 2026-04-28 | Day 9.2: `--best-of N` runner with deterministic ranking (verdict, gate_override, failed_traces, -n_claims, submission_id) and per-best `best_of_n_manifest.json`; variance-bounded sampling produces accept_* on all 3 drugs at --best-of 5 |
 | `987db83` | 2026-04-28 | Day 9.3: canonical-NCT-anchored live retrieval (`extra_queries` kwarg on `retrieve()`); live metformin canonical coverage 1/4 → 4/4 |
-| _next_    | 2026-04-28 | Day 9.4: P1 trust-spine fix in `trace_numeric_in_text` (label+value co-occurrence, was bare-value substring → false-positive); `--seed N` plumbed through chat_json → fact_extractor (per-item seed) → SPAR (per-judge seed, temp 0 forced); ruff cleanup; PROJECT_STATE refresh with honest "variance-bounded" framing |
+| `8342638` | 2026-04-28 | Day 9.4: P1 trust-spine fix in `trace_numeric_in_text` (label+value co-occurrence); `--seed N` plumbed through chat_json → fact_extractor → SPAR; ruff cleanup |
+| `5308433` | 2026-04-28 | Day 9.5: rename `paper.md` → `claim_receipt.md` (mislabel cleanup before Day 10) |
+| `05d7977` | 2026-04-29 | Day 10.1: synthesis schemas (8 frozen-dataclass types) + 2 paraphrased-rubric prompts |
+| `d6d1751` | 2026-04-29 | Day 10.2: tension matrix — deterministic per-pair classification (29 tests) |
+| `7285704` | 2026-04-29 | Day 10.3: synthesis thesis tournament — LLM proposes K candidates, code disposes (21 tests) |
+| `4f18bbf` | 2026-04-29 | Day 10.4: synthesis writer — sectioned LLM/deterministic mix, 10 sections in canonical order (16 tests) |
+| `0102154` | 2026-04-29 | Day 10.5a: synthesis quality audit — Q1-Q7 deterministic checks (18 tests) |
+| `7d3e050` | 2026-04-29 | Day 10.5b + 10.6: `--synthesize` flag + first synthesis paper (12 metformin receipts; reported 10/10 BUT was false-positive — see 10.7) |
+| `5cc931e` | 2026-04-29 | Day 10.7: reviewer P1+P2 fix — dedup receipts + Q4 unique trials + N/A audit handling. Day 10.6 false-positive closed. |
+| _next_    | 2026-04-29 | Day 10.8a: tighten gate to count unique TRIALS not deduped count; PROJECT_STATE refresh; LOC ceiling 7,500 → 8,000 with DECISIONS entry |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`

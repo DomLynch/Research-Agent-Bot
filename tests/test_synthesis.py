@@ -32,6 +32,7 @@ from agent.synthesis import (
     MIN_UNIQUE_TRIALS_FOR_SYNTHESIS,
     build_receipt_summary,
     build_tension_matrix,
+    count_unique_trials,
     dedupe_receipts,
     detect_effect_direction,
     detect_outcome_class,
@@ -517,6 +518,95 @@ def test_min_unique_trials_for_synthesis_is_three() -> None:
     """The threshold below which synthesis isn't honest. Pinned for
     visibility — changing it requires a DECISIONS.md entry."""
     assert MIN_UNIQUE_TRIALS_FOR_SYNTHESIS == 3
+
+
+# ============================================================
+# Day 10.8a: count_unique_trials — strict cross-source gate
+# ============================================================
+
+
+def test_count_unique_trials_collapses_same_trial_multi_endpoint() -> None:
+    """Day 10.8a reviewer P1: three different endpoints from one trial
+    dedupe to three different evidence units (different theses) but
+    they represent ONE source. count_unique_trials must reflect that
+    so the cross-source gate doesn't pass same-trial multi-endpoint
+    reporting as if it were synthesis."""
+    receipts = tuple(
+        ReceiptSummary(
+            receipt_id=f"r-{endpoint}", receipt_path="x", topic="metformin",
+            thesis_text=f"MASTERS thesis on {endpoint}",
+            spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+            canonical_trial_id="NCT02308228",  # all same trial
+            evidence_tier="A1", directness="direct",
+            outcome_class="muscle_function", effect_direction="negative",
+            p_values=(), population_summary="",
+        )
+        for endpoint in ("lean_body_mass", "thigh_muscle_area", "fiber_type")
+    )
+    # Different theses → 3 unique evidence keys
+    assert len({unique_evidence_key(r) for r in receipts}) == 3
+    # But ONE trial — count_unique_trials must reflect that
+    assert count_unique_trials(receipts) == 1
+
+
+def test_count_unique_trials_distinct_trials_count_separately() -> None:
+    receipts = tuple(
+        ReceiptSummary(
+            receipt_id=f"r-{trial}", receipt_path="x", topic="metformin",
+            thesis_text="thesis", spar_verdict="accept_clean",
+            n_claims=4, n_failed_traces=0,
+            canonical_trial_id=trial, evidence_tier="A1",
+            directness="direct", outcome_class="muscle_function",
+            effect_direction="negative", p_values=(), population_summary="",
+        )
+        for trial in ("NCT02308228", "NCT04264897", "NCT01765946")
+    )
+    assert count_unique_trials(receipts) == 3
+
+
+def test_count_unique_trials_untrialed_receipts_use_thesis_signature() -> None:
+    """Receipts without canonical_trial_id contribute via thesis text
+    so unsignposted single-source-multiple-restatements don't bypass
+    the gate."""
+    same_thesis = "metformin blunts hypertrophy"
+    receipts = tuple(
+        ReceiptSummary(
+            receipt_id=f"r-{i}", receipt_path="x", topic="metformin",
+            thesis_text=same_thesis,
+            spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+            canonical_trial_id=None,  # untrialed
+            evidence_tier="A1", directness="direct",
+            outcome_class="muscle_function", effect_direction="negative",
+            p_values=(), population_summary="",
+        )
+        for i in range(5)
+    )
+    # 5 receipts, all untrialed, same thesis → 1 effective "trial"
+    assert count_unique_trials(receipts) == 1
+
+
+def test_count_unique_trials_mixed_trialed_and_untrialed() -> None:
+    """Mix of trialed and untrialed receipts should count correctly."""
+    receipts = (
+        ReceiptSummary(
+            receipt_id="r-a", receipt_path="x", topic="metformin",
+            thesis_text="A", spar_verdict="accept_clean",
+            n_claims=4, n_failed_traces=0,
+            canonical_trial_id="NCT-A", evidence_tier="A1",
+            directness="direct", outcome_class="muscle_function",
+            effect_direction="negative", p_values=(), population_summary="",
+        ),
+        ReceiptSummary(
+            receipt_id="r-b", receipt_path="x", topic="metformin",
+            thesis_text="B unique untrialed thesis",
+            spar_verdict="accept_clean",
+            n_claims=4, n_failed_traces=0,
+            canonical_trial_id=None, evidence_tier="A1",
+            directness="direct", outcome_class="muscle_function",
+            effect_direction="negative", p_values=(), population_summary="",
+        ),
+    )
+    assert count_unique_trials(receipts) == 2
 
 
 def test_build_receipt_summary_pulls_p_values_from_thesis() -> None:

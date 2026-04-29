@@ -70,6 +70,7 @@ from agent.sources.pubmed import PubMedClient
 from agent.synthesis import (
     MIN_UNIQUE_TRIALS_FOR_SYNTHESIS,
     build_tension_matrix,
+    count_unique_trials,
     dedupe_receipts,
     load_receipt_summary,
 )
@@ -652,27 +653,31 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
         print(f"  - {s.receipt_id} (outcome={s.outcome_class}, "
               f"direction={s.effect_direction}, verdict={s.spar_verdict})")
 
-    # Day 10.7 (reviewer P1): dedupe receipts by unique_evidence_key
-    # so duplicate runs of the same source-paper cluster don't pollute
-    # the synthesis with same-trial / same-thesis self-pairs.
+    # Day 10.7 (reviewer P1, dedup): collapse duplicate runs of the
+    # same source-paper cluster.
     deduped = list(dedupe_receipts(summaries))
     n_dedup_dropped = len(summaries) - len(deduped)
     if n_dedup_dropped:
-        print(f"\nDeduped: {len(summaries)} → {len(deduped)} unique receipts "
-              f"({n_dedup_dropped} duplicate runs dropped)")
-    unique_trials = {
-        r.canonical_trial_id for r in deduped if r.canonical_trial_id
-    }
-    print(f"Unique canonical trials in deduped corpus: {len(unique_trials)} → "
-          f"{sorted(unique_trials)}")
-    if len(deduped) < MIN_UNIQUE_TRIALS_FOR_SYNTHESIS:
+        print(f"\nDeduped: {len(summaries)} → {len(deduped)} unique evidence "
+              f"units ({n_dedup_dropped} duplicate runs dropped)")
+    # Day 10.8a (reviewer P1, gate): the cross-source-synthesis gate
+    # counts UNIQUE TRIALS, not unique evidence units. Three different
+    # endpoints from one trial dedupe to three keys but represent one
+    # source — that's multi-endpoint reporting, not cross-source synthesis.
+    unique_trial_count = count_unique_trials(deduped)
+    print(f"Unique canonical trials in deduped corpus: {unique_trial_count}")
+    if unique_trial_count < MIN_UNIQUE_TRIALS_FOR_SYNTHESIS:
         print(
-            f"\nERROR: only {len(deduped)} unique evidence unit(s) after "
-            f"dedup; synthesis requires ≥{MIN_UNIQUE_TRIALS_FOR_SYNTHESIS}. "
-            f"This means the receipts under {receipts_dir} are duplicate "
-            f"runs of the same source-paper cluster, not cross-source "
-            f"evidence. Run the receipt pipeline against multiple "
-            f"corpora / canonical trials before synthesizing.",
+            f"\nERROR: corpus has {unique_trial_count} unique canonical "
+            f"trial(s); cross-source synthesis requires "
+            f"≥{MIN_UNIQUE_TRIALS_FOR_SYNTHESIS}. The {len(deduped)} deduped "
+            f"receipt(s) under {receipts_dir} either come from the same "
+            f"source paper (same-trial multi-endpoint reporting) or from "
+            f"too few sources to synthesize across. To produce real "
+            f"cross-source synthesis, run the receipt pipeline against "
+            f"corpora anchored on different canonical trials, OR use the "
+            f"multi-receipt mode (Day 10.8b) that emits one receipt per "
+            f"cluster from a single corpus.",
             file=sys.stderr,
         )
         return 2

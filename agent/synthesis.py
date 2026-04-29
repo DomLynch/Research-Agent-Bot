@@ -68,6 +68,7 @@ __all__ = [
     "load_receipt_summary",
     "unique_evidence_key",
     "dedupe_receipts",
+    "count_unique_trials",
     "InsufficientUniqueEvidenceError",
     "MIN_UNIQUE_TRIALS_FOR_SYNTHESIS",
 ]
@@ -137,6 +138,33 @@ def dedupe_receipts(
         seen.add(key)
         out.append(s)
     return tuple(out)
+
+
+def count_unique_trials(summaries: Sequence[ReceiptSummary]) -> int:
+    """Count distinct canonical trials in a receipt corpus.
+
+    Day 10.8a (reviewer P1): the cross-source-synthesis gate must
+    count UNIQUE TRIALS, not unique evidence units. Three distinct
+    findings from MASTERS (lean body mass, thigh muscle area, fiber
+    type) all dedupe to three different evidence keys, but they're
+    one trial — that's same-trial multi-endpoint reporting, not
+    cross-source synthesis.
+
+    Receipts without a canonical_trial_id contribute to the count
+    via their thesis signature (one untrialed thesis = one "trial"
+    for the purposes of the cross-source floor) so unsignposted
+    sources don't bypass the gate.
+    """
+    trial_set: set[str] = set()
+    for r in summaries:
+        if r.canonical_trial_id:
+            trial_set.add(r.canonical_trial_id.upper())
+        else:
+            # Untrialed: thesis signature serves as the source-identity
+            # proxy. Truncated so minor wording variations don't inflate.
+            sig = " ".join(r.thesis_text.lower().split())[:120]
+            trial_set.add(f"untrialed:{sig}")
+    return len(trial_set)
 
 
 # --- Outcome-class keyword maps ------------------------------------------

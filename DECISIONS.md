@@ -1,5 +1,13 @@
 # DECISION JOURNAL
 
+## 2026-04-29 (Day 10.8a, reviewer-driven) — Raise LOC ceiling to 8,000 for Day 10.7 + 10.8 fixes
+**Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 7,500 → 8,000. Per-file 600 LOC unchanged.
+**Why:** Day 10.7 (reviewer P1+P2 fix: dedup, Q4 unique trials, N/A handling) and Day 10.8a (reviewer P1 fix: gate on unique trials not deduped count) added ~120 cloc to the synthesis layer. The reviewer's P3 explicitly called out "Pretending [the LOC budget will] fit is the kind of self-deception the audit gate was built to prevent" — applies here. Day 10.8b (multi-receipt mode in orchestrator, projected ~150-200 cloc) needs headroom too. 8,000 ceiling covers Day 10.7+10.8 fully with ~370 cloc buffer for any small follow-up corrections.
+**Alternatives rejected:**
+- Trim docstrings from synthesis modules — rejected; the contract rules + reviewer-finding rationale ARE the spec.
+- Defer Day 10.8b multi-receipt mode — rejected; without it, the cross-source-synthesis gate has nothing real to evaluate (the reviewer's actionable next step explicitly names this).
+**Revisit if:** runtime LOC approaches 7,800 without a clear capability gain mapped to the synthesis-quality audit gate.
+
 ## 2026-04-29 (revised mid-day) — Raise LOC ceiling to 7,500 for Day 10 synthesis writer
 **Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 7,000 → 7,500. Per-file 600 LOC hard cap unchanged.
 **Why:** The 7,000 ceiling set this morning underestimated Day 10's full footprint by ~500 cloc. The actual breakdown:
