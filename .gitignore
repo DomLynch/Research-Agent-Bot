@@ -81,6 +81,19 @@ runs/e2e-baselines/*.tmp
 # Honest interpretation: the filter+guard slice of work has plateaued
 # on this corpus — remaining accept-rate gap is corpus-quality bound.
 !runs/metformin-multi-001-2026-04-29T11-50-04Z-de47/
+# Day 10.13 — predeclared 7-paper canonical corpus benchmark
+# (tests/fixtures/metformin_canonical/). 5 clusters processed, 1 accept,
+# 4 rejected. CRITICAL DIAGNOSTIC: 3 of 4 rejections trace to
+# trace-client bugs, NOT claim-quality issues:
+#   - cluster_01 (MET-PREVENT): ISRCTN29932357 fails nct_exists because
+#     the trace client only checks CT.gov, not UK ISRCTN registry
+#   - cluster_03 (MILES): nct_exists with has_results=False treated as
+#     fabrication, but registry HAS the trial (just no posted results)
+#   - cluster_05 (Konopka): alias_match resolves the generic biological
+#     term "Mitochondrial" to specific drug "MITOQUINONE MESYLATE"
+# Only cluster_04 (Kulkarni 2022 review) is a real claim-quality
+# rejection. Day 10.14 fixes the 3 trace-client bugs and re-runs.
+!runs/metformin-multi-001-2026-04-29T14-34-18Z-c35f/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

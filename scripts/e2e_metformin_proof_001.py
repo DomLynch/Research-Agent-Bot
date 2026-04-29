@@ -321,7 +321,24 @@ def _resolve_output_dir(
 async def _run(args: argparse.Namespace) -> int:
     cfg = _TOPIC_CONFIG[args.topic]
     topic_pack_path = REPO_ROOT / "topic_packs" / cfg["pack"]
-    fixtures_dir = REPO_ROOT / "tests" / "fixtures" / cfg["fixtures"]
+    # Day 10.13 — `--canonical-corpus` swaps the noisy 40-source fixture
+    # for the predeclared 7-paper Quality Reference Corpus
+    # (`tests/fixtures/<topic>_canonical/`). The corpus is committed
+    # ahead of any run; SPAR fates of all 7 papers are reported, no
+    # papers are added or removed after the fact.
+    if args.canonical_corpus:
+        fixtures_dir = REPO_ROOT / "tests" / "fixtures" / f"{args.topic}_canonical"
+        if not fixtures_dir.exists():
+            print(
+                f"ERROR: --canonical-corpus requested but no canonical "
+                f"fixture exists at {fixtures_dir}. Run the canonical "
+                f"fetcher to populate it (see "
+                f"docs/quality-reference/{args.topic}/README.md).",
+                file=sys.stderr,
+            )
+            return 2
+    else:
+        fixtures_dir = REPO_ROOT / "tests" / "fixtures" / cfg["fixtures"]
     proof = cfg["proof"]
     domain = cfg["domain"]
     criteria = cfg["criteria"]
@@ -972,6 +989,15 @@ def main() -> int:
              "is implied. Default: runs/metformin-001-<UTC>-<rand>/",
     )
     parser.add_argument(
+        "--canonical-corpus", action="store_true",
+        help="Day 10.13 — load ONLY the predeclared 7-paper Quality "
+             "Reference Corpus from tests/fixtures/<topic>_canonical/ "
+             "(skip the noisy 40-source retrieval). Implements the "
+             "reviewer's predeclared-benchmark discipline: corpus is "
+             "fixed before the run; SPAR fates of all 7 papers are "
+             "reported transparently. Mutually exclusive with --live.",
+    )
+    parser.add_argument(
         "--multi-receipt", action="store_true",
         help="Day 10.8b multi-receipt mode: extract facts ONCE, then "
              "fan out per cohesive cluster — emit one Proof 001 receipt "
@@ -1003,6 +1029,14 @@ def main() -> int:
              "--best-of are ignored.",
     )
     args = parser.parse_args()
+    if args.canonical_corpus and args.live:
+        print(
+            "ERROR: --canonical-corpus and --live are mutually exclusive. "
+            "Canonical corpus is a fixed, predeclared fixture; live mode "
+            "retrieves dynamically. Pick one.",
+            file=sys.stderr,
+        )
+        return 2
     if args.synthesize and args.multi_receipt:
         print(
             "ERROR: --synthesize and --multi-receipt are mutually exclusive. "

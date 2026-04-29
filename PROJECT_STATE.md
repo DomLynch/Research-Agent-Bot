@@ -56,6 +56,21 @@ LLM PROPOSES. CODE DISPOSES.
 
 **Honest assessment after Day 10.12:** the validator-stack improvements have plateaued on this corpus. Three runs in (10.11 → 10.12), each adding correct guards, the SPAR pass rate moved from 4% → 9%. The remaining gap is **corpus quality**: only 2 of the 4 metformin canonical trials reach SPAR-accepted state, and the broader 40-source corpus has too many weak papers (mechanism inflation, missing source text, underpowered samples) for further validator tightening to recover them. Day 10.13 must address the input side: either (a) curate the metformin retrieve+bundle stage to anchor on the 7-paper Quality Reference Corpus directly, (b) implement per-cluster `--best-of N` retry on rejected clusters (probably won't recover legitimately-weak claims, but might recover transient SPAR judge failures), or (c) accept that this metformin corpus genuinely doesn't support cross-source synthesis at the trust-spine bar and pivot to rapamycin/everolimus where the canonical-trial corpus may be stronger.
 
+**Day 10.13 — predeclared canonical corpus benchmark (reviewer-aligned: "predeclared, not cherry-picking"):** built `tests/fixtures/metformin_canonical/` with the 7-paper Quality Reference Corpus (MASTERS, Konopka, MILES, MET-PREVENT, Kulkarni 2022, Keys 2025, Mohammed 2021) — abstracts fetched verbatim from PubMed e-utilities and committed alongside `CANONICAL_MANIFEST.md` so the benchmark is auditable. Added `--canonical-corpus` flag to `scripts/e2e_metformin_proof_001.py` that loads the canonical fixture instead of the noisy 40-source one.
+
+**Empirical Day 10.13 run** (`runs/metformin-multi-001-2026-04-29T14-34-18Z-c35f/`): **5 clusters processed, 1 accept_clean (MASTERS), 4 reject_critical, 1 protocol-only excluded (Mohammed).** Surface read: same gate failure as Day 10.12. But inspecting EACH rejection's SPAR rationale reveals the actual story:
+
+| Cluster | Paper | Rejection reason | Actual issue |
+|---|---|---|---|
+| 01 | MET-PREVENT | `nct_exists` failed for ISRCTN29932357 | Trace client only checks ClinicalTrials.gov, not UK ISRCTN registry |
+| 02 | MASTERS | accept_clean ✓ | — |
+| 03 | MILES | `nct_exists` failed because `has_results=False` | Trace client treats "registry has trial but no posted results" as "fabricated NCT" |
+| 04 | Kulkarni 2022 | First-person narrative not anchored | Real claim-quality issue (review-style framing) |
+| 05 | Konopka | `alias_match` failed: "Mitochondrial" → "MITOQUINONE MESYLATE" | Alias resolver shouldn't map generic biology terms to specific drugs |
+| (excluded) | Mohammed | protocol-only cluster | Day 10.12 filter (correct) |
+
+**Critical finding:** **3 of 4 rejections are trace-client bugs, not claim-quality issues.** The CANONICAL papers themselves (MET-PREVENT, MILES, Konopka) are doing exactly what they should — reporting real findings with real evidence — but the trace clients are spuriously rejecting them. Day 10.14 will fix these three bugs and re-run; if all three close cleanly, expect 4 of 7 accepted (the 4 RCTs), gate clears, synthesis runs.
+
 **Architecture:**
   - **Layer 1 (Days 1-9.5 + 10.8b)** — claim receipts: atomic single-source evidence with full audit trail. `--multi-receipt` mode emits one receipt per cohesive cluster from a single corpus.
   - **Layer 2 (Day 10)** — synthesis layer: aggregates N receipts → tension matrix → thesis tournament (LLM proposes K, code disposes) → sectioned writer → Q1-Q7 audit. Every prose sentence anchored to receipt_ids; no novel numerics; `paper_synthesis.md` artifact gated by audit ≥8.5/10.
@@ -182,7 +197,8 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
 | `ea884ad` | 2026-04-29 | Day 10.11: protocol-as-claim filter shipped — `check_objective_as_claim` validator + strengthened extractor prompt + LOC ceiling raise to 8,500. 9 new validator tests; 750/750 total |
 | `15cd5a3` | 2026-04-29 | Day 10.11 empirical: 27 clusters, 1 accepted (filter drops objective spans pre-extraction; cluster count 30→27) but SPAR pass rate stays ~4% — dominant rejection mode shifts to mechanism inflation |
 | `0e125bd` | 2026-04-29 | Day 10.12: mechanism-inflation guard + protocol-only-cluster filter shipped — `check_mechanism_inflation` validator + `MECHANISM_INFLATION_RE` + multi-receipt orchestrator excludes clusters whose every supporting ref is protocol/registered. 760/760 tests pass |
-| _next_    | 2026-04-29 | Day 10.12 empirical: 22 clusters (7 excluded as protocol-only), 2 accept_caveated, gate ≥3 still not cleared. Validator stack has plateaued; Day 10.13 needs corpus-level work |
+| `0f698df` | 2026-04-29 | Day 10.12 empirical: 22 clusters (7 excluded as protocol-only), 2 accept_caveated, gate ≥3 still not cleared. Validator stack has plateaued; Day 10.13 needs corpus-level work |
+| _next_    | 2026-04-29 | Day 10.13: predeclared 7-paper canonical-corpus benchmark + `--canonical-corpus` flag + first canonical run (1/5 accept). Critical: 3 of 4 rejections are trace-client bugs (ISRCTN, has_results=False, alias_match generic terms), NOT claim-quality issues. Day 10.14 fixes these. |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -301,8 +317,9 @@ numeric tracing, and live-retrieval anchoring.
 | **10.10** | trust-spine ordering: filter accepted, rejected_evidence quarantine, gate counts accepted-only, Q3 corpus-directness, load-bearing N/A blocks ship, prompts strengthened | ✅ |
 | **10.11** | raise SPAR pass rate: fact_extractor protocol-vs-results discrimination + per-cluster error tolerance | ✅ (filter + robustness shipped; empirical accept rate didn't move because mechanism inflation is now the dominant rejection mode) |
 | **10.12** | mechanism-inflation guard + protocol-only-cluster filter | ✅ (accept rate 4% → 9%, but gate ≥3 still not cleared on this corpus) |
-| **10.13** (next) | corpus-level fix: anchor retrieve+bundle to canonical-trial NCTs (skip noisy non-canonical retrieval) OR per-cluster `--best-of N` retry OR pivot to a topic with a stronger corpus | ☑ this slice |
-| **10.14** (stretch) | external human review of prose quality — outside automated audit | ☐ |
+| **10.13** | predeclared 7-paper canonical-corpus benchmark + `--canonical-corpus` flag. Empirical: 1/5 accept, 4 rejections — but **3 of 4 are trace-client bugs, NOT claim-quality issues** (ISRCTN not supported, has_results=False misread as fabrication, alias_match resolves "Mitochondrial" → "MITOQUINONE MESYLATE") | ✅ |
+| **10.14** (next) | fix the 3 trace-client bugs surfaced by Day 10.13 + re-run canonical benchmark + synthesize | ☑ this slice |
+| **10.15** (stretch) | external human review of prose quality — outside automated audit | ☐ |
 | **11** (stretch) | RFC outreach + first user-facing artifact | ☐ |
 
 ### LOC budget after Day 10.10
