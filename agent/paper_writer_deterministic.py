@@ -39,8 +39,16 @@ def build_methods_section(
 
 This synthesis was produced by an automated multi-receipt research
 pipeline (Researka v1, submission `{submission_id}`) that operates on
-the principle: **LLM proposes, code disposes**. Topic of synthesis:
-*{topic}*.
+a single load-bearing principle: **LLM proposes, code disposes**.
+Topic of synthesis: *{topic}*. Every claim that appears in this paper
+is either anchored to a specific source-paper receipt by deterministic
+trace verification, or is explicitly marked as scoped framing prose
+that cannot make novel quantitative assertions. The architecture is
+designed so that hallucinated numerics, fabricated trial identifiers,
+and over-claimed clinical effects are caught before they reach the
+reader. Where the pipeline is uncertain or where a canonical paper
+fails internal review, the artifact records that fact transparently
+rather than silently filtering it.
 
 ### Corpus
 
@@ -49,59 +57,114 @@ research papers ({n_accepted} accepted by SPAR adjudication and
 integrated as evidence; {n_rejected} rejected and quarantined under
 "Rejected / Contested Evidence" in the brief). Corpus declaration is
 locked before any run via `tests/fixtures/<topic>_canonical/` so
-papers cannot be silently added or removed after the fact.
+papers cannot be silently added or removed after the fact. This
+predeclared-benchmark discipline is the AAA-grade anti-cherry-picking
+guarantee: the audit trail records exactly which papers were
+evaluated, which passed SPAR, which failed and why. The corpus was
+selected from the topic's published high-quality reference set
+(canonical RCTs and major review/meta-analysis articles); papers were
+not added in response to favorable findings nor removed in response
+to unfavorable ones.
 
 ### Per-paper claim receipts
 
 Each paper enters a single-source claim-receipt pipeline:
 
 1. **Fact extraction** — an LLM proposes verbatim source-quote facts
-   from the abstract; structurally-validated against the source text.
-   Filters reject objective-as-claim spans (study purposes posing as
-   findings) and mechanism-inflation extractions (clinical-effect
-   verbs over preclinical/low-tier-review evidence).
-2. **Compile** — facts → claims → claim graph; thesis chosen
-   deterministically from a 6-dimension scoring tournament.
-3. **Citation tracing** — every claim's NCT IDs, alias names,
-   p-values, percentages, and bibliographic identifiers are traced
-   against ClinicalTrials.gov / ISRCTN registries, ChEMBL, and the
-   abstract text itself. Failed traces propagate to SPAR.
-4. **SPAR adjudication** — three role-bound LLM judges (Evidence
-   Auditor, Domain Skeptic, Final Judge) review the claim graph
-   plus citation traces plus source abstracts. Verdict is computed
-   deterministically (3-0 → accept_clean, 2-1 → accept_caveated,
-   1-2 → reject_majority, 0-3 → reject_critical). Dissent is
-   always published.
-5. **Receipt emission** — accepted claim receipts contribute to
-   the synthesis layer; rejected receipts are quarantined for
-   transparency.
+   from the abstract; the proposed quote must appear character-for-
+   character in the source (whitespace and Unicode normalization
+   tolerated, semantic edits rejected). Structured fields
+   (`outcome`, `estimate`, `p_value`, `ci`) are kept only when they
+   are clean substrings of the verified source quote, otherwise
+   nulled. Two extractor-side filters protect against the most
+   common mis-extraction failure modes: an OBJECTIVE-AS-CLAIM filter
+   rejects spans like "To determine whether..." that describe study
+   purposes rather than findings, and a MECHANISM-INFLATION filter
+   rejects clinical-effect verbs ("protective effect on cognition",
+   "demonstrates efficacy") when the cited source is mechanistic,
+   preclinical, or a tier-B/C review.
+2. **Compile** — accepted facts become typed claims with deterministic
+   role/directness/tier classifications derived from the source
+   metadata; the claim graph is bundled and a thesis is chosen by a
+   deterministic 6-dimension scoring tournament (canonical-trial
+   priority, directness, tier, recency, confidence, claim id).
+3. **Citation tracing** — every claim's NCT IDs, ISRCTN IDs, alias
+   names, p-values, percentages, and bibliographic identifiers are
+   traced against ClinicalTrials.gov v2, the ISRCTN registry,
+   ChEMBL, and the abstract text itself. Failed traces propagate
+   to SPAR as evidence-integrity signals. The trace clients
+   distinguish "registry has the trial but no posted results" (a
+   normal data-lag condition for journal-published RCTs whose
+   results live in the paper, not the registry) from "registry has
+   no record of this trial" (a fabrication signal).
+4. **SPAR adjudication** — three role-bound LLM judges adjudicate
+   the claim graph plus citation traces plus source abstracts in
+   parallel: Evidence Auditor (verifies claim ↔ source
+   correspondence), Domain Skeptic (looks for over-claiming, missing
+   caveats, mechanism inflation, off-topic drift), Final Judge
+   (votes independently after reading the prior two). The panel
+   verdict is computed deterministically: 3-0 accept → accept_clean,
+   2-1 accept → accept_caveated, 1-2 reject → reject_majority,
+   0-3 reject → reject_critical. Dissent in any 2-1 split is
+   always published verbatim in the receipt.
+5. **Receipt emission** — accepted claim receipts (verdict starts
+   with `accept`) contribute to the synthesis layer; rejected
+   receipts are quarantined for transparency and surfaced in the
+   "Rejected / Contested Evidence" section of the brief and in the
+   relevant outcome subsection of this paper's Results.
 
 ### Cross-source synthesis
 
 The accepted receipts feed a synthesis layer that:
 
-1. Builds a **tension matrix** — every pair of receipts is classified
-   as orthogonal, agreement, disagreement, indirectness_gap, or
-   null_vs_positive (deterministic per-pair classification).
+1. Builds a **tension matrix** — every pair of receipts is
+   classified as orthogonal (cover different outcome classes),
+   agreement (same outcome, same direction), disagreement (same
+   outcome, opposing direction), indirectness_gap (one direct, one
+   mechanistic on the same outcome), or null_vs_positive (one null
+   result, one signed effect, same outcome). The classification is
+   purely deterministic per pair; no LLM is involved at this stage.
 2. Runs a **thesis tournament** — an LLM proposes K=3 candidate
    integrating theses; a deterministic validator enforces ≥3
    distinct receipts referenced, ≥1 non-orthogonal tension addressed
-   (when the matrix has any), no novel numerics, and ≤30-word
-   length. The picker selects the highest-ranked valid candidate.
+   verbatim (when the matrix has any), no novel numerics absent
+   from receipts, and ≤30-word length. The picker selects the
+   highest-ranked valid candidate by descending receipt-coverage
+   then descending tension-coverage then ascending word-count then
+   alphabetical text. When no candidate validates, the thesis falls
+   back to a deterministic stub and the picker rationale records
+   "all candidates rejected" so the audit trail is unambiguous.
 3. Renders a **structured evidence brief** (`paper_synthesis.md`) —
-   bullet-anchored summary, every sentence cited.
+   bullet-anchored summary where every sentence cites at least one
+   receipt. The brief is the auditable evidence layer; readers who
+   need to verify a specific claim can trace it directly to a
+   receipt without reading the full paper.
 4. Renders this **full paper** (`full_paper.md`) — multi-section
-   prose with tiered validation: ANCHORED sections (Abstract,
-   Results, Cross-Domain Synthesis, Limitations) cite per sentence;
-   SCOPED sections (Introduction, Background, Discussion,
-   Conclusion) are unanchored framing with topic + hedge enforcement;
-   DETERMINISTIC sections (Methods, References) render from
-   pipeline constants.
+   prose with tiered validation. ANCHORED sections (Abstract,
+   Results, Cross-Domain Synthesis, Limitations) require every
+   paragraph to cite ≥1 accepted receipt and reject paragraphs that
+   introduce numerics absent from the corpus. SCOPED sections
+   (Introduction, Background, Discussion, Conclusion) are framing
+   prose; they may cite receipts but are not required to, must
+   mention the topic alias ≥2 times per paragraph, must contain
+   at least one hedge phrase per paragraph, and must not introduce
+   novel numerics. DETERMINISTIC sections (Methods, References)
+   render from pipeline constants and receipt metadata with no LLM
+   call. This tiered design preserves the trust-spine guarantees of
+   the brief while permitting the prose density expected of a
+   publishable artifact.
 5. Runs a **Q1-Q7 quality audit** — deterministic checks against
-   the rendered paper covering hedging discipline, null-result
-   acknowledgment, mixed-directness transitions, replication-gap
-   surfacing, healthspan-claim discipline, adverse-event surfacing,
-   and numeric fidelity. Load-bearing failures block ship.
+   the rendered paper covering: borderline-p hedging discipline
+   (Q1), null-result acknowledgment (Q2), mixed-directness
+   transitions (Q3, load-bearing), single-trial replication-gap
+   surfacing (Q4), healthspan-claim discipline (Q5, load-bearing),
+   adverse-event surfacing (Q6), and numeric fidelity (Q7). Q1, Q3,
+   and Q5 are designated load-bearing — failure on any one of them
+   blocks ship regardless of overall score. The audit notes the
+   load-bearing-failure list explicitly and reports score as a
+   percentage of applicable checks (N/A checks are not counted as
+   passes — load-bearing N/A blocks ship just as load-bearing
+   failure does).
 
 ### Outcome class distribution (accepted slice)
 
@@ -109,10 +172,19 @@ The accepted receipts feed a synthesis layer that:
 
 ### Reproducibility
 
-All artifacts (the {n_total} cluster receipts, the brief, this paper,
-the audit, the tension matrix, and the LLM cost ledger) are written
-to disk per-submission and tracked alongside the source corpus so a
-reviewer can reproduce or re-audit any result.
+All artifacts produced by a single run are written to disk under a
+timestamped per-submission directory: the {n_total} cluster receipts
+(8 JSON files each, plus a `claim_receipt.md` per cluster), the
+multi-receipt manifest, the brief (`paper_synthesis.md`), this full
+paper (`full_paper.md`), the synthesis quality audit
+(`synthesis_quality_audit.json`), the receipt summaries
+(`receipt_summaries.json`), the tension matrix
+(`tension_matrix.json`), and the synthesis metadata including the
+LLM cost ledger and the rejected thesis candidates. The corpus
+fixture is committed to the repository alongside the run artifacts
+so any reviewer with the source tree can re-run the pipeline and
+verify byte-identical outputs (modulo provider-side LLM stochasticity
+when no seed is supplied).
 """
     return SynthesisSection(name="methods", body_md=body, anchors=())
 

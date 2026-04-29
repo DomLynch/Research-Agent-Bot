@@ -1,0 +1,121 @@
+{
+  "receipts": [
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c01",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T15-09-47Z-cfab/cluster_01",
+      "topic": "metformin",
+      "thesis_text": "CT scan showed that increases in thigh muscle area (p = .005) and density (p = .020) were greater in placebo versus metformin.",
+      "spar_verdict": "accept_clean",
+      "n_claims": 4,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT02308228",
+      "evidence_tier": "A1",
+      "directness": "direct",
+      "outcome_class": "muscle_function",
+      "effect_direction": "unclear",
+      "p_values": [
+        "p=0.005",
+        "p=0.020"
+      ],
+      "population_summary": "type 2"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c03",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T15-09-47Z-cfab/cluster_03",
+      "topic": "metformin",
+      "thesis_text": "Both metabolic and nonmetabolic pathways were significantly influenced, including pyruvate metabolism and DNA repair in muscle and PPAR and SREBP signaling, mitochondrial fatty acid oxidation, and collagen trimerization in adipose.",
+      "spar_verdict": "accept_caveated",
+      "n_claims": 3,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT01765946",
+      "evidence_tier": "A1",
+      "directness": "direct",
+      "outcome_class": "mechanism",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "type 2"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c04",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T15-09-47Z-cfab/cluster_04",
+      "topic": "metformin",
+      "thesis_text": "Due to evidence of improvements in healthspan and lifespan in model organisms, and mechanistic data relevant to the hallmarks of aging, it has been considered a promising candidate in the search for pharmacological interventions that may attenuate the ageing process in humans.",
+      "spar_verdict": "accept_clean",
+      "n_claims": 4,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "C",
+      "directness": "mechanistic",
+      "outcome_class": "longevity",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "type 2"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T15-09-47Z-cfab/cluster_05",
+      "topic": "metformin",
+      "thesis_text": "The change in whole-body insulin sensitivity was correlated to the change in mitochondrial respiration.",
+      "spar_verdict": "accept_clean",
+      "n_claims": 3,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "C",
+      "directness": "mechanistic",
+      "outcome_class": "cardiometabolic",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "type 2"
+    }
+  ],
+  "pairs": [
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c03",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c01 (muscle_function) and metformin-multi-001-2026-04-29T15-09-47Z-cfab-c03 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c04",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c01 (muscle_function) and metformin-multi-001-2026-04-29T15-09-47Z-cfab-c04 (longevity) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c01 (muscle_function) and metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c04",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c03 (mechanism) and metformin-multi-001-2026-04-29T15-09-47Z-cfab-c04 (longevity) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c03 (mechanism) and metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05",
+      "kind": "orthogonal",
+      "outcome_class": "longevity",
+      "summary": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c04 (longevity) and metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    }
+  ]
+}

@@ -125,8 +125,8 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
 **State verified through:** the most recent entry in the commit log table below. Exact repository HEAD remains `git log -1 --oneline`; this document does not try to self-reference its own future commit hash.
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
-**Tests:** 738/738 passing in 0.59s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, enforced by `tests/test_loc_budget.py`):** 7,828 / **8,000** ceiling (Day 10.9 added +63 cloc for the Q3 transition helper, thesis pair-coverage logic, and metadata fields).
+**Tests:** 777/777 passing in 0.64s. ruff clean. git diff --check clean.
+**Runtime LOC (cloc-style, enforced by `tests/test_loc_budget.py`):** 9,614 / **10,000** ceiling (Day 10.16 added the full-paper writer module + builders + deterministic Methods/References + word-count retry framework; Day 10.16c added per-section code-level word floors + retry loop).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600 — synthesis layer adds 4 new modules):**
 - Trust-spine: `spar.py` 412, `citation_trace.py` 485, `fact_extractor.py` 435, `orchestrator.py` 325, `schemas.py` 281, `llm_client.py` 276, `evidence_cards.py` 261, `writer.py` 259

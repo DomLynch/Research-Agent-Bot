@@ -65,9 +65,11 @@ Output JSON only. No prose outside the JSON."""
 
 INTRODUCTION_SYSTEM_PROMPT = """You write the INTRODUCTION of a research synthesis paper.
 
-Word target: 1500-2500 words across 4-6 paragraphs. Each paragraph
-4-8 sentences. This is the longest section after Results — write
-substantively, not as a placeholder.
+**HARD MINIMUM: 6 paragraphs of 6-9 sentences each = ~1,800 words.**
+This is the second-longest section after Results. The prior version
+of this prompt under-produced (3 paragraphs of ~100 words each =
+~300-500 words total). That output was rejected for being too thin.
+Write the full 6 paragraphs — do NOT default to a concise summary.
 
 Output ONE JSON object with this exact shape:
 
@@ -92,20 +94,35 @@ MUST:
   - not assert clinical efficacy ("metformin extends lifespan",
     "metformin prevents X") — frame as questions the field is asking
 
-Recommended structure:
-  Paragraph 1: The clinical question — population aging, metabolic
-    dysfunction, the search for geroprotective drugs.
-  Paragraph 2: Why metformin specifically — its repurposing rationale,
-    historical safety data, mechanistic plausibility from preclinical
-    work. CITE relevant review receipts where appropriate.
-  Paragraph 3: What human evidence exists — RCTs in different
-    populations + outcomes (sarcopenia, frailty, cognition, glucose).
-    CITE relevant trial receipts.
-  Paragraph 4: The unresolved questions — does mechanistic plausibility
-    translate to functional benefit? are there tradeoffs (e.g. blunted
-    exercise adaptation)? what populations benefit?
-  Paragraph 5 (optional): The contribution this synthesis makes —
-    integrating across receipts to surface cross-outcome tensions.
+REQUIRED STRUCTURE (write all 6 paragraphs, each 6-9 sentences):
+  Paragraph 1: The clinical question — population aging,
+    metabolic dysfunction, healthspan vs lifespan, the
+    economic and human stakes of geroprotective intervention.
+    Why this matters now.
+  Paragraph 2: The geroscience hypothesis specifically — target
+    aging biology rather than individual diseases. Why
+    pharmacological intervention (vs lifestyle) might be needed.
+    The repurposing-vs-novel-development trade-off.
+  Paragraph 3: Why metformin specifically — its decades of
+    glycemic-control safety data, its preclinical longevity
+    profile in model organisms, the AMPK / mTORC1 / mitochondrial
+    pathways implicated. Its accessibility (off-patent, cheap).
+  Paragraph 4: What human RCT evidence exists — describe the
+    landscape of trials (sarcopenia, frailty, cognition,
+    cardiometabolic) including specific trials present in this
+    synthesis. CITE relevant trial receipts. Note endpoint
+    diversity and population heterogeneity.
+  Paragraph 5: The unresolved questions — mechanistic plausibility
+    vs functional translation, tradeoffs like blunted exercise
+    adaptation, population specificity (who benefits, who doesn't),
+    duration of treatment, dose-response.
+  Paragraph 6: The contribution this synthesis makes — integrating
+    across receipts to surface cross-outcome tensions, applying
+    SPAR adjudication to filter weak evidence, distinguishing
+    clinical from mechanistic endpoints.
+
+Each paragraph MUST be a full multi-sentence paragraph. Do not output
+single-sentence "paragraphs." Aim for 100-200 words per paragraph.
 
 Output JSON only. No prose outside the JSON."""
 
@@ -113,8 +130,9 @@ Output JSON only. No prose outside the JSON."""
 BACKGROUND_SYSTEM_PROMPT = """You write the BACKGROUND / LITERATURE REVIEW
 section of a research synthesis paper.
 
-Word target: 1000-2000 words across 3-5 paragraphs. Each paragraph
-4-8 sentences.
+**HARD MINIMUM: 5 paragraphs of 6-9 sentences each = ~1,500 words.**
+The prior version of this prompt under-produced (3 paragraphs ~100
+words each). Write the full 5 paragraphs of substantive prose.
 
 Output ONE JSON object with this exact shape:
 
@@ -137,16 +155,29 @@ field claims ("type 2 diabetes affects 460 million globally"
 here. The same SCOPED rules apply: topic mentions ≥2x per paragraph,
 hedge phrase present, no novel numerics.
 
-Recommended structure:
-  Paragraph 1: Geroscience as a discipline — the rationale for
-    target-aging-not-disease. Reviews from the corpus belong here.
-  Paragraph 2: Metformin's mechanistic profile from preclinical
-    + early-stage human work. AMPK, mTORC1, mitochondrial pathways.
-  Paragraph 3: The clinical-trial landscape — what's been tested,
-    in whom, with what endpoints. Frame each canonical trial in
-    1-2 sentences.
-  Paragraph 4: Open methodological questions — endpoint choice,
-    population heterogeneity, the mechanism-vs-clinic gap.
+REQUIRED STRUCTURE (5 paragraphs, each 6-9 sentences, 100-200 words):
+  Paragraph 1: Geroscience as a discipline — its history,
+    rationale for target-aging-not-disease, the hallmarks-of-
+    aging framework, and the regulatory implications. Cite
+    review receipts.
+  Paragraph 2: Metformin's preclinical longevity profile — animal
+    models (C. elegans, mice), molecular mechanisms (AMPK
+    activation, mTORC1 inhibition, mitochondrial complex I,
+    ETC effects), and the cellular phenotypes consistent with
+    delayed senescence.
+  Paragraph 3: Metformin's human evidence base — observational
+    diabetes cohorts suggesting reduced age-related morbidity,
+    early-stage human mechanistic RCTs, and the translation
+    questions they raise. Cite specific receipts.
+  Paragraph 4: The clinical-trial landscape relevant to this
+    synthesis — describe the canonical trials in 2-3 sentences
+    each (their populations, primary endpoints, durations).
+    Include both accepted and quarantined receipts.
+  Paragraph 5: Open methodological questions — endpoint choice
+    (functional vs surrogate vs molecular), population
+    heterogeneity (diabetic vs non-diabetic, baseline frailty),
+    the mechanism-to-clinic gap, treatment duration, and
+    interactions with concurrent interventions like exercise.
 
 Output JSON only. No prose outside the JSON."""
 
@@ -155,8 +186,11 @@ RESULTS_SYSTEM_PROMPT = """You write the RESULTS section of a research
 synthesis paper. The Results section is structured by OUTCOME CLASS —
 one subsection per outcome class present in the corpus.
 
-Word target: 3000-5000 words total. Each outcome subsection: 600-1200
-words across 2-4 paragraphs.
+**HARD MINIMUM: every outcome subsection MUST have at least 4
+paragraphs of 5-8 sentences each (~600-900 words per subsection).**
+The prior version of this prompt produced 1 paragraph per subsection
+(~70 words each); that output was rejected. Write the full multi-
+paragraph subsections this time.
 
 Output ONE JSON object with this exact shape:
 
@@ -181,21 +215,40 @@ Output ONE JSON object with this exact shape:
 Validation tier: ANCHORED. EVERY paragraph must cite ≥1 receipt_id.
 The validator drops uncited paragraphs entirely.
 
+REQUIRED PER-SUBSECTION STRUCTURE (4 paragraphs minimum):
+  Paragraph 1 — Trial summary: describe the trial(s) anchoring
+    this outcome class. Population, design, duration, primary
+    endpoint, dose. Specific to the receipts cited.
+  Paragraph 2 — Quantitative findings: effect sizes, p-values,
+    confidence intervals, percentage changes from receipts —
+    exactly as they appear, no rounding or paraphrasing.
+  Paragraph 3 — Mechanistic context: how this outcome relates
+    to the molecular pathways described in the corpus
+    (mitochondrial respiration, AMPK, pyruvate metabolism,
+    DNA repair, etc.). Distinguish A1_clinical_RCT vs
+    A2_human_mechanistic vs C1_preclinical evidence.
+  Paragraph 4 — Within-corpus tensions or quarantined receipts:
+    if any accepted receipts disagree, name the disagreement.
+    If MET-PREVENT (or any other canonical paper) was rejected
+    by SPAR for THIS outcome class, discuss it explicitly:
+    "MET-PREVENT reported a null walk-speed effect (0.001 m/s
+    [95% CI -0.06 to 0.06], p=0.96); SPAR rejected the receipt
+    on Domain Skeptic grounds of population over-generalization,
+    so the finding is contested but is NOT silently omitted from
+    this synthesis."
+
 Rules:
-1. Per-outcome subsection: integrate every accepted receipt that
-   touches that outcome. Cite receipts by id in the paragraph.
-2. Report effect sizes, p-values, sample sizes EXACTLY as they appear
-   in the receipts. Do NOT round, paraphrase, or compute new numerics.
-3. Distinguish DIRECT evidence (RCTs with clinical endpoints) from
-   MECHANISTIC evidence (RCTs with mechanism endpoints, or in-vitro/
-   animal). Use explicit transition phrases: "Mechanistically,",
-   "By contrast,", "In a clinical RCT,", "Preclinical data suggest,".
-4. Where receipts disagree, name the disagreement explicitly.
-5. Where a canonical receipt was rejected (quarantine list provided
-   in input), discuss it in the relevant subsection: "MET-PREVENT
-   reported a null effect on walk speed; SPAR rejected the receipt
-   for [reason], so the finding is contested but not silently
-   omitted."
+1. Cite ≥1 receipt_id in EVERY paragraph; multiple receipts when
+   the paragraph integrates evidence across them.
+2. Report effect sizes, p-values, sample sizes EXACTLY as they
+   appear in receipts. Do NOT round, paraphrase, or compute new
+   numerics. Validator drops paragraphs with novel numerics.
+3. Use explicit directness transitions: "Mechanistically,",
+   "By contrast,", "In a clinical RCT,", "Preclinical data suggest,",
+   "The mechanistic substrate underlying this functional finding,".
+4. The quarantine paragraph is REQUIRED when a SPAR-rejected
+   canonical receipt touches the outcome — it cannot be silently
+   omitted. The synthesis must surface the contested evidence.
 
 Output JSON only. No prose outside the JSON."""
 
@@ -204,7 +257,9 @@ CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = """You write the CROSS-DOMAIN
 SYNTHESIS section. Its job: surface tensions BETWEEN outcome classes
 that single-outcome subsections miss.
 
-Word target: 800-1500 words across 2-4 paragraphs.
+**HARD MINIMUM: 4 paragraphs of 6-9 sentences each = ~1,000-1,400 words.**
+Each paragraph addresses one cross-outcome tension. The prior version
+under-produced (~250 words total) — write the full 4 paragraphs.
 
 Output ONE JSON object with this exact shape:
 
@@ -250,7 +305,10 @@ Output JSON only. No prose outside the JSON."""
 DISCUSSION_SYSTEM_PROMPT = """You write the DISCUSSION of a research
 synthesis paper.
 
-Word target: 2000-3000 words across 4-6 paragraphs.
+**HARD MINIMUM: 6 paragraphs of 6-9 sentences each = ~1,800-2,400 words.**
+The prior version of this prompt produced 4 paragraphs averaging ~145
+words each (583 words total). That output was rejected. Write the
+full 6 paragraphs.
 
 Output ONE JSON object with this exact shape:
 
@@ -293,8 +351,9 @@ Output JSON only. No prose outside the JSON."""
 LIMITATIONS_FULL_SYSTEM_PROMPT = """You write the LIMITATIONS section of
 a research synthesis paper.
 
-Word target: 500-1000 words across 3-5 paragraphs OR a paragraph with
-a numbered list of limitations.
+**HARD MINIMUM: 5 paragraphs of 4-7 sentences each = ~700-1,000 words.**
+The prior version produced 4 short paragraphs (~300 words). Write
+the full 5 paragraphs.
 
 Output ONE JSON object with this exact shape:
 
@@ -330,7 +389,9 @@ Output JSON only. No prose outside the JSON."""
 CONCLUSION_SYSTEM_PROMPT = """You write the CONCLUSION of a research
 synthesis paper.
 
-Word target: 250-500 words across 1-2 paragraphs.
+**HARD MINIMUM: 2 paragraphs of 5-8 sentences each = ~350-500 words.**
+The prior version produced 1 paragraph (~160 words). Write 2 full
+paragraphs.
 
 Output ONE JSON object with this exact shape:
 

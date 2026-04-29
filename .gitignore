@@ -110,6 +110,15 @@ runs/e2e-baselines/*.tmp
 # and Q5 longevity-claim hedge — these are the 2 prose-quality
 # issues remaining for Day 10.15 writer work).
 !runs/synthesis-metformin-010-2026-04-29T15-12-36Z-56d7/
+# Day 10.16 — first full_paper.md artifact. Brief: 841 words.
+# Full paper: 3,284 words across 10 sections (Abstract / Introduction
+# / Background / Methods / Results-by-outcome / Cross-Domain Synthesis
+# / Discussion / Limitations / Conclusion / References). Audit: 8.0/10
+# (was 6.0 on the brief alone — Q5 longevity hedge now passes; Q3
+# transitions still ship-block). 3.8x more prose than the brief; still
+# below the 5k floor — Day 10.16b prompt-strengthening + Methods-
+# template expansion targets that gap.
+!runs/synthesis-metformin-010-2026-04-29T16-21-11Z-61f4/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

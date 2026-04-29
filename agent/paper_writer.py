@@ -24,7 +24,6 @@ discussion happens explicitly in LimitationsFull).
 """
 from __future__ import annotations
 
-import re
 from collections.abc import Mapping, Sequence
 from typing import Any
 
@@ -41,6 +40,11 @@ from agent.paper_writer_prompts import (
     LIMITATIONS_FULL_SYSTEM_PROMPT,
     RESULTS_SYSTEM_PROMPT,
 )
+from agent.paper_writer_builders import (
+    build_anchored_from_parsed,
+    build_results_from_parsed,
+    build_scoped_from_parsed,
+)
 from agent.paper_writer_deterministic import (
     build_methods_section,
     build_references_full_section,
@@ -48,7 +52,6 @@ from agent.paper_writer_deterministic import (
 from agent.synthesis_schemas import (
     ReceiptSummary,
     SectionName,
-    SynthesisClaimAnchor,
     SynthesisSection,
     SynthesisThesis,
     TensionMatrix,
@@ -57,27 +60,29 @@ from agent.synthesis_writer import filter_accepted
 
 PAPER_WRITER_VERSION = "paper-writer/2026-04-29-day10-16"
 
-# Numeric token regex (mirrors synthesis_writer / synthesis_thesis).
-_NUMERIC_RE = re.compile(
-    r"\b(?:p\s*[<=>]\s*0?\.\d+|"
-    r"\d+(?:\.\d+)?\s*%|"
-    r"(?:hr|or|rr|ahr|aor|arr|ηp[2²]|β)\s*[=:,\-]?\s*\d+(?:\.\d+)?"
-    r")\b",
-    re.IGNORECASE,
-)
+# Day 10.16c — per-section word-count budgets enforced AT CODE LEVEL.
+# Prompts ask for length; this dict defines the floors that the writer
+# enforces by retrying under-budget sections up to N times. If a section
+# still falls short after retries, it lands as-is and the audit picks
+# up the shortfall via the WORD_COUNT_FLOOR check.
+SECTION_WORD_FLOORS: Mapping[str, int] = {
+    "abstract": 250,
+    "introduction": 1200,
+    "background": 1000,
+    "results": 2000,
+    "cross_domain_synthesis": 700,
+    "discussion": 1500,
+    "limitations_full": 600,
+    "conclusion": 300,
+}
 
-_HEDGE_PHRASES = (
-    "may ", "appears to", "evidence suggests", "remains uncertain",
-    "has been proposed", "the question of whether", "we interpret",
-    "this suggests", "one reading is", "the evidence supports",
-    "in our view", "remains to be confirmed", "is not yet established",
-    "is unresolved", "is unclear", "could ", "might ",
-    "proposed as", "hypothesized", "tentative",
-)
+# Total full-paper floor — paper_writer's render_full_paper records
+# the total word count and the auditor / script can ship-fail when
+# the count is below this.
+FULL_PAPER_WORD_FLOOR = 5000
 
-
-def _normalize(text: str) -> str:
-    return " ".join(text.replace("·", ".").split()).lower()
+# Max LLM retries per section when word count is below floor.
+SECTION_RETRY_BUDGET = 2
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
@@ -123,61 +128,9 @@ def derive_paper_tier(summary: ReceiptSummary) -> str:
     return tier or "unknown"
 
 
-# --- Validation helpers --------------------------------------------------
-
-
-def _check_anchored_paragraph(
-    text: str,
-    receipt_ids: Sequence[str],
-    accepted_ids: set[str],
-    accepted_corpus_norm: str,
-) -> tuple[bool, str]:
-    """Validate an ANCHORED paragraph: must cite ≥1 accepted receipt,
-    no novel numerics."""
-    if not text.strip():
-        return False, "empty_paragraph"
-    cited = [r for r in receipt_ids if r in accepted_ids]
-    if not cited:
-        return False, f"no_accepted_anchor:{list(receipt_ids)}"
-    for m in _NUMERIC_RE.finditer(text):
-        tok = _normalize(m.group(0))
-        if tok not in accepted_corpus_norm:
-            return False, f"novel_numeric:{tok!r}"
-    return True, "ok"
-
-
-def _check_scoped_paragraph(
-    text: str,
-    topic: str,
-    receipt_ids: Sequence[str],
-    accepted_corpus_norm: str,
-) -> tuple[bool, str]:
-    """Validate a SCOPED paragraph: topic mentioned ≥2x, contains a
-    hedge phrase, no novel numerics. Receipt anchoring is OPTIONAL
-    here (this is framing prose, not evidence reporting)."""
-    if not text.strip():
-        return False, "empty_paragraph"
-    norm = _normalize(text)
-    topic_norm = _normalize(topic)
-    if topic_norm and norm.count(topic_norm) < 2:
-        return False, f"topic_alias_under_count:<2:{topic_norm!r}"
-    if not any(h in norm for h in _HEDGE_PHRASES):
-        return False, "missing_hedge_phrase"
-    for m in _NUMERIC_RE.finditer(text):
-        tok = _normalize(m.group(0))
-        if tok not in accepted_corpus_norm:
-            return False, f"novel_numeric:{tok!r}"
-    return True, "ok"
-
-
-def _accepted_corpus_norm(receipts: Sequence[ReceiptSummary]) -> str:
-    """Concatenated normalized text of all receipts' p_values + thesis.
-    Used for novel-numeric checks."""
-    parts: list[str] = []
-    for r in receipts:
-        parts.extend(r.p_values)
-        parts.append(r.thesis_text)
-    return _normalize(" ".join(parts))
+# Validation helpers + paragraph builders moved to
+# agent/paper_writer_builders.py to keep this module under the 600
+# per-file LOC cap.
 
 
 # --- LLM section helper --------------------------------------------------
@@ -264,6 +217,39 @@ def _build_user_prompt(
 # --- Section builders ----------------------------------------------------
 
 
+def _section_word_count(section: SynthesisSection) -> int:
+    """Count words in the section body, excluding the heading line."""
+    lines = section.body_md.split("\n")
+    body = "\n".join(lines[1:]) if lines else ""
+    return len(body.split())
+
+
+def _build_retry_prompt(
+    base_user_prompt: str,
+    *,
+    section_name: str,
+    target_floor: int,
+    last_word_count: int,
+) -> str:
+    """Append explicit retry guidance when a section under-produced.
+
+    Empirically, LLMs default to concise output even when prompts
+    request length. A retry that names the under-production and the
+    floor is much more likely to hit the target than a fresh call.
+    """
+    return (
+        base_user_prompt
+        + f"\n\nRETRY GUIDANCE: the previous attempt at the "
+        f"{section_name.upper()} section produced only {last_word_count} "
+        f"words. The minimum word count is {target_floor}. "
+        f"Re-write the section now with at least {target_floor} words "
+        f"of substantive prose. Concretely: produce more paragraphs, "
+        f"and make each paragraph longer (8-12 sentences each instead "
+        f"of 3-5). Do NOT default to summary mode. The reader needs "
+        f"the full publishable density."
+    )
+
+
 async def _write_anchored_section(
     *,
     name: SectionName,
@@ -277,53 +263,41 @@ async def _write_anchored_section(
     seed: int | None,
     fallback_body: str,
 ) -> SynthesisSection:
-    """Build a section that requires every paragraph to cite ≥1
-    accepted receipt. Drops invalid paragraphs; falls back to a
-    deterministic stub when nothing survives."""
-    parsed = await _call_llm_section(
-        system_prompt=system_prompt, user_prompt=user_prompt,
-        chain=chain, client=client, ledger=ledger, seed=seed,
-    )
-    if not parsed:
-        return SynthesisSection(name=name, body_md=fallback_body, anchors=())
-    accepted_ids = {r.receipt_id for r in accepted}
-    corpus_norm = _accepted_corpus_norm(accepted)
-    paragraphs = parsed.get("paragraphs") or parsed.get("subsections") or []
-    body_lines: list[str] = [heading, ""]
-    anchors: list[SynthesisClaimAnchor] = []
-    for entry in paragraphs:
-        if not isinstance(entry, dict):
-            continue
-        # Results section uses {subsections: [{outcome_class, heading, paragraphs}]}
-        if "subsections" in (parsed or {}):
-            pass  # handled by the dedicated results path
-        text = entry.get("text") or entry.get("sentence") or ""
-        rids = entry.get("receipt_ids") or []
-        if not isinstance(text, str) or not isinstance(rids, list):
-            continue
-        ok, _reason = _check_anchored_paragraph(
-            text, [str(r) for r in rids], accepted_ids, corpus_norm,
+    """Build an ANCHORED section with code-level word-count retry.
+
+    Day 10.16c: prompts ask for length but LLMs default to concise
+    output. This wrapper enforces the floor at code level: if the
+    rendered section is under SECTION_WORD_FLOORS[name], retry up to
+    SECTION_RETRY_BUDGET times with a more aggressive expansion
+    prompt. Pick the longest valid attempt across all retries."""
+    floor = SECTION_WORD_FLOORS.get(str(name), 0)
+    best: SynthesisSection | None = None
+    best_words = 0
+    current_prompt = user_prompt
+    for attempt in range(SECTION_RETRY_BUDGET + 1):
+        parsed = await _call_llm_section(
+            system_prompt=system_prompt, user_prompt=current_prompt,
+            chain=chain, client=client, ledger=ledger, seed=seed,
         )
-        if not ok:
+        if not parsed:
             continue
-        body_lines.append(text.strip())
-        body_lines.append("")
-        cite_str = ", ".join(f"`{i}`" for i in rids)
-        body_lines.append(f"  _Cited: {cite_str}_")
-        body_lines.append("")
-        anchors.append(SynthesisClaimAnchor(
-            sentence=text.strip(),
-            receipt_ids=tuple(str(r) for r in rids),
-            numerics=tuple(
-                _normalize(m.group(0))
-                for m in _NUMERIC_RE.finditer(text)
-            ),
-        ))
-    if not anchors:
-        return SynthesisSection(name=name, body_md=fallback_body, anchors=())
-    return SynthesisSection(
-        name=name, body_md="\n".join(body_lines).rstrip() + "\n",
-        anchors=tuple(anchors),
+        section = build_anchored_from_parsed(
+            parsed, name=name, heading=heading, accepted=accepted,
+        )
+        if section is None:
+            continue
+        words = _section_word_count(section)
+        if words > best_words:
+            best, best_words = section, words
+        if best_words >= floor or floor == 0:
+            return best
+        # Below floor — prepare a retry prompt.
+        current_prompt = _build_retry_prompt(
+            user_prompt, section_name=str(name),
+            target_floor=floor, last_word_count=words,
+        )
+    return best or SynthesisSection(
+        name=name, body_md=fallback_body, anchors=(),
     )
 
 
@@ -341,47 +315,37 @@ async def _write_scoped_section(
     seed: int | None,
     fallback_body: str,
 ) -> SynthesisSection:
-    """Build a SCOPED section (Introduction, Background, Discussion,
-    Conclusion). Topic alias and hedge phrase required per paragraph;
-    receipt citation is OPTIONAL but preferred."""
-    parsed = await _call_llm_section(
-        system_prompt=system_prompt, user_prompt=user_prompt,
-        chain=chain, client=client, ledger=ledger, seed=seed,
-    )
-    if not parsed:
-        return SynthesisSection(name=name, body_md=fallback_body, anchors=())
-    corpus_norm = _accepted_corpus_norm(accepted)
-    paragraphs = parsed.get("paragraphs") or []
-    body_lines: list[str] = [heading, ""]
-    anchors: list[SynthesisClaimAnchor] = []
-    for entry in paragraphs:
-        if not isinstance(entry, dict):
-            continue
-        text = entry.get("text") or ""
-        rids = entry.get("receipt_ids") or []
-        if not isinstance(text, str) or not isinstance(rids, list):
-            continue
-        ok, _reason = _check_scoped_paragraph(
-            text, topic, [str(r) for r in rids], corpus_norm,
+    """Build a SCOPED section with code-level word-count retry.
+
+    See `_write_anchored_section` for the retry contract."""
+    floor = SECTION_WORD_FLOORS.get(str(name), 0)
+    best: SynthesisSection | None = None
+    best_words = 0
+    current_prompt = user_prompt
+    for attempt in range(SECTION_RETRY_BUDGET + 1):
+        parsed = await _call_llm_section(
+            system_prompt=system_prompt, user_prompt=current_prompt,
+            chain=chain, client=client, ledger=ledger, seed=seed,
         )
-        if not ok:
+        if not parsed:
             continue
-        body_lines.append(text.strip())
-        body_lines.append("")
-        if rids:
-            cite_str = ", ".join(f"`{i}`" for i in rids)
-            body_lines.append(f"  _Cited: {cite_str}_")
-            body_lines.append("")
-        anchors.append(SynthesisClaimAnchor(
-            sentence=text.strip(),
-            receipt_ids=tuple(str(r) for r in rids),
-            numerics=(),
-        ))
-    if not anchors:
-        return SynthesisSection(name=name, body_md=fallback_body, anchors=())
-    return SynthesisSection(
-        name=name, body_md="\n".join(body_lines).rstrip() + "\n",
-        anchors=tuple(anchors),
+        section = build_scoped_from_parsed(
+            parsed, name=name, heading=heading,
+            topic=topic, accepted=accepted,
+        )
+        if section is None:
+            continue
+        words = _section_word_count(section)
+        if words > best_words:
+            best, best_words = section, words
+        if best_words >= floor or floor == 0:
+            return best
+        current_prompt = _build_retry_prompt(
+            user_prompt, section_name=str(name),
+            target_floor=floor, last_word_count=words,
+        )
+    return best or SynthesisSection(
+        name=name, body_md=fallback_body, anchors=(),
     )
 
 
@@ -397,15 +361,12 @@ async def write_results_section(
     ledger: CostLedger | None = None,
     seed: int | None = None,
 ) -> SynthesisSection:
-    """ANCHORED multi-paragraph Results, organized by outcome class.
+    """ANCHORED multi-paragraph Results with code-level word retry.
     Each subsection has its own H3 heading. Each paragraph cites
-    ≥1 accepted receipt."""
+    ≥1 accepted receipt. If overall Results word count is below
+    SECTION_WORD_FLOORS['results'], retry up to N times."""
     user = _build_user_prompt(
         receipts, rejected, matrix, thesis, topic=topic,
-    )
-    parsed = await _call_llm_section(
-        system_prompt=RESULTS_SYSTEM_PROMPT, user_prompt=user,
-        chain=chain, client=client, ledger=ledger, seed=seed,
     )
     fallback = (
         "## Results\n\n_LLM-generated results section failed validation; "
@@ -413,56 +374,31 @@ async def write_results_section(
         "evidence brief (`paper_synthesis.md`) for the per-receipt "
         "summary._\n"
     )
-    if not parsed:
-        return SynthesisSection(
-            name="results", body_md=fallback, anchors=(),
+    floor = SECTION_WORD_FLOORS.get("results", 0)
+    best: SynthesisSection | None = None
+    best_words = 0
+    current_prompt = user
+    for attempt in range(SECTION_RETRY_BUDGET + 1):
+        parsed = await _call_llm_section(
+            system_prompt=RESULTS_SYSTEM_PROMPT, user_prompt=current_prompt,
+            chain=chain, client=client, ledger=ledger, seed=seed,
         )
-    accepted_ids = {r.receipt_id for r in receipts}
-    corpus_norm = _accepted_corpus_norm(receipts)
-    body_lines: list[str] = ["## Results", ""]
-    anchors: list[SynthesisClaimAnchor] = []
-    for sub in parsed.get("subsections") or []:
-        if not isinstance(sub, dict):
+        if not parsed:
             continue
-        h3 = sub.get("heading") or sub.get("outcome_class") or ""
-        sub_paragraphs = sub.get("paragraphs") or []
-        sub_body: list[str] = [f"### {h3}", ""]
-        sub_anchors: list[SynthesisClaimAnchor] = []
-        for entry in sub_paragraphs:
-            if not isinstance(entry, dict):
-                continue
-            text = entry.get("text") or ""
-            rids = entry.get("receipt_ids") or []
-            if not isinstance(text, str) or not isinstance(rids, list):
-                continue
-            ok, _reason = _check_anchored_paragraph(
-                text, [str(r) for r in rids], accepted_ids, corpus_norm,
-            )
-            if not ok:
-                continue
-            sub_body.append(text.strip())
-            sub_body.append("")
-            cite_str = ", ".join(f"`{i}`" for i in rids)
-            sub_body.append(f"  _Cited: {cite_str}_")
-            sub_body.append("")
-            sub_anchors.append(SynthesisClaimAnchor(
-                sentence=text.strip(),
-                receipt_ids=tuple(str(r) for r in rids),
-                numerics=tuple(
-                    _normalize(m.group(0))
-                    for m in _NUMERIC_RE.finditer(text)
-                ),
-            ))
-        if sub_anchors:
-            body_lines.extend(sub_body)
-            anchors.extend(sub_anchors)
-    if not anchors:
-        return SynthesisSection(
-            name="results", body_md=fallback, anchors=(),
+        section = build_results_from_parsed(parsed, accepted=receipts)
+        if section is None:
+            continue
+        words = _section_word_count(section)
+        if words > best_words:
+            best, best_words = section, words
+        if best_words >= floor or floor == 0:
+            return best
+        current_prompt = _build_retry_prompt(
+            user, section_name="results",
+            target_floor=floor, last_word_count=words,
         )
-    return SynthesisSection(
-        name="results", body_md="\n".join(body_lines).rstrip() + "\n",
-        anchors=tuple(anchors),
+    return best or SynthesisSection(
+        name="results", body_md=fallback, anchors=(),
     )
 
 
