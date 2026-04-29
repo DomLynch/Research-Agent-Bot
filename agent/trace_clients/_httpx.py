@@ -1,4 +1,4 @@
-"""HTTPX-backed trace clients — CT.gov v2 / ChEMBL / Europe PMC.
+"""HTTPX-backed trace clients — CT.gov v2 / ISRCTN / ChEMBL / Europe PMC.
 
 DESIGN-001 §7: citation-trace must work without MCP. These backends hit
 public REST APIs directly via httpx (the runtime's only dep). The
@@ -19,9 +19,21 @@ Failure semantics (matches the fixture backend's contract):
 No retry / no rate-limit logic: the realistic per-claim trace volume
 is ~5-10 calls and the public APIs are generous. Add retry only if a
 real run shows transient failures.
+
+Day 10.14 — `HttpxTrialRegistryClient` now also handles ISRCTN IDs
+(UK trial registry). Empirical: MET-PREVENT (ISRCTN29932357) was
+spuriously failing nct_exists in the canonical-corpus benchmark
+because the v0 client only knew CT.gov.
+
+ISRCTN parser: deliberately uses regex extraction (not xml.etree)
+to eliminate XXE / billion-laughs / DTD-injection attack surface on
+the third-party registry response. The 7 fields we need are simple
+top-level tags inside `<trial><main>`; regex is sufficient and safer
+than stdlib XML parsing.
 """
 from __future__ import annotations
 
+import re
 from collections.abc import Mapping
 
 import httpx
@@ -41,6 +53,7 @@ __all__ = [
 ]
 
 _CT_BASE = "https://clinicaltrials.gov/api/v2"
+_ISRCTN_BASE = "https://www.isrctn.com/api/query/format/who"
 _CHEMBL_BASE = "https://www.ebi.ac.uk/chembl/api/data"
 _EPMC_BASE = "https://www.ebi.ac.uk/europepmc/webservices/rest"
 
@@ -57,10 +70,66 @@ _CT_STATUS_MAP: Mapping[str, TrialStatus] = {
 }
 
 
+# Day 10.14 — ISRCTN uses prose status labels. Map them to our
+# TrialStatus literal. Match is on lowercase, whitespace-collapsed.
+# Anything not in this map falls through to "unknown" (safe default;
+# never crashes the pipeline on a status string the registry adds).
+_ISRCTN_STATUS_MAP: Mapping[str, TrialStatus] = {
+    "recruiting": "recruiting",
+    "ongoing": "active_not_recruiting",
+    "no longer recruiting": "active_not_recruiting",
+    "completed": "completed",
+    "closed": "completed",
+    "stopped": "terminated",
+    "terminated": "terminated",
+    "suspended": "suspended",
+    "withdrawn": "withdrawn",
+    "in setup": "unknown",
+    "in setup, pending funding": "unknown",
+    "pending": "unknown",
+}
+
+# Day 10.14 — ISRCTN phase strings that mean "no phase declared". Map
+# to None so downstream code doesn't carry a misleading literal.
+_ISRCTN_NULL_PHASE = frozenset({"not specified", "not applicable", "n/a"})
+
+# Day 10.14 — regex extractors for ISRCTN response fields. We extract
+# only the 7 top-level tags we need and never invoke an XML parser, so
+# the response is immune to DTD / external-entity / billion-laughs
+# attacks regardless of what the registry returns.
+_ISRCTN_TRIAL_BLOCK_RE = re.compile(
+    r"<trial\b[^>]*>(.*?)</trial>",
+    re.IGNORECASE | re.DOTALL,
+)
+_ISRCTN_MAIN_BLOCK_RE = re.compile(
+    r"<main\b[^>]*>(.*?)</main>",
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def _isrctn_field(block: str, tag: str) -> str:
+    """Extract `<tag>...</tag>` content from an ISRCTN block, or empty
+    string when missing. Whitespace-trimmed; tag-internal HTML/XML is
+    NOT processed (matches the regex literally between tag boundaries).
+    """
+    pattern = rf"<{tag}\b[^>]*>(.*?)</{tag}>"
+    m = re.search(pattern, block, re.IGNORECASE | re.DOTALL)
+    if m is None:
+        return ""
+    return m.group(1).strip()
+
+
 def _normalize_status(raw: str | None) -> TrialStatus:
     if not raw:
         return "unknown"
     return _CT_STATUS_MAP.get(raw.strip().upper(), "unknown")
+
+
+def _normalize_isrctn_status(raw: str | None) -> TrialStatus:
+    if not raw:
+        return "unknown"
+    key = " ".join(raw.split()).lower()
+    return _ISRCTN_STATUS_MAP.get(key, "unknown")
 
 
 def _get_json(
@@ -103,11 +172,15 @@ def _get_json(
 
 
 class HttpxTrialRegistryClient:
-    """Backend for ClinicalTrials.gov API v2.
+    """Backend for ClinicalTrials.gov v2 + ISRCTN registries.
 
-    NCT IDs only — ISRCTN returns None (their public API has a different
-    shape and isn't worth the divergence cost for v0; the fixture backend
-    still serves ISRCTN for the planted-failure regression tests).
+    Routes by trial-ID prefix:
+      - NCT*    → ClinicalTrials.gov API v2 (JSON)
+      - ISRCTN* → ISRCTN registry WHO-format API (XML)
+
+    Day 10.14 added ISRCTN handling. Empirical: MET-PREVENT
+    (ISRCTN29932357) was spuriously failing the nct_exists trace
+    because the v0 client returned None for any non-NCT id.
     """
 
     def __init__(
@@ -115,16 +188,23 @@ class HttpxTrialRegistryClient:
         *,
         client: httpx.Client | None = None,
         base_url: str = _CT_BASE,
+        isrctn_base_url: str = _ISRCTN_BASE,
         timeout: float = 15.0,
     ) -> None:
         self._client = client or httpx.Client(timeout=timeout)
         self._base = base_url.rstrip("/")
+        self._isrctn_base = isrctn_base_url
         self._owns_client = client is None
 
     def get_trial(self, trial_id: str) -> TrialRecord | None:
         tid = trial_id.strip().upper()
-        if not tid.startswith("NCT"):
-            return None
+        if tid.startswith("NCT"):
+            return self._get_ctgov_trial(tid)
+        if tid.startswith("ISRCTN"):
+            return self._get_isrctn_trial(tid)
+        return None
+
+    def _get_ctgov_trial(self, tid: str) -> TrialRecord | None:
         url = f"{self._base}/studies/{tid}"
         data = _get_json(self._client, url, backend="CT.gov", target=tid)
         if data is None:
@@ -146,6 +226,88 @@ class HttpxTrialRegistryClient:
             status=_normalize_status(status_mod.get("overallStatus")),
             has_results=has_results,
             phase=("/".join(phases) if phases else None),
+            primary_completion_date=completion,
+        )
+
+    def _get_isrctn_trial(self, tid: str) -> TrialRecord | None:
+        """Fetch from the ISRCTN WHO-format API (XML response).
+
+        Parser: regex-based field extraction (not xml.etree) so the
+        third-party response cannot trigger XXE / billion-laughs /
+        DTD-injection attacks. The 7 fields we need are simple top-
+        level tags inside `<trial><main>`; regex is sufficient and
+        keeps the runtime dep set to httpx-only per AGENTS.md.
+
+        Multi-trial responses: the WHO `q=` parameter is a keyword
+        search, not exact-id match. If the registry returns multiple
+        `<trial>` blocks, we select the one whose `<trial_id>` text
+        equals `tid` (the requested id). If none match, return None
+        rather than risk binding an unrelated trial to the requested
+        id (Day 10.14 reviewer-found precision concern).
+
+        `has_results=True` requires a populated `<results_url_link>` —
+        the `<results_date_completed>` field can be set to an
+        anticipated date for trials that have ended enrollment but
+        not yet posted results, so it's not a reliable signal alone.
+        """
+        try:
+            resp = self._client.get(
+                self._isrctn_base,
+                params={"q": tid},
+                headers={"Accept": "application/xml"},
+                timeout=15.0,
+            )
+        except httpx.HTTPError as exc:
+            raise TraceBackendError(
+                f"ISRCTN GET failed for {tid!r}: "
+                f"{type(exc).__name__}: {exc}"
+            ) from exc
+        if resp.status_code == 404:
+            return None
+        if resp.status_code >= 400:
+            raise TraceBackendError(
+                f"ISRCTN {resp.status_code} for {tid!r}: "
+                f"{resp.text[:200]!r}"
+            )
+        body = resp.text or ""
+        # Find the `<main>` block of the trial whose `<trial_id>`
+        # matches `tid`. Empty result-set returns None.
+        target_main: str | None = None
+        for trial_block in _ISRCTN_TRIAL_BLOCK_RE.finditer(body):
+            block_text = trial_block.group(1)
+            main_match = _ISRCTN_MAIN_BLOCK_RE.search(block_text)
+            if main_match is None:
+                continue
+            main_block = main_match.group(1)
+            if _isrctn_field(main_block, "trial_id").upper() == tid:
+                target_main = main_block
+                break
+        if target_main is None:
+            return None
+        title = (
+            _isrctn_field(target_main, "scientific_title")
+            or _isrctn_field(target_main, "public_title")
+        )
+        status_raw = _isrctn_field(target_main, "recruitment_status")
+        results_url = _isrctn_field(target_main, "results_url_link")
+        has_results = bool(results_url)
+        completion = (
+            _isrctn_field(target_main, "results_date_completed")
+            or _isrctn_field(target_main, "date_enrolment")
+            or None
+        )
+        phase_raw = _isrctn_field(target_main, "phase")
+        phase = (
+            None
+            if phase_raw.lower() in _ISRCTN_NULL_PHASE
+            else (phase_raw or None)
+        )
+        return TrialRecord(
+            trial_id=_isrctn_field(target_main, "trial_id") or tid,
+            title=title,
+            status=_normalize_isrctn_status(status_raw),
+            has_results=has_results,
+            phase=phase,
             primary_completion_date=completion,
         )
 

@@ -253,16 +253,48 @@ _DRUG_CANDIDATE_STOPWORDS = frozenset({
     "which", "while", "with", "from", "the", "and", "but",
     "after", "before", "during", "however", "moreover", "furthermore",
     "similarly", "likewise", "additionally", "consequently", "therefore",
-    "although", "despite", "whereas", "while", "since", "because",
+    "although", "despite", "whereas", "since", "because",
     "indeed", "notably", "specifically", "importantly", "interestingly",
     "overall", "finally", "first", "second", "third", "fourth", "next",
     "subsequently", "previously", "recently", "currently", "initially",
     # Body-composition / outcome terms commonly capitalized at sentence
     # start in clinical abstracts (Day 8.1 from rapamycin run regression)
     "lean", "visceral", "fat", "self", "muscle", "body", "weight",
-    "mean", "median", "average", "total", "primary", "secondary",
-    "compared", "using", "both", "either", "neither", "such",
-    "treatment", "patients", "subjects", "control", "placebo",
+    "mean", "median", "average", "total",
+    "using", "both", "either", "neither", "such",
+    "treatment", "control",
+    # Day 10.14 — generic biology/anatomy/physiology terms. Without
+    # these, the alias-match trace queries ChEMBL for words like
+    # "Mitochondrial" and ChEMBL returns the first molecule whose
+    # description contains the term ("Mitoquinone Mesylate"). The
+    # claim is talking about mitochondrial physiology, not a drug —
+    # so the resolution is a false-positive. Empirical: caused
+    # cluster_05 (Konopka 2019) to spuriously fail SPAR in the
+    # Day 10.13 canonical-corpus benchmark. These are NOUNS THAT
+    # MODIFY processes/structures, not drug names. Reserved for
+    # generic biology vocabulary; specific drug names (Glucophage,
+    # Rapamycin) still pass through.
+    #
+    # Day 10.14 reviewer note (deliberately NOT in the stoplist):
+    # "Insulin", "Glucose" — these ARE legitimate drug-class names
+    # (insulin glargine/lispro/detemir; glucose tablets). A future
+    # diabetes-comparator topic_pack might cite them as comparator
+    # therapies. Letting alias_match query them against ChEMBL keeps
+    # that path open. The 7-paper metformin canonical corpus uses
+    # "insulin" as a physiology term, but it's never capitalized at
+    # sentence start except as a sentence-leading word — which the
+    # capital-first regex catches. The risk-reward is letting them
+    # through.
+    "mitochondrial", "mitochondria", "metabolic", "metabolism",
+    "respiratory", "respiration", "oxidative", "oxidation",
+    "cellular", "molecular", "biological", "physiological",
+    "skeletal", "vascular", "cardiac", "hepatic", "renal", "neural",
+    "tissue", "tissues", "organ", "pathway", "pathways", "signaling",
+    "receptor", "receptors", "enzyme", "enzymes", "protein", "proteins",
+    "lipid", "lipids", "cholesterol", "triglyceride",
+    "inflammation", "inflammatory", "immune", "immunity",
+    "nuclear", "cytoplasmic", "membrane", "membranes",
+    "endocrine", "neurological", "musculoskeletal",
 })
 
 # Trial-status set indicating "results are publicly accessible". A claim
@@ -329,14 +361,34 @@ def trace_nct_exists(
     """Yield one CitationTrace per registry id found across the item's
     source.nct + source.url + abstract surfaces.
 
-    Three outcomes per id:
+    Outcomes per id:
       1. registry has no record       → passed=False (case 2 fab NCT)
       2. registry has record, but
-         item.role='published_results'
-         AND record.has_results=False → passed=False (P1.1: case 1
-         protocol-as-results — the registry says no results but the
-         pipeline classified the cite as a published-results citation;
-         contradiction caught at trace layer)
+         item.role='published_results' AND record.has_results=False:
+         - if item.source.pmid is set (truthy: non-empty string,
+           matched the upstream PubMed indexing) → passed=True with
+           caveat (Day 10.14 fix: many real published RCTs have
+           has_results=False on the registry because PIs publish to
+           journal but don't update the registry post-hoc — the paper
+           IS the results, the registry just lags. Empirical: caused
+           MILES + MET-PREVENT to spuriously fail in Day 10.13
+           canonical-corpus benchmark.)
+
+           ACCEPTED RISK (Day 10.14 reviewer note): the bypass does
+           not verify that the PMID's abstract actually mentions the
+           NCT — an upstream pipeline that paired an unrelated PMID
+           with a registry-only NCT could pass this trace. The
+           protocol-as-claim filter (Day 10.11 OBJECTIVE_PATTERN_RE)
+           and the SPAR Domain Skeptic both catch that drift at
+           higher layers, so the bypass is sound for the
+           supervised-corpus regime; it would need tightening if the
+           bot ever consumed adversarial input.
+         - else (registry stub with no published paper)
+                                       → passed=False (P1.1: case 1
+           protocol-as-results — registry says no results AND there
+           is no peer-reviewed paper backing the claim either; the
+           pipeline classified the cite as published_results in
+           error)
       3. registry has record, and
          (role != 'published_results'
           OR record.has_results)      → passed=True
@@ -354,13 +406,26 @@ def trace_nct_exists(
             )
             continue
         if item.role == "published_results" and not record.has_results:
+            if item.source.pmid:
+                yield CitationTrace(
+                    claim_id=claim.claim_id, ref=item.source.ref,
+                    trace_type="nct_exists", passed=True,
+                    detail=(
+                        f"{nct} found: status={record.status}, "
+                        f"registry has_results=False but item has "
+                        f"PMID {item.source.pmid} — peer-reviewed paper "
+                        f"is the results source, registry lags."
+                    ),
+                )
+                continue
             yield CitationTrace(
                 claim_id=claim.claim_id, ref=item.source.ref,
                 trace_type="nct_exists", passed=False,
                 detail=(
                     f"{nct} role='published_results' but registry says "
-                    f"has_results=False (status={record.status}). "
-                    f"Protocol-as-results contradiction at trace layer."
+                    f"has_results=False (status={record.status}) AND "
+                    f"item has no PMID — no peer-reviewed publication "
+                    f"backing the claim. Protocol-as-results contradiction."
                 ),
             )
             continue

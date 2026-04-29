@@ -94,6 +94,22 @@ runs/e2e-baselines/*.tmp
 # Only cluster_04 (Kulkarni 2022 review) is a real claim-quality
 # rejection. Day 10.14 fixes the 3 trace-client bugs and re-runs.
 !runs/metformin-multi-001-2026-04-29T14-34-18Z-c35f/
+# Day 10.14 — final canonical-corpus benchmark after 3 trace-client
+# fixes + reviewer punch-list + SPAR brief abstracts. Result:
+# 4 of 5 canonical papers passed SPAR (3 accept_clean + 1
+# accept_caveated + 1 reject_majority on MET-PREVENT for population
+# specificity, 1 protocol-only excluded for Mohammed). Cross-source
+# gate cleared at 4 unique trials >= 3.
+!runs/metformin-multi-001-2026-04-29T15-09-47Z-cfab/
+# Day 10.14 — first AAA-defensible synthesis paper: real LLM thesis
+# ("Metformin improves whole-body insulin sensitivity through
+# mitochondrial respiration and DNA repair pathways, while
+# simultaneously suppressing muscle mass accumulation"), 5
+# canonical-corpus references integrated, 4 SPAR-accepted +
+# 1 quarantined. Audit: 6.0/10 (ship-blocked on Q3 transitions
+# and Q5 longevity-claim hedge — these are the 2 prose-quality
+# issues remaining for Day 10.15 writer work).
+!runs/synthesis-metformin-010-2026-04-29T15-12-36Z-56d7/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

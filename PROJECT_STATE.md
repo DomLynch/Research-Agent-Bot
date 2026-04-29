@@ -71,6 +71,24 @@ LLM PROPOSES. CODE DISPOSES.
 
 **Critical finding:** **3 of 4 rejections are trace-client bugs, not claim-quality issues.** The CANONICAL papers themselves (MET-PREVENT, MILES, Konopka) are doing exactly what they should — reporting real findings with real evidence — but the trace clients are spuriously rejecting them. Day 10.14 will fix these three bugs and re-run; if all three close cleanly, expect 4 of 7 accepted (the 4 RCTs), gate clears, synthesis runs.
 
+**Day 10.14 — trace-client fixes + SPAR brief + first AAA-defensible synthesis paper.** Implemented per AAA protocol with explicit code-reviewer subagent pass before declaring done. Three trace-client bugs fixed:
+  - **ISRCTN registry support**: `HttpxTrialRegistryClient` now routes ISRCTN ids to the WHO-format API. Parser uses targeted regex extraction (not stdlib XML) so the third-party response is immune to XXE / billion-laughs / DTD-injection attacks. Multi-trial responses are disambiguated by `<trial_id>` match (no first-found bug). Empty/no-match → None. 5xx and network errors → `TraceBackendError`.
+  - **has_results=False semantics**: when registry says no results posted but `item.source.pmid` is set (peer-reviewed paper IS the results), the trace passes with caveat "registry lags." When no PMID, the original protocol-as-results contradiction stands. Empty-string PMID does NOT bypass.
+  - **Alias-match generic-biology stoplist**: 30+ anatomy/physiology/process terms (mitochondrial, metabolic, cellular, pathway, receptor, enzyme, protein, etc.) added so ChEMBL queries don't false-match generic biology to specific drugs. Reviewer-aligned: "Insulin" and "Glucose" deliberately NOT stoplisted (real drug class names; future diabetes-comparator topic packs need them).
+
+Plus a 4th fix surfaced by the post-trace-fix empirical run:
+  - **SPAR brief abstracts**: `render_brief` now appends an EVIDENCE ABSTRACTS section with the source abstract per cited ref (truncated to 2000 chars). Pre-fix, the Evidence Auditor judge couldn't verify claim ↔ source correspondence and rejected with "no source abstracts in input"; this caused 3 of the 5 canonical clusters to spuriously fail in the first hardened run.
+
+**Empirical Day 10.14 result** (`runs/metformin-multi-001-2026-04-29T15-09-47Z-cfab/` + `runs/synthesis-metformin-010-2026-04-29T15-12-36Z-56d7/`): **4 of 5 canonical papers passed SPAR** — 3 accept_clean (MASTERS, MILES, Konopka), 1 accept_caveated (Kulkarni 2022 review), 1 reject_majority (MET-PREVENT — Domain Skeptic flagged population over-generalization, NOT trace bugs), 1 protocol-only excluded (Mohammed). Cross-source gate cleared at 4 unique source units >= 3.
+
+Synthesis layer ran for the first time on real cross-source canonical input. Real LLM thesis (not fallback stub): _"Metformin improves whole-body insulin sensitivity through mitochondrial respiration and DNA repair pathways, while simultaneously suppressing muscle mass accumulation compared to placebo."_ (3 receipts integrated, 21 words, position-taking + mechanism-naming). MET-PREVENT was correctly quarantined to the rejected_evidence section per Day 10.10 trust-spine ordering, NOT cited in the thesis or synthesis bullets.
+
+**Audit: 6.0 / 10 — ship-blocked on Q3 + Q5 load-bearing fails.** This is the HONEST result the reviewer asked for:
+  - Q3 (mixed-directness transitions): synthesis bullets that mix direct + mechanistic refs need transition language ("Mechanistically", "By contrast", etc.). Day 10.9 had auto-prefix for this; Day 10.10 reverted as cosmetic. The fix needs to be at the SYNTHESIS PROMPT level, not auto-prefix.
+  - Q5 (healthspan/longevity discipline): the synthesis mentions "longevity benefit" sourced from a Kulkarni 2022 review of model organisms, but the receipt is mechanistic/indirect, not a direct human longevity trial. The hedge needs to be explicit ("model-organism evidence suggests..." rather than asserting transferability).
+
+These are real prose-quality issues that the audit correctly catches. Day 10.15 addresses them at the writer-prompt level. The architecture, gate, and trust spine are AAA-defensible; the prose is two writer-prompt iterations away.
+
 **Architecture:**
   - **Layer 1 (Days 1-9.5 + 10.8b)** — claim receipts: atomic single-source evidence with full audit trail. `--multi-receipt` mode emits one receipt per cohesive cluster from a single corpus.
   - **Layer 2 (Day 10)** — synthesis layer: aggregates N receipts → tension matrix → thesis tournament (LLM proposes K, code disposes) → sectioned writer → Q1-Q7 audit. Every prose sentence anchored to receipt_ids; no novel numerics; `paper_synthesis.md` artifact gated by audit ≥8.5/10.
@@ -198,7 +216,8 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
 | `15cd5a3` | 2026-04-29 | Day 10.11 empirical: 27 clusters, 1 accepted (filter drops objective spans pre-extraction; cluster count 30→27) but SPAR pass rate stays ~4% — dominant rejection mode shifts to mechanism inflation |
 | `0e125bd` | 2026-04-29 | Day 10.12: mechanism-inflation guard + protocol-only-cluster filter shipped — `check_mechanism_inflation` validator + `MECHANISM_INFLATION_RE` + multi-receipt orchestrator excludes clusters whose every supporting ref is protocol/registered. 760/760 tests pass |
 | `0f698df` | 2026-04-29 | Day 10.12 empirical: 22 clusters (7 excluded as protocol-only), 2 accept_caveated, gate ≥3 still not cleared. Validator stack has plateaued; Day 10.13 needs corpus-level work |
-| _next_    | 2026-04-29 | Day 10.13: predeclared 7-paper canonical-corpus benchmark + `--canonical-corpus` flag + first canonical run (1/5 accept). Critical: 3 of 4 rejections are trace-client bugs (ISRCTN, has_results=False, alias_match generic terms), NOT claim-quality issues. Day 10.14 fixes these. |
+| `fa35b42` | 2026-04-29 | Day 10.13: predeclared 7-paper canonical-corpus benchmark + `--canonical-corpus` flag + first canonical run (1/5 accept). Critical: 3 of 4 rejections are trace-client bugs (ISRCTN, has_results=False, alias_match generic terms), NOT claim-quality issues |
+| _next_    | 2026-04-29 | Day 10.14: 3 trace-client fixes + reviewer punch-list (XXE→regex, multi-trial id-match, status enum, phase normalization, results_url, dedup) + SPAR brief abstracts. **4/5 canonical papers passed SPAR; first real cross-source synthesis paper (audit 6.0/10, Q3+Q5 ship-blocked).** 777/777 tests; LOC 8,370/8,500 |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
@@ -317,9 +336,10 @@ numeric tracing, and live-retrieval anchoring.
 | **10.10** | trust-spine ordering: filter accepted, rejected_evidence quarantine, gate counts accepted-only, Q3 corpus-directness, load-bearing N/A blocks ship, prompts strengthened | ✅ |
 | **10.11** | raise SPAR pass rate: fact_extractor protocol-vs-results discrimination + per-cluster error tolerance | ✅ (filter + robustness shipped; empirical accept rate didn't move because mechanism inflation is now the dominant rejection mode) |
 | **10.12** | mechanism-inflation guard + protocol-only-cluster filter | ✅ (accept rate 4% → 9%, but gate ≥3 still not cleared on this corpus) |
-| **10.13** | predeclared 7-paper canonical-corpus benchmark + `--canonical-corpus` flag. Empirical: 1/5 accept, 4 rejections — but **3 of 4 are trace-client bugs, NOT claim-quality issues** (ISRCTN not supported, has_results=False misread as fabrication, alias_match resolves "Mitochondrial" → "MITOQUINONE MESYLATE") | ✅ |
-| **10.14** (next) | fix the 3 trace-client bugs surfaced by Day 10.13 + re-run canonical benchmark + synthesize | ☑ this slice |
-| **10.15** (stretch) | external human review of prose quality — outside automated audit | ☐ |
+| **10.13** | predeclared 7-paper canonical-corpus benchmark + `--canonical-corpus` flag. Empirical: 1/5 accept, 4 rejections — but **3 of 4 are trace-client bugs, NOT claim-quality issues** | ✅ |
+| **10.14** | 3 trace-client fixes (ISRCTN registry, has_results=False with PMID bypass, alias-match biology stoplist) + code-reviewer punch-list (XXE→regex extraction, multi-trial id-match, status enum extension, phase-not-specified→None, results_url required for has_results, dedup duplicates) + SPAR brief abstracts. **4/5 canonical papers passed SPAR; first real cross-source synthesis paper rendered (substantive LLM thesis on insulin sensitivity ↔ mitochondrial respiration ↔ muscle growth suppression); audit 6.0/10 — ship-blocked on Q3 transitions + Q5 longevity hedge.** | ✅ |
+| **10.15** (next) | writer fixes for Q3 transitions + Q5 longevity-claim hedging on the canonical-corpus paper | ☑ this slice |
+| **10.16** (stretch) | external human review of prose quality — outside automated audit | ☐ |
 | **11** (stretch) | RFC outreach + first user-facing artifact | ☐ |
 
 ### LOC budget after Day 10.10

@@ -339,6 +339,298 @@ def test_partial_corpus_raises_only_for_missing_subdirs(
 # --- Fixture corpus discipline -------------------------------------------
 
 
+# --- Day 10.14: HttpxTrialRegistryClient ISRCTN support ----------------
+
+
+def test_httpx_trial_client_routes_isrctn_to_isrctn_api() -> None:
+    """ISRCTN ID lookup hits the WHO-format ISRCTN endpoint (not CT.gov).
+
+    Day 10.14 fix: pre-fix, the client returned None for any non-NCT
+    id (including legitimate UK ISRCTN ids), causing MET-PREVENT
+    (ISRCTN29932357) to spuriously fail nct_exists. Now the client
+    routes ISRCTN ids to the ISRCTN registry's WHO-format API and
+    parses the XML response into a TrialRecord."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    captured_url = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured_url["url"] = str(request.url)
+        return httpx.Response(
+            200,
+            text=(
+                "<trials><trial><main>"
+                "<trial_id>ISRCTN29932357</trial_id>"
+                "<scientific_title>Metformin to prevent progression of "
+                "sarcopenia and frailty for older people</scientific_title>"
+                "<recruitment_status>No longer recruiting</recruitment_status>"
+                "<phase>Phase IV</phase>"
+                "<results_url_link>https://pubmed.ncbi.nlm.nih.gov/40147475/</results_url_link>"
+                "<results_date_completed>31/08/2023</results_date_completed>"
+                "</main></trial></trials>"
+            ),
+        )
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    rec = client.get_trial("ISRCTN29932357")
+    assert rec is not None
+    assert rec.trial_id == "ISRCTN29932357"
+    assert rec.has_results is True
+    assert rec.status == "active_not_recruiting"
+    # URL routed to ISRCTN, not CT.gov
+    assert "isrctn.com" in captured_url["url"], captured_url
+
+
+def test_httpx_trial_client_isrctn_no_results_link_means_no_results() -> None:
+    """ISRCTN's `results_url_link` empty AND `results_date_completed`
+    empty → has_results=False (registry has no results posted)."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            text=(
+                "<trials><trial><main>"
+                "<trial_id>ISRCTN12345678</trial_id>"
+                "<public_title>A pending trial</public_title>"
+                "<recruitment_status>Recruiting</recruitment_status>"
+                "</main></trial></trials>"
+            ),
+        )
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    rec = client.get_trial("ISRCTN12345678")
+    assert rec is not None
+    assert rec.has_results is False
+    assert rec.status == "recruiting"
+
+
+def test_httpx_trial_client_isrctn_empty_response_returns_none() -> None:
+    """When ISRCTN's WHO-format API returns no `<trial>` element,
+    the client returns None — registry has no record."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, text="<trials></trials>")
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    assert client.get_trial("ISRCTN99999999") is None
+
+
+def test_httpx_trial_client_isrctn_multi_trial_response_picks_matching_id() -> None:
+    """Day 10.14 reviewer P1: ISRCTN's `q=` parameter is a keyword
+    search, not exact-id match. If the registry returns multiple
+    `<trial>` blocks (e.g., another trial mentions the requested ID
+    in its body), the client must pick the one whose `<trial_id>`
+    EQUALS the requested id — not the first-found."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            text=(
+                "<trials>"
+                # First trial mentions ISRCTN29932357 in its title text
+                # but is itself a different trial.
+                "<trial><main>"
+                "<trial_id>ISRCTN11111111</trial_id>"
+                "<scientific_title>A study cross-referencing "
+                "ISRCTN29932357</scientific_title>"
+                "<recruitment_status>Recruiting</recruitment_status>"
+                "</main></trial>"
+                # Second trial is the one we asked for.
+                "<trial><main>"
+                "<trial_id>ISRCTN29932357</trial_id>"
+                "<scientific_title>MET-PREVENT</scientific_title>"
+                "<recruitment_status>No longer recruiting</recruitment_status>"
+                "<results_url_link>https://example.com/results</results_url_link>"
+                "</main></trial>"
+                "</trials>"
+            ),
+        )
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    rec = client.get_trial("ISRCTN29932357")
+    assert rec is not None
+    assert rec.trial_id == "ISRCTN29932357"
+    assert rec.title == "MET-PREVENT", (
+        "must select the matching trial, not the first-found"
+    )
+    assert rec.has_results is True
+
+
+def test_httpx_trial_client_isrctn_no_matching_id_returns_none() -> None:
+    """When the response contains trials but none match the requested
+    id, return None — never bind an unrelated trial to the queried id."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            text=(
+                "<trials><trial><main>"
+                "<trial_id>ISRCTN99999999</trial_id>"
+                "<scientific_title>Some other trial</scientific_title>"
+                "</main></trial></trials>"
+            ),
+        )
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    assert client.get_trial("ISRCTN29932357") is None
+
+
+def test_httpx_trial_client_isrctn_status_whitespace_normalized() -> None:
+    """Day 10.14: status text with leading/trailing whitespace + line
+    breaks is normalized before lookup. Real ISRCTN responses sometimes
+    contain this shape."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            text=(
+                "<trials><trial><main>"
+                "<trial_id>ISRCTN29932357</trial_id>"
+                "<scientific_title>X</scientific_title>"
+                "<recruitment_status>  No longer recruiting  \n</recruitment_status>"
+                "</main></trial></trials>"
+            ),
+        )
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    rec = client.get_trial("ISRCTN29932357")
+    assert rec is not None
+    assert rec.status == "active_not_recruiting"
+
+
+def test_httpx_trial_client_isrctn_phase_not_specified_normalized_to_none() -> None:
+    """ISRCTN's `<phase>Not Specified</phase>` placeholder must map to
+    None, not propagate the literal string downstream."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            text=(
+                "<trials><trial><main>"
+                "<trial_id>ISRCTN29932357</trial_id>"
+                "<scientific_title>X</scientific_title>"
+                "<recruitment_status>Recruiting</recruitment_status>"
+                "<phase>Not Specified</phase>"
+                "</main></trial></trials>"
+            ),
+        )
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    rec = client.get_trial("ISRCTN29932357")
+    assert rec is not None
+    assert rec.phase is None
+
+
+def test_httpx_trial_client_isrctn_5xx_raises_backend_error() -> None:
+    """Server-side errors must surface as TraceBackendError so the
+    orchestrator can decide retry-vs-surface — not silently return
+    None (which would falsely report 'trial not in registry')."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+    from agent.trace_clients.protocols import TraceBackendError
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(503, text="<error>service down</error>")
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    with pytest.raises(TraceBackendError, match="ISRCTN 503"):
+        client.get_trial("ISRCTN29932357")
+
+
+def test_httpx_trial_client_isrctn_network_error_raises_backend_error() -> None:
+    """A connection failure surfaces as TraceBackendError, not as a
+    silent None or an unhandled httpx exception."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+    from agent.trace_clients.protocols import TraceBackendError
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        raise httpx.ConnectError("simulated network failure")
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    with pytest.raises(TraceBackendError, match="ISRCTN GET failed"):
+        client.get_trial("ISRCTN29932357")
+
+
+def test_httpx_trial_client_isrctn_results_date_alone_does_not_imply_results() -> None:
+    """Day 10.14 reviewer P3: ISRCTN sometimes populates
+    `<results_date_completed>` with an ANTICIPATED date for trials
+    that have completed enrollment but not yet posted results. The
+    `has_results=True` signal requires `<results_url_link>` present
+    — bare date alone is not enough."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            text=(
+                "<trials><trial><main>"
+                "<trial_id>ISRCTN29932357</trial_id>"
+                "<scientific_title>X</scientific_title>"
+                "<recruitment_status>Completed</recruitment_status>"
+                "<results_date_completed>31/12/2027</results_date_completed>"
+                "</main></trial></trials>"
+            ),
+        )
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    rec = client.get_trial("ISRCTN29932357")
+    assert rec is not None
+    assert rec.has_results is False, (
+        "results_date_completed alone (no results_url_link) must NOT imply has_results=True"
+    )
+
+
+def test_httpx_trial_client_unknown_prefix_returns_none() -> None:
+    """A trial id that's neither NCT nor ISRCTN (e.g., EUDRACT,
+    JPRN) returns None — we don't yet support those registries."""
+    import httpx
+    from agent.trace_clients._httpx import HttpxTrialRegistryClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        # Should never be called; the client short-circuits on prefix.
+        return httpx.Response(200, json={})
+
+    client = HttpxTrialRegistryClient(
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    assert client.get_trial("EUDRACT2020-001234-56") is None
+
+
 def test_canonical_metformin_trials_all_present() -> None:
     """If the topic_pack lists a canonical trial, the trace_clients fixture
     directory must have a fixture for it. Otherwise Day 3 citation_trace

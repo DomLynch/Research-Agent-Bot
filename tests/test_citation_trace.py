@@ -51,8 +51,15 @@ def drug_client() -> FixtureDrugAliasClient:
     return FixtureDrugAliasClient()
 
 
-def _src(ref: int = 1, nct: str | None = None) -> Source:
-    return Source(ref=ref, title="", year=2024, url="", source="pubmed", nct=nct)
+def _src(
+    ref: int = 1,
+    nct: str | None = None,
+    pmid: str | None = None,
+) -> Source:
+    return Source(
+        ref=ref, title="", year=2024, url="",
+        source="pubmed", nct=nct, pmid=pmid,
+    )
 
 
 def _item(
@@ -63,10 +70,11 @@ def _item(
     tier: str = "A1",
     direct: bool = True,
     nct: str | None = None,
+    pmid: str | None = None,
     abstract: str = "",
 ) -> EvidenceItem:
     return EvidenceItem(
-        source=_src(ref, nct=nct), abstract=abstract,
+        source=_src(ref, nct=nct, pmid=pmid), abstract=abstract,
         design=design, role=role, tier=tier,  # type: ignore[arg-type]
         direct=direct, strict=True,
     )
@@ -191,6 +199,66 @@ def test_trace_nct_exists_passes_when_role_protocol_and_no_results(
     item = _item(role="registered_pending", nct="NCT04264897")
     traces = list(trace_nct_exists(claim, item, registry))
     assert len(traces) == 1 and traces[0].passed is True
+
+
+# --- Day 10.14: PMID-bypass for has_results=False registry lag --------
+
+
+def test_trace_nct_exists_passes_published_results_no_results_with_pmid(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """Day 10.14 fix: when the trial exists in the registry with
+    has_results=False but the EvidenceItem has a PMID, the
+    peer-reviewed paper is the source of results (registry just lags).
+    The trace must pass with a caveat detail.
+
+    Empirical: MILES (NCT01765946) and MET-PREVENT (ISRCTN29932357)
+    both have published RCT results but registry has_results=False;
+    they were spuriously failing the canonical-corpus benchmark."""
+    claim = _claim()
+    item = _item(
+        role="published_results",
+        nct="NCT04264897",   # registry says has_results=False
+        pmid="12345678",     # but the paper has been peer-reviewed
+    )
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1
+    assert traces[0].passed is True, traces[0].detail
+    assert "PMID 12345678" in traces[0].detail
+    assert "registry lags" in traces[0].detail
+
+
+def test_trace_nct_exists_still_fails_published_results_no_results_no_pmid(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """Day 10.14: the PMID-bypass is targeted. When has_results=False
+    AND there's no PMID (pure registry stub), the trace still fails —
+    that's the protocol-as-results contradiction. This is the
+    pre-existing P1.1 behavior preserved."""
+    claim = _claim()
+    item = _item(role="published_results", nct="NCT04264897", pmid=None)
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1
+    assert traces[0].passed is False
+    assert "no peer-reviewed publication" in traces[0].detail or \
+        "Protocol-as-results" in traces[0].detail
+
+
+def test_trace_nct_exists_empty_string_pmid_does_not_bypass(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    """Day 10.14 reviewer P2: pmid='' (empty string) must NOT count as
+    'has PMID' — a regression where empty becomes truthy would falsely
+    bypass the protocol-as-results gate. The check uses Python truthy
+    semantics, so empty string is correctly falsy here; this test
+    locks that contract in."""
+    claim = _claim()
+    item = _item(role="published_results", nct="NCT04264897", pmid="")
+    traces = list(trace_nct_exists(claim, item, registry))
+    assert len(traces) == 1
+    assert traces[0].passed is False, (
+        "empty-string PMID must not satisfy the bypass — only a real id does"
+    )
 
 
 def test_trace_nct_exists_finds_nct_in_abstract(
@@ -579,6 +647,70 @@ def test_trace_alias_match_skips_canonical_trial_names(
                 f"canonical trial token {trial_name!r} false-flagged as "
                 f"drug drift: {t.detail!r}"
             )
+
+
+def test_trace_alias_match_skips_generic_biology_terms(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """Day 10.14 fix: anatomy / physiology / process words like
+    'Mitochondrial', 'Metabolic', 'Cellular' are generic biology
+    vocabulary, not drug aliases.
+
+    Empirical: cluster_05 (Konopka 2019) was failing the canonical-
+    corpus benchmark because alias_match was querying ChEMBL for
+    'Mitochondrial' and ChEMBL was returning 'MITOQUINONE MESYLATE'
+    as the closest molecule match — a false-positive alias resolution.
+
+    These words MUST NOT enter the alias_match candidate loop.
+
+    Day 10.14 reviewer P2 (intentional non-stoplist): "Insulin" and
+    "Glucose" are NOT in the stoplist. They are real drug class names
+    (insulin glargine/lispro/detemir; glucose tablets) and a future
+    diabetes-comparator topic_pack should be free to cite them. We
+    accept the small risk of false alias-drift on these two tokens
+    in metformin prose for the bigger benefit of leaving the
+    drug-class path open."""
+    claim = _claim(
+        text=(
+            "Mitochondrial respiration was elevated. Metabolic pathways "
+            "showed Inflammatory changes. Cellular "
+            "Skeletal muscle Cardiac Renal Hepatic outcomes improved."
+        ),
+    )
+    traces = list(trace_alias_match(claim, metformin_pack, drug_client))
+    candidates = [t for t in traces if t.trace_type == "alias_match"]
+    for noise in (
+        "Mitochondrial", "Metabolic", "Cellular",
+        "Inflammatory", "Skeletal", "Cardiac", "Renal", "Hepatic",
+    ):
+        for t in candidates:
+            assert noise not in t.detail, (
+                f"generic biology term {noise!r} should not appear in "
+                f"alias_match trace: {t.detail!r}"
+            )
+
+
+def test_trace_alias_match_does_not_stoplist_drug_class_terms(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """Day 10.14 reviewer-aligned decision: 'Insulin' and 'Glucose'
+    are real drug class names; the stoplist must NOT include them.
+    In metformin prose they may produce a soft-fail alias drift, but
+    the trade-off favors keeping these queryable for future
+    diabetes-comparator topic packs."""
+    claim = _claim(
+        text="Insulin sensitivity was measured. Glucose tolerance improved.",
+    )
+    traces = list(trace_alias_match(claim, metformin_pack, drug_client))
+    candidates = [t for t in traces if t.trace_type == "alias_match"]
+    # Insulin / Glucose ARE candidates — they hit ChEMBL. The drug
+    # class queries return a record (or not), but the trace IS emitted.
+    insulin_traces = [t for t in candidates if "Insulin" in t.detail]
+    glucose_traces = [t for t in candidates if "Glucose" in t.detail]
+    assert insulin_traces, "Insulin must enter the alias_match loop (real class)"
+    assert glucose_traces, "Glucose must enter the alias_match loop (real class)"
 
 
 def test_trace_alias_match_skips_met_prevent_fragments(

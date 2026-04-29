@@ -112,14 +112,44 @@ def test_httpx_trial_registry_raises_on_bad_json() -> None:
         backend.get_trial("NCT04264897")
 
 
-def test_httpx_trial_registry_skips_isrctn() -> None:
-    """ISRCTN ids skip CT.gov entirely (different registry). The fixture
-    backend still serves ISRCTN for the planted-failure regression."""
+def test_httpx_trial_registry_isrctn_routes_to_isrctn_api() -> None:
+    """Day 10.14: ISRCTN ids route to the ISRCTN WHO-format API
+    (different from CT.gov). Pre-fix this returned None for any
+    non-NCT id, causing MET-PREVENT to spuriously fail nct_exists.
+    See agent/trace_clients/_httpx.py and the canonical-corpus
+    benchmark in runs/metformin-multi-001-2026-04-29T14-34-18Z-c35f/
+    for the empirical evidence that drove this fix."""
+    captured = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["url"] = str(request.url)
+        return httpx.Response(
+            200,
+            text=(
+                "<trials><trial><main>"
+                "<trial_id>ISRCTN29932357</trial_id>"
+                "<scientific_title>MET-PREVENT trial</scientific_title>"
+                "<recruitment_status>No longer recruiting</recruitment_status>"
+                "<results_url_link>https://pubmed.ncbi.nlm.nih.gov/40147475/</results_url_link>"
+                "</main></trial></trials>"
+            ),
+        )
+
+    backend = HttpxTrialRegistryClient(client=_client(handler))
+    rec = backend.get_trial("ISRCTN29932357")
+    assert rec is not None
+    assert rec.has_results is True
+    assert "isrctn.com" in captured["url"]
+
+
+def test_httpx_trial_registry_unknown_prefix_returns_none() -> None:
+    """A trial id with neither NCT nor ISRCTN prefix (EUDRACT, JPRN,
+    etc.) returns None — those registries aren't yet supported. The
+    backend short-circuits on prefix and never makes a network call."""
     backend = HttpxTrialRegistryClient(client=_client(
-        # Handler should never be called; if it is, fail the test.
         lambda req: pytest.fail(f"unexpected HTTP call: {req.url}"),  # type: ignore[return-value]
     ))
-    assert backend.get_trial("ISRCTN29932357") is None
+    assert backend.get_trial("EUDRACT2020-001234-56") is None
 
 
 def test_httpx_trial_registry_unknown_status_falls_back() -> None:

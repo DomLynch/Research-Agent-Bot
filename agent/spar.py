@@ -42,6 +42,7 @@ from agent.schemas import (
     assert_spar_invariants,
     compute_spar_verdict,
 )
+from agent.types import EvidenceItem
 
 __all__ = [
     "SPARError",
@@ -144,17 +145,30 @@ _SYSTEM_PROMPTS: Mapping[JudgeRole, str] = {
 # --- Brief rendering ------------------------------------------------------
 
 
+_BRIEF_ABSTRACT_CHAR_LIMIT = 2000
+
+
 def render_brief(
     graph: ClaimGraph,
     traces: Sequence[CitationTrace],
     *,
     topic: str,
     submission_id: str,
+    items_by_ref: "Mapping[int, EvidenceItem] | None" = None,
 ) -> str:
     """Render the claim graph + traces as a judge-readable text block.
 
     Public so tests can inspect prompt determinism + run logs can show
     exactly what the judges saw.
+
+    `items_by_ref` (Day 10.14): when provided, an EVIDENCE ABSTRACTS
+    section is appended listing the source abstract per ref cited by
+    any claim in the graph (truncated to ~2000 chars to keep prompt
+    size bounded). Without this, the Evidence Auditor judge cannot
+    verify claim ↔ source correspondence and rejects with rationales
+    like 'no source abstracts provided in input.' Empirical: 3 of 4
+    rejections in the Day 10.14 hardened canonical-corpus benchmark
+    cited this exact gap.
     """
     thesis = next(
         (c for c in graph.claims if c.claim_id == graph.thesis_claim_id),
@@ -177,12 +191,47 @@ def render_brief(
             for t in traces
         ) or "  (no citation traces — citation_trace not run)"
     )
+    abstracts_block = ""
+    if items_by_ref:
+        cited_refs = sorted(
+            {r for c in graph.claims for r in c.supporting_refs}
+        )
+        rendered = []
+        for ref in cited_refs:
+            item = items_by_ref.get(ref)
+            if item is None:
+                continue
+            src = item.source
+            abstract = (item.abstract or "")[:_BRIEF_ABSTRACT_CHAR_LIMIT]
+            truncated = (
+                "" if len(item.abstract or "") <= _BRIEF_ABSTRACT_CHAR_LIMIT
+                else f" [truncated to {_BRIEF_ABSTRACT_CHAR_LIMIT} chars]"
+            )
+            ident_bits = [f"role={item.role}", f"design={item.design}"]
+            if src.pmid:
+                ident_bits.append(f"pmid={src.pmid}")
+            if src.doi:
+                ident_bits.append(f"doi={src.doi}")
+            if src.nct:
+                ident_bits.append(f"nct={src.nct}")
+            ident = ", ".join(ident_bits)
+            rendered.append(
+                f"  [{ref}] {src.title!r}\n"
+                f"    ({ident}){truncated}\n"
+                f"    abstract: {abstract!r}"
+            )
+        if rendered:
+            abstracts_block = (
+                f"\n\nEVIDENCE ABSTRACTS ({len(rendered)}):\n"
+                + "\n".join(rendered)
+            )
     return (
         f"TOPIC: {topic}\n"
         f"SUBMISSION ID: {submission_id}\n\n"
         f"{thesis_line}\n\n"
         f"CLAIMS ({len(graph.claims)}):\n{claims_block}\n\n"
         f"CITATION TRACES ({len(traces)}):\n{traces_block}"
+        f"{abstracts_block}"
     )
 
 
@@ -369,6 +418,7 @@ async def run_spar(
     ledger: CostLedger | None = None,
     temperature: float = 0.2,
     seed: int | None = None,
+    items_by_ref: Mapping[int, EvidenceItem] | None = None,
 ) -> SPARReview:
     """Run the 3-judge panel; return a structurally valid SPARReview.
 
@@ -390,6 +440,7 @@ async def run_spar(
     """
     base_brief = render_brief(
         graph, traces, topic=topic, submission_id=submission_id,
+        items_by_ref=items_by_ref,
     )
 
     # When seed is set, force temperature to 0.0 — seed has no

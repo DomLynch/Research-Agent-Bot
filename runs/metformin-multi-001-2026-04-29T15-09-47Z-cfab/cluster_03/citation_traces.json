@@ -1,0 +1,50 @@
+[
+  {
+    "claim_id": "C008",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[3] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C008",
+    "ref": 3,
+    "trace_type": "nct_exists",
+    "passed": true,
+    "detail": "NCT01765946 found: status=completed, registry has_results=False but item has PMID 29383869 — peer-reviewed paper is the results source, registry lags.",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C009",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[3] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C009",
+    "ref": 3,
+    "trace_type": "nct_exists",
+    "passed": true,
+    "detail": "NCT01765946 found: status=completed, registry has_results=False but item has PMID 29383869 — peer-reviewed paper is the results source, registry lags.",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C010",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[3] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C010",
+    "ref": 3,
+    "trace_type": "nct_exists",
+    "passed": true,
+    "detail": "NCT01765946 found: status=completed, registry has_results=False but item has PMID 29383869 — peer-reviewed paper is the results source, registry lags.",
+    "source_excerpt": null
+  }
+]

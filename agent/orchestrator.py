@@ -336,11 +336,15 @@ async def run_proof(
 
         # Stage 4: 3-judge SPAR (with trust-spine trace gate). SPARError
         # is a real trust-spine failure and propagates uncaught.
+        # Day 10.14: pass items_by_ref so the brief includes the source
+        # abstracts; the Evidence Auditor needs them to verify
+        # claim ↔ source correspondence.
         spar_review = await run_spar(
             graph, traces,
             topic=topic, submission_id=submission_id,
             chain=spar_chain, client=c, ledger=spar_ledger,
             seed=seed,
+            items_by_ref=items_by_ref,
         )
 
         # Stage 5: deterministic write. P2-4 — the writer is documented
@@ -570,6 +574,7 @@ async def run_proof_multi_receipt(
                     topic=topic,
                     submission_id=f"{submission_id}-c{idx:02d}",
                     chain=spar_chain, client=c, ledger=spar_ledger, seed=seed,
+                    items_by_ref=items_by_ref,
                 )
                 claim_receipt_md, writer_rejections = write_paper(
                     graph, items, traces, spar_review,
