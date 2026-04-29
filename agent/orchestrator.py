@@ -3,7 +3,7 @@
 Wires the trust-spine modules into one async call and emits the 8
 mandatory JSON receipts (DESIGN-001 §6.1) to `output_dir`:
 
-  paper.md                   — writer.write_paper output (deterministic)
+  claim_receipt.md           — writer.write_paper output (deterministic)
   claim_graph.json           — full ClaimGraph (source of truth)
   citation_traces.json       — every per-claim trace + pass/fail
   spar_review.json           — 3-judge verdict + dissent + gate_override
@@ -80,9 +80,19 @@ class OrchestratorError(RuntimeError):
 @dataclass(frozen=True, slots=True)
 class RunReceipts:
     """Paths to the 8 mandatory artifacts for one Proof 001 run.
-    Returned so callers can read / verify / post-process."""
+    Returned so callers can read / verify / post-process.
+
+    Day 9.5 rename: `paper_md` → `claim_receipt_md` and the corresponding
+    file output `paper.md` → `claim_receipt.md`. The output of the
+    current pipeline is a CLAIM RECEIPT (atomic verified evidence
+    bundle anchored on one source-paper cluster), not a synthesis
+    paper. The Day 10 synthesis layer aggregates many receipts into a
+    `paper_synthesis.md` artifact — that's the "paper" in the
+    Researka product framing. Mislabeling these as "paper.md" pre-9.5
+    made every reviewer conversation about quality miss the actual
+    architectural truth."""
     output_dir: Path
-    paper_md: Path
+    claim_receipt_md: Path
     claim_graph: Path
     citation_traces: Path
     spar_review: Path
@@ -132,7 +142,7 @@ def _evidence_to_dict(item: EvidenceItem) -> dict:
 
 
 _RECEIPT_NAMES: tuple[str, ...] = (
-    "paper.md",
+    "claim_receipt.md",
     "claim_graph.json",
     "citation_traces.json",
     "spar_review.json",
@@ -331,7 +341,7 @@ async def run_proof(
         # as "always [] on the deterministic path"; if it ever regresses
         # and produces rejections, those are audit-trail signals that
         # must surface, not be discarded silently.
-        paper_md, writer_rejections = write_paper(
+        claim_receipt_md, writer_rejections = write_paper(
             graph, items, traces, spar_review,
             pack=pack, topic=topic,
         )
@@ -349,7 +359,7 @@ async def run_proof(
     finished_at = datetime.now(timezone.utc).isoformat()
     paths = RunReceipts(
         output_dir=output_dir,
-        paper_md=output_dir / "paper.md",
+        claim_receipt_md=output_dir / "claim_receipt.md",
         claim_graph=output_dir / "claim_graph.json",
         citation_traces=output_dir / "citation_traces.json",
         spar_review=output_dir / "spar_review.json",
@@ -359,10 +369,10 @@ async def run_proof(
         run_metadata=output_dir / "run_metadata.json",
     )
 
-    # P2: paper.md must be atomic too — same audit-trail integrity
+    # P2: claim_receipt.md must be atomic too — same audit-trail integrity
     # rule as the JSON receipts. A partial-paper write can strand the
     # output directory and a re-run then refuses to clobber.
-    _atomic_write_text(paths.paper_md, paper_md)
+    _atomic_write_text(paths.claim_receipt_md, claim_receipt_md)
     _write_json(paths.claim_graph, _claim_graph_to_dict(graph))
     _write_json(paths.citation_traces, [dataclasses.asdict(t) for t in traces])
     _write_json(paths.spar_review, reviews_to_dict(spar_review))

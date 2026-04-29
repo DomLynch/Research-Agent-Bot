@@ -159,14 +159,14 @@ def test_run_proof_happy_path_emits_all_eight_receipts(tmp_path: Path) -> None:
 
     # All 8 receipts exist on disk
     for path in (
-        receipts.paper_md, receipts.claim_graph, receipts.citation_traces,
+        receipts.claim_receipt_md, receipts.claim_graph, receipts.citation_traces,
         receipts.spar_review, receipts.evidence_cards, receipts.cost_log,
         receipts.fact_extraction_log, receipts.run_metadata,
     ):
         assert path.exists(), f"missing receipt: {path.name}"
 
     # paper.md has thesis content
-    paper = receipts.paper_md.read_text()
+    paper = receipts.claim_receipt_md.read_text()
     assert "# " in paper  # has a title
     assert "## Thesis" in paper
     assert "accept_clean" in paper
@@ -226,7 +226,7 @@ def test_run_proof_gate_override_path_renders_rejection(tmp_path: Path) -> None:
             await client.aclose()
 
     receipts: RunReceipts = _run(go())
-    paper = receipts.paper_md.read_text()
+    paper = receipts.claim_receipt_md.read_text()
     assert "TRUST-SPINE TRACE GATE TRIGGERED" in paper
     assert "reject_critical" in paper
 
@@ -266,7 +266,7 @@ def test_run_proof_unanimous_reject_renders_rejection(tmp_path: Path) -> None:
             await client.aclose()
 
     receipts: RunReceipts = _run(go())
-    paper = receipts.paper_md.read_text()
+    paper = receipts.claim_receipt_md.read_text()
     assert "DRAFT REJECTED" in paper
     md = json.loads(receipts.run_metadata.read_text())
     assert md["spar_verdict"] == "reject_critical"
@@ -454,7 +454,7 @@ def test_run_proof_published_results_with_empty_llm_facts_is_documented_orphan(
             await client.aclose()
 
     receipts = _run(go())
-    assert receipts.paper_md.exists()
+    assert receipts.claim_receipt_md.exists()
     fact_log = json.loads(receipts.fact_extraction_log.read_text())
     # ref=1 produced the fact, ref=2 produced the synthetic rejection
     assert len(fact_log["accepted"]) == 1
@@ -468,7 +468,7 @@ def test_run_proof_refuses_to_overwrite_existing_receipts(tmp_path: Path) -> Non
     """P1-3 fix: a prior run's receipts must not be silently clobbered.
     Audit-trail integrity over write-throughput convenience."""
     # Pre-create one of the receipt files in the target dir
-    (tmp_path / "paper.md").write_text("# Old run\n", encoding="utf-8")
+    (tmp_path / "claim_receipt.md").write_text("# Old run\n", encoding="utf-8")
 
     handler = _make_handler()
     items = [_item(1)]
@@ -525,7 +525,7 @@ def test_run_proof_force_overwrite_re_runs_into_existing_directory(
 
     receipts = _run(go())
     # New paper.md has replaced the old one
-    new_paper = receipts.paper_md.read_text()
+    new_paper = receipts.claim_receipt_md.read_text()
     assert "Old run" not in new_paper
     assert "## Thesis" in new_paper
 
@@ -698,4 +698,4 @@ def test_run_proof_creates_output_dir_if_missing(tmp_path: Path) -> None:
 
     receipts = _run(go())
     assert target.is_dir()
-    assert receipts.paper_md.parent == target
+    assert receipts.claim_receipt_md.parent == target

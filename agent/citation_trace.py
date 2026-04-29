@@ -23,7 +23,7 @@ correspond to 5 checks here:
 
 Hard rule (DESIGN-001 §1, posted at top of compiler.py):
   LLM PROPOSES. CODE DISPOSES.
-  - Claim membership in paper.md: gated by claim_graph.json. LLM cannot add claims.
+  - Claim membership in claim_receipt.md: gated by claim_graph.json. LLM cannot add claims.
 
 Citation trace is the audit-trail half of "code disposes". The LLM may
 propose claims, but each claim ships a per-check trace receipt; failed

@@ -517,7 +517,7 @@ async def _run(args: argparse.Namespace) -> int:
     print(f"    spar:              ${best_cost['spar']['total_usd']:.6f}")
     print(f"\nReceipts: {_format_path(best_receipts.output_dir)}/")
     for name in (
-        "paper.md", "claim_graph.json", "spar_review.json",
+        "claim_receipt.md", "claim_graph.json", "spar_review.json",
         "citation_traces.json", "evidence_cards.json",
         "fact_extraction_log.json", "cost_log.json", "run_metadata.json",
     ):

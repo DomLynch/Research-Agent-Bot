@@ -10,7 +10,7 @@ Hard rule (also posted at top of compiler.py and every relevant prompt):
   LLM PROPOSES. CODE DISPOSES.
   - Role assignment: registry override > deterministic abstract classifier. Never LLM.
   - Fact identity: extracted by LLM, schema-validated, source-text-traced.
-  - Claim membership in paper.md: gated by claim_graph.json. LLM cannot add claims.
+  - Claim membership in claim_receipt.md: gated by claim_graph.json. LLM cannot add claims.
 """
 from __future__ import annotations
 

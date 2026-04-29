@@ -256,7 +256,7 @@ def test_proof_001_clean_run_emits_all_receipts_and_renders_paper(
 
     # Paper renders the thesis (deterministic writer — no banner phrases
     # from the rejection path)
-    paper = receipts.paper_md.read_text()
+    paper = receipts.claim_receipt_md.read_text()
     assert "## Thesis" in paper
     assert "DRAFT REJECTED" not in paper
     assert "TRUST-SPINE TRACE GATE TRIGGERED" not in paper
@@ -337,7 +337,7 @@ def test_proof_001_gate_fires_on_fabricated_nct(
     assert md["n_failed_traces"] >= 1
 
     # Paper is the rejection notice with gate banner prominent
-    paper = receipts.paper_md.read_text()
+    paper = receipts.claim_receipt_md.read_text()
     assert "TRUST-SPINE TRACE GATE TRIGGERED" in paper
     assert "accept_clean" in paper  # panel's original verdict preserved
     assert "reject_critical" in paper  # canonical verdict

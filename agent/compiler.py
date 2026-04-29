@@ -4,7 +4,7 @@ Hard rule (printed at the top of every prompt that touches the trust spine):
   LLM PROPOSES. CODE DISPOSES.
   - Role assignment: registry override > deterministic abstract classifier. Never LLM.
   - Fact identity: extracted by LLM, schema-validated, source-text-traced.
-  - Claim membership in paper.md: gated by claim_graph.json. LLM cannot add claims.
+  - Claim membership in claim_receipt.md: gated by claim_graph.json. LLM cannot add claims.
 
 Day 3.2a (this slice): the **deterministic** half. Pure functions, no LLM,
 no external I/O. Takes typed `Fact` records (already produced by some
