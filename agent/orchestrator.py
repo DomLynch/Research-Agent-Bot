@@ -513,6 +513,33 @@ async def run_proof_multi_receipt(
                 f"{type(exc).__name__}: {exc}"
             ) from exc
 
+        # Day 10.12: filter out protocol-only / registered-pending-only
+        # clusters. A cluster whose every supporting ref is
+        # role={published_protocol, registered_pending} cannot stand as
+        # a standalone evidence claim receipt — its quotes are study
+        # PURPOSES, not findings. SPAR judges correctly reject those
+        # clusters as protocol-as-claim (6 of 27 in Day 10.11 run).
+        # Empirically those clusters waste 3 SPAR LLM calls each and
+        # add noise to the manifest. Filter them here so multi-receipt
+        # mode emits ONLY clusters with at least one published_results
+        # / mechanistic / review item driving the cluster's claims.
+        protocol_only_excluded: list[int] = []
+        kept_graphs: list[ClaimGraph] = []
+        for original_idx, g in enumerate(graphs, start=1):
+            cluster_refs: set[int] = set()
+            for cl in g.claims:
+                cluster_refs.update(cl.supporting_refs)
+            cluster_roles = {
+                items_by_ref[r].role for r in cluster_refs if r in items_by_ref
+            }
+            if cluster_roles and cluster_roles.issubset(
+                {"published_protocol", "registered_pending"}
+            ):
+                protocol_only_excluded.append(original_idx)
+                continue
+            kept_graphs.append(g)
+        graphs = tuple(kept_graphs)
+
         if max_clusters is not None and max_clusters > 0:
             graphs = graphs[:max_clusters]
 
@@ -629,6 +656,8 @@ async def run_proof_multi_receipt(
             "n_clusters": len(per_cluster_receipts),
             "n_cluster_failures": len(per_cluster_failures),
             "cluster_failures": per_cluster_failures,
+            "n_protocol_only_excluded": len(protocol_only_excluded),
+            "protocol_only_excluded_indices": protocol_only_excluded,
             "clusters": [
                 {
                     "cluster_index": i + 1,

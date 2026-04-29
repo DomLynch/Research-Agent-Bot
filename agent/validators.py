@@ -44,7 +44,9 @@ __all__ = [
     "check_alias_drift",
     "check_p_value_in_source",
     "check_objective_as_claim",
+    "check_mechanism_inflation",
     "OBJECTIVE_PATTERN_RE",
+    "MECHANISM_INFLATION_RE",
     "PVALUE_RE",  # public so citation_trace.py can reuse the canonical regex
 ]
 
@@ -89,6 +91,57 @@ OBJECTIVE_PATTERN_RE = re.compile(
     r"will|plan|propose)\s+to\b"
     r"|trial\s+registration:"
     r")",
+    re.IGNORECASE,
+)
+
+
+# Day 10.12 — mechanism-inflation patterns.
+# Clinical-effect verb phrases that over-claim when the cited source
+# is mechanistic / preclinical / low-tier review (cell-line evidence
+# extrapolated to "protective effect on cognition", animal data
+# extrapolated to "improves clinical outcomes", etc.). The Day 10.11
+# empirical run found this is the dominant remaining SPAR rejection
+# mode (16 of 27 rejected clusters cite mechanism inflation). Domain
+# skeptic flags extrapolation; this regex catches it upstream of SPAR
+# so the receipt pipeline doesn't burn cost on quotes that domain
+# skeptics will correctly reject.
+#
+# Patterns:
+#   "protective effect on / against / in / for ..."
+#   "prevents / prevented (the) onset / development / progression"
+#   "(significantly) reduces (the) risk / incidence / progression"
+#   "demonstrates clinical efficacy / effectiveness / benefit"
+#   "is effective at / in / for"
+#   "(significantly) improves clinical outcomes / prognosis / survival"
+#   "may protect / prevent / delay / slow / halt"
+#   "appears to protect / prevent / delay"
+MECHANISM_INFLATION_RE = re.compile(
+    r"\b(?:"
+    r"protective\s+(?:effect|role|action)\s+(?:on|against|in|for|over)"
+    r"|prevent[sd]?\s+(?:the\s+)?(?:onset|development|progression|risk|incidence)"
+    r"|(?:significantly\s+)?reduce[sd]?\s+(?:the\s+)?"
+    r"(?:risk|incidence|onset|progression|likelihood)"
+    r"|demonstrate[sd]?\s+(?:clinical\s+)?(?:efficacy|effectiveness|benefit)"
+    r"|is\s+effective\s+(?:at|in|for)"
+    r"|(?:significantly\s+)?improve[sd]?\s+(?:clinical\s+)?"
+    r"(?:outcomes?|prognosis|survival|mortality)"
+    r"|may\s+(?:protect|prevent|delay|slow|halt|reverse|cure)"
+    r"|appears?\s+to\s+(?:protect|prevent|delay|slow|halt|reverse|cure)"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+# Hedge phrases that LEGITIMATELY scope a clinical-effect verb to
+# its mechanistic / preclinical context. When a quote uses one of
+# the MECHANISM_INFLATION_RE phrases AND ALSO contains one of these
+# hedges, the writer correctly bounded the claim — no rejection.
+_MECHANISM_HEDGE_RE = re.compile(
+    r"\b(?:"
+    r"in\s+vitro|in\s+animal[s]?|in\s+cell[s]?|in\s+rodent[s]?|"
+    r"in\s+mice|in\s+rats|in\s+model[s]?|preclinical(?:ly)?|"
+    r"mechanistic(?:ally)?|in\s+culture|cell\s+line[s]?"
+    r")\b",
     re.IGNORECASE,
 )
 
@@ -207,6 +260,73 @@ def check_objective_as_claim(
             severity="block",
         )
     return None
+
+
+# --- check_mechanism_inflation — Day 10.12 -----------------------------
+
+
+def check_mechanism_inflation(
+    claim_text: str,
+    evidence_item: EvidenceItem,
+) -> GateFailure | None:
+    """Reject quotes that make CLINICAL-EFFECT claims when the cited
+    source is mechanistic / preclinical / low-tier review.
+
+    Day 10.12 reviewer-driven fix. Empirical Day 10.11 run showed 16
+    of 27 rejected clusters had a mechanism-inflation rationale from
+    the Domain Skeptic — quotes like "metformin has a protective
+    effect on overall cognitive function" extracted from a B-tier
+    meta-analysis with I²=49.6%, p>0.05. SPAR judges correctly reject;
+    this validator catches the same pattern upstream of SPAR.
+
+    Trigger: quote contains a CLINICAL-CLAIM phrase
+    (`MECHANISM_INFLATION_RE`) AND the cited evidence is one of:
+      - role == "mechanistic"
+      - design in {"observational", "preclinical", "in_vitro", "animal"}
+      - role == "review" AND tier in {"B", "C"}
+        (a single B/C-tier review cannot ground a clinical-effect claim
+        without explicit hedging; PROTECTOR / PEARL / Mannick-style
+        primary RCTs are A1/A2 and bypass this rule)
+
+    Bypass: if the quote ALSO contains a hedge phrase
+    (`_MECHANISM_HEDGE_RE` — "in vitro", "in animal models",
+    "preclinically", "mechanistically", etc.), the writer has
+    correctly bounded the claim and we accept it.
+
+    Why not gate published_results A1 RCTs? Because real RCT abstracts
+    legitimately use "reduced risk" / "improved outcomes" — those are
+    findings, not extrapolations. The mechanism-inflation contract is
+    about claim/evidence-tier mismatch, not about the verb itself.
+    """
+    if not MECHANISM_INFLATION_RE.search(claim_text):
+        return None
+    # Hedge bypass: the writer scoped the claim to its mechanistic context.
+    if _MECHANISM_HEDGE_RE.search(claim_text):
+        return None
+    role = evidence_item.role
+    design = evidence_item.design
+    tier = evidence_item.tier
+    inflation_risk = (
+        role == "mechanistic"
+        or design in ("observational", "preclinical", "in_vitro", "animal")
+        or (role == "review" and tier in ("B", "C"))
+    )
+    if not inflation_risk:
+        return None
+    ref = evidence_item.source.ref
+    snippet = " ".join(claim_text.split())[:80]
+    return GateFailure(
+        code="MECHANISM_INFLATION",
+        message=(
+            f"quote (ref={ref}, role={role!r}, design={design!r}, "
+            f"tier={tier!r}) makes a clinical-effect claim but the cited "
+            f"source is {role}/{design}-tier {tier} — extrapolation. "
+            f"Quote: {snippet!r}. Either rewrite the claim to scope it "
+            f"to the cited evidence type ('mechanistically suggests', "
+            f"'in animal models'), or extract from a stronger source."
+        ),
+        severity="block",
+    )
 
 
 # --- check_role_claim_match — directness contract ------------------------

@@ -32,6 +32,7 @@ from agent.topic_pack import TopicPack
 from agent.types import EvidenceItem, Fact, FactKind
 from agent.validators import (
     PVALUE_RE,
+    check_mechanism_inflation,
     check_objective_as_claim,
     check_p_value_in_source,
     check_verb_ban,
@@ -53,7 +54,7 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 
-PROMPT_VERSION = "fact-extractor/2026-04-29-day10-11-objective-filter"
+PROMPT_VERSION = "fact-extractor/2026-04-29-day10-12-mechanism-inflation"
 
 _MAX_CLAIM_LEN = 500
 
@@ -125,6 +126,24 @@ Rules:
    showed greater muscle hypertrophy (p<0.05)", "After 12 weeks,
    participants in arm A had higher walking speed", etc. Past-tense
    reporting clauses are the safe pattern for published_results.
+
+6. **MECHANISM-INFLATION FILTER (CRITICAL for mechanistic / preclinical /
+   low-tier review items):** when the source is mechanistic, preclinical,
+   or a tier-B/C review, do NOT quote spans that make CLINICAL-EFFECT
+   claims unless the quote scopes the claim to its mechanism context.
+   AVOID unhedged forms like:
+     - "metformin has a protective effect on (cognition / memory / etc.)"
+     - "may protect / prevent / delay / slow / reverse / cure ..."
+     - "appears to protect / prevent / delay ..."
+     - "demonstrates clinical efficacy / effectiveness / benefit"
+     - "is effective at (preventing / treating / improving) ..."
+     - "(significantly) reduces (risk / incidence / progression) of ..."
+     - "(significantly) improves clinical outcomes / prognosis / survival"
+   When the source genuinely SCOPES its clinical-claim to mechanism
+   context — phrases like "in vitro", "in animal models",
+   "preclinically", "mechanistically", "in cell lines" — those quotes
+   are FINE; code's hedge-bypass accepts them. The contract is about
+   claim/evidence-tier MATCH, not about banning verbs.
 
 No prose outside the JSON. No markdown fences."""
 
@@ -339,10 +358,21 @@ def _validate_proposed(
         return None, f"verb_ban:{verb_fail.code}"
 
     # Day 10.11 reviewer P1: drop objective-as-claim extractions on
-    # published_results items (the dominant SPAR rejection mode).
+    # published_results items (the dominant SPAR rejection mode at
+    # the time of Day 10.10 audit).
     objective_fail = check_objective_as_claim(quote, item)
     if objective_fail is not None:
         return None, f"objective_as_claim:{objective_fail.code}"
+
+    # Day 10.12 — drop mechanism-inflation extractions: clinical-effect
+    # verbs ("protective effect on", "may protect against") quoted from
+    # mechanistic / preclinical / low-tier review evidence. The Day 10.11
+    # empirical run found this is the dominant remaining SPAR rejection
+    # mode (16 of 27 clusters). Hedge phrases ("in vitro", "in animal
+    # models") bypass the gate — see check_mechanism_inflation.
+    inflation_fail = check_mechanism_inflation(quote, item)
+    if inflation_fail is not None:
+        return None, f"mechanism_inflation:{inflation_fail.code}"
 
     p_value = _coerce_str_or_none(proposed.get("p_value"))
     estimate = _coerce_str_or_none(proposed.get("estimate"))

@@ -17,8 +17,10 @@ from agent.schemas import Claim
 from agent.topic_pack import TopicPack, load_topic_pack
 from agent.types import EvidenceItem, Source
 from agent.validators import (
+    MECHANISM_INFLATION_RE,
     OBJECTIVE_PATTERN_RE,
     check_alias_drift,
+    check_mechanism_inflation,
     check_objective_as_claim,
     check_p_value_in_source,
     check_role_claim_match,
@@ -499,5 +501,137 @@ def test_objective_pattern_re_matches_all_targeted_forms() -> None:
     for t in targets:
         norm = " ".join(t.split())
         assert OBJECTIVE_PATTERN_RE.search(norm) is not None, (
+            f"regex missed: {t}"
+        )
+
+
+# --- Day 10.12 — check_mechanism_inflation -------------------------------
+#
+# Failure mode: fact extractor pulls "metformin has a protective effect on
+# cognitive function" (or similar clinical-claim phrasing) from a B-tier
+# meta-analysis with high heterogeneity, and Domain Skeptic rejects it as
+# extrapolation. The validator catches this upstream when the cited
+# evidence is mechanistic / preclinical / low-tier review.
+
+
+def _ev_role(role: str, *, design: str = "rct", tier: str = "B"):
+    return EvidenceItem(
+        source=_src(),
+        abstract="", design=design, role=role, tier=tier,
+        direct=True, strict=True,
+    )
+
+
+def test_mechanism_inflation_catches_protective_effect_on_meta_analysis() -> None:
+    """The exact pattern from cluster_05 in Day 10.11 run."""
+    ev = _ev_role("review", design="meta_analysis", tier="B")
+    fail = check_mechanism_inflation(
+        "Metformin has a protective effect on overall cognitive function "
+        "in older people with diabetes mellitus.",
+        ev,
+    )
+    assert fail is not None
+    assert fail.code == "MECHANISM_INFLATION"
+    assert "MECHANISM_INFLATION" in fail.code
+
+
+def test_mechanism_inflation_catches_may_protect_for_mechanistic() -> None:
+    """A mechanistic source cannot ground 'may protect' clinical claims
+    without explicit hedging."""
+    ev = _ev_role("mechanistic", design="preclinical", tier="C")
+    fail = check_mechanism_inflation(
+        "Metformin may protect against neurodegeneration in older adults.",
+        ev,
+    )
+    assert fail is not None
+    assert fail.code == "MECHANISM_INFLATION"
+
+
+def test_mechanism_inflation_catches_demonstrates_efficacy_for_preclinical() -> None:
+    ev = _ev_role("mechanistic", design="preclinical", tier="C")
+    fail = check_mechanism_inflation(
+        "Metformin demonstrates clinical efficacy at preventing aging-"
+        "related muscle loss.",
+        ev,
+    )
+    assert fail is not None
+
+
+def test_mechanism_inflation_catches_reduces_risk_for_low_tier_review() -> None:
+    ev = _ev_role("review", design="meta_analysis", tier="C")
+    fail = check_mechanism_inflation(
+        "Metformin significantly reduces the risk of cognitive decline.",
+        ev,
+    )
+    assert fail is not None
+
+
+def test_mechanism_inflation_bypasses_when_quote_self_hedges() -> None:
+    """When the quote ALREADY contains a hedge phrase scoping the claim
+    to mechanism context, the extraction is fine — the writer has
+    bounded the claim correctly."""
+    ev = _ev_role("mechanistic", design="preclinical", tier="C")
+    for hedged in (
+        "In vitro, metformin demonstrates efficacy at activating AMPK.",
+        "In animal models, metformin may protect against aging biomarkers.",
+        "Preclinically, metformin reduces the progression of senescence markers.",
+        "Mechanistically, metformin appears to delay mitochondrial decline in cell lines.",
+    ):
+        assert check_mechanism_inflation(hedged, ev) is None, (
+            f"hedge bypass should accept: {hedged}"
+        )
+
+
+def test_mechanism_inflation_skips_a1_rct_published_results() -> None:
+    """Real RCT abstracts legitimately use 'reduced risk' / 'improved
+    outcomes' — those are findings, not extrapolations. The contract
+    is about claim/evidence-tier MATCH, not banning verbs."""
+    ev = _ev_role("published_results", design="rct", tier="A1")
+    for finding in (
+        "Metformin significantly reduced the risk of microvascular complications.",
+        "The treatment improved clinical outcomes at 12 months.",
+        "Metformin demonstrates clinical efficacy in this RCT.",
+    ):
+        assert check_mechanism_inflation(finding, ev) is None, (
+            f"A1 RCT findings must NOT be flagged as mechanism inflation: {finding}"
+        )
+
+
+def test_mechanism_inflation_skips_a2_rct_published_results() -> None:
+    """A2 RCTs (smaller / shorter) still ground their own findings."""
+    ev = _ev_role("published_results", design="rct", tier="A2")
+    fail = check_mechanism_inflation(
+        "Metformin significantly reduces the risk of weight gain.", ev,
+    )
+    assert fail is None
+
+
+def test_mechanism_inflation_skips_when_no_clinical_pattern() -> None:
+    """Quotes without clinical-claim phrases never trigger this gate."""
+    ev = _ev_role("mechanistic", design="preclinical", tier="C")
+    for plain in (
+        "Metformin reduced HbA1c by 0.5% (p=0.003).",
+        "Lean body mass increased by 1.2 kg in the treatment arm.",
+        "AMPK activation was elevated 2.3-fold compared to control.",
+    ):
+        assert check_mechanism_inflation(plain, ev) is None, (
+            f"plain finding clause must not be flagged: {plain}"
+        )
+
+
+def test_mechanism_inflation_pattern_re_matches_targeted_phrases() -> None:
+    """Smoke test on the regex itself."""
+    targets = [
+        "Metformin has a protective effect on cognition.",
+        "It prevents the onset of diabetes.",
+        "Metformin significantly reduces the risk of mortality.",
+        "The drug demonstrates clinical efficacy at high doses.",
+        "Metformin is effective at preventing weight gain.",
+        "Treatment may protect against age-related decline.",
+        "This appears to delay disease progression.",
+        "It improves clinical outcomes at 12 months.",
+    ]
+    for t in targets:
+        assert MECHANISM_INFLATION_RE.search(t) is not None, (
             f"regex missed: {t}"
         )

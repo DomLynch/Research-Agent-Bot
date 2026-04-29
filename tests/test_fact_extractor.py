@@ -530,7 +530,7 @@ def test_build_user_prompt_is_deterministic() -> None:
 def test_prompt_version_is_anchored() -> None:
     """Anchored constant — cost_log.json records this for reproducibility.
     Day 10.11 bumped after objective-as-claim filter + prompt strengthening."""
-    assert PROMPT_VERSION == "fact-extractor/2026-04-29-day10-11-objective-filter"
+    assert PROMPT_VERSION == "fact-extractor/2026-04-29-day10-12-mechanism-inflation"
 
 
 # --- extract_facts_from_item ---------------------------------------------

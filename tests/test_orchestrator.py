@@ -741,6 +741,56 @@ def test_run_proof_multi_receipt_emits_one_subdir_per_cluster(
     assert md["parent_submission_id"] == "multi-001"
 
 
+def test_run_proof_multi_receipt_filters_protocol_only_clusters(
+    tmp_path: Path,
+) -> None:
+    """Day 10.12 — a cluster whose every supporting ref is
+    role={published_protocol, registered_pending} cannot stand as a
+    standalone evidence claim receipt (its quotes are study purposes,
+    not findings). The filter excludes such clusters from multi-receipt
+    output and records them in the manifest's
+    `protocol_only_excluded_indices`."""
+    # Mix: one published_results item and one registered_pending item.
+    # Each gets its own fact → singleton clusters → all-singleton
+    # fallback merges them into ONE cluster of mixed roles, which is
+    # NOT protocol-only and should pass the filter.
+    handler = _make_handler()
+    items = [
+        _item(1, abstract="Metformin reduced HbA1c by 0.5% (p=0.003)."),
+        EvidenceItem(
+            source=_src(2),
+            abstract="Metformin reduced HbA1c by 0.5% (p=0.003).",
+            design="rct", role="registered_pending", tier="B",
+            direct=False, strict=False,
+        ),
+    ]
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_proof_multi_receipt(
+                items,
+                topic="metformin", domain="aging",
+                pack=_pack(), output_dir=tmp_path,
+                submission_id="multi-mixed",
+                extract_chain=(_spec(),), spar_chain=(_spec(),),
+                registry=FixtureTrialRegistryClient(),
+                drug_client=FixtureDrugAliasClient(),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    per_cluster = _run(go())
+    # Mixed cluster (one published_results + one registered_pending)
+    # is NOT protocol-only — filter must keep it.
+    assert len(per_cluster) >= 1
+    manifest = json.loads((tmp_path / "multi_receipt_manifest.json").read_text())
+    # The protocol-only filter is present in the manifest but didn't fire.
+    assert "n_protocol_only_excluded" in manifest
+    assert manifest["n_protocol_only_excluded"] == 0
+
+
 def test_run_proof_multi_receipt_two_clusters_when_refs_overlap(
     tmp_path: Path,
 ) -> None:
