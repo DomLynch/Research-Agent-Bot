@@ -8,17 +8,19 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 8,500 LOC (set by DECISIONS.md 2026-04-29 Day 10.11 —
-the Day 10.11 fact-extractor protocol-vs-results filter added ~90 cloc
-of validator defense + prompt strengthening + extractor wiring on top
-of Day 10.10's trust-spine ordering. 8,500 covers Day 10 fully with
-buffer for any small follow-up corrections in the synthesis layer.
+Current ceiling: 10,000 LOC (set by DECISIONS.md 2026-04-29 Day 10.16 —
+the user-facing deliverable expansion from a ~1k-word structured
+brief to a 5–15k-word full research paper added ~1,000 cloc for the
+new paper_writer.py + paper_writer_prompts.py + tiered validation +
+cross-domain tension detection. 10,000 covers Day 10.16 fully with
+~600 cloc headroom for the rule fixes in Phase 3 and the audit
+extensions in Phase 4.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 8500
+TOTAL_LIMIT = 10000
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

@@ -84,6 +84,7 @@ from agent.synthesis_schemas import (
     ReceiptSummary,
     assert_synthesis_invariants,
 )
+from agent.paper_writer import render_full_paper
 from agent.synthesis_thesis import synthesize_thesis
 from agent.synthesis_writer import render_synthesis_paper
 from agent.topic_pack import TopicPack, load_topic_pack
@@ -865,12 +866,31 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
         return 3
     elapsed = time.perf_counter() - t0
 
-    # Stage 5: audit
+    # Stage 5: audit (against the brief)
     audit = audit_synthesis_paper(paper, summaries)
+
+    # Day 10.16 — render the FULL PAPER alongside the brief. The brief
+    # is the structured-evidence layer (auditable, anchored bullets);
+    # the full paper is the publishable artifact (5-15k words,
+    # multi-section, tiered validation per section). Both written
+    # to the same submission directory so reviewers can see the
+    # evidence layer underneath the prose.
+    full_paper_md, full_paper_sections = await render_full_paper(
+        # Pass the FULL deduped corpus (accepted + rejected) so the
+        # references_full section can list everything and the
+        # quarantined-discussion path in Limitations sees the rejected
+        # set. The renderer applies filter_accepted internally for the
+        # ANCHORED LLM sections per Day 10.10 trust-spine ordering.
+        full_deduped, matrix, thesis,
+        topic=topic, submission_id=submission_id,
+        chain=judge_chain, ledger=synthesis_ledger, seed=args.seed,
+    )
 
     # Stage 6: write all artifacts atomically
     paper_path = output_dir / "paper_synthesis.md"
     paper_path.write_text(paper.body_md, encoding="utf-8")
+    full_paper_path = output_dir / "full_paper.md"
+    full_paper_path.write_text(full_paper_md, encoding="utf-8")
     (output_dir / "synthesis_quality_audit.json").write_text(
         json.dumps(dataclasses.asdict(audit), indent=2), encoding="utf-8",
     )
@@ -931,9 +951,13 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
         load = " [load-bearing]" if c.question_id in Q_LOAD_BEARING_IDS else ""
         print(f"    {marker} {c.question_id}{load}: {c.detail[:80]}")
     print(f"  notes: {audit.notes}")
+    full_paper_words = len(full_paper_md.split())
+    print(f"  full_paper:         {full_paper_words:,} words "
+          f"({full_paper_words // 250} pages-ish)")
     print(f"\nReceipts: {_format_path(output_dir)}/")
     for name in (
-        "paper_synthesis.md", "synthesis_quality_audit.json",
+        "paper_synthesis.md", "full_paper.md",
+        "synthesis_quality_audit.json",
         "receipt_summaries.json", "tension_matrix.json",
         "synthesis_metadata.json",
     ):

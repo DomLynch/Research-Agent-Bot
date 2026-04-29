@@ -220,6 +220,9 @@ class SynthesisThesis:
 
 
 SectionName = Literal[
+    # --- Brief (~870-word) layer (Day 10.x) — the structured evidence
+    # summary, retained verbatim per Day 10.16 reviewer guidance: brief
+    # is the auditable evidence layer, paper is the publishable artifact.
     "title",
     "thesis",
     "evidence_summary",     # deterministic table of receipts
@@ -232,6 +235,20 @@ SectionName = Literal[
     "limitations",          # LLM with template scaffold per evidence tier mix
     "spar_adjudication",    # deterministic from receipt-level + synthesis-level SPAR
     "references",           # deterministic — every receipt's source papers
+    # --- Full-paper layer (Day 10.16) — multi-section publishable
+    # artifact. Each section has a designated validation tier
+    # (anchored / scoped / deterministic) — see paper_writer.py.
+    "abstract",             # ~300 words; ANCHORED — every claim cites receipt
+    "introduction",         # ~1500-2500; SCOPED — topic-relevant + hedged
+    "background",           # ~1000-2000; SCOPED — broader field synthesis
+    "methods",              # ~1000-1500; DETERMINISTIC — describes SPAR pipeline
+    "results",              # ~3000-5000; ANCHORED — multi-paragraph by outcome class
+    "cross_domain_synthesis",  # ~800-1500; ANCHORED — integrates outcomes with
+                            # cross-outcome tensions
+    "discussion",           # ~2000-3000; SCOPED — evidence-says vs interpretation
+    "limitations_full",     # ~500-1000; ANCHORED — includes quarantine rationale
+    "conclusion",           # ~300-500; SCOPED — hedged summary
+    "references_full",      # DETERMINISTIC — formatted citations from receipt metadata
 ]
 
 
