@@ -838,13 +838,37 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
     (output_dir / "tension_matrix.json").write_text(
         json.dumps(dataclasses.asdict(matrix), indent=2), encoding="utf-8",
     )
+    # Day 10.9 reviewer P2: surface the cross-source proof fields so a
+    # reviewer can verify the gate from this artifact alone, without
+    # recomputing from receipt_summaries.json.
+    canonical_ncts = sorted({
+        s.canonical_trial_id.upper()
+        for s in summaries if s.canonical_trial_id
+    })
+    n_untrialed = sum(1 for s in summaries if not s.canonical_trial_id)
+    n_unique_source_units = count_unique_trials(summaries)
+    rejected_thesis = [
+        {
+            "text": c.text[:160],
+            "n_receipts_referenced": len(c.receipt_ids_referenced),
+            "n_tensions_addressed": len(c.tensions_addressed),
+        }
+        for c in thesis.rejected_candidates
+    ]
     (output_dir / "synthesis_metadata.json").write_text(
         json.dumps({
             "submission_id": submission_id,
             "topic": topic,
             "n_receipts": len(summaries),
+            "n_unique_source_units": n_unique_source_units,
+            "n_unique_canonical_trials": len(canonical_ncts),
+            "canonical_trial_ids": canonical_ncts,
+            "n_untrialed_sources": n_untrialed,
             "n_non_orthogonal_tensions": len(non_orth),
             "thesis_text": thesis.text,
+            "thesis_picker_rationale": thesis.picker_rationale,
+            "n_rejected_thesis_candidates": len(rejected_thesis),
+            "rejected_thesis_candidates": rejected_thesis,
             "audit_score": audit.score,
             "audit_notes": audit.notes,
             "elapsed_sec": round(elapsed, 2),

@@ -176,13 +176,70 @@ def test_validate_rejects_too_few_receipts() -> None:
 
 def test_validate_rejects_no_tension_addressed_when_matrix_has_one() -> None:
     """When the matrix has a non-orthogonal tension, the thesis must
-    name at least one. Otherwise it's a list, not a synthesis."""
-    receipts = _receipts_three()
-    matrix = _matrix_with_one_tension(receipts)
-    cand = _candidate(tensions=())
+    name at least one — either verbatim in `tensions_addressed`, OR
+    by referencing both receipt_ids of the tension pair (Day 10.9
+    pair-coverage relaxation). When NEITHER holds, reject."""
+    # Extend corpus so refs can be ≥3 without covering the (r-A, r-B) pair.
+    receipts = _receipts_three() + (_summary("r-D", outcome="cognitive"),)
+    matrix = TensionMatrix(
+        receipts=tuple(receipts),
+        pairs=(
+            Tension(
+                receipt_a_id="r-A", receipt_b_id="r-B",
+                kind="agreement", outcome_class="muscle_function",
+                summary="r-A and r-B both report negative effect on muscle_function",
+                severity=2,
+            ),
+            Tension(
+                receipt_a_id="r-A", receipt_b_id="r-C",
+                kind="orthogonal", outcome_class="muscle_function",
+                summary="orthogonal", severity=0,
+            ),
+            Tension(
+                receipt_a_id="r-A", receipt_b_id="r-D",
+                kind="orthogonal", outcome_class="muscle_function",
+                summary="orthogonal", severity=0,
+            ),
+            Tension(
+                receipt_a_id="r-B", receipt_b_id="r-C",
+                kind="orthogonal", outcome_class="cardiometabolic",
+                summary="orthogonal", severity=0,
+            ),
+            Tension(
+                receipt_a_id="r-B", receipt_b_id="r-D",
+                kind="orthogonal", outcome_class="cardiometabolic",
+                summary="orthogonal", severity=0,
+            ),
+            Tension(
+                receipt_a_id="r-C", receipt_b_id="r-D",
+                kind="orthogonal", outcome_class="frailty",
+                summary="orthogonal", severity=0,
+            ),
+        ),
+    )
+    # Refs cover r-A, r-C, r-D — but NOT r-B, so the (r-A,r-B) pair
+    # isn't covered. tensions=() means no verbatim match either.
+    cand = _candidate(refs=("r-A", "r-C", "r-D"), tensions=())
     rej = validate_thesis_candidate(cand, receipts, matrix)
     assert rej is not None
     assert rej.reason == "no_tension_addressed"
+
+
+def test_validate_accepts_tension_addressed_via_pair_coverage() -> None:
+    """Day 10.9 — a candidate that references both receipt_ids of a
+    non-orthogonal tension pair is treated as addressing that tension
+    even when `tensions_addressed` is empty. Reason: long receipt-id
+    prefixes in real corpora make verbatim summary matching brittle;
+    when the LLM integrates both sides of a tension via its refs, the
+    thesis is structurally addressing it."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_one_tension(receipts)
+    # Refs cover r-A and r-B (the tension pair), tensions=() empty.
+    cand = _candidate(refs=("r-A", "r-B", "r-C"), tensions=())
+    rej = validate_thesis_candidate(cand, receipts, matrix)
+    assert rej is None, (
+        f"pair coverage should satisfy tension rule; got rejection: {rej}"
+    )
 
 
 def test_validate_allows_no_tensions_addressed_when_matrix_is_orthogonal() -> None:

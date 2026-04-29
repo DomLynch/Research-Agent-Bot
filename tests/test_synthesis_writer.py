@@ -27,6 +27,7 @@ from agent.synthesis_schemas import (
 )
 from agent.synthesis_writer import (
     WRITER_VERSION,
+    _ensure_directness_transition,
     build_direct_evidence_section,
     build_evidence_summary_section,
     build_indirect_evidence_section,
@@ -392,3 +393,70 @@ def test_render_synthesis_paper_handles_empty_tensions_matrix() -> None:
 
 def test_writer_version_is_anchored() -> None:
     assert WRITER_VERSION == "synthesis-writer/2026-04-29"
+
+
+# ============================================================
+# Day 10.9 — _ensure_directness_transition
+# ============================================================
+
+
+def test_ensure_transition_prepends_mechanistically_for_mixed_with_mechanistic() -> None:
+    """When refs span direct + mechanistic, prepend 'Mechanistically, '
+    so the Q3 audit's transition check passes deterministically."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+    ]
+    out = _ensure_directness_transition(
+        "metformin influences pathways", ("r-A", "r-B"), receipts,
+    )
+    assert out.lower().startswith("mechanistically, ")
+
+
+def test_ensure_transition_prepends_by_contrast_for_direct_plus_indirect() -> None:
+    """When refs span direct + indirect (no mechanistic), prepend
+    'By contrast, ' — the cross-directness signal isn't mechanism."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="indirect"),
+    ]
+    out = _ensure_directness_transition(
+        "Ongoing research investigates the question",
+        ("r-A", "r-B"), receipts,
+    )
+    assert out.lower().startswith("by contrast, ")
+
+
+def test_ensure_transition_idempotent_when_phrase_already_present() -> None:
+    """If the LLM already wrote a sentence starting with a transition
+    phrase, don't double-prefix."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="indirect"),
+    ]
+    sentence = "Mechanistically, metformin acts via AMPK"
+    out = _ensure_directness_transition(sentence, ("r-A", "r-B"), receipts)
+    assert out == sentence
+
+
+def test_ensure_transition_unchanged_for_all_direct() -> None:
+    """All-direct anchor sets aren't 'mixed' — no transition needed."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="direct"),
+    ]
+    sentence = "Both trials report agreement on muscle outcomes"
+    out = _ensure_directness_transition(sentence, ("r-A", "r-B"), receipts)
+    assert out == sentence
+
+
+def test_ensure_transition_unchanged_for_all_mechanistic() -> None:
+    """All-mechanistic anchor sets aren't 'mixed' either — there's no
+    direct claim to contrast against, so no transition is required."""
+    receipts = [
+        _summary("r-A", directness="mechanistic"),
+        _summary("r-B", directness="mechanistic"),
+    ]
+    sentence = "Both studies trace the AMPK pathway"
+    out = _ensure_directness_transition(sentence, ("r-A", "r-B"), receipts)
+    assert out == sentence

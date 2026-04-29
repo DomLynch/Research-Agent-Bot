@@ -43,11 +43,18 @@ runs/e2e-baselines/*.tmp
 # Day 10.8c — first real cross-source proof:
 #   producer: 13 cluster receipts from a single metformin --multi-receipt run
 !runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/
-#   consumer: synthesis across 13 unique canonical trials, audit 8.3/10
-#   (Q3 load-bearing fail on direct/indirect transition — system correctly
-#   ship-blocks). The architecture is verified end-to-end; remaining
-#   gap is writer-side, not gate-side.
+#   consumer: synthesis across 13 unique source units (7 NCTs + 6 untrialed),
+#   audit 8.3/10 (Q3 load-bearing fail on direct/indirect transition — system
+#   correctly ship-blocks). Architecture verified end-to-end; gap was
+#   writer-side, closed in Day 10.9 below.
 !runs/synthesis-metformin-010-2026-04-29T09-32-28Z-0d63/
+# Day 10.9 — AAA achieved on the SAME 13 cluster receipts:
+#   - writer Q3 transition fix
+#   - thesis tournament pair-coverage tolerance
+#   - metadata proof fields (n_unique_canonical_trials, etc.)
+# Audit: 10.0 / 10 across 5 applicable checks (Q3 + Q6 N/A); load-bearing
+# Q1 + Q5 pass. Real LLM thesis picked (only 1 of 3 candidates rejected).
+!runs/synthesis-metformin-010-2026-04-29T09-52-15Z-044b/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

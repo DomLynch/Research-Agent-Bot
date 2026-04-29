@@ -231,11 +231,26 @@ def validate_thesis_candidate(
             f"too_few_receipts:{len(referenced)}<{_REQUIRED_RECEIPT_REFERENCES}",
         )
 
-    # 4. ≥1 non-orthogonal tension addressed (only if matrix has any)
-    non_orth_summaries = {t.summary for t in matrix.non_orthogonal()}
-    if non_orth_summaries:
+    # 4. ≥1 non-orthogonal tension addressed (only if matrix has any).
+    # Day 10.9 — tolerate paraphrase: a candidate addresses a tension
+    # if EITHER (a) `tensions_addressed` contains the verbatim summary,
+    # OR (b) `receipt_ids_referenced` covers both receipt_ids of any
+    # non-orthogonal pair (the thesis is integrating that pair). Reason:
+    # with multi-receipt corpora the tension summaries embed long
+    # receipt-id prefixes (e.g. `metformin-multi-001-2026-04-29T...-c06`)
+    # and LLMs almost always paraphrase to compact form, leaving the
+    # verbatim-only rule unsatisfiable on heterogeneous real corpora.
+    non_orth_pairs = matrix.non_orthogonal()
+    if non_orth_pairs:
+        non_orth_summaries = {t.summary for t in non_orth_pairs}
         addressed_set = set(candidate.tensions_addressed)
-        if not (addressed_set & non_orth_summaries):
+        verbatim_match = bool(addressed_set & non_orth_summaries)
+        ref_set = set(candidate.receipt_ids_referenced)
+        pair_covered = any(
+            t.receipt_a_id in ref_set and t.receipt_b_id in ref_set
+            for t in non_orth_pairs
+        )
+        if not (verbatim_match or pair_covered):
             return ThesisRejection(
                 candidate.text,
                 "no_tension_addressed",
