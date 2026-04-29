@@ -55,9 +55,11 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+import dataclasses
+
 from agent.citation_trace import registry_ids_for
 from agent.evidence_cards import bundle
-from agent.llm_client import build_extract_chain, build_judge_chain
+from agent.llm_client import CostLedger, build_extract_chain, build_judge_chain
 from agent.orchestrator import RunReceipts, run_proof
 from agent.retrieve import normalize_and_dedup, retrieve
 from agent.settings import load_settings
@@ -65,6 +67,18 @@ from agent.sources.clinicaltrials import ClinicalTrialsClient
 from agent.sources.europepmc import EuropePMCClient
 from agent.sources.openalex import OpenAlexClient
 from agent.sources.pubmed import PubMedClient
+from agent.synthesis import build_tension_matrix, load_receipt_summary
+from agent.synthesis_audit import (
+    DAY10_SCORE_FLOOR,
+    Q_LOAD_BEARING_IDS,
+    audit_synthesis_paper,
+)
+from agent.synthesis_schemas import (
+    ReceiptSummary,
+    assert_synthesis_invariants,
+)
+from agent.synthesis_thesis import synthesize_thesis
+from agent.synthesis_writer import render_synthesis_paper
 from agent.topic_pack import TopicPack, load_topic_pack
 from agent.trace_clients import (
     get_drug_alias_client,
@@ -534,6 +548,207 @@ async def _run(args: argparse.Namespace) -> int:
     return 0 if best_md["spar_verdict"].startswith("accept") else 1
 
 
+# --- Day 10 synthesis flow -------------------------------------------------
+
+
+def _discover_receipt_dirs(root: Path) -> list[Path]:
+    """Find every subdirectory of `root` that looks like a saved
+    claim receipt — i.e. contains all 8 receipt JSON files.
+
+    Skips e2e-baselines and other non-receipt directories silently."""
+    if not root.exists() or not root.is_dir():
+        return []
+    found: list[Path] = []
+    required = ("claim_graph.json", "spar_review.json", "evidence_cards.json")
+    for child in sorted(root.iterdir()):
+        if not child.is_dir():
+            continue
+        if all((child / f).exists() for f in required):
+            found.append(child)
+    return found
+
+
+async def _run_synthesize(args: argparse.Namespace) -> int:
+    """Day 10 synthesis layer: aggregate N claim receipts under a
+    directory into a single paper_synthesis.md + audit JSON.
+
+    Returns exit codes:
+      0 — synthesis paper rendered + audit ≥ DAY10_SCORE_FLOOR + load-bearing pass
+      1 — synthesis rendered but failed quality gate (paper still on disk)
+      2 — config error (no receipts found, missing keys, etc.)
+      3 — pipeline runtime crash
+    """
+    print("=" * 70)
+    print("Day 10 — Synthesis paper engine")
+    print("=" * 70)
+
+    settings = load_settings()
+    judge_chain = build_judge_chain(settings)
+    if not any(spec.api_key for spec in judge_chain):
+        print(
+            "ERROR: no API keys for synthesis LLM calls. Set MIMO_API_KEY "
+            "or OPENROUTER_API_KEY.",
+            file=sys.stderr,
+        )
+        return 2
+
+    receipts_dir = Path(args.synthesize).expanduser().resolve()
+    receipt_paths = _discover_receipt_dirs(receipts_dir)
+    if not receipt_paths:
+        print(
+            f"ERROR: no claim receipts found under {receipts_dir} "
+            f"(each subdirectory must contain claim_graph.json + "
+            f"spar_review.json + evidence_cards.json).",
+            file=sys.stderr,
+        )
+        return 2
+    print(f"Loading {len(receipt_paths)} claim receipts from "
+          f"{_format_path(receipts_dir)}/")
+
+    summaries_all: list[ReceiptSummary] = []
+    for rp in receipt_paths:
+        try:
+            s = load_receipt_summary(rp)
+        except (FileNotFoundError, json.JSONDecodeError, KeyError) as exc:
+            print(f"  SKIP {rp.name}: {type(exc).__name__}: {exc}", file=sys.stderr)
+            continue
+        summaries_all.append(s)
+    if not summaries_all:
+        print("ERROR: zero loadable receipts.", file=sys.stderr)
+        return 2
+
+    # Day 10.5b: synthesis is per-topic. When the receipts span
+    # multiple drugs, --topic selects the slice. Without --topic,
+    # filter to the most-common topic and warn.
+    topics_seen = Counter(s.topic for s in summaries_all)
+    if len(topics_seen) > 1 and args.topic == "metformin" and "metformin" not in topics_seen:
+        # Default --topic=metformin but no metformin receipts — pick the
+        # most-common to avoid empty filter.
+        chosen_topic = topics_seen.most_common(1)[0][0]
+    elif len(topics_seen) > 1:
+        chosen_topic = args.topic
+        print(f"\nReceipts span {len(topics_seen)} topics: "
+              f"{dict(topics_seen)}; filtering to --topic={chosen_topic}")
+    else:
+        chosen_topic = next(iter(topics_seen))
+    summaries = [s for s in summaries_all if s.topic == chosen_topic]
+    if not summaries:
+        print(
+            f"ERROR: --topic={chosen_topic} matches 0 of "
+            f"{len(summaries_all)} loaded receipts. "
+            f"Available topics: {sorted(topics_seen)}",
+            file=sys.stderr,
+        )
+        return 2
+    topic = chosen_topic
+
+    print(f"\nTopic: {topic} ({len(summaries)} receipts)")
+    for s in summaries:
+        print(f"  - {s.receipt_id} (outcome={s.outcome_class}, "
+              f"direction={s.effect_direction}, verdict={s.spar_verdict})")
+
+    # Stage 1: tension matrix — deterministic, no LLM
+    matrix = build_tension_matrix(summaries)
+    non_orth = matrix.non_orthogonal()
+    print(f"Tension matrix: {len(matrix.pairs)} pairs total, "
+          f"{len(non_orth)} non-orthogonal")
+    for t in non_orth[:5]:
+        print(f"  - {t.kind} (severity {t.severity}): {t.summary}")
+
+    # Stage 2-4: LLM synthesis pipeline
+    synthesis_ledger = CostLedger()
+    output_dir = (
+        Path(args.output_dir).expanduser().resolve() if args.output_dir
+        else _resolve_output_dir(None, topic=f"synthesis-{topic}", proof="010")
+    )
+    submission_id = output_dir.name
+    output_dir.mkdir(parents=True, exist_ok=True)
+    print(f"\nWriting to {_format_path(output_dir)}")
+
+    t0 = time.perf_counter()
+    try:
+        thesis = await synthesize_thesis(
+            summaries, matrix,
+            chain=judge_chain, topic=topic,
+            ledger=synthesis_ledger, seed=args.seed,
+        )
+        print(f"\nThesis: {thesis.text}")
+        print(f"  picker: {thesis.picker_rationale}")
+
+        paper = await render_synthesis_paper(
+            summaries, matrix, thesis,
+            topic=topic, submission_id=submission_id,
+            chain=judge_chain, ledger=synthesis_ledger, seed=args.seed,
+        )
+        assert_synthesis_invariants(paper)
+    except Exception as exc:  # noqa: BLE001 — any failure is reportable
+        elapsed = time.perf_counter() - t0
+        print(f"PIPELINE FAILED after {elapsed:.1f}s: "
+              f"{type(exc).__name__}: {exc}", file=sys.stderr)
+        return 3
+    elapsed = time.perf_counter() - t0
+
+    # Stage 5: audit
+    audit = audit_synthesis_paper(paper, summaries)
+
+    # Stage 6: write all artifacts atomically
+    paper_path = output_dir / "paper_synthesis.md"
+    paper_path.write_text(paper.body_md, encoding="utf-8")
+    (output_dir / "synthesis_quality_audit.json").write_text(
+        json.dumps(dataclasses.asdict(audit), indent=2), encoding="utf-8",
+    )
+    (output_dir / "receipt_summaries.json").write_text(
+        json.dumps([dataclasses.asdict(s) for s in summaries], indent=2),
+        encoding="utf-8",
+    )
+    (output_dir / "tension_matrix.json").write_text(
+        json.dumps(dataclasses.asdict(matrix), indent=2), encoding="utf-8",
+    )
+    (output_dir / "synthesis_metadata.json").write_text(
+        json.dumps({
+            "submission_id": submission_id,
+            "topic": topic,
+            "n_receipts": len(summaries),
+            "n_non_orthogonal_tensions": len(non_orth),
+            "thesis_text": thesis.text,
+            "audit_score": audit.score,
+            "audit_notes": audit.notes,
+            "elapsed_sec": round(elapsed, 2),
+            "total_usd": round(synthesis_ledger.total_usd(), 6),
+            "render_version": paper.render_version,
+        }, indent=2),
+        encoding="utf-8",
+    )
+
+    # Summary print
+    print()
+    print("=" * 70)
+    print(f"Synthesis complete in {elapsed:.1f}s — ${synthesis_ledger.total_usd():.4f}")
+    print(f"  audit score:        {audit.score:.1f} / 10  (floor {DAY10_SCORE_FLOOR})")
+    for c in audit.checks:
+        marker = "✓" if c.passed else "✗"
+        load = " [load-bearing]" if c.question_id in Q_LOAD_BEARING_IDS else ""
+        print(f"    {marker} {c.question_id}{load}: {c.detail[:80]}")
+    print(f"  notes: {audit.notes}")
+    print(f"\nReceipts: {_format_path(output_dir)}/")
+    for name in (
+        "paper_synthesis.md", "synthesis_quality_audit.json",
+        "receipt_summaries.json", "tension_matrix.json",
+        "synthesis_metadata.json",
+    ):
+        p = output_dir / name
+        size_kb = p.stat().st_size / 1024 if p.exists() else 0
+        print(f"  {name:32}  {size_kb:6.1f} KB")
+    print("=" * 70)
+
+    load_pass = all(
+        c.passed for c in audit.checks if c.question_id in Q_LOAD_BEARING_IDS
+    )
+    if audit.score >= DAY10_SCORE_FLOOR and load_pass:
+        return 0
+    return 1
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -572,7 +787,23 @@ def main() -> int:
              "into a stranded output_dir after a crash; force_overwrite "
              "is implied. Default: runs/metformin-001-<UTC>-<rand>/",
     )
+    parser.add_argument(
+        "--synthesize", type=str, default=None, metavar="RECEIPTS_DIR",
+        help="Run the Day 10 synthesis layer: load every claim receipt "
+             "subdirectory under RECEIPTS_DIR (each must contain the 8 "
+             "receipt JSONs from a prior --topic run), build the "
+             "tension matrix, run the synthesis thesis tournament, "
+             "render paper_synthesis.md, and audit against the 7-paper "
+             "rubric. Output: a fresh runs/synthesis-<topic>-<UTC>-<rand>/ "
+             "containing paper_synthesis.md + synthesis_quality_audit.json "
+             "+ receipt_summaries.json + tension_matrix.json. "
+             "Pass `runs/` to synthesize across all tracked receipts. "
+             "When --synthesize is set, --topic / --live / --max-items / "
+             "--best-of are ignored.",
+    )
     args = parser.parse_args()
+    if args.synthesize:
+        return asyncio.run(_run_synthesize(args))
     return asyncio.run(_run(args))
 
 

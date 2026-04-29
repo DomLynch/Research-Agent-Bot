@@ -34,6 +34,10 @@ runs/e2e-baselines/*.tmp
 # where ALL 4 metformin canonical trials (MASTERS / MET-PREVENT / TAME /
 # MILES) surface in the corpus + accept_clean on a single attempt:
 !runs/metformin-001-2026-04-28T19-01-44Z-d1f4/
+# Day 10.6 — first synthesis paper: 12 metformin claim receipts → one
+# integrated paper_synthesis.md, audit score 10/10 across 7 quality
+# checks (all 3 load-bearing Q1/Q3/Q5 pass).
+!runs/synthesis-metformin-010-2026-04-29T05-52-53Z-caa9/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

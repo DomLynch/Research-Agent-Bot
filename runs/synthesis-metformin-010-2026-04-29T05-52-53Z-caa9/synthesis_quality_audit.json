@@ -1,0 +1,56 @@
+{
+  "submission_id": "synthesis-metformin-010-2026-04-29T05-52-53Z-caa9",
+  "checks": [
+    {
+      "question_id": "Q1-konopka-p008-hedging",
+      "question": "Borderline p-values must not be rounded to 'significant'",
+      "passed": true,
+      "detail": "no borderline p-value rounded to significant",
+      "excerpt": null
+    },
+    {
+      "question_id": "Q2-witham-null-acknowledgment",
+      "question": "Null primary endpoints must be acknowledged",
+      "passed": true,
+      "detail": "no null receipts in corpus",
+      "excerpt": null
+    },
+    {
+      "question_id": "Q3-mohammed-direct-vs-indirect",
+      "question": "Mixed-directness paragraphs need transition language",
+      "passed": true,
+      "detail": "no mixed-directness paragraphs need correction",
+      "excerpt": null
+    },
+    {
+      "question_id": "Q4-miles-replication-gap",
+      "question": "Single-trial / thin theses must name replication gap",
+      "passed": true,
+      "detail": "thesis references 3 receipts, corpus is rich",
+      "excerpt": null
+    },
+    {
+      "question_id": "Q5-mohammed-healthspan-discipline",
+      "question": "Healthspan claims need direct longevity receipt OR hedge",
+      "passed": true,
+      "detail": "no unhedged healthspan claims",
+      "excerpt": null
+    },
+    {
+      "question_id": "Q6-witham-adverse-event-surfacing",
+      "question": "Safety receipts must appear in Tensions or Limitations",
+      "passed": true,
+      "detail": "no safety receipts in corpus",
+      "excerpt": null
+    },
+    {
+      "question_id": "Q7-masters-numeric-fidelity",
+      "question": "Every numeric token must come from some receipt",
+      "passed": true,
+      "detail": "no novel numerics",
+      "excerpt": null
+    }
+  ],
+  "score": 10.0,
+  "notes": "7/7 checks passed; ship-criterion met (score \u2265 8.5 AND load-bearing Q1/Q3/Q5 pass)"
+}
