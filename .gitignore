@@ -48,13 +48,19 @@ runs/e2e-baselines/*.tmp
 #   correctly ship-blocks). Architecture verified end-to-end; gap was
 #   writer-side, closed in Day 10.9 below.
 !runs/synthesis-metformin-010-2026-04-29T09-32-28Z-0d63/
-# Day 10.9 — AAA achieved on the SAME 13 cluster receipts:
-#   - writer Q3 transition fix
-#   - thesis tournament pair-coverage tolerance
-#   - metadata proof fields (n_unique_canonical_trials, etc.)
-# Audit: 10.0 / 10 across 5 applicable checks (Q3 + Q6 N/A); load-bearing
-# Q1 + Q5 pass. Real LLM thesis picked (only 1 of 3 candidates rejected).
+# Day 10.9 — initially claimed AAA at 10.0/10 (REVERTED by Day 10.10
+# as gamed: pair-coverage validator loosening + cosmetic transition
+# auto-prefix + SPAR-rejected receipts cited as evidence). Kept here
+# as audit evidence of what got reverted.
 !runs/synthesis-metformin-010-2026-04-29T09-52-15Z-044b/
+# Day 10.10 — TRACE_BACKEND=http multi-receipt re-run on metformin
+# corpus: 30 clusters produced, only 1 accepted by SPAR (cluster_01).
+# Honest result: trust-spine ordering correctly blocks synthesis on a
+# corpus where SPAR rejected 29 of 30 clusters. Live trace did NOT
+# materially raise the accept rate vs fixture mode — the rejections
+# are real claim-quality issues (protocol-as-claim, mechanism
+# inflation, sample-size critiques), not trace coverage gaps.
+!runs/metformin-multi-001-2026-04-29T10-27-39Z-4923/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/

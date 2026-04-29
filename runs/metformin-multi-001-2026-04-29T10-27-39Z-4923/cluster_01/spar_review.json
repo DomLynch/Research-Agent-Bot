@@ -1,0 +1,34 @@
+{
+  "submission_id": "metformin-multi-001-2026-04-29T10-27-39Z-4923-c01",
+  "verdict": "accept_clean",
+  "reviews": [
+    {
+      "judge_role": "evidence_auditor",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 10,
+      "rationale": "All three claims (C032, C033, C034) are supported by a single source (Ref 15), which corresponds to a completed trial with published results (NCT02308228). The citation traces confirm that every specific p-value mentioned in the claims (p=0.003, p<0.001, p=0.005, p=0.020, and p=0.007) is explicitly present in the source abstract. There are no missing citations for direct claims, and the role matches are consistent.",
+      "flagged_claims": []
+    },
+    {
+      "judge_role": "domain_skeptic",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 9,
+      "rationale": "The claims are highly calibrated and strictly limited to the reported outcomes of a specific clinical trial (NCT02308228). The author avoids the common pitfall of extrapolating these findings to a general population or making broad claims about metformin's effect on muscle wasting in all contexts. Instead, they report specific p-values and metrics (lean body mass, thigh muscle area, fiber percentage) directly from the source.\n\nThere is no evidence of mechanism inflation or over-claiming. The results are presented as comparative differences between a placebo and metformin group within the study, and the scope remains narrow and evidence-based.",
+      "flagged_claims": []
+    },
+    {
+      "judge_role": "final_judge",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 10,
+      "rationale": "The submission is exceptionally well-supported. The Evidence Auditor confirmed that every p-value and metric across all three claims (C032, C033, C034) is explicitly present in the source abstract of the cited trial (NCT02308228). The Domain Skeptic further noted that the author maintained a strict scope, reporting the trial's specific findings without over-extrapolating to a general population. Since both prior reviewers found no flaws in the citation trace or the calibration of the claims, and the data is verified as direct and accurate, I concur with the unanimous accept.",
+      "flagged_claims": []
+    }
+  ],
+  "dissent": null,
+  "final_judge_resolution": "The submission is exceptionally well-supported. The Evidence Auditor confirmed that every p-value and metric across all three claims (C032, C033, C034) is explicitly present in the source abstract of the cited trial (NCT02308228). The Domain Skeptic further noted that the author maintained a strict scope, reporting the trial's specific findings without over-extrapolating to a general population. Since both prior reviewers found no flaws in the citation trace or the calibration of the claims, and the data is verified as direct and accurate, I concur with the unanimous accept.",
+  "gate_override": null,
+  "prompt_version": "spar/2026-04-28"
+}

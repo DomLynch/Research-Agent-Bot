@@ -44,6 +44,8 @@ LLM PROPOSES. CODE DISPOSES.
 
 **Empirical effect on the existing 13-cluster metformin corpus:** with trust-spine ordering enforced, 12 of 13 receipts are SPAR-rejected. The accepted slice has 1 unique trial (NCT02308228, MASTERS) — below the cross-source ≥3 floor. Honest result: **synthesis cannot run on this corpus.** The system correctly refuses with an explicit error rather than producing a paper from rejected evidence.
 
+**Day 10.10 follow-up empirical run** (`runs/metformin-multi-001-2026-04-29T10-27-39Z-4923/`): re-ran `--multi-receipt` with `TRACE_BACKEND=http` (live ClinicalTrials.gov registry) to test whether SPAR rejections were primarily fixture-mode `nct_exists` failures. Result: **30 clusters produced, only 1 accepted (cluster_01, accept_clean).** The same gate-failure outcome — live trace did not materially raise the SPAR pass rate. Inspecting the rejection rationales confirms the failures are real claim-quality issues (protocol-as-claim, mechanism inflation, underpowered sample sizes, missing source text on certain receipts) — not trace coverage gaps that live registry could fix. The receipt pipeline needs upstream improvements (fact_extractor's protocol-vs-results discrimination, role-classifier tightening, possibly a per-cluster `--best-of` retry) before this corpus can support cross-source synthesis. Day 10.10 has done its job: the trust spine is enforced; the bottleneck is now correctly visible upstream of synthesis, not buried inside it.
+
 **Architecture:**
   - **Layer 1 (Days 1-9.5 + 10.8b)** — claim receipts: atomic single-source evidence with full audit trail. `--multi-receipt` mode emits one receipt per cohesive cluster from a single corpus.
   - **Layer 2 (Day 10)** — synthesis layer: aggregates N receipts → tension matrix → thesis tournament (LLM proposes K, code disposes) → sectioned writer → Q1-Q7 audit. Every prose sentence anchored to receipt_ids; no novel numerics; `paper_synthesis.md` artifact gated by audit ≥8.5/10.
@@ -165,7 +167,8 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
 | `4965b68` | 2026-04-29 | Day 10.8a: tighten gate to count unique TRIALS not deduped count; PROJECT_STATE refresh; LOC ceiling 7,500 → 8,000 with DECISIONS entry |
 | `115971c` | 2026-04-29 | Day 10.8b: multi-receipt mode — `cluster_all_claims()` exposed + `run_proof_multi_receipt()` + `--multi-receipt` flag (11 new tests, 732/732 pass, 7,765/8,000 LOC) |
 | `81a56b4` | 2026-04-29 | Day 10.8c: empirical proof — 13 cluster receipts across 7 canonical NCTs + 6 untrialed sources → real cross-source synthesis paper, honest audit 8.3/10 (Q3 ship-block fires correctly); orchestrator manifest-write fix |
-| _next_    | 2026-04-29 | Day 10.9: AAA achieved — writer auto-prepends Q3 transitions + thesis pair-coverage tolerance + synthesis_metadata proof fields + reviewer P2/P3 honesty; re-run on same 13 receipts scores 10.0/10 |
+| `534daea` | 2026-04-29 | Day 10.9: claimed AAA at 10.0/10 — REVERTED by Day 10.10 as gamed (pair-coverage validator loosening + cosmetic transition auto-prefix + SPAR-rejected receipts cited as evidence). Metadata proof fields + P2/P3 honesty kept |
+| _next_    | 2026-04-29 | Day 10.10: trust-spine ordering enforced — accepted-only filter + rejected_evidence quarantine + Q3 corpus-directness applicability + load-bearing N/A blocks ship + reverted gaming. Empirical: 1 of 30 clusters accepted on live-trace re-run → gate honestly fails, AAA not reached on this corpus |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`
