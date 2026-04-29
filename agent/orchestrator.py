@@ -591,25 +591,35 @@ async def run_proof_multi_receipt(
                 "multi_receipt": True,
             })
             per_cluster_receipts.append(paths)
+
+        # Write manifest BEFORE the finally clause: if the httpx client
+        # cleanup hangs (observed empirically when SPAR fires across
+        # many clusters and OpenRouter keep-alives don't tear down
+        # cleanly), the receipts and the manifest are still durable on
+        # disk. Without this ordering, a stuck aclose left the operator
+        # with N cluster_NN/ subdirs but no manifest, breaking the
+        # synthesis loader's discovery.
+        _write_json(manifest_path, {
+            "submission_id": submission_id,
+            "topic": topic,
+            "domain": domain,
+            "n_clusters": len(per_cluster_receipts),
+            "clusters": [
+                {
+                    "cluster_index": i + 1,
+                    "subdir": p.output_dir.name,
+                    "n_claims": len(graphs[i].claims),
+                    "spar_verdict": json.loads(
+                        p.spar_review.read_text()
+                    )["verdict"],
+                }
+                for i, p in enumerate(per_cluster_receipts)
+            ],
+            "started_at": started_at,
+            "finished_at": datetime.now(timezone.utc).isoformat(),
+        })
     finally:
         if own_client:
             await c.aclose()
 
-    _write_json(manifest_path, {
-        "submission_id": submission_id,
-        "topic": topic,
-        "domain": domain,
-        "n_clusters": len(per_cluster_receipts),
-        "clusters": [
-            {
-                "cluster_index": i + 1,
-                "subdir": p.output_dir.name,
-                "n_claims": len(graphs[i].claims),
-                "spar_verdict": json.loads(p.spar_review.read_text())["verdict"],
-            }
-            for i, p in enumerate(per_cluster_receipts)
-        ],
-        "started_at": started_at,
-        "finished_at": datetime.now(timezone.utc).isoformat(),
-    })
     return tuple(per_cluster_receipts)

@@ -1,0 +1,34 @@
+[
+  {
+    "claim_id": "C073",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[34] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C073",
+    "ref": 34,
+    "trace_type": "nct_exists",
+    "passed": false,
+    "detail": "NCT 'NCT03107884' not found in registry (fabricated or stale)",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C074",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[34] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C074",
+    "ref": 34,
+    "trace_type": "nct_exists",
+    "passed": false,
+    "detail": "NCT 'NCT03107884' not found in registry (fabricated or stale)",
+    "source_excerpt": null
+  }
+]

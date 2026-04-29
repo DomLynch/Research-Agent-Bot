@@ -46,8 +46,14 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
   - `scripts/e2e_metformin_proof_001.py`: `--multi-receipt` flag (mutually exclusive with `--best-of` and `--synthesize`). `--max-clusters N` caps emission. Output dir is `runs/<topic>-multi-001-<UTC>-<rand>/`.
   - 11 new tests (4 orchestrator, 7 compiler) covering cluster ordering, canonical bonus, all-singleton fallback, max_clusters cap, manifest refusal-to-clobber.
 
+**Day 10.8c — first empirical cross-source synthesis paper (this commit):**
+  - Producer: `runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/` — single fixture-mode metformin run with `--multi-receipt` produced **13 cluster receipts** (1 accept_caveated + 12 reject_critical/majority). 13 distinct canonical NCTs surfaced (MASTERS, Witham, Kulkarni, MILES, MET-PREVENT, Mohammed, Keys, etc.).
+  - Consumer: `runs/synthesis-metformin-010-2026-04-29T09-32-28Z-0d63/paper_synthesis.md` — synthesis across all 13 receipts. Cross-source gate **passed** at 13 unique canonical trials (was 1 in Day 10.6). Tension matrix detected 1 real non-orthogonal disagreement (cognitive null vs positive between two different trials). Synthesis sections rendered with anchored sentences, no novel numerics.
+  - **Honest audit: 8.33 / 10 (below 8.5 floor) — ship blocked.** Q3-mohammed-direct-vs-indirect (load-bearing) failed: synthesis bullets that anchor on indirect-only refs lack the required transition language ("indirect evidence suggests…" / "supportive but not direct…"). Thesis tournament: all 3 LLM candidates rejected by validators → fallback stub used. The gate works exactly as designed: paper exists, score reported honestly, ship-block fires.
+  - Orchestrator bug found + fixed in same commit: manifest write was outside the `try/finally` so a hung `httpx.aclose()` after 13 SPAR-heavy clusters left the run dir without `multi_receipt_manifest.json`. Moved the write inside `try` (before `finally`); manifest backfilled for the existing run from per-cluster receipts.
+
 **What's still missing for AAA:**
-  1. **Day 10.8c — empirical cross-source synthesis paper** (next slice): run the metformin pipeline ONCE with `--multi-receipt` → expect 4-5 cluster receipts spanning MASTERS / Konopka / MET-PREVENT / Kulkarni / etc. → `--synthesize` across them → audit honest score. Until this ships, "AAA-track" is aspirational.
+  1. **Day 10.9 — thesis tournament + writer fixes**: investigate why all 3 LLM thesis candidates fail validation on real cross-source corpora (likely: contract rules tightened too far in earlier slices, or the candidates need different prompting when the corpus is heterogeneous). Then fix the writer's Q3 transition rendering for direct/indirect-only bullets. Both are well-scoped writer-side issues, not architectural — the trust spine is verified.
   2. **External human review** of the prose quality. Q1-Q7 verifies structural fidelity (anchors, no novel numerics, hedge language) but not coherence or peer-review-grade readability.
 
 **Architecture milestones of Days 6-8:**
@@ -143,7 +149,8 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
 | `7d3e050` | 2026-04-29 | Day 10.5b + 10.6: `--synthesize` flag + first synthesis paper (12 metformin receipts; reported 10/10 BUT was false-positive — see 10.7) |
 | `5cc931e` | 2026-04-29 | Day 10.7: reviewer P1+P2 fix — dedup receipts + Q4 unique trials + N/A audit handling. Day 10.6 false-positive closed. |
 | `4965b68` | 2026-04-29 | Day 10.8a: tighten gate to count unique TRIALS not deduped count; PROJECT_STATE refresh; LOC ceiling 7,500 → 8,000 with DECISIONS entry |
-| _next_    | 2026-04-29 | Day 10.8b: multi-receipt mode — `cluster_all_claims()` exposed + `run_proof_multi_receipt()` + `--multi-receipt` flag (11 new tests, 732/732 pass, 7,765/8,000 LOC) |
+| `115971c` | 2026-04-29 | Day 10.8b: multi-receipt mode — `cluster_all_claims()` exposed + `run_proof_multi_receipt()` + `--multi-receipt` flag (11 new tests, 732/732 pass, 7,765/8,000 LOC) |
+| _next_    | 2026-04-29 | Day 10.8c: empirical proof — 13 cluster receipts across 13 unique canonical trials → real cross-source synthesis paper, honest audit 8.3/10 (Q3 ship-block fires correctly); orchestrator manifest-write fix |
 
 **Archived to `agent_archived/proof001/`** (per [FAILURES/research-agent-v1.md](FAILURES/research-agent-v1.md)):
 - 6 modules: `relevance.py`, `llm.py`, `judge.py`, `draft.py`, `qa.py`, `app.py`

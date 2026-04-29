@@ -36,8 +36,18 @@ runs/e2e-baselines/*.tmp
 !runs/metformin-001-2026-04-28T19-01-44Z-d1f4/
 # Day 10.6 — first synthesis paper: 12 metformin claim receipts → one
 # integrated paper_synthesis.md, audit score 10/10 across 7 quality
-# checks (all 3 load-bearing Q1/Q3/Q5 pass).
+# checks (all 3 load-bearing Q1/Q3/Q5 pass). Caveat: false-positive,
+# all 12 receipts anchored on MASTERS NCT02308228 (duplicate aggregation,
+# not real cross-source — closed by Day 10.7+10.8a gate fixes).
 !runs/synthesis-metformin-010-2026-04-29T05-52-53Z-caa9/
+# Day 10.8c — first real cross-source proof:
+#   producer: 13 cluster receipts from a single metformin --multi-receipt run
+!runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/
+#   consumer: synthesis across 13 unique canonical trials, audit 8.3/10
+#   (Q3 load-bearing fail on direct/indirect transition — system correctly
+#   ship-blocks). The architecture is verified end-to-end; remaining
+#   gap is writer-side, not gate-side.
+!runs/synthesis-metformin-010-2026-04-29T09-32-28Z-0d63/
 tests_legacy/golden/fixture_runs/
 tests_legacy/golden/fixture_runs_debug/
 *.egg-info/
