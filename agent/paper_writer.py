@@ -63,12 +63,15 @@ from agent.synthesis_writer import filter_accepted
 logger = logging.getLogger(__name__)
 
 
-# Day 10.16d — per-LLM-call timeout. If a single section call to the
-# LLM provider takes longer than this, we treat it as a hang and let
-# the retry loop move on. The real LLM round-trip is 30-90s; 180s
-# accommodates the long-paragraph generations without letting a stuck
-# call wedge the whole render.
-PER_CALL_TIMEOUT_SEC = 180.0
+# Day 10.16d → 10.16h — per-LLM-call timeout. If a single section
+# call (including chain fallback to Ministral) takes longer than this,
+# we treat it as a hang and let the retry loop move on. Originally
+# 180s, bumped to 240s in 10.16h: the inner mimo_timeout_sec is now
+# 180s (was 60s — see settings.py rationale), so the outer needs to
+# allow MiMo's full 180s PLUS some headroom for Ministral fallback if
+# MiMo errors hard. 240s = MiMo full time + 60s for a fast Ministral
+# round-trip.
+PER_CALL_TIMEOUT_SEC = 240.0
 
 PAPER_WRITER_VERSION = "paper-writer/2026-04-29-day10-16"
 

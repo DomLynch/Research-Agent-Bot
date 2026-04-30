@@ -90,7 +90,16 @@ def load_settings() -> Settings:
         mimo_base_url=os.environ.get(
             "MIMO_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"
         ),
-        mimo_timeout_sec=_float("MIMO_TIMEOUT_SEC", 60.0),
+        # Day 10.16h: bumped 60→180. The original 60s ceiling was set
+        # for short fact-extraction calls (a few hundred output tokens).
+        # Day 10.16's full-paper writer asks for 1,500-1,800 word
+        # sections — 2,000+ output tokens at MiMo's tokenization. Those
+        # routinely take 60-120s of generation time on the production
+        # endpoint, so the 60s httpx timeout was killing the request
+        # before MiMo finished, forcing the chain to fall back to
+        # Ministral (smaller, faster, but worse prose). 180s gives MiMo
+        # the headroom to complete on its first attempt.
+        mimo_timeout_sec=_float("MIMO_TIMEOUT_SEC", 180.0),
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
         openrouter_base_url=os.environ.get(
             "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"
