@@ -18,6 +18,7 @@ from __future__ import annotations
 import re
 from collections.abc import Sequence
 
+from agent.synthesis_audit_q8q9q10 import check_q8, check_q9, check_q10
 from agent.synthesis_schemas import (
     QualityCheckResult,
     ReceiptSummary,
@@ -51,6 +52,27 @@ Q_LOAD_BEARING_IDS = (
     "Q1-konopka-p008-hedging",
     "Q3-mohammed-direct-vs-indirect",
     "Q5-mohammed-healthspan-discipline",
+    # Day 10.17 — two new load-bearing checks added after the 10.17a
+    # empirical run. Q8 catches rejected-evidence leakage (a rejected
+    # receipt was cited in Background prose, violating Day 10.10
+    # trust-spine ordering). Q10 catches causal-verb overclaim on
+    # tier-C / mechanistic evidence (audit was passing 10/10 while
+    # prose used "demonstrates" / "robust" on preclinical-only data).
+    # Q9 (receipt-ID format) is not load-bearing — typos break
+    # readability but not the trust spine.
+    "Q8-quarantine-leakage",
+    "Q10-claim-strength-discipline",
+)
+# Subset of load-bearing IDs where N/A (applicable=False) is a clean
+# pass, NOT a coverage gap that blocks ship. Q8 N/A = "no rejected
+# receipts in corpus" (structurally good — nothing to leak). Q10 N/A =
+# "no tier-C / mechanistic receipts" (no weak evidence to overclaim
+# on). Contrast with Q1/Q3/Q5 where N/A means the corpus is too thin
+# to be honestly evaluated on that invariant — that genuinely should
+# block ship.
+Q_LOAD_BEARING_NA_OK_IDS = (
+    "Q8-quarantine-leakage",
+    "Q10-claim-strength-discipline",
 )
 
 
@@ -519,6 +541,9 @@ def audit_synthesis_paper(
         _check_q5(paper, receipts),
         _check_q6(paper, receipts),
         _check_q7(paper, receipts),
+        check_q8(paper, receipts),
+        check_q9(paper, receipts),
+        check_q10(paper, receipts),
     )
     applicable = [c for c in checks if c.applicable]
     passed_applicable = sum(1 for c in applicable if c.passed)
@@ -536,14 +561,20 @@ def audit_synthesis_paper(
     load_bearing_all = [
         c for c in checks if c.question_id in Q_LOAD_BEARING_IDS
     ]
+    # Day 10.17: Q8/Q10 N/A is structurally fine, not a coverage gap.
     load_bearing_pass = all(
-        c.applicable and c.passed for c in load_bearing_all
+        c.passed and (
+            c.applicable or c.question_id in Q_LOAD_BEARING_NA_OK_IDS
+        )
+        for c in load_bearing_all
     )
     failed_load = [
         c.question_id for c in load_bearing_all if not c.passed
     ]
     skipped_load = [
-        c.question_id for c in load_bearing_all if not c.applicable
+        c.question_id for c in load_bearing_all
+        if not c.applicable
+        and c.question_id not in Q_LOAD_BEARING_NA_OK_IDS
     ]
 
     insufficient_coverage = total_applicable < MIN_APPLICABLE_CHECKS

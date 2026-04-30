@@ -547,3 +547,232 @@ def test_insufficient_coverage_blocks_ship_even_at_high_score() -> None:
     if applicable_count < 4:
         assert "INSUFFICIENT COVERAGE" in audit.notes
         assert "ship-criterion met" not in audit.notes
+
+
+# ============================================================
+# Q8 — rejected-evidence leakage (Day 10.17 — load-bearing)
+# ============================================================
+# Found empirically in 10.17a verification: the Background section of
+# the rendered paper cited cfab-c02, the SPAR-rejected frailty receipt.
+# Day 10.10 trust-spine ordering says rejected receipts may only
+# appear in their dedicated "Rejected / Contested Evidence" section
+# (and the deterministic Methods + References blocks that describe
+# the rejection). Anywhere else = trust-spine violation. Q8 is
+# load-bearing — leaking rejected evidence into headline prose
+# undermines the SPAR gate's whole purpose.
+
+
+def _rejected(rid: str) -> ReceiptSummary:
+    """Helper: build a SPAR-rejected receipt for Q8 tests."""
+    return ReceiptSummary(
+        receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
+        thesis_text=f"thesis for {rid}",
+        spar_verdict="reject_majority",
+        n_claims=1, n_failed_traces=0, canonical_trial_id=None,
+        evidence_tier="A1", directness="direct",
+        outcome_class="frailty", effect_direction="null",
+        p_values=("p=0.96",), population_summary="older adults",
+    )
+
+
+def test_q8_passes_when_no_rejected_receipts() -> None:
+    """No rejected receipts in corpus → Q8 has nothing to check (N/A)."""
+    receipts = (_summary("r-A"),)
+    paper = _paper("body without any rejected ID", receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q8 = next(c for c in audit.checks if c.question_id.startswith("Q8"))
+    assert q8.applicable is False
+    assert q8.passed is True
+
+
+def test_q8_fails_when_rejected_id_appears_in_background_prose() -> None:
+    """Rejected receipt cited outside the quarantine section → fail."""
+    receipts = (_summary("r-A"), _rejected("r-rej-X"))
+    body = (
+        "## Background\n\nMetformin trials covered diverse outcomes; "
+        "for example, r-rej-X investigated walk speed.\n\n"
+        "## Rejected / Contested Evidence\n\nr-rej-X was rejected.\n"
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q8 = next(c for c in audit.checks if c.question_id.startswith("Q8"))
+    assert q8.applicable is True
+    assert q8.passed is False, q8.detail
+    assert "r-rej-X" in q8.detail
+
+
+def test_q8_passes_when_rejected_id_only_in_quarantine_section() -> None:
+    """Rejected receipt cited ONLY in Rejected/Contested Evidence,
+    Methods (which describes SPAR), or References → pass."""
+    receipts = (_summary("r-A"), _rejected("r-rej-X"))
+    body = (
+        "## Background\n\nGeneral metformin background prose.\n\n"
+        "## Rejected / Contested Evidence\n\n"
+        "r-rej-X was rejected by SPAR for over-generalization.\n\n"
+        "## References\n\n[5] r-rej-X (QUARANTINED)\n"
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q8 = next(c for c in audit.checks if c.question_id.startswith("Q8"))
+    assert q8.passed is True, q8.detail
+
+
+def test_q8_is_load_bearing() -> None:
+    assert "Q8-quarantine-leakage" in Q_LOAD_BEARING_IDS
+
+
+# ============================================================
+# Q9 — receipt-ID format validity (Day 10.17)
+# ============================================================
+# Found empirically in 10.17a verification: line 341 of full_paper.md
+# cited `cfab-01` and `cfab-04` instead of `cfab-c01` and `cfab-c04`.
+# The LLM dropped the `c` prefix in inline prose. The audit's existing
+# anchor validator only checks the `_Cited:` markers below each
+# paragraph; it doesn't scan inline citations within prose. Q9 closes
+# this hole by extracting every receipt-id-shaped token from the body
+# and verifying it matches a real receipt_id from the corpus.
+
+
+def test_q9_passes_when_all_inline_ids_match_corpus() -> None:
+    """Realistic-shape receipt IDs (4+ hyphens). Both cited tokens
+    match the corpus → pass."""
+    receipts = (
+        _summary("metformin-multi-001-cfab-c01"),
+        _summary("metformin-multi-001-cfab-c02"),
+    )
+    body = (
+        "Background prose citing metformin-multi-001-cfab-c01 and "
+        "metformin-multi-001-cfab-c02 only."
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q9 = next(c for c in audit.checks if c.question_id.startswith("Q9"))
+    assert q9.passed is True, q9.detail
+
+
+def test_q9_fails_on_malformed_receipt_id_in_inline_prose() -> None:
+    """Empirical bug: `cfab-01` (missing the `c`) appears in line 341
+    of the 10.17a full paper. Real id is `cfab-c01`. Q9 must catch."""
+    receipts = (
+        _summary("metformin-multi-001-cfab-c01"),
+        _summary("metformin-multi-001-cfab-c04"),
+    )
+    # Note "...cfab-01" / "...cfab-04" — missing the c prefix on the
+    # last segment. Same overall hyphen count as valid IDs so Q9 cannot
+    # discriminate by length alone — must check actual id match.
+    body = (
+        "Conversely, CT scans suggested metformin-multi-001-cfab-01 "
+        "found suppression. Preclinical data from "
+        "metformin-multi-001-cfab-04 showed extension."
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q9 = next(c for c in audit.checks if c.question_id.startswith("Q9"))
+    assert q9.passed is False, q9.detail
+    assert (
+        "metformin-multi-001-cfab-01" in q9.detail
+        or "metformin-multi-001-cfab-04" in q9.detail
+    )
+
+
+def test_q9_ignores_receipt_id_lookalikes_that_are_not_in_token_form() -> None:
+    """Q9 only checks tokens that look like our receipt-id format
+    (slug-with-multiple-hyphens-and-cluster-suffix). Bare numbers,
+    NCT IDs, ISRCTN IDs, and dates don't trigger."""
+    receipts = (_summary("metformin-multi-001-cfab-c01"),)
+    body = (
+        "Trial NCT02308228 in 2023 enrolled p=0.005 patients per arm. "
+        "Citing metformin-multi-001-cfab-c01 for the result."
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q9 = next(c for c in audit.checks if c.question_id.startswith("Q9"))
+    assert q9.passed is True, q9.detail
+
+
+# ============================================================
+# Q10 — claim-strength on tier-C / mechanistic evidence (load-bearing)
+# ============================================================
+# Found in three independent reviews of the 10.17a artifact: the
+# rendered paper uses causal verbs ("improves", "drives", "demonstrates",
+# "potent", "robust") on sentences that cite tier-C or mechanistic
+# evidence — tier-C is preclinical / model organism, where the
+# evidence is not strong enough for unhedged causal language. Q10
+# fails when a sentence cites a tier-C or mechanistic receipt AND
+# uses an unhedged causal verb.
+
+
+def _mech_receipt(rid: str) -> ReceiptSummary:
+    return ReceiptSummary(
+        receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
+        thesis_text=f"thesis for {rid}",
+        spar_verdict="accept_clean",
+        n_claims=1, n_failed_traces=0, canonical_trial_id=None,
+        evidence_tier="C", directness="mechanistic",
+        outcome_class="longevity", effect_direction="positive",
+        p_values=(), population_summary="",
+    )
+
+
+def test_q10_passes_when_no_tier_c_receipts() -> None:
+    """Corpus has only A1/direct receipts — Q10 has no tier-C to check."""
+    receipts = (_summary("r-A"), _summary("r-B"))
+    body = "Metformin improves muscle function via robust evidence."
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q10 = next(c for c in audit.checks if c.question_id.startswith("Q10"))
+    assert q10.applicable is False
+    assert q10.passed is True
+
+
+def test_q10_fails_when_tier_c_sentence_uses_unhedged_causal_verb() -> None:
+    """Sentence cites a mechanistic receipt + uses 'demonstrates'
+    without any hedge phrase → fail."""
+    receipts = (
+        _summary("metformin-multi-001-cfab-c01"),
+        _mech_receipt("metformin-multi-001-cfab-c04"),
+    )
+    body = (
+        "Metformin demonstrates a robust effect on longevity in "
+        "model organisms (metformin-multi-001-cfab-c04)."
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q10 = next(c for c in audit.checks if c.question_id.startswith("Q10"))
+    assert q10.applicable is True
+    assert q10.passed is False, q10.detail
+
+
+def test_q10_passes_when_tier_c_sentence_includes_hedge() -> None:
+    """Same causal verb as above, but sentence contains 'may' or
+    'suggests' or 'consistent with' — passes."""
+    receipts = (
+        _summary("metformin-multi-001-cfab-c01"),
+        _mech_receipt("metformin-multi-001-cfab-c04"),
+    )
+    body = (
+        "Evidence suggests metformin may demonstrate effects on "
+        "longevity in model organisms (metformin-multi-001-cfab-c04)."
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q10 = next(c for c in audit.checks if c.question_id.startswith("Q10"))
+    assert q10.passed is True, q10.detail
+
+
+def test_q10_passes_when_unhedged_sentence_only_cites_direct_receipt() -> None:
+    """Q10 only fires on sentences citing tier-C / mechanistic receipts.
+    A direct A1 receipt with an unhedged causal verb is fine — that's
+    what direct clinical evidence is for."""
+    receipts = (_summary("r-A", directness="direct", tier="A1"),)
+    body = "Metformin demonstrates a robust suppression effect (r-A)."
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q10 = next(c for c in audit.checks if c.question_id.startswith("Q10"))
+    # No tier-C receipts in corpus → N/A.
+    assert q10.applicable is False
+    assert q10.passed is True
+
+
+def test_q10_is_load_bearing() -> None:
+    assert "Q10-claim-strength-discipline" in Q_LOAD_BEARING_IDS

@@ -407,23 +407,10 @@ def _detect_population_summary(
 ) -> str:
     """Extract a one-line clinical-population descriptor for direct
     RCT receipts. Returns "" for any non-direct directness OR when no
-    canonical pattern matches a direct receipt.
-
-    Day 10.17a: tier-gated. The regex set matches any abstract that
-    mentions a clinical population — including model-organism reviews
-    and mechanistic studies that mention T2D only as background
-    context. Empirically (10.16i run, c04 longevity review + c05
-    untrialed mechanistic), this caused the Limitations section to
-    falsely claim all studies focused on T2D. Fix: only run text-
-    mining for direct clinical RCT receipts.
-
-    Default kwarg = "indirect" (fail-closed): a future caller that
-    forgets the kwarg gets "" instead of re-introducing the bug.
-
-    Note: a "" return is now ambiguous between "no canonical pattern
-    matched a direct receipt" and "directness gated us out before the
-    regex ran." Downstream consumers cannot distinguish; use the
-    `directness` field on the same receipt as the disambiguator.
+    canonical pattern matches. Default kwarg "indirect" is fail-
+    closed: a future caller that forgets the kwarg gets "" instead
+    of re-introducing the 10.16i bug where mechanistic receipts
+    inherited "type 2" from contextual T2D mentions.
     """
     if directness != "direct":
         return ""
