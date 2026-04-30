@@ -8,19 +8,21 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 10,000 LOC (set by DECISIONS.md 2026-04-29 Day 10.16 —
-the user-facing deliverable expansion from a ~1k-word structured
-brief to a 5–15k-word full research paper added ~1,000 cloc for the
-new paper_writer.py + paper_writer_prompts.py + tiered validation +
-cross-domain tension detection. 10,000 covers Day 10.16 fully with
-~600 cloc headroom for the rule fixes in Phase 3 and the audit
-extensions in Phase 4.
+Current ceiling: 12,000 LOC (set by DECISIONS.md 2026-04-30 Day 10.17 —
+the audit-quality expansion adds Q8 quarantine-leakage / Q9 receipt-id
+format / Q10 claim-strength validators (Phase 1, ~200 cloc), plus the
+upcoming Phase 2 tension-matrix cross-domain rules (~80 cloc) and
+Phase 3 DOI/PMID citation upgrade (~50 cloc). 12,000 covers Day 10.17
+fully with ~2,000 cloc headroom for any small follow-on validators.
+The user explicitly approved this raise on 2026-04-30 with the
+constraint "if needed and not bloat" — i.e. each new line must earn
+its life via the constraint surface, not through abstraction theater.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 10000
+TOTAL_LIMIT = 12000
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

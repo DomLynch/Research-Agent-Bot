@@ -24,7 +24,7 @@ LLM PROPOSES. CODE DISPOSES.
 ```
 
 ## Constraints
-- Hard ceiling: **5,500 LOC runtime** for `agent/` (raised 2026-04-28 to fund Day 4 writer + GateOverride trust-spine; previous 3,500 → 4,800 → 5,500 history in DECISIONS.md). Test LOC budgeted separately.
+- Hard ceiling: **12,000 LOC runtime** for `agent/` (raised 2026-04-30 per DECISIONS.md Day 10.17 — funds the audit-quality expansion: Q8/Q9/Q10 validators + Phase 1.5 wiring already landed + Phase 2 tension matrix + Phase 3 DOI/PMID pending; full lineage 3,500 → 4,800 → 5,500 → 7,500 → 8,000 → 8,500 → 10,000 → 12,000 in DECISIONS.md). Test LOC budgeted separately.
 - Soft per-file budget: **300 LOC** (v4 Rule 54). Hard per-file cap: **600 LOC**.
 - Soft per-function budget: **50 LOC** (v4 Rule 54).
 - Runtime dep: `httpx` only. **Topic packs use stdlib `tomllib` (TOML, not YAML)** — no PyYAML.
@@ -126,7 +126,7 @@ The first synthesis attempt (Day 10.6, `runs/synthesis-metformin-010-2026-04-29T
 
 **Tag:** `v1.1-final` → `89ee064` (preserves V1.1 LLM-coupled state for archaeology)
 **Tests:** 777/777 passing in 0.64s. ruff clean. git diff --check clean.
-**Runtime LOC (cloc-style, enforced by `tests/test_loc_budget.py`):** 9,614 / **10,000** ceiling (Day 10.16 added the full-paper writer module + builders + deterministic Methods/References + word-count retry framework; Day 10.16c added per-section code-level word floors + retry loop).
+**Runtime LOC (cloc-style, enforced by `tests/test_loc_budget.py`):** 9,999 / **12,000** ceiling (raised 2026-04-30 per DECISIONS.md Day 10.17 to fund the audit-quality expansion: Q8 quarantine-leakage + Q9 receipt-id format + Q10 claim-strength + Phase 1.5 wiring landed; Phase 2 tension-matrix cross-domain + Phase 3 DOI/PMID citations pending).
 
 **Per-file (cloc-style, soft cap 300, hard cap 600 — synthesis layer adds 4 new modules):**
 - Trust-spine: `spar.py` 412, `citation_trace.py` 485, `fact_extractor.py` 435, `orchestrator.py` 325, `schemas.py` 281, `llm_client.py` 276, `evidence_cards.py` 261, `writer.py` 259
