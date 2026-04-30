@@ -121,6 +121,53 @@ def test_indirect_directness_also_satisfies_mix() -> None:
     assert synthesis_has_mixed_directness_anchor(section, receipts) is True
 
 
+def test_day_10_16i_one_good_one_bad_mixed_anchor_still_fails() -> None:
+    """Day 10.16h empirical run had 4 mixed-directness anchors, 3 with
+    valid transitions and 1 without ('The inhibition of muscle growth
+    suggests...'). The audit failed; my old retry predicate had returned
+    True after seeing the first good anchor. Day 10.16i aligns the
+    predicate with the audit: ALL mixed-directness anchors must have
+    a transition phrase."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+    ]
+    section = _section(
+        SynthesisClaimAnchor(
+            sentence="Mechanistically, metformin modulates AMPK signaling and the muscle outcome is mixed.",
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+        SynthesisClaimAnchor(
+            sentence="The inhibition of muscle growth suggests a tradeoff against systemic effects.",
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+    )
+    # Audit semantics: ANY mixed-directness anchor lacking transition fails.
+    assert synthesis_has_mixed_directness_anchor(section, receipts) is False
+
+
+def test_day_10_16i_all_mixed_anchors_with_transition_passes() -> None:
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+    ]
+    section = _section(
+        SynthesisClaimAnchor(
+            sentence="Mechanistically, metformin modulates AMPK signaling.",
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+        SynthesisClaimAnchor(
+            sentence="However, the inhibition of muscle growth complicates the picture.",
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+        SynthesisClaimAnchor(
+            sentence="Consequently, clinical use must weigh both effects.",
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+    )
+    assert synthesis_has_mixed_directness_anchor(section, receipts) is True
+
+
 def test_consequently_satisfies_q3_after_day_10_16f_widening() -> None:
     """Day 10.16e empirical run produced a Q3-compliant integrating
     sentence ('Consequently, while metformin may...') that the audit

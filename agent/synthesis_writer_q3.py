@@ -62,14 +62,20 @@ def _normalize(text: str) -> str:
 def synthesis_has_mixed_directness_anchor(
     section: SynthesisSection, receipts: Sequence[ReceiptSummary],
 ) -> bool:
-    """Q3 invariant: when the corpus has both `direct` and (`mechanistic`
-    or `indirect`) receipts, at least one synthesis anchor must cite
-    BOTH a direct AND a mechanistic/indirect receipt in its
-    `receipt_ids` list AND start with a transition phrase.
+    """Q3 invariant — must mirror agent/synthesis_audit.py::_check_q3.
 
-    Returns True if the invariant is satisfied OR not applicable
-    (uniform-directness corpus). Returns False only when the corpus
-    is mixed-directness but the section has no integrating paragraph.
+    When the corpus has both `direct` and (`mechanistic` or `indirect`)
+    receipts, the synthesis section must produce ≥1 mixed-directness
+    anchor AND every mixed-directness anchor must start with a
+    transition phrase. Returns True iff the invariant is satisfied
+    (including the uniform-directness vacuous case).
+
+    Day 10.16i fix: previously this returned True as soon as ONE
+    mixed-directness anchor with a transition was found, but the audit
+    fails if ANY mixed-directness anchor lacks a transition. The
+    mismatch let runs slip past the writer's retry only to fail at
+    audit time. Now both predicates use AND semantics: every mixed-
+    directness anchor must comply.
     """
     by_id = {r.receipt_id: r for r in receipts}
     corpus_dirs = {r.directness for r in receipts}
@@ -78,6 +84,7 @@ def synthesis_has_mixed_directness_anchor(
     )
     if not has_mixed_corpus:
         return True
+    mixed_count = 0
     for anchor in section.anchors:
         dirs = {
             by_id[rid].directness
@@ -89,10 +96,12 @@ def synthesis_has_mixed_directness_anchor(
         )
         if not is_mixed:
             continue
+        mixed_count += 1
         sentence_norm = _normalize(anchor.sentence)
-        if any(t in sentence_norm for t in Q3_TRANSITION_PHRASES):
-            return True
-    return False
+        if not any(t in sentence_norm for t in Q3_TRANSITION_PHRASES):
+            return False
+    # corpus mixed but synthesis has no integrating anchor → fail
+    return mixed_count > 0
 
 
 def q3_retry_user_prompt(
