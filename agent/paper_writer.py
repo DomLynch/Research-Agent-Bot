@@ -207,6 +207,13 @@ def _build_user_prompt(
     lines = [f"Topic: {topic}", "", "ACCEPTED RECEIPTS:"]
     for r in receipts:
         paper_tier = derive_paper_tier(r)
+        # Day 10.17a: empty population_summary now means tier-gated-out
+        # (mechanistic / indirect receipt) per agent/synthesis.py. Use
+        # an explicit sentinel so the LLM hedges honestly instead of
+        # hallucinate-filling a clinical population it doesn't have.
+        pop = r.population_summary or (
+            "N/A (mechanistic / indirect — no enrolled clinical population)"
+        )
         lines.append(
             f"  - id: {r.receipt_id}\n"
             f"    paper_tier: {paper_tier}\n"
@@ -214,7 +221,7 @@ def _build_user_prompt(
             f"    directness: {r.directness}\n"
             f"    effect_direction: {r.effect_direction}\n"
             f"    canonical_trial_id: {r.canonical_trial_id or '(none)'}\n"
-            f"    population: {r.population_summary}\n"
+            f"    population: {pop}\n"
             f"    p_values: {list(r.p_values)}\n"
             f"    thesis: {r.thesis_text[:300]}"
         )

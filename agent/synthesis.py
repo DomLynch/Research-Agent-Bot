@@ -399,10 +399,34 @@ _POPULATION_PATTERNS = (
 )
 
 
-def _detect_population_summary(thesis_text: str, items_by_ref: Mapping[int, dict]) -> str:
-    """Extract a one-line population descriptor from the thesis text or
-    the first supporting item's abstract. Best-effort — empty string
-    when no canonical pattern matches."""
+def _detect_population_summary(
+    thesis_text: str,
+    items_by_ref: Mapping[int, dict],
+    *,
+    directness: str = "indirect",
+) -> str:
+    """Extract a one-line clinical-population descriptor for direct
+    RCT receipts. Returns "" for any non-direct directness OR when no
+    canonical pattern matches a direct receipt.
+
+    Day 10.17a: tier-gated. The regex set matches any abstract that
+    mentions a clinical population — including model-organism reviews
+    and mechanistic studies that mention T2D only as background
+    context. Empirically (10.16i run, c04 longevity review + c05
+    untrialed mechanistic), this caused the Limitations section to
+    falsely claim all studies focused on T2D. Fix: only run text-
+    mining for direct clinical RCT receipts.
+
+    Default kwarg = "indirect" (fail-closed): a future caller that
+    forgets the kwarg gets "" instead of re-introducing the bug.
+
+    Note: a "" return is now ambiguous between "no canonical pattern
+    matched a direct receipt" and "directness gated us out before the
+    regex ran." Downstream consumers cannot distinguish; use the
+    `directness` field on the same receipt as the disambiguator.
+    """
+    if directness != "direct":
+        return ""
     candidates: list[str] = [thesis_text]
     for item in items_by_ref.values():
         if isinstance(item, dict):
@@ -512,7 +536,7 @@ def build_receipt_summary(
         effect_direction=effect_direction,
         p_values=p_values,
         population_summary=_detect_population_summary(
-            thesis_text, items_by_ref,
+            thesis_text, items_by_ref, directness=directness,
         ),
     )
 

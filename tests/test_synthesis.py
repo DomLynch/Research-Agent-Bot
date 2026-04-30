@@ -30,6 +30,7 @@ from __future__ import annotations
 
 from agent.synthesis import (
     MIN_UNIQUE_TRIALS_FOR_SYNTHESIS,
+    _detect_population_summary,
     build_receipt_summary,
     build_tension_matrix,
     count_unique_trials,
@@ -118,6 +119,112 @@ def test_outcome_class_priority_muscle_over_mechanism() -> None:
     style abstracts that mention both hypertrophy AND AMPK."""
     text = "Metformin blunts muscle hypertrophy AND engages AMPK signaling."
     assert detect_outcome_class(text) == "muscle_function"
+
+
+# ============================================================
+# _detect_population_summary — Day 10.17a tier-gated extraction
+# ============================================================
+# Bug found in 10.16i empirical: the regex set matched any abstract
+# mentioning "type 2 diabetes" anywhere, including model-organism
+# longevity reviews and untrialed mechanistic studies that mention
+# T2D only as background context. The Limitations section then said
+# "all studies focused on T2D" which was factually wrong for c04
+# (longevity review) and c05 (mechanistic, no trial).
+#
+# Day 10.17a fix: gate the regex extraction by directness. Only
+# direct clinical RCT receipts (where a population was actually
+# enrolled and studied) get text-mined for population. Mechanistic /
+# indirect receipts return "" so downstream prose can hedge honestly
+# instead of inheriting a clinical label they don't deserve.
+
+
+def test_population_summary_extracts_from_direct_receipt_abstract() -> None:
+    """Direct receipt with abstract describing 'older adults' →
+    population_summary captures that span. The regex returns the
+    FIRST canonical pattern match (one of: 'older adults', 'aged X-Y',
+    'postmenopausal', etc.) — not concatenated spans."""
+    items = {
+        1: {"abstract": "Trial enrolled older adults aged 65 with sarcopenia."},
+    }
+    out = _detect_population_summary(
+        thesis_text="metformin blunts hypertrophy",
+        items_by_ref=items,
+        directness="direct",
+    )
+    assert "older adults" in out.lower(), (
+        f"expected 'older adults' span; got {out!r}"
+    )
+
+
+def test_population_summary_does_not_inherit_clinical_label_for_mechanistic() -> None:
+    """Mechanistic receipt whose abstract mentions T2D as context
+    → returns "" (NOT 'type 2'). This is the load-bearing fix for
+    the c04/c05 bug from 10.16i."""
+    items = {
+        1: {"abstract": (
+            "Metformin, a first-line drug for type 2 diabetes, has been "
+            "explored as a geroprotective intervention. We review the "
+            "preclinical longevity literature in C. elegans and mice."
+        )},
+    }
+    out = _detect_population_summary(
+        thesis_text=(
+            "Metformin shows lifespan extension in model organisms via "
+            "mitochondrial mechanisms."
+        ),
+        items_by_ref=items,
+        directness="mechanistic",
+    )
+    assert out == "", (
+        f"mechanistic receipt should not inherit clinical population from "
+        f"contextual T2D mention; got {out!r}"
+    )
+
+
+def test_population_summary_returns_empty_for_indirect_receipt() -> None:
+    """Indirect (review/meta) receipt that mentions populations in
+    cited studies should not inherit them as its own population."""
+    items = {
+        1: {"abstract": "Review of trials in postmenopausal type 2 diabetes patients."},
+    }
+    out = _detect_population_summary(
+        thesis_text="systematic review of metformin trials",
+        items_by_ref=items,
+        directness="indirect",
+    )
+    assert out == "", (
+        "indirect-evidence receipt should not adopt populations from cited trials"
+    )
+
+
+def test_population_summary_empty_when_direct_but_no_pattern_match() -> None:
+    """Direct receipt with abstract that has no canonical population
+    pattern → empty string (existing behavior preserved)."""
+    items = {
+        1: {"abstract": "Generic prose with no canonical population marker."},
+    }
+    out = _detect_population_summary(
+        thesis_text="metformin study",
+        items_by_ref=items,
+        directness="direct",
+    )
+    assert out == ""
+
+
+def test_population_summary_fails_closed_on_empty_directness() -> None:
+    """Defensive: a malformed claim graph with directness="" must not
+    re-introduce the bug. The default kwarg is "indirect" so any future
+    caller that forgets to pass directness also fails closed."""
+    items = {
+        1: {"abstract": "Trial enrolled older adults aged 65 with T2D."},
+    }
+    assert _detect_population_summary(
+        thesis_text="metformin study", items_by_ref=items, directness="",
+    ) == ""
+    # Default-kwarg path: caller forgot directness — must fail closed.
+    assert _detect_population_summary(
+        thesis_text="metformin study", items_by_ref=items,
+    ) == ""
 
 
 # ============================================================
