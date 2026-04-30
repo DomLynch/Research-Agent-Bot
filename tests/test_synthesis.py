@@ -435,17 +435,163 @@ def test_metformin_reference_corpus_tension_signals() -> None:
     pairs = {(p.receipt_a_id, p.receipt_b_id): p for p in matrix.pairs}
     assert len(pairs) == 10  # C(5, 2)
 
-    # Cross-outcome pairs are orthogonal — different outcome classes.
-    # MASTERS (muscle) vs Konopka (cardiometabolic) is one of them.
+    # Cross-outcome pairs where BOTH are direct → orthogonal
+    # (different clinical outcomes, no cross-domain trust hazard).
     assert pairs[("konopka", "masters")].kind == "orthogonal"
     assert pairs[("masters", "met-prevent")].kind == "orthogonal"
-    assert pairs[("masters", "miles")].kind == "orthogonal"
-    assert pairs[("masters", "mohammed")].kind == "orthogonal"
     assert pairs[("konopka", "met-prevent")].kind == "orthogonal"
+
+    # Day 10.17 Phase 2: cross-outcome pairs where ONE is direct/clinical
+    # and the OTHER is mechanistic/indirect now surface as
+    # mechanism_vs_clinical — the cross-domain trust hazard the metformin
+    # paper hinges on (clinical muscle suppression vs mechanistic /
+    # preclinical longevity promise).
+    assert pairs[("masters", "miles")].kind == "mechanism_vs_clinical"
+    assert pairs[("masters", "mohammed")].kind == "mechanism_vs_clinical"
+    assert pairs[("konopka", "miles")].kind == "mechanism_vs_clinical"
+    assert pairs[("konopka", "mohammed")].kind == "mechanism_vs_clinical"
+    assert pairs[("met-prevent", "miles")].kind == "mechanism_vs_clinical"
+    assert pairs[("met-prevent", "mohammed")].kind == "mechanism_vs_clinical"
 
     # The two mechanism receipts share outcome class → orthogonal
     # (both unclear direction, no useful tension to surface).
     assert pairs[("miles", "mohammed")].kind == "orthogonal"
+
+
+# ============================================================
+# Day 10.17 Phase 2 — mechanism_vs_clinical cross-domain detection
+# ============================================================
+# All three external reviewers of 10.17a flagged that the tension
+# matrix said "no non-orthogonal tensions" while the rendered paper
+# argued a clear metabolic-vs-muscle tension. Root cause: the old
+# classifier returned "orthogonal" whenever outcome classes differed,
+# even when the pair was the cross-domain trust hazard the synthesis
+# writer must keep separate (direct clinical evidence on outcome A
+# fused with mechanistic / preclinical evidence on outcome B).
+# Day 10.17 Phase 2 adds the `mechanism_vs_clinical` kind — same
+# severity as `indirectness_gap` (3) since both are direct-vs-
+# mechanistic trust hazards, just in the cross-class variant.
+
+
+def test_mechanism_vs_clinical_fires_on_direct_plus_mechanistic_cross_outcome() -> None:
+    """The metformin paper's central tension: c01 (muscle, direct) + c04
+    (longevity, mechanistic) — different outcomes, one direct clinical,
+    one mechanistic preclinical. Must be flagged, not buried as
+    'orthogonal' as the old classifier did."""
+    c01 = _summary(
+        "c01", outcome="muscle_function", direction="negative",
+        directness="direct", tier="A1",
+    )
+    c04 = _summary(
+        "c04", outcome="longevity", direction="unclear",
+        directness="mechanistic", tier="C",
+    )
+    matrix = build_tension_matrix([c01, c04])
+    pair = matrix.pairs[0]
+    assert pair.kind == "mechanism_vs_clinical"
+    assert pair.severity == 3  # same as indirectness_gap
+    assert "cross-domain" in pair.summary
+    assert pair in matrix.non_orthogonal()
+
+
+def test_mechanism_vs_clinical_also_fires_on_indirect_directness() -> None:
+    """`indirect` directness counts the same as `mechanistic` — both are
+    non-clinical evidence types that must not be fused with direct
+    findings on a different outcome."""
+    a = _summary(
+        "direct-A", outcome="muscle_function", direction="negative",
+        directness="direct",
+    )
+    b = _summary(
+        "indirect-B", outcome="longevity", direction="unclear",
+        directness="indirect",
+    )
+    matrix = build_tension_matrix([a, b])
+    assert matrix.pairs[0].kind == "mechanism_vs_clinical"
+
+
+def test_mechanism_vs_clinical_does_not_fire_when_both_direct_cross_outcome() -> None:
+    """Two direct A1 trials on different outcomes are still orthogonal
+    — they're both clinical, just on different endpoints. No cross-
+    domain trust hazard."""
+    a = _summary(
+        "a", outcome="muscle_function", direction="negative",
+        directness="direct",
+    )
+    b = _summary(
+        "b", outcome="cardiometabolic", direction="negative",
+        directness="direct",
+    )
+    matrix = build_tension_matrix([a, b])
+    assert matrix.pairs[0].kind == "orthogonal"
+
+
+def test_mechanism_vs_clinical_does_not_fire_when_both_mechanistic_cross_outcome() -> None:
+    """Two mechanistic preclinical receipts on different outcomes are
+    still orthogonal — both are non-clinical, no direct-vs-mechanistic
+    trust hazard."""
+    a = _summary(
+        "a", outcome="longevity", direction="unclear",
+        directness="mechanistic",
+    )
+    b = _summary(
+        "b", outcome="cardiometabolic", direction="unclear",
+        directness="mechanistic",
+    )
+    matrix = build_tension_matrix([a, b])
+    assert matrix.pairs[0].kind == "orthogonal"
+
+
+def test_mechanism_vs_clinical_does_not_steal_from_indirectness_gap() -> None:
+    """Same outcome class + direct + mechanistic still goes to
+    indirectness_gap, not mechanism_vs_clinical. The cross-class
+    variant only fires when outcomes differ."""
+    a = _summary(
+        "a", outcome="muscle_function", direction="negative",
+        directness="direct",
+    )
+    b = _summary(
+        "b", outcome="muscle_function", direction="unclear",
+        directness="mechanistic",
+    )
+    matrix = build_tension_matrix([a, b])
+    assert matrix.pairs[0].kind == "indirectness_gap"
+
+
+def test_mechanism_vs_clinical_uses_fail_closed_predicate() -> None:
+    """Day 10.17 Phase 2 reviewer fix: the non-direct side uses
+    `not direct` rather than an explicit list. A receipt with
+    `directness=""` (or any unknown value) paired with a direct
+    cross-outcome receipt must still fire as mechanism_vs_clinical
+    — the trust hazard exists regardless of how the non-direct side
+    is labeled."""
+    direct = _summary(
+        "direct-A", outcome="muscle_function", direction="negative",
+        directness="direct",
+    )
+    unknown = _summary(
+        "unknown-B", outcome="longevity", direction="unclear",
+        directness="",  # malformed / unknown — must still flag
+    )
+    matrix = build_tension_matrix([direct, unknown])
+    assert matrix.pairs[0].kind == "mechanism_vs_clinical"
+
+
+def test_indirectness_gap_now_includes_indirect_directness() -> None:
+    """Day 10.17 Phase 2 reviewer fix: same-outcome direct + indirect
+    is now indirectness_gap (was orthogonal). Resolves the asymmetry
+    the reviewer flagged — cross-outcome direct+indirect was already
+    severity 3, but same-outcome direct+indirect was severity 0."""
+    direct = _summary(
+        "direct-A", outcome="muscle_function", direction="negative",
+        directness="direct",
+    )
+    indirect = _summary(
+        "indirect-B", outcome="muscle_function", direction="unclear",
+        directness="indirect",
+    )
+    matrix = build_tension_matrix([direct, indirect])
+    assert matrix.pairs[0].kind == "indirectness_gap"
 
 
 def test_metformin_corpus_with_intra_outcome_replication_yields_agreement() -> None:

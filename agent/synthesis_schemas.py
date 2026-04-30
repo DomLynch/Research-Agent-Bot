@@ -88,6 +88,14 @@ TensionKind = Literal[
     "indirectness_gap",  # one direct trial finding + one mechanistic claim about
                        # the same outcome class — synthesis must keep them separate
     "null_vs_positive",  # one receipt is null, another is positive — partial conflict
+    # Day 10.17 Phase 2 — cross-domain tension. Different outcome
+    # classes BUT one receipt is direct/clinical and the other is
+    # mechanistic/preclinical. This is where the metformin paper's
+    # central tension lives ("clinical muscle suppression observed
+    # in c01" vs "preclinical longevity promise from c04") and the
+    # old classifier wrongly buried it as "orthogonal" because the
+    # outcome classes were different.
+    "mechanism_vs_clinical",
     "orthogonal",      # receipts cover different outcome classes; no logical conflict
 ]
 

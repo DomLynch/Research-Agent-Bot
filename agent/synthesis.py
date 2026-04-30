@@ -562,6 +562,11 @@ _SEVERITY: Mapping[TensionKind, int] = {
     "orthogonal": 0,
     "agreement": 2,
     "indirectness_gap": 3,
+    # Day 10.17 Phase 2 — mechanism_vs_clinical is severity 3 (same as
+    # indirectness_gap): both are "direct evidence vs mechanistic
+    # evidence — synthesis must keep them separate." The cross-class
+    # variant is the cross-domain version of the same trust hazard.
+    "mechanism_vs_clinical": 3,
     "null_vs_positive": 4,
     "disagreement": 5,
 }
@@ -602,6 +607,16 @@ def _tension_summary(kind: TensionKind, a: ReceiptSummary, b: ReceiptSummary) ->
             f"vs {other.receipt_id} ({other.directness}) on "
             f"{a.outcome_class} — direct vs indirect must be kept separate"
         )
+    if kind == "mechanism_vs_clinical":
+        direct_one = a if a.directness == "direct" else b
+        other = b if a.directness == "direct" else a
+        return (
+            f"{direct_one.receipt_id} (direct, {direct_one.outcome_class}) "
+            f"vs {other.receipt_id} ({other.directness}, "
+            f"{other.outcome_class}) — cross-domain: clinical evidence "
+            f"on one outcome must not be fused with mechanistic / "
+            f"preclinical evidence on a different outcome"
+        )
     return f"{a.receipt_id} vs {b.receipt_id}"
 
 
@@ -609,7 +624,12 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
     """Pure deterministic classification of one pair (a, b).
 
     Rules (first match wins):
-      1. outcome_class differs → orthogonal
+      1. outcome_class differs:
+         a. one direct + one mechanistic → mechanism_vs_clinical
+            (Day 10.17 Phase 2 — cross-domain trust hazard: clinical
+            evidence on one outcome must not be fused with mechanistic
+            / preclinical evidence on a different outcome)
+         b. otherwise → orthogonal
       2. one is direct, the other is mechanistic, same outcome class
          → indirectness_gap
       3. one effect is null, other is positive/negative → null_vs_positive
@@ -622,16 +642,29 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
     """
     same_outcome = a.outcome_class == b.outcome_class
 
+    a_direct = a.directness == "direct"
+    b_direct = b.directness == "direct"
+    # Day 10.17 Phase 2 review: use `not direct` rather than an
+    # explicit list of non-direct values. This fail-closed predicate
+    # captures "mechanistic", "indirect", AND any malformed empty/
+    # unknown directness so a future receipt with `directness=""`
+    # can't silently re-bury the cross-domain trust hazard.
+    a_non_direct = not a_direct
+    b_non_direct = not b_direct
+
     if not same_outcome:
-        kind: TensionKind = "orthogonal"
+        if (a_direct and b_non_direct) or (b_direct and a_non_direct):
+            kind: TensionKind = "mechanism_vs_clinical"
+        else:
+            kind = "orthogonal"
     else:
         # Same outcome class — now decide by directness + direction.
-        a_direct = a.directness == "direct"
-        b_direct = b.directness == "direct"
-        a_mech = a.directness == "mechanistic"
-        b_mech = b.directness == "mechanistic"
-
-        if (a_direct and b_mech) or (b_direct and a_mech):
+        # Day 10.17 Phase 2 review: same-outcome indirectness_gap now
+        # uses the same `not direct` predicate as the cross-outcome
+        # mechanism_vs_clinical rule above. Resolves an asymmetry the
+        # reviewer flagged (cross-outcome direct+indirect was severity
+        # 3 but same-outcome direct+indirect was severity 0).
+        if (a_direct and b_non_direct) or (b_direct and a_non_direct):
             kind = "indirectness_gap"
         elif a.effect_direction == "null" and b.effect_direction in {"positive", "negative"}:
             kind = "null_vs_positive"
