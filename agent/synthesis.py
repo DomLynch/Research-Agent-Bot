@@ -506,6 +506,20 @@ def build_receipt_summary(
         if not t.get("passed", False)
     )
 
+    # Day 10.17 Phase 3: surface bibliographic fields from the
+    # thesis-supporting evidence cards so References can render real
+    # citations. Pick the first supporting ref's source as the canonical
+    # bibliographic anchor (matches how the thesis was built); fall
+    # back to ref=1 if supporting_refs is empty.
+    bib_source: dict | None = None
+    for ref_id in supporting_refs or [1]:
+        item = items_by_ref.get(ref_id)
+        if isinstance(item, dict):
+            src = item.get("source")
+            if isinstance(src, dict):
+                bib_source = src
+                break
+
     return ReceiptSummary(
         receipt_id=receipt_id,
         receipt_path=str(receipt_path),
@@ -525,6 +539,11 @@ def build_receipt_summary(
         population_summary=_detect_population_summary(
             thesis_text, items_by_ref, directness=directness,
         ),
+        source_title=bib_source.get("title") if bib_source else None,
+        source_year=bib_source.get("year") if bib_source else None,
+        source_doi=bib_source.get("doi") if bib_source else None,
+        source_pmid=bib_source.get("pmid") if bib_source else None,
+        source_venue=bib_source.get("venue") if bib_source else None,
     )
 
 

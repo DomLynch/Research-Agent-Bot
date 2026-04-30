@@ -131,6 +131,17 @@ class ReceiptSummary:
     effect_direction: EffectDirection
     p_values: tuple[str, ...]      # canonical-form p-values mentioned in the thesis
     population_summary: str        # e.g. "older adults, age 65+" (extracted from abstract)
+    # Day 10.17 Phase 3 — bibliographic fields surfaced from
+    # evidence_cards.json so the rendered References section can show
+    # publication-grade citations (Title, Year, Venue, DOI, PMID)
+    # instead of internal cfab-c01 receipt IDs. All optional with
+    # default None so existing test fixtures and old run dirs that
+    # predate Phase 3 still construct cleanly.
+    source_title: str | None = None
+    source_year: int | None = None
+    source_doi: str | None = None
+    source_pmid: str | None = None
+    source_venue: str | None = None
 
 
 # --- TensionMatrix --------------------------------------------------------

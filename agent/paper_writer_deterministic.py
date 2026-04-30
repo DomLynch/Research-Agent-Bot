@@ -189,29 +189,59 @@ when no seed is supplied).
     return SynthesisSection(name="methods", body_md=body, anchors=())
 
 
+def format_bibliographic_citation(r: ReceiptSummary) -> str:
+    """Day 10.17 Phase 3: render publication-grade citation from the
+    bibliographic fields populated in build_receipt_summary. Uses
+    Title (Year). Venue. PMID/DOI format — not author-year, since
+    evidence_cards source data does not include authors. Falls back
+    to the receipt ID when no bibliographic data is available (older
+    fixtures, malformed receipts)."""
+    parts: list[str] = []
+    if r.source_title:
+        title = r.source_title.rstrip(".")
+        parts.append(f"{title}.")
+    if r.source_year:
+        parts.append(f"({r.source_year}).")
+    if r.source_venue:
+        parts.append(f"{r.source_venue}.")
+    if r.source_pmid:
+        parts.append(f"PMID: {r.source_pmid}.")
+    if r.source_doi:
+        parts.append(f"doi:{r.source_doi}.")
+    if r.canonical_trial_id:
+        parts.append(f"Trial: {r.canonical_trial_id}.")
+    if not parts:
+        # No bibliographic data — fall back to internal id so the
+        # reference still has SOMETHING the auditor can match.
+        return f"`{r.receipt_id}`"
+    return " ".join(parts)
+
+
 def build_references_full_section(
     receipts: Sequence[ReceiptSummary],
 ) -> SynthesisSection:
     """References is DETERMINISTIC — formatted bibliographic citations
-    from each receipt's metadata. No LLM call."""
+    from each receipt's metadata. No LLM call.
+
+    Day 10.17 Phase 3: leads with publication-grade citation
+    (Title / Year / Venue / PMID / DOI) and surfaces the internal
+    receipt_id and SPAR verdict on a follow-up line for traceability."""
     lines = ["## References", ""]
     accepted = filter_accepted(receipts)
     accepted_ids = {r.receipt_id for r in accepted}
     rejected = [r for r in receipts if r.receipt_id not in accepted_ids]
     all_in_order = list(accepted) + list(rejected)
     for i, r in enumerate(all_in_order, start=1):
-        trial = (
-            f"({r.canonical_trial_id})"
-            if r.canonical_trial_id else "(no trial registry id)"
-        )
-        venue_hint = (
-            f" [accepted: {r.spar_verdict}]"
+        citation = format_bibliographic_citation(r)
+        verdict_tag = (
+            f"[accepted: {r.spar_verdict}]"
             if r.spar_verdict.startswith("accept")
-            else f" [QUARANTINED: {r.spar_verdict}]"
+            else f"[QUARANTINED: {r.spar_verdict}]"
         )
         thesis_excerpt = r.thesis_text[:160].rstrip()
         lines.append(
-            f"[{i}] `{r.receipt_id}` {trial}{venue_hint}\n"
+            f"[{i}] {citation}\n"
+            f"    Receipt: `{r.receipt_id}` {verdict_tag}\n"
             f"    {thesis_excerpt}\n"
         )
     return SynthesisSection(

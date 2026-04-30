@@ -306,15 +306,24 @@ def build_spar_adjudication_section(
 
 
 def build_references_section(receipts: Sequence[ReceiptSummary]) -> SynthesisSection:
-    """Deterministic reference list. Each receipt contributes one line:
-    its receipt_id + canonical_trial_id + thesis_text excerpt. Real
-    DOI / PMID lookups would require reading evidence_cards.json; for
-    now this is the receipt-level shape — sufficient for the audit."""
+    """Deterministic reference list. Day 10.17 Phase 3: each receipt
+    contributes a publication-grade citation (Title / Year / Venue /
+    PMID / DOI) sourced from its evidence_cards bibliographic data,
+    plus the internal receipt_id on a follow-up line for audit
+    traceability. Falls back to the receipt_id alone when no biblio
+    data is available."""
+    # Local import to keep this module's surface stable; the formatter
+    # lives in paper_writer_deterministic.py because the full-paper
+    # writer also needs it.
+    from agent.paper_writer_deterministic import format_bibliographic_citation
     lines = ["## References\n"]
     for i, r in enumerate(sorted(receipts, key=lambda x: x.receipt_id), 1):
-        trial = f" (Trial: {r.canonical_trial_id})" if r.canonical_trial_id else ""
+        citation = format_bibliographic_citation(r)
         excerpt = r.thesis_text[:140].rstrip()
-        lines.append(f"[{i}] `{r.receipt_id}`{trial}: {excerpt}")
+        lines.append(
+            f"[{i}] {citation}\n"
+            f"    Receipt: `{r.receipt_id}` — {excerpt}"
+        )
     body = "\n".join(lines) + "\n"
     return SynthesisSection(name="references", body_md=body, anchors=())
 

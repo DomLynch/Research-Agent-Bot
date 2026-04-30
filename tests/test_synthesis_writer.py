@@ -214,6 +214,114 @@ def test_references_section_lists_every_receipt_with_index() -> None:
     assert "## References" in sect.body_md
 
 
+# Day 10.17 Phase 3 — publication-grade citations
+# All three external reviewers flagged that internal cfab-c01 receipt
+# IDs in References are a credibility-killer for any external reader.
+# Phase 3 surfaces Title / Year / Venue / PMID / DOI from
+# evidence_cards.json bibliographic fields. Receipt IDs stay visible
+# below each citation for audit traceability.
+
+
+def test_references_use_real_citation_when_bibliographic_data_present() -> None:
+    """When the receipt has source_title / source_year / source_venue /
+    source_pmid / source_doi populated, References must surface them
+    in publication-grade format — not just the cfab-c01 internal ID."""
+    receipt_with_bib = ReceiptSummary(
+        receipt_id="metformin-multi-001-cfab-c01",
+        receipt_path="runs/x", topic="metformin",
+        thesis_text="Metformin blunts hypertrophy in older adults",
+        spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+        canonical_trial_id="NCT02308228",
+        evidence_tier="A1", directness="direct",
+        outcome_class="muscle_function", effect_direction="negative",
+        p_values=("p=0.005",), population_summary="older adults",
+        source_title=(
+            "Metformin blunts muscle hypertrophy in response to "
+            "progressive resistance exercise training"
+        ),
+        source_year=2019,
+        source_venue="Aging Cell",
+        source_pmid="31557380",
+        source_doi="10.1111/acel.13039",
+    )
+    sect = build_references_section([receipt_with_bib])
+    body = sect.body_md
+    assert "Aging Cell" in body, "venue must appear in citation"
+    assert "2019" in body, "year must appear in citation"
+    assert "PMID: 31557380" in body, "PMID must appear in citation"
+    assert "10.1111/acel.13039" in body, "DOI must appear in citation"
+    assert "Metformin blunts muscle hypertrophy" in body, "title must appear"
+    # Receipt ID stays for audit traceability but is no longer the
+    # only thing the reader sees.
+    assert "metformin-multi-001-cfab-c01" in body
+
+
+def test_references_falls_back_to_receipt_id_when_no_bibliographic_data() -> None:
+    """When bibliographic fields are all None (older fixtures, malformed
+    evidence_cards), the formatter falls back to the receipt ID. The
+    reference still exists; it just lacks the publication metadata."""
+    receipt_no_bib = _summary("r-A")  # source_* fields default to None
+    sect = build_references_section([receipt_no_bib])
+    assert "r-A" in sect.body_md
+
+
+def test_references_handle_empty_string_bib_fields_gracefully() -> None:
+    """Reviewer pin: upstream JSON parsers may coerce missing fields to
+    "" rather than None. The formatter's truthy guards must skip empty
+    strings the same way they skip None — no `". (). . PMID: . "`
+    citation in the output."""
+    receipt_partial = ReceiptSummary(
+        receipt_id="metformin-multi-001-cfab-c01",
+        receipt_path="runs/x", topic="metformin",
+        thesis_text="thesis", spar_verdict="accept_clean",
+        n_claims=1, n_failed_traces=0, canonical_trial_id=None,
+        evidence_tier="A1", directness="direct",
+        outcome_class="muscle_function", effect_direction="negative",
+        p_values=(), population_summary="",
+        source_title="", source_year=None, source_venue="",
+        source_pmid="", source_doi="",
+    )
+    sect = build_references_section([receipt_partial])
+    body = sect.body_md
+    # Empty fields must be silently skipped — no "PMID: ." or "doi:."
+    # or stray standalone period clusters.
+    assert "PMID: ." not in body
+    assert "doi:." not in body
+    assert "(). " not in body
+    # The receipt-id fallback path is what should fire for a fully-
+    # empty bibliographic record.
+    assert "metformin-multi-001-cfab-c01" in body
+
+
+def test_full_paper_references_use_publication_grade_citation() -> None:
+    """The full-paper References section (paper_writer_deterministic)
+    must also surface publication-grade citations — same shared
+    formatter as the brief, but with the verdict tag preserved."""
+    from agent.paper_writer_deterministic import build_references_full_section
+    rich = ReceiptSummary(
+        receipt_id="metformin-multi-001-cfab-c01",
+        receipt_path="runs/x", topic="metformin",
+        thesis_text="Metformin blunts hypertrophy",
+        spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+        canonical_trial_id="NCT02308228",
+        evidence_tier="A1", directness="direct",
+        outcome_class="muscle_function", effect_direction="negative",
+        p_values=("p=0.005",), population_summary="older adults",
+        source_title="MASTERS trial paper",
+        source_year=2019, source_venue="Aging Cell",
+        source_pmid="31557380", source_doi="10.1111/acel.13039",
+    )
+    sect = build_references_full_section([rich])
+    body = sect.body_md
+    assert "MASTERS trial paper" in body
+    assert "Aging Cell" in body
+    assert "PMID: 31557380" in body
+    assert "10.1111/acel.13039" in body
+    assert "[accepted: accept_clean]" in body
+    # Receipt ID still present for audit traceability.
+    assert "metformin-multi-001-cfab-c01" in body
+
+
 def test_spar_adjudication_section_renders_verdict_table() -> None:
     receipts = [_summary("r-A"), _summary("r-B")]
     sect = build_spar_adjudication_section(receipts)
