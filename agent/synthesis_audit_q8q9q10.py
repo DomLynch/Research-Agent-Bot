@@ -181,6 +181,10 @@ _Q10_HEDGES = (
     " remains to be confirmed", " is not yet established",
 )
 _Q10_SENTENCE_RE = re.compile(r"[^.!?]+[.!?]")
+# Strip `_Cited: \`...\`_` footer lines (citation metadata, not prose)
+# before scanning so the sentence regex doesn't absorb them into
+# surrounding prose and false-positive on the receipt IDs inside.
+_Q10_CITED_FOOTER_RE = re.compile(r"^\s*_Cited:.*_\s*$", re.MULTILINE)
 
 
 def check_q10(
@@ -204,8 +208,11 @@ def check_q10(
             detail="no tier-C / mechanistic receipts in corpus (N/A)",
             applicable=False,
         )
+    # Strip _Cited: footer lines so Q10's sentence regex doesn't
+    # absorb citation metadata into surrounding prose and false-fail.
+    body_for_scan = _Q10_CITED_FOOTER_RE.sub("", paper.body_md)
     failures: list[str] = []
-    for m in _Q10_SENTENCE_RE.finditer(paper.body_md):
+    for m in _Q10_SENTENCE_RE.finditer(body_for_scan):
         sentence = m.group(0)
         cited = {tok.group(0) for tok in _RECEIPT_ID_RE.finditer(sentence)}
         if not (cited & weak):

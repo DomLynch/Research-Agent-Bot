@@ -776,3 +776,27 @@ def test_q10_passes_when_unhedged_sentence_only_cites_direct_receipt() -> None:
 
 def test_q10_is_load_bearing() -> None:
     assert "Q10-claim-strength-discipline" in Q_LOAD_BEARING_IDS
+
+
+def test_q10_ignores_cited_footer_markdown() -> None:
+    """Day 10.17 Phase 1.5 false-positive: the writer emits a
+    `_Cited: \\`receipt-id\\`, ..._` markdown footer below each
+    anchored paragraph. That line contains receipt IDs but no prose,
+    so Q10 must strip it before sentence-scanning — otherwise the
+    sentence regex absorbs it into surrounding prose and false-fails
+    when an unrelated paragraph happens to use a causal verb."""
+    receipts = (
+        _summary("metformin-multi-001-cfab-c01"),
+        _mech_receipt("metformin-multi-001-cfab-c04"),
+    )
+    body = (
+        "Metformin may demonstrate a hedged effect on longevity in "
+        "model organisms (metformin-multi-001-cfab-c04).\n"
+        "  _Cited: `metformin-multi-001-cfab-c04`, "
+        "`metformin-multi-001-cfab-c01`_\n\n"
+        "Unrelated next paragraph with no overclaim ends here."
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q10 = next(c for c in audit.checks if c.question_id.startswith("Q10"))
+    assert q10.passed is True, q10.detail

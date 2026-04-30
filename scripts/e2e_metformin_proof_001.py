@@ -82,6 +82,7 @@ from agent.synthesis_audit import (
 )
 from agent.synthesis_schemas import (
     ReceiptSummary,
+    SynthesisPaper,
     assert_synthesis_invariants,
 )
 from agent.paper_writer import render_full_paper
@@ -866,9 +867,6 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
         return 3
     elapsed = time.perf_counter() - t0
 
-    # Stage 5: audit (against the brief)
-    audit = audit_synthesis_paper(paper, summaries)
-
     # Day 10.16 — render the FULL PAPER alongside the brief. The brief
     # is the structured-evidence layer (auditable, anchored bullets);
     # the full paper is the publishable artifact (5-15k words,
@@ -885,6 +883,29 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
         topic=topic, submission_id=submission_id,
         chain=judge_chain, ledger=synthesis_ledger, seed=args.seed,
     )
+
+    # Stage 5: audit. Day 10.17 Phase 1.5 — audit the FULL PAPER body
+    # with the FULL CORPUS (accepted + rejected). The brief audit was
+    # missing two things:
+    #   (1) Q1/Q5/Q7/Q8/Q9/Q10 scan body_md but the brief body is much
+    #       smaller than the full paper, so overclaim / typo / leakage
+    #       in full_paper.md slipped through unnoticed.
+    #   (2) Q8 (rejected-evidence leakage) needs rejected receipts to
+    #       know what to flag — the brief audit was passed only
+    #       accepted summaries so Q8 always N/A'd.
+    # The hybrid audit_target keeps the brief's structured sections
+    # (Q3 needs them for the synthesis-section anchor check) but
+    # routes body scans to the full paper.
+    audit_target = SynthesisPaper(
+        submission_id=paper.submission_id,
+        topic=paper.topic,
+        thesis=paper.thesis,
+        matrix=paper.matrix,
+        sections=paper.sections,  # brief sections — Q3 anchor check
+        body_md=full_paper_md,    # full paper — Q1/Q5/Q7/Q8/Q9/Q10 scan
+        render_version=paper.render_version,
+    )
+    audit = audit_synthesis_paper(audit_target, full_deduped)
 
     # Stage 6: write all artifacts atomically
     paper_path = output_dir / "paper_synthesis.md"
