@@ -209,6 +209,38 @@ def test_repair_healthspan_inline_passes_q5_window_check() -> None:
     )
 
 
+def test_repair_healthspan_handles_plural_form_without_dangling_s() -> None:
+    """Reviewer-flagged Phase-0 bug: when the LLM writes 'longevity
+    benefits' (plural), the pre-fix regex matched only 'longevity
+    benefit' (singular) and the inline insertion produced
+    'longevity benefit (potentially)s' — visibly broken prose with
+    a dangling 's'. Fix: regex matches the full word with optional
+    plural via word boundary, so 'longevity benefits' repairs to
+    'longevity benefits (potentially)' cleanly."""
+    accepted = [_direct("metformin-multi-001-cfab-c01")]
+    body = "The longevity benefits remain contested in human trials."
+    repaired, log = repair_claim_strength(body, accepted)
+    assert "(potentially)s" not in repaired, (
+        f"dangling 's' artifact: {repaired!r}"
+    )
+    # Must repair the full plural form.
+    assert "benefits (potentially)" in repaired
+    assert len(log) == 1
+
+
+def test_repair_extends_life_does_not_match_inside_lifespan() -> None:
+    """Reviewer-flagged Phase-0 bug: 'extends life' regex matched
+    inside 'extends lifespan' (no word boundary). Fix: \\bextends?\\s+life\\b
+    only matches the full word 'life', not 'life' inside 'lifespan'."""
+    accepted = [_direct("metformin-multi-001-cfab-c01")]
+    body = "The hypothesis that metformin extends lifespan in humans is contested."
+    repaired, log = repair_claim_strength(body, accepted)
+    # 'extends lifespan' should match (the longer pattern).
+    assert "extends lifespan (potentially)" in repaired
+    # Must not produce a double-repair like 'extends life (potentially)span'
+    assert "(potentially)span" not in repaired
+
+
 def test_repair_preserves_acronym_case_after_prefix() -> None:
     """Reviewer pin: pre-fix lower-cased the first letter
     unconditionally, mangling acronyms like AMPK / mTOR / GDF15.

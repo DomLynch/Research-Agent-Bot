@@ -82,9 +82,17 @@ _REPAIR_CAUSAL_RE = re.compile(
 # so the same prefix patches both checks. Mirrors Q5's
 # _HEALTHSPAN_CLAIMS in agent/synthesis_audit.py.
 _REPAIR_HEALTHSPAN_RE = re.compile(
-    r"(?:extends?\s+lifespan|extends?\s+life|"
-    r"longevity\s+benefit|increases?\s+healthspan|"
-    r"geroprotective)",
+    # Day 10.17 Phase 0 reviewer fix: word-boundary anchored. Pre-fix
+    # the regex matched "longevity benefit" inside "longevity
+    # benefits" and produced visible "(potentially)s" artifact when
+    # the inline insertion ran. Now matches the full word(s) with
+    # optional plural; longest pattern wins (lifespan before life)
+    # so we don't accidentally short-match.
+    r"(?:\bextends?\s+lifespan\b|"
+    r"\blongevity\s+benefits?\b|"
+    r"\bincreases?\s+healthspan\b|"
+    r"\bgeroprotective\b|"
+    r"\bextends?\s+life\b)",
     re.IGNORECASE,
 )
 # Mirror of Q10's hedge set. Same lockstep contract.
