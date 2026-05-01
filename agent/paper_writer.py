@@ -201,9 +201,24 @@ def _build_user_prompt(
     *,
     topic: str,
 ) -> str:
-    """Common context block — receipt summaries + tensions + thesis +
-    quarantined receipts. Each LLM section gets the same context;
-    the system prompt does the section-specific work."""
+    """Common LLM-prompt context block — accepted receipts + tensions +
+    thesis. Each LLM section gets the same context; the system prompt
+    does the section-specific work.
+
+    Day 10.17 Fix A: rejected (SPAR-quarantined) receipts are NOT
+    included in the LLM prompt context. The pre-Fix-A code emitted a
+    'QUARANTINED (SPAR-rejected) RECEIPTS:' block hoping the LLM would
+    respect the label — empirically it didn't (10.17 e2e run leaked
+    cfab-c02 into Background prose, Q8 ship-blocked). The writer
+    cannot cite what it does not see. Trust-spine transparency is
+    preserved through deterministic non-LLM paths: Methods describes
+    the SPAR pipeline including rejection, build_references_full_section
+    lists every receipt with its verdict tag, and the brief renders
+    rejected receipts in its 'Rejected / Contested Evidence' section.
+    The `rejected` parameter is retained for caller-API stability but
+    is intentionally unused here.
+    """
+    _ = rejected  # Day 10.17 Fix A — intentionally unused, see docstring.
     lines = [f"Topic: {topic}", "", "ACCEPTED RECEIPTS:"]
     for r in receipts:
         paper_tier = derive_paper_tier(r)
@@ -225,16 +240,6 @@ def _build_user_prompt(
             f"    p_values: {list(r.p_values)}\n"
             f"    thesis: {r.thesis_text[:300]}"
         )
-    if rejected:
-        lines.extend(["", "QUARANTINED (SPAR-rejected) RECEIPTS:"])
-        for r in rejected:
-            lines.append(
-                f"  - id: {r.receipt_id}\n"
-                f"    verdict: {r.spar_verdict}\n"
-                f"    outcome_class: {r.outcome_class}\n"
-                f"    canonical_trial_id: {r.canonical_trial_id or '(none)'}\n"
-                f"    thesis: {r.thesis_text[:200]}"
-            )
     non_orth = matrix.non_orthogonal()
     lines.extend(["", "TENSION MATRIX (non-orthogonal pairs):"])
     if non_orth:
