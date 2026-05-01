@@ -138,3 +138,10 @@ scripts/karpathy-loop/snapshots/
 scripts/karpathy-loop/diffs/
 
 docs/weekly/
+
+# Quality-reference PDFs (Day 10.17 Phase 1 / Path B-prime). They are
+# the prose-quality benchmark the system targets, NOT inputs the bot
+# synthesizes from. Each PDF is sourced via DOI/PMID listed in
+# docs/quality-reference/metformin/README.md. Mirror copy lives on
+# the VPS under the same path; binary blobs don't go in git.
+docs/quality-reference/metformin/pdfs/
