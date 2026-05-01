@@ -129,6 +129,17 @@ _TRANSITION_PHRASES = (
     "conversely,",
     "nevertheless,",
     "nonetheless,",
+    # Day 10.17 Fix C.2 — explicit-tension marker. The Day 10.17
+    # Fix C.1 fresh run produced legitimate cross-class integrating
+    # sentences starting with "The tension between systemic longevity
+    # benefits and localized muscle loss may be linked to..." That's
+    # NOT a transition-word patch (reviewer caution honored) — the
+    # phrase explicitly NAMES the cross-class tension being
+    # adjudicated, which is the strongest possible integration
+    # signal. Anti-gaming protected: "furthermore" / "additionally"
+    # / "moreover" stay rejected because they're additive markers,
+    # not cross-evidence integration.
+    "the tension between",
 )
 
 

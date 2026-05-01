@@ -224,6 +224,74 @@ def test_day_10_16g_canonical_markers_satisfy_q3() -> None:
         )
 
 
+def test_day_10_17_fix_c2_the_tension_between_satisfies_q3() -> None:
+    """Day 10.17 Fix C.2 — Day 10.17 e2e + Fix C.1 brief produced
+    legitimate cross-class integrating sentences starting with
+    'The tension between systemic longevity benefits and localized
+    muscle loss may be linked to...' Reviewer-prescribed whitelist
+    addition: 'the tension between' is a real integration marker,
+    NOT a transition-word patch — it explicitly names the
+    cross-class tension being adjudicated."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+    ]
+    section = _section(
+        SynthesisClaimAnchor(
+            sentence=(
+                "The tension between systemic longevity benefits and "
+                "localized muscle loss may be linked to PPAR signaling."
+            ),
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+    )
+    assert synthesis_has_mixed_directness_anchor(section, receipts), (
+        "Fix C.2: 'The tension between' must satisfy Q3"
+    )
+
+
+def test_day_10_17_fix_c2_generic_appears_to_does_not_satisfy_q3() -> None:
+    """Anti-gaming: Fix C.2 must NOT admit weak generic shapes like
+    'X appears to modulate Y' — that's an unstructured claim, not
+    a cross-class integration. The reviewer caution: 'don't
+    transition-word patch blindly.' Bullets that don't lead with a
+    real integration marker stay rejected."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+    ]
+    section = _section(
+        SynthesisClaimAnchor(
+            sentence=(
+                "Metformin appears to modulate a broad array of "
+                "metabolic pathways including pyruvate metabolism."
+            ),
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+    )
+    assert not synthesis_has_mixed_directness_anchor(section, receipts), (
+        "Fix C.2 must NOT admit 'X appears to' — too generic to be "
+        "a cross-class integration marker"
+    )
+
+
+def test_day_10_17_fix_c2_furthermore_does_not_satisfy_q3() -> None:
+    """Anti-gaming: 'Furthermore,' is a transition word but does NOT
+    signal cross-evidence integration — it's an additive marker.
+    Whitelist must stay principled."""
+    receipts = [
+        _summary("r-A", directness="direct"),
+        _summary("r-B", directness="mechanistic"),
+    ]
+    section = _section(
+        SynthesisClaimAnchor(
+            sentence="Furthermore, the receptors interact in unclear ways.",
+            receipt_ids=("r-A", "r-B"), numerics=(),
+        ),
+    )
+    assert not synthesis_has_mixed_directness_anchor(section, receipts)
+
+
 # --- retry prompt: names actual receipt IDs by directness ---------------
 
 
@@ -239,7 +307,14 @@ def test_retry_prompt_names_direct_and_mechanistic_receipts() -> None:
     assert "r-mech-X" in out
     assert "r-mech-Y" in out
     assert "Q3 RETRY GUIDANCE" in out
-    assert "transition phrases" in out
+    # Day 10.17 Fix C.2 broadened wording: "accepted markers" instead
+    # of "transition phrases" because the whitelist now also includes
+    # "the tension between" (an explicit-tension-naming marker, not
+    # strictly a transition word).
+    assert "accepted markers" in out
+    # Concrete fail/pass examples are the C.2 strengthening — they
+    # must appear in the retry prompt so the LLM sees both shapes.
+    assert "FAIL:" in out and "PASS:" in out
 
 
 def test_retry_prompt_handles_empty_directness_groups() -> None:

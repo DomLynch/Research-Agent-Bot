@@ -45,6 +45,9 @@ Q3_TRANSITION_PHRASES = (
     "conversely,",
     "nevertheless,",
     "nonetheless,",
+    # Day 10.17 Fix C.2 — see synthesis_audit.py for rationale; both
+    # lists MUST stay in lockstep (test_transition_phrases_match_audit_set).
+    "the tension between",
 )
 
 
@@ -119,19 +122,31 @@ def q3_retry_user_prompt(
     ]
     return (
         base_user_prompt
-        + "\n\nQ3 RETRY GUIDANCE: the previous attempt produced no "
-        "mixed-directness sentence. The audit will REJECT this paper. "
-        "You MUST include at least one sentence that cites BOTH a "
+        + "\n\nQ3 RETRY GUIDANCE: the previous attempt produced "
+        "mixed-directness sentences that did not start with an "
+        "approved cross-class transition. The audit will REJECT "
+        "this paper. Required fix:\n\n"
+        "1. Every sentence whose `receipt_ids` list contains BOTH a "
         f"DIRECT receipt ({', '.join(direct_ids) or '(none)'}) AND a "
         f"MECHANISTIC/INDIRECT receipt ({', '.join(mech_ids) or '(none)'}) "
-        "in the SAME `receipt_ids` list, AND that sentence MUST start "
-        "with one of these transition phrases (case-insensitive): "
-        "'Mechanistically,', 'Preclinically,', 'In vitro,', "
-        "'In contrast,', 'However,', 'By contrast,', 'Consequently,', "
-        "'Therefore,', 'Ultimately,', 'Thus,', 'Conversely,', "
-        "'Nevertheless,', 'Nonetheless,'. Re-write ALL synthesis "
-        "sentences now — every mixed-directness sentence (any sentence "
-        "whose receipt_ids list contains both a direct and a "
-        "mechanistic/indirect id) must begin with one of these phrases. "
-        "The audit checks every such sentence, not just the first."
+        "MUST begin with one of these accepted markers (case-insensitive):\n"
+        "   'Mechanistically,', 'Preclinically,', 'In vitro,',\n"
+        "   'In contrast,', 'However,', 'By contrast,',\n"
+        "   'Consequently,', 'Therefore,', 'Ultimately,', 'Thus,',\n"
+        "   'Conversely,', 'Nevertheless,', 'Nonetheless,',\n"
+        "   'The tension between' (use ONLY when explicitly naming\n"
+        "   a cross-class tension as the subject of the sentence)\n\n"
+        "2. CONCRETE EXAMPLES of FAIL vs PASS shapes:\n"
+        "   FAIL: 'Metformin appears to modulate metabolic and "
+        "nonmetabolic pathways.' (no transition; generic claim)\n"
+        "   FAIL: 'Furthermore, the drug acts on multiple targets.' "
+        "(additive transition, not cross-class)\n"
+        "   PASS: 'Mechanistically, metformin modulates pathways, "
+        "but the clinical RCT shows reduced muscle gain.'\n"
+        "   PASS: 'However, the preclinical longevity signal contrasts "
+        "with the clinical muscle suppression.'\n"
+        "   PASS: 'The tension between systemic metabolic benefit "
+        "and localized muscle cost remains unresolved.'\n\n"
+        "3. The audit checks EVERY mixed-directness sentence, not "
+        "just the first. Re-write all synthesis sentences now."
     )
