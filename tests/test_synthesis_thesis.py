@@ -403,6 +403,182 @@ def test_fallback_stub_is_a_valid_synthesis_thesis() -> None:
 
 
 # ============================================================
+# Day 10.17 Fix C.1 — fuzzy tension-match validator + better fallback
+# ============================================================
+# The Day 10.17 e2e run showed all 3 LLM thesis candidates rejected
+# because Phase 2's tension summaries grew to 240+ chars (with full
+# receipt IDs) — the LLM truncates / paraphrases instead of copying
+# verbatim, so addressed_set & non_orth_summaries was empty for all
+# candidates and the validator rejected every one. Fix C.1 accepts a
+# fuzzy match on the tension's KIND or OUTCOME_CLASS as a substitute
+# for verbatim summary copy. Reviewer 1's framing: "Require ≥1 real
+# non-orthogonal tension addressed when tensions exist; do not
+# require all tensions; this is a principled tightening, not a
+# loosening."
+
+
+def _matrix_with_mechanism_vs_clinical(receipts) -> TensionMatrix:
+    """Synthetic mechanism_vs_clinical tension matching the metformin
+    Phase-2 shape (long receipt-id summary)."""
+    pairs = (
+        Tension(
+            receipt_a_id="r-A", receipt_b_id="r-B",
+            kind="mechanism_vs_clinical", outcome_class="muscle_function",
+            summary=(
+                "metformin-multi-001-very-long-id-cfab-c01 (direct, "
+                "muscle_function) vs metformin-multi-001-very-long-id-cfab-c04 "
+                "(mechanistic, longevity) — cross-domain: clinical "
+                "evidence on one outcome must not be fused with "
+                "mechanistic / preclinical evidence on a different outcome"
+            ),
+            severity=3,
+        ),
+    )
+    return TensionMatrix(receipts=tuple(receipts), pairs=pairs)
+
+
+def test_validate_rejects_standalone_kind_token() -> None:
+    """Reviewer pin: standalone `kind` token alone is too loose
+    because the same kind can appear on multiple non-orth pairs.
+    The LLM must use the composite kind:outcome_class handle so
+    each addressed tension uniquely identifies one pair."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_mechanism_vs_clinical(receipts)
+    cand = _candidate(
+        refs=("r-A", "r-B", "r-C"),
+        tensions=("mechanism_vs_clinical",),
+    )
+    rej = validate_thesis_candidate(cand, receipts, matrix)
+    assert rej is not None
+    assert rej.reason == "no_tension_addressed"
+
+
+def test_validate_rejects_standalone_outcome_class_token() -> None:
+    """Same reviewer pin for outcome_class. 'longevity' alone is
+    too loose — it could refer to an orthogonal-tension outcome,
+    not the addressed non-orth tension."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_mechanism_vs_clinical(receipts)
+    cand = _candidate(
+        refs=("r-A", "r-B", "r-C"),
+        tensions=("muscle_function",),
+    )
+    rej = validate_thesis_candidate(cand, receipts, matrix)
+    assert rej is not None
+    assert rej.reason == "no_tension_addressed"
+
+
+def test_validate_accepts_kind_outcome_short_handle() -> None:
+    """LLM uses a short 'kind:outcome' handle in tensions_addressed —
+    Fix C.1 accepts this as the fuzzy match."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_mechanism_vs_clinical(receipts)
+    cand = _candidate(
+        refs=("r-A", "r-B", "r-C"),
+        tensions=("mechanism_vs_clinical:muscle_function",),
+    )
+    rej = validate_thesis_candidate(cand, receipts, matrix)
+    assert rej is None
+
+
+def test_validate_still_rejects_when_tensions_addressed_is_empty() -> None:
+    """Day 10.10 invariant preserved: empty tensions_addressed when
+    matrix has non-orth tensions still rejects."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_mechanism_vs_clinical(receipts)
+    cand = _candidate(refs=("r-A", "r-B", "r-C"), tensions=())
+    rej = validate_thesis_candidate(cand, receipts, matrix)
+    assert rej is not None
+    assert rej.reason == "no_tension_addressed"
+
+
+def test_validate_still_rejects_irrelevant_tension_text() -> None:
+    """Fuzzy match must NOT accept arbitrary words. 'orthogonal' or
+    'foo' in tensions_addressed should not pass when the matrix's
+    non-orth tension is mechanism_vs_clinical."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_mechanism_vs_clinical(receipts)
+    cand = _candidate(
+        refs=("r-A", "r-B", "r-C"),
+        tensions=("orthogonal", "foo"),
+    )
+    rej = validate_thesis_candidate(cand, receipts, matrix)
+    assert rej is not None
+    assert rej.reason == "no_tension_addressed"
+
+
+def test_validate_rejects_when_outcome_collides_with_orthogonal_tension() -> None:
+    """Reviewer-pinned anti-gaming case: a matrix where one non-orth
+    tension is mechanism_vs_clinical:longevity and a separate
+    orthogonal pair shares outcome_class='longevity'. A candidate
+    that puts 'longevity' alone (or even 'orthogonal:longevity')
+    in tensions_addressed must be rejected — only the composite
+    handle of an actual non-orth tension counts."""
+    receipts = _receipts_three()
+    pairs = (
+        Tension(
+            receipt_a_id="r-A", receipt_b_id="r-B",
+            kind="mechanism_vs_clinical", outcome_class="longevity",
+            summary="non-orth long-summary on longevity", severity=3,
+        ),
+        Tension(
+            receipt_a_id="r-A", receipt_b_id="r-C",
+            kind="orthogonal", outcome_class="longevity",
+            summary="orthogonal", severity=0,
+        ),
+    )
+    matrix = TensionMatrix(receipts=tuple(receipts), pairs=pairs)
+    # Address only the orthogonal pair's outcome — must still fail
+    cand_orth = _candidate(
+        refs=("r-A", "r-B", "r-C"),
+        tensions=("orthogonal:longevity",),
+    )
+    rej = validate_thesis_candidate(cand_orth, receipts, matrix)
+    assert rej is not None
+    assert rej.reason == "no_tension_addressed"
+    # But the real non-orth composite must pass
+    cand_real = _candidate(
+        refs=("r-A", "r-B", "r-C"),
+        tensions=("mechanism_vs_clinical:longevity",),
+    )
+    rej2 = validate_thesis_candidate(cand_real, receipts, matrix)
+    assert rej2 is None
+
+
+def test_validate_still_accepts_verbatim_summary_match() -> None:
+    """Backward compat: candidates that DO copy the verbatim summary
+    must still pass — the existing strict path is preserved."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_mechanism_vs_clinical(receipts)
+    summary = matrix.pairs[0].summary
+    cand = _candidate(
+        refs=("r-A", "r-B", "r-C"),
+        tensions=(summary,),
+    )
+    rej = validate_thesis_candidate(cand, receipts, matrix)
+    assert rej is None
+
+
+def test_fallback_names_highest_severity_tension_explicitly() -> None:
+    """Reviewer pin: 'Fallback must name the highest-severity tension
+    explicitly.' Pre-fix C.1 the fallback said generic '...with N
+    non-orthogonal tension(s) across the cluster...' — Fix C.1
+    fallback names the kind and the outcome class so a reader can
+    see what the unresolved tension actually is."""
+    receipts = _receipts_three()
+    matrix = _matrix_with_mechanism_vs_clinical(receipts)
+    stub = build_fallback_thesis(receipts, matrix, topic="metformin")
+    # The fallback must mention the kind name OR a description that
+    # identifies it as cross-domain mechanism-vs-clinical.
+    text = stub.text.lower()
+    assert (
+        "mechanism_vs_clinical" in text
+        or ("mechanistic" in text and "clinical" in text)
+        or "cross-domain" in text
+    ), f"fallback does not name the tension: {stub.text!r}"
+
+
+# ============================================================
 # build_thesis_user_prompt — deterministic rendering
 # ============================================================
 

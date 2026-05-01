@@ -114,10 +114,14 @@ Candidate rules (every candidate MUST satisfy all):
 1. ≤30 words. Reference papers are 14-25 words; longer means overclaim.
 2. Reference at least 3 distinct receipt_ids from the input — synthesis
    means "across sources", not "single trial wrapped in prose".
-3. Address at least 1 non-orthogonal tension from the input matrix by
-   COPYING ITS `summary` STRING VERBATIM into `tensions_addressed`.
-   Do NOT paraphrase. Do NOT shorten. The `summary` strings in the
-   TENSIONS block of the user prompt are the ONLY valid values.
+3. Address at least 1 non-orthogonal tension from the input matrix.
+   Two valid forms for `tensions_addressed`:
+   (a) Verbatim: copy the tension's `summary` STRING verbatim from
+       the TENSIONS block of the user prompt.
+   (b) Short handle: use the `kind:outcome_class` short handle (e.g.
+       "mechanism_vs_clinical:longevity"). Either form satisfies the
+       validator; pick whichever is cleaner. Do NOT paraphrase
+       arbitrarily — use one of these two exact forms.
 4. Do NOT introduce numerics absent from the receipts. If you cite a
    p-value or HR, it must come from one of the receipt's `p_values` or
    `thesis_text` fields.
@@ -172,8 +176,13 @@ def build_thesis_user_prompt(
         lines.append("  (no non-orthogonal pairs — receipts cover distinct outcomes)")
     else:
         for t in non_orth:
+            # Day 10.17 Fix C.1: emit the short handle alongside the
+            # full summary so the LLM has an easy verbatim option.
+            short_handle = f"{t.kind}:{t.outcome_class}"
             lines.append(
-                f"  - {t.kind} ({t.outcome_class}, severity {t.severity}): {t.summary}"
+                f"  - {t.kind} ({t.outcome_class}, severity {t.severity})\n"
+                f"    short_handle: {short_handle}\n"
+                f"    summary: {t.summary}"
             )
 
     lines.extend(["", f"Output {k} thesis candidates per the system prompt."])
@@ -259,18 +268,39 @@ def validate_thesis_candidate(
         )
 
     # 4. ≥1 non-orthogonal tension addressed (only if matrix has any).
-    # Day 10.10: REVERTED Day 10.9's pair-coverage relaxation. The
-    # reviewer correctly observed that pair-coverage lets the LLM
-    # avoid taking a substantive position on the tension — referencing
-    # both refs is a structural signal, not a synthesis act. The
-    # verbatim-summary rule forces the candidate to NAME the tension,
-    # which forces it to take a position. Long receipt-id prefixes are
-    # ugly but not unsatisfiable; the user prompt below now compresses
-    # them via short_id mapping so the LLM can copy summaries verbatim.
-    non_orth_summaries = {t.summary for t in matrix.non_orthogonal()}
-    if non_orth_summaries:
+    # Day 10.10: pair-coverage rejected (structural ≠ position).
+    # Day 10.17 Fix C.1: verbatim-summary match LOOSENED to also
+    # accept the tension's KIND token or "kind:outcome" short handle.
+    # Phase 2's mechanism_vs_clinical summaries grew to 240+ chars
+    # (full receipt IDs in the prefix); LLMs reliably truncated /
+    # paraphrased rather than copying verbatim, so 100% of candidates
+    # were getting rejected and the fallback stub was always firing.
+    # Fuzzy match accepts the kind / kind:outcome handles as a
+    # legitimate "address" — but irrelevant strings ('orthogonal',
+    # arbitrary words) are still rejected because they don't appear
+    # in any non-orth tension's identifying tokens.
+    non_orth = matrix.non_orthogonal()
+    if non_orth:
+        non_orth_summaries = {t.summary for t in non_orth}
+        # Day 10.17 Fix C.1 reviewer fix: only accept the COMPOSITE
+        # `kind:outcome_class` handle as a fuzzy match, NOT standalone
+        # `kind` or `outcome_class`. Standalone tokens are too loose
+        # — `outcome_class="longevity"` could pass on a candidate
+        # that isn't actually addressing the load-bearing tension,
+        # and `kind="mechanism_vs_clinical"` is also too generic when
+        # multiple non-orth pairs share the kind. The composite uniquely
+        # identifies a specific tension; the LLM uses it (verified
+        # empirically in the Fix C.1 fresh run: "mechanism_vs_clinical:
+        # mechanism" was the picked candidate's value).
+        fuzzy_tokens = {
+            f"{t.kind.lower()}:{t.outcome_class.lower()}"
+            for t in non_orth
+        }
         addressed_set = set(candidate.tensions_addressed)
-        if not (addressed_set & non_orth_summaries):
+        addressed_norm = {a.strip().lower() for a in addressed_set}
+        verbatim_match = bool(addressed_set & non_orth_summaries)
+        fuzzy_match = bool(addressed_norm & fuzzy_tokens)
+        if not (verbatim_match or fuzzy_match):
             return ThesisRejection(
                 candidate.text,
                 "no_tension_addressed",
@@ -388,11 +418,20 @@ def build_fallback_thesis(
     """
     n = len(receipts)
     non_orth = matrix.non_orthogonal()
+    # Day 10.17 Fix C.1: name the highest-severity tension EXPLICITLY
+    # so the fallback is informative, not generic. Pre-fix the stub
+    # said "with N non-orthogonal tension(s) across the cluster" —
+    # told the reader nothing about WHAT the tension was. Now: pick
+    # the highest-severity non-orth pair and name its kind +
+    # outcome class so a downstream reader (and the auditor) can see
+    # what unresolved structural tension blocks a real thesis.
     if non_orth:
+        top = max(non_orth, key=lambda t: t.severity)
         tensions_clause = (
-            f"with {len(non_orth)} non-orthogonal tension(s) across the cluster"
+            f"with the highest-severity unresolved tension being "
+            f"{top.kind} on {top.outcome_class}"
         )
-        addressed = (non_orth[0].summary,)
+        addressed = (f"{top.kind}:{top.outcome_class}",)
     else:
         tensions_clause = "with receipts covering distinct outcomes"
         addressed = ()
