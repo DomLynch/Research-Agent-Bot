@@ -70,17 +70,28 @@ Q_LOAD_BEARING_IDS = (
     # laundering. Load-bearing because we don't want to ship a paper
     # whose hedge density is artificial.
     "Q11-claim-repair-density",
+    # Day 10.17 Fix C.3 — receipt-id traceability. External reviewer:
+    # "broken receipt IDs break traceability, and traceability is the
+    # whole product." The Fix C.2 ship had cfab-01 (missing the c
+    # prefix) in the body — the audit caught it but Q9 wasn't load-
+    # bearing so the artifact shipped anyway. Fix C.3 also adds a
+    # builder-layer repair pass so well-formed papers don't trip Q9
+    # at all; making Q9 load-bearing closes the gate on the rare
+    # case where an unrepairable id slips through.
+    "Q9-receipt-id-format",
 )
 # Subset of load-bearing IDs where N/A (applicable=False) is a clean
 # pass, NOT a coverage gap that blocks ship. Q8 N/A = "no rejected
 # receipts in corpus" (structurally good — nothing to leak). Q10 N/A =
 # "no tier-C / mechanistic receipts" (no weak evidence to overclaim
-# on). Contrast with Q1/Q3/Q5 where N/A means the corpus is too thin
+# on). Q9 N/A = "empty corpus" (no ids to validate against).
+# Contrast with Q1/Q3/Q5 where N/A means the corpus is too thin
 # to be honestly evaluated on that invariant — that genuinely should
 # block ship.
 Q_LOAD_BEARING_NA_OK_IDS = (
     "Q8-quarantine-leakage",
     "Q10-claim-strength-discipline",
+    "Q9-receipt-id-format",
 )
 
 

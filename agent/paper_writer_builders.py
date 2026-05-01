@@ -20,6 +20,7 @@ needed by the builders.
 """
 from __future__ import annotations
 
+import difflib
 import re
 from collections.abc import Sequence
 
@@ -34,7 +35,53 @@ __all__ = [
     "build_anchored_from_parsed",
     "build_scoped_from_parsed",
     "build_results_from_parsed",
+    "repair_receipt_ids",
 ]
+
+
+# Day 10.17 Fix C.3 — fuzzy-match cutoff for receipt-id repair.
+# 0.85 ratio matches "cfab-01" against "cfab-c01" (ratio 0.86) but
+# rejects "cfab-99" against "cfab-c01" (ratio 0.71). Tight enough
+# to avoid snapping fabricated ids to real ones, loose enough to
+# repair the empirical 1-char typo class.
+_RECEIPT_ID_REPAIR_CUTOFF = 0.85
+
+
+def repair_receipt_ids(
+    rids: Sequence[str], accepted_ids: set[str],
+) -> tuple[list[str], list[tuple[str, str]]]:
+    """Snap each id in `rids` to its closest match in `accepted_ids`
+    via stdlib difflib. Exact matches pass through. Near-misses
+    (SequenceMatcher ratio ≥ 0.85) are repaired. Fabricated ids
+    (no close match) are dropped.
+
+    Returns (repaired_list, log_of_changes). Log entries are
+    (original, repaired_or_dropped_to). The caller can write the
+    log to artifact for audit trail.
+
+    Day 10.17 Fix C.3 prescription from external review: prevent
+    Q9 receipt-id-format failures at the builder layer rather than
+    catching them after rendering. The empirical typo class is
+    1-char insertions/deletions in the cluster suffix (LLM dropped
+    the 'c' prefix in "cfab-c01" → "cfab-01"); difflib catches that
+    cleanly without snapping fabricated ids.
+    """
+    repaired: list[str] = []
+    log: list[tuple[str, str]] = []
+    valid_list = list(accepted_ids)
+    for rid in rids:
+        if rid in accepted_ids:
+            repaired.append(rid)
+            continue
+        match = difflib.get_close_matches(
+            rid, valid_list, n=1, cutoff=_RECEIPT_ID_REPAIR_CUTOFF,
+        )
+        if match:
+            repaired.append(match[0])
+            log.append((rid, match[0]))
+        else:
+            log.append((rid, "<dropped>"))
+    return repaired, log
 
 
 _NUMERIC_RE = re.compile(
@@ -126,19 +173,25 @@ def build_anchored_from_parsed(
         rids = entry.get("receipt_ids") or []
         if not isinstance(text, str) or not isinstance(rids, list):
             continue
+        # Day 10.17 Fix C.3: repair LLM-emitted receipt-id typos
+        # before validation. The empirical pattern is 1-char drops
+        # (e.g. "cfab-c01" → "cfab-01"); difflib snaps them back.
+        repaired_rids, _repair_log = repair_receipt_ids(
+            [str(r) for r in rids], accepted_ids,
+        )
         ok, _reason = _check_anchored_paragraph(
-            text, [str(r) for r in rids], accepted_ids, corpus_norm,
+            text, repaired_rids, accepted_ids, corpus_norm,
         )
         if not ok:
             continue
         body_lines.append(text.strip())
         body_lines.append("")
-        cite_str = ", ".join(f"`{i}`" for i in rids)
+        cite_str = ", ".join(f"`{i}`" for i in repaired_rids)
         body_lines.append(f"  _Cited: {cite_str}_")
         body_lines.append("")
         anchors.append(SynthesisClaimAnchor(
             sentence=text.strip(),
-            receipt_ids=tuple(str(r) for r in rids),
+            receipt_ids=tuple(repaired_rids),
             numerics=tuple(
                 _normalize(m.group(0))
                 for m in _NUMERIC_RE.finditer(text)
@@ -160,6 +213,7 @@ def build_scoped_from_parsed(
     topic: str,
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
+    accepted_ids = {r.receipt_id for r in accepted}
     corpus_norm = _accepted_corpus_norm(accepted)
     paragraphs = parsed.get("paragraphs") or []
     body_lines: list[str] = [heading, ""]
@@ -171,20 +225,24 @@ def build_scoped_from_parsed(
         rids = entry.get("receipt_ids") or []
         if not isinstance(text, str) or not isinstance(rids, list):
             continue
+        # Day 10.17 Fix C.3: same fuzzy-id repair as anchored builder.
+        repaired_rids, _repair_log = repair_receipt_ids(
+            [str(r) for r in rids], accepted_ids,
+        )
         ok, _reason = _check_scoped_paragraph(
-            text, topic, [str(r) for r in rids], corpus_norm,
+            text, topic, repaired_rids, corpus_norm,
         )
         if not ok:
             continue
         body_lines.append(text.strip())
         body_lines.append("")
-        if rids:
-            cite_str = ", ".join(f"`{i}`" for i in rids)
+        if repaired_rids:
+            cite_str = ", ".join(f"`{i}`" for i in repaired_rids)
             body_lines.append(f"  _Cited: {cite_str}_")
             body_lines.append("")
         anchors.append(SynthesisClaimAnchor(
             sentence=text.strip(),
-            receipt_ids=tuple(str(r) for r in rids),
+            receipt_ids=tuple(repaired_rids),
             numerics=(),
         ))
     if not anchors:
@@ -218,19 +276,24 @@ def build_results_from_parsed(
             rids = entry.get("receipt_ids") or []
             if not isinstance(text, str) or not isinstance(rids, list):
                 continue
+            # Day 10.17 Fix C.3: receipt-id typo repair (same as
+            # anchored / scoped builders).
+            repaired_rids, _repair_log = repair_receipt_ids(
+                [str(r) for r in rids], accepted_ids,
+            )
             ok, _reason = _check_anchored_paragraph(
-                text, [str(r) for r in rids], accepted_ids, corpus_norm,
+                text, repaired_rids, accepted_ids, corpus_norm,
             )
             if not ok:
                 continue
             sub_body.append(text.strip())
             sub_body.append("")
-            cite_str = ", ".join(f"`{i}`" for i in rids)
+            cite_str = ", ".join(f"`{i}`" for i in repaired_rids)
             sub_body.append(f"  _Cited: {cite_str}_")
             sub_body.append("")
             sub_anchors.append(SynthesisClaimAnchor(
                 sentence=text.strip(),
-                receipt_ids=tuple(str(r) for r in rids),
+                receipt_ids=tuple(repaired_rids),
                 numerics=tuple(
                     _normalize(m.group(0))
                     for m in _NUMERIC_RE.finditer(text)
