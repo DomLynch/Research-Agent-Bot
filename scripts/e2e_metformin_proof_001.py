@@ -884,6 +884,21 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
         chain=judge_chain, ledger=synthesis_ledger, seed=args.seed,
     )
 
+    # Day 10.17 Fix B — claim-strength repair pass. Scans the full
+    # paper for sentences citing tier-C / mechanistic receipts that
+    # use causal verbs without an epistemic hedge, and prepends
+    # "Evidence suggests that " to each violation. Every repair is
+    # logged for audit trail. Anti-gaming: Q11 ship-blocks if repair
+    # count exceeds the threshold (default 8), so the system can fix
+    # small numbers of violations but cannot launder a wholly-
+    # overclaimed paper.
+    from agent.paper_writer_claim_repair import repair_claim_strength
+    accepted_for_repair = list(filter_accepted(full_deduped))
+    full_paper_md, repair_log = repair_claim_strength(
+        full_paper_md, accepted_for_repair,
+    )
+    print(f"Claim-strength repair: {len(repair_log)} sentence(s) repaired")
+
     # Stage 5: audit. Day 10.17 Phase 1.5 — audit the FULL PAPER body
     # with the FULL CORPUS (accepted + rejected). The brief audit was
     # missing two things:
@@ -922,6 +937,14 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
     (output_dir / "tension_matrix.json").write_text(
         json.dumps(dataclasses.asdict(matrix), indent=2), encoding="utf-8",
     )
+    # Day 10.17 Fix B — save the repair log so reviewers can audit
+    # every sentence the deterministic pass mutated. Empty list when
+    # no repairs were needed.
+    (output_dir / "claim_strength_repairs.json").write_text(
+        json.dumps(
+            [dataclasses.asdict(r) for r in repair_log], indent=2,
+        ), encoding="utf-8",
+    )
     # Day 10.9 reviewer P2: surface the cross-source proof fields so a
     # reviewer can verify the gate from this artifact alone, without
     # recomputing from receipt_summaries.json.
@@ -955,6 +978,7 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
             "rejected_thesis_candidates": rejected_thesis,
             "audit_score": audit.score,
             "audit_notes": audit.notes,
+            "n_claim_strength_repairs": len(repair_log),
             "elapsed_sec": round(elapsed, 2),
             "total_usd": round(synthesis_ledger.total_usd(), 6),
             "render_version": paper.render_version,

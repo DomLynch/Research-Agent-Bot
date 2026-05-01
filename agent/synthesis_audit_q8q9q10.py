@@ -25,7 +25,7 @@ from agent.synthesis_schemas import (
     SynthesisPaper,
 )
 
-__all__ = ["check_q8", "check_q9", "check_q10"]
+__all__ = ["check_q8", "check_q9", "check_q10", "check_q11"]
 
 
 # --- Shared helpers ------------------------------------------------------
@@ -232,4 +232,68 @@ def check_q10(
             f"{len(weak)} weak-tier receipts, all sentences hedged"
             if not failures else f"unhedged: {failures[:2]}"
         ),
+    )
+
+
+# --- Q11 — claim-strength repair count threshold (Day 10.17 Fix B) -------
+
+
+# The deterministic repair pass in agent/paper_writer_claim_repair.py
+# prepends "Evidence suggests that " to violating sentences. Q11
+# counts those markers in the rendered body. Reviewer-prescribed
+# anti-gaming threshold:
+#   0-3 repairs   PASS clean
+#   4-8 repairs   PASS with warning (repair density acceptable)
+#   >8 repairs    FAIL ship-block (paper too overclaimed to launder)
+# Day 10.17 Fix B v3 — count BOTH repair markers. The repair pass
+# uses two strategies: sentence-prefix "Evidence suggests that " for
+# Q10 causal-verb violations, and inline " (potentially)" for Q5
+# healthspan-claim violations. Q11 must see both or a future paper
+# could game the threshold by piling up inline insertions. Both
+# constants must stay in lockstep with REPAIR_PREFIX and
+# REPAIR_INLINE_HEDGE in agent/paper_writer_claim_repair.py.
+_Q11_REPAIR_MARKERS = ("Evidence suggests that ", " (potentially)")
+_Q11_WARN_THRESHOLD = 4
+_Q11_FAIL_THRESHOLD = 8
+
+
+def check_q11(
+    paper: SynthesisPaper, receipts: Sequence[ReceiptSummary],
+) -> QualityCheckResult:
+    """Count claim-strength repair markers in the rendered body.
+    >8 repairs ship-blocks (paper has too many tier-C overclaims to
+    be salvaged by the deterministic patch); ≤3 is clean; 4-8 passes
+    with a warning detail. Counts BOTH repair-strategy markers
+    (sentence-prefix and inline) so the threshold can't be gamed by
+    splitting violations across the two paths."""
+    _ = receipts  # the count is body-only; no receipt filtering needed
+    n_repairs = sum(
+        paper.body_md.count(m) for m in _Q11_REPAIR_MARKERS
+    )
+    if n_repairs > _Q11_FAIL_THRESHOLD:
+        return QualityCheckResult(
+            question_id="Q11-claim-repair-density",
+            question="Claim-strength repair count must stay below ship-block threshold",
+            passed=False,
+            detail=(
+                f"{n_repairs} repairs > {_Q11_FAIL_THRESHOLD} threshold — "
+                "paper has too many tier-C / mechanistic overclaims to "
+                "ship even after deterministic patching"
+            ),
+        )
+    if n_repairs >= _Q11_WARN_THRESHOLD:
+        return QualityCheckResult(
+            question_id="Q11-claim-repair-density",
+            question="Claim-strength repair count must stay below ship-block threshold",
+            passed=True,
+            detail=(
+                f"{n_repairs} repairs (warning band {_Q11_WARN_THRESHOLD}-"
+                f"{_Q11_FAIL_THRESHOLD}; ≤3 is clean)"
+            ),
+        )
+    return QualityCheckResult(
+        question_id="Q11-claim-repair-density",
+        question="Claim-strength repair count must stay below ship-block threshold",
+        passed=True,
+        detail=f"{n_repairs} repairs (clean band ≤3)",
     )

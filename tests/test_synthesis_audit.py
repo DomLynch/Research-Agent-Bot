@@ -778,6 +778,66 @@ def test_q10_is_load_bearing() -> None:
     assert "Q10-claim-strength-discipline" in Q_LOAD_BEARING_IDS
 
 
+def test_q11_passes_clean_when_no_repairs() -> None:
+    """Body has no `Evidence suggests that ` markers → 0 repairs →
+    clean pass."""
+    receipts = (_summary("r-A"),)
+    body = "Direct trial finding cited normally (r-A)."
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q11 = next(c for c in audit.checks if c.question_id.startswith("Q11"))
+    assert q11.passed is True
+    assert "0 repairs" in q11.detail
+
+
+def test_q11_passes_with_warning_in_4_to_8_band() -> None:
+    """4-8 repairs is acceptable repair density."""
+    receipts = (_summary("r-A"),)
+    body = "Sentence one. " + "Evidence suggests that x. " * 5  # 5 markers
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q11 = next(c for c in audit.checks if c.question_id.startswith("Q11"))
+    assert q11.passed is True
+    assert "5 repairs" in q11.detail
+    assert "warning" in q11.detail.lower()
+
+
+def test_q11_fails_above_threshold() -> None:
+    """>8 repairs → ship-block. The paper had too many overclaims
+    to legitimately patch — the prose is fundamentally over-hedged
+    or laundered."""
+    receipts = (_summary("r-A"),)
+    body = "Evidence suggests that x. " * 10  # 10 markers
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q11 = next(c for c in audit.checks if c.question_id.startswith("Q11"))
+    assert q11.passed is False
+    assert "10 repairs" in q11.detail
+    assert "ship" in q11.detail.lower() or "threshold" in q11.detail.lower()
+
+
+def test_q11_counts_both_repair_strategies_to_prevent_gaming() -> None:
+    """Reviewer pin: Q11 must count BOTH the sentence-prefix marker
+    ('Evidence suggests that ') AND the inline-hedge marker
+    (' (potentially)'). Otherwise a paper could pile up 20 inline
+    insertions and slip past the >8 ship-block threshold."""
+    receipts = (_summary("r-A"),)
+    # 5 inline + 5 prefix = 10 total > 8 threshold → fail
+    body = (
+        ("foo (potentially) bar. " * 5)
+        + ("Evidence suggests that x. " * 5)
+    )
+    paper = _paper(body, receipts)
+    audit = audit_synthesis_paper(paper, receipts)
+    q11 = next(c for c in audit.checks if c.question_id.startswith("Q11"))
+    assert q11.passed is False
+    assert "10 repairs" in q11.detail
+
+
+def test_q11_is_load_bearing() -> None:
+    assert "Q11-claim-repair-density" in Q_LOAD_BEARING_IDS
+
+
 def test_q10_ignores_cited_footer_markdown() -> None:
     """Day 10.17 Phase 1.5 false-positive: the writer emits a
     `_Cited: \\`receipt-id\\`, ..._` markdown footer below each
