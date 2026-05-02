@@ -148,3 +148,41 @@ done
 ```
 
 Per-paper gold checks live in `tests/test_pdf_ingest.py::test_per_paper_metadata_matches_readme_gold` — they cross-check the `paper_sections.json` against the metadata block above.
+
+## Phase 2 — `quant_claims/` artifacts
+
+`scripts/quant_claim_extract.py` (Day 10.17 Phase 2) reads each `parsed/*.paper_sections.json` and emits structured quantitative-claim records to `quant_claims/{paper_id}.quant_claims.json`. Each record carries:
+
+- `claim_type` — one of `p_value | confidence_interval | sample_size | mean_sd | percentage | unit_value`
+- `numeric_values` — tuple of floats (1 for scalar claims, 2 for CI bounds / mean±SD pairs)
+- `units` — SI/clinical unit token (`%`, `m/s`, `mmHg`, etc.) or `""` for dimensionless
+- `source_section` + `source_offset` + `sentence` + `context_window` — source-text traceability
+
+The extractor is deterministic regex (NOT LLM) per the AGENTS.md "code disposes" rule — Phase 2 produces gold-benchmark data for Phase 4, so reproducibility is non-negotiable.
+
+To regenerate after extractor changes:
+
+```bash
+for parsed in docs/quality-reference/metformin/parsed/*.json; do
+  name=$(basename "$parsed" .paper_sections.json)
+  python scripts/quant_claim_extract.py "$parsed" \
+    --out "docs/quality-reference/metformin/quant_claims/${name}.quant_claims.json"
+done
+```
+
+Per-paper reasonableness (current corpus, v0.2):
+
+| Paper | total | p_value | CI | n= | % | mean±SD | unit |
+|---|---|---|---|---|---|---|---|
+| Walton MASTERS (RCT) | 180 | 75 | 0 | 12 | 65 | 1 | 27 |
+| Konopka 2019 (RCT) | 196 | 35 | 0 | 21 | 26 | 59 | 55 |
+| Witham MET-PREVENT (Lancet RCT) | 210 | 3 | 3 | 17 | 110 | 0 | 77 |
+| Kulkarni 2022 (review) | 54 | 5 | 0 | 2 | 35 | 5 | 7 |
+| Keys 2025 (review) | 54 | 1 | 0 | 8 | 24 | 0 | 21 |
+| Mohammed 2021 (review) | 33 | 0 | 0 | 0 | 17 | 0 | 16 |
+| MILES 2018 (short take) | 5 | 0 | 0 | 1 | 0 | 0 | 4 |
+
+**Known limitations (v0.1 / v0.2):**
+- Tables are NOT extracted (Phase 1 captures captions only). Witham puts most stats inside trial summary tables, hence the small `p_value` count for a heavy-stats paper.
+- Hazard ratios, odds ratios, Cohen's d, correlation coefficients deferred to Phase 2.1 (see `# TODO(phase 2.1)` in extractor).
+- References section is intentionally skipped (citation-year false positives).
