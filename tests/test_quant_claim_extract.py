@@ -357,6 +357,8 @@ def test_all_seven_papers_extract_without_exception() -> None:
                 assert c.claim_type in {
                     "p_value", "confidence_interval", "sample_size",
                     "percentage", "mean_sd", "unit_value",
+                    # Phase 2.1 effect-size additions
+                    "hazard_ratio", "odds_ratio", "risk_ratio", "correlation",
                 }, f"unknown claim_type: {c.claim_type}"
                 assert isinstance(c.numeric_values, tuple)
                 assert len(c.numeric_values) >= 1
@@ -474,3 +476,240 @@ def test_per_paper_claim_count_under_sanity_ceiling() -> None:
         assert len(claims) < 1000, (
             f"{parsed.name}: claim explosion ({len(claims)} >= 1000)"
         )
+
+
+# ============================================================
+# Phase 2.1 - effect-size patterns (HR / OR / RR / correlation)
+# ============================================================
+
+
+def test_hazard_ratio_extracted_from_witham_style_text() -> None:
+    """Witham trial: 'adjusted hazard ratio 1.25 (95% CI ...)' must produce
+    a hazard_ratio claim with value 1.25."""
+    text = "Adjusted hazard ratio 1.25 (95% CI 0.47 to 3.29); p=0.66."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    hrs = [c for c in claims if c.claim_type == "hazard_ratio"]
+    assert len(hrs) == 1
+    assert hrs[0].numeric_values == (1.25,)
+
+
+def test_odds_ratio_extracted_with_short_form_OR() -> None:
+    """Phase 2.1 v0.3: 'OR' alone is too ambiguous (English conjunction).
+    Requires either the long form 'odds ratio' OR the abbreviation
+    followed by mandatory [:=]. Both shapes captured."""
+    text = (
+        "The adjusted odds ratio 1.25 was reported in the trial. "
+        "A second model gave OR: 0.75 with similar bounds."
+    )
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    ors = [c for c in claims if c.claim_type == "odds_ratio"]
+    assert len(ors) == 2
+    values = sorted(c.numeric_values[0] for c in ors)
+    assert values == [0.75, 1.25]
+
+
+def test_relative_risk_extracted() -> None:
+    """'relative risk 1.10' / 'RR 1.10'."""
+    text = "The relative risk 1.10 indicated marginal increase."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    rrs = [c for c in claims if c.claim_type == "risk_ratio"]
+    assert len(rrs) == 1
+    assert rrs[0].numeric_values == (1.10,)
+
+
+def test_correlation_coefficient_extracted_with_pearson() -> None:
+    """Pearson r = 0.45 must produce a correlation claim."""
+    text = "Insulin sensitivity correlated with mitochondrial respiration (Pearson r = 0.45)."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    corrs = [c for c in claims if c.claim_type == "correlation"]
+    assert len(corrs) == 1
+    assert corrs[0].numeric_values == (0.45,)
+
+
+def test_negative_correlation_extracted_with_parenthesis_anchor() -> None:
+    """Phase 2.1 v0.3: bare 'r=' was matching 'for r = 4 patients'.
+    Now requires either Pearson/Spearman keyword OR parenthesis anchor.
+    Negative sign captured."""
+    text = "Body mass and walk speed were inversely related (r = -0.32) in older adults."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    corrs = [c for c in claims if c.claim_type == "correlation"]
+    assert len(corrs) == 1
+    assert corrs[0].numeric_values == (-0.32,)
+
+
+# ============================================================
+# Phase 2.1 - dose units (Mohammed "5 kg/day" false-positive fix)
+# ============================================================
+
+
+def test_dose_unit_kg_per_day_wins_over_bare_kg() -> None:
+    """Reviewer-flagged Mohammed false positive: pre-fix the regex
+    matched '5 kg' inside '5 kg/day' (a fatal-dose value treated as
+    a body weight). Phase 2.1 puts kg/day BEFORE kg in the alternation
+    so the longer dose unit wins."""
+    text = "The dose was approximately 5 kg/day equivalent in humans."
+    claims = quant_claim_extract.extract_from_text(text, "discussion")
+    units = [(c.numeric_values, c.units) for c in claims if c.claim_type == "unit_value"]
+    assert ((5.0,), "kg/day") in units, f"missing kg/day capture: {units}"
+    # And the bare 'kg' must NOT appear separately for the same span.
+    bare_kg = [u for u in units if u[1] == "kg" and u[0] == (5.0,)]
+    assert bare_kg == [], f"bare kg leaked alongside kg/day: {units}"
+
+
+def test_mg_per_kg_per_day_dose_unit_extracted() -> None:
+    """Dose unit 'mg/kg/day' (mouse studies) must be recognized."""
+    text = "Mice received 300 mg/kg/day metformin."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    doses = [c for c in claims if c.units == "mg/kg/day"]
+    assert len(doses) == 1
+    assert doses[0].numeric_values == (300.0,)
+
+
+# ============================================================
+# Phase 2.1 - claim_role tagging
+# ============================================================
+
+
+def test_claim_role_default_is_empty_for_v01_compatibility() -> None:
+    """The new claim_role field must default to a heuristic value.
+    For sentences with no role keywords + ambiguous section, it
+    falls back to 'unknown' (NOT empty string '') so consumers can
+    distinguish 'never tagged' from 'tagged as ambiguous'."""
+    text = "An odd number 42 appeared p = 0.05 here."
+    claims = quant_claim_extract.extract_from_text(text, "abstract")
+    p_claims = [c for c in claims if c.claim_type == "p_value"]
+    assert len(p_claims) == 1
+    assert p_claims[0].claim_role in ("effect", "background", "unknown")
+
+
+def test_claim_role_tags_effect_from_increased_keyword() -> None:
+    """Sentences containing 'increased / decreased / improved' clearly
+    state effects. Role = 'effect'."""
+    text = "Walk speed increased by 0.05 m/s in the metformin group (p = 0.04)."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    for c in claims:
+        if c.claim_type in ("p_value", "unit_value"):
+            assert c.claim_role == "effect", (
+                f"{c.claim_type} got role={c.claim_role!r}"
+            )
+
+
+def test_claim_role_tags_background_from_prevalence_keyword() -> None:
+    """'Prevalence' / 'incidence' keywords mark a sentence as background
+    epidemiology, not a study finding."""
+    text = "Type 2 diabetes prevalence is approximately 10% globally."
+    claims = quant_claim_extract.extract_from_text(text, "introduction")
+    pct_claims = [c for c in claims if c.claim_type == "percentage"]
+    assert len(pct_claims) == 1
+    assert pct_claims[0].claim_role == "background"
+
+
+def test_claim_role_tags_dose_from_treatment_keyword() -> None:
+    """'Treatment with X mg/day' is dose, not effect."""
+    text = "Subjects received treatment with 1700 mg/day metformin."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    dose_claims = [c for c in claims if c.units == "mg/day"]
+    assert len(dose_claims) == 1
+    assert dose_claims[0].claim_role == "dose"
+
+
+def test_claim_role_tags_duration_from_followup_keyword() -> None:
+    """'Follow-up of N years' is duration, not effect."""
+    text = "Median follow-up duration of 2.8 years was achieved."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    dur_claims = [c for c in claims if c.units == "years"]
+    assert len(dur_claims) == 1
+    assert dur_claims[0].claim_role == "duration"
+
+
+def test_claim_role_field_serialized_in_artifact() -> None:
+    """The new field must round-trip through make_artifact JSON."""
+    import json
+    text = "Walk speed increased (p = 0.04) significantly."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    artifact = quant_claim_extract.make_artifact(
+        paper_id="x", doi="d", claims=claims,
+    )
+    payload = json.loads(json.dumps(artifact))
+    for c in payload["claims"]:
+        assert "claim_role" in c
+        assert c["claim_role"] in (
+            "effect", "dose", "duration", "population", "background", "unknown",
+        )
+
+
+# ============================================================
+# Phase 2.1 v0.3 - reviewer-flagged HIGH bug regression tests
+# ============================================================
+
+
+def test_or_does_not_match_english_conjunction_or() -> None:
+    """Reviewer HIGH 1: pre-fix the OR pattern (case-insensitive,
+    optional [:=]) matched English 'or' in clauses like 'metformin or
+    placebo (n=27)'. Fix: CAPS only + mandatory [:=] for the
+    abbreviation form. The phrase below contains 'or' twice but no
+    real odds ratio."""
+    text = "Subjects received metformin or placebo for 12 weeks; n=27 in each arm."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    ors = [c for c in claims if c.claim_type == "odds_ratio"]
+    assert ors == [], f"English 'or' false-positive: {[c.raw_text for c in ors]}"
+
+
+def test_hr_does_not_match_clinical_heart_rate() -> None:
+    """Reviewer HIGH 2: pre-fix 'HR was 72' tagged as hazard_ratio=72
+    (heart rate). Fix: CAPS-only HR + mandatory [:=] + sanity bound.
+    Spelled-out 'heart rate' is harmless."""
+    text = "Resting heart rate was 72 bpm; HR exam taken every 4 weeks."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    hrs = [c for c in claims if c.claim_type == "hazard_ratio"]
+    assert hrs == [], f"heart-rate false-positive: {[c.raw_text for c in hrs]}"
+
+
+def test_hazard_ratio_implausibly_large_value_dropped() -> None:
+    """Reviewer HIGH 2: even with [:=] enforced, a clinical typo or
+    table-cell collision could produce 'HR: 200'. Sanity bound
+    rejects values > 100 (real HRs are 0.01-50 range)."""
+    text = "HR: 200 was reported in a table cell error."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    hrs = [c for c in claims if c.claim_type == "hazard_ratio"]
+    assert hrs == []
+
+
+def test_correlation_bare_r_equals_does_not_match_outside_anchor() -> None:
+    """Reviewer HIGH 3: pre-fix 'for r = 4 patients' false-positive'd.
+    Fix requires (Pearson|Spearman) keyword OR parenthesis anchor."""
+    text = "The methodology was adapted; for r = 4 patients the formula was simplified."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    corrs = [c for c in claims if c.claim_type == "correlation"]
+    assert corrs == [], f"bare r= false-positive: {[c.raw_text for c in corrs]}"
+
+
+def test_correlation_value_outside_minus1_to_1_dropped() -> None:
+    """Sanity: even matched anchors must enforce |r| <= 1."""
+    text = "An aberrant value (r = 5.2) was discarded."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    corrs = [c for c in claims if c.claim_type == "correlation"]
+    assert corrs == []
+
+
+def test_role_background_wins_when_prevalence_co_occurs_with_increased() -> None:
+    """Reviewer HIGH 4: pre-fix 'Global incidence has increased' tagged
+    as effect because 'increased' was checked first. Fix: BACKGROUND
+    keywords (prevalence/incidence/global) override EFFECT keywords."""
+    text = "Global incidence of T2DM has increased to 10% over the past decade."
+    claims = quant_claim_extract.extract_from_text(text, "introduction")
+    pct_claims = [c for c in claims if c.claim_type == "percentage"]
+    assert len(pct_claims) == 1
+    assert pct_claims[0].claim_role == "background", (
+        f"epidemiology sentence with 'increased' wrongly tagged as effect: "
+        f"{pct_claims[0].claim_role}"
+    )
+
+
+def test_role_effect_still_wins_when_no_background_keyword() -> None:
+    """The HIGH 4 fix must not over-correct: a sentence with effect
+    keywords + NO background signal still tags as effect."""
+    text = "Walk speed increased by 0.05 m/s in the metformin arm (p = 0.03)."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    p = [c for c in claims if c.claim_type == "p_value"][0]
+    assert p.claim_role == "effect"

@@ -15,13 +15,21 @@ deterministic regex + heuristics — no LLM. The runtime
 candidates from retrieved evidence, validators dispose). Don't
 confuse the two.
 
-Patterns extracted (claim_type values):
+Patterns extracted (claim_type values, v0.3 set):
   - p_value           : "p = 0.08" / "p < .001" / "P=0.04"
   - confidence_interval: "95% CI -0.06 to 0.06"
   - sample_size       : "n = 27"
   - mean_sd           : "9.7 ± 8.5"
   - percentage        : "58%" with surrounding context
-  - unit_value        : "0.57 m/s" / "12.3 kg" / "12 weeks"
+  - unit_value        : "0.57 m/s" / "12.3 kg" / "5 kg/day"
+  - hazard_ratio      : "HR: 1.25" / "hazard ratio 1.25" (Phase 2.1)
+  - odds_ratio        : "OR: 0.75" / "odds ratio 0.75" (Phase 2.1)
+  - risk_ratio        : "RR: 1.10" / "relative risk 1.10" (Phase 2.1)
+  - correlation       : "Pearson r = 0.45" / "(r = 0.32)" (Phase 2.1)
+
+Each claim also carries a `claim_role` (effect | dose | duration |
+population | background | unknown) tagged from sentence keywords +
+section context (Phase 2.1).
 
 Sections are processed in isolation; references is skipped (citation
 years and page numbers false-fire on percentage/sample_size patterns).
@@ -43,7 +51,7 @@ import datetime as dt
 import json
 import re
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
 __all__ = [
@@ -56,7 +64,19 @@ __all__ = [
 ]
 
 
-EXTRACTOR_VERSION = "0.1.0"
+EXTRACTOR_VERSION = "0.2.0"
+# Day 10.17 Phase 2.1: schema bump from 0.1.0 -> 0.2.0
+#   - new field: QuantClaim.claim_role (effect | dose | duration |
+#     population | background | unknown). Pre-2.1 every numeric
+#     was bucketed only by claim_type; reviewer-flagged that the
+#     same "5 mg" can be a dose (treatment) or an effect (LDL
+#     change) — without role, downstream Phase 4 can't tell results
+#     from background prose.
+#   - new claim_types: hazard_ratio, odds_ratio, risk_ratio,
+#     correlation. Effect-size patterns the v0.1 extractor missed.
+#   - dose units added to UNIT_VALUE_RE: kg/day, mg/kg/day, mg/d.
+#     Mohammed "5 kg/day" was being captured as "5 kg" with units="kg"
+#     (a fatal-dose value misread as a body weight).
 
 # Sections that downstream Phase 4 actually wants quant claims from.
 # References is excluded because citation years and page numbers
@@ -101,6 +121,16 @@ class QuantClaim:
     source_offset: int
     sentence: str
     context_window: str
+    # Day 10.17 Phase 2.1 — semantic role of the value within the
+    # paper. `claim_type` says WHAT shape the number has (p_value,
+    # percentage, etc.). `claim_role` says WHAT IT MEANS in the
+    # study's argument: an outcome effect, a treatment dose, a
+    # study duration, a population descriptor (e.g. age range), or
+    # background context (epidemiology / disease prevalence).
+    # Heuristic from sentence keywords + section context — best-effort,
+    # not authoritative. Default "" preserves backward compatibility
+    # with v0.1 artifacts.
+    claim_role: str = ""
 
 
 # --- Text normalization --------------------------------------------------
@@ -207,15 +237,143 @@ _PERCENT_RE = re.compile(r"(\d+\.?\d*)\s*%")
 # longer multi-character units FIRST so "kg/m2" wins over "kg".
 _UNIT_VALUE_RE = re.compile(
     r"(\d+\.?\d*)\s*"
-    r"(mL/min|kg/m2|mg/dL|mg/d|ng/mL|μg/L|ug/L|IU/L|mmHg|bpm|"
+    # Phase 2.1 reviewer fix: dose units added BEFORE the bare
+    # "kg" / "mg" so "5 kg/day" wins over "5 kg" (Mohammed false
+    # positive). Order is load-bearing — first match wins.
+    r"(mg/kg/day|mg/kg/d|kg/day|mg/day|μg/day|ug/day|μg/d|"
+    r"mL/min|kg/m2|mg/dL|mg/d|ng/mL|μg/L|ug/L|IU/L|mmHg|bpm|"
     r"m/s|kg|mg|mmol|μmol|µmol|umol|"
     r"mL|months?|weeks?|days?|years?|cm|mm)"
     r"\b",
 )
-# TODO(phase 2.1): hazard_ratio, odds_ratio, cohens_d, correlation
-# coefficient (r=, R²). Witham reports HRs and ORs in trial summary.
-# Konopka reports effect sizes (d). Out of scope for v0.1 to keep the
-# pattern set audit-able; track here so future Phase doesn't re-derive.
+
+
+# Day 10.17 Phase 2.1 — effect-size patterns. These are the shapes
+# the v0.1 extractor missed. Each pattern captures the effect
+# estimate; CIs that follow are caught by the existing CI regex
+# (downstream pairing is Phase 4 territory).
+#
+# Reviewer-flagged HIGH bugs in v0.2:
+#   - "OR" matches the English conjunction "metformin or placebo"
+#   - "HR" collides with "heart rate" (clinical papers report HR=72)
+#   - bare "r=" matches "for r = 4 patients"
+# Fixes applied in v0.3 (Phase 2.1 hotfix):
+#   - Drop re.IGNORECASE on the abbreviation forms (OR/HR/RR must
+#     be CAPS — English "or"/"hr"/"rr" are lowercase)
+#   - Require explicit [:=] (no bare "HR 1.25" — must be "HR: 1.25"
+#     or "HR = 1.25" or the spelled-out long form "hazard ratio 1.25")
+#   - Sanity bounds enforced in extractor (HR/OR/RR < 100 — clinical
+#     ratios are 0.01-50 range; 72 = heart rate, drop)
+#   - Long forms (e.g. "hazard ratio") keep IGNORECASE since they're
+#     unambiguous English.
+_HAZARD_RATIO_LONG_RE = re.compile(
+    r"\b(?:hazard\s+ratio|adjusted\s+hazard\s+ratio)\s*"
+    r"[:=]?\s*(\d+\.?\d*)",
+    re.IGNORECASE,
+)
+_HAZARD_RATIO_ABBR_RE = re.compile(
+    r"\b(?:HR|aHR)\s*[:=]\s*(\d+\.?\d*)",  # CAPS only, [:=] mandatory
+)
+_ODDS_RATIO_LONG_RE = re.compile(
+    r"\b(?:odds\s+ratio|adjusted\s+odds\s+ratio)\s*"
+    r"[:=]?\s*(\d+\.?\d*)",
+    re.IGNORECASE,
+)
+_ODDS_RATIO_ABBR_RE = re.compile(
+    r"\b(?:OR|aOR)\s*[:=]\s*(\d+\.?\d*)",
+)
+_RISK_RATIO_LONG_RE = re.compile(
+    r"\b(?:risk\s+ratio|relative\s+risk|adjusted\s+relative\s+risk)\s*"
+    r"[:=]?\s*(\d+\.?\d*)",
+    re.IGNORECASE,
+)
+_RISK_RATIO_ABBR_RE = re.compile(
+    r"\b(?:RR|aRR)\s*[:=]\s*(\d+\.?\d*)",
+)
+# Correlation: "r = 0.45", "R² = 0.23", "Pearson r = -0.32".
+# Reviewer-fix: bare "r=" was matching "for r = 4 patients". The
+# fix requires either (a) an explicit Pearson/Spearman keyword
+# preceding, OR (b) the value to be in correlation range (-1 to 1).
+# Sanity bound enforced in extractor; pattern just captures candidates.
+_CORRELATION_RE = re.compile(
+    r"\b(?:Pearson|Spearman)\s+[Rr]\s*=\s*(-?\d+\.?\d*)"
+    r"|\b(?:R²|r2|R2)\s*=\s*(-?\d+\.?\d*)"
+    r"|\(\s*[Rr]\s*=\s*(-?\d+\.?\d*)\s*\)",
+)
+
+
+# Day 10.17 Phase 2.1 — claim_role tagger keywords. Each role's
+# keyword set is checked against the sentence (lowercased). First
+# match wins; order matters — more-specific roles before less-specific.
+_ROLE_KEYWORD_DOSE = (
+    "dose", "dosing", "dosage", "administered", "received",
+    "treatment with", "treated with", "/day", "per day",
+    "/d ", "twice daily", "tablets",
+)
+_ROLE_KEYWORD_DURATION = (
+    "follow-up", "follow up", "duration of", "for a period of",
+    "during the", "weeks of", "months of", "years of",
+    "treatment period", "trial duration",
+)
+_ROLE_KEYWORD_POPULATION = (
+    "age range", "aged", "older adults", "participants were",
+    "subjects were", "median age", "mean age", "enrolled",
+    "recruited", "inclusion criteria",
+)
+_ROLE_KEYWORD_BACKGROUND = (
+    "prevalence", "incidence", "worldwide", "globally",
+    "general population", "epidemiology", "background",
+    "literature reports", "previous studies",
+    "estimated to affect", "is associated with the",
+)
+_ROLE_KEYWORD_EFFECT = (
+    "increased", "decreased", "improved", "reduced", "blunted",
+    "attenuated", "enhanced", "treatment effect", "primary endpoint",
+    "secondary endpoint", "between groups", "compared to placebo",
+    "vs. placebo", "vs placebo", "treatment arm", "metformin group",
+    "placebo group",
+)
+
+
+def _assign_claim_role(sentence: str, section: str) -> str:
+    """Heuristic role tagging from sentence keywords + section.
+    Returns 'effect' | 'dose' | 'duration' | 'population' |
+    'background' | 'unknown'.
+
+    Phase 2.1 v0.3 reviewer fix: pre-fix prioritized 'effect' first,
+    so a sentence like "Global incidence of T2DM has increased over
+    the past decade" tagged as effect (because of "increased") even
+    though "incidence" / "globally" are clear background signals.
+    Fix: BACKGROUND wins when its keywords co-occur with effect
+    keywords. Effect keywords alone still tag as effect.
+
+    Order: BACKGROUND-strong-signals > EFFECT > DURATION > DOSE >
+    POPULATION > section fallback.
+    """
+    s = sentence.lower()
+    has_effect = any(k in s for k in _ROLE_KEYWORD_EFFECT)
+    has_background = any(k in s for k in _ROLE_KEYWORD_BACKGROUND)
+    # Strong-background signals override effect keywords. Otherwise
+    # effect wins (since most quantitative claims in results sections
+    # use one of the effect keywords).
+    if has_background:
+        return "background"
+    if has_effect:
+        return "effect"
+    if any(k in s for k in _ROLE_KEYWORD_DURATION):
+        return "duration"
+    if any(k in s for k in _ROLE_KEYWORD_DOSE):
+        return "dose"
+    if any(k in s for k in _ROLE_KEYWORD_POPULATION):
+        return "population"
+    # Section-based fallback. Methods/abstract/limitations stay
+    # 'unknown' — they can carry any role and the heuristic is
+    # too brittle to guess a default.
+    if section == "introduction":
+        return "background"
+    if section in ("results", "discussion", "conclusion"):
+        return "effect"
+    return "unknown"
 
 
 # Sentence segmenter — split on sentence-final punctuation followed
@@ -417,6 +575,73 @@ def _extract_percentages(
     return out
 
 
+# Per-pattern dispatch with sanity bounds. Reviewer-flagged HIGH bug
+# fix: HR/OR/RR clinical ratios live in 0.01-50 range; values outside
+# that are typically heart rate (72), age (65), or body weight (80) —
+# false positives from pattern collisions. Drop them post-match.
+_EFFECT_SIZE_PATTERNS = (
+    # (claim_type, id_prefix, pattern, max_plausible_value)
+    ("hazard_ratio", "hr-l", _HAZARD_RATIO_LONG_RE, 100.0),
+    ("hazard_ratio", "hr-a", _HAZARD_RATIO_ABBR_RE, 100.0),
+    ("odds_ratio", "or-l", _ODDS_RATIO_LONG_RE, 100.0),
+    ("odds_ratio", "or-a", _ODDS_RATIO_ABBR_RE, 100.0),
+    ("risk_ratio", "rr-l", _RISK_RATIO_LONG_RE, 100.0),
+    ("risk_ratio", "rr-a", _RISK_RATIO_ABBR_RE, 100.0),
+    # Correlation r values must be in [-1, 1] by definition.
+    ("correlation", "corr", _CORRELATION_RE, 1.0),
+)
+
+
+def _extract_effect_sizes(
+    text: str, section: str, paper_id: str, sentences: list[tuple[int, str]],
+    occupied: list[tuple[int, int]],
+) -> list[QuantClaim]:
+    """Phase 2.1: extract HR / OR / RR / correlation. Each matches a
+    keyword anchor + numeric. Skipped if span is inside an already-
+    claimed CI literal. Sanity bound applied per claim_type so bare
+    "HR: 72" (a heart rate, not a hazard ratio) doesn't leak.
+
+    Phase 2.1 v0.3 reviewer fix: separate long-form (case-insensitive,
+    "hazard ratio") from short-form (CAPS only + mandatory [:=])
+    patterns, with per-type sanity ceilings.
+    """
+    out: list[QuantClaim] = []
+    for claim_type, prefix, pattern, max_value in _EFFECT_SIZE_PATTERNS:
+        for m in pattern.finditer(text):
+            if _is_inside_occupied_span(m.start(), m.end(), occupied):
+                continue
+            # Correlation pattern has multiple alternation groups —
+            # find the first non-None capture.
+            value_str = next(
+                (g for g in m.groups() if g is not None), None,
+            )
+            if value_str is None:
+                continue
+            try:
+                value = float(value_str)
+            except ValueError:
+                continue
+            # Sanity bound — reject implausible values that almost
+            # certainly come from pattern-natural-language collision.
+            # For correlations, also enforce the lower bound (-1).
+            if abs(value) > max_value:
+                continue
+            if claim_type == "correlation" and value < -1.0:
+                continue
+            out.append(QuantClaim(
+                claim_id=f"{paper_id}-{prefix}-{m.start()}",
+                claim_type=claim_type,
+                raw_text=m.group(0),
+                numeric_values=(value,),
+                units="",
+                source_section=section,
+                source_offset=m.start(),
+                sentence=_sentence_for_offset(m.start(), sentences),
+                context_window=_context_window(text, m.start(), m.end()),
+            ))
+    return out
+
+
 def _extract_unit_values(
     text: str, section: str, paper_id: str, sentences: list[tuple[int, str]],
     occupied: list[tuple[int, int]],
@@ -494,16 +719,32 @@ def extract_from_text(
     )
     for c in pct_claims:
         occupied.append((c.source_offset, c.source_offset + len(c.raw_text)))
+    # Phase 2.1: effect-size patterns (HR / OR / RR / correlation)
+    # before unit_value so a "HR: 1.25" doesn't get misread; effect-
+    # size raw_text spans marked occupied to prevent unit_value
+    # double-claim.
+    effect_claims = _extract_effect_sizes(
+        norm, section, paper_id, sentences, occupied,
+    )
+    for c in effect_claims:
+        occupied.append((c.source_offset, c.source_offset + len(c.raw_text)))
     unit_claims = _extract_unit_values(
         norm, section, paper_id, sentences, occupied,
     )
 
     all_claims = (
         p_claims + ci_claims + sample_claims
-        + mean_sd_claims + pct_claims + unit_claims
+        + mean_sd_claims + pct_claims + effect_claims + unit_claims
     )
-    all_claims.sort(key=lambda c: (c.source_offset, c.claim_type))
-    return tuple(all_claims)
+    # Phase 2.1: post-process — assign claim_role from sentence
+    # keywords + section context. Frozen dataclass rebuild via
+    # dataclasses.replace.
+    enriched = [
+        replace(c, claim_role=_assign_claim_role(c.sentence, section))
+        for c in all_claims
+    ]
+    enriched.sort(key=lambda c: (c.source_offset, c.claim_type))
+    return tuple(enriched)
 
 
 def extract_from_paper_sections(

@@ -1,8 +1,8 @@
 {
   "paper_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review",
   "doi": "10.3389/fendo.2021.718942",
-  "extracted_at": "2026-05-02T07:25:40+00:00",
-  "extractor_version": "0.1.0",
+  "extracted_at": "2026-05-02T10:11:41+00:00",
+  "extractor_version": "0.2.0",
   "claims_count_by_type": {
     "unit_value": 16,
     "percentage": 17
@@ -19,7 +19,8 @@
       "source_section": "abstract",
       "source_offset": 822,
       "sentence": "Furthermore, despite clinical use for over 60 years as an anti-diabetic drug, the cellular\nmechanisms by which metformin exerts either its actions remain unclear.",
-      "context_window": "free of disease. Furthermore, despite clinical use for over 60 years as an anti-diabetic drug, the cellular mechanisms by which"
+      "context_window": "free of disease. Furthermore, despite clinical use for over 60 years as an anti-diabetic drug, the cellular mechanisms by which",
+      "claim_role": "unknown"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-537",
@@ -32,7 +33,8 @@
       "source_section": "introduction",
       "source_offset": 537,
       "sentence": "Metformin was introduced to treat T2DM in\nFrance in 1958 and now after over 60 years is used on a daily\nbasis by over 150 million people (4).",
-      "context_window": "troduced to treat T2DM in France in 1958 and now after over 60 years is used on a daily basis by over 150 million people (4). Fo"
+      "context_window": "troduced to treat T2DM in France in 1958 and now after over 60 years is used on a daily basis by over 150 million people (4). Fo",
+      "claim_role": "background"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-804",
@@ -45,7 +47,8 @@
       "source_section": "introduction",
       "source_offset": 804,
       "sentence": "For the majority of people\nmetformin is not only an inexpensive drug as it is off patent but\nalso a safe drug with the most prominent side effects being\ngastrointestinal-related that occur in about 20-30% of patients\nand can include abdominal pain, bloating, diarrhea, nausea and\nvomiting (5, 6).",
-      "context_window": "fects being gastrointestinal-related that occur in about 20-30% of patients and can include abdominal pain, bloating, diarr"
+      "context_window": "fects being gastrointestinal-related that occur in about 20-30% of patients and can include abdominal pain, bloating, diarr",
+      "claim_role": "background"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-999",
@@ -58,7 +61,8 @@
       "source_section": "introduction",
       "source_offset": 999,
       "sentence": "The GI-side effects are dose-dependent and do\nnot usually limit its use; however, in approximately 5% of\nsubjects these side effects can result in the need to switch to an\nalternative drug (5-9).",
-      "context_window": "and do not usually limit its use; however, in approximately 5% of subjects these side effects can result in the need to sw"
+      "context_window": "and do not usually limit its use; however, in approximately 5% of subjects these side effects can result in the need to sw",
+      "claim_role": "dose"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-1652",
@@ -71,20 +75,22 @@
       "source_section": "introduction",
       "source_offset": 1652,
       "sentence": "Several studies, but\nnot all, have reported that the chronic use of metformin results in\nmalabsorption issues and vitamin B12 de\ufb01ciency, affecting\nbetween 6 and 30% of users.",
-      "context_window": "n issues and vitamin B12 de\ufb01ciency, affecting between 6 and 30% of users. Thus, monitoring B12 levels will be essential if"
+      "context_window": "n issues and vitamin B12 de\ufb01ciency, affecting between 6 and 30% of users. Thus, monitoring B12 levels will be essential if",
+      "claim_role": "background"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-9878",
       "claim_type": "unit_value",
-      "raw_text": "5 kg",
+      "raw_text": "5 kg/day",
       "numeric_values": [
         5.0
       ],
-      "units": "kg",
+      "units": "kg/day",
       "source_section": "introduction",
       "source_offset": 9878,
       "sentence": "However, in these studies with C. elegans, very high\nconcentrations of metformin, from 10 to 150 mM, were used (67,\n86), and are the equivalent to a dose in humans of approximately\n5 kg/day.",
-      "context_window": "and are the equivalent to a dose in humans of approximately 5 kg/day. Such doses in humans would be fatal and one would expe"
+      "context_window": "and are the equivalent to a dose in humans of approximately 5 kg/day. Such doses in humans would be fatal and one would expect t",
+      "claim_role": "dose"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-11078",
@@ -97,7 +103,8 @@
       "source_section": "introduction",
       "source_offset": 11078,
       "sentence": "Metformin has a\nbioavailability of approximately 50% with the unabsorbed drug\nexiting in the stool and following a dose of up to 2550-mg/day;\nthe concentration of metformin in the gut could reach mM\nlevels.",
-      "context_window": "(88, 89). Metformin has a bioavailability of approximately 50% with the unabsorbed drug exiting in the stool and following"
+      "context_window": "(88, 89). Metformin has a bioavailability of approximately 50% with the unabsorbed drug exiting in the stool and following",
+      "claim_role": "dose"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-784",
@@ -110,7 +117,8 @@
       "source_section": "results",
       "source_offset": 784,
       "sentence": "Epidemiological data on older\nOkinawans, on a caloric restriction-like diet for approximately half\ntheir lives, (caloric restriction (10-15%), consumption of foods that\nmimic biological effects of calorie restriction, and phenotypic\nevidence consistent with caloric restriction (low body weight, and\nBMI).\n\u2022 Caloric restriction likely contributed to the extended healthspan and lifespan of\nthe Okinawans.",
-      "context_window": "or approximately half their lives, (caloric restriction (10-15%), consumption of foods that mimic biological effects of cal"
+      "context_window": "or approximately half their lives, (caloric restriction (10-15%), consumption of foods that mimic biological effects of cal",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-1481",
@@ -123,7 +131,8 @@
       "source_section": "results",
       "source_offset": 1481,
       "sentence": "Bene\ufb01ts of metformin\nwere dependent on expression of the stress-responsive SKN-1/\nNrf2, but independent of the insulin-signaling pathway?\n\u2022 Exposure to 50 mM, but not 1 or 10 mM, metformin signi\ufb01cantly enhanced\nsurvival of C. elegans by 27%, signi\ufb01cantly right-shifted the survival curve and\npromoted \u2018youthful\u2019 mobility.",
-      "context_window": ", metformin signi\ufb01cantly enhanced survival of C. elegans by 27%, signi\ufb01cantly right-shifted the survival curve and promoted"
+      "context_window": ", metformin signi\ufb01cantly enhanced survival of C. elegans by 27%, signi\ufb01cantly right-shifted the survival curve and promoted",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-2587",
@@ -136,7 +145,8 @@
       "source_section": "results",
       "source_offset": 2587,
       "sentence": "Anisimov\net al. (66);\nAlso see\nAnisimov\net al. (73)\nand\nAnisimov\net al. (74)\n\u2022 Anisimov et al. (66): Studies in old vs. young mice\n\u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg]\ndaily, vs. tap water without metformin [control].\n\u2022 Anisimov et al. (74): Comparison of treatment with metformin:\n\u2022 a) started at 3 months of age.\n\u2022 b) started at 9 months of age.\n\u2022 c) started at 15 months of age.\n\u2022 When added to the diet of SHR mice, metformin slowed aging and increased\nlifespan, but did not lower incidence of spontaneous tumors.",
-      "context_window": "ung mice \u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg] daily, vs. tap water without metformin [control]. \u2022 Ani"
+      "context_window": "ung mice \u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg] daily, vs. tap water without metformin [control]. \u2022 Ani",
+      "claim_role": "background"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-2728",
@@ -149,7 +159,8 @@
       "source_section": "results",
       "source_offset": 2728,
       "sentence": "Anisimov\net al. (66);\nAlso see\nAnisimov\net al. (73)\nand\nAnisimov\net al. (74)\n\u2022 Anisimov et al. (66): Studies in old vs. young mice\n\u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg]\ndaily, vs. tap water without metformin [control].\n\u2022 Anisimov et al. (74): Comparison of treatment with metformin:\n\u2022 a) started at 3 months of age.\n\u2022 b) started at 9 months of age.\n\u2022 c) started at 15 months of age.\n\u2022 When added to the diet of SHR mice, metformin slowed aging and increased\nlifespan, but did not lower incidence of spontaneous tumors.",
-      "context_window": "4): Comparison of treatment with metformin: \u2022 a) started at 3 months of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15"
+      "context_window": "4): Comparison of treatment with metformin: \u2022 a) started at 3 months of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15",
+      "claim_role": "background"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-2761",
@@ -162,7 +173,8 @@
       "source_section": "results",
       "source_offset": 2761,
       "sentence": "Anisimov\net al. (66);\nAlso see\nAnisimov\net al. (73)\nand\nAnisimov\net al. (74)\n\u2022 Anisimov et al. (66): Studies in old vs. young mice\n\u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg]\ndaily, vs. tap water without metformin [control].\n\u2022 Anisimov et al. (74): Comparison of treatment with metformin:\n\u2022 a) started at 3 months of age.\n\u2022 b) started at 9 months of age.\n\u2022 c) started at 15 months of age.\n\u2022 When added to the diet of SHR mice, metformin slowed aging and increased\nlifespan, but did not lower incidence of spontaneous tumors.",
-      "context_window": "metformin: \u2022 a) started at 3 months of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15 months of age. \u2022 When added to t"
+      "context_window": "metformin: \u2022 a) started at 3 months of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15 months of age. \u2022 When added to t",
+      "claim_role": "background"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-2794",
@@ -175,7 +187,8 @@
       "source_section": "results",
       "source_offset": 2794,
       "sentence": "Anisimov\net al. (66);\nAlso see\nAnisimov\net al. (73)\nand\nAnisimov\net al. (74)\n\u2022 Anisimov et al. (66): Studies in old vs. young mice\n\u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg]\ndaily, vs. tap water without metformin [control].\n\u2022 Anisimov et al. (74): Comparison of treatment with metformin:\n\u2022 a) started at 3 months of age.\n\u2022 b) started at 9 months of age.\n\u2022 c) started at 15 months of age.\n\u2022 When added to the diet of SHR mice, metformin slowed aging and increased\nlifespan, but did not lower incidence of spontaneous tumors.",
-      "context_window": "hs of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15 months of age. \u2022 When added to the diet of SHR mice, metformin slo"
+      "context_window": "hs of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15 months of age. \u2022 When added to the diet of SHR mice, metformin slo",
+      "claim_role": "background"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-3143",
@@ -188,7 +201,8 @@
       "source_section": "results",
       "source_offset": 3143,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
-      "context_window": "ent. \u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01"
+      "context_window": "ent. \u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-3163",
@@ -201,7 +215,8 @@
       "source_section": "results",
       "source_offset": 3163,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
-      "context_window": "l. (74): Metformin extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 month"
+      "context_window": "l. (74): Metformin extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 month",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-3178",
@@ -214,7 +229,8 @@
       "source_section": "results",
       "source_offset": 3178,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
-      "context_window": "min extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffectiv"
+      "context_window": "min extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffectiv",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-3211",
@@ -227,7 +243,8 @@
       "source_section": "results",
       "source_offset": 3211,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
-      "context_window": "started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffective. \u2022 In the 2003 paper Anis"
+      "context_window": "started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffective. \u2022 In the 2003 paper Anis",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-3222",
@@ -240,7 +257,8 @@
       "source_section": "results",
       "source_offset": 3222,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
-      "context_window": "1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffective. \u2022 In the 2003 paper Anisimov et al demonst"
+      "context_window": "1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffective. \u2022 In the 2003 paper Anisimov et al demonst",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-3639",
@@ -253,7 +271,8 @@
       "source_section": "results",
       "source_offset": 3639,
       "sentence": "Alfaras et al.\n(75)\n\u2022 Intermittent [either every other week (EOW) or two weeks out of 4\n(2WM)] treatment of aged male C57/BL6 mice for 17 weeks with\n1% metformin in diet\n\u2022 Intermittent metformin treatment did not lead to early mortality.\n\u2022 EOW metformin resulted in weight loss and improved insulin sensitivity, but not\nlifespan extension.\n\u2022 Compared to controls evidence of increase in renal lesions in EOW and 2WM\nmice.",
-      "context_window": "eks out of 4 (2WM)] treatment of aged male C57/BL6 mice for 17 weeks with 1% metformin in diet \u2022 Intermittent metformin treatmen"
+      "context_window": "eks out of 4 (2WM)] treatment of aged male C57/BL6 mice for 17 weeks with 1% metformin in diet \u2022 Intermittent metformin treatmen",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-3653",
@@ -266,7 +285,8 @@
       "source_section": "results",
       "source_offset": 3653,
       "sentence": "Alfaras et al.\n(75)\n\u2022 Intermittent [either every other week (EOW) or two weeks out of 4\n(2WM)] treatment of aged male C57/BL6 mice for 17 weeks with\n1% metformin in diet\n\u2022 Intermittent metformin treatment did not lead to early mortality.\n\u2022 EOW metformin resulted in weight loss and improved insulin sensitivity, but not\nlifespan extension.\n\u2022 Compared to controls evidence of increase in renal lesions in EOW and 2WM\nmice.",
-      "context_window": "2WM)] treatment of aged male C57/BL6 mice for 17 weeks with 1% metformin in diet \u2022 Intermittent metformin treatment did no"
+      "context_window": "2WM)] treatment of aged male C57/BL6 mice for 17 weeks with 1% metformin in diet \u2022 Intermittent metformin treatment did no",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-4052",
@@ -279,7 +299,8 @@
       "source_section": "results",
       "source_offset": 4052,
       "sentence": "Martin-\nMontalvo\net al. (76)\n\u2022 Cohorts of middle-aged mice were fed either a normal diet or a\nstandard diet supplemented with 0.1% (w/w) or 1% (w/w)\nmetformin, for the remainder of their lives.\n\u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum\nlevels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver.\n\u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was\ntoxic and resulted in a 14.4% reduction in the average lifespan of mice.\n\u2022 Parallel studies in mouse embryonic \ufb01broblasts demonstrated activation of AMPK\nwithout affecting mitochondria electron transport activity.\n\u2022 Conclusion: Metformin extends lifespan in mice, but dose-dependent..\n\u2022 Note: Comments on the western blot data are available on pubpeer.",
-      "context_window": "d either a normal diet or a standard diet supplemented with 0.1% (w/w) or 1% (w/w) metformin, for the remainder of their liv"
+      "context_window": "d either a normal diet or a standard diet supplemented with 0.1% (w/w) or 1% (w/w) metformin, for the remainder of their liv",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-4066",
@@ -292,7 +313,8 @@
       "source_section": "results",
       "source_offset": 4066,
       "sentence": "Martin-\nMontalvo\net al. (76)\n\u2022 Cohorts of middle-aged mice were fed either a normal diet or a\nstandard diet supplemented with 0.1% (w/w) or 1% (w/w)\nmetformin, for the remainder of their lives.\n\u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum\nlevels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver.\n\u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was\ntoxic and resulted in a 14.4% reduction in the average lifespan of mice.\n\u2022 Parallel studies in mouse embryonic \ufb01broblasts demonstrated activation of AMPK\nwithout affecting mitochondria electron transport activity.\n\u2022 Conclusion: Metformin extends lifespan in mice, but dose-dependent..\n\u2022 Note: Comments on the western blot data are available on pubpeer.",
-      "context_window": "mal diet or a standard diet supplemented with 0.1% (w/w) or 1% (w/w) metformin, for the remainder of their lives. \u2022 In mal"
+      "context_window": "mal diet or a standard diet supplemented with 0.1% (w/w) or 1% (w/w) metformin, for the remainder of their lives. \u2022 In mal",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-4161",
@@ -305,7 +327,8 @@
       "source_section": "results",
       "source_offset": 4161,
       "sentence": "Martin-\nMontalvo\net al. (76)\n\u2022 Cohorts of middle-aged mice were fed either a normal diet or a\nstandard diet supplemented with 0.1% (w/w) or 1% (w/w)\nmetformin, for the remainder of their lives.\n\u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum\nlevels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver.\n\u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was\ntoxic and resulted in a 14.4% reduction in the average lifespan of mice.\n\u2022 Parallel studies in mouse embryonic \ufb01broblasts demonstrated activation of AMPK\nwithout affecting mitochondria electron transport activity.\n\u2022 Conclusion: Metformin extends lifespan in mice, but dose-dependent..\n\u2022 Note: Comments on the western blot data are available on pubpeer.",
-      "context_window": "er of their lives. \u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum levels of 450 mM increased"
+      "context_window": "er of their lives. \u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum levels of 450 mM increased",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-4237",
@@ -318,7 +341,8 @@
       "source_section": "results",
       "source_offset": 4237,
       "sentence": "Martin-\nMontalvo\net al. (76)\n\u2022 Cohorts of middle-aged mice were fed either a normal diet or a\nstandard diet supplemented with 0.1% (w/w) or 1% (w/w)\nmetformin, for the remainder of their lives.\n\u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum\nlevels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver.\n\u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was\ntoxic and resulted in a 14.4% reduction in the average lifespan of mice.\n\u2022 Parallel studies in mouse embryonic \ufb01broblasts demonstrated activation of AMPK\nwithout affecting mitochondria electron transport activity.\n\u2022 Conclusion: Metformin extends lifespan in mice, but dose-dependent..\n\u2022 Note: Comments on the western blot data are available on pubpeer.",
-      "context_window": "/w resulted in serum levels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver. \u2022 A higher dose of 1% metf"
+      "context_window": "/w resulted in serum levels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver. \u2022 A higher dose of 1% metf",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-4295",
@@ -331,7 +355,8 @@
       "source_section": "results",
       "source_offset": 4295,
       "sentence": "Martin-\nMontalvo\net al. (76)\n\u2022 Cohorts of middle-aged mice were fed either a normal diet or a\nstandard diet supplemented with 0.1% (w/w) or 1% (w/w)\nmetformin, for the remainder of their lives.\n\u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum\nlevels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver.\n\u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was\ntoxic and resulted in a 14.4% reduction in the average lifespan of mice.\n\u2022 Parallel studies in mouse embryonic \ufb01broblasts demonstrated activation of AMPK\nwithout affecting mitochondria electron transport activity.\n\u2022 Conclusion: Metformin extends lifespan in mice, but dose-dependent..\n\u2022 Note: Comments on the western blot data are available on pubpeer.",
-      "context_window": "y 4.15%, and reduced NF-kB in the liver. \u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was toxi"
+      "context_window": "y 4.15%, and reduced NF-kB in the liver. \u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was toxi",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-4377",
@@ -344,7 +369,8 @@
       "source_section": "results",
       "source_offset": 4377,
       "sentence": "Martin-\nMontalvo\net al. (76)\n\u2022 Cohorts of middle-aged mice were fed either a normal diet or a\nstandard diet supplemented with 0.1% (w/w) or 1% (w/w)\nmetformin, for the remainder of their lives.\n\u2022 In male mice, long-term treatment with 0.1% metformin w/w resulted in serum\nlevels of 450 mM increased lifespan by 4.15%, and reduced NF-kB in the liver.\n\u2022 A higher dose of 1% metformin w/w resulted in serum levels of 5 mM and was\ntoxic and resulted in a 14.4% reduction in the average lifespan of mice.\n\u2022 Parallel studies in mouse embryonic \ufb01broblasts demonstrated activation of AMPK\nwithout affecting mitochondria electron transport activity.\n\u2022 Conclusion: Metformin extends lifespan in mice, but dose-dependent..\n\u2022 Note: Comments on the western blot data are available on pubpeer.",
-      "context_window": "ted in serum levels of 5 mM and was toxic and resulted in a 14.4% reduction in the average lifespan of mice. \u2022 Parallel studi"
+      "context_window": "ted in serum levels of 5 mM and was toxic and resulted in a 14.4% reduction in the average lifespan of mice. \u2022 Parallel studi",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-4813",
@@ -357,7 +383,8 @@
       "source_section": "results",
       "source_offset": 4813,
       "sentence": "Strong et al.\n(77)\n\u2022 The National Institute on Aging Interventions Testing Program\n(ITP) dataset evaluated 0.1% metformin and rapamycin (14 ppm)\neffects on lifespan in mice.\n\u2022 Metformin alone did not increase lifespan, but in combination with rapamycin, a\nbene\ufb01t was reported.",
-      "context_window": "Aging Interventions Testing Program (ITP) dataset evaluated 0.1% metformin and rapamycin (14 ppm) effects on lifespan in mic"
+      "context_window": "Aging Interventions Testing Program (ITP) dataset evaluated 0.1% metformin and rapamycin (14 ppm) effects on lifespan in mic",
+      "claim_role": "effect"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-5204",
@@ -370,7 +397,8 @@
       "source_section": "results",
       "source_offset": 5204,
       "sentence": "Smith et al.\n(78)\n\u2022 Male Fischer rats from 6 months of age were subjected to either a\ncalorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/\nday) versus a control group.",
-      "context_window": "ifespan in mice. Smith et al. (78) \u2022 Male Fischer rats from 6 months of age were subjected to either a calorie restricted (CR) d"
+      "context_window": "ifespan in mice. Smith et al. (78) \u2022 Male Fischer rats from 6 months of age were subjected to either a calorie restricted (CR) d",
+      "claim_role": "duration"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-5277",
@@ -383,7 +411,8 @@
       "source_section": "results",
       "source_offset": 5277,
       "sentence": "Smith et al.\n(78)\n\u2022 Male Fischer rats from 6 months of age were subjected to either a\ncalorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/\nday) versus a control group.",
-      "context_window": "ge were subjected to either a calorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/ day) versus a control gr"
+      "context_window": "ge were subjected to either a calorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/ day) versus a control gr",
+      "claim_role": "duration"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-5305",
@@ -396,20 +425,22 @@
       "source_section": "results",
       "source_offset": 5305,
       "sentence": "Smith et al.\n(78)\n\u2022 Male Fischer rats from 6 months of age were subjected to either a\ncalorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/\nday) versus a control group.",
-      "context_window": "a calorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/ day) versus a control group. Metabolic parameters, body"
+      "context_window": "a calorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/ day) versus a control group. Metabolic parameters, body",
+      "claim_role": "duration"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-5827",
       "claim_type": "unit_value",
-      "raw_text": "1700 mg",
+      "raw_text": "1700 mg/day",
       "numeric_values": [
         1700.0
       ],
-      "units": "mg",
+      "units": "mg/day",
       "source_section": "results",
       "source_offset": 5827,
       "sentence": "Subjects were\ntreated with 1700 mg/day metformin for 6 weeks and\ntranscriptomic studies of biopsies from skeletal muscle and\nsubcutaneous adipose tissue were conducted.\n\u2022 647 genes were differentially expressed in muscle versus 146 in adipose tissue\naffecting both metabolic and non-metabolic pathways\n\u2022 Changes in DNA repair and, since repair function declines with age, data\nsuggests an anti-aging action.",
-      "context_window": "ch serving as their own control. Subjects were treated with 1700 mg/day metformin for 6 weeks and transcriptomic studies of bio"
+      "context_window": "ch serving as their own control. Subjects were treated with 1700 mg/day metformin for 6 weeks and transcriptomic studies of biopsie",
+      "claim_role": "dose"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-5853",
@@ -422,7 +453,8 @@
       "source_section": "results",
       "source_offset": 5853,
       "sentence": "Subjects were\ntreated with 1700 mg/day metformin for 6 weeks and\ntranscriptomic studies of biopsies from skeletal muscle and\nsubcutaneous adipose tissue were conducted.\n\u2022 647 genes were differentially expressed in muscle versus 146 in adipose tissue\naffecting both metabolic and non-metabolic pathways\n\u2022 Changes in DNA repair and, since repair function declines with age, data\nsuggests an anti-aging action.",
-      "context_window": "ntrol. Subjects were treated with 1700 mg/day metformin for 6 weeks and transcriptomic studies of biopsies from skeletal muscle"
+      "context_window": "ntrol. Subjects were treated with 1700 mg/day metformin for 6 weeks and transcriptomic studies of biopsies from skeletal muscle",
+      "claim_role": "dose"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-6995",
@@ -435,7 +467,8 @@
       "source_section": "results",
       "source_offset": 6995,
       "sentence": "Of additional interest and based on a proteomic analysis of\nthe plasma from 240 healthy, disease-free, humans in the age\nrange 22-93 years-old, GDF15 was identi\ufb01ed as the protein most\npositively correlated with chronological age and also known to\nreduce appetite via an action in the hind-brain (82, 95).",
-      "context_window": "from 240 healthy, disease-free, humans in the age range 22-93 years-old, GDF15 was identi\ufb01ed as the protein most positively cor"
+      "context_window": "from 240 healthy, disease-free, humans in the age range 22-93 years-old, GDF15 was identi\ufb01ed as the protein most positively cor",
+      "claim_role": "effect"
     }
   ]
 }
