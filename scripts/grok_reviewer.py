@@ -139,11 +139,21 @@ def _build_grok_prompt(
     return system, user
 
 
-async def _call_grok(
+# Per-1M-token pricing (input, output) in USD. Falls back to (0, 0) for
+# anything not listed so we record cost as zero rather than crash. The
+# user has explicitly said cost is not a concern; this exists for
+# transparency / retroactive audit, not budgeting.
+_PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
+    "x-ai/grok-4.3": (3.00, 15.00),
+    "mistralai/mistral-small-2603": (0.20, 0.60),
+}
+
+
+async def _call_one(
     system: str, user: str, model: str, api_key: str,
     base_url: str, client: Any,
-) -> dict[str, Any]:
-    """Single Grok call. Returns the parsed JSON object."""
+) -> tuple[dict[str, Any], int, int]:
+    """Single chat call. Returns (parsed_json, in_tokens, out_tokens)."""
     url = base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": model,
@@ -166,7 +176,43 @@ async def _call_grok(
     # Strip JSON fences if present
     text = re.sub(r"^```(?:json)?\s*", "", text.strip())
     text = re.sub(r"\s*```$", "", text)
-    return json.loads(text)
+    usage = body.get("usage") or {}
+    in_tok = int(usage.get("prompt_tokens", 0))
+    out_tok = int(usage.get("completion_tokens", 0))
+    return json.loads(text), in_tok, out_tok
+
+
+def _estimate_cost(model: str, in_tok: int, out_tok: int) -> float:
+    in_per, out_per = _PRICING_PER_MTOK.get(model, (0.0, 0.0))
+    return (in_tok / 1_000_000.0) * in_per + (out_tok / 1_000_000.0) * out_per
+
+
+async def _call_with_fallback(
+    system: str, user: str, primary_model: str,
+    fallback_model: str, api_key: str, base_url: str, client: Any,
+) -> tuple[dict[str, Any], str, float]:
+    """Try primary first; on any HTTP/parse failure, fall back. Returns
+    (parsed_json, model_used, cost_usd_estimate). Per the user: Grok
+    4.3 is the final fail-safe, Mistral fallback only fires on
+    OpenRouter outage / Grok unavailability — unlikely in practice."""
+    import httpx
+    for model in (primary_model, fallback_model):
+        try:
+            parsed, in_tok, out_tok = await _call_one(
+                system, user, model, api_key, base_url, client,
+            )
+            cost = _estimate_cost(model, in_tok, out_tok)
+            return parsed, model, cost
+        except (httpx.HTTPError, ValueError, KeyError, json.JSONDecodeError) as exc:
+            print(
+                f"grok_reviewer: {model} failed ({type(exc).__name__}); "
+                f"trying fallback",
+                file=sys.stderr,
+            )
+            continue
+    raise RuntimeError(
+        f"both {primary_model} and {fallback_model} failed for review call"
+    )
 
 
 def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
@@ -200,35 +246,48 @@ def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
 async def review_with_grok(
     paper_md: str, manifest: dict, audit: dict,
     *, model: str = "x-ai/grok-4.3",
+    fallback_model: str = "mistralai/mistral-small-2603",
     api_key: str | None = None,
     base_url: str = "https://openrouter.ai/api/v1",
-) -> tuple[list[TypedPatch], dict]:
-    """Run the Grok review. Returns (patches, raw_response)."""
+    client: Any | None = None,
+) -> tuple[list[TypedPatch], dict, str, float]:
+    """Run the final-layer review. Returns (patches, raw_response,
+    model_used, cost_usd). Grok 4.3 is the primary; Mistral Small
+    is the fallback that only fires on OpenRouter outage."""
     api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
-        raise RuntimeError("OPENROUTER_API_KEY not set; cannot run Grok review")
+        raise RuntimeError(
+            "OPENROUTER_API_KEY not set; cannot run final-layer review"
+        )
     system, user = _build_grok_prompt(paper_md, manifest, audit)
     import httpx
-    async with httpx.AsyncClient(timeout=300.0) as client:
-        raw = await _call_grok(
-            system, user, model, api_key, base_url, client,
+    own_client = client is None
+    c = client or httpx.AsyncClient(timeout=300.0)
+    try:
+        raw, model_used, cost = await _call_with_fallback(
+            system, user, model, fallback_model, api_key, base_url, c,
         )
+    finally:
+        if own_client:
+            await c.aclose()
     patches: list[TypedPatch] = []
     for i, p in enumerate(raw.get("patches", []), start=1):
         norm = _normalize_patch(p, i)
         if norm is not None:
             patches.append(norm)
-    return patches, raw
+    return patches, raw, model_used, cost
 
 
 def _format_summary(
-    patches: list[TypedPatch], cost_estimate: float = 0.0,
+    patches: list[TypedPatch],
+    cost_usd: float = 0.0,
+    model_used: str = "x-ai/grok-4.3",
 ) -> str:
     if not patches:
         return (
-            "# Grok 4.3 Review\n\n"
-            "**No patches proposed.** Paper looks clean to the LLM "
-            "reviewer.\n"
+            f"# Final-Layer Review ({model_used})\n\n"
+            f"**No patches proposed.** Paper looks clean to the LLM "
+            f"reviewer.\n\nActual cost: ${cost_usd:.4f}\n"
         )
     by_type: dict[str, int] = {}
     by_sev: dict[str, int] = {}
@@ -236,23 +295,21 @@ def _format_summary(
         by_type[p.patch_type] = by_type.get(p.patch_type, 0) + 1
         by_sev[p.severity] = by_sev.get(p.severity, 0) + 1
     lines = [
-        "# Grok 4.3 Review",
+        f"# Final-Layer Review ({model_used})",
         "",
         f"**{len(patches)} patches proposed.**",
         f"- By type: {by_type}",
         f"- By severity: {by_sev}",
-        f"- Estimated cost: ${cost_estimate:.4f}",
+        f"- Actual cost: ${cost_usd:.4f}",
         "",
         "## Patches",
         "",
-        "| # | Type | Sev | Auto? | Trace? | Location | Reason |",
-        "|---|---|---|---|---|---|---|",
+        "| # | Type | Sev | Location | Reason |",
+        "|---|---|---|---|---|",
     ]
     for p in patches:
         lines.append(
             f"| {p.id} | {p.patch_type} | {p.severity} | "
-            f"{'✓' if p.auto_applicable else '✗'} | "
-            f"{'✓' if p.requires_trace else '—'} | "
             f"{p.location} | {p.reason[:80]} |"
         )
     return "\n".join(lines)
@@ -283,20 +340,22 @@ def main(argv: list[str] | None = None) -> int:
         json.loads(audit_path.read_text()) if audit_path.exists() else {}
     )
 
-    patches, raw = asyncio.run(
+    patches, raw, model_used, cost_usd = asyncio.run(
         review_with_grok(paper, manifest, audit, model=args.model),
     )
     out_json = paper_path.with_suffix(".review_patches.json")
     out_md = paper_path.with_suffix(".review_summary.md")
     out_json.write_text(json.dumps({
-        "model": args.model,
+        "model_requested": args.model,
+        "model_used": model_used,
+        "cost_usd": cost_usd,
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "n_patches": len(patches),
         "patches": [asdict(p) for p in patches],
         "raw_response_keys": sorted((raw or {}).keys()),
     }, indent=2))
-    out_md.write_text(_format_summary(patches))
-    print(_format_summary(patches))
+    out_md.write_text(_format_summary(patches, cost_usd, model_used))
+    print(_format_summary(patches, cost_usd, model_used))
     print(f"\nPatches: {out_json}\nSummary: {out_md}", file=sys.stderr)
     return 0
 

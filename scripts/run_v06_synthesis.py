@@ -48,6 +48,16 @@ from agent.synthesis_schemas import (  # noqa: E402
 )
 from agent.settings import load_settings  # noqa: E402
 
+# Pipeline-stage modules (auto-included after writer; final-layer
+# review by Grok 4.3 with Mistral fallback closes the loop with NO
+# manual step required).
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+import audit_v06_paper as _audit_v06  # noqa: E402
+import final_consistency_audit as _consistency_audit  # noqa: E402
+import apply_consistency_fixes as _consistency_fixer  # noqa: E402
+import grok_reviewer as _final_reviewer  # noqa: E402
+import apply_patches as _patch_applier  # noqa: E402
+
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
 
@@ -586,15 +596,165 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
 
+    # ===== Auto-pipeline stages (Layer 1 audit + auto-fix → Grok final
+    # review → auto-apply → final audit). No manual step required —
+    # this whole chain runs from one invocation. =====
+    final_paper_md = await _run_post_paper_pipeline(
+        paper_path=paper_path, manifest=manifest, out_dir=out_dir,
+    )
+    word_count = len(final_paper_md.split())
+
     print(f"\nDONE: {paper_path}", file=sys.stderr)
-    print(f"  total_words: {word_count}", file=sys.stderr)
+    print(f"  final_words: {word_count}", file=sys.stderr)
     print(f"  per-section: {section_words}", file=sys.stderr)
     print(
         f"  llm_calls: {manifest['n_llm_calls']} "
-        f"cost_usd: ${manifest['total_cost_usd']:.4f}",
+        f"cost_usd: ${manifest['total_cost_usd']:.4f} (writer-only; "
+        f"final-layer review cost in {out_dir.name}/full_paper.review_patches.json)",
         file=sys.stderr,
     )
     return 0
+
+
+async def _run_post_paper_pipeline(
+    *, paper_path: Path, manifest: dict, out_dir: Path,
+) -> str:
+    """Layer 1 deterministic audit + auto-fix → final-layer LLM review
+    (Grok 4.3 → Mistral fallback) → auto-apply patches → final audit.
+
+    Each step's artifact is written to disk so a human can retroactively
+    review what changed and why. Returns the final paper text."""
+    paper_md = paper_path.read_text()
+
+    # Stage 1: deterministic audit (Q1-Q10) on the as-written paper.
+    print("[pipeline] Stage 1/5 — initial audit...", file=sys.stderr)
+    audit_report = _audit_v06.audit(paper_md)
+    audit_path = paper_path.with_suffix(".audit.json")
+    audit_path.write_text(json.dumps(audit_report, indent=2))
+    audit_md = _audit_v06._format_summary(audit_report)
+    paper_path.with_suffix(".audit.md").write_text(audit_md)
+
+    # Stage 2: Layer 1 consistency audit + deterministic auto-fix.
+    print("[pipeline] Stage 2/5 — consistency audit + auto-fix...", file=sys.stderr)
+    issues = _consistency_audit.run_audit(
+        paper_md, manifest, audit_report, audit_md,
+    )
+    paper_path.with_suffix(".consistency.json").write_text(
+        json.dumps([_issue_to_dict(i) for i in issues], indent=2)
+    )
+    paper_path.with_suffix(".consistency.md").write_text(
+        _consistency_audit._format_summary(issues)
+    )
+    paper_md, fix_log = _consistency_fixer.apply_fixes(paper_md, issues)
+    paper_path.with_suffix(".fixed_log.json").write_text(
+        json.dumps(fix_log, indent=2)
+    )
+    paper_path.write_text(paper_md)
+
+    # Re-run the audit + manifest now that auto-fixes have landed
+    # (the consistency audit's verdict-overclaim check needs the
+    # updated audit_md to pass).
+    audit_report = _audit_v06.audit(paper_md)
+    audit_path.write_text(json.dumps(audit_report, indent=2))
+    audit_md = _audit_v06._format_summary(audit_report)
+    paper_path.with_suffix(".audit.md").write_text(audit_md)
+
+    # Stage 3: Final-layer LLM review (Grok 4.3 primary, Mistral fallback).
+    print(
+        "[pipeline] Stage 3/5 — final-layer review (Grok 4.3 → Mistral fallback)...",
+        file=sys.stderr,
+    )
+    try:
+        patches, _raw, model_used, cost = await _final_reviewer.review_with_grok(
+            paper_md, manifest, audit_report,
+        )
+    except RuntimeError as exc:
+        # No OPENROUTER_API_KEY OR both Grok and Mistral failed. Log
+        # but don't crash the whole run — the deterministic Layer 1
+        # work has already happened. The reviewer artifact records
+        # the gap for transparency.
+        print(
+            f"[pipeline] final-layer review unavailable: {exc}",
+            file=sys.stderr,
+        )
+        patches, model_used, cost = [], "none", 0.0
+    paper_path.with_suffix(".review_patches.json").write_text(json.dumps({
+        "model_used": model_used,
+        "cost_usd": cost,
+        "n_patches": len(patches),
+        "patches": [
+            {
+                "id": p.id, "patch_type": p.patch_type,
+                "severity": p.severity, "location": p.location,
+                "before": p.before, "after": p.after, "reason": p.reason,
+            }
+            for p in patches
+        ],
+    }, indent=2))
+    paper_path.with_suffix(".review_summary.md").write_text(
+        _final_reviewer._format_summary(patches, cost, model_used)
+    )
+
+    # Stage 4: Auto-apply final-layer patches. Trust Grok with
+    # mechanical safety only — no flag-for-human terminal state.
+    print(
+        f"[pipeline] Stage 4/5 — auto-apply {len(patches)} patches...",
+        file=sys.stderr,
+    )
+    if patches:
+        patches_dicts = [
+            {
+                "id": p.id, "patch_type": p.patch_type,
+                "severity": p.severity, "location": p.location,
+                "before": p.before, "after": p.after, "reason": p.reason,
+            }
+            for p in patches
+        ]
+        paper_md, results = _patch_applier.apply_patches(
+            paper_md, patches_dicts, manifest,
+        )
+        paper_path.write_text(paper_md)
+        paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
+            "applied_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+            "n_proposed": len(results),
+            "n_applied": sum(1 for r in results if r.decision == "applied"),
+            "n_rejected": sum(1 for r in results if r.decision == "rejected"),
+            "patches": [
+                {
+                    "patch_id": r.patch_id, "patch_type": r.patch_type,
+                    "severity": r.severity, "decision": r.decision,
+                    "reason_for_decision": r.reason_for_decision,
+                }
+                for r in results
+            ],
+        }, indent=2))
+        n_applied = sum(1 for r in results if r.decision == "applied")
+        n_rejected = sum(1 for r in results if r.decision == "rejected")
+        print(
+            f"[pipeline]   applied={n_applied} rejected={n_rejected}",
+            file=sys.stderr,
+        )
+
+    # Stage 5: Final audit (re-run after all patches applied).
+    print("[pipeline] Stage 5/5 — final audit...", file=sys.stderr)
+    audit_report = _audit_v06.audit(paper_md)
+    audit_path.write_text(json.dumps(audit_report, indent=2))
+    audit_md = _audit_v06._format_summary(audit_report)
+    paper_path.with_suffix(".audit.md").write_text(audit_md)
+    print(
+        f"[pipeline] DONE — score={audit_report['score_out_of_10']}/10 "
+        f"P1_pass={audit_report['p1_pass']}",
+        file=sys.stderr,
+    )
+    return paper_md
+
+
+def _issue_to_dict(issue) -> dict[str, Any]:
+    return {
+        "id": issue.id, "severity": issue.severity,
+        "issue_type": issue.issue_type, "auto_fixable": issue.auto_fixable,
+        "evidence": issue.evidence, "suggested_fix": issue.suggested_fix,
+    }
 
 
 def main(argv: list[str] | None = None) -> int:

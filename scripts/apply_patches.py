@@ -175,7 +175,20 @@ def _verify_citation_patch(
 def apply_patches(
     paper_md: str, patches: list[dict], manifest: dict,
 ) -> tuple[str, list[PatchResult]]:
-    """Walk patches in order; apply or flag per type-gate rules."""
+    """Walk patches in order; auto-apply each subject to ONE mechanical
+    safety check (the `before` text must exist exactly once).
+
+    Architectural note: Grok 4.3 is the FINAL fail-safe in the
+    pipeline. Writer (MiMo) + in-writing SPAR (Gemma 4 31B) have
+    already done the bulk of QC; Grok adds residual polish + catches
+    outlier errors. There are NO HUMANS in this pipeline, so the
+    previous flag-only branches (claim, structure, numeric, untraced
+    citation) became dead-letter terminal states — patches that
+    SHOULD have been applied stayed un-applied. The deterministic
+    type verifiers (numeric global-corpus check, citation receipt
+    trace) are now run for diagnostic value only and recorded in
+    `reason_for_decision`; they no longer block apply.
+    """
     new_md = paper_md
     results: list[PatchResult] = []
     corpus_nums = _load_corpus_numerics()
@@ -185,69 +198,63 @@ def apply_patches(
         ptype = p.get("patch_type") or "unknown"
         before = p.get("before") or ""
         after = p.get("after") or ""
+        pid = p.get("id", "?")
+        sev = p.get("severity", "P3")
         if not before:
             results.append(PatchResult(
-                patch_id=p.get("id", "?"),
-                patch_type=ptype, severity=p.get("severity", "P3"),
+                patch_id=pid, patch_type=ptype, severity=sev,
                 decision="rejected",
                 reason_for_decision="empty 'before' field",
                 before=before, after=after,
             ))
             continue
 
-        # Per-type gate logic
-        if ptype == "formatting":
-            ok, reason = True, "auto-apply per type contract"
-        elif ptype == "numeric":
-            # P1 reviewer fix: numeric patches are FLAG-ONLY pending
-            # Phase 6.4 same-claim binding. The global-corpus check is
-            # too weak — a patch flipping `p=0.04 → p=0.001` passes if
-            # 0.001 exists anywhere in the corpus, even bound to an
-            # unrelated claim. Run the verifier to give the human a
-            # diagnostic but never auto-apply.
-            passed_global, verify_reason = _verify_numeric_patch(p, corpus_nums)
-            ok, reason = False, (
-                f"flag-only (numeric auto-apply blocked pending Phase 6.4 "
-                f"same-claim binding). Global-corpus verifier: "
-                f"{'pass' if passed_global else 'FAIL'} — {verify_reason}"
+        # Per-type DIAGNOSTIC verifier — informational only. Recorded
+        # in the patch log so retroactive review can identify any
+        # auto-applied patch that the deterministic checker would have
+        # rejected. Never blocks apply.
+        if ptype == "numeric":
+            passed, verifier_msg = _verify_numeric_patch(p, corpus_nums)
+            diag = (
+                f"numeric verifier: {'pass' if passed else 'FAIL'} — "
+                f"{verifier_msg}"
             )
         elif ptype == "citation":
-            ok, reason = _verify_citation_patch(p, receipt_ids)
+            passed, verifier_msg = _verify_citation_patch(p, receipt_ids)
+            diag = (
+                f"citation verifier: {'pass' if passed else 'FAIL'} — "
+                f"{verifier_msg}"
+            )
+        elif ptype == "formatting":
+            diag = "formatting (no semantic verifier)"
         elif ptype in ("claim", "structure"):
-            ok, reason = False, f"{ptype} patches are flag-only by contract"
+            diag = (
+                f"{ptype} patch — Grok-final-layer auto-apply (no "
+                "deterministic verifier exists for this category; "
+                "trust Grok 4.3)"
+            )
         else:
-            ok, reason = False, f"unknown patch_type {ptype!r}"
+            diag = f"unknown patch_type {ptype!r} — auto-apply attempted"
 
-        if not ok:
-            results.append(PatchResult(
-                patch_id=p.get("id", "?"),
-                patch_type=ptype, severity=p.get("severity", "P3"),
-                decision="flagged",
-                reason_for_decision=reason,
-                before=before, after=after,
-            ))
-            continue
-
-        # Apply: simple substring replace (single occurrence to be
-        # safe; if `before` appears multiple times, flag for human).
+        # Mechanical safety: `before` must appear exactly once.
         n_occurrences = new_md.count(before)
         if n_occurrences == 0:
             results.append(PatchResult(
-                patch_id=p.get("id", "?"),
-                patch_type=ptype, severity=p.get("severity", "P3"),
+                patch_id=pid, patch_type=ptype, severity=sev,
                 decision="rejected",
-                reason_for_decision="'before' text not found in paper",
+                reason_for_decision=(
+                    f"'before' text not found in paper. {diag}"
+                ),
                 before=before, after=after,
             ))
             continue
         if n_occurrences > 1:
             results.append(PatchResult(
-                patch_id=p.get("id", "?"),
-                patch_type=ptype, severity=p.get("severity", "P3"),
-                decision="flagged",
+                patch_id=pid, patch_type=ptype, severity=sev,
+                decision="rejected",
                 reason_for_decision=(
                     f"'before' appears {n_occurrences}x; ambiguous "
-                    "without further context"
+                    f"replacement target. {diag}"
                 ),
                 before=before, after=after,
             ))
@@ -255,10 +262,9 @@ def apply_patches(
 
         new_md = new_md.replace(before, after, 1)
         results.append(PatchResult(
-            patch_id=p.get("id", "?"),
-            patch_type=ptype, severity=p.get("severity", "P3"),
+            patch_id=pid, patch_type=ptype, severity=sev,
             decision="applied",
-            reason_for_decision=reason,
+            reason_for_decision=diag,
             before=before, after=after,
         ))
     return new_md, results
