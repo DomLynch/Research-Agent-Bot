@@ -1,8 +1,8 @@
 {
   "paper_id": "PMC12796513_lifespan_extending_endogenous_metabolites",
   "doi": "10.1111/acel.70371",
-  "extracted_at": "2026-05-02T09:57:10+00:00",
-  "extractor_version": "0.1.0",
+  "extracted_at": "2026-05-02T14:26:37+00:00",
+  "extractor_version": "0.5.0",
   "claims_count_by_type": {
     "percentage": 1
   },
@@ -18,7 +18,12 @@
       "source_section": "conclusion",
       "source_offset": 1869,
       "sentence": "A recent study in mice found that lifelong restriction of dietary valine improved multiple healthspan measures in both sexes but extended median lifespan by approximately 23% only in males and not in females (Calubag et al.",
-      "context_window": "in both sexes but extended median lifespan by approximately 23% only in males and not in females (Calubag et al. 2025 ). Th"
+      "context_window": "in both sexes but extended median lifespan by approximately 23% only in males and not in females (Calubag et al. 2025 ). Th",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
     }
   ]
 }
