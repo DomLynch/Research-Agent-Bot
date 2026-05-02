@@ -31,7 +31,6 @@ import argparse
 import asyncio
 import datetime as dt
 import json
-import os
 import re
 import sys
 from collections import Counter, defaultdict
@@ -438,23 +437,34 @@ def _append_references_block(
 
 
 def _build_call_chain() -> list[CallSpec]:
+    """Bulk paper writer chain — MiMo v2.5 Pro is PRIMARY.
+
+    Order: MiMo v2.5 Pro (unlimited token plan) → Mistral Small (paid
+    fallback) → Gemma 4 31B (paid fallback). OpenRouter fires only if
+    MiMo is unreachable; the user's MiMo plan is unlimited while
+    OpenRouter is metered.
+
+    All identifiers come from agent/settings.py — never hardcode here.
+    Past drift put `mimo-vl-7b-rl` (a vision model) and Gemma 3 27B as
+    primaries, silently bypassing MiMo v2.5 Pro entirely.
+    """
+    settings = load_settings()
     chain: list[CallSpec] = []
-    if openrouter := os.environ.get("OPENROUTER_API_KEY"):
+    if settings.mimo_api_key:
         chain.append(CallSpec(
-            base_url=os.environ.get(
-                "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1",
-            ),
-            api_key=openrouter,
-            model=os.environ.get("WRITER_MODEL", "google/gemma-3-27b-it"),
-            timeout_sec=180.0,
+            base_url=settings.mimo_base_url,
+            api_key=settings.mimo_api_key,
+            model=settings.mimo_model,
+            timeout_sec=settings.mimo_timeout_sec,
         ))
-    if mimo := os.environ.get("MIMO_API_KEY"):
-        chain.append(CallSpec(
-            base_url="https://api.mimo.ai/v1",
-            api_key=mimo,
-            model="mimo-vl-7b-rl",
-            timeout_sec=180.0,
-        ))
+    if settings.openrouter_api_key:
+        for openrouter_model in (settings.fallback_model, settings.judge_model):
+            chain.append(CallSpec(
+                base_url=settings.openrouter_base_url,
+                api_key=settings.openrouter_api_key,
+                model=openrouter_model,
+                timeout_sec=settings.mimo_timeout_sec,
+            ))
     return chain
 
 
@@ -504,8 +514,8 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     submission_id = out_dir.name
     ledger = CostLedger()
     print(
-        f"\nCalling render_full_paper "
-        f"(target 5-15k words, multi-section, tiered validation)...",
+        "\nCalling render_full_paper "
+        "(target 5-15k words, multi-section, tiered validation)...",
         file=sys.stderr,
     )
     import httpx

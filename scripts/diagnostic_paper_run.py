@@ -37,7 +37,6 @@ import argparse
 import asyncio
 import datetime as dt
 import json
-import os
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -225,9 +224,9 @@ def _build_section_prompt(
 # table get cost=0 logged (still correct for budget reporting; the
 # provider-side bill will be the source of truth).
 _MODEL_PRICING: dict[str, tuple[float, float]] = {
-    "google/gemma-3-27b-it": (0.000, 0.000),  # OpenRouter free tier
-    "deepseek-chat": (0.00014, 0.00028),
-    "mimo-vl-7b-rl": (0.000, 0.000),
+    "mimo-v2.5-pro": (0.000, 0.000),  # unlimited token plan
+    "mistralai/mistral-small-2603": (0.00020, 0.00060),
+    "google/gemma-4-31b-it": (0.000, 0.000),  # OpenRouter cheap/free tier
 }
 
 
@@ -329,32 +328,31 @@ async def _generate_section(
 
 
 def _build_call_chain() -> list[CallSpec]:
-    """Construct the LLM fallback chain from env. Order: MiMo (primary)
-    → DeepSeek (cheap fallback) → OpenRouter Gemma (if configured)."""
+    """Diagnostic-paper writer chain — MiMo v2.5 Pro is PRIMARY.
+
+    Same chain as the production publisher (run_v06_synthesis.py):
+    MiMo v2.5 Pro (unlimited) → Mistral Small (paid) → Gemma 4 31B
+    (paid). Identifiers come from agent/settings.py — never hardcode
+    here, that's how the previous mimo-vl-7b-rl / gemma-3-27b-it /
+    deepseek drift happened.
+    """
+    settings = load_settings()
     chain: list[CallSpec] = []
-    if mimo := os.environ.get("MIMO_API_KEY"):
+    if settings.mimo_api_key:
         chain.append(CallSpec(
-            base_url="https://api.mimo.ai/v1",
-            api_key=mimo,
-            model="mimo-vl-7b-rl",
-            timeout_sec=120.0,
+            base_url=settings.mimo_base_url,
+            api_key=settings.mimo_api_key,
+            model=settings.mimo_model,
+            timeout_sec=settings.mimo_timeout_sec,
         ))
-    if openrouter := os.environ.get("OPENROUTER_API_KEY"):
-        chain.append(CallSpec(
-            base_url=os.environ.get(
-                "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1",
-            ),
-            api_key=openrouter,
-            model=os.environ.get("WRITER_MODEL", "google/gemma-3-27b-it"),
-            timeout_sec=120.0,
-        ))
-    if deepseek := os.environ.get("DEEPSEEK_API_KEY"):
-        chain.append(CallSpec(
-            base_url="https://api.deepseek.com/v1",
-            api_key=deepseek,
-            model="deepseek-chat",
-            timeout_sec=120.0,
-        ))
+    if settings.openrouter_api_key:
+        for openrouter_model in (settings.fallback_model, settings.judge_model):
+            chain.append(CallSpec(
+                base_url=settings.openrouter_base_url,
+                api_key=settings.openrouter_api_key,
+                model=openrouter_model,
+                timeout_sec=settings.mimo_timeout_sec,
+            ))
     return chain
 
 
