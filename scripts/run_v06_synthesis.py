@@ -62,6 +62,7 @@ import apply_patches as _patch_applier  # noqa: E402
 import run_mode_contract as _run_mode  # noqa: E402
 import citation_registry as _citations  # noqa: E402
 import evidence_taxonomy as _taxonomy  # noqa: E402
+import effect_direction as _direction  # noqa: E402
 
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
@@ -141,16 +142,14 @@ def _claim_metformin_effect(claim: dict) -> int:
 
 def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
     """Per-paper rollup: dominant outcome_class, dominant
-    effect_direction, p-values list, sample-size summary."""
+    effect_direction (Fix #5: now significance-aware → null/mixed
+    states), p-values list, sample-size summary."""
     outcome_counter: Counter[str] = Counter()
-    direction_score = 0
     p_values: list[str] = []
     sample_sizes: list[float] = []
     for c in claims:
         if oc := _ENDPOINT_TO_OUTCOME_CLASS.get(c.get("endpoint") or ""):
             outcome_counter[oc] += 1
-        eff = _claim_metformin_effect(c)
-        direction_score += eff
         if c.get("claim_type") == "p_value":
             raw = c.get("raw_text") or ""
             if raw:
@@ -164,12 +163,13 @@ def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
         outcome_counter.most_common(1)[0][0]
         if outcome_counter else "longevity"
     )
-    if direction_score > 0:
-        effect_direction = "positive"
-    elif direction_score < 0:
-        effect_direction = "negative"
-    else:
-        effect_direction = "unclear"
+    # Fix #5: significance-aware aggregation. Returns one of
+    # positive/negative/null/mixed/unclear. The MET-PREVENT case
+    # (Witham 2025: 0.001 m/s walk speed, p=0.96) now correctly
+    # produces "null" instead of "positive".
+    effect_direction = _direction.infer_effect_direction(
+        claims, metformin_effect_fn=_claim_metformin_effect,
+    )
 
     return {
         "outcome_class": dominant_outcome,
@@ -328,9 +328,18 @@ def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
     for i, a in enumerate(sorted_receipts):
         for b in sorted_receipts[i + 1:]:
             if a.outcome_class == b.outcome_class:
+                # Fix #5 reviewer P2: explicit branches for the new
+                # null/mixed direction values; agreement covers same-
+                # value pairs (incl. null-vs-null and mixed-vs-mixed).
                 if a.effect_direction == b.effect_direction:
                     kind = "agreement"
                     severity = 1
+                elif "mixed" in (a.effect_direction, b.effect_direction):
+                    # mixed vs anything (positive / negative / null) is a
+                    # partial disagreement — strongest evidence the paper
+                    # has internal contradiction worth surfacing.
+                    kind = "disagreement"
+                    severity = 4
                 elif "null" in (a.effect_direction, b.effect_direction):
                     kind = "null_vs_positive"
                     severity = 3

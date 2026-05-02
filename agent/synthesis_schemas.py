@@ -78,8 +78,9 @@ OutcomeClass = Literal[
 EffectDirection = Literal[
     "positive",   # treatment improves outcome (e.g. HR < 1 for mortality)
     "negative",   # treatment worsens outcome (e.g. HR > 1)
-    "null",       # no statistically significant difference
-    "unclear",    # signs ambiguous, only-mechanistic, or inconclusive trial
+    "null",       # no statistically significant difference (p>=0.05 + effect~0)
+    "mixed",      # significant findings in BOTH directions across endpoints
+    "unclear",    # signs ambiguous, only-mechanistic, or inconclusive
 ]
 
 TensionKind = Literal[
