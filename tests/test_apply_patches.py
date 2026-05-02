@@ -66,9 +66,12 @@ def test_structure_patch_is_flagged_only() -> None:
     assert results[0].decision == "flagged"
 
 
-def test_numeric_patch_with_traceable_value_applies() -> None:
-    """A numeric patch where the new value EXISTS in the corpus
-    should auto-apply (mocked corpus)."""
+def test_numeric_patch_with_traceable_value_flagged_not_applied() -> None:
+    """P1 reviewer fix: numeric patches are FLAG-ONLY, even when the
+    new value traces globally. The global-corpus check is too weak —
+    a value can exist in some unrelated paper's claim and still be
+    wrong for this context. Auto-apply blocked pending Phase 6.4
+    same-claim binding."""
     p = {
         "id": "P04", "patch_type": "numeric", "severity": "P2",
         "location": "Results",
@@ -83,8 +86,11 @@ def test_numeric_patch_with_traceable_value_applies() -> None:
         new_md, results = apply_patches.apply_patches(
             paper, [p], _manifest(),
         )
-    assert "by 32%" in new_md
-    assert results[0].decision == "applied"
+    # Paper is unchanged; patch is flagged with the global-verifier
+    # PASS noted in the reason for the human reviewer.
+    assert "by 14%" in new_md and "by 32%" not in new_md
+    assert results[0].decision == "flagged"
+    assert "pass" in results[0].reason_for_decision.lower()
 
 
 def test_numeric_patch_with_untraceable_value_flagged() -> None:
@@ -209,10 +215,14 @@ def test_citation_regex_does_not_falsefire_on_proper_nouns() -> None:
 
 
 # Reviewer-fix HIGH 2 regression: numeric token with unit suffix
-# (no space) like "32%" exercises the bare-prefix fallback path.
-def test_numeric_token_with_glued_unit_suffix_traces_correctly() -> None:
-    """A patch with `after` containing '32%' (no space between digit
-    and %) must trace if '32' is in the corpus."""
+# (no space) like "32%" exercises the bare-prefix fallback path. Now
+# verifies the verifier itself reports PASS even though the patch is
+# flag-only (P1 reviewer fix in apply_patches).
+def test_numeric_token_with_glued_unit_suffix_verifier_reports_pass() -> None:
+    """Verifier must trace '32%' to corpus value '32'. Patch itself
+    stays flag-only per the P1 numeric-auto-apply fix, but the
+    verifier's pass/fail diagnostic in `reason_for_decision` matters
+    for downstream human review."""
     p = {
         "id": "PX2", "patch_type": "numeric", "severity": "P2",
         "location": "Results",
@@ -226,6 +236,10 @@ def test_numeric_token_with_glued_unit_suffix_traces_correctly() -> None:
         return_value={"32", "32.0", "14", "14.0"},
     ):
         _, results = apply_patches.apply_patches(paper, [p], _manifest())
-    assert results[0].decision == "applied", (
-        f"glued unit-suffix not handled: {results[0].reason_for_decision}"
+    assert results[0].decision == "flagged"
+    reason = results[0].reason_for_decision.lower()
+    # Verifier should report PASS (lowercase 'pass') in the reason.
+    assert "verifier: pass" in reason, (
+        f"glued unit-suffix verifier should report PASS: "
+        f"{results[0].reason_for_decision}"
     )

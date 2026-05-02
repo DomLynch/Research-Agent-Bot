@@ -100,13 +100,15 @@ def test_clean_paper_returns_empty_list() -> None:
 
 
 def test_paper_id_truncation_in_body_flagged() -> None:
-    """Truncated paper_id 'Walton_2019_MASTERS_' leaking into body."""
+    """Truncated paper_id 'Walton_2019_MASTERS_' leaking into body.
+    P2 reviewer fix renamed the issue_type to 'truncated_author_year_id'
+    to make room for the new 'pmcid_in_body' detector."""
     paper = (
         "## Discussion\n\n"
         "MASTERS (Walton_2019_MASTERS_metformin_) reported significant effects.\n"
     )
     issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
-    leaks = [i for i in issues if i.issue_type == "paper_id_in_body"]
+    leaks = [i for i in issues if i.issue_type == "truncated_author_year_id"]
     assert len(leaks) == 1
 
 
@@ -175,6 +177,82 @@ def test_apply_fixes_idempotent_across_invocations() -> None:
     out2, log2 = fixer.apply_fixes(paper, [])
     assert "v0.6 quant-claim adapter" in out2, (
         f"mutable-default closure regressed; second call output:\n{out2}"
+    )
+
+
+# P1 reviewer fix: trial acronyms extracted as short forms
+def test_trial_acronym_met_prevent_flagged_when_called_rejected() -> None:
+    """'MET-PREVENT was rejected by SPAR' must flag — pre-fix, only
+    'Witham' / 'Witham 2025' were short forms; the acronym slipped
+    through entirely."""
+    paper = (
+        "## Discussion\n\n"
+        "MET-PREVENT was rejected by SPAR despite the protocol design.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    flagged = [i for i in issues if i.issue_type == "accepted_paper_called_rejected"]
+    assert len(flagged) == 1, (
+        f"trial acronym MET-PREVENT not recognized as short form: {flagged}"
+    )
+
+
+# P1 reviewer fix: sentence-scope catches earlier-in-sentence references
+def test_long_sentence_with_earlier_reference_still_flagged() -> None:
+    """Pre-fix, a Witham mention >80 chars before 'was rejected'
+    slipped past the window. Sentence-scope must catch it."""
+    paper = (
+        "## Discussion\n\n"
+        "Witham 2025 conducted the MET-PREVENT trial with extensive "
+        "frailty endpoints across multiple sites and a long follow-up; "
+        "later analyses showed it was rejected by SPAR.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    flagged = [i for i in issues if i.issue_type == "accepted_paper_called_rejected"]
+    assert len(flagged) >= 1, (
+        f"long-sentence reference to Witham not flagged: {flagged}"
+    )
+
+
+# P2 reviewer fix: PMCID handles in body
+def test_pmcid_handle_in_body_flagged() -> None:
+    """'PMC12978362 2026' is an internal corpus identifier, not a
+    citation — it must not appear in body prose."""
+    paper = (
+        "## Discussion\n\n"
+        "Recent work by PMC12978362 2026 extended the mechanism.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    pmcid_leaks = [i for i in issues if i.issue_type == "pmcid_in_body"]
+    assert len(pmcid_leaks) == 1, (
+        f"PMCID handle not detected: {pmcid_leaks}"
+    )
+
+
+def test_pmcid_handle_in_references_section_allowed() -> None:
+    """PMCIDs are valid in the References block — only body leaks count."""
+    paper = (
+        "## Discussion\n\nClean discussion with no PMCIDs.\n\n"
+        "## References\n\n- PMC12978362 2026 — molecular mechanisms paper.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    pmcid_leaks = [i for i in issues if i.issue_type == "pmcid_in_body"]
+    assert pmcid_leaks == []
+
+
+def test_pmcid_in_cited_block_allowed() -> None:
+    """The writer emits per-section `_Cited:_` italic blocks. PMCID
+    handles inside those blocks ARE the proper citation form for
+    PMC-only papers (no Author Year exists). Only PMCIDs in actual
+    body prose are leaks."""
+    paper = (
+        "## Results\n\n"
+        "Treatment improved walk speed.\n\n"
+        "  _Cited: `Witham 2025`, `PMC13055625 2026`, `PMC13032177 2026`_\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    pmcid_leaks = [i for i in issues if i.issue_type == "pmcid_in_body"]
+    assert pmcid_leaks == [], (
+        f"PMCIDs inside _Cited:_ blocks must not be flagged: {pmcid_leaks}"
     )
 
 

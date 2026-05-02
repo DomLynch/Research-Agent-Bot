@@ -60,40 +60,69 @@ def _check_word_count(paper: str, threshold: int = 5000) -> tuple[bool, str]:
     return wc >= threshold, f"word_count={wc} (threshold={threshold})"
 
 
-# Q2: numeric integrity — every percentage and p-value in the paper
-# must trace to a v0.6.0 high-confidence claim or be a small reference
-# integer (e.g. "5 papers", "12 weeks" study duration).
+# Q2: numeric integrity — every reportable numeric in the paper
+# (percentages, p-values, HR/OR/RR ratios, sample sizes, doses,
+# walk speeds) must trace to a v0.6.0 high-confidence claim. P1
+# reviewer fix: pre-fix only checked percentages, so values like
+# `HR 0.41` or `n=120` or `0.85 m/s` could be hallucinated without
+# tripping the gate.
+_PATTERNS_BY_CATEGORY: tuple[tuple[str, str], ...] = (
+    # (category, regex_with_one_capture_group)
+    ("percentage", r"\b(\d+\.?\d*)\s*%"),
+    ("p_value", r"\b[Pp]\s*[<>=]\s*(0?\.\d+)\b"),
+    ("ratio", r"\b(?:HR|OR|RR|aHR|HzR)\s*[=:]?\s*(\d+\.?\d*)\b"),
+    ("sample_size", r"\b[nN]\s*=\s*(\d+)\b"),
+    ("dose", r"\b(\d+\.?\d*)\s*(?:mg|g|kg|μg|mcg|mL)\b"),
+    ("speed", r"\b(\d+\.?\d*)\s*m\s*/\s*s\b"),
+)
+
+
 def _check_numeric_integrity(
     paper: str, corpus_nums: set[str],
 ) -> tuple[bool, str]:
-    # Extract percentages from the paper, EXCLUDING CI-level anchors
-    # ("95% CI", "99% CI") which are statistical conventions, not
-    # findings. Pre-fix Phase 6.3 paper false-flagged "95" as
-    # un-traceable because the corpus has CI bounds (-0.06, 0.06)
-    # but no claim with raw value "95" — yet "95% CI" appears
-    # legitimately in the prose around CI reports.
-    paper_with_ci_stripped = re.sub(
+    # Strip CI-level anchors first ("95% CI", "99% CI") — they are
+    # statistical conventions, not findings. Pre-fix Phase 6.3 paper
+    # false-flagged "95" because corpus has no claim with raw value
+    # "95" — yet "95% CI" appears legitimately in CI reports.
+    paper_clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
     )
-    paper_pcts = set(re.findall(
-        r"\b(\d+\.?\d*)\s*%", paper_with_ci_stripped,
-    ))
-    pcts_to_check = {
-        p for p in paper_pcts
-        if float(p) > 1.0 and float(p) < 1000
-    }
-    untraceable = []
-    for p in pcts_to_check:
-        f = float(p)
-        candidates = {p, str(f), str(int(f)) if f.is_integer() else p}
-        if not any(c in corpus_nums for c in candidates):
-            untraceable.append(p)
-    n_total = len(pcts_to_check)
-    n_bad = len(untraceable)
+
+    by_cat: dict[str, set[str]] = {}
+    for cat, pat in _PATTERNS_BY_CATEGORY:
+        vals = set(re.findall(pat, paper_clean))
+        # Filter trivial integers ≤1.0 / ≥1000 ONLY for percentages —
+        # other categories legitimately use small/large numerics
+        # (p<0.05, n=12000, dose 850 mg).
+        if cat == "percentage":
+            vals = {v for v in vals if 1.0 < float(v) < 1000}
+        by_cat[cat] = vals
+
+    untraceable_by_cat: dict[str, list[str]] = {}
+    n_total = 0
+    n_bad = 0
+    for cat, vals in by_cat.items():
+        bad = []
+        for v in vals:
+            f = float(v)
+            candidates = {v, str(f), str(int(f)) if f.is_integer() else v}
+            if not any(c in corpus_nums for c in candidates):
+                bad.append(v)
+        n_total += len(vals)
+        n_bad += len(bad)
+        if bad:
+            untraceable_by_cat[cat] = sorted(bad)[:3]
+
     pct_clean = (n_total - n_bad) / n_total if n_total else 1.0
+    detail = ", ".join(
+        f"{cat}={len(by_cat[cat])-len(untraceable_by_cat.get(cat, []))}"
+        f"/{len(by_cat[cat])}"
+        for cat in by_cat if by_cat[cat]
+    )
     return pct_clean >= 0.9, (
-        f"{n_total - n_bad}/{n_total} percentages trace to corpus "
-        f"({pct_clean:.0%}); untraceable: {sorted(untraceable)[:5]}"
+        f"{n_total - n_bad}/{n_total} numerics trace to corpus "
+        f"({pct_clean:.0%}); per-category: {detail or 'none'}; "
+        f"untraceable: {dict(list(untraceable_by_cat.items())[:5])}"
     )
 
 
@@ -361,14 +390,33 @@ def _format_summary(report: dict) -> str:
             f"| {c['name']} | {c['name']} | {p1} | {status} | {c['detail']} |"
         )
     lines.append("")
+    # P1 reviewer fix: AAA is reserved for ALL-GREEN. Pre-fix, the
+    # audit declared AAA at score≥9.0 + P1-pass even when P2 checks
+    # failed — a separate post-hoc fixer step renamed the verdict.
+    # The audit itself should not lie.
+    n_pass = sum(1 for c in report["checks"] if c["passed"])
+    n_total = len(report["checks"])
+    all_green = n_pass == n_total
     if not report["p1_pass"]:
         lines.append("## Verdict: SHIP-BLOCKED")
         lines.append("")
         lines.append("One or more P1 checks failed. Fix before merging.")
-    elif report["score_out_of_10"] >= 9.0:
+    elif all_green:
         lines.append("## Verdict: AAA")
         lines.append("")
-        lines.append("≥9.0 score AND no P1 failures. Paper passes the trust-spine gate.")
+        lines.append(
+            f"All {n_total} checks pass (P1 + P2). "
+            "Paper meets the AAA bar."
+        )
+    elif report["score_out_of_10"] >= 9.0:
+        lines.append("## Verdict: Trust-Spine Pass")
+        lines.append("")
+        lines.append(
+            f"P1 ship-blockers all green; overall score "
+            f"{report['score_out_of_10']}/10 ({n_pass}/{n_total} checks). "
+            "One or more P2 quality checks flagged non-blocking issues. "
+            "AAA is reserved for all-green."
+        )
     else:
         lines.append("## Verdict: PASS (with notes)")
         lines.append("")

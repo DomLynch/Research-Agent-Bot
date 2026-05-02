@@ -99,49 +99,77 @@ def _check_manifest_paper_consistency(
         r["receipt_id"] for r in manifest.get("receipts", [])
     }
 
-    # Build short forms (e.g. "Witham 2025") from accepted receipt_ids
+    # Build short forms (e.g. "Witham 2025") from accepted receipt_ids.
+    # P1 reviewer fix: also extract trial-acronym short forms (e.g.
+    # "MET-PREVENT" from Witham_2025_MET_PREVENT_metformin_trial,
+    # "MASTERS" from Walton_2019_MASTERS_metformin_blunts_resistance_hy).
+    # Pre-fix, "MET-PREVENT was rejected by SPAR" missed the gate
+    # entirely because MET-PREVENT was not in short_forms_to_id.
     short_forms_to_id: dict[str, str] = {}
     for rid in accepted_ids:
         parts = rid.split("_")
         if len(parts) >= 2 and parts[1].isdigit():
-            short = f"{parts[0]} {parts[1]}"
-            short_forms_to_id[short] = rid
+            short_forms_to_id[f"{parts[0]} {parts[1]}"] = rid
             short_forms_to_id[parts[0]] = rid  # bare surname
+        # Trial acronyms: collect consecutive ALL-CAPS tokens after
+        # Author_Year. Stops at the first lowercase token. Add the
+        # acronym in three glue forms (hyphen / underscore / space)
+        # since prose can use any of them.
+        caps_run: list[str] = []
+        for tok in parts[2:]:
+            if tok.isupper() and len(tok) >= 2:
+                caps_run.append(tok)
+            else:
+                break
+        if caps_run:
+            for tok in caps_run:
+                short_forms_to_id[tok] = rid
+            if len(caps_run) >= 2:
+                for sep in ("-", "_", " "):
+                    short_forms_to_id[sep.join(caps_run)] = rid
 
     # Issue: paper text claims an accepted paper was REJECTED by SPAR.
-    # Sentence-bounded scan: for each rejection-marker, find its
-    # containing sentence and look for any short_form mention. Avoids
-    # the greedy-match bug where the prefix `[A-Z][a-zA-Z]+` swallowed
-    # an unrelated heading word.
+    # P1 reviewer fix: scope the scan to the FULL SENTENCE containing
+    # the rejection marker (not ±80 chars). Pre-fix, "Witham 2025's
+    # MET-PREVENT trial showed positive outcomes; later, MET-PREVENT
+    # was rejected by SPAR" missed the gate when the trial-name
+    # mention sat outside the 80-char window.
     rejection_marker_re = re.compile(
         r"(?:was\s+rejected\b|rejected\s+by\s+SPAR|SPAR-quarantined|"
         r"did\s+not\s+pass\s+SPAR|quarantined\s+by\s+SPAR)",
         re.IGNORECASE,
     )
-    # Reviewer-fix HIGH 2/3: only flag if the short_form appears
-    # within a tight ~80-char window of the rejection marker AND
-    # without an intervening clause break. "While Walton was rejected
-    # by SPAR, Witham 2025 demonstrated..." pre-fix wrongly tagged
-    # Witham. Clause-break heuristic: comma followed by either a
-    # capital-letter proper-noun (new clause subject) or a
-    # connector word; full stop / semicolon also count.
+    # Sentence boundary: . ! ? then space + capital, or paragraph
+    # break, or new heading line. Conservative — favors larger scope.
+    _SENTENCE_BREAK_RE = re.compile(r"[.!?]\s+(?=[A-Z])|\n\n+|\n#")
+    # Clause-break trim retained from the prior heuristic to keep the
+    # "While Walton was rejected by SPAR, Witham 2025 demonstrated..."
+    # false-positive suppressed (we don't want to flag Witham just
+    # because it shares a sentence with a Walton rejection). Only the
+    # comma+new-subject pattern is needed now — sentence-scope above
+    # already handles full-stops and paragraph breaks. Pre-fix the
+    # heuristic also split on `;` and `.`, which cut out long-distance
+    # earlier-in-sentence references that the P1 fix needs to catch.
     _CLAUSE_BREAK_RE = re.compile(
-        # comma + whitespace + (capital-starting word OR connector)
         r",\s+(?=[A-Z][a-z]|and\b|but\b|while\b|although\b|"
-        r"whereas\b|however\b)|"
-        r"\.\s+|;\s+",
+        r"whereas\b|however\b)",
     )
     for m in rejection_marker_re.finditer(paper):
-        # Look ±80 chars around the marker for short_form mentions,
-        # but stop at any intervening clause break.
-        before_window = paper[max(0, m.start() - 80):m.start()]
-        after_window = paper[m.end():min(len(paper), m.end() + 80)]
-        # Trim before_window at the LAST clause break (we want the
-        # text adjacent to the marker, not text from a prior clause).
+        # Sentence-scope: find last sentence-break before marker, first
+        # sentence-break after.
+        sent_start = 0
+        for sb in _SENTENCE_BREAK_RE.finditer(paper[:m.start()]):
+            sent_start = sb.end()
+        sb_after = _SENTENCE_BREAK_RE.search(paper, m.end())
+        sent_end = sb_after.start() if sb_after else len(paper)
+        before_window = paper[sent_start:m.start()]
+        after_window = paper[m.end():sent_end]
+        # Clause-break trim within the sentence: keeps subject of the
+        # rejection clause adjacent to the marker; drops sibling
+        # clauses that name unrelated accepted papers.
         breaks_before = list(_CLAUSE_BREAK_RE.finditer(before_window))
         if breaks_before:
             before_window = before_window[breaks_before[-1].end():]
-        # Trim after_window at the FIRST clause break.
         first_break_after = _CLAUSE_BREAK_RE.search(after_window)
         if first_break_after:
             after_window = after_window[:first_break_after.start()]
@@ -309,32 +337,57 @@ def _check_audit_verdict_gate(
 
 
 def _check_broken_paper_id_citations(paper: str) -> list[ConsistencyIssue]:
-    """Truncated paper_ids leaking into prose (e.g. 'Walton_2019_MASTERS_').
-    These are signs the citation post-processor missed a span."""
+    """Internal handles leaking into prose. Two shapes:
+      a) Truncated Author_Year_TRIAL_keyword_ ids (post-processor miss)
+      b) PMCID handles like "PMC12978362 2026" (P2 reviewer fix:
+         pre-fix only the Author_Year shape was caught, so internal
+         corpus identifiers passed straight through as fake citations).
+    """
     issues: list[ConsistencyIssue] = []
-    bad_re = re.compile(r"\b([A-Z][a-zA-Z]+_\d{4}_[A-Za-z_]+_)\b")
-    for m in bad_re.finditer(paper):
-        snippet = paper[max(0, m.start() - 30):m.end() + 30]
-        # Allow inside References (quoted), reject in body
-        # Detect by checking if we're inside a "## References" section.
-        before = paper[:m.start()]
-        last_h2 = before.rfind("\n## ")
-        if last_h2 >= 0:
-            heading_line = before[last_h2:].split("\n", 2)[1]
-            if "References" in heading_line:
+    patterns: tuple[tuple[str, re.Pattern], ...] = (
+        (
+            "truncated_author_year_id",
+            re.compile(r"\b([A-Z][a-zA-Z]+_\d{4}_[A-Za-z_]+_)\b"),
+        ),
+        (
+            "pmcid_in_body",
+            re.compile(r"\b(PMC\d{7,9}(?:\s+\d{4})?)\b"),
+        ),
+    )
+    for kind, bad_re in patterns:
+        for m in bad_re.finditer(paper):
+            snippet = paper[max(0, m.start() - 30):m.end() + 30]
+            # Allow inside ## References (proper bibliographic context).
+            before = paper[:m.start()]
+            last_h2 = before.rfind("\n## ")
+            if last_h2 >= 0:
+                heading_line = before[last_h2:].split("\n", 2)[1]
+                if "References" in heading_line:
+                    continue
+            # Allow inside `_Cited:_` italicized citation blocks. The
+            # writer emits these per-section to attribute claims to
+            # specific receipts; PMCID handles ARE the proper cite for
+            # PMC-only papers (no Author Year exists). The leak gate
+            # only matters for body prose like "Recent work by PMC...".
+            line_start = paper.rfind("\n", 0, m.start()) + 1
+            line_end = paper.find("\n", m.end())
+            if line_end < 0:
+                line_end = len(paper)
+            line = paper[line_start:line_end]
+            if "_Cited:" in line:
                 continue
-        issues.append(ConsistencyIssue(
-            id=f"C07-{m.start()}",
-            severity="P1",
-            issue_type="paper_id_in_body",
-            auto_fixable=False,  # needs receipt list to map to Author Year
-            evidence=snippet,
-            suggested_fix=(
-                f"Replace truncated paper_id '{m.group(1)}' with a "
-                "proper Author Year citation (post-processor may have "
-                "missed this span)."
-            ),
-        ))
+            issues.append(ConsistencyIssue(
+                id=f"C07-{kind}-{m.start()}",
+                severity="P1" if kind == "truncated_author_year_id" else "P2",
+                issue_type=kind,
+                auto_fixable=False,
+                evidence=snippet,
+                suggested_fix=(
+                    f"Replace internal handle '{m.group(1)}' with a "
+                    "proper Author Year citation (post-processor may "
+                    "have missed this span)."
+                ),
+            ))
     return issues
 
 

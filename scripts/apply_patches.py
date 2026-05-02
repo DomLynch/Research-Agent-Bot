@@ -199,7 +199,18 @@ def apply_patches(
         if ptype == "formatting":
             ok, reason = True, "auto-apply per type contract"
         elif ptype == "numeric":
-            ok, reason = _verify_numeric_patch(p, corpus_nums)
+            # P1 reviewer fix: numeric patches are FLAG-ONLY pending
+            # Phase 6.4 same-claim binding. The global-corpus check is
+            # too weak — a patch flipping `p=0.04 → p=0.001` passes if
+            # 0.001 exists anywhere in the corpus, even bound to an
+            # unrelated claim. Run the verifier to give the human a
+            # diagnostic but never auto-apply.
+            passed_global, verify_reason = _verify_numeric_patch(p, corpus_nums)
+            ok, reason = False, (
+                f"flag-only (numeric auto-apply blocked pending Phase 6.4 "
+                f"same-claim binding). Global-corpus verifier: "
+                f"{'pass' if passed_global else 'FAIL'} — {verify_reason}"
+            )
         elif ptype == "citation":
             ok, reason = _verify_citation_patch(p, receipt_ids)
         elif ptype in ("claim", "structure"):
