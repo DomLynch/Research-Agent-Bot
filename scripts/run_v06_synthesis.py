@@ -61,6 +61,7 @@ import grok_reviewer as _final_reviewer  # noqa: E402
 import apply_patches as _patch_applier  # noqa: E402
 import run_mode_contract as _run_mode  # noqa: E402
 import citation_registry as _citations  # noqa: E402
+import evidence_taxonomy as _taxonomy  # noqa: E402
 
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
@@ -180,21 +181,44 @@ def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
 
 
 def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tuple[str, str]:
-    """Return (evidence_tier, directness) heuristic.
+    """Return (evidence_tier, directness) — Fix #4: deterministic
+    classification from structured metadata via evidence_taxonomy.
 
-    The 5 RCT-style core papers (Walton/Konopka/Witham/Mohammed/Keys)
-    contributing >5 high-confidence claims get tier A (RCT) or B (review).
-    The 35 OA papers from search are mostly mechanistic/review.
-    """
-    # Heuristic: papers in the original 7 reference set are tier A1
-    # (Walton/Konopka/Witham are RCTs) or B (Mohammed/Keys/MILES/Kulkarni
-    # 2022 are reviews). The 35 PMC papers are mostly editorials.
-    is_rct_papers = ("MASTERS", "MET_PREVENT", "Konopka_2019")
-    if any(name in paper_id for name in is_rct_papers):
-        return "A1", "direct"
-    if paper_id.startswith("PMC"):
-        return "C", "mechanistic"
-    return "B", "indirect"
+    First tries explicit metadata fields (`study_design`, `species`,
+    `endpoint_kind` if the parsed-paper JSON has them). Falls back to
+    a title/abstract keyword extractor for legacy papers without
+    explicit annotation. The pre-fix heuristic (PMC* → "mechanistic",
+    everything else → "B/indirect") incorrectly tagged human
+    observational mortality studies as "mechanistic" — a category
+    error that propagated into the synthesis."""
+    # Explicit-field path: metadata sources MAY include these fields
+    # directly. Empty/missing fields fall through to inference.
+    explicit_design = paper_meta.get("study_design")
+    explicit_species = paper_meta.get("species")
+    explicit_endpoint_kind = paper_meta.get("endpoint_kind")
+    if explicit_design or explicit_species or explicit_endpoint_kind:
+        cls = _taxonomy.classify_evidence(
+            study_design=explicit_design,
+            species=explicit_species,
+            endpoint_kind=explicit_endpoint_kind,
+        )
+    else:
+        cls = _taxonomy.infer_from_paper_meta(paper_meta)
+    # If the deterministic path returns "unknown", fall back to the
+    # legacy receipt_id heuristic so existing runs don't regress.
+    if cls.tier == "unknown":
+        is_rct_papers = ("MASTERS", "MET_PREVENT", "Konopka_2019")
+        if any(name in paper_id for name in is_rct_papers):
+            return "A1", "direct"
+        if paper_id.startswith("PMC"):
+            # P1 reviewer fix: PMC* prefix alone is NOT a reliable
+            # mechanistic signal — many PMC papers are human
+            # observational mortality studies. Default to B2 here so
+            # we err toward "human-direct" rather than misclassifying
+            # as mechanistic.
+            return "B2", "indirect"
+        return "B1", "review"
+    return cls.tier, cls.directness
 
 
 def _build_population_summary(paper_meta: dict, n_subjects: list[float]) -> str:
