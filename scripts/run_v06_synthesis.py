@@ -29,11 +29,13 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import dataclasses
 import datetime as dt
 import json
 import re
 import sys
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -735,15 +737,41 @@ async def _run_post_paper_pipeline(
             file=sys.stderr,
         )
 
-    # Stage 5: Final audit (re-run after all patches applied).
-    print("[pipeline] Stage 5/5 — final audit...", file=sys.stderr)
+    # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
+    # Re-runs both stage-1 audit AND stage-2 consistency on the
+    # post-Grok paper, then computes a single honest verdict.
+    # Pre-fix the orchestrator only printed stage-1's verdict; stage-1
+    # Q3 paper-ID-leak check is too narrow (only Author_Year_TRIAL_
+    # keyword_ shape), so PMCID body leaks slipped past stage-1 while
+    # stage-2 caught them. Now `final_verdict = worst(stage1, stage2)`.
+    print(
+        "[pipeline] Stage 5/5 — final audit + unified verdict...",
+        file=sys.stderr,
+    )
     audit_report = _audit_v06.audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)
     paper_path.with_suffix(".audit.md").write_text(audit_md)
+    final_issues = _consistency_audit.run_audit(
+        paper_md, manifest, audit_report, audit_md,
+    )
+    paper_path.with_suffix(".consistency.json").write_text(
+        json.dumps([_issue_to_dict(i) for i in final_issues], indent=2)
+    )
+    paper_path.with_suffix(".consistency.md").write_text(
+        _consistency_audit._format_summary(final_issues)
+    )
+    unified = _compute_unified_verdict(audit_report, final_issues)
+    paper_path.with_suffix(".final_verdict.json").write_text(
+        json.dumps(dataclasses.asdict(unified), indent=2)
+    )
+    paper_path.with_suffix(".final_verdict.md").write_text(
+        _format_unified_verdict(unified)
+    )
     print(
-        f"[pipeline] DONE — score={audit_report['score_out_of_10']}/10 "
-        f"P1_pass={audit_report['p1_pass']}",
+        f"[pipeline] DONE — verdict={unified.verdict} "
+        f"(stage1 {unified.stage1_pass_rate}; "
+        f"stage2 P1={unified.stage2_p1} P2={unified.stage2_p2})",
         file=sys.stderr,
     )
     return paper_md
@@ -755,6 +783,148 @@ def _issue_to_dict(issue) -> dict[str, Any]:
         "issue_type": issue.issue_type, "auto_fixable": issue.auto_fixable,
         "evidence": issue.evidence, "suggested_fix": issue.suggested_fix,
     }
+
+
+# Severities that block ship — anything ELSE is treated as informational.
+# Positive allowlist (not blocklist) so future severities like "P0" or
+# "CRITICAL" silently fail closed instead of silently passing.
+_BLOCKING_SEVERITIES: frozenset[str] = frozenset({"P0", "P1", "CRITICAL"})
+_NONBLOCKING_SEVERITIES: frozenset[str] = frozenset({"P2", "P3", "INFO"})
+
+
+@dataclass(frozen=True, slots=True)
+class UnifiedVerdict:
+    """Worst-of(stage1, stage2). Cross-stage object → frozen+slots
+    per project rule. Serialized via dataclasses.asdict() to JSON."""
+    verdict: str
+    reason: str
+    stage1_p1_pass: bool
+    stage1_score: float
+    stage1_pass_rate: str
+    stage2_p1: int
+    stage2_p2: int
+    stage2_unknown_severity_count: int
+    all_green: bool
+    p1_clean: bool
+
+
+def _is_blocking(severity: str) -> bool:
+    """Positive allowlist: known non-blocking severities pass; ANYTHING
+    ELSE blocks (fail-closed for unknown severities like 'P0' or
+    'CRITICAL' that future reviewer-prompts may introduce)."""
+    return severity not in _NONBLOCKING_SEVERITIES
+
+
+def _compute_unified_verdict(
+    stage1_report: dict[str, Any] | None,
+    stage2_issues: list[Any],
+) -> UnifiedVerdict:
+    """Worst-of(stage1, stage2). AAA reserved for fully-green (P1+P2).
+    SHIP-BLOCKED if either stage flags a P1+ severity. Trust-Spine
+    Pass otherwise.
+
+    Defensive on inputs: missing stage1 keys → treated as failure
+    (fail-closed). Empty stage1.checks → cannot return AAA (AAA
+    requires evidence, not vacuous success)."""
+    stage1_report = stage1_report or {}
+    s1_p1_pass = bool(stage1_report.get("p1_pass", False))
+    s1_score = float(stage1_report.get("score_out_of_10", 0.0))
+    checks = stage1_report.get("checks") or []
+    s1_n_pass = sum(1 for c in checks if c.get("passed", False))
+    s1_n_total = len(checks)
+
+    # Stage-2 severity tally with unknown-severity counter for telemetry.
+    s2_p1_blocking = 0
+    s2_p2 = 0
+    s2_unknown = 0
+    for i in stage2_issues:
+        sev = getattr(i, "severity", None) or ""
+        if sev == "P2":
+            s2_p2 += 1
+        elif sev in _BLOCKING_SEVERITIES:
+            s2_p1_blocking += 1
+        elif sev in _NONBLOCKING_SEVERITIES:
+            pass  # P3 / INFO — no count needed for this verdict
+        else:
+            # Unknown severity — fail closed. Counts as blocking.
+            s2_p1_blocking += 1
+            s2_unknown += 1
+
+    p1_clean = s1_p1_pass and s2_p1_blocking == 0
+    # AAA requires positive evidence: at least one check ran AND all
+    # passed AND zero stage-2 issues. Empty checks → CANNOT be AAA.
+    all_green = (
+        p1_clean
+        and s1_n_total > 0
+        and s1_n_pass == s1_n_total
+        and s2_p2 == 0
+    )
+
+    if not p1_clean:
+        verdict = "SHIP-BLOCKED"
+        reason = (
+            f"P1 fail: stage1 P1_pass={s1_p1_pass}, "
+            f"stage2 blocking issues={s2_p1_blocking}"
+            + (f" (incl. {s2_unknown} unknown-severity)" if s2_unknown else "")
+        )
+    elif all_green:
+        verdict = "AAA"
+        reason = (
+            f"All-green: stage1 {s1_n_pass}/{s1_n_total} + "
+            f"stage2 zero issues"
+        )
+    else:
+        verdict = "Trust-Spine Pass"
+        reason = (
+            f"P1 clean; stage1 {s1_n_pass}/{s1_n_total} "
+            f"(score {s1_score}/10); stage2 {s2_p2} P2 notes"
+            + (
+                "; stage1 had ZERO checks (no positive evidence — AAA blocked)"
+                if s1_n_total == 0 else ""
+            )
+        )
+
+    return UnifiedVerdict(
+        verdict=verdict,
+        reason=reason,
+        stage1_p1_pass=s1_p1_pass,
+        stage1_score=s1_score,
+        stage1_pass_rate=f"{s1_n_pass}/{s1_n_total}",
+        stage2_p1=s2_p1_blocking,
+        stage2_p2=s2_p2,
+        stage2_unknown_severity_count=s2_unknown,
+        all_green=all_green,
+        p1_clean=p1_clean,
+    )
+
+
+def _format_unified_verdict(u: UnifiedVerdict) -> str:
+    return (
+        f"# Unified Final Verdict\n\n"
+        f"**Verdict: {u.verdict}**\n\n"
+        f"**Reason:** {u.reason}\n\n"
+        f"## Components\n\n"
+        f"- Stage-1 audit (Q1-Q10): "
+        f"P1_pass={u.stage1_p1_pass}, "
+        f"score={u.stage1_score}/10, "
+        f"pass_rate={u.stage1_pass_rate}\n"
+        f"- Stage-2 consistency audit: "
+        f"P1 issues={u.stage2_p1}, "
+        f"P2 issues={u.stage2_p2}"
+        + (
+            f", unknown-severity={u.stage2_unknown_severity_count} "
+            f"(treated as blocking)"
+            if u.stage2_unknown_severity_count else ""
+        )
+        + "\n\n"
+        "## Verdict scale\n\n"
+        "- **AAA** — all-green (stage-1 + stage-2 both zero issues, "
+        "and stage-1 actually ran checks).\n"
+        "- **Trust-Spine Pass** — P1 clean in both stages; "
+        "stage-1 P2s or stage-2 P2 notes allowed.\n"
+        "- **SHIP-BLOCKED** — ANY P1 fail in stage-1 OR stage-2 "
+        "(unknown severities fail closed).\n"
+    )
 
 
 def main(argv: list[str] | None = None) -> int:
