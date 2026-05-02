@@ -2,6 +2,12 @@
 __pycache__/
 .pytest_cache/
 *.pyc
+# Day 10.17 Phase 3 — Europe PMC fetch cache. JATS XML blobs cached
+# locally so re-runs don't re-hit the API. Per-PMCID files; safe to
+# wipe at any time. Reviewer-flagged: pre-fix .gitignore didn't
+# cover this and a contributor running the fetcher from repo root
+# would have committed XML blobs into a tracked path.
+.cache/
 # Ignore runs/ contents EXCEPT e2e-baselines (v4 Rule 26 metric-loop artifacts)
 # AND the small set of "proof receipts" PROJECT_STATE references as evidence
 # of the trust-spine claims (Day 8.2 reviewer P2: a fresh clone must include
