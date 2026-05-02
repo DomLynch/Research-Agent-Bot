@@ -69,6 +69,7 @@ class Settings:
     openrouter_base_url: str
     judge_model: str       # Gemma 4 (primary judge)
     fallback_model: str    # Ministral — shared fallback for MiMo writer AND Gemma judge
+    final_layer_reviewer_model: str  # Grok 4.3 — final fail-safe
 
     # Safety rails
     bot_enabled: bool
@@ -106,6 +107,9 @@ def load_settings() -> Settings:
         ),
         judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-31b-it"),
         fallback_model=os.environ.get("FALLBACK_MODEL", "mistralai/mistral-small-2603"),
+        final_layer_reviewer_model=os.environ.get(
+            "FINAL_LAYER_REVIEWER_MODEL", "x-ai/grok-4.3"
+        ),
         bot_enabled=_bool("BOT_ENABLED", True),
         daily_cost_cap_usd=_float("DAILY_COST_CAP_USD", 10.0),
         dashboard_host=os.environ.get("DASHBOARD_HOST", "127.0.0.1"),

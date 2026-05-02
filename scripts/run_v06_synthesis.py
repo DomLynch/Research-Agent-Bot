@@ -59,6 +59,7 @@ import final_consistency_audit as _consistency_audit  # noqa: E402
 import apply_consistency_fixes as _consistency_fixer  # noqa: E402
 import grok_reviewer as _final_reviewer  # noqa: E402
 import apply_patches as _patch_applier  # noqa: E402
+import run_mode_contract as _run_mode  # noqa: E402
 
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
@@ -559,6 +560,32 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     full_paper_md = _replace_paper_ids_with_author_year(full_paper_md, receipts)
     full_paper_md = _append_references_block(full_paper_md, receipts)
 
+    # Fix #2: replace LLM-templated Methods with deterministic block
+    # rendered from a RunModeContract. Eliminates the contradiction
+    # where Methods describes pipeline stages that didn't run.
+    contract = _build_run_mode_contract(
+        settings=settings,
+        topic="metformin",
+        submission_id=submission_id,
+        n_papers=len(receipts),
+        n_claims=sum(r.n_claims for r in receipts),
+    )
+    contract_errors = _run_mode.validate_contract(contract)
+    if contract_errors:
+        raise RuntimeError(
+            f"RunModeContract failed self-validation: {contract_errors}"
+        )
+    methods_md = _run_mode.render_methods(contract)
+    blocked_in_rendered = _run_mode.validate_rendered(methods_md)
+    if blocked_in_rendered:
+        raise RuntimeError(
+            f"Rendered Methods contains blocked phrases: {blocked_in_rendered}"
+        )
+    full_paper_md = _run_mode.replace_methods_in_paper(full_paper_md, methods_md)
+    (out_dir / "run_mode_contract.json").write_text(
+        json.dumps(dataclasses.asdict(contract), indent=2)
+    )
+
     paper_path = out_dir / "full_paper.md"
     paper_path.write_text(full_paper_md)
     word_count = len(full_paper_md.split())
@@ -783,6 +810,32 @@ def _issue_to_dict(issue) -> dict[str, Any]:
         "issue_type": issue.issue_type, "auto_fixable": issue.auto_fixable,
         "evidence": issue.evidence, "suggested_fix": issue.suggested_fix,
     }
+
+
+def _build_run_mode_contract(
+    *, settings: Any, topic: str, submission_id: str,
+    n_papers: int, n_claims: int,
+) -> _run_mode.RunModeContract:
+    """Construct the contract from settings + run facts. The v0.6
+    quant-claim adapter never runs SPAR, never uses LLM fact
+    extraction, never builds multi-receipt clusters — those flags
+    are False because that's the literal pipeline behaviour."""
+    return _run_mode.RunModeContract(
+        run_mode="v0.6 quant-claim adapter",
+        topic=topic,
+        submission_id=submission_id,
+        n_papers_in_corpus=n_papers,
+        n_high_confidence_claims_used_by_writer=n_claims,
+        writer_model=settings.mimo_model,
+        in_writing_judge_model=settings.judge_model,
+        final_layer_reviewer_model=settings.final_layer_reviewer_model,
+        final_layer_fallback_model=settings.fallback_model,
+        claim_source=f"docs/quality-reference/{topic}/quant_claims/*.json",
+        spar_adjudication_ran=False,
+        multi_receipt_clusters_ran=False,
+        llm_fact_extraction_ran=False,
+        rejected_evidence_quarantine_ran=False,
+    )
 
 
 # Severities that block ship — anything ELSE is treated as informational.

@@ -493,6 +493,7 @@ def _settings(
         openrouter_base_url="https://or.example/v1",
         judge_model="google/gemma-4-31b-it",
         fallback_model="mistralai/mistral-small-2603",
+        final_layer_reviewer_model="x-ai/grok-4.3",
         bot_enabled=True, daily_cost_cap_usd=10.0,
         dashboard_host="127.0.0.1", dashboard_port=8791,
         runs_dir="runs",
