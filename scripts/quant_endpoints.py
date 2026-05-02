@@ -25,11 +25,37 @@ dependency added; no agent/ runtime touched.
 from __future__ import annotations
 
 import re
+import sys
 from dataclasses import dataclass
+from pathlib import Path
+
+# Phase 7 domain-pack: load vocab from scripts/vocab/<domain>.py.
+# `TOPIC_DOMAIN` env var picks the pack; default "metformin" preserves
+# backward-compat with all v0.1-v0.6 callers.
+# Reviewer-fix MEDIUM 1: import from domain_vocab namespace to avoid
+# a top-level `vocab` package collision with any third-party install.
+_HERE = Path(__file__).resolve().parent
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
+from vocab import load_domain  # noqa: E402
+
+_DOMAIN_PACK = load_domain()
+ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = _DOMAIN_PACK.ENDPOINT_VOCAB
+ENDPOINT_TO_OUTCOME_CLASS: dict[str, str] = (
+    _DOMAIN_PACK.ENDPOINT_TO_OUTCOME_CLASS
+)
+ENDPOINT_POLARITY: dict[str, int] = _DOMAIN_PACK.ENDPOINT_POLARITY
+# ARM_VOCAB also from the domain pack (Reviewer-fix MEDIUM 2):
+# rapamycin pack overrides the "metformin" bare-keyword fallbacks
+# with "rapamycin"/"sirolimus".
+ARM_VOCAB: tuple[tuple[str, str], ...] = _DOMAIN_PACK.ARM_VOCAB
+
 
 __all__ = [
     "EndpointBinding",
     "ENDPOINT_VOCAB",
+    "ENDPOINT_TO_OUTCOME_CLASS",
+    "ENDPOINT_POLARITY",
     "ARM_VOCAB",
     "DIRECTION_VOCAB",
     "match_endpoint",
@@ -55,75 +81,14 @@ class EndpointBinding:
 
 
 # --- Vocab tables ---------------------------------------------------------
+# Phase 7 refactor: ENDPOINT_VOCAB / ENDPOINT_TO_OUTCOME_CLASS /
+# ENDPOINT_POLARITY now live in scripts/vocab/<domain>.py and are
+# imported at module load via load_domain() at the top of this file.
+# ARM_VOCAB and DIRECTION_VOCAB stay here (domain-agnostic).
 
 
-# Endpoint vocabulary — curated for the metformin/aging benchmark
-# corpus. Each entry: (canonical_display_name, regex_pattern). Pattern
-# matches common spelling variants + acronyms case-insensitively.
-# Order matters — more-specific patterns FIRST so "thigh muscle mass"
-# wins over the broader "muscle mass". Verified against the 7 reference
-# papers' results sections; gaps tracked as Phase 2.3 work.
-ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
-    # Cardio / aerobic
-    ("VO2max", r"\bVO\s*2\s*max\b|\bVO₂\s*max\b|peak\s+oxygen\s+(?:consumption|uptake)|aerobic\s+capacity"),
-    ("walk speed", r"\b(?:4-?\s*m|six-?minute)\s+walk(?:\s+(?:speed|distance|test))?\b|gait\s+speed\b"),
-    # Body composition
-    ("thigh muscle mass", r"\bthigh\s+muscle\s+(?:mass|size|area|volume|cross-?sectional\s+area)|thigh\s+CSA"),
-    ("lean body mass", r"\blean\s+(?:body\s+)?mass\b|fat-?free\s+mass\b|\bFFM\b"),
-    ("muscle hypertrophy", r"\bhypertroph(?:y|ic\s+response)|muscle\s+gain"),
-    ("muscle strength", r"\b(?:muscle\s+|grip\s+|leg\s+|knee\s+|handgrip\s+)?strength\b|\b1\s*RM\b|one[\s-]?rep\s*max"),
-    ("body weight", r"\bbody\s+weight\b|\bweight\s+(?:loss|gain|change)\b"),
-    ("body mass index", r"\bbody\s+mass\s+index\b|\bBMI\b"),
-    # Glucose / insulin
-    ("HbA1c", r"\bHbA1c\b|glycated\s+h(?:a|ae)moglobin|hemoglobin\s+A1c|\bA1c\b"),
-    ("insulin sensitivity", r"\binsulin\s+sensitivit(?:y|ies)\b|\bHOMA-?IR\b|insulin\s+action|insulin\s+resistance"),
-    ("fasting glucose", r"\bfasting\s+(?:plasma\s+)?glucose\b|FPG\b"),
-    ("blood glucose", r"\bblood\s+glucose\b|plasma\s+glucose\b|24-?h(?:r|our)?\s+glucose"),
-    # Mitochondrial / cellular
-    ("mitochondrial respiration", r"mitochondrial\s+respiration|mitochondrial\s+function|oxygen\s+consumption\s+rate|\bOCR\b"),
-    ("AMPK signaling", r"\bAMPK\b|AMP-?activated\s+protein\s+kinase"),
-    ("mTOR signaling", r"\bmTORC?[12]?\b|mammalian\s+target\s+of\s+rapamycin|S6K1\b|p70S6K"),
-    ("protein synthesis", r"\bprotein\s+synthesis\b|fractional\s+synthesis\s+rate"),
-    # Aging-specific
-    ("frailty", r"\bfrailt(?:y|ies)\b|frail\s+(?:index|status)|frailty\s+phenotype"),
-    ("sarcopenia", r"\bsarcopeni(?:a|c)\b|muscle\s+wasting"),
-    # v0.6.0 audit fix: split mortality from lifespan. Pre-fix
-    # "all-cause mortality" was mapped to canonical "lifespan", so
-    # a sentence like "metformin reduced mortality by 32%" bound to
-    # endpoint=lifespan with direction=decrease — which the writer
-    # then rendered as "decreased lifespan by 32%" (semantic OPPOSITE
-    # of the actual finding). Mortality and lifespan are different
-    # outcome concepts: mortality is a binary event rate (lower is
-    # better); lifespan is a continuous measure (higher is better).
-    # Direction polarity flips between them.
-    ("mortality", r"\b(?:all-?cause\s+)?mortality\b|risk\s+(?:reduction|of\s+death)"
-                  r"|death\s+rate|risk\s+of\s+(?:diabetes-?related\s+events|major\s+events|"
-                  r"cardiovascular\s+events|cancer-?related\s+events)"
-                  r"|reduced\s+the\s+risk\s+of"),
-    ("lifespan", r"\blifespan\b|life\s+span"),
-    ("healthspan", r"\bhealthspan\b|health\s+span|disease-?free\s+years"),
-    # Inflammation / biomarkers
-    ("inflammation", r"\binflammat(?:ion|ory)\b|\bIL-?6\b|\bTNF-?[αα]?\b|\bCRP\b|\bhsCRP\b"),
-    ("oxidative stress", r"\boxidative\s+stress\b|reactive\s+oxygen\s+species|\bROS\b"),
-    # Common clinical
-    ("blood pressure", r"\bblood\s+pressure\b|systolic\s+BP|diastolic\s+BP|\bSBP\b|\bDBP\b"),
-    ("cardiorespiratory fitness", r"cardiorespiratory\s+fitness|\bCRF\b"),
-)
-
-# Arm vocabulary — which group is the value attributed to.
-# "metformin" and "treatment" treated as synonyms for the active arm
-# in metformin-vs-placebo trials. Order: most-specific first.
-ARM_VOCAB: tuple[tuple[str, str], ...] = (
-    ("metformin", r"\bmetformin\s+(?:group|arm|treatment|cohort)|\bmetformin-?treated"),
-    ("placebo", r"\bplacebo\s+(?:group|arm|cohort|control)|\bplacebo-?treated"),
-    ("control", r"\bcontrol\s+(?:group|arm|cohort|subjects?)\b"),
-    ("treatment", r"\btreatment\s+(?:group|arm|cohort)\b|\bactive\s+treatment\b"),
-    ("pooled", r"\bpooled\b|combined\s+groups?|both\s+(?:groups|arms)|across\s+groups"),
-    # Bare keyword fallbacks (looser, lower confidence) - kept LAST
-    # so the modified-noun forms above win when both present.
-    ("metformin", r"\bmetformin\b"),
-    ("placebo", r"\bplacebo\b"),
-)
+# ARM_VOCAB now lives in scripts/vocab/<domain>.py (Phase 7 + reviewer
+# fix MEDIUM 2). Loaded via `_DOMAIN_PACK.ARM_VOCAB` at module import.
 
 # Direction vocabulary — which way the value moved. Each entry is a
 # regex; first whole-token match in proximity wins (proximity check
