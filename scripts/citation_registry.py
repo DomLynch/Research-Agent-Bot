@@ -1,0 +1,363 @@
+"""Fix #3: Citation registry — eliminate PMCID/internal-handle body
+leaks BY CONSTRUCTION rather than by post-hoc cleanup.
+
+Pre-fix the writer received raw receipt_ids like
+`PMC12978362_molecular_mechanisms_of_metformin_acti` and emitted them
+in body prose ("the PMC12978362 receipt..."). A post-processor then
+chased the leaks with regex substitution and missed many — the latest
+paper had 53 PMCID body leaks.
+
+Fix: build a registry mapping each receipt_id → a clean body_citation
+string ("Smith 2026", "PMC-12978362 2026", etc.) BEFORE the writer
+runs, then substitute the receipt list passed to the writer so it
+never sees the long handles. The post-processor still runs as belt-
+and-braces, but the registry is the single source of truth.
+
+Architecture: deterministic, no LLM. The registry shape is per-receipt
+(one entry per source paper); body_citation is bounded by an explicit
+allowed-shape list (Surname YYYY / Surname et al YYYY / PMCID YYYY)."""
+from __future__ import annotations
+
+import dataclasses
+import re
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class CitationEntry:
+    """One source paper's allowed body citation + reference metadata.
+
+    Cross-stage object → frozen+slots+kw_only per project rule.
+    body_citation is what the writer / Methods text may reference.
+    Internal handles (long receipt_id, PMCID-only forms) NEVER appear
+    in body prose — only inside ## References."""
+    receipt_id: str        # internal long handle (the registry key)
+    body_citation: str     # allowed in body prose
+    reference_id: str      # short identifier in ## References (e.g. "R03")
+    source_year: int | None = None
+    source_doi: str | None = None
+    source_pmid: str | None = None
+    source_pmcid: str | None = None
+    source_journal: str | None = None
+    title: str | None = None
+
+
+# Receipt-id shape: Author_YYYY_TRAIL or PMC<digits>_TRAIL.
+# PMCID still uses a strict regex (the `PMC` prefix uniquely identifies
+# the form); author-year extraction is now token-based to handle
+# multi-word surnames (Van de Werf, O'Brien, Smith-Jones).
+_PMCID_RE = re.compile(r"^(PMC\d{6,9})(?:_|$)")
+_YEAR_RE = re.compile(r"^(20\d{2}|19\d{2})$")
+# Plausibility window for inferred publication years.
+_MIN_PLAUSIBLE_YEAR = 1990
+_MAX_PLAUSIBLE_YEAR = 2100
+
+
+def _body_citation_for(receipt_id: str, source_year: int | None = None) -> str:
+    """Deterministic body citation from receipt_id shape.
+
+    Token-based extraction (not regex-anchored) so multi-word
+    surnames work: split on `_`, find the first 4-digit year token,
+    everything before that is the author name (joined by spaces).
+
+    Rules:
+      - <token>...<YYYY>_*  → "<token>... YYYY"
+            handles Walton_2019, Van_de_Werf_2019, O'Brien_2019,
+            Smith-Jones_2019 (any token shape before the year is fine)
+      - PMC#######_*        → "PMC####### <year>"
+      - anything else       → fail-loud (raises in build_registry)
+    """
+    # PMCID first — distinct shape, won't have an author-year prefix.
+    if m := _PMCID_RE.match(receipt_id):
+        year = source_year or _extract_year_from_id(receipt_id) or ""
+        if year:
+            return f"{m.group(1)} {year}"
+        return m.group(1)
+    # Token-based author + year. Find the FIRST 4-digit token in the
+    # plausible publication-year window.
+    parts = receipt_id.split("_")
+    for i, tok in enumerate(parts):
+        if (m := _YEAR_RE.match(tok)) and _is_plausible_year(int(m.group(1))):
+            year = m.group(1)
+            author_tokens = [p for p in parts[:i] if p]
+            if author_tokens:
+                # First token always capitalized (leading char of the
+                # surname); subsequent tokens use particle-aware rule.
+                first = author_tokens[0]
+                head = first[0].upper() + first[1:] if first else ""
+                tail = [_smart_title(t) for t in author_tokens[1:]]
+                author = " ".join([head, *tail]).strip()
+                return f"{author} {year}"
+            break
+    # Fallback: short slug + year if any. Caller's
+    # build_registry.validate_body_citation will catch leak-shaped
+    # output and raise.
+    slug = receipt_id[:30].rstrip("_")
+    if source_year:
+        return f"{slug} {source_year}"
+    return slug
+
+
+def _is_plausible_year(y: int) -> bool:
+    return _MIN_PLAUSIBLE_YEAR <= y <= _MAX_PLAUSIBLE_YEAR
+
+
+# Lowercase nobiliary particles preserved as-is in surnames (the
+# Western convention: "Van de Werf", not "Van De Werf").
+_LOWERCASE_PARTICLES: frozenset[str] = frozenset({
+    "de", "van", "von", "der", "den", "du", "la", "le",
+    "el", "of", "the", "y", "i",
+})
+
+
+def _smart_title(token: str) -> str:
+    """Capitalize the first letter of a surname token while preserving
+    interior uppercase ('O'Brien' stays 'O'Brien', 'MASTERS' stays
+    'MASTERS', 'walton' → 'Walton'). Lowercase nobiliary particles
+    ('de', 'van', 'von', etc.) are left lowercase per Western surname
+    convention."""
+    if not token:
+        return token
+    if token.lower() in _LOWERCASE_PARTICLES:
+        return token.lower()
+    if any(c.isupper() for c in token):
+        return token
+    return token[0].upper() + token[1:]
+
+
+def _extract_year_from_id(receipt_id: str) -> int | None:
+    """Best-effort year extraction from a slug like
+    `..._2026_...`. P2 reviewer fix: scan ALL year-shaped matches
+    and pick the most plausible publication year (1990-2100)
+    instead of the first hit (which could be `n=2018` or `v2019`)."""
+    candidates: list[int] = []
+    for m in re.finditer(r"(?:^|[_\-\s])(20\d{2}|19\d{2})(?:[_\-\s]|$)", receipt_id):
+        try:
+            y = int(m.group(1))
+        except (ValueError, TypeError):
+            continue
+        if _is_plausible_year(y):
+            candidates.append(y)
+    if not candidates:
+        return None
+    # Prefer the LAST plausible year — receipt_ids put the publication
+    # year before the descriptive slug, but pre-print year is often
+    # appended at the end (..._2026_revised). Last-wins matches the
+    # observed corpus naming.
+    return candidates[-1]
+
+
+# Phrases the body_citation MUST NOT match. Anything matching these
+# patterns means the body prose still contains an internal handle.
+# Includes BARE-handle shapes (Author_YYYY without trailing keyword,
+# bare PMCID without year) — those are still leaks the user would
+# notice.
+_BLOCKED_BODY_CITATION_PATTERNS: tuple[re.Pattern[str], ...] = (
+    # Long descriptive PMCID slug like "PMC12978362_molecular_mechanisms_..."
+    re.compile(r"PMC\d{6,9}_[a-zA-Z_]{10,}"),
+    # Author_YYYY_TRAIL_KEYWORDS
+    re.compile(r"[A-Z][a-zA-Z]+_\d{4}_[A-Za-z_]+_"),
+    # Bare Author_YYYY (no trailing) — still an internal handle leak
+    re.compile(r"^[A-Z][a-zA-Z]+_\d{4}$"),
+    # Bare PMCID with no year decoration
+    re.compile(r"^PMC\d{6,9}$"),
+)
+
+
+def validate_body_citation(citation: str) -> list[str]:
+    """Return list of blocked patterns the citation matches. Empty
+    list = clean. Used by tests + the orchestrator's pre-write gate."""
+    found: list[str] = []
+    for pat in _BLOCKED_BODY_CITATION_PATTERNS:
+        if pat.search(citation):
+            found.append(pat.pattern)
+    return found
+
+
+def build_registry(receipts: list) -> dict[str, CitationEntry]:
+    """Build the registry from a list of ReceiptSummary objects.
+
+    Each entry's body_citation is computed once + validated; if any
+    body_citation matches a blocked pattern OR is empty, raises
+    immediately so the pipeline can't ship with an internal-handle
+    leak baked in."""
+    registry: dict[str, CitationEntry] = {}
+    for idx, r in enumerate(receipts, start=1):
+        receipt_id = getattr(r, "receipt_id", "") or ""
+        if not receipt_id.strip():
+            raise ValueError(
+                f"Receipt at index {idx-1} has empty receipt_id; "
+                "registry cannot key by empty string"
+            )
+        body_citation = _body_citation_for(
+            receipt_id, source_year=getattr(r, "source_year", None),
+        )
+        leaks = validate_body_citation(body_citation)
+        if leaks:
+            raise ValueError(
+                f"Generated body_citation for {receipt_id!r} matches "
+                f"blocked pattern(s) {leaks}: {body_citation!r}"
+            )
+        # Reference IDs: R01, R02, ... in receipt order. Stable across
+        # runs so References section + body cites agree.
+        reference_id = f"R{idx:02d}"
+        entry = CitationEntry(
+            receipt_id=receipt_id,
+            body_citation=body_citation,
+            reference_id=reference_id,
+            source_year=getattr(r, "source_year", None),
+            source_doi=getattr(r, "source_doi", None),
+            source_pmid=getattr(r, "source_pmid", None),
+            source_pmcid=getattr(r, "source_pmcid", None),
+            source_journal=getattr(r, "source_journal", None),
+            title=getattr(r, "title", None),
+        )
+        registry[receipt_id] = entry
+    return registry
+
+
+def _safe_variants_across_registry(
+    registry: dict[str, CitationEntry],
+) -> dict[str, str]:
+    """Build {variant: body_citation} across the whole registry, with
+    cross-receipt collision detection AND self-substitution prevention.
+
+    A variant is SAFE only when:
+      1. It's a prefix of EXACTLY ONE receipt's id (no cross-receipt
+         ambiguity).
+      2. It is NOT a substring of its own body_citation (otherwise
+         `Walton` → `Walton 2019` would double-substitute clean prose
+         like 'The Walton 2019 trial' → 'The Walton 2019 2019 trial').
+
+    The full receipt_id is always safe; bare surname variants are
+    typically dropped by rule (2)."""
+    variant_to_owners: dict[str, set[str]] = {}
+    for receipt_id in registry:
+        for v in _variants_for(receipt_id):
+            variant_to_owners.setdefault(v, set()).add(receipt_id)
+    safe: dict[str, str] = {}
+    for v, owners in variant_to_owners.items():
+        if len(owners) != 1:
+            continue
+        (rid,) = owners
+        body_citation = registry[rid].body_citation
+        # Self-substitution guard: skip variants that are substrings
+        # of their own body_citation. Otherwise the substitution
+        # double-applies to clean text already containing the citation.
+        if v in body_citation:
+            continue
+        safe[v] = body_citation
+    return safe
+
+
+def _variants_for(receipt_id: str) -> list[str]:
+    """Generate prefix variants of a receipt_id that could appear as
+    leaks in body prose. Two families: underscore-segment prefixes
+    (the writer often drops trailing tokens) and character-truncation
+    forms (the writer sometimes hard-truncates at 20/25/30).
+
+    P2 reviewer fix: floor lowered to 5 chars to cover short surnames
+    (Wu, Li, He, Yu — common Chinese surnames). The cross-receipt
+    collision check in `_safe_variants_across_registry` ensures short
+    variants don't blast across unrelated receipts."""
+    if not receipt_id:
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+
+    def _add(v: str) -> None:
+        if v and len(v) >= 5 and v not in seen:
+            seen.add(v)
+            out.append(v)
+
+    # Underscore-segment prefixes: full → drop one trailing segment → ...
+    parts = receipt_id.split("_")
+    for i in range(len(parts), 0, -1):
+        _add("_".join(parts[:i]))
+    # Character-truncation variants the writer sometimes produces.
+    for length in (30, 25, 20, 18, 15, 12, 10):
+        _add(receipt_id[:length])
+    return out
+
+
+def substitute_receipt_ids(
+    paper_md: str, registry: dict[str, CitationEntry],
+) -> str:
+    """Substitute every receipt_id leak in the paper with its body_
+    citation. Belt-and-braces backstop for the upstream substitution
+    in the writer-input transform.
+
+    Uses cross-receipt collision detection: ambiguous variants (those
+    that prefix more than one receipt) are dropped, so `Walton_2019`
+    is NOT auto-substituted when both `Walton_2019_MASTERS` and
+    `Walton_2019_PHOENIX` exist. Sorted longest-first within the safe
+    set."""
+    safe = _safe_variants_across_registry(registry)
+    pairs = sorted(safe.items(), key=lambda p: -len(p[0]))
+    out = paper_md
+    for variant, body_citation in pairs:
+        out = out.replace(variant, body_citation)
+    return out
+
+
+def transform_receipts_for_writer(
+    receipts: list, registry: dict[str, CitationEntry],
+) -> list:
+    """Rewrite each receipt's receipt_id to its body_citation BEFORE
+    the writer sees the list. The writer's prompt builder iterates
+    over receipts and emits receipt_id verbatim — by the time the
+    writer reads a receipt, its receipt_id is already a clean
+    body_citation token, not an internal handle.
+
+    Returns NEW ReceiptSummary instances (frozen dataclass — can't
+    mutate). Original receipts list is untouched for downstream uses
+    (manifest, References block).
+
+    IMPORTANT: callers MUST also call `transform_matrix_for_writer`
+    on any TensionMatrix derived from these receipts. The matrix
+    holds its own `receipts` field AND each Tension references
+    `receipt_a_id`/`receipt_b_id` strings — those need rewriting
+    in lockstep, otherwise the writer's anchor-validator sees
+    transformed receipt_ids in writer_receipts but original handles
+    in matrix.receipts and trips invariant checks."""
+    transformed: list = []
+    for r in receipts:
+        rid = getattr(r, "receipt_id", "")
+        entry = registry.get(rid)
+        if entry is None:
+            transformed.append(r)
+            continue
+        transformed.append(
+            dataclasses.replace(r, receipt_id=entry.body_citation)
+        )
+    return transformed
+
+
+def transform_matrix_for_writer(matrix, registry: dict[str, CitationEntry]):
+    """Rewrite a TensionMatrix's `receipts` AND every `Tension`'s
+    `receipt_a_id` / `receipt_b_id` to use body_citation strings.
+    Pairs lockstep with `transform_receipts_for_writer`.
+
+    Returns a NEW TensionMatrix (frozen) with rewritten receipts
+    and pairs. Original matrix is untouched.
+
+    Returns matrix unchanged when registry has no matching receipt
+    (defensive — should not happen if matrix was built from the same
+    receipts that built the registry)."""
+    new_receipts = transform_receipts_for_writer(
+        list(matrix.receipts), registry,
+    )
+    new_pairs = []
+    for pair in matrix.pairs:
+        a_entry = registry.get(pair.receipt_a_id)
+        b_entry = registry.get(pair.receipt_b_id)
+        new_a = a_entry.body_citation if a_entry else pair.receipt_a_id
+        new_b = b_entry.body_citation if b_entry else pair.receipt_b_id
+        new_pairs.append(dataclasses.replace(
+            pair, receipt_a_id=new_a, receipt_b_id=new_b,
+        ))
+    return dataclasses.replace(
+        matrix,
+        receipts=tuple(new_receipts),
+        pairs=tuple(new_pairs),
+    )

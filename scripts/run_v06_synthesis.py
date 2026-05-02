@@ -60,6 +60,7 @@ import apply_consistency_fixes as _consistency_fixer  # noqa: E402
 import grok_reviewer as _final_reviewer  # noqa: E402
 import apply_patches as _patch_applier  # noqa: E402
 import run_mode_contract as _run_mode  # noqa: E402
+import citation_registry as _citations  # noqa: E402
 
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
@@ -526,6 +527,26 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     submission_id = out_dir.name
     ledger = CostLedger()
+
+    # Fix #3: build the citation registry BEFORE the writer runs and
+    # transform receipts AND matrix so the writer never sees raw
+    # internal handles. PMCID body leaks become structurally
+    # impossible (vs the previous post-hoc regex chase that missed
+    # ~half the leaks). Matrix transformation MUST happen in lockstep
+    # with receipt transformation, otherwise the writer's anchor-
+    # validator sees mismatched IDs and trips invariant checks.
+    citation_registry = _citations.build_registry(receipts)
+    writer_receipts = _citations.transform_receipts_for_writer(
+        receipts, citation_registry,
+    )
+    writer_matrix = _citations.transform_matrix_for_writer(
+        matrix, citation_registry,
+    )
+    (out_dir / "citation_registry.json").write_text(json.dumps({
+        rid: dataclasses.asdict(entry)
+        for rid, entry in citation_registry.items()
+    }, indent=2))
+
     print(
         "\nCalling render_full_paper "
         "(target 5-15k words, multi-section, tiered validation)...",
@@ -534,7 +555,7 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     import httpx
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(
-            receipts, matrix, thesis,
+            writer_receipts, writer_matrix, thesis,
             topic="metformin", submission_id=submission_id,
             chain=chain, client=client, ledger=ledger,
         )
@@ -551,12 +572,12 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
         file=sys.stderr,
     )
 
-    # Phase 6.2 audit-driven: replace paper_id citations with Author-Year
-    # form so the body prose doesn't leak internal handles. The production
-    # writer cites by receipt_id (which IS paper_id in our adapter); the
-    # audit Q3 ship-blocks if those leak into prose. Post-processing
-    # substitutes Author-Year throughout body + leaves a proper References
-    # block at the end for traceability.
+    # Belt-and-braces: even though Fix #3 substituted upstream, run the
+    # registry-backed substitution again as a safety net. Idempotent —
+    # if upstream already converted everything, this is a no-op.
+    full_paper_md = _citations.substitute_receipt_ids(
+        full_paper_md, citation_registry,
+    )
     full_paper_md = _replace_paper_ids_with_author_year(full_paper_md, receipts)
     full_paper_md = _append_references_block(full_paper_md, receipts)
 
