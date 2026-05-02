@@ -129,3 +129,22 @@
 ## Re-acquiring the PDFs
 
 Each paper's DOI resolves on Sci-Hub mirrors / institutional access / arXiv / publisher OA. Local copies are not required for the build — the structured metadata above is what actually feeds the prompts.
+
+## Phase 1 / 1.5 — `parsed/` artifacts
+
+`scripts/pdf_ingest.py` (Day 10.17 Phase 1) reads each PDF in `pdfs/` and writes a `paper_sections.json` artifact into `parsed/`. The PDFs themselves are gitignored (binary, copyrighted) but the `parsed/` JSON IS tracked — it serves as:
+
+1. The Phase 2+ claim-extraction input (so downstream stages don't need PyMuPDF).
+2. The committed audit record of what the parser extracted at each commit, useful for catching parser regressions in CI.
+3. A way for cloners without the PDFs to still see what the parser saw.
+
+To regenerate after parser changes:
+
+```bash
+for pdf in docs/quality-reference/metformin/pdfs/*.pdf; do
+  python scripts/pdf_ingest.py "$pdf" \
+    --out "docs/quality-reference/metformin/parsed/$(basename "$pdf" .pdf).paper_sections.json"
+done
+```
+
+Per-paper gold checks live in `tests/test_pdf_ingest.py::test_per_paper_metadata_matches_readme_gold` — they cross-check the `paper_sections.json` against the metadata block above.

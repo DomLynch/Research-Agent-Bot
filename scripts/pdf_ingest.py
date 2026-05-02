@@ -142,10 +142,60 @@ def _extract_trial_ids(text: str) -> tuple[str, ...]:
 
 
 def _extract_year(text: str) -> int | None:
-    """Pick the first plausible 4-digit year from the first 500 chars."""
-    head = text[:500]
-    m = _YEAR_RE.search(head)
-    return int(m.group(0)) if m else None
+    """Find the publication year. Day 10.17 Phase 1.5: was 500-char
+    head only — that missed Konopka/MILES/Mohammed/Witham whose year
+    appears past the title block.
+
+    Strategy (order matters — first match wins):
+      1. Journal-citation patterns ("Aging Cell. YYYY;", "Lancet ... YYYY",
+         "Frontiers ... YYYY") are the actual publication year — these
+         must beat the copyright year, which is sometimes a year off
+         (Konopka: © 2018 Authors, Aging Cell. 2019;18:e12880 — the
+         pattern that wins must be the journal one).
+      2. "Publication date:" / "Published YYYY" — explicit publication
+         markers next.
+      3. Copyright patterns © / (c) — usually the publication year, but
+         can lag by a year for revised manuscripts.
+      4. "Accepted YYYY" / "Received YYYY" — review-timeline years
+         only — last resort, since "received 2018, published 2019"
+         is the usual case.
+      5. Fallback to the first plausible 4-digit year in 1990-2030
+         range in the first 5000 chars.
+    """
+    high_precision_patterns = (
+        r"Aging Cell\.\s*((?:19|20)\d{2})",
+        r"Lancet[^\n]{0,40}((?:19|20)\d{2})",
+        r"Frontiers[^\n]{0,60}((?:19|20)\d{2})",
+        r"Publication date:\s*((?:19|20)\d{2})",
+        r"Published(?:\s+online)?[:\s]*[A-Za-z]+\s*\d{0,2},?\s*((?:19|20)\d{2})",
+        r"©\s*((?:19|20)\d{2})",
+        r"\(c\)\s*((?:19|20)\d{2})",
+        r"Accepted[^\n]{0,40}((?:19|20)\d{2})",
+        r"Received[^\n]{0,40}((?:19|20)\d{2})",
+    )
+    # Reviewer flagged risk: a body-text "Frontiers ... 2018" citation
+    # could match the journal pattern instead of the publication year.
+    # Mitigation: the caller passes only `first_page` to this function
+    # (see ingest_pdf), so we operate on a single page. Page-1 prose
+    # is rarely a citation; the journal-citation block sits at the
+    # bottom of page 1 for Aging Cell / Lancet (Konopka's lives at
+    # char ~3800). We scan the whole first page rather than capping
+    # at 2000 chars, since 2000 misses Konopka's "Aging Cell. 2019;"
+    # block. The bare-year fallback runs only if no high-precision
+    # pattern fired.
+    head = text[:5000]
+    for pat in high_precision_patterns:
+        m = re.search(pat, head, re.IGNORECASE)
+        if m:
+            year = int(m.group(1))
+            if 1990 <= year <= 2030:
+                return year
+    m = re.search(r"\b((?:19|20)\d{2})\b", head)
+    if m:
+        year = int(m.group(1))
+        if 1990 <= year <= 2030:
+            return year
+    return None
 
 
 # --- Section splitter ----------------------------------------------------
@@ -196,10 +246,31 @@ def _normalize_aging_cell_layout(text: str) -> str:
     return _AGING_CELL_HEADING_RE.sub(r"\1 | \2", text)
 
 
+# Day 10.17 Phase 1.5 — Elsevier / Frontiers / SDU-Pure typeset
+# section headings with single capital letters separated by spaces:
+#   "A B S T R A C T", "M E T H O D S", "K E Y W O R D S".
+# Collapse them so the line-anchored section regex matches.
+_LETTER_SPACED_HEADER_RE = re.compile(
+    r"^[ \t]*([A-Z](?:[ \t]+[A-Z]){4,})[ \t]*$", re.MULTILINE,
+)
+
+
+def _collapse_letter_spaced_headers(text: str) -> str:
+    """Lines like 'A B S T R A C T' on their own line become 'ABSTRACT'.
+    Pre-fix: Keys 2025 had its abstract heading typeset that way (Elsevier
+    typesetting); the ^abstract$ regex couldn't match. Collapse before
+    splitting so detection works."""
+    def _collapse(m: re.Match[str]) -> str:
+        return re.sub(r"[ \t]+", "", m.group(1))
+    return _LETTER_SPACED_HEADER_RE.sub(_collapse, text)
+
+
 def _normalize_journal_layout(text: str) -> str:
     """Dispatch to per-journal normalizers in order. Add a new
     `_normalize_<journal>_layout` function above and call it here."""
-    return _normalize_aging_cell_layout(text)
+    text = _normalize_aging_cell_layout(text)
+    text = _collapse_letter_spaced_headers(text)
+    return text
 
 
 def _split_sections(full_text: str) -> tuple[Sections, list[str]]:
@@ -224,6 +295,134 @@ def _split_sections(full_text: str) -> tuple[Sections, list[str]]:
             sections[name] = body
             detected.append(name)
     return Sections(**sections), detected
+
+
+# Day 10.17 Phase 1.5 — unlabeled abstract heuristic. Some Frontiers /
+# review-style papers (Mohammed 2021) put the abstract immediately
+# after the affiliations block with NO heading. The labeled-section
+# splitter never finds it. Recover by scanning the prose between the
+# title and the first detected section header.
+_METADATA_LINE_PREFIXES = (
+    "doi:", "published in:", "publication date:", "document version",
+    "document license", "citation for", "go to publication",
+    "terms of use", "this work is brought", "if you believe",
+    "please direct", "received:", "accepted:", "revised:",
+    "https://", "http://", "wileyonlinelibrary",
+    "correspondence", "email:", "funding", "keywords",
+    "k e y w o r d s",  # letter-spaced variant
+    "edited by", "reviewed by",
+)
+
+
+def _looks_like_prose(text: str) -> bool:
+    """Reject metadata blocks; require enough sentence-ending periods
+    to look like multi-sentence prose."""
+    stripped = text.strip()
+    if len(stripped) < 200:
+        return False
+    if stripped.lstrip().lower().startswith(_METADATA_LINE_PREFIXES):
+        return False
+    # Must have at least 2 sentence-ending periods to look like prose
+    if stripped.count(". ") < 2:
+        return False
+    return True
+
+
+# Affiliation-line shape — these immediately follow authors and are
+# characterized by leading numeric superscripts ("1 Department of...")
+# or organization keywords near the start of the line. Reviewer fix:
+# require the keyword to appear in the FIRST HALF of the line so
+# legitimate abstract sentences with mid-clause "Centers for Disease
+# Control..." or "Hospital admission rates declined..." pass through.
+# Affiliations always have the org keyword early; prose mentions it
+# mid-clause.
+_AFFILIATION_KEYWORDS_RE = re.compile(
+    r"\b(?:Department|Departments|Institute|School|Hospital|"
+    r"Faculty|College|Centre|Center|Laboratory|Division|"
+    r"University)\b",
+    re.IGNORECASE,
+)
+
+
+def _looks_like_affiliation(line: str) -> bool:
+    """True if `line` looks like an affiliation block (org keyword in
+    first half of line). Avoids false-positives on abstract sentences
+    that mention an org keyword in late-clause position."""
+    m = _AFFILIATION_KEYWORDS_RE.search(line)
+    if m is None:
+        return False
+    return m.start() < len(line) // 2
+
+
+def _extract_unlabeled_abstract(
+    full_text: str, title: str, sections: Sections,
+    detected: list[str],
+) -> str:
+    """Return prose between title and first detected section that
+    looks like an abstract — used when no labeled abstract heading
+    was found. Empty string if no plausible candidate exists.
+
+    Mohammed 2021 (Frontiers in Endocrinology) is the canonical
+    target: abstract is unlabeled, sits between the affiliations
+    block and a section heading. Pre-fix this paper had abstract=''
+    even though prose was clearly present.
+
+    The heuristic walks lines after the title:
+      1. Skip blank lines, author-shaped lines, numbered affiliations
+         and affiliation continuation lines (Department/University/
+         Institute/...)
+      2. The first line that passes those filters AND is substantive
+         (>= 30 chars) is the abstract start
+      3. Take from there to the end of the title-to-section region
+      4. Final block must pass the prose sniff (>= 200 chars, multiple
+         sentences, no metadata-prefix start)
+    """
+    if sections.abstract or not title or not detected:
+        return ""
+    # Use a SHORT title prefix (~30 chars) since the reassembled title
+    # may span multiple lines in raw full_text — newlines between
+    # title segments make a longer prefix fail to match.
+    title_idx = full_text.find(title[:30])
+    if title_idx < 0:
+        return ""
+    first_body = getattr(sections, detected[0], "")
+    if not first_body:
+        return ""
+    anchor_idx = full_text.find(first_body[:80], title_idx)
+    if anchor_idx < 0:
+        return ""
+    region = full_text[title_idx + len(title):anchor_idx]
+    lines = region.split("\n")
+    abstract_start = None
+    for i, raw in enumerate(lines):
+        s = raw.strip()
+        if not s or len(s) < 30:
+            continue
+        if _is_author_line(s):
+            continue
+        # Numbered affiliation marker at line start ("1 Department...")
+        if re.match(r"^\d+\s+[A-Z]", s):
+            continue
+        if _INSTITUTIONAL_COVER_RE.match(s):
+            continue
+        if s.lower().startswith(_METADATA_LINE_PREFIXES):
+            continue
+        # Affiliation continuation lines (mid-line "Department" /
+        # "Institute" / "University" tokens — Mohammed's affiliations
+        # wrap across 4 lines without leading digits on the wrap).
+        # Reviewer fix: only filter when the org keyword is in the
+        # first half of the line — abstracts can mention orgs in
+        # late-clause position.
+        if _looks_like_affiliation(s):
+            continue
+        abstract_start = i
+        break
+    if abstract_start is None:
+        return ""
+    candidate = "\n".join(lines[abstract_start:]).strip()
+    if not _looks_like_prose(candidate):
+        return ""
+    return candidate
 
 
 # --- Table detection -----------------------------------------------------
@@ -291,6 +490,85 @@ def _detect_figures_via_captions(full_text: str) -> tuple[Figure, ...]:
 # --- Title + author best-effort -----------------------------------------
 
 
+# Day 10.17 Phase 1.5 — author-line shape. Used by the title
+# extractor to stop continuation when the next line is the authors
+# block (rather than continuing prose). Each subpattern captures one
+# common author-list shape we observed across the 7 reference PDFs:
+#   - LastName + superscript digit ("Walton1", "Konopka1,2")
+#   - Aging Cell pipe separator (" | " between authors)
+#   - "et al."
+#   - Semicolon-separated authors ("Keys, Matthew Thomas; Hallas, Jesper")
+#     — Keys 2025 cover-page lists authors this way without superscripts
+#
+# Reviewer fix: initials pattern split out to require ≥2 instances on
+# the line. A single `[A-Z]\.\s*[A-Z]` match false-positives on title
+# tokens like "U.S. Adults" / "U.K. Biobank" / "P.D. Studies". Author
+# lines almost always have multiple initial pairs (multi-author
+# papers), so requiring 2+ catches authors without dropping titles.
+_AUTHOR_LINE_RE = re.compile(
+    r"(?:[A-Z][a-z]+\s*\d"
+    r"|\s\|\s"
+    r"|\bet\s+al\b"
+    r"|;\s+[A-Z][a-z]+,\s+[A-Z])",
+)
+_INITIALS_PAIR_RE = re.compile(r"[A-Z]\.\s*[A-Z]")
+
+
+def _is_author_line(line: str) -> bool:
+    """Author-line detection. True if any of:
+      1. `_AUTHOR_LINE_RE` matches (LastName+digit, " | ", "et al",
+         "; LastName, F" semicolon-author).
+      2. Line has 2+ initial pairs ("A. B. Smith and C. D. Jones" —
+         the reviewer-flagged 'multiple initials' check that distinguishes
+         author lines from title fragments containing "U.S. Adults" or
+         "U.K. Biobank").
+      3. Line has 4+ commas AND no English prose connectors. Witham 2025
+         author line is a 9-name comma list with NO superscripts, NO
+         pipes, NO et-al, and only single-initial middle names like
+         "Miles D Witham" (no period after D). Author lists virtually
+         never contain "the", "and", "of", "to", "in", "with", "for"
+         — those are a strong negative signal for "this is just authors".
+    """
+    if _AUTHOR_LINE_RE.search(line):
+        return True
+    if len(_INITIALS_PAIR_RE.findall(line)) >= 2:
+        return True
+    if line.count(",") >= 4:
+        # Tokenize lowercased words and check for prose connectors.
+        # Author names get past this check easily ("Miles D Witham,
+        # Claire McDonald" — no connector words).
+        prose_connectors = {
+            "the", "and", "of", "to", "in", "with", "for", "on", "at",
+            "by", "from", "is", "are", "was", "were", "an", "as",
+        }
+        words = re.findall(r"[a-z]+", line.lower())
+        if not (set(words) & prose_connectors):
+            return True
+    return False
+
+
+# Day 10.17 Phase 1.5 — institutional cover-page lines that some
+# repositories (e.g. SDU's Pure for Keys 2025) prepend before the
+# real title. Skip lines that match this shape so the candidate-
+# selection loop reaches the actual title line.
+_INSTITUTIONAL_COVER_RE = re.compile(
+    r"^(?:university|institute|department|school|college|hospital|"
+    r"published in|publication date|document version|document license|"
+    r"citation for pulished|citation for published|"
+    r"this work is brought)",
+    re.IGNORECASE,
+)
+
+
+# Day 10.17 Phase 1.5 — soft hyphens (­ / \xad) leak through
+# PyMuPDF text extraction inside hyphenated words like
+# "Geroscience-\xadguided" / "FDA-\xadapproved". Strip them from
+# titles so downstream tools see clean ASCII-ish prose. We don't
+# touch the body text (sections.*) since they may legitimately
+# contain soft hyphens at line-break positions.
+_SOFT_HYPHEN = "­"
+
+
 def _extract_title(first_page: str) -> str:
     """Best-effort title: find the first plausible title line, then
     consume continuation lines until a stop signal (authors line,
@@ -307,14 +585,20 @@ def _extract_title(first_page: str) -> str:
     skip_terms = (
         "aging cell", "open access", "creative commons",
         "doi:", "received", "accepted", "first published",
-        "wiley", "page", "journal", "geroscience",
-        "© 20", "© 19",
+        "wiley", "page", "© 20", "© 19", "©20", "©19",
+        "lancet", "frontiers in", "ageing research",
+        "elsevier", "springer", "publication date",
+        "document license", "document version",
+        "citation for pulished", "citation for published",
     )
     article_type_terms = (
-        "original article", "research article", "review article",
-        "short take", "short report", "letter", "commentary",
-        "perspective", "editorial", "rapid communication",
-        "research", "review",
+        "original article", "original paper", "research article",
+        "research paper", "review article", "review paper",
+        "short take", "short report", "short communication",
+        "letter", "commentary", "perspective", "editorial",
+        "rapid communication", "research", "review", "opinion",
+        "case study", "clinical trial", "meta-analysis",
+        "systematic review",
     )
     for i, line in enumerate(lines):
         line = line.strip()
@@ -330,6 +614,18 @@ def _extract_title(first_page: str) -> str:
         compact = re.sub(r"\s+", "", collapsed)
         if any(re.sub(r"\s+", "", t) == compact for t in article_type_terms):
             continue
+        # Day 10.17 Phase 1.5 — institutional cover-page wrapper
+        # ("University of Southern Denmark" prefix on Keys 2025).
+        # These ARE capitalized and pass the article-type filters
+        # but precede the real title; skip them.
+        if _INSTITUTIONAL_COVER_RE.match(line):
+            continue
+        # Day 10.17 Phase 1.5 — author-line shape on the candidate
+        # itself (Kulkarni 2022 had the title detector pick up the
+        # authors line "Ameya S. Kulkarni1 | Sandra Aleksic2 | ..."
+        # because pre-fix logic only checked continuation lines).
+        if _is_author_line(line):
+            continue
         if not re.match(r"^[A-Z]", line):
             continue
         # Found a candidate title line — consume continuation lines.
@@ -340,17 +636,25 @@ def _extract_title(first_page: str) -> str:
                 break
             if cont.lower().startswith(("abstract", "summary", "introduction")):
                 break
-            # Author lines usually have 3+ comma-separated names or
-            # superscript markers (1, 2, *, †). Stop on those.
-            if re.search(r"\d+\s*[ ,]", cont) or cont.count(",") >= 3:
+            # Day 10.17 Phase 1.5 - replace the brittle comma-count
+            # heuristic ("3 commas == authors") with author-line shape
+            # detection. Pre-fix check false-positived on Walton 2019
+            # line "randomized, double-blind, placebo-controlled,
+            # multicenter trial:" - has 3 commas but is title prose.
+            if _is_author_line(cont):
                 break
-            if re.search(r"[A-Z]\.\s*[A-Z]", cont):  # initials pattern
+            # Institutional cover lines after the title can also signal
+            # we have left the title block (Keys "Published in:" etc).
+            if _INSTITUTIONAL_COVER_RE.match(cont):
                 break
             if len(cont) > 200:
                 break
             title_parts.append(cont)
         title = " ".join(title_parts)
-        # Final clean: collapse internal whitespace
+        # Day 10.17 Phase 1.5 - strip soft hyphens (PyMuPDF leaks them
+        # inside hyphenated words like "Geroscience-\xadguided"). Then
+        # collapse internal whitespace.
+        title = title.replace(_SOFT_HYPHEN, "")
         title = re.sub(r"\s+", " ", title).strip()
         return title
     return ""
@@ -394,18 +698,50 @@ def _extract_authors(first_page: str) -> tuple[str, ...]:
     return plausible
 
 
+# Day 10.17 Phase 1.5 reviewer fix: word-boundary anchored AND
+# longest-name first so "Aging Cell" matches before "Cell" and
+# "Sports Science" doesn't false-match "Science". The ordering is
+# load-bearing — first match wins.
 _JOURNAL_HINTS = (
-    "Aging Cell", "GeroScience", "Cell Metabolism", "Lancet",
-    "JAMA", "Nature", "Science", "BMJ", "NEJM",
-    "JCI Insight", "Nature Aging", "Diabetes Care",
-    "Diabetologia", "Journal of Gerontology",
+    "Lancet Healthy Longevity",
+    "Ageing Research Reviews",
+    "Journal of Gerontology",
+    "Frontiers in Endocrinology",
+    "Frontiers in Aging",
+    "Nature Aging",
+    "Cell Metabolism",
+    "Diabetes Care",
+    "Diabetologia",
+    "JCI Insight",
+    "Aging Cell",
+    "GeroScience",
+    "Lancet",
+    "JAMA",
+    "BMJ",
+    "NEJM",
+    "Nature",
+    # "Science" intentionally NOT in the list — too short, too
+    # ambiguous against "Sports Science" / "Computer Science" etc.
 )
 
 
 def _extract_journal(first_page: str) -> str:
-    head = first_page[:1500]
+    """Match journal name with word boundaries. Per reviewer pin:
+    pre-fix substring match caught 'Science' inside 'Sports Science'
+    affiliations. Now requires word-boundary match and prefers
+    longer journal names (the _JOURNAL_HINTS tuple is ordered
+    longest-first so first match wins).
+
+    Day 10.17 Phase 1.5: scan the whole first page, not the first
+    2500 chars. Konopka/MILES/Witham/Mohammed all place the journal
+    name in the citation block past char 3000 (well past abstracts
+    on the same page). Whole-first-page scan is fine — the journal
+    name is unique enough that false positives are vanishingly rare,
+    and `_JOURNAL_HINTS` is curated so word-boundary regex won't
+    misfire on body prose."""
     for j in _JOURNAL_HINTS:
-        if j.lower() in head.lower():
+        pattern = r"\b" + re.escape(j) + r"\b"
+        if re.search(pattern, first_page, re.IGNORECASE):
             return j
     return ""
 
@@ -438,6 +774,26 @@ def ingest_pdf(pdf_path: Path) -> PaperSections:
     trial_ids = _extract_trial_ids(full_text)
 
     sections, detected = _split_sections(full_text)
+    # Day 10.17 Phase 1.5 — recover unlabeled abstracts (Mohammed
+    # 2021 / Frontiers shape: prose between affiliations and
+    # Introduction with no Abstract heading). Only fires when the
+    # labeled splitter found nothing for `abstract`.
+    if not sections.abstract:
+        unlabeled = _extract_unlabeled_abstract(
+            full_text, title, sections, detected,
+        )
+        if unlabeled:
+            sections = Sections(
+                abstract=unlabeled,
+                introduction=sections.introduction,
+                methods=sections.methods,
+                results=sections.results,
+                discussion=sections.discussion,
+                limitations=sections.limitations,
+                conclusion=sections.conclusion,
+                references=sections.references,
+            )
+            detected = ["abstract"] + detected
     tables = _detect_tables_via_pdfplumber(pdf_path)
     figures = _detect_figures_via_captions(full_text)
     # Day 10.17 Phase 1 reviewer-fix: splitlines() correctly handles

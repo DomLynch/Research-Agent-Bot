@@ -263,3 +263,153 @@ def test_year_regex_extracts_4_digit_year_in_head() -> None:
 def test_year_regex_returns_none_when_absent() -> None:
     text = "No date in this header"
     assert pdf_ingest._extract_year(text) is None
+
+
+# ============================================================
+# Day 10.17 Phase 1.5 — per-paper gold-value assertions
+# ============================================================
+# Reviewer pin: title/year/journal extraction had real bugs across
+# multiple papers. Use the README's canonical values as ground truth
+# so we get one assertion per paper per field. If the parser
+# regresses on any reference paper, exactly which value broke is
+# visible.
+
+
+# Gold values from docs/quality-reference/metformin/README.md.
+# Each entry is (pdf_substring, expected_year, expected_journal,
+# expected_title_substring_lowercased, expected_doi_or_None).
+_GOLD = (
+    (
+        "Walton_2019_MASTERS",
+        2019, "Aging Cell", "metformin blunts muscle hypertrophy",
+        "10.1111/acel.13039",
+    ),
+    (
+        "Konopka_2019",
+        2019, "Aging Cell", "metformin inhibits mitochondrial",
+        "10.1111/acel.12880",
+    ),
+    (
+        "Kulkarni_2018_MILES",
+        2018, "Aging Cell", "metformin regulates metabolic",
+        "10.1111/acel.12723",
+    ),
+    (
+        "Kulkarni_2022",
+        2022, "Aging Cell", "geroscience",  # Geroscience-guided repurposing
+        "10.1111/acel.13596",
+    ),
+    (
+        "Keys_2025",
+        2025, "Ageing Research Reviews", "emerging uncertainty",
+        "10.1016/j.arr.2025.102817",
+    ),
+    (
+        "Witham_2025_MET_PREVENT",
+        2025, "Lancet",  # Lancet Healthy Longevity
+        "metformin and physical performance",
+        None,  # Witham PDF doesn't include parseable DOI in body
+    ),
+    (
+        "Mohammed_2021",
+        2021, "Frontiers",  # Frontiers in Endocrinology
+        "critical review of the evidence",
+        "10.3389/fendo.2021.718942",
+    ),
+)
+
+
+def _find_pdf(substring: str) -> Path | None:
+    for p in _all_pdfs():
+        if substring in p.name:
+            return p
+    return None
+
+
+@pytest.mark.skipif(
+    not _all_pdfs(),
+    reason="No reference PDFs present",
+)
+@pytest.mark.parametrize(
+    "pdf_marker,exp_year,exp_journal,exp_title_sub,exp_doi", _GOLD,
+    ids=[g[0] for g in _GOLD],
+)
+def test_per_paper_metadata_matches_readme_gold(
+    pdf_marker: str,
+    exp_year: int,
+    exp_journal: str,
+    exp_title_sub: str,
+    exp_doi: str | None,
+) -> None:
+    """One discriminating assertion per paper. Fails surface as
+    'Konopka year wrong' rather than 'all 7 papers had something'.
+    Phase 1.5 must close all of these before Phase 2 starts."""
+    pdf = _find_pdf(pdf_marker)
+    assert pdf is not None, f"PDF for {pdf_marker} not found"
+    paper = pdf_ingest.ingest_pdf(pdf)
+    title_lc = paper.title.lower()
+    assert exp_title_sub in title_lc, (
+        f"{pdf_marker}: expected title to contain "
+        f"{exp_title_sub!r}; got {paper.title!r}"
+    )
+    # Title MUST NOT contain article-type artifacts
+    assert "original" not in title_lc or "original article" in exp_title_sub.lower(), (
+        f"{pdf_marker}: title leaked article-type marker: {paper.title!r}"
+    )
+    assert "review article" not in title_lc or "review article" in exp_title_sub.lower(), (
+        f"{pdf_marker}: title leaked article-type marker: {paper.title!r}"
+    )
+    # Title MUST NOT be the authors line (initials pattern)
+    import re as _re
+    assert not _re.search(r"\b[A-Z]\.\s*[A-Z]", paper.title), (
+        f"{pdf_marker}: title looks like authors line: {paper.title!r}"
+    )
+    # Reviewer anti-gaming pin: a regression that returns a 250+ char
+    # blob containing the expected substring should still fail. The
+    # 7 reference titles range 70-220 chars; 250 is the tightest
+    # ceiling that doesn't false-fail any.
+    assert len(paper.title) <= 250, (
+        f"{pdf_marker}: title too long ({len(paper.title)} > 250): "
+        f"{paper.title!r}"
+    )
+    # Title MUST NOT contain Pure cover-page metadata (Keys 2025 was
+    # leaking these pre-Phase 1.5; this test catches a regression).
+    cover_leaks = (
+        "Published in", "Document License", "Document Version",
+        "Publication date", "Citation for", "University of Southern Denmark",
+    )
+    for leak in cover_leaks:
+        assert leak.lower() not in title_lc, (
+            f"{pdf_marker}: title contains cover-page leak {leak!r}: "
+            f"{paper.title!r}"
+        )
+    assert paper.year == exp_year, (
+        f"{pdf_marker}: year wrong; expected {exp_year}, got {paper.year}"
+    )
+    assert exp_journal.lower() in paper.journal.lower(), (
+        f"{pdf_marker}: journal wrong; expected substring "
+        f"{exp_journal!r}, got {paper.journal!r}"
+    )
+    if exp_doi is not None:
+        assert paper.doi == exp_doi, (
+            f"{pdf_marker}: DOI wrong; expected {exp_doi}, got {paper.doi}"
+        )
+
+
+@pytest.mark.skipif(
+    not _all_pdfs(),
+    reason="No reference PDFs present",
+)
+def test_all_seven_papers_have_abstract_after_phase_1_5() -> None:
+    """Reviewer pin: Keys + Mohammed had no abstract because they
+    use unlabeled prose abstracts. Phase 1.5 adds a fallback
+    heuristic — abstract text MUST be non-empty for all 7."""
+    pdfs = _all_pdfs()
+    failures: list[str] = []
+    for pdf in pdfs:
+        paper = pdf_ingest.ingest_pdf(pdf)
+        if not paper.sections.abstract.strip():
+            failures.append(
+                f"{pdf.name}: abstract empty after Phase 1.5"
+            )
+    assert not failures, "\n  - ".join([""] + failures)
