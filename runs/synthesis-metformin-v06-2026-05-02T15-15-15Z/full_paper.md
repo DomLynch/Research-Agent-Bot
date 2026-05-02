@@ -18,11 +18,11 @@ Clinical trials consistently demonstrate that metformin blunts adaptations to ex
 
   _Cited: `Walton 2019`, `Konopka 2019`_
 
-These negative effects on muscle function and exercise response were observed despite evidence suggesting metformin can reduce body weight, as shown by Konopka (p < 0.001), and align with mechanistic findings indicating decreased insulin sensitivity with metformin use (PMC12978362).
+These negative effects on muscle function and exercise response were observed despite evidence suggesting metformin can reduce body weight, as shown by Konopka (p < 0.001), and align with mechanistic findings indicating decreased insulin sensitivity with metformin use (PMC12978362 2026).
 
   _Cited: `Konopka 2019`, `PMC12978362 2026`_
 
-Conversely, observational studies and preclinical work suggest potential benefits, with reviews reporting metformin associated with decreased mortality (Keys 2025, 32-42%) and increased lifespan (Mohammed 2021, up to 14%).
+Conversely, observational studies and preclinical work suggest potential benefits, with reviews reporting metformin associated with decreased mortality (Keys 2025) and increased lifespan (Mohammed 2021).
 
   _Cited: `Keys 2025`, `Mohammed 2021`_
 
@@ -83,7 +83,7 @@ designed so that hallucinated numerics, fabricated trial identifiers,
 and over-claimed clinical effects are caught before they reach the
 reader. Where the pipeline is uncertain or where a canonical paper
 fails internal review, the artifact records that fact transparently
-rather than silently filtering it.This synthesis used the v0.6 quant-claim adapter (scripts/run_v06_synthesis.This synthesis used the v0.6 quant-claim adapter (scripts/run_v06_synthesis.py); no multi-receipt adjudication pipeline ran. Corpus declaration is
+rather than silently filtering it.This synthesis used the v0.6 quant-claim adapter (scripts/run_v06_synthesis.py); no multi-receipt adjudication pipeline ran. Corpus declaration is
 locked before any run via `tests/fixtures/<topic>_canonical/` so
 papers cannot be silently added or removed after the fact. This
 predeclared-benchmark discipline is the AAA-grade anti-cherry-picking
@@ -124,7 +124,6 @@ to unfavorable ones. **Fact extraction** — an LLM proposes verbatim source-quo
    2-1 accept → accept_caveated, 1-2 reject → reject_majority,
    0-3 reject → reject_critical. Dissent in any 2-1 split is
    always published verbatim in the receipt.
-5.
 
 ### Cross-source synthesis
 
@@ -210,7 +209,7 @@ The primary evidence for metformin’s impact on muscle function originates from
 
   _Cited: `Walton 2019`_
 
-Quantitative findings from the MASTERS trial demonstrate a statistically significant increase in lean body mass in the placebo group (p = .003), while the metformin group showed a blunted response, failing to achieve a similar level of hypertrophy. Specifically, the placebo group experienced a significant increase in thigh muscle mass (p < .001), again contrasting with the attenuated response observed in the metformin group. Further analysis revealed no significant differences in muscle strength between the groups (p = .184, p = .272), suggesting that metformin primarily affects muscle hypertrophy rather than neural adaptations or contractile function. However, a trend towards reduced muscle protein synthesis rates was observed in the metformin group, although this did not reach statistical significance (p = .003 for a related biomarker). These results indicate that metformin may interfere with the anabolic signaling pathways necessary for muscle growth in response to resistance exercise.
+Quantitative findings from the MASTERS trial demonstrate a statistically significant increase in lean body mass in the placebo group (p = .003), while the metformin group showed a blunted response, failing to achieve a similar level of hypertrophy. Specifically, the placebo group experienced a significant increase in thigh muscle mass (p < .001), again contrasting with the attenuated response observed in the metformin group. Further analysis revealed no significant differences in muscle strength between the groups (p = .184, p = .272), suggesting that metformin primarily affects muscle hypertrophy rather than neural adaptations or contractile function. However, a trend towards reduced muscle protein synthesis rates was observed in the metformin group, although this did not reach statistical significance. These results indicate that metformin may interfere with the anabolic signaling pathways necessary for muscle growth in response to resistance exercise.
 
   _Cited: `Walton 2019`_
 
