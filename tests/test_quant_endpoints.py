@@ -196,10 +196,26 @@ def test_direction_returns_empty_when_no_vocab_match() -> None:
 # ============================================================
 
 
-def test_binding_confidence_high_when_all_three_bound() -> None:
+def test_binding_confidence_high_when_all_three_bound_AND_role_is_effect() -> None:
+    """Phase 2.2-fix P1 #3: high requires claim_role=='effect' too."""
     assert quant_endpoints.binding_confidence_for(
         endpoint="VO2max", arm="metformin", direction="decrease",
+        claim_role="effect",
     ) == "high"
+
+
+def test_binding_confidence_partial_when_all_three_bound_but_role_non_effect() -> None:
+    """P1 #3 regression: 'high' was masking dose/duration/population
+    claims as primary evidence even when all 3 fields were bound.
+    Now: full coverage + non-effect role lands as 'partial'."""
+    for non_effect in ("dose", "duration", "population", "background", "unknown", ""):
+        got = quant_endpoints.binding_confidence_for(
+            endpoint="VO2max", arm="metformin", direction="decrease",
+            claim_role=non_effect,
+        )
+        assert got == "partial", (
+            f"role={non_effect!r}: expected partial, got {got!r}"
+        )
 
 
 def test_binding_confidence_partial_when_some_bound() -> None:
@@ -225,22 +241,23 @@ def test_binding_confidence_none_when_nothing_bound() -> None:
 def test_bind_walton_thigh_muscle_finding() -> None:
     """Walton MASTERS gold passage: '...placebo gained more lean body
     mass and thigh muscle mass than metformin'. Anchor on the
-    'thigh' position so direction is bound to 'gained' (increase)."""
+    'thigh' position so endpoint binds to thigh muscle mass (not
+    lean body mass — the proximity fix in P1 #1)."""
     sentence = (
         "Placebo gained more lean body mass and thigh muscle mass "
         "than metformin (p = .003)."
     )
-    # Anchor: the 'thigh muscle mass' position
+    # Anchor near the 'thigh muscle mass' position
     binding = quant_endpoints.bind_claim(
         sentence, source_offset_in_section=sentence.find("thigh"),
+        claim_role="effect",
     )
-    # Endpoint: thigh muscle mass wins over plain lean body mass
+    # Endpoint: proximity → thigh muscle mass (not lean body mass)
     assert binding.endpoint == "thigh muscle mass"
-    # Arm: metformin (first match — first metformin entry is the
-    # 'metformin group' modified-noun pattern, which doesn't fire
-    # here, then placebo group, then bare metformin/placebo)
-    assert binding.arm in ("metformin", "placebo")
+    # Arm: 'placebo' (earliest in sentence — clinical convention)
+    assert binding.arm == "placebo"
     assert binding.direction == "increase"
+    # claim_role=="effect" passed → high confidence
     assert binding.binding_confidence == "high"
 
 
@@ -284,16 +301,25 @@ def test_bind_unbound_sentence_returns_none_confidence() -> None:
     assert binding.binding_confidence == "none"
 
 
-def test_arm_bare_keyword_at_later_sentence_position_loses_to_earlier() -> None:
-    """Reviewer HIGH 2 regression: any sentence with both bare
-    metformin AND placebo must bind to the EARLIER-mentioned arm.
-    Pre-fix arbitrarily returned metformin via vocab order; this
-    test pins the corpus rebalance."""
+def test_arm_bare_keyword_picks_earliest_or_subject_after_comparator() -> None:
+    """Phase 2.2-fix: combined regression test for the two arm rules.
+
+    Plain comparison sentences with both arms: earliest-IN-SENTENCE
+    wins (the subject of the statement).
+
+    Comparator-grammar sentences ('Compared to X, Y'): the subject
+    is the arm AFTER the comparator marker, NOT before. Pre-fix
+    these wrongly bound to the comparator arm.
+    """
     cases = [
+        # Plain comparison — earliest mention wins.
         ("Placebo had higher VO2max than metformin (p = 0.04).", "placebo"),
         ("Metformin had lower VO2max than placebo (p = 0.04).", "metformin"),
-        ("Compared to placebo, metformin reduced HbA1c.", "placebo"),
-        ("Compared to metformin, placebo had no benefit.", "metformin"),
+        # Comparator grammar — subject (after marker) wins, NOT comparator.
+        ("Compared to placebo, metformin reduced HbA1c.", "metformin"),
+        ("Compared to metformin, placebo had no benefit.", "placebo"),
+        ("In contrast to placebo, metformin lowered weight.", "metformin"),
+        ("Vs. metformin, placebo had higher mortality.", "placebo"),
     ]
     for sentence, expected in cases:
         got = quant_endpoints.match_arm(sentence)
@@ -323,3 +349,109 @@ def test_bind_partial_endpoint_only_returns_partial() -> None:
     assert binding.arm == ""  # No arm vocabulary
     assert binding.direction == ""
     assert binding.binding_confidence == "partial"
+
+
+# ============================================================
+# Phase 2.2-fix - P1 audit regression tests
+# ============================================================
+
+
+def test_p1_endpoint_proximity_walton_dual_endpoint_sentence() -> None:
+    """P1 #1 audit fix: pre-fix `match_endpoint` returned the
+    first vocab match by curated order, so a sentence like
+    `lean body mass (p=.003) and thigh muscle mass (p<.001)`
+    bound BOTH p-values to the same endpoint. Now: each claim
+    binds to the endpoint NEAREST to its anchor."""
+    sentence = (
+        "Placebo gained more lean body mass (p = .003) and thigh "
+        "muscle mass (p < .001) than metformin."
+    )
+    anchor1 = sentence.find("p = .003")
+    ep1 = quant_endpoints.match_endpoint(sentence, anchor_offset=anchor1)
+    assert ep1 == "lean body mass", (
+        f"first p-value should bind to lean body mass, got {ep1!r}"
+    )
+    anchor2 = sentence.find("p < .001")
+    ep2 = quant_endpoints.match_endpoint(sentence, anchor_offset=anchor2)
+    assert ep2 == "thigh muscle mass", (
+        f"second p-value should bind to thigh muscle mass, got {ep2!r}"
+    )
+
+
+def test_p1_endpoint_proximity_no_anchor_falls_back_to_vocab_order() -> None:
+    """Backward compat: callers that do not pass anchor_offset get
+    the original first-match-wins behavior."""
+    sentence = "lean body mass and thigh muscle mass were measured"
+    assert quant_endpoints.match_endpoint(sentence) == "thigh muscle mass"
+
+
+def test_p1_arm_comparator_grammar_compared_to() -> None:
+    """P1 #2 audit fix: 'Compared to placebo, metformin reduced
+    HbA1c' must bind arm=metformin (the subject), NOT placebo
+    (the comparator). Pre-fix earliest-mention-wins was wrong."""
+    assert quant_endpoints.match_arm(
+        "Compared to placebo, metformin reduced HbA1c by 0.5%.",
+    ) == "metformin"
+    assert quant_endpoints.match_arm(
+        "In contrast to placebo, metformin lowered weight.",
+    ) == "metformin"
+    assert quant_endpoints.match_arm(
+        "Compared to metformin, placebo had no benefit.",
+    ) == "placebo"
+
+
+def test_p1_arm_comparator_with_versus_marker() -> None:
+    """vs / versus markers also flip arm assignment."""
+    assert quant_endpoints.match_arm(
+        "Vs. placebo, metformin reduced events.",
+    ) == "metformin"
+    assert quant_endpoints.match_arm(
+        "Versus placebo, metformin had a smaller gain.",
+    ) == "metformin"
+
+
+def test_p1_arm_plain_comparison_unchanged_by_comparator_fix() -> None:
+    """Comparator-grammar fix must not regress plain comparison
+    sentences without comparator markers."""
+    assert quant_endpoints.match_arm(
+        "Placebo gained more weight than metformin (p = .003).",
+    ) == "placebo"
+    assert quant_endpoints.match_arm(
+        "Metformin reduced glucose more than placebo.",
+    ) == "metformin"
+
+
+def test_p1_role_gated_high_confidence_dose_lands_partial() -> None:
+    """P1 #3 audit fix: a dose like '500 mg/day' in a sentence
+    that mentions endpoint and arm and direction must NOT land
+    as binding_confidence=high. Pre-fix audit found 117/194
+    high claims were non-effect roles."""
+    binding = quant_endpoints.bind_claim(
+        sentence="Subjects in the metformin group received 500 mg/day for HbA1c control.",
+        source_offset_in_section=39,
+        claim_role="dose",
+    )
+    assert binding.binding_confidence == "partial", (
+        f"dose claim wrongly tagged: {binding}"
+    )
+
+
+def test_comparator_grammar_does_not_overexclude_when_no_arm_in_tight_window() -> None:
+    """Reviewer MEDIUM fix v0.5.0: pre-fix any arm word within 40
+    chars after a comparator marker was excluded as the comparator
+    referent. That wrongly suppressed real subjects in sentences
+    like 'Compared to historical levels, metformin treatment is
+    widespread' — metformin appeared past a non-arm prefix and was
+    eaten. Fix: only exclude arms in the tight next-word window
+    (<=8 chars). The non-comparative phrase passes through and
+    metformin survives as the subject."""
+    assert quant_endpoints.match_arm(
+        "Compared to historical levels, metformin treatment is widespread.",
+    ) == "metformin"
+    assert quant_endpoints.match_arm(
+        "Relative to baseline values, the metformin group improved.",
+    ) == "metformin"
+    # Tight window still works for real comparator grammar:
+    assert quant_endpoints.match_arm(
+        "Compared to placebo, metformin reduced HbA1c.",
+    ) == "metformin"

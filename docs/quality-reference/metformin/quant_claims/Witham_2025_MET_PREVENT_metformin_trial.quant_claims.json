@@ -1,8 +1,8 @@
 {
   "paper_id": "Witham_2025_MET_PREVENT_metformin_trial",
   "doi": "",
-  "extracted_at": "2026-05-02T13:52:07+00:00",
-  "extractor_version": "0.4.0",
+  "extracted_at": "2026-05-02T14:17:23+00:00",
+  "extractor_version": "0.5.0",
   "claims_count_by_type": {
     "unit_value": 77,
     "sample_size": 17,
@@ -61,7 +61,7 @@
       "sentence": "Methods In this double-blind, randomised, parallel-group, placebo-controlled trial (MET-PREVENT), participants aged\n65 years and older with a 4-m walk speed of less than 0.8 m/s and probable sarcopenia, characterised by low handgrip\nstrength (<16 kg for women and <27 kg for men) or \ufb01ve times sit-to-stand time of longer than 15 s (or inability to\ncomplete \ufb01ve sit-to-stands) were recruited from primary care and hospital clinics in Gateshead and Newcastle, UK.",
       "context_window": "obable sarcopenia, characterised by low handgrip strength (<16 kg for women and <27 kg for men) or \ufb01ve times sit-to-stand tim",
       "claim_role": "population",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -79,7 +79,7 @@
       "sentence": "Methods In this double-blind, randomised, parallel-group, placebo-controlled trial (MET-PREVENT), participants aged\n65 years and older with a 4-m walk speed of less than 0.8 m/s and probable sarcopenia, characterised by low handgrip\nstrength (<16 kg for women and <27 kg for men) or \ufb01ve times sit-to-stand time of longer than 15 s (or inability to\ncomplete \ufb01ve sit-to-stands) were recruited from primary care and hospital clinics in Gateshead and Newcastle, UK.",
       "context_window": "aracterised by low handgrip strength (<16 kg for women and <27 kg for men) or \ufb01ve times sit-to-stand time of longer than 15 s",
       "claim_role": "population",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -511,8 +511,8 @@
       "source_offset": 3893,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "s scant and con\ufb02icting. One trial of older people (mean age 69 years) with prefrailty-an early and potentially reversible risk s",
-      "claim_role": "dose",
-      "endpoint": "walk speed",
+      "claim_role": "effect",
+      "endpoint": "frailty",
       "arm": "placebo",
       "direction": "no_change",
       "binding_confidence": "high"
@@ -529,7 +529,7 @@
       "source_offset": 4060,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "t and clinically important improvement in 4-m walk speed of 0.13 m/s with 500 mg three times a day of met- formin for 16 weeks c",
-      "claim_role": "dose",
+      "claim_role": "effect",
       "endpoint": "walk speed",
       "arm": "placebo",
       "direction": "no_change",
@@ -547,7 +547,7 @@
       "source_offset": 4074,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "ly important improvement in 4-m walk speed of 0.13 m/s with 500 mg three times a day of met- formin for 16 weeks compared with",
-      "claim_role": "dose",
+      "claim_role": "effect",
       "endpoint": "walk speed",
       "arm": "placebo",
       "direction": "no_change",
@@ -565,7 +565,7 @@
       "source_offset": 4118,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "f 0.13 m/s with 500 mg three times a day of met- formin for 16 weeks compared with matched placebo.13 Another trial performed in",
-      "claim_role": "dose",
+      "claim_role": "effect",
       "endpoint": "walk speed",
       "arm": "placebo",
       "direction": "no_change",
@@ -583,8 +583,8 @@
       "source_offset": 4207,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "d placebo.13 Another trial performed in older men (mean age 73 years) with sarcopenia found a small improvement in handgrip stre",
-      "claim_role": "dose",
-      "endpoint": "walk speed",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
       "arm": "placebo",
       "direction": "no_change",
       "binding_confidence": "high"
@@ -601,8 +601,8 @@
       "source_offset": 4322,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "handgrip strength and sarcopenia-related quality of life at 4 months compared with placebo, but no difference in walk speed.14 H",
-      "claim_role": "dose",
-      "endpoint": "walk speed",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
       "arm": "placebo",
       "direction": "no_change",
       "binding_confidence": "high"
@@ -619,8 +619,8 @@
       "source_offset": 4435,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "walk speed.14 However, the MASTERS trial7 found that adding 850 mg of metformin twice daily to a 14-week resistance training p",
-      "claim_role": "dose",
-      "endpoint": "walk speed",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "no_change",
       "binding_confidence": "high"
@@ -637,8 +637,8 @@
       "source_offset": 4594,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "to strength training in healthy older people (age range 64-91 years, median 69 years). Instead, the hypertrophic response to tr",
-      "claim_role": "dose",
-      "endpoint": "walk speed",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "no_change",
       "binding_confidence": "high"
@@ -655,8 +655,8 @@
       "source_offset": 4611,
       "sentence": "One trial of older\npeople (mean age 69 years) with prefrailty-an early and\npotentially reversible risk state before frailty-found a sig-\nni\ufb01cant and clinically important improvement in 4-m walk\nspeed of 0.13 m/s with 500 mg three times a day of met-\nformin for 16 weeks compared with matched placebo.13\nAnother trial performed in older men (mean age 73 years)\nwith sarcopenia found a small improvement in handgrip\nstrength and sarcopenia-related quality of life at 4 months\ncompared with placebo, but no difference in walk speed.14\nHowever, the MASTERS trial7 found that adding 850 mg of\nmetformin twice daily to a 14-week resistance training\nprogramme did not improve response to strength training\nin healthy older people (age range 64-91 years, median\n69 years).",
       "context_window": "ning in healthy older people (age range 64-91 years, median 69 years). Instead, the hypertrophic response to training was blunte",
-      "claim_role": "dose",
-      "endpoint": "walk speed",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "no_change",
       "binding_confidence": "high"
@@ -674,7 +674,7 @@
       "sentence": "Instead, the hypertrophic response to training\nwas blunted in the metformin group compared with the\nplacebo group.7 Similar attenuation in the response to\nexercise training was seen in a small trial of metformin\nversus placebo when added to aerobic training in healthy\nolder people (mean age 62 years).8\nPatients with sarcopenia and prefrailty or frailty are a\npriority for treatment in clinical practice but are also a group\nwho are at risk of adverse effects and many have multiple\nlong-term conditions with attendant polypharmacy.",
       "context_window": "added to aerobic training in healthy older people (mean age 62 years).8 Patients with sarcopenia and prefrailty or frailty are a",
       "claim_role": "effect",
-      "endpoint": "muscle hypertrophy",
+      "endpoint": "sarcopenia",
       "arm": "metformin",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -692,7 +692,7 @@
       "sentence": "Partic-\nipants were eligible for inclusion if they were aged 65 years\nand older and had probable sarcopenia, according to the\nEuropean Working Group on Sarcopenia in Older People\n(EWGSOP) 2019 de\ufb01nition of sarcopenia,15 operationalised\naslow maximum handgrip strength (<16 kg forwomen and\n<27 kg for men) or a \ufb01ve times sit-to-stand time of longer\nthan 15 s (or inability to complete \ufb01ve sit-to-stands).",
       "context_window": "artic- ipants were eligible for inclusion if they were aged 65 years and older and had probable sarcopenia, according to the Eur",
       "claim_role": "population",
-      "endpoint": "muscle strength",
+      "endpoint": "sarcopenia",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -980,7 +980,7 @@
       "sentence": "Secondary outcomes were grip strength; \ufb01ve-time sit-to-\nstand time; appendicular skeletal muscle mass (measured\nusing bioimpedance); Fried frailty score; other individual\ncomponents of the Fried frailty score (ie, activity level, self-\nreported exhaustion, and weight); transition from prefrail\nto frail, death, inability to continue in trial, or to non-frail\nmeasured, using the Fried frailty score; SPPB score; 6-min\nwalk distance; instrumental activities of daily living\n(Nottingham Extended Activities of Daily Living score);\nand health-related quality of life (measured by the\nEQ-5D-5L and SF-36 v2 [1 week recall] physical and mental\ncomponent score).",
       "context_window": "ted quality of life (measured by the EQ-5D-5L and SF-36 v2 [1 week recall] physical and mental component score). Additionally,",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "frailty",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1358,7 +1358,7 @@
       "sentence": "42 (58%) of 72 participants ful\ufb01lled Fried frailty\ncriteria frailty score of three out of \ufb01ve or higher); one par-\nticipant in the placebo group did not ful\ufb01l the criteria for\neither prefrailty orfrailty on baseline testingduetomarginal\nimprovements in strength and walk speed at baseline\ncompared with at screening.",
       "context_window": "\ufb01l the criteria for a diagnosis of con\ufb01rmed sarcopenia. 42 (58%) of 72 participants ful\ufb01lled Fried frailty criteria frailty",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "frailty",
       "arm": "placebo",
       "direction": "increase",
       "binding_confidence": "high"
@@ -2116,7 +2116,7 @@
       "sentence": "We found no evidence that metformin 500 mg taken three\ntimes a day for 4 months improved 4-m walk speed, grip\nstrength,physicalperformance, musclemass,quality oflife,\nor activities of daily living in people aged 65 years and older\nwith probable sarcopenia and physical prefrailty or frailty\nversus placebo.",
       "context_window": "uality oflife, or activities of daily living in people aged 65 years and older with probable sarcopenia and physical prefrailty",
       "claim_role": "effect",
-      "endpoint": "walk speed",
+      "endpoint": "sarcopenia",
       "arm": "metformin",
       "direction": "increase",
       "binding_confidence": "high"
@@ -2152,10 +2152,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "different groups of patients might respond Metformin group (n=36) Placebo group (n=36) Site Gateshead 11 (31%) 9 (25%) Newca",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-n-3216",
@@ -2170,10 +2170,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "atients might respond Metformin group (n=36) Placebo group (n=36) Site Gateshead 11 (31%) 9 (25%) Newcastle 25 (69%) 27 (75%",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3241",
@@ -2188,10 +2188,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "formin group (n=36) Placebo group (n=36) Site Gateshead 11 (31%) 9 (25%) Newcastle 25 (69%) 27 (75%) Age, years 80.8 (6.0)",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3249",
@@ -2206,10 +2206,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "roup (n=36) Placebo group (n=36) Site Gateshead 11 (31%) 9 (25%) Newcastle 25 (69%) 27 (75%) Age, years 80.8 (6.0) 79.9 (5.",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3268",
@@ -2224,10 +2224,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "group (n=36) Site Gateshead 11 (31%) 9 (25%) Newcastle 25 (69%) 27 (75%) Age, years 80.8 (6.0) 79.9 (5.5) Sex Female 21 (5",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3277",
@@ -2242,10 +2242,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "=36) Site Gateshead 11 (31%) 9 (25%) Newcastle 25 (69%) 27 (75%) Age, years 80.8 (6.0) 79.9 (5.5) Sex Female 21 (58%) 21 (5",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3330",
@@ -2260,10 +2260,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "%) 27 (75%) Age, years 80.8 (6.0) 79.9 (5.5) Sex Female 21 (58%) 21 (58%) Male 15 (42%) 15 (42%) Ethnicity White British 35",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3339",
@@ -2278,10 +2278,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "%) Age, years 80.8 (6.0) 79.9 (5.5) Sex Female 21 (58%) 21 (58%) Male 15 (42%) 15 (42%) Ethnicity White British 35 (97%) 35",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3353",
@@ -2296,10 +2296,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "80.8 (6.0) 79.9 (5.5) Sex Female 21 (58%) 21 (58%) Male 15 (42%) 15 (42%) Ethnicity White British 35 (97%) 35 (97%) Any oth",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3362",
@@ -2314,10 +2314,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": ") 79.9 (5.5) Sex Female 21 (58%) 21 (58%) Male 15 (42%) 15 (42%) Ethnicity White British 35 (97%) 35 (97%) Any other White",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3395",
@@ -2332,10 +2332,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "21 (58%) Male 15 (42%) 15 (42%) Ethnicity White British 35 (97%) 35 (97%) Any other White background 1 (3%) 1 (3%) Not Whit",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3404",
@@ -2350,10 +2350,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "Male 15 (42%) 15 (42%) Ethnicity White British 35 (97%) 35 (97%) Any other White background 1 (3%) 1 (3%) Not White 0 0 Liv",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3439",
@@ -2368,10 +2368,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "ite British 35 (97%) 35 (97%) Any other White background 1 (3%) 1 (3%) Not White 0 0 Lives in own home 28 (78%) 34 (94%) W",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3446",
@@ -2386,10 +2386,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "tish 35 (97%) 35 (97%) Any other White background 1 (3%) 1 (3%) Not White 0 0 Lives in own home 28 (78%) 34 (94%) Walking",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3486",
@@ -2404,10 +2404,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "ackground 1 (3%) 1 (3%) Not White 0 0 Lives in own home 28 (78%) 34 (94%) Walking aid 19 (53%) 20 (56%) Comorbidities Ischa",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3495",
@@ -2422,10 +2422,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "1 (3%) 1 (3%) Not White 0 0 Lives in own home 28 (78%) 34 (94%) Walking aid 19 (53%) 20 (56%) Comorbidities Ischaemic hear",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3516",
@@ -2440,10 +2440,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "ite 0 0 Lives in own home 28 (78%) 34 (94%) Walking aid 19 (53%) 20 (56%) Comorbidities Ischaemic heart disease 4 (11%) 5 (",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3525",
@@ -2458,10 +2458,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "ives in own home 28 (78%) 34 (94%) Walking aid 19 (53%) 20 (56%) Comorbidities Ischaemic heart disease 4 (11%) 5 (14%) Stro",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3571",
@@ -2476,10 +2476,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "19 (53%) 20 (56%) Comorbidities Ischaemic heart disease 4 (11%) 5 (14%) Stroke 9 (25%) 6 (17%) Hypertension 17 (47%) 21 (5",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3579",
@@ -2494,10 +2494,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": ") 20 (56%) Comorbidities Ischaemic heart disease 4 (11%) 5 (14%) Stroke 9 (25%) 6 (17%) Hypertension 17 (47%) 21 (58%) Anxi",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3594",
@@ -2512,10 +2512,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "rbidities Ischaemic heart disease 4 (11%) 5 (14%) Stroke 9 (25%) 6 (17%) Hypertension 17 (47%) 21 (58%) Anxiety 5 (14%) 5 (",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3602",
@@ -2530,10 +2530,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "s Ischaemic heart disease 4 (11%) 5 (14%) Stroke 9 (25%) 6 (17%) Hypertension 17 (47%) 21 (58%) Anxiety 5 (14%) 5 (14%) Dep",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3624",
@@ -2548,10 +2548,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "ase 4 (11%) 5 (14%) Stroke 9 (25%) 6 (17%) Hypertension 17 (47%) 21 (58%) Anxiety 5 (14%) 5 (14%) Depression 10 (28%) 9 (25",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3633",
@@ -2566,10 +2566,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "%) 5 (14%) Stroke 9 (25%) 6 (17%) Hypertension 17 (47%) 21 (58%) Anxiety 5 (14%) 5 (14%) Depression 10 (28%) 9 (25%) Parkin",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3649",
@@ -2584,10 +2584,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "e 9 (25%) 6 (17%) Hypertension 17 (47%) 21 (58%) Anxiety 5 (14%) 5 (14%) Depression 10 (28%) 9 (25%) Parkinsonism 1 (3%) 2",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3657",
@@ -2602,10 +2602,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": ") 6 (17%) Hypertension 17 (47%) 21 (58%) Anxiety 5 (14%) 5 (14%) Depression 10 (28%) 9 (25%) Parkinsonism 1 (3%) 2 (6%) Ast",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3677",
@@ -2620,10 +2620,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "on 17 (47%) 21 (58%) Anxiety 5 (14%) 5 (14%) Depression 10 (28%) 9 (25%) Parkinsonism 1 (3%) 2 (6%) Asthma 4 (11%) 6 (17%)",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3685",
@@ -2638,10 +2638,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "7%) 21 (58%) Anxiety 5 (14%) 5 (14%) Depression 10 (28%) 9 (25%) Parkinsonism 1 (3%) 2 (6%) Asthma 4 (11%) 6 (17%) Other lu",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3706",
@@ -2656,10 +2656,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "5 (14%) 5 (14%) Depression 10 (28%) 9 (25%) Parkinsonism 1 (3%) 2 (6%) Asthma 4 (11%) 6 (17%) Other lung disease 4 (11%) 5",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3713",
@@ -2674,10 +2674,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "5 (14%) Depression 10 (28%) 9 (25%) Parkinsonism 1 (3%) 2 (6%) Asthma 4 (11%) 6 (17%) Other lung disease 4 (11%) 5 (14%)",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3727",
@@ -2692,10 +2692,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "ssion 10 (28%) 9 (25%) Parkinsonism 1 (3%) 2 (6%) Asthma 4 (11%) 6 (17%) Other lung disease 4 (11%) 5 (14%) Osteoarthritis",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3735",
@@ -2710,10 +2710,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "(28%) 9 (25%) Parkinsonism 1 (3%) 2 (6%) Asthma 4 (11%) 6 (17%) Other lung disease 4 (11%) 5 (14%) Osteoarthritis 23 (64%)",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3762",
@@ -2728,10 +2728,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "1 (3%) 2 (6%) Asthma 4 (11%) 6 (17%) Other lung disease 4 (11%) 5 (14%) Osteoarthritis 23 (64%) 25 (69%) Physical performa",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3770",
@@ -2746,10 +2746,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "2 (6%) Asthma 4 (11%) 6 (17%) Other lung disease 4 (11%) 5 (14%) Osteoarthritis 23 (64%) 25 (69%) Physical performance meas",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3794",
@@ -2764,10 +2764,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "(17%) Other lung disease 4 (11%) 5 (14%) Osteoarthritis 23 (64%) 25 (69%) Physical performance measures Maximal handgrip st",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3803",
@@ -2782,10 +2782,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "er lung disease 4 (11%) 5 (14%) Osteoarthritis 23 (64%) 25 (69%) Physical performance measures Maximal handgrip strength, k",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3969",
@@ -2800,10 +2800,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": ") 13.9 (4.8) Five times sit-to-stand test completed (%) 27 (75%) 26 (72%) Five times sit-to-stand time for those that compl",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-3978",
@@ -2821,7 +2821,7 @@
       "endpoint": "walk speed",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-4265",
@@ -2836,10 +2836,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "m* 181 (61) 192 (104) Fried frailty score of \u22653 points 22 (61%) 20 (56%) BMI, kg/m2 27.1 (5.0) 27.4 (6.2) Appendicular ske",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "body mass index",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-pct-4274",
@@ -2854,10 +2854,10 @@
       "sentence": "For instance, different groups of patients might respond\nMetformin\ngroup (n=36)\nPlacebo\ngroup (n=36)\nSite\nGateshead\n11 (31%)\n9 (25%)\nNewcastle\n25 (69%)\n27 (75%)\nAge, years\n80.8 (6.0)\n79.9 (5.5)\nSex\nFemale\n21 (58%)\n21 (58%)\nMale\n15 (42%)\n15 (42%)\nEthnicity\nWhite British\n35 (97%)\n35 (97%)\nAny other White background\n1 (3%)\n1 (3%)\nNot White\n0\n0\nLives in own home\n28 (78%)\n34 (94%)\nWalking aid\n19 (53%)\n20 (56%)\nComorbidities\nIschaemic heart disease\n4 (11%)\n5 (14%)\nStroke\n9 (25%)\n6 (17%)\nHypertension\n17 (47%)\n21 (58%)\nAnxiety\n5 (14%)\n5 (14%)\nDepression\n10 (28%)\n9 (25%)\nParkinsonism\n1 (3%)\n2 (6%)\nAsthma\n4 (11%)\n6 (17%)\nOther lung disease\n4 (11%)\n5 (14%)\nOsteoarthritis\n23 (64%)\n25 (69%)\nPhysical performance measures\nMaximal handgrip strength, kg\nMen\n21.5 (7.2)\n21.3 (8.1)\nWomen\n12.0 (5.0)\n13.9 (4.8)\nFive times sit-to-stand test completed (%)\n27 (75%)\n26 (72%)\nFive times sit-to-stand time for those that completed the test\n19.5 (15.5-26.9)\n16.6 (15.2-20.8)\n4-m walk speed, m/s\n0.59 (0.17)\n0.60 (0.26)\nShort Physical Performance Battery score\n5.6 (2.5)\n6.1 (2.8)\n6-min walk distance, m*\n181 (61)\n192 (104)\nFried frailty score of \u22653 points\n22 (61%)\n20 (56%)\nBMI, kg/m2\n27.1 (5.0)\n27.4 (6.2)\nAppendicular skeletal muscle mass index, kg/m2\nMen\n6.8 (0.9)\n7.2 (1.2)\nWomen\n6.1 (0.9)\n6.3 (1.3)\nEQ-5D-5L\u2020\n0.68 (0.22)\n0.67 (0.30)\nEQ-5D thermometer\u2020\n66 (16)\n60 (23)\nSF-36 v2\nPhysical component score\n36.6 (9.1)\n35.5 (9.8)\nMental component score\n49.4 (12.0)\n48.3 (13.2)\nNottingham Extended ADL score\n15 (5)\n16 (5)\nNon-fasting glucose, mmol/L\u2021\n5.3 (1.0)\n5.2 (0.9)\nHbA1c, mmol/mol\u00a7\n39 (4)\n39 (3)\nAGE reader score\u00b6\n2.9 (0.6)\n3.1 (1.3)\nHOMA-IR\u2021\n3.3 (1.4-4.5)\n1.5 (1.1-3.5)\nData are n (%), mean (SD), and median (IQR).",
       "context_window": "61) 192 (104) Fried frailty score of \u22653 points 22 (61%) 20 (56%) BMI, kg/m2 27.1 (5.0) 27.4 (6.2) Appendicular skeletal mus",
       "claim_role": "background",
-      "endpoint": "walk speed",
+      "endpoint": "body mass index",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Witham_2025_MET_PREVENT_metformin_trial-u-7021",
@@ -3016,7 +3016,7 @@
       "sentence": "Table 2: 4-m walk speed outcome results (primary outcome)\nAge\n>75 years\n\u226475 years\nSex\nMale\nFemale\nBaseline walk speed\n>0.6 m/s\n\u22640.6 m/s\nHOMA-IR score*\n>median\n\u2264median\nAll participants\n0.5 (0.2)\n0.7 (0.2)\n0.6 (0.1)\n0.6 (0.2)\n0.7 (0.1)\n0.4 (0.1)\n0.6 (0.2)\n0.5 (0.2)\n27\n7\n14\n20\n16\n18\n20\n13\n29\n7\n15\n21\n18\n18\n13\n22\n0.6 (0.2)\n0.6 (0.2)\n0.7 (0.3)\n0.5 (0.2)\n0.8 (0.2)\n0.4 (0.1)\n0.6 (0.2)\n0.6 (0.3)\nAdjusted mean di\ufb00erence\n(95% CI)\n-0.008 (-0.072 to 0.056)\n0.035 (-0.093 to 0.163)\n-0.051 (-0.138 to 0.036)\n0.039 (-0.035 to 0.112)\n-0.044 (-0.146 to 0.057)\n0.029 (-0.069 to 0.128)\n-0.007 (-0.094 to 0.079)\n0.034 (-0.051 to 0.119)\n0.001 (-0.050 to 0.058)\npinteraction\n0.56\n0.12\n0.030\n0.50\nPatients\nMetformin\ngroup\nPlacebo\ngroup\nMetformin\ngroup\nPlacebo\ngroup\nMean (SD)\n-0.15\n-0.1 -0.05\n0\n0.05\n0.1\n0.15\n0.2\n-0.2\nAdjusted mean di\ufb00erence\nFigure 2: Forest plot of subgroup analyses for 4-month 4-m walk speed, intention-to-treat population complete-case analysis\nFor the subgroup analyses of age and HOMA-IR, models are adjusted for baseline walk speed and sex.",
       "context_window": "ge >75 years \u226475 years Sex Male Female Baseline walk speed >0.6 m/s \u22640.6 m/s HOMA-IR score* >median \u2264median All participants 0.",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "insulin sensitivity",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3034,7 +3034,7 @@
       "sentence": "Table 2: 4-m walk speed outcome results (primary outcome)\nAge\n>75 years\n\u226475 years\nSex\nMale\nFemale\nBaseline walk speed\n>0.6 m/s\n\u22640.6 m/s\nHOMA-IR score*\n>median\n\u2264median\nAll participants\n0.5 (0.2)\n0.7 (0.2)\n0.6 (0.1)\n0.6 (0.2)\n0.7 (0.1)\n0.4 (0.1)\n0.6 (0.2)\n0.5 (0.2)\n27\n7\n14\n20\n16\n18\n20\n13\n29\n7\n15\n21\n18\n18\n13\n22\n0.6 (0.2)\n0.6 (0.2)\n0.7 (0.3)\n0.5 (0.2)\n0.8 (0.2)\n0.4 (0.1)\n0.6 (0.2)\n0.6 (0.3)\nAdjusted mean di\ufb00erence\n(95% CI)\n-0.008 (-0.072 to 0.056)\n0.035 (-0.093 to 0.163)\n-0.051 (-0.138 to 0.036)\n0.039 (-0.035 to 0.112)\n-0.044 (-0.146 to 0.057)\n0.029 (-0.069 to 0.128)\n-0.007 (-0.094 to 0.079)\n0.034 (-0.051 to 0.119)\n0.001 (-0.050 to 0.058)\npinteraction\n0.56\n0.12\n0.030\n0.50\nPatients\nMetformin\ngroup\nPlacebo\ngroup\nMetformin\ngroup\nPlacebo\ngroup\nMean (SD)\n-0.15\n-0.1 -0.05\n0\n0.05\n0.1\n0.15\n0.2\n-0.2\nAdjusted mean di\ufb00erence\nFigure 2: Forest plot of subgroup analyses for 4-month 4-m walk speed, intention-to-treat population complete-case analysis\nFor the subgroup analyses of age and HOMA-IR, models are adjusted for baseline walk speed and sex.",
       "context_window": "ars \u226475 years Sex Male Female Baseline walk speed >0.6 m/s \u22640.6 m/s HOMA-IR score* >median \u2264median All participants 0.5 (0.2) 0",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "insulin sensitivity",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3052,7 +3052,7 @@
       "sentence": "Table 2: 4-m walk speed outcome results (primary outcome)\nAge\n>75 years\n\u226475 years\nSex\nMale\nFemale\nBaseline walk speed\n>0.6 m/s\n\u22640.6 m/s\nHOMA-IR score*\n>median\n\u2264median\nAll participants\n0.5 (0.2)\n0.7 (0.2)\n0.6 (0.1)\n0.6 (0.2)\n0.7 (0.1)\n0.4 (0.1)\n0.6 (0.2)\n0.5 (0.2)\n27\n7\n14\n20\n16\n18\n20\n13\n29\n7\n15\n21\n18\n18\n13\n22\n0.6 (0.2)\n0.6 (0.2)\n0.7 (0.3)\n0.5 (0.2)\n0.8 (0.2)\n0.4 (0.1)\n0.6 (0.2)\n0.6 (0.3)\nAdjusted mean di\ufb00erence\n(95% CI)\n-0.008 (-0.072 to 0.056)\n0.035 (-0.093 to 0.163)\n-0.051 (-0.138 to 0.036)\n0.039 (-0.035 to 0.112)\n-0.044 (-0.146 to 0.057)\n0.029 (-0.069 to 0.128)\n-0.007 (-0.094 to 0.079)\n0.034 (-0.051 to 0.119)\n0.001 (-0.050 to 0.058)\npinteraction\n0.56\n0.12\n0.030\n0.50\nPatients\nMetformin\ngroup\nPlacebo\ngroup\nMetformin\ngroup\nPlacebo\ngroup\nMean (SD)\n-0.15\n-0.1 -0.05\n0\n0.05\n0.1\n0.15\n0.2\n-0.2\nAdjusted mean di\ufb00erence\nFigure 2: Forest plot of subgroup analyses for 4-month 4-m walk speed, intention-to-treat population complete-case analysis\nFor the subgroup analyses of age and HOMA-IR, models are adjusted for baseline walk speed and sex.",
       "context_window": "0.2) 0.4 (0.1) 0.6 (0.2) 0.6 (0.3) Adjusted mean di\ufb00erence (95% CI) -0.008 (-0.072 to 0.056) 0.035 (-0.093 to 0.163) -0.051",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "insulin sensitivity",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -3069,7 +3069,7 @@
       "source_offset": 11495,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "metformin might require a longer duration of treatment than 4 months to deliver a meaningful treatment effect, although improvem",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3087,7 +3087,7 @@
       "source_offset": 11730,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "efrailty.13 We did not titrate the dose of Metformin group (n=35) Placebo group (n=36) Participants with at least one advers",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3105,7 +3105,7 @@
       "source_offset": 11751,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "t titrate the dose of Metformin group (n=35) Placebo group (n=36) Participants with at least one adverse event 35 (100%) 33",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3123,7 +3123,7 @@
       "source_offset": 11806,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "oup (n=36) Participants with at least one adverse event 35 (100%) 33 (92%) Participants with at least one adverse reaction 2",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3141,7 +3141,7 @@
       "source_offset": 11816,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "Participants with at least one adverse event 35 (100%) 33 (92%) Participants with at least one adverse reaction 28 (80%) 1",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3159,7 +3159,7 @@
       "source_offset": 11873,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "3 (92%) Participants with at least one adverse reaction 28 (80%) 17 (47%) Participants with at least one serious adverse ev",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3177,7 +3177,7 @@
       "source_offset": 11882,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "articipants with at least one adverse reaction 28 (80%) 17 (47%) Participants with at least one serious adverse event 9 (26",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3195,7 +3195,7 @@
       "source_offset": 11943,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "7%) Participants with at least one serious adverse event 9 (26%) 3 (8%) Participants with at least one serious adverse reac",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",
@@ -3213,7 +3213,7 @@
       "source_offset": 11951,
       "sentence": "Additionally, metformin might require a longer duration of\ntreatment than 4 months to deliver a meaningful treatment\neffect, although improvements in walk speed were seen\nwith a similar duration of therapy in a previous trial in older\npeople with prefrailty.13 We did not titrate the dose of\nMetformin\ngroup (n=35)\nPlacebo\ngroup (n=36)\nParticipants with at least one adverse\nevent\n35 (100%)\n33 (92%)\nParticipants with at least one adverse\nreaction\n28 (80%)\n17 (47%)\nParticipants with at least one serious\nadverse event\n9 (26%)\n3 (8%)\nParticipants with at least one serious\nadverse reaction\n0\n0\nParticipants with at least one suspected\nunexpected serious adverse reaction\n0\n0\nTotal number of adverse events\n108\n77\nNumber of adverse events per participant\n3 (2-4)\n2 (1-3)\nMost common adverse events\nDiarrhoea\n26\n10\nNausea\n6\n0\nVomiting\n3\n0\nElevated plasma lactate\n13\n8\nNumber of hospital admissions\n12\n3\nNumber of deaths\n1\n0\nData are n (%), n or median (IQR).",
       "context_window": "icipants with at least one serious adverse event 9 (26%) 3 (8%) Participants with at least one serious adverse reaction 0",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "",
       "arm": "metformin",
       "direction": "increase",

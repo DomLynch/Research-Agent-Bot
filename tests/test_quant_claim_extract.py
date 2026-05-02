@@ -478,6 +478,71 @@ def test_per_paper_claim_count_under_sanity_ceiling() -> None:
         )
 
 
+@pytest.mark.skipif(
+    not _all_parsed(),
+    reason="No parsed PDFs available",
+)
+def test_p1_corpus_shape_invariant_high_confidence_within_expected_range() -> None:
+    """Corpus-shape invariant (replaces the earlier tautological
+    test that just re-asserted the function definition). Pre-fix
+    Phase 2.2 v0.4.0 had 194 high-confidence claims with 117
+    (60.3%) leaking into non-effect roles. After v0.5.0 the role
+    gate + endpoint proximity drop high count to a tight band.
+
+    This test detects EXTRACTOR DRIFT: if a future change shifts
+    the rebalance significantly (high count > 200 or new non-
+    effect leakage > 0), the build fails. The unit test on
+    binding_confidence_for already covers the function contract;
+    this test covers the corpus-level shape."""
+    high_count = 0
+    high_non_effect = 0
+    total = 0
+    for parsed in _all_parsed():
+        claims = quant_claim_extract.extract_from_paper_sections(parsed)
+        for c in claims:
+            total += 1
+            if c.binding_confidence == "high":
+                high_count += 1
+                if c.claim_role != "effect":
+                    high_non_effect += 1
+
+    # Invariant 1: zero non-effect leakage in high-confidence band.
+    assert high_non_effect == 0, (
+        f"non-effect leakage in high-confidence: {high_non_effect}/{high_count}"
+    )
+    # Invariant 2: high-confidence count is in expected band for the
+    # 7-paper corpus. Tight enough to catch a regression that drops
+    # all bindings (would go to ~0) or one that re-introduces leakage
+    # (would balloon back to 150+).
+    assert 50 <= high_count <= 200, (
+        f"high-confidence count {high_count} outside expected [50, 200]"
+    )
+    # Invariant 3: total claim count sane (rules out catastrophic
+    # extractor failure that would also produce 0 high claims).
+    assert 500 <= total <= 1500, (
+        f"total claim count {total} outside expected [500, 1500]"
+    )
+
+
+def test_role_more_than_in_background_prose_does_not_tag_as_effect() -> None:
+    """Reviewer MEDIUM fix v0.5.0: pre-fix EFFECT keywords included
+    bare 'more than' / 'less than' which false-fired on background
+    quantitative prose ('More than 27 trials have been conducted',
+    'Less than half of subjects met criteria'). Fix: removed bare
+    forms; kept 'gained more', 'lost less', 'than placebo',
+    'than metformin' which require clinical context anchors."""
+    text = "More than 27 trials have been conducted in this area."
+    claims = quant_claim_extract.extract_from_text(text, "introduction")
+    sample_size_or_pct = [
+        c for c in claims if c.claim_type in ("percentage", "sample_size")
+    ]
+    if sample_size_or_pct:
+        for c in sample_size_or_pct:
+            assert c.claim_role != "effect", (
+                f"'more than' false-fired as effect: {c.raw_text!r} role={c.claim_role!r}"
+            )
+
+
 # ============================================================
 # Phase 2.1 - effect-size patterns (HR / OR / RR / correlation)
 # ============================================================

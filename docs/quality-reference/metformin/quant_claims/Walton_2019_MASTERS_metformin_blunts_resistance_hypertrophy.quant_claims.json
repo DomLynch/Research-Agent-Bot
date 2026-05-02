@@ -1,8 +1,8 @@
 {
   "paper_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy",
   "doi": "10.1111/acel.13039",
-  "extracted_at": "2026-05-02T13:52:07+00:00",
-  "extractor_version": "0.4.0",
+  "extracted_at": "2026-05-02T14:17:23+00:00",
+  "extractor_version": "0.5.0",
   "claims_count_by_type": {
     "unit_value": 27,
     "sample_size": 12,
@@ -96,8 +96,8 @@
       "source_offset": 667,
       "sentence": "Although responses to PRT varied, placebo gained more lean body \nmass (p = .003) and thigh muscle mass (p < .001) than metformin.",
       "context_window": "sponses to PRT varied, placebo gained more lean body mass (p = .003) and thigh muscle mass (p < .001) than metformin. CT scan s",
-      "claim_role": "unknown",
-      "endpoint": "thigh muscle mass",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
       "arm": "placebo",
       "direction": "increase",
       "binding_confidence": "high"
@@ -114,7 +114,7 @@
       "source_offset": 700,
       "sentence": "Although responses to PRT varied, placebo gained more lean body \nmass (p = .003) and thigh muscle mass (p < .001) than metformin.",
       "context_window": "ined more lean body mass (p = .003) and thigh muscle mass (p < .001) than metformin. CT scan showed that increases in thigh mu",
-      "claim_role": "unknown",
+      "claim_role": "effect",
       "endpoint": "thigh muscle mass",
       "arm": "placebo",
       "direction": "increase",
@@ -136,7 +136,7 @@
       "endpoint": "thigh muscle mass",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-802",
@@ -154,7 +154,7 @@
       "endpoint": "thigh muscle mass",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-u-1368",
@@ -1916,7 +1916,7 @@
       "sentence": "N = 48 placebo, 46 metformin. (a) With PRT, percent fat was \nreduced in most participants, and this reduction was not affected by metformin (p = .714). (b) Percent change in lean mass was larger in \nplacebo than in metformin (p = .003), and (c) percent change in thigh muscle mass was also larger in placebo than in metformin (p < .001).",
       "context_window": "on and bilateral thigh muscle mass were measured using DXA. N = 48 placebo, 46 metformin. (a) With PRT, percent fat was reduc",
       "claim_role": "effect",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "lean body mass",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -1934,7 +1934,7 @@
       "sentence": "N = 48 placebo, 46 metformin. (a) With PRT, percent fat was \nreduced in most participants, and this reduction was not affected by metformin (p = .714). (b) Percent change in lean mass was larger in \nplacebo than in metformin (p = .003), and (c) percent change in thigh muscle mass was also larger in placebo than in metformin (p < .001).",
       "context_window": "icipants, and this reduction was not affected by metformin (p = .714). (b) Percent change in lean mass was larger in placebo th",
       "claim_role": "effect",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "lean body mass",
       "arm": "placebo",
       "direction": "increase",
       "binding_confidence": "high"
@@ -1988,10 +1988,10 @@
       "sentence": "Box plots indicate the mean (\u00d7) and median (\u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010), and whiskers indicate the upper and lower quartiles\nChange in thigh muscle mass (%)\n-6\n-4\n-2\n0\n2\n4\n6\n8\n10\nChange in lean mass (%)\n(a)\n(C)\n(b)\nPlacebo      \nMetformin\nPlacebo      \nMetformin\nPlacebo      \nMetformin\np = .003 \np < .001 \n-10\n-8\n-6\n-4\n-2\n0\n2\n4\nChange in percent fat\np = .714 \n-15\n-10\n-5\n0\n5\n10\n15\n20\n\n\n\u2003\u2002 \u2003| \u20035 of 13\nWALTON et al.",
       "context_window": "Metformin Placebo Metformin Placebo Metformin p = .003 p < .001 -10 -8 -6 -4 -2 0 2 4 Change in percent fat p =",
       "claim_role": "unknown",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "lean body mass",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-11010",
@@ -2006,10 +2006,10 @@
       "sentence": "Box plots indicate the mean (\u00d7) and median (\u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010), and whiskers indicate the upper and lower quartiles\nChange in thigh muscle mass (%)\n-6\n-4\n-2\n0\n2\n4\n6\n8\n10\nChange in lean mass (%)\n(a)\n(C)\n(b)\nPlacebo      \nMetformin\nPlacebo      \nMetformin\nPlacebo      \nMetformin\np = .003 \np < .001 \n-10\n-8\n-6\n-4\n-2\n0\n2\n4\nChange in percent fat\np = .714 \n-15\n-10\n-5\n0\n5\n10\n15\n20\n\n\n\u2003\u2002 \u2003| \u20035 of 13\nWALTON et al.",
       "context_window": "n Placebo Metformin Placebo Metformin p = .003 p < .001 -10 -8 -6 -4 -2 0 2 4 Change in percent fat p = .714 -15",
       "claim_role": "unknown",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "lean body mass",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-11064",
@@ -2024,10 +2024,10 @@
       "sentence": "Box plots indicate the mean (\u00d7) and median (\u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010), and whiskers indicate the upper and lower quartiles\nChange in thigh muscle mass (%)\n-6\n-4\n-2\n0\n2\n4\n6\n8\n10\nChange in lean mass (%)\n(a)\n(C)\n(b)\nPlacebo      \nMetformin\nPlacebo      \nMetformin\nPlacebo      \nMetformin\np = .003 \np < .001 \n-10\n-8\n-6\n-4\n-2\n0\n2\n4\nChange in percent fat\np = .714 \n-15\n-10\n-5\n0\n5\n10\n15\n20\n\n\n\u2003\u2002 \u2003| \u20035 of 13\nWALTON et al.",
       "context_window": ".003 p < .001 -10 -8 -6 -4 -2 0 2 4 Change in percent fat p = .714 -15 -10 -5 0 5 10 15 20 | 5 of 13 WALTON et al. TA",
       "claim_role": "unknown",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "lean body mass",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-u-11189",
@@ -2042,7 +2042,7 @@
       "sentence": "TA B LE 2\u2003Changes in strength and thigh muscle CT following 14 weeks of PRT\nOutcome measure\nPlacebo\nMetformin\np =\nN\nBaseline\n14 week PRT\n% change\nmean (SD)\nN\nBaseline\n14 week PRT\n% change\nmean (SD)\nEffect of drug\nStrength testinga\nKnee extension 1 RM (kg)\nmean (SD)\n45\n39.8 (18.8)\n48.6 (22.5)\n23.1 (18.9)\n44\n53.4b (22.6)\n60.6 (24.4)\n15.3 (18.5)\n0.055\nMaximum voluntary isometric \ncontraction (Nm)\nmean (SD)\n46\n137.3 (41.5)\n152.3 (45.3)\n11.8 (12.7)\n45\n168.0b (53.3)\n177.0 (56.1)\n6.7 (14.5)\n0.082\nPower (W)\nmean (SD)\n46\n256.7 (120.3)\n310.0 (130.3)\n29.4 (40.7)\n44\n327.7b (130.0)\n368.8 (140.1)\n14.3 (35.7)\n0.064\nRelative strength (kg/kg)c\nmean (SD)\n45\n3.43 (3.27)\n3.99 (3.70)\n19.7 (19.0)\n44\n4.40 (4.49)\n4.72 (4.70)\n14.5 (17.9)\n0.188\nThigh muscle CTd\nLow\u2010density muscle area, \n0-34 HU (cm2) mean (SD)\n40\n23.2 (7.3)\n21.5 (6.8)\n-6.74 (11.6)\n37\n26.9b (9.6)\n25.6 (8.7)\n-3.86 (10.6)\n0.257\nNormal density muscle area,\n35-100 HU (cm2)\nmean (SD)\n40\n78.8 (20.5)\n86.9 (22.2)\n10.5 (7.0)\n37\n97.2b (26.7)\n101.5 (29.4)\n4.16 (9.1)\n0.001\nNote: PRT, progressive resistance training; SD, standard deviation.\naBaseline strength testing was performed at week 2 of PRT, RM = repetition maximum. \nbtreatment groups were significantly different at baseline. \nckg knee extension/kg thigh muscle mass, CT = computed tomography. \ndCT analyses are based on the mean of both legs, HU = Hounsfield Units.",
       "context_window": "TA B LE 2 Changes in strength and thigh muscle CT following 14 weeks of PRT Outcome measure Placebo Metformin p = N Baseline 14",
       "claim_role": "duration",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2060,7 +2060,7 @@
       "sentence": "TA B LE 2\u2003Changes in strength and thigh muscle CT following 14 weeks of PRT\nOutcome measure\nPlacebo\nMetformin\np =\nN\nBaseline\n14 week PRT\n% change\nmean (SD)\nN\nBaseline\n14 week PRT\n% change\nmean (SD)\nEffect of drug\nStrength testinga\nKnee extension 1 RM (kg)\nmean (SD)\n45\n39.8 (18.8)\n48.6 (22.5)\n23.1 (18.9)\n44\n53.4b (22.6)\n60.6 (24.4)\n15.3 (18.5)\n0.055\nMaximum voluntary isometric \ncontraction (Nm)\nmean (SD)\n46\n137.3 (41.5)\n152.3 (45.3)\n11.8 (12.7)\n45\n168.0b (53.3)\n177.0 (56.1)\n6.7 (14.5)\n0.082\nPower (W)\nmean (SD)\n46\n256.7 (120.3)\n310.0 (130.3)\n29.4 (40.7)\n44\n327.7b (130.0)\n368.8 (140.1)\n14.3 (35.7)\n0.064\nRelative strength (kg/kg)c\nmean (SD)\n45\n3.43 (3.27)\n3.99 (3.70)\n19.7 (19.0)\n44\n4.40 (4.49)\n4.72 (4.70)\n14.5 (17.9)\n0.188\nThigh muscle CTd\nLow\u2010density muscle area, \n0-34 HU (cm2) mean (SD)\n40\n23.2 (7.3)\n21.5 (6.8)\n-6.74 (11.6)\n37\n26.9b (9.6)\n25.6 (8.7)\n-3.86 (10.6)\n0.257\nNormal density muscle area,\n35-100 HU (cm2)\nmean (SD)\n40\n78.8 (20.5)\n86.9 (22.2)\n10.5 (7.0)\n37\n97.2b (26.7)\n101.5 (29.4)\n4.16 (9.1)\n0.001\nNote: PRT, progressive resistance training; SD, standard deviation.\naBaseline strength testing was performed at week 2 of PRT, RM = repetition maximum. \nbtreatment groups were significantly different at baseline. \nckg knee extension/kg thigh muscle mass, CT = computed tomography. \ndCT analyses are based on the mean of both legs, HU = Hounsfield Units.",
       "context_window": "eks of PRT Outcome measure Placebo Metformin p = N Baseline 14 week PRT % change mean (SD) N Baseline 14 week PRT % change mean",
       "claim_role": "duration",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2078,7 +2078,7 @@
       "sentence": "TA B LE 2\u2003Changes in strength and thigh muscle CT following 14 weeks of PRT\nOutcome measure\nPlacebo\nMetformin\np =\nN\nBaseline\n14 week PRT\n% change\nmean (SD)\nN\nBaseline\n14 week PRT\n% change\nmean (SD)\nEffect of drug\nStrength testinga\nKnee extension 1 RM (kg)\nmean (SD)\n45\n39.8 (18.8)\n48.6 (22.5)\n23.1 (18.9)\n44\n53.4b (22.6)\n60.6 (24.4)\n15.3 (18.5)\n0.055\nMaximum voluntary isometric \ncontraction (Nm)\nmean (SD)\n46\n137.3 (41.5)\n152.3 (45.3)\n11.8 (12.7)\n45\n168.0b (53.3)\n177.0 (56.1)\n6.7 (14.5)\n0.082\nPower (W)\nmean (SD)\n46\n256.7 (120.3)\n310.0 (130.3)\n29.4 (40.7)\n44\n327.7b (130.0)\n368.8 (140.1)\n14.3 (35.7)\n0.064\nRelative strength (kg/kg)c\nmean (SD)\n45\n3.43 (3.27)\n3.99 (3.70)\n19.7 (19.0)\n44\n4.40 (4.49)\n4.72 (4.70)\n14.5 (17.9)\n0.188\nThigh muscle CTd\nLow\u2010density muscle area, \n0-34 HU (cm2) mean (SD)\n40\n23.2 (7.3)\n21.5 (6.8)\n-6.74 (11.6)\n37\n26.9b (9.6)\n25.6 (8.7)\n-3.86 (10.6)\n0.257\nNormal density muscle area,\n35-100 HU (cm2)\nmean (SD)\n40\n78.8 (20.5)\n86.9 (22.2)\n10.5 (7.0)\n37\n97.2b (26.7)\n101.5 (29.4)\n4.16 (9.1)\n0.001\nNote: PRT, progressive resistance training; SD, standard deviation.\naBaseline strength testing was performed at week 2 of PRT, RM = repetition maximum. \nbtreatment groups were significantly different at baseline. \nckg knee extension/kg thigh muscle mass, CT = computed tomography. \ndCT analyses are based on the mean of both legs, HU = Hounsfield Units.",
       "context_window": "in p = N Baseline 14 week PRT % change mean (SD) N Baseline 14 week PRT % change mean (SD) Effect of drug Strength testinga Kne",
       "claim_role": "duration",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -2187,7 +2187,7 @@
       "context_window": "change in type I\u2010associated satellite cells/type I fibers (p = .088). (g) The percent change in type II\u2010associated satellite c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "metformin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2837,7 +2837,7 @@
       "endpoint": "thigh muscle mass",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-19378",
@@ -2855,7 +2855,7 @@
       "endpoint": "thigh muscle mass",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-19465",
@@ -2873,7 +2873,7 @@
       "endpoint": "thigh muscle mass",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-19722",
@@ -2891,7 +2891,7 @@
       "endpoint": "thigh muscle mass",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-19795",
@@ -2906,10 +2906,10 @@
       "sentence": "Box plots indicate the \nmean (\u00d7) and median (\u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010 \u2010), and \nwhiskers indicate the upper and lower \nquartiles\n-20\n-15\n-10\n-5\n0\n5\n10\n15\n20\n25\n30\n(a)\n(b)\nChange in thigh muscle area (%)\nPlacebo\nMetformin\nPlacebo\nMetformin\np = .005 \nChange in thigh muscle density (%)\n-8\n-6\n-4\n-2\n0\n2\n4\n6\n8\n10\n12\np = .020 \n\n\n8 of 13\u2003 |\u2003 \u2003\u2002\nWALTON et al.\nenergy availability, and ultimately leading to chronic AMPK activa\u2010\ntion (Musi et al., 2002).",
       "context_window": "nge in thigh muscle density (%) -8 -6 -4 -2 0 2 4 6 8 10 12 p = .020 8 of 13 | WALTON et al. energy availability, and ul",
       "claim_role": "unknown",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "AMPK signaling",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-pct-20276",
@@ -3107,7 +3107,7 @@
       "endpoint": "AMPK signaling",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-21949",
@@ -3125,7 +3125,7 @@
       "endpoint": "AMPK signaling",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-p-22406",
@@ -3176,7 +3176,7 @@
       "sentence": "One placebo \noutlier was removed from AMPK analysis. (a) Following PRT, metformin had a higher percent change in basal phospho\u2010AMPK:total AMPK \nratio that did not reach statistical significance (p = .087). (b) The metformin group also had a significantly higher percent change in basal \nphospho\u2010ACC:total ACC ratio following PRT (p = .035). (c) The placebo group had a greater mean increase in basal phospho\u2010RPS6:total RPS6 \nratio that did not reach statistical significance (p = .090). (d) Representative Western blots of human muscle biopsies. (e) In cultured human \nmyotubes, treatment with metformin blunts phosphorylation of p70S6K1 following electrical stimulation.",
       "context_window": "al RPS6 ratio that did not reach statistical significance (p = .090). (d) Representative Western blots of human muscle biopsies",
       "claim_role": "effect",
-      "endpoint": "AMPK signaling",
+      "endpoint": "mTOR signaling",
       "arm": "placebo",
       "direction": "increase",
       "binding_confidence": "high"
@@ -3265,7 +3265,7 @@
       "source_offset": 1660,
       "sentence": "Boule et \nal. (2013) reported that following 22  weeks of resistance training \nin middle\u2010aged subjects with type 2 diabetes, metformin inhibited \nmuscle mass gains without affecting strength.",
       "context_window": "min treatment. Boule et al. (2013) reported that following 22 weeks of resistance training in middle\u2010aged subjects with type 2",
-      "claim_role": "duration",
+      "claim_role": "effect",
       "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "decrease",
@@ -3287,7 +3287,7 @@
       "endpoint": "body weight",
       "arm": "pooled",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy-u-6326",
@@ -3302,7 +3302,7 @@
       "sentence": "In conclusion, 14 weeks of progressive resistance training re\u2010\nsulted in variable, but significant, gains in total lean mass and thigh \nmuscle mass in healthy adults aged 65 and over.",
       "context_window": "s nonobese and free from metabolic disease. In conclusion, 14 weeks of progressive resistance training re\u2010 sulted in variable,",
       "claim_role": "duration",
-      "endpoint": "thigh muscle mass",
+      "endpoint": "lean body mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

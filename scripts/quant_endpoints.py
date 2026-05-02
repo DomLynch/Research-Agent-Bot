@@ -177,50 +177,129 @@ _ARM_COMPILED = _compile_vocab(ARM_VOCAB)
 _DIRECTION_COMPILED = _compile_vocab(DIRECTION_VOCAB)
 
 
-def match_endpoint(sentence: str) -> str:
-    """Return canonical endpoint name; "" if no match. First-match-wins
-    on the vocab order (ENDPOINT_VOCAB is curated longest/most-specific
-    first — "thigh muscle mass" before "muscle mass")."""
+def match_endpoint(
+    sentence: str, anchor_offset: int | None = None,
+) -> str:
+    """Return canonical endpoint name; "" if no match.
+
+    P1 #1 audit fix: pre-fix used vocab-order first-match-wins, so on
+    Walton's dual-endpoint sentence "lean body mass (p=.003) and
+    thigh muscle mass (p<.001)" both p-values bound to the same
+    endpoint (whichever vocab entry matched first). Now: if
+    `anchor_offset` is given, the endpoint match NEAREST to the
+    anchor wins. Vocab order remains the tiebreaker only when two
+    matches are equidistant (the more-specific entry wins via
+    earlier vocab position — "thigh muscle mass" > "muscle mass" >
+    "lean body mass" overlap rules).
+
+    Without an anchor, falls back to first-match-wins on vocab order
+    (preserves backward compatibility with callers that don't have
+    a per-claim anchor — e.g., the unit tests).
+    """
     if not sentence:
         return ""
-    for name, pat in _ENDPOINT_COMPILED:
-        if pat.search(sentence):
-            return name
-    return ""
+    if anchor_offset is None:
+        for name, pat in _ENDPOINT_COMPILED:
+            if pat.search(sentence):
+                return name
+        return ""
+    # Collect all matches with vocab priority for tiebreaking.
+    candidates: list[tuple[int, int, str]] = []  # (distance, vocab_priority, name)
+    for prio, (name, pat) in enumerate(_ENDPOINT_COMPILED):
+        for m in pat.finditer(sentence):
+            if m.start() <= anchor_offset <= m.end():
+                distance = 0
+            else:
+                distance = min(
+                    abs(m.start() - anchor_offset),
+                    abs(m.end() - anchor_offset),
+                )
+            candidates.append((distance, prio, name))
+    if not candidates:
+        return ""
+    candidates.sort(key=lambda t: (t[0], t[1]))
+    return candidates[0][2]
+
+
+# P1 #2 audit fix: comparator grammar. Sentences like "Compared to
+# placebo, metformin reduced HbA1c" have two arms; the one BEFORE
+# the comma is the COMPARATOR (placebo, here), and the one AFTER
+# is the SUBJECT (metformin, the arm whose effect is being claimed).
+# Plain earliest-mention-wins gives the WRONG answer. We detect
+# the comparator marker and exclude its referent from arm selection.
+_COMPARATOR_MARKER_RE = re.compile(
+    r"\b(?:compared\s+to|in\s+contrast\s+to|relative\s+to|"
+    r"versus|vs\.?)\s+",
+    re.IGNORECASE,
+)
 
 
 def match_arm(sentence: str) -> str:
     """Return canonical arm name; "" if no match.
 
-    Reviewer-flagged HIGH bug fix: pre-fix iterated ARM_VOCAB in vocab
-    order and returned the first matching entry. For sentences with
-    BOTH bare "metformin" and "placebo" (e.g. "Placebo gained more
-    mass than metformin"), this systematically returned arm=metformin
-    because the bare-metformin entry preceded bare-placebo in the
-    vocab — independent of which word actually appeared first in
-    the sentence. The corpus 509:51 metformin:placebo skew was
-    consistent with this bias.
+    Two-stage rule:
+      1. If the sentence contains a comparator marker ("compared to",
+         "in contrast to", "vs.", "versus", "relative to"), find the
+         arm immediately following the marker (the comparator) and
+         EXCLUDE its byte-span from candidate selection. The remaining
+         arm match — typically a different one mentioned later — is
+         the subject.
+      2. Otherwise, earliest-IN-SENTENCE arm wins, with vocab order
+         as tiebreaker for same-position overlaps.
 
-    Fix: collect ALL matches across ALL vocab entries, then pick the
-    one whose match position is EARLIEST in the sentence. Vocab
-    order remains the tiebreaker (modified-noun forms still win
-    when they overlap a bare match at the same position). This
-    aligns with clinical prose convention: the FIRST-MENTIONED arm
-    is typically the subject of the comparison statement.
+    P1 #2 audit fix: pre-fix used earliest-mention-wins universally.
+    "Compared to placebo, metformin reduced HbA1c" wrongly bound to
+    arm=placebo (the comparator). Now we detect the comparator
+    marker and exclude its arm from selection.
     """
     if not sentence:
         return ""
+    # Stage 1: find comparator-marker arms to exclude.
+    # The arm referent must appear IMMEDIATELY after the marker — we
+    # only treat the next-word slot as the comparator. Reviewer-flagged
+    # MEDIUM bug fix: pre-fix accepted any arm match within 40 chars,
+    # so "Compared to historical levels, metformin treatment..."
+    # wrongly excluded metformin (the actual subject) because it
+    # appeared past intervening "historical levels". The
+    # _COMPARATOR_TIGHT_WINDOW limit confines exclusion to the
+    # next-word slot only.
+    _COMPARATOR_TIGHT_WINDOW = 8  # characters
+    excluded_spans: list[tuple[int, int]] = []
+    for marker_match in _COMPARATOR_MARKER_RE.finditer(sentence):
+        scan_start = marker_match.end()
+        scan_end = min(len(sentence), scan_start + 40)
+        scan_text = sentence[scan_start:scan_end]
+        earliest: re.Match[str] | None = None
+        for _name, pat in _ARM_COMPILED:
+            arm_match = pat.search(scan_text)
+            if arm_match is not None and (
+                earliest is None or arm_match.start() < earliest.start()
+            ):
+                earliest = arm_match
+        # Only exclude if the earliest arm sits in the tight next-word
+        # window (handles "compared to placebo," but not "compared to
+        # historical levels, metformin..."). Beyond _COMPARATOR_TIGHT_WINDOW
+        # the arm is just any later mention, not the comparator referent.
+        if earliest is not None and earliest.start() <= _COMPARATOR_TIGHT_WINDOW:
+            excluded_spans.append((
+                scan_start + earliest.start(),
+                scan_start + earliest.end(),
+            ))
+    # Stage 2: collect arm candidates excluding any in comparator spans.
     candidates: list[tuple[int, int, str]] = []  # (position, vocab_priority, name)
     for prio, (name, pat) in enumerate(_ARM_COMPILED):
         for m in pat.finditer(sentence):
+            in_excluded = any(
+                es <= m.start() < ee for es, ee in excluded_spans
+            )
+            if in_excluded:
+                continue
             candidates.append((m.start(), prio, name))
     if not candidates:
+        # Fallback: if every match was excluded as a comparator, the
+        # sentence only names the comparator and not the subject.
+        # Better to return "" than guess.
         return ""
-    # Earliest sentence position wins; vocab priority tiebreaks ties
-    # (which only happen when two vocab entries match at the same
-    # offset — e.g., "metformin group" matches both modified-noun
-    # form AND bare "metformin"; we want the modified-noun, which
-    # comes first in vocab).
     candidates.sort(key=lambda t: (t[0], t[1]))
     return candidates[0][2]
 
@@ -303,13 +382,31 @@ def match_direction(
 
 
 def binding_confidence_for(
-    endpoint: str, arm: str, direction: str,
+    endpoint: str, arm: str, direction: str, claim_role: str = "",
 ) -> str:
-    """Summary tag based on how many of the 3 fields were bound.
-    Phase 4 uses this as a quick filter ("show only high-confidence
-    claims for the abstract") without re-checking each field."""
+    """Summary tag based on how many of the 3 fields were bound AND
+    whether the claim is effect-shaped.
+
+    P1 #3 audit fix: pre-fix counted 3/3 field coverage as "high"
+    regardless of `claim_role`. That meant a dose like "500 mg/day"
+    in a sentence mentioning an endpoint and an arm was tagged high
+    confidence — even though it's a treatment dose, not an effect
+    claim. Audit found 117/194 (60.3%) high-confidence claims were
+    actually dose/duration/population/unknown roles. Phase 4 paper
+    writer would silently use those as primary evidence.
+
+    Fixed contract:
+      "high"    — all 3 fields bound AND claim_role == "effect"
+      "partial" — at least 1 field bound, OR all 3 bound but role
+                  is non-effect (e.g. dose with full context)
+      "none"    — 0 fields bound
+
+    `claim_role` defaults to "" so callers that don't pass it (unit
+    tests, pre-Phase-2.1 artifacts) get the strictest interpretation:
+    no role → cannot be high.
+    """
     bound = sum(1 for f in (endpoint, arm, direction) if f)
-    if bound == 3:
+    if bound == 3 and claim_role == "effect":
         return "high"
     if bound >= 1:
         return "partial"
@@ -319,23 +416,29 @@ def binding_confidence_for(
 def bind_claim(
     sentence: str, source_offset_in_section: int,
     sentence_offset_in_section: int = 0,
+    claim_role: str = "",
 ) -> EndpointBinding:
     """Bind one claim. `source_offset_in_section` is the claim's
     char-offset within its section (already what QuantClaim stores).
     `sentence_offset_in_section` is where the sentence STARTS within
     the section, so the per-sentence anchor is the difference.
+
+    `claim_role` is passed through to `binding_confidence_for` so
+    "high" is reserved for effect-shaped claims (P1 #3 fix).
     """
-    anchor = source_offset_in_section - sentence_offset_in_section
-    if anchor < 0 or anchor > len(sentence):
+    anchor: int | None = source_offset_in_section - sentence_offset_in_section
+    if anchor is not None and (anchor < 0 or anchor > len(sentence)):
         # Defensive: caller passed inconsistent offsets. Fall back to
-        # first-match-wins direction.
+        # vocab-order endpoint and first-match-wins direction.
         anchor = None
-    endpoint = match_endpoint(sentence)
+    endpoint = match_endpoint(sentence, anchor_offset=anchor)
     arm = match_arm(sentence)
     direction = match_direction(sentence, anchor_offset=anchor)
     return EndpointBinding(
         endpoint=endpoint,
         arm=arm,
         direction=direction,
-        binding_confidence=binding_confidence_for(endpoint, arm, direction),
+        binding_confidence=binding_confidence_for(
+            endpoint, arm, direction, claim_role=claim_role,
+        ),
     )

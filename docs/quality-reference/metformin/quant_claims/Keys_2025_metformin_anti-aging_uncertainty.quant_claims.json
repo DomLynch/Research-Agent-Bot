@@ -1,8 +1,8 @@
 {
   "paper_id": "Keys_2025_metformin_anti-aging_uncertainty",
   "doi": "10.1016/j.arr.2025.102817",
-  "extracted_at": "2026-05-02T13:52:07+00:00",
-  "extractor_version": "0.4.0",
+  "extracted_at": "2026-05-02T14:17:22+00:00",
+  "extractor_version": "0.5.0",
   "claims_count_by_type": {
     "percentage": 24,
     "unit_value": 21,
@@ -28,7 +28,7 @@
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-4696",
@@ -46,7 +46,7 @@
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-5459",
@@ -600,7 +600,7 @@
       "source_offset": 20395,
       "sentence": "However, the group initially randomized to metformin \nwere instructed to continue receiving the study drug unmasked, in \naddition to the modified lifestyle program, until HbA1c rose above 7 %, \nat which point they received intensified or additional treatment for \nincident type II diabetes.",
       "context_window": "n to the modified lifestyle program, until HbA1c rose above 7 %, at which point they received intensified or additional tr",
-      "claim_role": "dose",
+      "claim_role": "effect",
       "endpoint": "HbA1c",
       "arm": "metformin",
       "direction": "increase",
@@ -1122,7 +1122,7 @@
       "source_offset": 33572,
       "sentence": "In the most recent \nMET-PREVENT trial, metformin for 4 months did not improve grip \nstrength, walking speed, physical performance, muscle mass, quality of \nlife, or activities of daily living (Witham et al., 2025).",
       "context_window": "2024). In the most recent MET-PREVENT trial, metformin for 4 months did not improve grip strength, walking speed, physical per",
-      "claim_role": "unknown",
+      "claim_role": "effect",
       "endpoint": "muscle strength",
       "arm": "metformin",
       "direction": "no_change",
@@ -1141,7 +1141,7 @@
       "sentence": "In first of \nthese, treatment with metformin for 12 weeks resulted in an attenuation \nof exercise-induced improvements in whole-body insulin sensitivity, \nskeletal muscle mitochondrial respiration, and vo2 max after aerobic \nexercise (Konopka et al., 2019).",
       "context_window": "er adults. In first of these, treatment with metformin for 12 weeks resulted in an attenuation of exercise-induced improvement",
       "claim_role": "dose",
-      "endpoint": "VO2max",
+      "endpoint": "insulin sensitivity",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1158,7 +1158,7 @@
       "source_offset": 34483,
       "sentence": "In the second trial, treatment with \nmetformin for 14 weeks parallel to a resistance training program \nresulted in no difference in exercise performance, and in smaller in\u00ad\ncreases in lean mass gained by inhibiting the expected beneficial \nM.T.",
       "context_window": ", 2019). In the second trial, treatment with metformin for 14 weeks parallel to a resistance training program resulted in no d",
-      "claim_role": "dose",
+      "claim_role": "effect",
       "endpoint": "lean body mass",
       "arm": "metformin",
       "direction": "no_change",

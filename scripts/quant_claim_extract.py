@@ -70,7 +70,7 @@ __all__ = [
 ]
 
 
-EXTRACTOR_VERSION = "0.4.0"
+EXTRACTOR_VERSION = "0.5.0"
 # Day 10.17 Phase 2.2 schema versioning (see Phase 2.1 history below):
 #   0.4.0 — endpoint/arm/direction binding via scripts/quant_endpoints.py
 #           vocab matchers. Each claim now carries:
@@ -82,6 +82,23 @@ EXTRACTOR_VERSION = "0.4.0"
 #           Span-containment filter handles "attenuated the increase"
 #           and "did not improve" subsuming bare "increase"/"improve".
 #           Defaults are "" / "none" so v0.3 artifacts upgrade cleanly.
+#   0.5.0 — Phase 2.2-fix audit response. Three P1 semantic bugs
+#           caught and locked-in via regression tests:
+#             * P1 #1: endpoint matcher uses CLAIM-ANCHORED PROXIMITY.
+#               Pre-fix Walton dual-endpoint sentence
+#               "lean body mass (p=.003) and thigh muscle mass (p<.001)"
+#               bound BOTH p-values to the same endpoint by vocab order.
+#               Now the nearest endpoint to each claim wins.
+#             * P1 #2: arm matcher honors COMPARATOR GRAMMAR.
+#               "Compared to placebo, metformin reduced HbA1c" pre-fix
+#               bound to arm=placebo (the comparator). Now the marker
+#               "compared to|vs.|versus|in contrast to" excludes its
+#               referent so the subject (metformin) wins.
+#             * P1 #3: binding_confidence requires claim_role=="effect"
+#               for "high". Pre-fix audit found 117/194 (60.3%)
+#               high-confidence claims were dose/duration/population/
+#               unknown roles. Now: 0/92 (0%) non-effect leakage.
+#               Locked in by an artifact-level invariant test.
 #   0.1.0 — initial extractor (p_value, CI, sample_size, mean_sd,
 #           percentage, unit_value)
 #   0.2.0 — claim_role field added; HR/OR/RR/correlation patterns
@@ -365,11 +382,32 @@ _ROLE_KEYWORD_BACKGROUND = (
     "estimated to affect", "is associated with the",
 )
 _ROLE_KEYWORD_EFFECT = (
+    # Direction verbs
     "increased", "decreased", "improved", "reduced", "blunted",
-    "attenuated", "enhanced", "treatment effect", "primary endpoint",
-    "secondary endpoint", "between groups", "compared to placebo",
-    "vs. placebo", "vs placebo", "treatment arm", "metformin group",
-    "placebo group",
+    "attenuated", "enhanced", "elevated", "lowered", "diminished",
+    "suppressed", "inhibited", "declined", "rose", "rose by",
+    # Phase 2.2-fix: P1 #3 / Walton-class regressions. The pre-fix
+    # keyword set missed common effect verbs ("gained", "lost") used
+    # in body-composition trials, so a sentence like "Placebo gained
+    # more lean body mass than metformin (p = .003)" landed as role=
+    # unknown (no keyword match) → binding_confidence=partial. Now
+    # tagged as effect.
+    # Reviewer-fix v0.5.0: bare "more than" / "less than" REMOVED.
+    # They false-fire on background prose like "More than 27 trials
+    # have been conducted" or "Less than half of subjects met
+    # criteria." Kept the arm-anchored variants ("than placebo",
+    # "than metformin", "gained more", "lost less") which require
+    # a clinical context word.
+    "gained", "lost more", "lost less", "gained more", "gained less",
+    "than placebo", "than metformin",
+    "than control", "than the placebo", "than the metformin",
+    # Trial-design markers
+    "treatment effect", "primary endpoint", "secondary endpoint",
+    "between groups", "between arms", "between the groups",
+    "compared to placebo", "vs. placebo", "vs placebo",
+    "treatment arm", "metformin group", "placebo group",
+    "did not improve", "did not change", "did not differ",
+    "did not reach", "did not reach significance",
 )
 
 
@@ -816,19 +854,29 @@ def extract_from_text(
         # Word-boundary regex prevents "min" inside "metformin" from
         # false-firing on real sample sizes like "(n = 26) or metformin".
         if c.claim_type == "sample_size":
-            tail = c.context_window[
-                c.context_window.find(c.raw_text) + len(c.raw_text):
-            ][:30]
-            if _DURATION_TOKEN_RE.search(tail):
-                role = "duration"
+            # Reviewer-flagged LOW guard: context_window.find can return
+            # -1 if the raw_text was fragmented during whitespace
+            # canonicalization. In practice raw_text is single-space-
+            # canonical from _normalize, but cheap defensive: skip the
+            # tail check if the substring isn't found verbatim.
+            idx = c.context_window.find(c.raw_text)
+            if idx >= 0:
+                tail = c.context_window[idx + len(c.raw_text):][:30]
+                if _DURATION_TOKEN_RE.search(tail):
+                    role = "duration"
         # Phase 2.2 binding: pass the claim's sentence + the sentence's
         # start-offset within the section so direction proximity is
         # computed in sentence-local coordinates.
+        # Phase 2.2-fix (P1 #3): pass `role` so binding_confidence_for
+        # gates "high" on effect-shaped roles. Dose/duration/population
+        # claims with full endpoint+arm+direction context now correctly
+        # land as "partial" rather than masquerading as primary evidence.
         sent_start = _sentence_start_for_claim(c.source_offset)
         binding = quant_endpoints.bind_claim(
             sentence=c.sentence,
             source_offset_in_section=c.source_offset,
             sentence_offset_in_section=sent_start,
+            claim_role=role,
         )
         enriched.append(replace(
             c,

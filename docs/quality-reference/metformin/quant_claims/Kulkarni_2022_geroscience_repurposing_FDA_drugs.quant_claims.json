@@ -1,8 +1,8 @@
 {
   "paper_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs",
   "doi": "10.1111/acel.13596",
-  "extracted_at": "2026-05-02T13:52:07+00:00",
-  "extractor_version": "0.4.0",
+  "extracted_at": "2026-05-02T14:17:23+00:00",
+  "extractor_version": "0.5.0",
   "claims_count_by_type": {
     "sample_size": 2,
     "percentage": 35,
@@ -207,7 +207,7 @@
       "sentence": "TA B LE 2\u2003Preclinical evidence for candidate gerotherapeutics in improving lifespan and healthspan and attenuating hallmarks of aging\nGerotherapeutics\nEffects on model \norganism lifespan\nEffects on healthspan and age-\u00ad\nrelated diseases in preclinical \nmodels\nHallmarks of Aging\nMacromolecular Damage / \nAdaptation to Stress\nEpigenetic effects / \nStem Cell renewal and \nregeneration\nProteostasis / Inflammation / \nSenescence\nMetabolism\nSGLT2 inhibitors\nITP: Canagliflozin \u2191 \nmedian lifespan \nby 14% in males \n(Miller et al., \n2020)\nDapagliflozin \u2193 atherosclerosis \nwith macrophage infiltration in \ndiabetic ApoE -/- mice (Leng \net al., 2016)\nDapagliflozin restores \nCalcium uptake \nand prevents age-\u00ad\nassociated Calcium \nbuild up in the \nmitochondria of \ncardiomyocytes (Olgar \net al., 2020)\nNo applicable studies\nEmpagliflozin reactivates glomerular \nautophagy in db/db mice (Korbut \net al., 2020)\n\u2022 Dapagliflozin \u2191 cardiac \nfunction and glucose \ntolerance in IR rats with \nmetabolic syndrome via \n\u2191 mitochondrial function \nand oxidative stress \n(Durak et al., 2018)\n\u2022 Empagliflozin \u2191 AMP/\nATP ratio, AMPK and \n\u2193 mitochondrial fission \n(Zhou et al., 2018)\n\u2022 Empagliflozin \u2193 mTORC1 \nin diabetic mouse kidneys \n(Tomita et al., 2020)\nMetformin (pre-\u00ad\n2020 studies \nsummarized \npreviously \n(Kulkarni et al., \n2020))\n5.83% \u2191 in mean \nlifespan of \n84-\u00adweeks-\u00adold \nmales (Martin-\u00ad\nMontalvo et al., \n2013)\n\u2022\t \u2191 cognitive function, \u2193 \nmicroglial activation in 18-\u00admo-\u00ad\nold male mice (Kodali et al., \n2021)\n\u2022\t \u2191 motor symptoms in mouse \nmodel of Parkinson's disease \nvia regulation of astrocytes \ntranscriptome (Ryu et al., 2020)\n\u2022\t \u2193 cartilage degeneration and \nchondrocyte aging in mouse \nmodel of osteoarthritis (X.",
       "context_window": "SGLT2 inhibitors ITP: Canagliflozin \u2191 median lifespan by 14% in males (Miller et al., 2020) Dapagliflozin \u2193 atheroscle",
       "claim_role": "unknown",
-      "endpoint": "mitochondrial respiration",
+      "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -225,7 +225,7 @@
       "sentence": "TA B LE 2\u2003Preclinical evidence for candidate gerotherapeutics in improving lifespan and healthspan and attenuating hallmarks of aging\nGerotherapeutics\nEffects on model \norganism lifespan\nEffects on healthspan and age-\u00ad\nrelated diseases in preclinical \nmodels\nHallmarks of Aging\nMacromolecular Damage / \nAdaptation to Stress\nEpigenetic effects / \nStem Cell renewal and \nregeneration\nProteostasis / Inflammation / \nSenescence\nMetabolism\nSGLT2 inhibitors\nITP: Canagliflozin \u2191 \nmedian lifespan \nby 14% in males \n(Miller et al., \n2020)\nDapagliflozin \u2193 atherosclerosis \nwith macrophage infiltration in \ndiabetic ApoE -/- mice (Leng \net al., 2016)\nDapagliflozin restores \nCalcium uptake \nand prevents age-\u00ad\nassociated Calcium \nbuild up in the \nmitochondria of \ncardiomyocytes (Olgar \net al., 2020)\nNo applicable studies\nEmpagliflozin reactivates glomerular \nautophagy in db/db mice (Korbut \net al., 2020)\n\u2022 Dapagliflozin \u2191 cardiac \nfunction and glucose \ntolerance in IR rats with \nmetabolic syndrome via \n\u2191 mitochondrial function \nand oxidative stress \n(Durak et al., 2018)\n\u2022 Empagliflozin \u2191 AMP/\nATP ratio, AMPK and \n\u2193 mitochondrial fission \n(Zhou et al., 2018)\n\u2022 Empagliflozin \u2193 mTORC1 \nin diabetic mouse kidneys \n(Tomita et al., 2020)\nMetformin (pre-\u00ad\n2020 studies \nsummarized \npreviously \n(Kulkarni et al., \n2020))\n5.83% \u2191 in mean \nlifespan of \n84-\u00adweeks-\u00adold \nmales (Martin-\u00ad\nMontalvo et al., \n2013)\n\u2022\t \u2191 cognitive function, \u2193 \nmicroglial activation in 18-\u00admo-\u00ad\nold male mice (Kodali et al., \n2021)\n\u2022\t \u2191 motor symptoms in mouse \nmodel of Parkinson's disease \nvia regulation of astrocytes \ntranscriptome (Ryu et al., 2020)\n\u2022\t \u2193 cartilage degeneration and \nchondrocyte aging in mouse \nmodel of osteoarthritis (X.",
       "context_window": "studies summarized previously (Kulkarni et al., 2020)) 5.83% \u2191 in mean lifespan of 84-\u00adweeks-\u00adold males (Martin-\u00ad Mon",
       "claim_role": "unknown",
-      "endpoint": "mitochondrial respiration",
+      "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -243,7 +243,7 @@
       "sentence": "Zhang et al., \n2020; Zhao et al., 2020)\nRegulation of UPR via \nAMPK/ERK1/2 \npathway to attenuate \nage-\u00adrelated hearing \nloss, cell apoptosis and \nneurodegeneration in \nold rats (Cai et al., 2020)\nAcarbose\nITP: 22% \u2191 in \nmedian lifespan \n(males) and 5% \n\u2191 in (females) \n(Harrison et al., \n2014, 2019; \nStrong et al., \n2016)\n\u2022\t \u2193 Incidence of lung tumors \n(males), \u2193 Liver degeneration \n(both sexes) and \u2193 \nGlomerulosclerosis (females) \n(Harrison et al., 2019)\n\u2022\t \u2193 Age-\u00adrelated behavioral \nand biochemical changes in \nSAMP8 mice (Tong et al., 2015)\n\u2022\t \u2193 Age-\u00adrelated memory \nimpairment (Yan et al., 2015)\n\u2022\t \u2193 tumor burden and hematocrit \nin Apc +/Min mouse model of \nintestinal tumorigenesis at the \nhigher dose (Dodds et al., 2020)\nNo applicable studies\n\u2193 PDX-1 methylation in \nbeta-\u00adcells reverting \nT2DM in db/db mice (D.",
       "context_window": "odegeneration in old rats (Cai et al., 2020) Acarbose ITP: 22% \u2191 in median lifespan (males) and 5% \u2191 in (females) (Har",
       "claim_role": "background",
-      "endpoint": "AMPK signaling",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -261,7 +261,7 @@
       "sentence": "Zhang et al., \n2020; Zhao et al., 2020)\nRegulation of UPR via \nAMPK/ERK1/2 \npathway to attenuate \nage-\u00adrelated hearing \nloss, cell apoptosis and \nneurodegeneration in \nold rats (Cai et al., 2020)\nAcarbose\nITP: 22% \u2191 in \nmedian lifespan \n(males) and 5% \n\u2191 in (females) \n(Harrison et al., \n2014, 2019; \nStrong et al., \n2016)\n\u2022\t \u2193 Incidence of lung tumors \n(males), \u2193 Liver degeneration \n(both sexes) and \u2193 \nGlomerulosclerosis (females) \n(Harrison et al., 2019)\n\u2022\t \u2193 Age-\u00adrelated behavioral \nand biochemical changes in \nSAMP8 mice (Tong et al., 2015)\n\u2022\t \u2193 Age-\u00adrelated memory \nimpairment (Yan et al., 2015)\n\u2022\t \u2193 tumor burden and hematocrit \nin Apc +/Min mouse model of \nintestinal tumorigenesis at the \nhigher dose (Dodds et al., 2020)\nNo applicable studies\n\u2193 PDX-1 methylation in \nbeta-\u00adcells reverting \nT2DM in db/db mice (D.",
       "context_window": "2020) Acarbose ITP: 22% \u2191 in median lifespan (males) and 5% \u2191 in (females) (Harrison et al., 2014, 2019; Strong et",
       "claim_role": "background",
-      "endpoint": "AMPK signaling",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -279,7 +279,7 @@
       "sentence": "Gerotherapeutics\nEffects on model \norganism lifespan\nEffects on healthspan and age-\u00ad\nrelated diseases in preclinical \nmodels\nHallmarks of Aging\nMacromolecular Damage / \nAdaptation to Stress\nEpigenetic effects / \nStem Cell renewal and \nregeneration\nProteostasis / Inflammation / \nSenescence\nMetabolism\nRapamycin and \nRapalogs\nITP: Median \nlifespan-\u00ad 13-\u00ad\n23% \u2191 (dose-\u00ad\ndependent) in \nmale mice; 16-\u00ad\n26% \u2191 (dose-\u00ad\ndependent) in \nfemale mice; \nMax lifespan-\u00ad \n8% \u2191 in male \nmice; 5-\u00ad11% \u2191 \nin female mice \n(Miller et al., \n2014)\n\u2022\t \u2193 cognitive decline, \u2193 \nretinopathy, \u2193 myocardial \nalterations, \u2193 liver \ndegeneration, \u2193 endometrial \nhyperplasia and \u2191 physical \nactivity (Lamming et al., 2012)\n\u2022\t \u2193 Reactive Oxygen Species in \nhuman corneal endothelial cells \n(Shin et al., 2011)\n\u2022\t \u2193 loss of cognition in mouse \nmodels of Alzheimer's Disease \n(Kaeberlein & Galvan, 2019; \nSpilman et al., 2010)\n\u2022\t \u2193 frailty, \u2191 long-\u00adterm \nneuromuscular coordination, \nmemory, and tissue \narchitecture (Correia-\u00adMelo et \nal., 2019)\n\u2022\t \u2193 oxidative stress \ninduced damage in \nerythrocytes (Singh et \nal., 2016)\n\u2022\t \u2193 DNA-\u00addamage \naccumulation and \nimproved nuclear \nmorphology in \nfibroblasts from \nWerner's syndrome \n(Saha et al., 2014)\n\u2022 Delay age-\u00adrelated decline \nin HSCs and restoration \nof hematopoeisis (C.",
       "context_window": "bolism Rapamycin and Rapalogs ITP: Median lifespan-\u00ad 13-\u00ad 23% \u2191 (dose-\u00ad dependent) in male mice; 16-\u00ad 26% \u2191 (dose-\u00ad depe",
       "claim_role": "effect",
-      "endpoint": "frailty",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -297,7 +297,7 @@
       "sentence": "Gerotherapeutics\nEffects on model \norganism lifespan\nEffects on healthspan and age-\u00ad\nrelated diseases in preclinical \nmodels\nHallmarks of Aging\nMacromolecular Damage / \nAdaptation to Stress\nEpigenetic effects / \nStem Cell renewal and \nregeneration\nProteostasis / Inflammation / \nSenescence\nMetabolism\nRapamycin and \nRapalogs\nITP: Median \nlifespan-\u00ad 13-\u00ad\n23% \u2191 (dose-\u00ad\ndependent) in \nmale mice; 16-\u00ad\n26% \u2191 (dose-\u00ad\ndependent) in \nfemale mice; \nMax lifespan-\u00ad \n8% \u2191 in male \nmice; 5-\u00ad11% \u2191 \nin female mice \n(Miller et al., \n2014)\n\u2022\t \u2193 cognitive decline, \u2193 \nretinopathy, \u2193 myocardial \nalterations, \u2193 liver \ndegeneration, \u2193 endometrial \nhyperplasia and \u2191 physical \nactivity (Lamming et al., 2012)\n\u2022\t \u2193 Reactive Oxygen Species in \nhuman corneal endothelial cells \n(Shin et al., 2011)\n\u2022\t \u2193 loss of cognition in mouse \nmodels of Alzheimer's Disease \n(Kaeberlein & Galvan, 2019; \nSpilman et al., 2010)\n\u2022\t \u2193 frailty, \u2191 long-\u00adterm \nneuromuscular coordination, \nmemory, and tissue \narchitecture (Correia-\u00adMelo et \nal., 2019)\n\u2022\t \u2193 oxidative stress \ninduced damage in \nerythrocytes (Singh et \nal., 2016)\n\u2022\t \u2193 DNA-\u00addamage \naccumulation and \nimproved nuclear \nmorphology in \nfibroblasts from \nWerner's syndrome \n(Saha et al., 2014)\n\u2022 Delay age-\u00adrelated decline \nin HSCs and restoration \nof hematopoeisis (C.",
       "context_window": "ifespan-\u00ad 13-\u00ad 23% \u2191 (dose-\u00ad dependent) in male mice; 16-\u00ad 26% \u2191 (dose-\u00ad dependent) in female mice; Max lifespan-\u00ad 8% \u2191",
       "claim_role": "effect",
-      "endpoint": "frailty",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -315,7 +315,7 @@
       "sentence": "Gerotherapeutics\nEffects on model \norganism lifespan\nEffects on healthspan and age-\u00ad\nrelated diseases in preclinical \nmodels\nHallmarks of Aging\nMacromolecular Damage / \nAdaptation to Stress\nEpigenetic effects / \nStem Cell renewal and \nregeneration\nProteostasis / Inflammation / \nSenescence\nMetabolism\nRapamycin and \nRapalogs\nITP: Median \nlifespan-\u00ad 13-\u00ad\n23% \u2191 (dose-\u00ad\ndependent) in \nmale mice; 16-\u00ad\n26% \u2191 (dose-\u00ad\ndependent) in \nfemale mice; \nMax lifespan-\u00ad \n8% \u2191 in male \nmice; 5-\u00ad11% \u2191 \nin female mice \n(Miller et al., \n2014)\n\u2022\t \u2193 cognitive decline, \u2193 \nretinopathy, \u2193 myocardial \nalterations, \u2193 liver \ndegeneration, \u2193 endometrial \nhyperplasia and \u2191 physical \nactivity (Lamming et al., 2012)\n\u2022\t \u2193 Reactive Oxygen Species in \nhuman corneal endothelial cells \n(Shin et al., 2011)\n\u2022\t \u2193 loss of cognition in mouse \nmodels of Alzheimer's Disease \n(Kaeberlein & Galvan, 2019; \nSpilman et al., 2010)\n\u2022\t \u2193 frailty, \u2191 long-\u00adterm \nneuromuscular coordination, \nmemory, and tissue \narchitecture (Correia-\u00adMelo et \nal., 2019)\n\u2022\t \u2193 oxidative stress \ninduced damage in \nerythrocytes (Singh et \nal., 2016)\n\u2022\t \u2193 DNA-\u00addamage \naccumulation and \nimproved nuclear \nmorphology in \nfibroblasts from \nWerner's syndrome \n(Saha et al., 2014)\n\u2022 Delay age-\u00adrelated decline \nin HSCs and restoration \nof hematopoeisis (C.",
       "context_window": "26% \u2191 (dose-\u00ad dependent) in female mice; Max lifespan-\u00ad 8% \u2191 in male mice; 5-\u00ad11% \u2191 in female mice (Miller et al.,",
       "claim_role": "effect",
-      "endpoint": "frailty",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -333,7 +333,7 @@
       "sentence": "Gerotherapeutics\nEffects on model \norganism lifespan\nEffects on healthspan and age-\u00ad\nrelated diseases in preclinical \nmodels\nHallmarks of Aging\nMacromolecular Damage / \nAdaptation to Stress\nEpigenetic effects / \nStem Cell renewal and \nregeneration\nProteostasis / Inflammation / \nSenescence\nMetabolism\nRapamycin and \nRapalogs\nITP: Median \nlifespan-\u00ad 13-\u00ad\n23% \u2191 (dose-\u00ad\ndependent) in \nmale mice; 16-\u00ad\n26% \u2191 (dose-\u00ad\ndependent) in \nfemale mice; \nMax lifespan-\u00ad \n8% \u2191 in male \nmice; 5-\u00ad11% \u2191 \nin female mice \n(Miller et al., \n2014)\n\u2022\t \u2193 cognitive decline, \u2193 \nretinopathy, \u2193 myocardial \nalterations, \u2193 liver \ndegeneration, \u2193 endometrial \nhyperplasia and \u2191 physical \nactivity (Lamming et al., 2012)\n\u2022\t \u2193 Reactive Oxygen Species in \nhuman corneal endothelial cells \n(Shin et al., 2011)\n\u2022\t \u2193 loss of cognition in mouse \nmodels of Alzheimer's Disease \n(Kaeberlein & Galvan, 2019; \nSpilman et al., 2010)\n\u2022\t \u2193 frailty, \u2191 long-\u00adterm \nneuromuscular coordination, \nmemory, and tissue \narchitecture (Correia-\u00adMelo et \nal., 2019)\n\u2022\t \u2193 oxidative stress \ninduced damage in \nerythrocytes (Singh et \nal., 2016)\n\u2022\t \u2193 DNA-\u00addamage \naccumulation and \nimproved nuclear \nmorphology in \nfibroblasts from \nWerner's syndrome \n(Saha et al., 2014)\n\u2022 Delay age-\u00adrelated decline \nin HSCs and restoration \nof hematopoeisis (C.",
       "context_window": "t) in female mice; Max lifespan-\u00ad 8% \u2191 in male mice; 5-\u00ad11% \u2191 in female mice (Miller et al., 2014) \u2022 \u2193 cognitive de",
       "claim_role": "effect",
-      "endpoint": "frailty",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -351,7 +351,7 @@
       "sentence": "Wang et al., \n2017)\n\u2022\t \u2193 IL1A and NFKB signaling thereby \n\u2193 SASP via mTORC1-\u00addependent \nmechanism (Laberge et al., 2015)\n\u2022\t \u2193 adipose tissue inflammation \n(Paschoal et al., 2017)\n\u2022\t \u2193 TOR signaling in yeast, \nworms, flies, mice and \nhumans (Blagosklonny, \n2019)\n\u2022\t Reversal of IR via \ndephosphorylation of \nIRS1 (Leontieva et al., \n2014)\nMethylene Blue\nITP: Median \nlifespan-\u00ad 0.7% \n\u2191 and max \nlifespan-\u00ad 6% \n\u2191 in females \n(Harrison et al., \n2014)\n\u2022 Improvement in brain ABAD \nfunction and \u2193 A-\u00adbeta in \nneuroinflammatory mouse \nmodel (Zakaria et al., 2016)\n\u2022\t \u2193 Tau accumulation in P301L \nTau transgenic mice (Hosokawa \net al., 2012)\n\u2022\t \u2193 nuclear and mitochondrial \nabnormalities in progeroid \nmouse model (Xiong et al., \n2016)\nImproved mitochondrial \nrespiration and \u2193 \nreactive oxygen \nspecies and oxidative \nstress in diabetic rat \nhearts (Duicu et al., \n2017; Xiong et al., \n2016)\nNo applicable studies\nDelays cellular senescence (Atamna \net al., 2008; Xiong et al., 2017)\nNo applicable studies\nACEi and ARBs\n\u2191 rat lifespan with \nlong-\u00adterm \nenalapril \ntreatment \n(Santos et al., \n2009)\n\u2022 Enalapril attenuates frailty in \nmiddle-\u00adaged and older female \nmice and older male mice \n(Keller et al., 2019)\n\u2022\t \u2193 angiotensin-\u00adinduced \natherosclerosis and vascular \ninflammation in mice (da Cunha \net al., 2005)\nNo applicable studies\nNo applicable studies\n\u2022\t \u2191 antioxidant defenses in mouse \ntissues treated with enalapril and \ncaptopril (de Cavanagh et al., 1997)\n\u2022\t \u2191 autophagy in prostate cancer \ncells (Woo & Jung, 2017)\nNo applicable studies\nTA B LE 2\u2003(Continued)\n(Continues)\n\n\n8 of 23\u2003|\u2003 \u2003\u2002\nKULKARNI et al.",
       "context_window": "tieva et al., 2014) Methylene Blue ITP: Median lifespan-\u00ad 0.7% \u2191 and max lifespan-\u00ad 6% \u2191 in females (Harrison et al.,",
       "claim_role": "effect",
-      "endpoint": "mitochondrial respiration",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -369,7 +369,7 @@
       "sentence": "Wang et al., \n2017)\n\u2022\t \u2193 IL1A and NFKB signaling thereby \n\u2193 SASP via mTORC1-\u00addependent \nmechanism (Laberge et al., 2015)\n\u2022\t \u2193 adipose tissue inflammation \n(Paschoal et al., 2017)\n\u2022\t \u2193 TOR signaling in yeast, \nworms, flies, mice and \nhumans (Blagosklonny, \n2019)\n\u2022\t Reversal of IR via \ndephosphorylation of \nIRS1 (Leontieva et al., \n2014)\nMethylene Blue\nITP: Median \nlifespan-\u00ad 0.7% \n\u2191 and max \nlifespan-\u00ad 6% \n\u2191 in females \n(Harrison et al., \n2014)\n\u2022 Improvement in brain ABAD \nfunction and \u2193 A-\u00adbeta in \nneuroinflammatory mouse \nmodel (Zakaria et al., 2016)\n\u2022\t \u2193 Tau accumulation in P301L \nTau transgenic mice (Hosokawa \net al., 2012)\n\u2022\t \u2193 nuclear and mitochondrial \nabnormalities in progeroid \nmouse model (Xiong et al., \n2016)\nImproved mitochondrial \nrespiration and \u2193 \nreactive oxygen \nspecies and oxidative \nstress in diabetic rat \nhearts (Duicu et al., \n2017; Xiong et al., \n2016)\nNo applicable studies\nDelays cellular senescence (Atamna \net al., 2008; Xiong et al., 2017)\nNo applicable studies\nACEi and ARBs\n\u2191 rat lifespan with \nlong-\u00adterm \nenalapril \ntreatment \n(Santos et al., \n2009)\n\u2022 Enalapril attenuates frailty in \nmiddle-\u00adaged and older female \nmice and older male mice \n(Keller et al., 2019)\n\u2022\t \u2193 angiotensin-\u00adinduced \natherosclerosis and vascular \ninflammation in mice (da Cunha \net al., 2005)\nNo applicable studies\nNo applicable studies\n\u2022\t \u2191 antioxidant defenses in mouse \ntissues treated with enalapril and \ncaptopril (de Cavanagh et al., 1997)\n\u2022\t \u2191 autophagy in prostate cancer \ncells (Woo & Jung, 2017)\nNo applicable studies\nTA B LE 2\u2003(Continued)\n(Continues)\n\n\n8 of 23\u2003|\u2003 \u2003\u2002\nKULKARNI et al.",
       "context_window": "ne Blue ITP: Median lifespan-\u00ad 0.7% \u2191 and max lifespan-\u00ad 6% \u2191 in females (Harrison et al., 2014) \u2022 Improvement in br",
       "claim_role": "effect",
-      "endpoint": "mitochondrial respiration",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -405,7 +405,7 @@
       "sentence": "Wang et al., \n2020)\nNo applicable studies\n\u2022\t \u2193 intestinal senescence and \ninflammation with a modulation \nof gut microbiome (Saccon et al., \n2021)\n\u2022\t \u2193 pro-\u00adinflammatory cytokine \nrelease in human adipose tissue \n(Xu et al., 2018)\n\u2191 insulin sensitivity and \nglucose tolerance in \nobese mice (Sierra-\u00ad\nRamirez et al., 2020)\nAspirin (dose-\u00adspecific \neffect)\nITP: (21 mg/kg)-\u00ad \nMedian lifespan \n8% \u2191 in males \n(Strong et al., \n2008)\n\u2022\t \u2193 amyloid plaque pathology \nvia lysosomal biogenesis in \nAlzheimer's mouse model \n(Chandra et al., 2018)\n\u2022\t \u2193 colorectal tumor incidence \nin a microbiome-\u00addependent \nmanner (Zhao et al., 2020)\n\u2022 Prevention of age-\u00adrelated \nendothelial dysfunction \n(Bulckaen et al., 2008)\n\u2022 Protection against \nUVB-\u00adinduced DNA \ndamage in melanocytes \nand keratinocytes in \nC57B6 mice (Rahman et \nal., 2021)\n\u2022\t \u2193 in markers of oxidative \nstress (Bulckaen et al., \n2008)\n\u2022\t \u2193 Reactive Oxygen \nSpecies and decreased \nonset of senescence in \nendothelial cells (Bode-\u00ad\nB\u00f6ger et al., 2005)\nSuppression of age-\u00ad\nrelated and CC-\u00ad\nhypermethylation in \ncolon (Noreen et al., \n2020)\n\u2022\t \u2191 autophagy in C. elegans via \nEP300 inhibition (Pietrocola et al., \n2018)\n\u2022\t \u2193 senescence in doxorubicin-\u00ad\ninduced models of senescent \nhuman and mouse fibroblasts (M.",
       "context_window": "amirez et al., 2020) Aspirin (dose-\u00adspecific effect) ITP: (21 mg/kg)-\u00ad Median lifespan 8% \u2191 in males (Strong et al., 200",
       "claim_role": "background",
-      "endpoint": "insulin sensitivity",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -423,7 +423,7 @@
       "sentence": "Wang et al., \n2020)\nNo applicable studies\n\u2022\t \u2193 intestinal senescence and \ninflammation with a modulation \nof gut microbiome (Saccon et al., \n2021)\n\u2022\t \u2193 pro-\u00adinflammatory cytokine \nrelease in human adipose tissue \n(Xu et al., 2018)\n\u2191 insulin sensitivity and \nglucose tolerance in \nobese mice (Sierra-\u00ad\nRamirez et al., 2020)\nAspirin (dose-\u00adspecific \neffect)\nITP: (21 mg/kg)-\u00ad \nMedian lifespan \n8% \u2191 in males \n(Strong et al., \n2008)\n\u2022\t \u2193 amyloid plaque pathology \nvia lysosomal biogenesis in \nAlzheimer's mouse model \n(Chandra et al., 2018)\n\u2022\t \u2193 colorectal tumor incidence \nin a microbiome-\u00addependent \nmanner (Zhao et al., 2020)\n\u2022 Prevention of age-\u00adrelated \nendothelial dysfunction \n(Bulckaen et al., 2008)\n\u2022 Protection against \nUVB-\u00adinduced DNA \ndamage in melanocytes \nand keratinocytes in \nC57B6 mice (Rahman et \nal., 2021)\n\u2022\t \u2193 in markers of oxidative \nstress (Bulckaen et al., \n2008)\n\u2022\t \u2193 Reactive Oxygen \nSpecies and decreased \nonset of senescence in \nendothelial cells (Bode-\u00ad\nB\u00f6ger et al., 2005)\nSuppression of age-\u00ad\nrelated and CC-\u00ad\nhypermethylation in \ncolon (Noreen et al., \n2020)\n\u2022\t \u2191 autophagy in C. elegans via \nEP300 inhibition (Pietrocola et al., \n2018)\n\u2022\t \u2193 senescence in doxorubicin-\u00ad\ninduced models of senescent \nhuman and mouse fibroblasts (M.",
       "context_window": "dose-\u00adspecific effect) ITP: (21 mg/kg)-\u00ad Median lifespan 8% \u2191 in males (Strong et al., 2008) \u2022 \u2193 amyloid plaque path",
       "claim_role": "background",
-      "endpoint": "insulin sensitivity",
+      "endpoint": "lifespan",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -462,7 +462,7 @@
       "endpoint": "healthspan",
       "arm": "metformin",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-24554",
@@ -480,7 +480,7 @@
       "endpoint": "healthspan",
       "arm": "metformin",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-24628",
@@ -498,7 +498,7 @@
       "endpoint": "healthspan",
       "arm": "metformin",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-24703",
@@ -516,7 +516,7 @@
       "endpoint": "healthspan",
       "arm": "metformin",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-24807",
@@ -534,7 +534,7 @@
       "endpoint": "healthspan",
       "arm": "metformin",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-24904",
@@ -552,7 +552,7 @@
       "endpoint": "healthspan",
       "arm": "metformin",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-25094",
@@ -716,7 +716,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-p-26259",
@@ -734,7 +734,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-26387",
@@ -752,7 +752,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-26504",
@@ -770,7 +770,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-26616",
@@ -788,7 +788,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-26649",
@@ -806,7 +806,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-pct-26834",
@@ -824,7 +824,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-p-26997",
@@ -842,7 +842,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-u-27253",
@@ -860,7 +860,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-u-27528",
@@ -878,7 +878,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-u-27608",
@@ -896,7 +896,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-27823",
@@ -914,7 +914,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-27905",
@@ -932,7 +932,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-pct-27999",
@@ -950,7 +950,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-pct-28011",
@@ -968,7 +968,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-28138",
@@ -986,7 +986,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-28169",
@@ -1004,7 +1004,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-28262",
@@ -1022,7 +1022,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-pct-28367",
@@ -1040,7 +1040,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-pct-28377",
@@ -1058,7 +1058,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-or-a-28533",
@@ -1076,7 +1076,7 @@
       "endpoint": "muscle strength",
       "arm": "placebo",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-or-a-28569",
@@ -1091,7 +1091,7 @@
       "sentence": "ARBs (OR = 0.69 [0.56-\u00ad0.85]); both \nACEi (OR = 0.73 [0.58 = 0.92]) + ARB (OR = 0.63 [0.40-\u00ad1.00]) \u2193 \npneumonia-\u00adrelated death (Caldeira et al., 2012)\n\u2022 ACEi \u2193decline in muscle strength + \u2193 decline in gait speed in older \nwomen (Onder et al., 2002)\n\n\n\u2003\u2002\u2003 |\u2003 11 of 23\nKULKARNI et al.",
       "context_window": "other BP meds/placebo (OR = 0.66 [0.55-\u00ad0.80]) + vs. ARBs (OR = 0.69 [0.56-\u00ad0.85]); both ACEi (OR = 0.73 [0.58 = 0.92]) + ARB (",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1109,7 +1109,7 @@
       "sentence": "ARBs (OR = 0.69 [0.56-\u00ad0.85]); both \nACEi (OR = 0.73 [0.58 = 0.92]) + ARB (OR = 0.63 [0.40-\u00ad1.00]) \u2193 \npneumonia-\u00adrelated death (Caldeira et al., 2012)\n\u2022 ACEi \u2193decline in muscle strength + \u2193 decline in gait speed in older \nwomen (Onder et al., 2002)\n\n\n\u2003\u2002\u2003 |\u2003 11 of 23\nKULKARNI et al.",
       "context_window": "55-\u00ad0.80]) + vs. ARBs (OR = 0.69 [0.56-\u00ad0.85]); both ACEi (OR = 0.73 [0.58 = 0.92]) + ARB (OR = 0.63 [0.40-\u00ad1.00]) \u2193 pneumonia-",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1127,7 +1127,7 @@
       "sentence": "ARBs (OR = 0.69 [0.56-\u00ad0.85]); both \nACEi (OR = 0.73 [0.58 = 0.92]) + ARB (OR = 0.63 [0.40-\u00ad1.00]) \u2193 \npneumonia-\u00adrelated death (Caldeira et al., 2012)\n\u2022 ACEi \u2193decline in muscle strength + \u2193 decline in gait speed in older \nwomen (Onder et al., 2002)\n\n\n\u2003\u2002\u2003 |\u2003 11 of 23\nKULKARNI et al.",
       "context_window": "[0.56-\u00ad0.85]); both ACEi (OR = 0.73 [0.58 = 0.92]) + ARB (OR = 0.63 [0.40-\u00ad1.00]) \u2193 pneumonia-\u00adrelated death (Caldeira et al.,",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "muscle strength",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1434,9 +1434,9 @@
       "context_window": "desartan \u2193 CV mortality vs. placebo (RR 0.71 [0.50-\u00ad1.00], p = 0.049) + \u2193 all-\u00adcause mortality (RR = 0.73 [0.57-\u00ad0.95]) (Lithel",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-30666",
@@ -1452,9 +1452,9 @@
       "context_window": "RR 0.71 [0.50-\u00ad1.00], p = 0.049) + \u2193 all-\u00adcause mortality (RR = 0.73 [0.57-\u00ad0.95]) (Lithell et al., 2004) \u2022 No \u0394 in all-\u00adcause",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-hr-a-30846",
@@ -1470,9 +1470,9 @@
       "context_window": "t al., 2003) \u2022 Meta-\u00adanalysis: ACEi \u2193 all-\u00adcause mortality (HR = 0.90 [0.84-\u00ad 0.97] (Brugts et al., 2015)) \u2022 Meta-\u00adanalysis: No \u0394",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-31049",
@@ -1488,9 +1488,9 @@
       "context_window": ", 2015) \u2022 Meta-\u00adanalysis: \u2193 all-\u00adcause mortality with ACEi (RR = 0.89 [0.80-\u00ad1.00]; almost the entire difference explained by \u2193",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-rr-a-31144",
@@ -1506,9 +1506,9 @@
       "context_window": "entire difference explained by \u2193 CV deaths), but not ARB (RR = 1.01 [0.96-\u00ad1.06]), vs. placebo (Bangalore et al., 2016) \u2022 Meta",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Kulkarni_2022_geroscience_repurposing_FDA_drugs-pct-32588",
@@ -1691,7 +1691,7 @@
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     }
   ]
 }
