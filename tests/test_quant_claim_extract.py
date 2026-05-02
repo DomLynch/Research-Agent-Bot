@@ -720,11 +720,18 @@ def test_role_effect_still_wins_when_no_background_keyword() -> None:
 # ============================================================
 
 
-def test_extractor_version_matches_module_docstring_v03() -> None:
-    """Audit P2 #1: pre-fix EXTRACTOR_VERSION was '0.2.0' but the
-    module docstring already documented v0.3 claim-types. Version
-    contract must reflect what the code does."""
-    assert quant_claim_extract.EXTRACTOR_VERSION == "0.3.0"
+def test_extractor_version_is_proper_semver_and_at_least_v03() -> None:
+    """Audit P2 #1: the version must reflect what the code does (the
+    audit caught a v0.2.0 vs v0.3 docstring mismatch). After Phase
+    2.2 the version is 0.4.0+. Test the SHAPE here so future bumps
+    don't break this; the per-version contract lives in the module-
+    level history comment."""
+    import re as _re
+    v = quant_claim_extract.EXTRACTOR_VERSION
+    assert _re.match(r"^\d+\.\d+\.\d+$", v), f"version not semver: {v!r}"
+    major, minor, _patch = v.split(".")
+    assert int(major) >= 0
+    assert int(minor) >= 3, f"version {v} predates the v0.3 audit fix"
 
 
 def test_role_results_section_no_keyword_returns_unknown_not_effect() -> None:
@@ -771,3 +778,111 @@ def test_real_sample_size_with_participant_context_stays_effect_or_population() 
         assert c.claim_role != "duration", (
             f"real sample size wrongly retagged as duration: {c}"
         )
+
+
+# ============================================================
+# Phase 2.2 - endpoint / arm / direction binding integration
+# ============================================================
+
+
+def test_phase22_schema_has_binding_fields() -> None:
+    """v0.4.0 adds endpoint, arm, direction, binding_confidence to
+    QuantClaim. Defaults must be backward-compatible."""
+    fields = quant_claim_extract.QuantClaim.__dataclass_fields__
+    for f in ("endpoint", "arm", "direction", "binding_confidence"):
+        assert f in fields, f"missing schema field: {f}"
+
+
+def test_phase22_walton_passage_binds_endpoint_arm_direction() -> None:
+    """Walton MASTERS gold: 'Placebo gained more lean body mass
+    (p = .003) than metformin'. Should bind endpoint=lean body
+    mass, arm=metformin or placebo, direction=increase, with
+    high confidence."""
+    text = "Placebo gained more lean body mass (p = .003) than metformin."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    p_claim = next(c for c in claims if c.claim_type == "p_value")
+    assert p_claim.endpoint == "lean body mass"
+    assert p_claim.arm in ("metformin", "placebo")
+    assert p_claim.direction == "increase"
+    assert p_claim.binding_confidence == "high"
+
+
+def test_phase22_konopka_attenuated_increase_binds_decrease() -> None:
+    """Konopka 2019 gold: the load-bearing test for the span-
+    containment fix. 'Metformin attenuated the increase in VO2max
+    ... (p = 0.08)' must bind direction=decrease (the compound
+    phrase "attenuated the increase" subsumes the inner "increase"
+    word; "did not reach significance" is NOT a no_change pattern
+    match because "reach" isn't in the negated-verb set)."""
+    text = (
+        "Metformin attenuated the increase in VO2max following 12 "
+        "weeks of AET, although this did not reach significance (p = 0.08)."
+    )
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    p_claim = next(c for c in claims if c.claim_type == "p_value")
+    assert p_claim.endpoint == "VO2max"
+    assert p_claim.arm == "metformin"
+    # Tightened from `!= "increase"` (reviewer-flagged: a not-equal
+    # assertion doesn't validate that the span-containment fix
+    # delivers the right answer, only that it doesn't deliver the
+    # wrong one). Confirmed by direct trace: actual result IS
+    # "decrease".
+    assert p_claim.direction == "decrease"
+    assert p_claim.binding_confidence == "high"
+
+
+def test_phase22_witham_did_not_improve_binds_no_change() -> None:
+    """Witham MET-PREVENT primary endpoint: load-bearing for the
+    span-containment fix on 'did not improve'. Pre-fix the inner
+    'improve' word would have bound to direction=increase."""
+    text = (
+        "Metformin did not improve 4-m walk speed at 4 months "
+        "(p = 0.96)."
+    )
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    p_claim = next(c for c in claims if c.claim_type == "p_value")
+    assert p_claim.endpoint == "walk speed"
+    assert p_claim.arm == "metformin"
+    assert p_claim.direction == "no_change"
+    assert p_claim.binding_confidence == "high"
+
+
+def test_phase22_partial_binding_when_no_arm_keyword() -> None:
+    """Sentence with endpoint + direction but no arm keyword should
+    yield binding_confidence=partial."""
+    text = "HbA1c decreased (p = 0.03) at 12 weeks."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    p_claim = next(c for c in claims if c.claim_type == "p_value")
+    assert p_claim.endpoint == "HbA1c"
+    assert p_claim.arm == ""
+    assert p_claim.direction == "decrease"
+    assert p_claim.binding_confidence == "partial"
+
+
+def test_phase22_no_binding_when_pure_methodology_text() -> None:
+    """A methods-section sentence with no clinical vocab returns
+    binding_confidence=none. Phase 4 can drop these for the abstract."""
+    text = "Subjects were enrolled in 2018 (n = 45) at three sites."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    sample_claim = next(c for c in claims if c.claim_type == "sample_size")
+    assert sample_claim.endpoint == ""
+    assert sample_claim.arm == ""
+    assert sample_claim.direction == ""
+    assert sample_claim.binding_confidence == "none"
+
+
+def test_phase22_binding_fields_round_trip_through_artifact_json() -> None:
+    """v0.4.0 fields must serialize through make_artifact + JSON."""
+    import json
+    text = "Walk speed increased (p = 0.04) in the metformin arm."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    artifact = quant_claim_extract.make_artifact(
+        paper_id="x", doi="d", claims=claims,
+    )
+    payload = json.loads(json.dumps(artifact))
+    for c in payload["claims"]:
+        assert "endpoint" in c
+        assert "arm" in c
+        assert "direction" in c
+        assert "binding_confidence" in c
+        assert c["binding_confidence"] in ("high", "partial", "none")

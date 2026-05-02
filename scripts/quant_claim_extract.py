@@ -54,6 +54,12 @@ import sys
 from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
+# Phase 2.2 binding: vocab matchers live in a sibling module so the
+# vocab can be swapped per corpus (rapamycin will use a different
+# endpoint set). Import from the same scripts/ directory.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import quant_endpoints  # noqa: E402
+
 __all__ = [
     "QuantClaim",
     "EXTRACTOR_VERSION",
@@ -64,8 +70,18 @@ __all__ = [
 ]
 
 
-EXTRACTOR_VERSION = "0.3.0"
-# Day 10.17 Phase 2.1 schema versioning:
+EXTRACTOR_VERSION = "0.4.0"
+# Day 10.17 Phase 2.2 schema versioning (see Phase 2.1 history below):
+#   0.4.0 — endpoint/arm/direction binding via scripts/quant_endpoints.py
+#           vocab matchers. Each claim now carries:
+#             * endpoint:    canonical name from ENDPOINT_VOCAB
+#                            (e.g. "VO2max", "lean body mass")
+#             * arm:         "metformin" / "placebo" / "control" / etc.
+#             * direction:   increase | decrease | no_change | mixed
+#             * binding_confidence: high (3/3) | partial (1-2) | none
+#           Span-containment filter handles "attenuated the increase"
+#           and "did not improve" subsuming bare "increase"/"improve".
+#           Defaults are "" / "none" so v0.3 artifacts upgrade cleanly.
 #   0.1.0 — initial extractor (p_value, CI, sample_size, mean_sd,
 #           percentage, unit_value)
 #   0.2.0 — claim_role field added; HR/OR/RR/correlation patterns
@@ -139,6 +155,20 @@ class QuantClaim:
     # not authoritative. Default "" preserves backward compatibility
     # with v0.1 artifacts.
     claim_role: str = ""
+    # Day 10.17 Phase 2.2 — endpoint/arm/direction binding from
+    # quant_endpoints.py vocab matchers. Each is "" when no vocab
+    # match was found in the claim's sentence. binding_confidence
+    # rolls up the 3-field coverage:
+    #   "high"    — all 3 fields bound
+    #   "partial" — 1 or 2 bound
+    #   "none"    — 0 bound (sentence had no clinical vocab match)
+    # Phase 4 paper writer uses "high"-confidence claims for primary
+    # evidence; "partial" go to a secondary pool; "none" are typically
+    # background / methodology numbers without endpoint context.
+    endpoint: str = ""
+    arm: str = ""
+    direction: str = ""
+    binding_confidence: str = "none"
 
 
 # --- Text normalization --------------------------------------------------
@@ -761,6 +791,21 @@ def extract_from_text(
     # Phase 2.1: post-process — assign claim_role from sentence
     # keywords + section context. Frozen dataclass rebuild via
     # dataclasses.replace.
+    # Phase 2.2: also bind endpoint/arm/direction from sentence vocab.
+    # The sentence-relative anchor (claim's source_offset minus the
+    # sentence's start in the section) lets the proximity tiebreaker
+    # in match_direction pick the closest direction word.
+    # Reviewer-flagged MEDIUM fix: pre-fix used a dict keyed by
+    # sentence text, which collapsed identical-text sentences (e.g.
+    # boilerplate "Results are shown in Figure X.") and made the
+    # proximity anchor stale for the first occurrence. Now we look
+    # up sentence start by SCANNING sentences in order and taking the
+    # one whose [start, start+len] window contains the claim offset.
+    def _sentence_start_for_claim(claim_offset: int) -> int:
+        for s_start, s_text in sentences:
+            if s_start <= claim_offset < s_start + len(s_text):
+                return s_start
+        return 0
     enriched = []
     for c in all_claims:
         role = _assign_claim_role(c.sentence, section)
@@ -776,7 +821,23 @@ def extract_from_text(
             ][:30]
             if _DURATION_TOKEN_RE.search(tail):
                 role = "duration"
-        enriched.append(replace(c, claim_role=role))
+        # Phase 2.2 binding: pass the claim's sentence + the sentence's
+        # start-offset within the section so direction proximity is
+        # computed in sentence-local coordinates.
+        sent_start = _sentence_start_for_claim(c.source_offset)
+        binding = quant_endpoints.bind_claim(
+            sentence=c.sentence,
+            source_offset_in_section=c.source_offset,
+            sentence_offset_in_section=sent_start,
+        )
+        enriched.append(replace(
+            c,
+            claim_role=role,
+            endpoint=binding.endpoint,
+            arm=binding.arm,
+            direction=binding.direction,
+            binding_confidence=binding.binding_confidence,
+        ))
     enriched.sort(key=lambda c: (c.source_offset, c.claim_type))
     return tuple(enriched)
 

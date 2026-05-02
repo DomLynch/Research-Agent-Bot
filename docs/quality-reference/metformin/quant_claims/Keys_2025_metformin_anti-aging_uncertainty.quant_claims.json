@@ -1,8 +1,8 @@
 {
   "paper_id": "Keys_2025_metformin_anti-aging_uncertainty",
   "doi": "10.1016/j.arr.2025.102817",
-  "extracted_at": "2026-05-02T13:11:51+00:00",
-  "extractor_version": "0.3.0",
+  "extracted_at": "2026-05-02T13:52:07+00:00",
+  "extractor_version": "0.4.0",
   "claims_count_by_type": {
     "percentage": 24,
     "unit_value": 21,
@@ -24,7 +24,11 @@
       "source_offset": 4585,
       "sentence": "In the most widely discussed of these \nstudies, Martin-Montalvo et al. (2013) administered metformin at a dose \nof 0.1 % of diet by weight to C57BL/6 inbred male mice in mid-life, and \nreported an increase in mean lifespan of 5.8 % and improvements in \nseveral measures of healthspan.",
       "context_window": "Montalvo et al. (2013) administered metformin at a dose of 0.1 % of diet by weight to C57BL/6 inbred male mice in mid-life,",
-      "claim_role": "dose"
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-4696",
@@ -38,7 +42,11 @@
       "source_offset": 4696,
       "sentence": "In the most widely discussed of these \nstudies, Martin-Montalvo et al. (2013) administered metformin at a dose \nof 0.1 % of diet by weight to C57BL/6 inbred male mice in mid-life, and \nreported an increase in mean lifespan of 5.8 % and improvements in \nseveral measures of healthspan.",
       "context_window": "in mid-life, and reported an increase in mean lifespan of 5.8 % and improvements in several measures of healthspan. Metfor",
-      "claim_role": "dose"
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-5459",
@@ -52,7 +60,11 @@
       "source_offset": 5459,
       "sentence": "A subgroup analysis of the randomized UK \nProspective Diabetes Study (UKPDS) showed that initiating intensive \nglucose-control with metformin reduced the risk of diabetes-related \nevents (relative reduction 32 %), diabetes-related death (42 %) and \nall-cause mortality (36 %), compared to dietary treatment alone (UKPDS \nResearch Group, 1998).",
       "context_window": "ed the risk of diabetes-related events (relative reduction 32 %), diabetes-related death (42 %) and all-cause mortality (3",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-5490",
@@ -66,7 +78,11 @@
       "source_offset": 5490,
       "sentence": "A subgroup analysis of the randomized UK \nProspective Diabetes Study (UKPDS) showed that initiating intensive \nglucose-control with metformin reduced the risk of diabetes-related \nevents (relative reduction 32 %), diabetes-related death (42 %) and \nall-cause mortality (36 %), compared to dietary treatment alone (UKPDS \nResearch Group, 1998).",
       "context_window": "events (relative reduction 32 %), diabetes-related death (42 %) and all-cause mortality (36 %), compared to dietary treat",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-5522",
@@ -80,7 +96,11 @@
       "source_offset": 5522,
       "sentence": "A subgroup analysis of the randomized UK \nProspective Diabetes Study (UKPDS) showed that initiating intensive \nglucose-control with metformin reduced the risk of diabetes-related \nevents (relative reduction 32 %), diabetes-related death (42 %) and \nall-cause mortality (36 %), compared to dietary treatment alone (UKPDS \nResearch Group, 1998).",
       "context_window": "%), diabetes-related death (42 %) and all-cause mortality (36 %), compared to dietary treatment alone (UKPDS Research Grou",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-5673",
@@ -94,7 +114,11 @@
       "source_offset": 5673,
       "sentence": "Long-term follow-up showed that such cardio\u00ad\nvascular effects persisted over 15 years, suggesting a legacy effect of \nearly intervention in the treatment of hyperglycaemia (Holman et al., \n2008; Chalmers and Cooper, 2008).",
       "context_window": "up showed that such cardio\u00ad vascular effects persisted over 15 years, suggesting a legacy effect of early intervention in the t",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-7456",
@@ -108,7 +132,11 @@
       "source_offset": 7456,
       "sentence": "One of \nthe most prominent lines of research in this area pertains to evidence of \nits protective effects against cancer, with early meta-analyses reporting \nrisk reductions in both cancer incidence and mortality associated with \nmetformin of approximately 30-40 % (Decensi et al., 2010; Zhang et al., \n2013; Noto et al., 2012).",
       "context_window": "nd mortality associated with metformin of approximately 30-40 % (Decensi et al., 2010; Zhang et al., 2013; Noto et al., 20",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-9827",
@@ -122,7 +150,11 @@
       "source_offset": 9827,
       "sentence": "After adjustment for baseline \ncardiovascular prophylaxis, having type II diabetes and initiating on \nmetformin monotherapy was associated with an 18 % higher median \nsurvival time compared to not having the disease at all (Bannister et al., \n2014).",
       "context_window": "initiating on metformin monotherapy was associated with an 18 % higher median survival time compared to not having the dis",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-10065",
@@ -136,7 +168,11 @@
       "source_offset": 10065,
       "sentence": "The Emerging Risk Factor Collaboration studies suggest that a \nperson with type II diabetes at age 50 has a reduced life expectancy of 6 \nyears (Anisimov et al., 2005).",
       "context_window": "type II diabetes at age 50 has a reduced life expectancy of 6 years (Anisimov et al., 2005). Considering these risks, the survi",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-10976",
@@ -150,7 +186,11 @@
       "source_offset": 10976,
       "sentence": "The ITP \nreported in 2016 that metformin, administered to mice at a dose of 1000 \nmilligrams per kilogram of food from 9 months of age, failed to produce \nsignificant lifespan benefits in either male (n = 442) or female (n = 421) \nmice (Strong et al., 2016).",
       "context_window": "ice at a dose of 1000 milligrams per kilogram of food from 9 months of age, failed to produce significant lifespan benefits in",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-11058",
@@ -164,7 +204,11 @@
       "source_offset": 11058,
       "sentence": "The ITP \nreported in 2016 that metformin, administered to mice at a dose of 1000 \nmilligrams per kilogram of food from 9 months of age, failed to produce \nsignificant lifespan benefits in either male (n = 442) or female (n = 421) \nmice (Strong et al., 2016).",
       "context_window": "d to produce significant lifespan benefits in either male (n = 442) or female (n = 421) mice (Strong et al., 2016). The ITP d",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-11078",
@@ -178,7 +222,11 @@
       "source_offset": 11078,
       "sentence": "The ITP \nreported in 2016 that metformin, administered to mice at a dose of 1000 \nmilligrams per kilogram of food from 9 months of age, failed to produce \nsignificant lifespan benefits in either male (n = 442) or female (n = 421) \nmice (Strong et al., 2016).",
       "context_window": "icant lifespan benefits in either male (n = 442) or female (n = 421) mice (Strong et al., 2016). The ITP dose was chosen in an",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-509",
@@ -192,7 +240,11 @@
       "source_offset": 509,
       "sentence": "The employed sample sizes are sufficient to detect changes in mean\nlifespan of 10% with statistical power of at least 80%, using data from only\n2 out of 3 study sites.",
       "context_window": "sizes are sufficient to detect changes in mean lifespan of 10% with statistical power of at least 80%, using data from onl",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-548",
@@ -206,7 +258,11 @@
       "source_offset": 548,
       "sentence": "The employed sample sizes are sufficient to detect changes in mean\nlifespan of 10% with statistical power of at least 80%, using data from only\n2 out of 3 study sites.",
       "context_window": "in mean lifespan of 10% with statistical power of at least 80%, using data from only 2 out of 3 study sites. Findings As o",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-10008",
@@ -220,7 +276,11 @@
       "source_offset": 10008,
       "sentence": "Early meta-analyses reported reductions in \nrisk of approximately of 30-40 %, for both cancer incidence and mor\u00ad\ntality (Decensi et al., 2010; Zhang et al., 2013; Noto et al., 2012).",
       "context_window": "nalyses reported reductions in risk of approximately of 30-40 %, for both cancer incidence and mor\u00ad tality (Decensi et al.,",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-11859",
@@ -234,7 +294,11 @@
       "source_offset": 11859,
       "sentence": "In 3682 \npatients (mean age 52.4 years), metformin was not associated with \nimprovements in overall (HR = 1.10) or progression-free survival (HR =\n1.01) compared to placebo, over 5 years of follow-up (Goodwin et al., \n2022).",
       "context_window": "cancer (Goodwin et al., 2022). In 3682 patients (mean age 52.4 years), metformin was not associated with improvements in overal",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-11932",
@@ -248,7 +312,11 @@
       "source_offset": 11932,
       "sentence": "In 3682 \npatients (mean age 52.4 years), metformin was not associated with \nimprovements in overall (HR = 1.10) or progression-free survival (HR =\n1.01) compared to placebo, over 5 years of follow-up (Goodwin et al., \n2022).",
       "context_window": "metformin was not associated with improvements in overall (HR = 1.10) or progression-free survival (HR = 1.01) compared to place",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-11973",
@@ -262,7 +330,11 @@
       "source_offset": 11973,
       "sentence": "In 3682 \npatients (mean age 52.4 years), metformin was not associated with \nimprovements in overall (HR = 1.10) or progression-free survival (HR =\n1.01) compared to placebo, over 5 years of follow-up (Goodwin et al., \n2022).",
       "context_window": "ements in overall (HR = 1.10) or progression-free survival (HR = 1.01) compared to placebo, over 5 years of follow-up (Goodwin et",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-12010",
@@ -276,7 +348,11 @@
       "source_offset": 12010,
       "sentence": "In 3682 \npatients (mean age 52.4 years), metformin was not associated with \nimprovements in overall (HR = 1.10) or progression-free survival (HR =\n1.01) compared to placebo, over 5 years of follow-up (Goodwin et al., \n2022).",
       "context_window": "ression-free survival (HR = 1.01) compared to placebo, over 5 years of follow-up (Goodwin et al., 2022). Other notable example",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-13049",
@@ -290,7 +366,11 @@
       "source_offset": 13049,
       "sentence": "Across a total of 5943 participants, metformin was \nnot associated with progression-free survival (HR = 0.97) or overall \nsurvival (HR = 0.98) for all cancers combined (Wen et al., 2022).",
       "context_window": "tformin was not associated with progression-free survival (HR = 0.97) or overall survival (HR = 0.98) for all cancers combined",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-13082",
@@ -304,7 +384,11 @@
       "source_offset": 13082,
       "sentence": "Across a total of 5943 participants, metformin was \nnot associated with progression-free survival (HR = 0.97) or overall \nsurvival (HR = 0.98) for all cancers combined (Wen et al., 2022).",
       "context_window": "progression-free survival (HR = 0.97) or overall survival (HR = 0.98) for all cancers combined (Wen et al., 2022). When divided",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-13239",
@@ -318,7 +402,11 @@
       "source_offset": 13239,
       "sentence": "When \ndivided by cancer location, low certainty evidence suggested benefit in \nreproductive cancers (HR = 0.87) and deleterious effect in gastrointes\u00ad\ntinal cancers (HR = 1.45), although both findings may be due to random \nvariability and type I error.",
       "context_window": "tainty evidence suggested benefit in reproductive cancers (HR = 0.87) and deleterious effect in gastrointes\u00ad tinal cancers (HR =",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-13304",
@@ -332,7 +420,11 @@
       "source_offset": 13304,
       "sentence": "When \ndivided by cancer location, low certainty evidence suggested benefit in \nreproductive cancers (HR = 0.87) and deleterious effect in gastrointes\u00ad\ntinal cancers (HR = 1.45), although both findings may be due to random \nvariability and type I error.",
       "context_window": "0.87) and deleterious effect in gastrointes\u00ad tinal cancers (HR = 1.45), although both findings may be due to random variability",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-14801",
@@ -346,7 +438,11 @@
       "source_offset": 14801,
       "sentence": "However, evidence for reductions in major cardiovascular \nevents or mortality from intensive glucose control with metformin is \nmostly derived from a subgroup of a clinical trial conducted over 30 \nyears ago (McCormack and Greenhalgh, 2000; Flory and Lipska, 2019; \nBoussageon et al., 2016).",
       "context_window": "derived from a subgroup of a clinical trial conducted over 30 years ago (McCormack and Greenhalgh, 2000; Flory and Lipska, 2019",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-16897",
@@ -360,7 +456,11 @@
       "source_offset": 16897,
       "sentence": "Ageing Research Reviews 111 (2025) 102817 \n5 \n\n\nassessed the role of metformin on the progression of atherosclerosis in \nnondiabetic patients (n = 173) with coronary artery disease, where no \neffect was observed on progression of mean distal carotid intima-media \nthickness (cIMT) (Preiss et al., 2014).",
       "context_window": "he progression of atherosclerosis in nondiabetic patients (n = 173) with coronary artery disease, where no effect was observe",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-17076",
@@ -374,7 +474,11 @@
       "source_offset": 17076,
       "sentence": "The MetCAB trial (n = 111) \nassessed the effect of metformin on protection from myocardial injury \nduring coronary artery bypass graft surgery and failed to demonstrate \nany benefit (Messaoudi et al., 2015).",
       "context_window": "thickness (cIMT) (Preiss et al., 2014). The MetCAB trial (n = 111) assessed the effect of metformin on protection from myoca",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-17286",
@@ -388,7 +492,11 @@
       "source_offset": 17286,
       "sentence": "The GIPS-III trial (n = 380) \nassessed the effect of metformin on recovery from ST-segment elevation \nmyocardial infarction, and demonstrated no effect on left ventricular \nejection fraction or cardiovascular events (Lexis et al., 2014).",
       "context_window": "any benefit (Messaoudi et al., 2015). The GIPS-III trial (n = 380) assessed the effect of metformin on recovery from ST-segm",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-17543",
@@ -402,7 +510,11 @@
       "source_offset": 17543,
       "sentence": "The \nREMOVAL study in type I diabetes (n = 643) similarly failed to \ndemonstrate an effect against the primary outcome mean cIMT, \nalthough an effect was observed on a tertiary outcome (Petrie et al., \n2017).",
       "context_window": "Lexis et al., 2014). The REMOVAL study in type I diabetes (n = 643) similarly failed to demonstrate an effect against the pri",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-17773",
@@ -416,7 +528,11 @@
       "source_offset": 17773,
       "sentence": "The smallest and most recent of these trials, MET-REMODEL \n(n = 68) demonstrated a benefit of metformin on change in left ven\u00ad\ntricular mass in prediabetic patients with coronary heart disease (Mohan \net al., 2019).",
       "context_window": "The smallest and most recent of these trials, MET-REMODEL (n = 68) demonstrated a benefit of metformin on change in left ven\u00ad",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-19739",
@@ -430,7 +546,11 @@
       "source_offset": 19739,
       "sentence": "This land\u00ad\nmark study of 3234 individuals with prediabetes demonstrated re\u00ad\nductions in the incidence of diabetes by 58 % and 31 % with lifestyle \nintervention and metformin respectively compared to placebo, over a \nfollow-up period of 2.8 years (DPP Research Group, 2002).",
       "context_window": "s demonstrated re\u00ad ductions in the incidence of diabetes by 58 % and 31 % with lifestyle intervention and metformin respect",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-19748",
@@ -444,7 +564,11 @@
       "source_offset": 19748,
       "sentence": "This land\u00ad\nmark study of 3234 individuals with prediabetes demonstrated re\u00ad\nductions in the incidence of diabetes by 58 % and 31 % with lifestyle \nintervention and metformin respectively compared to placebo, over a \nfollow-up period of 2.8 years (DPP Research Group, 2002).",
       "context_window": "rated re\u00ad ductions in the incidence of diabetes by 58 % and 31 % with lifestyle intervention and metformin respectively com",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-19858",
@@ -458,7 +582,11 @@
       "source_offset": 19858,
       "sentence": "This land\u00ad\nmark study of 3234 individuals with prediabetes demonstrated re\u00ad\nductions in the incidence of diabetes by 58 % and 31 % with lifestyle \nintervention and metformin respectively compared to placebo, over a \nfollow-up period of 2.8 years (DPP Research Group, 2002).",
       "context_window": "spectively compared to placebo, over a follow-up period of 2.8 years (DPP Research Group, 2002). Following premature terminatio",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-20395",
@@ -472,7 +600,11 @@
       "source_offset": 20395,
       "sentence": "However, the group initially randomized to metformin \nwere instructed to continue receiving the study drug unmasked, in \naddition to the modified lifestyle program, until HbA1c rose above 7 %, \nat which point they received intensified or additional treatment for \nincident type II diabetes.",
       "context_window": "n to the modified lifestyle program, until HbA1c rose above 7 %, at which point they received intensified or additional tr",
-      "claim_role": "dose"
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-20538",
@@ -486,7 +618,11 @@
       "source_offset": 20538,
       "sentence": "Of all the original study participants, 88 % \ncontinued for follow-up in the DPPOS (DPPOS Research Group, 2015).",
       "context_window": "t type II diabetes. Of all the original study participants, 88 % continued for follow-up in the DPPOS (DPPOS Research Group",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-20617",
@@ -500,7 +636,11 @@
       "source_offset": 20617,
       "sentence": "After 15 years of follow-up, cumulative diabetes rates in the original \nplacebo, metformin and lifestyle arms of the study were 62 %, 56 %, and \n55 % respectively (DPPOS Research Group, 2015).",
       "context_window": "follow-up in the DPPOS (DPPOS Research Group, 2015). After 15 years of follow-up, cumulative diabetes rates in the original pl",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-20739",
@@ -514,7 +654,11 @@
       "source_offset": 20739,
       "sentence": "After 15 years of follow-up, cumulative diabetes rates in the original \nplacebo, metformin and lifestyle arms of the study were 62 %, 56 %, and \n55 % respectively (DPPOS Research Group, 2015).",
       "context_window": "al placebo, metformin and lifestyle arms of the study were 62 %, 56 %, and 55 % respectively (DPPOS Research Group, 2015).",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-20745",
@@ -528,7 +672,11 @@
       "source_offset": 20745,
       "sentence": "After 15 years of follow-up, cumulative diabetes rates in the original \nplacebo, metformin and lifestyle arms of the study were 62 %, 56 %, and \n55 % respectively (DPPOS Research Group, 2015).",
       "context_window": "acebo, metformin and lifestyle arms of the study were 62 %, 56 %, and 55 % respectively (DPPOS Research Group, 2015). Howev",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-20756",
@@ -542,7 +690,11 @@
       "source_offset": 20756,
       "sentence": "After 15 years of follow-up, cumulative diabetes rates in the original \nplacebo, metformin and lifestyle arms of the study were 62 %, 56 %, and \n55 % respectively (DPPOS Research Group, 2015).",
       "context_window": "ormin and lifestyle arms of the study were 62 %, 56 %, and 55 % respectively (DPPOS Research Group, 2015). However, annual",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-21230",
@@ -556,7 +708,11 @@
       "source_offset": 21230,
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "outcomes relevant to its geroprotective potential. After 19-21 years of follow-up, 453 deaths had occurred in DPPOS participant",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-21388",
@@ -570,7 +726,11 @@
       "source_offset": 21388,
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "as not associated with any differences in cardiovas\u00ad cular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR = 0.99) (Le",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-21408",
@@ -584,7 +744,11 @@
       "source_offset": 21408,
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "th any differences in cardiovas\u00ad cular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR = 0.99) (Lee et al., 2021). Ove",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-21443",
@@ -598,7 +762,11 @@
       "source_offset": 21443,
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "lar (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR = 0.99) (Lee et al., 2021). Over the same timeframe, metformin was",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-21592",
@@ -612,7 +780,11 @@
       "source_offset": 21592,
       "sentence": "Over the same timeframe, metformin was also \nnot associated with any differences in the incidence of neither cancer \n(HR = 0.90, p = 0.31) nor major cardiovascular events (HR = 1.03), \ndespite improvements in several cardiovascular risk factors (Goldberg \net al., 2022; Orchard et al., 2005; Ratner et al., 2005; Goldberg et al., \n2017; Heckman-Stoddard et al., 2025).",
       "context_window": "d with any differences in the incidence of neither cancer (HR = 0.90, p = 0.31) nor major cardiovascular events (HR = 1.03), de",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-p-21603",
@@ -626,7 +798,11 @@
       "source_offset": 21603,
       "sentence": "Over the same timeframe, metformin was also \nnot associated with any differences in the incidence of neither cancer \n(HR = 0.90, p = 0.31) nor major cardiovascular events (HR = 1.03), \ndespite improvements in several cardiovascular risk factors (Goldberg \net al., 2022; Orchard et al., 2005; Ratner et al., 2005; Goldberg et al., \n2017; Heckman-Stoddard et al., 2025).",
       "context_window": "differences in the incidence of neither cancer (HR = 0.90, p = 0.31) nor major cardiovascular events (HR = 1.03), despite impr",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-21646",
@@ -640,7 +816,11 @@
       "source_offset": 21646,
       "sentence": "Over the same timeframe, metformin was also \nnot associated with any differences in the incidence of neither cancer \n(HR = 0.90, p = 0.31) nor major cardiovascular events (HR = 1.03), \ndespite improvements in several cardiovascular risk factors (Goldberg \net al., 2022; Orchard et al., 2005; Ratner et al., 2005; Goldberg et al., \n2017; Heckman-Stoddard et al., 2025).",
       "context_window": "cer (HR = 0.90, p = 0.31) nor major cardiovascular events (HR = 1.03), despite improvements in several cardiovascular risk fact",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-25454",
@@ -654,7 +834,11 @@
       "source_offset": 25454,
       "sentence": "In the first of these, the COVID-OUT trial, metformin reduced a ter\u00ad\ntiary outcome comprised of emergency room visits, hospitalization and \ndeath (HR = 0.62), but was without effect on its primary outcome \nM.T.",
       "context_window": "rised of emergency room visits, hospitalization and death (HR = 0.62), but was without effect on its primary outcome M.T. Keys",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-25905",
@@ -668,7 +852,11 @@
       "source_offset": 25905,
       "sentence": "Participants receiving metformin also showed \nreduced risk of long COVID-19 (HR = 0.59) after 10 months, partially \nexplained by the lower occurrence of severe acute COVID-19 (Bramante \net al., 2023).",
       "context_window": "iving metformin also showed reduced risk of long COVID-19 (HR = 0.59) after 10 months, partially explained by the lower occurre",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-25922",
@@ -682,7 +870,11 @@
       "source_offset": 25922,
       "sentence": "Participants receiving metformin also showed \nreduced risk of long COVID-19 (HR = 0.59) after 10 months, partially \nexplained by the lower occurrence of severe acute COVID-19 (Bramante \net al., 2023).",
       "context_window": "lso showed reduced risk of long COVID-19 (HR = 0.59) after 10 months, partially explained by the lower occurrence of severe acu",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-rr-l-26349",
@@ -696,7 +888,11 @@
       "source_offset": 26349,
       "sentence": "In the subsequent TOGETHER trial, no ef\u00ad\nfect of metformin was observed against any primary (Risk Ratio = 1.14) \nor secondary outcome studied (Reis et al., 2022).",
       "context_window": "no ef\u00ad fect of metformin was observed against any primary (Risk Ratio = 1.14) or secondary outcome studied (Reis et al., 2022). The mos",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-27784",
@@ -710,7 +906,11 @@
       "source_offset": 27784,
       "sentence": "However, it is worth considering that approximately 50 % \nof participants in the high risk COVID-OUT and TOGETHER trials were \nobese, and interpretations of geroprotective mechanisms here may be \nconfounded by prediabetes and insulin resistance, for which metformin \nis already indicated (Bramante et al., 2022; Reis et al., 2022).",
       "context_window": "2025). However, it is worth considering that approximately 50 % of participants in the high risk COVID-OUT and TOGETHER tr",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-28408",
@@ -724,7 +924,11 @@
       "source_offset": 28408,
       "sentence": "A landmark study suggested that only 5 % of patients \nwith type II diabetes achieved a sufficient risk factor profile that was \nassociated with survival equal to that of the general population \n(Rawshani et al., 2018).",
       "context_window": "; Wang et al., 2024). A landmark study suggested that only 5 % of patients with type II diabetes achieved a sufficient ri",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-30461",
@@ -738,7 +942,11 @@
       "source_offset": 30461,
       "sentence": "On the contrary, \nmortality was consistently increased compared to general population \nnondiabetic controls (HR = 1.48-2.05).",
       "context_window": "eased compared to general population nondiabetic controls (HR = 1.48-2.05). Between the two studies, the only major difference",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-30650",
@@ -752,7 +960,11 @@
       "source_offset": 30650,
       "sentence": "Between the two studies, the \nonly major difference was observed in the metformin monotherapy \ngroup\u2019s mortality rates, where in the Bannister et al. (2014) cohort it \nwas 43 % lower than in Keys et al. (2022).",
       "context_window": "rates, where in the Bannister et al. (2014) cohort it was 43 % lower than in Keys et al. (2022). Otherwise, mortality rate",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-31189",
@@ -766,7 +978,11 @@
       "source_offset": 31189,
       "sentence": "The second replication study was published in 2023, this time \nextending the scope of follow-up to 20 years, compared to 5.5 years in \nBannister et al. (2014), and 8 years in Keys et al. (2022)\n(Stevenson-Hoare et al., 2023).",
       "context_window": "hed in 2023, this time extending the scope of follow-up to 20 years, compared to 5.5 years in Bannister et al. (2014), and 8 y",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-31211",
@@ -780,7 +996,11 @@
       "source_offset": 31211,
       "sentence": "The second replication study was published in 2023, this time \nextending the scope of follow-up to 20 years, compared to 5.5 years in \nBannister et al. (2014), and 8 years in Keys et al. (2022)\n(Stevenson-Hoare et al., 2023).",
       "context_window": "extending the scope of follow-up to 20 years, compared to 5.5 years in Bannister et al. (2014), and 8 years in Keys et al. (20",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-31254",
@@ -794,7 +1014,11 @@
       "source_offset": 31254,
       "sentence": "The second replication study was published in 2023, this time \nextending the scope of follow-up to 20 years, compared to 5.5 years in \nBannister et al. (2014), and 8 years in Keys et al. (2022)\n(Stevenson-Hoare et al., 2023).",
       "context_window": "ars, compared to 5.5 years in Bannister et al. (2014), and 8 years in Keys et al. (2022) (Stevenson-Hoare et al., 2023). Using",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-31395",
@@ -808,7 +1032,11 @@
       "source_offset": 31395,
       "sentence": "Using a robust time-dependent Cox \nregression approach, the authors reported a 69 % and 59 % increased \nhazard of death in metformin initiators and sulfonylurea initiators \ncompared to matched controls without diabetes, over 20 years of \nfollow-up.",
       "context_window": "-dependent Cox regression approach, the authors reported a 69 % and 59 % increased hazard of death in metformin initiators",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-31404",
@@ -822,7 +1050,11 @@
       "source_offset": 31404,
       "sentence": "Using a robust time-dependent Cox \nregression approach, the authors reported a 69 % and 59 % increased \nhazard of death in metformin initiators and sulfonylurea initiators \ncompared to matched controls without diabetes, over 20 years of \nfollow-up.",
       "context_window": "t Cox regression approach, the authors reported a 69 % and 59 % increased hazard of death in metformin initiators and sulf",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-31541",
@@ -836,7 +1068,11 @@
       "source_offset": 31541,
       "sentence": "Using a robust time-dependent Cox \nregression approach, the authors reported a 69 % and 59 % increased \nhazard of death in metformin initiators and sulfonylurea initiators \ncompared to matched controls without diabetes, over 20 years of \nfollow-up.",
       "context_window": "iators compared to matched controls without diabetes, over 20 years of follow-up. In a second matched cohort analysis, althoug",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-32379",
@@ -850,7 +1086,11 @@
       "source_offset": 32379,
       "sentence": "However, controls were additionally matched on baseline \ncardiovascular disease, of which 90 % of patients were affected \n(Stevenson-Hoare et al., 2023).",
       "context_window": "nally matched on baseline cardiovascular disease, of which 90 % of patients were affected (Stevenson-Hoare et al., 2023).",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-33152",
@@ -864,7 +1104,11 @@
       "source_offset": 33152,
       "sentence": "In the first of these, nondiabetic prefrail in\u00ad\ndividuals treated with metformin for 14 weeks reported increased gait \nspeed, but no change in handgrip strength, serum myostatin, or health \nrelated quality of life (Laksmi et al., 2017).",
       "context_window": "ndiabetic prefrail in\u00ad dividuals treated with metformin for 14 weeks reported increased gait speed, but no change in handgrip s",
-      "claim_role": "effect"
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-33572",
@@ -878,7 +1122,11 @@
       "source_offset": 33572,
       "sentence": "In the most recent \nMET-PREVENT trial, metformin for 4 months did not improve grip \nstrength, walking speed, physical performance, muscle mass, quality of \nlife, or activities of daily living (Witham et al., 2025).",
       "context_window": "2024). In the most recent MET-PREVENT trial, metformin for 4 months did not improve grip strength, walking speed, physical per",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-34223",
@@ -892,7 +1140,11 @@
       "source_offset": 34223,
       "sentence": "In first of \nthese, treatment with metformin for 12 weeks resulted in an attenuation \nof exercise-induced improvements in whole-body insulin sensitivity, \nskeletal muscle mitochondrial respiration, and vo2 max after aerobic \nexercise (Konopka et al., 2019).",
       "context_window": "er adults. In first of these, treatment with metformin for 12 weeks resulted in an attenuation of exercise-induced improvement",
-      "claim_role": "dose"
+      "claim_role": "dose",
+      "endpoint": "VO2max",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-34483",
@@ -906,7 +1158,11 @@
       "source_offset": 34483,
       "sentence": "In the second trial, treatment with \nmetformin for 14 weeks parallel to a resistance training program \nresulted in no difference in exercise performance, and in smaller in\u00ad\ncreases in lean mass gained by inhibiting the expected beneficial \nM.T.",
       "context_window": ", 2019). In the second trial, treatment with metformin for 14 weeks parallel to a resistance training program resulted in no d",
-      "claim_role": "dose"
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-36449",
@@ -920,7 +1176,11 @@
       "source_offset": 36449,
       "sentence": "In the DPPOS discussed pre\u00ad\nviously, metformin had neither protective nor detrimental effect on a \nbattery of in-person cognitive tests conducted 12 years after randomi\u00ad\nzation, regardless of cumulative use (Luchsinger et al., 2017).",
       "context_window": "effect on a battery of in-person cognitive tests conducted 12 years after randomi\u00ad zation, regardless of cumulative use (Luchsi",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-36964",
@@ -934,7 +1194,11 @@
       "source_offset": 36964,
       "sentence": "Three large randomized trials are \nalso underway (MET-FINGER, MAP and MetMemory) to assess the effect \nof shorter term use of metformin on cognitive syndromes over approx\u00ad\nimately 3 years of follow-up (scheduled completion 20276-2029) \n(Tahmi and Luchsinger, 2023; Barbera et al., 2024).",
       "context_window": "se of metformin on cognitive syndromes over approx\u00ad imately 3 years of follow-up (scheduled completion 20276-2029) (Tahmi and",
-      "claim_role": "duration"
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-n-38005",
@@ -948,7 +1212,11 @@
       "source_offset": 38005,
       "sentence": "The only available clinical \ntrial, METforMIN (n = 66), reported no effect of metformin over 13 \nmonths on the progression of geographic atrophy, an advanced form of \nAMD (Shen et al., 2024).",
       "context_window": "al., 2023). The only available clinical trial, METforMIN (n = 66), reported no effect of metformin over 13 months on the pr",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-u-38051",
@@ -962,7 +1230,11 @@
       "source_offset": 38051,
       "sentence": "The only available clinical \ntrial, METforMIN (n = 66), reported no effect of metformin over 13 \nmonths on the progression of geographic atrophy, an advanced form of \nAMD (Shen et al., 2024).",
       "context_window": "l, METforMIN (n = 66), reported no effect of metformin over 13 months on the progression of geographic atrophy, an advanced form",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-hr-a-39147",
@@ -976,7 +1248,11 @@
       "source_offset": 39147,
       "sentence": "Comparison of studies assessing survival in type II \ndiabetes treated with metformin\nKeys et al. (2022) reported that individuals with type II diabetes exhibit higher\nmortality than the general population (HR = 1.48).",
       "context_window": "betes exhibit higher mortality than the general population (HR = 1.48). These findings contrasted with the highly influential stu",
-      "claim_role": "background"
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Keys_2025_metformin_anti-aging_uncertainty-pct-39869",
@@ -990,7 +1266,11 @@
       "source_offset": 39869,
       "sentence": "However, mortality in metformin initiators was 43% lower in Bannister et al. than\nKeys et al.",
       "context_window": "at baseline. However, mortality in metformin initiators was 43% lower in Bannister et al. than Keys et al. This was despite",
-      "claim_role": "unknown"
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
     }
   ]
 }
