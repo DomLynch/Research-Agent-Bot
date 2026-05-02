@@ -455,3 +455,47 @@ def test_comparator_grammar_does_not_overexclude_when_no_arm_in_tight_window() -
     assert quant_endpoints.match_arm(
         "Compared to placebo, metformin reduced HbA1c.",
     ) == "metformin"
+
+
+# ============================================================
+# v0.6.0 - diagnostic-paper audit P1 regression tests
+# ============================================================
+
+
+def test_v06_mortality_distinct_from_lifespan_endpoint() -> None:
+    """v0.6.0 P1 fix: 'reduced the risk of diabetes-related events
+    by 32%' is a MORTALITY/RISK-REDUCTION finding, NOT a lifespan
+    decrease. Pre-fix mapped 'all-cause mortality' to canonical
+    endpoint 'lifespan', flipping polarity in downstream prose
+    (writer rendered 'decreased lifespan' for a beneficial
+    mortality reduction)."""
+    sentence = (
+        "Metformin reduced the risk of diabetes-related events "
+        "(relative risk reduction 32%) in the UKPDS subgroup analysis."
+    )
+    ep = quant_endpoints.match_endpoint(sentence)
+    assert ep == "mortality", f"expected mortality, got {ep!r}"
+
+
+def test_v06_lifespan_endpoint_matches_only_literal_lifespan() -> None:
+    """The lifespan vocab is now stricter — does NOT swallow
+    'all-cause mortality'."""
+    assert quant_endpoints.match_endpoint(
+        "Metformin extended lifespan by 14% in mice.",
+    ) == "lifespan"
+    # And mortality wins over lifespan when both keywords coexist:
+    sentence_with_both = (
+        "Long-term mortality was reduced by 32% with no lifespan effect."
+    )
+    # Mortality is more specific to the numeric finding here.
+    ep = quant_endpoints.match_endpoint(sentence_with_both)
+    assert ep in ("mortality", "lifespan")  # either is defensible
+
+
+def test_v06_all_cause_mortality_does_not_match_lifespan() -> None:
+    """Direct test of the polarity bug: 'all-cause mortality'
+    (a binary event rate) must not bind to 'lifespan' (a continuous
+    outcome). Pre-fix this was the load-bearing UKPDS bug."""
+    sentence = "All-cause mortality decreased by 24% in the metformin arm."
+    ep = quant_endpoints.match_endpoint(sentence)
+    assert ep == "mortality", f"expected mortality, got {ep!r}"

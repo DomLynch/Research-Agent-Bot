@@ -70,7 +70,29 @@ __all__ = [
 ]
 
 
-EXTRACTOR_VERSION = "0.5.0"
+EXTRACTOR_VERSION = "0.6.0"
+# v0.6.0 — diagnostic-paper audit response. Two semantic-binding
+# bugs in the v0.5.0 extractor surfaced when a real LLM tried to
+# turn the bound claims into prose:
+#   * P1 polarity: "all-cause mortality" was mapped to canonical
+#     endpoint "lifespan", so a Keys/UKPDS sentence "metformin
+#     reduced the risk of diabetes-related events by 32%" bound
+#     to endpoint=lifespan direction=decrease — the writer rendered
+#     this as "decreased lifespan by 32%", reversing the meaning.
+#     Mortality and lifespan are now separate canonical endpoints
+#     in ENDPOINT_VOCAB; mortality matches "risk reduction", "death
+#     rate", "all-cause mortality"; lifespan matches "lifespan" /
+#     "life span" only.
+#   * P1 protocol-as-effect: Mohammed's "started at 3 / 9 / 15
+#     months of age" treatment-timing numbers bound to claim_role=
+#     effect because the sentence ALSO contained "extended lifespan
+#     by 14%". Now: unit_value with months/years/weeks near a
+#     _TREATMENT_TIMING_RE trigger ("started at", "of age", "from")
+#     gets role=protocol overriding effect — binding_confidence
+#     drops to partial, so Phase 4 won't pull these as primary
+#     evidence.
+# New role: "protocol" (joins effect | dose | duration | population
+# | background | unknown). Schema field set unchanged.
 # Day 10.17 Phase 2.2 schema versioning (see Phase 2.1 history below):
 #   0.4.0 — endpoint/arm/direction binding via scripts/quant_endpoints.py
 #           vocab matchers. Each claim now carries:
@@ -462,6 +484,23 @@ def _assign_claim_role(sentence: str, section: str) -> str:
 # allowed via optional 's'.
 _DURATION_TOKEN_RE = re.compile(
     r"\b(?:weeks?|months?|days?|years?|hours?|minutes?)\b",
+    re.IGNORECASE,
+)
+
+
+# v0.6.0 audit fix: treatment-timing patterns. Mohammed's animal-study
+# sentences enumerate "treatment started at 3 months / 9 months /
+# 15 months of age" — those are PROTOCOL TIMING, not lifespan effects.
+# Pre-fix the role tagger let them carry role=effect because the
+# sentence ALSO contains "extended lifespan by 14%" (the real effect).
+# Now any unit_value with months/years/weeks following a
+# treatment-timing trigger gets role=protocol overriding effect.
+_TREATMENT_TIMING_RE = re.compile(
+    r"(?:started?|starting|treatment|begun|began|initiated|"
+    r"administered|first\s+given|from)\s+at\s+|"
+    r"(?:from|at|by)\s+(?=\d+\s*(?:months?|years?|weeks?)\b)|"
+    r"(?:months?|years?|weeks?)\s+of\s+age\b|"
+    r"started?\s+(?:at\s+|when\s+)?\d+\s*(?:months?|years?|weeks?)",
     re.IGNORECASE,
 )
 
@@ -864,6 +903,22 @@ def extract_from_text(
                 tail = c.context_window[idx + len(c.raw_text):][:30]
                 if _DURATION_TOKEN_RE.search(tail):
                     role = "duration"
+        # v0.6.0 audit fix: unit_value with months/years/weeks units
+        # near a treatment-timing trigger ("started at", "X months
+        # of age") is PROTOCOL TIMING, not an effect. Mohammed's
+        # animal-study sentences describing "treatment from 3 months
+        # of age" pre-fix bound to claim_role=effect because the
+        # sentence ALSO mentioned "extended lifespan by 14%". Now
+        # we override role=protocol so binding_confidence stays
+        # partial (not high) and Phase 4 can filter cleanly.
+        elif (
+            c.claim_type == "unit_value"
+            and c.units in (
+                "months", "month", "years", "year", "weeks", "week",
+            )
+            and _TREATMENT_TIMING_RE.search(c.context_window)
+        ):
+            role = "protocol"
         # Phase 2.2 binding: pass the claim's sentence + the sentence's
         # start-offset within the section so direction proximity is
         # computed in sentence-local coordinates.

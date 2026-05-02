@@ -1,8 +1,8 @@
 {
   "paper_id": "Keys_2025_metformin_anti-aging_uncertainty",
   "doi": "10.1016/j.arr.2025.102817",
-  "extracted_at": "2026-05-02T14:26:36+00:00",
-  "extractor_version": "0.5.0",
+  "extracted_at": "2026-05-02T14:59:41+00:00",
+  "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 24,
     "unit_value": 21,
@@ -61,7 +61,7 @@
       "sentence": "A subgroup analysis of the randomized UK \nProspective Diabetes Study (UKPDS) showed that initiating intensive \nglucose-control with metformin reduced the risk of diabetes-related \nevents (relative reduction 32 %), diabetes-related death (42 %) and \nall-cause mortality (36 %), compared to dietary treatment alone (UKPDS \nResearch Group, 1998).",
       "context_window": "ed the risk of diabetes-related events (relative reduction 32 %), diabetes-related death (42 %) and all-cause mortality (3",
       "claim_role": "effect",
-      "endpoint": "lifespan",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -79,7 +79,7 @@
       "sentence": "A subgroup analysis of the randomized UK \nProspective Diabetes Study (UKPDS) showed that initiating intensive \nglucose-control with metformin reduced the risk of diabetes-related \nevents (relative reduction 32 %), diabetes-related death (42 %) and \nall-cause mortality (36 %), compared to dietary treatment alone (UKPDS \nResearch Group, 1998).",
       "context_window": "events (relative reduction 32 %), diabetes-related death (42 %) and all-cause mortality (36 %), compared to dietary treat",
       "claim_role": "effect",
-      "endpoint": "lifespan",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -97,7 +97,7 @@
       "sentence": "A subgroup analysis of the randomized UK \nProspective Diabetes Study (UKPDS) showed that initiating intensive \nglucose-control with metformin reduced the risk of diabetes-related \nevents (relative reduction 32 %), diabetes-related death (42 %) and \nall-cause mortality (36 %), compared to dietary treatment alone (UKPDS \nResearch Group, 1998).",
       "context_window": "%), diabetes-related death (42 %) and all-cause mortality (36 %), compared to dietary treatment alone (UKPDS Research Grou",
       "claim_role": "effect",
-      "endpoint": "lifespan",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -133,7 +133,7 @@
       "sentence": "One of \nthe most prominent lines of research in this area pertains to evidence of \nits protective effects against cancer, with early meta-analyses reporting \nrisk reductions in both cancer incidence and mortality associated with \nmetformin of approximately 30-40 % (Decensi et al., 2010; Zhang et al., \n2013; Noto et al., 2012).",
       "context_window": "nd mortality associated with metformin of approximately 30-40 % (Decensi et al., 2010; Zhang et al., 2013; Noto et al., 20",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -186,7 +186,7 @@
       "source_offset": 10976,
       "sentence": "The ITP \nreported in 2016 that metformin, administered to mice at a dose of 1000 \nmilligrams per kilogram of food from 9 months of age, failed to produce \nsignificant lifespan benefits in either male (n = 442) or female (n = 421) \nmice (Strong et al., 2016).",
       "context_window": "ice at a dose of 1000 milligrams per kilogram of food from 9 months of age, failed to produce significant lifespan benefits in",
-      "claim_role": "duration",
+      "claim_role": "protocol",
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "",
@@ -439,7 +439,7 @@
       "sentence": "However, evidence for reductions in major cardiovascular \nevents or mortality from intensive glucose control with metformin is \nmostly derived from a subgroup of a clinical trial conducted over 30 \nyears ago (McCormack and Greenhalgh, 2000; Flory and Lipska, 2019; \nBoussageon et al., 2016).",
       "context_window": "derived from a subgroup of a clinical trial conducted over 30 years ago (McCormack and Greenhalgh, 2000; Flory and Lipska, 2019",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "",
       "binding_confidence": "partial"
@@ -709,7 +709,7 @@
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "outcomes relevant to its geroprotective potential. After 19-21 years of follow-up, 453 deaths had occurred in DPPOS participant",
       "claim_role": "duration",
-      "endpoint": "lifespan",
+      "endpoint": "mortality",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -727,7 +727,7 @@
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "as not associated with any differences in cardiovas\u00ad cular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR = 0.99) (Le",
       "claim_role": "duration",
-      "endpoint": "lifespan",
+      "endpoint": "mortality",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -745,7 +745,7 @@
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "th any differences in cardiovas\u00ad cular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR = 0.99) (Lee et al., 2021). Ove",
       "claim_role": "duration",
-      "endpoint": "lifespan",
+      "endpoint": "mortality",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -763,7 +763,7 @@
       "sentence": "After 19-21 years of \nfollow-up, 453 deaths had occurred in DPPOS participants, and met\u00ad\nformin treatment was not associated with any differences in cardiovas\u00ad\ncular (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR =\n0.99) (Lee et al., 2021).",
       "context_window": "lar (HR = 1.08), cancer (HR = 1.04) or all-cause mortality (HR = 0.99) (Lee et al., 2021). Over the same timeframe, metformin was",
       "claim_role": "duration",
-      "endpoint": "lifespan",
+      "endpoint": "mortality",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -943,7 +943,7 @@
       "sentence": "On the contrary, \nmortality was consistently increased compared to general population \nnondiabetic controls (HR = 1.48-2.05).",
       "context_window": "eased compared to general population nondiabetic controls (HR = 1.48-2.05). Between the two studies, the only major difference",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "mortality",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -961,7 +961,7 @@
       "sentence": "Between the two studies, the \nonly major difference was observed in the metformin monotherapy \ngroup\u2019s mortality rates, where in the Bannister et al. (2014) cohort it \nwas 43 % lower than in Keys et al. (2022).",
       "context_window": "rates, where in the Bannister et al. (2014) cohort it was 43 % lower than in Keys et al. (2022). Otherwise, mortality rate",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1249,7 +1249,7 @@
       "sentence": "Comparison of studies assessing survival in type II \ndiabetes treated with metformin\nKeys et al. (2022) reported that individuals with type II diabetes exhibit higher\nmortality than the general population (HR = 1.48).",
       "context_window": "betes exhibit higher mortality than the general population (HR = 1.48). These findings contrasted with the highly influential stu",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1267,7 +1267,7 @@
       "sentence": "However, mortality in metformin initiators was 43% lower in Bannister et al. than\nKeys et al.",
       "context_window": "at baseline. However, mortality in metformin initiators was 43% lower in Bannister et al. than Keys et al. This was despite",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "decrease",
       "binding_confidence": "partial"

@@ -87,7 +87,20 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
     # Aging-specific
     ("frailty", r"\bfrailt(?:y|ies)\b|frail\s+(?:index|status)|frailty\s+phenotype"),
     ("sarcopenia", r"\bsarcopeni(?:a|c)\b|muscle\s+wasting"),
-    ("lifespan", r"\blifespan\b|life\s+span|all-?cause\s+mortality"),
+    # v0.6.0 audit fix: split mortality from lifespan. Pre-fix
+    # "all-cause mortality" was mapped to canonical "lifespan", so
+    # a sentence like "metformin reduced mortality by 32%" bound to
+    # endpoint=lifespan with direction=decrease — which the writer
+    # then rendered as "decreased lifespan by 32%" (semantic OPPOSITE
+    # of the actual finding). Mortality and lifespan are different
+    # outcome concepts: mortality is a binary event rate (lower is
+    # better); lifespan is a continuous measure (higher is better).
+    # Direction polarity flips between them.
+    ("mortality", r"\b(?:all-?cause\s+)?mortality\b|risk\s+(?:reduction|of\s+death)"
+                  r"|death\s+rate|risk\s+of\s+(?:diabetes-?related\s+events|major\s+events|"
+                  r"cardiovascular\s+events|cancer-?related\s+events)"
+                  r"|reduced\s+the\s+risk\s+of"),
+    ("lifespan", r"\blifespan\b|life\s+span"),
     ("healthspan", r"\bhealthspan\b|health\s+span|disease-?free\s+years"),
     # Inflammation / biomarkers
     ("inflammation", r"\binflammat(?:ion|ory)\b|\bIL-?6\b|\bTNF-?[αα]?\b|\bCRP\b|\bhsCRP\b"),

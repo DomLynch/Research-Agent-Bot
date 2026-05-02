@@ -543,6 +543,31 @@ def test_role_more_than_in_background_prose_does_not_tag_as_effect() -> None:
             )
 
 
+def test_v06_treatment_timing_months_tagged_protocol_not_effect() -> None:
+    """v0.6.0 P1 fix: Mohammed's 'started at 3/9/15 months of age'
+    are TREATMENT-START AGES, not lifespan effects. Pre-fix the role
+    tagger let them carry role=effect because the sentence ALSO
+    contained 'extended lifespan by 14%'. Now: unit_value with
+    months/years/weeks near a treatment-timing trigger gets
+    role=protocol, demoting binding_confidence from high to partial."""
+    text = (
+        "Treatment with metformin started at 3 months of age "
+        "extended lifespan by 14% in mice."
+    )
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    month_claims = [
+        c for c in claims if c.claim_type == "unit_value" and c.units == "months"
+    ]
+    assert len(month_claims) == 1
+    assert month_claims[0].claim_role == "protocol", (
+        f"treatment-timing months wrongly tagged as "
+        f"{month_claims[0].claim_role!r}"
+    )
+    assert month_claims[0].binding_confidence != "high", (
+        "treatment-timing leaked into high-confidence band"
+    )
+
+
 # ============================================================
 # Phase 2.1 - effect-size patterns (HR / OR / RR / correlation)
 # ============================================================

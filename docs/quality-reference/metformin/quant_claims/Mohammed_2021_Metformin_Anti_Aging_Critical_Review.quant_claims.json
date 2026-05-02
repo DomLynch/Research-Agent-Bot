@@ -1,8 +1,8 @@
 {
   "paper_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review",
   "doi": "10.3389/fendo.2021.718942",
-  "extracted_at": "2026-05-02T14:26:37+00:00",
-  "extractor_version": "0.5.0",
+  "extracted_at": "2026-05-02T14:59:41+00:00",
+  "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 16,
     "percentage": 17
@@ -200,7 +200,7 @@
       "source_offset": 2728,
       "sentence": "Anisimov\net al. (66);\nAlso see\nAnisimov\net al. (73)\nand\nAnisimov\net al. (74)\n\u2022 Anisimov et al. (66): Studies in old vs. young mice\n\u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg]\ndaily, vs. tap water without metformin [control].\n\u2022 Anisimov et al. (74): Comparison of treatment with metformin:\n\u2022 a) started at 3 months of age.\n\u2022 b) started at 9 months of age.\n\u2022 c) started at 15 months of age.\n\u2022 When added to the diet of SHR mice, metformin slowed aging and increased\nlifespan, but did not lower incidence of spontaneous tumors.",
       "context_window": "4): Comparison of treatment with metformin: \u2022 a) started at 3 months of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15",
-      "claim_role": "background",
+      "claim_role": "protocol",
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "decrease",
@@ -218,7 +218,7 @@
       "source_offset": 2761,
       "sentence": "Anisimov\net al. (66);\nAlso see\nAnisimov\net al. (73)\nand\nAnisimov\net al. (74)\n\u2022 Anisimov et al. (66): Studies in old vs. young mice\n\u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg]\ndaily, vs. tap water without metformin [control].\n\u2022 Anisimov et al. (74): Comparison of treatment with metformin:\n\u2022 a) started at 3 months of age.\n\u2022 b) started at 9 months of age.\n\u2022 c) started at 15 months of age.\n\u2022 When added to the diet of SHR mice, metformin slowed aging and increased\nlifespan, but did not lower incidence of spontaneous tumors.",
       "context_window": "metformin: \u2022 a) started at 3 months of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15 months of age. \u2022 When added to t",
-      "claim_role": "background",
+      "claim_role": "protocol",
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "decrease",
@@ -236,7 +236,7 @@
       "source_offset": 2794,
       "sentence": "Anisimov\net al. (66);\nAlso see\nAnisimov\net al. (73)\nand\nAnisimov\net al. (74)\n\u2022 Anisimov et al. (66): Studies in old vs. young mice\n\u2022 160 female Swiss-H Rappolovo (SHR) mice were in [100 mg/kg]\ndaily, vs. tap water without metformin [control].\n\u2022 Anisimov et al. (74): Comparison of treatment with metformin:\n\u2022 a) started at 3 months of age.\n\u2022 b) started at 9 months of age.\n\u2022 c) started at 15 months of age.\n\u2022 When added to the diet of SHR mice, metformin slowed aging and increased\nlifespan, but did not lower incidence of spontaneous tumors.",
       "context_window": "hs of age. \u2022 b) started at 9 months of age. \u2022 c) started at 15 months of age. \u2022 When added to the diet of SHR mice, metformin slo",
-      "claim_role": "background",
+      "claim_role": "protocol",
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "decrease",
@@ -272,11 +272,11 @@
       "source_offset": 3163,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
       "context_window": "l. (74): Metformin extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 month",
-      "claim_role": "effect",
+      "claim_role": "protocol",
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-3178",
@@ -290,11 +290,11 @@
       "source_offset": 3178,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
       "context_window": "min extended lifespan by 14% when started at 1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffectiv",
-      "claim_role": "effect",
+      "claim_role": "protocol",
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-pct-3211",
@@ -326,11 +326,11 @@
       "source_offset": 3222,
       "sentence": "The anti-aging\neffectiveness of metformin was reduced in older mice.\n\u2022 Conclusion: Metformin effects on lifespan in mice are age-dependent.\n\u2022 Anisimov et al. (74): Metformin extended lifespan by 14% when started at 1\nmonth but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was\nineffective.\n\u2022 In the 2003 paper Anisimov et al demonstrate a comparable lifespan extending\neffects in mice and rats with the biguanides, phenformin and busoformin that also\nattenuated tumor development suggesting to the authors that they are potential\ngeroprotetors.",
       "context_window": "1 month but at 9 months only by an insigni\ufb01cant 6%, and at 15 months was ineffective. \u2022 In the 2003 paper Anisimov et al demonst",
-      "claim_role": "effect",
+      "claim_role": "protocol",
       "endpoint": "lifespan",
       "arm": "metformin",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "Mohammed_2021_Metformin_Anti_Aging_Critical_Review-u-3639",
@@ -345,7 +345,7 @@
       "sentence": "Alfaras et al.\n(75)\n\u2022 Intermittent [either every other week (EOW) or two weeks out of 4\n(2WM)] treatment of aged male C57/BL6 mice for 17 weeks with\n1% metformin in diet\n\u2022 Intermittent metformin treatment did not lead to early mortality.\n\u2022 EOW metformin resulted in weight loss and improved insulin sensitivity, but not\nlifespan extension.\n\u2022 Compared to controls evidence of increase in renal lesions in EOW and 2WM\nmice.",
       "context_window": "eks out of 4 (2WM)] treatment of aged male C57/BL6 mice for 17 weeks with 1% metformin in diet \u2022 Intermittent metformin treatmen",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "increase",
       "binding_confidence": "high"
@@ -363,7 +363,7 @@
       "sentence": "Alfaras et al.\n(75)\n\u2022 Intermittent [either every other week (EOW) or two weeks out of 4\n(2WM)] treatment of aged male C57/BL6 mice for 17 weeks with\n1% metformin in diet\n\u2022 Intermittent metformin treatment did not lead to early mortality.\n\u2022 EOW metformin resulted in weight loss and improved insulin sensitivity, but not\nlifespan extension.\n\u2022 Compared to controls evidence of increase in renal lesions in EOW and 2WM\nmice.",
       "context_window": "2WM)] treatment of aged male C57/BL6 mice for 17 weeks with 1% metformin in diet \u2022 Intermittent metformin treatment did no",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "mortality",
       "arm": "metformin",
       "direction": "increase",
       "binding_confidence": "high"
@@ -506,7 +506,7 @@
       "source_offset": 5204,
       "sentence": "Smith et al.\n(78)\n\u2022 Male Fischer rats from 6 months of age were subjected to either a\ncalorie restricted (CR) diet (70%), or dietary metformin (300 mg/kg/\nday) versus a control group.",
       "context_window": "ifespan in mice. Smith et al. (78) \u2022 Male Fischer rats from 6 months of age were subjected to either a calorie restricted (CR) d",
-      "claim_role": "duration",
+      "claim_role": "protocol",
       "endpoint": "",
       "arm": "metformin",
       "direction": "",
