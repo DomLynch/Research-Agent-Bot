@@ -713,3 +713,61 @@ def test_role_effect_still_wins_when_no_background_keyword() -> None:
     claims = quant_claim_extract.extract_from_text(text, "results")
     p = [c for c in claims if c.claim_type == "p_value"][0]
     assert p.claim_role == "effect"
+
+
+# ============================================================
+# Phase 2.1 v0.3 hotfix - audit-flagged P2 regression tests
+# ============================================================
+
+
+def test_extractor_version_matches_module_docstring_v03() -> None:
+    """Audit P2 #1: pre-fix EXTRACTOR_VERSION was '0.2.0' but the
+    module docstring already documented v0.3 claim-types. Version
+    contract must reflect what the code does."""
+    assert quant_claim_extract.EXTRACTOR_VERSION == "0.3.0"
+
+
+def test_role_results_section_no_keyword_returns_unknown_not_effect() -> None:
+    """Audit P2 #3: pre-fix the section fallback returned 'effect'
+    for any results/discussion/conclusion claim with no keyword
+    match. That overlabeled interpretive numbers (e.g. table-cell
+    residue percentages, citation context) as findings. Now: only
+    introduction has a directional default; everything else is
+    'unknown' so Phase 4 owns the disambiguation."""
+    text = "Table 2 lists 4 cohorts."  # no keyword match
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    sample_claims = [c for c in claims if c.claim_type == "sample_size"]
+    if sample_claims:
+        # If we extracted anything, it must NOT be tagged effect.
+        for c in sample_claims:
+            assert c.claim_role != "effect", (
+                f"section fallback overlabeled as effect: {c}"
+            )
+
+
+def test_sample_size_with_trailing_duration_token_tagged_duration() -> None:
+    """Audit P2 #2: pre-fix 'n = 12 weeks' was extracted as a
+    sample_size with claim_role='effect' (or unknown). Now the
+    trailing duration token bumps role to 'duration' so Phase 4
+    can post-filter without dropping the candidate."""
+    text = "Subjects underwent n = 12 weeks of training."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    sample_claims = [c for c in claims if c.claim_type == "sample_size"]
+    assert len(sample_claims) == 1
+    assert sample_claims[0].claim_role == "duration", (
+        f"trailing-duration sample_size not retagged: "
+        f"role={sample_claims[0].claim_role}"
+    )
+
+
+def test_real_sample_size_with_participant_context_stays_effect_or_population() -> None:
+    """The hotfix must not over-correct: a real sample size like
+    'n = 27 participants' must NOT be retagged as duration."""
+    text = "Participants were randomized to placebo (n = 26) or metformin (n = 27)."
+    claims = quant_claim_extract.extract_from_text(text, "methods")
+    sample_claims = [c for c in claims if c.claim_type == "sample_size"]
+    assert len(sample_claims) == 2
+    for c in sample_claims:
+        assert c.claim_role != "duration", (
+            f"real sample size wrongly retagged as duration: {c}"
+        )

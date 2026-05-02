@@ -64,19 +64,27 @@ __all__ = [
 ]
 
 
-EXTRACTOR_VERSION = "0.2.0"
-# Day 10.17 Phase 2.1: schema bump from 0.1.0 -> 0.2.0
-#   - new field: QuantClaim.claim_role (effect | dose | duration |
-#     population | background | unknown). Pre-2.1 every numeric
-#     was bucketed only by claim_type; reviewer-flagged that the
-#     same "5 mg" can be a dose (treatment) or an effect (LDL
-#     change) — without role, downstream Phase 4 can't tell results
-#     from background prose.
-#   - new claim_types: hazard_ratio, odds_ratio, risk_ratio,
-#     correlation. Effect-size patterns the v0.1 extractor missed.
-#   - dose units added to UNIT_VALUE_RE: kg/day, mg/kg/day, mg/d.
-#     Mohammed "5 kg/day" was being captured as "5 kg" with units="kg"
-#     (a fatal-dose value misread as a body weight).
+EXTRACTOR_VERSION = "0.3.0"
+# Day 10.17 Phase 2.1 schema versioning:
+#   0.1.0 — initial extractor (p_value, CI, sample_size, mean_sd,
+#           percentage, unit_value)
+#   0.2.0 — claim_role field added; HR/OR/RR/correlation patterns
+#           introduced; dose units extended (kg/day, mg/kg/day, mg/d).
+#           Initial cut had 4 HIGH false-positive bugs.
+#   0.3.0 — reviewer-driven hotfix:
+#           * OR/HR/RR abbreviations require CAPS + mandatory [:=]
+#             (English "or"/"hr" no longer false-positive)
+#           * sanity bounds on effect sizes (HR/OR/RR < 100; |r| <= 1)
+#           * correlation requires Pearson/Spearman or paren anchor
+#           * BACKGROUND wins over EFFECT in claim_role when prevalence/
+#             incidence keywords co-occur
+#           * results/discussion/conclusion section fallback now
+#             "unknown" instead of "effect" when no keywords matched
+#             (audit pin: section-only effect tagging was overlabeling
+#             interpretive numbers)
+#           * sample_size with trailing duration token (n=12 weeks)
+#             gets claim_role="duration" so Phase 4 can post-filter
+#             without losing the candidate.
 
 # Sections that downstream Phase 4 actually wants quant claims from.
 # References is excluded because citation years and page numbers
@@ -366,14 +374,28 @@ def _assign_claim_role(sentence: str, section: str) -> str:
         return "dose"
     if any(k in s for k in _ROLE_KEYWORD_POPULATION):
         return "population"
-    # Section-based fallback. Methods/abstract/limitations stay
-    # 'unknown' — they can carry any role and the heuristic is
-    # too brittle to guess a default.
+    # Phase 2.1 v0.3 audit fix: section-based fallback is honest only
+    # when there's a clear introduction-vs-results polarity. Pre-fix,
+    # results/discussion/conclusion defaulted to "effect" for ANY
+    # claim with no keyword match — that overlabeled interpretive
+    # numbers, table-residue percentages, and citation-context numbers
+    # as findings. Now: only "introduction" carries a directional
+    # default (background); everything else stays "unknown" so
+    # downstream Phase 4 can apply its own logic without assuming
+    # the extractor "knew."
     if section == "introduction":
         return "background"
-    if section in ("results", "discussion", "conclusion"):
-        return "effect"
     return "unknown"
+
+
+# Phase 2.1 v0.3 audit fix: word-boundary anchored duration tokens
+# for the sample_size override. Substring matching false-fired on
+# "min" inside "metformin"; \b ensures whole-word match. Plurals
+# allowed via optional 's'.
+_DURATION_TOKEN_RE = re.compile(
+    r"\b(?:weeks?|months?|days?|years?|hours?|minutes?)\b",
+    re.IGNORECASE,
+)
 
 
 # Sentence segmenter — split on sentence-final punctuation followed
@@ -739,10 +761,22 @@ def extract_from_text(
     # Phase 2.1: post-process — assign claim_role from sentence
     # keywords + section context. Frozen dataclass rebuild via
     # dataclasses.replace.
-    enriched = [
-        replace(c, claim_role=_assign_claim_role(c.sentence, section))
-        for c in all_claims
-    ]
+    enriched = []
+    for c in all_claims:
+        role = _assign_claim_role(c.sentence, section)
+        # Phase 2.1 v0.3 audit fix: sample_size with trailing duration
+        # token (n=12 weeks/months/days/years/hours/min) is a study
+        # duration, not an enrollment count. Override role so Phase 4
+        # can post-filter cleanly without dropping the candidate.
+        # Word-boundary regex prevents "min" inside "metformin" from
+        # false-firing on real sample sizes like "(n = 26) or metformin".
+        if c.claim_type == "sample_size":
+            tail = c.context_window[
+                c.context_window.find(c.raw_text) + len(c.raw_text):
+            ][:30]
+            if _DURATION_TOKEN_RE.search(tail):
+                role = "duration"
+        enriched.append(replace(c, claim_role=role))
     enriched.sort(key=lambda c: (c.source_offset, c.claim_type))
     return tuple(enriched)
 
