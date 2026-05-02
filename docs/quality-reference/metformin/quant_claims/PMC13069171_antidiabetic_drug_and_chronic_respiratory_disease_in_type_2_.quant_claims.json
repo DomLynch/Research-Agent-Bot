@@ -1,0 +1,936 @@
+{
+  "paper_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_",
+  "doi": "10.1177/20420188261437346",
+  "extracted_at": "2026-05-02T16:49:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "percentage": 19,
+    "unit_value": 4,
+    "confidence_interval": 21,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-n-752",
+      "claim_type": "sample_size",
+      "raw_text": "n = 939",
+      "numeric_values": [
+        939.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 752,
+      "sentence": "Our analysis of 33 studies ( n = 939,064) found that glucagon-like peptide-1 receptor agonists (GLP1RAs) offered the strongest protection against acute exacerbations (hazard ratio vs insulin: 0.40, 95% credible interval 0.29-0.56) and had the highest first-rank probability (72.95%), followed by sodium-glucose cotransporter-2 inhibitors (SGLT2is; 46.19%).",
+      "context_window": "lity in individuals with T2D. Our analysis of 33 studies ( n = 939,064) found that glucagon-like peptide-1 receptor agonists (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-921",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 921,
+      "sentence": "Our analysis of 33 studies ( n = 939,064) found that glucagon-like peptide-1 receptor agonists (GLP1RAs) offered the strongest protection against acute exacerbations (hazard ratio vs insulin: 0.40, 95% credible interval 0.29-0.56) and had the highest first-rank probability (72.95%), followed by sodium-glucose cotransporter-2 inhibitors (SGLT2is; 46.19%).",
+      "context_window": "against acute exacerbations (hazard ratio vs insulin: 0.40, 95% credible interval 0.29-0.56) and had the highest first-rank",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-998",
+      "claim_type": "percentage",
+      "raw_text": "72.95%",
+      "numeric_values": [
+        72.95
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 998,
+      "sentence": "Our analysis of 33 studies ( n = 939,064) found that glucagon-like peptide-1 receptor agonists (GLP1RAs) offered the strongest protection against acute exacerbations (hazard ratio vs insulin: 0.40, 95% credible interval 0.29-0.56) and had the highest first-rank probability (72.95%), followed by sodium-glucose cotransporter-2 inhibitors (SGLT2is; 46.19%).",
+      "context_window": "rval 0.29-0.56) and had the highest first-rank probability (72.95%), followed by sodium-glucose cotransporter-2 inhibitors (SG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-1071",
+      "claim_type": "percentage",
+      "raw_text": "46.19%",
+      "numeric_values": [
+        46.19
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1071,
+      "sentence": "Our analysis of 33 studies ( n = 939,064) found that glucagon-like peptide-1 receptor agonists (GLP1RAs) offered the strongest protection against acute exacerbations (hazard ratio vs insulin: 0.40, 95% credible interval 0.29-0.56) and had the highest first-rank probability (72.95%), followed by sodium-glucose cotransporter-2 inhibitors (SGLT2is; 46.19%).",
+      "context_window": "owed by sodium-glucose cotransporter-2 inhibitors (SGLT2is; 46.19%). Thiazolidinediones reduced incident CRD by 21% (odds rati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-1123",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1123,
+      "sentence": "Thiazolidinediones reduced incident CRD by 21% (odds ratio (OR) 0.79, 0.69-0.91), while metformin lowered all-cause mortality risk by 16% (OR 0.84, 0.74-0.95).",
+      "context_window": "GLT2is; 46.19%). Thiazolidinediones reduced incident CRD by 21% (odds ratio (OR) 0.79, 0.69-0.91), while metformin lowered",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-1214",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1214,
+      "sentence": "Thiazolidinediones reduced incident CRD by 21% (odds ratio (OR) 0.79, 0.69-0.91), while metformin lowered all-cause mortality risk by 16% (OR 0.84, 0.74-0.95).",
+      "context_window": "-0.91), while metformin lowered all-cause mortality risk by 16% (OR 0.84, 0.74-0.95). Mendelian randomization confirmed GLP",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-u-1048",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1048,
+      "sentence": "They had to compare the use of one or more of nine predefined antidiabetic drug classes (metformin, sulfonylureas, TZDs, alpha-glucosidase inhibitors (AGIs), dipeptidyl peptidase-4 inhibitors (DPP-4is), SGLT2is, GLP-1RAs, non-sulfonylurea insulin secretagogues, and insulin) against non-use, placebo, or another active drug for \u2a7e3 weeks, providing quantitative effect estimates (odds ratio (OR), hazard ratio (HR), or risk ratio) with 95% confidence intervals (CIs).",
+      "context_window": "ulin) against non-use, placebo, or another active drug for \u2a7e3 weeks, providing quantitative effect estimates (odds ratio (OR),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-1154",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1154,
+      "sentence": "They had to compare the use of one or more of nine predefined antidiabetic drug classes (metformin, sulfonylureas, TZDs, alpha-glucosidase inhibitors (AGIs), dipeptidyl peptidase-4 inhibitors (DPP-4is), SGLT2is, GLP-1RAs, non-sulfonylurea insulin secretagogues, and insulin) against non-use, placebo, or another active drug for \u2a7e3 weeks, providing quantitative effect estimates (odds ratio (OR), hazard ratio (HR), or risk ratio) with 95% confidence intervals (CIs).",
+      "context_window": "es (odds ratio (OR), hazard ratio (HR), or risk ratio) with 95% confidence intervals (CIs). Two reviewers independently ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-u-2499",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2499,
+      "sentence": "Subgroup analyses were conducted by age (<65 vs >65 years), geographic region (Asia vs North America), outcome (COPD vs asthma), effect estimate type (OR vs HR), NOS quality (>8 vs <8), and sample size (>10 vs <10 k).",
+      "context_window": "symmetry. Subgroup analyses were conducted by age (<65 vs >65 years), geographic region (Asia vs North America), outcome (COPD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4590",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4590,
+      "sentence": "The primary TSMR analysis, performed using the TwoSampleMR package (v.0.6.0), applied the inverse-variance weighted or Wald ratio method to estimate ORs (95% CIs) per unit increase in genetically predicted gene expression.",
+      "context_window": "rse-variance weighted or Wald ratio method to estimate ORs (95% CIs) per unit increase in genetically predicted gene expres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-u-390",
+      "claim_type": "unit_value",
+      "raw_text": "62.3 years",
+      "numeric_values": [
+        62.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 390,
+      "sentence": "Sample sizes ranged from 94 to 285,992 participants, with a mean age of 62.3 years and 54.1% men.",
+      "context_window": "ranged from 94 to 285,992 participants, with a mean age of 62.3 years and 54.1% men. All nine predefined antidiabetic drug classe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-405",
+      "claim_type": "percentage",
+      "raw_text": "54.1%",
+      "numeric_values": [
+        54.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 405,
+      "sentence": "Sample sizes ranged from 94 to 285,992 participants, with a mean age of 62.3 years and 54.1% men.",
+      "context_window": "to 285,992 participants, with a mean age of 62.3 years and 54.1% men. All nine predefined antidiabetic drug classes-metformi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-915",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 915,
+      "sentence": "Overall, antidiabetic drug use was associated with a 14% lower risk of exacerbation (OR 0.86, 95% CI 0.76-0.96; Figure 2(c) ).",
+      "context_window": "ation. Overall, antidiabetic drug use was associated with a 14% lower risk of exacerbation (OR 0.86, 95% CI 0.76-0.96; Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-956",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.76-0.96",
+      "numeric_values": [
+        0.76,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 956,
+      "sentence": "Overall, antidiabetic drug use was associated with a 14% lower risk of exacerbation (OR 0.86, 95% CI 0.76-0.96; Figure 2(c) ).",
+      "context_window": "associated with a 14% lower risk of exacerbation (OR 0.86, 95% CI 0.76-0.96; Figure 2(c) ). Specifically, SGLT2is (OR 0.20, 95% CI 0.13",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-1021",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.13-0.32",
+      "numeric_values": [
+        0.13,
+        0.32
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1021,
+      "sentence": "Specifically, SGLT2is (OR 0.20, 95% CI 0.13-0.32) and TZDs (OR 0.89, 95% CI 0.81-0.99) were associated with significant risk reduction.",
+      "context_window": "I 0.76-0.96; Figure 2(c) ). Specifically, SGLT2is (OR 0.20, 95% CI 0.13-0.32) and TZDs (OR 0.89, 95% CI 0.81-0.99) were associated with",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-1058",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.81-0.99",
+      "numeric_values": [
+        0.81,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1058,
+      "sentence": "Specifically, SGLT2is (OR 0.20, 95% CI 0.13-0.32) and TZDs (OR 0.89, 95% CI 0.81-0.99) were associated with significant risk reduction.",
+      "context_window": "lly, SGLT2is (OR 0.20, 95% CI 0.13-0.32) and TZDs (OR 0.89, 95% CI 0.81-0.99) were associated with significant risk reduction. TZDs redu",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-1180",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.63-1.00",
+      "numeric_values": [
+        0.63,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1180,
+      "sentence": "TZDs reduced the risk of asthma exacerbation (OR 0.79, 95% CI 0.63-1.00; Figure 2(b) ) but not COPD exacerbation (OR 0.91, 95% CI 0.81-1.02; Figure 2(a) ).",
+      "context_window": "ion. TZDs reduced the risk of asthma exacerbation (OR 0.79, 95% CI 0.63-1.00; Figure 2(b) ) but not COPD exacerbation (OR 0.91, 95% CI 0",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-1248",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.81-1.02",
+      "numeric_values": [
+        0.81,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1248,
+      "sentence": "TZDs reduced the risk of asthma exacerbation (OR 0.79, 95% CI 0.63-1.00; Figure 2(b) ) but not COPD exacerbation (OR 0.91, 95% CI 0.81-1.02; Figure 2(a) ).",
+      "context_window": ".63-1.00; Figure 2(b) ) but not COPD exacerbation (OR 0.91, 95% CI 0.81-1.02; Figure 2(a) ). A meta-analysis of the impact of using ant",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-u-1861",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1861,
+      "sentence": "Subgroup analyses indicated metformin reduced exacerbation risk in individuals aged >65 years (OR 0.78, 95% CI 0.70-0.87), in studies with NOS score <8 (OR 0.74, 95% CI 0.60-0.91), and in studies with sample size <10,000 (OR 0.36, 95% CI 0.20-0.67; Figure S1 ).",
+      "context_window": "ed metformin reduced exacerbation risk in individuals aged >65 years (OR 0.78, 95% CI 0.70-0.87), in studies with NOS score <8 (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-1880",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.70-0.87",
+      "numeric_values": [
+        0.7,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1880,
+      "sentence": "Subgroup analyses indicated metformin reduced exacerbation risk in individuals aged >65 years (OR 0.78, 95% CI 0.70-0.87), in studies with NOS score <8 (OR 0.74, 95% CI 0.60-0.91), and in studies with sample size <10,000 (OR 0.36, 95% CI 0.20-0.67; Figure S1 ).",
+      "context_window": "d exacerbation risk in individuals aged >65 years (OR 0.78, 95% CI 0.70-0.87), in studies with NOS score <8 (OR 0.74, 95% CI 0.60-0.91),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-1938",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60-0.91",
+      "numeric_values": [
+        0.6,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1938,
+      "sentence": "Subgroup analyses indicated metformin reduced exacerbation risk in individuals aged >65 years (OR 0.78, 95% CI 0.70-0.87), in studies with NOS score <8 (OR 0.74, 95% CI 0.60-0.91), and in studies with sample size <10,000 (OR 0.36, 95% CI 0.20-0.67; Figure S1 ).",
+      "context_window": ", 95% CI 0.70-0.87), in studies with NOS score <8 (OR 0.74, 95% CI 0.60-0.91), and in studies with sample size <10,000 (OR 0.36, 95% CI",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-2007",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.20-0.67",
+      "numeric_values": [
+        0.2,
+        0.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2007,
+      "sentence": "Subgroup analyses indicated metformin reduced exacerbation risk in individuals aged >65 years (OR 0.78, 95% CI 0.70-0.87), in studies with NOS score <8 (OR 0.74, 95% CI 0.60-0.91), and in studies with sample size <10,000 (OR 0.36, 95% CI 0.20-0.67; Figure S1 ).",
+      "context_window": "60-0.91), and in studies with sample size <10,000 (OR 0.36, 95% CI 0.20-0.67; Figure S1 ). A sensitivity analysis for metformin found no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-p-2214",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2214,
+      "sentence": "No significant publication bias was detected (Egger\u2019s test p = 0.15; Figure S3 ).",
+      "context_window": "No significant publication bias was detected (Egger\u2019s test p = 0.15; Figure S3 ). A sensitivity analysis was only conducted for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-3618",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3618,
+      "sentence": "GLP1RAs were associated with the greatest reduction in exacerbation risk, with ORs (95% credible interval) of 0.61 (0.45-0.83) versus metformin, 0.64 (0.52-0.79) versus sulfonylureas, 0.73 (0.54-0.96) versus TZDs, 0.67 (0.50-0.91) versus AGIs, 0.66 (0.53-0.82) versus DPP4is, and 0.40 (0.29-0.56) versus insulin.",
+      "context_window": "with the greatest reduction in exacerbation risk, with ORs (95% credible interval) of 0.61 (0.45-0.83) versus metformin, 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4253",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4253,
+      "sentence": "Estimates are presented as hazard ratios (95% credible interval).",
+      "context_window": "iratory disease. Estimates are presented as hazard ratios (95% credible interval). Bold values represent statistically si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4674",
+      "claim_type": "percentage",
+      "raw_text": "72.95%",
+      "numeric_values": [
+        72.95
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4674,
+      "sentence": "Treatment rankings, presented as bar plots in Figure 4 , identified GLP1RAs as the most likely best treatment (first-rank probability 72.95%), followed by SGLT2is (second-rank probability 46.19%).",
+      "context_window": "s as the most likely best treatment (first-rank probability 72.95%), followed by SGLT2is (second-rank probability 46.19%). TZD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4728",
+      "claim_type": "percentage",
+      "raw_text": "46.19%",
+      "numeric_values": [
+        46.19
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4728,
+      "sentence": "Treatment rankings, presented as bar plots in Figure 4 , identified GLP1RAs as the most likely best treatment (first-rank probability 72.95%), followed by SGLT2is (second-rank probability 46.19%).",
+      "context_window": "ility 72.95%), followed by SGLT2is (second-rank probability 46.19%). TZDs, metformin, and AGIs had the highest probabilities f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4808",
+      "claim_type": "percentage",
+      "raw_text": "33.37%",
+      "numeric_values": [
+        33.37
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4808,
+      "sentence": "TZDs, metformin, and AGIs had the highest probabilities for the third (33.37%), fourth (40.81%), and fifth (32.84%) ranks, respectively, while insulin had the highest probability of ranking last (99.18%; Table S3 ).",
+      "context_window": "rmin, and AGIs had the highest probabilities for the third (33.37%), fourth (40.81%), and fifth (32.84%) ranks, respectively,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4825",
+      "claim_type": "percentage",
+      "raw_text": "40.81%",
+      "numeric_values": [
+        40.81
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4825,
+      "sentence": "TZDs, metformin, and AGIs had the highest probabilities for the third (33.37%), fourth (40.81%), and fifth (32.84%) ranks, respectively, while insulin had the highest probability of ranking last (99.18%; Table S3 ).",
+      "context_window": "d the highest probabilities for the third (33.37%), fourth (40.81%), and fifth (32.84%) ranks, respectively, while insulin had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4845",
+      "claim_type": "percentage",
+      "raw_text": "32.84%",
+      "numeric_values": [
+        32.84
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4845,
+      "sentence": "TZDs, metformin, and AGIs had the highest probabilities for the third (33.37%), fourth (40.81%), and fifth (32.84%) ranks, respectively, while insulin had the highest probability of ranking last (99.18%; Table S3 ).",
+      "context_window": "ilities for the third (33.37%), fourth (40.81%), and fifth (32.84%) ranks, respectively, while insulin had the highest probabi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-4933",
+      "claim_type": "percentage",
+      "raw_text": "99.18%",
+      "numeric_values": [
+        99.18
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4933,
+      "sentence": "TZDs, metformin, and AGIs had the highest probabilities for the third (33.37%), fourth (40.81%), and fifth (32.84%) ranks, respectively, while insulin had the highest probability of ranking last (99.18%; Table S3 ).",
+      "context_window": "while insulin had the highest probability of ranking last (99.18%; Table S3 ). Bar plots showing the probability of each ant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-p-5520",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5520,
+      "sentence": "The node-splitting method indicated no significant inconsistency between direct and indirect evidence across all treatment loops ( p > 0.05; Figure S4 ).",
+      "context_window": "n direct and indirect evidence across all treatment loops ( p > 0.05; Figure S4 ). Sensitivity analyses, including those restric",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-6009",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.64-0.95",
+      "numeric_values": [
+        0.64,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6009,
+      "sentence": "One study reported that dual therapy with metformin and a sulfonylurea was associated with a lower risk of COPD exacerbation compared to other dual regimens (OR 0.78, 95% CI 0.64-0.95).",
+      "context_window": "COPD exacerbation compared to other dual regimens (OR 0.78, 95% CI 0.64-0.95). 17 In contrast, another study found the combination of a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-6162",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.51-0.94",
+      "numeric_values": [
+        0.51,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6162,
+      "sentence": "17 In contrast, another study found the combination of a sulfonylurea and a TZD was superior to sulfonylurea plus metformin (OR 0.69, 95% CI 0.51-0.94).",
+      "context_window": "a TZD was superior to sulfonylurea plus metformin (OR 0.69, 95% CI 0.51-0.94). 32 Additionally, triple therapy with metformin, sulfonylu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-6335",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.68-0.96",
+      "numeric_values": [
+        0.68,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6335,
+      "sentence": "32 Additionally, triple therapy with metformin, sulfonylurea, and TZD reduced exacerbation risk compared to metformin, sulfonylurea, and an AGI (OR 0.81, 95% CI 0.68-0.96).",
+      "context_window": "k compared to metformin, sulfonylurea, and an AGI (OR 0.81, 95% CI 0.68-0.96). These contrasting findings highlight the need for further",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-6766",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6766,
+      "sentence": "Pooled results indicated that TZD use was associated with a 21% lower risk of incident disease (OR 0.79, 95% CI 0.69-0.91; Figure S30 ).",
+      "context_window": "Pooled results indicated that TZD use was associated with a 21% lower risk of incident disease (OR 0.79, 95% CI 0.69-0.91;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-6811",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.69-0.91",
+      "numeric_values": [
+        0.69,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6811,
+      "sentence": "Pooled results indicated that TZD use was associated with a 21% lower risk of incident disease (OR 0.79, 95% CI 0.69-0.91; Figure S30 ).",
+      "context_window": "ociated with a 21% lower risk of incident disease (OR 0.79, 95% CI 0.69-0.91; Figure S30 ). No other drug class showed a significant ass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-7141",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.54-0.79",
+      "numeric_values": [
+        0.54,
+        0.79
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7141,
+      "sentence": "One study not meeting our outcome definition 37 reported that SGLT2is reduced incident respiratory disease risk compared to DPP4is (HR 0.65, 95% CI 0.54-0.79).",
+      "context_window": "ident respiratory disease risk compared to DPP4is (HR 0.65, 95% CI 0.54-0.79). 46 No significant publication bias was detected (Egger\u2019s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-p-7222",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7222,
+      "sentence": "46 No significant publication bias was detected (Egger\u2019s test p = 0.07; Figure S32 ).",
+      "context_window": "No significant publication bias was detected (Egger\u2019s test p = 0.07; Figure S32 ). Eight studies (141,103 individuals) evaluat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-pct-7440",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7440,
+      "sentence": "Meta-analysis showed that metformin use was associated with a 16% lower risk of all-cause mortality compared with non-use (OR 0.84, 95% CI 0.74-0.95).",
+      "context_window": "ta-analysis showed that metformin use was associated with a 16% lower risk of all-cause mortality compared with non-use (OR",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-7510",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.74-0.95",
+      "numeric_values": [
+        0.74,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7510,
+      "sentence": "Meta-analysis showed that metformin use was associated with a 16% lower risk of all-cause mortality compared with non-use (OR 0.84, 95% CI 0.74-0.95).",
+      "context_window": "risk of all-cause mortality compared with non-use (OR 0.84, 95% CI 0.74-0.95). This protective association remained significant in a sen",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-7647",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.78-0.94",
+      "numeric_values": [
+        0.78,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7647,
+      "sentence": "This protective association remained significant in a sensitivity analysis restricted to patients with COPD (OR 0.86, 95% CI 0.78-0.94; Figure S33 ).",
+      "context_window": "itivity analysis restricted to patients with COPD (OR 0.86, 95% CI 0.78-0.94; Figure S33 ). No significant publication bias was detected",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-p-7738",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7738,
+      "sentence": "No significant publication bias was detected (Egger\u2019s test p = 0.65; Figure S34 ).",
+      "context_window": "No significant publication bias was detected (Egger\u2019s test p = 0.65; Figure S34 ). TSMR assessed potential causal relationship",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-8010",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.997-0.999",
+      "numeric_values": [
+        0.997,
+        0.999
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8010,
+      "sentence": "Higher expression of GLP1R (the target for GLP1RAs) was associated with reduced asthma risk (OR 0.998, 95% CI 0.997-0.999).",
+      "context_window": "GLP1RAs) was associated with reduced asthma risk (OR 0.998, 95% CI 0.997-0.999). In contrast, higher expression of SLC5A2 (encoding SGLT2)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-8147",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.000-1.004",
+      "numeric_values": [
+        1.0,
+        1.004
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8147,
+      "sentence": "In contrast, higher expression of SLC5A2 (encoding SGLT2) was weakly associated with increased COPD risk (OR 1.002, 95% CI 1.000-1.004).",
+      "context_window": ") was weakly associated with increased COPD risk (OR 1.002, 95% CI 1.000-1.004). Expression of PRKAB1 (related to metformin action) was as",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-8278",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.001-1.207",
+      "numeric_values": [
+        1.001,
+        1.207
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8278,
+      "sentence": "Expression of PRKAB1 (related to metformin action) was associated with increased risk of both COPD (OR 1.099, 95% CI 1.001-1.207) and asthma (OR 1.006, 95% CI 1.002-1.011).",
+      "context_window": "was associated with increased risk of both COPD (OR 1.099, 95% CI 1.001-1.207) and asthma (OR 1.006, 95% CI 1.002-1.011). Expression of s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-8320",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.002-1.011",
+      "numeric_values": [
+        1.002,
+        1.011
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8320,
+      "sentence": "Expression of PRKAB1 (related to metformin action) was associated with increased risk of both COPD (OR 1.099, 95% CI 1.001-1.207) and asthma (OR 1.006, 95% CI 1.002-1.011).",
+      "context_window": "h COPD (OR 1.099, 95% CI 1.001-1.207) and asthma (OR 1.006, 95% CI 1.002-1.011). Expression of sulfonylurea-related genes ABCC8 and KCNJ11",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-8450",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.087-1.267",
+      "numeric_values": [
+        1.087,
+        1.267
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8450,
+      "sentence": "Expression of sulfonylurea-related genes ABCC8 and KCNJ11 was associated with increased COPD risk (OR 1.174, 95% CI 1.087-1.267 and OR 1.108, 95% CI 1.052-1.167, respectively), but not with asthma.",
+      "context_window": "d KCNJ11 was associated with increased COPD risk (OR 1.174, 95% CI 1.087-1.267 and OR 1.108, 95% CI 1.052-1.167, respectively), but not wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-ci-8483",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.052-1.167",
+      "numeric_values": [
+        1.052,
+        1.167
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8483,
+      "sentence": "Expression of sulfonylurea-related genes ABCC8 and KCNJ11 was associated with increased COPD risk (OR 1.174, 95% CI 1.087-1.267 and OR 1.108, 95% CI 1.052-1.167, respectively), but not with asthma.",
+      "context_window": "eased COPD risk (OR 1.174, 95% CI 1.087-1.267 and OR 1.108, 95% CI 1.052-1.167, respectively), but not with asthma. No significant causal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13069171_antidiabetic_drug_and_chronic_respiratory_disease_in_type_2_-p-8869",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.093",
+      "numeric_values": [
+        0.093
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8869,
+      "sentence": "However, a suggestive inverse relationship was observed between SLC5A2 expression and levels of the chemokine CXCL10 (\u03b2 = -0.043, SE 0.025, p = 0.093; Table S17 ).",
+      "context_window": "n and levels of the chemokine CXCL10 (\u03b2 = -0.043, SE 0.025, p = 0.093; Table S17 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

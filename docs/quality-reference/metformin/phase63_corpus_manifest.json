@@ -1,0 +1,507 @@
+{
+  "n_hits": 49,
+  "by_evidence_type": {
+    "rct": 15,
+    "meta_analysis": 12,
+    "observational": 15,
+    "mechanism": 7
+  },
+  "queries": {
+    "rct": "metformin AND (randomized OR randomised OR RCT OR \"clinical trial\") AND (aging OR sarcopenia OR frailty OR older OR longevity OR healthspan) AND OPEN_ACCESS:Y AND HAS_FT:Y",
+    "meta_analysis": "metformin AND (\"meta-analysis\" OR \"systematic review\") AND (mortality OR aging OR longevity OR cardiovascular) AND OPEN_ACCESS:Y AND HAS_FT:Y",
+    "observational": "metformin AND (cohort OR observational OR \"electronic health\") AND (mortality OR survival OR all-cause) AND OPEN_ACCESS:Y AND HAS_FT:Y",
+    "mechanism": "metformin AND (AMPK OR mTOR OR mitochondrial OR autophagy OR senescence OR \"insulin sensitivity\") AND (skeletal\\ muscle OR longevity OR \"older adults\") AND OPEN_ACCESS:Y AND HAS_FT:Y"
+  },
+  "hits": [
+    {
+      "pmcid": "PMC12938515",
+      "pmid": "",
+      "doi": "",
+      "title": "Metformin for Longevity and Sarcopenia: A Therapeutic Paradox in Aging",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 1
+    },
+    {
+      "pmcid": "PMC12735892",
+      "pmid": "41471752",
+      "doi": "10.3390/molecules30244728",
+      "title": "From Elixirs to Geroscience: A Historical and Molecular Perspective on Anti-Aging Medicine.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "rct",
+      "rank_in_type": 2
+    },
+    {
+      "pmcid": "PMC12763660",
+      "pmid": "",
+      "doi": "",
+      "title": "METFORMIN TO TARGET FRAILTY IN OLDER ADULTS",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "rct",
+      "rank_in_type": 3
+    },
+    {
+      "pmcid": "PMC12762609",
+      "pmid": "",
+      "doi": "",
+      "title": "A 2-year Trial of Metformin to Reduce Frailty in Older Adults with Glucose Intolerance",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "rct",
+      "rank_in_type": 4
+    },
+    {
+      "pmcid": "PMC12524491",
+      "pmid": "41096641",
+      "doi": "10.3390/ijms26199372",
+      "title": "Rewinding the Clock: Emerging Pharmacological Strategies for Human Anti-Aging Therapy.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "rct",
+      "rank_in_type": 5
+    },
+    {
+      "pmcid": "PMC12525316",
+      "pmid": "41096907",
+      "doi": "10.3390/ijms26199643",
+      "title": "Dietary and Pharmacological Modulation of Aging-Related Metabolic Pathways: Molecular Insights, Clinical Evidence, and a Translational Model.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "rct",
+      "rank_in_type": 6
+    },
+    {
+      "pmcid": "PMC13092247",
+      "pmid": "42011226",
+      "doi": "10.2147/dddt.s594895",
+      "title": "SRN-901, a Novel Longevity Drug, Extends Lifespan and Healthspan by Targeting Multiple Aging Pathways.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 7
+    },
+    {
+      "pmcid": "PMC13081146",
+      "pmid": "41994361",
+      "doi": "10.5114/biolsport.2026.156224",
+      "title": "Aging reimagined: Bridging clinical modulation and scientific breakthroughs.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 8
+    },
+    {
+      "pmcid": "PMC12796513",
+      "pmid": "41527327",
+      "doi": "10.1111/acel.70371",
+      "title": "Lifespan-Extending Endogenous Metabolites.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 9
+    },
+    {
+      "pmcid": "PMC12937842",
+      "pmid": "",
+      "doi": "",
+      "title": "Mechanistic Links Between the Gut Microbiome and Longevity Therapeutics",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 10
+    },
+    {
+      "pmcid": "PMC12310402",
+      "pmid": "40706485",
+      "doi": "10.1016/j.jnha.2025.100637",
+      "title": "Advancing Geroscience Research - A Scoping Review of Regulatory Environments for Gerotherapeutics.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "rct",
+      "rank_in_type": 11
+    },
+    {
+      "pmcid": "PMC12978362",
+      "pmid": "41821769",
+      "doi": "10.5937/jomb0-60849",
+      "title": "Molecular mechanisms of metformin action: From metabolic effects to lifespan extension and healthspan promotion.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 12
+    },
+    {
+      "pmcid": "PMC13050347",
+      "pmid": "41934491",
+      "doi": "10.1007/s12017-026-08923-y",
+      "title": "SIRT1 Activators as Geroprotective Agents in Brain Aging: Mechanisms and Therapeutic Potential.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 13
+    },
+    {
+      "pmcid": "PMC12508447",
+      "pmid": "40887496",
+      "doi": "10.1038/s12276-025-01527-9",
+      "title": "Targeting immunosenescence and inflammaging: advancing longevity research.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "rct",
+      "rank_in_type": 14
+    },
+    {
+      "pmcid": "PMC13005784",
+      "pmid": "41701264",
+      "doi": "10.1007/s00125-026-06681-x",
+      "title": "Type 1 diabetes, ageing and frailty: an underexplored intersection.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "rct",
+      "rank_in_type": 15
+    },
+    {
+      "pmcid": "PMC13069171",
+      "pmid": "41969412",
+      "doi": "10.1177/20420188261437346",
+      "title": "Antidiabetic drug and chronic respiratory disease in type 2 diabetes: a network meta-analysis and Mendelian randomization analysis.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 1
+    },
+    {
+      "pmcid": "PMC13025945",
+      "pmid": "41899438",
+      "doi": "10.3390/cimb48030286",
+      "title": "From Metabolism to Longevity: Molecular Mechanisms Underlying Metformin's Anticancer and Anti-Aging Effects.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 2
+    },
+    {
+      "pmcid": "PMC12667244",
+      "pmid": "41333746",
+      "doi": "10.3389/fcvm.2025.1720220",
+      "title": "Correction: Insulin resistance/hyperinsulinemia: an important cardiovascular risk factor that has long been underestimated.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 3
+    },
+    {
+      "pmcid": "PMC12711054",
+      "pmid": "41406136",
+      "doi": "10.1371/journal.pone.0339098",
+      "title": "Retraction: Cardiovascular and mortality outcomes of DPP-4 inhibitors vs. sulfonylureas as metformin add-on therapy in patients with type 2 diabetes: A systematic review and meta-analysis.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 5
+    },
+    {
+      "pmcid": "PMC12895371",
+      "pmid": "41676958",
+      "doi": "10.1002/edm2.70176",
+      "title": "Comparing SGLT2i and Other Oral Antidiabetic Drugs as Dual Therapy Add-On to Metformin in Type 2 Diabetes: A Systematic Review and Meta-Analysis.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 6
+    },
+    {
+      "pmcid": "PMC13010735",
+      "pmid": "41874055",
+      "doi": "10.3390/pharmacy14020047",
+      "title": "Effectiveness of SGLT2 Inhibitors in Type 2 Diabetes: A Systematic Integrative Review of Reviews and Comparative Effectiveness Studies (2020-2025).",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 7
+    },
+    {
+      "pmcid": "PMC12937443",
+      "pmid": "",
+      "doi": "",
+      "title": "Biosacetalin (1,1-Diethoxyethane) Improves Healthy Lifespan in C. elegans and Rats",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 8
+    },
+    {
+      "pmcid": "PMC13030081",
+      "pmid": "41909353",
+      "doi": "10.7759/cureus.104244",
+      "title": "Exercise Intervention for Blood Pressure Reduction in Diabetic Patients: A Systematic Review and Meta-Analysis.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 10
+    },
+    {
+      "pmcid": "PMC12223363",
+      "pmid": "40388602",
+      "doi": "10.1093/gerona/glaf095",
+      "title": "Comparative Effectiveness of Metformin Versus Sulfonylureas on Exceptional Longevity in Women With Type 2 Diabetes: Target Trial Emulation.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 11
+    },
+    {
+      "pmcid": "PMC12542718",
+      "pmid": "41132242",
+      "doi": "10.14740/jocmr6370",
+      "title": "Adenosine Monophosphate-Activated Protein Kinase Activation and Mammalian Target of Rapamycin Complex 1 Inhibition: A Mechanistic Rationale for Anti-Aging Therapy in Type 2 Diabetes.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 12
+    },
+    {
+      "pmcid": "PMC13035662",
+      "pmid": "41924097",
+      "doi": "10.1007/s40471-026-00389-7",
+      "title": "A Narrative Review of Cardiovascular Health in Autistic Individuals: Epidemiologic Evidence, Mechanistic Pathways, and Future Directions.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 13
+    },
+    {
+      "pmcid": "PMC12468145",
+      "pmid": "41008660",
+      "doi": "10.3390/diagnostics15182288",
+      "title": "Metformin and Risk of New-Onset Atrial Fibrillation in Type 2 Diabetes: A Systematic Review and Meta-Analysis.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "meta_analysis",
+      "rank_in_type": 15
+    },
+    {
+      "pmcid": "PMC13082573",
+      "pmid": "41985055",
+      "doi": "10.2196/85083",
+      "title": "Antidiabetic Drug Associations With Heart Failure Outcomes: Real-World Evidence Study Using Electronic Health Records.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 1
+    },
+    {
+      "pmcid": "PMC13055741",
+      "pmid": "41804881",
+      "doi": "10.1161/jaha.125.042404",
+      "title": "Safety and Efficacy of Sodium Glucose Cotransporter-2 Inhibitors in Patients With Cancer and Diabetes.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 2
+    },
+    {
+      "pmcid": "PMC13009881",
+      "pmid": "41884313",
+      "doi": "10.1177/20420188261431021",
+      "title": "The WATCH-DM integer-based risk score identifies risk of all-cause mortality in patients with type 2 diabetes: a retrospective cohort study.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 3
+    },
+    {
+      "pmcid": "PMC13055625",
+      "pmid": "41953033",
+      "doi": "10.3389/fimmu.2026.1768882",
+      "title": "Metformin use and the risk of incident immune-mediated diseases in patients with type 2 diabetes: a population-based cohort study.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 4
+    },
+    {
+      "pmcid": "PMC13032177",
+      "pmid": "41902599",
+      "doi": "10.1111/liv.70608",
+      "title": "Clinical Outcomes and Non-Invasive Testing in Metabolic Dysfunction-Associated Steatohepatitis With Cirrhosis: A Systematic Review.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 5
+    },
+    {
+      "pmcid": "PMC12958111",
+      "pmid": "41788737",
+      "doi": "10.1093/noajnl/vdag041",
+      "title": "Metformin exposure after glioblastoma diagnosis and mortality: A large population-based study.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 6
+    },
+    {
+      "pmcid": "PMC13012210",
+      "pmid": "41884702",
+      "doi": "10.1097/txd.0000000000001932",
+      "title": "Glucagon-like Peptide-1 Receptor Agonists in Liver Transplant Recipients: A Retrospective Cohort Study.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 7
+    },
+    {
+      "pmcid": "PMC13026772",
+      "pmid": "41899041",
+      "doi": "10.3390/jcm15062117",
+      "title": "Clinical Outcomes with the Use of Dipeptidyl Peptidase-4 (DPP-4) Inhibitor Among Patients with Diabetes Mellitus and COVID-19: A Systematic Review of Observational Studies.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 8
+    },
+    {
+      "pmcid": "PMC13010754",
+      "pmid": "41883449",
+      "doi": "10.5493/wjem.v16.i1.117464",
+      "title": "Diabetic ketoacidosis in patients with type 2 diabetes: Risk factors for mortality and adverse outcomes.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 9
+    },
+    {
+      "pmcid": "PMC12986202",
+      "pmid": "",
+      "doi": "",
+      "title": "Cardiometabolic Comorbidities in COPD: Focus on Diabetes, GLP-1 Receptor Agonists, SGLT-2 Inhibitors and Antidiabetic Drugs",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 10
+    },
+    {
+      "pmcid": "PMC12609103",
+      "pmid": "41228370",
+      "doi": "10.3390/cancers17213579",
+      "title": "Effects of Metformin on Cancer Survival Among Men Diagnosed with Advanced Prostate Cancer Treated with Androgen-Deprivation Therapy: Emulating a Target Trial.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "observational",
+      "rank_in_type": 11
+    },
+    {
+      "pmcid": "PMC13096582",
+      "pmid": "42010803",
+      "doi": "10.1002/prp2.70257",
+      "title": "Metformin as a Multifaceted Therapeutic Agent for Gastrointestinal Diseases: Mechanisms, Clinical Efficacy, and Future Directions.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 12
+    },
+    {
+      "pmcid": "PMC12983889",
+      "pmid": "",
+      "doi": "",
+      "title": "Association of metformin with lung function decline and mortality in fibrotic interstitial lung disease: an observational cohort study",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 13
+    },
+    {
+      "pmcid": "PMC12803636",
+      "pmid": "41178701",
+      "doi": "10.1111/dom.70267",
+      "title": "Synergistic associations of metformin and GLP-1 receptor agonist use with adiposity-related cancer incidence in people living with type 2 diabetes.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 14
+    },
+    {
+      "pmcid": "PMC12784257",
+      "pmid": "41505116",
+      "doi": "10.1001/jamaoncol.2025.5869",
+      "title": "Sodium-Glucose Cotransporter 2 Inhibitors for Patients With Prostate Cancer Undergoing Hormone Therapy.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "observational",
+      "rank_in_type": 15
+    },
+    {
+      "pmcid": "PMC13018527",
+      "pmid": "41811567",
+      "doi": "10.1007/s10571-026-01709-7",
+      "title": "Interplay Between Autophagy, Cellular Senescence, and Brain Aging: Neuroprotective Implications of Intermittent Fasting.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "mechanism",
+      "rank_in_type": 7
+    },
+    {
+      "pmcid": "PMC12900492",
+      "pmid": "41695773",
+      "doi": "10.3389/fgene.2026.1771707",
+      "title": "Molecular mechanisms underlying the lifespan and healthspan benefits of dietary restriction across species.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "mechanism",
+      "rank_in_type": 8
+    },
+    {
+      "pmcid": "PMC12752735",
+      "pmid": "41477061",
+      "doi": "10.1515/mr-2025-0047",
+      "title": "Interplay between aging and metabolic diseases: from molecular mechanisms to therapeutic horizons.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "mechanism",
+      "rank_in_type": 10
+    },
+    {
+      "pmcid": "PMC13026103",
+      "pmid": "41898620",
+      "doi": "10.3390/ijms27062746",
+      "title": "Exercise-Induced Exerkines Modulate Autophagy: Implications for Interorgan Crosstalk in the Hallmarks of Ageing.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "mechanism",
+      "rank_in_type": 11
+    },
+    {
+      "pmcid": "PMC12872640",
+      "pmid": "41609972",
+      "doi": "10.1007/s40520-025-03278-z",
+      "title": "Exploring the nexus between inflammation and mobility through the lens of healthy aging: current scenario and future perspectives.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "mechanism",
+      "rank_in_type": 12
+    },
+    {
+      "pmcid": "PMC12591866",
+      "pmid": "41209074",
+      "doi": "10.5646/ch.2025.31.e34",
+      "title": "Dual modulation of atherosclerosis by exercise and metformin: convergent pathways, divergent outcomes, and therapeutic potential.",
+      "journal": "",
+      "year": 2025,
+      "evidence_type": "mechanism",
+      "rank_in_type": 14
+    },
+    {
+      "pmcid": "PMC12869046",
+      "pmid": "41646179",
+      "doi": "10.1016/j.smhs.2025.10.003",
+      "title": "Leveraging mitochondrial stress to improve healthy aging.",
+      "journal": "",
+      "year": 2026,
+      "evidence_type": "mechanism",
+      "rank_in_type": 15
+    }
+  ]
+}

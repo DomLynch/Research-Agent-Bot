@@ -1,0 +1,1899 @@
+{
+  "paper_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_",
+  "doi": "10.5493/wjem.v16.i1.117464",
+  "extracted_at": "2026-05-02T16:48:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 39,
+    "confidence_interval": 5,
+    "odds_ratio": 17,
+    "unit_value": 29,
+    "p_value": 3,
+    "mean_sd": 5,
+    "hazard_ratio": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-681",
+      "claim_type": "percentage",
+      "raw_text": "85.13%",
+      "numeric_values": [
+        85.13
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 681,
+      "sentence": "Of these 395 (85.13%) were White, 266 (57.3%) were males with a mean age at presentation of 61.3 (17.6) years, median inpatient hospital stay of 5 (interquartile range: 3-10.3) days, and a mean glycated HbA1c of 89.3 (30) mmol/mol.",
+      "context_window": "undred and sixty-four patients were included. Of these 395 (85.13%) were White, 266 (57.3%) were males with a mean age at pres",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-706",
+      "claim_type": "percentage",
+      "raw_text": "57.3%",
+      "numeric_values": [
+        57.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 706,
+      "sentence": "Of these 395 (85.13%) were White, 266 (57.3%) were males with a mean age at presentation of 61.3 (17.6) years, median inpatient hospital stay of 5 (interquartile range: 3-10.3) days, and a mean glycated HbA1c of 89.3 (30) mmol/mol.",
+      "context_window": "ients were included. Of these 395 (85.13%) were White, 266 (57.3%) were males with a mean age at presentation of 61.3 (17.6)",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-936",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 936,
+      "sentence": "The 30-day and 90-day mortality were 13.4% and 11% respectively after the index DKA event.",
+      "context_window": "of 89.3 (30) mmol/mol. The 30-day and 90-day mortality were 13.4% and 11% respectively after the index DKA event. The long-te",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-946",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 946,
+      "sentence": "The 30-day and 90-day mortality were 13.4% and 11% respectively after the index DKA event.",
+      "context_window": "0) mmol/mol. The 30-day and 90-day mortality were 13.4% and 11% respectively after the index DKA event. The long-term survi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-1042",
+      "claim_type": "percentage",
+      "raw_text": "58.6%",
+      "numeric_values": [
+        58.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1042,
+      "sentence": "The long-term survival after the DKA event was only 58.6%.",
+      "context_window": "event. The long-term survival after the DKA event was only 58.6%. Presence of cerebrovascular disease [odds ratio (OR): 6.75",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-ci-1109",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 0.76-12.74",
+      "numeric_values": [
+        0.76,
+        12.74
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1109,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-1179",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 5.8",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "6-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-ci-1188",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.32-9.62",
+      "numeric_values": [
+        1.32,
+        9.62
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1188,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-1246",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 3.6",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 s",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-ci-1255",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 2.14-6.44",
+      "numeric_values": [
+        2.14,
+        6.44
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1255,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-1319",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.14",
+      "numeric_values": [
+        1.14
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1319,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "I: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-ci-1329",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 0.10-2.18",
+      "numeric_values": [
+        0.1,
+        2.18
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1329,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 t",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-ci-1391",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -0.32 to -0.04",
+      "numeric_values": [
+        -0.32,
+        -0.04
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1391,
+      "sentence": "Presence of cerebrovascular disease [odds ratio (OR): 6.75; 95%CI: 0.76-12.74], use of sodium glucose cotransporter 2 inhibitors (OR: 5.8; 95%CI: 1.32-9.62), chronic obstructive pulmonary disease (OR: 3.6; 95%CI: 2.14-6.44), higher national early warning score 2 score (OR: 1.14; 95%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inpatient stay.",
+      "context_window": "%CI: 0.10-2.18) and low systolic blood pressure (OR: -0.18; 95%CI: -0.32 to -0.04) at admission were the significant predictors of longer inp",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-1530",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 46.43",
+      "numeric_values": [
+        46.43
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1530,
+      "sentence": "Coexistent peripheral vascular disease (PVD; OR: 46.43) and congestive heart failure (CHF; OR: 30.83), and lower estimated glomerular filtration rate (eGFR; OR: 0.98) were the important predictors of mortality during the hospital treatment.",
+      "context_window": "npatient stay. Coexistent peripheral vascular disease (PVD; OR: 46.43) and congestive heart failure (CHF; OR: 30.83), and lower e",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-1576",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 30.83",
+      "numeric_values": [
+        30.83
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1576,
+      "sentence": "Coexistent peripheral vascular disease (PVD; OR: 46.43) and congestive heart failure (CHF; OR: 30.83), and lower estimated glomerular filtration rate (eGFR; OR: 0.98) were the important predictors of mortality during the hospital treatment.",
+      "context_window": "disease (PVD; OR: 46.43) and congestive heart failure (CHF; OR: 30.83), and lower estimated glomerular filtration rate (eGFR; OR:",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-1642",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1642,
+      "sentence": "Coexistent peripheral vascular disease (PVD; OR: 46.43) and congestive heart failure (CHF; OR: 30.83), and lower estimated glomerular filtration rate (eGFR; OR: 0.98) were the important predictors of mortality during the hospital treatment.",
+      "context_window": ".83), and lower estimated glomerular filtration rate (eGFR; OR: 0.98) were the important predictors of mortality during the hosp",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-1784",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.06",
+      "numeric_values": [
+        1.06
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1784,
+      "sentence": "The significant predictors on 30-day mortality were: Age (OR: 1.06), eGFR (0.97) and index of multiple deprivation (IMD) decile (0.74).",
+      "context_window": ". The significant predictors on 30-day mortality were: Age (OR: 1.06), eGFR (0.97) and index of multiple deprivation (IMD) decil",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-2006",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2006,
+      "sentence": "The factors associated with long-term mortality risk were dementia (20.54-fold higher), continued use of sulfonylurea/metformin, and older age (4% higher with each additional year).",
+      "context_window": "r), continued use of sulfonylurea/metformin, and older age (4% higher with each additional year). DKA carries a serious r",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-618",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 618,
+      "sentence": "All adult patients (age \u2265 18 years) with T2DM admitted with DKA during the above period were screened for inclusion.",
+      "context_window": "arance (No. DIAB/CA/2021-22/03). All adult patients (age \u2265 18 years) with T2DM admitted with DKA during the above period were s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-813",
+      "claim_type": "unit_value",
+      "raw_text": "11 mmol",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 813,
+      "sentence": "The Joint British Diabetes Society criteria for DKA were used to identify patients (capillary glucose > 11 mmol/L, capillary ketone > 3 mmol/L or urine ketone \u2265 ++ and venous pH < 7.35 and/or bicarbonate < 15 mmol/L).",
+      "context_window": "for DKA were used to identify patients (capillary glucose > 11 mmol/L, capillary ketone > 3 mmol/L or urine ketone \u2265 ++ and ven",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-843",
+      "claim_type": "unit_value",
+      "raw_text": "3 mmol",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 843,
+      "sentence": "The Joint British Diabetes Society criteria for DKA were used to identify patients (capillary glucose > 11 mmol/L, capillary ketone > 3 mmol/L or urine ketone \u2265 ++ and venous pH < 7.35 and/or bicarbonate < 15 mmol/L).",
+      "context_window": "patients (capillary glucose > 11 mmol/L, capillary ketone > 3 mmol/L or urine ketone \u2265 ++ and venous pH < 7.35 and/or bicarbon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-915",
+      "claim_type": "unit_value",
+      "raw_text": "15 mmol",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 915,
+      "sentence": "The Joint British Diabetes Society criteria for DKA were used to identify patients (capillary glucose > 11 mmol/L, capillary ketone > 3 mmol/L or urine ketone \u2265 ++ and venous pH < 7.35 and/or bicarbonate < 15 mmol/L).",
+      "context_window": "urine ketone \u2265 ++ and venous pH < 7.35 and/or bicarbonate < 15 mmol/L). When patients had been on SGLT-2i class of medications,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-1025",
+      "claim_type": "unit_value",
+      "raw_text": "11 mmol",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1025,
+      "sentence": "When patients had been on SGLT-2i class of medications, even those with plasma glucose level of < 11 mmol/L also was considered as having DKA when other criteria were met in presence of an anion gap > 10.",
+      "context_window": "s of medications, even those with plasma glucose level of < 11 mmol/L also was considered as having DKA when other criteria wer",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2467",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2467,
+      "sentence": "Demographic information (age, sex, and ethnic background), associated comorbidities, clinical observations and laboratory information at the time of admission with DKA, the duration of inpatient hospital stays, and death during, within 30 days and longer term during follow up were also recorded.",
+      "context_window": "ation of inpatient hospital stays, and death during, within 30 days and longer term during follow up were also recorded. For va",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-p-4378",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4378,
+      "sentence": "The level for statistical significance was considered as P < 0.05.",
+      "context_window": "). The level for statistical significance was considered as P < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-99",
+      "claim_type": "percentage",
+      "raw_text": "57.3%",
+      "numeric_values": [
+        57.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 99,
+      "sentence": "266 (57.3%) were males and 395 (85.13%) were White with the remainder other ethnic groups [Asians 41 (8.84%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3.88%)].",
+      "context_window": "admitted to hospital with DKA during the study period. 266 (57.3%) were males and 395 (85.13%) were White with the remainder",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-126",
+      "claim_type": "percentage",
+      "raw_text": "85.13%",
+      "numeric_values": [
+        85.13
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 126,
+      "sentence": "266 (57.3%) were males and 395 (85.13%) were White with the remainder other ethnic groups [Asians 41 (8.84%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3.88%)].",
+      "context_window": "KA during the study period. 266 (57.3%) were males and 395 (85.13%) were White with the remainder other ethnic groups [Asians",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-196",
+      "claim_type": "percentage",
+      "raw_text": "8.84%",
+      "numeric_values": [
+        8.84
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 196,
+      "sentence": "266 (57.3%) were males and 395 (85.13%) were White with the remainder other ethnic groups [Asians 41 (8.84%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3.88%)].",
+      "context_window": "re White with the remainder other ethnic groups [Asians 41 (8.84%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-223",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 223,
+      "sentence": "266 (57.3%) were males and 395 (85.13%) were White with the remainder other ethnic groups [Asians 41 (8.84%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3.88%)].",
+      "context_window": "other ethnic groups [Asians 41 (8.84%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3.88%)]. Mean age at presen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-260",
+      "claim_type": "percentage",
+      "raw_text": "3.88%",
+      "numeric_values": [
+        3.88
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 260,
+      "sentence": "266 (57.3%) were males and 395 (85.13%) were White with the remainder other ethnic groups [Asians 41 (8.84%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3.88%)].",
+      "context_window": "%), Afro-Caribbean 10 (2.1%) and ethnicity not recorded 18 (3.88%)]. Mean age at presentation was 61.3 \u00b1 17.6 years and media",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-msd-298",
+      "claim_type": "mean_sd",
+      "raw_text": "61.3 \u00b1 17.6",
+      "numeric_values": [
+        61.3,
+        17.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 298,
+      "sentence": "Mean age at presentation was 61.3 \u00b1 17.6 years and median age was 60 (51-76) years.",
+      "context_window": "city not recorded 18 (3.88%)]. Mean age at presentation was 61.3 \u00b1 17.6 years and median age was 60 (51-76) years. Table 1 shows th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-305",
+      "claim_type": "unit_value",
+      "raw_text": "17.6 years",
+      "numeric_values": [
+        17.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 305,
+      "sentence": "Mean age at presentation was 61.3 \u00b1 17.6 years and median age was 60 (51-76) years.",
+      "context_window": "t recorded 18 (3.88%)]. Mean age at presentation was 61.3 \u00b1 17.6 years and median age was 60 (51-76) years. Table 1 shows the como",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-msd-906",
+      "claim_type": "mean_sd",
+      "raw_text": "8.7 \u00b1 10.3",
+      "numeric_values": [
+        8.7,
+        10.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 906,
+      "sentence": "The median LOS was 5 (3-10.3) days and the mean was 8.7 \u00b1 10.3 days.",
+      "context_window": "ssure. The median LOS was 5 (3-10.3) days and the mean was 8.7 \u00b1 10.3 days. Cerebrovascular disease, use of SGLT-2i, chronic obst",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-912",
+      "claim_type": "unit_value",
+      "raw_text": "10.3 days",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 912,
+      "sentence": "The median LOS was 5 (3-10.3) days and the mean was 8.7 \u00b1 10.3 days.",
+      "context_window": "The median LOS was 5 (3-10.3) days and the mean was 8.7 \u00b1 10.3 days. Cerebrovascular disease, use of SGLT-2i, chronic obstructi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-1767",
+      "claim_type": "unit_value",
+      "raw_text": "80 mm",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 1767,
+      "sentence": "Interestingly, lower systolic BP at admission (below 120/80 mm Hg) was also significantly associated with longer hospitalisation, with each mmHg reduction predicting an additional 0.18 days of stay.",
+      "context_window": ". Interestingly, lower systolic BP at admission (below 120/80 mm Hg) was also significantly associated with longer hospitali",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-1890",
+      "claim_type": "unit_value",
+      "raw_text": "0.18 days",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1890,
+      "sentence": "Interestingly, lower systolic BP at admission (below 120/80 mm Hg) was also significantly associated with longer hospitalisation, with each mmHg reduction predicting an additional 0.18 days of stay.",
+      "context_window": "lisation, with each mmHg reduction predicting an additional 0.18 days of stay. Lower systolic BP usually implies circulatory volu",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2209",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2209,
+      "sentence": "Conversely, a recent myocardial infarction was associated with a shorter LOS (about 6 days), though this finding was borderline significant and may be influenced by early discharge pathways (for treatment in other hospitals for coronary interventions), or mortality bias.",
+      "context_window": "cardial infarction was associated with a shorter LOS (about 6 days), though this finding was borderline significant and may be",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2488",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2488,
+      "sentence": "The model also found that individuals whose race was not recorded had longer stays (about 10 days), suggesting that missing or poorly classified demographic data may correlate with unmeasured clinical or social complexity.",
+      "context_window": "viduals whose race was not recorded had longer stays (about 10 days), suggesting that missing or poorly classified demographic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-2816",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2816,
+      "sentence": "Twenty-five (5.4%) patients died during hospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event.",
+      "context_window": "emonstrate significant associations with LOS. Twenty-five (5.4%) patients died during hospital admission while 37 (8%) died",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-2872",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2872,
+      "sentence": "Twenty-five (5.4%) patients died during hospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event.",
+      "context_window": "ve (5.4%) patients died during hospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2888",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2888,
+      "sentence": "Twenty-five (5.4%) patients died during hospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event.",
+      "context_window": "ts died during hospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event. At las",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-2904",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2904,
+      "sentence": "Twenty-five (5.4%) patients died during hospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event.",
+      "context_window": "ospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event. At last follow-up,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2921",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2921,
+      "sentence": "Twenty-five (5.4%) patients died during hospital admission while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event.",
+      "context_window": "while 37 (8%) died within 30 days and 51 (11%) died within 90 days of the index event. At last follow-up, 272 patients (58.6%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-2982",
+      "claim_type": "percentage",
+      "raw_text": "58.6%",
+      "numeric_values": [
+        58.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2982,
+      "sentence": "At last follow-up, 272 patients (58.6%) were alive, corresponding to 192 deaths.",
+      "context_window": "0 days of the index event. At last follow-up, 272 patients (58.6%) were alive, corresponding to 192 deaths. This logistic re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-p-3254",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.000001",
+      "numeric_values": [
+        1e-06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3254,
+      "sentence": "The overall model fit was strong, with a pseudo-R 2 of 0.438 and a highly significant likelihood ratio test ( P < 0.000001), indicating that the model explains a meaningful portion of the variability in patient outcomes ( Table 4 ).",
+      "context_window": "2 of 0.438 and a highly significant likelihood ratio test ( P < 0.000001), indicating that the model explains a meaningful portion o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-3990",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3990,
+      "sentence": "In contrast, the use of metformin prior to admission was associated with a 91% reduction in the odds of death.",
+      "context_window": "e use of metformin prior to admission was associated with a 91% reduction in the odds of death. This strong protective effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-4473",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4473,
+      "sentence": "Finally, lower estimated glomerular filtration rate (eGFR) values (worse kidney function) were also associated with increased mortality risk, with each unit increase in eGFR decreasing the odds of death by approximately 2%.",
+      "context_window": "rease in eGFR decreasing the odds of death by approximately 2%. Other predictors, such as age, dementia, and NEWS 2 score",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-p-4870",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.000001",
+      "numeric_values": [
+        1e-06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4870,
+      "sentence": "The model demonstrated statistically significant overall performance (log-likelihood ratio P < 0.000001) and identified four key predictors.",
+      "context_window": "cally significant overall performance (log-likelihood ratio P < 0.000001) and identified four key predictors. Logistic regression a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-5199",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5199,
+      "sentence": "The age of the patient was a significant positive predictor: For each additional year of age, the odds of dying within 30 days increased by approximately 6%.",
+      "context_window": ": For each additional year of age, the odds of dying within 30 days increased by approximately 6%. Similarly, lower values of e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-5234",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5234,
+      "sentence": "The age of the patient was a significant positive predictor: For each additional year of age, the odds of dying within 30 days increased by approximately 6%.",
+      "context_window": "the odds of dying within 30 days increased by approximately 6%. Similarly, lower values of eGFR, a measure of kidney funct",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-5420",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5420,
+      "sentence": "Each unit increase in eGFR reduced the odds of 30-day mortality by about 3%, underscoring the importance of renal function as a mortality determinant.",
+      "context_window": "rease in eGFR reduced the odds of 30-day mortality by about 3%, underscoring the importance of renal function as a mortali",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-5686",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5686,
+      "sentence": "Importantly, patients from more deprived areas (lower IMD decile) also had higher odds of dying, with each unit increase in the IMD decile (indicating less deprivation) associated with a 26% reduction in 30-day mortality risk.",
+      "context_window": "IMD decile (indicating less deprivation) associated with a 26% reduction in 30-day mortality risk. This finding highlights",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-6918",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6918,
+      "sentence": "Cox proportional hazards model analysis examining the long-term mortality risk after index hospitalisation\n\nAge was a consistent and significant predictor: Each additional year of age was associated with a 4% increase in hazard of death.",
+      "context_window": "redictor: Each additional year of age was associated with a 4% increase in hazard of death. Two antidiabetic therapies (pr",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-7376",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7376,
+      "sentence": "Though it appears paradoxical at first glance that metformin use appears to be strongly protective for in-hospital mortality (OR = 0.09) and increases the HR in the long-term mortality model, these findings are probably not implying a cause-effect relationship but may be related to patient selection and treatment periods.",
+      "context_window": "ppears to be strongly protective for in-hospital mortality (OR = 0.09) and increases the HR in the long-term mortality model, the",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-7779",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7779,
+      "sentence": "In contrast, patients with cerebrovascular disease (CEVD) demonstrated a 66% lower hazard, which may reflect early discharge, end-of-life care outside hospital, or misclassification of cause of death.",
+      "context_window": "patients with cerebrovascular disease (CEVD) demonstrated a 66% lower hazard, which may reflect early discharge, end-of-lif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-87",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 87,
+      "sentence": "The study identified that the inpatient mortality due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event.",
+      "context_window": "he inpatient mortality due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-105",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 105,
+      "sentence": "The study identified that the inpatient mortality due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event.",
+      "context_window": "lity due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-130",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 130,
+      "sentence": "The study identified that the inpatient mortality due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event.",
+      "context_window": "ts with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-164",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 164,
+      "sentence": "The study identified that the inpatient mortality due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event.",
+      "context_window": "8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event. We also fou",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-175",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 175,
+      "sentence": "The study identified that the inpatient mortality due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event.",
+      "context_window": "s dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event. We also found that t",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-186",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 186,
+      "sentence": "The study identified that the inpatient mortality due to DKA in patients with T2DM was 5.4% with another 8% of cases dying within 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event.",
+      "context_window": "hin 30 days (overall 30-day mortality 13.4%) and 11% within 90 days of the index DKA event. We also found that the long-term su",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-288",
+      "claim_type": "percentage",
+      "raw_text": "58.6%",
+      "numeric_values": [
+        58.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 288,
+      "sentence": "We also found that the long-term survival after the DKA event is only 58.6%.",
+      "context_window": "und that the long-term survival after the DKA event is only 58.6%. Presence of cerebrovascular disease (OR: 6.75), use of SGL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-332",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 6.75",
+      "numeric_values": [
+        6.75
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 332,
+      "sentence": "Presence of cerebrovascular disease (OR: 6.75), use of SGLT-2 inhibitors (OR: 5.8), COPD (OR: 3.6), higher NEWS 2 score at admission (OR: 1.14) and systolic BP (OR: -0.18) were the significant predictors of longer inpatient stay.",
+      "context_window": "A event is only 58.6%. Presence of cerebrovascular disease (OR: 6.75), use of SGLT-2 inhibitors (OR: 5.8), COPD (OR: 3.6), highe",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-369",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 5.8",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 369,
+      "sentence": "Presence of cerebrovascular disease (OR: 6.75), use of SGLT-2 inhibitors (OR: 5.8), COPD (OR: 3.6), higher NEWS 2 score at admission (OR: 1.14) and systolic BP (OR: -0.18) were the significant predictors of longer inpatient stay.",
+      "context_window": "rebrovascular disease (OR: 6.75), use of SGLT-2 inhibitors (OR: 5.8), COPD (OR: 3.6), higher NEWS 2 score at admission (OR: 1.1",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-385",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 3.6",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 385,
+      "sentence": "Presence of cerebrovascular disease (OR: 6.75), use of SGLT-2 inhibitors (OR: 5.8), COPD (OR: 3.6), higher NEWS 2 score at admission (OR: 1.14) and systolic BP (OR: -0.18) were the significant predictors of longer inpatient stay.",
+      "context_window": "sease (OR: 6.75), use of SGLT-2 inhibitors (OR: 5.8), COPD (OR: 3.6), higher NEWS 2 score at admission (OR: 1.14) and systolic",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-429",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.14",
+      "numeric_values": [
+        1.14
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 429,
+      "sentence": "Presence of cerebrovascular disease (OR: 6.75), use of SGLT-2 inhibitors (OR: 5.8), COPD (OR: 3.6), higher NEWS 2 score at admission (OR: 1.14) and systolic BP (OR: -0.18) were the significant predictors of longer inpatient stay.",
+      "context_window": "OR: 5.8), COPD (OR: 3.6), higher NEWS 2 score at admission (OR: 1.14) and systolic BP (OR: -0.18) were the significant predictor",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-541",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 46.43",
+      "numeric_values": [
+        46.43
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 541,
+      "sentence": "Coexistent PVD (OR: 46.43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR: 0.09) were the important predictors of mortality during the hospital treatment.",
+      "context_window": "ficant predictors of longer inpatient stay. Coexistent PVD (OR: 46.43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-561",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 30.83",
+      "numeric_values": [
+        30.83
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 561,
+      "sentence": "Coexistent PVD (OR: 46.43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR: 0.09) were the important predictors of mortality during the hospital treatment.",
+      "context_window": "longer inpatient stay. Coexistent PVD (OR: 46.43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR: 0.09) were the imp",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-579",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 579,
+      "sentence": "Coexistent PVD (OR: 46.43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR: 0.09) were the important predictors of mortality during the hospital treatment.",
+      "context_window": "stay. Coexistent PVD (OR: 46.43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR: 0.09) were the important predictors",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-608",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 608,
+      "sentence": "Coexistent PVD (OR: 46.43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR: 0.09) were the important predictors of mortality during the hospital treatment.",
+      "context_window": "43) and CHF (OR: 30.83), eGFR (OR: 0.98) and metformin use (OR: 0.09) were the important predictors of mortality during the hosp",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-or-a-757",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.06",
+      "numeric_values": [
+        1.06
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 757,
+      "sentence": "The significant predictors on 30-day mortality were: Higher age (OR: 1.06), eGFR (0.97) and IMD decile (0.74).",
+      "context_window": "ignificant predictors on 30-day mortality were: Higher age (OR: 1.06), eGFR (0.97) and IMD decile (0.74). The factors associated",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-962",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 962,
+      "sentence": "The factors associated with long-term mortality risk were dementia (20.54 higher), use of older antidiabetic agents like sulphonylurea and metformin, and age (4% higher with each additional year).",
+      "context_window": "idiabetic agents like sulphonylurea and metformin, and age (4% higher with each additional year). Historically, DKA has b",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-1322",
+      "claim_type": "percentage",
+      "raw_text": "30.8%",
+      "numeric_values": [
+        30.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1322,
+      "sentence": "They found a mortality rate of 30.8% with median time of death 43 days.",
+      "context_window": "e with T1DM who develop DKA. They found a mortality rate of 30.8% with median time of death 43 days. As we were unable to ide",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-1354",
+      "claim_type": "unit_value",
+      "raw_text": "43 days",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1354,
+      "sentence": "They found a mortality rate of 30.8% with median time of death 43 days.",
+      "context_window": "y found a mortality rate of 30.8% with median time of death 43 days. As we were unable to identify the time of death among thos",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-1438",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1438,
+      "sentence": "As we were unable to identify the time of death among those who died after 90 days of hospital discharge, we are unable to assess the median time of death in all cases.",
+      "context_window": "le to identify the time of death among those who died after 90 days of hospital discharge, we are unable to assess the median t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-1592",
+      "claim_type": "percentage",
+      "raw_text": "24.4%",
+      "numeric_values": [
+        24.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1592,
+      "sentence": "However, we observed a lower overall mortality rate of only 24.4% at 90 days of the index DKA event, while the mortality rate reported by Song and Frier[ 15 ] was apparently higher.",
+      "context_window": "However, we observed a lower overall mortality rate of only 24.4% at 90 days of the index DKA event, while the mortality rate",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-1601",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1601,
+      "sentence": "However, we observed a lower overall mortality rate of only 24.4% at 90 days of the index DKA event, while the mortality rate reported by Song and Frier[ 15 ] was apparently higher.",
+      "context_window": "we observed a lower overall mortality rate of only 24.4% at 90 days of the index DKA event, while the mortality rate reported b",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-1771",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1771,
+      "sentence": "Though we observed a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from Israel[ 16 ], we observed a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while only 7.7% of deaths were observed in the Israeli cohort even with a comparable mean age of 63 (13 years) of patients in both cohorts.",
+      "context_window": "r. Though we observed a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-1788",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1788,
+      "sentence": "Though we observed a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from Israel[ 16 ], we observed a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while only 7.7% of deaths were observed in the Israeli cohort even with a comparable mean age of 63 (13 years) of patients in both cohorts.",
+      "context_window": "rved a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from Israel[ 16 ], we",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-1896",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1896,
+      "sentence": "Though we observed a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from Israel[ 16 ], we observed a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while only 7.7% of deaths were observed in the Israeli cohort even with a comparable mean age of 63 (13 years) of patients in both cohorts.",
+      "context_window": "Israel[ 16 ], we observed a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-1922",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1922,
+      "sentence": "Though we observed a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from Israel[ 16 ], we observed a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while only 7.7% of deaths were observed in the Israeli cohort even with a comparable mean age of 63 (13 years) of patients in both cohorts.",
+      "context_window": "a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while only 7.7% of deaths were obse",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-1965",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1965,
+      "sentence": "Though we observed a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from Israel[ 16 ], we observed a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while only 7.7% of deaths were observed in the Israeli cohort even with a comparable mean age of 63 (13 years) of patients in both cohorts.",
+      "context_window": "ses dying within 90 days of the index DKA event, while only 7.7% of deaths were observed in the Israeli cohort even with a c",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2055",
+      "claim_type": "unit_value",
+      "raw_text": "13 years",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2055,
+      "sentence": "Though we observed a lower in hospital mortality rate of 5.4% compared to 6.4% observed from a recent study reported from Israel[ 16 ], we observed a much higher mortality rate with 19% of cases dying within 90 days of the index DKA event, while only 7.7% of deaths were observed in the Israeli cohort even with a comparable mean age of 63 (13 years) of patients in both cohorts.",
+      "context_window": "n the Israeli cohort even with a comparable mean age of 63 (13 years) of patients in both cohorts. Varying demographic and patie",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2701",
+      "claim_type": "unit_value",
+      "raw_text": "8.7 days",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2701,
+      "sentence": "We found a shorter LOS (mean 8.7 days and median 5 days) compared to a much longer period of stay (13.4 \u00b1 17.6) days in a large study data on DKA among T2DM patients reported from Australia between 2002 and 2016[ 17 , 18 ].",
+      "context_window": "ients across the world[ 17 ]. We found a shorter LOS (mean 8.7 days and median 5 days) compared to a much longer period of stay",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-2721",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2721,
+      "sentence": "We found a shorter LOS (mean 8.7 days and median 5 days) compared to a much longer period of stay (13.4 \u00b1 17.6) days in a large study data on DKA among T2DM patients reported from Australia between 2002 and 2016[ 17 , 18 ].",
+      "context_window": "ld[ 17 ]. We found a shorter LOS (mean 8.7 days and median 5 days) compared to a much longer period of stay (13.4 \u00b1 17.6) day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-msd-2771",
+      "claim_type": "mean_sd",
+      "raw_text": "13.4 \u00b1 17.6",
+      "numeric_values": [
+        13.4,
+        17.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2771,
+      "sentence": "We found a shorter LOS (mean 8.7 days and median 5 days) compared to a much longer period of stay (13.4 \u00b1 17.6) days in a large study data on DKA among T2DM patients reported from Australia between 2002 and 2016[ 17 , 18 ].",
+      "context_window": "nd median 5 days) compared to a much longer period of stay (13.4 \u00b1 17.6) days in a large study data on DKA among T2DM patients repo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-msd-2982",
+      "claim_type": "mean_sd",
+      "raw_text": "61.3 \u00b1 17.6",
+      "numeric_values": [
+        61.3,
+        17.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2982,
+      "sentence": "Better treatment facilities in recent years for patients with DKA and lower mean age (61.3 \u00b1 17.6) years at presentation in our cohort would probably explain this discrepancy.",
+      "context_window": "s in recent years for patients with DKA and lower mean age (61.3 \u00b1 17.6) years at presentation in our cohort would probably explain",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-3831",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3831,
+      "sentence": "Our observation of a 4% excess risk of mortality with each year of increasing age after the index DKA event is especially important as potential preventive strategies can be sought in such older individuals.",
+      "context_window": "id disease and cancer had no effects. Our observation of a 4% excess risk of mortality with each year of increasing age a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-msd-4080",
+      "claim_type": "mean_sd",
+      "raw_text": "89.5 \u00b1 30",
+      "numeric_values": [
+        89.5,
+        30.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4080,
+      "sentence": "As we observed poor metabolic control with a high mean HbA1c (89.5 \u00b1 30 mmol/mol) in our cohort, prompt glycemic control could have potentially improved the long-term survival or at least prevented several complications associated with diabetes.",
+      "context_window": "we observed poor metabolic control with a high mean HbA1c (89.5 \u00b1 30 mmol/mol) in our cohort, prompt glycemic control could have",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-4087",
+      "claim_type": "unit_value",
+      "raw_text": "30 mmol",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 4087,
+      "sentence": "As we observed poor metabolic control with a high mean HbA1c (89.5 \u00b1 30 mmol/mol) in our cohort, prompt glycemic control could have potentially improved the long-term survival or at least prevented several complications associated with diabetes.",
+      "context_window": "erved poor metabolic control with a high mean HbA1c (89.5 \u00b1 30 mmol/mol) in our cohort, prompt glycemic control could have pote",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-4285",
+      "claim_type": "unit_value",
+      "raw_text": "34 years",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4285,
+      "sentence": "Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications study indicated that DKA was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ].",
+      "context_window": "omplications associated with diabetes. Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epi",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-hr-a-4491",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 9.13",
+      "numeric_values": [
+        9.13
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4491,
+      "sentence": "Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications study indicated that DKA was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ].",
+      "context_window": "was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-hr-a-4517",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 3.24",
+      "numeric_values": [
+        3.24
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4517,
+      "sentence": "Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications study indicated that DKA was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ].",
+      "context_window": "cess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-hr-a-4553",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 2.10",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4553,
+      "sentence": "Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications study indicated that DKA was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ].",
+      "context_window": ": 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglyce",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-hr-a-4594",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.66",
+      "numeric_values": [
+        1.66
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4594,
+      "sentence": "Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications study indicated that DKA was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ].",
+      "context_window": "ed kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (H",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-hr-a-4626",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.53",
+      "numeric_values": [
+        1.53
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4626,
+      "sentence": "Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications study indicated that DKA was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ].",
+      "context_window": "jor adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those witho",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-hr-a-4661",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.49",
+      "numeric_values": [
+        1.49
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4661,
+      "sentence": "Long-term follow-up (34 years) data from the Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications study indicated that DKA was associated with an excess risk of all-cause mortality (HR: 9.13), recurrent DKA (HR: 3.24), advanced kidney disease (HR: 2.10), major adverse cardiac events (HR: 1.66), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ].",
+      "context_window": "6), severe hypoglycemia (HR: 1.53) and advanced neuropathy (HR: 1.49) compared to those without an incident DKA[ 22 ]. Though th",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-5279",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5279,
+      "sentence": "Liu et al [ 23 ] showed that dementia is associated with a 30% excess long-term mortality risk among patients admitted with a hyperglycemic complication such as DKA in T2DM patients.",
+      "context_window": "Liu et al [ 23 ] showed that dementia is associated with a 30% excess long-term mortality risk among patients admitted wit",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-6539",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6539,
+      "sentence": "We were also unable to get data on the causes of death after 90 days of discharge.",
+      "context_window": "e were also unable to get data on the causes of death after 90 days of discharge. Moreover, the apparently protective effects o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-6938",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6938,
+      "sentence": "However, the study provides results from a large data with a very long follow-up period of over 15 years which make our observations unique.",
+      "context_window": "from a large data with a very long follow-up period of over 15 years which make our observations unique. The analyzed clinical a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-82",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 82,
+      "sentence": "The inpatient mortality due to DKA in patients with T2DM was comparatively low at 5.4% compared with previously reported rates with an overall 90-day death risk of 24.4% after the index DKA event.",
+      "context_window": "y due to DKA in patients with T2DM was comparatively low at 5.4% compared with previously reported rates with an overall 90-",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-164",
+      "claim_type": "percentage",
+      "raw_text": "24.4%",
+      "numeric_values": [
+        24.4
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 164,
+      "sentence": "The inpatient mortality due to DKA in patients with T2DM was comparatively low at 5.4% compared with previously reported rates with an overall 90-day death risk of 24.4% after the index DKA event.",
+      "context_window": "viously reported rates with an overall 90-day death risk of 24.4% after the index DKA event. The long-term survival following",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-pct-250",
+      "claim_type": "percentage",
+      "raw_text": "58.6%",
+      "numeric_values": [
+        58.6
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 250,
+      "sentence": "The long-term survival following a DKA event is only 58.6% at 15 years.",
+      "context_window": "event. The long-term survival following a DKA event is only 58.6% at 15 years. DKA carries a serious risk of mortality in bot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13010754_diabetic_ketoacidosis_in_patients_with_type_2_diabetes_risk_-u-259",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 259,
+      "sentence": "The long-term survival following a DKA event is only 58.6% at 15 years.",
+      "context_window": "e long-term survival following a DKA event is only 58.6% at 15 years. DKA carries a serious risk of mortality in both the short",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

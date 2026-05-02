@@ -1,0 +1,897 @@
+{
+  "paper_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp",
+  "doi": "10.3390/jcm15062117",
+  "extracted_at": "2026-05-02T16:48:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "confidence_interval": 19,
+    "p_value": 11,
+    "percentage": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-u-1168",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "Results : A total of nineteen studies were included with sample sizes varying from over 100 patients to 2.8 million and variant follow-up durations from 30 days up to discharge or death.",
+      "context_window": "atients to 2.8 million and variant follow-up durations from 30 days up to discharge or death. Most of the population across the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-u-2086",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2086,
+      "sentence": "Follow-up most commonly extended to discharge, death, or 28 or 30 days after diagnosis or admission, as shown in Table 1 .",
+      "context_window": "low-up most commonly extended to discharge, death, or 28 or 30 days after diagnosis or admission, as shown in Table 1 . Accordi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-3464",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.29-0.66",
+      "numeric_values": [
+        0.29,
+        0.66
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3464,
+      "sentence": "The results showed improved outcomes for the time to clinical endpoint (death/discharge) (HR 0.44, 95% CI 0.29-0.66, p = 0.0001), which is statistically significant, and a mortality rate of 18% in the sitagliptin-treated group compared to 37% in the control group, which demonstrated a lower risk of mortality among the sitagliptin-treated group [ 15 ].",
+      "context_window": "r the time to clinical endpoint (death/discharge) (HR 0.44, 95% CI 0.29-0.66, p = 0.0001), which is statistically significant, and a mor",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-3482",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3482,
+      "sentence": "The results showed improved outcomes for the time to clinical endpoint (death/discharge) (HR 0.44, 95% CI 0.29-0.66, p = 0.0001), which is statistically significant, and a mortality rate of 18% in the sitagliptin-treated group compared to 37% in the control group, which demonstrated a lower risk of mortality among the sitagliptin-treated group [ 15 ].",
+      "context_window": "ical endpoint (death/discharge) (HR 0.44, 95% CI 0.29-0.66, p = 0.0001), which is statistically significant, and a mortality rate",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-3555",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3555,
+      "sentence": "The results showed improved outcomes for the time to clinical endpoint (death/discharge) (HR 0.44, 95% CI 0.29-0.66, p = 0.0001), which is statistically significant, and a mortality rate of 18% in the sitagliptin-treated group compared to 37% in the control group, which demonstrated a lower risk of mortality among the sitagliptin-treated group [ 15 ].",
+      "context_window": "which is statistically significant, and a mortality rate of 18% in the sitagliptin-treated group compared to 37% in the con",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-3604",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3604,
+      "sentence": "The results showed improved outcomes for the time to clinical endpoint (death/discharge) (HR 0.44, 95% CI 0.29-0.66, p = 0.0001), which is statistically significant, and a mortality rate of 18% in the sitagliptin-treated group compared to 37% in the control group, which demonstrated a lower risk of mortality among the sitagliptin-treated group [ 15 ].",
+      "context_window": "ty rate of 18% in the sitagliptin-treated group compared to 37% in the control group, which demonstrated a lower risk of mo",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-3858",
+      "claim_type": "percentage",
+      "raw_text": "12.2%",
+      "numeric_values": [
+        12.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3858,
+      "sentence": "Mirani and colleagues conducted a case series study including 387 individuals with COVID-19 and 90 patients with type 2 diabetes, of whom 12.2% were on DPP-4i.",
+      "context_window": "with COVID-19 and 90 patients with type 2 diabetes, of whom 12.2% were on DPP-4i. The study was conducted to assess the impac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-4068",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.02-0.92",
+      "numeric_values": [
+        0.02,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4068,
+      "sentence": "Among DPP-4i users, a significant reduction in mortality was observed (adjusted HR 0.13, 95% CI 0.02-0.92; p = 0.042) with statistical significance [ 16 ].",
+      "context_window": "cant reduction in mortality was observed (adjusted HR 0.13, 95% CI 0.02-0.92; p = 0.042) with statistical significance [ 16 ]. P\u00e9rez-Be",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-4086",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4086,
+      "sentence": "Among DPP-4i users, a significant reduction in mortality was observed (adjusted HR 0.13, 95% CI 0.02-0.92; p = 0.042) with statistical significance [ 16 ].",
+      "context_window": "mortality was observed (adjusted HR 0.13, 95% CI 0.02-0.92; p = 0.042) with statistical significance [ 16 ]. P\u00e9rez-Belmonte and",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-4536",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4536,
+      "sentence": "Among DPP-4i users, the analysis indicated no influence on in-hospital mortality (adjusted OR 1.05; 95% CI, 0.67-2.11; p = 0.562), indicating a statistically non-significant result [ 17 ].",
+      "context_window": "ed no influence on in-hospital mortality (adjusted OR 1.05; 95% CI, 0.67-2.11; p = 0.562), indicating a statistically non-s",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-4555",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.562",
+      "numeric_values": [
+        0.562
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4555,
+      "sentence": "Among DPP-4i users, the analysis indicated no influence on in-hospital mortality (adjusted OR 1.05; 95% CI, 0.67-2.11; p = 0.562), indicating a statistically non-significant result [ 17 ].",
+      "context_window": "in-hospital mortality (adjusted OR 1.05; 95% CI, 0.67-2.11; p = 0.562), indicating a statistically non-significant result [ 17 ].",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-4940",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.43-1.26",
+      "numeric_values": [
+        0.43,
+        1.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4940,
+      "sentence": "The results demonstrated no effect of DPP-4i on all-cause mortality (adjusted HR 0.74, 95% CI 0.43-1.26), which is a statistically non-significant value [ 18 ].",
+      "context_window": "effect of DPP-4i on all-cause mortality (adjusted HR 0.74, 95% CI 0.43-1.26), which is a statistically non-significant value [ 18 ]. R",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-5402",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.70-1.12",
+      "numeric_values": [
+        0.7,
+        1.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5402,
+      "sentence": "The study revealed no significant effect of DPP-4i on 28-day mortality (adjusted OR 0.89, 95% CI 0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.0561; these values are statistically non-significant [ 19 ].",
+      "context_window": "ant effect of DPP-4i on 28-day mortality (adjusted OR 0.89, 95% CI 0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.056",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-5444",
+      "claim_type": "percentage",
+      "raw_text": "18.1%",
+      "numeric_values": [
+        18.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5444,
+      "sentence": "The study revealed no significant effect of DPP-4i on 28-day mortality (adjusted OR 0.89, 95% CI 0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.0561; these values are statistically non-significant [ 19 ].",
+      "context_window": "adjusted OR 0.89, 95% CI 0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.0561; these values are statistical",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-5462",
+      "claim_type": "percentage",
+      "raw_text": "21.8%",
+      "numeric_values": [
+        21.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5462,
+      "sentence": "The study revealed no significant effect of DPP-4i on 28-day mortality (adjusted OR 0.89, 95% CI 0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.0561; these values are statistically non-significant [ 19 ].",
+      "context_window": "95% CI 0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.0561; these values are statistically non-significant",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-5469",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0561",
+      "numeric_values": [
+        0.0561
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5469,
+      "sentence": "The study revealed no significant effect of DPP-4i on 28-day mortality (adjusted OR 0.89, 95% CI 0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.0561; these values are statistically non-significant [ 19 ].",
+      "context_window": "0.70-1.12) and a mortality rate of 18.1% compared to 21.8%, p = 0.0561; these values are statistically non-significant [ 19 ]. Kh",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-5930",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01-1.13",
+      "numeric_values": [
+        1.01,
+        1.13
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5930,
+      "sentence": "The findings revealed that the DPP-4i group had a higher risk of COVID-19-related mortality (HR 1.07, 95% CI 1.01-1.13) [ 20 ].",
+      "context_window": "p had a higher risk of COVID-19-related mortality (HR 1.07, 95% CI 1.01-1.13) [ 20 ]. Meijer and colleagues conducted a prospective obs",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-6215",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.68-1.28",
+      "numeric_values": [
+        0.68,
+        1.28
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6215,
+      "sentence": "In the propensity-matched analysis, DPP-4i use showed no major effect on in-hospital death (OR 0.93, 95% CI 0.68-1.28, p = 0.689), which is not statistically significant [ 21 ].",
+      "context_window": "i use showed no major effect on in-hospital death (OR 0.93, 95% CI 0.68-1.28, p = 0.689), which is not statistically significant [ 21 ].",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-6233",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.689",
+      "numeric_values": [
+        0.689
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6233,
+      "sentence": "In the propensity-matched analysis, DPP-4i use showed no major effect on in-hospital death (OR 0.93, 95% CI 0.68-1.28, p = 0.689), which is not statistically significant [ 21 ].",
+      "context_window": "jor effect on in-hospital death (OR 0.93, 95% CI 0.68-1.28, p = 0.689), which is not statistically significant [ 21 ]. Nyland an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-6519",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.84-1.26",
+      "numeric_values": [
+        0.84,
+        1.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6519,
+      "sentence": "The study indicated no impact of DPP-4i on 28-day mortality (RR 1.03, 95% CI 0.84-1.26, p value = 0.78), which is not statistically significant.",
+      "context_window": "indicated no impact of DPP-4i on 28-day mortality (RR 1.03, 95% CI 0.84-1.26, p value = 0.78), which is not statistically significant. I",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-6781",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.28-0.72",
+      "numeric_values": [
+        0.28,
+        0.72
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6781,
+      "sentence": "Importantly, the study also reported that the continuation of DPP-4i after hospitalization was associated with significantly lower mortality compared to discontinuation (matched RR 0.45, 95% CI 0.28-0.72; p < 0.001), demonstrating a 55% relative reduction in mortality [ 22 ].",
+      "context_window": "wer mortality compared to discontinuation (matched RR 0.45, 95% CI 0.28-0.72; p < 0.001), demonstrating a 55% relative reduction in mort",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-6799",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6799,
+      "sentence": "Importantly, the study also reported that the continuation of DPP-4i after hospitalization was associated with significantly lower mortality compared to discontinuation (matched RR 0.45, 95% CI 0.28-0.72; p < 0.001), demonstrating a 55% relative reduction in mortality [ 22 ].",
+      "context_window": "ared to discontinuation (matched RR 0.45, 95% CI 0.28-0.72; p < 0.001), demonstrating a 55% relative reduction in mortality [ 22",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-6827",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6827,
+      "sentence": "Importantly, the study also reported that the continuation of DPP-4i after hospitalization was associated with significantly lower mortality compared to discontinuation (matched RR 0.45, 95% CI 0.28-0.72; p < 0.001), demonstrating a 55% relative reduction in mortality [ 22 ].",
+      "context_window": "ched RR 0.45, 95% CI 0.28-0.72; p < 0.001), demonstrating a 55% relative reduction in mortality [ 22 ]. Israelsen and coll",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-7292",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.99-5.89",
+      "numeric_values": [
+        0.99,
+        5.89
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7292,
+      "sentence": "Among DPP-4i users, the findings showed a higher 30-day mortality rate, which was more than two times higher compared with SGLT-2 inhibitor users (2.42, 95% CI 0.99-5.89) [ 23 ].",
+      "context_window": "wo times higher compared with SGLT-2 inhibitor users (2.42, 95% CI 0.99-5.89) [ 23 ]. Luk and colleagues conducted a retrospective coho",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-7586",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.35-1.39",
+      "numeric_values": [
+        0.35,
+        1.39
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7586,
+      "sentence": "The results revealed that DPP-4i had no influence on in-hospital deaths (HR 0.70, 95% CI 0.35-1.39, p = 0.304) [ 24 ].",
+      "context_window": "hat DPP-4i had no influence on in-hospital deaths (HR 0.70, 95% CI 0.35-1.39, p = 0.304) [ 24 ]. Wong and colleagues conducted a retros",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-7604",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.304",
+      "numeric_values": [
+        0.304
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7604,
+      "sentence": "The results revealed that DPP-4i had no influence on in-hospital deaths (HR 0.70, 95% CI 0.35-1.39, p = 0.304) [ 24 ].",
+      "context_window": "influence on in-hospital deaths (HR 0.70, 95% CI 0.35-1.39, p = 0.304) [ 24 ]. Wong and colleagues conducted a retrospective ter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-7859",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.91-1.79",
+      "numeric_values": [
+        0.91,
+        1.79
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7859,
+      "sentence": "The study showed no association between DPP-4i use and in-hospital deaths (fully adjusted OR 1.28, 95% CI 0.91-1.79), which is not statistically significant.",
+      "context_window": "DPP-4i use and in-hospital deaths (fully adjusted OR 1.28, 95% CI 0.91-1.79), which is not statistically significant. In addition, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-u-8032",
+      "claim_type": "unit_value",
+      "raw_text": "4.82 days",
+      "numeric_values": [
+        4.82
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8032,
+      "sentence": "In addition, the study found that the DPP-4i group had an average reduction in length of hospitalization of about 4.82 days compared to non-DPP-4i users, with a p value < 0.001, which is statistically significant [ 25 ].",
+      "context_window": "an average reduction in length of hospitalization of about 4.82 days compared to non-DPP-4i users, with a p value < 0.001, which",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-8465",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.57-0.61",
+      "numeric_values": [
+        0.57,
+        0.61
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8465,
+      "sentence": "The results revealed that the DDP-4i group had a lower risk of death compared to the non-DDP-4i group (OR 0.59, 95% CI 0.57-0.61; p < 0.001), indicating a statistically significant value [ 1 ].",
+      "context_window": "er risk of death compared to the non-DDP-4i group (OR 0.59, 95% CI 0.57-0.61; p < 0.001), indicating a statistically significant value [",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-8483",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8483,
+      "sentence": "The results revealed that the DDP-4i group had a lower risk of death compared to the non-DDP-4i group (OR 0.59, 95% CI 0.57-0.61; p < 0.001), indicating a statistically significant value [ 1 ].",
+      "context_window": "ompared to the non-DDP-4i group (OR 0.59, 95% CI 0.57-0.61; p < 0.001), indicating a statistically significant value [ 1 ]. Ferr",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-8763",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8763,
+      "sentence": "Ferrannini and colleagues conducted an observational longitudinal analysis of registry data including 344,413 individuals with type 2 diabetes and COVID-19, of whom 53,044 individuals were on DPP-4i, accounting for 15%.",
+      "context_window": ", of whom 53,044 individuals were on DPP-4i, accounting for 15%. The objective was to examine the relation between glucose-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-8991",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.00-1.22",
+      "numeric_values": [
+        1.0,
+        1.22
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8991,
+      "sentence": "The findings demonstrated that the DPP-4i group had a slightly higher 30-day mortality (matched RR was 1.11, 95% CI 1.00-1.22, p value = 0.046) [ 26 ].",
+      "context_window": "ad a slightly higher 30-day mortality (matched RR was 1.11, 95% CI 1.00-1.22, p value = 0.046) [ 26 ]. Sadid and colleagues conducted a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-9202",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9202,
+      "sentence": "Sadid and colleagues conducted a retrospective cohort study including 220 hospitalized individuals with diabetes, of whom 44 received DPP-4i treatment, accounting for 20%.",
+      "context_window": "betes, of whom 44 received DPP-4i treatment, accounting for 20%. The study aims to examine the relation between DPP-4i and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-9417",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.13-4.41",
+      "numeric_values": [
+        0.13,
+        4.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9417,
+      "sentence": "The findings identified no significant impact of DPP-4i on survival rates (OR 0.76, 95% CI 0.13-4.41, p = 0.76).",
+      "context_window": "no significant impact of DPP-4i on survival rates (OR 0.76, 95% CI 0.13-4.41, p = 0.76). Moreover, DPP-4i users had a mean hospital stay",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-9435",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9435,
+      "sentence": "The findings identified no significant impact of DPP-4i on survival rates (OR 0.76, 95% CI 0.13-4.41, p = 0.76).",
+      "context_window": "act of DPP-4i on survival rates (OR 0.76, 95% CI 0.13-4.41, p = 0.76). Moreover, DPP-4i users had a mean hospital stay of 6.57 d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-u-9497",
+      "claim_type": "unit_value",
+      "raw_text": "6.57 days",
+      "numeric_values": [
+        6.57
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9497,
+      "sentence": "Moreover, DPP-4i users had a mean hospital stay of 6.57 days versus 8.03 days for non-users ( p = 0.01), representing a statistically significant reduction in hospital stay [ 27 ].",
+      "context_window": "= 0.76). Moreover, DPP-4i users had a mean hospital stay of 6.57 days versus 8.03 days for non-users ( p = 0.01), representing a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-u-9514",
+      "claim_type": "unit_value",
+      "raw_text": "8.03 days",
+      "numeric_values": [
+        8.03
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9514,
+      "sentence": "Moreover, DPP-4i users had a mean hospital stay of 6.57 days versus 8.03 days for non-users ( p = 0.01), representing a statistically significant reduction in hospital stay [ 27 ].",
+      "context_window": ", DPP-4i users had a mean hospital stay of 6.57 days versus 8.03 days for non-users ( p = 0.01), representing a statistically sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-9540",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9540,
+      "sentence": "Moreover, DPP-4i users had a mean hospital stay of 6.57 days versus 8.03 days for non-users ( p = 0.01), representing a statistically significant reduction in hospital stay [ 27 ].",
+      "context_window": "hospital stay of 6.57 days versus 8.03 days for non-users ( p = 0.01), representing a statistically significant reduction in hos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-9789",
+      "claim_type": "percentage",
+      "raw_text": "12.6%",
+      "numeric_values": [
+        12.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9789,
+      "sentence": "Out of the total population, DPP-4i users accounted for 12.6%.",
+      "context_window": "es. Out of the total population, DPP-4i users accounted for 12.6%. The goal is to investigate the link between glucose-loweri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-10068",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.41-1.64",
+      "numeric_values": [
+        0.41,
+        1.64
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10068,
+      "sentence": "The findings suggested that there was no significant difference in mortality with DPP-4i use (RR 0.82, 95% CI 0.41-1.64, p value = 0.581) [ 28 ].",
+      "context_window": "gnificant difference in mortality with DPP-4i use (RR 0.82, 95% CI 0.41-1.64, p value = 0.581) [ 28 ]. Foresta and colleagues conducted",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-10457",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82-0.97",
+      "numeric_values": [
+        0.82,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10457,
+      "sentence": "Regarding DPP-4i in particular, the analysis identified a lower total mortality (RR 0.89, 95% CI 0.82-0.97), which is statistically significant [ 29 ].",
+      "context_window": ", the analysis identified a lower total mortality (RR 0.89, 95% CI 0.82-0.97), which is statistically significant [ 29 ]. Akinosoglou a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-10904",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.148-6.068",
+      "numeric_values": [
+        1.148,
+        6.068
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10904,
+      "sentence": "Among DPP-4i users, a statistically significant higher risk of in-hospital deaths was observed (fully adjusted HR 2.639, 95% CI 1.148-6.068; p = 0.022).",
+      "context_window": "f in-hospital deaths was observed (fully adjusted HR 2.639, 95% CI 1.148-6.068; p = 0.022). Also, the mortality rate was 50.8% for the DPP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-p-10924",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10924,
+      "sentence": "Among DPP-4i users, a statistically significant higher risk of in-hospital deaths was observed (fully adjusted HR 2.639, 95% CI 1.148-6.068; p = 0.022).",
+      "context_window": "was observed (fully adjusted HR 2.639, 95% CI 1.148-6.068; p = 0.022). Also, the mortality rate was 50.8% for the DPP-4i group c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-10965",
+      "claim_type": "percentage",
+      "raw_text": "50.8%",
+      "numeric_values": [
+        50.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10965,
+      "sentence": "Also, the mortality rate was 50.8% for the DPP-4i group compared with 35.9% among non-users with a p -value of 0.028 [ 30 ].",
+      "context_window": "5% CI 1.148-6.068; p = 0.022). Also, the mortality rate was 50.8% for the DPP-4i group compared with 35.9% among non-users wi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-pct-11006",
+      "claim_type": "percentage",
+      "raw_text": "35.9%",
+      "numeric_values": [
+        35.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11006,
+      "sentence": "Also, the mortality rate was 50.8% for the DPP-4i group compared with 35.9% among non-users with a p -value of 0.028 [ 30 ].",
+      "context_window": "mortality rate was 50.8% for the DPP-4i group compared with 35.9% among non-users with a p -value of 0.028 [ 30 ]. Jang and",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-11426",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.217-0.949",
+      "numeric_values": [
+        0.217,
+        0.949
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11426,
+      "sentence": "The findings suggested lower mortality among the DPP-4i group (fully adjusted OR 0.454, 95% CI 0.217-0.949, p -value = 0.036), indicating a statistically significant result [ 31 ].",
+      "context_window": "mortality among the DPP-4i group (fully adjusted OR 0.454, 95% CI 0.217-0.949, p -value = 0.036), indicating a statistically significant",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-ci-11831",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.414-0.499",
+      "numeric_values": [
+        0.414,
+        0.499
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11831,
+      "sentence": "The analysis demonstrated a decreased 30-day mortality rate among DPP-4i users (HR 0.455, 95% CI 0.414-0.499), which is statistically significant [ 32 ].",
+      "context_window": "creased 30-day mortality rate among DPP-4i users (HR 0.455, 95% CI 0.414-0.499), which is statistically significant [ 32 ]. The primary o",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13026772_clinical_outcomes_with_the_use_of_dipeptidyl_peptidase_4_dpp-u-2473",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2473,
+      "sentence": "One of the cohorts defined DPP-4 inhibitor use as 90 days preceding COVID-19 diagnosis [ 23 ], while other studies did not specify an exact exposure window, instead referring broadly to pre-admission or pre-infection use.",
+      "context_window": "ogeneity. One of the cohorts defined DPP-4 inhibitor use as 90 days preceding COVID-19 diagnosis [ 23 ], while other studies di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

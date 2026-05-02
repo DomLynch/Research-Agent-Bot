@@ -66,9 +66,18 @@ def _check_word_count(paper: str, threshold: int = 5000) -> tuple[bool, str]:
 def _check_numeric_integrity(
     paper: str, corpus_nums: set[str],
 ) -> tuple[bool, str]:
-    # Extract percentages from the paper
-    paper_pcts = set(re.findall(r"\b(\d+\.?\d*)\s*%", paper))
-    # Filter to "interesting" percentages (claim-shaped, > 1%)
+    # Extract percentages from the paper, EXCLUDING CI-level anchors
+    # ("95% CI", "99% CI") which are statistical conventions, not
+    # findings. Pre-fix Phase 6.3 paper false-flagged "95" as
+    # un-traceable because the corpus has CI bounds (-0.06, 0.06)
+    # but no claim with raw value "95" — yet "95% CI" appears
+    # legitimately in the prose around CI reports.
+    paper_with_ci_stripped = re.sub(
+        r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
+    )
+    paper_pcts = set(re.findall(
+        r"\b(\d+\.?\d*)\s*%", paper_with_ci_stripped,
+    ))
     pcts_to_check = {
         p for p in paper_pcts
         if float(p) > 1.0 and float(p) < 1000

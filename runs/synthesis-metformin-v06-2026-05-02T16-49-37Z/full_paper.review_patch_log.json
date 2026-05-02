@@ -1,0 +1,90 @@
+{
+  "applied_at": "2026-05-02T17:06:55+00:00",
+  "n_proposed": 9,
+  "n_applied": 7,
+  "n_flagged": 0,
+  "n_rejected": 2,
+  "patches": [
+    {
+      "patch_id": "P01",
+      "patch_type": "formatting",
+      "severity": "P1",
+      "decision": "applied",
+      "reason": "auto-apply per type contract",
+      "before": "A key observational study, PMC12223363 2025on_exceptional_longevity_in_women, examined the association between metformin use and exceptional longevity in women with type 2 diabetes.",
+      "after": "A key observational study, PMC12223363 2025, examined the association between metformin use and exceptional longevity in women with type 2 diabetes."
+    },
+    {
+      "patch_id": "P02",
+      "patch_type": "citation",
+      "severity": "P1",
+      "decision": "applied",
+      "reason": "no novel citations",
+      "before": "  _Cited: `PMC13009881 2026`, `PMC13032177 2026`_",
+      "after": "  _Cited: `PMC12223363 2025`, `PMC13032177 2026`_"
+    },
+    {
+      "patch_id": "P03",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "decision": "applied",
+      "reason": "no novel numerics",
+      "before": "improvements in HbA1c levels (7%, 95% CI: 0.95-0.99).",
+      "after": "improvements in HbA1c levels."
+    },
+    {
+      "patch_id": "P04",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "decision": "applied",
+      "reason": "no novel numerics",
+      "before": "with reported decreases ranging from 16% to 42% in observational analyses.",
+      "after": "with reported decreases in mortality risk in observational analyses."
+    },
+    {
+      "patch_id": "P05",
+      "patch_type": "formatting",
+      "severity": "P1",
+      "decision": "rejected",
+      "reason": "'before' text not found in paper",
+      "before": "   always published verbatim in the receipt.\n5.\n### Cross-source synthesis",
+      "after": "   always published verbatim in the receipt.\n### Cross-source synthesis"
+    },
+    {
+      "patch_id": "P06",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "applied",
+      "reason": "auto-apply per type contract",
+      "before": "invertebrate models [PMC12978362 2026].  In mammalian studies",
+      "after": "invertebrate models.  In mammalian studies"
+    },
+    {
+      "patch_id": "P07",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "applied",
+      "reason": "auto-apply per type contract",
+      "before": "aging process [Konopka 2019].  Addressing these methodological challenges",
+      "after": "aging process.  Addressing these methodological challenges"
+    },
+    {
+      "patch_id": "P08",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "rejected",
+      "reason": "'before' text not found in paper",
+      "before": "preclinical longevity data.\n  _Cited: `Mohammed 2021`, `Kulkarni 2022`_\nTo synthesize this growing body of literature",
+      "after": "preclinical longevity data.\nTo synthesize this growing body of literature"
+    },
+    {
+      "patch_id": "P09",
+      "patch_type": "numeric",
+      "severity": "P2",
+      "decision": "applied",
+      "reason": "no novel numerics",
+      "before": "metformin decreases HbA1c (7%; 95% CI: 0.95-0.99) in patients with metabolic dysfunction",
+      "after": "metformin decreases HbA1c in patients with metabolic dysfunction"
+    }
+  ]
+}

@@ -1,0 +1,1808 @@
+{
+  "paper_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all",
+  "doi": "10.1177/20420188261431021",
+  "extracted_at": "2026-05-02T16:48:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 24,
+    "percentage": 41,
+    "hazard_ratio": 10,
+    "confidence_interval": 8,
+    "p_value": 14,
+    "mean_sd": 1,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-1179",
+      "claim_type": "unit_value",
+      "raw_text": "61 months",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "Over a median follow-up of 61 months, 39 patients (8.7%) died.",
+      "context_window": "used to assess mortality risk. Over a median follow-up of 61 months, 39 patients (8.7%) died. Each 1-point increase in the WATC",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-1203",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1203,
+      "sentence": "Over a median follow-up of 61 months, 39 patients (8.7%) died.",
+      "context_window": "y risk. Over a median follow-up of 61 months, 39 patients (8.7%) died. Each 1-point increase in the WATCH-DM(i) score was a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-1284",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1284,
+      "sentence": "Each 1-point increase in the WATCH-DM(i) score was associated with a 29% higher risk of all-cause mortality (HR: 1.287, 95% CI: 1.151-1.439, p < 0.001).",
+      "context_window": "int increase in the WATCH-DM(i) score was associated with a 29% higher risk of all-cause mortality (HR: 1.287, 95% CI: 1.15",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-1324",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.287",
+      "numeric_values": [
+        1.287
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1324,
+      "sentence": "Each 1-point increase in the WATCH-DM(i) score was associated with a 29% higher risk of all-cause mortality (HR: 1.287, 95% CI: 1.151-1.439, p < 0.001).",
+      "context_window": "s associated with a 29% higher risk of all-cause mortality (HR: 1.287, 95% CI: 1.151-1.439, p < 0.001). Higher risk groups showed",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-1335",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.151-1.439",
+      "numeric_values": [
+        1.151,
+        1.439
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1335,
+      "sentence": "Each 1-point increase in the WATCH-DM(i) score was associated with a 29% higher risk of all-cause mortality (HR: 1.287, 95% CI: 1.151-1.439, p < 0.001).",
+      "context_window": "d with a 29% higher risk of all-cause mortality (HR: 1.287, 95% CI: 1.151-1.439, p < 0.001). Higher risk groups showed progressively greate",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-1356",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "Each 1-point increase in the WATCH-DM(i) score was associated with a 29% higher risk of all-cause mortality (HR: 1.287, 95% CI: 1.151-1.439, p < 0.001).",
+      "context_window": "isk of all-cause mortality (HR: 1.287, 95% CI: 1.151-1.439, p < 0.001). Higher risk groups showed progressively greater mortality",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-1444",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1444,
+      "sentence": "Higher risk groups showed progressively greater mortality, especially after 24 months.",
+      "context_window": "ps showed progressively greater mortality, especially after 24 months. The score demonstrated good discrimination for 5-year mort",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-1607",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.410",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1607,
+      "sentence": "Metformin use was independently associated with lower mortality risk (HR: 0.410, p = 0.019).",
+      "context_window": "use was independently associated with lower mortality risk (HR: 0.410, p = 0.019). The WATCH-DM(i) score is a robust prognostic",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-1618",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "Metformin use was independently associated with lower mortality risk (HR: 0.410, p = 0.019).",
+      "context_window": "ependently associated with lower mortality risk (HR: 0.410, p = 0.019). The WATCH-DM(i) score is a robust prognostic marker of 5",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-187",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 187,
+      "sentence": "1 The United Kingdom Prospective Diabetes Study reports that almost half of the deaths within 10 years of a diabetes mellitus (DM) diagnosis are because of cardiovascular disease (CVD).",
+      "context_window": "iabetes Study reports that almost half of the deaths within 10 years of a diabetes mellitus (DM) diagnosis are because of cardio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-220",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 220,
+      "sentence": "The cohort included adult participants (aged \u2a7e20 years) diagnosed with T2DM in accordance with the American Diabetes Association criteria.",
+      "context_window": ". V105C-207). The cohort included adult participants (aged \u2a7e20 years) diagnosed with T2DM in accordance with the American Diabet",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-2296",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 2296,
+      "sentence": "Chronic kidney disease (CKD) was defined by estimated glomerular filtration rate (eGFR) <60 mL/min/1.73 m 2 (determined using the Cockcroft-Gault equation) and proteinuria (at least trace results of a urine dipstick test or urine albumin-to-creatinine ratio \u2a7e30).",
+      "context_window": "was defined by estimated glomerular filtration rate (eGFR) <60 mL/min/1.73 m 2 (determined using the Cockcroft-Gault equation) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-5147",
+      "claim_type": "unit_value",
+      "raw_text": "0 mg/dL",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 5147,
+      "sentence": "For lipid parameters, total cholesterol values were derived using a standard formula (total cholesterol [TC] = [triglycerides {TG}/5] + HDL + low-density lipoprotein cholesterol [LDL]) when direct measurements were unavailable, and cases with implausible calculated values (HDL <0 mg/dL) were excluded.",
+      "context_window": "ailable, and cases with implausible calculated values (HDL <0 mg/dL) were excluded. No additional imputation procedures were ap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-6636",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6636,
+      "sentence": "All statistical analyses were conducted using SPSS software (version 23.0 for Windows; IBM Corporation, Armonk, NY, USA) and R Studio Cloud (version 2024.08), with statistical significance set at p < 0.05.",
+      "context_window": "oud (version 2024.08), with statistical significance set at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-264",
+      "claim_type": "unit_value",
+      "raw_text": "64.57 years",
+      "numeric_values": [
+        64.57
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 264,
+      "sentence": "The study population had a mean age of 64.57 years, with 52.9% being male.",
+      "context_window": "lemental Figure 1 ). The study population had a mean age of 64.57 years, with 52.9% being male. Approximately one-third of the part",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-282",
+      "claim_type": "percentage",
+      "raw_text": "52.9%",
+      "numeric_values": [
+        52.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 282,
+      "sentence": "The study population had a mean age of 64.57 years, with 52.9% being male.",
+      "context_window": "). The study population had a mean age of 64.57 years, with 52.9% being male. Approximately one-third of the participants wer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-386",
+      "claim_type": "unit_value",
+      "raw_text": "25.99 kg",
+      "numeric_values": [
+        25.99
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 386,
+      "sentence": "The mean BMI was 25.99 kg/m 2 .",
+      "context_window": "the participants were diagnosed with CKD. The mean BMI was 25.99 kg/m 2 . Insulin dependence was observed in around 20% of the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-443",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 443,
+      "sentence": "Insulin dependence was observed in around 20% of the subjects, while the most commonly prescribed oral antidiabetic medication was metformin (70.2%), followed by dipeptidyl peptidase-4 (DPP-4) inhibitors (44.5%).",
+      "context_window": "as 25.99 kg/m 2 . Insulin dependence was observed in around 20% of the subjects, while the most commonly prescribed oral an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-543",
+      "claim_type": "percentage",
+      "raw_text": "70.2%",
+      "numeric_values": [
+        70.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 543,
+      "sentence": "Insulin dependence was observed in around 20% of the subjects, while the most commonly prescribed oral antidiabetic medication was metformin (70.2%), followed by dipeptidyl peptidase-4 (DPP-4) inhibitors (44.5%).",
+      "context_window": "only prescribed oral antidiabetic medication was metformin (70.2%), followed by dipeptidyl peptidase-4 (DPP-4) inhibitors (44",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-606",
+      "claim_type": "percentage",
+      "raw_text": "44.5%",
+      "numeric_values": [
+        44.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 606,
+      "sentence": "Insulin dependence was observed in around 20% of the subjects, while the most commonly prescribed oral antidiabetic medication was metformin (70.2%), followed by dipeptidyl peptidase-4 (DPP-4) inhibitors (44.5%).",
+      "context_window": "2%), followed by dipeptidyl peptidase-4 (DPP-4) inhibitors (44.5%). The mean HbA1c level was 7.31%. Regarding antihypertensiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-639",
+      "claim_type": "percentage",
+      "raw_text": "7.31%",
+      "numeric_values": [
+        7.31
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 639,
+      "sentence": "The mean HbA1c level was 7.31%.",
+      "context_window": "dase-4 (DPP-4) inhibitors (44.5%). The mean HbA1c level was 7.31%. Regarding antihypertensive treatment, ARB was the most fre",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-778",
+      "claim_type": "unit_value",
+      "raw_text": "76.46 mmHg",
+      "numeric_values": [
+        76.46
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 778,
+      "sentence": "The mean SBP and DBP were 129.45 and 76.46 mmHg, respectively.",
+      "context_window": "gent, followed by CCB. The mean SBP and DBP were 129.45 and 76.46 mmHg, respectively. Statin therapy was utilized by 71.1% of the",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-835",
+      "claim_type": "percentage",
+      "raw_text": "71.1%",
+      "numeric_values": [
+        71.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 835,
+      "sentence": "Statin therapy was utilized by 71.1% of the patients, with a mean LDL level of 90.92 mg/dL.",
+      "context_window": "nd 76.46 mmHg, respectively. Statin therapy was utilized by 71.1% of the patients, with a mean LDL level of 90.92 mg/dL. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-883",
+      "claim_type": "unit_value",
+      "raw_text": "90.92 mg/dL",
+      "numeric_values": [
+        90.92
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 883,
+      "sentence": "Statin therapy was utilized by 71.1% of the patients, with a mean LDL level of 90.92 mg/dL.",
+      "context_window": "utilized by 71.1% of the patients, with a mean LDL level of 90.92 mg/dL. The mean WATCH-DM(i) risk score in the study population wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-msd-956",
+      "claim_type": "mean_sd",
+      "raw_text": "11.52 \u00b1 3.53",
+      "numeric_values": [
+        11.52,
+        3.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 956,
+      "sentence": "The mean WATCH-DM(i) risk score in the study population was 11.52 \u00b1 3.53 points ( Table 2 ).",
+      "context_window": "The mean WATCH-DM(i) risk score in the study population was 11.52 \u00b1 3.53 points ( Table 2 ). Baseline characteristics of the study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-1897",
+      "claim_type": "percentage",
+      "raw_text": "49.6%",
+      "numeric_values": [
+        49.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1897,
+      "sentence": "Among the total cohort of 463 patients, 223 individuals (49.6%) were classified as having very-low risk (Group 1), 94 patients (20.9%) were categorized as low risk (Group 2), 82 patients (18.3%) fell into the average risk group (Group 3), and 50 patients (11.1%) were identified as having high or very-high risk ( Figure 1 ).",
+      "context_window": ". Among the total cohort of 463 patients, 223 individuals (49.6%) were classified as having very-low risk (Group 1), 94 pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-1968",
+      "claim_type": "percentage",
+      "raw_text": "20.9%",
+      "numeric_values": [
+        20.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1968,
+      "sentence": "Among the total cohort of 463 patients, 223 individuals (49.6%) were classified as having very-low risk (Group 1), 94 patients (20.9%) were categorized as low risk (Group 2), 82 patients (18.3%) fell into the average risk group (Group 3), and 50 patients (11.1%) were identified as having high or very-high risk ( Figure 1 ).",
+      "context_window": "classified as having very-low risk (Group 1), 94 patients (20.9%) were categorized as low risk (Group 2), 82 patients (18.3%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-2028",
+      "claim_type": "percentage",
+      "raw_text": "18.3%",
+      "numeric_values": [
+        18.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2028,
+      "sentence": "Among the total cohort of 463 patients, 223 individuals (49.6%) were classified as having very-low risk (Group 1), 94 patients (20.9%) were categorized as low risk (Group 2), 82 patients (18.3%) fell into the average risk group (Group 3), and 50 patients (11.1%) were identified as having high or very-high risk ( Figure 1 ).",
+      "context_window": "20.9%) were categorized as low risk (Group 2), 82 patients (18.3%) fell into the average risk group (Group 3), and 50 patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-2096",
+      "claim_type": "percentage",
+      "raw_text": "11.1%",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2096,
+      "sentence": "Among the total cohort of 463 patients, 223 individuals (49.6%) were classified as having very-low risk (Group 1), 94 patients (20.9%) were categorized as low risk (Group 2), 82 patients (18.3%) fell into the average risk group (Group 3), and 50 patients (11.1%) were identified as having high or very-high risk ( Figure 1 ).",
+      "context_window": "ell into the average risk group (Group 3), and 50 patients (11.1%) were identified as having high or very-high risk ( Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-3791",
+      "claim_type": "unit_value",
+      "raw_text": "61 months",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3791,
+      "sentence": "Over a median follow-up period of 61 months (interquartile range 49-68), 39 patients (8.7%) died.",
+      "context_window": "WATCH-DM integer-based. Over a median follow-up period of 61 months (interquartile range 49-68), 39 patients (8.7%) died. This",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3843",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3843,
+      "sentence": "Over a median follow-up period of 61 months (interquartile range 49-68), 39 patients (8.7%) died.",
+      "context_window": "riod of 61 months (interquartile range 49-68), 39 patients (8.7%) died. This consisted of 6 (2.6%) patients at very-low risk",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3876",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3876,
+      "sentence": "This consisted of 6 (2.6%) patients at very-low risk, 6 (6.4%) patients at low risk, 12 (14.6%) patients at average risk, and 15 (24%) patients at high and very-high risk categories.",
+      "context_window": "range 49-68), 39 patients (8.7%) died. This consisted of 6 (2.6%) patients at very-low risk, 6 (6.4%) patients at low risk,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3912",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3912,
+      "sentence": "This consisted of 6 (2.6%) patients at very-low risk, 6 (6.4%) patients at low risk, 12 (14.6%) patients at average risk, and 15 (24%) patients at high and very-high risk categories.",
+      "context_window": "d. This consisted of 6 (2.6%) patients at very-low risk, 6 (6.4%) patients at low risk, 12 (14.6%) patients at average risk,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3944",
+      "claim_type": "percentage",
+      "raw_text": "14.6%",
+      "numeric_values": [
+        14.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3944,
+      "sentence": "This consisted of 6 (2.6%) patients at very-low risk, 6 (6.4%) patients at low risk, 12 (14.6%) patients at average risk, and 15 (24%) patients at high and very-high risk categories.",
+      "context_window": "tients at very-low risk, 6 (6.4%) patients at low risk, 12 (14.6%) patients at average risk, and 15 (24%) patients at high an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3985",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3985,
+      "sentence": "This consisted of 6 (2.6%) patients at very-low risk, 6 (6.4%) patients at low risk, 12 (14.6%) patients at average risk, and 15 (24%) patients at high and very-high risk categories.",
+      "context_window": "s at low risk, 12 (14.6%) patients at average risk, and 15 (24%) patients at high and very-high risk categories. The major",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4085",
+      "claim_type": "percentage",
+      "raw_text": "43.6%",
+      "numeric_values": [
+        43.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4085,
+      "sentence": "The major cause of death was malignancies (17, 43.6%), followed by CVD (9, 23.1%).",
+      "context_window": "categories. The major cause of death was malignancies (17, 43.6%), followed by CVD (9, 23.1%). Other causes of death include",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4113",
+      "claim_type": "percentage",
+      "raw_text": "23.1%",
+      "numeric_values": [
+        23.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4113,
+      "sentence": "The major cause of death was malignancies (17, 43.6%), followed by CVD (9, 23.1%).",
+      "context_window": "of death was malignancies (17, 43.6%), followed by CVD (9, 23.1%). Other causes of death included 6 (15.4%) pneumonia, 2 (5.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4155",
+      "claim_type": "percentage",
+      "raw_text": "15.4%",
+      "numeric_values": [
+        15.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4155,
+      "sentence": "Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others.",
+      "context_window": "llowed by CVD (9, 23.1%). Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4176",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4176,
+      "sentence": "Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others.",
+      "context_window": "1%). Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4225",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4225,
+      "sentence": "Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others.",
+      "context_window": "umonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4244",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4244,
+      "sentence": "Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others.",
+      "context_window": "which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4278",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4278,
+      "sentence": "Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others.",
+      "context_window": "19, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others. Of the 9 patients who",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4307",
+      "claim_type": "percentage",
+      "raw_text": "6.1%",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4307,
+      "sentence": "Other causes of death included 6 (15.4%) pneumonia, 2 (5.1%) of which were coronavirus disease 2019, 2 (5.1%) diabetes, 1 (2.6%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others.",
+      "context_window": "%) cerebrovascular disease, 1 (2.6%) kidney disease, and 3 (6.1%) others. Of the 9 patients who died of CVD, 1 patient had a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4676",
+      "claim_type": "percentage",
+      "raw_text": "28.7%",
+      "numeric_values": [
+        28.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4676,
+      "sentence": "In the multivariable Cox proportional hazards model ( Table 3 ), the WATCH-DM(i) score was significantly associated with all-cause mortality, with each 1-point increase conferring a 28.7% higher risk of death (HR: 1.287; 95% confidence interval (CI): 1.151-1.439; p < 0.001).",
+      "context_window": "ll-cause mortality, with each 1-point increase conferring a 28.7% higher risk of death (HR: 1.287; 95% confidence interval (C",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-4704",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.287",
+      "numeric_values": [
+        1.287
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4704,
+      "sentence": "In the multivariable Cox proportional hazards model ( Table 3 ), the WATCH-DM(i) score was significantly associated with all-cause mortality, with each 1-point increase conferring a 28.7% higher risk of death (HR: 1.287; 95% confidence interval (CI): 1.151-1.439; p < 0.001).",
+      "context_window": "h 1-point increase conferring a 28.7% higher risk of death (HR: 1.287; 95% confidence interval (CI): 1.151-1.439; p < 0.001). Amo",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4715",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4715,
+      "sentence": "In the multivariable Cox proportional hazards model ( Table 3 ), the WATCH-DM(i) score was significantly associated with all-cause mortality, with each 1-point increase conferring a 28.7% higher risk of death (HR: 1.287; 95% confidence interval (CI): 1.151-1.439; p < 0.001).",
+      "context_window": "ncrease conferring a 28.7% higher risk of death (HR: 1.287; 95% confidence interval (CI): 1.151-1.439; p < 0.001). Among ph",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-4758",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4758,
+      "sentence": "In the multivariable Cox proportional hazards model ( Table 3 ), the WATCH-DM(i) score was significantly associated with all-cause mortality, with each 1-point increase conferring a 28.7% higher risk of death (HR: 1.287; 95% confidence interval (CI): 1.151-1.439; p < 0.001).",
+      "context_window": "eath (HR: 1.287; 95% confidence interval (CI): 1.151-1.439; p < 0.001). Among pharmacologic and biochemical covariates, metformin",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-4905",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.410",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4905,
+      "sentence": "Among pharmacologic and biochemical covariates, metformin use was independently associated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031).",
+      "context_window": "ntly associated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marg",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-4916",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.195-0.863",
+      "numeric_values": [
+        0.195,
+        0.863
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4916,
+      "sentence": "Among pharmacologic and biochemical covariates, metformin use was independently associated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031).",
+      "context_window": "ated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significan",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-4937",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4937,
+      "sentence": "Among pharmacologic and biochemical covariates, metformin use was independently associated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031).",
+      "context_window": "isk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significantly inverse",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-5041",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.993",
+      "numeric_values": [
+        0.993
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5041,
+      "sentence": "Among pharmacologic and biochemical covariates, metformin use was independently associated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031).",
+      "context_window": "but significantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031). Other antidiabetic medica",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-5052",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.987-0.999",
+      "numeric_values": [
+        0.987,
+        0.999
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5052,
+      "sentence": "Among pharmacologic and biochemical covariates, metformin use was independently associated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031).",
+      "context_window": "cantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031). Other antidiabetic medications (insulin, sulfo",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-5073",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5073,
+      "sentence": "Among pharmacologic and biochemical covariates, metformin use was independently associated with a reduced risk of all-cause mortality (HR: 0.410; 95% CI: 0.195-0.863; p = 0.019), while TG levels were marginally but significantly inversely associated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031).",
+      "context_window": "ciated with mortality risk (HR: 0.993; 95% CI: 0.987-0.999; p = 0.031). Other antidiabetic medications (insulin, sulfonylureas),",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-5351",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5351,
+      "sentence": "Other antidiabetic medications (insulin, sulfonylureas), cardiovascular drugs (angiotensin receptor blockers, calcium channel blockers, beta blockers), and lipid parameters (total cholesterol, LDL) were not significantly associated with mortality in this model (all p > 0.05).",
+      "context_window": "significantly associated with mortality in this model (all p > 0.05). Analysis for all-cause mortality using the Cox proportio",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-6663",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6663,
+      "sentence": "However, these early risk estimates were accompanied by wide 95% CIs, reflecting sparse event accumulation during this period and considerable statistical uncertainty.",
+      "context_window": "owever, these early risk estimates were accompanied by wide 95% CIs, reflecting sparse event accumulation during this perio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-6971",
+      "claim_type": "unit_value",
+      "raw_text": "25 months",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6971,
+      "sentence": "Notably, a crossover occurred between group 3 and group 4 curves at approximately 20-25 months.",
+      "context_window": "rred between group 3 and group 4 curves at approximately 20-25 months. While group 3\u2019s risk declined over time, group 4\u2019s risk co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-7140",
+      "claim_type": "unit_value",
+      "raw_text": "36 months",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7140,
+      "sentence": "While group 3\u2019s risk declined over time, group 4\u2019s risk continued to increase and eventually surpassed that of groups 2 and 3 by the later follow-up period (\u2a7e36 months).",
+      "context_window": "ssed that of groups 2 and 3 by the later follow-up period (\u2a7e36 months). These trends became more stable as the number of deaths i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-8019",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8019,
+      "sentence": "HR, hazard ratio; ROC, receiver operating characteristic; WATCH-DM(i), WATCH-DM: Weight, Age, hyperTension, Creatinine, High-density lipoprotein cholesterol, Diabetes control, QRS Duration, Myocardial infarction, and coronary artery bypass graft; WATCH-DM(i): WATCH-DM integer-based.\n\np < 0.001 by log-rank test.",
+      "context_window": "artery bypass graft; WATCH-DM(i): WATCH-DM integer-based. p < 0.001 by log-rank test. The asterisk indicates pairwise p < 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-8079",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8079,
+      "sentence": "The asterisk indicates pairwise p < 0.05 by the log-rank test.",
+      "context_window": "p < 0.001 by log-rank test. The asterisk indicates pairwise p < 0.05 by the log-rank test. Figure 2(c) displayed the results of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-8298",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8298,
+      "sentence": "Figure 2(c) displayed the results of a landmark Cox regression analysis evaluating all-cause mortality risk associated with the WATCH-DM (i) risk categories over two follow-up periods: 0-24 months (early phase) and 24-60 months (late phase), using Group 1 as the reference (HR = 1.0, dashed line).",
+      "context_window": "WATCH-DM (i) risk categories over two follow-up periods: 0-24 months (early phase) and 24-60 months (late phase), using Group 1",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-8329",
+      "claim_type": "unit_value",
+      "raw_text": "60 months",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8329,
+      "sentence": "Figure 2(c) displayed the results of a landmark Cox regression analysis evaluating all-cause mortality risk associated with the WATCH-DM (i) risk categories over two follow-up periods: 0-24 months (early phase) and 24-60 months (late phase), using Group 1 as the reference (HR = 1.0, dashed line).",
+      "context_window": "ver two follow-up periods: 0-24 months (early phase) and 24-60 months (late phase), using Group 1 as the reference (HR = 1.0, das",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-8385",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.0",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8385,
+      "sentence": "Figure 2(c) displayed the results of a landmark Cox regression analysis evaluating all-cause mortality risk associated with the WATCH-DM (i) risk categories over two follow-up periods: 0-24 months (early phase) and 24-60 months (late phase), using Group 1 as the reference (HR = 1.0, dashed line).",
+      "context_window": "24-60 months (late phase), using Group 1 as the reference (HR = 1.0, dashed line). The HRs and 95% CIs are plotted on a logarit",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-8421",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8421,
+      "sentence": "The HRs and 95% CIs are plotted on a logarithmic scale.",
+      "context_window": "oup 1 as the reference (HR = 1.0, dashed line). The HRs and 95% CIs are plotted on a logarithmic scale. In the early follow",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-8498",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8498,
+      "sentence": "In the early follow-up period (0-24 months), the HRs for Groups 2, 3, and 4 approached zero, with 95% CIs extending from near zero to infinity, suggesting that risk estimates were unstable or non-estimable because of the limited number of events.",
+      "context_window": "ed on a logarithmic scale. In the early follow-up period (0-24 months), the HRs for Groups 2, 3, and 4 approached zero, with 95%",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-8563",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8563,
+      "sentence": "In the early follow-up period (0-24 months), the HRs for Groups 2, 3, and 4 approached zero, with 95% CIs extending from near zero to infinity, suggesting that risk estimates were unstable or non-estimable because of the limited number of events.",
+      "context_window": "nths), the HRs for Groups 2, 3, and 4 approached zero, with 95% CIs extending from near zero to infinity, suggesting that r",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-8842",
+      "claim_type": "unit_value",
+      "raw_text": "60 months",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8842,
+      "sentence": "However, in the 24-60 months interval, the HRs increased progressively with higher risk groups.",
+      "context_window": "isk during the initial follow-up period. However, in the 24-60 months interval, the HRs increased progressively with higher risk",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-8971",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 4.24",
+      "numeric_values": [
+        4.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8971,
+      "sentence": "Group 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001).",
+      "context_window": "groups. Group 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-8982",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.20-15.0",
+      "numeric_values": [
+        1.2,
+        15.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8982,
+      "sentence": "Group 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001).",
+      "context_window": "up 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-9001",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9001,
+      "sentence": "Group 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001).",
+      "context_window": "significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased and highly s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-9087",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 15.3",
+      "numeric_values": [
+        15.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9087,
+      "sentence": "Group 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001).",
+      "context_window": "exhibited a markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001). Although Group 2 showed a m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-9098",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 4.99-47.0",
+      "numeric_values": [
+        4.99,
+        47.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9098,
+      "sentence": "Group 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001).",
+      "context_window": "markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001). Although Group 2 showed a moderately elevated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-9117",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9117,
+      "sentence": "Group 3 demonstrated a significantly elevated risk (HR = 4.24, 95% CI: 1.20-15.0, p = 0.025), while Group 4 exhibited a markedly increased and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001).",
+      "context_window": "and highly significant risk (HR = 15.3, 95% CI: 4.99-47.0, p < 0.001). Although Group 2 showed a moderately elevated HR (HR = 2.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-9179",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 2.97",
+      "numeric_values": [
+        2.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9179,
+      "sentence": "Although Group 2 showed a moderately elevated HR (HR = 2.97, 95% CI: 0.80-11.1), the association did not reach statistical significance ( p = 0.105).",
+      "context_window": "< 0.001). Although Group 2 showed a moderately elevated HR (HR = 2.97, 95% CI: 0.80-11.1), the association did not reach statisti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-9190",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.80-11.1",
+      "numeric_values": [
+        0.8,
+        11.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9190,
+      "sentence": "Although Group 2 showed a moderately elevated HR (HR = 2.97, 95% CI: 0.80-11.1), the association did not reach statistical significance ( p = 0.105).",
+      "context_window": "lthough Group 2 showed a moderately elevated HR (HR = 2.97, 95% CI: 0.80-11.1), the association did not reach statistical significance (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-9267",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.105",
+      "numeric_values": [
+        0.105
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9267,
+      "sentence": "Although Group 2 showed a moderately elevated HR (HR = 2.97, 95% CI: 0.80-11.1), the association did not reach statistical significance ( p = 0.105).",
+      "context_window": "), the association did not reach statistical significance ( p = 0.105). These findings suggest that the mortality risk associated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-9833",
+      "claim_type": "unit_value",
+      "raw_text": "61 months",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 9833,
+      "sentence": "To evaluate the discriminative performance of the WATCH-DM(i) score for all-cause mortality over time, a time-dependent receiver operating characteristic (ROC) analysis was conducted at the median follow-up duration of 61 months.",
+      "context_window": "analysis was conducted at the median follow-up duration of 61 months. As illustrated in Figure 2(d) , the C-index was 0.751 (95%",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-9899",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.655-0.846",
+      "numeric_values": [
+        0.655,
+        0.846
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9899,
+      "sentence": "As illustrated in Figure 2(d) , the C-index was 0.751 (95% CI: 0.655-0.846), indicating good discriminatory ability.",
+      "context_window": "ths. As illustrated in Figure 2(d) , the C-index was 0.751 (95% CI: 0.655-0.846), indicating good discriminatory ability. This result sugge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-10118",
+      "claim_type": "percentage",
+      "raw_text": "75.1%",
+      "numeric_values": [
+        75.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10118,
+      "sentence": "This result suggests that, at the 61-month follow-up mark, the score correctly ranked pairs of individuals with respect to mortality risk with approximately 75.1% accuracy.",
+      "context_window": "dividuals with respect to mortality risk with approximately 75.1% accuracy. Figure 3 presents a forest plot of HRs for all-c",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-10321",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 10321,
+      "sentence": "These subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin, statin, ARB, and BB.",
+      "context_window": "s clinical subgroups. These subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-10344",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10344,
+      "sentence": "These subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin, statin, ARB, and BB.",
+      "context_window": "hese subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-10394",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 10394,
+      "sentence": "These subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin, statin, ARB, and BB.",
+      "context_window": "I \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of m",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-10419",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg/dL",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 10419,
+      "sentence": "These subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin, statin, ARB, and BB.",
+      "context_window": "status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metfor",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-10439",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10439,
+      "sentence": "These subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin, statin, ARB, and BB.",
+      "context_window": "erol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin,",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-10446",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10446,
+      "sentence": "These subgroups included age (\u2a7d65 vs >65 years), BMI \u2a7d25 vs >25 kg/m 2 , CKD status, LDL cholesterol (\u2a7d100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin, statin, ARB, and BB.",
+      "context_window": "100 vs >100 mg/dL), TG (\u2a7d150 vs >150 mg/dL), HbA1c (\u2a7d7% vs >7%), and use of medications such as metformin, insulin, statin",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-ci-10658",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.18-1.40",
+      "numeric_values": [
+        1.18,
+        1.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10658,
+      "sentence": "The WATCH-DM(i) score was consistently associated with increased all-cause mortality across all subgroups, with an overall HR of 1.29 (95% CI: 1.18-1.40) per unit increase.",
+      "context_window": "mortality across all subgroups, with an overall HR of 1.29 (95% CI: 1.18-1.40) per unit increase. Subgroup-specific HR point estimates ra",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-11605",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11605,
+      "sentence": "No statistically significant differences (all p > 0.05) in hazard ratios were observed across subgroups, indicating consistent prognostic performance of the risk score.",
+      "context_window": "interaction. No statistically significant differences (all p > 0.05) in hazard ratios were observed across subgroups, indicatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-474",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 474,
+      "sentence": "After adjusting for variables, the WATCH-DM(i) score remained independently associated with increased all-cause mortality, with each 1-point increase corresponding to a 29% higher risk of overall mortality, and the score effectively stratified patients into distinct mortality risk categories.",
+      "context_window": "se mortality, with each 1-point increase corresponding to a 29% higher risk of overall mortality, and the score effectively",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-1237",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1237,
+      "sentence": "Collectively, these findings enhanced current understanding by demonstrating that the WATCH-DM(i) score provides meaningful prognostic information for all-cause mortality risk in this outpatient T2DM population, including individuals without a formal HF diagnosis, over a median follow-up period of 5 years.",
+      "context_window": "ut a formal HF diagnosis, over a median follow-up period of 5 years. An explanation for the crossover of survival curves obser",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3413",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3413,
+      "sentence": "This observation is consistent with nationwide registry-based data from Taiwan over the past two decades, which demonstrate that cancer now accounts for approximately 23% of all deaths among patients with diabetes, exceeding heart disease (12%) and cerebrovascular disease (7%).",
+      "context_window": "hich demonstrate that cancer now accounts for approximately 23% of all deaths among patients with diabetes, exceeding heart",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3486",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3486,
+      "sentence": "This observation is consistent with nationwide registry-based data from Taiwan over the past two decades, which demonstrate that cancer now accounts for approximately 23% of all deaths among patients with diabetes, exceeding heart disease (12%) and cerebrovascular disease (7%).",
+      "context_window": "aths among patients with diabetes, exceeding heart disease (12%) and cerebrovascular disease (7%). This shift likely reflec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-3520",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3520,
+      "sentence": "This observation is consistent with nationwide registry-based data from Taiwan over the past two decades, which demonstrate that cancer now accounts for approximately 23% of all deaths among patients with diabetes, exceeding heart disease (12%) and cerebrovascular disease (7%).",
+      "context_window": "exceeding heart disease (12%) and cerebrovascular disease (7%). This shift likely reflects more rapid declines in cardiov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-hr-a-3849",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.410",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3849,
+      "sentence": "13 , 14\n\nImportantly, metformin use was independently associated with reduced all-cause mortality (HR: 0.410; p = 0.019) in this study, supported by clinical guidelines endorsing metformin as the first-line pharmacotherapy for T2DM because of its favorable cardiovascular profile.",
+      "context_window": "independently associated with reduced all-cause mortality (HR: 0.410; p = 0.019) in this study, supported by clinical guidelines",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-p-3860",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3860,
+      "sentence": "13 , 14\n\nImportantly, metformin use was independently associated with reduced all-cause mortality (HR: 0.410; p = 0.019) in this study, supported by clinical guidelines endorsing metformin as the first-line pharmacotherapy for T2DM because of its favorable cardiovascular profile.",
+      "context_window": "tly associated with reduced all-cause mortality (HR: 0.410; p = 0.019) in this study, supported by clinical guidelines endorsing",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4372",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4372,
+      "sentence": "In their cohort, metformin use ranged only from 1.8% to 17.6% across risk groups, which may have limited the ability to detect an association between metformin use and mortality.",
+      "context_window": "and HFpEF. In their cohort, metformin use ranged only from 1.8% to 17.6% across risk groups, which may have limited the abi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-4380",
+      "claim_type": "percentage",
+      "raw_text": "17.6%",
+      "numeric_values": [
+        17.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4380,
+      "sentence": "In their cohort, metformin use ranged only from 1.8% to 17.6% across risk groups, which may have limited the ability to detect an association between metformin use and mortality.",
+      "context_window": "EF. In their cohort, metformin use ranged only from 1.8% to 17.6% across risk groups, which may have limited the ability to d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-1355",
+      "claim_type": "percentage",
+      "raw_text": "3.0%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1355,
+      "sentence": "Lastly, the study had a low proportion of missing data, with only 14 patients (3.0%) excluded because of incomplete laboratory values, preserving statistical power.",
+      "context_window": "ad a low proportion of missing data, with only 14 patients (3.0%) excluded because of incomplete laboratory values, preservi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-u-1560",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 1560,
+      "sentence": "Given the relatively short follow-up period of approximately 5 years, particularly for cancer-related mortality, this study does not permit causal inference or long-term prediction of malignancy-related death.",
+      "context_window": "iven the relatively short follow-up period of approximately 5 years, particularly for cancer-related mortality, this study does",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-n-2061",
+      "claim_type": "sample_size",
+      "raw_text": "n = 39",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 2061,
+      "sentence": "The moderate sample size and relatively low number of observed deaths ( n = 39) may have limited the statistical precision of the estimates.",
+      "context_window": "sample size and relatively low number of observed deaths ( n = 39) may have limited the statistical precision of the estimate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13009881_the_watch_dm_integer_based_risk_score_identifies_risk_of_all-pct-179",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 179,
+      "sentence": "In this outpatient cohort of patients with T2DM, the WATCH-DM(i) score was independently associated with 5-year all-cause mortality, with each 1-point increase corresponding to a 29% higher risk.",
+      "context_window": "se mortality, with each 1-point increase corresponding to a 29% higher risk. The score demonstrated good discriminative abi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

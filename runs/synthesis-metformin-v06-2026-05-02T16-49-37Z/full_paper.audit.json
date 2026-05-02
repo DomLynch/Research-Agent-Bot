@@ -1,0 +1,68 @@
+{
+  "score_out_of_10": 9.0,
+  "p1_pass": true,
+  "checks": [
+    {
+      "name": "Q1_word_count",
+      "p1": true,
+      "passed": true,
+      "detail": "word_count=7913 (threshold=5000)"
+    },
+    {
+      "name": "Q2_numeric_integrity",
+      "p1": true,
+      "passed": true,
+      "detail": "2/2 percentages trace to corpus (100%); untraceable: []"
+    },
+    {
+      "name": "Q3_no_paper_id_in_body",
+      "p1": true,
+      "passed": true,
+      "detail": "no paper-ID leakage"
+    },
+    {
+      "name": "Q4_no_polarity_error",
+      "p1": true,
+      "passed": true,
+      "detail": "no mortality/lifespan polarity error"
+    },
+    {
+      "name": "Q5_no_fabricated_methods",
+      "p1": true,
+      "passed": true,
+      "detail": "no fabricated methodology claims"
+    },
+    {
+      "name": "Q6_preclinical_hedge",
+      "p1": false,
+      "passed": true,
+      "detail": "unhedged preclinical\u2192human sentences: 3 (threshold \u22643)"
+    },
+    {
+      "name": "Q7_section_coverage",
+      "p1": true,
+      "passed": true,
+      "detail": "all required sections present"
+    },
+    {
+      "name": "Q8_thesis_present",
+      "p1": false,
+      "passed": true,
+      "detail": "thesis sentence found"
+    },
+    {
+      "name": "Q9_numeric_density",
+      "p1": false,
+      "passed": false,
+      "detail": "density 1.8 numerics/1000 words (threshold \u22658.0)"
+    },
+    {
+      "name": "Q10_hedge_density",
+      "p1": false,
+      "passed": true,
+      "detail": "5/14 hedge phrases in Discussion (threshold \u22654)"
+    }
+  ],
+  "n_pass": 9,
+  "n_total": 10
+}

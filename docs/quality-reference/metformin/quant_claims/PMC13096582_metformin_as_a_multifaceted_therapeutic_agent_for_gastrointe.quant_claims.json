@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMC13096582_metformin_as_a_multifaceted_therapeutic_agent_for_gastrointe",
+  "doi": "10.1002/prp2.70257",
+  "extracted_at": "2026-05-02T16:49:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13096582_metformin_as_a_multifaceted_therapeutic_agent_for_gastrointe-pct-1374",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1374,
+      "sentence": "The pleiotropic effects of metformin benefits extend well beyond glycemic control, with robust cardiovascular protection evidenced in the landmark UKPDS trial, showing a 39% reduction in myocardial infarction and a 33% reduction in cardiovascular mortality, effects persisting after glycemic convergence.",
+      "context_window": "protection evidenced in the landmark UKPDS trial, showing a 39% reduction in myocardial infarction and a 33% reduction in c",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13096582_metformin_as_a_multifaceted_therapeutic_agent_for_gastrointe-pct-1419",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1419,
+      "sentence": "The pleiotropic effects of metformin benefits extend well beyond glycemic control, with robust cardiovascular protection evidenced in the landmark UKPDS trial, showing a 39% reduction in myocardial infarction and a 33% reduction in cardiovascular mortality, effects persisting after glycemic convergence.",
+      "context_window": "ial, showing a 39% reduction in myocardial infarction and a 33% reduction in cardiovascular mortality, effects persisting a",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

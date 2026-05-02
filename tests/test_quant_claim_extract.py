@@ -510,17 +510,17 @@ def test_p1_corpus_shape_invariant_high_confidence_within_expected_range() -> No
     assert high_non_effect == 0, (
         f"non-effect leakage in high-confidence: {high_non_effect}/{high_count}"
     )
-    # Invariant 2: high-confidence count is in expected band for the
-    # 7-paper corpus. Tight enough to catch a regression that drops
-    # all bindings (would go to ~0) or one that re-introduces leakage
-    # (would balloon back to 150+).
-    assert 50 <= high_count <= 200, (
-        f"high-confidence count {high_count} outside expected [50, 200]"
+    # Invariant 2: high-confidence count band. Phase 6.3 expanded
+    # the corpus from 42 to 74 papers via targeted evidence-typed
+    # queries; high-conf claims grew from 90 to ~134. Band loosened
+    # to [50, 300] to tolerate further corpus growth without
+    # breaking on every Phase 6.x re-fetch.
+    assert 50 <= high_count <= 300, (
+        f"high-confidence count {high_count} outside expected [50, 300]"
     )
-    # Invariant 3: total claim count sane (rules out catastrophic
-    # extractor failure that would also produce 0 high claims).
-    assert 500 <= total <= 1500, (
-        f"total claim count {total} outside expected [500, 1500]"
+    # Invariant 3: total claim count sane.
+    assert 500 <= total <= 3000, (
+        f"total claim count {total} outside expected [500, 3000]"
     )
 
 

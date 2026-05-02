@@ -1,0 +1,974 @@
+{
+  "paper_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago",
+  "doi": "10.1111/dom.70267",
+  "extracted_at": "2026-05-02T16:48:58+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 19,
+    "confidence_interval": 7,
+    "percentage": 27
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-763",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 763,
+      "sentence": "Cancer incidence and all cause mortality were assessed over 5 years of follow up.",
+      "context_window": "Cancer incidence and all cause mortality were assessed over 5 years of follow up. After matching, metformin and GLP\u20101 RA treat",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-ci-1030",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.92, 0.99",
+      "numeric_values": [
+        0.92,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1030,
+      "sentence": "Cancer rates were (hazard ratio) 0.96 [95% CI 0.92, 0.99] and 0.86 [0.82, 0.89], while mortality rates were 0.78 [0.76, 0.80] and 0.61 [0.59, 0.63] for metformin and GLP\u20101 RA, respectively.",
+      "context_window": "reductions in both. Cancer rates were (hazard ratio) 0.96 [95% CI 0.92, 0.99] and 0.86 [0.82, 0.89], while mortality rates were 0.78 [0.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-1463",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1463,
+      "sentence": "In patients with T2D, dual metformin and GLP\u20101 RA treatment was associated with a 39% lower incidence of adiposity\u2010related cancers and a 67% lower mortality, with a striking impact on cancer\u2010related outcomes.",
+      "context_window": "dual metformin and GLP\u20101 RA treatment was associated with a 39% lower incidence of adiposity\u2010related cancers and a 67% lowe",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-1518",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1518,
+      "sentence": "In patients with T2D, dual metformin and GLP\u20101 RA treatment was associated with a 39% lower incidence of adiposity\u2010related cancers and a 67% lower mortality, with a striking impact on cancer\u2010related outcomes.",
+      "context_window": "th a 39% lower incidence of adiposity\u2010related cancers and a 67% lower mortality, with a striking impact on cancer\u2010related o",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-209",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 209,
+      "sentence": "1 Between 4% and 8% of cancers are attributed to living with overweight/obesity (adiposity\u2010related cancers), the leading cancer risk factor after smoking.",
+      "context_window": ", but also an independent risk factor for cancer. 1 Between 4% and 8% of cancers are attributed to living with overweight/",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-216",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 216,
+      "sentence": "1 Between 4% and 8% of cancers are attributed to living with overweight/obesity (adiposity\u2010related cancers), the leading cancer risk factor after smoking.",
+      "context_window": "lso an independent risk factor for cancer. 1 Between 4% and 8% of cancers are attributed to living with overweight/obesity",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-656",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 656,
+      "sentence": "2 At least 13 types of adiposity\u2010related cancer are reproducibly reported, including endometrial, colorectal, breast cancer, oesophageal, renal, pancreatic, liver, myeloma, ovarian and thyroid, with the risk much higher in women (endometrial, postmenopausal breast, and colorectal cancers account for >60% of cases).",
+      "context_window": "postmenopausal breast, and colorectal cancers account for >60% of cases). 3 Recently, unpublished data suggest other site\u2010",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-1319",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1319,
+      "sentence": "7 Data from Cancer Research UK shows a doubling of the rates of obesity in the last three decades coinciding with increased cancer incidence, with a 19% and 22% increase in <25\u2010 and 25-49\u2010year\u2010old people, respectively, with further projected increases for most types of cancer.",
+      "context_window": "decades coinciding with increased cancer incidence, with a 19% and 22% increase in <25\u2010 and 25-49\u2010year\u2010old people, respect",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-1327",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1327,
+      "sentence": "7 Data from Cancer Research UK shows a doubling of the rates of obesity in the last three decades coinciding with increased cancer incidence, with a 19% and 22% increase in <25\u2010 and 25-49\u2010year\u2010old people, respectively, with further projected increases for most types of cancer.",
+      "context_window": "coinciding with increased cancer incidence, with a 19% and 22% increase in <25\u2010 and 25-49\u2010year\u2010old people, respectively, w",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-2180",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2180,
+      "sentence": "11 Current evidence suggests metabolic surgery is most efficacious, associated with a reduced overall incidence of cancer (by 38%), adiposity\u2010related cancer (by 41%) and cancer\u2010associated mortality (by 49%).",
+      "context_window": ", associated with a reduced overall incidence of cancer (by 38%), adiposity\u2010related cancer (by 41%) and cancer\u2010associated m",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-2215",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2215,
+      "sentence": "11 Current evidence suggests metabolic surgery is most efficacious, associated with a reduced overall incidence of cancer (by 38%), adiposity\u2010related cancer (by 41%) and cancer\u2010associated mortality (by 49%).",
+      "context_window": "incidence of cancer (by 38%), adiposity\u2010related cancer (by 41%) and cancer\u2010associated mortality (by 49%). 12 Given the str",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-2256",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2256,
+      "sentence": "11 Current evidence suggests metabolic surgery is most efficacious, associated with a reduced overall incidence of cancer (by 38%), adiposity\u2010related cancer (by 41%) and cancer\u2010associated mortality (by 49%).",
+      "context_window": "related cancer (by 41%) and cancer\u2010associated mortality (by 49%). 12 Given the strong association between obesity and cance",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-2646",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2646,
+      "sentence": "Metformin, a first\u2010line treatment for T2D, has been shown in multiple meta\u2010analyses of cohort studies, to decrease cancer incidence by 30%-40%; however, excluding time\u2010biased studies, the reduction in cancer incidence is more modest.",
+      "context_window": "analyses of cohort studies, to decrease cancer incidence by 30%-40%; however, excluding time\u2010biased studies, the reduction",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-2650",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2650,
+      "sentence": "Metformin, a first\u2010line treatment for T2D, has been shown in multiple meta\u2010analyses of cohort studies, to decrease cancer incidence by 30%-40%; however, excluding time\u2010biased studies, the reduction in cancer incidence is more modest.",
+      "context_window": "yses of cohort studies, to decrease cancer incidence by 30%-40%; however, excluding time\u2010biased studies, the reduction in c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-679",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 679,
+      "sentence": "18\n\nWe identified adults (>18 years) with type 2 diabetes (ICD\u201010 code E11) in TriNetX.",
+      "context_window": "network are described elsewhere. 18 We identified adults (>18 years) with type 2 diabetes (ICD\u201010 code E11) in TriNetX. Two arm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-2381",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2381,
+      "sentence": "20 Patients were followed up for 5 years from the first day of starting the new drug (treatment or reference).",
+      "context_window": "ion with cancer incidence. 20 Patients were followed up for 5 years from the first day of starting the new drug (treatment or r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-4839",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4839,
+      "sentence": "Survival analysis was performed to estimate the probability of an outcome, at daily time intervals, over 5 years from the index event.",
+      "context_window": "he probability of an outcome, at daily time intervals, over 5 years from the index event. A hazard ratio (HR), log rank test an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-5161",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5161,
+      "sentence": "Additionally, for sensitivity analysis, we performed a stratified analysis by body mass index (presence or absence of obesity: ICD\u201010 coding (E66), or BMI >30 vs. <30 kg/m 2 ), age (older adults vs. younger adults: >60 vs. < 60 years), ethnicity (white vs. non\u2010white ethnic background), sex (male vs. female), specific drug (semaglutide vs. liraglutide), type 2 diabetes duration (\u2265/<10 years), presence of alcohol\u2010use disorders (ICD\u201010 code F10), diagnosis of adiposity\u2010related cancers within the first 6 months following index were excluded (to ensure exclusion of patients with cancer development prior to the initiation of treatment), and glucose treatment adherence (persistence of medication use) data is not directly available within TriNetX so it is not possible to determine individuals' duration of treatment.",
+      "context_window": "or absence of obesity: ICD\u201010 coding (E66), or BMI >30 vs. <30 kg/m 2 ), age (older adults vs. younger adults: >60 vs. < 60 y",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-5222",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5222,
+      "sentence": "Additionally, for sensitivity analysis, we performed a stratified analysis by body mass index (presence or absence of obesity: ICD\u201010 coding (E66), or BMI >30 vs. <30 kg/m 2 ), age (older adults vs. younger adults: >60 vs. < 60 years), ethnicity (white vs. non\u2010white ethnic background), sex (male vs. female), specific drug (semaglutide vs. liraglutide), type 2 diabetes duration (\u2265/<10 years), presence of alcohol\u2010use disorders (ICD\u201010 code F10), diagnosis of adiposity\u2010related cancers within the first 6 months following index were excluded (to ensure exclusion of patients with cancer development prior to the initiation of treatment), and glucose treatment adherence (persistence of medication use) data is not directly available within TriNetX so it is not possible to determine individuals' duration of treatment.",
+      "context_window": "0 kg/m 2 ), age (older adults vs. younger adults: >60 vs. < 60 years), ethnicity (white vs. non\u2010white ethnic background), sex (m",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-5381",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5381,
+      "sentence": "Additionally, for sensitivity analysis, we performed a stratified analysis by body mass index (presence or absence of obesity: ICD\u201010 coding (E66), or BMI >30 vs. <30 kg/m 2 ), age (older adults vs. younger adults: >60 vs. < 60 years), ethnicity (white vs. non\u2010white ethnic background), sex (male vs. female), specific drug (semaglutide vs. liraglutide), type 2 diabetes duration (\u2265/<10 years), presence of alcohol\u2010use disorders (ICD\u201010 code F10), diagnosis of adiposity\u2010related cancers within the first 6 months following index were excluded (to ensure exclusion of patients with cancer development prior to the initiation of treatment), and glucose treatment adherence (persistence of medication use) data is not directly available within TriNetX so it is not possible to determine individuals' duration of treatment.",
+      "context_window": "(semaglutide vs. liraglutide), type 2 diabetes duration (\u2265/<10 years), presence of alcohol\u2010use disorders (ICD\u201010 code F10), diag",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-5501",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5501,
+      "sentence": "Additionally, for sensitivity analysis, we performed a stratified analysis by body mass index (presence or absence of obesity: ICD\u201010 coding (E66), or BMI >30 vs. <30 kg/m 2 ), age (older adults vs. younger adults: >60 vs. < 60 years), ethnicity (white vs. non\u2010white ethnic background), sex (male vs. female), specific drug (semaglutide vs. liraglutide), type 2 diabetes duration (\u2265/<10 years), presence of alcohol\u2010use disorders (ICD\u201010 code F10), diagnosis of adiposity\u2010related cancers within the first 6 months following index were excluded (to ensure exclusion of patients with cancer development prior to the initiation of treatment), and glucose treatment adherence (persistence of medication use) data is not directly available within TriNetX so it is not possible to determine individuals' duration of treatment.",
+      "context_window": "0), diagnosis of adiposity\u2010related cancers within the first 6 months following index were excluded (to ensure exclusion of patie",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-5937",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 5937,
+      "sentence": "To account for the important matter of treatment adherence, we mandated at least one repeat prescription code, at least 1 year after the index date, to enrich for persistent treatment exposure.",
+      "context_window": "we mandated at least one repeat prescription code, at least 1 year after the index date, to enrich for persistent treatment ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-45",
+      "claim_type": "percentage",
+      "raw_text": "92.9%",
+      "numeric_values": [
+        92.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 45,
+      "sentence": "1 290 061 patients were identified: 1198135 (92.9%) prescribed metformin, and 91 926 (7.1%) prescribed DPP4is.",
+      "context_window": "1 290 061 patients were identified: 1198135 (92.9%) prescribed metformin, and 91 926 (7.1%) prescribed DPP4is.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-86",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 86,
+      "sentence": "1 290 061 patients were identified: 1198135 (92.9%) prescribed metformin, and 91 926 (7.1%) prescribed DPP4is.",
+      "context_window": "entified: 1198135 (92.9%) prescribed metformin, and 91 926 (7.1%) prescribed DPP4is. The metformin arm was younger, with a h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-ci-572",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.92, 0.99",
+      "numeric_values": [
+        0.92,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 572,
+      "sentence": "Treatment with metformin reduced the risk of incident composite adiposity\u2010related cancers; both for all adiposity\u2010related cancers (HR 0.96 [95% CI 0.92, 0.99]), and for traditional adiposity\u2010related cancers (0.95 [0.91, 0.99]) (Table 2 ).",
+      "context_window": "d cancers; both for all adiposity\u2010related cancers (HR 0.96 [95% CI 0.92, 0.99]), and for traditional adiposity\u2010related cancers (0.95 [0.9",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-1909",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1909,
+      "sentence": "Survival curves demonstrating proportion of people without obesity\u2010related cancer after 5 years with (A) Metformin, (B) GLP1\u2010RA and (C) metformin and GLP1\u2010RA combination treatment, compared with DPP4i.",
+      "context_window": "g proportion of people without obesity\u2010related cancer after 5 years with (A) Metformin, (B) GLP1\u2010RA and (C) metformin and GLP1\u2010",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-2494",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2494,
+      "sentence": "HR 0.96 [0.92, 0.99]); (ii) males (HR 0.93 [0.87, 0.99]), but not females (HR 1.00 [0.94, 1.06]); (iii) patients without alcohol misuse\u2010related disorder (HR 0.96 [0.92, 0.99]); and (iv) in patients with a shorter duration of T2D (<10 years T2D, HR 0.94 [0.90, 0.98]), but not in patients with >10 years T2,D (HR 0.95 [0.88, 1.01]).",
+      "context_window": "99]); and (iv) in patients with a shorter duration of T2D (<10 years T2D, HR 0.94 [0.90, 0.98]), but not in patients with >10 ye",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-2557",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2557,
+      "sentence": "HR 0.96 [0.92, 0.99]); (ii) males (HR 0.93 [0.87, 0.99]), but not females (HR 1.00 [0.94, 1.06]); (iii) patients without alcohol misuse\u2010related disorder (HR 0.96 [0.92, 0.99]); and (iv) in patients with a shorter duration of T2D (<10 years T2D, HR 0.94 [0.90, 0.98]), but not in patients with >10 years T2,D (HR 0.95 [0.88, 1.01]).",
+      "context_window": "years T2D, HR 0.94 [0.90, 0.98]), but not in patients with >10 years T2,D (HR 0.95 [0.88, 1.01]). 423897 patients were identifi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-2637",
+      "claim_type": "percentage",
+      "raw_text": "30.8%",
+      "numeric_values": [
+        30.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2637,
+      "sentence": "423897 patients were identified: 130488 (30.8%) prescribed GLP\u20101 RAs, and 293 409 (69.2%) prescribed DPP4is.",
+      "context_window": "95 [0.88, 1.01]). 423897 patients were identified: 130488 (30.8%) prescribed GLP\u20101 RAs, and 293 409 (69.2%) prescribed DPP4i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-2679",
+      "claim_type": "percentage",
+      "raw_text": "69.2%",
+      "numeric_values": [
+        69.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2679,
+      "sentence": "423897 patients were identified: 130488 (30.8%) prescribed GLP\u20101 RAs, and 293 409 (69.2%) prescribed DPP4is.",
+      "context_window": "entified: 130488 (30.8%) prescribed GLP\u20101 RAs, and 293 409 (69.2%) prescribed DPP4is. The GLP\u20101 RA treatment arm patients wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-ci-3191",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82, 0.89",
+      "numeric_values": [
+        0.82,
+        0.89
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3191,
+      "sentence": "Treatment with GLP\u20101 RA reduced the risk of incident composite adiposity\u2010related cancers; both for all adiposity\u2010related cancers (HR 0.86 [95% CI 0.82, 0.89]), and for traditional adiposity\u2010related cancers (0.86 [0.82, 0.89]) (Table 2 ).",
+      "context_window": "d cancers; both for all adiposity\u2010related cancers (HR 0.86 [95% CI 0.82, 0.89]), and for traditional adiposity\u2010related cancers (0.86 [0.8",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-4921",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4921,
+      "sentence": "Treatment with GLP\u20101 significantly reduced the risk of incident all adiposity\u2010related cancers in: (i) those with obesity (HR 0.87 [0.81, 0.92]), and healthy weight (HR 0.86 [0.75, 0.98]); (ii) younger (0.77 [0.69, 0.86]), and, to a lesser extent, older (HR 0.85 [0.81, 0.89]) adults; (iii) white (HR 0.83 [0.80, 0.88]), and not non\u2010white (HR 0.87 [0.81, 0.94]), ethnic backgrounds; (iv) men (0.71 [0.67, 0.76]), and, to a lesser extent, women (0.88 [0.84, 0.93]); (v) semaglutide (0.78 [0.65, 0.94]), and, to a lesser extent, liraglutide (0.88 [0.83, 0.94]); (vi) patients without a history of excess alcohol misuse (0.85 [0.81, 0.89]); and (vii) patients with a diagnosis of diabetes for >10 years (0.79 [0.74, 0.85]), and < 10 years (0.84 [0.80, 0.88]).",
+      "context_window": ".89]); and (vii) patients with a diagnosis of diabetes for >10 years (0.79 [0.74, 0.85]), and < 10 years (0.84 [0.80, 0.88]). 1",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-4957",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4957,
+      "sentence": "Treatment with GLP\u20101 significantly reduced the risk of incident all adiposity\u2010related cancers in: (i) those with obesity (HR 0.87 [0.81, 0.92]), and healthy weight (HR 0.86 [0.75, 0.98]); (ii) younger (0.77 [0.69, 0.86]), and, to a lesser extent, older (HR 0.85 [0.81, 0.89]) adults; (iii) white (HR 0.83 [0.80, 0.88]), and not non\u2010white (HR 0.87 [0.81, 0.94]), ethnic backgrounds; (iv) men (0.71 [0.67, 0.76]), and, to a lesser extent, women (0.88 [0.84, 0.93]); (v) semaglutide (0.78 [0.65, 0.94]), and, to a lesser extent, liraglutide (0.88 [0.83, 0.94]); (vi) patients without a history of excess alcohol misuse (0.85 [0.81, 0.89]); and (vii) patients with a diagnosis of diabetes for >10 years (0.79 [0.74, 0.85]), and < 10 years (0.84 [0.80, 0.88]).",
+      "context_window": "gnosis of diabetes for >10 years (0.79 [0.74, 0.85]), and < 10 years (0.84 [0.80, 0.88]). 176254 patients were identified: 9461",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-5028",
+      "claim_type": "percentage",
+      "raw_text": "53.7%",
+      "numeric_values": [
+        53.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5028,
+      "sentence": "176254 patients were identified: 94619 (53.7%) prescribed dual metformin and GLP\u20101 RA treatment, and 81 635 (46.3%) prescribed DPP4is.",
+      "context_window": ".84 [0.80, 0.88]). 176254 patients were identified: 94619 (53.7%) prescribed dual metformin and GLP\u20101 RA treatment, and 81 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-5097",
+      "claim_type": "percentage",
+      "raw_text": "46.3%",
+      "numeric_values": [
+        46.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5097,
+      "sentence": "176254 patients were identified: 94619 (53.7%) prescribed dual metformin and GLP\u20101 RA treatment, and 81 635 (46.3%) prescribed DPP4is.",
+      "context_window": "escribed dual metformin and GLP\u20101 RA treatment, and 81 635 (46.3%) prescribed DPP4is. The dual metformin and GLP\u20101 RA treatme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-ci-5612",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.57, 0.65",
+      "numeric_values": [
+        0.57,
+        0.65
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5612,
+      "sentence": "Dual treatment reduced the risk of incident composite adiposity\u2010related cancers; both for all adiposity\u2010related cancers (HR 0.61 [95% CI 0.57, 0.65]), and for traditional adiposity\u2010related cancers (0.61 [0.56, 0.65]) (Table 2 ).",
+      "context_window": "d cancers; both for all adiposity\u2010related cancers (HR 0.61 [95% CI 0.57, 0.65]), and for traditional adiposity\u2010related cancers (0.61 [0.5",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-ci-6221",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.22, 0.63",
+      "numeric_values": [
+        0.22,
+        0.63
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6221,
+      "sentence": "Specifically, dual treatment with metformin and GLP\u20101 RAs reduced the risk of hepatocellular (0.38 [0.30, 0.48]), colorectal (0.54 [0.44, 0.66]), pancreatic (0.69 [0.53, 0.91]), oesophageal (HR 0.37 [95% CI 0.22, 0.63]), stomach (0.56 [0.35, 0.90]), uterine (0.57 [0.44, 0.74]), breast (0.84 [0.73, 0.97]), kidney (0.49 [0.40, 0.59]), brain (0.50 [0.32, 0.7]), multiple myeloma (0.51 [0.37, 0.71]), head and neck (0.54 [0.37, 0.79]) cancers, and melanoma (0.59 [95% CI 0.41, 0.85]).",
+      "context_window": "66]), pancreatic (0.69 [0.53, 0.91]), oesophageal (HR 0.37 [95% CI 0.22, 0.63]), stomach (0.56 [0.35, 0.90]), uterine (0.57 [0.44, 0.74])",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-ci-6483",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.41, 0.85",
+      "numeric_values": [
+        0.41,
+        0.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6483,
+      "sentence": "Specifically, dual treatment with metformin and GLP\u20101 RAs reduced the risk of hepatocellular (0.38 [0.30, 0.48]), colorectal (0.54 [0.44, 0.66]), pancreatic (0.69 [0.53, 0.91]), oesophageal (HR 0.37 [95% CI 0.22, 0.63]), stomach (0.56 [0.35, 0.90]), uterine (0.57 [0.44, 0.74]), breast (0.84 [0.73, 0.97]), kidney (0.49 [0.40, 0.59]), brain (0.50 [0.32, 0.7]), multiple myeloma (0.51 [0.37, 0.71]), head and neck (0.54 [0.37, 0.79]) cancers, and melanoma (0.59 [95% CI 0.41, 0.85]).",
+      "context_window": "d and neck (0.54 [0.37, 0.79]) cancers, and melanoma (0.59 [95% CI 0.41, 0.85]). Incident mortality was also lower in the dual metformin",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-ci-6597",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.32, 0.35",
+      "numeric_values": [
+        0.32,
+        0.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6597,
+      "sentence": "Incident mortality was also lower in the dual metformin and GLP\u20101 RA treatment arm (HR 0.33 [95% CI 0.32, 0.35]).",
+      "context_window": "in the dual metformin and GLP\u20101 RA treatment arm (HR 0.33 [95% CI 0.32, 0.35]). All outcome analysis results are presented in Table S4 ,",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-125",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 125,
+      "sentence": "In this large real\u2010world cohort, we demonstrate that in patients with T2D, metformin treatment was associated with a modest (4%) reduction in the risk of all adiposity\u2010related cancers (specifically, a lower risk of hepatocellular, kidney, and myeloma) with more robust risk reduction in younger adults living with obesity.",
+      "context_window": "with T2D, metformin treatment was associated with a modest (4%) reduction in the risk of all adiposity\u2010related cancers (sp",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-486",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 486,
+      "sentence": "GLP\u20101 RA use was associated with a greater reduction in risk (14%), driven specifically by a lower risk of hepatocellular, colorectal, gallbladder, gastric, pancreas, oesophageal, brain, oral cavity, and head and neck cancers.",
+      "context_window": "P\u20101 RA use was associated with a greater reduction in risk (14%), driven specifically by a lower risk of hepatocellular, co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-954",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 954,
+      "sentence": "Crucially, a combination of metformin and GLP\u20101 dual treatment had a staggering 39% lower risk of all\u2010adiposity related cancers.",
+      "context_window": "tion of metformin and GLP\u20101 dual treatment had a staggering 39% lower risk of all\u2010adiposity related cancers. Meta\u2010analyses",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-3263",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3263,
+      "sentence": "15 , 32 Additionally, unpublished data from 34 000 participants found that patients treated with GLP\u20101 RAs were 19% less likely to develop 13 types of adiposity\u2010related cancers.",
+      "context_window": "articipants found that patients treated with GLP\u20101 RAs were 19% less likely to develop 13 types of adiposity\u2010related cancer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-6715",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6715,
+      "sentence": "46 One study reported that 5.7% of all incident cancers in 2012 were related to T2D and obesity, with 25.8% of diabetes\u2010related cancers, and 31.9% of adiposity\u2010related cancers being attributed to these two factors.",
+      "context_window": "dence in the general population. 46 One study reported that 5.7% of all incident cancers in 2012 were related to T2D and obe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-6790",
+      "claim_type": "percentage",
+      "raw_text": "25.8%",
+      "numeric_values": [
+        25.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6790,
+      "sentence": "46 One study reported that 5.7% of all incident cancers in 2012 were related to T2D and obesity, with 25.8% of diabetes\u2010related cancers, and 31.9% of adiposity\u2010related cancers being attributed to these two factors.",
+      "context_window": "ident cancers in 2012 were related to T2D and obesity, with 25.8% of diabetes\u2010related cancers, and 31.9% of adiposity\u2010related",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-6829",
+      "claim_type": "percentage",
+      "raw_text": "31.9%",
+      "numeric_values": [
+        31.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6829,
+      "sentence": "46 One study reported that 5.7% of all incident cancers in 2012 were related to T2D and obesity, with 25.8% of diabetes\u2010related cancers, and 31.9% of adiposity\u2010related cancers being attributed to these two factors.",
+      "context_window": "2D and obesity, with 25.8% of diabetes\u2010related cancers, and 31.9% of adiposity\u2010related cancers being attributed to these two",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-6996",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6996,
+      "sentence": "47 An even more alarming public health trend globally is the younger onset of obesity, T2D (<40 years of age), and cancer incidence, particularly adiposity\u2010related cancer.",
+      "context_window": "ealth trend globally is the younger onset of obesity, T2D (<40 years of age), and cancer incidence, particularly adiposity\u2010relat",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-7180",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7180,
+      "sentence": "48 Cancer incidence rates have increased in all age groups; however, the greatest increase is in people <50 years old.",
+      "context_window": "ll age groups; however, the greatest increase is in people <50 years old. By way of illustration, colorectal cancer with a previ",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-7270",
+      "claim_type": "unit_value",
+      "raw_text": "67 years",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7270,
+      "sentence": "By way of illustration, colorectal cancer with a previous peak incidence of 67 years now has an increasing prevalence in young adults with more cases being identified in those <50 years according to data from the National Cancer Institute.",
+      "context_window": "ration, colorectal cancer with a previous peak incidence of 67 years now has an increasing prevalence in young adults with more",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-7371",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7371,
+      "sentence": "By way of illustration, colorectal cancer with a previous peak incidence of 67 years now has an increasing prevalence in young adults with more cases being identified in those <50 years according to data from the National Cancer Institute.",
+      "context_window": "in young adults with more cases being identified in those <50 years according to data from the National Cancer Institute. Our f",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-7885",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7885,
+      "sentence": "However, there remains a significant proportion of eligible patients not prescribed either drug; according to a US study reporting only 5%-6% of eligible patients were prescribed GLP\u20101 RAs.",
+      "context_window": "scribed either drug; according to a US study reporting only 5%-6% of eligible patients were prescribed GLP\u20101 RAs. 49 The r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-pct-7888",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7888,
+      "sentence": "However, there remains a significant proportion of eligible patients not prescribed either drug; according to a US study reporting only 5%-6% of eligible patients were prescribed GLP\u20101 RAs.",
+      "context_window": "ibed either drug; according to a US study reporting only 5%-6% of eligible patients were prescribed GLP\u20101 RAs. 49 The reas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12803636_synergistic_associations_of_metformin_and_glp_1_receptor_ago-u-9977",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 9977,
+      "sentence": "51 In addition, the relatively short follow\u2010up time of 5 years may be insufficient to detect the full chemoprotective effects of metformin and GLP\u20101 RAs on cancer incidence.",
+      "context_window": "ons. 51 In addition, the relatively short follow\u2010up time of 5 years may be insufficient to detect the full chemoprotective effe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}
