@@ -444,8 +444,20 @@ def transform_matrix_for_writer(matrix, registry: dict[str, CitationEntry]):
         b_entry = registry.get(pair.receipt_b_id)
         new_a = a_entry.body_citation if a_entry else pair.receipt_a_id
         new_b = b_entry.body_citation if b_entry else pair.receipt_b_id
+        # Fix #21 follow-up: the Tension's `summary` string contains
+        # the raw receipt_a_id and receipt_b_id verbatim (built by
+        # build_tension_matrix in run_v06_synthesis.py). When that
+        # summary surfaces in the writer-facing tables (Table 3),
+        # the raw paper-ID handles trip Q3 leak detection. Rewrite
+        # every raw receipt_id substring in the summary to its
+        # body_citation form too.
+        new_summary = pair.summary
+        for raw_id, entry in registry.items():
+            if raw_id in new_summary:
+                new_summary = new_summary.replace(raw_id, entry.body_citation)
         new_pairs.append(dataclasses.replace(
             pair, receipt_a_id=new_a, receipt_b_id=new_b,
+            summary=new_summary,
         ))
     return dataclasses.replace(
         matrix,

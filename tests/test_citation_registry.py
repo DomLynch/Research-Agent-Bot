@@ -550,3 +550,59 @@ def test_transform_matrix_in_lockstep_with_receipts() -> None:
     assert new_matrix.pairs[0].receipt_b_id == "PMC12978362 2026"
     # Original matrix untouched (frozen)
     assert matrix.receipts[0].receipt_id == "Walton_2019_MASTERS"
+
+
+def test_transform_matrix_sanitizes_tension_summary_strings() -> None:
+    """Fix #21 follow-up: the Tension's `summary` field embeds the
+    raw receipt_a_id and receipt_b_id verbatim — when that string
+    surfaces in Table 3 it leaks paper IDs into the body, tripping
+    Q3. Verify summary is rewritten to body_citation form too."""
+
+    @dataclass(frozen=True)
+    class _Receipt:
+        receipt_id: str
+        source_year: int | None = None
+        source_doi: str | None = None
+        source_pmid: str | None = None
+        source_pmcid: str | None = None
+        source_journal: str | None = None
+        title: str | None = None
+
+    @dataclass(frozen=True)
+    class _Tension:
+        receipt_a_id: str
+        receipt_b_id: str
+        kind: str = "agreement"
+        outcome_class: str = "longevity"
+        summary: str = ""
+        severity: int = 0
+
+    @dataclass(frozen=True)
+    class _Matrix:
+        receipts: tuple
+        pairs: tuple
+
+    receipts = [
+        _Receipt(receipt_id="Walton_2019_MASTERS", source_year=2019),
+        _Receipt(receipt_id="Kulkarni_2022_geroscience", source_year=2022),
+    ]
+    matrix = _Matrix(
+        receipts=tuple(receipts),
+        pairs=(_Tension(
+            receipt_a_id="Walton_2019_MASTERS",
+            receipt_b_id="Kulkarni_2022_geroscience",
+            summary=(
+                "Walton_2019_MASTERS (negative) vs "
+                "Kulkarni_2022_geroscience (unclear) on muscle_function"
+            ),
+        ),),
+    )
+    registry = cr.build_registry(receipts)
+    new_matrix = cr.transform_matrix_for_writer(matrix, registry)
+    summary = new_matrix.pairs[0].summary
+    # Raw receipt_id leaks must be GONE
+    assert "Walton_2019_MASTERS" not in summary
+    assert "Kulkarni_2022_geroscience" not in summary
+    # Body-citation form is in
+    assert "Walton 2019" in summary
+    assert "Kulkarni 2022" in summary
