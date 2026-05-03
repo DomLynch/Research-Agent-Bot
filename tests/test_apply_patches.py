@@ -37,12 +37,11 @@ def test_formatting_patch_auto_applies() -> None:
     assert results[0].decision == "applied"
 
 
-def test_claim_patch_auto_applies_with_diagnostic() -> None:
-    """Architectural shift: there are NO HUMANS in the pipeline. Grok
-    4.3 is the final-layer reviewer; flag-for-human is a dead-letter
-    state. Claim patches now auto-apply, with a diagnostic line in
-    `reason_for_decision` so retroactive review can identify any
-    auto-applied patch the deterministic verifier would have rejected."""
+def test_claim_patch_is_flagged_only_with_grok_rationale() -> None:
+    """Fix #7 reverts trust-Grok auto-apply. Claim patches require
+    semantic judgment that no deterministic verifier provides; they
+    are flag-only by contract. Grok's rationale is preserved in the
+    log so the human (or downstream adjudicator) can review."""
     p = {
         "id": "P02", "patch_type": "claim", "severity": "P1",
         "location": "Discussion",
@@ -52,13 +51,16 @@ def test_claim_patch_auto_applies_with_diagnostic() -> None:
     }
     paper = "## Discussion\n\nIn mice, metformin extended lifespan by 14%.\n"
     new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
-    assert "metformin reduced mortality" in new_md  # applied
-    assert "metformin extended lifespan" not in new_md
-    assert results[0].decision == "applied"
-    assert "trust Grok" in results[0].reason_for_decision
+    # Paper UNCHANGED — patch flagged, not applied
+    assert "metformin extended lifespan" in new_md
+    assert "metformin reduced mortality" not in new_md
+    assert results[0].decision == "flagged"
+    # Both the gate reason AND Grok's proposer rationale are logged
+    assert "claim patches are flag-only" in results[0].reason_for_decision
+    assert "polarity correction" in results[0].reason_for_decision
 
 
-def test_structure_patch_auto_applies_with_diagnostic() -> None:
+def test_structure_patch_is_flagged_only_with_grok_rationale() -> None:
     p = {
         "id": "P03", "patch_type": "structure", "severity": "P2",
         "location": "Results",
@@ -67,16 +69,17 @@ def test_structure_patch_auto_applies_with_diagnostic() -> None:
     }
     paper = "## Results\n\nText.\n"
     new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
-    assert "## Findings" in new_md
-    assert results[0].decision == "applied"
+    assert "## Results" in new_md  # unchanged
+    assert results[0].decision == "flagged"
+    assert "rename section" in results[0].reason_for_decision
 
 
-def test_numeric_patch_auto_applies_with_verifier_diagnostic() -> None:
-    """Numeric patches now auto-apply (Grok-final-layer trust). The
-    deterministic global-corpus verifier still runs and its pass/fail
-    is recorded in the diagnostic line for retroactive audit, but it
-    no longer blocks apply. The Phase 6.4 'same-claim binding' check
-    remains the right long-term hardening."""
+def test_numeric_patch_is_flagged_only_pending_phase_64_binding() -> None:
+    """Fix #7 reviewer-P1: numeric patches are flag-only because the
+    global-corpus check is too weak. A patch flipping `p=0.04 →
+    p=0.001` could pass if 0.001 exists anywhere in the corpus, even
+    bound to an unrelated claim. Phase 6.4 same-claim binding will
+    unlock auto-apply."""
     p = {
         "id": "P04", "patch_type": "numeric", "severity": "P2",
         "location": "Results",
@@ -91,16 +94,18 @@ def test_numeric_patch_auto_applies_with_verifier_diagnostic() -> None:
         new_md, results = apply_patches.apply_patches(
             paper, [p], _manifest(),
         )
-    assert "by 32%" in new_md
-    assert results[0].decision == "applied"
-    # Verifier diagnostic should be in the reason
-    assert "numeric verifier: pass" in results[0].reason_for_decision.lower()
+    # Paper unchanged even though global verifier passed
+    assert "by 14%" in new_md and "by 32%" not in new_md
+    assert results[0].decision == "flagged"
+    # Verifier still runs; diagnostic logged
+    reason = results[0].reason_for_decision.lower()
+    assert "numeric flag-only" in reason
+    assert "pass" in reason  # global verifier ran
 
 
-def test_numeric_patch_with_untraceable_value_still_applies_with_FAIL_diagnostic() -> None:
-    """Even when the global-corpus verifier reports FAIL, the patch
-    auto-applies. Grok is the final say. The FAIL is recorded in the
-    diagnostic so a retroactive reviewer can inspect."""
+def test_numeric_patch_with_untraceable_value_is_flagged_with_fail_diagnostic() -> None:
+    """Numeric patches are flag-only regardless of verifier outcome.
+    When the global verifier ALSO fails, both reasons are logged."""
     p = {
         "id": "P05", "patch_type": "numeric", "severity": "P2",
         "location": "Abstract",
@@ -115,14 +120,15 @@ def test_numeric_patch_with_untraceable_value_still_applies_with_FAIL_diagnostic
         new_md, results = apply_patches.apply_patches(
             paper, [p], _manifest(),
         )
-    assert "by 99.9%" in new_md  # auto-applied
-    assert results[0].decision == "applied"
-    # Verifier should have reported FAIL in the diagnostic
+    assert "by 14%" in new_md  # original kept
+    assert "by 99.9%" not in new_md
+    assert results[0].decision == "flagged"
     assert "fail" in results[0].reason_for_decision.lower()
 
 
 def test_citation_patch_with_known_receipt_applies() -> None:
-    """Replace a citation with another known receipt = auto-apply."""
+    """Citation patches DO auto-apply when the new citation traces to
+    the manifest receipts — that's a fully deterministic check."""
     p = {
         "id": "P06", "patch_type": "citation", "severity": "P2",
         "location": "Discussion",
@@ -135,10 +141,10 @@ def test_citation_patch_with_known_receipt_applies() -> None:
     assert results[0].decision == "applied"
 
 
-def test_citation_patch_with_unknown_receipt_still_applies_with_FAIL_diagnostic() -> None:
-    """Even when the citation doesn't trace to manifest receipts, the
-    patch auto-applies (Grok-final-layer trust). The FAIL is recorded
-    in the diagnostic so a retroactive reviewer can inspect."""
+def test_citation_patch_with_unknown_receipt_is_flagged() -> None:
+    """When the new citation doesn't trace to manifest receipts, the
+    citation verifier fails → flag-only. Grok's proposer rationale is
+    logged for human review."""
     p = {
         "id": "P07", "patch_type": "citation", "severity": "P2",
         "location": "Discussion",
@@ -147,9 +153,11 @@ def test_citation_patch_with_unknown_receipt_still_applies_with_FAIL_diagnostic(
     }
     paper = "## Discussion\n\nResults are interesting (Walton 2019).\n"
     new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
-    assert "(Smith 2020)" in new_md
-    assert results[0].decision == "applied"
+    assert "(Walton 2019)" in new_md  # unchanged
+    assert "(Smith 2020)" not in new_md
+    assert results[0].decision == "flagged"
     assert "fail" in results[0].reason_for_decision.lower()
+    assert "alternate cite" in results[0].reason_for_decision
 
 
 def test_patch_with_missing_before_text_rejected() -> None:
@@ -166,10 +174,11 @@ def test_patch_with_missing_before_text_rejected() -> None:
     assert "not found" in results[0].reason_for_decision
 
 
-def test_patch_with_ambiguous_before_text_rejected() -> None:
-    """If 'before' appears 2+ times, mechanical safety REJECTS the
-    patch — there's no way to know which occurrence Grok meant. This
-    is the only remaining safety gate after the trust-Grok shift."""
+def test_patch_with_ambiguous_before_text_flagged() -> None:
+    """If 'before' appears 2+ times, mechanical safety flags (not
+    rejects) — there's no way to know which occurrence Grok meant.
+    Flagged so a downstream reviewer can pick the right span; rejected
+    is reserved for unrecoverable cases (text not found, empty before)."""
     p = {
         "id": "P09", "patch_type": "formatting", "severity": "P3",
         "location": "(any)",
@@ -178,7 +187,7 @@ def test_patch_with_ambiguous_before_text_rejected() -> None:
     }
     paper = "## Abstract\n\nmetformin study. metformin trial.\n"
     new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
-    assert results[0].decision == "rejected"
+    assert results[0].decision == "flagged"
     assert "ambiguous" in results[0].reason_for_decision
     # Paper unchanged
     assert paper == new_md
@@ -226,11 +235,12 @@ def test_citation_regex_does_not_falsefire_on_proper_nouns() -> None:
 
 # Reviewer-fix HIGH 2 regression: numeric token with unit suffix
 # (no space) like "32%" exercises the bare-prefix fallback path. Patch
-# auto-applies (Grok-final-layer trust); verifier diagnostic stays in
-# the reason for retroactive audit.
+# is flag-only (Fix #7 reverts to strict gates); verifier still runs
+# and its output appears in the reason line for retroactive audit.
 def test_numeric_token_with_glued_unit_suffix_verifier_reports_pass() -> None:
-    """Verifier must trace '32%' to corpus value '32'. Patch auto-
-    applies; verifier's PASS/FAIL goes into the diagnostic line."""
+    """Verifier must trace '32%' to corpus value '32'. Patch is
+    flag-only per Fix #7; verifier's PASS/FAIL is logged in the
+    reason for retroactive review."""
     p = {
         "id": "PX2", "patch_type": "numeric", "severity": "P2",
         "location": "Results",
@@ -244,9 +254,100 @@ def test_numeric_token_with_glued_unit_suffix_verifier_reports_pass() -> None:
         return_value={"32", "32.0", "14", "14.0"},
     ):
         _, results = apply_patches.apply_patches(paper, [p], _manifest())
-    assert results[0].decision == "applied"
+    assert results[0].decision == "flagged"
     reason = results[0].reason_for_decision.lower()
-    assert "numeric verifier: pass" in reason, (
+    assert "pass" in reason, (
         f"glued unit-suffix verifier should report PASS: "
         f"{results[0].reason_for_decision}"
     )
+
+
+# ----- Reviewer-fix discriminating tests (post-2x review on Fix #7) ----
+
+
+def test_unknown_patch_type_is_rejected_not_flagged() -> None:
+    """Reviewer P1: malformed contract (unknown patch_type) → REJECTED.
+    Pre-fix this got flagged, polluting the requires-review queue and
+    hiding upstream Grok contract violations."""
+    p = {
+        "id": "PX3", "patch_type": "rogue_type", "severity": "P2",
+        "location": "Results",
+        "before": "x", "after": "y",
+        "reason": "Grok shipped a typo'd patch_type",
+    }
+    paper = "## Results\n\nx\n"
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "rejected"
+    assert "malformed patch contract" in results[0].reason_for_decision
+    assert "rogue_type" in results[0].reason_for_decision
+
+
+def test_empty_before_text_is_rejected() -> None:
+    """Empty before-text → rejected (not flagged) — Grok shipped
+    something fundamentally unactionable."""
+    p = {
+        "id": "PX4", "patch_type": "formatting", "severity": "P3",
+        "location": "Abstract",
+        "before": "", "after": "anything",
+        "reason": "test empty before",
+    }
+    paper = "## Abstract\n\nText.\n"
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "rejected"
+    assert "empty 'before'" in results[0].reason_for_decision
+
+
+def test_applied_patch_preserves_grok_rationale_in_reason() -> None:
+    """Applied patches must also carry Grok's rationale in the log.
+    Pre-fix only flagged patches had rationale logged; applied patches
+    discarded it."""
+    p = {
+        "id": "PX5", "patch_type": "formatting", "severity": "P3",
+        "location": "Abstract",
+        "before": "metformin  is", "after": "metformin is",
+        "reason": "double space typo per Grok scan",
+    }
+    paper = "## Abstract\n\nThe metformin  is widely studied.\n"
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "double space typo per Grok scan" in results[0].reason_for_decision
+
+
+def test_proposer_reason_is_clamped_to_500_chars() -> None:
+    """Reviewer P1: a 50KB Grok hallucination must not bloat the JSON
+    log. Clamp at 500 chars + ellipsis."""
+    huge_reason = "X" * 5000  # 5KB
+    p = {
+        "id": "PX6", "patch_type": "claim", "severity": "P1",
+        "location": "Discussion",
+        "before": "metformin extended lifespan",
+        "after": "metformin reduced mortality",
+        "reason": huge_reason,
+    }
+    paper = "## Discussion\n\nIn mice, metformin extended lifespan by 14%.\n"
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    # Total reason_for_decision length is bounded; specifically the
+    # proposer rationale portion is clamped + ellipsis-marked.
+    assert "[truncated]" in results[0].reason_for_decision
+    # Total reason should be reasonable length (gate text + clamped reason
+    # + repr quoting + format strings); empirically well under 1000 chars.
+    assert len(results[0].reason_for_decision) < 1000
+
+
+def test_numeric_patch_with_empty_proposer_reason_logs_only_gate_reason() -> None:
+    """Empty proposer_reason → reason_for_decision contains ONLY the
+    gate explanation (no trailing 'Grok rationale: ' fragment)."""
+    p = {
+        "id": "PX7", "patch_type": "numeric", "severity": "P2",
+        "location": "Results",
+        "before": "by 14%", "after": "by 32%",
+        # No reason field
+    }
+    paper = "## Results\n\nIncreased by 14% in mice.\n"
+    with mock_patch.object(
+        apply_patches, "_load_corpus_numerics",
+        return_value={"32", "14"},
+    ):
+        _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "flagged"
+    assert "Grok rationale" not in results[0].reason_for_decision
