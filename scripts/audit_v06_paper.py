@@ -119,7 +119,11 @@ def _check_numeric_integrity(
         f"/{len(by_cat[cat])}"
         for cat in by_cat if by_cat[cat]
     )
-    return pct_clean >= 0.9, (
+    # Fix #8 reviewer-P1: STRICT zero-tolerance gate. AAA / PhD-grade
+    # papers require every reportable numeric to trace; pre-fix the
+    # 90% threshold let single untraceable values (e.g. a fabricated
+    # "59" percentage) silently pass. Now n_bad == 0 is the bar.
+    return n_bad == 0, (
         f"{n_total - n_bad}/{n_total} numerics trace to corpus "
         f"({pct_clean:.0%}); per-category: {detail or 'none'}; "
         f"untraceable: {dict(list(untraceable_by_cat.items())[:5])}"
