@@ -658,10 +658,14 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     full_paper_md = _replace_paper_ids_with_author_year(
         full_paper_md, receipts, registry=citation_registry,
     )
-    # Fix #6: insert deterministic Tables 1/2/3 BEFORE References.
-    # Built from the post-citation-registry receipts so table cells
-    # use clean body_citation strings, not raw internal handles.
-    tables_md = _tables.render_all_tables(writer_receipts)
+    # Fix #6 + Fix #21: insert deterministic Tables 1-4 BEFORE
+    # References. Built from the post-citation-registry receipts so
+    # table cells use clean body_citation strings (no raw internal
+    # handles). Fix #21 passes the writer-side TensionMatrix so
+    # Table 3 (cross-domain tensions) renders the non-orthogonal
+    # pairs as one row per tension — the dense numerics carrier that
+    # raises Q9 density without prose bloat.
+    tables_md = _tables.render_all_tables(writer_receipts, writer_matrix)
     if tables_md:
         full_paper_md = full_paper_md.rstrip() + "\n\n" + tables_md
     # Pass the registry to References so its Author-Year tokens come

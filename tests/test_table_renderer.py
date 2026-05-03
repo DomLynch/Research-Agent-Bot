@@ -45,39 +45,77 @@ def test_table_1_extracts_n_from_population_summary() -> None:
     assert "120" in md
 
 
-def test_table_2_aggregates_by_outcome_class() -> None:
-    """Two receipts with same outcome_class → one Table 2 row."""
+def test_table_2_one_row_per_study_when_no_p_values() -> None:
+    """Fix #21 reshape: Table 2 is now per (study × p-value). When a
+    study has no p-values it still gets ONE row with `—` so the
+    reader sees the gap. Previous Fix #6 layout aggregated by
+    outcome_class — see test_table_2_one_row_per_study_p_value below
+    for the dense per-(study × p-value) row count."""
     receipts = [
         _FakeReceipt(receipt_id="A 2020", outcome_class="longevity"),
         _FakeReceipt(receipt_id="B 2021", outcome_class="longevity"),
         _FakeReceipt(receipt_id="C 2022", outcome_class="frailty"),
     ]
     md = tr.render_table_2_endpoint_evidence(receipts)
-    # Two outcome classes → 2 data rows + header + sep = 4+ lines
-    assert md.count("longevity") == 1  # one aggregation row
-    assert md.count("frailty") == 1
+    # Three studies, no p_values defined → 3 rows with '—' p/CI
+    for rid in ("A 2020", "B 2021", "C 2022"):
+        assert rid in md
     assert "## Table 2" in md
+    # 2 study rows for longevity, 1 for frailty (each row contains
+    # the endpoint name twice — once in Endpoint col, once in
+    # Interpretation col 'improves longevity').
+    longevity_rows = [
+        ln for ln in md.split("\n") if "longevity" in ln and "|" in ln
+    ]
+    frailty_rows = [
+        ln for ln in md.split("\n") if "frailty" in ln and "|" in ln
+    ]
+    assert len(longevity_rows) == 2
+    assert len(frailty_rows) == 1
 
 
-def test_table_2_counts_direct_vs_mechanistic() -> None:
-    """Direct (A1/A2) and Mechanistic (C*) tier counts populated correctly."""
+def test_table_2_one_row_per_study_p_value() -> None:
+    """Fix #21 dense layout: a study with K p-values contributes K
+    rows. Two studies with 2 + 1 p-values → 3 data rows total."""
+    @dataclass
+    class _R:
+        receipt_id: str
+        evidence_tier: str = "A1"
+        directness: str = "direct"
+        outcome_class: str = "longevity"
+        effect_direction: str = "positive"
+        p_values: tuple[str, ...] = ()
+        population_summary: str | None = None
+        canonical_trial_id: str | None = None
+        n_claims: int = 0
     receipts = [
-        _FakeReceipt(receipt_id="A 2020", evidence_tier="A1"),
-        _FakeReceipt(receipt_id="B 2021", evidence_tier="A2"),
-        _FakeReceipt(receipt_id="C 2022", evidence_tier="C1"),
+        _R(receipt_id="A 2020", p_values=("p < 0.001", "p = 0.04")),
+        _R(receipt_id="B 2021", p_values=("p = 0.02",)),
     ]
     md = tr.render_table_2_endpoint_evidence(receipts)
-    # 2 direct + 1 mechanistic for the longevity row
-    # Find the data row (after the separator)
-    data_line = [
-        line for line in md.split("\n")
-        if "longevity" in line and "|" in line
-    ][0]
-    cells = [c.strip() for c in data_line.split("|") if c.strip()]
-    # Layout: outcome | total | direct | mech | null | mixed | net
-    assert cells[1] == "3"  # total
-    assert cells[2] == "2"  # direct
-    assert cells[3] == "1"  # mechanistic
+    # 2 + 1 = 3 study-rows. Each p-value appears verbatim in own row.
+    assert "p < 0.001" in md
+    assert "p = 0.04" in md
+    assert "p = 0.02" in md
+    # Study A appears in 2 rows; B in 1
+    a_rows = [ln for ln in md.split("\n") if "A 2020" in ln and "|" in ln]
+    b_rows = [ln for ln in md.split("\n") if "B 2021" in ln and "|" in ln]
+    assert len(a_rows) == 2
+    assert len(b_rows) == 1
+
+
+def test_table_2_includes_interpretation_column() -> None:
+    """Each row carries a templated plain-English interpretation
+    derived from (direction × outcome_class) so a reader can scan
+    the column without needing the schema docs."""
+    receipts = [
+        _FakeReceipt(
+            receipt_id="A 2020", outcome_class="muscle_function",
+            effect_direction="negative",
+        ),
+    ]
+    md = tr.render_table_2_endpoint_evidence(receipts)
+    assert "worsens muscle_function" in md
 
 
 def test_table_3_assigns_per_domain_grades_by_tier() -> None:
@@ -119,12 +157,14 @@ def test_render_all_tables_returns_empty_on_empty_receipts() -> None:
     assert tr.render_all_tables([]) == ""
 
 
-def test_render_all_tables_concatenates_three_tables() -> None:
+def test_render_all_tables_concatenates_four_tables() -> None:
+    """Fix #21: render_all_tables emits Tables 1-4 (Tables 1-3 follow
+    the asymmetric-fix reviewer spec; Table 4 is the supplemental
+    Cochrane RoB-2 / ROBINS-I roll-up retained from Fix #14)."""
     receipts = [_FakeReceipt(receipt_id="X 2020")]
     md = tr.render_all_tables(receipts)
-    assert "## Table 1" in md
-    assert "## Table 2" in md
-    assert "## Table 3" in md
+    for tbl in ("## Table 1", "## Table 2", "## Table 3", "## Table 4"):
+        assert tbl in md
 
 
 def test_aggregate_net_direction_handles_mixed_correctly() -> None:
@@ -338,13 +378,17 @@ def test_aggregator_returns_uniform_value_for_all_same_direction() -> None:
     assert tr._aggregate_net_direction(receipts_pos) == "positive"
 
 
-def test_table_2_uses_predominant_direction_label() -> None:
-    """Reviewer-fix P1 #4: column header is now 'Predominant
-    direction' (not 'Net direction') — explicit about aggregate
-    semantics. Footnote in render_all_tables clarifies further."""
+def test_table_2_columns_match_user_spec() -> None:
+    """Fix #21: Table 2 column headers match the asymmetric-fix
+    reviewer spec — Endpoint | Study | p/CI | Direction | Directness
+    | Tier | Interpretation."""
     receipts = [_FakeReceipt(receipt_id="X 2020")]
     md = tr.render_table_2_endpoint_evidence(receipts)
-    assert "Predominant direction" in md
+    for col in (
+        "Endpoint", "Study", "p/CI", "Direction",
+        "Directness", "Tier", "Interpretation",
+    ):
+        assert col in md, f"missing column: {col}"
 
 
 def test_table_3_includes_per_domain_caveat() -> None:
@@ -409,18 +453,15 @@ def test_render_all_tables_includes_pointer_sentence() -> None:
     assert "referenced throughout" in md.lower() or "tables" in md.lower()
 
 
-def test_render_all_tables_includes_semantic_note_between_2_and_3() -> None:
-    """Footnote between Tables 2 and 3 explains the aggregate-vs-
-    pairwise semantic split (avoids contradictory-verdict trap)."""
+def test_render_all_tables_pointer_explains_table_layout() -> None:
+    """Fix #21: pointer block at the top names the table layout (1-3
+    follow the Researka v1 schema; 4 is supplemental). Replaces the
+    Fix #6 footnote that explained Table 2 aggregate semantics —
+    Table 2 is no longer an aggregator under the new spec."""
     receipts = [_FakeReceipt(receipt_id="X 2020")]
     md = tr.render_all_tables(receipts)
-    assert "Predominant direction" in md
-    assert "TensionMatrix" in md or "pairwise" in md
-    # The note appears between Table 2 and Table 3 markers
-    t2_pos = md.find("## Table 2")
-    t3_pos = md.find("## Table 3")
-    note_pos = md.find("aggregate roll-up")
-    assert t2_pos < note_pos < t3_pos
+    assert "Researka v1 schema" in md
+    assert "supplemental" in md.lower()
 
 
 # ----- 2nd-pass reviewer fix tests (post second 2x review on Fix #6) ----
@@ -571,3 +612,174 @@ def test_aggregator_handles_null_plus_unclear_mix() -> None:
         _FakeReceipt(receipt_id="C 2022", effect_direction="null"),
     ]
     assert tr._aggregate_net_direction(receipts) == "unclear"
+
+
+# ============ Fix #21 — new asymmetric-fix table tests =================
+
+
+def test_table_1_includes_design_column() -> None:
+    """Fix #21: Design column derived from evidence_tier so reader
+    sees study type at a glance ('RCT (clinical)' vs 'Preclinical
+    (animal/in vitro)') without memorising A1/A2/B/C codes."""
+    receipts = [_FakeReceipt(receipt_id="W 2019", evidence_tier="A1")]
+    md = tr.render_table_1_included_studies(receipts)
+    assert "Design" in md
+    assert "RCT (clinical)" in md
+
+
+def test_design_from_tier_maps_each_canonical_tier() -> None:
+    """Discrim: every canonical tier has a human-readable design."""
+    cases = {
+        "A1": "RCT (clinical)",
+        "A2": "RCT (mechanistic)",
+        "B1": "Review / meta-analysis",
+        "B2": "Observational",
+        "C1": "Preclinical (animal/in vitro)",
+        "C2": "Preclinical (cell-only)",
+        "mixed": "Mixed cluster",
+    }
+    for tier, label in cases.items():
+        assert tr._design_from_tier(tier) == label
+
+
+def test_design_from_tier_handles_none_and_unknown() -> None:
+    """None / empty / unknown tier → '—' or echo, never crash."""
+    assert tr._design_from_tier(None) == "—"
+    assert tr._design_from_tier("") == "—"
+    assert tr._design_from_tier("zzz") == "zzz"  # echo unknown for visibility
+
+
+def test_table_3_tensions_renders_one_row_per_pair() -> None:
+    """Fix #21 NEW Table 3: one row per non-orthogonal Tension. With
+    a 3-pair matrix we get 3 data rows (matching the corpus tension
+    count for the metformin run)."""
+    @dataclass
+    class _Tension:
+        receipt_a_id: str
+        receipt_b_id: str
+        kind: str
+        outcome_class: str
+        summary: str
+        severity: int
+
+    @dataclass
+    class _Matrix:
+        pairs_data: list
+
+        def non_orthogonal(self):
+            return self.pairs_data
+
+    pairs = [
+        _Tension("A", "B", "directionality_disagreement",
+                 "muscle_function", "A says +, B says -", 5),
+        _Tension("C", "D", "tier_mismatch",
+                 "frailty", "RCT vs animal-only", 3),
+        _Tension("E", "F", "directness_mismatch",
+                 "longevity", "human vs preclinical", 2),
+    ]
+    md = tr.render_table_3_cross_domain_tensions(_Matrix(pairs))
+    assert "## Table 3" in md
+    assert "Cross-Domain Tensions" in md
+    # Each pair surfaces both receipt ids and the kind label
+    for rid in ("A", "B", "C", "D", "E", "F"):
+        assert rid in md
+    assert "directionality_disagreement" in md
+    assert "tier_mismatch" in md
+    # Severity 5 / 3 / 2 surfaced as raw numerics (Q9 density carrier)
+    for sev in ("5", "3", "2"):
+        assert sev in md
+
+
+def test_table_3_tensions_handles_none_matrix() -> None:
+    """Defensive: None matrix → header + 'no matrix supplied' row,
+    never a crash."""
+    md = tr.render_table_3_cross_domain_tensions(None)
+    assert "## Table 3" in md
+    assert "no matrix supplied" in md
+
+
+def test_table_3_tensions_handles_empty_pairs() -> None:
+    """Empty non_orthogonal() → header + 'no non-orthogonal' row."""
+    @dataclass
+    class _Matrix:
+        def non_orthogonal(self):
+            return []
+    md = tr.render_table_3_cross_domain_tensions(_Matrix())
+    assert "no non-orthogonal" in md.lower()
+
+
+def test_table_3_tensions_implication_uses_severity_label() -> None:
+    """Severity ≥ 4 → 'load-bearing'; ≥ 2 → 'notable'; else 'minor'.
+    Reader-friendly without dropping the raw number."""
+    @dataclass
+    class _T:
+        receipt_a_id: str = "A"
+        receipt_b_id: str = "B"
+        kind: str = "directionality_disagreement"
+        outcome_class: str = "x"
+        summary: str = "y"
+        severity: int = 5
+
+    @dataclass
+    class _M:
+        pairs: tuple
+        def non_orthogonal(self):
+            return list(self.pairs)
+    md_high = tr.render_table_3_cross_domain_tensions(_M((_T(severity=5),)))
+    assert "load-bearing" in md_high
+    md_mid = tr.render_table_3_cross_domain_tensions(_M((_T(severity=2),)))
+    assert "notable" in md_mid
+    md_low = tr.render_table_3_cross_domain_tensions(_M((_T(severity=1),)))
+    assert "minor" in md_low
+
+
+def test_table_4_renames_evidence_limitations() -> None:
+    """Fix #21: per-domain RoB (formerly Table 3) is now Table 4
+    (supplemental) to make room for the cross-domain tensions table
+    at slot 3. Heading updated; backward-compat alias preserved."""
+    receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
+    md = tr.render_table_4_evidence_limitations(receipts)
+    assert "## Table 4 (supplemental)" in md
+    assert "Per-Domain Risk of Bias" in md
+    # Same caveat preserved
+    assert "Cochrane" in md or "ROBINS-I" in md
+
+
+def test_render_table_3_evidence_limitations_alias_works() -> None:
+    """Backward-compat: Fix #14 callers using the old name still work
+    (the alias points at render_table_4_evidence_limitations)."""
+    receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
+    md_old = tr.render_table_3_evidence_limitations(receipts)
+    md_new = tr.render_table_4_evidence_limitations(receipts)
+    assert md_old == md_new
+
+
+def test_render_all_tables_threads_matrix_into_table_3() -> None:
+    """Sanity: when render_all_tables receives a matrix, Table 3 sees
+    it (renders the tension rows, not the 'no matrix supplied' line)."""
+    @dataclass
+    class _T:
+        receipt_a_id: str = "A"
+        receipt_b_id: str = "B"
+        kind: str = "tier_mismatch"
+        outcome_class: str = "longevity"
+        summary: str = "RCT vs animal"
+        severity: int = 3
+
+    @dataclass
+    class _M:
+        def non_orthogonal(self):
+            return [_T()]
+    receipts = [_FakeReceipt(receipt_id="X 2020")]
+    md = tr.render_all_tables(receipts, _M())
+    assert "tier_mismatch" in md
+    assert "no matrix supplied" not in md
+
+
+def test_render_all_tables_omits_matrix_handles_none_gracefully() -> None:
+    """Backward-compat: render_all_tables(receipts) with no matrix
+    arg defaults to None and Table 3 reports 'no matrix supplied'."""
+    receipts = [_FakeReceipt(receipt_id="X 2020")]
+    md = tr.render_all_tables(receipts)
+    assert "## Table 3" in md
+    assert "no matrix supplied" in md
