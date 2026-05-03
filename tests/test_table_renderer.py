@@ -166,6 +166,105 @@ def test_table_1_handles_missing_population_gracefully() -> None:
     assert "X 2020" in md
 
 
+# ----- Fix #12: evidence-table completion (p-value + n claims columns) -
+
+
+def test_table_1_includes_representative_p_value_column() -> None:
+    """Fix #12: surface deterministic p-values from receipts into Table
+    1 → boosts Q9 numeric density without prose bloat."""
+    @dataclass
+    class _R:
+        receipt_id: str = "Walton 2019"
+        evidence_tier: str = "A1"
+        directness: str = "direct"
+        outcome_class: str = "muscle_function"
+        effect_direction: str = "negative"
+        population_summary: str | None = "older adults, n=120"
+        canonical_trial_id: str | None = "NCT01234567"
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
+        n_claims: int = 17
+
+    receipts = [_R()]
+    md = tr.render_table_1_included_studies(receipts)
+    assert "Representative p-value" in md  # column header
+    assert "p < 0.001" in md  # first p-value selected
+    assert "n claims" in md  # column header
+    assert "17" in md  # n_claims rendered
+
+
+def test_table_1_falls_back_to_dash_when_no_p_value() -> None:
+    """Receipt without p_values → '—' in p-value column (no fabrication)."""
+    @dataclass
+    class _R:
+        receipt_id: str = "Y 2021"
+        evidence_tier: str = "B1"
+        directness: str = "review"
+        outcome_class: str = "longevity"
+        effect_direction: str = "unclear"
+        population_summary: str | None = None
+        canonical_trial_id: str | None = None
+        p_values: tuple[str, ...] = ()  # empty
+        n_claims: int = 0
+
+    md = tr.render_table_1_included_studies([_R()])
+    # Row exists; p-value cell is dash
+    assert "Y 2021" in md
+    # Count the dashes in the row to confirm presence
+    walton_lines = [
+        line for line in md.split("\n")
+        if "Y 2021" in line and "|" in line
+    ]
+    assert walton_lines
+    # At least 2 dashes (p-value + trial_id at minimum)
+    assert walton_lines[0].count("—") >= 2
+
+
+def test_representative_p_value_picks_smallest_not_first() -> None:
+    """Reviewer P2: pre-fix returned the FIRST non-empty p-value
+    (iteration-order dependent → non-deterministic). Now picks the
+    SMALLEST (most-significant) one, which is what a clinician would
+    cite as 'representative.'"""
+    @dataclass
+    class _R:
+        p_values: tuple[str, ...] = ("p = 0.04", "p < 0.001", "p = 0.02")
+
+    # Smallest is 0.001 → "p < 0.001" wins, NOT first ("p = 0.04")
+    assert tr._representative_p_value(_R()) == "p < 0.001"
+
+
+def test_representative_p_value_falls_back_to_first_when_unparseable() -> None:
+    @dataclass
+    class _R:
+        p_values: tuple[str, ...] = ("not a p", "still not", "p = 0.02")
+
+    # First parseable is "p = 0.02" → wins (only parseable one)
+    assert tr._representative_p_value(_R()) == "p = 0.02"
+
+
+def test_representative_p_value_helper_returns_dash_when_empty() -> None:
+    @dataclass
+    class _R:
+        p_values: tuple[str, ...] = ()
+
+    assert tr._representative_p_value(_R()) == "—"
+
+
+def test_n_claims_helper_renders_int() -> None:
+    @dataclass
+    class _R:
+        n_claims: int = 42
+
+    assert tr._n_claims(_R()) == "42"
+
+
+def test_n_claims_helper_returns_dash_for_zero_or_missing() -> None:
+    @dataclass
+    class _R:
+        n_claims: int = 0
+
+    assert tr._n_claims(_R()) == "—"
+
+
 # ----- Reviewer-fix v2 discriminating tests (post-2x review on Fix #6) -
 
 

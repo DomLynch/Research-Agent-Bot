@@ -115,3 +115,127 @@ def test_strict_gate_empty_paper_passes_vacuously() -> None:
     paper = "## Discussion\n\nQualitative discussion only.\n"
     ok, _ = audit._check_numeric_integrity(paper, corpus_nums=set())
     assert ok is True
+
+
+# ----- Fix #12: Q9 numeric density extended pattern set ----------------
+
+
+def test_q9_density_counts_hr_or_rr_ratios() -> None:
+    """Pre-fix Q9 only counted percentages + p-values + speed/dose units.
+    Now ratios like HR=0.85, OR 1.2, RR 0.7 also count toward density."""
+    # 100-word paragraph with 2 ratios → density = 2/100*1000 = 20
+    paper = " ".join(
+        ["The"] * 96 + ["HR=0.85", "and", "OR=1.2", "."]
+    )
+    ok, msg = audit._check_numeric_density(paper, threshold=8.0)
+    assert ok is True, msg
+    assert "20.0" in msg or "density 20" in msg
+
+
+def test_q9_density_counts_sample_size_n_eq() -> None:
+    """`n=120` counts toward numeric density."""
+    paper = " ".join(
+        ["The"] * 99 + ["n=120"]
+    )
+    ok, msg = audit._check_numeric_density(paper, threshold=8.0)
+    assert ok is True, msg
+
+
+def test_q9_density_counts_table_cell_numerics() -> None:
+    """Numerics inside markdown tables MUST count — explicit metric
+    contract change. Per the reviewer's 'tables-not-paragraphs' guide."""
+    table_paper = (
+        "## Results\n\n"
+        "| Study | Tier | N | p |\n"
+        "| --- | --- | --- | --- |\n"
+        "| Walton 2019 | A1 | n=120 | p < 0.001 |\n"
+        "| Konopka 2019 | A1 | n=53 | p = 0.02 |\n"
+        "| Witham 2025 | A1 | n=160 | p = 0.96 |\n"
+    )
+    # Word count of table (each row is mostly 1-word cells) = ~30 words.
+    # Numerics: 3 n= + 3 p< → 6/30 *1000 = 200/1k → way over threshold.
+    ok, msg = audit._check_numeric_density(table_paper, threshold=8.0)
+    assert ok is True, f"Table cells should count: {msg}"
+
+
+def test_q9_density_threshold_default_is_8() -> None:
+    """Sanity: default threshold remains 8.0/1k."""
+    # 1000-word paper with exactly 7 numerics → density 7.0 < 8.0
+    paper = " ".join(["The"] * 993 + ["7%", "n=12", "HR=1.5",
+                                       "p < 0.05", "8 mg",
+                                       "12 weeks", "0.5 m/s"])
+    ok, msg = audit._check_numeric_density(paper)
+    assert ok is False
+    assert "7.0" in msg
+
+
+# ----- Reviewer-fix v2 on Fix #12 (P1 + P2 hardening) ------------------
+
+
+def test_q9_or_does_not_match_english_word_or() -> None:
+    """P1 reviewer: pre-fix `OR\\s*[=:]?\\s*\\d` matched 'OR 10' in
+    prose like '5 or 10 mg' (English 'or' + space + digit). Now the
+    separator `=` or `:` is mandatory."""
+    # 100-word paper with prose 'or 10' that should NOT count as a ratio.
+    paper = " ".join(["The"] * 98 + ["5", "or", "10", "mg"])
+    ok, msg = audit._check_numeric_density(paper, threshold=20.0)
+    # Should count "10 mg" once via dose pattern, not double via ratio.
+    # 1 numeric in 102 words → density ≈ 9.8/1k → fails threshold 20
+    assert ok is False, f"prose 'or' must not inflate count: {msg}"
+
+
+def test_q9_range_pattern_does_not_match_year_ranges() -> None:
+    """P1 reviewer: pre-fix `\\d+\\s*-\\s*\\d+` matched '2024-2026'
+    and 'section 1-3'. Now ranges only match inside CI/range context."""
+    paper = " ".join(["The"] * 95 + [
+        "trials", "spanned", "2019-2025", "across", "section", "1-3",
+    ])
+    # No CI/range keyword → no range matches → 0 numerics
+    ok, msg = audit._check_numeric_density(paper, threshold=8.0)
+    assert ok is False, msg
+    # Density should be 0.0 (no numerics caught)
+    assert "0.0" in msg
+
+
+def test_q9_range_pattern_still_matches_real_ci() -> None:
+    """Real CIs in clinical context should still count."""
+    paper = " ".join(["The"] * 90 + [
+        "HR=0.85", "(95% CI", "0.72", "to", "0.99)", "p", "<", "0.05",
+    ])
+    # Counted: HR=0.85, range 0.72-0.99, p<0.05 → 3 numerics in 98 words
+    # Density ≈ 30/1k → easily passes
+    ok, msg = audit._check_numeric_density(paper, threshold=20.0)
+    assert ok is True, msg
+
+
+def test_q9_contract_version_in_message() -> None:
+    """Reviewer P2: metric output must surface the contract version
+    so a future replay-on-old-paper can't misattribute score changes
+    to paper changes."""
+    paper = "## Discussion\n\nQualitative text."
+    _ok, msg = audit._check_numeric_density(paper)
+    assert "contract=" in msg
+    assert "2026-05-03" in msg
+
+
+def test_q2_or_does_not_match_english_word_or() -> None:
+    """Symmetric P1 fix on Q2: 'or 850 mg' must not extract 850 as
+    an unverified ratio. Pre-fix it could → strict-Q2 false-fail."""
+    paper = "Patients received 500 or 850 mg of metformin daily."
+    # 850 should be caught as a dose (corpus has 850), NOT a ratio.
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums={"500", "850"},
+    )
+    assert ok is True, f"Strict Q2 should pass when 850 traces: {msg}"
+    # Confirm only dose category fires (no ratio category)
+    assert "ratio=" not in msg or "ratio=0/0" in msg
+
+
+def test_q2_aor_irr_smr_ratios_extracted() -> None:
+    """Symmetric P1 fix: aOR / IRR / SHR / SMR are real epidemiology
+    ratios; Q2 should extract them and check trace."""
+    paper = "Adjusted aOR=0.7, IRR=1.2, SMR=0.8 across the cohort."
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums={"0.7", "1.2", "0.8"},
+    )
+    assert ok is True, msg

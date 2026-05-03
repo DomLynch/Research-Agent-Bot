@@ -70,7 +70,12 @@ _PATTERNS_BY_CATEGORY: tuple[tuple[str, str], ...] = (
     # (category, regex_with_one_capture_group)
     ("percentage", r"\b(\d+\.?\d*)\s*%"),
     ("p_value", r"\b[Pp]\s*[<>=]\s*(0?\.\d+)\b"),
-    ("ratio", r"\b(?:HR|OR|RR|aHR|HzR)\s*[=:]?\s*(\d+\.?\d*)\b"),
+    # Ratios: mandatory `=` or `:` separator + digit. Pre-fix
+    # `OR\s*[=:]?` (optional separator) matched English "or" in
+    # prose like "5 or 10 mg" → false ratio extraction. aOR/IRR/
+    # SHR/SMR added for completeness.
+    ("ratio",
+     r"\b(?:aHR|aOR|HR|OR|RR|RRR|IRR|SHR|SMR)\s*[=:]\s*(\d+\.?\d*)"),
     ("sample_size", r"\b[nN]\s*=\s*(\d+)\b"),
     ("dose", r"\b(\d+\.?\d*)\s*(?:mg|g|kg|μg|mcg|mL)\b"),
     ("speed", r"\b(\d+\.?\d*)\s*m\s*/\s*s\b"),
@@ -282,21 +287,59 @@ def _check_thesis_present(paper: str) -> tuple[bool, str]:
     )
 
 
-# Q9: numeric density (claims-per-1k-words)
+# Q9: numeric density (claims-per-1k-words). Fix #12: extended
+# patterns to include ratios, sample sizes, CIs, and doses —
+# symmetric with Q2 numeric-integrity. Tables are explicitly part
+# of the contract for density (per the reviewer's "tables-not-
+# paragraphs" guidance). Bumped to v2 after reviewer found two P1
+# pattern bugs (`OR` matching English "or"; range pattern matching
+# years like "2024-2026"). See _DENSITY_CONTRACT_VERSION.
+
+# Versioned metric contract — surfaced in audit output so a future
+# replay-on-old-paper run can't be mis-attributed to "paper improved"
+# when only the metric changed.
+_DENSITY_CONTRACT_VERSION = "2026-05-03-v2"
+
+# Ratios MUST have an explicit `=` or `:` separator + a digit.
+# Without that, `OR` matches the English word "or" in prose like
+# "5 or 10 mg" → false ratio count. `aOR` (adjusted OR), `IRR`
+# (incidence rate ratio), `SHR` (subdistribution HR), `SMR`
+# (standardized mortality ratio) added for completeness.
+_RATIO_PATTERN = (
+    r"\b(?:aHR|aOR|HR|OR|RR|RRR|IRR|SHR|SMR)\s*[=:]\s*\d+\.?\d*"
+)
+
+# Range pattern restricted to clinical-context shapes:
+#   - Inside parens with a leading CI or 95%/99%/90% marker
+#   - Or following an explicit "range" keyword
+# Pre-fix the bare `\d+\s*-\s*\d+` matched years ("2024-2026"),
+# page numbers ("section 1-3"), and double-counted with the dose
+# pattern ("850 mg to 1700 mg" counted 3×).
+_RANGE_PATTERN = (
+    r"(?:95%\s*CI|99%\s*CI|90%\s*CI|\bCI\b|\brange\b)[^,)\n]*?"
+    r"\d+\.?\d*\s*(?:to|–|-)\s*\d+\.?\d*"
+)
+
+_DENSITY_PATTERNS: tuple[str, ...] = (
+    r"\b\d+\.?\d*\s*%",                                    # percentages
+    r"\b[pP]\s*[<=>]\s*\.?\d+\.?\d*",                      # p-values
+    _RATIO_PATTERN,                                        # ratios
+    r"\b[nN]\s*=\s*\d+",                                   # sample sizes
+    r"\b\d+\.?\d*\s*(?:m/s|kg|mg|g|μg|mcg|mL|L|"           # doses + units
+    r"months?|years?|weeks?|days?|hours?|min)\b",          # (no bare `h`)
+    _RANGE_PATTERN,                                        # CIs / ranges
+)
+
+
 def _check_numeric_density(
     paper: str, threshold: float = 8.0,
 ) -> tuple[bool, str]:
     wc = len(paper.split())
-    n_pcts = len(re.findall(r"\b\d+\.?\d*\s*%", paper))
-    n_pvalues = len(re.findall(r"\b[pP]\s*[<=>]\s*\.?\d+\.?\d*", paper))
-    n_units = len(re.findall(
-        r"\b\d+\.?\d*\s*(?:m/s|kg|mg|months?|years?|weeks?)\b", paper,
-    ))
-    total = n_pcts + n_pvalues + n_units
+    total = sum(len(re.findall(pat, paper)) for pat in _DENSITY_PATTERNS)
     density = (total / max(1, wc)) * 1000
     return density >= threshold, (
         f"density {density:.1f} numerics/1000 words "
-        f"(threshold ≥{threshold})"
+        f"(threshold ≥{threshold}; contract={_DENSITY_CONTRACT_VERSION})"
     )
 
 

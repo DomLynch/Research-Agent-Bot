@@ -159,21 +159,60 @@ def _split_population_n(population_summary: str) -> tuple[str, str]:
     return n_str, pop_label or "—"
 
 
+def _representative_p_value(r: object) -> str:
+    """Smallest (most-significant) p-value from receipt's p_values
+    list. Pre-fix returned the FIRST entry which was iteration-order
+    dependent → non-deterministic across runs and not aligned with
+    what a clinician would cite as 'representative.' Reviewer P2.
+
+    Returns the raw p-value string (e.g. 'p < 0.001') or '—'.
+    Falls back to first non-empty entry if no entries parse."""
+    pvals = [p.strip() for p in (getattr(r, "p_values", None) or ())
+             if p and p.strip()]
+    if not pvals:
+        return "—"
+    parsed: list[tuple[float, str]] = []
+    for p in pvals:
+        m = re.search(r"\d*\.?\d+(?:[eE][-+]?\d+)?", p)
+        if not m:
+            continue
+        try:
+            parsed.append((float(m.group(0)), p))
+        except (ValueError, TypeError):
+            continue
+    if not parsed:
+        return pvals[0]
+    parsed.sort(key=lambda t: t[0])
+    return parsed[0][1]
+
+
+def _n_claims(r: object) -> str:
+    """High-confidence-claim count for a receipt — a measure of
+    evidence density already in the manifest."""
+    n = getattr(r, "n_claims", None)
+    return str(n) if isinstance(n, int) and n > 0 else "—"
+
+
 def render_table_1_included_studies(receipts: list) -> str:
-    """Table 1 — one row per source paper. Columns: Citation | Design |
-    Tier | N | Population | Outcome class | Effect direction |
-    Canonical trial ID."""
+    """Table 1 — one row per source paper. Columns: Citation | Tier |
+    Directness | N | Population | Outcome class | Effect direction |
+    Representative p-value | n claims | Trial ID.
+
+    Fix #12: added Representative p-value + n claims columns to
+    surface numerics the writer already aggregated. Lifts Q9
+    numeric density without prose bloat (per the reviewer's
+    'tables-not-paragraphs' guidance)."""
     header = (
         "## Table 1: Included Studies\n\n"
         + _row(
             "Citation", "Tier", "Directness", "N",
             "Population", "Outcome class", "Effect direction",
-            "Trial ID",
+            "Representative p-value", "n claims", "Trial ID",
         )
         + "\n"
         + _row(
-            "---", "---", "---", "---",
-            "---", "---", "---", "---",
+            "---", "---", "---", "---", "---",
+            "---", "---", "---", "---", "---",
         )
         + "\n"
     )
@@ -189,6 +228,8 @@ def render_table_1_included_studies(receipts: list) -> str:
             pop_label,
             _safe(getattr(r, "outcome_class", None), "—"),
             _safe(getattr(r, "effect_direction", None), "—"),
+            _representative_p_value(r),
+            _n_claims(r),
             _safe(getattr(r, "canonical_trial_id", None), "—"),
         ))
     return header + "\n".join(rows) + "\n"
