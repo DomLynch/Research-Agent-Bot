@@ -381,6 +381,114 @@ def test_walton_alone_in_body_gets_year_decorated() -> None:
     assert "Walton 2019 showed effects" in out
 
 
+def test_metadata_derived_author_year_for_pmc_paper() -> None:
+    """Fix #10: when parsed paper metadata has authors + year, body
+    citation is `<Surname> <Year>` (PhD-grade), not `PMC<id> <year>`."""
+    receipts = [_FakeReceipt(
+        receipt_id="PMC12223363_comparative_effectiveness_of_metformin",
+        source_year=2025,
+    )]
+    paper_meta = {
+        "PMC12223363_comparative_effectiveness_of_metformin": {
+            "authors": ["Aladdin H Shadyab", "Mark A Espeland"],
+            "year": 2025,
+            "title": "Comparative Effectiveness of Metformin...",
+        },
+    }
+    registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
+    entry = registry["PMC12223363_comparative_effectiveness_of_metformin"]
+    assert entry.body_citation == "Shadyab 2025"
+    # NOT the bare PMC handle
+    assert "PMC" not in entry.body_citation
+
+
+def test_metadata_derived_collision_disambiguator() -> None:
+    """Two papers with same surname+year get a/b suffixes."""
+    receipts = [
+        _FakeReceipt(receipt_id="PMC1_a_paper", source_year=2024),
+        _FakeReceipt(receipt_id="PMC2_b_paper", source_year=2024),
+    ]
+    paper_meta = {
+        "PMC1_a_paper": {"authors": ["Jane Smith"], "year": 2024},
+        "PMC2_b_paper": {"authors": ["John Smith"], "year": 2024},
+    }
+    registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
+    citations = sorted(e.body_citation for e in registry.values())
+    # Smith 2024 (first) + Smith 2024b (collision suffix)
+    assert citations == ["Smith 2024", "Smith 2024b"]
+
+
+def test_metadata_missing_falls_back_to_pmc_handle() -> None:
+    """When parsed metadata is incomplete (no authors / no year),
+    fall back to the legacy `PMC<id> <year>` form so the pipeline
+    doesn't crash."""
+    receipts = [_FakeReceipt(
+        receipt_id="PMC9999999_no_metadata",
+        source_year=2026,
+    )]
+    paper_meta = {
+        "PMC9999999_no_metadata": {"authors": [], "year": 2026},
+    }
+    registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
+    entry = registry["PMC9999999_no_metadata"]
+    assert entry.body_citation == "PMC9999999 2026"
+
+
+def test_metadata_overrides_receipt_id_derived_for_walton() -> None:
+    """When metadata is present even for Walton-style receipt_ids,
+    the metadata-derived citation wins (same shape, but consistent
+    source of truth)."""
+    receipts = [_FakeReceipt(
+        receipt_id="Walton_2019_MASTERS_metformin_blunts",
+        source_year=2019,
+    )]
+    paper_meta = {
+        "Walton_2019_MASTERS_metformin_blunts": {
+            "authors": ["P A Walton", "K Konopka"],
+            "year": 2019,
+        },
+    }
+    registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
+    entry = registry["Walton_2019_MASTERS_metformin_blunts"]
+    assert entry.body_citation == "Walton 2019"
+
+
+def test_no_paper_meta_param_keeps_legacy_behavior() -> None:
+    """Backward compat: callers that don't pass paper_meta_by_id get
+    the same body_citation strings as before Fix #10."""
+    receipts = [_FakeReceipt(
+        receipt_id="PMC12978362_molecular_mechanisms",
+        source_year=2026,
+    )]
+    registry = cr.build_registry(receipts)  # no paper_meta_by_id
+    entry = registry["PMC12978362_molecular_mechanisms"]
+    assert entry.body_citation == "PMC12978362 2026"
+
+
+def test_body_citation_from_metadata_helper_handles_edge_cases() -> None:
+    """Direct unit tests for the metadata extraction helper."""
+    # Standard case
+    assert cr._body_citation_from_metadata({
+        "authors": ["Aladdin H Shadyab"], "year": 2025,
+    }) == "Shadyab 2025"
+    # Multi-token surname (van/de/von) — last token wins
+    assert cr._body_citation_from_metadata({
+        "authors": ["Frans Van de Werf"], "year": 2019,
+    }) == "Werf 2019"
+    # Empty / None inputs return None
+    assert cr._body_citation_from_metadata({}) is None
+    assert cr._body_citation_from_metadata(
+        {"authors": [], "year": 2024}
+    ) is None
+    assert cr._body_citation_from_metadata(
+        {"authors": ["Smith"], "year": None}
+    ) is None
+    # Year-string also accepted (cast to int)
+    assert cr._body_citation_from_metadata({
+        "authors": ["Smith"], "year": "2024",
+    }) == "Smith 2024"
+
+
 def test_year_suffix_after_helper_extracts_correct_year() -> None:
     assert cr._year_suffix_after("PMC12978362", "PMC12978362 2026") == "2026"
     assert cr._year_suffix_after("Walton", "Walton 2019") == "2019"

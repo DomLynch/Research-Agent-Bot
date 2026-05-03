@@ -174,14 +174,26 @@ def validate_body_citation(citation: str) -> list[str]:
     return found
 
 
-def build_registry(receipts: list) -> dict[str, CitationEntry]:
+def build_registry(
+    receipts: list,
+    paper_meta_by_id: dict[str, dict] | None = None,
+) -> dict[str, CitationEntry]:
     """Build the registry from a list of ReceiptSummary objects.
 
-    Each entry's body_citation is computed once + validated; if any
-    body_citation matches a blocked pattern OR is empty, raises
-    immediately so the pipeline can't ship with an internal-handle
-    leak baked in."""
+    Fix #10: when `paper_meta_by_id` is provided, extract Author-Year
+    citations from parsed paper metadata (authors + year fields) for
+    PMC papers. Pre-fix Fix #3 produced `PMC12978362 2026` body
+    citations; a PhD reviewer would never accept PMC handles in body
+    prose. Now PMC papers cite as e.g. `Yu 2025`, `Shadyab 2025`.
+
+    Each entry's body_citation is computed once + validated + de-
+    duplicated (collisions like Smith 2024a / Smith 2024b). Raises
+    if any body_citation matches a blocked pattern."""
     registry: dict[str, CitationEntry] = {}
+    paper_meta_by_id = paper_meta_by_id or {}
+    # Track (surname, year) collisions across the whole registry so
+    # we can apply a/b/c disambiguator suffixes deterministically.
+    body_citation_counts: dict[str, int] = {}
     for idx, r in enumerate(receipts, start=1):
         receipt_id = getattr(r, "receipt_id", "") or ""
         if not receipt_id.strip():
@@ -189,8 +201,15 @@ def build_registry(receipts: list) -> dict[str, CitationEntry]:
                 f"Receipt at index {idx-1} has empty receipt_id; "
                 "registry cannot key by empty string"
             )
-        body_citation = _body_citation_for(
-            receipt_id, source_year=getattr(r, "source_year", None),
+        # Prefer metadata-derived Author-Year for PMC papers; fall
+        # back to receipt_id-derived form (legacy + Walton-style).
+        meta = paper_meta_by_id.get(receipt_id, {})
+        body_citation = (
+            _body_citation_from_metadata(meta)
+            or _body_citation_for(
+                receipt_id,
+                source_year=getattr(r, "source_year", None),
+            )
         )
         leaks = validate_body_citation(body_citation)
         if leaks:
@@ -198,8 +217,13 @@ def build_registry(receipts: list) -> dict[str, CitationEntry]:
                 f"Generated body_citation for {receipt_id!r} matches "
                 f"blocked pattern(s) {leaks}: {body_citation!r}"
             )
-        # Reference IDs: R01, R02, ... in receipt order. Stable across
-        # runs so References section + body cites agree.
+        # Disambiguate collisions: Smith 2024 → Smith 2024a, Smith 2024b
+        body_citation_counts[body_citation] = (
+            body_citation_counts.get(body_citation, 0) + 1
+        )
+        if body_citation_counts[body_citation] > 1:
+            suffix = chr(ord("a") + body_citation_counts[body_citation] - 1)
+            body_citation = f"{body_citation}{suffix}"
         reference_id = f"R{idx:02d}"
         entry = CitationEntry(
             receipt_id=receipt_id,
@@ -214,6 +238,34 @@ def build_registry(receipts: list) -> dict[str, CitationEntry]:
         )
         registry[receipt_id] = entry
     return registry
+
+
+def _body_citation_from_metadata(meta: dict) -> str | None:
+    """Extract `<Surname> <Year>` from parsed paper metadata. Returns
+    None if metadata insufficient (caller falls back to receipt_id-
+    derived citation).
+
+    Surname extraction: take the LAST token of the first author name
+    (Western-style). For multi-word surnames (Van de Werf), this
+    grabs only the last token — acceptable since the disambiguator
+    suffix handles collisions."""
+    if not meta:
+        return None
+    authors = meta.get("authors") or []
+    year = meta.get("year")
+    if not authors or not year:
+        return None
+    first_author = (authors[0] or "").strip()
+    if not first_author:
+        return None
+    surname = first_author.split()[-1]
+    if not surname:
+        return None
+    try:
+        year_str = str(int(year))
+    except (ValueError, TypeError):
+        return None
+    return f"{surname} {year_str}"
 
 
 def _safe_variants_across_registry(

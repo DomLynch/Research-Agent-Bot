@@ -255,18 +255,24 @@ def _extract_canonical_trial_id(claims: list[dict]) -> str | None:
     return None
 
 
-def build_receipts_from_quant_claims() -> list[ReceiptSummary]:
-    """Adapter: v0.6.0 quant_claims → ReceiptSummary list. One receipt
-    per contributing paper. Only papers with ≥1 high-confidence
-    effect-role claim are included."""
-    receipts: list[ReceiptSummary] = []
-
-    # Load paper metadata once (paper_id → {title, journal, year, doi, pmid})
+def _load_paper_meta_by_id() -> dict[str, dict]:
+    """Load all parsed-paper metadata (paper_id → dict). Used both
+    by the receipt builder AND by Fix #10's citation-registry call
+    (Author-Year extraction from authors+year fields)."""
     paper_meta_by_id: dict[str, dict] = {}
     for path in sorted(PARSED_DIR.glob("*.paper_sections.json")):
         d = json.loads(path.read_text())
         pid = d.get("paper_id") or path.stem
         paper_meta_by_id[pid] = d
+    return paper_meta_by_id
+
+
+def build_receipts_from_quant_claims() -> list[ReceiptSummary]:
+    """Adapter: v0.6.0 quant_claims → ReceiptSummary list. One receipt
+    per contributing paper. Only papers with ≥1 high-confidence
+    effect-role claim are included."""
+    receipts: list[ReceiptSummary] = []
+    paper_meta_by_id = _load_paper_meta_by_id()
 
     # Group high-confidence claims by paper_id
     by_paper: dict[str, list[dict]] = defaultdict(list)
@@ -590,7 +596,12 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     # ~half the leaks). Matrix transformation MUST happen in lockstep
     # with receipt transformation, otherwise the writer's anchor-
     # validator sees mismatched IDs and trips invariant checks.
-    citation_registry = _citations.build_registry(receipts)
+    # Fix #10: pass parsed paper metadata so PMC papers get
+    # Author-Year body citations (e.g. "Yu 2025") instead of bare
+    # PMC handles ("PMC12978362 2026"). PhD-grade citation surface.
+    citation_registry = _citations.build_registry(
+        receipts, paper_meta_by_id=_load_paper_meta_by_id(),
+    )
     writer_receipts = _citations.transform_receipts_for_writer(
         receipts, citation_registry,
     )
