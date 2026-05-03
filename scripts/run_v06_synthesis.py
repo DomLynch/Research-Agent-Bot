@@ -63,6 +63,7 @@ import run_mode_contract as _run_mode  # noqa: E402
 import citation_registry as _citations  # noqa: E402
 import evidence_taxonomy as _taxonomy  # noqa: E402
 import effect_direction as _direction  # noqa: E402
+import table_renderer as _tables  # noqa: E402
 
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
@@ -437,19 +438,31 @@ def _author_year_for_receipt(r: ReceiptSummary) -> str:
 
 def _replace_paper_ids_with_author_year(
     paper_md: str, receipts: list[ReceiptSummary],
+    *, registry: dict | None = None,
 ) -> str:
     """Substitute paper_id strings (and their truncated forms) in the
-    markdown with Author-Year citation. Audit Q3 ship-blocks otherwise."""
+    markdown with Author-Year citation. Audit Q3 ship-blocks otherwise.
+
+    Reviewer-fix Fix #6 P1 v2: when `registry` is provided, the
+    Author-Year substitution string comes from the registry's
+    body_citation — SAME source the Tables and References use, so the
+    body prose, tables, and references are guaranteed to use the same
+    citation token for each receipt."""
     out = paper_md
+
+    def _citation_for(r: ReceiptSummary) -> str:
+        if registry is not None and r.receipt_id in registry:
+            return registry[r.receipt_id].body_citation
+        return _author_year_for_receipt(r)
+
     # Sort by length desc so longer forms get replaced before shorter
     # truncations (avoids "Walton_2019" replacing inside
     # "Walton_2019_MASTERS_...").
     pairs = sorted(
-        ((r.receipt_id, _author_year_for_receipt(r)) for r in receipts),
+        ((r.receipt_id, _citation_for(r)) for r in receipts),
         key=lambda p: -len(p[0]),
     )
     for paper_id, author_year in pairs:
-        # Replace full id + common truncations the LLM produces
         for variant in (paper_id, paper_id[:30], paper_id[:25], paper_id[:20]):
             if variant and len(variant) >= 8:
                 out = out.replace(variant, author_year)
@@ -458,14 +471,23 @@ def _replace_paper_ids_with_author_year(
 
 def _append_references_block(
     paper_md: str, receipts: list[ReceiptSummary],
+    *, registry: dict | None = None,
 ) -> str:
     """Append a deterministic References section at the end of the
     paper (after Conclusion). Each entry: Author Year. Title. Journal,
     Year. DOI/PMID. Replaces the writer's References section with one
-    grounded in paper_sections.json metadata."""
+    grounded in paper_sections.json metadata.
+
+    Reviewer-fix Fix #6 P1: when `registry` is provided, the per-entry
+    Author-Year token is sourced from the registry's body_citation —
+    SAME source the Tables use, so prose / References / Tables can
+    never drift out of sync."""
     lines = ["", "## References", ""]
     for r in receipts:
-        author_year = _author_year_for_receipt(r)
+        if registry is not None and r.receipt_id in registry:
+            author_year = registry[r.receipt_id].body_citation
+        else:
+            author_year = _author_year_for_receipt(r)
         bits = [f"- **{author_year}.**"]
         if r.source_title:
             bits.append(f"_{r.source_title}._")
@@ -611,8 +633,23 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     full_paper_md = _citations.substitute_receipt_ids(
         full_paper_md, citation_registry,
     )
-    full_paper_md = _replace_paper_ids_with_author_year(full_paper_md, receipts)
-    full_paper_md = _append_references_block(full_paper_md, receipts)
+    # Fix #6 P1 v2: pass registry through so body prose substitution
+    # uses the SAME body_citation source as Tables and References. No
+    # 3-way drift possible.
+    full_paper_md = _replace_paper_ids_with_author_year(
+        full_paper_md, receipts, registry=citation_registry,
+    )
+    # Fix #6: insert deterministic Tables 1/2/3 BEFORE References.
+    # Built from the post-citation-registry receipts so table cells
+    # use clean body_citation strings, not raw internal handles.
+    tables_md = _tables.render_all_tables(writer_receipts)
+    if tables_md:
+        full_paper_md = full_paper_md.rstrip() + "\n\n" + tables_md
+    # Pass the registry to References so its Author-Year tokens come
+    # from the SAME source as the table cells — no drift possible.
+    full_paper_md = _append_references_block(
+        full_paper_md, receipts, registry=citation_registry,
+    )
 
     # Fix #2: replace LLM-templated Methods with deterministic block
     # rendered from a RunModeContract. Eliminates the contradiction
