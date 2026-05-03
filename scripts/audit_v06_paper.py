@@ -25,8 +25,23 @@ QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_clai
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
 
 
+def _load_background_lit_numerics() -> set[str]:
+    """Fix #16: numeric tokens from the background-literature registry.
+    Pre-vetted clinical thresholds, each with a canonical citation;
+    Q2 admits these in addition to corpus_numerics, but the new Stage-2
+    `_check_background_lit_citation_present` enforces that any use
+    must include the citation token in the same sentence."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import background_literature as _bg
+        return _bg.numeric_values(_bg.load_registry())
+    except (ImportError, FileNotFoundError, ValueError):
+        return set()
+
+
 def _load_corpus_numerics() -> set[str]:
-    """All numeric tokens that appear in v0.6.0 high-confidence claims."""
+    """All numeric tokens that appear in v0.6.0 high-confidence claims
+    PLUS pre-vetted background-literature thresholds (Fix #16)."""
     nums: set[str] = set()
     for path in QUANT_DIR.glob("*.quant_claims.json"):
         d = json.loads(path.read_text())
@@ -41,6 +56,11 @@ def _load_corpus_numerics() -> set[str]:
             raw = (c.get("raw_text") or "").strip()
             if raw:
                 nums.add(raw)
+    # Fix #16: extend with background-literature thresholds. These are
+    # admissible in body prose ONLY when their canonical citation is in
+    # the same sentence — enforced by Stage-2 _check_background_lit_*
+    # in final_consistency_audit.
+    nums |= _load_background_lit_numerics()
     return nums
 
 

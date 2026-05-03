@@ -1,0 +1,109 @@
+{
+  "gait_speed_frailty_cutoff": {
+    "numeric": "0.8 m/s",
+    "context": "Common gait-speed threshold associated with impaired mobility / frailty risk.",
+    "citation_token": "Studenski 2011",
+    "canonical_reference": "Studenski S, Perera S, Patel K, et al. Gait speed and survival in older adults. JAMA. 2011;305(1):50-58.",
+    "doi": "10.1001/jama.2010.1923",
+    "pmid": "21205966"
+  },
+  "gait_speed_severe_frailty": {
+    "numeric": "0.6 m/s",
+    "context": "Severe frailty / mobility-limitation cutoff.",
+    "citation_token": "Cesari 2009",
+    "canonical_reference": "Cesari M, Kritchevsky SB, Newman AB, et al. Added value of physical performance measures in predicting adverse health-related events. J Gerontol A Biol Sci Med Sci. 2009;64(7):772-779.",
+    "doi": "10.1093/gerona/glp012",
+    "pmid": "19349594"
+  },
+  "hba1c_target": {
+    "numeric": "7%",
+    "context": "American Diabetes Association HbA1c target for most adults with diabetes.",
+    "citation_token": "ADA 2024",
+    "canonical_reference": "American Diabetes Association. Standards of Care in Diabetes. Diabetes Care. 2024;47(Suppl 1).",
+    "doi": "10.2337/dc24-S006"
+  },
+  "hba1c_intensive_target": {
+    "numeric": "6.5%",
+    "context": "Tighter HbA1c target for younger / lower-risk patients.",
+    "citation_token": "ADA 2024",
+    "canonical_reference": "American Diabetes Association. Standards of Care in Diabetes. Diabetes Care. 2024;47(Suppl 1).",
+    "doi": "10.2337/dc24-S006"
+  },
+  "bmi_overweight": {
+    "numeric": "25 kg/m2",
+    "context": "WHO overweight threshold.",
+    "citation_token": "WHO 2000",
+    "canonical_reference": "World Health Organization. Obesity: Preventing and Managing the Global Epidemic. WHO Technical Report Series 894. 2000.",
+    "pmid": "11234459"
+  },
+  "bmi_obese": {
+    "numeric": "30 kg/m2",
+    "context": "WHO obesity threshold.",
+    "citation_token": "WHO 2000",
+    "canonical_reference": "World Health Organization. Obesity: Preventing and Managing the Global Epidemic. WHO Technical Report Series 894. 2000."
+  },
+  "metformin_standard_dose": {
+    "numeric": "2000 mg",
+    "context": "Common upper-end daily metformin dose for type 2 diabetes.",
+    "citation_token": "ADA 2024",
+    "canonical_reference": "American Diabetes Association. Pharmacologic Approaches to Glycemic Treatment. Diabetes Care. 2024;47(Suppl 1)."
+  },
+  "ms_to_aging_decline": {
+    "numeric": "0.05 m/s",
+    "context": "Annual age-related gait-speed decline in older adults.",
+    "citation_token": "Bohannon 1997",
+    "canonical_reference": "Bohannon RW. Comfortable and maximum walking speed of adults aged 20-79 years: reference values and determinants. Age Ageing. 1997;26(1):15-19.",
+    "doi": "10.1093/ageing/26.1.15"
+  },
+  "grip_strength_sarcopenia_men": {
+    "numeric": "27 kg",
+    "context": "EWGSOP2 grip-strength sarcopenia cutoff for men.",
+    "citation_token": "Cruz-Jentoft 2019",
+    "canonical_reference": "Cruz-Jentoft AJ, Bahat G, Bauer J, et al. Sarcopenia: revised European consensus on definition and diagnosis. Age Ageing. 2019;48(1):16-31.",
+    "doi": "10.1093/ageing/afy169",
+    "pmid": "30312372"
+  },
+  "grip_strength_sarcopenia_women": {
+    "numeric": "16 kg",
+    "context": "EWGSOP2 grip-strength sarcopenia cutoff for women.",
+    "citation_token": "Cruz-Jentoft 2019",
+    "canonical_reference": "Cruz-Jentoft AJ, Bahat G, Bauer J, et al. Sarcopenia: revised European consensus on definition and diagnosis. Age Ageing. 2019;48(1):16-31."
+  },
+  "metformin_complex_i_inhibition": {
+    "numeric": "30%",
+    "context": "Approximate magnitude of metformin's mitochondrial Complex I inhibition.",
+    "citation_token": "Owen 2000",
+    "canonical_reference": "Owen MR, Doran E, Halestrap AP. Evidence that metformin exerts its anti-diabetic effects through inhibition of complex 1 of the mitochondrial respiratory chain. Biochem J. 2000;348 Pt 3:607-614.",
+    "pmid": "10839993"
+  },
+  "preclinical_lifespan_extension_typical": {
+    "numeric": "5%",
+    "context": "Typical preclinical lifespan extension in metformin animal-model studies.",
+    "citation_token": "Anisimov 2008",
+    "canonical_reference": "Anisimov VN, Berstein LM, Egormin PA, et al. Metformin slows down aging and extends life span of female SHR mice. Cell Cycle. 2008;7(17):2769-2773.",
+    "pmid": "18728386"
+  },
+  "elderly_falls_prevalence": {
+    "numeric": "30%",
+    "context": "Annual fall prevalence among community-dwelling adults aged 65+.",
+    "citation_token": "Tinetti 1988",
+    "canonical_reference": "Tinetti ME, Speechley M, Ginter SF. Risk factors for falls among elderly persons living in the community. N Engl J Med. 1988;319(26):1701-1707.",
+    "doi": "10.1056/NEJM198812293192604",
+    "pmid": "3205267"
+  },
+  "all_cause_mortality_diabetes_relative": {
+    "numeric": "1.5",
+    "context": "Approximate hazard ratio for all-cause mortality in untreated type 2 diabetes vs general population.",
+    "citation_token": "Tancredi 2015",
+    "canonical_reference": "Tancredi M, Rosengren A, Svensson AM, et al. Excess mortality among persons with type 2 diabetes. N Engl J Med. 2015;373(18):1720-1732.",
+    "doi": "10.1056/NEJMoa1504347",
+    "pmid": "26510021"
+  },
+  "rct_attrition_typical": {
+    "numeric": "20%",
+    "context": "Typical attrition rate in long-duration RCTs of older adults.",
+    "citation_token": "Schulz 2010",
+    "canonical_reference": "Schulz KF, Altman DG, Moher D. CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials. BMJ. 2010;340:c332.",
+    "doi": "10.1136/bmj.c332"
+  }
+}

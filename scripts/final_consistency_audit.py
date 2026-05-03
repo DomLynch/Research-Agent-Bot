@@ -403,6 +403,39 @@ def run_audit(
     issues.extend(_check_audit_verdict_gate(audit, audit_md_text))
     issues.extend(_check_broken_paper_id_citations(paper_md))
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
+    issues.extend(_check_background_lit_unsourced(paper_md))  # Fix #16
+    return issues
+
+
+def _check_background_lit_unsourced(paper_md: str) -> list[ConsistencyIssue]:
+    """C09 (Fix #16): every background-literature numeric used in the
+    paper MUST have its canonical citation token in the same sentence.
+
+    Background-lit numerics are admitted to Q2 (extending corpus-only
+    trace) — but admission is conditional on attribution. Without this
+    check, the writer could use '0.8 m/s' freely and Q2 would pass
+    silently. This Stage-2 P1 check enforces the attribution contract."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import background_literature as _bg
+        registry = _bg.load_registry()
+        unsourced = _bg.find_unsourced_background_uses(paper_md, registry)
+    except (ImportError, FileNotFoundError, ValueError):
+        return []
+    issues: list[ConsistencyIssue] = []
+    for numeric, citation_token, snippet in unsourced:
+        issues.append(ConsistencyIssue(
+            id=f"C09-bglit-unsourced-{numeric}",
+            severity="P1",  # P1: unsourced background = trust-spine breach
+            issue_type="background_lit_unsourced",
+            auto_fixable=False,
+            evidence=snippet,
+            suggested_fix=(
+                f"Background-literature value {numeric!r} used without "
+                f"citation. Add '({citation_token})' to the sentence "
+                "OR remove the value."
+            ),
+        ))
     return issues
 
 

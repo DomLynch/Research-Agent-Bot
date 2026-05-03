@@ -356,6 +356,38 @@ def test_polish_clean_paper_returns_no_polish_issues() -> None:
     assert polish == []
 
 
+# ----- Fix #16: Stage-2 background-literature gate ---------------------
+
+
+def test_background_lit_unsourced_is_p1_in_stage2() -> None:
+    """Fix #16: unsourced background-lit numeric in body prose is a
+    P1 Stage-2 issue — the trust-spine extension contract requires
+    citation in same sentence."""
+    paper = (
+        "## Discussion\n\n"
+        "Walk-speed declines below 0.8 m/s indicate frailty risk.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    bg_issues = [i for i in issues if i.issue_type == "background_lit_unsourced"]
+    assert len(bg_issues) == 1
+    assert bg_issues[0].severity == "P1"
+    assert "0.8 m/s" in bg_issues[0].suggested_fix
+    assert "Studenski 2011" in bg_issues[0].suggested_fix
+
+
+def test_background_lit_sourced_passes_stage2() -> None:
+    """When the canonical citation appears in the same sentence, the
+    background-lit numeric passes — this is the admit lane."""
+    paper = (
+        "## Discussion\n\n"
+        "Walk-speed declines below 0.8 m/s (Studenski 2011) indicate "
+        "frailty risk.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    bg_issues = [i for i in issues if i.issue_type == "background_lit_unsourced"]
+    assert bg_issues == []
+
+
 # Reviewer-fix LOW: fix_audit_verdict idempotency
 def test_fix_audit_verdict_is_idempotent() -> None:
     """Running fix_audit_verdict twice on the already-renamed text
