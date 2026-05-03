@@ -99,7 +99,15 @@ def find_unsourced_background_uses(
     paper, check the citation_token also appears in the same sentence.
 
     Returns [(numeric, citation_token, evidence_snippet)] for every
-    unsourced use. Empty list = clean."""
+    unsourced use. Empty list = clean.
+
+    Fix #21 follow-up: SKIPS markdown table rows. Table cells surface
+    corpus numerics (some of which match background_literature
+    entries like '7%' or '0.8 m/s'). Those numerics are authorised:
+    they come from the corpus's quant_claims, NOT from the LLM's
+    training-data world knowledge. Flagging them as "unsourced
+    background" would force a strip of structured evidence the
+    paper LEGITIMATELY surfaces."""
     if not registry:
         return []
     # Split paper into sentences (rough — period followed by whitespace
@@ -116,9 +124,23 @@ def find_unsourced_background_uses(
                 continue
             if entry.citation_token in sent:
                 continue  # cited — admitted
+            # Skip markdown table content — see docstring.
+            if _is_table_dominated(sent):
+                continue
             # Found numeric without citation in same sentence
             snippet = sent.strip()[:160]
             unsourced.append(
                 (entry.numeric, entry.citation_token, snippet)
             )
     return unsourced
+
+
+def _is_table_dominated(text: str) -> bool:
+    """True if at least half of the non-blank lines in `text` start
+    with `|` (markdown table rows). Used to skip table content from
+    background-literature unsourced detection."""
+    lines = [ln for ln in text.splitlines() if ln.strip()]
+    if not lines:
+        return False
+    n_table = sum(1 for ln in lines if ln.lstrip().startswith("|"))
+    return n_table / len(lines) >= 0.5

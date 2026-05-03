@@ -227,9 +227,33 @@ def _strip_unsourced_background_sentences(paper_md: str) -> str:
 
     sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
 
+    def _is_markdown_table_paragraph(paragraph: str) -> bool:
+        """A markdown table paragraph has lines that mostly start with
+        `|` (table rows). The whole paragraph is structured data, not
+        prose — strip-by-sentence would treat the table as one
+        sentence and drop the entire table when ANY background numeric
+        appears anywhere in it. Tables are deterministic and Q9-counted
+        carriers; we DON'T want them stripped."""
+        lines = [ln for ln in paragraph.splitlines() if ln.strip()]
+        if not lines:
+            return False
+        n_table_lines = sum(1 for ln in lines if ln.lstrip().startswith("|"))
+        return n_table_lines / len(lines) >= 0.5
+
     def _one_pass(text: str) -> str:
         out_parts: list[str] = []
         for paragraph in text.split("\n\n"):
+            # Fix #21 follow-up: skip markdown tables — Table 5 surfaces
+            # corpus numerics (some of which match background_literature
+            # entries like '7%' or '0.8 m/s') without citation tokens
+            # in the same cell. Stripping the whole table for that
+            # would tank Q9 density and remove load-bearing structured
+            # evidence. The numerics in tables ARE authorised: they
+            # come from the corpus's quant_claims, not from the LLM's
+            # training-data world knowledge.
+            if _is_markdown_table_paragraph(paragraph):
+                out_parts.append(paragraph)
+                continue
             sentences = sent_split.split(paragraph)
             kept: list[str] = []
             for sent in sentences:

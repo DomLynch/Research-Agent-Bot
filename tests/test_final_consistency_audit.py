@@ -487,3 +487,66 @@ def test_fix_audit_verdict_is_idempotent() -> None:
     out2, log2 = fixer.fix_audit_verdict(out1)
     assert log2 == [], f"second pass not idempotent: {log2}"
     assert out2 == out1
+
+
+# ============ Fix #21 follow-up: auto-fixer skips markdown tables ====
+
+
+def test_auto_fixer_does_not_strip_table_paragraphs() -> None:
+    """Critical regression test: Table 5 surfaces corpus numerics
+    (some matching background_literature entries like '7%' or
+    '0.8 m/s') without their citation tokens — those are corpus-
+    authorised, NOT background-context. The auto-fixer's
+    background-strip pass MUST skip markdown tables, otherwise it
+    eats the entire structured-evidence payload (and tanks Q9
+    density)."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Discussion\n\n"
+        "Real prose paragraph. No background numerics here.\n\n"
+        "## Table 5: Per-Paper Numeric Index\n\n"
+        "| Citation | Section | Type | Value | Units |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| Walton 2019 | abstract | percentage | 7% | % |\n"
+        "| Konopka 2019 | abstract | unit_value | 0.8 m/s | m/s |\n"
+    )
+    fixed, log = fixer.apply_fixes(paper, [])
+    # Table rows MUST survive — they're structured evidence
+    assert "| Walton 2019 |" in fixed
+    assert "7%" in fixed
+    assert "0.8 m/s" in fixed
+    # Strip log should NOT report a background-lit strip on table content
+    bglit_strips = [
+        e for e in log
+        if e.get("fix_type") == "background_lit_unsourced_strip"
+    ]
+    assert not bglit_strips or bglit_strips[0]["n_changes"] == 0
+
+
+def test_auto_fixer_still_strips_unsourced_prose_sentences() -> None:
+    """Regression check: skipping tables MUST NOT skip real prose.
+    A naked '7%' in a Discussion sentence (no ADA 2024 citation in
+    same sentence) IS still stripped."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Discussion\n\n"
+        "Diabetes guidelines target HbA1c below 7% in older adults. "
+        "This is a different sentence with no background numeric.\n"
+    )
+    fixed, log = fixer.apply_fixes(paper, [])
+    # The sentence with unsourced "7%" should be stripped
+    assert "7%" not in fixed
+    # The clean sentence survives
+    assert "different sentence" in fixed

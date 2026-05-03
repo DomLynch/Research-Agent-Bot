@@ -199,3 +199,67 @@ def test_build_background_lit_block_empty_when_no_entries() -> None:
     from agent.paper_writer import _build_background_lit_block
     assert _build_background_lit_block(None) == ""
     assert _build_background_lit_block([]) == ""
+
+
+# ----- Fix #21 follow-up: skip markdown tables ------------------------
+
+
+def test_unsourced_check_skips_markdown_table_rows() -> None:
+    """Fix #21 follow-up: Table 5 cells contain corpus numerics that
+    happen to match background_literature entries (e.g. '7%' for the
+    HbA1c target). Those numerics are corpus-authorised, NOT
+    background-context, and stripping the table for that would tank
+    Q9 density. The detector skips paragraphs dominated by `|` rows."""
+    reg = _registry(hba1c={
+        "numeric": "7%",
+        "citation_token": "ADA 2024",
+    })
+    paper = (
+        "Real prose paragraph here. No background numerics.\n\n"
+        "## Table 5: Numeric Index\n\n"
+        "| Citation | Section | Type | Value | Units |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| Walton 2019 | abstract | percentage | 7% | % |\n"
+        "| Konopka 2019 | abstract | percentage | 7% | % |\n"
+    )
+    # 7% appears in the table multiple times, ADA 2024 doesn't appear
+    # at all → if we DID NOT skip tables, this would produce findings.
+    findings = bg.find_unsourced_background_uses(paper, reg)
+    assert findings == [], (
+        f"table rows must NOT trigger unsourced finding, got: {findings}"
+    )
+
+
+def test_unsourced_check_still_flags_prose_unsourced_use() -> None:
+    """Regression check: skipping tables MUST NOT skip real prose
+    sentences. A naked `7%` in a prose paragraph (no ADA 2024 in
+    same sentence) is still unsourced."""
+    reg = _registry(hba1c={
+        "numeric": "7%",
+        "citation_token": "ADA 2024",
+    })
+    paper = (
+        "Diabetes guidelines target HbA1c below 7% in older adults.\n"
+    )
+    findings = bg.find_unsourced_background_uses(paper, reg)
+    assert len(findings) == 1
+
+
+def test_is_table_dominated_helper() -> None:
+    """Coverage of the markdown-table heuristic. ≥50% of non-blank
+    lines start with `|` → table-dominated."""
+    table = (
+        "| col |\n| --- |\n| a |\n| b |"
+    )
+    prose = "This is real text. With multiple sentences."
+    mixed_table_heavy = (
+        "Caption text\n| col |\n| --- |\n| a |\n| b |"
+    )
+    mixed_prose_heavy = (
+        "Sentence 1.\nSentence 2.\nSentence 3.\n| col |"
+    )
+    assert bg._is_table_dominated(table) is True
+    assert bg._is_table_dominated(prose) is False
+    assert bg._is_table_dominated(mixed_table_heavy) is True  # 4/5
+    assert bg._is_table_dominated(mixed_prose_heavy) is False  # 1/4
+    assert bg._is_table_dominated("") is False  # empty
