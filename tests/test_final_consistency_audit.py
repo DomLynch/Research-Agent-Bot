@@ -304,6 +304,34 @@ def test_polish_whitelists_had_had() -> None:
     assert dups == []
 
 
+def test_polish_suppresses_triple_letter_in_identifier_context() -> None:
+    """Fix #15: 'aaa' inside a hyphen-bounded identifier (submission_id,
+    URL slug) is NOT a typo — suppress."""
+    paper = (
+        "## Methods\n\n"
+        "Submission: synthesis-metformin-v06-aaa-push-2026-05-03.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    polish = [i for i in issues if i.issue_type == "malformed_word"]
+    assert polish == [], (
+        f"`aaa` inside identifier should not flag: {polish}"
+    )
+
+
+def test_polish_suppresses_dup_word_followed_by_hyphen() -> None:
+    """Fix #15: 'over over-claimed' is grammatical (preposition +
+    hyphenated adjective); not a duplication artifact."""
+    paper = (
+        "## Methods\n\n"
+        "claim-strength repair (regex over over-claimed prose).\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    dups = [i for i in issues if i.issue_type == "duplicated_phrase"]
+    assert dups == [], (
+        f"'word word-' should not flag as duplication: {dups}"
+    )
+
+
 def test_polish_skips_code_block_contents() -> None:
     """C08: triple-letter runs (`aaa`) inside fenced code blocks are
     not real prose; should not false-fire on code samples."""

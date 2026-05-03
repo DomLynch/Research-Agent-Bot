@@ -420,11 +420,13 @@ _MALFORMED_WORD_PATTERNS: tuple[tuple[str, re.Pattern], ...] = (
         r"\b\w+(?<!fied)(?<!ried)(?<!died)(?<!tied)(?<!plied)"
         r"(?<!plied)(?<!plied)ectied\b"
     )),
-    # Triple-letter run inside a word (typo signal: not zoo or
-    # bookkeeper — those are exceptions; we'd false-fire ~0 in
-    # scientific prose).
+    # Triple-letter run inside a word (typo signal). Excludes spans
+    # adjacent to `-` or `/` or contained in submission-ID-like
+    # contexts (where 'aaa' could appear in run names like
+    # 'synthesis-metformin-v06-aaa-push-...').
     ("triple-letter-run", re.compile(
-        r"\b\w*([a-z])\1\1\w*\b", re.IGNORECASE,
+        r"(?<![\-_/])\b[a-z]*([a-z])\1\1[a-z]*\b(?![\-_/])",
+        re.IGNORECASE,
     )),
 )
 
@@ -508,6 +510,12 @@ def _check_surface_polish(paper_md: str) -> list[ConsistencyIssue]:
         word = m.group(1).lower()
         # Whitelist legitimate doublings ("had had", "that that").
         if word in {"had", "that", "what", "which"}:
+            continue
+        # Suppress when SECOND occurrence is followed by hyphen — the
+        # 'over' in 'regex over over-claimed' is grammatical (preposition
+        # then hyphenated adjective). Same for 'after after-effects' etc.
+        after_match = haystack[m.end():m.end() + 1]
+        if after_match == "-":
             continue
         issues.append(ConsistencyIssue(
             id=f"C08-dup-phrase-{m.start()}",
