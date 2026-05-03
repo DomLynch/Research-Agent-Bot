@@ -15,6 +15,7 @@ Day 10.16 is fixing).
 from __future__ import annotations
 
 __all__ = [
+    "NUMERIC_DISCIPLINE_RULE",
     "ABSTRACT_SYSTEM_PROMPT",
     "INTRODUCTION_SYSTEM_PROMPT",
     "BACKGROUND_SYSTEM_PROMPT",
@@ -24,6 +25,47 @@ __all__ = [
     "LIMITATIONS_FULL_SYSTEM_PROMPT",
     "CONCLUSION_SYSTEM_PROMPT",
 ]
+
+
+# Fix #17: shared hard rule prepended to EVERY section prompt below.
+# The rule is the writer-side enforcement of Fix #16's external-context
+# lane: numerics from world-knowledge / training data are forbidden
+# unless they appear in the supplied receipts (corpus evidence) OR are
+# canonical clinical thresholds with their citation in the SAME
+# sentence (background context lane). The post-paper audit gates
+# (Q2 strict + Stage-2 background-lit-unsourced) catch any violation;
+# this prompt change reduces the violation rate at generation time so
+# we don't waste cycles on regenerations.
+NUMERIC_DISCIPLINE_RULE = """\
+================================================================
+HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)
+================================================================
+- You may use ONLY two kinds of numerics:
+  (a) Values that appear in the supplied receipts (corpus evidence
+      — e.g. p-values, hazard ratios, percentages from the bound
+      claims you are given).
+  (b) Canonical clinical thresholds that come WITH their canonical
+      Author-Year citation, used as background context — and ONLY
+      when the citation token (e.g. "Studenski 2011", "Cesari 2009",
+      "Cruz-Jentoft 2019") appears in the SAME SENTENCE as the
+      numeric.
+- You MUST NOT write a numeric from your training-data world
+  knowledge without it being in (a) or (b). Examples of forbidden
+  uses: "0.8 m/s frailty cutoff", "95% sensitivity", "1500 mg
+  metformin standard dose" — none of these are admissible unless
+  the corresponding number is in the provided receipts OR you cite
+  the canonical source in the same sentence.
+- If you want to make a contextual point that requires a number you
+  cannot trace, describe it qualitatively without a number ("walk
+  speed below clinical thresholds is associated with frailty" —
+  fine; "walk speed below 0.7 m/s is associated with frailty" —
+  forbidden without citation).
+- Citation tokens for background context use the form "Author Year"
+  or "Author et al. Year" (e.g. "Studenski 2011", "Cruz-Jentoft
+  et al. 2019"). Do NOT invent citations.
+================================================================
+
+"""
 
 
 ABSTRACT_SYSTEM_PROMPT = """You write the ABSTRACT of a research synthesis paper.
@@ -426,3 +468,22 @@ sarcopenia" or any other unhedged clinical claim. Use:
   "may..."
 
 Output JSON only. No prose outside the JSON."""
+
+
+# Fix #17: prepend NUMERIC_DISCIPLINE_RULE to every section system
+# prompt. Done after definition so the constants exist when we
+# rebind. The rule lives at the TOP of each prompt where the model's
+# attention is strongest. Mutating the bound names is the smallest
+# possible diff vs editing each individual prompt string in-place.
+ABSTRACT_SYSTEM_PROMPT = NUMERIC_DISCIPLINE_RULE + ABSTRACT_SYSTEM_PROMPT
+INTRODUCTION_SYSTEM_PROMPT = NUMERIC_DISCIPLINE_RULE + INTRODUCTION_SYSTEM_PROMPT
+BACKGROUND_SYSTEM_PROMPT = NUMERIC_DISCIPLINE_RULE + BACKGROUND_SYSTEM_PROMPT
+RESULTS_SYSTEM_PROMPT = NUMERIC_DISCIPLINE_RULE + RESULTS_SYSTEM_PROMPT
+CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = (
+    NUMERIC_DISCIPLINE_RULE + CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT
+)
+DISCUSSION_SYSTEM_PROMPT = NUMERIC_DISCIPLINE_RULE + DISCUSSION_SYSTEM_PROMPT
+LIMITATIONS_FULL_SYSTEM_PROMPT = (
+    NUMERIC_DISCIPLINE_RULE + LIMITATIONS_FULL_SYSTEM_PROMPT
+)
+CONCLUSION_SYSTEM_PROMPT = NUMERIC_DISCIPLINE_RULE + CONCLUSION_SYSTEM_PROMPT
