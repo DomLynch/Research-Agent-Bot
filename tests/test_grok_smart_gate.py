@@ -141,6 +141,29 @@ def test_grok_real_walk_speed_deletion_auto_applies() -> None:
     assert "0.13 m/s)" in new_md
 
 
+def test_grok_reviewer_prompt_documents_smart_gate_contract() -> None:
+    """Fix #40: the Grok reviewer system prompt explicitly tells the
+    model to prefer deletion-style patches because the smart-gate
+    only auto-applies them. Without this guidance the model proposes
+    word-growth rewordings that the gate then refuses, making AAA
+    non-reproducible."""
+    sys.path.insert(0, str(
+        Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import grok_reviewer as gr
+    system, _user = gr._build_grok_prompt(
+        paper_md="## Test\n\nbody.\n",
+        manifest={"receipts": []},
+        audit={"checks": [], "p1_pass": True, "score_out_of_10": 10},
+    )
+    # Smart-gate contract is documented in the prompt
+    assert "smart-gate" in system or "smart gate" in system
+    assert "DELETION" in system
+    assert "shorter-or-equal" in system
+    # Concrete examples of GOOD vs BAD patches present
+    assert "GOOD" in system and "BAD" in system
+
+
 def test_grok_real_consistency_claim_deletion_auto_applies() -> None:
     """End-to-end: Grok's deletion of the false 'consistent with 5%'
     claim auto-applies under Fix #39."""
