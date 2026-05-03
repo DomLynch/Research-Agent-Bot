@@ -31,9 +31,15 @@ __all__ = ["apply_fixes", "main"]
 _POTENTIALLY_RE = re.compile(r"\s*\(potentially\)", re.IGNORECASE)
 _DOUBLE_HASH_RE = re.compile(r"^(#{2,4})\s+#{2,4}\s+", re.MULTILINE)
 # Sentences that contain stale-SPAR phrases — strip the entire sentence.
+# Fix #29: extended phrase set per reviewer — "spar quarantine"
+# (noun form), "spar-rejected", "rejected evidence" added.
+# Phrases like bare "quarantined" are too broad to ban
+# unconditionally; the regex below pairs them with SPAR context.
 _STALE_SPAR_SENT_RE = re.compile(
     r"[^.!?]*\b(?:spar\s+adjudication|rejected\s+by\s+spar|"
-    r"spar-?quarantined|claim\s+receipts?|receipt\s+clusters?|"
+    r"spar-?rejected|spar-?quarantined?|spar\s+quarantine|"
+    r"rejected\s+evidence|"
+    r"claim\s+receipts?|receipt\s+clusters?|"
     r"receipt-level\s+spar|synthesis-level\s+spar|"
     r"trust-spine\s+multi-receipt)\b[^.!?]*[.!?]",
     re.IGNORECASE,

@@ -65,7 +65,10 @@ _STALE_METHOD_PHRASES = (
     "spar adjudication",
     "spar rejected",
     "spar quarantined",
+    "spar quarantine",        # Fix #29: noun form — "SPAR quarantine process"
+    "spar-rejected",          # Fix #29: hyphenated rejected
     "rejected by spar",
+    "rejected evidence",      # Fix #29: bare phrase
     "spar-quarantined",
     "claim receipts",
     "receipt cluster",
@@ -397,6 +400,7 @@ def run_audit(
     issues: list[ConsistencyIssue] = []
     issues.extend(_check_manifest_paper_consistency(paper_md, manifest))
     issues.extend(_check_stale_methods(paper_md, manifest))
+    issues.extend(_check_stale_spar_in_prose(paper_md, manifest))  # Fix #29
     issues.extend(_check_duplicate_references(paper_md))
     issues.extend(_check_malformed_headers(paper_md))
     issues.extend(_check_repair_artifacts(paper_md))
@@ -405,6 +409,48 @@ def run_audit(
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
     issues.extend(_check_background_lit_unsourced(paper_md))  # Fix #16
     issues.extend(_check_surface_render_lint(paper_md))  # Fix #22
+    return issues
+
+
+def _check_stale_spar_in_prose(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """Fix #29: SPAR-language must NOT leak into ANY section when the
+    actual run used the v0.6 quant-claim adapter (no SPAR ran). The
+    pre-existing _check_stale_methods scopes only to the Methods
+    section — but reviewer caught 'SPAR quarantine process' in the
+    Limitations section. This check scans every section EXCEPT
+    Methods (which the other check handles) so we don't double-flag."""
+    issues: list[ConsistencyIssue] = []
+    writer_path = (manifest.get("writer_path") or "").lower()
+    if "spar" in writer_path:
+        return issues
+    # Strip out the Methods body so we don't double-flag with the
+    # existing _check_stale_methods.
+    paper_excluding_methods = re.sub(
+        r"##\s+Methods.*?(?=^##\s+\w|\Z)", "",
+        paper, flags=re.DOTALL | re.MULTILINE,
+    )
+    paper_lc = paper_excluding_methods.lower()
+    for phrase in _STALE_METHOD_PHRASES:
+        for m in re.finditer(re.escape(phrase), paper_lc):
+            idx = m.start()
+            snippet = paper_excluding_methods[
+                max(0, idx - 40):idx + len(phrase) + 40
+            ]
+            issues.append(ConsistencyIssue(
+                id=f"C11-{phrase[:20].replace(' ', '_')}-{idx}",
+                severity="P1",
+                issue_type="stale_spar_in_prose",
+                auto_fixable=True,  # apply_consistency_fixes strips
+                evidence=snippet.strip()[:200],
+                suggested_fix=(
+                    f"Replace SPAR-language sentence containing "
+                    f"{phrase!r} with v0.6 corpus-only phrasing "
+                    "('candidate sources not represented in the "
+                    "quant-claim corpus')."
+                ),
+            ))
     return issues
 
 

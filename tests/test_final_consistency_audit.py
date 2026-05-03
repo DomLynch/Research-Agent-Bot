@@ -606,3 +606,77 @@ def test_auto_fixer_does_not_collapse_indentation() -> None:
         e for e in log if e.get("fix_type") == "double_space_collapse"
     ]
     assert not ds_logs, f"unexpected double_space_collapse: {ds_logs}"
+
+
+# ============ Fix #29 — stale SPAR language outside Methods ===========
+
+
+def test_stale_spar_in_limitations_flagged_as_p1() -> None:
+    """Fix #29: 'SPAR quarantine process' in Limitations (or any
+    non-Methods section) trips C11 P1 when the manifest writer_path
+    is the v0.6 quant-claim adapter (no SPAR ran)."""
+    paper = (
+        "## Methods\n\n"
+        "v0.6 quant-claim adapter; no multi-receipt pipeline.\n\n"
+        "## Limitations\n\n"
+        "The SPAR quarantine process excluded several papers. "
+        "Other limitations apply.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    c11 = [i for i in issues if i.id.startswith("C11-")]
+    assert len(c11) >= 1
+    assert all(i.severity == "P1" for i in c11)
+    assert all(i.issue_type == "stale_spar_in_prose" for i in c11)
+
+
+def test_stale_spar_in_methods_NOT_double_flagged_as_c11() -> None:
+    """Fix #29: C11 (in-prose) check skips Methods because
+    _check_stale_methods (C02) already flags it. Avoid double-count."""
+    paper = (
+        "## Methods\n\n"
+        "The SPAR quarantine process applied to ranking.\n\n"
+        "## Discussion\n\n"
+        "Discussion has no stale SPAR phrases.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    c11 = [i for i in issues if i.id.startswith("C11-")]
+    assert c11 == [], (
+        f"C11 must skip Methods (covered by C02): {c11}"
+    )
+
+
+def test_stale_spar_check_silent_when_spar_actually_ran() -> None:
+    """Defensive: if writer_path mentions spar, the check is a no-op
+    (SPAR-language is legitimate when SPAR actually ran)."""
+    spar_manifest = {
+        "n_receipts": 3,
+        "writer_path": "agent.spar_synthesis.render_full_paper",
+        "receipts": [],
+    }
+    paper = (
+        "## Limitations\n\nThe SPAR quarantine process excluded.\n"
+    )
+    issues = audit.run_audit(paper, spar_manifest, _empty_audit())
+    c11 = [i for i in issues if i.id.startswith("C11-")]
+    assert c11 == []
+
+
+def test_apply_fixes_strips_spar_quarantine_in_limitations() -> None:
+    """End-to-end: the auto-fixer's Stage-3 stale-SPAR-sentence strip
+    now catches 'spar quarantine' (Fix #29 phrase additions)."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Limitations\n\n"
+        "The SPAR quarantine process excluded the TAME trial. "
+        "Other limitations remain valid.\n"
+    )
+    fixed, _log = fixer.apply_fixes(paper, [])
+    assert "SPAR quarantine" not in fixed
+    # Surrounding good sentence survives (or replaced by disclaimer)
+    assert "Other limitations" in fixed

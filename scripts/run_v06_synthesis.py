@@ -491,7 +491,16 @@ def _append_references_block(
     Reviewer-fix Fix #6 P1: when `registry` is provided, the per-entry
     Author-Year token is sourced from the registry's body_citation —
     SAME source the Tables use, so prose / References / Tables can
-    never drift out of sync."""
+    never drift out of sync.
+
+    Fix #30: also append a "Background References" subsection listing
+    any background_literature entries whose citation_token appears in
+    the paper prose (e.g. 'Owen 2000', 'Anisimov 2008', 'ADA 2024').
+    Pre-fix these citations were used by MiMo but missing from
+    References — a public-review reader would flag that as missing
+    bibliography. Per Fix #16/#18 the registry already validates the
+    citation_token is in the same sentence as the numeric; here we
+    add the canonical reference to the bibliography."""
     lines = ["", "## References", ""]
     for r in receipts:
         if registry is not None and r.receipt_id in registry:
@@ -512,7 +521,51 @@ def _append_references_block(
         bits.append(".")
         lines.append(" ".join(bits))
     lines.append("")
+
+    # Fix #30: background-literature references used in prose
+    used_bglit = _used_background_lit_entries(paper_md)
+    if used_bglit:
+        lines.extend([
+            "### Background References",
+            "",
+            "*Canonical clinical thresholds cited in prose. Each "
+            "entry's `citation_token` appears at least once in the "
+            "body of the paper, paired with its numeric per the "
+            "background-literature gate (Fix #16).*",
+            "",
+        ])
+        for entry in used_bglit:
+            bits = [f"- **{entry.citation_token}.**"]
+            if entry.canonical_reference:
+                bits.append(f"_{entry.canonical_reference}_")
+            if entry.doi:
+                bits.append(f"DOI: {entry.doi}")
+            if entry.pmid:
+                bits.append(f"PMID: {entry.pmid}")
+            lines.append(" ".join(bits))
+        lines.append("")
+
     return paper_md.rstrip() + "\n".join(lines)
+
+
+def _used_background_lit_entries(paper_md: str) -> list:
+    """Fix #30: load the background_literature registry, return the
+    entries whose citation_token appears anywhere in `paper_md`.
+    Returns an ordered, de-duplicated list (entry-key insertion
+    order from the registry)."""
+    try:
+        registry = _bglit.load_registry()
+    except (ImportError, FileNotFoundError, ValueError):
+        return []
+    seen_tokens: set[str] = set()
+    used: list = []
+    for entry in registry.values():
+        if entry.citation_token in seen_tokens:
+            continue
+        if entry.citation_token in paper_md:
+            used.append(entry)
+            seen_tokens.add(entry.citation_token)
+    return used
 
 
 def _build_call_chain() -> list[CallSpec]:
@@ -905,10 +958,24 @@ async def _run_post_paper_pipeline(
         }, indent=2))
         n_applied = sum(1 for r in results if r.decision == "applied")
         n_rejected = sum(1 for r in results if r.decision == "rejected")
+        # Fix #31: count Grok P1 patches that the auto-applier
+        # rejected (couldn't safely apply). These are flagged
+        # high-severity issues the harness cannot autonomously
+        # resolve — the unified verdict downgrades AAA → 'Trust-
+        # Spine Pass — Human Review Required' when n>0.
+        grok_unresolved_p1 = sum(
+            1 for r in results
+            if r.decision == "rejected"
+            and (r.severity or "").upper() in {"P1", "HIGH", "CRITICAL"}
+        )
         print(
-            f"[pipeline]   applied={n_applied} rejected={n_rejected}",
+            f"[pipeline]   applied={n_applied} rejected={n_rejected}"
+            + (f" (Grok-unresolved P1: {grok_unresolved_p1})"
+               if grok_unresolved_p1 else ""),
             file=sys.stderr,
         )
+    else:
+        grok_unresolved_p1 = 0
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
     # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok
@@ -948,7 +1015,9 @@ async def _run_post_paper_pipeline(
     paper_path.with_suffix(".consistency.md").write_text(
         _consistency_audit._format_summary(final_issues)
     )
-    unified = _compute_unified_verdict(audit_report, final_issues)
+    unified = _compute_unified_verdict(
+        audit_report, final_issues, grok_unresolved_p1=grok_unresolved_p1,
+    )
     paper_path.with_suffix(".final_verdict.json").write_text(
         json.dumps(dataclasses.asdict(unified), indent=2)
     )
@@ -1105,8 +1174,13 @@ _NONBLOCKING_SEVERITIES: frozenset[str] = frozenset({"P2", "P3", "INFO"})
 
 @dataclass(frozen=True, slots=True)
 class UnifiedVerdict:
-    """Worst-of(stage1, stage2). Cross-stage object → frozen+slots
-    per project rule. Serialized via dataclasses.asdict() to JSON."""
+    """Worst-of(stage1, stage2, grok-unresolved). Cross-stage object →
+    frozen+slots per project rule. Serialized via dataclasses.asdict()
+    to JSON. Fix #31: tracks Grok-unresolved P1 patches separately —
+    even when stage1 + stage2 are clean, an unresolved Grok P1
+    flag downgrades the verdict to 'Trust-Spine Pass — Human Review
+    Required' rather than AAA (the harness can't autonomously verify
+    Grok's flag was wrong)."""
     verdict: str
     reason: str
     stage1_p1_pass: bool
@@ -1117,6 +1191,7 @@ class UnifiedVerdict:
     stage2_unknown_severity_count: int
     all_green: bool
     p1_clean: bool
+    grok_unresolved_p1: int = 0
 
 
 def _is_blocking(severity: str) -> bool:
@@ -1129,14 +1204,23 @@ def _is_blocking(severity: str) -> bool:
 def _compute_unified_verdict(
     stage1_report: dict[str, Any] | None,
     stage2_issues: list[Any],
+    grok_unresolved_p1: int = 0,
 ) -> UnifiedVerdict:
-    """Worst-of(stage1, stage2). AAA reserved for fully-green (P1+P2).
-    SHIP-BLOCKED if either stage flags a P1+ severity. Trust-Spine
-    Pass otherwise.
+    """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
+    fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
+    either deterministic stage flags a P1+ severity. Trust-Spine
+    Pass otherwise — and 'Trust-Spine Pass — Human Review Required'
+    when only Grok-unresolved P1 prevents AAA.
 
     Defensive on inputs: missing stage1 keys → treated as failure
     (fail-closed). Empty stage1.checks → cannot return AAA (AAA
-    requires evidence, not vacuous success)."""
+    requires evidence, not vacuous success).
+
+    Fix #31: `grok_unresolved_p1` is the count of Grok-flagged P1
+    patches that the auto-applier rejected (couldn't be safely
+    applied). The harness can't autonomously verify Grok's flag was
+    wrong, so an unresolved P1 must surface as 'human review' even
+    when both deterministic stages are green."""
     stage1_report = stage1_report or {}
     s1_p1_pass = bool(stage1_report.get("p1_pass", False))
     s1_score = float(stage1_report.get("score_out_of_10", 0.0))
@@ -1162,10 +1246,12 @@ def _compute_unified_verdict(
             s2_unknown += 1
 
     p1_clean = s1_p1_pass and s2_p1_blocking == 0
+    grok_clean = grok_unresolved_p1 == 0
     # AAA requires positive evidence: at least one check ran AND all
-    # passed AND zero stage-2 issues. Empty checks → CANNOT be AAA.
+    # passed AND zero stage-2 issues AND zero unresolved Grok P1.
     all_green = (
         p1_clean
+        and grok_clean
         and s1_n_total > 0
         and s1_n_pass == s1_n_total
         and s2_p2 == 0
@@ -1182,7 +1268,18 @@ def _compute_unified_verdict(
         verdict = "AAA"
         reason = (
             f"All-green: stage1 {s1_n_pass}/{s1_n_total} + "
-            f"stage2 zero issues"
+            f"stage2 zero issues + zero unresolved Grok P1"
+        )
+    elif not grok_clean and p1_clean:
+        # Fix #31: deterministic stages clean, Grok flagged P1 →
+        # human review required, NOT AAA.
+        verdict = "Trust-Spine Pass — Human Review Required"
+        reason = (
+            f"P1 clean (stage1 {s1_n_pass}/{s1_n_total}, "
+            f"stage2 P2={s2_p2}); BUT {grok_unresolved_p1} "
+            f"Grok-flagged P1 patch(es) unresolved — the harness "
+            "can't auto-verify these flags were false positives. "
+            "Human review required before publication."
         )
     else:
         verdict = "Trust-Spine Pass"
@@ -1206,6 +1303,7 @@ def _compute_unified_verdict(
         stage2_unknown_severity_count=s2_unknown,
         all_green=all_green,
         p1_clean=p1_clean,
+        grok_unresolved_p1=grok_unresolved_p1,
     )
 
 
@@ -1227,7 +1325,15 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
             f"(treated as blocking)"
             if u.stage2_unknown_severity_count else ""
         )
-        + "\n\n"
+        + "\n"
+        + (
+            f"- Grok-flagged P1 patches unresolved: "
+            f"{u.grok_unresolved_p1} "
+            f"(downgrades AAA → 'Trust-Spine Pass — Human Review "
+            f"Required'; Fix #31)\n"
+            if u.grok_unresolved_p1 else ""
+        )
+        + "\n"
         "## Verdict scale\n\n"
         "- **AAA** — all-green (stage-1 + stage-2 both zero issues, "
         "and stage-1 actually ran checks).\n"

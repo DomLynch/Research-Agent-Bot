@@ -33,10 +33,13 @@ __all__ = [
 ]
 
 
-# 5% word-count drop tolerance (cosmetic edits + auto-fixer strips can
-# legitimately shave a few hundred words; bigger drops mean we lost
-# real content).
-WORD_COUNT_TOLERANCE = 0.95
+# Word-count floor (Fix #28): only flag a regression if the new run
+# drops BELOW this floor. Above the floor, lower word count is a
+# feature (Fix #27 prose compression), not a regression. The audit's
+# Q1 word-count check uses the same floor, so a sub-floor run already
+# fails Q1 and trips p1_count anyway — making word_count semantics
+# `floor-pass` instead of `must-not-drop` is consistent.
+WORD_COUNT_FLOOR = 5000
 
 
 @dataclass(frozen=True, slots=True)
@@ -170,28 +173,30 @@ def _load_run_metrics(run_dir: Path) -> dict:
 def _dim(
     name: str, baseline: float, new: float, *,
     direction: str,
-    tolerance_pct: float = 0.0,
+    floor: float | None = None,
 ) -> RegressionDimension:
-    """Build one dimension. `direction` is 'lower_is_better' or
-    'higher_is_better'. `tolerance_pct` allows a small drop (or rise)
-    in the worse direction without flagging — used for word_count
-    where a 1-5% shave is normal."""
+    """Build one dimension. `direction` is one of:
+
+      lower_is_better   — new must be ≤ baseline (no tolerance now;
+                          cosmetic +/- 0 strict)
+      higher_is_better  — new must be ≥ baseline (strict)
+      floor_pass        — new must be ≥ `floor` (Fix #28: used for
+                          word_count so prose compression no longer
+                          false-flags as a regression once we're
+                          comfortably above the floor)
+    """
+    delta = new - baseline
+    delta_str = f"{delta:+g}" if delta else "0 (unchanged)"
     if direction == "lower_is_better":
-        # New must be ≤ baseline (lower or equal is fine).
-        # Tolerance allows new = baseline + (baseline * tolerance).
-        threshold = baseline + abs(baseline * tolerance_pct)
-        regress = new > threshold
-        delta = new - baseline
-        delta_str = (
-            f"{delta:+g}" if delta else "0 (unchanged)"
-        )
+        regress = new > baseline
+    elif direction == "floor_pass":
+        if floor is None:
+            raise ValueError(
+                "floor_pass requires `floor` argument"
+            )
+        regress = new < floor
     else:  # higher_is_better
-        threshold = baseline - abs(baseline * tolerance_pct)
-        regress = new < threshold
-        delta = new - baseline
-        delta_str = (
-            f"{delta:+g}" if delta else "0 (unchanged)"
-        )
+        regress = new < baseline
     return RegressionDimension(
         name=name,
         baseline_value=float(baseline),
@@ -220,9 +225,13 @@ def compare_runs(
              new["consistency_count"], direction="lower_is_better"),
         _dim("leakage_count", baseline["leakage_count"],
              new["leakage_count"], direction="lower_is_better"),
+        # Fix #28: word_count uses floor-pass semantics. Above
+        # WORD_COUNT_FLOOR (matches Q1's audit threshold) lower
+        # word counts are a feature (Fix #27 prose compression),
+        # not a regression. Sub-floor runs already trip Q1 → P1
+        # so the gate doesn't need to double-flag.
         _dim("word_count", baseline["word_count"], new["word_count"],
-             direction="higher_is_better",
-             tolerance_pct=1 - WORD_COUNT_TOLERANCE),
+             direction="floor_pass", floor=WORD_COUNT_FLOOR),
         _dim("orphan_count", baseline["orphan_count"],
              new["orphan_count"], direction="lower_is_better"),
     )

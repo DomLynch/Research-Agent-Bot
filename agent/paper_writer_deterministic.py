@@ -398,7 +398,7 @@ def build_what_this_adds_section(
         )
     else:
         lines.append(
-            f"This synthesis adds (a) a per-receipt evidence-weighting "
+            "This synthesis adds (a) a per-receipt evidence-weighting "
             "(Table 4: tier × directness × overall RoB → "
             "load-bearing / mechanistic / supporting / "
             "hypothesis-generating), (b) a deterministic per-paper "

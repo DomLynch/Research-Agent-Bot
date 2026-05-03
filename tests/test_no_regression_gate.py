@@ -133,29 +133,36 @@ def test_leakage_increase_flags_regression() -> None:
         assert leak_dim.is_regression
 
 
-def test_word_count_drop_within_tolerance_passes() -> None:
-    """A 1-2% word drop is within the 5% tolerance → passes (cosmetic
-    edits and auto-fixer strips can legitimately shave words)."""
+def test_word_count_above_floor_passes_even_after_compression() -> None:
+    """Fix #28: floor-pass semantics — a 30% intentional compression
+    is FINE as long as the new word count stays above the
+    WORD_COUNT_FLOOR (5000). Prose compression (Fix #27) was the
+    explicit reviewer-driven path forward; the gate must not
+    false-flag intentional leaner prose."""
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
-        baseline = _write_run(tmp_path, "baseline", word_count=10000)
-        new = _write_run(tmp_path, "new", word_count=9800)  # 2% drop
+        baseline = _write_run(tmp_path, "baseline", word_count=13500)
+        # 30% drop, but still well above the 5000 floor
+        new = _write_run(tmp_path, "new", word_count=9500)
         report = nrg.compare_runs(baseline, new)
         wc_dim = next(d for d in report.dimensions
                        if d.name == "word_count")
         assert not wc_dim.is_regression
 
 
-def test_word_count_large_drop_flags_regression() -> None:
-    """A 10% word drop exceeds the 5% tolerance → fails."""
+def test_word_count_below_floor_flags_regression() -> None:
+    """Fix #28: sub-floor (under 5000 words) IS a regression.
+    Q1 audit threshold matches WORD_COUNT_FLOOR so a sub-floor run
+    already trips P1 — making the gate consistent."""
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
         baseline = _write_run(tmp_path, "baseline", word_count=10000)
-        new = _write_run(tmp_path, "new", word_count=8500)  # 15% drop
+        new = _write_run(tmp_path, "new", word_count=4500)  # below floor
         report = nrg.compare_runs(baseline, new)
         wc_dim = next(d for d in report.dimensions
                        if d.name == "word_count")
         assert wc_dim.is_regression
+        assert wc_dim.direction == "floor_pass"
 
 
 def test_orphan_increase_flags_regression() -> None:
