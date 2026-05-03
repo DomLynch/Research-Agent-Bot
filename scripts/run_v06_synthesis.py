@@ -937,7 +937,61 @@ async def _run_post_paper_pipeline(
         f"stage2 P1={unified.stage2_p1} P2={unified.stage2_p2})",
         file=sys.stderr,
     )
+
+    # Stage 6 (Fix #23): no-regression gate. If runs/_baseline.txt
+    # names a baseline run dir, compare the new run's six dimensions
+    # (P1, numeric trace, consistency, leakage, word count, orphan
+    # cites) against it. Writes report.{json,md} to the new run dir
+    # so the next agent / human can audit deltas. Informational only
+    # — does not fail the pipeline (the unified verdict already gates
+    # ship). Caller-driven exit-codes happen via the standalone
+    # `python scripts/no_regression_gate.py` CLI for CI.
+    _maybe_run_no_regression_gate(paper_path.parent)
+
     return paper_md
+
+
+def _maybe_run_no_regression_gate(new_run_dir: Path) -> None:
+    """Stage 6 (Fix #23): if docs/no_regression_baseline.txt names a
+    baseline run dir, compare the new run's quality dimensions
+    against it. Skip silently when no baseline configured.
+
+    Marker file is checked-in (under docs/) so the baseline name
+    travels with the repo across MacBook + GitHub + VPS — every
+    machine evaluates against the same anchor."""
+    baseline_marker = (
+        Path(__file__).resolve().parent.parent
+        / "docs" / "no_regression_baseline.txt"
+    )
+    if not baseline_marker.exists():
+        return
+    baseline_name = baseline_marker.read_text().strip()
+    if not baseline_name:
+        return
+    baseline_dir = (Path("runs") / baseline_name).resolve()
+    if not baseline_dir.exists() or baseline_dir == new_run_dir:
+        return
+    try:
+        import no_regression_gate as _nrg
+        report = _nrg.compare_runs(baseline_dir, new_run_dir)
+        md = _nrg.render_report_md(report)
+        (new_run_dir / "no_regression_report.md").write_text(md)
+        (new_run_dir / "no_regression_report.json").write_text(
+            json.dumps(report.to_dict(), indent=2),
+        )
+        verdict = "PASS" if report.passes else (
+            f"REGRESSION ({report.n_regressions} dim(s))"
+        )
+        print(
+            f"[pipeline] Stage 6/6 — no-regression gate vs "
+            f"{baseline_name}: {verdict}",
+            file=sys.stderr,
+        )
+    except (ImportError, OSError) as e:
+        print(
+            f"[pipeline] no-regression gate skipped: {e}",
+            file=sys.stderr,
+        )
 
 
 def _issue_to_dict(issue) -> dict[str, Any]:
