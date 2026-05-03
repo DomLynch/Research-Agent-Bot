@@ -174,6 +174,27 @@ def apply_fixes(
     except ImportError:
         pass
 
+    # 8. Collapse mid-line double spaces to single space.
+    # Stage-2 C08 flags these as P2 auto_fixable; before this fix the
+    # auto-fixer had no implementation, so the issues survived to
+    # final consistency.json and tripped the no-regression gate
+    # (consistency_count regression). Conservative pattern matches
+    # 2+ spaces NOT at line start (line-start indentation is
+    # legitimate in markdown bullets / cite blocks) AND NOT preceded
+    # by a newline.
+    double_space_re = re.compile(r"(?<=\S)  +(?=\S)")
+    n_collapsed = len(double_space_re.findall(new_md))
+    if n_collapsed:
+        new_md = double_space_re.sub(" ", new_md)
+        log.append({
+            "fix_type": "double_space_collapse",
+            "n_changes": n_collapsed,
+            "description": (
+                "collapsed mid-line double spaces to single space "
+                "(Stage-2 C08 was flagging without auto-fix)"
+            ),
+        })
+
     # Strip residual blank-line runs created by deletions
     # (collapse 3+ newlines to a single paragraph break: \n\n).
     new_md = re.sub(r"\n{3,}", "\n\n", new_md)

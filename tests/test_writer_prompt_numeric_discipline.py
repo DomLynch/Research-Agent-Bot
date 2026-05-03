@@ -113,3 +113,24 @@ def test_each_section_prompt_still_names_its_section() -> None:
             f"{name} prompt no longer mentions the section keyword "
             f"{kw!r} after Fix #17 prepend"
         )
+
+
+# ============ Fix #21 follow-up #2: Discussion hedge guidance =========
+
+
+def test_discussion_prompt_has_explicit_hedge_density_block() -> None:
+    """Q10 hedge density check expects ≥4 distinct hedge phrases in
+    the Discussion section. The prompt MUST tell MiMo this — without
+    explicit guidance, hedges land stochastically (observed range
+    2/14 to 7/14 across runs)."""
+    assert "HEDGE-DENSITY" in DISCUSSION_SYSTEM_PROMPT
+    # Q10 word list at minimum
+    for hedge in ("may", "might", "suggests", "appears", "uncertain",
+                   "warrants", "limited"):
+        assert hedge in DISCUSSION_SYSTEM_PROMPT.lower(), (
+            f"DISCUSSION_SYSTEM_PROMPT no longer mentions hedge "
+            f"phrase {hedge!r} — Q10 reliability regressed"
+        )
+    assert "≥4" in DISCUSSION_SYSTEM_PROMPT or "at least 4" in (
+        DISCUSSION_SYSTEM_PROMPT.lower()
+    )

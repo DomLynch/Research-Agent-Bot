@@ -387,6 +387,30 @@ Recommended structure:
 
 Same numeric / hedge / topic rules as Introduction.
 
+**HARD HEDGE-DENSITY REQUIREMENT (Q10 audit gate, ≥4 distinct
+phrases): the Discussion section as a whole MUST contain at least
+4 of the following hedge phrases (each at least once):
+
+  may, might, suggests, appears, consistent with, uncertain,
+  warrants, remains to be, preliminary, qualified, limited,
+  cautious, context-dependent, interpretive
+
+Distribute them across paragraphs so the prose reads as honest
+synthesis, not flat assertion. The audit COUNTS the unique
+phrases that appear in the rendered Discussion section — under-
+hedging trips a P2 fail. Examples of correct integration:
+
+  - "The evidence MAY support metformin as a geroprotector, but..."
+  - "These findings APPEAR consistent with..."
+  - "Interpretation REMAINS UNCERTAIN until..."
+  - "Translation to clinical practice WARRANTS further trials..."
+  - "The conclusion is QUALIFIED by population specificity..."
+  - "These signals are CONTEXT-DEPENDENT on..."
+
+Do NOT cluster all hedges in one paragraph; scatter across
+paragraphs 2-6 (paragraph 1 may be assertive about the strongest
+convergent signal).**
+
 Output JSON only. No prose outside the JSON."""
 
 

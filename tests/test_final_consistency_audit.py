@@ -550,3 +550,59 @@ def test_auto_fixer_still_strips_unsourced_prose_sentences() -> None:
     assert "7%" not in fixed
     # The clean sentence survives
     assert "different sentence" in fixed
+
+
+# ============ Fix #21 follow-up #2: double-space auto-fix ============
+
+
+def test_auto_fixer_collapses_mid_line_double_spaces() -> None:
+    """Stage-2 C08 flags `  ` (double-space mid-line) as P2
+    auto_fixable=True. Pre-fix the auto-fixer had no implementation,
+    so the issues survived to final consistency.json and tripped the
+    no-regression gate (consistency_count regression)."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Discussion\n\n"
+        "First sentence  with double space. "
+        "Another sentence here.\n"
+    )
+    fixed, log = fixer.apply_fixes(paper, [])
+    # Double space collapsed
+    assert "  " not in fixed.replace("\n\n", "")  # ignore paragraph breaks
+    # Log records the fix
+    ds_logs = [
+        e for e in log if e.get("fix_type") == "double_space_collapse"
+    ]
+    assert ds_logs, f"expected double_space_collapse in log: {log}"
+    assert ds_logs[0]["n_changes"] >= 1
+
+
+def test_auto_fixer_does_not_collapse_indentation() -> None:
+    """Line-start indentation (markdown bullets, cite blocks) is
+    legitimate — must NOT be collapsed."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Conclusion\n\n"
+        "Real sentence.\n\n"
+        "  _Cited: `Walton 2019`_\n"  # 2-space indent intentional
+    )
+    fixed, log = fixer.apply_fixes(paper, [])
+    # Indentation preserved
+    assert "  _Cited:" in fixed
+    # No double-space collapse logged for this paper (no mid-line dups)
+    ds_logs = [
+        e for e in log if e.get("fix_type") == "double_space_collapse"
+    ]
+    assert not ds_logs, f"unexpected double_space_collapse: {ds_logs}"
