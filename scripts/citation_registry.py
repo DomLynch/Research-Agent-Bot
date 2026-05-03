@@ -218,36 +218,61 @@ def build_registry(receipts: list) -> dict[str, CitationEntry]:
 
 def _safe_variants_across_registry(
     registry: dict[str, CitationEntry],
-) -> dict[str, str]:
-    """Build {variant: body_citation} across the whole registry, with
-    cross-receipt collision detection AND self-substitution prevention.
+) -> list[tuple[str, str, str]]:
+    """Build [(variant, body_citation, year)] triples across the whole
+    registry, with cross-receipt collision detection AND a year-lookahead
+    self-substitution guard.
 
-    A variant is SAFE only when:
-      1. It's a prefix of EXACTLY ONE receipt's id (no cross-receipt
-         ambiguity).
-      2. It is NOT a substring of its own body_citation (otherwise
-         `Walton` → `Walton 2019` would double-substitute clean prose
-         like 'The Walton 2019 trial' → 'The Walton 2019 2019 trial').
+    A variant is SAFE only when it's a prefix of EXACTLY ONE receipt's
+    id (no cross-receipt ambiguity).
 
-    The full receipt_id is always safe; bare surname variants are
-    typically dropped by rule (2)."""
+    For variants that ARE substrings of their own body_citation
+    (e.g. `Walton` is a substring of `Walton 2019`; `PMC12978362`
+    is a substring of `PMC12978362 2026`), the substitution uses a
+    negative-year-lookahead regex so:
+      - `(Walton)` → `(Walton 2019)` (bare → decorated)
+      - `(Walton 2019)` → unchanged (already has year)
+    Pre-fix this branch was dropped entirely, leaving bare PMCID
+    handles in body prose untouched — the 96 PMCID leaks in the
+    latest E2E paper.
+
+    Returns triples; the empty `year` string signals "use plain
+    str.replace, no lookahead needed"."""
     variant_to_owners: dict[str, set[str]] = {}
     for receipt_id in registry:
         for v in _variants_for(receipt_id):
             variant_to_owners.setdefault(v, set()).add(receipt_id)
-    safe: dict[str, str] = {}
+    triples: list[tuple[str, str, str]] = []
     for v, owners in variant_to_owners.items():
         if len(owners) != 1:
             continue
         (rid,) = owners
         body_citation = registry[rid].body_citation
-        # Self-substitution guard: skip variants that are substrings
-        # of their own body_citation. Otherwise the substitution
-        # double-applies to clean text already containing the citation.
-        if v in body_citation:
+        if v not in body_citation:
+            triples.append((v, body_citation, ""))
             continue
-        safe[v] = body_citation
-    return safe
+        # Variant is a substring of body_citation. Try the year-
+        # lookahead path: only safe if body_citation has the shape
+        # `<variant> <year>` so we can negative-lookahead the year.
+        year = _year_suffix_after(v, body_citation)
+        if year:
+            triples.append((v, body_citation, year))
+        # else: variant is contained in body_citation in some other
+        # shape (e.g. `Walton` inside `Walton et al. 2019`) — drop it
+        # because the lookahead pattern wouldn't be unambiguous.
+    return triples
+
+
+def _year_suffix_after(variant: str, body_citation: str) -> str:
+    """If body_citation ends with `<variant> <YYYY>`, return the year
+    string. Otherwise empty. Used for the negative-year-lookahead
+    substitution path."""
+    if not body_citation.startswith(variant):
+        return ""
+    rest = body_citation[len(variant):]
+    if m := re.match(r"\s+(\d{4})$", rest):
+        return m.group(1)
+    return ""
 
 
 def _variants_for(receipt_id: str) -> list[str]:
@@ -287,16 +312,30 @@ def substitute_receipt_ids(
     citation. Belt-and-braces backstop for the upstream substitution
     in the writer-input transform.
 
-    Uses cross-receipt collision detection: ambiguous variants (those
-    that prefix more than one receipt) are dropped, so `Walton_2019`
-    is NOT auto-substituted when both `Walton_2019_MASTERS` and
-    `Walton_2019_PHOENIX` exist. Sorted longest-first within the safe
-    set."""
-    safe = _safe_variants_across_registry(registry)
-    pairs = sorted(safe.items(), key=lambda p: -len(p[0]))
+    Two substitution paths:
+      1. Plain str.replace for variants NOT contained in body_citation
+         (e.g. `Walton_2019_MASTERS` → `Walton 2019`).
+      2. Regex with negative-year-lookahead for variants contained in
+         body_citation in `<variant> <year>` shape (e.g.
+         `PMC12978362` → `PMC12978362 2026` only when the year is NOT
+         already present — preventing `PMC12978362 2026 2026`).
+
+    Cross-receipt collision detection drops ambiguous variants. Sorted
+    longest-first within the safe set."""
+    triples = _safe_variants_across_registry(registry)
+    triples.sort(key=lambda t: -len(t[0]))
     out = paper_md
-    for variant, body_citation in pairs:
-        out = out.replace(variant, body_citation)
+    for variant, body_citation, year in triples:
+        if not year:
+            out = out.replace(variant, body_citation)
+        else:
+            # Negative-year-lookahead: substitute the variant ONLY when
+            # NOT already followed by ` <year>`. Avoids the double-apply
+            # `(Walton 2019)` → `(Walton 2019 2019)` regression.
+            pattern = re.compile(
+                rf"{re.escape(variant)}(?!\s+{re.escape(year)})"
+            )
+            out = pattern.sub(body_citation, out)
     return out
 
 

@@ -308,6 +308,88 @@ def test_build_registry_raises_on_empty_receipt_id() -> None:
         cr.build_registry(receipts)
 
 
+# ----- Fix #9 reviewer-P1: PMCID year-lookahead ------------------------
+
+
+def test_bare_pmcid_in_body_gets_year_decorated() -> None:
+    """Fix #9: pre-fix the self-substitution guard skipped variants
+    contained in their body_citation. So `(PMC12978362)` in body never
+    got rewritten to `(PMC12978362 2026)` — 96 such leaks in the
+    latest E2E paper. Now: regex with negative-year-lookahead applies
+    the substitution while leaving already-decorated forms alone."""
+    receipts = [_FakeReceipt(
+        receipt_id="PMC12978362_molecular_mechanisms_of_metformin",
+        source_year=2026,
+    )]
+    registry = cr.build_registry(receipts)
+    paper = (
+        "## Discussion\n\n"
+        "The bare handle (PMC12978362) appears here. The decorated "
+        "form (PMC12978362 2026) appears here too. Both should end "
+        "up as the decorated form.\n"
+    )
+    out = cr.substitute_receipt_ids(paper, registry)
+    # Bare → decorated
+    assert "(PMC12978362 2026)" in out
+    # Pre-decorated → unchanged (no double-apply)
+    assert "(PMC12978362 2026 2026)" not in out
+    # Count the decorated form: should appear EXACTLY twice (once
+    # from the bare leak that was rewritten, once from the original
+    # pre-decorated reference).
+    assert out.count("(PMC12978362 2026)") == 2
+
+
+def test_pre_decorated_pmcid_is_not_double_substituted() -> None:
+    """Discrim: a paper containing only the pre-decorated form should
+    be unchanged (year-lookahead correctly suppresses substitution)."""
+    receipts = [_FakeReceipt(
+        receipt_id="PMC12978362_molecular_mechanisms_of_metformin",
+        source_year=2026,
+    )]
+    registry = cr.build_registry(receipts)
+    paper = "## Discussion\n\nThe (PMC12978362 2026) finding was striking.\n"
+    out = cr.substitute_receipt_ids(paper, registry)
+    assert out == paper  # no change
+
+
+def test_walton_2019_clean_text_no_double_apply() -> None:
+    """Walton 2019 sanity: clean prose 'The Walton 2019 trial showed'
+    must not become 'The Walton 2019 2019 trial showed' — the year-
+    lookahead protects this case too."""
+    receipts = [_FakeReceipt(
+        receipt_id="Walton_2019_MASTERS_metformin_blunts",
+        source_year=2019,
+    )]
+    registry = cr.build_registry(receipts)
+    clean_paper = "## Discussion\n\nThe Walton 2019 trial showed effects.\n"
+    out = cr.substitute_receipt_ids(clean_paper, registry)
+    assert out == clean_paper
+
+
+def test_walton_alone_in_body_gets_year_decorated() -> None:
+    """If the writer emits bare 'Walton' in body prose (not followed
+    by 2019), substitute to 'Walton 2019'. This was previously
+    blocked by the self-substitution guard."""
+    receipts = [_FakeReceipt(
+        receipt_id="Walton_2019_MASTERS_metformin_blunts",
+        source_year=2019,
+    )]
+    registry = cr.build_registry(receipts)
+    paper = "## Discussion\n\nWalton showed effects in the MASTERS trial.\n"
+    out = cr.substitute_receipt_ids(paper, registry)
+    # Bare 'Walton' → 'Walton 2019'
+    assert "Walton 2019 showed effects" in out
+
+
+def test_year_suffix_after_helper_extracts_correct_year() -> None:
+    assert cr._year_suffix_after("PMC12978362", "PMC12978362 2026") == "2026"
+    assert cr._year_suffix_after("Walton", "Walton 2019") == "2019"
+    # Non-trailing-year shapes return ""
+    assert cr._year_suffix_after("Walton", "Walton et al. 2019") == ""
+    assert cr._year_suffix_after("PMC12978362", "PMC12978362") == ""
+    assert cr._year_suffix_after("X", "Y") == ""  # no prefix match
+
+
 def test_transform_matrix_in_lockstep_with_receipts() -> None:
     """P1 reviewer fix: the matrix must be transformed alongside
     receipts. Otherwise the writer's anchor-validator sees transformed
