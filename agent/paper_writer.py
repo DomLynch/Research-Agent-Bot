@@ -24,22 +24,29 @@ discussion happens explicitly in LimitationsFull).
 """
 from __future__ import annotations
 
-import asyncio
-import logging
 from collections.abc import Mapping, Sequence
 from typing import Any
 
 import httpx
 
-from agent.llm_client import CallSpec, CostLedger, chat_json
+from agent.llm_client import CallSpec, CostLedger
 from agent.paper_writer_builders import (
     build_anchored_from_parsed,
     build_results_from_parsed,
     build_scoped_from_parsed,
 )
+from agent.paper_writer_citations import (
+    build_background_lit_block as _build_background_lit_block,
+    run_citation_fix_pass as _run_citation_fix_pass,
+)
 from agent.paper_writer_deterministic import (
     build_methods_section,
     build_references_full_section,
+)
+from agent.paper_writer_helpers import (
+    build_retry_prompt as _build_retry_prompt,
+    call_llm_section as _call_llm_section,
+    section_word_count as _section_word_count,
 )
 from agent.paper_writer_prompts import (
     ABSTRACT_SYSTEM_PROMPT,
@@ -59,19 +66,6 @@ from agent.synthesis_schemas import (
     TensionMatrix,
 )
 from agent.synthesis_writer import filter_accepted
-
-logger = logging.getLogger(__name__)
-
-
-# Day 10.16d → 10.16h — per-LLM-call timeout. If a single section
-# call (including chain fallback to Ministral) takes longer than this,
-# we treat it as a hang and let the retry loop move on. Originally
-# 180s, bumped to 240s in 10.16h: the inner mimo_timeout_sec is now
-# 180s (was 60s — see settings.py rationale), so the outer needs to
-# allow MiMo's full 180s PLUS some headroom for Ministral fallback if
-# MiMo errors hard. 240s = MiMo full time + 60s for a fast Ministral
-# round-trip.
-PER_CALL_TIMEOUT_SEC = 240.0
 
 PAPER_WRITER_VERSION = "paper-writer/2026-04-29-day10-16"
 
@@ -153,73 +147,6 @@ def derive_paper_tier(summary: ReceiptSummary) -> str:
 # per-file LOC cap.
 
 
-# --- LLM section helper --------------------------------------------------
-
-
-async def _call_llm_section(
-    *,
-    system_prompt: str,
-    user_prompt: str,
-    chain: Sequence[CallSpec],
-    client: httpx.AsyncClient | None,
-    ledger: CostLedger | None,
-    seed: int | None,
-) -> dict | None:
-    """One LLM call returning a parsed JSON dict (or None if malformed
-    or timed out). Per-call timeout enforced via asyncio.wait_for."""
-    try:
-        response = await asyncio.wait_for(
-            chat_json(
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-                chain=chain,
-                client=client,
-                ledger=ledger,
-                temperature=0.0,
-                seed=seed,
-            ),
-            timeout=PER_CALL_TIMEOUT_SEC,
-        )
-    except asyncio.TimeoutError:
-        logger.warning(
-            "paper_writer LLM call exceeded %.0fs timeout — moving on",
-            PER_CALL_TIMEOUT_SEC,
-        )
-        return None
-    if isinstance(response.parsed, dict):
-        return response.parsed
-    return None
-
-
-def _build_background_lit_block(entries: Sequence[Any] | None) -> str:
-    """Fix #18a: format the background_literature registry entries as
-    a writer-facing block. Each entry exposes its numeric, the
-    REQUIRED citation token, and a one-line use rule. Empty when
-    no entries provided (caller falls back to corpus-only writing)."""
-    if not entries:
-        return ""
-    lines = [
-        "",
-        "ALLOWED BACKGROUND CITATIONS (canonical clinical thresholds):",
-        "These are pre-vetted background-context numerics. You MAY use",
-        "any of these IF AND ONLY IF you include the corresponding",
-        "citation_token in the SAME sentence as the numeric. If you",
-        "use the numeric without the citation_token, the audit gates",
-        "WILL strip the sentence.",
-        "",
-    ]
-    for e in entries:
-        lines.append(
-            f"  - numeric: {e.numeric!r}\n"
-            f"    citation_token: {e.citation_token!r} "
-            f"(use exactly this string in the same sentence)\n"
-            f"    context: {e.context}"
-        )
-    return "\n".join(lines)
-
-
 def _build_user_prompt(
     receipts: Sequence[ReceiptSummary],
     rejected: Sequence[ReceiptSummary],
@@ -292,39 +219,6 @@ def _build_user_prompt(
 # --- Section builders ----------------------------------------------------
 
 
-def _section_word_count(section: SynthesisSection) -> int:
-    """Count words in the section body, excluding the heading line."""
-    lines = section.body_md.split("\n")
-    body = "\n".join(lines[1:]) if lines else ""
-    return len(body.split())
-
-
-def _build_retry_prompt(
-    base_user_prompt: str,
-    *,
-    section_name: str,
-    target_floor: int,
-    last_word_count: int,
-) -> str:
-    """Append explicit retry guidance when a section under-produced.
-
-    Empirically, LLMs default to concise output even when prompts
-    request length. A retry that names the under-production and the
-    floor is much more likely to hit the target than a fresh call.
-    """
-    return (
-        base_user_prompt
-        + f"\n\nRETRY GUIDANCE: the previous attempt at the "
-        f"{section_name.upper()} section produced only {last_word_count} "
-        f"words. The minimum word count is {target_floor}. "
-        f"Re-write the section now with at least {target_floor} words "
-        f"of substantive prose. Concretely: produce more paragraphs, "
-        f"and make each paragraph longer (8-12 sentences each instead "
-        f"of 3-5). Do NOT default to summary mode. The reader needs "
-        f"the full publishable density."
-    )
-
-
 async def _write_anchored_section(
     *,
     name: SectionName,
@@ -337,6 +231,7 @@ async def _write_anchored_section(
     ledger: CostLedger | None,
     seed: int | None,
     fallback_body: str,
+    background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
     """Build an ANCHORED section with code-level word-count retry.
 
@@ -344,7 +239,13 @@ async def _write_anchored_section(
     output. This wrapper enforces the floor at code level: if the
     rendered section is under SECTION_WORD_FLOORS[name], retry up to
     SECTION_RETRY_BUDGET times with a more aggressive expansion
-    prompt. Pick the longest valid attempt across all retries."""
+    prompt. Pick the longest valid attempt across all retries.
+
+    Fix #20: after the word-count retry loop converges, run a
+    one-shot citation-fix pass — if the best attempt used background
+    numerics without the canonical citation, re-prompt MiMo to add
+    the citation IN the same sentence (rather than letting the
+    Stage-2 auto-fixer strip the sentence and tank Q9 density)."""
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
     best: SynthesisSection | None = None
     best_words = 0
@@ -365,12 +266,25 @@ async def _write_anchored_section(
         if words > best_words:
             best, best_words = section, words
         if best_words >= floor or floor == 0:
-            return best
+            break
         # Below floor — prepare a retry prompt.
         current_prompt = _build_retry_prompt(
             user_prompt, section_name=str(name),
             target_floor=floor, last_word_count=words,
         )
+
+    # Fix #20: citation fix pass (independent of word-count budget).
+    def _builder(parsed_dict: dict) -> SynthesisSection | None:
+        return build_anchored_from_parsed(
+            parsed_dict, name=name, heading=heading, accepted=accepted,
+        )
+    best = await _run_citation_fix_pass(
+        best, base_user_prompt=user_prompt,
+        system_prompt=system_prompt, builder_fn=_builder,
+        background_lit_entries=background_lit_entries,
+        chain=chain, client=client, ledger=ledger, seed=seed,
+        call_llm_fn=_call_llm_section,
+    )
     return best or SynthesisSection(
         name=name, body_md=fallback_body, anchors=(),
     )
@@ -389,10 +303,15 @@ async def _write_scoped_section(
     ledger: CostLedger | None,
     seed: int | None,
     fallback_body: str,
+    background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
     """Build a SCOPED section with code-level word-count retry.
 
-    See `_write_anchored_section` for the retry contract."""
+    See `_write_anchored_section` for the retry contract.
+
+    Fix #20: identical citation-fix pass — applies to scoped sections
+    too (Background and Discussion are the highest-density carriers
+    for canonical clinical thresholds)."""
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
     best: SynthesisSection | None = None
     best_words = 0
@@ -414,11 +333,25 @@ async def _write_scoped_section(
         if words > best_words:
             best, best_words = section, words
         if best_words >= floor or floor == 0:
-            return best
+            break
         current_prompt = _build_retry_prompt(
             user_prompt, section_name=str(name),
             target_floor=floor, last_word_count=words,
         )
+
+    # Fix #20: citation fix pass.
+    def _builder(parsed_dict: dict) -> SynthesisSection | None:
+        return build_scoped_from_parsed(
+            parsed_dict, name=name, heading=heading,
+            topic=topic, accepted=accepted,
+        )
+    best = await _run_citation_fix_pass(
+        best, base_user_prompt=user_prompt,
+        system_prompt=system_prompt, builder_fn=_builder,
+        background_lit_entries=background_lit_entries,
+        chain=chain, client=client, ledger=ledger, seed=seed,
+        call_llm_fn=_call_llm_section,
+    )
     return best or SynthesisSection(
         name=name, body_md=fallback_body, anchors=(),
     )
@@ -435,13 +368,19 @@ async def write_results_section(
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
     seed: int | None = None,
+    background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
     """ANCHORED multi-paragraph Results with code-level word retry.
     Each subsection has its own H3 heading. Each paragraph cites
     ≥1 accepted receipt. If overall Results word count is below
-    SECTION_WORD_FLOORS['results'], retry up to N times."""
+    SECTION_WORD_FLOORS['results'], retry up to N times.
+
+    Fix #20: trail with one-shot citation-fix pass. Results rarely
+    needs background-lit context (it's anchored to the receipts) but
+    when it does, the fix pass keeps Q9 density up."""
     user = _build_user_prompt(
         receipts, rejected, matrix, thesis, topic=topic,
+        background_lit_entries=background_lit_entries,
     )
     fallback = (
         "## Results\n\n_LLM-generated results section failed validation; "
@@ -467,11 +406,22 @@ async def write_results_section(
         if words > best_words:
             best, best_words = section, words
         if best_words >= floor or floor == 0:
-            return best
+            break
         current_prompt = _build_retry_prompt(
             user, section_name="results",
             target_floor=floor, last_word_count=words,
         )
+
+    # Fix #20: citation fix pass.
+    def _builder(parsed_dict: dict) -> SynthesisSection | None:
+        return build_results_from_parsed(parsed_dict, accepted=receipts)
+    best = await _run_citation_fix_pass(
+        best, base_user_prompt=user,
+        system_prompt=RESULTS_SYSTEM_PROMPT, builder_fn=_builder,
+        background_lit_entries=background_lit_entries,
+        chain=chain, client=client, ledger=ledger, seed=seed,
+        call_llm_fn=_call_llm_section,
+    )
     return best or SynthesisSection(
         name="results", body_md=fallback, anchors=(),
     )
@@ -547,6 +497,7 @@ async def render_full_paper(
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
         fallback_body="## Abstract\n\n_LLM-generated abstract failed validation; see Thesis above._\n",
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("abstract", sections["abstract"])
     sections["introduction"] = await _write_scoped_section(
@@ -555,6 +506,7 @@ async def render_full_paper(
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Introduction\n\n_Introduction failed scoped validation._\n",
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("introduction", sections["introduction"])
     sections["background"] = await _write_scoped_section(
@@ -563,6 +515,7 @@ async def render_full_paper(
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Background\n\n_Background failed scoped validation._\n",
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("background", sections["background"])
     sections["methods"] = build_methods_section(
@@ -572,6 +525,7 @@ async def render_full_paper(
     sections["results"] = await write_results_section(
         accepted, rejected, matrix, thesis,
         topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("results", sections["results"])
     sections["cross_domain_synthesis"] = await _write_anchored_section(
@@ -582,6 +536,7 @@ async def render_full_paper(
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
         fallback_body="## Cross-Domain Synthesis\n\n_Cross-domain synthesis failed validation._\n",
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
     sections["discussion"] = await _write_scoped_section(
@@ -590,6 +545,7 @@ async def render_full_paper(
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Discussion\n\n_Discussion failed scoped validation._\n",
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("discussion", sections["discussion"])
     sections["limitations_full"] = await _write_anchored_section(
@@ -598,6 +554,7 @@ async def render_full_paper(
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
         fallback_body="## Limitations\n\n_Limitations failed validation._\n",
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("limitations_full", sections["limitations_full"])
     sections["conclusion"] = await _write_scoped_section(
@@ -606,6 +563,7 @@ async def render_full_paper(
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Conclusion\n\n_Conclusion failed scoped validation._\n",
+        background_lit_entries=background_lit_entries,
     )
     _log_section_done("conclusion", sections["conclusion"])
     sections["references_full"] = build_references_full_section(receipts)
