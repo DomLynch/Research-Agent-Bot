@@ -107,11 +107,12 @@ Output JSON only. No prose outside the JSON."""
 
 INTRODUCTION_SYSTEM_PROMPT = """You write the INTRODUCTION of a research synthesis paper.
 
-**HARD MINIMUM: 6 paragraphs of 6-9 sentences each = ~1,800 words.**
-This is the second-longest section after Results. The prior version
-of this prompt under-produced (3 paragraphs of ~100 words each =
-~300-500 words total). That output was rejected for being too thin.
-Write the full 6 paragraphs — do NOT default to a concise summary.
+**TARGET RANGE: 4-5 paragraphs of 5-8 sentences each = ~1,000-1,400
+words.** Fix #27 prose compression: tables now carry the structured
+evidence; prose should be lean and argument-driven, not exhaustive.
+Do NOT pad with restated literature; cite once and move on. The
+prior version over-produced (~1,800-2,500 words); aim closer to
+1,200 words.
 
 Output ONE JSON object with this exact shape:
 
@@ -172,9 +173,11 @@ Output JSON only. No prose outside the JSON."""
 BACKGROUND_SYSTEM_PROMPT = """You write the BACKGROUND / LITERATURE REVIEW
 section of a research synthesis paper.
 
-**HARD MINIMUM: 5 paragraphs of 6-9 sentences each = ~1,500 words.**
-The prior version of this prompt under-produced (3 paragraphs ~100
-words each). Write the full 5 paragraphs of substantive prose.
+**TARGET RANGE: 3-4 paragraphs of 5-8 sentences each = ~800-1,100
+words.** Fix #27 prose compression: Tables 1-5 carry the structured
+evidence map; the Background section should set up the topic
+landscape lean, not catalogue every prior review. Cite once per
+claim and rely on Tables for breadth.
 
 Output ONE JSON object with this exact shape:
 
@@ -228,11 +231,12 @@ RESULTS_SYSTEM_PROMPT = """You write the RESULTS section of a research
 synthesis paper. The Results section is structured by OUTCOME CLASS —
 one subsection per outcome class present in the corpus.
 
-**HARD MINIMUM: every outcome subsection MUST have at least 4
-paragraphs of 5-8 sentences each (~600-900 words per subsection).**
-The prior version of this prompt produced 1 paragraph per subsection
-(~70 words each); that output was rejected. Write the full multi-
-paragraph subsections this time.
+**TARGET RANGE: every outcome subsection has 2-3 paragraphs of 5-7
+sentences each (~400-600 words per subsection).** Fix #27 prose
+compression: Table 2 (Per-Study Endpoint Evidence) carries every
+study × p-value tuple, so the prose can REFERENCE the table rather
+than restate every numeric. Aim for ~1,500 total words across
+subsections, not 3,000.
 
 Output ONE JSON object with this exact shape:
 
@@ -299,9 +303,12 @@ CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = """You write the CROSS-DOMAIN
 SYNTHESIS section. Its job: surface tensions BETWEEN outcome classes
 that single-outcome subsections miss.
 
-**HARD MINIMUM: 4 paragraphs of 6-9 sentences each = ~1,000-1,400 words.**
-Each paragraph addresses one cross-outcome tension. The prior version
-under-produced (~250 words total) — write the full 4 paragraphs.
+**TARGET RANGE: 3 paragraphs of 5-7 sentences each = ~600-800 words.**
+Fix #27 prose compression: Table 3 (Cross-Domain Tensions) lists
+every non-orthogonal pair with severity + practical implication.
+Reference the table; do NOT restate the full pair list. Each
+paragraph picks the SINGLE most load-bearing tension in its scope
+and interprets it.
 
 Output ONE JSON object with this exact shape:
 
@@ -347,10 +354,12 @@ Output JSON only. No prose outside the JSON."""
 DISCUSSION_SYSTEM_PROMPT = """You write the DISCUSSION of a research
 synthesis paper.
 
-**HARD MINIMUM: 6 paragraphs of 6-9 sentences each = ~1,800-2,400 words.**
-The prior version of this prompt produced 4 paragraphs averaging ~145
-words each (583 words total). That output was rejected. Write the
-full 6 paragraphs.
+**TARGET RANGE: 4-5 paragraphs of 5-8 sentences each = ~1,100-1,400
+words.** Fix #27 prose compression: Tables 1-5 + the deterministic
+What-This-Adds section now carry the structured evidence and the
+originality claim. The Discussion's job is INTERPRETATION over
+that evidence — not restating it. Lean prose, dense with hedges
+(see Q10 requirement below).
 
 Output ONE JSON object with this exact shape:
 
@@ -417,9 +426,12 @@ Output JSON only. No prose outside the JSON."""
 LIMITATIONS_FULL_SYSTEM_PROMPT = """You write the LIMITATIONS section of
 a research synthesis paper.
 
-**HARD MINIMUM: 5 paragraphs of 4-7 sentences each = ~700-1,000 words.**
-The prior version produced 4 short paragraphs (~300 words). Write
-the full 5 paragraphs.
+**TARGET RANGE: 3-4 paragraphs of 4-6 sentences each = ~500-700
+words.** Fix #27 prose compression: Table 4's per-domain RoB +
+Overall RoB + Weight columns surface design-level limitations
+already; the Limitations section's job is to add the
+synthesis-level limitations the table cannot encode (e.g. corpus
+scope, missing populations, methodology choices).
 
 Output ONE JSON object with this exact shape:
 
@@ -455,9 +467,10 @@ Output JSON only. No prose outside the JSON."""
 CONCLUSION_SYSTEM_PROMPT = """You write the CONCLUSION of a research
 synthesis paper.
 
-**HARD MINIMUM: 2 paragraphs of 5-8 sentences each = ~350-500 words.**
-The prior version produced 1 paragraph (~160 words). Write 2 full
-paragraphs.
+**TARGET RANGE: 1-2 paragraphs of 5-8 sentences each = ~250-350
+words.** Fix #27 prose compression: the conclusion should be
+tight — assert the synthesis position, name the load-bearing
+caveat, and stop. Do NOT restate the discussion.
 
 Output ONE JSON object with this exact shape:
 

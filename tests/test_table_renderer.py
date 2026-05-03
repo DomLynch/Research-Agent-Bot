@@ -439,25 +439,29 @@ def test_rob_domains_helper_returns_7_grades() -> None:
 
 def test_b2_observational_has_na_for_blinding() -> None:
     """Discrim: blinding domain not meaningful for observational
-    cohorts → 'n/a', not a fake 'low/high' grade."""
+    cohorts → 'n/a', not a fake 'low/high' grade.
+
+    Fix #24/#26: Table 4 layout updated — Tool column now at index 2,
+    so RoB domains shift one position right. Layout:
+    Citation | Tier | Tool | Allocation | Blinding | Attrition |
+    OutcomeMeasure | Reporting | Confounding | Generalizability |
+    Overall RoB | Weight in synthesis | note. Blinding now index 4."""
     receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="B2")]
     md = tr.render_table_3_evidence_limitations(receipts)
     line = [ln for ln in md.split("\n") if "X 2020" in ln][0]
     cells = [c.strip() for c in line.split("|") if c.strip()]
-    # Layout: Citation | Tier | Allocation | Blinding | Attrition |
-    #         OutcomeMeasure | Reporting | Confounding | Generalizability | note
-    # Blinding is index 3
-    assert cells[3] == "n/a"
+    assert cells[4] == "n/a"
 
 
 def test_a1_rct_has_low_allocation_and_blinding() -> None:
-    """A1 RCT: randomization + blinding are typically rigorous."""
+    """A1 RCT: randomization + blinding are typically rigorous.
+    Fix #24/#26: Allocation is index 3, Blinding is index 4."""
     receipts = [_FakeReceipt(receipt_id="W 2019", evidence_tier="A1")]
     md = tr.render_table_3_evidence_limitations(receipts)
     line = [ln for ln in md.split("\n") if "W 2019" in ln][0]
     cells = [c.strip() for c in line.split("|") if c.strip()]
-    assert cells[2] == "low"  # Allocation
-    assert cells[3] == "low"  # Blinding
+    assert cells[3] == "low"  # Allocation
+    assert cells[4] == "low"  # Blinding
 
 
 def test_render_all_tables_includes_pointer_sentence() -> None:
@@ -908,3 +912,110 @@ def test_render_all_tables_threads_claims_to_table_5() -> None:
     assert "p < 0.05" in md
     # Pointer block names Table 5 too
     assert "Table 5" in md.split("Structured Evidence Tables")[1][:600]
+
+
+# ============ Fix #24 + #26 — RoB tool + overall + weight ==============
+
+
+def test_table_4_includes_tool_column() -> None:
+    """Fix #26: Tool column names the RoB framework (Cochrane RoB-2,
+    ROBINS-I, SYRCLE, AMSTAR-2) so reviewers see what was applied."""
+    receipts = [
+        _FakeReceipt(receipt_id="A1 2020", evidence_tier="A1"),
+        _FakeReceipt(receipt_id="B2 2020", evidence_tier="B2"),
+        _FakeReceipt(receipt_id="C1 2020", evidence_tier="C1"),
+        _FakeReceipt(receipt_id="B1 2020", evidence_tier="B1"),
+    ]
+    md = tr.render_table_4_evidence_limitations(receipts)
+    assert "Tool" in md
+    assert "Cochrane RoB-2" in md       # A1 RCT
+    assert "ROBINS-I" in md             # B2 observational
+    assert "SYRCLE" in md               # C1 preclinical
+    assert "AMSTAR-2" in md             # B1 review
+
+
+def test_overall_rob_high_when_load_bearing_domain_high() -> None:
+    """Worst-of semantics: any 'high' on allocation/blinding/attrition/
+    outcome bumps the overall RoB to 'high'."""
+    # Pretend a tier has high blinding (index 1)
+    domains = ("low", "high", "low", "low", "low", "low", "moderate")
+    assert tr._overall_rob(domains) == "high"
+
+
+def test_overall_rob_plurality_otherwise() -> None:
+    """When no load-bearing domain is high, overall is the plurality
+    grade across non-`n/a` domains."""
+    domains = ("low", "low", "moderate", "low", "low", "low", "moderate")
+    assert tr._overall_rob(domains) == "low"
+
+
+def test_overall_rob_handles_all_na() -> None:
+    """All-`n/a` domains → overall = 'n/a'."""
+    domains = ("n/a",) * 7
+    assert tr._overall_rob(domains) == "n/a"
+
+
+def test_weight_in_synthesis_load_bearing_for_a1_direct() -> None:
+    """Fix #24: A1 + direct + low RoB → load-bearing."""
+    weight = tr._weight_in_synthesis("A1", "direct", "low")
+    assert "load-bearing" in weight
+
+
+def test_weight_in_synthesis_mechanistic_for_a2_or_a1_mech() -> None:
+    """Mechanistic label applies to A2 RCTs and A1 with mechanistic
+    directness (e.g. MILES)."""
+    a2 = tr._weight_in_synthesis("A2", "direct", "low")
+    a1_mech = tr._weight_in_synthesis("A1", "mechanistic", "low")
+    assert "mechanistic" in a2
+    assert "mechanistic" in a1_mech
+
+
+def test_weight_in_synthesis_supporting_for_b1_review() -> None:
+    """B1 systematic reviews → supporting weight."""
+    weight = tr._weight_in_synthesis("B1", "review", "moderate")
+    assert "supporting" in weight
+
+
+def test_weight_in_synthesis_high_rob_overrides_to_hypothesis_generating() -> None:
+    """Even an A1 RCT with high overall RoB → hypothesis-generating.
+    A reviewer should see immediately that the trust collapses to
+    'use cautiously' when RoB is bad."""
+    weight = tr._weight_in_synthesis("A1", "direct", "high")
+    assert "hypothesis-generating" in weight
+    assert "high RoB" in weight
+
+
+def test_weight_in_synthesis_handles_unknown_tier() -> None:
+    """Unknown tier → unweighted (defensive — never crashes)."""
+    weight = tr._weight_in_synthesis("zzz", "indirect", "low")
+    assert "unweighted" in weight
+
+
+def test_table_4_includes_overall_rob_and_weight_columns() -> None:
+    """End-to-end: Table 4 surfaces both new columns in its rows."""
+    receipts = [
+        _FakeReceipt(receipt_id="Walton 2019", evidence_tier="A1",
+                     directness="direct"),
+        _FakeReceipt(receipt_id="MILES 2018", evidence_tier="A2",
+                     directness="direct"),
+    ]
+    md = tr.render_table_4_evidence_limitations(receipts)
+    assert "Overall RoB" in md
+    assert "Weight in synthesis" in md
+    # Walton should show load-bearing weight; MILES should show mechanistic
+    walton_row = [ln for ln in md.split("\n") if "Walton 2019" in ln][0]
+    miles_row = [ln for ln in md.split("\n") if "MILES 2018" in ln][0]
+    assert "load-bearing" in walton_row
+    assert "mechanistic" in miles_row
+
+
+def test_table_4_caveat_mentions_synthesis_weight() -> None:
+    """The caveat above the table must explain what 'Weight in
+    synthesis' means so a reader understands the column is a
+    derived qualitative weighting, not Cochrane judgement."""
+    receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
+    md = tr.render_table_4_evidence_limitations(receipts)
+    assert "Weight in synthesis" in md
+    assert "tier × directness × overall RoB" in md or (
+        "qualitative weighting" in md
+    )

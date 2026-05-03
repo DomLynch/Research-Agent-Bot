@@ -145,3 +145,49 @@ def test_build_user_prompt_caller_filter_treats_accept_caveated_as_accepted() ->
     assert "r-clean" in prompt
     assert "r-caveated" in prompt
     assert "r-rej" not in prompt
+
+
+# ============ Fix #27 — prose-compression word floors ===============
+
+
+def test_section_word_floors_target_lean_prose() -> None:
+    """Fix #27: floors lowered ~25% so the writer aims for ~9-10k
+    total words (Tables 1-5 + What-This-Adds carry the structured
+    evidence). Pin the new floors so a future maintainer doesn't
+    silently drift back to the prior 11k+ targets."""
+    from agent.paper_writer import SECTION_WORD_FLOORS
+    assert SECTION_WORD_FLOORS["abstract"] <= 250
+    assert SECTION_WORD_FLOORS["introduction"] <= 1000
+    assert SECTION_WORD_FLOORS["background"] <= 800
+    assert SECTION_WORD_FLOORS["results"] <= 1700
+    assert SECTION_WORD_FLOORS["cross_domain_synthesis"] <= 600
+    assert SECTION_WORD_FLOORS["discussion"] <= 1200
+    assert SECTION_WORD_FLOORS["limitations_full"] <= 500
+    assert SECTION_WORD_FLOORS["conclusion"] <= 300
+    # Total LLM-written floor sum (excludes deterministic Methods +
+    # References + What-This-Adds + Tables) should be < 6500 so the
+    # final paper lands ~9-10k including deterministic content.
+    total = sum(SECTION_WORD_FLOORS.values())
+    assert total < 6500, (
+        f"Fix #27 budget broken: floors sum to {total} (expected <6500)"
+    )
+
+
+def test_section_prompts_no_longer_demand_old_high_minimums() -> None:
+    """Fix #27: prompts switched from `HARD MINIMUM` upper-floor
+    language to `TARGET RANGE` to permit lean prose. Pin the
+    prompt-side budget alongside the code-side floor."""
+    from agent.paper_writer_prompts import (
+        BACKGROUND_SYSTEM_PROMPT, CONCLUSION_SYSTEM_PROMPT,
+        CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
+        DISCUSSION_SYSTEM_PROMPT, INTRODUCTION_SYSTEM_PROMPT,
+        LIMITATIONS_FULL_SYSTEM_PROMPT, RESULTS_SYSTEM_PROMPT,
+    )
+    for prompt in (
+        BACKGROUND_SYSTEM_PROMPT, CONCLUSION_SYSTEM_PROMPT,
+        CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
+        DISCUSSION_SYSTEM_PROMPT, INTRODUCTION_SYSTEM_PROMPT,
+        LIMITATIONS_FULL_SYSTEM_PROMPT, RESULTS_SYSTEM_PROMPT,
+    ):
+        # New target language present
+        assert "TARGET RANGE" in prompt or "Fix #27" in prompt

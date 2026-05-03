@@ -45,6 +45,9 @@ sys.path.insert(0, str(REPO_ROOT))
 from agent.llm_client import CallSpec, CostLedger  # noqa: E402
 from agent.paper_writer import render_full_paper  # noqa: E402
 from agent.paper_writer_claim_repair import repair_claim_strength  # noqa: E402
+from agent.paper_writer_deterministic import (  # noqa: E402
+    build_what_this_adds_section,
+)
 from agent.synthesis_schemas import (  # noqa: E402
     ReceiptSummary, SynthesisThesis, Tension, TensionMatrix,
 )
@@ -671,6 +674,19 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     claims_by_citation = _build_claims_by_citation(
         receipts, citation_registry,
     )
+
+    # Fix #25: append the deterministic 'What This Synthesis Adds'
+    # section AFTER Conclusion and BEFORE Tables. Templated from
+    # writer_receipts + writer_matrix + thesis so the originality
+    # claim is grounded in pipeline data (zero LLM cost). Position
+    # gives a PhD reviewer the explicit "beyond prior reviews"
+    # statement right after the conclusion they just read.
+    what_adds_md = build_what_this_adds_section(
+        writer_receipts, writer_matrix, thesis, topic="metformin",
+    )
+    if what_adds_md:
+        full_paper_md = full_paper_md.rstrip() + "\n\n" + what_adds_md
+
     tables_md = _tables.render_all_tables(
         writer_receipts, writer_matrix, claims_by_citation,
     )

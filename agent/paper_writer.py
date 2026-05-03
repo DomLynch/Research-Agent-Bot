@@ -74,15 +74,21 @@ PAPER_WRITER_VERSION = "paper-writer/2026-04-29-day10-16"
 # enforces by retrying under-budget sections up to N times. If a section
 # still falls short after retries, it lands as-is and the audit picks
 # up the shortfall via the WORD_COUNT_FLOOR check.
+#
+# Fix #27 (prose compression): floors lowered ~25% to target a 9-10k
+# total paper instead of 11-13k. Tables now carry the dense numerics
+# (Tables 1-5 from Fix #21), so prose can be leaner without losing
+# evidence weight. Per the reviewer: "claim → table evidence →
+# interpretation, not long prose → citation → more prose".
 SECTION_WORD_FLOORS: Mapping[str, int] = {
-    "abstract": 250,
-    "introduction": 1200,
-    "background": 1000,
-    "results": 2000,
-    "cross_domain_synthesis": 700,
-    "discussion": 1500,
-    "limitations_full": 600,
-    "conclusion": 300,
+    "abstract": 200,            # was 250
+    "introduction": 800,        # was 1200
+    "background": 700,          # was 1000
+    "results": 1500,            # was 2000 (Tables 2 + 5 carry numerics)
+    "cross_domain_synthesis": 500,   # was 700
+    "discussion": 1100,         # was 1500 (still room for ≥4 hedges)
+    "limitations_full": 450,    # was 600
+    "conclusion": 250,          # was 300
 }
 
 # Total full-paper floor — paper_writer's render_full_paper records

@@ -405,29 +405,110 @@ def _rob_domains(tier: str) -> tuple[str, ...]:
     return _ROB_DOMAINS_BY_TIER.get(tier, _ROB_DOMAINS_BY_TIER["unknown"])
 
 
+# Fix #26: which RoB framework applies per study tier. Reviewers
+# expect to see the named tool, not just generic "RoB". Cochrane
+# RoB-2 for RCTs, ROBINS-I for observational, SYRCLE's risk-of-bias
+# tool for animal studies, AMSTAR-2-style for systematic reviews.
+_ROB_TOOL_BY_TIER: dict[str, str] = {
+    "A1": "Cochrane RoB-2",
+    "A2": "Cochrane RoB-2",
+    "B1": "AMSTAR-2 (review)",
+    "B2": "ROBINS-I",
+    "C1": "SYRCLE (animal)",
+    "C2": "SYRCLE (in-vitro)",
+    "unknown": "n/a",
+}
+
+
+def _rob_tool(tier: str) -> str:
+    return _ROB_TOOL_BY_TIER.get(tier, _ROB_TOOL_BY_TIER["unknown"])
+
+
+# Fix #26: overall RoB roll-up from per-domain grades. Worst-of
+# semantics — any 'high' on a load-bearing domain (allocation,
+# blinding, attrition, outcome measurement) bumps to 'high overall'.
+# Otherwise plurality-vote across non-`n/a` domains.
+_LOAD_BEARING_INDICES = (0, 1, 2, 3)  # allocation, blinding, attrition, outcome
+
+
+def _overall_rob(domains: tuple[str, ...]) -> str:
+    """Worst-of overall risk of bias across per-domain grades."""
+    if not domains:
+        return "unclear"
+    load_bearing = [domains[i] for i in _LOAD_BEARING_INDICES
+                    if i < len(domains)]
+    if any(g == "high" for g in load_bearing):
+        return "high"
+    non_na = [g for g in domains if g != "n/a"]
+    if not non_na:
+        return "n/a"
+    counts: dict[str, int] = {}
+    for g in non_na:
+        counts[g] = counts.get(g, 0) + 1
+    return max(counts, key=lambda k: counts[k])
+
+
+# Fix #24: weight-in-synthesis label per receipt — what reviewers
+# actually want from a RoB table. Templated from
+# (tier × directness × overall_rob) so the trust spine is
+# preserved (deterministic, no LLM, no I/O).
+def _weight_in_synthesis(
+    tier: str, directness: str, overall_rob: str,
+) -> str:
+    """Synthesised qualitative weight for the study's contribution."""
+    t = (tier or "unknown").upper()
+    d = (directness or "").lower()
+    r = (overall_rob or "unclear").lower()
+    if r == "high":
+        return "**hypothesis-generating** (high RoB on load-bearing domain)"
+    if t == "A1" and d == "direct":
+        return "**load-bearing** (direct clinical RCT)"
+    if t == "A2" or (t == "A1" and d == "mechanistic"):
+        return "**mechanistic** (human RCT, biomarker endpoint)"
+    if t == "B1":
+        return "**supporting** (synthesis evidence)"
+    if t == "B2":
+        return "**contextual** (observational signal)"
+    if t in ("C1", "C2"):
+        return "**hypothesis-generating** (preclinical mechanism)"
+    return "**unweighted** (insufficient metadata)"
+
+
 def render_table_4_evidence_limitations(receipts: list) -> str:
     """Table 4 (supplemental) — per-study × per-domain RoB grades.
 
-    Cochrane RoB-2 / ROBINS-I terminology where applicable. Per-tier
-    defaults are pipeline-level (derived from evidence_tier metadata,
-    NOT extracted from source text) — caveat above the table makes
-    this explicit so a Cochrane-trained reviewer doesn't mistake it
-    for a per-paper assessment from the source PDFs."""
+    Cochrane RoB-2 / ROBINS-I / SYRCLE / AMSTAR-2 terminology where
+    applicable. Per-tier defaults are pipeline-level (derived from
+    evidence_tier metadata, NOT extracted from source text) — caveat
+    above the table makes this explicit so a Cochrane-trained reviewer
+    doesn't mistake it for a per-paper assessment from the source PDFs.
+
+    Fix #24 + #26: adds Tool column (which RoB framework applies),
+    Overall RoB column (worst-of roll-up across per-domain grades),
+    and Weight-in-Synthesis column (qualitative contribution label
+    derived from tier × directness × overall_rob). Together these
+    turn the table from a 7-domain grade dump into the actual
+    evidence-weighting table reviewers expect."""
     header_cells = (
-        ["Citation", "Tier"]
+        ["Citation", "Tier", "Tool"]
         + list(_ROB_DOMAIN_HEADERS)
-        + ["Effect direction notes"]
+        + ["Overall RoB", "Weight in synthesis", "Effect direction notes"]
     )
     sep_cells = ["---"] * len(header_cells)
     header = (
-        "## Table 4 (supplemental): Per-Domain Risk of Bias\n\n"
-        "*Per-domain grades are derived from each study's evidence "
-        "tier (A1/A2/B1/B2/C1/C2) — they capture design-level "
-        "limitations, NOT a per-paper Cochrane RoB-2 / ROBINS-I "
-        "assessment from the source text. Domains follow Cochrane "
-        "RoB-2 (RCTs) and ROBINS-I (observational) terminology where "
-        "applicable; `n/a` indicates the domain is not meaningful for "
-        "that design (e.g. blinding for an observational cohort).*\n\n"
+        "## Table 4 (supplemental): Per-Domain Risk of Bias + "
+        "Synthesis Weight\n\n"
+        "*Per-domain grades + the named RoB tool are derived from "
+        "each study's evidence tier (A1/A2/B1/B2/C1/C2) — they capture "
+        "design-level limitations, NOT a per-paper Cochrane RoB-2 / "
+        "ROBINS-I assessment from the source text. Domains follow "
+        "Cochrane RoB-2 (RCTs), ROBINS-I (observational), SYRCLE "
+        "(animal), and AMSTAR-2 (systematic review) terminology; "
+        "`n/a` indicates the domain is not meaningful for that design "
+        "(e.g. blinding for an observational cohort). The "
+        "**Weight in synthesis** column is the qualitative weighting "
+        "the synthesis applies to each receipt — derived from "
+        "tier × directness × overall RoB.*\n\n"
         + _row(*header_cells) + "\n"
         + _row(*sep_cells) + "\n"
     )
@@ -435,6 +516,9 @@ def render_table_4_evidence_limitations(receipts: list) -> str:
     for r in receipts:
         tier = getattr(r, "evidence_tier", "") or "unknown"
         domains = _rob_domains(tier)
+        overall = _overall_rob(domains)
+        directness = getattr(r, "directness", "") or ""
+        weight = _weight_in_synthesis(tier, directness, overall)
         direction = getattr(r, "effect_direction", None) or "unclear"
         if direction == "null":
             note = "primary endpoint did not reach significance"
@@ -445,8 +529,10 @@ def render_table_4_evidence_limitations(receipts: list) -> str:
         else:
             note = f"{direction} effect — see Tables 1/2"
         cells = (
-            [_safe(getattr(r, "receipt_id", None), "—"), tier]
-            + list(domains) + [note]
+            [_safe(getattr(r, "receipt_id", None), "—"),
+             tier, _rob_tool(tier)]
+            + list(domains)
+            + [overall, weight, note]
         )
         rows.append(_row(*cells))
     return header + "\n".join(rows) + "\n"
