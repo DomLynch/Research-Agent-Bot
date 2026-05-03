@@ -37,11 +37,13 @@ def test_formatting_patch_auto_applies() -> None:
     assert results[0].decision == "applied"
 
 
-def test_claim_patch_is_flagged_only_with_grok_rationale() -> None:
-    """Fix #7 reverts trust-Grok auto-apply. Claim patches require
-    semantic judgment that no deterministic verifier provides; they
-    are flag-only by contract. Grok's rationale is preserved in the
-    log so the human (or downstream adjudicator) can review."""
+def test_claim_patch_with_semantic_substitution_is_flagged() -> None:
+    """Fix #39: claim patches go through the smart-gate. Pure
+    semantic substitutions (same word count, no new numerics, but
+    entirely different content words) ARE flagged by the
+    strict-subset rule. 'extended lifespan' → 'reduced mortality'
+    is exactly this case — Grok would be inventing a new claim, not
+    deleting wrong content."""
     p = {
         "id": "P02", "patch_type": "claim", "severity": "P1",
         "location": "Discussion",
@@ -51,13 +53,39 @@ def test_claim_patch_is_flagged_only_with_grok_rationale() -> None:
     }
     paper = "## Discussion\n\nIn mice, metformin extended lifespan by 14%.\n"
     new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
-    # Paper UNCHANGED — patch flagged, not applied
+    # Paper UNCHANGED — patch flagged by strict-subset rule
     assert "metformin extended lifespan" in new_md
     assert "metformin reduced mortality" not in new_md
     assert results[0].decision == "flagged"
-    # Both the gate reason AND Grok's proposer rationale are logged
-    assert "claim patches are flag-only" in results[0].reason_for_decision
+    # Reason names the strict-subset failure
+    assert "semantic substitution" in results[0].reason_for_decision
+    # Grok's rationale preserved in the log
     assert "polarity correction" in results[0].reason_for_decision
+
+
+def test_claim_patch_pure_deletion_auto_applies() -> None:
+    """Fix #39: a CLAIM patch that is a pure deletion (AFTER words
+    are a strict subset of BEFORE words, no new content) auto-
+    applies. This is exactly Grok's 0.13 m/s 'remove improvement'
+    fix that was getting blocked under the old flag-everything
+    contract."""
+    p = {
+        "id": "P-DEL", "patch_type": "claim", "severity": "P1",
+        "location": "Results",
+        "before": "walk speed (0.13 m/s improvement)",
+        "after": "walk speed (0.13 m/s)",
+        "reason": "remove false 'improvement' qualifier",
+    }
+    paper = (
+        "## Results\n\n"
+        "MET-PREVENT showed walk speed (0.13 m/s improvement) "
+        "in this analysis.\n"
+    )
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    # Patch APPLIED — paper updated
+    assert results[0].decision == "applied"
+    assert "walk speed (0.13 m/s improvement)" not in new_md
+    assert "walk speed (0.13 m/s)" in new_md
 
 
 def test_structure_patch_is_flagged_only_with_grok_rationale() -> None:
@@ -74,12 +102,13 @@ def test_structure_patch_is_flagged_only_with_grok_rationale() -> None:
     assert "rename section" in results[0].reason_for_decision
 
 
-def test_numeric_patch_is_flagged_only_pending_phase_64_binding() -> None:
-    """Fix #7 reviewer-P1: numeric patches are flag-only because the
-    global-corpus check is too weak. A patch flipping `p=0.04 →
-    p=0.001` could pass if 0.001 exists anywhere in the corpus, even
-    bound to an unrelated claim. Phase 6.4 same-claim binding will
-    unlock auto-apply."""
+def test_numeric_patch_with_value_substitution_is_flagged() -> None:
+    """Fix #39: numeric patches go through the smart-gate. A value
+    substitution like `14%` → `32%` introduces a NEW numeric (32)
+    not present in BEFORE — flagged by the no-new-numerics rule.
+    The strict-subset rule + the simplification gate together
+    prevent Grok from silently flipping percentages even when the
+    new value happens to exist somewhere in the global corpus."""
     p = {
         "id": "P04", "patch_type": "numeric", "severity": "P2",
         "location": "Results",
@@ -94,13 +123,12 @@ def test_numeric_patch_is_flagged_only_pending_phase_64_binding() -> None:
         new_md, results = apply_patches.apply_patches(
             paper, [p], _manifest(),
         )
-    # Paper unchanged even though global verifier passed
+    # Paper unchanged — gated by Fix #39 smart-gate
     assert "by 14%" in new_md and "by 32%" not in new_md
     assert results[0].decision == "flagged"
-    # Verifier still runs; diagnostic logged
+    # Reason names the new-numeric failure
     reason = results[0].reason_for_decision.lower()
-    assert "numeric flag-only" in reason
-    assert "pass" in reason  # global verifier ran
+    assert "new numeric" in reason or "32" in reason
 
 
 def test_numeric_patch_with_untraceable_value_is_flagged_with_fail_diagnostic() -> None:
