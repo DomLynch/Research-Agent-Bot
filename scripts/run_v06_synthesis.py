@@ -883,16 +883,30 @@ async def _run_post_paper_pipeline(
         )
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
-    # Re-runs both stage-1 audit AND stage-2 consistency on the
-    # post-Grok paper, then computes a single honest verdict.
-    # Pre-fix the orchestrator only printed stage-1's verdict; stage-1
-    # Q3 paper-ID-leak check is too narrow (only Author_Year_TRIAL_
-    # keyword_ shape), so PMCID body leaks slipped past stage-1 while
-    # stage-2 caught them. Now `final_verdict = worst(stage1, stage2)`.
+    # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok
+    # paper, computes a single honest verdict. `final_verdict =
+    # worst(stage1, stage2)`.
+    #
+    # Fix #19: re-run the deterministic auto-fixer on the post-Grok
+    # paper BEFORE final audit. Stage-2's auto-fix (Fix #18b strips
+    # unsourced background sentences) ran in Stage 2 but Grok's
+    # patches in Stage 4 can re-introduce sentences with
+    # background numerics. A Stage-5 re-fix closes the loop so the
+    # final-audit verdict reflects post-cleanup state.
     print(
         "[pipeline] Stage 5/5 — final audit + unified verdict...",
         file=sys.stderr,
     )
+    pre_audit = _audit_v06.audit(paper_md)
+    pre_audit_md = _audit_v06._format_summary(pre_audit)
+    pre_issues = _consistency_audit.run_audit(
+        paper_md, manifest, pre_audit, pre_audit_md,
+    )
+    if any(i.auto_fixable for i in pre_issues):
+        paper_md, _refix_log = _consistency_fixer.apply_fixes(
+            paper_md, pre_issues,
+        )
+        paper_path.write_text(paper_md)
     audit_report = _audit_v06.audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)

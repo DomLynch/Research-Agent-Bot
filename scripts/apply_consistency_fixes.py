@@ -188,8 +188,11 @@ def _strip_unsourced_background_sentences_inplace(
 
 def _strip_unsourced_background_sentences(paper_md: str) -> str:
     """Remove sentences whose background-numeric→citation gate fails.
-    Sentence boundary: . ! ? followed by whitespace+capital, OR
-    paragraph break."""
+
+    Fix #19: ITERATIVE strip until stable (a single pass can leave
+    survivors when multiple background numerics share a sentence or
+    when paragraph-wise splitting differs from the audit's sentence
+    splitter). Caps at 5 iterations to avoid pathological loops."""
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     try:
         import background_literature as _bg
@@ -198,22 +201,35 @@ def _strip_unsourced_background_sentences(paper_md: str) -> str:
         return paper_md
     if not registry:
         return paper_md
+
     sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
-    out_parts: list[str] = []
-    # Operate paragraph-wise so paragraph structure isn't mangled.
-    for paragraph in paper_md.split("\n\n"):
-        sentences = sent_split.split(paragraph)
-        kept: list[str] = []
-        for sent in sentences:
-            drop = False
-            for entry in registry.values():
-                if entry.numeric in sent and entry.citation_token not in sent:
-                    drop = True
-                    break
-            if not drop:
-                kept.append(sent)
-        out_parts.append(" ".join(kept) if kept else "")
-    return "\n\n".join(p for p in out_parts if p.strip() or p == "")
+
+    def _one_pass(text: str) -> str:
+        out_parts: list[str] = []
+        for paragraph in text.split("\n\n"):
+            sentences = sent_split.split(paragraph)
+            kept: list[str] = []
+            for sent in sentences:
+                drop = False
+                for entry in registry.values():
+                    if (
+                        entry.numeric in sent
+                        and entry.citation_token not in sent
+                    ):
+                        drop = True
+                        break
+                if not drop:
+                    kept.append(sent)
+            out_parts.append(" ".join(kept) if kept else "")
+        return "\n\n".join(p for p in out_parts if p.strip() or p == "")
+
+    out = paper_md
+    for _ in range(5):
+        nxt = _one_pass(out)
+        if nxt == out:
+            break
+        out = nxt
+    return out
 
 
 def fix_audit_verdict(audit_md: str) -> tuple[str, list[dict]]:
