@@ -85,8 +85,13 @@ SECTION_WORD_FLOORS: Mapping[str, int] = {
     "introduction": 800,        # was 1200
     "background": 700,          # was 1000
     "results": 1500,            # was 2000 (Tables 2 + 5 carry numerics)
-    "cross_domain_synthesis": 500,   # was 700
-    "discussion": 1100,         # was 1500 (still room for ≥4 hedges)
+    # Fix #45: Restore analytical depth on the two intellectual-core
+    # sections after Fix #27 over-compressed them (310-word
+    # Discussion and 525-word Cross-Domain in the grok-smart run
+    # were desk-reject territory). Q11 + Q12 audit gates enforce
+    # 800-word floors at the audit layer too.
+    "cross_domain_synthesis": 800,   # was 500 (Fix #27) → restored
+    "discussion": 900,          # was 1100 → 900 (matches Q11 floor)
     "limitations_full": 450,    # was 600
     "conclusion": 250,          # was 300
 }

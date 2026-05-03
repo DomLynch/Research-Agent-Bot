@@ -150,44 +150,72 @@ def test_build_user_prompt_caller_filter_treats_accept_caveated_as_accepted() ->
 # ============ Fix #27 — prose-compression word floors ===============
 
 
-def test_section_word_floors_target_lean_prose() -> None:
-    """Fix #27: floors lowered ~25% so the writer aims for ~9-10k
-    total words (Tables 1-5 + What-This-Adds carry the structured
-    evidence). Pin the new floors so a future maintainer doesn't
-    silently drift back to the prior 11k+ targets."""
+def test_section_word_floors_protect_analytical_depth() -> None:
+    """Fix #45 (post Fix #27 review): the two intellectual-core
+    sections — Discussion and Cross-Domain Synthesis — must have
+    floors ≥800 so the writer cannot land at 310 / 525 words
+    (the grok-smart paper's desk-reject regression). Lean
+    Introduction/Background floors stay (Fix #27 was right for
+    those — they're not analytical sections)."""
     from agent.paper_writer import SECTION_WORD_FLOORS
     assert SECTION_WORD_FLOORS["abstract"] <= 250
     assert SECTION_WORD_FLOORS["introduction"] <= 1000
     assert SECTION_WORD_FLOORS["background"] <= 800
     assert SECTION_WORD_FLOORS["results"] <= 1700
-    assert SECTION_WORD_FLOORS["cross_domain_synthesis"] <= 600
-    assert SECTION_WORD_FLOORS["discussion"] <= 1200
+    # Analytical-core floors RESTORED after Fix #27 over-compression
+    assert SECTION_WORD_FLOORS["cross_domain_synthesis"] >= 800
+    assert SECTION_WORD_FLOORS["discussion"] >= 900
     assert SECTION_WORD_FLOORS["limitations_full"] <= 500
     assert SECTION_WORD_FLOORS["conclusion"] <= 300
-    # Total LLM-written floor sum (excludes deterministic Methods +
-    # References + What-This-Adds + Tables) should be < 6500 so the
-    # final paper lands ~9-10k including deterministic content.
-    total = sum(SECTION_WORD_FLOORS.values())
-    assert total < 6500, (
-        f"Fix #27 budget broken: floors sum to {total} (expected <6500)"
-    )
 
 
-def test_section_prompts_no_longer_demand_old_high_minimums() -> None:
-    """Fix #27: prompts switched from `HARD MINIMUM` upper-floor
-    language to `TARGET RANGE` to permit lean prose. Pin the
-    prompt-side budget alongside the code-side floor."""
+def test_section_prompts_use_explicit_targets() -> None:
+    """Mixed contract per Fix #27 + Fix #45:
+      - Lean sections (Intro/Background/Results/Limitations/Conclusion)
+        use `TARGET RANGE` (Fix #27 prose compression)
+      - Analytical sections (Discussion/CrossDomain) use
+        `HARD MINIMUM` (Fix #45 depth restoration)
+    Either explicit-target language is acceptable; what matters is
+    the prompt isn't silent on word count."""
     from agent.paper_writer_prompts import (
         BACKGROUND_SYSTEM_PROMPT, CONCLUSION_SYSTEM_PROMPT,
         CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
         DISCUSSION_SYSTEM_PROMPT, INTRODUCTION_SYSTEM_PROMPT,
         LIMITATIONS_FULL_SYSTEM_PROMPT, RESULTS_SYSTEM_PROMPT,
     )
-    for prompt in (
-        BACKGROUND_SYSTEM_PROMPT, CONCLUSION_SYSTEM_PROMPT,
-        CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
-        DISCUSSION_SYSTEM_PROMPT, INTRODUCTION_SYSTEM_PROMPT,
-        LIMITATIONS_FULL_SYSTEM_PROMPT, RESULTS_SYSTEM_PROMPT,
+    for name, prompt in (
+        ("BACKGROUND", BACKGROUND_SYSTEM_PROMPT),
+        ("CONCLUSION", CONCLUSION_SYSTEM_PROMPT),
+        ("CROSS_DOMAIN", CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT),
+        ("DISCUSSION", DISCUSSION_SYSTEM_PROMPT),
+        ("INTRODUCTION", INTRODUCTION_SYSTEM_PROMPT),
+        ("LIMITATIONS", LIMITATIONS_FULL_SYSTEM_PROMPT),
+        ("RESULTS", RESULTS_SYSTEM_PROMPT),
     ):
-        # New target language present
-        assert "TARGET RANGE" in prompt or "Fix #27" in prompt
+        assert (
+            "TARGET RANGE" in prompt
+            or "HARD MINIMUM" in prompt
+            or "Fix #27" in prompt
+            or "Fix #45" in prompt
+        ), f"{name} prompt missing explicit word-count target"
+
+
+def test_discussion_and_cross_domain_prompts_demand_900_word_floor() -> None:
+    """Fix #45: the analytical-core sections explicitly require ≥900
+    words to prevent the grok-smart 310/525 regression."""
+    from agent.paper_writer_prompts import (
+        CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
+        DISCUSSION_SYSTEM_PROMPT,
+    )
+    for name, prompt in (
+        ("DISCUSSION", DISCUSSION_SYSTEM_PROMPT),
+        ("CROSS_DOMAIN", CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT),
+    ):
+        assert "900" in prompt, (
+            f"{name} prompt no longer carries the 900-word floor "
+            "(Fix #45 regression)"
+        )
+        assert "adjudicate" in prompt.lower(), (
+            f"{name} prompt no longer requires per-paragraph "
+            "tension adjudication"
+        )

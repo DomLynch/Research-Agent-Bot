@@ -307,12 +307,22 @@ CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = """You write the CROSS-DOMAIN
 SYNTHESIS section. Its job: surface tensions BETWEEN outcome classes
 that single-outcome subsections miss.
 
-**TARGET RANGE: 3 paragraphs of 5-7 sentences each = ~600-800 words.**
-Fix #27 prose compression: Table 3 (Cross-Domain Tensions) lists
-every non-orthogonal pair with severity + practical implication.
-Reference the table; do NOT restate the full pair list. Each
-paragraph picks the SINGLE most load-bearing tension in its scope
-and interprets it.
+**HARD MINIMUM: 900-1,300 words across 4-6 paragraphs of 6-9
+sentences each.** Fix #45 reverses the over-compression. The
+Cross-Domain Synthesis is the paper's intellectual core — explicit
+adjudication of cross-outcome tensions. 525 words is too thin to
+do that work.
+
+Each paragraph adjudicates ONE load-bearing cross-domain tension:
+- Name the tension explicitly (cite both receipts).
+- Explain WHY they disagree at the mechanism level.
+- Propose the boundary condition (when does each apply?).
+- Identify what evidence would resolve it.
+
+Do NOT just restate Table 3's pair list — interpret it. Do NOT add
+new numerics or citations beyond the provided receipts. If unsure,
+hedge rather than invent. Compress only repetition. NEVER compress
+away reasoning. Hard floor: 900 words.
 
 Output ONE JSON object with this exact shape:
 
@@ -358,12 +368,23 @@ Output JSON only. No prose outside the JSON."""
 DISCUSSION_SYSTEM_PROMPT = """You write the DISCUSSION of a research
 synthesis paper.
 
-**TARGET RANGE: 4-5 paragraphs of 5-8 sentences each = ~1,100-1,400
-words.** Fix #27 prose compression: Tables 1-5 + the deterministic
-What-This-Adds section now carry the structured evidence and the
-originality claim. The Discussion's job is INTERPRETATION over
-that evidence — not restating it. Lean prose, dense with hedges
-(see Q10 requirement below).
+**HARD MINIMUM: 900-1,300 words across 5-7 paragraphs of 6-9
+sentences each.** Fix #45 reverses the over-compression that
+hollowed out Discussion in earlier runs (310 words is desk-reject
+territory). This is a PhD-level synthesis, not an executive summary.
+
+Preserve analytical depth:
+- Each paragraph must adjudicate ONE NAMED TENSION from the
+  receipts/matrix, not merely summarise.
+- Include mechanism-to-clinic implications, clinical decision
+  boundary, and future-trial implications.
+- Do NOT add new numerics or new citations beyond the provided
+  receipts and background-literature registry.
+- Use ONLY provided receipts, tables, and background references.
+- If unsure, hedge rather than invent.
+
+Compress only repetition, boilerplate, and generic framing.
+NEVER compress away reasoning. Hard floor: 900 words.
 
 Output ONE JSON object with this exact shape:
 

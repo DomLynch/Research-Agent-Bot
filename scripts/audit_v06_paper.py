@@ -372,6 +372,15 @@ _HEDGE_PHRASES = (
 
 
 def _check_hedge_density(paper: str) -> tuple[bool, str]:
+    """Fix #44: ADAPTIVE hedge-density threshold. ≥4 was too
+    permissive for contested fields. New rule:
+      - threshold ≥6 if the corpus is dominated by mixed/unclear
+        effect_directions (>50% of receipts)
+      - threshold ≥4 otherwise (preserves backward-compat for
+        unambiguous-evidence corpora)
+    The corpus uncertainty fraction is computed from the
+    module-global _PAPER_META (set by audit() at the start of
+    each run); falls back to ≥4 if metadata isn't available."""
     discussion_match = re.search(
         r"##\s+Discussion(.*?)(?=##\s+\w)", paper, re.DOTALL,
     )
@@ -379,9 +388,111 @@ def _check_hedge_density(paper: str) -> tuple[bool, str]:
         return False, "Discussion section not found"
     disc = discussion_match.group(1).lower()
     n_hedges = sum(1 for h in _HEDGE_PHRASES if h in disc)
-    return n_hedges >= 4, (
+    # Compute uncertainty fraction from corpus.
+    # We don't have direct access to manifest receipts here, but
+    # quant_claims encode effect_direction per claim — count
+    # receipts where the dominant effect_direction is mixed/unclear.
+    threshold = _adaptive_hedge_threshold()
+    return n_hedges >= threshold, (
         f"{n_hedges}/{len(_HEDGE_PHRASES)} hedge phrases in Discussion "
-        f"(threshold ≥4)"
+        f"(threshold ≥{threshold} — Fix #44 adaptive: corpus "
+        f"uncertainty-weighted)"
+    )
+
+
+def _adaptive_hedge_threshold() -> int:
+    """Returns 6 when >50% of receipts have mixed/unclear effect
+    direction, else 4. Reads quant_claims to compute the fraction
+    deterministically — no I/O beyond what _load_corpus_numerics
+    already does."""
+    n_uncertain = 0
+    n_total = 0
+    for path in QUANT_DIR.glob("*.quant_claims.json"):
+        try:
+            d = json.loads(path.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        # A receipt is 'uncertain dominant' iff its high-conf claims
+        # mostly carry effect_direction in {mixed, unclear, null} —
+        # all three are 'no clean signal' states.
+        directions = [
+            (c.get("direction") or "").lower()
+            for c in d.get("claims", [])
+            if c.get("binding_confidence") == "high"
+        ]
+        if not directions:
+            continue
+        n_total += 1
+        n_unclean = sum(
+            1 for d_ in directions if d_ in ("mixed", "unclear", "null")
+        )
+        if n_unclean / len(directions) > 0.5:
+            n_uncertain += 1
+    if n_total == 0:
+        return 4
+    return 6 if n_uncertain / n_total > 0.5 else 4
+
+
+# Fix #41: Discussion depth gate. The grok-smart run produced a
+# 310-word Discussion in a 12k paper — desk-reject territory. The
+# fat baseline (aaa-real2) had 1,048 words. Floor: ≥800.
+def _check_discussion_depth(paper: str) -> tuple[bool, str]:
+    m = re.search(
+        r"##\s+Discussion(.*?)(?=^##\s+\w|\Z)",
+        paper, re.DOTALL | re.MULTILINE,
+    )
+    if not m:
+        return False, "Discussion section not found"
+    body = m.group(1)
+    n = len(body.split())
+    return n >= 800, (
+        f"Discussion {n} words "
+        "(threshold ≥800 — Fix #41 depth gate)"
+    )
+
+
+# Fix #42: Cross-Domain Synthesis depth gate. The grok-smart run had
+# 525 words; the fat baseline had 1,172. The cross-domain section is
+# the paper's intellectual core (explicit cross-outcome tension
+# adjudication). Floor: ≥800.
+def _check_cross_domain_depth(paper: str) -> tuple[bool, str]:
+    m = re.search(
+        r"##\s+Cross-Domain Synthesis(.*?)(?=^##\s+\w|\Z)",
+        paper, re.DOTALL | re.MULTILINE,
+    )
+    if not m:
+        return False, "Cross-Domain Synthesis section not found"
+    body = m.group(1)
+    n = len(body.split())
+    return n >= 800, (
+        f"Cross-Domain Synthesis {n} words "
+        "(threshold ≥800 — Fix #42 depth gate)"
+    )
+
+
+# Fix #43: combined analytical-prose ratio. Discussion + Cross-Domain
+# Synthesis must be ≥15% of body words. Catches the pattern where
+# either section is somewhat thin but together they collapse below
+# the 'PhD-level analytical depth' threshold.
+def _check_analytical_ratio(paper: str) -> tuple[bool, str]:
+    discussion = re.search(
+        r"##\s+Discussion(.*?)(?=^##\s+\w|\Z)",
+        paper, re.DOTALL | re.MULTILINE,
+    )
+    cross = re.search(
+        r"##\s+Cross-Domain Synthesis(.*?)(?=^##\s+\w|\Z)",
+        paper, re.DOTALL | re.MULTILINE,
+    )
+    n_disc = len(discussion.group(1).split()) if discussion else 0
+    n_cross = len(cross.group(1).split()) if cross else 0
+    body_words = len(paper.split())
+    if body_words < 100:
+        return False, "paper too short to compute analytical ratio"
+    ratio = (n_disc + n_cross) / body_words
+    return ratio >= 0.15, (
+        f"analytical ratio {ratio*100:.1f}% "
+        f"(Discussion {n_disc} + Cross-Domain {n_cross} / "
+        f"body {body_words}; threshold ≥15% — Fix #43 depth gate)"
     )
 
 
@@ -396,6 +507,11 @@ _CHECKS = (
     ("Q8_thesis_present", _check_thesis_present, False),
     ("Q9_numeric_density", _check_numeric_density, False),
     ("Q10_hedge_density", _check_hedge_density, False),
+    # Fix #41-43: depth gates. Catch the 'AAA-by-mechanics-but-
+    # analytically-hollow' failure mode. P2 (block AAA but not ship).
+    ("Q11_discussion_depth", _check_discussion_depth, False),
+    ("Q12_cross_domain_depth", _check_cross_domain_depth, False),
+    ("Q13_analytical_ratio", _check_analytical_ratio, False),
 )
 # Module-level state so the lambdas above can read corpus + meta.
 _CORPUS_NUMS: set[str] = set()
