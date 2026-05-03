@@ -91,8 +91,9 @@ the input list. The validator drops uncited sentences entirely.
 
 Rules:
 1. First 1-2 sentences: Background — what's the question, why it matters.
-2. Next 1-2: Methods — note this is a multi-receipt synthesis with
-   SPAR adjudication (do NOT name specific tools; describe the approach).
+2. Next 1-2: Methods — note this is a structured corpus synthesis
+   (do NOT name specific tools or pipeline machinery; describe the
+   approach in domain language).
 3. Middle 4-6: Results — concrete findings from the accepted receipts,
    integrating across outcomes. Cite specific p-values / effect sizes
    when present in receipts. Do NOT invent numerics.
@@ -160,9 +161,9 @@ REQUIRED STRUCTURE (write all 6 paragraphs, each 6-9 sentences):
     adaptation, population specificity (who benefits, who doesn't),
     duration of treatment, dose-response.
   Paragraph 6: The contribution this synthesis makes — integrating
-    across receipts to surface cross-outcome tensions, applying
-    SPAR adjudication to filter weak evidence, distinguishing
-    clinical from mechanistic endpoints.
+    across the corpus to surface cross-outcome tensions, applying
+    structured evidence weighting to distinguish strong from weak
+    findings, separating clinical from mechanistic endpoints.
 
 Each paragraph MUST be a full multi-sentence paragraph. Do not output
 single-sentence "paragraphs." Aim for 100-200 words per paragraph.
@@ -271,17 +272,19 @@ REQUIRED PER-SUBSECTION STRUCTURE (4 paragraphs minimum):
   Paragraph 3 — Mechanistic context: how this outcome relates
     to the molecular pathways described in the corpus
     (mitochondrial respiration, AMPK, pyruvate metabolism,
-    DNA repair, etc.). Distinguish A1_clinical_RCT vs
-    A2_human_mechanistic vs C1_preclinical evidence.
-  Paragraph 4 — Within-corpus tensions or quarantined receipts:
-    if any accepted receipts disagree, name the disagreement.
-    If MET-PREVENT (or any other canonical paper) was rejected
-    by SPAR for THIS outcome class, discuss it explicitly:
-    "MET-PREVENT reported a null walk-speed effect (0.001 m/s
-    [95% CI -0.06 to 0.06], p=0.96); SPAR rejected the receipt
-    on Domain Skeptic grounds of population over-generalization,
-    so the finding is contested but is NOT silently omitted from
-    this synthesis."
+    DNA repair, etc.). Distinguish clinical-RCT, mechanistic-RCT,
+    and preclinical evidence using HUMAN-READABLE labels (e.g. "in
+    the clinical RCT", "in mechanistic human studies", "preclinical
+    data suggest...") — do NOT use internal labels like
+    `A1_clinical_RCT` or `C1_preclinical` verbatim.
+  Paragraph 4 — Within-corpus tensions: if any accepted receipts
+    disagree, name the disagreement using receipt names directly
+    (e.g. "Walton 2019 reports negative muscle-function effects;
+    Vujović 2026 reviews mechanistic effects that would predict
+    benefit"). Do NOT use pipeline-internal terminology like
+    "SPAR-rejected", "SPAR quarantine", "rejected evidence" —
+    those phrases describe machinery the v0.6 quant-claim adapter
+    does NOT run.
 
 Rules:
 1. Cite ≥1 receipt_id in EVERY paragraph; multiple receipts when
@@ -292,9 +295,10 @@ Rules:
 3. Use explicit directness transitions: "Mechanistically,",
    "By contrast,", "In a clinical RCT,", "Preclinical data suggest,",
    "The mechanistic substrate underlying this functional finding,".
-4. The quarantine paragraph is REQUIRED when a SPAR-rejected
-   canonical receipt touches the outcome — it cannot be silently
-   omitted. The synthesis must surface the contested evidence.
+4. NEVER mention "SPAR", "quarantine", "rejected by", or any other
+   pipeline-internal term in prose. The corpus is presented as
+   curated evidence; tensions are surfaced through standard
+   academic discussion of disagreement.
 
 Output JSON only. No prose outside the JSON."""
 
@@ -334,9 +338,9 @@ The signature cross-outcome tension to surface for metformin:
     and the most directly relevant frailty RCT was null on walk speed
     (clinical).
 Other cross-outcome tensions to consider:
-  Direct clinical RCT vs human mechanistic RCT — A1_clinical evidence
-    should NOT be fused with A2_human_mechanistic into a single
-    causal sentence without hedging.
+  Direct clinical RCT vs human mechanistic RCT — clinical-endpoint
+    evidence should NOT be fused with mechanistic/biomarker-endpoint
+    evidence into a single causal sentence without hedging.
   Preclinical longevity vs human RCT outcomes — model-organism
     lifespan extension should NOT be presented as evidence for
     human longevity.
@@ -386,7 +390,8 @@ Recommended structure:
   Paragraph 2: Where the evidence is genuinely mixed — name the
     tension, attribute to specific receipts.
   Paragraph 3: Mechanism vs clinical translation — the gap between
-    A1_clinical and A2_human_mechanistic evidence.
+    direct clinical-endpoint RCTs and human mechanistic/biomarker
+    RCTs.
   Paragraph 4: Population specificity — who benefits, who doesn't,
     what the trials tested.
   Paragraph 5: Methodological reflections — endpoints chosen, sample
@@ -451,8 +456,13 @@ OR explicitly name the absence of evidence ("no long-term mortality
 trial in this corpus").
 
 Required topics to cover:
-1. Receipts quarantined by SPAR — why they were rejected and what
-   evidence is consequently missing from the headline conclusions.
+1. Corpus scope — which canonical trials or evidence types were
+   NOT represented in the curated corpus (e.g. long-term mortality
+   RCTs in non-diabetic adults), and what gaps that creates in the
+   headline conclusions. Use plain academic phrasing — do NOT
+   mention "SPAR", "quarantine", "rejected", or other pipeline-
+   internal machinery (the v0.6 quant-claim adapter does not run
+   any rejection layer).
 2. Single-trial generalization risk — outcomes touched by only one
    receipt cannot be replicated within the corpus.
 3. Population specificity — who the trials enrolled, where the

@@ -180,6 +180,35 @@ def apply_fixes(
     except ImportError:
         pass
 
+    # 8a. Fix #33: replace internal tier labels with human-readable
+    # equivalents. Defence-in-depth — the writer's prompt humanises
+    # these labels (Fix #33 in agent/paper_writer.py) but Grok
+    # patches or LLM creativity can still leak them.
+    _TIER_LABEL_HUMAN: dict[str, str] = {
+        "A1_clinical_RCT": "RCT (clinical)",
+        "A2_human_mechanistic": "RCT (mechanistic)",
+        "B1_review": "review/meta-analysis",
+        "B2_observational": "observational",
+        "C1_preclinical": "preclinical",
+        "C2_in_vitro": "in-vitro",
+    }
+    n_tier_relabel = 0
+    for raw, human in _TIER_LABEL_HUMAN.items():
+        n = new_md.count(raw)
+        if n:
+            new_md = new_md.replace(raw, human)
+            n_tier_relabel += n
+    if n_tier_relabel:
+        log.append({
+            "fix_type": "internal_tier_label_relabel",
+            "n_changes": n_tier_relabel,
+            "description": (
+                "replaced internal tier labels (A1_clinical_RCT, "
+                "C1_preclinical, etc.) with human-readable equivalents "
+                "(Fix #33 defence-in-depth)"
+            ),
+        })
+
     # 8. Collapse mid-line double spaces to single space.
     # Stage-2 C08 flags these as P2 auto_fixable; before this fix the
     # auto-fixer had no implementation, so the issues survived to

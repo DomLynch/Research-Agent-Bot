@@ -153,6 +153,37 @@ def derive_paper_tier(summary: ReceiptSummary) -> str:
 # per-file LOC cap.
 
 
+_PAPER_TIER_HUMAN_LABEL: dict[str, str] = {
+    # Internal-label forms (from derive_paper_tier when classifier fires)
+    "A1_clinical_RCT":
+        "RCT (clinical/functional endpoint)",
+    "A2_human_mechanistic":
+        "RCT (human, mechanistic/biomarker endpoint)",
+    "B1_review":
+        "systematic review or meta-analysis",
+    "C1_preclinical":
+        "preclinical (animal or in-vitro)",
+    "mixed":
+        "mixed cluster (multiple study types)",
+    # Raw tier-code forms (when derive_paper_tier doesn't subclassify
+    # — e.g. tier='C1' input, or 'B2' which has no internal-label form)
+    "A1": "RCT (clinical/functional endpoint)",
+    "A2": "RCT (human, mechanistic/biomarker endpoint)",
+    "B1": "systematic review or meta-analysis",
+    "B2": "observational cohort",
+    "C1": "preclinical (animal or in-vitro)",
+    "C2": "preclinical (in-vitro / cell-only)",
+}
+
+
+def _humanize_paper_tier(internal_label: str) -> str:
+    """Fix #33: map the internal `A1_clinical_RCT` / `C1_preclinical`
+    style label to a reader-facing study-design phrase. MiMo was
+    copy-pasting the internal token verbatim into prose; the human-
+    readable form reads naturally if MiMo includes it."""
+    return _PAPER_TIER_HUMAN_LABEL.get(internal_label, internal_label)
+
+
 def _build_user_prompt(
     receipts: Sequence[ReceiptSummary],
     rejected: Sequence[ReceiptSummary],
@@ -182,7 +213,14 @@ def _build_user_prompt(
     _ = rejected  # Day 10.17 Fix A — intentionally unused, see docstring.
     lines = [f"Topic: {topic}", "", "ACCEPTED RECEIPTS:"]
     for r in receipts:
-        paper_tier = derive_paper_tier(r)
+        paper_tier_raw = derive_paper_tier(r)
+        # Fix #33: write a HUMAN-READABLE study-design label into the
+        # prompt context instead of the internal `A1_clinical_RCT`
+        # / `C1_preclinical` / `A2_human_mechanistic` / `B1_review`
+        # token. MiMo was copy-pasting the internal token verbatim
+        # into prose ("the C1_preclinical evidence from..."), which
+        # leaks pipeline machinery into the published paper.
+        paper_tier = _humanize_paper_tier(paper_tier_raw)
         # Day 10.17a: empty population_summary now means tier-gated-out
         # (mechanistic / indirect receipt) per agent/synthesis.py. Use
         # an explicit sentinel so the LLM hedges honestly instead of
@@ -192,7 +230,7 @@ def _build_user_prompt(
         )
         lines.append(
             f"  - id: {r.receipt_id}\n"
-            f"    paper_tier: {paper_tier}\n"
+            f"    study_design: {paper_tier}\n"
             f"    outcome_class: {r.outcome_class}\n"
             f"    directness: {r.directness}\n"
             f"    effect_direction: {r.effect_direction}\n"

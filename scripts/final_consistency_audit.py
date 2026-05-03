@@ -401,6 +401,7 @@ def run_audit(
     issues.extend(_check_manifest_paper_consistency(paper_md, manifest))
     issues.extend(_check_stale_methods(paper_md, manifest))
     issues.extend(_check_stale_spar_in_prose(paper_md, manifest))  # Fix #29
+    issues.extend(_check_internal_tier_labels_in_prose(paper_md))  # Fix #33
     issues.extend(_check_duplicate_references(paper_md))
     issues.extend(_check_malformed_headers(paper_md))
     issues.extend(_check_repair_artifacts(paper_md))
@@ -409,6 +410,46 @@ def run_audit(
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
     issues.extend(_check_background_lit_unsourced(paper_md))  # Fix #16
     issues.extend(_check_surface_render_lint(paper_md))  # Fix #22
+    return issues
+
+
+# Fix #33: pipeline-internal tier labels that must NOT appear in
+# rendered prose. The writer's prompt now humanises them (Fix #33
+# in agent/paper_writer.py) but a defence-in-depth Stage-2 check
+# catches any that slip through (e.g. via Grok patches).
+_INTERNAL_TIER_LABEL_RE = re.compile(
+    r"\b(?:A1_clinical_RCT|A2_human_mechanistic|"
+    r"B1_review|B2_observational|"
+    r"C1_preclinical|C2_in_vitro)\b"
+)
+
+
+def _check_internal_tier_labels_in_prose(
+    paper: str,
+) -> list[ConsistencyIssue]:
+    """Fix #33: paper-tier internal labels (A1_clinical_RCT, etc.)
+    must NOT appear in rendered prose. They're machine artefacts
+    from the writer's receipt-context block; reviewer flagged them
+    as obvious 'AI article' tells. Severity P2 (cosmetic but
+    public-review-blocking), auto-fixable (we replace with a
+    human-readable equivalent)."""
+    issues: list[ConsistencyIssue] = []
+    for m in _INTERNAL_TIER_LABEL_RE.finditer(paper):
+        label = m.group(0)
+        snippet = paper[max(0, m.start() - 40):m.end() + 40]
+        issues.append(ConsistencyIssue(
+            id=f"C12-tier-leak-{m.start()}",
+            severity="P2",
+            issue_type="internal_tier_label_in_prose",
+            auto_fixable=True,
+            evidence=snippet.strip()[:200],
+            suggested_fix=(
+                f"Internal tier label {label!r} leaked into prose; "
+                "replace with human-readable study-design phrase "
+                "(e.g. 'RCT (clinical/functional endpoint)' for "
+                "A1_clinical_RCT)."
+            ),
+        ))
     return issues
 
 

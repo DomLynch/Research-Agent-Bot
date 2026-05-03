@@ -507,19 +507,29 @@ def _append_references_block(
             author_year = registry[r.receipt_id].body_citation
         else:
             author_year = _author_year_for_receipt(r)
-        bits = [f"- **{author_year}.**"]
-        if r.source_title:
-            bits.append(f"_{r.source_title}._")
+        # Fix #35: smart-join — venue + year glue with single comma,
+        # no `" ".join` artefact that produced "Lancet , 2025 ." with
+        # a stray space before the comma. Title is also de-hyphenated
+        # to fix PDF-parsed soft-breaks like "Anti- Aging".
+        clean_title = (
+            _clean_reference_title(r.source_title)
+            if r.source_title else None
+        )
+        parts: list[str] = [f"- **{author_year}.**"]
+        if clean_title:
+            parts.append(f"_{clean_title}._")
+        venue_year_bits: list[str] = []
         if r.source_venue:
-            bits.append(f"{r.source_venue}")
+            venue_year_bits.append(r.source_venue.strip().rstrip(",."))
         if r.source_year:
-            bits.append(f", {r.source_year}")
+            venue_year_bits.append(str(r.source_year))
+        if venue_year_bits:
+            parts.append(", ".join(venue_year_bits) + ".")
         if r.source_doi:
-            bits.append(f". DOI: {r.source_doi}")
+            parts.append(f"DOI: {r.source_doi}.")
         if r.source_pmid:
-            bits.append(f". PMID: {r.source_pmid}")
-        bits.append(".")
-        lines.append(" ".join(bits))
+            parts.append(f"PMID: {r.source_pmid}.")
+        lines.append(" ".join(parts))
     lines.append("")
 
     # Fix #30: background-literature references used in prose
@@ -535,17 +545,33 @@ def _append_references_block(
             "",
         ])
         for entry in used_bglit:
-            bits = [f"- **{entry.citation_token}.**"]
-            if entry.canonical_reference:
-                bits.append(f"_{entry.canonical_reference}_")
+            ref_clean = (
+                _clean_reference_title(entry.canonical_reference)
+                if entry.canonical_reference else ""
+            )
+            bg_parts = [f"- **{entry.citation_token}.**"]
+            if ref_clean:
+                bg_parts.append(f"_{ref_clean}._")
             if entry.doi:
-                bits.append(f"DOI: {entry.doi}")
+                bg_parts.append(f"DOI: {entry.doi}.")
             if entry.pmid:
-                bits.append(f"PMID: {entry.pmid}")
-            lines.append(" ".join(bits))
+                bg_parts.append(f"PMID: {entry.pmid}.")
+            lines.append(" ".join(bg_parts))
         lines.append("")
 
     return paper_md.rstrip() + "\n".join(lines)
+
+
+def _clean_reference_title(title: str) -> str:
+    """Fix #35: collapse soft-broken hyphens in PDF-parsed titles.
+    'Anti- Aging' → 'Anti-Aging'. Pattern: word-char + hyphen + space
+    + word-char (the space is the artefact). Also collapses internal
+    runs of double-spaces to single space and strips leading/trailing
+    whitespace + trailing periods that would duplicate the closing
+    period the renderer adds."""
+    cleaned = re.sub(r"(\w)-\s+(\w)", r"\1-\2", title)
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    return cleaned.strip().rstrip(".")
 
 
 def _used_background_lit_entries(paper_md: str) -> list:
