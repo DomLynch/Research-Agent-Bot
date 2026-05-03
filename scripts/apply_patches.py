@@ -138,29 +138,65 @@ def _verify_numeric_patch(
     )
 
 
+# Internal-handle shapes that MUST NOT appear as body citations.
+# Fix #11: pre-fix `_verify_citation_patch` only validated the
+# Author-Year regex. A patch whose `after` was a long PMC handle
+# (`PMC12978362_molecular_...`) had zero Author-Year matches → vacuous
+# "no novel citations" pass → patch auto-applied → 96 PMCID body
+# leaks in the latest E2E. Now we explicitly reject internal handles.
+_INTERNAL_HANDLE_PATTERNS: tuple[re.Pattern[str], ...] = (
+    # Long PMC slug like "PMC12978362_molecular_mechanisms_..."
+    re.compile(r"PMC\d{6,9}_[a-zA-Z_]{10,}"),
+    # Author_YYYY_TRAIL_KEYWORDS internal id form
+    re.compile(r"[A-Z][a-zA-Z]+_\d{4}_[A-Za-z_]+_"),
+    # Bare PMCID without year decoration in body context
+    re.compile(r"\bPMC\d{6,9}\b(?!\s*\d{4})"),
+)
+
+
 def _verify_citation_patch(
     patch: dict, receipt_ids: set[str],
 ) -> tuple[bool, str]:
-    """A citation patch is valid iff every Author-Year shaped token
-    in `after` exists in the receipt set.
+    """A citation patch is valid iff:
+      a) `after` does NOT introduce any internal-handle shape
+         (PMC long slug, Author_YYYY_TRAIL, bare PMCID without year)
+      b) every novel Author-Year shaped token in `after` exists in
+         the receipt set
 
-    Reviewer-fix HIGH: pre-fix regex `[A-Z][a-zA-Z]+(?:\\s+\\d{4})?`
-    matched any capitalized word ("Section", "Discussion") and
-    flagged them as 'novel citations'. Now we require BOTH
-    Author-and-Year (no optional year) — only true citation shapes
-    qualify. False-positive on prose proper nouns is eliminated.
+    Reviewer-fix history:
+      - HIGH 1: regex requires Author+Year (no false fire on
+        Title-Case prose like "Section", "Discussion").
+      - HIGH 2 (Fix #11): also reject internal-handle introduction
+        — pre-fix Grok could ship `PMC12978362_molecular...` as a
+        citation patch and the verifier passed it as "no novel
+        citations" because the long form has no Author-Year.
     """
+    after = patch.get("after", "") or ""
+    before = patch.get("before", "") or ""
+
+    # Check (a): internal-handle introduction. A handle in `after`
+    # that wasn't in `before` is a regression. Check ONLY novel
+    # introductions so a patch that already had handles in both
+    # before/after isn't blocked here.
+    for pat in _INTERNAL_HANDLE_PATTERNS:
+        after_handles = set(pat.findall(after))
+        before_handles = set(pat.findall(before))
+        novel_handles = after_handles - before_handles
+        if novel_handles:
+            sample = sorted(novel_handles)[:3]
+            return False, (
+                f"introduces internal-handle shape(s) in body: {sample}"
+            )
+
+    # Check (b): Author-Year citations trace to receipts.
     cite_re = re.compile(
         r"\b([A-Z][a-zA-Z]+(?:\s+et\s+al\.?)?\s+\d{4})\b"
     )
-    found_in_after = {m.group(1) for m in cite_re.finditer(patch["after"])}
-    found_in_before = {m.group(1) for m in cite_re.finditer(patch["before"])}
+    found_in_after = {m.group(1) for m in cite_re.finditer(after)}
+    found_in_before = {m.group(1) for m in cite_re.finditer(before)}
     novel_cites = found_in_after - found_in_before
     if not novel_cites:
         return True, "no novel citations"
-    # A receipt set entry of "Walton 2019" should match a found cite
-    # "Walton 2019" or "Walton et al. 2019" — both shapes accepted by
-    # the loader. Strip "et al." for the lookup.
     unknown = []
     for c in novel_cites:
         normalized = re.sub(r"\s+et\s+al\.?\s+", " ", c)

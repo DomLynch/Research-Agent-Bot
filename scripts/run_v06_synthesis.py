@@ -732,6 +732,7 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     # this whole chain runs from one invocation. =====
     final_paper_md = await _run_post_paper_pipeline(
         paper_path=paper_path, manifest=manifest, out_dir=out_dir,
+        citation_registry=citation_registry,
     )
     word_count = len(final_paper_md.split())
 
@@ -749,6 +750,7 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
 
 async def _run_post_paper_pipeline(
     *, paper_path: Path, manifest: dict, out_dir: Path,
+    citation_registry: dict | None = None,
 ) -> str:
     """Layer 1 deterministic audit + auto-fix → final-layer LLM review
     (Grok 4.3 → Mistral fallback) → auto-apply patches → final audit.
@@ -796,8 +798,14 @@ async def _run_post_paper_pipeline(
         file=sys.stderr,
     )
     try:
+        # Fix #11: pass citation_registry so Grok sees clean Author-Year
+        # tokens in the "allowed body citations" list, not internal
+        # receipt_id handles. Pre-fix Grok was reverting clean citations
+        # to long PMC handles because the prompt asked for "receipt-key
+        # consistency" — exactly the bug the third reviewer warned about.
         patches, _raw, model_used, cost = await _final_reviewer.review_with_grok(
             paper_md, manifest, audit_report,
+            citation_registry=citation_registry,
         )
     except RuntimeError as exc:
         # No OPENROUTER_API_KEY OR both Grok and Mistral failed. Log

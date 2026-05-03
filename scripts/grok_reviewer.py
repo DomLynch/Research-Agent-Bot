@@ -72,9 +72,16 @@ class TypedPatch:
 
 def _build_grok_prompt(
     paper_md: str, manifest: dict, audit: dict,
+    citation_registry: dict | None = None,
 ) -> tuple[str, str]:
     """System + user messages for Grok. The system prompt enumerates
-    the patch type contract so Grok produces correctly-typed output."""
+    the patch type contract so Grok produces correctly-typed output.
+
+    Fix #11: when citation_registry is provided, the user prompt
+    shows Grok the ALLOWED BODY CITATIONS (Author-Year tokens) instead
+    of internal receipt_id handles. Pre-fix Grok was reverting clean
+    Author-Year citations back to long PMC handles because the prompt
+    said 'use ONLY these for citations' next to the receipt_ids."""
     system = (
         "You are a careful research-synthesis reviewer. Your job is to "
         "find issues in the paper and propose TYPED patches with "
@@ -87,8 +94,13 @@ def _build_grok_prompt(
         "p-value, CI, or sample size. Will be VERIFIED against the "
         "v0.6 quant_claims corpus before applying. If the new "
         "number isn't in the corpus, the patch is rejected.\n"
-        "  citation   — any change to a paper citation (Author Year, "
-        "DOI, etc.). Verified against the receipt list.\n"
+        "  citation   — any change to a paper citation. Body citations "
+        "MUST be human-readable Author-Year tokens (e.g. \"Walton 2019\", "
+        "\"Smith et al. 2025\"). NEVER use receipt_id strings or "
+        "internal handles like `PMC12978362_...` or "
+        "`Author_YYYY_TRIAL_...` in body prose — those are internal "
+        "identifiers, not citations. PMC IDs and DOIs belong only in "
+        "the References section.\n"
         "  claim      — any change to a substantive claim (effect "
         "direction, magnitude, mechanism). FLAG ONLY — will not be "
         "auto-applied; surfaces for human review.\n"
@@ -119,19 +131,41 @@ def _build_grok_prompt(
     n_receipts = len(manifest.get("receipts", []))
     audit_p1 = audit.get("p1_pass", False)
     audit_score = audit.get("score_out_of_10", 0)
+    # Fix #11: derive (body_citation, outcome, effect, tier) per receipt.
+    # When citation_registry present, body_citation is the clean
+    # Author-Year token (Walton 2019, Shadyab 2025). When absent (legacy
+    # callers), fall back to receipt_id but warn Grok in the heading.
+    receipts = manifest.get("receipts", [])
+    if citation_registry:
+        receipt_lines = []
+        for r in receipts:
+            rid = r.get("receipt_id", "?")
+            entry = citation_registry.get(rid)
+            body_cite = entry.body_citation if entry else rid
+            receipt_lines.append(
+                f"- {body_cite}: outcome={r.get('outcome_class', '?')} "
+                f"effect={r.get('effect_direction', '?')} "
+                f"tier={r.get('evidence_tier', '?')}"
+            )
+        receipt_header = "## Allowed body citations (Author-Year tokens)"
+    else:
+        receipt_lines = [
+            f"- {r.get('receipt_id', '?')}: outcome={r.get('outcome_class', '?')} "
+            f"effect={r.get('effect_direction', '?')} tier={r.get('evidence_tier', '?')}"
+            for r in receipts
+        ]
+        receipt_header = "## Receipt list (use ONLY these for citations)"
+
     user = (
         f"# Paper to review ({len(paper_md.split())} words)\n\n"
         f"## Pipeline metadata\n"
         f"- Extractor version: {manifest.get('extractor_version', 'unknown')}\n"
         f"- Writer path: {manifest.get('writer_path', 'unknown')}\n"
         f"- Receipts: {n_receipts}\n"
-        f"- Local audit: score={audit_score}/10, P1={'PASS' if audit_p1 else 'FAIL'}\n\n"
-        f"## Receipt list (use ONLY these for citations)\n"
-        + "\n".join(
-            f"- {r.get('receipt_id', '?')}: outcome={r.get('outcome_class', '?')} "
-            f"effect={r.get('effect_direction', '?')} tier={r.get('evidence_tier', '?')}"
-            for r in manifest.get("receipts", [])
-        )
+        f"- Local audit: score={audit_score}/10, "
+        f"P1={'PASS' if audit_p1 else 'FAIL'}\n\n"
+        f"{receipt_header}\n"
+        + "\n".join(receipt_lines)
         + "\n\n## Paper full text\n\n```markdown\n"
         + paper_md
         + "\n```\n\nNow produce the JSON patch list."
@@ -250,6 +284,7 @@ async def review_with_grok(
     api_key: str | None = None,
     base_url: str = "https://openrouter.ai/api/v1",
     client: Any | None = None,
+    citation_registry: dict | None = None,
 ) -> tuple[list[TypedPatch], dict, str, float]:
     """Run the final-layer review. Returns (patches, raw_response,
     model_used, cost_usd). Grok 4.3 is the primary; Mistral Small
@@ -259,7 +294,9 @@ async def review_with_grok(
         raise RuntimeError(
             "OPENROUTER_API_KEY not set; cannot run final-layer review"
         )
-    system, user = _build_grok_prompt(paper_md, manifest, audit)
+    system, user = _build_grok_prompt(
+        paper_md, manifest, audit, citation_registry=citation_registry,
+    )
     import httpx
     own_client = client is None
     c = client or httpx.AsyncClient(timeout=300.0)

@@ -86,6 +86,68 @@ def test_both_failures_raises() -> None:
         assert "both" in str(exc).lower()
 
 
+def test_prompt_uses_body_citations_when_registry_provided() -> None:
+    """Fix #11: when citation_registry is passed, the user prompt
+    surfaces clean Author-Year tokens to Grok, NOT internal receipt_id
+    handles. Pre-fix Grok was reverting clean citations because the
+    prompt said 'use ONLY these for citations' next to receipt_ids."""
+    from dataclasses import dataclass
+
+    @dataclass
+    class _Entry:
+        body_citation: str
+        reference_id: str = "R01"
+        receipt_id: str = ""
+
+    manifest = {
+        "receipts": [
+            {
+                "receipt_id": "PMC12978362_molecular_mechanisms_of_metformin",
+                "outcome_class": "longevity",
+                "effect_direction": "positive",
+                "evidence_tier": "C1",
+            },
+        ],
+    }
+    registry = {
+        "PMC12978362_molecular_mechanisms_of_metformin":
+            _Entry(body_citation="Vujović 2026"),
+    }
+    _system, user = grok_reviewer._build_grok_prompt(
+        "## Body\n\nText.", manifest, {"p1_pass": True, "score_out_of_10": 9},
+        citation_registry=registry,
+    )
+    # Clean Author-Year token shown
+    assert "Vujović 2026" in user
+    # Long internal handle NOT shown in the citation list
+    assert "PMC12978362_molecular_mechanisms_of_metformin" not in user
+    # Header reflects new framing
+    assert "Allowed body citations" in user
+
+
+def test_prompt_falls_back_to_receipt_ids_without_registry() -> None:
+    """Backward compat: callers that don't pass citation_registry get
+    the legacy receipt_id-based prompt (just to keep old call sites
+    working; new orchestrator always passes the registry)."""
+    manifest = {
+        "receipts": [
+            {
+                "receipt_id": "Walton_2019_MASTERS_metformin_blunts",
+                "outcome_class": "muscle_function",
+                "effect_direction": "negative",
+                "evidence_tier": "A1",
+            },
+        ],
+    }
+    _system, user = grok_reviewer._build_grok_prompt(
+        "## Body\n\nText.", manifest, {"p1_pass": True, "score_out_of_10": 9},
+        citation_registry=None,
+    )
+    # Falls back to receipt_id form
+    assert "Walton_2019_MASTERS_metformin_blunts" in user
+    assert "Receipt list" in user
+
+
 def test_cost_estimate_is_real_not_zero() -> None:
     """Pre-fix cost was a hardcoded 0.0 placeholder. Verify the cost
     function actually computes something for known models."""

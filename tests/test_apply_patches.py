@@ -334,6 +334,81 @@ def test_proposer_reason_is_clamped_to_500_chars() -> None:
     assert len(results[0].reason_for_decision) < 1000
 
 
+def test_citation_patch_introducing_long_pmc_handle_is_flagged() -> None:
+    """Fix #11: pre-fix Grok could ship a citation patch whose `after`
+    was `PMC12978362_molecular_mechanisms_of_metformin` and the
+    verifier passed it as 'no novel citations' (no Author-Year regex
+    match). The patch then auto-applied → 96 PMCID body leaks. Now
+    the verifier explicitly rejects internal-handle shapes."""
+    p = {
+        "id": "PX8", "patch_type": "citation", "severity": "P2",
+        "location": "Abstract",
+        "before": "_Cited: `Walton 2019`_",
+        "after": (
+            "_Cited: `PMC12978362_molecular_mechanisms_of_metformin`_"
+        ),
+        "reason": "Grok wrongly enforcing receipt-key consistency",
+    }
+    paper = "## Abstract\n\n_Cited: `Walton 2019`_\n"
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "flagged"
+    assert "internal-handle" in results[0].reason_for_decision
+
+
+def test_citation_patch_introducing_author_year_trail_is_flagged() -> None:
+    """Same protection for Author_YYYY_TRAIL_KEYWORDS shapes."""
+    p = {
+        "id": "PX9", "patch_type": "citation", "severity": "P2",
+        "location": "Abstract",
+        "before": "_Cited: `Walton 2019`_",
+        "after": "_Cited: `Walton_2019_MASTERS_metformin_blunts_resistance`_",
+        "reason": "Grok wants long-form receipt id",
+    }
+    paper = "## Abstract\n\n_Cited: `Walton 2019`_\n"
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "flagged"
+    assert "internal-handle" in results[0].reason_for_decision
+
+
+def test_citation_patch_with_clean_author_year_still_applies() -> None:
+    """Sanity: clean Author-Year-to-Author-Year patches still apply."""
+    p = {
+        "id": "PX10", "patch_type": "citation", "severity": "P2",
+        "location": "Discussion",
+        "before": "(Walton 2019)", "after": "(Konopka 2019)",
+        "reason": "wrong attribution",
+    }
+    paper = "## Discussion\n\nResults are interesting (Walton 2019).\n"
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+
+
+def test_citation_patch_preserving_existing_handles_does_not_double_block() -> None:
+    """If both before AND after contain the same internal handle
+    (legitimate edit elsewhere), the verifier shouldn't flag the
+    handle as 'novel' — only NOVEL handles in after are blocked."""
+    # Construct a pathological case where existing prose already has
+    # a handle and the patch leaves it in place but edits other text.
+    p = {
+        "id": "PX11", "patch_type": "citation", "severity": "P2",
+        "location": "Abstract",
+        "before": "_Cited: `PMC12978362_molecular_mechanisms_of_metformin` and Walton 2019_",
+        "after":  "_Cited: `PMC12978362_molecular_mechanisms_of_metformin` and Konopka 2019_",
+        "reason": "fix attribution; legacy handle stays for now",
+    }
+    paper = (
+        "## Abstract\n\n"
+        "_Cited: `PMC12978362_molecular_mechanisms_of_metformin` and "
+        "Walton 2019_\n"
+    )
+    _, results = apply_patches.apply_patches(paper, [p], _manifest())
+    # Patch should APPLY (handle was already there, not introduced)
+    assert results[0].decision == "applied", (
+        f"Existing handle in both before/after must not block apply: "
+        f"{results[0].reason_for_decision}"
+    )
+
+
 def test_numeric_patch_with_empty_proposer_reason_logs_only_gate_reason() -> None:
     """Empty proposer_reason → reason_for_decision contains ONLY the
     gate explanation (no trailing 'Grok rationale: ' fragment)."""
