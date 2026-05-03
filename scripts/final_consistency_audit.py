@@ -404,6 +404,42 @@ def run_audit(
     issues.extend(_check_broken_paper_id_citations(paper_md))
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
     issues.extend(_check_background_lit_unsourced(paper_md))  # Fix #16
+    issues.extend(_check_surface_render_lint(paper_md))  # Fix #22
+    return issues
+
+
+def _check_surface_render_lint(paper_md: str) -> list[ConsistencyIssue]:
+    """C10 (Fix #22): catch the surface-render artifacts that the
+    Stage-2 audit historically missed but a human reader notices —
+    orphan `_Cited:` blocks, consecutive cite blocks, abstract
+    citation-only paragraphs, sentence-end author-year fragments.
+
+    Severity: P2 (orphan/consecutive/abstract are auto-fixable;
+    sentence-end author-year is flag-only — needs Layer-2 stylistic
+    judgement to rewrite cleanly)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import surface_render_lint as _srl
+    except ImportError:
+        return []
+    findings = _srl.run_surface_lint(paper_md)
+    issues: list[ConsistencyIssue] = []
+    for f in findings:
+        # Auto-fixable: orphan + consecutive + abstract-cite-only all
+        # collapse to "strip the cite block" (apply_consistency_fixes
+        # calls strip_orphan_citation_blocks). Sentence-end author-
+        # year is flag-only.
+        is_auto = f.kind in (
+            "orphan_cite", "consecutive_cites", "abstract_cite_only",
+        )
+        issues.append(ConsistencyIssue(
+            id=f"C10-{f.kind}-L{f.line_no}",
+            severity="P2",
+            issue_type=f"surface_render_{f.kind}",
+            auto_fixable=is_auto,
+            evidence=f.evidence,
+            suggested_fix=f.suggested_fix,
+        ))
     return issues
 
 

@@ -151,6 +151,29 @@ def apply_fixes(
     if bg_strip_count > 0:
         new_md = _strip_unsourced_background_sentences(new_md)
 
+    # 7. Fix #22: strip orphan / consecutive `_Cited:` blocks.
+    # Stage-2 surface-render-lint flags these as P2 with
+    # auto_fixable=True. Strip is safe by construction (no anchor
+    # sentence was lost — the surrounding prose either survives or
+    # the cite was already credited via the preceding cite block).
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import surface_render_lint as _srl
+        new_md, n_orphan_stripped = _srl.strip_orphan_citation_blocks(
+            new_md,
+        )
+        if n_orphan_stripped > 0:
+            log.append({
+                "fix_type": "surface_orphan_cite_strip",
+                "n_changes": n_orphan_stripped,
+                "description": (
+                    "stripped orphan / consecutive `_Cited:` blocks "
+                    "that had no anchor sentence (Fix #22 surface lint)"
+                ),
+            })
+    except ImportError:
+        pass
+
     # Strip residual blank-line runs created by deletions
     # (collapse 3+ newlines to a single paragraph break: \n\n).
     new_md = re.sub(r"\n{3,}", "\n\n", new_md)
