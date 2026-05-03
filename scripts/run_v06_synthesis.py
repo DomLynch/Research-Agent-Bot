@@ -64,6 +64,7 @@ import citation_registry as _citations  # noqa: E402
 import evidence_taxonomy as _taxonomy  # noqa: E402
 import effect_direction as _direction  # noqa: E402
 import table_renderer as _tables  # noqa: E402
+import background_literature as _bglit  # noqa: E402
 
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
@@ -618,12 +619,19 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
         "(target 5-15k words, multi-section, tiered validation)...",
         file=sys.stderr,
     )
+    # Fix #18a: load background-literature registry once and pass
+    # entries to the writer so MiMo sees the canonical citation tokens
+    # it can reference (e.g. 'Studenski 2011' for the 0.8 m/s frailty
+    # cutoff). Without this, MiMo only sees the system-prompt rule
+    # (Fix #17) and uses background numerics without their citations.
+    bglit_entries = list(_bglit.load_registry().values())
     import httpx
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(
             writer_receipts, writer_matrix, thesis,
             topic="metformin", submission_id=submission_id,
             chain=chain, client=client, ledger=ledger,
+            background_lit_entries=bglit_entries,
         )
     print(
         "render_full_paper done.",

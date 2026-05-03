@@ -120,11 +120,100 @@ def apply_fixes(
             ),
         })
 
-    # 5. Strip residual blank-line runs created by deletions
+    # 5. Fix #18c: citation-order auto-fix.
+    # `Konopka 2019 et al.` → `Konopka et al. 2019`. Common LLM
+    # generation artifact. Safe deterministic regex sub.
+    cite_order_re = re.compile(
+        r"\b([A-Z][a-zA-Z]+)\s+(\d{4})\s+et\s+al\.?",
+    )
+    cite_order_count = len(cite_order_re.findall(new_md))
+    if cite_order_count:
+        new_md = cite_order_re.sub(r"\1 et al. \2", new_md)
+        log.append({
+            "fix_type": "broken_citation_order",
+            "n_changes": cite_order_count,
+            "description": (
+                "rewrote 'Author YYYY et al.' → 'Author et al. YYYY' "
+                "(canonical scholarly citation order)"
+            ),
+        })
+
+    # 6. Fix #18b: strip sentences containing background-literature
+    # numerics WITHOUT their canonical citation token in the same
+    # sentence. Stage-2 audit flags these as P1; the writer should
+    # have included the citation per its prompt rule (Fix #17). We
+    # remove the offending sentence rather than ship an unsourced
+    # numeric — the surrounding paragraph still reads coherently
+    # because the preceding/following sentences carry the argument.
+    bg_strip_count = _strip_unsourced_background_sentences_inplace(
+        new_md, log,
+    )
+    if bg_strip_count > 0:
+        new_md = _strip_unsourced_background_sentences(new_md)
+
+    # Strip residual blank-line runs created by deletions
     # (collapse 3+ newlines to a single paragraph break: \n\n).
     new_md = re.sub(r"\n{3,}", "\n\n", new_md)
 
     return new_md, log
+
+
+def _strip_unsourced_background_sentences_inplace(
+    paper_md: str, log: list[dict],
+) -> int:
+    """Count + log unsourced background numerics; returns count.
+    Separate from the actual strip so the log accurately reports
+    BEFORE-state count even after the strip. Caller does the strip
+    via _strip_unsourced_background_sentences()."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import background_literature as _bg
+        registry = _bg.load_registry()
+        unsourced = _bg.find_unsourced_background_uses(paper_md, registry)
+    except (ImportError, FileNotFoundError, ValueError):
+        return 0
+    if not unsourced:
+        return 0
+    log.append({
+        "fix_type": "background_lit_unsourced_strip",
+        "n_changes": len(unsourced),
+        "description": (
+            "stripped sentences containing background-lit numerics "
+            "without their required canonical citation in the same "
+            "sentence"
+        ),
+    })
+    return len(unsourced)
+
+
+def _strip_unsourced_background_sentences(paper_md: str) -> str:
+    """Remove sentences whose background-numeric→citation gate fails.
+    Sentence boundary: . ! ? followed by whitespace+capital, OR
+    paragraph break."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import background_literature as _bg
+        registry = _bg.load_registry()
+    except (ImportError, FileNotFoundError, ValueError):
+        return paper_md
+    if not registry:
+        return paper_md
+    sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
+    out_parts: list[str] = []
+    # Operate paragraph-wise so paragraph structure isn't mangled.
+    for paragraph in paper_md.split("\n\n"):
+        sentences = sent_split.split(paragraph)
+        kept: list[str] = []
+        for sent in sentences:
+            drop = False
+            for entry in registry.values():
+                if entry.numeric in sent and entry.citation_token not in sent:
+                    drop = True
+                    break
+            if not drop:
+                kept.append(sent)
+        out_parts.append(" ".join(kept) if kept else "")
+    return "\n\n".join(p for p in out_parts if p.strip() or p == "")
 
 
 def fix_audit_verdict(audit_md: str) -> tuple[str, list[dict]]:

@@ -388,6 +388,92 @@ def test_background_lit_sourced_passes_stage2() -> None:
     assert bg_issues == []
 
 
+# ----- Fix #18b: auto-fix strips unsourced background sentences --------
+
+
+def test_apply_fixes_strips_unsourced_background_sentence() -> None:
+    """Stage-2 P1 issue → auto-fix removes the offending sentence so
+    the paper is shippable. The surrounding paragraph remains."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "Mortality reduction is observed across cohorts. "
+        "Walk-speed declines below 0.8 m/s indicate frailty risk. "
+        "These findings support the hypothesis.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    # Offending sentence (no Studenski 2011) is removed
+    assert "0.8 m/s" not in out
+    # Surrounding sentences preserved
+    assert "Mortality reduction is observed" in out
+    assert "support the hypothesis" in out
+    # Log records the fix
+    bg_log = [e for e in log
+              if e["fix_type"] == "background_lit_unsourced_strip"]
+    assert len(bg_log) == 1
+
+
+def test_apply_fixes_preserves_sourced_background_sentence() -> None:
+    """When the citation IS present, the sentence stays."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "Walk-speed declines below 0.8 m/s (Studenski 2011) "
+        "indicate frailty risk.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "0.8 m/s" in out
+    assert "Studenski 2011" in out
+    bg_log = [e for e in log
+              if e["fix_type"] == "background_lit_unsourced_strip"]
+    assert bg_log == []
+
+
+# ----- Fix #18c: citation-order auto-fix -------------------------------
+
+
+def test_apply_fixes_rewrites_broken_citation_order() -> None:
+    """`Konopka 2019 et al.` → `Konopka et al. 2019` (canonical order)."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "As Konopka 2019 et al. demonstrated, the effect was robust. "
+        "Walton 2019 et al. confirmed similar findings.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "Konopka et al. 2019" in out
+    assert "Walton et al. 2019" in out
+    assert "Konopka 2019 et al." not in out
+    cite_log = [e for e in log if e["fix_type"] == "broken_citation_order"]
+    assert len(cite_log) == 1
+    assert cite_log[0]["n_changes"] == 2
+
+
+def test_apply_fixes_idempotent_for_citation_order() -> None:
+    """Already-correct order is unchanged."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "As Konopka et al. 2019 demonstrated, the effect was robust.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.strip() == paper.strip()
+    cite_log = [e for e in log if e["fix_type"] == "broken_citation_order"]
+    assert cite_log == []
+
+
 # Reviewer-fix LOW: fix_audit_verdict idempotency
 def test_fix_audit_verdict_is_idempotent() -> None:
     """Running fix_audit_verdict twice on the already-renamed text

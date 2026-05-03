@@ -166,3 +166,36 @@ def test_seeded_registry_loads_canonical_thresholds() -> None:
     by_numeric = {e.numeric: e for e in reg.values()}
     assert "0.8 m/s" in by_numeric
     assert by_numeric["0.8 m/s"].citation_token.startswith("Studenski")
+
+
+# ----- Fix #18a: writer-side block formatter ---------------------------
+
+
+def test_build_background_lit_block_emits_required_fields() -> None:
+    """Block must surface numeric + citation_token + use rule for
+    every entry — that's what MiMo needs to write 'X (Author YYYY)'."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from agent.paper_writer import _build_background_lit_block
+    entries = [
+        bg.BackgroundLitEntry(
+            key="x", numeric="0.8 m/s",
+            citation_token="Studenski 2011",
+            canonical_reference="Studenski et al. JAMA 2011.",
+            context="frailty walk-speed cutoff",
+        ),
+    ]
+    block = _build_background_lit_block(entries)
+    assert "ALLOWED BACKGROUND CITATIONS" in block
+    assert "0.8 m/s" in block
+    assert "Studenski 2011" in block
+    assert "frailty walk-speed cutoff" in block
+    # Use rule must mention 'same sentence' so MiMo doesn't get clever
+    assert "SAME sentence" in block or "same sentence" in block
+
+
+def test_build_background_lit_block_empty_when_no_entries() -> None:
+    """No entries → empty block (caller falls back to corpus-only)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from agent.paper_writer import _build_background_lit_block
+    assert _build_background_lit_block(None) == ""
+    assert _build_background_lit_block([]) == ""

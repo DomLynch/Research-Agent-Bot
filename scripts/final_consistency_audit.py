@@ -428,7 +428,10 @@ def _check_background_lit_unsourced(paper_md: str) -> list[ConsistencyIssue]:
             id=f"C09-bglit-unsourced-{numeric}",
             severity="P1",  # P1: unsourced background = trust-spine breach
             issue_type="background_lit_unsourced",
-            auto_fixable=False,
+            # Fix #18b: auto_fixable=True — apply_consistency_fixes
+            # strips the offending sentence rather than ship-block
+            # forever on a writer-prompt miss.
+            auto_fixable=True,
             evidence=snippet,
             suggested_fix=(
                 f"Background-literature value {numeric!r} used without "

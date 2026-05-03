@@ -193,6 +193,33 @@ async def _call_llm_section(
     return None
 
 
+def _build_background_lit_block(entries: Sequence[Any] | None) -> str:
+    """Fix #18a: format the background_literature registry entries as
+    a writer-facing block. Each entry exposes its numeric, the
+    REQUIRED citation token, and a one-line use rule. Empty when
+    no entries provided (caller falls back to corpus-only writing)."""
+    if not entries:
+        return ""
+    lines = [
+        "",
+        "ALLOWED BACKGROUND CITATIONS (canonical clinical thresholds):",
+        "These are pre-vetted background-context numerics. You MAY use",
+        "any of these IF AND ONLY IF you include the corresponding",
+        "citation_token in the SAME sentence as the numeric. If you",
+        "use the numeric without the citation_token, the audit gates",
+        "WILL strip the sentence.",
+        "",
+    ]
+    for e in entries:
+        lines.append(
+            f"  - numeric: {e.numeric!r}\n"
+            f"    citation_token: {e.citation_token!r} "
+            f"(use exactly this string in the same sentence)\n"
+            f"    context: {e.context}"
+        )
+    return "\n".join(lines)
+
+
 def _build_user_prompt(
     receipts: Sequence[ReceiptSummary],
     rejected: Sequence[ReceiptSummary],
@@ -200,6 +227,7 @@ def _build_user_prompt(
     thesis: SynthesisThesis,
     *,
     topic: str,
+    background_lit_entries: Sequence[Any] | None = None,
 ) -> str:
     """Common LLM-prompt context block — accepted receipts + tensions +
     thesis. Each LLM section gets the same context; the system prompt
@@ -255,6 +283,9 @@ def _build_user_prompt(
         "PICKED THESIS (the integrating sentence from the brief):",
         f"  {thesis.text}",
     ])
+    bg_block = _build_background_lit_block(background_lit_entries)
+    if bg_block:
+        lines.append(bg_block)
     return "\n".join(lines)
 
 
@@ -474,18 +505,26 @@ async def render_full_paper(
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
     seed: int | None = None,
+    background_lit_entries: Sequence[Any] | None = None,
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
     """Render the full paper from accepted-receipt corpus + brief.
 
     Returns (body_md, sections_tuple) — the full markdown plus the
     per-section anchors so an audit pass can scan citation coverage.
-    """
+
+    Fix #18a: optional background_lit_entries (from
+    scripts/background_literature.load_registry()) get formatted into
+    a writer-facing 'ALLOWED BACKGROUND CITATIONS' block in the user
+    prompt. The writer is told to use any of these only with the
+    canonical citation_token in the SAME sentence — Stage-2 audit
+    enforces."""
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",
     )]
     user = _build_user_prompt(
         accepted, rejected, matrix, thesis, topic=topic,
+        background_lit_entries=background_lit_entries,
     )
     title_md = (
         f"# Researka Synthesis: {topic.title()} — full paper\n\n"
