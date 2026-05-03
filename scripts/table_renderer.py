@@ -321,61 +321,78 @@ def _aggregate_net_direction(receipts: list) -> str:
     return "unclear"
 
 
-# Risk-of-bias / confounding assessment heuristics. Per-tier defaults
-# the reviewer would expect a PhD-grade evidence-synthesis paper to
-# include — derived deterministically from evidence_tier so prose
-# doesn't need to invent assessments.
-_TIER_RISK_OF_BIAS: dict[str, str] = {
-    "A1": "low — randomization protects against confounding",
-    "A2": "low — randomization; mechanistic endpoint may not reflect "
-          "clinical effect",
-    "B1": "varies — depends on included studies' tier mix",
-    "B2": "high — confounding by indication, healthy-user bias possible",
-    "C1": "moderate — preclinical extrapolation to humans uncertain",
-    "C2": "moderate — review-of-mechanism, no primary data",
-    "unknown": "unknown — metadata insufficient to grade",
+# Fix #14: per-domain risk-of-bias grading (Cochrane RoB-2 inspired
+# for RCTs; ROBINS-I-style for observational; preclinical-rigor
+# proxies for animal studies). Each domain gets `low | moderate |
+# high | unclear`. Per-tier defaults derived from study-design
+# fundamentals — pipeline-level (not per-paper) but multi-domain so
+# a reviewer can see WHICH dimensions are weak rather than one
+# opaque "tier proxy" cell. The leading caveat above Table 3
+# remains: this is metadata-derived, not text-extracted from the
+# source PDFs.
+
+# Domain → grade. Each tier gets a tuple matching the column order:
+# (Allocation, Blinding, Attrition, Outcome measurement, Reporting,
+# Confounding control, Generalizability).
+_ROB_DOMAINS_BY_TIER: dict[str, tuple[str, ...]] = {
+    "A1": ("low", "low", "moderate", "low", "low",
+           "low", "moderate"),
+    "A2": ("low", "moderate", "moderate", "moderate", "low",
+           "low", "high"),
+    "B1": ("unclear", "unclear", "unclear", "unclear", "moderate",
+           "moderate", "moderate"),
+    "B2": ("n/a", "n/a", "moderate", "moderate", "moderate",
+           "high", "moderate"),
+    "C1": ("low", "n/a", "low", "moderate", "moderate",
+           "n/a", "high"),
+    "C2": ("n/a", "n/a", "n/a", "n/a", "moderate",
+           "n/a", "high"),
+    "unknown": ("unclear",) * 7,
 }
-_TIER_GENERALIZABILITY: dict[str, str] = {
-    "A1": "trial population only; external validity needs replication",
-    "A2": "trial population only; mechanistic findings may not generalize",
-    "B1": "depends on included studies",
-    "B2": "human population observed; selection effects possible",
-    "C1": "model organism only; human relevance requires translation",
-    "C2": "no primary population — generalizability not applicable",
-    "unknown": "unknown",
-}
+_ROB_DOMAIN_HEADERS: tuple[str, ...] = (
+    "Allocation", "Blinding", "Attrition",
+    "Outcome measurement", "Reporting",
+    "Confounding control", "Generalizability",
+)
+
+
+def _rob_domains(tier: str) -> tuple[str, ...]:
+    return _ROB_DOMAINS_BY_TIER.get(tier, _ROB_DOMAINS_BY_TIER["unknown"])
 
 
 def render_table_3_evidence_limitations(receipts: list) -> str:
-    """Table 3 — one row per study; risk-of-bias, confounding,
-    generalizability assessments derived deterministically from
-    evidence_tier.
+    """Table 3 — one row per study with per-domain RoB grades.
 
-    Reviewer-fix P2: the column is labelled `Risk of bias (tier
-    proxy)` and a caveat above the table makes the pipeline-level
-    limitation explicit — this is a tier-derived heuristic, NOT a
-    per-domain Cochrane RoB-2 grading."""
+    Fix #14: replaced the single 'Risk of bias (tier proxy)' column
+    with seven Cochrane RoB-2 / ROBINS-I-inspired domain columns.
+    Per-domain grades give a reviewer specific dimensions to scrutinize
+    rather than one opaque verdict. Still pipeline-level (derived from
+    evidence_tier metadata, not extracted from source PDFs) — caveat
+    text makes this explicit so a Cochrane-trained reviewer doesn't
+    mistake it for a per-paper assessment."""
+    header_cells = (
+        ["Citation", "Tier"]
+        + list(_ROB_DOMAIN_HEADERS)
+        + ["Effect direction notes"]
+    )
+    sep_cells = ["---"] * len(header_cells)
     header = (
-        "## Table 3: Evidence Limitations\n\n"
-        "*Risk-of-bias values are tier-derived heuristics, NOT a "
-        "per-domain Cochrane RoB-2 assessment. For tier B1 (systematic "
-        "reviews) the assessment depends on the inner studies' tier "
-        "mix, which is not represented in this pipeline.*\n\n"
-        + _row(
-            "Citation", "Tier", "Risk of bias (tier proxy)",
-            "Generalizability", "Effect direction notes",
-        )
-        + "\n"
-        + _row("---", "---", "---", "---", "---")
-        + "\n"
+        "## Table 3: Evidence Limitations (Per-Domain RoB)\n\n"
+        "*Per-domain grades are derived from each study's evidence "
+        "tier (A1/A2/B1/B2/C1/C2) — they capture design-level "
+        "limitations, NOT a per-paper Cochrane RoB-2 / ROBINS-I "
+        "assessment from the source text. Domains follow Cochrane "
+        "RoB-2 (RCTs) and ROBINS-I (observational) terminology where "
+        "applicable; `n/a` indicates the domain is not meaningful for "
+        "that design (e.g. blinding for an observational cohort).*\n\n"
+        + _row(*header_cells) + "\n"
+        + _row(*sep_cells) + "\n"
     )
     rows: list[str] = []
     for r in receipts:
         tier = getattr(r, "evidence_tier", "") or "unknown"
-        rob = _TIER_RISK_OF_BIAS.get(tier, "unknown")
-        gen = _TIER_GENERALIZABILITY.get(tier, "unknown")
+        domains = _rob_domains(tier)
         direction = getattr(r, "effect_direction", None) or "unclear"
-        # Direction-specific note
         if direction == "null":
             note = "primary endpoint did not reach significance"
         elif direction == "mixed":
@@ -384,10 +401,11 @@ def render_table_3_evidence_limitations(receipts: list) -> str:
             note = "signed claims without significance signal"
         else:
             note = f"{direction} effect — see Tables 1/2"
-        rows.append(_row(
-            _safe(getattr(r, "receipt_id", None), "—"),
-            tier, rob, gen, note,
-        ))
+        cells = (
+            [_safe(getattr(r, "receipt_id", None), "—"), tier]
+            + list(domains) + [note]
+        )
+        rows.append(_row(*cells))
     return header + "\n".join(rows) + "\n"
 
 

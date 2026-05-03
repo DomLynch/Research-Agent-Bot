@@ -80,17 +80,25 @@ def test_table_2_counts_direct_vs_mechanistic() -> None:
     assert cells[3] == "1"  # mechanistic
 
 
-def test_table_3_assigns_risk_of_bias_per_tier() -> None:
-    """A1 → 'low'; B2 → 'high (confounding)'; C1 → 'moderate'."""
+def test_table_3_assigns_per_domain_grades_by_tier() -> None:
+    """Fix #14: per-domain RoB. A1 → mostly low; B2 → high confounding
+    + n/a blinding; C1 → low allocation, n/a blinding/confounding."""
     receipts = [
         _FakeReceipt(receipt_id="A 2020", evidence_tier="A1"),
         _FakeReceipt(receipt_id="B 2021", evidence_tier="B2"),
         _FakeReceipt(receipt_id="C 2022", evidence_tier="C1"),
     ]
     md = tr.render_table_3_evidence_limitations(receipts)
-    assert "low" in md
-    assert "high" in md
-    assert "moderate" in md
+    # A1 RCT: low allocation + low blinding
+    a_line = [ln for ln in md.split("\n") if "A 2020" in ln][0]
+    assert "low" in a_line
+    # B2 cohort: n/a blinding (not meaningful); high confounding
+    b_line = [ln for ln in md.split("\n") if "B 2021" in ln][0]
+    assert "n/a" in b_line
+    assert "high" in b_line
+    # C1 preclinical: low allocation, n/a confounding control
+    c_line = [ln for ln in md.split("\n") if "C 2022" in ln][0]
+    assert "n/a" in c_line
 
 
 def test_table_3_includes_direction_specific_note() -> None:
@@ -339,14 +347,57 @@ def test_table_2_uses_predominant_direction_label() -> None:
     assert "Predominant direction" in md
 
 
-def test_table_3_includes_tier_proxy_caveat() -> None:
-    """Reviewer-fix P2: column labelled 'Risk of bias (tier proxy)'
-    + caveat above the table acknowledges this is NOT a Cochrane
-    RoB-2 assessment."""
+def test_table_3_includes_per_domain_caveat() -> None:
+    """Fix #14: caveat above Table 3 acknowledges per-domain grades
+    are tier-derived, NOT extracted from source PDFs."""
     receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
     md = tr.render_table_3_evidence_limitations(receipts)
-    assert "tier proxy" in md.lower()
     assert "Cochrane" in md or "rob-2" in md.lower()
+    assert "ROBINS-I" in md  # observational equivalent named
+
+
+def test_table_3_has_seven_rob_domain_columns() -> None:
+    """Fix #14: Table 3 header has 7 RoB domains + Citation + Tier +
+    Effect direction notes = 10 columns total."""
+    receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
+    md = tr.render_table_3_evidence_limitations(receipts)
+    for domain in (
+        "Allocation", "Blinding", "Attrition",
+        "Outcome measurement", "Reporting",
+        "Confounding control", "Generalizability",
+    ):
+        assert domain in md, f"missing column: {domain}"
+
+
+def test_rob_domains_helper_returns_7_grades() -> None:
+    """The internal _rob_domains helper returns exactly 7 grades per
+    tier (matches the column count)."""
+    for tier in ("A1", "A2", "B1", "B2", "C1", "C2", "unknown"):
+        domains = tr._rob_domains(tier)
+        assert len(domains) == 7, f"tier {tier} has {len(domains)} grades"
+
+
+def test_b2_observational_has_na_for_blinding() -> None:
+    """Discrim: blinding domain not meaningful for observational
+    cohorts → 'n/a', not a fake 'low/high' grade."""
+    receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="B2")]
+    md = tr.render_table_3_evidence_limitations(receipts)
+    line = [ln for ln in md.split("\n") if "X 2020" in ln][0]
+    cells = [c.strip() for c in line.split("|") if c.strip()]
+    # Layout: Citation | Tier | Allocation | Blinding | Attrition |
+    #         OutcomeMeasure | Reporting | Confounding | Generalizability | note
+    # Blinding is index 3
+    assert cells[3] == "n/a"
+
+
+def test_a1_rct_has_low_allocation_and_blinding() -> None:
+    """A1 RCT: randomization + blinding are typically rigorous."""
+    receipts = [_FakeReceipt(receipt_id="W 2019", evidence_tier="A1")]
+    md = tr.render_table_3_evidence_limitations(receipts)
+    line = [ln for ln in md.split("\n") if "W 2019" in ln][0]
+    cells = [c.strip() for c in line.split("|") if c.strip()]
+    assert cells[2] == "low"  # Allocation
+    assert cells[3] == "low"  # Blinding
 
 
 def test_render_all_tables_includes_pointer_sentence() -> None:
