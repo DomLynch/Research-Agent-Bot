@@ -218,12 +218,21 @@ def render_table_1_included_studies(receipts: list) -> str:
     for r in receipts:
         pop_raw = getattr(r, "population_summary", None) or "—"
         n_str, pop_label = _split_population_n(pop_raw)
+        # Fix #21 follow-up: Q9 numeric-density check requires the
+        # literal `n=NN` form (regex `\b[nN]\s*=\s*\d+`). Bare
+        # numeric "120" doesn't match. Render `n=120` so the
+        # corpus-traced sample size counts toward Q9.
+        n_cell = (
+            f"n={n_str}" if n_str not in ("—", "n/a")
+            and n_str[:1].isdigit()
+            else n_str
+        )
         tier = _safe(getattr(r, "evidence_tier", None), "—")
         rows.append(_row(
             _safe(getattr(r, "receipt_id", None), "—"),
             _design_from_tier(tier),
             tier,
-            n_str,
+            n_cell,
             pop_label,
             _safe(getattr(r, "outcome_class", None), "—"),
             _safe(getattr(r, "effect_direction", None), "—"),

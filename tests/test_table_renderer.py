@@ -36,13 +36,29 @@ def test_table_1_renders_one_row_per_receipt() -> None:
 
 
 def test_table_1_extracts_n_from_population_summary() -> None:
-    """n=120 in population_summary → 120 in N column."""
+    """n=120 in population_summary → `n=120` in N column.
+    Fix #21 follow-up: render with `n=` prefix so Q9 numeric-density
+    check (regex `\\b[nN]\\s*=\\s*\\d+`) counts it. Bare `120` would
+    leave per-study sample sizes uncounted."""
     receipts = [_FakeReceipt(
         receipt_id="X 2020",
         population_summary="older adults, n=120",
     )]
     md = tr.render_table_1_included_studies(receipts)
-    assert "120" in md
+    assert "n=120" in md
+
+
+def test_table_1_n_column_omits_prefix_for_dash() -> None:
+    """When N is unknown (`—`), do NOT render `n=—` — that's both
+    ugly and would fool Q9 with a non-digit. Stays as `—`."""
+    receipts = [_FakeReceipt(
+        receipt_id="Y 2021",
+        population_summary=None,  # → ('—', '—')
+    )]
+    md = tr.render_table_1_included_studies(receipts)
+    assert "n=—" not in md
+    # Bare dash still appears (in N column)
+    assert "—" in md
 
 
 def test_table_2_one_row_per_study_when_no_p_values() -> None:
