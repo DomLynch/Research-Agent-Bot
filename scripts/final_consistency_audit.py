@@ -402,6 +402,122 @@ def run_audit(
     issues.extend(_check_repair_artifacts(paper_md))
     issues.extend(_check_audit_verdict_gate(audit, audit_md_text))
     issues.extend(_check_broken_paper_id_citations(paper_md))
+    issues.extend(_check_surface_polish(paper_md))  # Fix #13
+    return issues
+
+
+# ----- C08: surface polish (Fix #13) -----------------------------------
+# Catches reviewer-flagged "PhD polish" defects: malformed words,
+# duplicated phrases, double spaces, broken citation ordering, empty
+# `_Cited:_` blocks. Lightweight regex pass — 0 LLM calls.
+
+# Patterns that indicate a malformed/typo word. Limited to obvious
+# joins/hallucinations to avoid false-positives on real prose.
+_MALFORMED_WORD_PATTERNS: tuple[tuple[str, re.Pattern], ...] = (
+    # `geroprotectied` (real example from prior reviewer feedback) —
+    # adjective ending in `ied` without `f`/`r` stem is unusual.
+    ("misformed-suffix-ied", re.compile(
+        r"\b\w+(?<!fied)(?<!ried)(?<!died)(?<!tied)(?<!plied)"
+        r"(?<!plied)(?<!plied)ectied\b"
+    )),
+    # Triple-letter run inside a word (typo signal: not zoo or
+    # bookkeeper — those are exceptions; we'd false-fire ~0 in
+    # scientific prose).
+    ("triple-letter-run", re.compile(
+        r"\b\w*([a-z])\1\1\w*\b", re.IGNORECASE,
+    )),
+)
+
+# "Konopka 2019 et al." → should be "Konopka et al. 2019"
+_BROKEN_CITATION_ORDER_RE = re.compile(
+    r"\b([A-Z][a-zA-Z]+)\s+(\d{4})\s+et\s+al\.?",
+)
+
+# Empty `_Cited:_` block — `_Cited: _` or `_Cited:_` with nothing
+# between colon and closing underscore.
+_EMPTY_CITED_BLOCK_RE = re.compile(r"_Cited:\s*_")
+
+# Double-or-more spaces in body prose (excluding code blocks).
+_DOUBLE_SPACE_RE = re.compile(r"(?<!\n)  +(?!\n)")
+
+
+def _check_surface_polish(paper_md: str) -> list[ConsistencyIssue]:
+    """C08: surface-polish defects that break PhD-paper feel."""
+    issues: list[ConsistencyIssue] = []
+
+    # Strip fenced code blocks before scanning so triple-letter runs
+    # in code samples don't false-fire.
+    haystack = re.sub(r"```.*?```", "", paper_md, flags=re.DOTALL)
+
+    # Malformed words
+    for kind, pat in _MALFORMED_WORD_PATTERNS:
+        for m in pat.finditer(haystack):
+            issues.append(ConsistencyIssue(
+                id=f"C08-malformed-{m.start()}",
+                severity="P2",
+                issue_type="malformed_word",
+                auto_fixable=False,
+                evidence=haystack[max(0, m.start() - 20):m.end() + 20],
+                suggested_fix=(
+                    f"Likely typo / generated artifact ({kind}): "
+                    f"{m.group(0)!r}"
+                ),
+            ))
+
+    # Broken citation order
+    for m in _BROKEN_CITATION_ORDER_RE.finditer(haystack):
+        author, year = m.group(1), m.group(2)
+        issues.append(ConsistencyIssue(
+            id=f"C08-cite-order-{m.start()}",
+            severity="P2",
+            issue_type="broken_citation_order",
+            auto_fixable=True,
+            evidence=haystack[max(0, m.start() - 20):m.end() + 20],
+            suggested_fix=(
+                f"`{author} {year} et al.` → `{author} et al. {year}`"
+            ),
+        ))
+
+    # Empty `_Cited:_` blocks
+    for m in _EMPTY_CITED_BLOCK_RE.finditer(haystack):
+        issues.append(ConsistencyIssue(
+            id=f"C08-empty-cited-{m.start()}",
+            severity="P2",
+            issue_type="empty_cited_block",
+            auto_fixable=True,
+            evidence=haystack[max(0, m.start() - 20):m.end() + 20],
+            suggested_fix="Empty _Cited:_ block — remove or populate.",
+        ))
+
+    # Double spaces in prose
+    for m in _DOUBLE_SPACE_RE.finditer(haystack):
+        issues.append(ConsistencyIssue(
+            id=f"C08-double-space-{m.start()}",
+            severity="P2",
+            issue_type="double_space",
+            auto_fixable=True,
+            evidence=haystack[max(0, m.start() - 20):m.end() + 20],
+            suggested_fix="Collapse multiple spaces to single space.",
+        ))
+
+    # Duplicated adjacent phrase ("the the", "of of", "is is" etc.)
+    # — common LLM-generation artifact.
+    for m in re.finditer(
+        r"\b(\w{3,})\s+\1\b", haystack, re.IGNORECASE,
+    ):
+        word = m.group(1).lower()
+        # Whitelist legitimate doublings ("had had", "that that").
+        if word in {"had", "that", "what", "which"}:
+            continue
+        issues.append(ConsistencyIssue(
+            id=f"C08-dup-phrase-{m.start()}",
+            severity="P2",
+            issue_type="duplicated_phrase",
+            auto_fixable=True,
+            evidence=haystack[max(0, m.start() - 20):m.end() + 20],
+            suggested_fix=f"Duplicated word `{m.group(1)}`.",
+        ))
+
     return issues
 
 

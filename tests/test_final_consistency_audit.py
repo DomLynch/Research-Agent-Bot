@@ -256,6 +256,78 @@ def test_pmcid_in_cited_block_allowed() -> None:
     )
 
 
+# ----- Fix #13: surface-polish validator (C08) -------------------------
+
+
+def test_polish_catches_broken_citation_order() -> None:
+    """C08: 'Konopka 2019 et al.' is wrong order; should be 'Konopka et
+    al. 2019'. Auto-fixable suggestion provided."""
+    paper = "## Discussion\n\nAs Konopka 2019 et al. demonstrated, ...\n"
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    polish = [i for i in issues if i.issue_type == "broken_citation_order"]
+    assert len(polish) == 1
+    assert polish[0].auto_fixable is True
+    assert "et al." in polish[0].suggested_fix
+
+
+def test_polish_catches_empty_cited_block() -> None:
+    """C08: `_Cited:_` with nothing between the colon and underscore
+    is a writer artifact — the section had no receipts attached."""
+    paper = "## Results\n\nFinding.\n\n  _Cited:_\n"
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    empty = [i for i in issues if i.issue_type == "empty_cited_block"]
+    assert len(empty) == 1
+
+
+def test_polish_catches_double_space_in_prose() -> None:
+    """C08: double-or-more spaces inside prose break PhD polish."""
+    paper = "## Discussion\n\nThe trial was  conducted in older adults.\n"
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    spaces = [i for i in issues if i.issue_type == "double_space"]
+    assert len(spaces) >= 1
+
+
+def test_polish_catches_duplicated_word() -> None:
+    """C08: 'in in', 'is is', 'were were' — common LLM-generation
+    artifact. Whitelist for legitimate 'had had', 'that that'."""
+    paper = "## Discussion\n\nThe trial was was conducted in mice.\n"
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    dups = [i for i in issues if i.issue_type == "duplicated_phrase"]
+    assert len(dups) == 1
+
+
+def test_polish_whitelists_had_had() -> None:
+    """C08: 'had had' is grammatically valid past-perfect; not flagged."""
+    paper = "## Discussion\n\nParticipants had had prior exposure.\n"
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    dups = [i for i in issues if i.issue_type == "duplicated_phrase"]
+    assert dups == []
+
+
+def test_polish_skips_code_block_contents() -> None:
+    """C08: triple-letter runs (`aaa`) inside fenced code blocks are
+    not real prose; should not false-fire on code samples."""
+    paper = (
+        "## Methods\n\nClean prose.\n\n"
+        "```\nlet aaaa = 'code';\n```\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    polish = [i for i in issues if i.issue_type == "malformed_word"]
+    assert polish == []
+
+
+def test_polish_clean_paper_returns_no_polish_issues() -> None:
+    """Sanity: a clean paper has zero polish issues."""
+    paper = (
+        "## Discussion\n\n"
+        "The trial demonstrated improvement in older adults.\n\n"
+        "  _Cited: `Witham 2025`_\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    polish = [i for i in issues if i.id.startswith("C08-")]
+    assert polish == []
+
+
 # Reviewer-fix LOW: fix_audit_verdict idempotency
 def test_fix_audit_verdict_is_idempotent() -> None:
     """Running fix_audit_verdict twice on the already-renamed text
