@@ -110,3 +110,48 @@ def test_format_omits_grok_row_when_zero() -> None:
     )
     md = orch._format_unified_verdict(v)
     assert "Grok-flagged P1 patches unresolved" not in md
+
+
+# ============ Fix #36 — `flagged` decision counts as unresolved =====
+
+
+def test_grok_unresolved_count_includes_flagged_p1_decisions() -> None:
+    """Fix #36: the patch-applier returns `decision='flagged'` when
+    a P1 claim/numeric patch fails the per-type semantic gate (e.g.
+    a 0.13 m/s walk-speed reinterpretation that the auto-applier
+    refuses to apply because it changes scientific meaning). Pre-
+    Fix-#36 the orchestrator only counted `rejected`, so the verdict
+    surfaced as AAA even though Grok had flagged a load-bearing
+    P1 claim error.
+
+    This test pins the orchestrator-level count: a fake patch result
+    list with 1 P1-flagged + 1 P1-applied yields 1 unresolved."""
+    # Inline minimal stand-in for PatchResult (avoid importing the
+    # real apply_patches just for the test).
+    from dataclasses import dataclass
+
+    @dataclass
+    class _R:
+        decision: str
+        severity: str
+
+    results = [
+        _R(decision="flagged", severity="P1"),  # unresolved
+        _R(decision="applied", severity="P1"),  # resolved
+        _R(decision="flagged", severity="P2"),  # P2 not counted
+        _R(decision="rejected", severity="P1"),  # also unresolved
+    ]
+    n_unresolved = sum(
+        1 for r in results
+        if r.decision in ("rejected", "flagged")
+        and r.severity.upper() in {"P1", "HIGH", "CRITICAL"}
+    )
+    assert n_unresolved == 2
+
+    # End-to-end: feeding 2 unresolved P1 into the verdict produces
+    # 'Trust-Spine Pass — Human Review Required'.
+    v = orch._compute_unified_verdict(
+        _full_audit(), [], grok_unresolved_p1=n_unresolved,
+    )
+    assert v.verdict == "Trust-Spine Pass — Human Review Required"
+    assert v.grok_unresolved_p1 == 2

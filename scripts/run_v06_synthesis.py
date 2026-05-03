@@ -973,6 +973,12 @@ async def _run_post_paper_pipeline(
             "n_proposed": len(results),
             "n_applied": sum(1 for r in results if r.decision == "applied"),
             "n_rejected": sum(1 for r in results if r.decision == "rejected"),
+            # Fix #36: surface the flagged count too — these are
+            # patches the auto-applier refuses to apply because they
+            # change scientific meaning (claim/numeric patches) or
+            # have ambiguous targets. They count as unresolved P1
+            # for the unified verdict.
+            "n_flagged": sum(1 for r in results if r.decision == "flagged"),
             "patches": [
                 {
                     "patch_id": r.patch_id, "patch_type": r.patch_type,
@@ -984,18 +990,26 @@ async def _run_post_paper_pipeline(
         }, indent=2))
         n_applied = sum(1 for r in results if r.decision == "applied")
         n_rejected = sum(1 for r in results if r.decision == "rejected")
-        # Fix #31: count Grok P1 patches that the auto-applier
-        # rejected (couldn't safely apply). These are flagged
-        # high-severity issues the harness cannot autonomously
-        # resolve — the unified verdict downgrades AAA → 'Trust-
-        # Spine Pass — Human Review Required' when n>0.
+        n_flagged = sum(1 for r in results if r.decision == "flagged")
+        # Fix #31 + Fix #36: count Grok P1 patches the auto-applier
+        # could NOT safely apply. Two decision states matter:
+        #   - "rejected" — mechanical safety failed (e.g. `before`
+        #     text not found in paper)
+        #   - "flagged"  — semantic safety failed (e.g. claim/numeric
+        #     patch the gate refuses to auto-apply because it
+        #     changes scientific meaning, OR ambiguous `before`)
+        # Both are unresolved for the harness — only a human can
+        # safely apply the patch. The unified verdict downgrades
+        # AAA → 'Trust-Spine Pass — Human Review Required' when
+        # any unresolved P1 exists.
         grok_unresolved_p1 = sum(
             1 for r in results
-            if r.decision == "rejected"
+            if r.decision in ("rejected", "flagged")
             and (r.severity or "").upper() in {"P1", "HIGH", "CRITICAL"}
         )
         print(
-            f"[pipeline]   applied={n_applied} rejected={n_rejected}"
+            f"[pipeline]   applied={n_applied} rejected={n_rejected} "
+            f"flagged={n_flagged}"
             + (f" (Grok-unresolved P1: {grok_unresolved_p1})"
                if grok_unresolved_p1 else ""),
             file=sys.stderr,

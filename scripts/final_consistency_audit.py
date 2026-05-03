@@ -410,6 +410,8 @@ def run_audit(
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
     issues.extend(_check_background_lit_unsourced(paper_md))  # Fix #16
     issues.extend(_check_surface_render_lint(paper_md))  # Fix #22
+    issues.extend(_check_change_value_misread(paper_md, manifest))  # Fix #37
+    issues.extend(_check_abstract_over_grouping(paper_md, manifest))  # Fix #38
     return issues
 
 
@@ -766,6 +768,277 @@ def main(argv: list[str] | None = None) -> int:
     print(_format_summary(issues))
     n_p1 = sum(1 for i in issues if i.severity == "P1")
     return 0 if n_p1 == 0 else 1
+
+
+# Fix #37: change-value misread detection.
+#
+# The Witham/MET-PREVENT paper says "improvement in 4-m walk speed of
+# 0.13 m/s with metformin"; the writer interpreted that 0.13 m/s as
+# an ABSOLUTE walking speed below the 0.8 m/s frailty threshold.
+# That's a load-bearing scientific misinterpretation.
+#
+# Detect by: scan corpus quant_claims for high-conf numerics whose
+# source-sentence context contains a change-word ("change",
+# "improvement", "increase", "decrease", "difference", "delta",
+# "reduction", "rise"). Tag those numerics as change-value-only.
+# Then scan the paper for sentences containing the numeric AND
+# absolute-value language ("below", "above", "value of", "level of",
+# "falls below threshold") AND NOT containing the change-word.
+# Flag as P1 — the value cannot be safely re-attributed without
+# changing scientific meaning.
+
+_CHANGE_WORDS = (
+    "change", "improvement", "increase", "decrease", "difference",
+    "delta", "reduction", "rise", "decline", "gain",
+)
+_ABSOLUTE_VALUE_PHRASES = (
+    "falls below", "below the", "above the",
+    "value of", "level of",
+    "absolute", "indicates", "signals",
+)
+
+
+def _check_change_value_misread(
+    paper_md: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """Fix #37: catch numerics described as absolute values when the
+    corpus says they're CHANGE/improvement/difference values.
+    Severity P1, NOT auto-fixable (requires Grok or human rewrite).
+
+    Empirically: Witham's '0.13 m/s improvement' was rendered as
+    'gait speed was 0.13 m/s, below the 0.8 m/s threshold' — a
+    direct misinterpretation that a senior reviewer catches in
+    seconds. Detection is one-shot deterministic over corpus
+    source-sentence context."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        # Pull QUANT_DIR from the orchestrator (topic-aware).
+        import run_v06_synthesis as _orch
+        quant_dir = _orch.QUANT_DIR
+    except (ImportError, AttributeError):
+        return []
+    if not quant_dir.exists():
+        return []
+    # Build {numeric_string: {change_words_in_source}} for high-conf
+    # claims across the corpus.
+    change_value_map: dict[str, set[str]] = {}
+    for qf in quant_dir.glob("*.quant_claims.json"):
+        try:
+            data = json.loads(qf.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        for c in data.get("claims", []):
+            if c.get("binding_confidence") != "high":
+                continue
+            raw = (c.get("raw_text") or "").strip()
+            if not raw:
+                continue
+            sent_lc = (c.get("sentence") or "").lower()
+            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+            if not change_hits:
+                continue
+            change_value_map.setdefault(raw, set()).update(change_hits)
+    if not change_value_map:
+        return []
+    issues: list[ConsistencyIssue] = []
+    sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])|\n\n+")
+    sentences = sent_split.split(paper_md)
+    for sent in sentences:
+        sent_lc = sent.lower()
+        for numeric, change_words in change_value_map.items():
+            if numeric not in sent:
+                continue
+            # Sentence is a misread iff it contains absolute-value
+            # phrasing AND does NOT contain any of the source's
+            # change-words.
+            has_absolute = any(
+                p in sent_lc for p in _ABSOLUTE_VALUE_PHRASES
+            )
+            has_change = any(w in sent_lc for w in change_words)
+            if has_absolute and not has_change:
+                snippet = sent.strip()[:200]
+                issues.append(ConsistencyIssue(
+                    id=f"C13-change-misread-{hash(sent) & 0xffffff}",
+                    severity="P1",
+                    issue_type="change_value_misread",
+                    auto_fixable=False,
+                    evidence=snippet,
+                    suggested_fix=(
+                        f"Numeric {numeric!r} is a change/improvement "
+                        f"value in the corpus source (context word(s): "
+                        f"{sorted(change_words)}); paper renders it "
+                        f"as an absolute value. Rewrite to "
+                        f"acknowledge it is a change/difference."
+                    ),
+                ))
+    return issues
+
+
+# Fix #38: abstract over-attribution detection.
+#
+# The abstract said "Keys 2025, Patel 2026, and Henney 2025 each
+# reporting mortality reductions in the range of 16–42%". Henney
+# (PMC12803636) has zero high-confidence percentage claims — the
+# attribution is wrong.
+#
+# Detect by: scan the Abstract section for sentences containing
+# multiple Author-Year tokens AND a numeric/range. For each cited
+# receipt, verify its high-conf claims contain the numeric. If a
+# cited receipt does NOT carry the numeric, flag the over-attribution.
+
+_AUTHOR_YEAR_RE = re.compile(
+    r"\b([A-Z][a-zA-Z]+(?:\s+et\s+al\.)?)\s+(\d{4})\b"
+)
+_PERCENT_RANGE_RE = re.compile(
+    r"\b(\d+\.?\d*)\s*[–-]\s*(\d+\.?\d*)\s*%"
+)
+
+
+def _check_abstract_over_grouping(
+    paper_md: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """Fix #38: catch abstract sentences that group multiple
+    Author-Year citations under a numeric range when one of the
+    cited receipts doesn't carry the numeric. Severity P1, not
+    auto-fixable (requires receipt-by-receipt rewrite)."""
+    abstract_match = re.search(
+        r"##\s+Abstract(.*?)(?=^##\s+\w|\Z)",
+        paper_md, re.DOTALL | re.MULTILINE,
+    )
+    if not abstract_match:
+        return []
+    abstract = abstract_match.group(1)
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import run_v06_synthesis as _orch
+        import citation_registry as _cr
+        quant_dir = _orch.QUANT_DIR
+        parsed_dir = _orch.PARSED_DIR
+    except (ImportError, AttributeError):
+        return []
+    if not quant_dir.exists():
+        return []
+    # Build the same body_citation mapping the writer + tables use,
+    # so 'Henney 2025' in prose maps back to the right receipt_id
+    # (e.g. PMC12803636_synergistic_associations_...).
+    paper_meta_by_id: dict[str, dict] = {}
+    if parsed_dir.exists():
+        for path in parsed_dir.glob("*.paper_sections.json"):
+            try:
+                d = json.loads(path.read_text())
+            except (OSError, json.JSONDecodeError):
+                continue
+            pid = d.get("paper_id") or path.stem
+            paper_meta_by_id[pid] = d
+    # Mock-receipt list for citation_registry — the registry only
+    # needs receipt_id + a few source_* fields to derive
+    # body_citation, all of which we can pull from paper_meta or
+    # the manifest's receipts list.
+    from dataclasses import dataclass
+
+    @dataclass(frozen=True)
+    class _MR:
+        receipt_id: str
+        source_year: int | None = None
+        source_doi: str | None = None
+        source_pmid: str | None = None
+        source_pmcid: str | None = None
+        source_journal: str | None = None
+        title: str | None = None
+
+    mock_receipts = []
+    for rec in manifest.get("receipts") or []:
+        rid = rec.get("receipt_id", "")
+        if not rid:
+            continue
+        meta = paper_meta_by_id.get(rid, {})
+        mock_receipts.append(_MR(
+            receipt_id=rid,
+            source_year=meta.get("year"),
+            source_doi=meta.get("doi"),
+            source_pmid=meta.get("pmid"),
+            source_pmcid=meta.get("pmcid"),
+            source_journal=meta.get("journal"),
+            title=meta.get("title"),
+        ))
+    try:
+        registry = _cr.build_registry(
+            mock_receipts, paper_meta_by_id=paper_meta_by_id,
+        )
+    except Exception:  # noqa: BLE001
+        return []
+    # Build {body_citation: set_of_high_conf_percent_strings}
+    citation_to_percents: dict[str, set[str]] = {}
+    for raw_id, entry in registry.items():
+        body_cite = entry.body_citation
+        qf = quant_dir / f"{raw_id}.quant_claims.json"
+        if not qf.exists():
+            citation_to_percents.setdefault(body_cite, set())
+            continue
+        try:
+            data = json.loads(qf.read_text())
+        except (OSError, json.JSONDecodeError):
+            citation_to_percents.setdefault(body_cite, set())
+            continue
+        pcts: set[str] = set()
+        for c in data.get("claims", []):
+            if c.get("binding_confidence") != "high":
+                continue
+            if c.get("claim_type") == "percentage":
+                raw = (c.get("raw_text") or "").strip()
+                if raw:
+                    pcts.add(raw)
+        citation_to_percents[body_cite] = pcts
+    if not citation_to_percents:
+        return []
+    issues: list[ConsistencyIssue] = []
+    sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])|\n\n+")
+    for sent in sent_split.split(abstract):
+        # Citations cited in this sentence — match against the
+        # body_citation forms in our map.
+        cited = {
+            cite for cite in citation_to_percents
+            if cite in sent
+        }
+        # Sentence-level over-grouping requires ≥2 distinct citations
+        if len(cited) < 2:
+            continue
+        # Range or percent in the same sentence
+        ranges = _PERCENT_RANGE_RE.findall(sent)
+        if not ranges:
+            continue
+        # For each cited receipt: do its high-conf percent claims
+        # cover the numeric range? Crude check: the receipt must
+        # have at least ONE percent claim. If it has none, it's
+        # being over-grouped (the writer attributed a percent to a
+        # paper that has no percent claims).
+        empty_cites = [
+            c for c in cited if not citation_to_percents.get(c)
+        ]
+        if not empty_cites:
+            continue
+        snippet = sent.strip()[:200]
+        for empty_cite in empty_cites:
+            issues.append(ConsistencyIssue(
+                id=(
+                    f"C14-abstract-overgroup-"
+                    f"{empty_cite.replace(' ', '_')}-"
+                    f"{hash(sent) & 0xffffff}"
+                ),
+                severity="P1",
+                issue_type="abstract_over_grouping",
+                auto_fixable=False,
+                evidence=snippet,
+                suggested_fix=(
+                    f"Abstract sentence groups {sorted(cited)} under "
+                    f"a numeric range {ranges[0]} but {empty_cite!r} "
+                    f"has no high-confidence percentage claims in its "
+                    f"corpus quant_claims. Narrow the attribution to "
+                    f"only the receipts that carry the numeric."
+                ),
+            ))
+    return issues
 
 
 if __name__ == "__main__":
