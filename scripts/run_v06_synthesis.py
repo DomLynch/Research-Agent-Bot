@@ -970,7 +970,14 @@ def _build_claims_by_citation(
     Used by Table 5 (Per-Paper Numeric Index) to surface the corpus's
     underlying quantitative claims. The map keys are body_citation
     strings (e.g. 'Walton 2019') so Table 5 can look up a writer-side
-    receipt's claims using its already-transformed receipt_id."""
+    receipt's claims using its already-transformed receipt_id.
+
+    Only high-confidence claims are surfaced — Q2 numeric integrity
+    trace uses the same high-confidence filter (see
+    audit_v06_paper._load_corpus_numerics), so a Table 5 numeric
+    that's NOT high-confidence would render to a paper cell that
+    Q2 then fails to trace. Pre-filter so Table 5 cells = Q2
+    corpus numerics by construction."""
     out: dict[str, list[dict]] = {}
     for r in receipts:
         raw_id = getattr(r, "receipt_id", "")
@@ -984,10 +991,15 @@ def _build_claims_by_citation(
             data = json.loads(path.read_text())
         except (OSError, json.JSONDecodeError):
             continue
-        claims = data.get("claims", [])
-        if not isinstance(claims, list):
+        all_claims = data.get("claims", [])
+        if not isinstance(all_claims, list):
             continue
-        out[entry.body_citation] = claims
+        high_conf = [
+            c for c in all_claims
+            if isinstance(c, dict)
+            and c.get("binding_confidence") == "high"
+        ]
+        out[entry.body_citation] = high_conf
     return out
 
 

@@ -4,13 +4,18 @@ Trust spine: when MiMo writes a section that uses background-literature
 numerics WITHOUT including the canonical citation in the same sentence,
 the writer must do ONE re-prompt asking MiMo to add the citation IN
 the same sentence (rather than letting the Stage-2 auto-fixer strip
-the sentence and tank Q9 numeric density)."""
+the sentence and tank Q9 numeric density).
+
+Tests use `asyncio.run()` rather than @pytest.mark.asyncio so they
+do NOT require pytest-asyncio in the dev environment — the prior
+decorator-based tests silently no-op'd on machines without
+pytest-asyncio installed (6 failures in
+tests/test_paper_writer_citations.py)."""
 from __future__ import annotations
 
+import asyncio
 import sys
 from pathlib import Path
-
-import pytest
 
 from agent.paper_writer_citations import (
     build_background_lit_block,
@@ -22,6 +27,12 @@ from agent.synthesis_schemas import SynthesisSection
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import background_literature as bg  # noqa: E402
+
+
+def _run_async(coro):
+    """Wrap an async coroutine for sync test execution. Avoids
+    requiring pytest-asyncio in the dev environment."""
+    return asyncio.run(coro)
 
 
 def _entry(
@@ -99,8 +110,7 @@ def test_fix_prompt_tells_writer_not_to_delete_numerics() -> None:
 # ----- run_citation_fix_pass ---------------------------------------------
 
 
-@pytest.mark.asyncio
-async def test_fix_pass_returns_input_when_no_entries() -> None:
+def test_fix_pass_returns_input_when_no_entries() -> None:
     """Empty registry → no work done, return original section."""
     section = SynthesisSection(
         name="background", body_md="## Background\n\nfine.",
@@ -110,18 +120,17 @@ async def test_fix_pass_returns_input_when_no_entries() -> None:
     async def _never_called(**_kwargs):
         raise AssertionError("LLM must not be called when no entries")
 
-    result = await run_citation_fix_pass(
+    result = _run_async(run_citation_fix_pass(
         section, base_user_prompt="x", system_prompt="y",
         builder_fn=lambda _p: None,
         background_lit_entries=None,
         chain=(), client=None, ledger=None, seed=None,
         call_llm_fn=_never_called,
-    )
+    ))
     assert result is section
 
 
-@pytest.mark.asyncio
-async def test_fix_pass_returns_input_when_section_clean() -> None:
+def test_fix_pass_returns_input_when_section_clean() -> None:
     """Clean section (citation present) → no LLM call, return as-is."""
     section = SynthesisSection(
         name="background",
@@ -133,18 +142,17 @@ async def test_fix_pass_returns_input_when_section_clean() -> None:
     async def _never_called(**_kwargs):
         raise AssertionError("LLM must not be called when section clean")
 
-    result = await run_citation_fix_pass(
+    result = _run_async(run_citation_fix_pass(
         section, base_user_prompt="x", system_prompt="y",
         builder_fn=lambda _p: None,
         background_lit_entries=[_entry()],
         chain=(), client=None, ledger=None, seed=None,
         call_llm_fn=_never_called,
-    )
+    ))
     assert result is section
 
 
-@pytest.mark.asyncio
-async def test_fix_pass_returns_improved_when_llm_fixes_it() -> None:
+def test_fix_pass_returns_improved_when_llm_fixes_it() -> None:
     """Bad section → LLM called → improved section returned."""
     bad = SynthesisSection(
         name="background",
@@ -164,19 +172,18 @@ async def test_fix_pass_returns_improved_when_llm_fixes_it() -> None:
         call_count["n"] += 1
         return {"parsed": "ok"}
 
-    result = await run_citation_fix_pass(
+    result = _run_async(run_citation_fix_pass(
         bad, base_user_prompt="x", system_prompt="y",
         builder_fn=lambda _p: fixed,
         background_lit_entries=[_entry()],
         chain=(), client=None, ledger=None, seed=None,
         call_llm_fn=_fake_llm,
-    )
+    ))
     assert result is fixed
     assert call_count["n"] == 1, "should be exactly 1 fix-pass call"
 
 
-@pytest.mark.asyncio
-async def test_fix_pass_returns_original_when_llm_fails_to_improve() -> None:
+def test_fix_pass_returns_original_when_llm_fails_to_improve() -> None:
     """LLM returns a section that's just-as-bad → keep original.
 
     Defends against the LLM rewriting in a way that changes meaning
@@ -195,19 +202,18 @@ async def test_fix_pass_returns_original_when_llm_fails_to_improve() -> None:
     async def _fake_llm(**_kwargs):
         return {"parsed": "ok"}
 
-    result = await run_citation_fix_pass(
+    result = _run_async(run_citation_fix_pass(
         bad, base_user_prompt="x", system_prompt="y",
         builder_fn=lambda _p: still_bad,
         background_lit_entries=[_entry()],
         chain=(), client=None, ledger=None, seed=None,
         call_llm_fn=_fake_llm,
-    )
+    ))
     # Same issue count → keep original (don't accept LLM rewrite)
     assert result is bad
 
 
-@pytest.mark.asyncio
-async def test_fix_pass_returns_original_when_llm_returns_none() -> None:
+def test_fix_pass_returns_original_when_llm_returns_none() -> None:
     """LLM timeout / malformed JSON → fall back to original section."""
     bad = SynthesisSection(
         name="background",
@@ -218,18 +224,17 @@ async def test_fix_pass_returns_original_when_llm_returns_none() -> None:
     async def _fake_llm(**_kwargs):
         return None  # timeout / malformed
 
-    result = await run_citation_fix_pass(
+    result = _run_async(run_citation_fix_pass(
         bad, base_user_prompt="x", system_prompt="y",
         builder_fn=lambda _p: None,
         background_lit_entries=[_entry()],
         chain=(), client=None, ledger=None, seed=None,
         call_llm_fn=_fake_llm,
-    )
+    ))
     assert result is bad
 
 
-@pytest.mark.asyncio
-async def test_fix_pass_only_calls_llm_once() -> None:
+def test_fix_pass_only_calls_llm_once() -> None:
     """Cap = 1 attempt. Even if the fix attempt also fails to improve,
     we don't loop. Cost containment + Stage-2 auto-fixer still acts as
     safety net."""
@@ -244,13 +249,13 @@ async def test_fix_pass_only_calls_llm_once() -> None:
         call_count["n"] += 1
         return {"parsed": "ok"}
 
-    await run_citation_fix_pass(
+    _run_async(run_citation_fix_pass(
         bad, base_user_prompt="x", system_prompt="y",
         builder_fn=lambda _p: bad,  # builder returns original = no improvement
         background_lit_entries=[_entry()],
         chain=(), client=None, ledger=None, seed=None,
         call_llm_fn=_fake_llm,
-    )
+    ))
     assert call_count["n"] == 1
 
 
