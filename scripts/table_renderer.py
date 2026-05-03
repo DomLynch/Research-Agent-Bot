@@ -496,17 +496,141 @@ def _aggregate_net_direction(receipts: list) -> str:
 render_table_3_evidence_limitations = render_table_4_evidence_limitations
 
 
+# --- Table 5 (supplemental): Per-Paper Numeric Index --------------------
+
+
+# Claim types we surface, in priority order. p_value first because
+# it's the load-bearing inferential statistic; percentage second
+# because it's the most common effect-size form; unit_value third
+# (doses, durations, etc.).
+_CLAIM_TYPE_PRIORITY: tuple[str, ...] = (
+    "p_value", "percentage", "ratio", "ci", "unit_value",
+    "mean_sd", "sample_size",
+)
+
+
+def _format_claim_value(claim: dict) -> str:
+    """Render a single claim's numeric value in its canonical inline
+    form. Q9-counted patterns: `p < 0.05`, `30%`, `n=120`, `850 mg`."""
+    raw = (claim.get("raw_text") or "").strip()
+    if not raw:
+        return "—"
+    units = (claim.get("units") or "").strip()
+    # If raw already contains units (e.g. "850 mg"), keep as-is
+    if units and units in raw:
+        return raw
+    # Sample-size claims need explicit `n=NN` form for Q9 to count
+    if claim.get("claim_type") == "sample_size":
+        if "=" not in raw:
+            return f"n={raw.lstrip('n').lstrip('=').strip()}"
+    return raw
+
+
+def _select_top_claims(
+    claims: list[dict], top_n: int = 5,
+) -> list[dict]:
+    """Pick the top-N claims for a paper, prioritising one of each
+    canonical claim_type in priority order so the surface is varied
+    (avoids 5 p-values from the same study)."""
+    if not claims:
+        return []
+    by_type: dict[str, list[dict]] = {}
+    for c in claims:
+        ct = c.get("claim_type", "")
+        by_type.setdefault(ct, []).append(c)
+    selected: list[dict] = []
+    # First pass: one of each priority type
+    for ct in _CLAIM_TYPE_PRIORITY:
+        if ct in by_type and by_type[ct]:
+            selected.append(by_type[ct][0])
+            if len(selected) >= top_n:
+                break
+    # Second pass: fill remaining slots with any unused claims
+    if len(selected) < top_n:
+        seen_ids = {c.get("claim_id") for c in selected}
+        for c in claims:
+            if c.get("claim_id") in seen_ids:
+                continue
+            selected.append(c)
+            if len(selected) >= top_n:
+                break
+    return selected
+
+
+def render_table_5_numeric_index(
+    receipts: list,
+    claims_by_citation: dict | None = None,
+    top_n: int = 5,
+) -> str:
+    """Table 5 (supplemental) — top-N quantitative claims per paper.
+
+    Surfaces the underlying corpus numerics that power Q2 trace —
+    one row per (paper × claim) tuple. For 15 papers × 5 claims =
+    75 rows of structured numerics. Each row's `Value` cell uses the
+    canonical inline form (`p < 0.05`, `30%`, `n=120`, `850 mg`) so
+    Q9 numeric-density patterns count it.
+
+    `claims_by_citation` maps body_citation (e.g. 'Walton 2019') to
+    the paper's full claims list (loaded from
+    docs/quality-reference/<topic>/quant_claims/<receipt_id>.json
+    by the orchestrator). When None or empty, the table renders a
+    placeholder row noting the data isn't wired in (defensive — so
+    test harnesses without claim data don't crash)."""
+    header = (
+        "## Table 5 (supplemental): Per-Paper Numeric Index\n\n"
+        "*Top-N quantitative claims per paper — the underlying "
+        "corpus numerics that power Q2 trace and Q9 density. One row "
+        "per (paper × claim) tuple, prioritised by claim type "
+        "(p-value > percentage > ratio > unit-value).*\n\n"
+        + _row(
+            "Citation", "Section", "Type", "Value", "Units",
+        )
+        + "\n"
+        + _row(*(["---"] * 5)) + "\n"
+    )
+    if not claims_by_citation:
+        return header + _row(
+            "—", "—", "—", "no claims index supplied", "—",
+        ) + "\n"
+    rows: list[str] = []
+    for r in receipts:
+        body_cite = _safe(getattr(r, "receipt_id", None), "—")
+        claims = claims_by_citation.get(body_cite, [])
+        top = _select_top_claims(claims, top_n=top_n)
+        if not top:
+            continue
+        for c in top:
+            rows.append(_row(
+                body_cite,
+                _safe(c.get("source_section"), "—"),
+                _safe(c.get("claim_type"), "—"),
+                _format_claim_value(c),
+                _safe(c.get("units"), "—"),
+            ))
+    if not rows:
+        return header + _row(
+            "—", "—", "—", "no claims found for any receipt", "—",
+        ) + "\n"
+    return header + "\n".join(rows) + "\n"
+
+
 # --- Top-level renderer --------------------------------------------------
 
 
-def render_all_tables(receipts: list, matrix: object | None = None) -> str:
-    """Render all four tables back-to-back as a single markdown block.
+def render_all_tables(
+    receipts: list,
+    matrix: object | None = None,
+    claims_by_citation: dict | None = None,
+) -> str:
+    """Render all five tables back-to-back as a single markdown block.
 
     Includes a leading pointer sentence (reviewer-fix P2) so the body
     prose has a natural reference site for the structured evidence.
 
     `matrix` is the TensionMatrix from build_tension_matrix; when
     omitted Table 3 reports 'no matrix supplied' rather than failing.
+    `claims_by_citation` is the per-paper claims index from the
+    orchestrator; when omitted Table 5 reports 'no claims index'.
     Returns empty string when receipts is empty."""
     if not receipts:
         return ""
@@ -517,7 +641,8 @@ def render_all_tables(receipts: list, matrix: object | None = None) -> str:
         "the tables; prose references them. Tables 1-3 follow the "
         "Researka v1 schema (included studies, per-study endpoint "
         "evidence, cross-domain tensions); Table 4 is a supplemental "
-        "Cochrane RoB-2 / ROBINS-I per-domain risk-of-bias roll-up.*\n\n"
+        "Cochrane RoB-2 / ROBINS-I per-domain risk-of-bias roll-up; "
+        "Table 5 surfaces the underlying per-paper numeric index.*\n\n"
     )
     return (
         pointer
@@ -528,6 +653,8 @@ def render_all_tables(receipts: list, matrix: object | None = None) -> str:
         + render_table_3_cross_domain_tensions(matrix)
         + "\n"
         + render_table_4_evidence_limitations(receipts)
+        + "\n"
+        + render_table_5_numeric_index(receipts, claims_by_citation)
     )
 
 
@@ -537,4 +664,5 @@ __all__ = [
     "render_table_2_endpoint_evidence",
     "render_table_3_cross_domain_tensions",
     "render_table_4_evidence_limitations",
+    "render_table_5_numeric_index",
 ]

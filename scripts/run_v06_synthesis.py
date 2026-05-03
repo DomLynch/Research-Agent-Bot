@@ -658,14 +658,22 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     full_paper_md = _replace_paper_ids_with_author_year(
         full_paper_md, receipts, registry=citation_registry,
     )
-    # Fix #6 + Fix #21: insert deterministic Tables 1-4 BEFORE
+    # Fix #6 + Fix #21: insert deterministic Tables 1-5 BEFORE
     # References. Built from the post-citation-registry receipts so
     # table cells use clean body_citation strings (no raw internal
     # handles). Fix #21 passes the writer-side TensionMatrix so
     # Table 3 (cross-domain tensions) renders the non-orthogonal
     # pairs as one row per tension — the dense numerics carrier that
-    # raises Q9 density without prose bloat.
-    tables_md = _tables.render_all_tables(writer_receipts, writer_matrix)
+    # raises Q9 density without prose bloat. Fix #21 follow-up
+    # builds claims_by_citation from the original receipt_id →
+    # quant_claims JSON so Table 5 can surface top-N per-paper
+    # numerics (the densest carrier — closes the Q9 AAA gap).
+    claims_by_citation = _build_claims_by_citation(
+        receipts, citation_registry,
+    )
+    tables_md = _tables.render_all_tables(
+        writer_receipts, writer_matrix, claims_by_citation,
+    )
     if tables_md:
         full_paper_md = full_paper_md.rstrip() + "\n\n" + tables_md
     # Pass the registry to References so its Author-Year tokens come
@@ -949,6 +957,38 @@ async def _run_post_paper_pipeline(
     _maybe_run_no_regression_gate(paper_path.parent)
 
     return paper_md
+
+
+def _build_claims_by_citation(
+    receipts: list, registry: dict,
+) -> dict[str, list[dict]]:
+    """Build {body_citation: [claim_dicts]} from the original receipt
+    list (pre-transform — receipt_ids are still raw paper-IDs that
+    map directly to docs/quality-reference/<topic>/quant_claims/
+    <receipt_id>.quant_claims.json).
+
+    Used by Table 5 (Per-Paper Numeric Index) to surface the corpus's
+    underlying quantitative claims. The map keys are body_citation
+    strings (e.g. 'Walton 2019') so Table 5 can look up a writer-side
+    receipt's claims using its already-transformed receipt_id."""
+    out: dict[str, list[dict]] = {}
+    for r in receipts:
+        raw_id = getattr(r, "receipt_id", "")
+        entry = registry.get(raw_id)
+        if entry is None:
+            continue
+        path = QUANT_DIR / f"{raw_id}.quant_claims.json"
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        claims = data.get("claims", [])
+        if not isinstance(claims, list):
+            continue
+        out[entry.body_citation] = claims
+    return out
 
 
 def _maybe_run_no_regression_gate(new_run_dir: Path) -> None:

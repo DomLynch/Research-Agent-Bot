@@ -799,3 +799,112 @@ def test_render_all_tables_omits_matrix_handles_none_gracefully() -> None:
     md = tr.render_all_tables(receipts)
     assert "## Table 3" in md
     assert "no matrix supplied" in md
+
+
+# ============ Fix #21 follow-up — Table 5 numeric index ================
+
+
+def test_table_5_renders_top_n_claims_per_paper() -> None:
+    """Table 5: surfaces top-N quantitative claims per paper. With 5
+    p-value claims for one paper, top_n=3 yields exactly 3 rows."""
+    claims = {
+        "Walton 2019": [
+            {"claim_id": "p1", "claim_type": "p_value",
+             "raw_text": "p < 0.001", "source_section": "results",
+             "units": ""},
+            {"claim_id": "u1", "claim_type": "unit_value",
+             "raw_text": "850 mg", "source_section": "methods",
+             "units": "mg"},
+            {"claim_id": "pct1", "claim_type": "percentage",
+             "raw_text": "30%", "source_section": "results",
+             "units": ""},
+        ],
+    }
+    receipts = [_FakeReceipt(receipt_id="Walton 2019")]
+    md = tr.render_table_5_numeric_index(receipts, claims, top_n=3)
+    assert "## Table 5" in md
+    assert "p < 0.001" in md
+    assert "850 mg" in md
+    assert "30%" in md
+    assert "Walton 2019" in md
+
+
+def test_table_5_prefers_one_of_each_claim_type() -> None:
+    """When a paper has many claims of one type and few of others,
+    Table 5 picks one per type before doubling up — varied surface."""
+    claims = {
+        "Walton 2019": [
+            {"claim_id": f"p{i}", "claim_type": "p_value",
+             "raw_text": f"p = 0.0{i}", "source_section": "results",
+             "units": ""}
+            for i in range(10)  # 10 p_values
+        ] + [
+            {"claim_id": "u1", "claim_type": "unit_value",
+             "raw_text": "850 mg", "source_section": "methods",
+             "units": "mg"},
+        ],
+    }
+    receipts = [_FakeReceipt(receipt_id="Walton 2019")]
+    md = tr.render_table_5_numeric_index(receipts, claims, top_n=2)
+    # Top-2 should include 1 p_value + 1 unit_value (varied) — NOT 2 p_values
+    assert "850 mg" in md
+    assert "Methods" in md or "methods" in md
+
+
+def test_table_5_handles_no_claims_dict() -> None:
+    """No claims dict → header + placeholder row, no crash."""
+    receipts = [_FakeReceipt(receipt_id="X 2020")]
+    md = tr.render_table_5_numeric_index(receipts, None)
+    assert "## Table 5" in md
+    assert "no claims index supplied" in md
+
+
+def test_table_5_handles_empty_claims_dict() -> None:
+    """Empty dict → header + 'no claims found' row."""
+    receipts = [_FakeReceipt(receipt_id="X 2020")]
+    md = tr.render_table_5_numeric_index(receipts, {})
+    assert "## Table 5" in md
+    # Empty dict triggers the "no claims index supplied" branch
+    assert "no claims" in md.lower()
+
+
+def test_table_5_sample_size_claim_renders_with_n_prefix() -> None:
+    """Q9 numeric-density requires `n=NN` form. Sample-size claims
+    must render with the prefix even when raw_text is just '120'."""
+    claims = {
+        "Walton 2019": [
+            {"claim_id": "n1", "claim_type": "sample_size",
+             "raw_text": "120", "source_section": "abstract",
+             "units": ""},
+        ],
+    }
+    receipts = [_FakeReceipt(receipt_id="Walton 2019")]
+    md = tr.render_table_5_numeric_index(receipts, claims, top_n=1)
+    assert "n=120" in md
+
+
+def test_table_5_format_claim_value_handles_units_already_in_raw() -> None:
+    """When raw_text already includes units (e.g. '850 mg'), don't
+    duplicate them in the rendered cell."""
+    claim = {"raw_text": "850 mg", "units": "mg",
+             "claim_type": "unit_value"}
+    out = tr._format_claim_value(claim)
+    assert out == "850 mg"  # no duplication
+
+
+def test_render_all_tables_threads_claims_to_table_5() -> None:
+    """Sanity: render_all_tables passes claims_by_citation through
+    to Table 5; the claims surface in the rendered output."""
+    receipts = [_FakeReceipt(receipt_id="X 2020")]
+    claims = {
+        "X 2020": [
+            {"claim_id": "p1", "claim_type": "p_value",
+             "raw_text": "p < 0.05", "source_section": "abstract",
+             "units": ""},
+        ],
+    }
+    md = tr.render_all_tables(receipts, None, claims)
+    assert "## Table 5" in md
+    assert "p < 0.05" in md
+    # Pointer block names Table 5 too
+    assert "Table 5" in md.split("Structured Evidence Tables")[1][:600]
