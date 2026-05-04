@@ -335,8 +335,13 @@ def _build_repair_prompt(
     )
     rejected_block = []
     for p, reason in flagged:
+        # Fix #51: accept both TypedPatch (`.id`) AND
+        # apply_patches.PatchResult (`.patch_id`). The repair loop
+        # passes PatchResults; pre-Fix-#51 this path crashed with
+        # `'PatchResult' object has no attribute 'id'`.
+        pid = getattr(p, "id", None) or getattr(p, "patch_id", "P-?")
         rejected_block.append(
-            f"REJECTED PATCH {p.id}\n"
+            f"REJECTED PATCH {pid}\n"
             f"  patch_type: {p.patch_type}\n"
             f"  severity: {p.severity}\n"
             f"  before: {p.before!r}\n"

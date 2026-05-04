@@ -67,6 +67,24 @@ def test_repair_returns_empty_for_no_input() -> None:
     assert out == []
 
 
+def test_repair_prompt_accepts_patch_result_id_field() -> None:
+    """Fix #51: the repair prompt builder must accept BOTH
+    apply_patches.PatchResult (`.patch_id`) and TypedPatch (`.id`).
+    Pre-Fix-#51 the orchestrator crashed with `'PatchResult' object
+    has no attribute 'id'` because the helper used `p.id`."""
+    pr = ap.PatchResult(
+        patch_id="P-FROM-RESULT", patch_type="claim",
+        severity="P1", decision="flagged",
+        reason_for_decision="ambiguous",
+        before="some text", after="",
+    )
+    flagged = [(pr, "test rejection reason")]
+    # Should not crash — uses .patch_id when .id is missing
+    system, user = gr._build_repair_prompt(flagged, "paper")
+    assert "P-FROM-RESULT" in user
+    assert "test rejection reason" in user
+
+
 # ============ _agent_repair_loop ======================================
 
 
