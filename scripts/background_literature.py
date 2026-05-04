@@ -56,25 +56,66 @@ class BackgroundLitEntry:
 
 def load_registry(
     path: Path | None = None,
+    *,
+    topic: str | None = None,
 ) -> dict[str, BackgroundLitEntry]:
     """Load registry from seed JSON. Returns {key: entry}. Empty
     when the seed file doesn't exist (caller falls back to corpus-
-    only behaviour)."""
+    only behaviour).
+
+    Refactor 2026-05-04: when `topic` is set, merge in the topic
+    pack's background_literature entries. This means topic-specific
+    canonical numerics (e.g. PEARL '80', Harrison '14%/9%') live in
+    topic_packs/<topic>.toml instead of polluting the global JSON.
+    """
     p = path or _DEFAULT_SEED_PATH
-    if not p.exists():
-        return {}
-    raw = json.loads(p.read_text())
     out: dict[str, BackgroundLitEntry] = {}
-    for k, v in raw.items():
-        out[k] = BackgroundLitEntry(
-            key=k,
-            numeric=v["numeric"],
-            context=v.get("context", ""),
-            citation_token=v["citation_token"],
-            canonical_reference=v.get("canonical_reference", ""),
-            doi=v.get("doi"),
-            pmid=v.get("pmid"),
-        )
+    if p.exists():
+        raw = json.loads(p.read_text())
+        for k, v in raw.items():
+            out[k] = BackgroundLitEntry(
+                key=k,
+                numeric=v["numeric"],
+                context=v.get("context", ""),
+                citation_token=v["citation_token"],
+                canonical_reference=v.get(
+                    "canonical_reference", "",
+                ),
+                doi=v.get("doi"),
+                pmid=v.get("pmid"),
+            )
+    # Merge topic pack entries (override globals on key clash;
+    # topic packs are more specific so they win).
+    if topic:
+        try:
+            import sys as _sys
+            _sys.path.insert(
+                0, str(Path(__file__).resolve().parent.parent),
+            )
+            from agent.topic_pack import load_topic_pack
+            tp_path = (
+                Path(__file__).resolve().parent.parent
+                / "topic_packs" / f"{topic}.toml"
+            )
+            if tp_path.exists():
+                pack = load_topic_pack(tp_path)
+                for entry in pack.background_literature:
+                    out[entry.key] = BackgroundLitEntry(
+                        key=entry.key,
+                        numeric=entry.numeric,
+                        context=entry.context,
+                        citation_token=entry.citation_token,
+                        canonical_reference=(
+                            entry.canonical_reference
+                        ),
+                        doi=entry.doi,
+                        pmid=entry.pmid,
+                    )
+        except (ImportError, OSError, ValueError) as e:
+            print(
+                f"  ! topic-pack bg-lit merge failed: {e}",
+                file=__import__("sys").stderr,
+            )
     return out
 
 

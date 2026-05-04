@@ -1,0 +1,88 @@
+{
+  "model_used": "x-ai/grok-4.3",
+  "cost_usd": 0.2394,
+  "n_patches": 9,
+  "patches": [
+    {
+      "id": "P01",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "location": "Abstract",
+      "before": ", with placebo-group walk speed changes near 0.13 m/s\u2014well below the 0.8 m/s threshold associated with impaired mobility risk described by Studenski 2011.",
+      "after": ", with placebo-group walk speed changes near 0.13 m/s.",
+      "reason": "The claim that a 0.13 m/s change falls below an 0.8 m/s absolute threshold is factually incorrect and misrepresents gait speed clinical significance."
+    },
+    {
+      "id": "P02",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "location": "Frailty and Physical Performance",
+      "before": " This change falls below the 0.8 m/s threshold associated with impaired mobility and frailty risk (Studenski 2011).",
+      "after": "",
+      "reason": "Deletes erroneous comparison of 0.13 m/s change to 0.8 m/s absolute threshold (Studenski 2011 not an allowed body citation)."
+    },
+    {
+      "id": "P03",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Cross-Domain Synthesis",
+      "before": "gait speed, where a decline below established thresholds like those documented by Studenski 2011 or Cesari 2009 predicts adverse outcomes, and grip strength, where sarcopenia cutoffs defined by Cruz-Jentoft 2019 identify individuals at elevated risk.",
+      "after": "gait speed, where a decline below established thresholds predicts adverse outcomes, and grip strength, where sarcopenia cutoffs identify individuals at elevated risk.",
+      "reason": "Removes three unauthorized body citations (Studenski 2011, Cesari 2009, Cruz-Jentoft 2019) not in the allowed list."
+    },
+    {
+      "id": "P04",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Longevity and Mortality Outcomes",
+      "before": " (Harrison 2009)",
+      "after": "",
+      "reason": "Deletes unauthorized body citation (Harrison 2009) not in the allowed list of 15 papers."
+    },
+    {
+      "id": "P05",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Limitations",
+      "before": " (Anisimov 2008)",
+      "after": "",
+      "reason": "Deletes unauthorized body citation (Anisimov 2008) not in the allowed list of 15 papers."
+    },
+    {
+      "id": "P06",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Limitations",
+      "before": " (ADA 2024)",
+      "after": "",
+      "reason": "Deletes unauthorized body citation (ADA 2024) not in the allowed list of 15 papers."
+    },
+    {
+      "id": "P07",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Limitations",
+      "before": "the ADA 2024 target of 7%",
+      "after": "the target of 7%",
+      "reason": "Deletes unauthorized body citation (ADA 2024) not in the allowed list of 15 papers."
+    },
+    {
+      "id": "P08",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "location": "Introduction",
+      "before": "where Hagstrom and colleagues report favorable signals",
+      "after": "where Hagstr\u00f6m and colleagues report favorable signals",
+      "reason": "Corrects inconsistent spelling of author name to match allowed citation token Hagstr\u00f6m 2026."
+    },
+    {
+      "id": "P09",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "location": "Introduction",
+      "before": "Vujovic and colleagues",
+      "after": "Vujovi\u0107 and colleagues",
+      "reason": "Corrects inconsistent spelling of author name to match allowed citation token Vujovi\u0107 2026."
+    }
+  ]
+}

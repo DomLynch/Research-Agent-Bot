@@ -23,6 +23,7 @@ from typing import Literal
 __all__ = [
     "OverrideRecord",
     "CanonicalTrial",
+    "BackgroundLiteratureEntry",
     "TopicPack",
     "TopicPackError",
     "load_topic_pack",
@@ -76,6 +77,21 @@ class CanonicalTrial:
 
 
 @dataclass(frozen=True, slots=True)
+class BackgroundLiteratureEntry:
+    """One topic-specific background-numeric registry entry. Hoisted
+    out of the global docs/background_literature.json so each topic
+    pack owns its own canonical numerics."""
+
+    key: str
+    numeric: str
+    context: str
+    citation_token: str
+    canonical_reference: str
+    doi: str | None = None
+    pmid: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
 class TopicPack:
     """Frozen topic pack. All collections are tuples / frozensets / mappingproxies.
 
@@ -98,6 +114,30 @@ class TopicPack:
     # runtime by any caller (defensive against accidental writes from
     # downstream stages — the table is sacred).
     known_role_overrides: Mapping[str, OverrideRecord]
+
+    # --- v2 generic-multi-topic fields (Refactor 2026-05-04) ---
+    # Active drug arm name synonyms (the topic compound's name as it
+    # appears in trial-arm fields). Drives _claim_topic_effect()
+    # generalization (was hardcoded `arm == "metformin"`).
+    active_arm_synonyms: frozenset[str] = frozenset()
+    placebo_arm_synonyms: frozenset[str] = frozenset(
+        ("placebo", "control", "PLA", "vehicle"),
+    )
+    # Search queries for live corpus discovery. Drives
+    # seed_topic_corpus.py --auto-corpus (was hardcoded in
+    # fetch_evidence_typed_corpus.py).
+    corpus_search_queries: tuple[str, ...] = ()
+    # Paper IDs that should be treated as canonical RCTs by the
+    # is_rct_papers logic (was hardcoded in run_v06_synthesis.py).
+    canonical_rct_paper_ids: tuple[str, ...] = ()
+    # Topic-specific background-literature numerics. Hoisted out
+    # of docs/background_literature.json so global registry stays
+    # generic.
+    background_literature: tuple[BackgroundLiteratureEntry, ...] = ()
+    # Endpoint polarity: which direction is "good" for the topic.
+    # Was hardcoded in _claim_metformin_effect() polarity logic.
+    # Map: outcome_class → "lower_is_better" | "higher_is_better"
+    endpoint_polarity: Mapping[str, str] = MappingProxyType({})
 
     # --- Lookups (intentionally explicit, not __contains__-style) ----------
 
@@ -251,6 +291,46 @@ def load_topic_pack(path: str | Path) -> TopicPack:
     canonical = _build_canonical_trials(data["canonical_trials"], p)
     overrides = _build_overrides(data["known_role_overrides"], p)
 
+    # v2 fields — all OPTIONAL with sensible defaults so existing
+    # topic packs that don't set them keep working.
+    active_arm_synonyms = frozenset(
+        s.strip().lower()
+        for s in data.get("active_arm_synonyms", [data["topic"]])
+    )
+    placebo_arm_synonyms = frozenset(
+        s.strip().lower()
+        for s in data.get(
+            "placebo_arm_synonyms",
+            ("placebo", "control", "PLA", "vehicle"),
+        )
+    )
+    corpus_search_queries = tuple(
+        data.get("corpus_search_queries", [])
+    )
+    canonical_rct_paper_ids = tuple(
+        data.get("canonical_rct_paper_ids", [])
+    )
+    bg_lit_raw = data.get("background_literature", [])
+    background_literature = tuple(
+        BackgroundLiteratureEntry(
+            key=row["key"],
+            numeric=row["numeric"],
+            context=row["context"],
+            citation_token=row["citation_token"],
+            canonical_reference=row["canonical_reference"],
+            doi=row.get("doi"),
+            pmid=row.get("pmid"),
+        )
+        for row in bg_lit_raw
+        if all(k in row for k in (
+            "key", "numeric", "context", "citation_token",
+            "canonical_reference",
+        ))
+    )
+    endpoint_polarity = MappingProxyType(
+        dict(data.get("endpoint_polarity", {}))
+    )
+
     return TopicPack(
         topic=data["topic"],
         drug_class=data["class_"],
@@ -267,4 +347,10 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         ),
         canonical_trials=canonical,
         known_role_overrides=overrides,
+        active_arm_synonyms=active_arm_synonyms,
+        placebo_arm_synonyms=placebo_arm_synonyms,
+        corpus_search_queries=corpus_search_queries,
+        canonical_rct_paper_ids=canonical_rct_paper_ids,
+        background_literature=background_literature,
+        endpoint_polarity=endpoint_polarity,
     )

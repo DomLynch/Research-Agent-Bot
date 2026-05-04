@@ -1,0 +1,28 @@
+{
+  "run_mode": "v0.6 quant-claim adapter",
+  "topic": "metformin",
+  "submission_id": "synthesis-metformin-v06-fix54-repro-2026-05-04T09-22-15Z",
+  "n_papers_in_corpus": 15,
+  "n_high_confidence_claims_used_by_writer": 134,
+  "writer_model": "mimo-v2.5-pro",
+  "in_writing_judge_model": "google/gemma-4-31b-it",
+  "final_layer_reviewer_model": "x-ai/grok-4.3",
+  "final_layer_fallback_model": "mistralai/mistral-small-2603",
+  "claim_source": "docs/quality-reference/metformin/quant_claims/*.json",
+  "spar_adjudication_ran": false,
+  "multi_receipt_clusters_ran": false,
+  "llm_fact_extraction_ran": false,
+  "rejected_evidence_quarantine_ran": false,
+  "deterministic_stages": [
+    "quant-claim extraction (deterministic regex over per-paper sources)",
+    "receipt summarization (group claims by paper, aggregate outcome class + effect direction)",
+    "tension matrix construction (cross-paper direction conflicts)",
+    "thesis selection (deterministic dominant-pattern picker \u2014 the LLM is NOT allowed to invent the thesis)",
+    "claim-strength repair (regex over over-claimed prose)",
+    "paper_id \u2192 Author Year substitution",
+    "References block append",
+    "Stage-1 audit (Q1-Q10) + Stage-2 consistency audit + auto-fix",
+    "final-layer LLM review (with single-occurrence patch safety)",
+    "final audit + unified verdict (worst-of stage1, stage2)"
+  ]
+}

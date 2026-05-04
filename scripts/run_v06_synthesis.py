@@ -76,22 +76,60 @@ import background_literature as _bglit  # noqa: E402
 # at docs/quality-reference/<topic>/). _run() resets these globals
 # before any downstream code reads them, so the per-topic pipeline
 # uses the right corpus end-to-end.
-DEFAULT_TOPIC = "metformin"
+# DEFAULT_TOPIC is intentionally not pinned to a specific drug —
+# the active topic is set per-invocation by _set_topic(). Tests
+# that need a baseline path use this fallback.
+DEFAULT_TOPIC = "metformin"  # historical default for backward-compat
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "parsed"
 
+# Active topic pack (set by _set_topic). Generic topic-aware logic
+# reads from this instead of hardcoded strings. None until first
+# _set_topic call.
+_TOPIC_PACK = None
+_ACTIVE_TOPIC: str = DEFAULT_TOPIC
+
 
 def _set_topic(topic: str) -> None:
-    """Update module-level corpus paths for the given topic across
-    BOTH the orchestrator AND the audit module. Called once by _run()
-    at the top of each pipeline invocation. Without the audit-side
-    update, the Q2 corpus trace would still read from the metformin
-    dir even when synthesising rapamycin."""
-    global QUANT_DIR, PARSED_DIR
+    """Update module-level corpus paths + topic pack for the given
+    topic across the orchestrator, audit, and bg-lit modules.
+    Called once by _run() at the top of each pipeline invocation.
+
+    Refactor 2026-05-04: also loads the topic pack so generic
+    helpers (_claim_topic_effect, canonical RCT lists, etc.) can
+    read topic-specific data without hardcoded strings."""
+    global QUANT_DIR, PARSED_DIR, _TOPIC_PACK, _ACTIVE_TOPIC
     QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims"
     PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "parsed"
+    _ACTIVE_TOPIC = topic
     # Keep audit module in lockstep
     _audit_v06._set_topic(topic)
+    # Load topic pack (best-effort — pack may not exist for new topics)
+    try:
+        from agent.topic_pack import load_topic_pack
+        tp_path = REPO_ROOT / "topic_packs" / f"{topic}.toml"
+        if tp_path.exists():
+            _TOPIC_PACK = load_topic_pack(tp_path)
+        else:
+            _TOPIC_PACK = None
+    except (ImportError, OSError, ValueError) as e:
+        print(
+            f"  ! topic pack load failed for {topic}: {e}",
+            file=sys.stderr,
+        )
+        _TOPIC_PACK = None
+
+
+def _get_topic_pack():
+    """Accessor for the active topic pack. Returns None if no
+    pack is loaded for the active topic (graceful fallback for
+    new/experimental topics)."""
+    return _TOPIC_PACK
+
+
+def _get_active_topic() -> str:
+    """Accessor for the currently-set topic name."""
+    return _ACTIVE_TOPIC
 
 
 # v0.6.0 endpoint → SynthesisSchemas OutcomeClass mapping. Curated
@@ -149,21 +187,42 @@ _ENDPOINT_POLARITY: dict[str, int] = {
 }
 
 
-def _claim_metformin_effect(claim: dict) -> int:
-    """Returns +1 if metformin's effect on this endpoint is good
-    (positive), -1 if bad (negative), 0 if unclear/null."""
+def _claim_topic_effect(claim: dict) -> int:
+    """Returns +1 if the active topic's compound has a good effect
+    on this endpoint, -1 if bad, 0 if unclear/null.
+
+    Refactor 2026-05-04: was hardcoded to `arm == "metformin"`.
+    Now reads active_arm_synonyms from the topic pack so this works
+    for any drug (rapamycin, GLP-1, statins, etc.) without code
+    changes."""
     direction = claim.get("direction") or ""
-    arm = claim.get("arm") or ""
+    arm = (claim.get("arm") or "").strip().lower()
     endpoint = claim.get("endpoint") or ""
     polarity = _ENDPOINT_POLARITY.get(endpoint, 0)
     if not polarity or not direction or direction == "no_change":
         return 0
     direction_sign = +1 if direction == "increase" else -1
-    # If the direction is described from the placebo arm, flip — a
-    # placebo-arm gain implies metformin underperformed.
-    arm_sign = +1 if arm == "metformin" else -1
-    metformin_movement = direction_sign * arm_sign
-    return polarity * metformin_movement
+    # If the direction is described from the active-drug arm, +1.
+    # If from the placebo arm, -1 (placebo gain = drug underperformed).
+    pack = _get_topic_pack()
+    if pack is not None and arm:
+        if arm in pack.active_arm_synonyms:
+            arm_sign = +1
+        elif arm in pack.placebo_arm_synonyms:
+            arm_sign = -1
+        else:
+            # Unknown arm name — fall back to topic-name match
+            arm_sign = +1 if arm == _get_active_topic() else -1
+    else:
+        # No pack loaded — fall back to topic-name string match
+        arm_sign = +1 if arm == _get_active_topic() else -1
+    drug_movement = direction_sign * arm_sign
+    return polarity * drug_movement
+
+
+# Backward-compat alias — some legacy call sites may still use the
+# old name. Forwards to the new generic function.
+_claim_metformin_effect = _claim_topic_effect
 
 
 def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
@@ -231,9 +290,16 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     else:
         cls = _taxonomy.infer_from_paper_meta(paper_meta)
     # If the deterministic path returns "unknown", fall back to the
-    # legacy receipt_id heuristic so existing runs don't regress.
+    # topic-pack canonical RCT list so existing runs don't regress.
+    # Refactor 2026-05-04: was hardcoded to metformin RCT names
+    # ("MASTERS", "MET_PREVENT", "Konopka_2019") — now reads from
+    # the active topic pack's canonical_rct_paper_ids.
     if cls.tier == "unknown":
-        is_rct_papers = ("MASTERS", "MET_PREVENT", "Konopka_2019")
+        pack = _get_topic_pack()
+        is_rct_papers = (
+            pack.canonical_rct_paper_ids if pack is not None
+            else ()
+        )
         if any(name in paper_id for name in is_rct_papers):
             return "A1", "direct"
         if paper_id.startswith("PMC"):

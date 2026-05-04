@@ -8,21 +8,23 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 12,000 LOC (set by DECISIONS.md 2026-04-30 Day 10.17 —
-the audit-quality expansion adds Q8 quarantine-leakage / Q9 receipt-id
-format / Q10 claim-strength validators (Phase 1, ~200 cloc), plus the
-upcoming Phase 2 tension-matrix cross-domain rules (~80 cloc) and
-Phase 3 DOI/PMID citation upgrade (~50 cloc). 12,000 covers Day 10.17
-fully with ~2,000 cloc headroom for any small follow-on validators.
-The user explicitly approved this raise on 2026-04-30 with the
-constraint "if needed and not bloat" — i.e. each new line must earn
-its life via the constraint surface, not through abstraction theater.
+Current ceiling: 13,500 LOC (raised 2026-05-04 from 12,000 by the
+multi-topic refactor — adds 9 new source-client adapters
+(biorxiv/semantic_scholar/crossref/unpaywall/core/doaj/openaire/
+pmc_oai/chembl, ~700 cloc), SourceAggregator (~150 cloc),
+TopicPack v2 schema fields + bg-lit hoist (~100 cloc), and
+manuscript_appendix.py (~250 cloc). Total expansion ~1,200 cloc to
+make the agent generic across topics + databases. The user
+explicitly approved this raise: "ADD ALL OF THESE" referring to
+the 11-database expansion, plus "no hardcoding ... should be
+scalable across multi topics" — every new line earns its life via
+generic-multi-topic capability, not abstraction theater.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 12000
+TOTAL_LIMIT = 13500
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

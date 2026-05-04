@@ -1,0 +1,73 @@
+{
+  "applied_at": "2026-05-04T09:49:05+00:00",
+  "n_proposed": 9,
+  "n_applied": 9,
+  "n_rejected": 0,
+  "n_flagged": 0,
+  "n_auto_stripped": 0,
+  "patches": [
+    {
+      "patch_id": "P01",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "decision": "applied",
+      "reason_for_decision": "numeric smart-gate: simplification pass (safe simplification (23 \u2192 9 words; AFTER words \u2286 BEFORE words; no new numerics/citations/identifiers)); global-corpus verifier: pass \u2014 no novel numerics. Grok rationale: 'The claim that a 0.13 m/s change falls below an 0.8 m/s absolute threshold is factually incorrect and misrepresents gait speed clinical significance.'"
+    },
+    {
+      "patch_id": "P02",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "decision": "applied",
+      "reason_for_decision": "numeric smart-gate: simplification pass (safe simplification (17 \u2192 0 words; AFTER words \u2286 BEFORE words; no new numerics/citations/identifiers)); global-corpus verifier: pass \u2014 no novel numerics. Grok rationale: 'Deletes erroneous comparison of 0.13 m/s change to 0.8 m/s absolute threshold (Studenski 2011 not an allowed body citation).'"
+    },
+    {
+      "patch_id": "P03",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Removes three unauthorized body citations (Studenski 2011, Cesari 2009, Cruz-Jentoft 2019) not in the allowed list.'"
+    },
+    {
+      "patch_id": "P04",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes unauthorized body citation (Harrison 2009) not in the allowed list of 15 papers.'"
+    },
+    {
+      "patch_id": "P05",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes unauthorized body citation (Anisimov 2008) not in the allowed list of 15 papers.'"
+    },
+    {
+      "patch_id": "P06",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes unauthorized body citation (ADA 2024) not in the allowed list of 15 papers.'"
+    },
+    {
+      "patch_id": "P07",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes unauthorized body citation (ADA 2024) not in the allowed list of 15 papers.'"
+    },
+    {
+      "patch_id": "P08",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "decision": "applied",
+      "reason_for_decision": "formatting auto-apply per type contract. Grok rationale: 'Corrects inconsistent spelling of author name to match allowed citation token Hagstr\u00f6m 2026.'"
+    },
+    {
+      "patch_id": "P09",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "decision": "applied",
+      "reason_for_decision": "formatting auto-apply per type contract. Grok rationale: 'Corrects inconsistent spelling of author name to match allowed citation token Vujovi\u0107 2026.'"
+    }
+  ]
+}

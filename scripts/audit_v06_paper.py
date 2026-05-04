@@ -267,8 +267,14 @@ _PRECLINICAL_RE = re.compile(
 def _check_preclinical_hedge(paper: str) -> tuple[bool, str]:
     """For sentences mentioning preclinical models, check if the
     immediately following sentence (or same sentence) contains a
-    translational hedge or limitation marker."""
-    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", paper)
+    translational hedge or limitation marker.
+
+    Excludes the publication-prep appendix sections — those are
+    metadata/disclosure prose, not synthesis content, and should
+    not be measured for translational hedging."""
+    # Strip appendix before measuring (Q9 does the same).
+    paper_for_check = _strip_publication_appendix(paper)
+    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", paper_for_check)
     violations: list[str] = []
     hedges = (
         "humans", "translation", "translate", "extrapolat", "limit",
@@ -366,15 +372,65 @@ _DENSITY_PATTERNS: tuple[str, ...] = (
 )
 
 
+_APPENDIX_HEADINGS_RE = re.compile(
+    r"^##\s+(Search Provenance and Selection|"
+    r"AI-Use Disclosure|"
+    r"Human Accountability Statement|"
+    r"Data and Code Availability|"
+    r"Acknowledgements?)"
+    r".*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+
+def _strip_publication_appendix(paper: str) -> str:
+    """Strip the publication-prep appendix sections (Search
+    Provenance / AI-Use Disclosure / Human Accountability / Data
+    and Code Availability / Acknowledgements) from the paper before
+    measuring synthesis-content metrics.
+
+    These sections are pure metadata/disclosure/methodology — they
+    have no claim density by design. Including them in Q6 (hedge
+    density) or Q9 (numeric density) measurements would dilute the
+    synthesis-content signal those checks are meant to catch.
+    Stripping is local to the metric — the actual paper file is
+    untouched."""
+    # Find the first appendix heading; cut everything from there to
+    # the next NON-appendix heading (or to the References section,
+    # whichever comes first).
+    lines = paper.splitlines()
+    out: list[str] = []
+    in_appendix = False
+    for line in lines:
+        m = _APPENDIX_HEADINGS_RE.match(line)
+        if m:
+            in_appendix = True
+            continue
+        if in_appendix and line.startswith("## ") and not (
+            _APPENDIX_HEADINGS_RE.match(line)
+        ):
+            in_appendix = False
+        if not in_appendix:
+            out.append(line)
+    return "\n".join(out)
+
+
 def _check_numeric_density(
     paper: str, threshold: float = 8.0,
 ) -> tuple[bool, str]:
-    wc = len(paper.split())
-    total = sum(len(re.findall(pat, paper)) for pat in _DENSITY_PATTERNS)
+    # Exclude publication-prep appendix from density calculation —
+    # appendix is pure prose with no claim numerics by design.
+    synthesis_content = _strip_publication_appendix(paper)
+    wc = len(synthesis_content.split())
+    total = sum(
+        len(re.findall(pat, synthesis_content))
+        for pat in _DENSITY_PATTERNS
+    )
     density = (total / max(1, wc)) * 1000
     return density >= threshold, (
         f"density {density:.1f} numerics/1000 words "
-        f"(threshold ≥{threshold}; contract={_DENSITY_CONTRACT_VERSION})"
+        f"(threshold ≥{threshold}; contract={_DENSITY_CONTRACT_VERSION}; "
+        f"appendix excluded)"
     )
 
 

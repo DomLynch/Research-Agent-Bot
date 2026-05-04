@@ -1,0 +1,1231 @@
+{
+  "paper_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme",
+  "doi": "10.1038/s43856-025-00904-9",
+  "extracted_at": "2026-05-04T10:01:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 22,
+    "mean_sd": 10,
+    "percentage": 19,
+    "p_value": 5,
+    "sample_size": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-385",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 385,
+      "sentence": "Eligible participants were people 55-85 years old with mild cognitive impairment or early-stage dementia, which was defined as having a Global Clinical Dementia Rating Scale Score of 0.5-1.",
+      "context_window": "f rapamycin in humans. Eligible participants were people 55-85 years old with mild cognitive impairment or early-stage dementia,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-575",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 575,
+      "sentence": "All participants received rapamycin (1 mg/day) for eight weeks.",
+      "context_window": "Scale Score of 0.5-1. All participants received rapamycin (1 mg/day) for eight weeks. The primary aim was to evaluate rapamycin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-912",
+      "claim_type": "mean_sd",
+      "raw_text": "74 \u00b1 4",
+      "numeric_values": [
+        74.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 912,
+      "sentence": "In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectable in the CSF before or after treatment.",
+      "context_window": "rkers in the CSF and plasma. In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectabl",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-917",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 917,
+      "sentence": "In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectable in the CSF before or after treatment.",
+      "context_window": "in the CSF and plasma. In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectable in t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-926",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 926,
+      "sentence": "In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectable in the CSF before or after treatment.",
+      "context_window": "SF and plasma. In ten participants (mean age 74 \u00b1 4 years, 60% female), we find that rapamycin is not detectable in the CS",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-1300",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1300,
+      "sentence": "Furthermore, we find that CSF phosphorylated tau-181 (mean change (95% confidence interval) pg/ml), 2.64 [0.70-4.59]), glial fibrillary acidic protein (6262.21 [3787.44-9373.84]), and neurofilament light (367.19 [204.28-561.61]) and plasma interferon gamma (4.37 [3.01-5.74]), interleukin 5 (0.33 [0.12-0.64]), vascular endothelial growth factor D (3741.03 [1505.98-5976.07]), soluble fms-like tyrosine kinase-1 (258.88 [89.03-428.74]) and placental growth factor (20.81 [12.38-29.25]) significantly increase (FDR-corrected p -value < 0.05).",
+      "context_window": "more, we find that CSF phosphorylated tau-181 (mean change (95% confidence interval) pg/ml), 2.64 [0.70-4.59]), glial fibri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-4155",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4155,
+      "sentence": "The most commonly reported side effects are mouth sores, acneiform rash, hypercholesterolemia, and hyperlipidemia, which occur in 5-20% of patients 7 , 19 .",
+      "context_window": "hypercholesterolemia, and hyperlipidemia, which occur in 5-20% of patients 7 , 19 . However, most safety data have been co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4440",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 4440,
+      "sentence": "To address this limitation, Kraig et al. conducted an 8-16-week randomized placebo-controlled study of rapamycin (1 mg/day) in generally healthy older adults aged 70-95 years 20 .",
+      "context_window": "8-16-week randomized placebo-controlled study of rapamycin (1 mg/day) in generally healthy older adults aged 70-95 years 20 . Th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4492",
+      "claim_type": "unit_value",
+      "raw_text": "95 years",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 4492,
+      "sentence": "To address this limitation, Kraig et al. conducted an 8-16-week randomized placebo-controlled study of rapamycin (1 mg/day) in generally healthy older adults aged 70-95 years 20 .",
+      "context_window": "amycin (1 mg/day) in generally healthy older adults aged 70-95 years 20 . The treatment was generally well-tolerated with no cli",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4702",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 4702,
+      "sentence": "In addition, a recently completed 18-week randomized placebo-controlled trial of rapamycin (1 mg/m 2 /day or 2 mg/m 2 /day) for amyotrophic lateral sclerosis (ALS) also reported an acceptable safety profile 21 , as have studies with other mTOR inhibitors in generally healthy older adults 22 , 23 .",
+      "context_window": "d 18-week randomized placebo-controlled trial of rapamycin (1 mg/m 2 /day or 2 mg/m 2 /day) for amyotrophic lateral sclerosi",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4719",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 4719,
+      "sentence": "In addition, a recently completed 18-week randomized placebo-controlled trial of rapamycin (1 mg/m 2 /day or 2 mg/m 2 /day) for amyotrophic lateral sclerosis (ALS) also reported an acceptable safety profile 21 , as have studies with other mTOR inhibitors in generally healthy older adults 22 , 23 .",
+      "context_window": "zed placebo-controlled trial of rapamycin (1 mg/m 2 /day or 2 mg/m 2 /day) for amyotrophic lateral sclerosis (ALS) also repo",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-5443",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 5443,
+      "sentence": "Given the promising safety data from recent trials for other indications 20 , 21 , coupled with the supportive data from preclinical and post-mortem studies 10 - 14 , we now conduct an eight-week open-label pilot trial with rapamycin (1 mg/day) in participants with a clinical diagnosis of mild cognitive impairment (MCI) or dementia of the Alzheimer\u2019s type.",
+      "context_window": "onduct an eight-week open-label pilot trial with rapamycin (1 mg/day) in participants with a clinical diagnosis of mild cognitiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-5571",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 5571,
+      "sentence": "The 1 mg/day dose of rapamycin is selected based on our prior data in older adults demonstrating acceptable tolerability using this dosing regimen 20 .",
+      "context_window": "e impairment (MCI) or dementia of the Alzheimer\u2019s type. The 1 mg/day dose of rapamycin is selected based on our prior data in ol",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-1900",
+      "claim_type": "mean_sd",
+      "raw_text": "74 \u00b1 4",
+      "numeric_values": [
+        74.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1900,
+      "sentence": "Ten participants (mean age 74 \u00b1 4 years, 60% female) completed the trial.",
+      "context_window": "ween 10/29/2020 and 12/16/2021. Ten participants (mean age 74 \u00b1 4 years, 60% female) completed the trial. A sample size of 10",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-1905",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1905,
+      "sentence": "Ten participants (mean age 74 \u00b1 4 years, 60% female) completed the trial.",
+      "context_window": "10/29/2020 and 12/16/2021. Ten participants (mean age 74 \u00b1 4 years, 60% female) completed the trial. A sample size of 10 was e",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-1914",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1914,
+      "sentence": "Ten participants (mean age 74 \u00b1 4 years, 60% female) completed the trial.",
+      "context_window": "0 and 12/16/2021. Ten participants (mean age 74 \u00b1 4 years, 60% female) completed the trial. A sample size of 10 was establ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-2125",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2125,
+      "sentence": "The minimum detectable effect size to achieve 80% power with a paired samples t -test and a two-sided significance level of p < 0.05 is 1.07, a large effect size 31 .",
+      "context_window": "pilot study. The minimum detectable effect size to achieve 80% power with a paired samples t -test and a two-sided signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-p-2203",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2203,
+      "sentence": "The minimum detectable effect size to achieve 80% power with a paired samples t -test and a two-sided significance level of p < 0.05 is 1.07, a large effect size 31 .",
+      "context_window": "aired samples t -test and a two-sided significance level of p < 0.05 is 1.07, a large effect size 31 . Inclusion criteria for t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-2304",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2304,
+      "sentence": "Inclusion criteria for the study included adults aged 55-85 years with a clinical diagnosis of MCI or mild dementia due to AD based on the National Institute on Aging-Alzheimer\u2019s Association criteria 32 and a Global Clinical Dementia Rating (CDR) Scale score of 0.5 or 1 33 .",
+      "context_window": ". Inclusion criteria for the study included adults aged 55-85 years with a clinical diagnosis of MCI or mild dementia due to AD",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-3920",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3920,
+      "sentence": "Within 15 days of Baseline Visit 2, participants began the eight-week treatment regimen of 1 mg of rapamycin (Rapamune\u2122 (sirolimus), Pfizer) per day, administered in the morning after an overnight fast.",
+      "context_window": "cognition and functional status (Baseline Visit 2). Within 15 days of Baseline Visit 2, participants began the eight-week trea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4004",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4004,
+      "sentence": "Within 15 days of Baseline Visit 2, participants began the eight-week treatment regimen of 1 mg of rapamycin (Rapamune\u2122 (sirolimus), Pfizer) per day, administered in the morning after an overnight fast.",
+      "context_window": "t 2, participants began the eight-week treatment regimen of 1 mg of rapamycin (Rapamune\u2122 (sirolimus), Pfizer) per day, admin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-5354",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5354,
+      "sentence": "Within 7-14 days of the final study drug dose, participants completed the CDR and all assessment procedures performed at Baseline Visit 2 (Visit 8).",
+      "context_window": "an, this participant was retained in the analyses. Within 7-14 days of the final study drug dose, participants completed the CD",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-11712",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11712,
+      "sentence": "Several of the inflammatory biomarkers were at or below the assay's lower limit of detection, resulting in average coefficients of variance exceeding 20%.",
+      "context_window": "on, resulting in average coefficients of variance exceeding 20%. These markers were excluded from the analysis. Data were",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-11853",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11853,
+      "sentence": "Demographic and clinical characteristics of the sample ( N = 10) at baseline were assessed using descriptive statistics.",
+      "context_window": "p. Demographic and clinical characteristics of the sample ( N = 10) at baseline were assessed using descriptive statistics. Sh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-p-12312",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 12312,
+      "sentence": "Statistical tests were 2-sided with the level for statistical significance set at p < 0.05.",
+      "context_window": "2-sided with the level for statistical significance set at p < 0.05. FDR-correction for multiple comparisons was applied to cog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-340",
+      "claim_type": "sample_size",
+      "raw_text": "N = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 340,
+      "sentence": "After in-person screening, there were five additional screen failures and four other individuals were withdrawn prior to the start of the intervention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar puncture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding across figures) who were enrolled in the intervention)).",
+      "context_window": "als were withdrawn prior to the start of the intervention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-389",
+      "claim_type": "sample_size",
+      "raw_text": "N = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 389,
+      "sentence": "After in-person screening, there were five additional screen failures and four other individuals were withdrawn prior to the start of the intervention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar puncture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding across figures) who were enrolled in the intervention)).",
+      "context_window": "rvention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-431",
+      "claim_type": "sample_size",
+      "raw_text": "N = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 431,
+      "sentence": "After in-person screening, there were five additional screen failures and four other individuals were withdrawn prior to the start of the intervention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar puncture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding across figures) who were enrolled in the intervention)).",
+      "context_window": "mic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar punctur",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-463",
+      "claim_type": "sample_size",
+      "raw_text": "N = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 463,
+      "sentence": "After in-person screening, there were five additional screen failures and four other individuals were withdrawn prior to the start of the intervention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar puncture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding across figures) who were enrolled in the intervention)).",
+      "context_window": "t urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar puncture], leaving a total of 10 partic",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-545",
+      "claim_type": "mean_sd",
+      "raw_text": "74 \u00b1 4",
+      "numeric_values": [
+        74.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 545,
+      "sentence": "After in-person screening, there were five additional screen failures and four other individuals were withdrawn prior to the start of the intervention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar puncture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding across figures) who were enrolled in the intervention)).",
+      "context_window": "bar puncture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-553",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 553,
+      "sentence": "After in-person screening, there were five additional screen failures and four other individuals were withdrawn prior to the start of the intervention [ N = 1 suspected transient ischemic attack (TIA), N = 1 recurrent urinary tract infections, N = 1 increasing liver enzymes, N = 1 unsuccessful lumbar puncture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding across figures) who were enrolled in the intervention)).",
+      "context_window": "ture], leaving a total of 10 participants (mean age 74 \u00b1 4; 60% female; Supplementary Table 1 (consistent color coding acro",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-751",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 751,
+      "sentence": "All participants identified as non-Hispanic white and had completed some college (10%) or were college graduates or higher (90%).",
+      "context_window": "ified as non-Hispanic white and had completed some college (10%) or were college graduates or higher (90%). At baseline, 70",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-793",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 793,
+      "sentence": "All participants identified as non-Hispanic white and had completed some college (10%) or were college graduates or higher (90%).",
+      "context_window": "ted some college (10%) or were college graduates or higher (90%). At baseline, 70% of the participants met criteria for MCI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-812",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 812,
+      "sentence": "At baseline, 70% of the participants met criteria for MCI and 30% met criteria for mild dementia.",
+      "context_window": "0%) or were college graduates or higher (90%). At baseline, 70% of the participants met criteria for MCI and 30% met criter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-861",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 861,
+      "sentence": "At baseline, 70% of the participants met criteria for MCI and 30% met criteria for mild dementia.",
+      "context_window": "baseline, 70% of the participants met criteria for MCI and 30% met criteria for mild dementia. Based on medication and dru",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-1015",
+      "claim_type": "mean_sd",
+      "raw_text": "92 \u00b1 5",
+      "numeric_values": [
+        92.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1015,
+      "sentence": "Based on medication and drug accountability logs, the average medication adherence rate over the eight-week trial was 92 \u00b1 5%.",
+      "context_window": "age medication adherence rate over the eight-week trial was 92 \u00b1 5%. Rapamycin was not detectable in study participant CSF at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-1020",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1020,
+      "sentence": "Based on medication and drug accountability logs, the average medication adherence rate over the eight-week trial was 92 \u00b1 5%.",
+      "context_window": "edication adherence rate over the eight-week trial was 92 \u00b1 5%. Rapamycin was not detectable in study participant CSF at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-1385",
+      "claim_type": "sample_size",
+      "raw_text": "N = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1385,
+      "sentence": "The majority of AEs were of mild severity ( N = 16) and deemed unlikely to be related to the study.",
+      "context_window": "ded (Table 1 ). The majority of AEs were of mild severity ( N = 16) and deemed unlikely to be related to the study. Two AEs (u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-1682",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1682,
+      "sentence": "The overall participant retention rate was 100% during the intervention period.",
+      "context_window": "the study drug. The overall participant retention rate was 100% during the intervention period. Table 1 Numbers and types o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-1806",
+      "claim_type": "sample_size",
+      "raw_text": "N = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1806,
+      "sentence": "Table 1 Numbers and types of adverse events occurring during the study Adverse event ( N = 20) Total N ( N before Txt) Severity ( N before Txt) Relatedness ( N before Txt) Skin Rash 1 (0) Mild Unlikely Infection 2 (1) Mild (moderate) Unlikely (not related) Gastrointestinal Diarrhea 2 (1) Mild (mild) Possible (not related) Emesis 2 (1) Mild (mild) Unlikely (not related) Respiratory Cough 2 (0) Mild Unlikely Infection 1 (0) Mild Unlikely Genitourinary Urinary urgency 1 (0) Mild Possible Urinary incontinence 1 (0) Mild Unlikely Urinary retention 1 (0) Mild Not related General Leg edema 2 (0) Mild/moderate Not related/unlikely Fall 2 (1) Mild (mild) Not related (not related) Nervous system Headache 1 (1) (Moderate) (Unlikely) Suspected TIA 1 (1) (Severe) (Not related) Metabolism Hypokalemia 1 (0) Mild Not related Note: Values in parentheses were before treatment.Txt = treatment, TIA = transient ischemic attack\n\nNumbers and types of adverse events occurring during the study\n\nNote: Values in parentheses were before treatment.Txt = treatment, TIA = transient ischemic attack\n\nAssessment of hematological studies indicated that all parameters remained within the normal range, although statistically significant reductions in red blood cell distribution width (RDW), mean corpuscular volume (MCV), and mean corpuscular hemoglobin (MCH) were observed from baseline to post-treatment (Supplementary Data 2 ).",
+      "context_window": "f adverse events occurring during the study Adverse event ( N = 20) Total N ( N before Txt) Severity ( N before Txt) Relatedne",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-3632",
+      "claim_type": "mean_sd",
+      "raw_text": "24.3 \u00b1 3.4",
+      "numeric_values": [
+        24.3,
+        3.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3632,
+      "sentence": "There were no significant changes in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24).",
+      "context_window": "eriod. There were no significant changes in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-3639",
+      "claim_type": "unit_value",
+      "raw_text": "3.4 mg",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3639,
+      "sentence": "There were no significant changes in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24).",
+      "context_window": "There were no significant changes in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-3668",
+      "claim_type": "mean_sd",
+      "raw_text": "24.0 \u00b1 3.5",
+      "numeric_values": [
+        24.0,
+        3.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3668,
+      "sentence": "There were no significant changes in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24).",
+      "context_window": "anges in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24). Systolic blood pressure",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-3675",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3675,
+      "sentence": "There were no significant changes in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24).",
+      "context_window": "n BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24). Systolic blood pressure in",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-p-3704",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3704,
+      "sentence": "There were no significant changes in BMI (baseline: 24.3 \u00b1 3.4 mg/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24).",
+      "context_window": "g/k 2 ; post-treatment: 24.0 \u00b1 3.5 mg/kg 2 , t (9) = -1.26, p = 0.24). Systolic blood pressure increased from baseline to post-t",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-3792",
+      "claim_type": "mean_sd",
+      "raw_text": "127.8 \u00b1 19.0",
+      "numeric_values": [
+        127.8,
+        19.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3792,
+      "sentence": "Systolic blood pressure increased from baseline to post-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002).",
+      "context_window": "essure increased from baseline to post-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p =",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-3800",
+      "claim_type": "unit_value",
+      "raw_text": "19.0 mmHg",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 3800,
+      "sentence": "Systolic blood pressure increased from baseline to post-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002).",
+      "context_window": "ncreased from baseline to post-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.00",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-3827",
+      "claim_type": "mean_sd",
+      "raw_text": "138.2 \u00b1 22.1",
+      "numeric_values": [
+        138.2,
+        22.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3827,
+      "sentence": "Systolic blood pressure increased from baseline to post-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002).",
+      "context_window": "ost-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002). Diastolic blood pressure d",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-3835",
+      "claim_type": "unit_value",
+      "raw_text": "22.1 mmHg",
+      "numeric_values": [
+        22.1
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 3835,
+      "sentence": "Systolic blood pressure increased from baseline to post-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002).",
+      "context_window": "tment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002). Diastolic blood pressure did no",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-p-3861",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3861,
+      "sentence": "Systolic blood pressure increased from baseline to post-treatment (baseline: 127.8 \u00b1 19.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002).",
+      "context_window": "9.0 mmHg; post-treatment: 138.2 \u00b1 22.1 mmHg, t (9) = 4.226, p = 0.002). Diastolic blood pressure did not change significantly (ba",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-3938",
+      "claim_type": "mean_sd",
+      "raw_text": "67.2 \u00b1 10.6",
+      "numeric_values": [
+        67.2,
+        10.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3938,
+      "sentence": "Diastolic blood pressure did not change significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38).",
+      "context_window": "olic blood pressure did not change significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p =",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-3945",
+      "claim_type": "unit_value",
+      "raw_text": "10.6 mmHg",
+      "numeric_values": [
+        10.6
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 3945,
+      "sentence": "Diastolic blood pressure did not change significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38).",
+      "context_window": "ood pressure did not change significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38)",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-msd-3972",
+      "claim_type": "mean_sd",
+      "raw_text": "68.9 \u00b1 12.0",
+      "numeric_values": [
+        68.9,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3972,
+      "sentence": "Diastolic blood pressure did not change significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38).",
+      "context_window": "significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38). In the unadjusted analyses",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-3979",
+      "claim_type": "unit_value",
+      "raw_text": "12.0 mmHg",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 3979,
+      "sentence": "Diastolic blood pressure did not change significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38).",
+      "context_window": "icantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38). In the unadjusted analyses of A",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-p-4005",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4005,
+      "sentence": "Diastolic blood pressure did not change significantly (baseline: 67.2 \u00b1 10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38).",
+      "context_window": "10.6 mmHg; post-treatment: 68.9 \u00b1 12.0 mmHg, t (9) = 0.915, p = 0.38). In the unadjusted analyses of ADRD biomarkers evaluated",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-4798",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4798,
+      "sentence": "Baseline and post-treatment plasma ( a - e ) and cerebrospinal fluid ( f - j ) ( N = 10 participants) biomarker changes were evaluated using paired samples t -tests or Wilcoxon signed rank tests.",
+      "context_window": "atment plasma ( a - e ) and cerebrospinal fluid ( f - j ) ( N = 10 participants) biomarker changes were evaluated using paired",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-5529",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5529,
+      "sentence": "Baseline and post-treatment plasma ( a - e ) and cerebrospinal fluid ( f - j ) ( N = 10 participants) biomarker changes were evaluated using paired samples t -tests or Wilcoxon signed rank tests.",
+      "context_window": "atment plasma ( a - e ) and cerebrospinal fluid ( f - j ) ( N = 10 participants) biomarker changes were evaluated using paired",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-6825",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6825,
+      "sentence": "Baseline and post-treatment plasma biomarker ( a - e ) ( N = 10 participants) changes were evaluated using paired samples t -tests or Wilcoxon signed rank tests.",
+      "context_window": "a. Baseline and post-treatment plasma biomarker ( a - e ) ( N = 10 participants) changes were evaluated using paired samples t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-n-7385",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7385,
+      "sentence": "Baseline and post-treatment plasma biomarker ( a - e ) ( N = 10 participants) changes were evaluated using paired samples t -tests or Wilcoxon signed rank tests.",
+      "context_window": ". Baseline and post-treatment plasma biomarker ( a - e ) ( N = 10 participants) changes were evaluated using paired samples t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-2226",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2226,
+      "sentence": "The investigators also demonstrated downstream inhibition of mTOR activity following treatment, coupled with a reduction in tumor cell proliferation in 50% of the study sample.",
+      "context_window": "nt, coupled with a reduction in tumor cell proliferation in 50% of the study sample. Therefore, there is evidence in some p",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-2518",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2518,
+      "sentence": "In circulation, 95% of the drug is retained in erythrocytes, with only about 3% sequestered in plasma 51 .",
+      "context_window": "CNS effects through peripheral mechanisms. In circulation, 95% of the drug is retained in erythrocytes, with only about 3%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-2579",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2579,
+      "sentence": "In circulation, 95% of the drug is retained in erythrocytes, with only about 3% sequestered in plasma 51 .",
+      "context_window": "5% of the drug is retained in erythrocytes, with only about 3% sequestered in plasma 51 . Further assessments of rapamycin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-4945",
+      "claim_type": "unit_value",
+      "raw_text": "160 mmHg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mmHg",
+      "source_section": "discussion",
+      "source_offset": 4945,
+      "sentence": "As systolic blood pressure > 160 mmHg was an exclusion criterion for study participation, regression to the mean may be contributing to the observed change.",
+      "context_window": "s in diastolic blood pressure. As systolic blood pressure > 160 mmHg was an exclusion criterion for study participation, regress",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-5346",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5346,
+      "sentence": "In renal transplant recipients taking generally high dosages of rapamycin, hypertension has been reported as an adverse event, occurring in 8-58% of treated individuals 55 .",
+      "context_window": "nsion has been reported as an adverse event, occurring in 8-58% of treated individuals 55 . In our prior placebo-controlled",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-6279",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6279,
+      "sentence": "Changes in erythrocyte parameters have been observed in association with rapamycin use in transplant recipients, with an estimated 27-57% developing thrombocytopenia and/or anemia 56 , 57 .",
+      "context_window": "apamycin use in transplant recipients, with an estimated 27-57% developing thrombocytopenia and/or anemia 56 , 57 . The mec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-u-9793",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 years",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 9793,
+      "sentence": "Over a mean of 2.1 years, Lleo et al. examined longitudinal changes in p-tau 181 using the Fujirebio Europe INNOTEST assay and NfL using the Uman Diagnostics assay.",
+      "context_window": "er short durations as employed by our study. Over a mean of 2.1 years, Lleo et al. examined longitudinal changes in p-tau 181 usi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme-pct-10075",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10075,
+      "sentence": "When restricting the sample to individuals with AD, CSF p-tau 181 levels remained unchanged, and NfL increased at an annual rate of 4% 69 .",
+      "context_window": "remained unchanged, and NfL increased at an annual rate of 4% 69 . Other studies have similarly reported stability in p-t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

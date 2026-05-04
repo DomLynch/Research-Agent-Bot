@@ -64,6 +64,42 @@ forbidden_verbs_for_results_role_with_protocol_keywords = [
 ]
 
 
+# --- v2 generic-multi-topic top-level fields (Refactor 2026-05-04) ---
+# These MUST be declared before any [section] / [[array-of-tables]]
+# below or TOML scopes them under the most recent section.
+
+active_arm_synonyms = [
+  "rapamycin",
+  "sirolimus",
+  "Rapamune",
+  "RAP",
+  "RAD001",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+]
+
+corpus_search_queries = [
+  "rapamycin AND aging AND human",
+  "sirolimus AND aging AND clinical trial",
+  "rapamycin AND (longevity OR healthspan)",
+  "rapamycin AND exercise AND older adults",
+  "(rapamycin OR sirolimus) AND mTOR AND mechanism",
+  "rapamycin AND (PEARL OR Mannick OR Konopka)",
+]
+
+canonical_rct_paper_ids = [
+  "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte",
+  "PMC13082878_exercise_and_weekly_sirolimus_rapamycin_in_older_adults_rapa",
+  "PMC10993488_evaluating_the_effect_of_rapamycin_treatment_in_alzheimer_s_",
+  "PMC12092812_rapamycin_treatment_for_alzheimer_s_disease_and_related_deme",
+]
+
+
 # --- Canonical trials (informational; surface-check feeds qa_report) -------
 
 # PEARL — randomized 1-year trial in healthy older adults; the flagship
@@ -122,3 +158,78 @@ tier   = "A1"
 role   = "registered_pending"
 design = "rct"
 tier   = "A1"
+
+
+# Endpoint polarity + background literature.
+# (active_arm_synonyms / placebo_arm_synonyms / corpus_search_queries /
+# canonical_rct_paper_ids declared earlier as top-level scalars.)
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiometabolic = "lower_is_better"
+muscle_function = "higher_is_better"
+frailty = "lower_is_better"
+longevity = "higher_is_better"
+immunosenescence = "lower_is_better"
+
+# Topic-specific background numerics — these were polluting the
+# global docs/background_literature.json before today's refactor.
+[[background_literature]]
+key = "pearl_total_enrollment"
+numeric = "80"
+context = "PEARL trial total enrollment (rapamycin geroscience RCT, ~80 adults across placebo + treatment arms; corpus extraction shows n=40 placebo + subgroups summing to 80-81)."
+citation_token = "Moel 2025"
+canonical_reference = "Moel V, Heimroth E, Boucher J, et al. Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial. Aging. 2025;17(7):1582-1606."
+doi = "10.18632/aging.206235"
+
+[[background_literature]]
+key = "pearl_total_enrollment_alt"
+numeric = "81"
+context = "PEARL trial total enrollment (alternate corpus extraction giving n=81; same trial as pearl_total_enrollment)."
+citation_token = "Moel 2025"
+canonical_reference = "Moel V, Heimroth E, Boucher J, et al. Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial. Aging. 2025;17(7):1582-1606."
+doi = "10.18632/aging.206235"
+
+[[background_literature]]
+key = "rapamycin_mouse_lifespan_extension_male"
+numeric = "14%"
+context = "Rapamycin extends median lifespan in heterogeneous mice by ~14% in males (Harrison 2009, NIA Interventions Testing Program)."
+citation_token = "Harrison 2009"
+canonical_reference = "Harrison DE, Strong R, Sharp ZD, et al. Rapamycin fed late in life extends lifespan in genetically heterogeneous mice. Nature. 2009;460(7253):392-395."
+doi = "10.1038/nature08221"
+pmid = "19587680"
+
+[[background_literature]]
+key = "rapamycin_mouse_lifespan_extension_female"
+numeric = "9%"
+context = "Rapamycin extends median lifespan in heterogeneous mice by ~9% in females (companion to ~14% males in same Harrison 2009 cohort)."
+citation_token = "Harrison 2009"
+canonical_reference = "Harrison DE, Strong R, Sharp ZD, et al. Rapamycin fed late in life extends lifespan in genetically heterogeneous mice. Nature. 2009;460(7253):392-395."
+doi = "10.1038/nature08221"
+pmid = "19587680"
+
+[[background_literature]]
+key = "rapamycin_mtorc2_disruption_threshold"
+numeric = "2 weeks"
+context = "Chronic rapamycin (sirolimus) dosing beyond ~2 weeks disrupts mTORC2 in addition to mTORC1; this drives the field's pivot to intermittent (weekly) dosing."
+citation_token = "Lamming 2012"
+canonical_reference = "Lamming DW, Ye L, Katajisto P, et al. Rapamycin-induced insulin resistance is mediated by mTORC2 loss and uncoupled from longevity. Science. 2012;335(6076):1638-1643."
+doi = "10.1126/science.1215135"
+pmid = "22461615"
+
+[[background_literature]]
+key = "rapamycin_pearl_intermittent_dose"
+numeric = "5 mg"
+context = "Intermittent (weekly) low-dose rapamycin regimen used in early human aging trials."
+citation_token = "Mannick 2014"
+canonical_reference = "Mannick JB, Del Giudice G, Lattanzi M, et al. mTOR inhibition improves immune function in the elderly. Sci Transl Med. 2014;6(268):268ra179."
+doi = "10.1126/scitranslmed.3009892"
+pmid = "25540326"
+
+[[background_literature]]
+key = "rapamycin_therapeutic_trough_post_transplant"
+numeric = "5-15 ng/mL"
+context = "Sirolimus whole-blood trough concentration target in solid-organ transplant immunosuppression. Reference range; aging-relevant trials use lower intermittent dosing."
+citation_token = "Kahan 2000"
+canonical_reference = "Kahan BD. Efficacy of sirolimus compared with azathioprine for reduction of acute renal allograft rejection: a randomised multicentre study. Lancet. 2000;356(9225):194-202."
+doi = "10.1016/s0140-6736(00)02480-6"
+pmid = "10963197"

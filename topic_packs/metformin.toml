@@ -61,6 +61,41 @@ forbidden_verbs_for_results_role_with_protocol_keywords = [
 ]
 
 
+# --- v2 generic-multi-topic top-level fields (Refactor 2026-05-04) ---
+# These MUST be declared before any [section] / [[array-of-tables]]
+# below or TOML scopes them under the most recent section.
+
+active_arm_synonyms = [
+  "metformin",
+  "MET",
+  "biguanide",
+  "Glucophage",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+]
+
+corpus_search_queries = [
+  "metformin AND aging AND human",
+  "metformin AND (RCT OR clinical trial OR randomized)",
+  "metformin AND (longevity OR healthspan OR sarcopenia OR frailty)",
+  "metformin AND exercise AND older adults",
+  "metformin AND (mortality OR cardiometabolic) AND cohort",
+  "metformin AND mTOR AND mechanism",
+]
+
+canonical_rct_paper_ids = [
+  "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy",
+  "Witham_2025_MET_PREVENT_metformin_trial",
+  "Konopka_2019_metformin_blunts_aerobic_exercise_adaptations",
+  "Kulkarni_2018_MILES_metformin_aging_cell",
+]
+
+
 # --- Canonical trials (informational; surface-check feeds qa_report) -------
 
 [[canonical_trials]]
@@ -112,3 +147,36 @@ tier   = "A1"
 role   = "published_results"
 design = "rct"
 tier   = "A1"
+
+
+# Endpoint polarity — which direction is "good" for this drug
+# in this outcome class. Drives generic _claim_topic_effect().
+# (active_arm_synonyms / placebo_arm_synonyms / corpus_search_queries /
+# canonical_rct_paper_ids declared earlier as top-level scalars.)
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiometabolic = "lower_is_better"  # HbA1c, BMI, lipids — lower
+muscle_function = "higher_is_better"  # walk speed, grip
+frailty = "lower_is_better"  # frailty index — lower
+longevity = "higher_is_better"
+inflammation = "lower_is_better"
+
+# Topic-specific background-literature numerics. Hoisted out
+# of docs/background_literature.json so the global registry stays
+# generic.
+[[background_literature]]
+key = "metformin_complex_i_inhibition"
+numeric = "100-300 μM"
+context = "Metformin's IC50 for mitochondrial complex I inhibition (in vitro / cellular dose range — orders of magnitude above plasma concentrations achievable from oral dosing)."
+citation_token = "Owen 2000"
+canonical_reference = "Owen MR, Doran E, Halestrap AP. Evidence that metformin exerts its anti-diabetic effects through inhibition of complex 1 of the mitochondrial respiratory chain. Biochem J. 2000;348(3):607-614."
+doi = "10.1042/0264-6021:3480607"
+pmid = "10839993"
+
+[[background_literature]]
+key = "metformin_standard_dose"
+numeric = "850 mg"
+context = "Metformin standard adult oral starting dose (twice daily)."
+citation_token = "ADA 2024"
+canonical_reference = "American Diabetes Association. Standards of Medical Care in Diabetes — 2024."
+doi = "10.2337/dc24-S001"

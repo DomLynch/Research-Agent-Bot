@@ -1,0 +1,30 @@
+{
+  "run_id": "synthesis-metformin-v06-fix54-verify2-2026-05-04T09-38-22Z",
+  "git_sha": "274648e",
+  "timestamp_iso": "2026-05-04T09:56:46Z",
+  "final_verdict": "AAA",
+  "aaa_pass": true,
+  "q2_traceability_pct": 100.0,
+  "q2_full": true,
+  "stage1_pass_rate": "13/13",
+  "stage2_p1": 0,
+  "stage2_p2": 0,
+  "stage2_clean": true,
+  "grok_unresolved_p1": 0,
+  "grok_clean": true,
+  "no_regression_pass": true,
+  "old_defect_scan_clean": true,
+  "old_defect_hits": [],
+  "applied_patches": 9,
+  "repaired_patches": 0,
+  "auto_stripped_patches": 0,
+  "rejected_patches": 0,
+  "flagged_patches": 0,
+  "word_count": 12946,
+  "cost_usd": 0.261504,
+  "model_stack": {
+    "writer": "MiMo-VL-7B-RL-2508",
+    "reviewer": "Grok-4.3-Reasoning",
+    "extractor": "MiMo-VL-7B-RL-2508"
+  }
+}

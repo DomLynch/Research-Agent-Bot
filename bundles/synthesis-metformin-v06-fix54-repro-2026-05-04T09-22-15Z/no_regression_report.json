@@ -1,0 +1,56 @@
+{
+  "baseline_run_dir": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-metformin-v06-fix53-verify-2026-05-04T07-52-04Z",
+  "new_run_dir": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-metformin-v06-fix54-repro-2026-05-04T09-22-15Z",
+  "passes": true,
+  "n_regressions": 0,
+  "dimensions": [
+    {
+      "name": "p1_count",
+      "baseline_value": 0.0,
+      "new_value": 0.0,
+      "is_regression": false,
+      "delta_str": "0 (unchanged)",
+      "direction": "lower_is_better"
+    },
+    {
+      "name": "numeric_trace_pct",
+      "baseline_value": 100.0,
+      "new_value": 100.0,
+      "is_regression": false,
+      "delta_str": "0 (unchanged)",
+      "direction": "higher_is_better"
+    },
+    {
+      "name": "consistency_count",
+      "baseline_value": 0.0,
+      "new_value": 0.0,
+      "is_regression": false,
+      "delta_str": "0 (unchanged)",
+      "direction": "lower_is_better"
+    },
+    {
+      "name": "leakage_count",
+      "baseline_value": 0.0,
+      "new_value": 0.0,
+      "is_regression": false,
+      "delta_str": "0 (unchanged)",
+      "direction": "lower_is_better"
+    },
+    {
+      "name": "word_count",
+      "baseline_value": 13192.0,
+      "new_value": 11408.0,
+      "is_regression": false,
+      "delta_str": "-1784",
+      "direction": "floor_pass"
+    },
+    {
+      "name": "orphan_count",
+      "baseline_value": 0.0,
+      "new_value": 0.0,
+      "is_regression": false,
+      "delta_str": "0 (unchanged)",
+      "direction": "lower_is_better"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "model_used": "x-ai/grok-4.3",
+  "cost_usd": 0.21623399999999998,
+  "n_patches": 8,
+  "patches": [
+    {
+      "id": "P01",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "location": "Abstract",
+      "before": "near 0.13 m/s, well below the 0.8 m/s threshold associated with impaired mobility (Studenski 2011).",
+      "after": "near the 0.8 m/s threshold associated with impaired mobility.",
+      "reason": "Removes erroneous implausibly low walk-speed value (0.13 m/s) and unallowed citation via strict deletion."
+    },
+    {
+      "id": "P02",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "location": "Frailty and Physical Performance",
+      "before": "no change in walk speed, with a reported walk speed of 0.13 m/s. These findings indicate",
+      "after": "no change in walk speed. These findings indicate",
+      "reason": "Removes erroneous numeric value for walk speed via strict deletion while preserving sentence flow."
+    },
+    {
+      "id": "P03",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "Frailty and Physical Performance",
+      "before": "impaired mobility risk (Studenski 2011) and 0.6 m/s indicating severe mobility limitation (Cesari 2009).",
+      "after": "impaired mobility risk and 0.6 m/s indicating severe mobility limitation.",
+      "reason": "Removes two unallowed citations absent from the permitted body-citation list via deletion."
+    },
+    {
+      "id": "P04",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "Frailty and Physical Performance",
+      "before": "approximately 0.05 m/s (Bohannon 1997) represents a meaningful trajectory that metformin does not appear to modify.",
+      "after": "approximately 0.05 m/s represents a meaningful trajectory that metformin does not appear to modify.",
+      "reason": "Removes unallowed citation via strict deletion."
+    },
+    {
+      "id": "P05",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "Discussion",
+      "before": "elevated mortality risk per Tancredi 2015), and subject to healthy-user bias.",
+      "after": "elevated mortality risk), and subject to healthy-user bias.",
+      "reason": "Removes unallowed citation via strict deletion."
+    },
+    {
+      "id": "P06",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "Discussion",
+      "before": "toward the ADA 2024 target of 7%,",
+      "after": "toward the target of 7%,",
+      "reason": "Removes unallowed citation via strict deletion."
+    },
+    {
+      "id": "P07",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "Introduction",
+      "before": "dosing (ADA 2024), and long-term safety data in non-diabetic cohorts remain sparse.",
+      "after": "dosing, and long-term safety data in non-diabetic cohorts remain sparse.",
+      "reason": "Removes unallowed citation via strict deletion."
+    },
+    {
+      "id": "P08",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "Introduction",
+      "before": "mitochondrial Complex I (Owen 2000) may underlie many of these downstream signaling effects.",
+      "after": "mitochondrial Complex I may underlie many of these downstream signaling effects.",
+      "reason": "Removes unallowed citation via strict deletion."
+    }
+  ]
+}
