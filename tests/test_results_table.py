@@ -29,14 +29,17 @@ def test_high_confidence_always_admitted():
                                    "claim_type": "hazard_ratio"})
 
 
-def test_partial_admitted_only_for_objective_facts():
-    """Partial-confidence sample_size / unit_value / year passes;
-    interpretive claim types (HR/p_value/percentage) blocked at
-    partial."""
-    objective = {"binding_confidence": "partial", "claim_type": "sample_size"}
-    interpretive = {"binding_confidence": "partial", "claim_type": "hazard_ratio"}
-    assert _confidence_admissible(objective)
-    assert not _confidence_admissible(interpretive)
+def test_partial_admitted_for_all_numeric_types():
+    """Universal-fix wave 2 (2026-05-04): partial-confidence claims
+    admitted regardless of claim type — the value IS in the corpus
+    even when the (endpoint, arm, direction) binding is uncertain.
+    Aligns table admissibility with audit's _load_corpus_numerics
+    so the table can't emit untraceable numerics."""
+    for ct in ("sample_size", "hazard_ratio", "p_value", "percentage",
+               "confidence_interval", "odds_ratio", "unit_value"):
+        assert _confidence_admissible(
+            {"binding_confidence": "partial", "claim_type": ct}
+        ), f"partial-confidence {ct} should be admitted"
 
 
 def test_unbound_or_none_rejected():

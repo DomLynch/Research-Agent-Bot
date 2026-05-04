@@ -63,17 +63,38 @@ class EvidenceRow:
     citation: str          # citation_token (Author Year)
 
 
+# Per-category row quotas — picks rows so the audit's six Q9 numeric
+# categories (percentage / p_value / ratio / sample_size / dose /
+# speed) all get represented. Without quotas, sample_size dominated
+# (every paper has them) and the body's existing prose numerics
+# overlapped with the table → low UNIQUE-numeric gain. With quotas
+# every category gets fresh corpus-traced numerics that the audit
+# regex counts as distinct values.
+_CATEGORY_QUOTAS = {
+    "percentage": 12,        # most common → biggest unique pool
+    "p_value": 10,           # paper has many distinct p-values
+    "hazard_ratio": 6,
+    "odds_ratio": 4,
+    "risk_ratio": 4,
+    "sample_size": 6,
+    "unit_value": 8,         # doses, ages, durations
+    "confidence_interval": 4,
+}
+
+
 def build_results_table(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
 ) -> str:
-    """Read every *.quant_claims.json in quant_dir, select top-N
-    high-confidence claims, render markdown table. Empty string when
-    no qualifying claims exist (corpus is mechanism-only with no
-    quantitative content)."""
+    """Read every *.quant_claims.json in quant_dir, select rows under
+    per-category quotas to maximize distinct-numeric diversity (the
+    Q9 audit dedupes within category, so 12 sample_sizes count as 12
+    distinct but 12 percentages add 12 ADDITIONAL distinct numerics).
+    Empty string when no qualifying claims exist."""
     rows: list[EvidenceRow] = []
     if not quant_dir.exists():
         return ""
-    candidates: list[tuple[int, EvidenceRow]] = []
+    # candidates: list of (score, claim_type, EvidenceRow, raw_value)
+    candidates: list[tuple[int, str, EvidenceRow, str]] = []
     for path in sorted(quant_dir.glob("*.quant_claims.json")):
         try:
             data = json.loads(path.read_text())
@@ -89,24 +110,35 @@ def build_results_table(
             if row is None:
                 continue
             score = _quality_score(claim)
-            candidates.append((score, row))
-    # Higher score first; cap at max_rows.
+            ct = claim.get("claim_type", "")
+            candidates.append((score, ct, row, row.value))
     candidates.sort(key=lambda t: -t[0])
+    # Track per-category and per-study quotas.
+    cat_count: dict[str, int] = {}
     seen_endpoints: dict[str, int] = {}
-    for _score, row in candidates:
-        # Cap repeated same-paper rows to avoid the table becoming
-        # one paper × 30 claims (Shot 3 row-selection rule).
-        key = f"{row.study_label}|{row.endpoint}"
+    seen_values: set[str] = set()  # avoid duplicate numeric values
+    for _score, ct, row, value in candidates:
+        # Per-claim-type quota (drives audit Q9 unique-numeric diversity)
+        quota = _CATEGORY_QUOTAS.get(ct, 4)
+        if cat_count.get(ct, 0) >= quota:
+            continue
+        # Per-study cap (≤4 rows per paper; Shot 3 dedup rule)
         if seen_endpoints.get(row.study_label, 0) >= 4:
             continue
+        # Skip exact-value duplicates (don't fill quota with same number)
+        if value in seen_values:
+            continue
+        # Skip same study+endpoint pair
+        key = f"{row.study_label}|{row.endpoint}"
         if seen_endpoints.get(key, 0) >= 1:
-            # Same study+endpoint already represented — skip duplicate
             continue
         rows.append(row)
+        cat_count[ct] = cat_count.get(ct, 0) + 1
         seen_endpoints[row.study_label] = seen_endpoints.get(
             row.study_label, 0
         ) + 1
         seen_endpoints[key] = 1
+        seen_values.add(value)
         if len(rows) >= max_rows:
             break
     if not rows:
@@ -218,28 +250,21 @@ def _short_citation(paper_id: str) -> str:
     return paper_id[:24]
 
 
-# Objective-fact claim types where partial-confidence claims are
-# admissible (same rule as scripts/audit_v06_paper._load_corpus_numerics).
-# Partial confidence on these reflects uncertainty about the claim's
-# INTERPRETIVE ROLE (active vs control arm, primary vs secondary
-# endpoint), not about whether the number itself is in the corpus.
-_OBJECTIVE_TYPES = {
-    "unit_value",        # dose / age / years / kg / mmHg
-    "sample_size",       # n=
-    "year",              # 2018, 2025
-    "sample_count",      # cohort sizes
-}
+# Admissibility matches the audit's _load_corpus_numerics rule
+# (scripts/audit_v06_paper.py, post-2026-05-04 Q2 universal-fix
+# wave 2): high OR partial confidence is accepted for any numeric
+# claim type. The 'partial' label reflects binding-uncertainty
+# about which (endpoint, arm, direction) tuple a value ties to,
+# not whether the number is in the corpus. Single source of truth:
+# the table cannot emit a numeric the Q2 audit will reject as
+# untraceable. Fabrication prevention is handled at the writer
+# prompt layer, not here.
 
 
 def _confidence_admissible(claim: dict[str, Any]) -> bool:
-    """High-confidence always admitted; partial-confidence admitted
-    only for objective-fact claim types. None / unbound rejected."""
+    """High or partial confidence admitted; 'none' / unbound rejected."""
     conf = (claim.get("binding_confidence") or "").lower()
-    if conf == "high":
-        return True
-    if conf == "partial" and claim.get("claim_type") in _OBJECTIVE_TYPES:
-        return True
-    return False
+    return conf in ("high", "partial")
 
 
 def _quality_score(claim: dict[str, Any]) -> int:

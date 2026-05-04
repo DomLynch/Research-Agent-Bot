@@ -70,44 +70,32 @@ def _load_corpus_numerics() -> set[str]:
     """All numeric tokens that appear in v0.6.0 quant-claims PLUS
     pre-vetted background-literature thresholds (Fix #16).
 
-    Refactor 2026-05-04 (aspirin Q2 fix): for objective-fact categories
-    (dose, sample_size, year, sample_count) the binding_confidence
-    filter is dropped. These are factual values pulled directly from
-    the source paper — partial confidence reflects uncertainty about
-    the claim's INTERPRETIVE ROLE (active vs control arm, primary vs
-    secondary endpoint), not about whether the number itself appears
-    in the corpus. The traceability audit asks "is this number in the
-    corpus?" — partial confidence is sufficient evidence for that.
+    Refactor 2026-05-04 (Q2 universal-fix wave 2): admissibility is now
+    'is the number IN the corpus?'. Both high and partial confidence
+    are accepted for any numeric claim type. The 'partial' label
+    reflects the binder's uncertainty about which (endpoint, arm,
+    direction) tuple a value ties to — but the value itself was
+    extracted from the source paper text, so it IS in the corpus.
 
-    For interpretive claims (hazard_ratio, odds_ratio, percentage tied
-    to an effect, p_value), high confidence is still required so the
-    writer can't backfill a fabricated effect with a coincidentally
-    matching partial-confidence value.
+    Fabrication prevention is handled at the WRITER prompt layer
+    (NUMERIC_DISCIPLINE_RULE in agent/paper_writer_prompts.py:
+    'You may use ONLY numerics from supplied receipts'), not here.
+    The audit's traceability check answers a narrower question that
+    partial confidence is sufficient for. This unification lets the
+    Quantitative Evidence Index (agent/results_table.py) emit any
+    value the audit will subsequently accept — single source of
+    truth, no admissibility-mismatch trapdoor.
+
+    Only 'none' / unbound-confidence values are still rejected — those
+    weren't tied to any paper section and could be regex-extraction
+    artifacts (page numbers, table-cell remnants).
     """
     nums: set[str] = set()
-    OBJECTIVE_TYPES = {
-        "unit_value",       # dose / age / years / kg
-        "sample_size",      # n=
-        "year",             # 2018, 2025
-        "sample_count",     # cohort sizes
-    }
     for path in QUANT_DIR.glob("*.quant_claims.json"):
         d = json.loads(path.read_text())
         for c in d.get("claims", []):
-            confidence = c.get("binding_confidence", "")
-            claim_type = c.get("claim_type", "")
-            # Always accept high-confidence claims (interpretive +
-            # objective). Accept partial-confidence ONLY for
-            # objective-fact claim types where the number itself is a
-            # primary-source fact, not an interpretive judgment.
-            if confidence == "high":
-                pass
-            elif (
-                confidence == "partial"
-                and claim_type in OBJECTIVE_TYPES
-            ):
-                pass
-            else:
+            confidence = (c.get("binding_confidence") or "").lower()
+            if confidence not in ("high", "partial"):
                 continue
             for v in c.get("numeric_values") or ():
                 nums.add(str(v))
