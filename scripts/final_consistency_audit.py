@@ -1086,6 +1086,8 @@ def _check_change_value_paragraph_threshold(
             # the proximity check missed the legitimate hedge.
             if any(w in window for w in _CHANGE_WORDS):
                 continue
+            # Pull source-specific words for the message context only
+            change_words = change_value_words.get(numeric, set())
             # Hits: this paragraph juxtaposes a change-numeric with
             # a threshold marker, with no nearby change-word hedge.
             snippet = para.strip()[:240]
