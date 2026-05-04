@@ -145,3 +145,48 @@ def test_abstract_over_grouping_silent_when_no_range() -> None:
     )
     issues = fca._check_abstract_over_grouping(paper, _empty_manifest())
     assert issues == []
+
+
+# ============ Fix #46 — auto-strip change-value misread sentences =====
+
+
+def test_apply_fixes_strips_change_value_misread_sentence() -> None:
+    """Fix #46: the C13 misread (corpus says 0.13 m/s is an
+    improvement; paper says it's an absolute below 0.8 m/s
+    threshold) is auto-stripped from the paper. Numeric is corpus-
+    traced (Q2 untouched); only the misread sentence is lost."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper_path = (
+        _Path(__file__).resolve().parent.parent
+        / "runs/synthesis-metformin-v06-hybrid-"
+          "2026-05-04T04-28-38Z/full_paper.md"
+    )
+    if not paper_path.exists():
+        return  # archived run; skip silently
+    paper = paper_path.read_text()
+    fixed, log = fixer.apply_fixes(paper, [])
+    misread_logs = [
+        e for e in log
+        if e.get("fix_type") == "change_value_misread_strip"
+    ]
+    assert misread_logs, (
+        "Fix #46 must strip the C13 misread sentence on the hybrid "
+        "paper"
+    )
+    assert misread_logs[0]["n_changes"] >= 1
+    # Re-audit: C13 should now be empty
+    import final_consistency_audit as fca
+    audit = {"score_out_of_10": 10.0, "p1_pass": True}
+    manifest = {"receipts": []}
+    issues = fca.run_audit(fixed, manifest, audit)
+    c13 = [i for i in issues if i.id.startswith("C13-")]
+    assert c13 == [], (
+        f"Fix #46 strip did not clear C13 — remaining: "
+        f"{[i.suggested_fix[:80] for i in c13]}"
+    )

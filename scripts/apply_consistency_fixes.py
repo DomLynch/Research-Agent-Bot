@@ -157,6 +157,27 @@ def apply_fixes(
     if bg_strip_count > 0:
         new_md = _strip_unsourced_background_sentences(new_md)
 
+    # 6b. Fix #46: strip sentences flagged as change-value misread
+    # (C13). The corpus says X is an improvement/change/difference
+    # value; the writer rendered it as an absolute below a threshold.
+    # Pure deletion of the offending sentence (analogous to Fix #18b
+    # for unsourced background numerics). Numeric is corpus-traced
+    # (Q2 untouched); only the misread sentence is lost. The writer's
+    # surrounding prose carries the rest of the argument.
+    new_md, n_misread_stripped = _strip_change_value_misread_sentences(
+        new_md,
+    )
+    if n_misread_stripped:
+        log.append({
+            "fix_type": "change_value_misread_strip",
+            "n_changes": n_misread_stripped,
+            "description": (
+                "stripped sentences containing change-value numerics "
+                "(e.g. 0.13 m/s 'improvement') rendered as absolute "
+                "values below thresholds (Fix #46 / C13 auto-fix)"
+            ),
+        })
+
     # 7. Fix #22: strip orphan / consecutive `_Cited:` blocks.
     # Stage-2 surface-render-lint flags these as P2 with
     # auto_fixable=True. Strip is safe by construction (no anchor
@@ -263,6 +284,82 @@ def _strip_unsourced_background_sentences_inplace(
         ),
     })
     return len(unsourced)
+
+
+def _strip_change_value_misread_sentences(
+    paper_md: str,
+) -> tuple[str, int]:
+    """Fix #46: strip sentences whose change-value numeric is
+    rendered as absolute. Mirrors the audit's
+    _check_change_value_misread but performs the deletion. Safe by
+    construction: numerics are corpus-traced (Q2 untouched), only
+    interpretation-broken sentences disappear.
+
+    Returns (new_md, n_stripped). Iterates per-paragraph: builds the
+    same change_value_map the audit uses, splits paragraphs into
+    sentences, drops any sentence with the change-numeric paired with
+    absolute-value phrasing AND missing the source's change-words."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import audit_v06_paper as _audit
+        change_value_map: dict[str, set[str]] = {}
+        if not _audit.QUANT_DIR.exists():
+            return paper_md, 0
+        for qf in _audit.QUANT_DIR.glob("*.quant_claims.json"):
+            try:
+                data = json.loads(qf.read_text())
+            except (OSError, json.JSONDecodeError):
+                continue
+            for c in data.get("claims", []):
+                if c.get("binding_confidence") != "high":
+                    continue
+                raw = (c.get("raw_text") or "").strip()
+                if not raw:
+                    continue
+                sent_lc = (c.get("sentence") or "").lower()
+                from final_consistency_audit import _CHANGE_WORDS
+                hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+                if hits:
+                    change_value_map.setdefault(raw, set()).update(hits)
+    except (ImportError, OSError, ValueError):
+        return paper_md, 0
+    if not change_value_map:
+        return paper_md, 0
+    from final_consistency_audit import _ABSOLUTE_VALUE_PHRASES
+    sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
+    n_stripped = 0
+    out_parts: list[str] = []
+    for paragraph in paper_md.split("\n\n"):
+        # Skip markdown tables (don't strip table rows).
+        lines = [ln for ln in paragraph.splitlines() if ln.strip()]
+        if lines and (
+            sum(1 for ln in lines if ln.lstrip().startswith("|"))
+            / len(lines) >= 0.5
+        ):
+            out_parts.append(paragraph)
+            continue
+        sentences = sent_split.split(paragraph)
+        kept: list[str] = []
+        for sent in sentences:
+            sent_lc = sent.lower()
+            should_drop = False
+            for numeric, change_words in change_value_map.items():
+                if numeric not in sent:
+                    continue
+                has_absolute = any(
+                    p in sent_lc for p in _ABSOLUTE_VALUE_PHRASES
+                )
+                has_change = any(w in sent_lc for w in change_words)
+                if has_absolute and not has_change:
+                    should_drop = True
+                    n_stripped += 1
+                    break
+            if not should_drop:
+                kept.append(sent)
+        out_parts.append(" ".join(kept) if kept else "")
+    new_md = "\n\n".join(p for p in out_parts if p.strip() or p == "")
+    new_md = re.sub(r"\n{3,}", "\n\n", new_md)
+    return new_md, n_stripped
 
 
 def _strip_unsourced_background_sentences(paper_md: str) -> str:
