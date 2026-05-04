@@ -103,11 +103,40 @@ def test_rapamycin_polarity_inverted_vs_metformin_for_mTOR() -> None:
     assert qe_rap.ENDPOINT_POLARITY["S6K1 phosphorylation"] == -1
 
 
-def test_unknown_domain_raises() -> None:
-    """Unknown TOPIC_DOMAIN must raise so misconfiguration fails fast."""
+def test_unknown_domain_falls_back_via_topic_pack() -> None:
+    """Refactor 2026-05-04: removed _KNOWN_DOMAINS allow-list.
+    When no vocab/<topic>.py exists AND no topic_packs/<topic>.toml
+    exists, load_domain falls back to metformin's vocab module
+    (was: raise ValueError). This enables generic multi-topic —
+    new topics work via TOML alone, no Python file needed.
+
+    'panaceaol' is a deliberately-fake topic with no .py and no
+    .toml → graceful fallback to metformin vocab."""
     os.environ["TOPIC_DOMAIN"] = "panaceaol"
-    with pytest.raises(ValueError, match="Unknown TOPIC_DOMAIN"):
-        _reload_quant_endpoints()
+    qe = _reload_quant_endpoints()
+    # Should fall back gracefully — metformin vocab loaded
+    assert qe.match_arm(
+        "The metformin group showed reduction.",
+    ) == "metformin"
+
+
+def test_topic_pack_only_topic_auto_synthesizes_vocab() -> None:
+    """Refactor 2026-05-04 part 2: when topic_packs/<topic>.toml
+    EXISTS but no vocab/<topic>.py, vocab loader auto-synthesizes
+    ARM_VOCAB from the pack's active_arm_synonyms. This is the
+    generic-multi-topic acceptance test.
+
+    'statins' has a TOML pack but no vocab/statins.py."""
+    os.environ["TOPIC_DOMAIN"] = "statins"
+    qe = _reload_quant_endpoints()
+    # ARM_VOCAB should bind statin-specific terms from the TOML
+    # without requiring a hand-written vocab/statins.py.
+    assert qe.match_arm(
+        "The atorvastatin group showed reduction.",
+    ) == "atorvastatin"
+    assert qe.match_arm(
+        "Rosuvastatin-treated patients had lower LDL.",
+    ) == "rosuvastatin"
 
 
 # Reviewer-fix MEDIUM 2 regression: ARM_VOCAB is per-domain.
