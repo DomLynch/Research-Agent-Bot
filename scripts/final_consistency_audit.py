@@ -411,6 +411,9 @@ def run_audit(
     issues.extend(_check_background_lit_unsourced(paper_md))  # Fix #16
     issues.extend(_check_surface_render_lint(paper_md))  # Fix #22
     issues.extend(_check_change_value_misread(paper_md, manifest))  # Fix #37
+    issues.extend(_check_change_value_anaphor_misread(  # Fix #54
+        paper_md, manifest,
+    ))
     issues.extend(_check_abstract_over_grouping(paper_md, manifest))  # Fix #38
     return issues
 
@@ -871,6 +874,167 @@ def _check_change_value_misread(
                         f"acknowledge it is a change/difference."
                     ),
                 ))
+    return issues
+
+
+# Fix #54: cross-sentence anaphoric misread detection.
+#
+# C13 (Fix #37) is per-sentence: it catches "0.13 m/s improvement"
+# rendered as "value of 0.13 m/s, below threshold". But the reviewer
+# caught a CROSS-SENTENCE variant in fix53-verify line 156 that
+# slipped through:
+#
+#   Sentence A: "...placebo group showing no change in walk speed
+#                 (0.13 m/s)..."   [has "change" word → C13 clears]
+#   Sentence B: "This walk speed value is below the 0.8 m/s
+#                 threshold..."   [no 0.13 m/s → C13 doesn't check]
+#
+# The misread is the implicit anaphoric reference: "this walk speed
+# value" refers back to (0.13 m/s), and the threshold-comparison
+# treats it as absolute. Fix #54 detects this paragraph-level pattern.
+#
+# Anaphora cues: "this <noun> value/figure/number/result/measurement"
+# Threshold cues: "below the <number>", "above the <number>",
+#                 "threshold", "cutoff", "cut-off", "frailty"
+
+_ANAPHOR_RE = re.compile(
+    r"\bthis\s+\w+(?:\s+\w+)?\s+"
+    r"(?:value|figure|number|result|measurement|score|level|rate)"
+    r"\b",
+    re.IGNORECASE,
+)
+_THRESHOLD_RE = re.compile(
+    r"\b(?:below|above|under|over)\s+(?:the\s+)?\d+\.?\d*\s*"
+    r"(?:m/s|kg|cm|mmol/l|mg/dl|%|years?|points?)?\s*"
+    r"(?:threshold|cutoff|cut-off|cut\s+off|limit|level|"
+    r"frailty\s+threshold|frailty)?",
+    re.IGNORECASE,
+)
+# Looser threshold pattern that catches "below the threshold" phrasing
+# even when the number doesn't immediately follow "below".
+_THRESHOLD_KEYWORD_RE = re.compile(
+    r"\b(?:below\s+(?:the|a)\s+\d|"
+    r"above\s+(?:the|a)\s+\d|"
+    r"threshold|cutoff|cut-off|"
+    r"frailty\s+(?:threshold|cutoff)|"
+    r"clinically\s+meaningful)\b",
+    re.IGNORECASE,
+)
+
+
+def _check_change_value_anaphor_misread(
+    paper_md: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """Fix #54: detect cross-sentence anaphoric misreads of
+    change-value numerics.
+
+    Walks paragraph-by-paragraph. For each paragraph that contains
+    a known change-value numeric (per the corpus), checks subsequent
+    sentences for anaphoric reference + threshold-comparison
+    phrasing. Flags as P1 when found — the implicit interpretation
+    treats the change as an absolute value.
+
+    The reviewer-flagged exemplar:
+      'walk speed (0.13 m/s)... This walk speed value is below the
+       0.8 m/s threshold...'
+    is two sentences; sentence 1 has 'change' so per-sentence C13
+    clears it; sentence 2 has no 0.13 m/s so C13 never inspects it.
+    Fix #54 spans the boundary."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import run_v06_synthesis as _orch
+        quant_dir = _orch.QUANT_DIR
+    except (ImportError, AttributeError):
+        return []
+    if not quant_dir.exists():
+        return []
+    # Build the same change-value map as C13 (Fix #37).
+    change_value_map: dict[str, set[str]] = {}
+    for qf in quant_dir.glob("*.quant_claims.json"):
+        try:
+            data = json.loads(qf.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        for c in data.get("claims", []):
+            if c.get("binding_confidence") != "high":
+                continue
+            raw = (c.get("raw_text") or "").strip()
+            if not raw:
+                continue
+            sent_lc = (c.get("sentence") or "").lower()
+            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+            if change_hits:
+                change_value_map.setdefault(raw, set()).update(change_hits)
+    if not change_value_map:
+        return []
+    issues: list[ConsistencyIssue] = []
+    sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
+    paragraphs = paper_md.split("\n\n")
+    for para in paragraphs:
+        para_stripped = para.strip()
+        # Skip tables (many rows starting with `|`).
+        lines = [ln for ln in para_stripped.splitlines() if ln.strip()]
+        if lines and (
+            sum(1 for ln in lines if ln.lstrip().startswith("|"))
+            / len(lines) >= 0.5
+        ):
+            continue
+        # Skip code blocks
+        if para_stripped.startswith("```"):
+            continue
+        sentences = sent_split.split(para_stripped)
+        if len(sentences) < 2:
+            continue
+        # Find sentences that contain change-value numerics
+        change_sent_indices: dict[str, int] = {}
+        for i, sent in enumerate(sentences):
+            for numeric in change_value_map:
+                if numeric in sent and numeric not in change_sent_indices:
+                    change_sent_indices[numeric] = i
+        if not change_sent_indices:
+            continue
+        # Now look at subsequent sentences for anaphor + threshold
+        for i, sent in enumerate(sentences):
+            sent_lc = sent.lower()
+            # Must come AFTER a change-numeric sentence
+            earlier_numerics = [
+                n for n, idx in change_sent_indices.items()
+                if idx < i
+            ]
+            if not earlier_numerics:
+                continue
+            # Anaphoric reference + threshold-comparison both present
+            has_anaphor = bool(_ANAPHOR_RE.search(sent))
+            has_threshold = bool(_THRESHOLD_KEYWORD_RE.search(sent))
+            if not (has_anaphor and has_threshold):
+                continue
+            # And must not contain the change-word itself (defence:
+            # "this represents a change of X below threshold" is fine)
+            change_words = set()
+            for n in earlier_numerics:
+                change_words.update(change_value_map[n])
+            if any(w in sent_lc for w in change_words):
+                continue
+            snippet = sent.strip()[:220]
+            numerics_str = ", ".join(repr(n) for n in earlier_numerics)
+            issues.append(ConsistencyIssue(
+                id=f"C13b-anaphor-misread-{hash(sent) & 0xffffff}",
+                severity="P1",
+                issue_type="change_value_anaphor_misread",
+                auto_fixable=True,  # Fix #54 ships an auto-strip
+                evidence=snippet,
+                suggested_fix=(
+                    f"Sentence anaphorically refers back to a "
+                    f"change-value numeric ({numerics_str}) from an "
+                    f"earlier sentence in the same paragraph and "
+                    f"treats it as an absolute value via "
+                    f"threshold-comparison phrasing. The corpus "
+                    f"source describes the numeric as a change/"
+                    f"improvement/difference, not an absolute. Fix "
+                    f"#54: rewrite to 'change in <metric>' or strip "
+                    f"the threshold-comparison sentence."
+                ),
+            ))
     return issues
 
 

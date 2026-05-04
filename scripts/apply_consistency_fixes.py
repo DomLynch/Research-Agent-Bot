@@ -230,6 +230,28 @@ def apply_fixes(
             ),
         })
 
+    # 6c. Fix #54: strip cross-sentence anaphoric misreads. C13's
+    # per-sentence detection misses 'This walk speed value is below
+    # 0.8 m/s threshold' because that sentence has no 0.13 m/s; the
+    # change-numeric is in the PRECEDING sentence. Fix #54 strips
+    # the threshold-comparison sentence (the misread carrier), not
+    # the corpus-traced numeric sentence (which is fine).
+    new_md, n_anaphor_stripped = _strip_change_value_anaphor_sentences(
+        new_md,
+    )
+    if n_anaphor_stripped:
+        log.append({
+            "fix_type": "change_value_anaphor_strip",
+            "n_changes": n_anaphor_stripped,
+            "description": (
+                "stripped cross-sentence anaphoric misreads — "
+                "sentences referring back to a change-value numeric "
+                "('this walk speed value...') and treating it as "
+                "absolute via threshold-comparison phrasing "
+                "(Fix #54 / C13b auto-fix)"
+            ),
+        })
+
     # 7. Fix #22: strip orphan / consecutive `_Cited:` blocks.
     # Stage-2 surface-render-lint flags these as P2 with
     # auto_fixable=True. Strip is safe by construction (no anchor
@@ -474,6 +496,100 @@ def _strip_change_value_misread_sentences(
                 kept.append(sent)
         out_parts.append(" ".join(kept) if kept else "")
     new_md = "\n\n".join(p for p in out_parts if p.strip() or p == "")
+    new_md = re.sub(r"\n{3,}", "\n\n", new_md)
+    return new_md, n_stripped
+
+
+def _strip_change_value_anaphor_sentences(
+    paper_md: str,
+) -> tuple[str, int]:
+    """Fix #54: strip cross-sentence anaphoric misreads.
+
+    Mirrors final_consistency_audit._check_change_value_anaphor_misread
+    but performs the deletion. For each paragraph that contains a
+    change-value numeric followed by a sentence that combines an
+    anaphoric reference ('this walk speed value', 'the figure', etc.)
+    with threshold-comparison phrasing ('below the 0.8 m/s threshold',
+    'below the cutoff', 'frailty threshold'), the threshold-sentence
+    is dropped. The change-numeric sentence stays — it's the
+    misreading sentence (B) we lose, not the corpus-traced one (A).
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import audit_v06_paper as _audit
+        if not _audit.QUANT_DIR.exists():
+            return paper_md, 0
+        from final_consistency_audit import (
+            _CHANGE_WORDS, _ANAPHOR_RE, _THRESHOLD_KEYWORD_RE,
+        )
+        change_value_map: dict[str, set[str]] = {}
+        for qf in _audit.QUANT_DIR.glob("*.quant_claims.json"):
+            try:
+                data = json.loads(qf.read_text())
+            except (OSError, json.JSONDecodeError):
+                continue
+            for c in data.get("claims", []):
+                if c.get("binding_confidence") != "high":
+                    continue
+                raw = (c.get("raw_text") or "").strip()
+                if not raw:
+                    continue
+                sent_lc = (c.get("sentence") or "").lower()
+                hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+                if hits:
+                    change_value_map.setdefault(raw, set()).update(hits)
+    except (ImportError, OSError, ValueError):
+        return paper_md, 0
+    if not change_value_map:
+        return paper_md, 0
+    sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
+    n_stripped = 0
+    out_paragraphs: list[str] = []
+    for para in paper_md.split("\n\n"):
+        # Skip tables.
+        lines = [ln for ln in para.splitlines() if ln.strip()]
+        if lines and (
+            sum(1 for ln in lines if ln.lstrip().startswith("|"))
+            / len(lines) >= 0.5
+        ):
+            out_paragraphs.append(para)
+            continue
+        sentences = sent_split.split(para)
+        if len(sentences) < 2:
+            out_paragraphs.append(para)
+            continue
+        # Map: numeric → first sentence index containing it
+        change_sent_indices: dict[str, int] = {}
+        for i, sent in enumerate(sentences):
+            for numeric in change_value_map:
+                if numeric in sent and numeric not in change_sent_indices:
+                    change_sent_indices[numeric] = i
+        if not change_sent_indices:
+            out_paragraphs.append(para)
+            continue
+        kept_sentences: list[str] = []
+        for i, sent in enumerate(sentences):
+            sent_lc = sent.lower()
+            earlier_numerics = [
+                n for n, idx in change_sent_indices.items() if idx < i
+            ]
+            should_drop = False
+            if earlier_numerics:
+                has_anaphor = bool(_ANAPHOR_RE.search(sent))
+                has_threshold = bool(_THRESHOLD_KEYWORD_RE.search(sent))
+                if has_anaphor and has_threshold:
+                    change_words: set[str] = set()
+                    for n in earlier_numerics:
+                        change_words.update(change_value_map[n])
+                    if not any(w in sent_lc for w in change_words):
+                        should_drop = True
+                        n_stripped += 1
+            if not should_drop:
+                kept_sentences.append(sent)
+        out_paragraphs.append(
+            " ".join(kept_sentences) if kept_sentences else ""
+        )
+    new_md = "\n\n".join(p for p in out_paragraphs if p.strip() or p == "")
     new_md = re.sub(r"\n{3,}", "\n\n", new_md)
     return new_md, n_stripped
 
