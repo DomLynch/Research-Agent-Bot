@@ -16,7 +16,9 @@ import httpx
 from agent.sources._base import clean_text, normalize_doi
 from agent.types import RawHit
 
-_CORE_URL = "https://api.core.ac.uk/v3/search/works"
+# CORE v3 requires trailing slash — without it the API returns 301
+# and httpx doesn't follow redirects by default.
+_CORE_URL = "https://api.core.ac.uk/v3/search/works/"
 
 
 class CoreClient:

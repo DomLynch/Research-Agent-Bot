@@ -1,11 +1,28 @@
 """OpenAlex adapter.
 
 Endpoint: https://api.openalex.org/works?search=...&per-page=N
-Polite pool: include `mailto=` param. Returns abstract as inverted index
-(word -> [positions]); we reconstitute it.
+
+Refactor 2026-05-04: OpenAlex changed auth as of 2026-02-13. Per
+developers.openalex.org/how-to-use-the-api/rate-limits-and-authentication
+(fetched 2026-05-04), API keys are now the primary auth path:
+  - Sign-up: free at openalex.org/settings/api
+  - Daily $1 free tier (singleton lookups unlimited; 10k list/filter
+    calls; 1k search; 100 content downloads)
+  - 100 req/s rate limit when a key is presented
+  - The legacy `mailto=` polite-pool param is no longer documented as
+    the recommended path (still tolerated for backward compat)
+
+This adapter prefers OPENALEX_API_KEY (sent as ?api_key= query param),
+falls back to CROSSREF_POLITE_EMAIL for the mailto (since both are
+"please be polite to my requests" identifiers and the user's polite
+email is already configured), and finally to no-auth (~10k calls/day
+unkeyed).
+
+Returns abstract as inverted index (word → [positions]); we reconstitute.
 """
 from __future__ import annotations
 
+import os
 from typing import Any
 
 import httpx
@@ -14,7 +31,6 @@ from agent.sources._base import clean_text, normalize_doi
 from agent.types import RawHit
 
 OPENALEX_WORKS_URL = "https://api.openalex.org/works"
-POLITE_MAILTO = "research-agent@domlynch.com"
 SELECT_FIELDS = (
     "id,doi,title,abstract_inverted_index,primary_location,publication_year"
 )
@@ -22,6 +38,21 @@ SELECT_FIELDS = (
 
 class OpenAlexClient:
     name = "openalex"
+
+    def _auth_params(self) -> dict[str, str]:
+        """Pick the strongest available auth signal:
+        1. OPENALEX_API_KEY (2026 preferred — query param api_key=...)
+        2. CROSSREF_POLITE_EMAIL (legacy polite-pool mailto)
+        3. nothing (anonymous tier)
+        """
+        api_key = os.environ.get("OPENALEX_API_KEY")
+        if api_key:
+            return {"api_key": api_key}
+        # Reuse the polite email user already set (same intent).
+        email = os.environ.get("CROSSREF_POLITE_EMAIL")
+        if email:
+            return {"mailto": email}
+        return {}
 
     async def search(
         self,
@@ -34,10 +65,21 @@ class OpenAlexClient:
             "search": clean_text(query, limit=240),
             "per-page": str(max(1, min(limit, 25))),
             "select": SELECT_FIELDS,
-            "mailto": POLITE_MAILTO,
         }
-        response = await client.get(OPENALEX_WORKS_URL, params=params)
-        response.raise_for_status()
+        params.update(self._auth_params())
+        try:
+            response = await client.get(
+                OPENALEX_WORKS_URL, params=params, timeout=20.0,
+            )
+        except httpx.HTTPError:
+            return []
+        # 429 (daily-budget exhausted), 401/403 (bad key), 5xx → fail
+        # soft. Aggregator continues with the other 12 sources rather
+        # than aborting the whole discovery run.
+        if response.status_code in (401, 403, 429) or response.status_code >= 500:
+            return []
+        if response.status_code != 200:
+            return []
         works = response.json().get("results", []) or []
         return [hit for hit in (self._parse_work(w, query=query) for w in works) if hit]
 

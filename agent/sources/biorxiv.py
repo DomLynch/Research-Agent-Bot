@@ -1,12 +1,12 @@
-"""bioRxiv / medRxiv adapter.
+"""bioRxiv adapter — biology preprints.
 
-Endpoint: https://api.biorxiv.org/details/biorxiv/<doi> + search via
-relate.bjresearch.com (or the official Europe-PMC overlay since
-bioRxiv lacks a true keyword-search API).
-
-bioRxiv has no native search endpoint — we use Europe PMC's preprint
-filter as a free proxy. Returns RawHit shape compatible with the
-agent.sources contract.
+bioRxiv has no native keyword-search endpoint (their official API at
+api.biorxiv.org is detail/lookup only). We use Europe PMC's preprint
+overlay (SRC:PPR + PUB_TYPE:Preprint) as a search proxy. medRxiv
+preprints flow through the same Europe PMC overlay but are exposed via
+agent/sources/medrxiv.py with venue-based filtering. THIS adapter
+filters down to bioRxiv-only records so the two sources have clean
+non-overlapping provenance.
 
 No auth required. Rate limit: gentle, ~10 rps.
 """
@@ -28,8 +28,9 @@ _BIORXIV_SEARCH_URL = (
 
 
 class BioRxivClient:
-    """bioRxiv / medRxiv preprint search via Europe PMC's preprint
-    filter. Returns RawHit-shaped records."""
+    """bioRxiv preprint search via Europe PMC's preprint filter.
+    Filters to bioRxiv-only records (medRxiv is exposed by
+    agent.sources.medrxiv.MedRxivClient). Returns RawHit-shaped records."""
 
     name = "biorxiv"
 
@@ -71,16 +72,15 @@ class BioRxivClient:
         if not title or not abstract:
             return None
         doi = normalize_doi(record.get("doi"))
-        # Filter out non-preprint sources that slip through
+        # bioRxiv-only filter (medRxiv is exposed by MedRxivClient).
         venue_raw = (record.get("journalTitle") or "").lower()
-        if (
-            "biorxiv" not in venue_raw
-            and "medrxiv" not in venue_raw
-            and "preprint" not in venue_raw
-        ):
-            # Still accept if DOI starts with bioRxiv prefix
-            if not (doi or "").startswith("10.1101/"):
-                return None
+        is_biorxiv = "biorxiv" in venue_raw
+        if not is_biorxiv:
+            book = record.get("bookOrReportDetails") or {}
+            pub = (book.get("publisher") or "").lower()
+            is_biorxiv = "biorxiv" in pub
+        if not is_biorxiv:
+            return None
         year_raw = clean_text(record.get("pubYear"), limit=8)
         year: int | None = (
             int(year_raw) if year_raw.isdigit() else None
