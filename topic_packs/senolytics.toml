@@ -1,0 +1,141 @@
+# Senolytics topic pack — Proof 005
+#
+# Senolytics are drugs that selectively eliminate senescent cells,
+# proposed as anti-aging therapeutics. The flagship clinical
+# combination is dasatinib + quercetin (D+Q); fisetin and navitoclax
+# are also being studied. Direct geroscience target — most relevant
+# for aging-research framing.
+
+topic   = "senolytics"
+class_  = "senolytic"
+
+aliases = [
+  "senolytic",
+  "senolytics",
+  "senotherapeutic",
+  # Specific drugs (dasatinib + quercetin combo + others)
+  "dasatinib",
+  "quercetin",
+  "fisetin",
+  "navitoclax",
+  "ABT-263",
+  "ABT-199",  # venetoclax, also senolytic in some contexts
+  "D+Q",       # dasatinib + quercetin combo notation
+  "DQ",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "safety_tolerability",
+  "dosing_regimen",
+  "ongoing_trials",
+  "senescence_biomarkers",   # senolytic-specific (p16, p21, SASP)
+  "tissue_specificity",       # senolytics differ by tissue (skin, lung, bone)
+]
+
+special_rules = [
+  "human senolytic data is sparse — most evidence is preclinical mouse models",
+  "D+Q has small Phase I/II trials (Hickson 2019 IPF, Justice 2019 diabetic kidney) — not large-scale",
+  "Fisetin is a flavonoid with weak senolytic activity at supplement-relevant doses",
+  "Navitoclax has on-target thrombocytopenia toxicity — limits chronic dosing",
+  "Senescence biomarkers (p16, SASP) are surrogates, not clinical endpoints — flag accordingly",
+]
+
+forbidden_verbs_for_protocol_role = [
+  "found", "showed", "improved", "reduced",
+  "demonstrated", "established", "proved",
+]
+
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned", "will assess", "pending", "ongoing", "awaiting",
+]
+
+
+# --- v2 generic-multi-topic top-level fields -------------------------
+
+active_arm_synonyms = [
+  "senolytic",
+  "dasatinib",
+  "quercetin",
+  "fisetin",
+  "navitoclax",
+  "D+Q",
+  "DQ",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+  "saline",
+]
+
+corpus_search_queries = [
+  "senolytic AND aging AND human",
+  "(dasatinib AND quercetin) AND aging",
+  "fisetin AND senescence AND aging",
+  "navitoclax AND senescent AND clinical",
+  "senolytic AND clinical trial AND randomized",
+  "(senolytic OR senescence) AND (longevity OR healthspan)",
+  "(p16 OR SASP OR senescent cell) AND human AND clinical",
+]
+
+canonical_rct_paper_ids = []
+
+
+# --- Canonical trials ------------------------------------------------
+
+[[canonical_trials]]
+id            = "NCT02874989"
+name          = "DQ-IPF"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT02848131"
+name          = "DQ-DKD"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT04685590"
+name          = "ALSENLITE"
+expected_role = "registered_pending"
+design        = "rct"
+
+
+# --- Hard-coded role overrides ---------------------------------------
+
+[known_role_overrides.NCT02874989]
+role   = "published_results"
+design = "rct"
+tier   = "A2"  # small Phase I/II — A2 not A1
+
+[known_role_overrides.NCT02848131]
+role   = "published_results"
+design = "rct"
+tier   = "A2"
+
+[known_role_overrides.NCT04685590]
+role   = "registered_pending"
+design = "rct"
+tier   = "A1"
+
+
+# --- Endpoint polarity -----------------------------------------------
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+senescent_cell_burden = "lower_is_better"
+sasp_biomarkers = "lower_is_better"
+p16_expression = "lower_is_better"
+muscle_function = "higher_is_better"
+gait_speed = "higher_is_better"
+frailty = "lower_is_better"
+chair_stand = "higher_is_better"
+inflammation = "lower_is_better"
+thrombocytopenia = "lower_is_better"

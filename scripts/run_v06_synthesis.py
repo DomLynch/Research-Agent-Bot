@@ -1813,12 +1813,14 @@ def main(argv: list[str] | None = None) -> int:
         description="Phase 6.1 — wire v0.6.0 bound claims into agent/paper_writer.py",
     )
     parser.add_argument(
-        "--topic", default=DEFAULT_TOPIC,
+        "--topic", required=True,
         help=(
-            f"Topic to synthesise (default: {DEFAULT_TOPIC!r}). Must "
-            "match a directory at docs/quality-reference/<topic>/ "
-            "with quant_claims/ + parsed/ subdirs. Examples: "
-            "metformin, rapamycin, everolimus."
+            "Topic to synthesise (REQUIRED — no default to prevent "
+            "accidental metformin runs after a topic-pack edit). "
+            "Must match a topic_packs/<topic>.toml file AND a "
+            "docs/quality-reference/<topic>/ corpus directory. "
+            "Examples: metformin, rapamycin, statins, glp1, "
+            "senolytics, nad_precursors."
         ),
     )
     parser.add_argument(

@@ -1,0 +1,193 @@
+{
+  "paper_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r",
+  "doi": "10.1093/ehjdh/ztaf143.092",
+  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 7,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-u-1899",
+      "claim_type": "unit_value",
+      "raw_text": "69.7 years",
+      "numeric_values": [
+        69.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1899,
+      "sentence": "Median age was 69.7 years and 27.7% were female.",
+      "context_window": "ntervention and control group, respectively. Median age was 69.7 years and 27.7% were female. The participants performed 5226 hear",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-pct-1914",
+      "claim_type": "percentage",
+      "raw_text": "27.7%",
+      "numeric_values": [
+        27.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1914,
+      "sentence": "Median age was 69.7 years and 27.7% were female.",
+      "context_window": "control group, respectively. Median age was 69.7 years and 27.7% were female. The participants performed 5226 heart rhythm r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-pct-2104",
+      "claim_type": "percentage",
+      "raw_text": "4.8%",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2104,
+      "sentence": "There were 4.8% (5/104) same-day cancellations of scheduled cardioversions in the intervention group compared to 23.2% (23/99) in the control group (P < .001).",
+      "context_window": "ings per participant pre-cardioversion was 2.1. There were 4.8% (5/104) same-day cancellations of scheduled cardioversions",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-pct-2206",
+      "claim_type": "percentage",
+      "raw_text": "23.2%",
+      "numeric_values": [
+        23.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2206,
+      "sentence": "There were 4.8% (5/104) same-day cancellations of scheduled cardioversions in the intervention group compared to 23.2% (23/99) in the control group (P < .001).",
+      "context_window": "eduled cardioversions in the intervention group compared to 23.2% (23/99) in the control group (P < .001). For same-day cance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-p-2242",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2242,
+      "sentence": "There were 4.8% (5/104) same-day cancellations of scheduled cardioversions in the intervention group compared to 23.2% (23/99) in the control group (P < .001).",
+      "context_window": "ntion group compared to 23.2% (23/99) in the control group (P < .001). For same-day cancellations due to spontaneous sinus rhyth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-pct-2355",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2355,
+      "sentence": "For same-day cancellations due to spontaneous sinus rhythm conversion, the corresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, absolute risk reduction (ARR) 17,2 % and number needed to treat (NNT) was 6.",
+      "context_window": "ous sinus rhythm conversion, the corresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk redu",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-pct-2375",
+      "claim_type": "percentage",
+      "raw_text": "18.2%",
+      "numeric_values": [
+        18.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2375,
+      "sentence": "For same-day cancellations due to spontaneous sinus rhythm conversion, the corresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, absolute risk reduction (ARR) 17,2 % and number needed to treat (NNT) was 6.",
+      "context_window": "version, the corresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, ab",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-p-2390",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2390,
+      "sentence": "For same-day cancellations due to spontaneous sinus rhythm conversion, the corresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, absolute risk reduction (ARR) 17,2 % and number needed to treat (NNT) was 6.",
+      "context_window": "rresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, absolute risk reduct",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-pct-2434",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2434,
+      "sentence": "For same-day cancellations due to spontaneous sinus rhythm conversion, the corresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, absolute risk reduction (ARR) 17,2 % and number needed to treat (NNT) was 6.",
+      "context_window": "18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, absolute risk reduction (ARR) 17,2 % and number needed to",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12795214_comparison_of_standard_of_care_and_pre_cardioversion_heart_r-pct-2471",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2471,
+      "sentence": "For same-day cancellations due to spontaneous sinus rhythm conversion, the corresponding results were 1.0% (1/104) versus 18.2% (18/99) (P < .001), relative risk reduction (RRR) 94,7%, absolute risk reduction (ARR) 17,2 % and number needed to treat (NNT) was 6.",
+      "context_window": "isk reduction (RRR) 94,7%, absolute risk reduction (ARR) 17,2 % and number needed to treat (NNT) was 6. Pre-cardioversion",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

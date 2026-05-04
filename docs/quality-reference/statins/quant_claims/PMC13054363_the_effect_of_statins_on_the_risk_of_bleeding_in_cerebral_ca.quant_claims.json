@@ -1,0 +1,874 @@
+{
+  "paper_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca",
+  "doi": "10.25259/SNI_73_2026",
+  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 26,
+    "confidence_interval": 12,
+    "odds_ratio": 1,
+    "p_value": 1,
+    "unit_value": 5,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-1114",
+      "claim_type": "percentage",
+      "raw_text": "10.4%",
+      "numeric_values": [
+        10.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1114,
+      "sentence": "Seven studies with 2524 patients, 315 of whom used statins (10.4%), were included in the analyses.",
+      "context_window": "Seven studies with 2524 patients, 315 of whom used statins (10.4%), were included in the analyses. Statin use was associated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-1277",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1277,
+      "sentence": "Statin use was associated with a reduced hazard of prospective (re-)bleeding in adjusted analyses (hazard ratio [HR] 0.419; 95% confidence interval [CI] [0.186, 0.942]).",
+      "context_window": "re-)bleeding in adjusted analyses (hazard ratio [HR] 0.419; 95% confidence interval [CI] [0.186, 0.942]). The association r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-1410",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.272, 0.997",
+      "numeric_values": [
+        0.272,
+        0.997
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1410,
+      "sentence": "The association remained significant when the unadjusted study was included (HR 0.523; 95% CI [0.272, 0.997]).",
+      "context_window": "gnificant when the unadjusted study was included (HR 0.523; 95% CI [0.272, 0.997]). No significant difference was observed regarding hemorrh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-or-l-1522",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 0.827",
+      "numeric_values": [
+        0.827
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1522,
+      "sentence": "No significant difference was observed regarding hemorrhagic presentation at diagnosis (odds ratio 0.827; 95% CI [0.595, 1.162]).",
+      "context_window": "s observed regarding hemorrhagic presentation at diagnosis (odds ratio 0.827; 95% CI [0.595, 1.162]). Statin exposure is associated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-1540",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.595, 1.162",
+      "numeric_values": [
+        0.595,
+        1.162
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1540,
+      "sentence": "No significant difference was observed regarding hemorrhagic presentation at diagnosis (odds ratio 0.827; 95% CI [0.595, 1.162]).",
+      "context_window": "ng hemorrhagic presentation at diagnosis (odds ratio 0.827; 95% CI [0.595, 1.162]). Statin exposure is associated with a reduced risk of (r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-244",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 244,
+      "sentence": "Cerebral cavernous malformations (CCMs) are low-flow, low-pressure clusters of dilated capillaries without intervening neural tissue, representing one of the most frequently diagnosed vascular pathologies of the brain, with a prevalence of 0.1-0.5%.[ 18 ] They occur either sporadically, presenting as a single lesion often associated with a developmental venous anomaly (DVA), or in a familial form, which is usually characterized by multiple lesions and may also present as a single lesion with family history.[ 13 ]\n\nAbout 20-50% of CCMs are incidental; others present with headaches, seizures, or focal deficits, with or without bleeding.[ 11 , 13 ] Pooled annual symptomatic bleeding risk is 2.5% and higher with brainstem-CCMs or prior hemorrhage.[ 4 , 16 ] Surgical resection remains the primary treatment for CCMs and is effective for accessible lesions, but resections in deeper locations may carry substantially higher morbidity and mortality risks.[ 28 , 29 ] Resection is often avoided for small/deep asymptomatic lesions; with multiple lesions, removing one does not reduce the risk from others.[ 28 ]\n\nIn recent decades, questions have arisen regarding whether asymptomatic lesions should be surgically treated or whether the stability of deeper lesions might be better managed through conservative approaches, with decisions guided by a careful risk-benefit analysis.[ 39 ] Advances in CCM vascular biology have identified potential pharmacologic options, such as antithrombotics, beta-blockers, and agents targeting Ras homolog family member A (RhoA)/Rho-associated coiled-coil-containing protein kinase axis.[ 57 ]\n\nDuring the investigation of various pharmacological treatment options for stabilizing CCMs, several studies have highlighted the increased activation of the RhoA/ROCK pathway [ Figure 1 ], which leads to endothelial junction instability and vascular leakiness, and restoration of endothelial integrity has been achieved experimentally through ROCK inhibition.[ 7 , 49 ] One of the most important drug groups discussed in this context for their potential to stabilize CCMs through this pathway is statins [ Figure 1 ].",
+      "context_window": "vascular pathologies of the brain, with a prevalence of 0.1-0.5%.[ 18 ] They occur either sporadically, presenting as a sing",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-529",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 529,
+      "sentence": "Cerebral cavernous malformations (CCMs) are low-flow, low-pressure clusters of dilated capillaries without intervening neural tissue, representing one of the most frequently diagnosed vascular pathologies of the brain, with a prevalence of 0.1-0.5%.[ 18 ] They occur either sporadically, presenting as a single lesion often associated with a developmental venous anomaly (DVA), or in a familial form, which is usually characterized by multiple lesions and may also present as a single lesion with family history.[ 13 ]\n\nAbout 20-50% of CCMs are incidental; others present with headaches, seizures, or focal deficits, with or without bleeding.[ 11 , 13 ] Pooled annual symptomatic bleeding risk is 2.5% and higher with brainstem-CCMs or prior hemorrhage.[ 4 , 16 ] Surgical resection remains the primary treatment for CCMs and is effective for accessible lesions, but resections in deeper locations may carry substantially higher morbidity and mortality risks.[ 28 , 29 ] Resection is often avoided for small/deep asymptomatic lesions; with multiple lesions, removing one does not reduce the risk from others.[ 28 ]\n\nIn recent decades, questions have arisen regarding whether asymptomatic lesions should be surgically treated or whether the stability of deeper lesions might be better managed through conservative approaches, with decisions guided by a careful risk-benefit analysis.[ 39 ] Advances in CCM vascular biology have identified potential pharmacologic options, such as antithrombotics, beta-blockers, and agents targeting Ras homolog family member A (RhoA)/Rho-associated coiled-coil-containing protein kinase axis.[ 57 ]\n\nDuring the investigation of various pharmacological treatment options for stabilizing CCMs, several studies have highlighted the increased activation of the RhoA/ROCK pathway [ Figure 1 ], which leads to endothelial junction instability and vascular leakiness, and restoration of endothelial integrity has been achieved experimentally through ROCK inhibition.[ 7 , 49 ] One of the most important drug groups discussed in this context for their potential to stabilize CCMs through this pathway is statins [ Figure 1 ].",
+      "context_window": "ent as a single lesion with family history.[ 13 ] About 20-50% of CCMs are incidental; others present with headaches, seiz",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-697",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 697,
+      "sentence": "Cerebral cavernous malformations (CCMs) are low-flow, low-pressure clusters of dilated capillaries without intervening neural tissue, representing one of the most frequently diagnosed vascular pathologies of the brain, with a prevalence of 0.1-0.5%.[ 18 ] They occur either sporadically, presenting as a single lesion often associated with a developmental venous anomaly (DVA), or in a familial form, which is usually characterized by multiple lesions and may also present as a single lesion with family history.[ 13 ]\n\nAbout 20-50% of CCMs are incidental; others present with headaches, seizures, or focal deficits, with or without bleeding.[ 11 , 13 ] Pooled annual symptomatic bleeding risk is 2.5% and higher with brainstem-CCMs or prior hemorrhage.[ 4 , 16 ] Surgical resection remains the primary treatment for CCMs and is effective for accessible lesions, but resections in deeper locations may carry substantially higher morbidity and mortality risks.[ 28 , 29 ] Resection is often avoided for small/deep asymptomatic lesions; with multiple lesions, removing one does not reduce the risk from others.[ 28 ]\n\nIn recent decades, questions have arisen regarding whether asymptomatic lesions should be surgically treated or whether the stability of deeper lesions might be better managed through conservative approaches, with decisions guided by a careful risk-benefit analysis.[ 39 ] Advances in CCM vascular biology have identified potential pharmacologic options, such as antithrombotics, beta-blockers, and agents targeting Ras homolog family member A (RhoA)/Rho-associated coiled-coil-containing protein kinase axis.[ 57 ]\n\nDuring the investigation of various pharmacological treatment options for stabilizing CCMs, several studies have highlighted the increased activation of the RhoA/ROCK pathway [ Figure 1 ], which leads to endothelial junction instability and vascular leakiness, and restoration of endothelial integrity has been achieved experimentally through ROCK inhibition.[ 7 , 49 ] One of the most important drug groups discussed in this context for their potential to stabilize CCMs through this pathway is statins [ Figure 1 ].",
+      "context_window": "ding.[ 11 , 13 ] Pooled annual symptomatic bleeding risk is 2.5% and higher with brainstem-CCMs or prior hemorrhage.[ 4 , 16",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-5900",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5900,
+      "sentence": "Hemorrhage during follow-up was assessed by calculating the log HRs and log odds ratios (ORs) and back-transformed by exponentiation to report HRs/ORs along with 95% confidence intervals (CIs) for binary outcomes.",
+      "context_window": "-transformed by exponentiation to report HRs/ORs along with 95% confidence intervals (CIs) for binary outcomes. The random",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6440",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6440,
+      "sentence": "I 2 >75%, I 2 >50%, and I 2 <50% reflect considerable, substantial, and nonsignificant heterogeneity, respectively.",
+      "context_window": "tance of heterogeneity correlated with the percentage. I 2 >75%, I 2 >50%, and I 2 <50% reflect considerable, substantial,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6450",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6450,
+      "sentence": "I 2 >75%, I 2 >50%, and I 2 <50% reflect considerable, substantial, and nonsignificant heterogeneity, respectively.",
+      "context_window": "eterogeneity correlated with the percentage. I 2 >75%, I 2 >50%, and I 2 <50% reflect considerable, substantial, and nonsig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6464",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6464,
+      "sentence": "I 2 >75%, I 2 >50%, and I 2 <50% reflect considerable, substantial, and nonsignificant heterogeneity, respectively.",
+      "context_window": "orrelated with the percentage. I 2 >75%, I 2 >50%, and I 2 <50% reflect considerable, substantial, and nonsignificant heter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-p-6684",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6684,
+      "sentence": "All evaluations were conducted at a significance level of 0.05 ( P < 0.05).",
+      "context_window": "valuations were conducted at a significance level of 0.05 ( P < 0.05). All quantitative analyses were performed using STATA soft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-1158",
+      "claim_type": "percentage",
+      "raw_text": "55.28%",
+      "numeric_values": [
+        55.28
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1158,
+      "sentence": "Across 3,077 patients, mean age 45.1 (17.7) years; 55.28% female.",
+      "context_window": "and b ]. Across 3,077 patients, mean age 45.1 (17.7) years; 55.28% female. Four studies reported patient-level presentation: 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-u-2866",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2866,
+      "sentence": "In an RCT by Awad et al .,[ 6 ] atorvastatin 80 mg was administered daily versus placebo.",
+      "context_window": "cross studies. In an RCT by Awad et al .,[ 6 ] atorvastatin 80 mg was administered daily versus placebo. Marques et al .[ 26",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-3360",
+      "claim_type": "percentage",
+      "raw_text": "57.1%",
+      "numeric_values": [
+        57.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3360,
+      "sentence": "Across the included studies, four[ 6 , 9 , 15 , 58 ] (57.1%) demonstrated a low risk of bias, whereas three[ 2 , 26 , 42 ] (42.8%) had a moderate risk [ Supplementary Table 1 , Supplementary Figure 1 ].",
+      "context_window": "ose. Across the included studies, four[ 6 , 9 , 15 , 58 ] (57.1%) demonstrated a low risk of bias, whereas three[ 2 , 26 , 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-3430",
+      "claim_type": "percentage",
+      "raw_text": "42.8%",
+      "numeric_values": [
+        42.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3430,
+      "sentence": "Across the included studies, four[ 6 , 9 , 15 , 58 ] (57.1%) demonstrated a low risk of bias, whereas three[ 2 , 26 , 42 ] (42.8%) had a moderate risk [ Supplementary Table 1 , Supplementary Figure 1 ].",
+      "context_window": "onstrated a low risk of bias, whereas three[ 2 , 26 , 42 ] (42.8%) had a moderate risk [ Supplementary Table 1 , Supplementar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-u-4148",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4148,
+      "sentence": "All longitudinal studies had follow-up periods exceeding 2 years [ Figure 5 ].",
+      "context_window": ". All longitudinal studies had follow-up periods exceeding 2 years [ Figure 5 ]. Gomez-Paz et al .[ 15 ] and Agosti et al .[ 2",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-4323",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4323,
+      "sentence": "In four studies,[ 2 , 6 , 9 , 42 ] participant retention fell below 80%, meeting NOS criteria for attrition bias.",
+      "context_window": "studies,[ 2 , 6 , 9 , 42 ] participant retention fell below 80%, meeting NOS criteria for attrition bias. In addition, five",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-5372",
+      "claim_type": "percentage",
+      "raw_text": "14.2%",
+      "numeric_values": [
+        14.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5372,
+      "sentence": "Based on the AANS/CNS criteria[ 5 ] [ Supplementary Table 2 ], one study, which is an RCT[ 6 ] (14.2%), provided Class I evidence with Level 1 recommendation on the use of statins for bleeding risk reduction in CCM patients.",
+      "context_window": "[ Supplementary Table 2 ], one study, which is an RCT[ 6 ] (14.2%), provided Class I evidence with Level 1 recommendation on",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-5566",
+      "claim_type": "percentage",
+      "raw_text": "71.4%",
+      "numeric_values": [
+        71.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5566,
+      "sentence": "Five cohort studies with control groups[ 2 , 9 , 26 , 42 , 58 ] (71.4%) fulfilled the criteria for Class II evidence with Level 2 recommendation.",
+      "context_window": "cohort studies with control groups[ 2 , 9 , 26 , 42 , 58 ] (71.4%) fulfilled the criteria for Class II evidence with Level 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-5690",
+      "claim_type": "percentage",
+      "raw_text": "14.2%",
+      "numeric_values": [
+        14.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5690,
+      "sentence": "The remaining cross-sectional study[ 15 ] (14.2%) was classified as Class III evidence and aligned with Level 3 recommendation.",
+      "context_window": "recommendation. The remaining cross-sectional study[ 15 ] (14.2%) was classified as Class III evidence and aligned with Leve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-5977",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.186, 0.942",
+      "numeric_values": [
+        0.186,
+        0.942
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5977,
+      "sentence": "Supplementary Table 2\n\nIn the analysis of adjusted studies considering age, sex, and concomitant medication use, statin use was associated with a reduced hazard of prospective (re-)bleeding (HR 0.419; 95% CI 0.186, 0.942; back-transformed from log[HR] -0.87; 95% CI -1.68, -0.06).",
+      "context_window": "th a reduced hazard of prospective (re-)bleeding (HR 0.419; 95% CI 0.186, 0.942; back-transformed from log[HR] -0.87; 95% CI -1.68, -0.06).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-6035",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.68, -0.06",
+      "numeric_values": [
+        -1.68,
+        -0.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6035,
+      "sentence": "Supplementary Table 2\n\nIn the analysis of adjusted studies considering age, sex, and concomitant medication use, statin use was associated with a reduced hazard of prospective (re-)bleeding (HR 0.419; 95% CI 0.186, 0.942; back-transformed from log[HR] -0.87; 95% CI -1.68, -0.06).",
+      "context_window": "; 95% CI 0.186, 0.942; back-transformed from log[HR] -0.87; 95% CI -1.68, -0.06). The association remained significant when unadjusted stud",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-6147",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.272, 0.997",
+      "numeric_values": [
+        0.272,
+        0.997
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6147,
+      "sentence": "The association remained significant when unadjusted study was also considered (HR 0.523; 95% CI 0.272, 0.997; from log[HR] -0.65; 95% CI -1.301, -0.003).",
+      "context_window": "ficant when unadjusted study was also considered (HR 0.523; 95% CI 0.272, 0.997; from log[HR] -0.65; 95% CI -1.301, -0.003). Heterogeneity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-6188",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.301, -0.003",
+      "numeric_values": [
+        -1.301,
+        -0.003
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6188,
+      "sentence": "The association remained significant when unadjusted study was also considered (HR 0.523; 95% CI 0.272, 0.997; from log[HR] -0.65; 95% CI -1.301, -0.003).",
+      "context_window": "sidered (HR 0.523; 95% CI 0.272, 0.997; from log[HR] -0.65; 95% CI -1.301, -0.003). Heterogeneity was not observed in both adjusted (I 2 = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6267",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6267,
+      "sentence": "Heterogeneity was not observed in both adjusted (I 2 = 0.0%) and unadjusted analyses (I 2 = 0.0%).",
+      "context_window": "03). Heterogeneity was not observed in both adjusted (I 2 = 0.0%) and unadjusted analyses (I 2 = 0.0%). The overall pooled e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6304",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6304,
+      "sentence": "Heterogeneity was not observed in both adjusted (I 2 = 0.0%) and unadjusted analyses (I 2 = 0.0%).",
+      "context_window": "n both adjusted (I 2 = 0.0%) and unadjusted analyses (I 2 = 0.0%). The overall pooled estimate also showed no statistically",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6401",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6401,
+      "sentence": "The overall pooled estimate also showed no statistically significant heterogeneity (I 2 = 0.0%) [ Figure 7a ].",
+      "context_window": "so showed no statistically significant heterogeneity (I 2 = 0.0%) [ Figure 7a ]. Meta-analytic forest plots evaluating asso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6706",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6706,
+      "sentence": "Meta-analytic forest plots evaluating associations between statin exposure and hemorrhage outcomes in CCMs. (a) Association of statin therapy with risk of (re)bleeding during follow-up, evaluated using log[HR], shown as squares scaled by inverse-variance random-effects weights with 95% CIs. (b) Association of statin use with hemorrhagic presentation at diagnosis, evaluated using log[OR], shown as weighted squares with 95% CIs.",
+      "context_window": "ares scaled by inverse-variance random-effects weights with 95% CIs. (b) Association of statin use with hemorrhagic present",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6845",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6845,
+      "sentence": "Meta-analytic forest plots evaluating associations between statin exposure and hemorrhage outcomes in CCMs. (a) Association of statin therapy with risk of (re)bleeding during follow-up, evaluated using log[HR], shown as squares scaled by inverse-variance random-effects weights with 95% CIs. (b) Association of statin use with hemorrhagic presentation at diagnosis, evaluated using log[OR], shown as weighted squares with 95% CIs.",
+      "context_window": "is, evaluated using log[OR], shown as weighted squares with 95% CIs. Diamonds in both panels indicate pooled random-effects",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-6924",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6924,
+      "sentence": "Diamonds in both panels indicate pooled random-effects estimates with 95% CIs.",
+      "context_window": "n both panels indicate pooled random-effects estimates with 95% CIs. CCM: Cerebral cavernous malformation, CI: Confidence i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-7198",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.595, 1.162",
+      "numeric_values": [
+        0.595,
+        1.162
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7198,
+      "sentence": "Regarding the secondary outcome, no significant difference was found between statin-users and nonusers in relation to hemorrhagic presentation at diagnosis (OR 0.827; 95% CI 0.595, 1.162; from log [OR] -0.19; 95% CI -0.52, 0.15).",
+      "context_window": "elation to hemorrhagic presentation at diagnosis (OR 0.827; 95% CI 0.595, 1.162; from log [OR] -0.19; 95% CI -0.52, 0.15). The outcome did",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-7240",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.52, 0.15",
+      "numeric_values": [
+        -0.52,
+        0.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7240,
+      "sentence": "Regarding the secondary outcome, no significant difference was found between statin-users and nonusers in relation to hemorrhagic presentation at diagnosis (OR 0.827; 95% CI 0.595, 1.162; from log [OR] -0.19; 95% CI -0.52, 0.15).",
+      "context_window": "gnosis (OR 0.827; 95% CI 0.595, 1.162; from log [OR] -0.19; 95% CI -0.52, 0.15). The outcome did not change in the analysis of adjusted st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-7388",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.554, 1.310",
+      "numeric_values": [
+        0.554,
+        1.31
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7388,
+      "sentence": "The outcome did not change in the analysis of adjusted studies considering age, sex, and concomitant medication use (OR 0.852; 95% CI 0.554, 1.310; from log[OR] -0.16; 95% CI -0.59, 0.27) or unadjusted studies (OR 0.771; 95% CI 0.403, 1.492; from log[OR] -0.26; 95% CI -0.91, 0.40).",
+      "context_window": "idering age, sex, and concomitant medication use (OR 0.852; 95% CI 0.554, 1.310; from log[OR] -0.16; 95% CI -0.59, 0.27) or unadjusted stud",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-7429",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.59, 0.27",
+      "numeric_values": [
+        -0.59,
+        0.27
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7429,
+      "sentence": "The outcome did not change in the analysis of adjusted studies considering age, sex, and concomitant medication use (OR 0.852; 95% CI 0.554, 1.310; from log[OR] -0.16; 95% CI -0.59, 0.27) or unadjusted studies (OR 0.771; 95% CI 0.403, 1.492; from log[OR] -0.26; 95% CI -0.91, 0.40).",
+      "context_window": "ion use (OR 0.852; 95% CI 0.554, 1.310; from log[OR] -0.16; 95% CI -0.59, 0.27) or unadjusted studies (OR 0.771; 95% CI 0.403, 1.492; from",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-7482",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.403, 1.492",
+      "numeric_values": [
+        0.403,
+        1.492
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7482,
+      "sentence": "The outcome did not change in the analysis of adjusted studies considering age, sex, and concomitant medication use (OR 0.852; 95% CI 0.554, 1.310; from log[OR] -0.16; 95% CI -0.59, 0.27) or unadjusted studies (OR 0.771; 95% CI 0.403, 1.492; from log[OR] -0.26; 95% CI -0.91, 0.40).",
+      "context_window": "-0.16; 95% CI -0.59, 0.27) or unadjusted studies (OR 0.771; 95% CI 0.403, 1.492; from log[OR] -0.26; 95% CI -0.91, 0.40). As for the hetero",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-ci-7523",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.91, 0.40",
+      "numeric_values": [
+        -0.91,
+        0.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7523,
+      "sentence": "The outcome did not change in the analysis of adjusted studies considering age, sex, and concomitant medication use (OR 0.852; 95% CI 0.554, 1.310; from log[OR] -0.16; 95% CI -0.59, 0.27) or unadjusted studies (OR 0.771; 95% CI 0.403, 1.492; from log[OR] -0.26; 95% CI -0.91, 0.40).",
+      "context_window": "studies (OR 0.771; 95% CI 0.403, 1.492; from log[OR] -0.26; 95% CI -0.91, 0.40). As for the heterogeneity, adjusted studies showed no hete",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-7618",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7618,
+      "sentence": "As for the heterogeneity, adjusted studies showed no heterogeneity (I 2 = 0.0%); however, unadjusted studies demonstrated moderate heterogeneity (I 2 = 32.4%).",
+      "context_window": "erogeneity, adjusted studies showed no heterogeneity (I 2 = 0.0%); however, unadjusted studies demonstrated moderate heterog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-7696",
+      "claim_type": "percentage",
+      "raw_text": "32.4%",
+      "numeric_values": [
+        32.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7696,
+      "sentence": "As for the heterogeneity, adjusted studies showed no heterogeneity (I 2 = 0.0%); however, unadjusted studies demonstrated moderate heterogeneity (I 2 = 32.4%).",
+      "context_window": "adjusted studies demonstrated moderate heterogeneity (I 2 = 32.4%). The overall pooled estimate also showed no statistically",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-7794",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7794,
+      "sentence": "The overall pooled estimate also showed no statistically significant heterogeneity (I 2 = 0.0%) [ Figure 7b ].",
+      "context_window": "so showed no statistically significant heterogeneity (I 2 = 0.0%) [ Figure 7b ]. In the RCT by Awad et al .,[ 6 ] high-dose",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-u-1144",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 1144,
+      "sentence": "In this phase 1/2a, biomarker-driven, placebo-controlled trial of atorvastatin 80 mg/day, the primary endpoint was annual percent change in lesional-iron on quantitative-susceptibility-mapping (QSM), and the secondary outcome was symptomatic rebleeding; neither differed between groups.",
+      "context_window": "biomarker-driven, placebo-controlled trial of atorvastatin 80 mg/day, the primary endpoint was annual percent change in lesional",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-u-5998",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 5998,
+      "sentence": "ROCK inhibition has been shown to reduce lesion burden and hemorrhage in CCM models, and high-dose atorvastatin (40-80 mg/day) produces strong ROCK inhibition in humans.",
+      "context_window": "nd hemorrhage in CCM models, and high-dose atorvastatin (40-80 mg/day) produces strong ROCK inhibition in humans. However, a head",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-u-8465",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8465,
+      "sentence": "Beta-blockers may reduce the risk of hemorrhage in CCMs by antagonizing \u03b21-adrenergic signaling, which stabilizes endothelial junctions and barrier function, dampens vascular endothelial growth factor-driven angiogenesis, and modulates shear-stress cues by lowering heart rate/cardiac output, thereby decreasing lesion fragility.[ 22 , 25 , 32 , 40 ] A randomized trial ( NCT03589014 ) showed that propranolol therapy combined with standard care for 24 months resulted in a 57% lower risk of intracerebral hemorrhage (ICH) or focal deficits compared to standard care alone in familial CCMs.[ 21 ]\n\nDue to low blood flow and the risk of thrombus formation in CCMs, antithrombotic agents have also been investigated.[ 1 , 14 ] They may reduce bleeding by preventing intralesional thrombus formation.[ 42 , 44 , 53 , 59 ] A meta-analysis of 1,342 patients revealed a reduced risk of ICH with antithrombotics and found no significant difference between anticoagulants and antiplatelet agents.[ 59 ] CCM patients are likely to benefit from antithrombotics or beta-blockers when there is a strong standard indication.[ 21 , 59 ]\n\nIn a prospective cohort study of cerebral and spinal cavernous malformations, fish oil, selective serotonin reuptake inhibitors, and vitamin D correlated with a lower risk of prospective hemorrhage, and low 25-hydroxyvitamin D was more frequent at hemorrhagic presentation, whereas vitamin E was not protective.[ 36 ] A preclinical study showed noninvasive MR-guided focused-ultrasound blood-brain-barrier opening safely arrested CCM growth and prevented de novo lesions.[ 12 ] Current evidence suggests several potential agents for the conservative management of CCMs; however, significant gaps remain regarding the preferred first-line therapy, optimal dosing, patient selection, and timing of initiation.",
+      "context_window": "ed that propranolol therapy combined with standard care for 24 months resulted in a 57% lower risk of intracerebral hemorrhage (I",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-pct-8489",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8489,
+      "sentence": "Beta-blockers may reduce the risk of hemorrhage in CCMs by antagonizing \u03b21-adrenergic signaling, which stabilizes endothelial junctions and barrier function, dampens vascular endothelial growth factor-driven angiogenesis, and modulates shear-stress cues by lowering heart rate/cardiac output, thereby decreasing lesion fragility.[ 22 , 25 , 32 , 40 ] A randomized trial ( NCT03589014 ) showed that propranolol therapy combined with standard care for 24 months resulted in a 57% lower risk of intracerebral hemorrhage (ICH) or focal deficits compared to standard care alone in familial CCMs.[ 21 ]\n\nDue to low blood flow and the risk of thrombus formation in CCMs, antithrombotic agents have also been investigated.[ 1 , 14 ] They may reduce bleeding by preventing intralesional thrombus formation.[ 42 , 44 , 53 , 59 ] A meta-analysis of 1,342 patients revealed a reduced risk of ICH with antithrombotics and found no significant difference between anticoagulants and antiplatelet agents.[ 59 ] CCM patients are likely to benefit from antithrombotics or beta-blockers when there is a strong standard indication.[ 21 , 59 ]\n\nIn a prospective cohort study of cerebral and spinal cavernous malformations, fish oil, selective serotonin reuptake inhibitors, and vitamin D correlated with a lower risk of prospective hemorrhage, and low 25-hydroxyvitamin D was more frequent at hemorrhagic presentation, whereas vitamin E was not protective.[ 36 ] A preclinical study showed noninvasive MR-guided focused-ultrasound blood-brain-barrier opening safely arrested CCM growth and prevented de novo lesions.[ 12 ] Current evidence suggests several potential agents for the conservative management of CCMs; however, significant gaps remain regarding the preferred first-line therapy, optimal dosing, patient selection, and timing of initiation.",
+      "context_window": "apy combined with standard care for 24 months resulted in a 57% lower risk of intracerebral hemorrhage (ICH) or focal defic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-n-13096",
+      "claim_type": "sample_size",
+      "raw_text": "n = 315",
+      "numeric_values": [
+        315.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 13096,
+      "sentence": "Finally, the number of patients on statins was relatively small ( n = 315), and hemorrhagic events were rare.",
+      "context_window": "y, the number of patients on statins was relatively small ( n = 315), and hemorrhagic events were rare. These factors decreased",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13054363_the_effect_of_statins_on_the_risk_of_bleeding_in_cerebral_ca-n-3248",
+      "claim_type": "sample_size",
+      "raw_text": "n = 315",
+      "numeric_values": [
+        315.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 3248,
+      "sentence": "Finally, the number of patients on statins was relatively small ( n = 315), and hemorrhagic events were rare.",
+      "context_window": "y, the number of patients on statins was relatively small ( n = 315), and hemorrhagic events were rare. These factors decreased",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -431,6 +431,22 @@ async def write_results_section(
         receipts, rejected, matrix, thesis, topic=topic,
         background_lit_entries=background_lit_entries,
     )
+    # Topic-aware Results prompt (Refactor 2026-05-04)
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    drug_class = "drug"
+    try:
+        from pathlib import Path as _Path
+        from agent.topic_pack import load_topic_pack
+        _repo = _Path(__file__).resolve().parent.parent
+        _tp = _repo / "topic_packs" / f"{topic}.toml"
+        if _tp.exists():
+            pack = load_topic_pack(_tp)
+            drug_class = pack.drug_class or "drug"
+    except (ImportError, OSError, ValueError):
+        pass
+    _results_prompt = format_prompts_for_topic(
+        topic=topic, drug_class=drug_class,
+    )["results"]
     fallback = (
         "## Results\n\n_LLM-generated results section failed validation; "
         "see Direct Evidence and Indirect / Mechanistic Evidence in the "
@@ -443,7 +459,7 @@ async def write_results_section(
     current_prompt = user
     for attempt in range(SECTION_RETRY_BUDGET + 1):
         parsed = await _call_llm_section(
-            system_prompt=RESULTS_SYSTEM_PROMPT, user_prompt=current_prompt,
+            system_prompt=_results_prompt, user_prompt=current_prompt,
             chain=chain, client=client, ledger=ledger, seed=seed,
         )
         if not parsed:
@@ -466,7 +482,7 @@ async def write_results_section(
         return build_results_from_parsed(parsed_dict, accepted=receipts)
     best = await _run_citation_fix_pass(
         best, base_user_prompt=user,
-        system_prompt=RESULTS_SYSTEM_PROMPT, builder_fn=_builder,
+        system_prompt=_results_prompt, builder_fn=_builder,
         background_lit_entries=background_lit_entries,
         chain=chain, client=client, ledger=ledger, seed=seed,
         call_llm_fn=_call_llm_section,
@@ -521,14 +537,38 @@ async def render_full_paper(
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",
     )]
+    # Refactor 2026-05-04: prompts are now topic-templated. Resolve
+    # the topic + drug_class via the topic pack (if available) so
+    # paragraph instructions read 'rapamycin (mTOR inhibitor)' not
+    # 'metformin (biguanide)' for non-metformin runs.
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    drug_class = "drug"
+    try:
+        from pathlib import Path as _Path
+        from agent.topic_pack import load_topic_pack
+        _repo = _Path(__file__).resolve().parent.parent
+        _tp = _repo / "topic_packs" / f"{topic}.toml"
+        if _tp.exists():
+            pack = load_topic_pack(_tp)
+            drug_class = pack.drug_class or "drug"
+    except (ImportError, OSError, ValueError):
+        pass
+    _prompts = format_prompts_for_topic(
+        topic=topic, drug_class=drug_class,
+    )
     user = _build_user_prompt(
         accepted, rejected, matrix, thesis, topic=topic,
         background_lit_entries=background_lit_entries,
     )
+    # Refactor 2026-05-04: removed the '**Submission:** `<run-tag>`'
+    # line — that's internal pipeline metadata that belongs in the
+    # manifest.json / supplement, not in the prose body. Reviewer
+    # flagged this as 'too much internal pipeline language' and
+    # Fix #56 was already stripping it; now we don't emit it in the
+    # first place.
     title_md = (
         f"# Researka Synthesis: {topic.title()} — full paper\n\n"
         f"**Thesis:** {thesis.text}\n\n"
-        f"**Submission:** `{submission_id}`\n\n"
     )
     sections: dict[SectionName, SynthesisSection] = {}
 
@@ -542,7 +582,7 @@ async def render_full_paper(
     print("[paper_writer] starting full-paper render", flush=True)
     sections["abstract"] = await _write_anchored_section(
         name="abstract", heading="## Abstract",
-        system_prompt=ABSTRACT_SYSTEM_PROMPT, user_prompt=user,
+        system_prompt=_prompts["abstract"], user_prompt=user,
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
         fallback_body="## Abstract\n\n_LLM-generated abstract failed validation; see Thesis above._\n",
@@ -551,7 +591,7 @@ async def render_full_paper(
     _log_section_done("abstract", sections["abstract"])
     sections["introduction"] = await _write_scoped_section(
         name="introduction", heading="## Introduction",
-        system_prompt=INTRODUCTION_SYSTEM_PROMPT, user_prompt=user,
+        system_prompt=_prompts["introduction"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Introduction\n\n_Introduction failed scoped validation._\n",
@@ -560,7 +600,7 @@ async def render_full_paper(
     _log_section_done("introduction", sections["introduction"])
     sections["background"] = await _write_scoped_section(
         name="background", heading="## Background",
-        system_prompt=BACKGROUND_SYSTEM_PROMPT, user_prompt=user,
+        system_prompt=_prompts["background"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Background\n\n_Background failed scoped validation._\n",
@@ -580,7 +620,7 @@ async def render_full_paper(
     sections["cross_domain_synthesis"] = await _write_anchored_section(
         name="cross_domain_synthesis",
         heading="## Cross-Domain Synthesis",
-        system_prompt=CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
+        system_prompt=_prompts["cross_domain_synthesis"],
         user_prompt=user,
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
@@ -590,7 +630,7 @@ async def render_full_paper(
     _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
     sections["discussion"] = await _write_scoped_section(
         name="discussion", heading="## Discussion",
-        system_prompt=DISCUSSION_SYSTEM_PROMPT, user_prompt=user,
+        system_prompt=_prompts["discussion"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Discussion\n\n_Discussion failed scoped validation._\n",
@@ -599,7 +639,7 @@ async def render_full_paper(
     _log_section_done("discussion", sections["discussion"])
     sections["limitations_full"] = await _write_anchored_section(
         name="limitations_full", heading="## Limitations",
-        system_prompt=LIMITATIONS_FULL_SYSTEM_PROMPT, user_prompt=user,
+        system_prompt=_prompts["limitations_full"], user_prompt=user,
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
         fallback_body="## Limitations\n\n_Limitations failed validation._\n",
@@ -608,7 +648,7 @@ async def render_full_paper(
     _log_section_done("limitations_full", sections["limitations_full"])
     sections["conclusion"] = await _write_scoped_section(
         name="conclusion", heading="## Conclusion",
-        system_prompt=CONCLUSION_SYSTEM_PROMPT, user_prompt=user,
+        system_prompt=_prompts["conclusion"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
         fallback_body="## Conclusion\n\n_Conclusion failed scoped validation._\n",

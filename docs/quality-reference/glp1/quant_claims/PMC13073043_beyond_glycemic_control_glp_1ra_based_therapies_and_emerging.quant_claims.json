@@ -1,0 +1,1811 @@
+{
+  "paper_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging",
+  "doi": "10.3390/jcm15072786",
+  "extracted_at": "2026-05-04T12:17:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 50,
+    "unit_value": 11,
+    "confidence_interval": 12,
+    "p_value": 13,
+    "sample_size": 5,
+    "hazard_ratio": 5,
+    "risk_ratio": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-1069",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1069,
+      "sentence": "Notably, more than 80% of the included studies were published between 2020 and 2026, reflecting the recent growth of research in this field.",
+      "context_window": "iple physiological systems and diseases. Notably, more than 80% of the included studies were published between 2020 and 202",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-1883",
+      "claim_type": "unit_value",
+      "raw_text": "40 months",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 1883,
+      "sentence": "It enrolled 17,604 patients with a median follow-up of approximately 40 months.",
+      "context_window": "ed 17,604 patients with a median follow-up of approximately 40 months. The trial demonstrated that semaglutide improved all outco",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-2083",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60-0.87",
+      "numeric_values": [
+        0.6,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 2083,
+      "sentence": "The trial demonstrated that semaglutide improved all outcome measures in patients with heart failure at random assignment compared with those without heart failure (hazard ratio (HR) 0.72, 95% CI 0.60-0.87 for MACE; 0.79, 0.64-0.98 for the heart failure composite endpoint; 0.76, 0.59-0.97 for cardiovascular death; and 0.81, 0.66-1.00 for all-cause death; all interaction p > 0.19) [ 6 ].",
+      "context_window": "d with those without heart failure (hazard ratio (HR) 0.72, 95% CI 0.60-0.87 for MACE; 0.79, 0.64-0.98 for the heart failure composite e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-2267",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2267,
+      "sentence": "The trial demonstrated that semaglutide improved all outcome measures in patients with heart failure at random assignment compared with those without heart failure (hazard ratio (HR) 0.72, 95% CI 0.60-0.87 for MACE; 0.79, 0.64-0.98 for the heart failure composite endpoint; 0.76, 0.59-0.97 for cardiovascular death; and 0.81, 0.66-1.00 for all-cause death; all interaction p > 0.19) [ 6 ].",
+      "context_window": "h; and 0.81, 0.66-1.00 for all-cause death; all interaction p > 0.19) [ 6 ]. Importantly, the reduction in cardiovascular risk w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-2976",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2976,
+      "sentence": "Treatment with tirzepatide was associated with a 38% reduction in the risk of cardiovascular death or worsening heart failure and a 56% reduction in hospitalizations for heart failure compared with placebo [ 3 , 5 , 7 ].",
+      "context_window": "July 2024. Treatment with tirzepatide was associated with a 38% reduction in the risk of cardiovascular death or worsening",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-3059",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3059,
+      "sentence": "Treatment with tirzepatide was associated with a 38% reduction in the risk of cardiovascular death or worsening heart failure and a 56% reduction in hospitalizations for heart failure compared with placebo [ 3 , 5 , 7 ].",
+      "context_window": "sk of cardiovascular death or worsening heart failure and a 56% reduction in hospitalizations for heart failure compared wi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-3852",
+      "claim_type": "unit_value",
+      "raw_text": "39.9 years",
+      "numeric_values": [
+        39.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3852,
+      "sentence": "The study enrolled 48 participants-34 women and 14 men-with a mean age of 39.9 years.",
+      "context_window": "lled 48 participants-34 women and 14 men-with a mean age of 39.9 years. Most participants had a body mass index (BMI) exceeding 30",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-n-4162",
+      "claim_type": "sample_size",
+      "raw_text": "n = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4162,
+      "sentence": "Despite promising results, the small number of participants ( n = 48) restricts the findings to a hypothesis-generating level.",
+      "context_window": "spite promising results, the small number of participants ( n = 48) restricts the findings to a hypothesis-generating level.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-n-4387",
+      "claim_type": "sample_size",
+      "raw_text": "n = 45",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4387,
+      "sentence": "The 12-month follow-up period retrospective cohort study, including electronic health records of 83,825 patients with obesity, demonstrated that semaglutide ( n = 45,797) compared with other anti-obesity medications ( n = 38,028) is associated with a 50-56% lower risk for both the incidence and recurrence of alcohol use disorder (0.37% vs.",
+      "context_window": ",825 patients with obesity, demonstrated that semaglutide ( n = 45,797) compared with other anti-obesity medications ( n = 38,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-n-4446",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4446,
+      "sentence": "The 12-month follow-up period retrospective cohort study, including electronic health records of 83,825 patients with obesity, demonstrated that semaglutide ( n = 45,797) compared with other anti-obesity medications ( n = 38,028) is associated with a 50-56% lower risk for both the incidence and recurrence of alcohol use disorder (0.37% vs.",
+      "context_window": "n = 45,797) compared with other anti-obesity medications ( n = 38,028) is associated with a 50-56% lower risk for both the in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-4482",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4482,
+      "sentence": "The 12-month follow-up period retrospective cohort study, including electronic health records of 83,825 patients with obesity, demonstrated that semaglutide ( n = 45,797) compared with other anti-obesity medications ( n = 38,028) is associated with a 50-56% lower risk for both the incidence and recurrence of alcohol use disorder (0.37% vs.",
+      "context_window": "i-obesity medications ( n = 38,028) is associated with a 50-56% lower risk for both the incidence and recurrence of alcohol",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-4560",
+      "claim_type": "percentage",
+      "raw_text": "0.37%",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4560,
+      "sentence": "The 12-month follow-up period retrospective cohort study, including electronic health records of 83,825 patients with obesity, demonstrated that semaglutide ( n = 45,797) compared with other anti-obesity medications ( n = 38,028) is associated with a 50-56% lower risk for both the incidence and recurrence of alcohol use disorder (0.37% vs.",
+      "context_window": "both the incidence and recurrence of alcohol use disorder (0.37% vs. 0.73%; HR: 0.50, 95% CI: 0.39-0.63), consistent across",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-4570",
+      "claim_type": "percentage",
+      "raw_text": "0.73%",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4570,
+      "sentence": "0.73%; HR: 0.50, 95% CI: 0.39-0.63), consistent across gender, age group and race.",
+      "context_window": "incidence and recurrence of alcohol use disorder (0.37% vs. 0.73%; HR: 0.50, 95% CI: 0.39-0.63), consistent across gender, ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-hr-a-4577",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4577,
+      "sentence": "0.73%; HR: 0.50, 95% CI: 0.39-0.63), consistent across gender, age group and race.",
+      "context_window": "ce and recurrence of alcohol use disorder (0.37% vs. 0.73%; HR: 0.50, 95% CI: 0.39-0.63), consistent across gender, age group an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-4587",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.39-0.63",
+      "numeric_values": [
+        0.39,
+        0.63
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4587,
+      "sentence": "0.73%; HR: 0.50, 95% CI: 0.39-0.63), consistent across gender, age group and race.",
+      "context_window": "urrence of alcohol use disorder (0.37% vs. 0.73%; HR: 0.50, 95% CI: 0.39-0.63), consistent across gender, age group and race. Similar fin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-6169",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 kg",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6169,
+      "sentence": "Weight gain is particularly prominent during the first months of cessation, with an average increase of approximately 2.3 kg within the first two months [ 36 ].",
+      "context_window": "ths of cessation, with an average increase of approximately 2.3 kg within the first two months [ 36 ]. GLP-1 RAs reduce calor",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-7241",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7241,
+      "sentence": "In an observational study involving 222,942 patients with T2DM treated with various antidiabetic medications (including insulin, metformin, DPP-4 inhibitors, SGLT-2 inhibitors, sulfonylureas, thiazolidinediones, and GLP-1 RAs-among them 5967 semaglutide users), semaglutide use was associated with a 32% lower risk of tobacco use disorder compared to insulin (HR 0.68 [95% CI, 0.63 to 0.74]).",
+      "context_window": "7 semaglutide users), semaglutide use was associated with a 32% lower risk of tobacco use disorder compared to insulin (HR",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-7310",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7310,
+      "sentence": "In an observational study involving 222,942 patients with T2DM treated with various antidiabetic medications (including insulin, metformin, DPP-4 inhibitors, SGLT-2 inhibitors, sulfonylureas, thiazolidinediones, and GLP-1 RAs-among them 5967 semaglutide users), semaglutide use was associated with a 32% lower risk of tobacco use disorder compared to insulin (HR 0.68 [95% CI, 0.63 to 0.74]).",
+      "context_window": "risk of tobacco use disorder compared to insulin (HR 0.68 [95% CI, 0.63 to 0.74]). Patients receiving semaglutide also sho",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-10581",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10581,
+      "sentence": "The study involving approximately 700,000 individuals (85,223 patients with obesity who were prescribed semaglutide or non-GLP-1RA anti-obesity medications, with the findings replicated in 596,045 patients with T2DM) revealed that patients who initiated semaglutide therapy were found to have a 44% lower risk of incident cannabis use disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84).",
+      "context_window": "ents who initiated semaglutide therapy were found to have a 44% lower risk of incident cannabis use disorder (CUD) in patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-hr-a-10671",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10671,
+      "sentence": "The study involving approximately 700,000 individuals (85,223 patients with obesity who were prescribed semaglutide or non-GLP-1RA anti-obesity medications, with the findings replicated in 596,045 patients with T2DM) revealed that patients who initiated semaglutide therapy were found to have a 44% lower risk of incident cannabis use disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84).",
+      "context_window": "nabis use disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-10681",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.42-0.75",
+      "numeric_values": [
+        0.42,
+        0.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10681,
+      "sentence": "The study involving approximately 700,000 individuals (85,223 patients with obesity who were prescribed semaglutide or non-GLP-1RA anti-obesity medications, with the findings replicated in 596,045 patients with T2DM) revealed that patients who initiated semaglutide therapy were found to have a 44% lower risk of incident cannabis use disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84).",
+      "context_window": "disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a hist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-10706",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10706,
+      "sentence": "The study involving approximately 700,000 individuals (85,223 patients with obesity who were prescribed semaglutide or non-GLP-1RA anti-obesity medications, with the findings replicated in 596,045 patients with T2DM) revealed that patients who initiated semaglutide therapy were found to have a 44% lower risk of incident cannabis use disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84).",
+      "context_window": "s with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a history of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-hr-a-10779",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10779,
+      "sentence": "The study involving approximately 700,000 individuals (85,223 patients with obesity who were prescribed semaglutide or non-GLP-1RA anti-obesity medications, with the findings replicated in 596,045 patients with T2DM) revealed that patients who initiated semaglutide therapy were found to have a 44% lower risk of incident cannabis use disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84).",
+      "context_window": "k of recurrent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84). These findings were consistent across",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-10789",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.46-0.84",
+      "numeric_values": [
+        0.46,
+        0.84
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10789,
+      "sentence": "The study involving approximately 700,000 individuals (85,223 patients with obesity who were prescribed semaglutide or non-GLP-1RA anti-obesity medications, with the findings replicated in 596,045 patients with T2DM) revealed that patients who initiated semaglutide therapy were found to have a 44% lower risk of incident cannabis use disorder (CUD) in patients with no prior history (HR: 0.56, 95% CI: 0.42-0.75) and a 38% lower risk of recurrent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84).",
+      "context_window": "rent CUD in those with a history of the disorder (HR: 0.62, 95% CI: 0.46-0.84). These findings were consistent across age, gender, and ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-12593",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12593,
+      "sentence": "In a randomized controlled trial evaluating GLP-1 RAs for opioid use disorder (OUD), participants receiving low-dose liraglutide reported a 40% reduction in opioid craving over a 3-week period.",
+      "context_window": "UD), participants receiving low-dose liraglutide reported a 40% reduction in opioid craving over a 3-week period. However,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-12925",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12925,
+      "sentence": "An observational study involving 33,000 patients with T2DM showed that treatment with semaglutide was associated with a nearly 50% lower risk of opioid overdose compared to other antidiabetic medications over a one-year follow-up period (HR ranging from 0.32 (95% CI, 0.12-0.89) to 0.58 (95% CI, 0.38-0.87)) [ 52 ].",
+      "context_window": "hat treatment with semaglutide was associated with a nearly 50% lower risk of opioid overdose compared to other antidiabeti",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-13058",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13058,
+      "sentence": "An observational study involving 33,000 patients with T2DM showed that treatment with semaglutide was associated with a nearly 50% lower risk of opioid overdose compared to other antidiabetic medications over a one-year follow-up period (HR ranging from 0.32 (95% CI, 0.12-0.89) to 0.58 (95% CI, 0.38-0.87)) [ 52 ].",
+      "context_window": "ons over a one-year follow-up period (HR ranging from 0.32 (95% CI, 0.12-0.89) to 0.58 (95% CI, 0.38-0.87)) [ 52 ]. A rece",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-13086",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13086,
+      "sentence": "An observational study involving 33,000 patients with T2DM showed that treatment with semaglutide was associated with a nearly 50% lower risk of opioid overdose compared to other antidiabetic medications over a one-year follow-up period (HR ranging from 0.32 (95% CI, 0.12-0.89) to 0.58 (95% CI, 0.38-0.87)) [ 52 ].",
+      "context_window": "p period (HR ranging from 0.32 (95% CI, 0.12-0.89) to 0.58 (95% CI, 0.38-0.87)) [ 52 ]. A recent literature review of both",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-15313",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-0.21, -0.03",
+      "numeric_values": [
+        -0.21,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 15313,
+      "sentence": "A meta-analysis by Xinda Chen et al., including over 2000 participants across five randomized controlled trials and one prospective cohort study, showed that adults treated with GLP-1 RAs experienced significantly fewer depressive symptoms compared to those treated with other antidiabetic medications (SMD = -0.12, 95% CI [-0.21, -0.03], p SMD < 0.01, I 2 = 0%, p Q = 0.52).",
+      "context_window": "e treated with other antidiabetic medications (SMD = -0.12, 95% CI [-0.21, -0.03], p SMD < 0.01, I 2 = 0%, p Q = 0.52). These findings sugge",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-15356",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15356,
+      "sentence": "A meta-analysis by Xinda Chen et al., including over 2000 participants across five randomized controlled trials and one prospective cohort study, showed that adults treated with GLP-1 RAs experienced significantly fewer depressive symptoms compared to those treated with other antidiabetic medications (SMD = -0.12, 95% CI [-0.21, -0.03], p SMD < 0.01, I 2 = 0%, p Q = 0.52).",
+      "context_window": "ns (SMD = -0.12, 95% CI [-0.21, -0.03], p SMD < 0.01, I 2 = 0%, p Q = 0.52). These findings suggest that GLP-1 RAs may off",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-17247",
+      "claim_type": "unit_value",
+      "raw_text": "3.4 years",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 17247,
+      "sentence": "A randomized FLOW trial involving 3533 participants (median follow-up 3.4 years), showed that the risk of a primary-outcome event (major kidney disease events, kidney failure, \u226550% eGFR reduction from baseline, renal/cardiovascular death) was 24% lower in the semaglutide group than in the placebo group (331 vs.",
+      "context_window": "ed FLOW trial involving 3533 participants (median follow-up 3.4 years), showed that the risk of a primary-outcome event (major ki",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17354",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17354,
+      "sentence": "A randomized FLOW trial involving 3533 participants (median follow-up 3.4 years), showed that the risk of a primary-outcome event (major kidney disease events, kidney failure, \u226550% eGFR reduction from baseline, renal/cardiovascular death) was 24% lower in the semaglutide group than in the placebo group (331 vs.",
+      "context_window": "utcome event (major kidney disease events, kidney failure, \u226550% eGFR reduction from baseline, renal/cardiovascular death) w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17420",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17420,
+      "sentence": "A randomized FLOW trial involving 3533 participants (median follow-up 3.4 years), showed that the risk of a primary-outcome event (major kidney disease events, kidney failure, \u226550% eGFR reduction from baseline, renal/cardiovascular death) was 24% lower in the semaglutide group than in the placebo group (331 vs.",
+      "context_window": "FR reduction from baseline, renal/cardiovascular death) was 24% lower in the semaglutide group than in the placebo group (3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17518",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17518,
+      "sentence": "410 first events; HR, 0.76; 95% CI, 0.66 to 0.88; p = 0.0003).",
+      "context_window": "n in the placebo group (331 vs. 410 first events; HR, 0.76; 95% CI, 0.66 to 0.88; p = 0.0003). Similar results were achieve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-17540",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17540,
+      "sentence": "410 first events; HR, 0.76; 95% CI, 0.66 to 0.88; p = 0.0003).",
+      "context_window": "(331 vs. 410 first events; HR, 0.76; 95% CI, 0.66 to 0.88; p = 0.0003). Similar results were achieved for a composite of the kidn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17667",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17667,
+      "sentence": "Similar results were achieved for a composite of the kidney-specific components of the primary outcome (HR, 0.79; 95% CI, 0.66 to 0.94) and for death from cardiovascular causes (HR, 0.71; 95% CI, 0.56 to 0.89).",
+      "context_window": "idney-specific components of the primary outcome (HR, 0.79; 95% CI, 0.66 to 0.94) and for death from cardiovascular causes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17741",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17741,
+      "sentence": "Similar results were achieved for a composite of the kidney-specific components of the primary outcome (HR, 0.79; 95% CI, 0.66 to 0.94) and for death from cardiovascular causes (HR, 0.71; 95% CI, 0.56 to 0.89).",
+      "context_window": "o 0.94) and for death from cardiovascular causes (HR, 0.71; 95% CI, 0.56 to 0.89). The risk of major cardiovascular events",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17808",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17808,
+      "sentence": "The risk of major cardiovascular events was 18% lower (HR, 0.82; 95% CI, 0.68 to 0.98; p = 0.029).",
+      "context_window": "0.56 to 0.89). The risk of major cardiovascular events was 18% lower (HR, 0.82; 95% CI, 0.68 to 0.98; p = 0.029). Furtherm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17829",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17829,
+      "sentence": "The risk of major cardiovascular events was 18% lower (HR, 0.82; 95% CI, 0.68 to 0.98; p = 0.029).",
+      "context_window": "isk of major cardiovascular events was 18% lower (HR, 0.82; 95% CI, 0.68 to 0.98; p = 0.029). Furthermore, the risk of all-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-17851",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17851,
+      "sentence": "The risk of major cardiovascular events was 18% lower (HR, 0.82; 95% CI, 0.68 to 0.98; p = 0.029).",
+      "context_window": "cular events was 18% lower (HR, 0.82; 95% CI, 0.68 to 0.98; p = 0.029). Furthermore, the risk of all-cause mortality was reduced",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17923",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17923,
+      "sentence": "Furthermore, the risk of all-cause mortality was reduced by 20% (HR, 0.80; 95% CI, 0.67-0.95; p = 0.01).",
+      "context_window": "Furthermore, the risk of all-cause mortality was reduced by 20% (HR, 0.80; 95% CI, 0.67-0.95; p = 0.01). Regarding surrogat",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-17938",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17938,
+      "sentence": "Furthermore, the risk of all-cause mortality was reduced by 20% (HR, 0.80; 95% CI, 0.67-0.95; p = 0.01).",
+      "context_window": "e risk of all-cause mortality was reduced by 20% (HR, 0.80; 95% CI, 0.67-0.95; p = 0.01). Regarding surrogate renal outcome",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-17957",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17957,
+      "sentence": "Furthermore, the risk of all-cause mortality was reduced by 20% (HR, 0.80; 95% CI, 0.67-0.95; p = 0.01).",
+      "context_window": "mortality was reduced by 20% (HR, 0.80; 95% CI, 0.67-0.95; p = 0.01). Regarding surrogate renal outcomes, semaglutide treatment",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-18127",
+      "claim_type": "unit_value",
+      "raw_text": "1.16 mL/min",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 18127,
+      "sentence": "Regarding surrogate renal outcomes, semaglutide treatment resulted in a significantly slower decline in kidney function, with the mean annual eGFR slope being 1.16 mL/min/1.73 m 2 less steep compared to placebo ( p < 0.001) [ 9 , 62 ].",
+      "context_window": "e in kidney function, with the mean annual eGFR slope being 1.16 mL/min/1.73 m 2 less steep compared to placebo ( p < 0.001) [ 9 ,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-18181",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18181,
+      "sentence": "Regarding surrogate renal outcomes, semaglutide treatment resulted in a significantly slower decline in kidney function, with the mean annual eGFR slope being 1.16 mL/min/1.73 m 2 less steep compared to placebo ( p < 0.001) [ 9 , 62 ].",
+      "context_window": "being 1.16 mL/min/1.73 m 2 less steep compared to placebo ( p < 0.001) [ 9 , 62 ]. A recent 2025 meta-analysis of 24 randomized",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-18455",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.19 to -0.01",
+      "numeric_values": [
+        -0.19,
+        -0.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18455,
+      "sentence": "The study reported a significant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05).",
+      "context_window": "nificant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine rat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-18485",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18485,
+      "sentence": "The study reported a significant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05).",
+      "context_window": "eatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-18490",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18490,
+      "sentence": "The study reported a significant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05).",
+      "context_window": "ine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-18554",
+      "claim_type": "unit_value",
+      "raw_text": "1.01 mg",
+      "numeric_values": [
+        1.01
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 18554,
+      "sentence": "The study reported a significant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05).",
+      "context_window": "0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05). Furthermore,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-18565",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:-1.68, -0.34",
+      "numeric_values": [
+        -1.68,
+        -0.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18565,
+      "sentence": "The study reported a significant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05).",
+      "context_window": "rinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05). Furthermore, the study underlines st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-18592",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18592,
+      "sentence": "The study reported a significant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05).",
+      "context_window": "e ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05). Furthermore, the study underlines statistically",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-18597",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18597,
+      "sentence": "The study reported a significant reduction in serum creatinine levels (WMD = -0.10, 95% CI: -0.19 to -0.01, I 2 = 33%, p < 0.05) and urinary albumin-to-creatinine ratio (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05).",
+      "context_window": "io (UACR) (WMD: -1.01 mg/g, 95% CI:-1.68, -0.34, I 2 = 15%, p < 0.05). Furthermore, the study underlines statistically significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-18699",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.19 to 0.90",
+      "numeric_values": [
+        0.19,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18699,
+      "sentence": "Furthermore, the study underlines statistically significant elevation in eGFR (WMD = 0.54, 95% CI 0.19 to 0.90, I 2 = 27%, p < 0.05) compared to control groups [ 63 ].",
+      "context_window": "es statistically significant elevation in eGFR (WMD = 0.54, 95% CI 0.19 to 0.90, I 2 = 27%, p < 0.05) compared to control groups [ 63 ]. C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-18726",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18726,
+      "sentence": "Furthermore, the study underlines statistically significant elevation in eGFR (WMD = 0.54, 95% CI 0.19 to 0.90, I 2 = 27%, p < 0.05) compared to control groups [ 63 ].",
+      "context_window": "t elevation in eGFR (WMD = 0.54, 95% CI 0.19 to 0.90, I 2 = 27%, p < 0.05) compared to control groups [ 63 ]. Clinicians s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-18731",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18731,
+      "sentence": "Furthermore, the study underlines statistically significant elevation in eGFR (WMD = 0.54, 95% CI 0.19 to 0.90, I 2 = 27%, p < 0.05) compared to control groups [ 63 ].",
+      "context_window": "vation in eGFR (WMD = 0.54, 95% CI 0.19 to 0.90, I 2 = 27%, p < 0.05) compared to control groups [ 63 ]. Clinicians studying th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-n-22955",
+      "claim_type": "sample_size",
+      "raw_text": "n = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22955,
+      "sentence": "However, a secondary outcome analysis revealed a lower incidence of prostate cancer in the liraglutide group ( n = 26) compared to the placebo group ( n = 47), with an HR of 0.54 (95% CI: 0.34-0.88).",
+      "context_window": "wer incidence of prostate cancer in the liraglutide group ( n = 26) compared to the placebo group ( n = 47), with an HR of 0.5",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-n-22995",
+      "claim_type": "sample_size",
+      "raw_text": "n = 47",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22995,
+      "sentence": "However, a secondary outcome analysis revealed a lower incidence of prostate cancer in the liraglutide group ( n = 26) compared to the placebo group ( n = 47), with an HR of 0.54 (95% CI: 0.34-0.88).",
+      "context_window": "liraglutide group ( n = 26) compared to the placebo group ( n = 47), with an HR of 0.54 (95% CI: 0.34-0.88). While these findi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-23024",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.34-0.88",
+      "numeric_values": [
+        0.34,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 23024,
+      "sentence": "However, a secondary outcome analysis revealed a lower incidence of prostate cancer in the liraglutide group ( n = 26) compared to the placebo group ( n = 47), with an HR of 0.54 (95% CI: 0.34-0.88).",
+      "context_window": "ompared to the placebo group ( n = 47), with an HR of 0.54 (95% CI: 0.34-0.88). While these findings are hypothesis-generating and do not",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-25773",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25773,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": "al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-rr-a-25817",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.627",
+      "numeric_values": [
+        0.627
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25817,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": "sociated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-25829",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25829,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": "h a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-25851",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25851,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": "he risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-25871",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25871,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": "g AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.49",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-hr-a-25909",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.525",
+      "numeric_values": [
+        0.525
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25909,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": ", p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001). Furthermore, GLP-1 RAs r",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-25921",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25921,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": "and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001). Furthermore, GLP-1 RAs reduce",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-25943",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25943,
+      "sentence": "These findings are corroborated by a large cohort study conducted by Siddeeque et al., which found that semaglutide use was associated with a 37% reduction in the risk of developing AD (RR = 0.627, 95% CI = 0.481-0.817, p < 0.001) and over 50% reduction in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001).",
+      "context_window": "n in all-cause mortality (HR = 0.525, 95% CI = 0.493-0.558, p < 0.001). Furthermore, GLP-1 RAs reduced the risk of Lewy body deme",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-26042",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26042,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": "ced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR =",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-rr-a-26047",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.590",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26047,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": "he risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95%",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-26059",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26059,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": "ewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI =",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-26081",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26081,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": "vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), res",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-26096",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26096,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": "ia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-rr-a-26101",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.438",
+      "numeric_values": [
+        0.438
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26101,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": "41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively. This study",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-26113",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26113,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": ".590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively. This study anal",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-26135",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26135,
+      "sentence": "Furthermore, GLP-1 RAs reduced the risk of Lewy body dementia and vascular dementia by 41% (RR = 0.590, 95% CI = 0.462-0.753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively.",
+      "context_window": ".753, p < 0.001) and 56% (RR = 0.438, 95% CI = 0.327-0.588, p < 0.001), respectively. This study analyzed data from 5,307,845 obe",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-27331",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 27331,
+      "sentence": "Similarly, a systematic review and meta-analysis conducted by researchers from Universidade do Estado do Amazonas reported no significant improvement in any component of the MDS-UPDRS scale (I-IV) after 6 and 12 months of GLP-1 RA treatment.",
+      "context_window": "in any component of the MDS-UPDRS scale (I-IV) after 6 and 12 months of GLP-1 RA treatment. No meaningful changes in quality of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-28047",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 28047,
+      "sentence": "After 10 years of sustained treatment, GLP-1 RA users showed a lower risk of PD compared with matched DPP-4i users (HR 0.57; 95% CI 0.37-0.85), with similar trends observed when insulin was used as a comparator.",
+      "context_window": "4i) between 2007 and 2018, with follow-up until 2022. After 10 years of sustained treatment, GLP-1 RA users showed a lower risk",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-28166",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.37-0.85",
+      "numeric_values": [
+        0.37,
+        0.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 28166,
+      "sentence": "After 10 years of sustained treatment, GLP-1 RA users showed a lower risk of PD compared with matched DPP-4i users (HR 0.57; 95% CI 0.37-0.85), with similar trends observed when insulin was used as a comparator.",
+      "context_window": "wer risk of PD compared with matched DPP-4i users (HR 0.57; 95% CI 0.37-0.85), with similar trends observed when insulin was used as a c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-28516",
+      "claim_type": "unit_value",
+      "raw_text": "66 years",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 28516,
+      "sentence": "Medicare data (2016-2020), which included 89,074 adults aged \u226566 years with T2DM.",
+      "context_window": "dicare data (2016-2020), which included 89,074 adults aged \u226566 years with T2DM. In this analysis, initiation of GLP-1 RA therapy",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-28607",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 28607,
+      "sentence": "In this analysis, initiation of GLP-1 RA therapy was associated with a 23% lower risk of PD compared with DPP-4 inhibitor use (HR 0.77; 95% CI 0.63-0.95), with lower crude incidence rates among GLP-1 RA users (2.85 vs.",
+      "context_window": "lysis, initiation of GLP-1 RA therapy was associated with a 23% lower risk of PD compared with DPP-4 inhibitor use (HR 0.77",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-28672",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.63-0.95",
+      "numeric_values": [
+        0.63,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 28672,
+      "sentence": "In this analysis, initiation of GLP-1 RA therapy was associated with a 23% lower risk of PD compared with DPP-4 inhibitor use (HR 0.77; 95% CI 0.63-0.95), with lower crude incidence rates among GLP-1 RA users (2.85 vs.",
+      "context_window": "ower risk of PD compared with DPP-4 inhibitor use (HR 0.77; 95% CI 0.63-0.95), with lower crude incidence rates among GLP-1 RA users (2.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-32296",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 32296,
+      "sentence": "After 12 weeks, levels of alanine aminotransferase (ALT), aspartate aminotransferase (AST), and \u03b3-glutamyltransferase were lower in the exenatide group compared to insulin [ 92 ].",
+      "context_window": "obesity, T2DM, and MASLD with elevated liver enzymes. After 12 weeks, levels of alanine aminotransferase (ALT), aspartate aminot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-32562",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 32562,
+      "sentence": "In another randomized clinical trial, retatrutide administered in advanced MASLD eliminated 86% of liver fat in patients.",
+      "context_window": "rial, retatrutide administered in advanced MASLD eliminated 86% of liver fat in patients. Clinical trials of GLP-1 RAs hav",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-33838",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 33838,
+      "sentence": "Hepatocellular carcinoma (HCC) accounts for approximately 72% of primary liver cancers [ 95 ].",
+      "context_window": ". Hepatocellular carcinoma (HCC) accounts for approximately 72% of primary liver cancers [ 95 ]. HCC primarily develops in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-33953",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 33953,
+      "sentence": "HCC primarily develops in patients with post-inflammatory liver cirrhosis (80-90%), associated with HBV or HCV infections and their coexistence.",
+      "context_window": "lops in patients with post-inflammatory liver cirrhosis (80-90%), associated with HBV or HCV infections and their coexisten",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-35654",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 35654,
+      "sentence": "Tirzepatide led to a body weight reduction of approximately 20%, with an estimated treatment difference (ETD) of -16.1% (95% CI -18.0, -14.2) to -17.3% (-19.3, -15.3) compared to placebo.",
+      "context_window": "Tirzepatide led to a body weight reduction of approximately 20%, with an estimated treatment difference (ETD) of -16.1% (95",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-35708",
+      "claim_type": "percentage",
+      "raw_text": "16.1%",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 35708,
+      "sentence": "Tirzepatide led to a body weight reduction of approximately 20%, with an estimated treatment difference (ETD) of -16.1% (95% CI -18.0, -14.2) to -17.3% (-19.3, -15.3) compared to placebo.",
+      "context_window": "ately 20%, with an estimated treatment difference (ETD) of -16.1% (95% CI -18.0, -14.2) to -17.3% (-19.3, -15.3) compared to",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-ci-35715",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -18.0, -14.2",
+      "numeric_values": [
+        -18.0,
+        -14.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 35715,
+      "sentence": "Tirzepatide led to a body weight reduction of approximately 20%, with an estimated treatment difference (ETD) of -16.1% (95% CI -18.0, -14.2) to -17.3% (-19.3, -15.3) compared to placebo.",
+      "context_window": "0%, with an estimated treatment difference (ETD) of -16.1% (95% CI -18.0, -14.2) to -17.3% (-19.3, -15.3) compared to placebo. Most importa",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-35740",
+      "claim_type": "percentage",
+      "raw_text": "17.3%",
+      "numeric_values": [
+        17.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 35740,
+      "sentence": "Tirzepatide led to a body weight reduction of approximately 20%, with an estimated treatment difference (ETD) of -16.1% (95% CI -18.0, -14.2) to -17.3% (-19.3, -15.3) compared to placebo.",
+      "context_window": "atment difference (ETD) of -16.1% (95% CI -18.0, -14.2) to -17.3% (-19.3, -15.3) compared to placebo. Most importantly, the t",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-35835",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 35835,
+      "sentence": "Most importantly, the treatment resulted in a nearly 60% decrease in apnea episodes, achieving an ETD in the Apnea-Hypopnea Index (AHI) of -47.7% (-65.8, -29.6) to -56.2% (-73.7, -38.7).",
+      "context_window": "acebo. Most importantly, the treatment resulted in a nearly 60% decrease in apnea episodes, achieving an ETD in the Apnea-H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-35922",
+      "claim_type": "percentage",
+      "raw_text": "47.7%",
+      "numeric_values": [
+        47.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 35922,
+      "sentence": "Most importantly, the treatment resulted in a nearly 60% decrease in apnea episodes, achieving an ETD in the Apnea-Hypopnea Index (AHI) of -47.7% (-65.8, -29.6) to -56.2% (-73.7, -38.7).",
+      "context_window": "des, achieving an ETD in the Apnea-Hypopnea Index (AHI) of -47.7% (-65.8, -29.6) to -56.2% (-73.7, -38.7). However, it remain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-35947",
+      "claim_type": "percentage",
+      "raw_text": "56.2%",
+      "numeric_values": [
+        56.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 35947,
+      "sentence": "Most importantly, the treatment resulted in a nearly 60% decrease in apnea episodes, achieving an ETD in the Apnea-Hypopnea Index (AHI) of -47.7% (-65.8, -29.6) to -56.2% (-73.7, -38.7).",
+      "context_window": "the Apnea-Hypopnea Index (AHI) of -47.7% (-65.8, -29.6) to -56.2% (-73.7, -38.7). However, it remains unclear whether the dec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-37200",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 37200,
+      "sentence": "The trial, including 39,394 patients with obesity using anti-obesity medications (AOMs) (23,933 semaglutide, 12,854 tirzepatide, 2607 liraglutide) and 72,405 without AOM use, demonstrated that the adjusted osteoarthritis risk was 27% lower in AOM users than in non-users (HR = 0.73, 95% CI (0.67-0.79), p < 0.01).",
+      "context_window": "use, demonstrated that the adjusted osteoarthritis risk was 27% lower in AOM users than in non-users (HR = 0.73, 95% CI (0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-hr-a-37242",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.73",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 37242,
+      "sentence": "The trial, including 39,394 patients with obesity using anti-obesity medications (AOMs) (23,933 semaglutide, 12,854 tirzepatide, 2607 liraglutide) and 72,405 without AOM use, demonstrated that the adjusted osteoarthritis risk was 27% lower in AOM users than in non-users (HR = 0.73, 95% CI (0.67-0.79), p < 0.01).",
+      "context_window": "rthritis risk was 27% lower in AOM users than in non-users (HR = 0.73, 95% CI (0.67-0.79), p < 0.01). Randomized controlled trial",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-37253",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 37253,
+      "sentence": "The trial, including 39,394 patients with obesity using anti-obesity medications (AOMs) (23,933 semaglutide, 12,854 tirzepatide, 2607 liraglutide) and 72,405 without AOM use, demonstrated that the adjusted osteoarthritis risk was 27% lower in AOM users than in non-users (HR = 0.73, 95% CI (0.67-0.79), p < 0.01).",
+      "context_window": "sk was 27% lower in AOM users than in non-users (HR = 0.73, 95% CI (0.67-0.79), p < 0.01). Randomized controlled trials hav",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-p-37273",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 37273,
+      "sentence": "The trial, including 39,394 patients with obesity using anti-obesity medications (AOMs) (23,933 semaglutide, 12,854 tirzepatide, 2607 liraglutide) and 72,405 without AOM use, demonstrated that the adjusted osteoarthritis risk was 27% lower in AOM users than in non-users (HR = 0.73, 95% CI (0.67-0.79), p < 0.01).",
+      "context_window": "AOM users than in non-users (HR = 0.73, 95% CI (0.67-0.79), p < 0.01). Randomized controlled trials have shown that overweight/o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-37381",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 37381,
+      "sentence": "Randomized controlled trials have shown that overweight/obese individuals who lost an average of 14% of their body weight during semaglutide therapy experienced significant improvement in knee osteoarthritis pain, likely related to both weight loss and the anti-inflammatory properties of the drug.",
+      "context_window": "wn that overweight/obese individuals who lost an average of 14% of their body weight during semaglutide therapy experienced",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-38071",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 38071,
+      "sentence": "Polycystic ovary syndrome (PCOS) is the most common cause of anovulatory infertility, affecting approximately 20% of women of reproductive age (according to Rotterdam criteria).",
+      "context_window": "n cause of anovulatory infertility, affecting approximately 20% of women of reproductive age (according to Rotterdam criter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-u-38933",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 38933,
+      "sentence": "In an open-label, prospective, randomized clinical trial conducted over 12 months (September 2014-May 2015) with 28 obese women diagnosed with PCOS per Rotterdam criteria, preconception low-dose liraglutide combined with metformin was more effective than metformin alone in increasing pregnancy rates in IVF procedures, despite similar weight loss effects in both groups [ 102 ].",
+      "context_window": "abel, prospective, randomized clinical trial conducted over 12 months (September 2014-May 2015) with 28 obese women diagnosed wit",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13073043_beyond_glycemic_control_glp_1ra_based_therapies_and_emerging-pct-39926",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 39926,
+      "sentence": "In a study by Karen Elkind-Hirsch et al. involving 60 obese women with oligo-ovulation and PCOS (70% completed the study), combination therapy with exenatide and metformin resulted in greater improvement in menstrual cyclicity, endogenous ovulatory function, body weight, waist circumference, insulin resistance, and hyperandrogenism compared to monotherapy [ 109 ].",
+      "context_window": "al. involving 60 obese women with oligo-ovulation and PCOS (70% completed the study), combination therapy with exenatide an",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

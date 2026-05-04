@@ -1,0 +1,337 @@
+{
+  "paper_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_",
+  "doi": "10.3389/fcvm.2021.741542",
+  "extracted_at": "2026-05-04T12:05:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 12,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-n-826",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 826,
+      "sentence": "Recruited patients awaiting CABG surgery at the Montreal Heart Institute (n = 100) will be randomly assigned in a 1:1 ratio to receive either quercetin supplementation (500 mg twice daily) or placebo, starting 2 days before surgery and until the seventh postoperative day.",
+      "context_window": "ents awaiting CABG surgery at the Montreal Heart Institute (n = 100) will be randomly assigned in a 1:1 ratio to receive either",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-921",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 921,
+      "sentence": "Recruited patients awaiting CABG surgery at the Montreal Heart Institute (n = 100) will be randomly assigned in a 1:1 ratio to receive either quercetin supplementation (500 mg twice daily) or placebo, starting 2 days before surgery and until the seventh postoperative day.",
+      "context_window": "in a 1:1 ratio to receive either quercetin supplementation (500 mg twice daily) or placebo, starting 2 days before surgery and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-962",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 962,
+      "sentence": "Recruited patients awaiting CABG surgery at the Montreal Heart Institute (n = 100) will be randomly assigned in a 1:1 ratio to receive either quercetin supplementation (500 mg twice daily) or placebo, starting 2 days before surgery and until the seventh postoperative day.",
+      "context_window": "n supplementation (500 mg twice daily) or placebo, starting 2 days before surgery and until the seventh postoperative day. The",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-276",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 276,
+      "sentence": "Q-CABG ( ClinicalTrials.gov , NCT04907253 ) is a phase II, single center, prospective, randomized, double-blind, allocation-concealed and placebo-controlled study evaluating the anti-inflammatory and senolytic effects of a short-course (hospital stay) treatment of quercetin (500 mg P.O. bid) vs. placebo in patients undergoing CABG.",
+      "context_window": "s of a short-course (hospital stay) treatment of quercetin (500 mg P.O. bid) vs. placebo in patients undergoing CABG. The tria",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-1486",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1486,
+      "sentence": "Inclusion criteria target 18 years old and older patients with a diagnosis of ACS in the last month.",
+      "context_window": "er os ; POD, post-operative day. Inclusion criteria target 18 years old and older patients with a diagnosis of ACS in the last",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-3084",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3084,
+      "sentence": "Patients aged 18 years or older admitted to the MHI for an ACS diagnosed within the past 30 days and expected to undergo an inpatient CABG are eligible to participate.",
+      "context_window": "ST elevation myocardial infarction (STEMI) . Patients aged 18 years or older admitted to the MHI for an ACS diagnosed within th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-3159",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3159,
+      "sentence": "Patients aged 18 years or older admitted to the MHI for an ACS diagnosed within the past 30 days and expected to undergo an inpatient CABG are eligible to participate.",
+      "context_window": "er admitted to the MHI for an ACS diagnosed within the past 30 days and expected to undergo an inpatient CABG are eligible to p",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-pct-5590",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5590,
+      "sentence": "The composition of the quercetin capsules is as follows: 92% quercetin, 5% Arbocel A300 (microcrystalline cellulose), and 3% sodium stearyl fumarate.",
+      "context_window": "l. The composition of the quercetin capsules is as follows: 92% quercetin, 5% Arbocel A300 (microcrystalline cellulose), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-pct-5605",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5605,
+      "sentence": "The composition of the quercetin capsules is as follows: 92% quercetin, 5% Arbocel A300 (microcrystalline cellulose), and 3% sodium stearyl fumarate.",
+      "context_window": "ion of the quercetin capsules is as follows: 92% quercetin, 5% Arbocel A300 (microcrystalline cellulose), and 3% sodium st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-pct-5655",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5655,
+      "sentence": "The composition of the quercetin capsules is as follows: 92% quercetin, 5% Arbocel A300 (microcrystalline cellulose), and 3% sodium stearyl fumarate.",
+      "context_window": "uercetin, 5% Arbocel A300 (microcrystalline cellulose), and 3% sodium stearyl fumarate. The quercetin is extracted from th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-pct-5973",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5973,
+      "sentence": "For the placebo, quercetin is simply replaced by Arbocel A300 (97%).",
+      "context_window": "the placebo, quercetin is simply replaced by Arbocel A300 (97%). The capsule covers are made of pharmaceutical grade cellu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-7539",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7539,
+      "sentence": "The 50 patients randomized to the treatment arm will receive capsules of quercetin at a dose of 500 mg P.O. bid (morning and evening doses).",
+      "context_window": "eatment arm will receive capsules of quercetin at a dose of 500 mg P.O. bid (morning and evening doses). The other half partic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-7801",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7801,
+      "sentence": "Treatment administration starts 2-3 days before planned surgery so that patients receive four-six doses pre-operatively.",
+      "context_window": "rom the trial medication. Treatment administration starts 2-3 days before planned surgery so that patients receive four-six do",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-8891",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8891,
+      "sentence": "Participants will be contacted or seen at their routine outpatient follow-up by a member of the research team, 6-12 weeks after surgery.",
+      "context_window": "ne outpatient follow-up by a member of the research team, 6-12 weeks after surgery. They will be questioned about their post-ope",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-pct-3776",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3776,
+      "sentence": "We used the data observed by Noly et al., to calculate our sample size, assuming a 50% relative reduction in hs-CRP levels would represent a significant clinical gain.",
+      "context_window": "ed by Noly et al., to calculate our sample size, assuming a 50% relative reduction in hs-CRP levels would represent a signi",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-4382",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4382,
+      "sentence": "In Canada, the recommended maximum daily dose of quercetin is 1,200 mg and intra-venous formulation is not approved by Health Canada.",
+      "context_window": "anada, the recommended maximum daily dose of quercetin is 1,200 mg and intra-venous formulation is not approved by Health Cana",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-4555",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4555,
+      "sentence": "Therefore, since the optimal dosing strategy of quercetin remains unknown, we assumed that a dose of 1,000 mg daily would be a good balance between proven safety and accepted efficacy.",
+      "context_window": "y of quercetin remains unknown, we assumed that a dose of 1,000 mg daily would be a good balance between proven safety and acc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8564044_design_of_a_randomized_placebo_controlled_trial_to_evaluate_-u-4769",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4769,
+      "sentence": "In this era of Enhanced Recovery after Surgery (ERAS) protocols ( 49 ), it is not surprising to see patients going home as early as 3 days after CABG.",
+      "context_window": "it is not surprising to see patients going home as early as 3 days after CABG. Since participation in the trial will not delay",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+# GLP-1 receptor agonists topic pack — Proof 004
+#
+# Multi-topic scalability test #2. GLP-1 RAs (semaglutide,
+# liraglutide, tirzepatide) are the most-prescribed metabolic
+# drug class of 2023-2026 and have aging-relevant signals
+# (cardiovascular, weight, possibly cognition).
+
+topic   = "glp1"
+class_  = "glp1_receptor_agonist"
+
+aliases = [
+  "GLP-1",
+  "GLP1",
+  "GLP-1 receptor agonist",
+  "GLP-1 RA",
+  "incretin mimetic",
+  # Specific drugs
+  "semaglutide",
+  "liraglutide",
+  "dulaglutide",
+  "exenatide",
+  "tirzepatide",  # technically GIP/GLP-1 dual but field treats as GLP-1 class
+  "Ozempic",
+  "Wegovy",
+  "Saxenda",
+  "Mounjaro",
+  "Zepbound",
+  "Trulicity",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "safety_tolerability",
+  "dosing_regimen",
+  "ongoing_trials",
+  "cardiovascular_outcomes",   # GLP-1-specific (SUSTAIN, LEADER, SELECT)
+  "weight_loss_outcomes",      # GLP-1-specific
+  "cognitive_outcomes",        # registered/ongoing GLP-1 dementia trials
+]
+
+special_rules = [
+  "SUSTAIN, LEADER, SELECT, REWIND, PIONEER trials are canonical CV-outcome RCTs",
+  "STEP trials are canonical weight-loss RCTs",
+  "Tirzepatide is GIP/GLP-1 dual agonist — flag as such, NOT pure GLP-1",
+  "Aging-relevance is INDIRECT for most GLP-1 trials (designed for diabetes/obesity, not aging)",
+  "GI side effects (nausea, vomiting) are dose-limiting in many trials — flag attrition",
+]
+
+forbidden_verbs_for_protocol_role = [
+  "found", "showed", "improved", "reduced",
+  "demonstrated", "established", "proved",
+]
+
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned", "will assess", "pending", "ongoing", "awaiting",
+]
+
+
+# --- v2 generic-multi-topic top-level fields -------------------------
+
+active_arm_synonyms = [
+  "GLP-1",
+  "semaglutide",
+  "liraglutide",
+  "dulaglutide",
+  "exenatide",
+  "tirzepatide",
+  "incretin",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+  "saline",
+  "no drug",
+]
+
+corpus_search_queries = [
+  "(semaglutide OR liraglutide OR GLP-1) AND aging AND human",
+  "(semaglutide OR tirzepatide) AND clinical trial AND randomized",
+  "GLP-1 receptor agonist AND (mortality OR longevity OR healthspan)",
+  "(SUSTAIN OR LEADER OR SELECT OR REWIND OR STEP) AND outcomes",
+  "(semaglutide OR liraglutide) AND elderly AND (frailty OR sarcopenia)",
+  "GLP-1 AND (cardiovascular OR cognitive) AND outcomes AND trial",
+  "tirzepatide AND clinical AND (cardiovascular OR weight)",
+]
+
+canonical_rct_paper_ids = []  # populated as corpus matures
+
+
+# --- Canonical trials ------------------------------------------------
+
+[[canonical_trials]]
+id            = "NCT01179048"
+name          = "LEADER"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT01720446"
+name          = "SUSTAIN-6"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT03574597"
+name          = "SELECT"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT03548935"
+name          = "STEP-1"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT04255433"
+name          = "SURMOUNT-1"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT05891496"
+name          = "FOCUS"
+expected_role = "registered_pending"
+design        = "rct"
+
+
+# --- Hard-coded role overrides ---------------------------------------
+
+[known_role_overrides.NCT01179048]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT01720446]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT03574597]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT03548935]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT04255433]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT05891496]
+role   = "registered_pending"
+design = "rct"
+tier   = "A1"
+
+
+# --- Endpoint polarity -----------------------------------------------
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiometabolic = "lower_is_better"
+cardiovascular_outcome = "lower_is_better"
+weight_loss = "higher_is_better"
+hba1c_reduction = "higher_is_better"
+incident_diabetes = "lower_is_better"
+incident_cv_event = "lower_is_better"
+muscle_function = "higher_is_better"
+frailty = "lower_is_better"
+sarcopenia = "lower_is_better"
+gi_adverse_events = "lower_is_better"

@@ -1,0 +1,1319 @@
+{
+  "paper_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c",
+  "doi": "10.1136/openhrt-2026-004115",
+  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 21,
+    "hazard_ratio": 2,
+    "confidence_interval": 4,
+    "p_value": 11,
+    "percentage": 30,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-n-792",
+      "claim_type": "sample_size",
+      "raw_text": "n=2476",
+      "numeric_values": [
+        2476.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 792,
+      "sentence": "Recruitment was lower than planned (n=2476), yielding an aged population (mean, 64 years) with well-controlled blood pressure and low-density lipoprotein cholesterol at baseline, and relatively high rates of statin and ACEI/ARB use.",
+      "context_window": "of life and win ratio. Recruitment was lower than planned (n=2476), yielding an aged population (mean, 64 years) with well-co",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-836",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 836,
+      "sentence": "Recruitment was lower than planned (n=2476), yielding an aged population (mean, 64 years) with well-controlled blood pressure and low-density lipoprotein cholesterol at baseline, and relatively high rates of statin and ACEI/ARB use.",
+      "context_window": "r than planned (n=2476), yielding an aged population (mean, 64 years) with well-controlled blood pressure and low-density lipopr",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-992",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 years",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 992,
+      "sentence": "At 2.5 years, 421 events occurred (221 in IMT, 200 in UC) with no difference in the primary outcome (HR=1.13 (95% CI 0.94 to 1.37) for IMT vs UC, p=0.20) or secondary outcomes.",
+      "context_window": "e, and relatively high rates of statin and ACEI/ARB use. At 2.5 years, 421 events occurred (221 in IMT, 200 in UC) with no differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-hr-a-1090",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=1.13",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1090,
+      "sentence": "At 2.5 years, 421 events occurred (221 in IMT, 200 in UC) with no difference in the primary outcome (HR=1.13 (95% CI 0.94 to 1.37) for IMT vs UC, p=0.20) or secondary outcomes.",
+      "context_window": "IMT, 200 in UC) with no difference in the primary outcome (HR=1.13 (95% CI 0.94 to 1.37) for IMT vs UC, p=0.20) or secondary o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-ci-1099",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.94 to 1.37",
+      "numeric_values": [
+        0.94,
+        1.37
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "At 2.5 years, 421 events occurred (221 in IMT, 200 in UC) with no difference in the primary outcome (HR=1.13 (95% CI 0.94 to 1.37) for IMT vs UC, p=0.20) or secondary outcomes.",
+      "context_window": "in UC) with no difference in the primary outcome (HR=1.13 (95% CI 0.94 to 1.37) for IMT vs UC, p=0.20) or secondary outcomes. Hospitalisat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-1135",
+      "claim_type": "p_value",
+      "raw_text": "p=0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1135,
+      "sentence": "At 2.5 years, 421 events occurred (221 in IMT, 200 in UC) with no difference in the primary outcome (HR=1.13 (95% CI 0.94 to 1.37) for IMT vs UC, p=0.20) or secondary outcomes.",
+      "context_window": "imary outcome (HR=1.13 (95% CI 0.94 to 1.37) for IMT vs UC, p=0.20) or secondary outcomes. Hospitalisations for angina were th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-1322",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1322,
+      "sentence": "Sensitivity analysis of contamination provided an estimated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43.",
+      "context_window": "mination provided an estimated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43. Among women with suspected AN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-1347",
+      "claim_type": "p_value",
+      "raw_text": "p=0.43",
+      "numeric_values": [
+        0.43
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1347,
+      "sentence": "Sensitivity analysis of contamination provided an estimated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43.",
+      "context_window": "mated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43. Among women with suspected ANOCA/INOCA, outcomes were dom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-376",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 376,
+      "sentence": "2 Among women with symptoms and/or signs of ischaemia referred for coronary assessment, up to 70% have no obstructive coronary artery disease (CAD); termed ischaemia and no obstructive CAD (angina/ischaemia with no obstructive coronary artery disease (ANOCA/INOCA)).",
+      "context_window": "signs of ischaemia referred for coronary assessment, up to 70% have no obstructive coronary artery disease (CAD); termed i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-1276",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1276,
+      "sentence": "6 Estimates indicate ~4 million patients in the USA (>60% women) have suspected ANOCA/INOCA, incurring healthcare costs similar to those of obstructive CAD.",
+      "context_window": "omen. 6 Estimates indicate ~4 million patients in the USA (>60% women) have suspected ANOCA/INOCA, incurring healthcare cos",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-1004",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1004,
+      "sentence": "Inclusion criteria were \u226518 years old with non-obstructive CAD (as 0 to 49% diameter reduction of a major epicardial vessel or FFR>0.80).",
+      "context_window": "eath and other angina equivalents. Inclusion criteria were \u226518 years old with non-obstructive CAD (as 0 to 49% diameter reductio",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-1051",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1051,
+      "sentence": "Inclusion criteria were \u226518 years old with non-obstructive CAD (as 0 to 49% diameter reduction of a major epicardial vessel or FFR>0.80).",
+      "context_window": "iteria were \u226518 years old with non-obstructive CAD (as 0 to 49% diameter reduction of a major epicardial vessel or FFR>0.80",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-2736",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2736,
+      "sentence": "The system included an e-prescription/express mail pharmacy or local pharmacies 12 enabling prescription of IMT medications (atorvastatin or rosuvastatin) and ACEI (lisinopril) (or ARB (losartan)) within 3-4 days.",
+      "context_window": "astatin) and ACEI (lisinopril) (or ARB (losartan)) within 3-4 days. Providing medication at no cost yields superior medication",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-3095",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3095,
+      "sentence": "Follow-up was at 3, 6 and 12 months and every 6 months thereafter.",
+      "context_window": "livered through local pharmacies. Follow-up was at 3, 6 and 12 months and every 6 months thereafter. If adverse events occurred,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-3115",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3115,
+      "sentence": "Follow-up was at 3, 6 and 12 months and every 6 months thereafter.",
+      "context_window": "l pharmacies. Follow-up was at 3, 6 and 12 months and every 6 months thereafter. If adverse events occurred, participants comple",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-5854",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5854,
+      "sentence": "The trial design estimated effect size of 20% MACE reduction was from randomised controlled trials of statins, low-density lipoprotein cholesterol (LDL-C) reduction and ACEI/ARB blood pressure (BP) reduction.",
+      "context_window": "her angina or HF. The trial design estimated effect size of 20% MACE reduction was from randomised controlled trials of sta",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6085",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6085,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": ", 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6098",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6098,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6169",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6169,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "ance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6209",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6209,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "s: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 mont",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-6234",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6234,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-6265",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6265,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying fr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6297",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6297,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulti",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6337",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6337,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "oss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( onl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6347",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6347,
+      "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
+      "context_window": "low-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supple",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6599",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6599,
+      "sentence": "In the primary analysis, Cox proportional hazards regression, stratified by site, was used to calculate HRs and 95% CIs.",
+      "context_window": "gression, stratified by site, was used to calculate HRs and 95% CIs. The analysis was repeated for the following combinatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-8631",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 8631,
+      "sentence": "These probabilities were estimated based on logistic regression models using the available data at each follow-up month to 5 years.",
+      "context_window": "models using the available data at each follow-up month to 5 years.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-160",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 160,
+      "sentence": "A total of 4% were lost to follow-up, evenly distributed in both arms and included as ITT in the analyses.",
+      "context_window": "9 February 2018 and the last on 18 January 2024. A total of 4% were lost to follow-up, evenly distributed in both arms and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-827",
+      "claim_type": "unit_value",
+      "raw_text": "3.03 years",
+      "numeric_values": [
+        3.03
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 827,
+      "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
+      "context_window": "systolic blood pressure. The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-852",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 852,
+      "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
+      "context_window": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years. There were 421 first ev",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 864,
+      "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
+      "context_window": "follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years. There were 421 first events overal",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-885",
+      "claim_type": "unit_value",
+      "raw_text": "2.92 years",
+      "numeric_values": [
+        2.92
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 885,
+      "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
+      "context_window": "s 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years. There were 421 first events overall (221 in IMT, 200 in UC",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-977",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 977,
+      "sentence": "The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26).",
+      "context_window": "events overall (221 in IMT, 200 in UC). The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-986",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 986,
+      "sentence": "The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26).",
+      "context_window": "verall (221 in IMT, 200 in UC). The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26). A Cox p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-1005",
+      "claim_type": "percentage",
+      "raw_text": "17.84%",
+      "numeric_values": [
+        17.84
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1005,
+      "sentence": "The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26).",
+      "context_window": "200 in UC). The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26). A Cox proportional hazard",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-1023",
+      "claim_type": "percentage",
+      "raw_text": "16.17%",
+      "numeric_values": [
+        16.17
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1023,
+      "sentence": "The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26).",
+      "context_window": "vent rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26). A Cox proportional hazards regression (unad",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-1037",
+      "claim_type": "p_value",
+      "raw_text": "p=0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1037,
+      "sentence": "The event rate was 17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26).",
+      "context_window": "17% over 5 years follow-up (17.84% in IMT and 16.17% in UC; p=0.26). A Cox proportional hazards regression (unadjusted), strat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-hr-a-1165",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=1.13",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1165,
+      "sentence": "A Cox proportional hazards regression (unadjusted), stratified by site was not significantly different between groups (HR=1.13,95% CI 0.94 to 1.37) for IMT versus UC, p=0.20 ( figure 2 ).",
+      "context_window": "ied by site was not significantly different between groups (HR=1.13,95% CI 0.94 to 1.37) for IMT versus UC, p=0.20 ( figure 2 )",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-ci-1173",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.94 to 1.37",
+      "numeric_values": [
+        0.94,
+        1.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1173,
+      "sentence": "A Cox proportional hazards regression (unadjusted), stratified by site was not significantly different between groups (HR=1.13,95% CI 0.94 to 1.37) for IMT versus UC, p=0.20 ( figure 2 ).",
+      "context_window": "ite was not significantly different between groups (HR=1.13,95% CI 0.94 to 1.37) for IMT versus UC, p=0.20 ( figure 2 ). At 5 years, there",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-1213",
+      "claim_type": "p_value",
+      "raw_text": "p=0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1213,
+      "sentence": "A Cox proportional hazards regression (unadjusted), stratified by site was not significantly different between groups (HR=1.13,95% CI 0.94 to 1.37) for IMT versus UC, p=0.20 ( figure 2 ).",
+      "context_window": "een groups (HR=1.13,95% CI 0.94 to 1.37) for IMT versus UC, p=0.20 ( figure 2 ). At 5 years, there were a total of 369 events",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-1237",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1237,
+      "sentence": "At 5 years, there were a total of 369 events in the IMT group and 354 in the UC group (frailty model HR 1.01, 95% CI 0.85 to 1.21, p=0.92; table 2 ).",
+      "context_window": "CI 0.94 to 1.37) for IMT versus UC, p=0.20 ( figure 2 ). At 5 years, there were a total of 369 events in the IMT group and 354",
+      "claim_role": "protocol",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-ci-1344",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.85 to 1.21",
+      "numeric_values": [
+        0.85,
+        1.21
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1344,
+      "sentence": "At 5 years, there were a total of 369 events in the IMT group and 354 in the UC group (frailty model HR 1.01, 95% CI 0.85 to 1.21, p=0.92; table 2 ).",
+      "context_window": "e IMT group and 354 in the UC group (frailty model HR 1.01, 95% CI 0.85 to 1.21, p=0.92; table 2 ). CV, cardiovascular; IMT, intensive med",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-1365",
+      "claim_type": "p_value",
+      "raw_text": "p=0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1365,
+      "sentence": "At 5 years, there were a total of 369 events in the IMT group and 354 in the UC group (frailty model HR 1.01, 95% CI 0.85 to 1.21, p=0.92; table 2 ).",
+      "context_window": "n the UC group (frailty model HR 1.01, 95% CI 0.85 to 1.21, p=0.92; table 2 ). CV, cardiovascular; IMT, intensive medical tre",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-ci-1792",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.2 to 2.48",
+      "numeric_values": [
+        0.2,
+        2.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1792,
+      "sentence": "There were four CV deaths in the IMT group and five in the UC group (HR 0.7, 95% CI 0.2 to 2.48), p=0.58; table 2 ).",
+      "context_window": "V deaths in the IMT group and five in the UC group (HR 0.7, 95% CI 0.2 to 2.48), p=0.58; table 2 ). Non-CV and indeterminate deaths are in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-1813",
+      "claim_type": "p_value",
+      "raw_text": "p=0.58",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1813,
+      "sentence": "There were four CV deaths in the IMT group and five in the UC group (HR 0.7, 95% CI 0.2 to 2.48), p=0.58; table 2 ).",
+      "context_window": "roup and five in the UC group (HR 0.7, 95% CI 0.2 to 2.48), p=0.58; table 2 ). Non-CV and indeterminate deaths are in online s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-2401",
+      "claim_type": "p_value",
+      "raw_text": "p=0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2401,
+      "sentence": "A prespecified Cox proportional hazards regression stratified by site for differences in outcome related to CCTA versus ICA did not demonstrate statistical significance for the interaction, p=0.65.",
+      "context_window": "t demonstrate statistical significance for the interaction, p=0.65. The trial design anticipated contamination (cross-over) i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-2660",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2660,
+      "sentence": "Using suspected ANOCA/INOCA registries demonstrating baseline statin and ACEI/ARB ( online supplemental table S3 ), we anticipated up to 30% of UC patients would be taking IMT, and for reasons of observed moderate adherence to IMT in clinical care, up to 30% of IMT-assigned patients were anticipated to not take the assigned IMT.",
+      "context_window": "/ARB ( online supplemental table S3 ), we anticipated up to 30% of UC patients would be taking IMT, and for reasons of obse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-2778",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2778,
+      "sentence": "Using suspected ANOCA/INOCA registries demonstrating baseline statin and ACEI/ARB ( online supplemental table S3 ), we anticipated up to 30% of UC patients would be taking IMT, and for reasons of observed moderate adherence to IMT in clinical care, up to 30% of IMT-assigned patients were anticipated to not take the assigned IMT.",
+      "context_window": "observed moderate adherence to IMT in clinical care, up to 30% of IMT-assigned patients were anticipated to not take the a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-2865",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2865,
+      "sentence": "Initially, 16% of participants in the UC group were receiving IMT, while only 48% of IMT participants were adherent to the strategy.",
+      "context_window": "s were anticipated to not take the assigned IMT. Initially, 16% of participants in the UC group were receiving IMT, while o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-2932",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2932,
+      "sentence": "Initially, 16% of participants in the UC group were receiving IMT, while only 48% of IMT participants were adherent to the strategy.",
+      "context_window": "participants in the UC group were receiving IMT, while only 48% of IMT participants were adherent to the strategy. Use of I",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-n-3131",
+      "claim_type": "sample_size",
+      "raw_text": "n=2176",
+      "numeric_values": [
+        2176.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3131,
+      "sentence": "A sensitivity analysis of contamination using a weighted Cox proportional hazards regression model (n=2176 with complete baseline covariates stratified by site) provided estimated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43 ( Figure 3 ).",
+      "context_window": "using a weighted Cox proportional hazards regression model (n=2176 with complete baseline covariates stratified by site) provi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-3240",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3240,
+      "sentence": "A sensitivity analysis of contamination using a weighted Cox proportional hazards regression model (n=2176 with complete baseline covariates stratified by site) provided estimated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43 ( Figure 3 ).",
+      "context_window": "ed by site) provided estimated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43 ( Figure 3 ). The anticipated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-3265",
+      "claim_type": "p_value",
+      "raw_text": "p=0.43",
+      "numeric_values": [
+        0.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3265,
+      "sentence": "A sensitivity analysis of contamination using a weighted Cox proportional hazards regression model (n=2176 with complete baseline covariates stratified by site) provided estimated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43 ( Figure 3 ).",
+      "context_window": "mated HR for IMT versus UC of 0.74 95% CI (0.352 to 1.558), p=0.43 ( Figure 3 ). The anticipated MACE rate used registries of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-3412",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3412,
+      "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
+      "context_window": "A cohorts ( online supplemental table S4 ). Enrolling only ~60% of planned, combined with the relatively lower than anticip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-3491",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3491,
+      "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
+      "context_window": "bined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-3498",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3498,
+      "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
+      "context_window": "ith the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power t",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-3521",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3521,
+      "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
+      "context_window": "r than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reducti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-3528",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3528,
+      "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
+      "context_window": "anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-3657",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3657,
+      "sentence": "The design estimated effect size of 20% MACE reduction related to randomised trials of statins, LDL-C reduction and ACEI/ARB BP reduction.",
+      "context_window": "upplemental table S4 ). The design estimated effect size of 20% MACE reduction related to randomised trials of statins, LDL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-4095",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4095,
+      "sentence": "During the trial, the difference in IMT and UC ACE/ARB medications was insufficient to result in significant reductions in BP between groups; however, there was a lower LDL-C in the IMT versus UC group (time averaged difference of 7.6 (1.5 SE) mg/dL, p<0.0001) and no detectable difference in BP between groups ( online supplemental figure S4 ).",
+      "context_window": "s UC group (time averaged difference of 7.6 (1.5 SE) mg/dL, p<0.0001) and no detectable difference in BP between groups ( online",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-262",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 262,
+      "sentence": "The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of most (83%) of these events.",
+      "context_window": "ction in at-risk IHD populations. The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-273",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 273,
+      "sentence": "The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of most (83%) of these events.",
+      "context_window": "-risk IHD populations. The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-347",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 347,
+      "sentence": "The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of most (83%) of these events.",
+      "context_window": "w-up, and hospitalisation for angina was the cause of most (83%) of these events. Based on the results of this trial, inte",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-1194",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1194,
+      "sentence": "Of note, the MACE in this female population were largely driven by repeated episodes of hospital care for anginal chest pain which accrued progressively over 5 years.",
+      "context_window": "are for anginal chest pain which accrued progressively over 5 years. This result highlights the longer-term morbidity associate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-2107",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2107,
+      "sentence": "819 , 25 A foundational pharmacologic probe trial conducted by the WISE investigators in 78 women with suspected ANOCA/INOCA, randomised and double blinded to maximally tolerated the ACEI quinapril versus placebo over 16 weeks, demonstrated an almost 20 point angina improvement (SAQ angina frequency score 61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve.",
+      "context_window": "maximally tolerated the ACEI quinapril versus placebo over 16 weeks, demonstrated an almost 20 point angina improvement (SAQ an",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-2206",
+      "claim_type": "p_value",
+      "raw_text": "p=0.037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2206,
+      "sentence": "819 , 25 A foundational pharmacologic probe trial conducted by the WISE investigators in 78 women with suspected ANOCA/INOCA, randomised and double blinded to maximally tolerated the ACEI quinapril versus placebo over 16 weeks, demonstrated an almost 20 point angina improvement (SAQ angina frequency score 61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve.",
+      "context_window": "nt angina improvement (SAQ angina frequency score 61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-msd-2256",
+      "claim_type": "mean_sd",
+      "raw_text": "126\u00b115",
+      "numeric_values": [
+        126.0,
+        15.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2256,
+      "sentence": "819 , 25 A foundational pharmacologic probe trial conducted by the WISE investigators in 78 women with suspected ANOCA/INOCA, randomised and double blinded to maximally tolerated the ACEI quinapril versus placebo over 16 weeks, demonstrated an almost 20 point angina improvement (SAQ angina frequency score 61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve.",
+      "context_window": "61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve.",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-msd-2266",
+      "claim_type": "mean_sd",
+      "raw_text": "120\u00b116",
+      "numeric_values": [
+        120.0,
+        16.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2266,
+      "sentence": "819 , 25 A foundational pharmacologic probe trial conducted by the WISE investigators in 78 women with suspected ANOCA/INOCA, randomised and double blinded to maximally tolerated the ACEI quinapril versus placebo over 16 weeks, demonstrated an almost 20 point angina improvement (SAQ angina frequency score 61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve.",
+      "context_window": "p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve. 26 Conver",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-2270",
+      "claim_type": "unit_value",
+      "raw_text": "16 mmHg",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "mmHg",
+      "source_section": "discussion",
+      "source_offset": 2270,
+      "sentence": "819 , 25 A foundational pharmacologic probe trial conducted by the WISE investigators in 78 women with suspected ANOCA/INOCA, randomised and double blinded to maximally tolerated the ACEI quinapril versus placebo over 16 weeks, demonstrated an almost 20 point angina improvement (SAQ angina frequency score 61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve.",
+      "context_window": "037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve. 26 Conversely,",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-2279",
+      "claim_type": "p_value",
+      "raw_text": "p=0.38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2279,
+      "sentence": "819 , 25 A foundational pharmacologic probe trial conducted by the WISE investigators in 78 women with suspected ANOCA/INOCA, randomised and double blinded to maximally tolerated the ACEI quinapril versus placebo over 16 weeks, demonstrated an almost 20 point angina improvement (SAQ angina frequency score 61 to 82, p=0.037) combined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve.",
+      "context_window": "ined with a trend for SBP reduction (126\u00b115 to 120\u00b116 mmHg, p=0.38) and improved coronary flow reserve. 26 Conversely, a small",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-4970",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4970,
+      "sentence": "Specific to COVID impact, admissions for acute coronary syndrome declined by up to 48% 34 while CV mortality increased significantly in the early months of the pandemic.",
+      "context_window": "t, admissions for acute coronary syndrome declined by up to 48% 34 while CV mortality increased significantly in the early",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-530",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 530,
+      "sentence": "Specific to COVID impact, admissions for acute coronary syndrome declined by up to 48% 34 while CV mortality increased significantly in the early months of the pandemic.",
+      "context_window": "t, admissions for acute coronary syndrome declined by up to 48% 34 while CV mortality increased significantly in the early",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

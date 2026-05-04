@@ -1,4 +1,22 @@
-"""Proof 002 — rapamycin corpus seeding (Workstream C).
+"""DEPRECATED — moved to scripts/legacy/ on 2026-05-04.
+
+Use the generic seeder instead:
+    python scripts/seed_topic_corpus.py --topic rapamycin
+
+This file is kept for archaeological reference. Do NOT extend or
+import from it. The corpus seeding logic is now topic-agnostic and
+lives in scripts/seed_topic_corpus.py + agent/sources/aggregator.py;
+the rapamycin-specific data (search queries, canonical RCTs,
+background numerics) lives in topic_packs/rapamycin.toml.
+
+If you want to add a NEW topic, write topic_packs/<topic>.toml and
+run scripts/seed_topic_corpus.py --topic <X>. Do NOT copy this file.
+
+Below this line is the ORIGINAL docstring + code, untouched, for
+reference only.
+================================================================
+
+Proof 002 — rapamycin corpus seeding (Workstream C).
 
 Two phases:
 

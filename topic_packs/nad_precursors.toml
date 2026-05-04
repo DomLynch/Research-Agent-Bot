@@ -1,0 +1,143 @@
+# NAD precursors topic pack — Proof 006
+#
+# Nicotinamide adenine dinucleotide (NAD+) precursors are widely
+# marketed anti-aging supplements. NMN (nicotinamide mononucleotide)
+# and NR (nicotinamide riboside) are the two most-studied. Mostly
+# observational + small RCTs; geroprotective effects in humans
+# remain inconclusive.
+
+topic   = "nad_precursors"
+class_  = "nad_boosting"
+
+aliases = [
+  "NAD",
+  "NAD+",
+  "NAD precursor",
+  "NAD booster",
+  # Specific compounds
+  "nicotinamide riboside",
+  "NR",
+  "nicotinamide mononucleotide",
+  "NMN",
+  "nicotinamide",
+  "niacinamide",
+  "Niagen",   # commercial NR brand
+  "Tru Niagen",
+  "NMN supplement",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "safety_tolerability",
+  "dosing_regimen",
+  "ongoing_trials",
+  "nad_biomarkers",     # blood/tissue NAD+ levels — surrogate
+  "skeletal_muscle_outcomes",
+  "cognitive_outcomes",
+]
+
+special_rules = [
+  "human evidence for NAD precursors is sparse and mostly biomarker-based (blood NAD+ levels)",
+  "no large mortality or healthspan endpoint trial has been completed",
+  "NMN vs NR are biochemically distinct — flag explicitly which compound was studied",
+  "any 'NAD-boosting' claim must reference whether intracellular NAD+ rose, not just blood",
+  "supplement-grade studies should be tier B at best (no FDA oversight)",
+]
+
+forbidden_verbs_for_protocol_role = [
+  "found", "showed", "improved", "reduced",
+  "demonstrated", "established", "proved",
+]
+
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned", "will assess", "pending", "ongoing", "awaiting",
+]
+
+
+# --- v2 generic-multi-topic top-level fields -------------------------
+
+active_arm_synonyms = [
+  "NAD",
+  "NMN",
+  "NR",
+  "nicotinamide riboside",
+  "nicotinamide mononucleotide",
+  "nicotinamide",
+  "niacinamide",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+]
+
+corpus_search_queries = [
+  "(nicotinamide riboside OR NR) AND aging AND human",
+  "(NMN OR nicotinamide mononucleotide) AND aging AND clinical",
+  "NAD precursor AND clinical trial AND randomized",
+  "NAD AND (longevity OR healthspan) AND human",
+  "(NMN OR NR) AND elderly AND (frailty OR sarcopenia OR muscle)",
+  "NAD AND (cognitive OR cardiovascular) AND outcomes",
+  "(NMN OR NR) AND safety AND tolerability AND human",
+]
+
+canonical_rct_paper_ids = []
+
+
+# --- Canonical trials ------------------------------------------------
+
+[[canonical_trials]]
+id            = "NCT02921659"
+name          = "Martens-2018-NR"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT04571008"
+name          = "MIB-NMN-Healthspan"
+expected_role = "registered_pending"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT04823260"
+name          = "NMN-Skeletal-Muscle"
+expected_role = "registered_pending"
+design        = "rct"
+
+
+# --- Hard-coded role overrides ---------------------------------------
+
+[known_role_overrides.NCT02921659]
+role   = "published_results"
+design = "rct"
+tier   = "A2"  # small sample size
+
+[known_role_overrides.NCT04571008]
+role   = "registered_pending"
+design = "rct"
+tier   = "A2"
+
+[known_role_overrides.NCT04823260]
+role   = "registered_pending"
+design = "rct"
+tier   = "A2"
+
+
+# --- Endpoint polarity -----------------------------------------------
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+nad_blood_levels = "higher_is_better"
+nad_tissue_levels = "higher_is_better"
+muscle_function = "higher_is_better"
+gait_speed = "higher_is_better"
+walk_distance = "higher_is_better"
+cardiometabolic = "lower_is_better"
+inflammation = "lower_is_better"
+cognitive_score = "higher_is_better"
+frailty = "lower_is_better"

@@ -1,0 +1,3643 @@
+{
+  "paper_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp",
+  "doi": "10.2147/DDDT.S594895",
+  "extracted_at": "2026-05-04T12:19:02+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 48,
+    "p_value": 30,
+    "unit_value": 60,
+    "mean_sd": 8,
+    "sample_size": 34,
+    "confidence_interval": 18,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-717",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 717,
+      "sentence": "SRN-901-treated mice showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice.",
+      "context_window": "iet. SRN-901-treated mice showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mi",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-907",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "Cox proportional hazards analysis revealed a hazard ratio of 0.54, indicating that SRN-901 treatment was associated with a 46% reduction in the hazard of death.",
+      "context_window": "54, indicating that SRN-901 treatment was associated with a 46% reduction in the hazard of death. While rapamycin increased",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-1305",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1305,
+      "sentence": "SRN-901 protected mice against increased frailty during aging, with baseline-normalized scores rising to 1.17 in treated mice and 1.57 in controls, corresponding to a 70% attenuation of frailty progression between pre-treatment (D-14) and post-treatment (D128; p < 0.001).",
+      "context_window": "17 in treated mice and 1.57 in controls, corresponding to a 70% attenuation of frailty progression between pre-treatment (D",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-1399",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1399,
+      "sentence": "SRN-901 protected mice against increased frailty during aging, with baseline-normalized scores rising to 1.17 in treated mice and 1.57 in controls, corresponding to a 70% attenuation of frailty progression between pre-treatment (D-14) and post-treatment (D128; p < 0.001).",
+      "context_window": "sion between pre-treatment (D-14) and post-treatment (D128; p < 0.001). Transcriptomic analyses revealed that SRN-901 modulates g",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-2278",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/kg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2278,
+      "sentence": "Eighteen-month-old C57BL/6 mice were treated until death with SRN-901 (500 mg/kg/day), a novel oral formulation composed of a PI3K/Akt/mTOR pathway modulator, an autophagy-enhancing compound, an anti-inflammatory flavonoid, and an NAD\u207a precursor.",
+      "context_window": "nth-old C57BL/6 mice were treated until death with SRN-901 (500 mg/kg/day), a novel oral formulation composed of a PI3K/Akt/mTOR path",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-123",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 123,
+      "sentence": "A total of 160 C57BL/6 mice (80 male and 80 pup-na\u00efve female) were purchased from Charles River Laboratories at the age of 15 months and aged in the animal facility (HD Biosciences, San Diego) until they reached 18 months.",
+      "context_window": "ere purchased from Charles River Laboratories at the age of 15 months and aged in the animal facility (HD Biosciences, San Diego)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-212",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 212,
+      "sentence": "A total of 160 C57BL/6 mice (80 male and 80 pup-na\u00efve female) were purchased from Charles River Laboratories at the age of 15 months and aged in the animal facility (HD Biosciences, San Diego) until they reached 18 months.",
+      "context_window": "mal facility (HD Biosciences, San Diego) until they reached 18 months. Eighteen months of age was selected to model late-life int",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-312",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 312,
+      "sentence": "In C57BL/6 mice, 18-24 months corresponds to late-middle to early-old age and aligns approximately with late-middle-aged to older adult humans, depending on the conversion model used.",
+      "context_window": "lected to model late-life intervention. In C57BL/6 mice, 18-24 months corresponds to late-middle to early-old age and aligns appr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-866",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 2",
+      "numeric_values": [
+        22.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 866,
+      "sentence": "Mice were housed in groups of three or four per cage under standard conditions, including a 12-hour light/dark cycle (lights on at 7:00 AM, ambient temperature of 22 \u00b1 2\u00b0C, and relative humidity of 50 \u00b1 10%.",
+      "context_window": "ht/dark cycle (lights on at 7:00 AM, ambient temperature of 22 \u00b1 2\u00b0C, and relative humidity of 50 \u00b1 10%. To simulate human die",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-901",
+      "claim_type": "mean_sd",
+      "raw_text": "50 \u00b1 10",
+      "numeric_values": [
+        50.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 901,
+      "sentence": "Mice were housed in groups of three or four per cage under standard conditions, including a 12-hour light/dark cycle (lights on at 7:00 AM, ambient temperature of 22 \u00b1 2\u00b0C, and relative humidity of 50 \u00b1 10%.",
+      "context_window": ", ambient temperature of 22 \u00b1 2\u00b0C, and relative humidity of 50 \u00b1 10%. To simulate human dietary patterns, mice were fed the Tot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-906",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 906,
+      "sentence": "Mice were housed in groups of three or four per cage under standard conditions, including a 12-hour light/dark cycle (lights on at 7:00 AM, ambient temperature of 22 \u00b1 2\u00b0C, and relative humidity of 50 \u00b1 10%.",
+      "context_window": "ient temperature of 22 \u00b1 2\u00b0C, and relative humidity of 50 \u00b1 10%. To simulate human dietary patterns, mice were fed the Tota",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-1026",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1026,
+      "sentence": "To simulate human dietary patterns, mice were fed the Total Western Diet (TWD), a high-fat diet (ENVIGO TD.110424; 45% kcal from fat, 35% from carbohydrates, and 20% from protein; energy density 4.7 kcal/g) ad libitum, with free access to water.",
+      "context_window": "otal Western Diet (TWD), a high-fat diet (ENVIGO TD.110424; 45% kcal from fat, 35% from carbohydrates, and 20% from protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-1045",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1045,
+      "sentence": "To simulate human dietary patterns, mice were fed the Total Western Diet (TWD), a high-fat diet (ENVIGO TD.110424; 45% kcal from fat, 35% from carbohydrates, and 20% from protein; energy density 4.7 kcal/g) ad libitum, with free access to water.",
+      "context_window": "TWD), a high-fat diet (ENVIGO TD.110424; 45% kcal from fat, 35% from carbohydrates, and 20% from protein; energy density 4.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-1073",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1073,
+      "sentence": "To simulate human dietary patterns, mice were fed the Total Western Diet (TWD), a high-fat diet (ENVIGO TD.110424; 45% kcal from fat, 35% from carbohydrates, and 20% from protein; energy density 4.7 kcal/g) ad libitum, with free access to water.",
+      "context_window": "O TD.110424; 45% kcal from fat, 35% from carbohydrates, and 20% from protein; energy density 4.7 kcal/g) ad libitum, with f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1284",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/kg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 1284,
+      "sentence": "SRN-901 (500 mg/kg/day) and control were fed through oral gavage 6 days a week.",
+      "context_window": "and dietary compliance ( Supplementary Figure 1 ). SRN-901 (500 mg/kg/day) and control were fed through oral gavage 6 days a week. SR",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1340",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1340,
+      "sentence": "SRN-901 (500 mg/kg/day) and control were fed through oral gavage 6 days a week.",
+      "context_window": "01 (500 mg/kg/day) and control were fed through oral gavage 6 days a week. SRN-901 was obtained from Seragon Biosciences. The",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1406",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/kg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 1406,
+      "sentence": "The 500 mg/kg/day SRN-901 dose was selected by combining nicotinamide riboside, quercetin, urolithin A, and alpha-lipoic acid in equimolar concentrations, consistent with doses previously reported in the literature to be well tolerated and to influence metabolic or aging-related pathways, together with Seragon\u2019s SRN-820 at an internally established percentage that produced robust target engagement without gastrointestinal intolerance in prior exploratory studies.",
+      "context_window": "a week. SRN-901 was obtained from Seragon Biosciences. The 500 mg/kg/day SRN-901 dose was selected by combining nicotinamide ribosid",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1875",
+      "claim_type": "unit_value",
+      "raw_text": "300mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1875,
+      "sentence": "NMN (300mg/kg) and NR (300mg/kg) were purchased from Effepharm, and fed through oral gavage 6 days a week.",
+      "context_window": "rointestinal intolerance in prior exploratory studies. NMN (300mg/kg) and NR (300mg/kg) were purchased from Effepharm, and fe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1893",
+      "claim_type": "unit_value",
+      "raw_text": "300mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1893,
+      "sentence": "NMN (300mg/kg) and NR (300mg/kg) were purchased from Effepharm, and fed through oral gavage 6 days a week.",
+      "context_window": "erance in prior exploratory studies. NMN (300mg/kg) and NR (300mg/kg) were purchased from Effepharm, and fed through oral gav",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1962",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1962,
+      "sentence": "NMN (300mg/kg) and NR (300mg/kg) were purchased from Effepharm, and fed through oral gavage 6 days a week.",
+      "context_window": "were purchased from Effepharm, and fed through oral gavage 6 days a week. Rapamycin was mixed in food with a concentration of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-2450",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2450,
+      "sentence": "Sample sizes were selected based on effect sizes reported in late\u2011life intervention studies and were intended to provide >80% power to detect a 20-30% difference in median lifespan at \u03b1=0.05.",
+      "context_window": "ate\u2011life intervention studies and were intended to provide >80% power to detect a 20-30% difference in median lifespan at \u03b1",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-2475",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2475,
+      "sentence": "Sample sizes were selected based on effect sizes reported in late\u2011life intervention studies and were intended to provide >80% power to detect a 20-30% difference in median lifespan at \u03b1=0.05.",
+      "context_window": "dies and were intended to provide >80% power to detect a 20-30% difference in median lifespan at \u03b1=0.05. Formal power calcu",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2737",
+      "claim_type": "sample_size",
+      "raw_text": "n=44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2737,
+      "sentence": "To minimize bias, mice were randomized into groups (SRN-901 and Control: n=44 per group; Rapamycin, NMN, and NR: n=24 per group) using a computer-generated randomization protocol.",
+      "context_window": "ias, mice were randomized into groups (SRN-901 and Control: n=44 per group; Rapamycin, NMN, and NR: n=24 per group) using a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2777",
+      "claim_type": "sample_size",
+      "raw_text": "n=24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2777,
+      "sentence": "To minimize bias, mice were randomized into groups (SRN-901 and Control: n=44 per group; Rapamycin, NMN, and NR: n=24 per group) using a computer-generated randomization protocol.",
+      "context_window": "RN-901 and Control: n=44 per group; Rapamycin, NMN, and NR: n=24 per group) using a computer-generated randomization protoco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-3852",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3852,
+      "sentence": "For Euthanasia, mice were exposed to 4% isoflurane.",
+      "context_window": "to severe morbidity). For Euthanasia, mice were exposed to 4% isoflurane. Animals were monitored closely, watching for ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4878",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4878,
+      "sentence": "Assessments were conducted at two time points: 14 days before the initiation of dosing (baseline) and 128 days after dosing began.",
+      "context_window": "ter frailty. Assessments were conducted at two time points: 14 days before the initiation of dosing (baseline) and 128 days aft",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4933",
+      "claim_type": "unit_value",
+      "raw_text": "128 days",
+      "numeric_values": [
+        128.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4933,
+      "sentence": "Assessments were conducted at two time points: 14 days before the initiation of dosing (baseline) and 128 days after dosing began.",
+      "context_window": "nts: 14 days before the initiation of dosing (baseline) and 128 days after dosing began. The FI scoring system included 24 non-",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-5912",
+      "claim_type": "sample_size",
+      "raw_text": "n=24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5912,
+      "sentence": "RNA sequencing was performed on n=24 mice per group to investigate transcriptome-wide changes across experimental groups.",
+      "context_window": "volved in data collection. RNA sequencing was performed on n=24 mice per group to investigate transcriptome-wide changes ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-6333",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6333,
+      "sentence": "RNA purity was assessed via NanoDrop\u2122 spectrophotometry (A260/A280 > 1.9; A260/A230 > 2.0), integrity verified by Agilent\u2122 5400 Bioanalyzer (RIN > 8.0), and genomic DNA contamination excluded through 1% agarose gel electrophoresis.",
+      "context_window": "(RIN > 8.0), and genomic DNA contamination excluded through 1% agarose gel electrophoresis. Strand-specific RNA-seq librar",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-7256",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7256,
+      "sentence": "Equimolar pooled libraries were sequenced on an Illumina NovaSeq 6000 platform (2\u00d7150 bp paired-end reads), generating ~20 million high-quality reads per sample (Q30 > 85%).",
+      "context_window": "generating ~20 million high-quality reads per sample (Q30 > 85%). Adapters and low-quality bases (Q-score < 25) were trimm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-7492",
+      "claim_type": "percentage",
+      "raw_text": "92.4%",
+      "numeric_values": [
+        92.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7492,
+      "sentence": "17 Post-filtering reads (92.4% retention rate) were aligned to the GRCm39 reference genome (Mus Musculus Genome Assembly GRCm39, n.d.) using STAR v2.7.10b 18 with splice-aware parameters (--sjdbOverhang 149; --alignIntronMax 80,000), achieving 89.3% mean alignment efficiency.",
+      "context_window": "3.0 in -rrna mode; SILVA database. 17 Post-filtering reads (92.4% retention rate) were aligned to the GRCm39 reference genome",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-7711",
+      "claim_type": "percentage",
+      "raw_text": "89.3%",
+      "numeric_values": [
+        89.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7711,
+      "sentence": "17 Post-filtering reads (92.4% retention rate) were aligned to the GRCm39 reference genome (Mus Musculus Genome Assembly GRCm39, n.d.) using STAR v2.7.10b 18 with splice-aware parameters (--sjdbOverhang 149; --alignIntronMax 80,000), achieving 89.3% mean alignment efficiency.",
+      "context_window": "rs (--sjdbOverhang 149; --alignIntronMax 80,000), achieving 89.3% mean alignment efficiency. BAM files were indexed with Samt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-9445",
+      "claim_type": "sample_size",
+      "raw_text": "n=12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9445,
+      "sentence": "33\n\nFrozen whole blood (SRN-901 and control; n=12 mice per group) was homogenized in ice-cold methanol/water (80:20, v/v) using a Bead Ruptor Elite homogenizer (Omni International) at 4\u00b0C, followed by centrifugation (15,000\u00d7g, 10 min, 4\u00b0C) to pellet insoluble debris.",
+      "context_window": "hview v1.38.0. 33 Frozen whole blood (SRN-901 and control; n=12 mice per group) was homogenized in ice-cold methanol/water",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-10043",
+      "claim_type": "unit_value",
+      "raw_text": "100 mm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 10043,
+      "sentence": "Chromatographic separation was achieved using a Waters ACQUITY UPLC HSS T3 column (2.1\u00d7100 mm, 1.8 \u03bcm) maintained at 40\u00b0C, coupled to a TripleTOF 6600 mass spectrometer (SCIEX) equipped with DuoSpray\u2122 ion source.",
+      "context_window": "was achieved using a Waters ACQUITY UPLC HSS T3 column (2.1\u00d7100 mm, 1.8 \u03bcm) maintained at 40\u00b0C, coupled to a TripleTOF 6600 ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-10196",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10196,
+      "sentence": "The mobile phase comprised 0.1% (v/v) formic acid in water (A) and acetonitrile (B), with the following elution gradient: 0-1 min 2% B, 1-12 min linear increase to 98% B, 12-14 min isocratic hold, 14-14.1 min return to 2% B, and 14.1-16 min column re-equilibration.",
+      "context_window": "ipped with DuoSpray\u2122 ion source. The mobile phase comprised 0.1% (v/v) formic acid in water (A) and acetonitrile (B), with t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-10299",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10299,
+      "sentence": "The mobile phase comprised 0.1% (v/v) formic acid in water (A) and acetonitrile (B), with the following elution gradient: 0-1 min 2% B, 1-12 min linear increase to 98% B, 12-14 min isocratic hold, 14-14.1 min return to 2% B, and 14.1-16 min column re-equilibration.",
+      "context_window": "tonitrile (B), with the following elution gradient: 0-1 min 2% B, 1-12 min linear increase to 98% B, 12-14 min isocratic h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-10333",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10333,
+      "sentence": "The mobile phase comprised 0.1% (v/v) formic acid in water (A) and acetonitrile (B), with the following elution gradient: 0-1 min 2% B, 1-12 min linear increase to 98% B, 12-14 min isocratic hold, 14-14.1 min return to 2% B, and 14.1-16 min column re-equilibration.",
+      "context_window": "elution gradient: 0-1 min 2% B, 1-12 min linear increase to 98% B, 12-14 min isocratic hold, 14-14.1 min return to 2% B, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-10388",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10388,
+      "sentence": "The mobile phase comprised 0.1% (v/v) formic acid in water (A) and acetonitrile (B), with the following elution gradient: 0-1 min 2% B, 1-12 min linear increase to 98% B, 12-14 min isocratic hold, 14-14.1 min return to 2% B, and 14.1-16 min column re-equilibration.",
+      "context_window": "e to 98% B, 12-14 min isocratic hold, 14-14.1 min return to 2% B, and 14.1-16 min column re-equilibration. Mass spectromet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-11143",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11143,
+      "sentence": "Raw mass spectrometry data were converted to mzXML format using ProteoWizard MSConvert (v3.0) 34 and processed through XCMS (v3.18.0) 35 with optimized workflows: The peaks with missing rate >50% in each group of samples were filtered.",
+      "context_window": ") 35 with optimized workflows: The peaks with missing rate >50% in each group of samples were filtered. Missing values were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-11719",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11719,
+      "sentence": "Final metabolite identifications required coefficient of variation (CV) <30% in QC replicates and MS/MS spectral similarity confidence level \u22652 (out of 4-tiered confidence scoring system).",
+      "context_window": "ite identifications required coefficient of variation (CV) <30% in QC replicates and MS/MS spectral similarity confidence l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-12134",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12134,
+      "sentence": "Quality control (QC) measures were implemented to filter unreliable reads based on low repeatability within the QC sample group, as determined by the relative standard deviation (RSD = SD/mean), with a threshold of 25%.",
+      "context_window": "ive standard deviation (RSD = SD/mean), with a threshold of 25%. To further refine the dataset, an additional variance filt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-12264",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12264,
+      "sentence": "To further refine the dataset, an additional variance filter was applied based on the interquartile range, retaining the top 95% of variance-exhibiting metabolites while filtering out the top 5% of highly variable features.",
+      "context_window": "applied based on the interquartile range, retaining the top 95% of variance-exhibiting metabolites while filtering out the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-12331",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12331,
+      "sentence": "To further refine the dataset, an additional variance filter was applied based on the interquartile range, retaining the top 95% of variance-exhibiting metabolites while filtering out the top 5% of highly variable features.",
+      "context_window": "variance-exhibiting metabolites while filtering out the top 5% of highly variable features. Following quality filtering,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-14185",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 14185,
+      "sentence": "Differential metabolites were selected using an FDR threshold of p < 0.05.",
+      "context_window": "rential metabolites were selected using an FDR threshold of p < 0.05. Annotated metabolites were mapped to their corresponding",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-15264",
+      "claim_type": "sample_size",
+      "raw_text": "n=24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 15264,
+      "sentence": "Freshly collected mouse serum samples were immediately snap-frozen in liquid nitrogen and stored at -80\u00b0C in low-protein-binding cryovials (Eppendorf Protein LoBind \u00ae ) to minimize surface adsorption (n=24 per group).",
+      "context_window": "ppendorf Protein LoBind \u00ae ) to minimize surface adsorption (n=24 per group). For proteomic processing, samples were thawed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-16350",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16350,
+      "sentence": "Resulting peptides were desalted using C18 StageTips (Thermo Scientific), eluted in 80% acetonitrile/0.1% formic acid, and quantified via UV absorbance at 280 nm (NanoDrop\u2122) prior to vacuum drying.",
+      "context_window": "desalted using C18 StageTips (Thermo Scientific), eluted in 80% acetonitrile/0.1% formic acid, and quantified via UV absorb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-16367",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16367,
+      "sentence": "Resulting peptides were desalted using C18 StageTips (Thermo Scientific), eluted in 80% acetonitrile/0.1% formic acid, and quantified via UV absorbance at 280 nm (NanoDrop\u2122) prior to vacuum drying.",
+      "context_window": "8 StageTips (Thermo Scientific), eluted in 80% acetonitrile/0.1% formic acid, and quantified via UV absorbance at 280 nm (Na",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-16531",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16531,
+      "sentence": "For LC-MS/MS analysis, lyophilized peptides were reconstituted in 0.1% formic acid and loaded onto a Vanquish Neo UHPLC system (Thermo Scientific) equipped with a 50 cm \u00b5PAC C18 column (PharmaFluidics).",
+      "context_window": "-MS/MS analysis, lyophilized peptides were reconstituted in 0.1% formic acid and loaded onto a Vanquish Neo UHPLC system (Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-16628",
+      "claim_type": "unit_value",
+      "raw_text": "50 cm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 16628,
+      "sentence": "For LC-MS/MS analysis, lyophilized peptides were reconstituted in 0.1% formic acid and loaded onto a Vanquish Neo UHPLC system (Thermo Scientific) equipped with a 50 cm \u00b5PAC C18 column (PharmaFluidics).",
+      "context_window": "nquish Neo UHPLC system (Thermo Scientific) equipped with a 50 cm \u00b5PAC C18 column (PharmaFluidics). Chromatographic separatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-16726",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16726,
+      "sentence": "Chromatographic separation employed a 120-min gradient: 2-28% mobile phase B (0.1% formic acid in acetonitrile) over 90 min, 28-40% B over 10 min, 40-95% B over 5 min, followed by 15 min column re-equilibration at 500 nL/min.",
+      "context_window": ". Chromatographic separation employed a 120-min gradient: 2-28% mobile phase B (0.1% formic acid in acetonitrile) over 90 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-16746",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16746,
+      "sentence": "Chromatographic separation employed a 120-min gradient: 2-28% mobile phase B (0.1% formic acid in acetonitrile) over 90 min, 28-40% B over 10 min, 40-95% B over 5 min, followed by 15 min column re-equilibration at 500 nL/min.",
+      "context_window": "paration employed a 120-min gradient: 2-28% mobile phase B (0.1% formic acid in acetonitrile) over 90 min, 28-40% B over 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-16796",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16796,
+      "sentence": "Chromatographic separation employed a 120-min gradient: 2-28% mobile phase B (0.1% formic acid in acetonitrile) over 90 min, 28-40% B over 10 min, 40-95% B over 5 min, followed by 15 min column re-equilibration at 500 nL/min.",
+      "context_window": "phase B (0.1% formic acid in acetonitrile) over 90 min, 28-40% B over 10 min, 40-95% B over 5 min, followed by 15 min colu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-16818",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16818,
+      "sentence": "Chromatographic separation employed a 120-min gradient: 2-28% mobile phase B (0.1% formic acid in acetonitrile) over 90 min, 28-40% B over 10 min, 40-95% B over 5 min, followed by 15 min column re-equilibration at 500 nL/min.",
+      "context_window": "acid in acetonitrile) over 90 min, 28-40% B over 10 min, 40-95% B over 5 min, followed by 15 min column re-equilibration at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-17151",
+      "claim_type": "percentage",
+      "raw_text": "300%",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17151,
+      "sentence": "Mass spectrometric data were acquired on an Orbitrap Astral instrument (Thermo Scientific) operated in data-independent acquisition (DIA) mode with the following parameters: MS1 scans at 120,000 resolution (m/z 380-980), automatic gain control (AGC) target 300%; MS2 spectra collected via Astral analyzer with 3 m/z isolation windows and 15 normalized collision energy (NCE), achieving a 1.5 s MS1 cycle time coupled with 22 DIA windows.",
+      "context_window": "solution (m/z 380-980), automatic gain control (AGC) target 300%; MS2 spectra collected via Astral analyzer with 3 m/z isola",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-17562",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17562,
+      "sentence": "Peptide-spectrum matches were filtered at 1% global false discovery rate (FDR) using a convolutional neural network classifier.",
+      "context_window": "| UniProt, n.d.). Peptide-spectrum matches were filtered at 1% global false discovery rate (FDR) using a convolutional neu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-17838",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17838,
+      "sentence": "Protein quantification via maxLFQ algorithm 45 incorporated delayed cross-run normalization with ComBat batch effect correction (sva R package v3.48.0), 46 while missing values (present in <50% samples) were imputed via k-nearest neighbors (k=5).",
+      "context_window": "va R package v3.48.0), 46 while missing values (present in <50% samples) were imputed via k-nearest neighbors (k=5). Final",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-748",
+      "claim_type": "unit_value",
+      "raw_text": "500mg/kg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 748,
+      "sentence": "Male and female 18-month-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by oral gavage (water), and mouse cohorts were followed until the predetermined humane endpoint to determine lifespan.",
+      "context_window": "ale and female 18-month-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-770",
+      "claim_type": "unit_value",
+      "raw_text": "300mg/kg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 770,
+      "sentence": "Male and female 18-month-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by oral gavage (water), and mouse cohorts were followed until the predetermined humane endpoint to determine lifespan.",
+      "context_window": "h-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by oral gavage (water), a",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-971",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 971,
+      "sentence": "Mice were evaluated for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baseline dose (D128; post-dosing).",
+      "context_window": "t to determine lifespan. Mice were evaluated for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baselin",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1016",
+      "claim_type": "unit_value",
+      "raw_text": "128 days",
+      "numeric_values": [
+        128.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1016,
+      "sentence": "Mice were evaluated for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baseline dose (D128; post-dosing).",
+      "context_window": "for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baseline dose (D128; post-dosing). Blood samples were",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-1203",
+      "claim_type": "sample_size",
+      "raw_text": "n= 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1203,
+      "sentence": "SRN-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group.",
+      "context_window": "-7 (pre-dosing) and D56 (post-dosing). SRN-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group. Experi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-1244",
+      "claim_type": "sample_size",
+      "raw_text": "n= 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1244,
+      "sentence": "SRN-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group.",
+      "context_window": "N-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group. Experimental design for testing lifespan and he",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1586",
+      "claim_type": "unit_value",
+      "raw_text": "500mg/kg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 1586,
+      "sentence": "Male and female 18-month-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by oral gavage (water), and mouse cohorts were followed until the predetermined humane endpoint to determine lifespan.",
+      "context_window": "ale and female 18-month-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1608",
+      "claim_type": "unit_value",
+      "raw_text": "300mg/kg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 1608,
+      "sentence": "Male and female 18-month-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by oral gavage (water), and mouse cohorts were followed until the predetermined humane endpoint to determine lifespan.",
+      "context_window": "h-old C57BL/6J mice were treated with 500mg/kg/day SRN-901, 300mg/kg/day NMN, or NR, Rapamycin, or placebo by oral gavage (water), a",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1809",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1809,
+      "sentence": "Mice were evaluated for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baseline dose (D128; post-dosing).",
+      "context_window": "t to determine lifespan. Mice were evaluated for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baselin",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-1854",
+      "claim_type": "unit_value",
+      "raw_text": "128 days",
+      "numeric_values": [
+        128.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1854,
+      "sentence": "Mice were evaluated for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baseline dose (D128; post-dosing).",
+      "context_window": "for frailty at 14 days before dosing (D-14; pre-dosing) and 128 days after baseline dose (D128; post-dosing). Blood samples were",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2041",
+      "claim_type": "sample_size",
+      "raw_text": "n= 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2041,
+      "sentence": "SRN-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group.",
+      "context_window": "-7 (pre-dosing) and D56 (post-dosing). SRN-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group. We fou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2082",
+      "claim_type": "sample_size",
+      "raw_text": "n= 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2082,
+      "sentence": "SRN-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group.",
+      "context_window": "N-901 and Control: n= 44 per group; Rapamycin, NMN, and NR: n= 24 per group. We found that SRN-901-treated mice (median: 350",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-2144",
+      "claim_type": "unit_value",
+      "raw_text": "350.5 days",
+      "numeric_values": [
+        350.5
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2144,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "24 per group. We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-2156",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 309.0-412.0",
+      "numeric_values": [
+        309.0,
+        412.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2156,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "p. We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median rem",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2177",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2177,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining l",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-2218",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2218,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mi",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-2293",
+      "claim_type": "unit_value",
+      "raw_text": "263.5 days",
+      "numeric_values": [
+        263.5
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2293,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "emaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Sup",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-2305",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 241.0-305.0",
+      "numeric_values": [
+        241.0,
+        305.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2305,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "espan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2326",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2326,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "cebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ). Cox p",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-2334",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2334,
+      "sentence": "We found that SRN-901-treated mice (median: 350.5 days; 95% CI: 309.0-412.0; n = 38) showed a significant increase of 33% in median remaining lifespan compared to placebo-treated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ).",
+      "context_window": "ated mice (median: 263.5 days; 95% CI: 241.0-305.0; n = 42; p < 0.001) ( Figure 2 and Supplementary Table 1.1 ). Cox proportional",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-2454",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.34-0.85",
+      "numeric_values": [
+        0.34,
+        0.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2454,
+      "sentence": "Cox proportional hazards analysis revealed a hazard ratio of 0.54 (95% CI: 0.34-0.85; p < 0.01), indicating that SRN-901 treatment was associated with a 46% reduction in the hazard of death.",
+      "context_window": "portional hazards analysis revealed a hazard ratio of 0.54 (95% CI: 0.34-0.85; p < 0.01), indicating that SRN-901 treatment was associate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-2473",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2473,
+      "sentence": "Cox proportional hazards analysis revealed a hazard ratio of 0.54 (95% CI: 0.34-0.85; p < 0.01), indicating that SRN-901 treatment was associated with a 46% reduction in the hazard of death.",
+      "context_window": "nalysis revealed a hazard ratio of 0.54 (95% CI: 0.34-0.85; p < 0.01), indicating that SRN-901 treatment was associated with a 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-2540",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2540,
+      "sentence": "Cox proportional hazards analysis revealed a hazard ratio of 0.54 (95% CI: 0.34-0.85; p < 0.01), indicating that SRN-901 treatment was associated with a 46% reduction in the hazard of death.",
+      "context_window": "1), indicating that SRN-901 treatment was associated with a 46% reduction in the hazard of death. While rapamycin increased",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-2628",
+      "claim_type": "unit_value",
+      "raw_text": "318.0 days",
+      "numeric_values": [
+        318.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "of death. While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide monon",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-2640",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 281.0-399.0",
+      "numeric_values": [
+        281.0,
+        399.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2640,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "ile rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2661",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2661,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "ed lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 9",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-2669",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2669,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "pan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-2714",
+      "claim_type": "unit_value",
+      "raw_text": "246.0 days",
+      "numeric_values": [
+        246.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2714,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide r",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-2726",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 195.0-278.0",
+      "numeric_values": [
+        195.0,
+        278.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2726,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "0; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 da",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2747",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2747,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "amide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95%",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-2755",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2755,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "nonucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-2797",
+      "claim_type": "unit_value",
+      "raw_text": "232.0 days",
+      "numeric_values": [
+        232.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2797,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": ".0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show signif",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-2809",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 173.0-314.0",
+      "numeric_values": [
+        173.0,
+        314.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2809,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "= 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-2830",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2830,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median l",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-2838",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2838,
+      "sentence": "While rapamycin increased lifespan in adult mice (318.0 days; 95% CI: 281.0-399.0; n = 20; p = 0.04), nicotinamide mononucleotide (NMN; 246.0 days; 95% CI: 195.0-278.0; n = 22; p = 0.50), and nicotinamide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan compared to placebo.",
+      "context_window": "mide riboside (NR; 232.0 days; 95% CI: 173.0-314.0; n = 16; p = 0.83) did not show significant differences in median lifespan co",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-3223",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3223,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "boside (NR, green). Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-3256",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3256,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83. Median",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-3282",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3282,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83. Median survival: Placebo = 263.5",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-3307",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3307,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83. Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3344",
+      "claim_type": "unit_value",
+      "raw_text": "263.5 days",
+      "numeric_values": [
+        263.5
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3344,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "= 0.50; NR vs placebo, p = 0.83. Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-3356",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 241.0-305.0",
+      "numeric_values": [
+        241.0,
+        305.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3356,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "s placebo, p = 0.83. Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-3377",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3377,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapam",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3396",
+      "claim_type": "unit_value",
+      "raw_text": "350.5 days",
+      "numeric_values": [
+        350.5
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3396,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "acebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-3408",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 309.0-412.0",
+      "numeric_values": [
+        309.0,
+        412.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3408,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-3429",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3429,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3450",
+      "claim_type": "unit_value",
+      "raw_text": "318.0 days",
+      "numeric_values": [
+        318.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3450,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 19",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-3462",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 281.0-399.0",
+      "numeric_values": [
+        281.0,
+        399.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3462,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), N",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-3483",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3483,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "12.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3498",
+      "claim_type": "unit_value",
+      "raw_text": "246.0 days",
+      "numeric_values": [
+        246.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3498,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-3510",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 195.0-278.0",
+      "numeric_values": [
+        195.0,
+        278.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3510,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-3531",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3531,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "81.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox propor",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3545",
+      "claim_type": "unit_value",
+      "raw_text": "232.0 days",
+      "numeric_values": [
+        232.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3545,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "= 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox proportional hazards ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-3557",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 173.0-314.0",
+      "numeric_values": [
+        173.0,
+        314.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3557,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox proportional hazards analysis for SRN-901 vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-3578",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3578,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox proportional hazards analysis for SRN-901 vs placebo:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-hr-a-3645",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3645,
+      "sentence": "Cox proportional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85).",
+      "context_window": ". Cox proportional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85). SRN-901 significantly increases lifes",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-3656",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.34-0.85",
+      "numeric_values": [
+        0.34,
+        0.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3656,
+      "sentence": "Cox proportional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85).",
+      "context_window": "rtional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85). SRN-901 significantly increases lifespan of adult mice.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-3966",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3966,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "boside (NR, green). Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-3999",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3999,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83. Median",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-4025",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4025,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83. Median survival: Placebo = 263.5",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-4050",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4050,
+      "sentence": "Gehan-Breslow test: SRN-901 vs placebo, p < 0.001; rapamycin vs placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83.",
+      "context_window": "placebo, p = 0.04; NMN vs placebo, p = 0.50; NR vs placebo, p = 0.83. Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4087",
+      "claim_type": "unit_value",
+      "raw_text": "263.5 days",
+      "numeric_values": [
+        263.5
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4087,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "= 0.50; NR vs placebo, p = 0.83. Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-4099",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 241.0-305.0",
+      "numeric_values": [
+        241.0,
+        305.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4099,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "s placebo, p = 0.83. Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-4120",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4120,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapam",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4139",
+      "claim_type": "unit_value",
+      "raw_text": "350.5 days",
+      "numeric_values": [
+        350.5
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4139,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "acebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-4151",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 309.0-412.0",
+      "numeric_values": [
+        309.0,
+        412.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4151,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-4172",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4172,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4193",
+      "claim_type": "unit_value",
+      "raw_text": "318.0 days",
+      "numeric_values": [
+        318.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4193,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 19",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-4205",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 281.0-399.0",
+      "numeric_values": [
+        281.0,
+        399.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4205,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), N",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-4226",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4226,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "12.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4241",
+      "claim_type": "unit_value",
+      "raw_text": "246.0 days",
+      "numeric_values": [
+        246.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4241,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-4253",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 195.0-278.0",
+      "numeric_values": [
+        195.0,
+        278.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4253,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-4274",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4274,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "81.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox propor",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4288",
+      "claim_type": "unit_value",
+      "raw_text": "232.0 days",
+      "numeric_values": [
+        232.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4288,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "= 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox proportional hazards ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-4300",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 173.0-314.0",
+      "numeric_values": [
+        173.0,
+        314.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4300,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox proportional hazards analysis for SRN-901 vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-4321",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4321,
+      "sentence": "Median survival: Placebo = 263.5 days (95% CI: 241.0-305.0, n = 42), SRN-901 = 350.5 days (95% CI: 309.0-412.0, n = 38), Rapamycin = 318.0 days (95% CI: 281.0-399.0, n = 20), NMN = 246.0 days (95% CI: 195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16).",
+      "context_window": "195.0-278.0, n = 22), NR = 232.0 days (95% CI: 173.0-314.0, n = 16). Cox proportional hazards analysis for SRN-901 vs placebo:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-hr-a-4388",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4388,
+      "sentence": "Cox proportional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85).",
+      "context_window": ". Cox proportional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85). At 64 weeks post-treatment onset, pla",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-ci-4399",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.34-0.85",
+      "numeric_values": [
+        0.34,
+        0.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4399,
+      "sentence": "Cox proportional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85).",
+      "context_window": "rtional hazards analysis for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85). At 64 weeks post-treatment onset, placebo-treated mice w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4423",
+      "claim_type": "unit_value",
+      "raw_text": "64 weeks",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4423,
+      "sentence": "At 64 weeks post-treatment onset, placebo-treated mice were ungroomed and displayed several end-of-life signs, including kyphosis ( Figure 3A and B ).",
+      "context_window": "for SRN-901 vs placebo: HR = 0.54 (95% CI: 0.34-0.85). At 64 weeks post-treatment onset, placebo-treated mice were ungroomed a",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4806",
+      "claim_type": "unit_value",
+      "raw_text": "64 weeks",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4806,
+      "sentence": "The photos show the mice 64 weeks after the start of placebo ( A and B ) and SRN-901 ( C and D ) treatment. ( E ) Frailty scores.",
+      "context_window": "A - D ) Visual inspection of mice. The photos show the mice 64 weeks after the start of placebo ( A and B ) and SRN-901 ( C and",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-5271",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5271,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": "control (black) and SRN-901-treated (red) groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. SRN-901 protec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-5288",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5288,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": "and SRN-901-treated (red) groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. SRN-901 protects against frailt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-5299",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5299,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": "-treated (red) groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. SRN-901 protects against frailty during agi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-5312",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5312,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": ") groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. SRN-901 protects against frailty during aging in adult mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-5446",
+      "claim_type": "unit_value",
+      "raw_text": "64 weeks",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5446,
+      "sentence": "The photos show the mice 64 weeks after the start of placebo ( A and B ) and SRN-901 ( C and D ) treatment. ( E ) Frailty scores.",
+      "context_window": "A - D ) Visual inspection of mice. The photos show the mice 64 weeks after the start of placebo ( A and B ) and SRN-901 ( C and",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-5911",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5911,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": "control (black) and SRN-901-treated (red) groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. To further inv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-5928",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5928,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": "and SRN-901-treated (red) groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. To further investigate the effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-5939",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5939,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": "-treated (red) groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. To further investigate the effect of SRN-90",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-5952",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5952,
+      "sentence": "Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001.",
+      "context_window": ") groups. Placebo: n = 42; SRN-901; n = 38. ***p<0.001, ****p<0.0001. To further investigate the effect of SRN-901 on mouse hea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-6163",
+      "claim_type": "mean_sd",
+      "raw_text": "3.29 \u00b1 1.30",
+      "numeric_values": [
+        3.29,
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6163,
+      "sentence": "SRN-901-treated mice had a mean frailty score of 3.29 \u00b1 1.30 at baseline and 3.85 \u00b1 1.04 after 128 days of treatment.",
+      "context_window": "me points. SRN-901-treated mice had a mean frailty score of 3.29 \u00b1 1.30 at baseline and 3.85 \u00b1 1.04 after 128 days of treatment. Wh",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-6191",
+      "claim_type": "mean_sd",
+      "raw_text": "3.85 \u00b1 1.04",
+      "numeric_values": [
+        3.85,
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6191,
+      "sentence": "SRN-901-treated mice had a mean frailty score of 3.29 \u00b1 1.30 at baseline and 3.85 \u00b1 1.04 after 128 days of treatment.",
+      "context_window": "ice had a mean frailty score of 3.29 \u00b1 1.30 at baseline and 3.85 \u00b1 1.04 after 128 days of treatment. Whereas placebo-treated mice p",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-6209",
+      "claim_type": "unit_value",
+      "raw_text": "128 days",
+      "numeric_values": [
+        128.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6209,
+      "sentence": "SRN-901-treated mice had a mean frailty score of 3.29 \u00b1 1.30 at baseline and 3.85 \u00b1 1.04 after 128 days of treatment.",
+      "context_window": "ilty score of 3.29 \u00b1 1.30 at baseline and 3.85 \u00b1 1.04 after 128 days of treatment. Whereas placebo-treated mice progressed from",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-6277",
+      "claim_type": "mean_sd",
+      "raw_text": "2.80 \u00b1 0.95",
+      "numeric_values": [
+        2.8,
+        0.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6277,
+      "sentence": "Whereas placebo-treated mice progressed from 2.80 \u00b1 0.95 to 4.40 \u00b1 2.10 over the same interval.",
+      "context_window": "of treatment. Whereas placebo-treated mice progressed from 2.80 \u00b1 0.95 to 4.40 \u00b1 2.10 over the same interval. When scores were nor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-6292",
+      "claim_type": "mean_sd",
+      "raw_text": "4.40 \u00b1 2.10",
+      "numeric_values": [
+        4.4,
+        2.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6292,
+      "sentence": "Whereas placebo-treated mice progressed from 2.80 \u00b1 0.95 to 4.40 \u00b1 2.10 over the same interval.",
+      "context_window": "Whereas placebo-treated mice progressed from 2.80 \u00b1 0.95 to 4.40 \u00b1 2.10 over the same interval. When scores were normalized to each",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-6501",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6501,
+      "sentence": "This corresponds to a 70% attenuation of frailty progression relative to placebo controls (p = 0.001; Figure 3E and Supplementary Table 2.1 ).",
+      "context_window": "the SRN-901 group rose only to 1.17. This corresponds to a 70% attenuation of frailty progression relative to placebo cont",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-6570",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6570,
+      "sentence": "This corresponds to a 70% attenuation of frailty progression relative to placebo controls (p = 0.001; Figure 3E and Supplementary Table 2.1 ).",
+      "context_window": "uation of frailty progression relative to placebo controls (p = 0.001; Figure 3E and Supplementary Table 2.1 ). Mice were also e",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-6732",
+      "claim_type": "percentage",
+      "raw_text": "13.2%",
+      "numeric_values": [
+        13.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6732,
+      "sentence": "Tumor incidence in SRN-901-treated mice (13.2%) was significantly reduced by 30.53% relative to placebo-treated mice (19.0%; p < 0.0001).",
+      "context_window": "wth ( Figure 3F ). Tumor incidence in SRN-901-treated mice (13.2%) was significantly reduced by 30.53% relative to placebo-tr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-6768",
+      "claim_type": "percentage",
+      "raw_text": "30.53%",
+      "numeric_values": [
+        30.53
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6768,
+      "sentence": "Tumor incidence in SRN-901-treated mice (13.2%) was significantly reduced by 30.53% relative to placebo-treated mice (19.0%; p < 0.0001).",
+      "context_window": "n SRN-901-treated mice (13.2%) was significantly reduced by 30.53% relative to placebo-treated mice (19.0%; p < 0.0001). To i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-6809",
+      "claim_type": "percentage",
+      "raw_text": "19.0%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6809,
+      "sentence": "Tumor incidence in SRN-901-treated mice (13.2%) was significantly reduced by 30.53% relative to placebo-treated mice (19.0%; p < 0.0001).",
+      "context_window": "icantly reduced by 30.53% relative to placebo-treated mice (19.0%; p < 0.0001). To investigate the mechanisms by which SRN-9",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-6816",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6816,
+      "sentence": "Tumor incidence in SRN-901-treated mice (13.2%) was significantly reduced by 30.53% relative to placebo-treated mice (19.0%; p < 0.0001).",
+      "context_window": "reduced by 30.53% relative to placebo-treated mice (19.0%; p < 0.0001). To investigate the mechanisms by which SRN-901 increases",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-7037",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7037,
+      "sentence": "To investigate the mechanisms by which SRN-901 increases lifespan, we performed RNA sequencing (RNA-seq) to examine gene expression profiles of blood samples from SRN-901-treated and placebo-treated mice at 7 days before treatment and 56 days after the start of treatment.",
+      "context_window": "od samples from SRN-901-treated and placebo-treated mice at 7 days before treatment and 56 days after the start of treatment.",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-7065",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7065,
+      "sentence": "To investigate the mechanisms by which SRN-901 increases lifespan, we performed RNA sequencing (RNA-seq) to examine gene expression profiles of blood samples from SRN-901-treated and placebo-treated mice at 7 days before treatment and 56 days after the start of treatment.",
+      "context_window": "ted and placebo-treated mice at 7 days before treatment and 56 days after the start of treatment. We identified a total of 1710",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-8146",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8146,
+      "sentence": "RNA-seq data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed for GSEA Hallmark pathways ( A ) and KEGG pathways ( B and C ). n = 24 per group.",
+      "context_window": "lt mice. RNA-seq data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed for GSEA Hallma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-8262",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8262,
+      "sentence": "RNA-seq data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed for GSEA Hallmark pathways ( A ) and KEGG pathways ( B and C ). n = 24 per group.",
+      "context_window": "GSEA Hallmark pathways ( A ) and KEGG pathways ( B and C ). n = 24 per group. SRN-901 transcriptionally upregulates pro-longe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-8467",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8467,
+      "sentence": "RNA-seq data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed for GSEA Hallmark pathways ( A ) and KEGG pathways ( B and C ). n = 24 per group.",
+      "context_window": "lt mice. RNA-seq data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed for GSEA Hallma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-8583",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8583,
+      "sentence": "RNA-seq data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed for GSEA Hallmark pathways ( A ) and KEGG pathways ( B and C ). n = 24 per group.",
+      "context_window": "GSEA Hallmark pathways ( A ) and KEGG pathways ( B and C ). n = 24 per group. To investigate the effect of SRN-901 on transcr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-10239",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 10239,
+      "sentence": "To further characterize the mechanisms underlying SRN-901-mediated lifespan extension, we performed metabolomic sequencing to examine the metabolite profiles of whole blood samples from SRN-901-treated and placebo-treated mice at 7 days before treatment and 56 days after treatment onset.",
+      "context_window": "od samples from SRN-901-treated and placebo-treated mice at 7 days before treatment and 56 days after treatment onset. To inv",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-10267",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 10267,
+      "sentence": "To further characterize the mechanisms underlying SRN-901-mediated lifespan extension, we performed metabolomic sequencing to examine the metabolite profiles of whole blood samples from SRN-901-treated and placebo-treated mice at 7 days before treatment and 56 days after treatment onset.",
+      "context_window": "ted and placebo-treated mice at 7 days before treatment and 56 days after treatment onset. To investigate metabolic shifts in",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-11310",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 11310,
+      "sentence": "Metabolomics data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed with KEGG Pathway Enrichment Analysis. ( C - J ) Liver function related metabolites.",
+      "context_window": "is. Metabolomics data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed with KEGG Pathw",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-11706",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11706,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "ibonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. SRN-901 preserve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-11725",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11725,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. SRN-901 preserves the metabolic agi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-11735",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11735,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. SRN-901 preserves the metabolic aging profile",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-11746",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11746,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "eta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. SRN-901 preserves the metabolic aging profile of adult mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-12229",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 12229,
+      "sentence": "Metabolomics data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed with KEGG Pathway Enrichment Analysis. ( C - J ) Liver function related metabolites.",
+      "context_window": "is. Metabolomics data from SRN-901 and placebo-treated mice 56 days into the daily dosing regimen were analyzed with KEGG Pathw",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-12625",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12625,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "ibonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. To gain further",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-12644",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12644,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. To gain further understanding on th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-12654",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12654,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. To gain further understanding on the pathways",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-12665",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12665,
+      "sentence": "Differential analysis of individual metabolites revealed an upregulation of S-Glutathionyl-L-cysteine, Riboflavin, Phloretin, and Niacinamide ( C - F ) and a downregulation of Urobilin, Glycinamide ribonucleotide, CerP(d18_1_18_0), and 11beta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001.",
+      "context_window": "eta-PGE2 ( G - J ). n = 12 per group. *p<0.05, **p<0.01, ***p<0.001. To gain further understanding on the pathways related to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-15858",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15858,
+      "sentence": "The significance threshold (p = 0.05) is denoted by the gray dashed line.",
+      "context_window": "vels represented on the x-axis. The significance threshold (p = 0.05) is denoted by the gray dashed line. Dot size reflects the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-16350",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16350,
+      "sentence": "Additionally, the color of the dots represents the enrichment, which indicates the extent to which the metabolites in the pathway were clustered amongst the compounds with the most positive fold-changes (positive enrichments), the most negative fold-changes (negative enrichments), or uniformly distributed across high and low fold-change compounds (enrichment values near 0.0). n = 24 per group.",
+      "context_window": "and low fold-change compounds (enrichment values near 0.0). n = 24 per group. SRN-901 alters proteome of adult mice during ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-16889",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16889,
+      "sentence": "The significance threshold (p = 0.05) is denoted by the gray dashed line.",
+      "context_window": "vels represented on the x-axis. The significance threshold (p = 0.05) is denoted by the gray dashed line. Dot size reflects the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-n-17381",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17381,
+      "sentence": "Additionally, the color of the dots represents the enrichment, which indicates the extent to which the metabolites in the pathway were clustered amongst the compounds with the most positive fold-changes (positive enrichments), the most negative fold-changes (negative enrichments), or uniformly distributed across high and low fold-change compounds (enrichment values near 0.0). n = 24 per group.",
+      "context_window": "and low fold-change compounds (enrichment values near 0.0). n = 24 per group. To gain biological insights from the dysregulat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-1883",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1883,
+      "sentence": "The 33% increase in median lifespan following SRN-901-treated mice represents a notable improvement over placebo-treated controls.",
+      "context_window": ", and normalization of age-associated molecular drift. The 33% increase in median lifespan following SRN-901-treated mice",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-3389",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3389,
+      "sentence": "Research by Harrison et al demonstrated that, based on age at 90% mortality, mice fed rapamycin beginning at 600 days of age (19.7 months) led to an increase of 14% for females and 9% for males.",
+      "context_window": "search by Harrison et al demonstrated that, based on age at 90% mortality, mice fed rapamycin beginning at 600 days of age",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3436",
+      "claim_type": "unit_value",
+      "raw_text": "600 days",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3436,
+      "sentence": "Research by Harrison et al demonstrated that, based on age at 90% mortality, mice fed rapamycin beginning at 600 days of age (19.7 months) led to an increase of 14% for females and 9% for males.",
+      "context_window": "ed on age at 90% mortality, mice fed rapamycin beginning at 600 days of age (19.7 months) led to an increase of 14% for females",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3453",
+      "claim_type": "unit_value",
+      "raw_text": "19.7 months",
+      "numeric_values": [
+        19.7
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3453,
+      "sentence": "Research by Harrison et al demonstrated that, based on age at 90% mortality, mice fed rapamycin beginning at 600 days of age (19.7 months) led to an increase of 14% for females and 9% for males.",
+      "context_window": "mortality, mice fed rapamycin beginning at 600 days of age (19.7 months) led to an increase of 14% for females and 9% for males. NM",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-3488",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3488,
+      "sentence": "Research by Harrison et al demonstrated that, based on age at 90% mortality, mice fed rapamycin beginning at 600 days of age (19.7 months) led to an increase of 14% for females and 9% for males.",
+      "context_window": "ning at 600 days of age (19.7 months) led to an increase of 14% for females and 9% for males. NMN and NR, as NAD+ precursor",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-3508",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3508,
+      "sentence": "Research by Harrison et al demonstrated that, based on age at 90% mortality, mice fed rapamycin beginning at 600 days of age (19.7 months) led to an increase of 14% for females and 9% for males.",
+      "context_window": "age (19.7 months) led to an increase of 14% for females and 9% for males. NMN and NR, as NAD+ precursors, were chosen for",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3767",
+      "claim_type": "unit_value",
+      "raw_text": "13 months",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3767,
+      "sentence": "Kane et al, demonstrated NMN treatment of mice beginning at 13 months increased median lifespan by 8.5% in females, possibly due to sex-specific effects of NMN on NAD + metabolism.",
+      "context_window": "Kane et al, demonstrated NMN treatment of mice beginning at 13 months increased median lifespan by 8.5% in females, possibly due",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-3806",
+      "claim_type": "percentage",
+      "raw_text": "8.5%",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3806,
+      "sentence": "Kane et al, demonstrated NMN treatment of mice beginning at 13 months increased median lifespan by 8.5% in females, possibly due to sex-specific effects of NMN on NAD + metabolism.",
+      "context_window": "of mice beginning at 13 months increased median lifespan by 8.5% in females, possibly due to sex-specific effects of NMN on",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3940",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3940,
+      "sentence": "Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034).",
+      "context_window": "bolism. Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-3963",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3963,
+      "sentence": "Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034).",
+      "context_window": "onstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 day",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-4016",
+      "claim_type": "mean_sd",
+      "raw_text": "829 \u00b1 12.0",
+      "numeric_values": [
+        829.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4016,
+      "sentence": "Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034).",
+      "context_window": "ce for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034). 55 F",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4022",
+      "claim_type": "unit_value",
+      "raw_text": "12.0 days",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4022,
+      "sentence": "Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034).",
+      "context_window": "6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034). 55 Frailt",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-msd-4052",
+      "claim_type": "mean_sd",
+      "raw_text": "868 \u00b1 12.4",
+      "numeric_values": [
+        868.0,
+        12.4
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4052,
+      "sentence": "Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034).",
+      "context_window": "fespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034). 55 Frailty is a key indicator of healths",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-4058",
+      "claim_type": "unit_value",
+      "raw_text": "12.4 days",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4058,
+      "sentence": "Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034).",
+      "context_window": "(chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034). 55 Frailty is a key indicator of healthspan,",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-p-4069",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4069,
+      "sentence": "Zhang et al demonstrated that NR treatment of 22 to 24 months old mice for 6 weeks slightly increased lifespan (chow diet: mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034).",
+      "context_window": ": mean 829 \u00b1 12.0 days; NR treatment: mean 868 \u00b1 12.4 days; p = 0.034). 55 Frailty is a key indicator of healthspan, reflecting",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-8874",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8874,
+      "sentence": "A relatively small subset of proteins (47 of 5023 tested) met our conservative significance criteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retained; FDR <0.05).",
+      "context_window": "f 5023 tested) met our conservative significance criteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-8895",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8895,
+      "sentence": "A relatively small subset of proteins (47 of 5023 tested) met our conservative significance criteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retained; FDR <0.05).",
+      "context_window": "r conservative significance criteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retained; FDR <0.05). This",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-8915",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8915,
+      "sentence": "A relatively small subset of proteins (47 of 5023 tested) met our conservative significance criteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retained; FDR <0.05).",
+      "context_window": "ficance criteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retained; FDR <0.05). This likely reflects bot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-pct-8924",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8924,
+      "sentence": "A relatively small subset of proteins (47 of 5023 tested) met our conservative significance criteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retained; FDR <0.05).",
+      "context_window": "riteria (\u226450% missingness; CV <30%; MS/MS \u22652; RSD \u226425%; top 95% IQR retained; FDR <0.05). This likely reflects both biologi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-13889",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 13889,
+      "sentence": "Future studies should perform dose-ranging (including lower total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing) to determine the minimal effective exposure for survival and frailty outcomes while improving translational feasibility and tolerability.",
+      "context_window": "including lower total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing)",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-13904",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 13904,
+      "sentence": "Future studies should perform dose-ranging (including lower total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing) to determine the minimal effective exposure for survival and frailty outcomes while improving translational feasibility and tolerability.",
+      "context_window": "total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing) to determine t",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-360",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "limitations",
+      "source_offset": 360,
+      "sentence": "Future studies should perform dose-ranging (including lower total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing) to determine the minimal effective exposure for survival and frailty outcomes while improving translational feasibility and tolerability.",
+      "context_window": "including lower total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing)",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13092247_srn_901_a_novel_longevity_drug_extends_lifespan_and_healthsp-u-375",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "limitations",
+      "source_offset": 375,
+      "sentence": "Future studies should perform dose-ranging (including lower total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing) to determine the minimal effective exposure for survival and frailty outcomes while improving translational feasibility and tolerability.",
+      "context_window": "total doses) and schedule optimization (eg, 3 days/week vs 6 days/week, and intermittent vs continuous dosing) to determine t",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

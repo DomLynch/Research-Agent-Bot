@@ -1,0 +1,663 @@
+{
+  "paper_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and",
+  "doi": "10.1136/bmj.m4573",
+  "extracted_at": "2026-05-04T12:04:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 10,
+    "percentage": 20,
+    "odds_ratio": 5,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-476",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 476,
+      "sentence": "Randomised controlled trials comparing SGLT-2 inhibitors or GLP-1 receptor agonists with placebo, standard care, or other glucose lowering treatment in adults with type 2 diabetes with follow up of 24 weeks or longer.",
+      "context_window": "treatment in adults with type 2 diabetes with follow up of 24 weeks or longer. Studies were screened independently by two revie",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-1465",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1465,
+      "sentence": "We included studies reporting outcomes at 24 weeks or longer.",
+      "context_window": "type 2 diabetes. We included studies reporting outcomes at 24 weeks or longer. Treatment was given either as monotherapy or add",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-3653",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3653,
+      "sentence": "For each direct comparison of two treatments, we conducted a frequentist pairwise meta-analysis using a restricted maximum likelihood estimation and reported, with corresponding 95% confidence intervals, odds ratios for dichotomous outcomes, mean differences for continuous outcomes (body weight and glycated haemoglobin A1c), and standardised mean difference for health related quality of life.",
+      "context_window": "imum likelihood estimation and reported, with corresponding 95% confidence intervals, odds ratios for dichotomous outcomes,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-5097",
+      "claim_type": "unit_value",
+      "raw_text": "75 mL/min",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 5097,
+      "sentence": "Patient categories were defined as very low risk (no or few (<3) cardiovascular risk factors), low risk (three or more cardiovascular risk factors), moderate risk (cardiovascular disease), high risk (chronic kidney disease (estimated glomerular filtration rate 45-75 mL/min per 1.73 m 2 with albuminuria >300 mg/g (30 mg/mmol) or estimated glomerular filtration rate 15-45 mL/min per 1.73 m 2 )), and very high risk (cardiovascular disease and chronic kidney disease)).",
+      "context_window": "nic kidney disease (estimated glomerular filtration rate 45-75 mL/min per 1.73 m 2 with albuminuria >300 mg/g (30 mg/mmol) or est",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-5138",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5138,
+      "sentence": "Patient categories were defined as very low risk (no or few (<3) cardiovascular risk factors), low risk (three or more cardiovascular risk factors), moderate risk (cardiovascular disease), high risk (chronic kidney disease (estimated glomerular filtration rate 45-75 mL/min per 1.73 m 2 with albuminuria >300 mg/g (30 mg/mmol) or estimated glomerular filtration rate 15-45 mL/min per 1.73 m 2 )), and very high risk (cardiovascular disease and chronic kidney disease)).",
+      "context_window": "filtration rate 45-75 mL/min per 1.73 m 2 with albuminuria >300 mg/g (30 mg/mmol) or estimated glomerular filtration rate 15-4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-5148",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5148,
+      "sentence": "Patient categories were defined as very low risk (no or few (<3) cardiovascular risk factors), low risk (three or more cardiovascular risk factors), moderate risk (cardiovascular disease), high risk (chronic kidney disease (estimated glomerular filtration rate 45-75 mL/min per 1.73 m 2 with albuminuria >300 mg/g (30 mg/mmol) or estimated glomerular filtration rate 15-45 mL/min per 1.73 m 2 )), and very high risk (cardiovascular disease and chronic kidney disease)).",
+      "context_window": "rate 45-75 mL/min per 1.73 m 2 with albuminuria >300 mg/g (30 mg/mmol) or estimated glomerular filtration rate 15-45 mL/min",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-5203",
+      "claim_type": "unit_value",
+      "raw_text": "45 mL/min",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 5203,
+      "sentence": "Patient categories were defined as very low risk (no or few (<3) cardiovascular risk factors), low risk (three or more cardiovascular risk factors), moderate risk (cardiovascular disease), high risk (chronic kidney disease (estimated glomerular filtration rate 45-75 mL/min per 1.73 m 2 with albuminuria >300 mg/g (30 mg/mmol) or estimated glomerular filtration rate 15-45 mL/min per 1.73 m 2 )), and very high risk (cardiovascular disease and chronic kidney disease)).",
+      "context_window": "g/g (30 mg/mmol) or estimated glomerular filtration rate 15-45 mL/min per 1.73 m 2 )), and very high risk (cardiovascular disease",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-380",
+      "claim_type": "unit_value",
+      "raw_text": "57.1 years",
+      "numeric_values": [
+        57.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 380,
+      "sentence": "The median trial mean age was 57.1 years, and the median proportion of men was 55.6%.",
+      "context_window": "ize ranged from 16 to 17 160. The median trial mean age was 57.1 years, and the median proportion of men was 55.6%. At baseline, t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-429",
+      "claim_type": "percentage",
+      "raw_text": "55.6%",
+      "numeric_values": [
+        55.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 429,
+      "sentence": "The median trial mean age was 57.1 years, and the median proportion of men was 55.6%.",
+      "context_window": "an age was 57.1 years, and the median proportion of men was 55.6%. At baseline, the median trial mean glycated haemoglobin A1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-500",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 500,
+      "sentence": "At baseline, the median trial mean glycated haemoglobin A1c was 8.1% and BMI was 30.1.",
+      "context_window": "aseline, the median trial mean glycated haemoglobin A1c was 8.1% and BMI was 30.1. Eligibility criteria included coronary ar",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-2136",
+      "claim_type": "percentage",
+      "raw_text": "40.2%",
+      "numeric_values": [
+        40.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2136,
+      "sentence": "Three hundred and seven (40.2%) of 764 trials were at low risk of bias in random sequence generation and 529 (69.2%) were at low risk of bias in allocation concealment.",
+      "context_window": "estigators, and outcome assessors. Three hundred and seven (40.2%) of 764 trials were at low risk of bias in random sequence",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-2221",
+      "claim_type": "percentage",
+      "raw_text": "69.2%",
+      "numeric_values": [
+        69.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2221,
+      "sentence": "Three hundred and seven (40.2%) of 764 trials were at low risk of bias in random sequence generation and 529 (69.2%) were at low risk of bias in allocation concealment.",
+      "context_window": "at low risk of bias in random sequence generation and 529 (69.2%) were at low risk of bias in allocation concealment. Four h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-2315",
+      "claim_type": "percentage",
+      "raw_text": "60.5%",
+      "numeric_values": [
+        60.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2315,
+      "sentence": "Four hundred and sixty two trials (60.5%) reported blinding for participants and investigators, and 105 trials (13.7%) reported blinding for outcome assessment.",
+      "context_window": "allocation concealment. Four hundred and sixty two trials (60.5%) reported blinding for participants and investigators, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-2392",
+      "claim_type": "percentage",
+      "raw_text": "13.7%",
+      "numeric_values": [
+        13.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2392,
+      "sentence": "Four hundred and sixty two trials (60.5%) reported blinding for participants and investigators, and 105 trials (13.7%) reported blinding for outcome assessment.",
+      "context_window": "linding for participants and investigators, and 105 trials (13.7%) reported blinding for outcome assessment. Three hundred an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-2480",
+      "claim_type": "percentage",
+      "raw_text": "42.9%",
+      "numeric_values": [
+        42.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2480,
+      "sentence": "Three hundred and twenty eight trials (42.9%) were adjudicated as being at low risk of attrition bias and 355 trials (46.5%) were at low risk of bias from selective outcome reporting.",
+      "context_window": "outcome assessment. Three hundred and twenty eight trials (42.9%) were adjudicated as being at low risk of attrition bias an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-2559",
+      "claim_type": "percentage",
+      "raw_text": "46.5%",
+      "numeric_values": [
+        46.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2559,
+      "sentence": "Three hundred and twenty eight trials (42.9%) were adjudicated as being at low risk of attrition bias and 355 trials (46.5%) were at low risk of bias from selective outcome reporting.",
+      "context_window": "ated as being at low risk of attrition bias and 355 trials (46.5%) were at low risk of bias from selective outcome reporting.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-or-l-6752",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 0.85",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6752,
+      "sentence": "SGLT-2 inhibitors lowered all cause mortality compared with placebo (odds ratio 0.85 (95% confidence interval 0.79 to 0.92); 3 fewer per 1000 in five years for very low risk patients (moderate certainty); 10 fewer for low risk patients (high certainty); 18 fewer for moderate risk patients (high certainty); 26 fewer for high risk patients (high certainty); and 40 fewer for very high risk patients (high certainty); table 4 ).",
+      "context_window": "hibitors lowered all cause mortality compared with placebo (odds ratio 0.85 (95% confidence interval 0.79 to 0.92); 3 fewer per 1000 in",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-6769",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6769,
+      "sentence": "SGLT-2 inhibitors lowered all cause mortality compared with placebo (odds ratio 0.85 (95% confidence interval 0.79 to 0.92); 3 fewer per 1000 in five years for very low risk patients (moderate certainty); 10 fewer for low risk patients (high certainty); 18 fewer for moderate risk patients (high certainty); 26 fewer for high risk patients (high certainty); and 40 fewer for very high risk patients (high certainty); table 4 ).",
+      "context_window": "all cause mortality compared with placebo (odds ratio 0.85 (95% confidence interval 0.79 to 0.92); 3 fewer per 1000 in five",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-or-l-8455",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 0.87",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8455,
+      "sentence": "SGLT-2 inhibitors lowered odds of non-fatal myocardial infarction compared with placebo (odds ratio 0.87 (95% confidence interval 0.79 to 0.97); 4, 7, 13, 14, and 21 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8), as did GLP-1 receptor agonists (0.92 (0.85 to 0.99); 2, 4, 8, 9, 13 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8).",
+      "context_window": "s of non-fatal myocardial infarction compared with placebo (odds ratio 0.87 (95% confidence interval 0.79 to 0.97); 4, 7, 13, 14, and 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-8472",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8472,
+      "sentence": "SGLT-2 inhibitors lowered odds of non-fatal myocardial infarction compared with placebo (odds ratio 0.87 (95% confidence interval 0.79 to 0.97); 4, 7, 13, 14, and 21 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8), as did GLP-1 receptor agonists (0.92 (0.85 to 0.99); 2, 4, 8, 9, 13 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8).",
+      "context_window": "ocardial infarction compared with placebo (odds ratio 0.87 (95% confidence interval 0.79 to 0.97); 4, 7, 13, 14, and 21 few",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-or-l-9222",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 1.01",
+      "numeric_values": [
+        1.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9222,
+      "sentence": "SGLT-2 inhibitors had little or no effect on non-fatal stroke (odds ratio 1.01 (95% confidence interval 0.89 to 1.14); moderate to high certainty; appendix 8).",
+      "context_window": "T-2 inhibitors had little or no effect on non-fatal stroke (odds ratio 1.01 (95% confidence interval 0.89 to 1.14); moderate to high ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-9239",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9239,
+      "sentence": "SGLT-2 inhibitors had little or no effect on non-fatal stroke (odds ratio 1.01 (95% confidence interval 0.89 to 1.14); moderate to high certainty; appendix 8).",
+      "context_window": "d little or no effect on non-fatal stroke (odds ratio 1.01 (95% confidence interval 0.89 to 1.14); moderate to high certain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-or-l-9947",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9947,
+      "sentence": "SGLT-2 inhibitors reduced kidney failure (odds ratio 0.71 (95% confidence interval 0.57 to 0.89); 1,3, 6, 25, and 38 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8).",
+      "context_window": "cement treatment. SGLT-2 inhibitors reduced kidney failure (odds ratio 0.71 (95% confidence interval 0.57 to 0.89); 1,3, 6, 25, and 38",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-9964",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9964,
+      "sentence": "SGLT-2 inhibitors reduced kidney failure (odds ratio 0.71 (95% confidence interval 0.57 to 0.89); 1,3, 6, 25, and 38 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8).",
+      "context_window": "SGLT-2 inhibitors reduced kidney failure (odds ratio 0.71 (95% confidence interval 0.57 to 0.89); 1,3, 6, 25, and 38 fewer",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-or-l-10730",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 0.70",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10730,
+      "sentence": "SGLT-2 inhibitors reduced admission for heart failure (odds ratio 0.70 (95% confidence interval 0.63 to 0.77); 2, 9, 23, 29, and 58 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8).",
+      "context_window": "ure. SGLT-2 inhibitors reduced admission for heart failure (odds ratio 0.70 (95% confidence interval 0.63 to 0.77); 2, 9, 23, 29, and 5",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-10747",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10747,
+      "sentence": "SGLT-2 inhibitors reduced admission for heart failure (odds ratio 0.70 (95% confidence interval 0.63 to 0.77); 2, 9, 23, 29, and 58 fewer per 1000 in five years for very low, low, moderate, high, and very high risk patients respectively, moderate to high certainty; appendix 8).",
+      "context_window": "itors reduced admission for heart failure (odds ratio 0.70 (95% confidence interval 0.63 to 0.77); 2, 9, 23, 29, and 58 few",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-12222",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12222,
+      "sentence": "SGLT-2 inhibitors had uncertain effects on health related quality of life (standardised mean difference 0.14 (95% confidence interval -0.08 to 0.36); low certainty; appendix 8).",
+      "context_window": "related quality of life (standardised mean difference 0.14 (95% confidence interval -0.08 to 0.36); low certainty; appendix",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-12843",
+      "claim_type": "unit_value",
+      "raw_text": "1.92 kg",
+      "numeric_values": [
+        1.92
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 12843,
+      "sentence": "SGLT-2 inhibitor treatment and GLP-1 receptor agonist treatment might lower body weight (mean difference for SGLT-2 inhibitors -1.92 kg (95% confidence interval -2.23 to -1.62); low certainty; mean difference for GLP-1 receptor agonists -1.45 kg (-1.72 to -1.18); low certainty; appendix 8).",
+      "context_window": "t lower body weight (mean difference for SGLT-2 inhibitors -1.92 kg (95% confidence interval -2.23 to -1.62); low certainty; me",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-12852",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12852,
+      "sentence": "SGLT-2 inhibitor treatment and GLP-1 receptor agonist treatment might lower body weight (mean difference for SGLT-2 inhibitors -1.92 kg (95% confidence interval -2.23 to -1.62); low certainty; mean difference for GLP-1 receptor agonists -1.45 kg (-1.72 to -1.18); low certainty; appendix 8).",
+      "context_window": "ody weight (mean difference for SGLT-2 inhibitors -1.92 kg (95% confidence interval -2.23 to -1.62); low certainty; mean di",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-12953",
+      "claim_type": "unit_value",
+      "raw_text": "1.45 kg",
+      "numeric_values": [
+        1.45
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 12953,
+      "sentence": "SGLT-2 inhibitor treatment and GLP-1 receptor agonist treatment might lower body weight (mean difference for SGLT-2 inhibitors -1.92 kg (95% confidence interval -2.23 to -1.62); low certainty; mean difference for GLP-1 receptor agonists -1.45 kg (-1.72 to -1.18); low certainty; appendix 8).",
+      "context_window": "low certainty; mean difference for GLP-1 receptor agonists -1.45 kg (-1.72 to -1.18); low certainty; appendix 8). SGLT-2 inhibi",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-u-13106",
+      "claim_type": "unit_value",
+      "raw_text": "0.47 kg",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 13106,
+      "sentence": "SGLT-2 inhibitors appeared to lower body weight to a greater extent than GLP-1 receptor agonists (-0.47 kg (-0.85 to -0.09); moderate certainty).",
+      "context_window": "y weight to a greater extent than GLP-1 receptor agonists (-0.47 kg (-0.85 to -0.09); moderate certainty). Six hundred and fou",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-13320",
+      "claim_type": "percentage",
+      "raw_text": "0.60%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13320,
+      "sentence": "SGLT-2 inhibitors (mean difference -0.60% (95% confidence interval -0.67 to -0.54); low certainty) and GLP-1 receptor agonists (-0.89% (-0.95 to -0.82); low certainty) might lower glycated haemoglobin A1c levels more than placebo (low certainty).",
+      "context_window": "ollow-up of six months. SGLT-2 inhibitors (mean difference -0.60% (95% confidence interval -0.67 to -0.54); low certainty) an",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-13327",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13327,
+      "sentence": "SGLT-2 inhibitors (mean difference -0.60% (95% confidence interval -0.67 to -0.54); low certainty) and GLP-1 receptor agonists (-0.89% (-0.95 to -0.82); low certainty) might lower glycated haemoglobin A1c levels more than placebo (low certainty).",
+      "context_window": "p of six months. SGLT-2 inhibitors (mean difference -0.60% (95% confidence interval -0.67 to -0.54); low certainty) and GLP",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-13413",
+      "claim_type": "percentage",
+      "raw_text": "0.89%",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13413,
+      "sentence": "SGLT-2 inhibitors (mean difference -0.60% (95% confidence interval -0.67 to -0.54); low certainty) and GLP-1 receptor agonists (-0.89% (-0.95 to -0.82); low certainty) might lower glycated haemoglobin A1c levels more than placebo (low certainty).",
+      "context_window": ".67 to -0.54); low certainty) and GLP-1 receptor agonists (-0.89% (-0.95 to -0.82); low certainty) might lower glycated haemo",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-pct-13656",
+      "claim_type": "percentage",
+      "raw_text": "0.28%",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13656,
+      "sentence": "GLP-1 receptor agonists reduced glycated haemoglobin A1c levels to a greater extent than SGLT-2 inhibitors (mean difference -0.28% (95% CI -0.37 to -0.19); high certainty).",
+      "context_window": "o a greater extent than SGLT-2 inhibitors (mean difference -0.28% (95% CI -0.37 to -0.19); high certainty). GLP-1 receptor a",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7804890_sodium_glucose_cotransporter_protein_2_sglt_2_inhibitors_and-ci-13663",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.37 to -0.19",
+      "numeric_values": [
+        -0.37,
+        -0.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 13663,
+      "sentence": "GLP-1 receptor agonists reduced glycated haemoglobin A1c levels to a greater extent than SGLT-2 inhibitors (mean difference -0.28% (95% CI -0.37 to -0.19); high certainty).",
+      "context_window": "ater extent than SGLT-2 inhibitors (mean difference -0.28% (95% CI -0.37 to -0.19); high certainty). GLP-1 receptor agonists reduced serious",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}
