@@ -6,7 +6,6 @@ Free, no auth (rate-limited to ~5 rps for unauthenticated).
 from __future__ import annotations
 
 from typing import Any
-from xml.etree import ElementTree as ET
 
 import httpx
 

@@ -407,9 +407,15 @@ def build_data_code_availability(
     git_sha: str,
     bundle_path: str | None = None,
     repo_url: str = "https://github.com/DomLynch/Research-Agent-Bot",
+    topic: str = "the_topic",
 ) -> str:
     """Data and Code Availability — links to the public bundle so
-    a reviewer can reproduce the synthesis end-to-end."""
+    a reviewer can reproduce the synthesis end-to-end.
+
+    Refactor 2026-05-04: takes `topic` so the reproduce command
+    matches the actual topic ('--topic rapamycin' not the previous
+    hardcoded '--topic metformin' which broke rapamycin/statins/etc.
+    papers' provenance)."""
     bundle_str = (
         f"`{bundle_path}`" if bundle_path
         else "see `bundles/<run_id>/` in the source repository"
@@ -441,7 +447,7 @@ def build_data_code_availability(
         "```bash\n"
         f"git clone {repo_url}\n"
         f"cd Research-Agent-Bot && git checkout {git_sha}\n"
-        "python scripts/run_v06_synthesis.py --topic metformin\n"
+        f"python scripts/run_v06_synthesis.py --topic {topic}\n"
         "```\n"
         "\n"
         "The pipeline is deterministic given the corpus + topic "
@@ -494,7 +500,7 @@ def compose_appendix(
         build_ai_use_disclosure(manifest, audit, model_stack),
         build_human_accountability_template(),
         build_data_code_availability(
-            run_id, git_sha, bundle_path=bundle_path,
+            run_id, git_sha, bundle_path=bundle_path, topic=topic,
         ),
     ]
     return "\n\n".join(b.rstrip() for b in blocks) + "\n"

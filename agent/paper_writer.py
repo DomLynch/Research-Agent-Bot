@@ -48,16 +48,6 @@ from agent.paper_writer_helpers import (
     call_llm_section as _call_llm_section,
     section_word_count as _section_word_count,
 )
-from agent.paper_writer_prompts import (
-    ABSTRACT_SYSTEM_PROMPT,
-    BACKGROUND_SYSTEM_PROMPT,
-    CONCLUSION_SYSTEM_PROMPT,
-    CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
-    DISCUSSION_SYSTEM_PROMPT,
-    INTRODUCTION_SYSTEM_PROMPT,
-    LIMITATIONS_FULL_SYSTEM_PROMPT,
-    RESULTS_SYSTEM_PROMPT,
-)
 from agent.synthesis_schemas import (
     ReceiptSummary,
     SectionName,

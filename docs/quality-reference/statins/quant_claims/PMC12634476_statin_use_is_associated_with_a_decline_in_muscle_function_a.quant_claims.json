@@ -1,0 +1,1061 @@
+{
+  "paper_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a",
+  "doi": "10.1002/jcsm.70132",
+  "extracted_at": "2026-05-04T13:17:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 19,
+    "unit_value": 16,
+    "mean_sd": 1,
+    "p_value": 4,
+    "sample_size": 17,
+    "correlation": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-953",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "Participants averaged 56.4 (\u00b1 8) years, and 46% were male.",
+      "context_window": "y PGS tertile. Participants averaged 56.4 (\u00b1 8) years, and 46% were male. Statin use was associated with lower baseline gr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-1034",
+      "claim_type": "unit_value",
+      "raw_text": "0.68 kg",
+      "numeric_values": [
+        0.68
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1034,
+      "sentence": "Statin use was associated with lower baseline grip strength (\u03b2 = -0.68 kg [-0.89, -0.48]) and ALM (\u03b2 = -0.19 kg [-0.22, -0.16]).",
+      "context_window": "use was associated with lower baseline grip strength (\u03b2 = -0.68 kg [-0.89, -0.48]) and ALM (\u03b2 = -0.19 kg [-0.22, -0.16]). Amon",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-1072",
+      "claim_type": "unit_value",
+      "raw_text": "0.19 kg",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1072,
+      "sentence": "Statin use was associated with lower baseline grip strength (\u03b2 = -0.68 kg [-0.89, -0.48]) and ALM (\u03b2 = -0.19 kg [-0.22, -0.16]).",
+      "context_window": "e grip strength (\u03b2 = -0.68 kg [-0.89, -0.48]) and ALM (\u03b2 = -0.19 kg [-0.22, -0.16]). Among 35 557 participants with follow\u2010up d",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-msd-1144",
+      "claim_type": "mean_sd",
+      "raw_text": "10 \u00b1 5",
+      "numeric_values": [
+        10.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1144,
+      "sentence": "Among 35 557 participants with follow\u2010up data (10 \u00b1 5 years), continuous statin use was associated with an accelerated decline in grip strength (\u03b2 = -0.32 kg/year [-0.49, -0.14]) and ALM (\u03b2 = -0.06 kg/year [-0.08, -0.03]) compared with never users.",
+      "context_window": "22, -0.16]). Among 35 557 participants with follow\u2010up data (10 \u00b1 5 years), continuous statin use was associated with an accele",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-1149",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1149,
+      "sentence": "Among 35 557 participants with follow\u2010up data (10 \u00b1 5 years), continuous statin use was associated with an accelerated decline in grip strength (\u03b2 = -0.32 kg/year [-0.49, -0.14]) and ALM (\u03b2 = -0.06 kg/year [-0.08, -0.03]) compared with never users.",
+      "context_window": "0.16]). Among 35 557 participants with follow\u2010up data (10 \u00b1 5 years), continuous statin use was associated with an accelerated",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-1247",
+      "claim_type": "unit_value",
+      "raw_text": "0.32 kg",
+      "numeric_values": [
+        0.32
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1247,
+      "sentence": "Among 35 557 participants with follow\u2010up data (10 \u00b1 5 years), continuous statin use was associated with an accelerated decline in grip strength (\u03b2 = -0.32 kg/year [-0.49, -0.14]) and ALM (\u03b2 = -0.06 kg/year [-0.08, -0.03]) compared with never users.",
+      "context_window": "sociated with an accelerated decline in grip strength (\u03b2 = -0.32 kg/year [-0.49, -0.14]) and ALM (\u03b2 = -0.06 kg/year [-0.08, -0.",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-1290",
+      "claim_type": "unit_value",
+      "raw_text": "0.06 kg",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1290,
+      "sentence": "Among 35 557 participants with follow\u2010up data (10 \u00b1 5 years), continuous statin use was associated with an accelerated decline in grip strength (\u03b2 = -0.32 kg/year [-0.49, -0.14]) and ALM (\u03b2 = -0.06 kg/year [-0.08, -0.03]) compared with never users.",
+      "context_window": "p strength (\u03b2 = -0.32 kg/year [-0.49, -0.14]) and ALM (\u03b2 = -0.06 kg/year [-0.08, -0.03]) compared with never users. The PGS sho",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-p-1404",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.058",
+      "numeric_values": [
+        0.058
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1404,
+      "sentence": "The PGS showed a potential modifying effect at baseline ( p = 0.058 for grip strength and p = 0.068 for ALM) but did not significantly influence the rate of decline over time.",
+      "context_window": ". The PGS showed a potential modifying effect at baseline ( p = 0.058 for grip strength and p = 0.068 for ALM) but did not signif",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-p-1436",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.068",
+      "numeric_values": [
+        0.068
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1436,
+      "sentence": "The PGS showed a potential modifying effect at baseline ( p = 0.058 for grip strength and p = 0.068 for ALM) but did not significantly influence the rate of decline over time.",
+      "context_window": "ifying effect at baseline ( p = 0.058 for grip strength and p = 0.068 for ALM) but did not significantly influence the rate of de",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-1613",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1613,
+      "sentence": "Continuous statin use is associated with a decline in muscle function and mass over time (25% decline in grip strength and 73% decline in ALM compared to never\u2010users), irrespective of genetic susceptibility to statin response.",
+      "context_window": "iated with a decline in muscle function and mass over time (25% decline in grip strength and 73% decline in ALM compared to",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-1646",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1646,
+      "sentence": "Continuous statin use is associated with a decline in muscle function and mass over time (25% decline in grip strength and 73% decline in ALM compared to never\u2010users), irrespective of genetic susceptibility to statin response.",
+      "context_window": "nction and mass over time (25% decline in grip strength and 73% decline in ALM compared to never\u2010users), irrespective of ge",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-763",
+      "claim_type": "sample_size",
+      "raw_text": "n = 863",
+      "numeric_values": [
+        863.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 763,
+      "sentence": "The current study excluded participants either lacking medication information at baseline ( n = 863) or using both statins and other lipid\u2010lowering medications ( n = 5357).",
+      "context_window": "cipants either lacking medication information at baseline ( n = 863) or using both statins and other lipid\u2010lowering medications",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-833",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5357",
+      "numeric_values": [
+        5357.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 833,
+      "sentence": "The current study excluded participants either lacking medication information at baseline ( n = 863) or using both statins and other lipid\u2010lowering medications ( n = 5357).",
+      "context_window": "r using both statins and other lipid\u2010lowering medications ( n = 5357). Besides, we excluded participants having prevalent organi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-922",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 922,
+      "sentence": "Besides, we excluded participants having prevalent organic mental disorders ( n = 15 067) and neuromuscular\u2010related diseases ( n = 37 880) defined by the International Classification of Diseases\u201010 th revision.",
+      "context_window": "ed participants having prevalent organic mental disorders ( n = 15 067) and neuromuscular\u2010related diseases ( n = 37 880) defin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-971",
+      "claim_type": "sample_size",
+      "raw_text": "n = 37",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 971,
+      "sentence": "Besides, we excluded participants having prevalent organic mental disorders ( n = 15 067) and neuromuscular\u2010related diseases ( n = 37 880) defined by the International Classification of Diseases\u201010 th revision.",
+      "context_window": "isorders ( n = 15 067) and neuromuscular\u2010related diseases ( n = 37 880) defined by the International Classification of Disease",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1156",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1156,
+      "sentence": "Finally, since we made use of the genetic data, we excluded participants with missing genetic data ( n = 12 564), failed quality control of the genotyped data ( n = 70 439), non\u2010European ancestry ( n = 62 081), and for whom we were unable to calculate the PGS ( n = 15).",
+      "context_window": "data, we excluded participants with missing genetic data ( n = 12 564), failed quality control of the genotyped data ( n = 70",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1216",
+      "claim_type": "sample_size",
+      "raw_text": "n = 70",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1216,
+      "sentence": "Finally, since we made use of the genetic data, we excluded participants with missing genetic data ( n = 12 564), failed quality control of the genotyped data ( n = 70 439), non\u2010European ancestry ( n = 62 081), and for whom we were unable to calculate the PGS ( n = 15).",
+      "context_window": "n = 12 564), failed quality control of the genotyped data ( n = 70 439), non\u2010European ancestry ( n = 62 081), and for whom we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1253",
+      "claim_type": "sample_size",
+      "raw_text": "n = 62",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1253,
+      "sentence": "Finally, since we made use of the genetic data, we excluded participants with missing genetic data ( n = 12 564), failed quality control of the genotyped data ( n = 70 439), non\u2010European ancestry ( n = 62 081), and for whom we were unable to calculate the PGS ( n = 15).",
+      "context_window": "f the genotyped data ( n = 70 439), non\u2010European ancestry ( n = 62 081), and for whom we were unable to calculate the PGS ( n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1317,
+      "sentence": "Finally, since we made use of the genetic data, we excluded participants with missing genetic data ( n = 12 564), failed quality control of the genotyped data ( n = 70 439), non\u2010European ancestry ( n = 62 081), and for whom we were unable to calculate the PGS ( n = 15).",
+      "context_window": "62 081), and for whom we were unable to calculate the PGS ( n = 15). From the 49 837 participants completing the second visit,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1462",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6421",
+      "numeric_values": [
+        6421.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1462,
+      "sentence": "From the 49 837 participants completing the second visit, the longitudinal study excluded participants lacking medication information ( n = 6421) or who used both statins and other lipid\u2010lowering medications at the second visit ( n = 191).",
+      "context_window": "tudy excluded participants lacking medication information ( n = 6421) or who used both statins and other lipid\u2010lowering medicati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1556",
+      "claim_type": "sample_size",
+      "raw_text": "n = 191",
+      "numeric_values": [
+        191.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1556,
+      "sentence": "From the 49 837 participants completing the second visit, the longitudinal study excluded participants lacking medication information ( n = 6421) or who used both statins and other lipid\u2010lowering medications at the second visit ( n = 191).",
+      "context_window": "and other lipid\u2010lowering medications at the second visit ( n = 191). Finally, participants who stopped using statins ( n = 561",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1616",
+      "claim_type": "sample_size",
+      "raw_text": "n = 561",
+      "numeric_values": [
+        561.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1616,
+      "sentence": "Finally, participants who stopped using statins ( n = 561) or started using statins at the second visit ( n = 7107) were excluded.",
+      "context_window": "n = 191). Finally, participants who stopped using statins ( n = 561) or started using statins at the second visit ( n = 7107) w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1672",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7107",
+      "numeric_values": [
+        7107.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1672,
+      "sentence": "Finally, participants who stopped using statins ( n = 561) or started using statins at the second visit ( n = 7107) were excluded.",
+      "context_window": "s ( n = 561) or started using statins at the second visit ( n = 7107) were excluded. The final study sample included 297 977 par",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-corr-3166",
+      "claim_type": "correlation",
+      "raw_text": "(r = 0.96)",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3166,
+      "sentence": "BIA fat\u2010free mass showed a strong correlation (r = 0.96) with body composition measured by dual\u2010energy X\u2010ray absorptiometry (DXA) in a subset of participants.",
+      "context_window": "(BIA) method. BIA fat\u2010free mass showed a strong correlation (r = 0.96) with body composition measured by dual\u2010energy X\u2010ray absorpt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-4034",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4034,
+      "sentence": "We excluded SNPs with a minor allele frequency (MAF) < 1%, those that did not verify Hardy-Weinberg equilibrium ( p < 1 \u00d7 10 -6 ), and dependent SNPs according to linkage disequilibrium (r 2 > 0.8)\n\nwhere N is the number of SNPs, \u03b2 i the effect size from GWAS summary statistics, and G i the genotype dosage (0, 1 or 2).",
+      "context_window": "WAS. We excluded SNPs with a minor allele frequency (MAF) < 1%, those that did not verify Hardy-Weinberg equilibrium ( p <",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-6795",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6795,
+      "sentence": "Missing values among covariates varied between 0% and 21.6%.",
+      "context_window": "19 , 20 ]. Missing values among covariates varied between 0% and 21.6%. To address this, we applied multiple imputation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-6802",
+      "claim_type": "percentage",
+      "raw_text": "21.6%",
+      "numeric_values": [
+        21.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6802,
+      "sentence": "Missing values among covariates varied between 0% and 21.6%.",
+      "context_window": "0 ]. Missing values among covariates varied between 0% and 21.6%. To address this, we applied multiple imputation via the ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-9263",
+      "claim_type": "unit_value",
+      "raw_text": "42 mmol",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 9263,
+      "sentence": "To assess potential confounding by glycaemic status and blood pressure medications, we performed sensitivity analyses that additionally adjusted the cross\u2010sectional and longitudinal models for [ 1 ] glycaemic status categorized using HbA1c (normoglycaemia: < 42 mmol/mol; prediabetes: 42-47 mmol/mol; diabetes: \u2265 48 mmol/mol or diabetes medication) and [ 2 ] hypertension or medication for blood pressure.",
+      "context_window": "glycaemic status categorized using HbA1c (normoglycaemia: < 42 mmol/mol; prediabetes: 42-47 mmol/mol; diabetes: \u2265 48 mmol/mol o",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-9292",
+      "claim_type": "unit_value",
+      "raw_text": "47 mmol",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 9292,
+      "sentence": "To assess potential confounding by glycaemic status and blood pressure medications, we performed sensitivity analyses that additionally adjusted the cross\u2010sectional and longitudinal models for [ 1 ] glycaemic status categorized using HbA1c (normoglycaemia: < 42 mmol/mol; prediabetes: 42-47 mmol/mol; diabetes: \u2265 48 mmol/mol or diabetes medication) and [ 2 ] hypertension or medication for blood pressure.",
+      "context_window": "using HbA1c (normoglycaemia: < 42 mmol/mol; prediabetes: 42-47 mmol/mol; diabetes: \u2265 48 mmol/mol or diabetes medication) and [",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-9317",
+      "claim_type": "unit_value",
+      "raw_text": "48 mmol",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 9317,
+      "sentence": "To assess potential confounding by glycaemic status and blood pressure medications, we performed sensitivity analyses that additionally adjusted the cross\u2010sectional and longitudinal models for [ 1 ] glycaemic status categorized using HbA1c (normoglycaemia: < 42 mmol/mol; prediabetes: 42-47 mmol/mol; diabetes: \u2265 48 mmol/mol or diabetes medication) and [ 2 ] hypertension or medication for blood pressure.",
+      "context_window": "ia: < 42 mmol/mol; prediabetes: 42-47 mmol/mol; diabetes: \u2265 48 mmol/mol or diabetes medication) and [ 2 ] hypertension or medic",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-9568",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9568,
+      "sentence": "DXA measurements were available at the second ( n = 40 278) and third visits ( n = 4016).",
+      "context_window": "ed results. DXA measurements were available at the second ( n = 40 278) and third visits ( n = 4016). For these analyses, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-9599",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4016",
+      "numeric_values": [
+        4016.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9599,
+      "sentence": "DXA measurements were available at the second ( n = 40 278) and third visits ( n = 4016).",
+      "context_window": "re available at the second ( n = 40 278) and third visits ( n = 4016). For these analyses, the second visit was treated as the b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-100",
+      "claim_type": "unit_value",
+      "raw_text": "55.7 years",
+      "numeric_values": [
+        55.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 100,
+      "sentence": "55.7 years), more often male (62.8% vs.",
+      "context_window": "study sample at baseline. Statin users were older (61.4 vs. 55.7 years), more often male (62.8% vs. 43.4%), and had a higher BMI (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-130",
+      "claim_type": "percentage",
+      "raw_text": "62.8%",
+      "numeric_values": [
+        62.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 130,
+      "sentence": "55.7 years), more often male (62.8% vs.",
+      "context_window": "in users were older (61.4 vs. 55.7 years), more often male (62.8% vs. 43.4%), and had a higher BMI (29.2 vs. 26.9) compared t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-140",
+      "claim_type": "percentage",
+      "raw_text": "43.4%",
+      "numeric_values": [
+        43.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 140,
+      "sentence": "43.4%), and had a higher BMI (29.2 vs.",
+      "context_window": "ere older (61.4 vs. 55.7 years), more often male (62.8% vs. 43.4%), and had a higher BMI (29.2 vs. 26.9) compared to non\u2010user",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-675",
+      "claim_type": "unit_value",
+      "raw_text": "0.683 kg",
+      "numeric_values": [
+        0.683
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 675,
+      "sentence": "In fully adjusted models, statin use was associated with lower grip strength (\u03b2 = -0.683 kg [-0.888, -0.478]; p = 6e\u201011) and lower ALM (\u03b2 = -0.188 kg [-0.220, -0.155]; p < 1e\u201016).",
+      "context_window": "s, statin use was associated with lower grip strength (\u03b2 = -0.683 kg [-0.888, -0.478]; p = 6e\u201011) and lower ALM (\u03b2 = -0.188 kg [",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-733",
+      "claim_type": "unit_value",
+      "raw_text": "0.188 kg",
+      "numeric_values": [
+        0.188
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 733,
+      "sentence": "In fully adjusted models, statin use was associated with lower grip strength (\u03b2 = -0.683 kg [-0.888, -0.478]; p = 6e\u201011) and lower ALM (\u03b2 = -0.188 kg [-0.220, -0.155]; p < 1e\u201016).",
+      "context_window": "-0.683 kg [-0.888, -0.478]; p = 6e\u201011) and lower ALM (\u03b2 = -0.188 kg [-0.220, -0.155]; p < 1e\u201016). Cross\u2010sectional association",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1354",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1354,
+      "sentence": "This matching created balanced groups of statin users and non\u2010users ( n = 31 328 per group), with standardized mean differences for all covariates below 10% except for CHD (~15%), suggesting some residual confounding (Figures S2 and S3 ).",
+      "context_window": "ing created balanced groups of statin users and non\u2010users ( n = 31 328 per group), with standardized mean differences for all",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-1437",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1437,
+      "sentence": "This matching created balanced groups of statin users and non\u2010users ( n = 31 328 per group), with standardized mean differences for all covariates below 10% except for CHD (~15%), suggesting some residual confounding (Figures S2 and S3 ).",
+      "context_window": "with standardized mean differences for all covariates below 10% except for CHD (~15%), suggesting some residual confounding",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-1458",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1458,
+      "sentence": "This matching created balanced groups of statin users and non\u2010users ( n = 31 328 per group), with standardized mean differences for all covariates below 10% except for CHD (~15%), suggesting some residual confounding (Figures S2 and S3 ).",
+      "context_window": "n differences for all covariates below 10% except for CHD (~15%), suggesting some residual confounding (Figures S2 and S3 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-2047",
+      "claim_type": "unit_value",
+      "raw_text": "0.315 kg",
+      "numeric_values": [
+        0.315
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2047,
+      "sentence": "Continuous statin use was significantly associated with an accelerated decline in grip strength (\u03b2 = -0.315 kg/year [-0.485, -0.144]; p = 3e\u201004) and ALM (\u03b2 = -0.057 kg/year [-0.081, -0.033]; p = 4e\u201006), despite higher baseline values (Table 3 ).",
+      "context_window": "sociated with an accelerated decline in grip strength (\u03b2 = -0.315 kg/year [-0.485, -0.144]; p = 3e\u201004) and ALM (\u03b2 = -0.057 kg/ye",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-2104",
+      "claim_type": "unit_value",
+      "raw_text": "0.057 kg",
+      "numeric_values": [
+        0.057
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2104,
+      "sentence": "Continuous statin use was significantly associated with an accelerated decline in grip strength (\u03b2 = -0.315 kg/year [-0.485, -0.144]; p = 3e\u201004) and ALM (\u03b2 = -0.057 kg/year [-0.081, -0.033]; p = 4e\u201006), despite higher baseline values (Table 3 ).",
+      "context_window": "= -0.315 kg/year [-0.485, -0.144]; p = 3e\u201004) and ALM (\u03b2 = -0.057 kg/year [-0.081, -0.033]; p = 4e\u201006), despite higher baseline",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-2280",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2280,
+      "sentence": "Predicted changes in grip strength and ALM over time identified a crossover point around 10 years of follow\u2010up.",
+      "context_window": "ength and ALM over time identified a crossover point around 10 years of follow\u2010up. At this point, the initial advantage observed",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-3211",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3211,
+      "sentence": "Predicted changes in grip strength (left) and appendicular lean mass (right) with a 95% confidence interval were obtained from the linear model adjusted for assessment center, age, sex, education, TDI, smoking and drinking status, BMI, MET score, diet quality score, history of depression, hypertension, diabetes, coronary heart disease, liver failure/cirrhosis, chronic obstructive airway diseases/COPD, renal/kidney failure.",
+      "context_window": "p strength (left) and appendicular lean mass (right) with a 95% confidence interval were obtained from the linear model adj",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-3872",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3872,
+      "sentence": "The PGS included SNPs related to statin response, with 12 (26%) associated with LDL\u2010cholesterol change and 11 (24%) with simvastatin\u2010induced myopathy; the three most influential SNPs (rs4256319, rs140854723 and rs184787123) had the largest absolute effect sizes despite low MAF (Figure S4 ).",
+      "context_window": "The PGS included SNPs related to statin response, with 12 (26%) associated with LDL\u2010cholesterol change and 11 (24%) with s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-3924",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3924,
+      "sentence": "The PGS included SNPs related to statin response, with 12 (26%) associated with LDL\u2010cholesterol change and 11 (24%) with simvastatin\u2010induced myopathy; the three most influential SNPs (rs4256319, rs140854723 and rs184787123) had the largest absolute effect sizes despite low MAF (Figure S4 ).",
+      "context_window": "ith 12 (26%) associated with LDL\u2010cholesterol change and 11 (24%) with simvastatin\u2010induced myopathy; the three most influent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-4546",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4546,
+      "sentence": "The \u03b2 estimate and 95% confidence interval were obtained from the linear model adjusted for SNP chip, the 10 genetic principal components, the assessment center, age, and sex.",
+      "context_window": "d lipid\u2010related biomarkers in the blood. The \u03b2 estimate and 95% confidence interval were obtained from the linear model adj",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-p-4892",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.058",
+      "numeric_values": [
+        0.058
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4892,
+      "sentence": "In cross\u2010sectional analyses, this interaction showed a trend toward significance for grip strength and ALM ( p = 0.058 and p = 0.068, respectively), suggesting a possible modifying effect of PGS (Table S7 ).",
+      "context_window": "wed a trend toward significance for grip strength and ALM ( p = 0.058 and p = 0.068, respectively), suggesting a possible modifyi",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-p-4906",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.068",
+      "numeric_values": [
+        0.068
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4906,
+      "sentence": "In cross\u2010sectional analyses, this interaction showed a trend toward significance for grip strength and ALM ( p = 0.058 and p = 0.068, respectively), suggesting a possible modifying effect of PGS (Table S7 ).",
+      "context_window": "ward significance for grip strength and ALM ( p = 0.058 and p = 0.068, respectively), suggesting a possible modifying effect of P",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-5660",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5660,
+      "sentence": "Predicted values of grip strength and appendicular lean mass with a 95% confidence interval were obtained from the linear model adjusted for SNP chip, the 10 genetic principal components, assessment center, age, sex, education, Townsend deprivation index, smoking and drinking status, BMI, MET score, diet quality score, history of depression, hypertension, diabetes, coronary heart disease, liver failure/cirrhosis, chronic obstructive airway diseases/COPD, renal/kidney failure.",
+      "context_window": "d values of grip strength and appendicular lean mass with a 95% confidence interval were obtained from the linear model adj",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-6748",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6748,
+      "sentence": "Predicted changes in grip strength and appendicular lean mass with a 95% confidence interval were obtained from the linear model adjusted for SNP chip, 10 genetic principal components, assessment center, age, sex, education, Townsend deprivation index, smoking and drinking status, BMI, MET score, diet quality score, history of depression, hypertension, diabetes, coronary heart disease, liver failure/cirrhosis, chronic obstructive airway diseases/COPD, renal/kidney failure.",
+      "context_window": "changes in grip strength and appendicular lean mass with a 95% confidence interval were obtained from the linear model adj",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-479",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 479,
+      "sentence": "Longitudinal analysis revealed that continuous statin use was associated with a faster decline in both grip strength and ALM, such that after approximately 10 years of follow\u2010up, statin users displayed lower trajectories of muscle function and mass than never users.",
+      "context_window": "n both grip strength and ALM, such that after approximately 10 years of follow\u2010up, statin users displayed lower trajectories of",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1444",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1444,
+      "sentence": "However, this study relied on a simple comparison between statin users ( n = 77) and non\u2010users ( n = 75), without adjustment for confounders [ 4 ], which could introduce bias and increase the likelihood of a chance finding.",
+      "context_window": "study relied on a simple comparison between statin users ( n = 77) and non\u2010users ( n = 75), without adjustment for confounder",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-n-1468",
+      "claim_type": "sample_size",
+      "raw_text": "n = 75",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1468,
+      "sentence": "However, this study relied on a simple comparison between statin users ( n = 77) and non\u2010users ( n = 75), without adjustment for confounders [ 4 ], which could introduce bias and increase the likelihood of a chance finding.",
+      "context_window": "e comparison between statin users ( n = 77) and non\u2010users ( n = 75), without adjustment for confounders [ 4 ], which could int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-2069",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2069,
+      "sentence": "This association represents an additional 25% decline in grip strength and a 73% decline in ALM among continuous statin users compared to never\u2010users.",
+      "context_window": "d mass over time. This association represents an additional 25% decline in grip strength and a 73% decline in ALM among con",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-2104",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2104,
+      "sentence": "This association represents an additional 25% decline in grip strength and a 73% decline in ALM among continuous statin users compared to never\u2010users.",
+      "context_window": "represents an additional 25% decline in grip strength and a 73% decline in ALM among continuous statin users compared to ne",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-pct-3069",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3069,
+      "sentence": "First, a higher proportion of statin users in the longitudinal sample were men (70%), and men generally exhibit greater grip strength and muscle mass than women [ 23 ] This imbalance may reflect disparities in statin prescription, with women less likely to receive statins due to the underestimation of their cardiovascular risk and their underrepresentation in clinical trials [ 24 ].",
+      "context_window": "ortion of statin users in the longitudinal sample were men (70%), and men generally exhibit greater grip strength and muscl",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12634476_statin_use_is_associated_with_a_decline_in_muscle_function_a-u-8984",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8984,
+      "sentence": "This includes a large sample size, adjustment for important confounders, longitudinal data with a median follow\u2010up period of 10 years, integration of genetic information and validation of BIA\u2010derived ALM against DXA\u2010derived ALM.",
+      "context_window": "unders, longitudinal data with a median follow\u2010up period of 10 years, integration of genetic information and validation of BIA\u2010d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

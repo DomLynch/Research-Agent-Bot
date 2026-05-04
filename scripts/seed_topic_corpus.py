@@ -29,7 +29,6 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
-import re
 import subprocess
 import sys
 import urllib.parse
@@ -209,7 +208,7 @@ async def _do_seed(
 
     # 4. Extract quant claims
     print(
-        f"\n=== Extracting quant claims ===",
+        "\n=== Extracting quant claims ===",
         file=sys.stderr,
     )
     n_extracted = 0

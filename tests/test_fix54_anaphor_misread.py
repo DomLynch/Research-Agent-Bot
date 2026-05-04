@@ -23,7 +23,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import final_consistency_audit as fca  # noqa: E402
 import apply_consistency_fixes as fixer  # noqa: E402
-import run_v06_synthesis as _orch  # noqa: E402  (sets QUANT_DIR)
 
 
 def _empty_audit() -> dict:

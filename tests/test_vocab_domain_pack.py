@@ -54,53 +54,48 @@ def test_default_domain_loads_metformin() -> None:
     assert "thigh muscle mass" in canonical_names
 
 
-def test_rapamycin_domain_loads_rapamycin_pack() -> None:
-    """TOPIC_DOMAIN=rapamycin loads the rapamycin pack."""
+def test_rapamycin_domain_auto_synth_from_topic_pack() -> None:
+    """Refactor 2026-05-04: scripts/vocab/rapamycin.py was retired
+    (DEPRECATED). The rapamycin vocab now auto-synthesizes from
+    topic_packs/rapamycin.toml. Inherits metformin's endpoint
+    regex patterns (cardiometabolic + frailty endpoints overlap)
+    but builds ARM_VOCAB from rapamycin's active_arm_synonyms list.
+    """
     os.environ["TOPIC_DOMAIN"] = "rapamycin"
     qe = _reload_quant_endpoints()
     canonical_names = {name for name, _pat in qe.ENDPOINT_VOCAB}
-    # Rapamycin-specific endpoints
-    assert "mTOR inhibition" in canonical_names
-    assert "autophagy" in canonical_names
-    assert "influenza vaccine response" in canonical_names
-    # Metformin-specific should NOT be present
-    assert "HbA1c" not in canonical_names
+    # Inherits metformin's endpoint vocab (HbA1c is shared across
+    # cardiometabolic-aging drugs)
+    assert "HbA1c" in canonical_names
+    # ARM_VOCAB built from rapamycin pack synonyms
+    arm_canonical_names = {
+        name.lower() for name, _pat in qe.ARM_VOCAB
+    }
+    assert "rapamycin" in arm_canonical_names
+    assert "sirolimus" in arm_canonical_names
 
 
 def test_rapamycin_pack_binds_real_sentence() -> None:
-    """A canonical rapamycin RCT sentence should bind correctly."""
+    """A rapamycin RCT sentence should bind to a rapamycin
+    active-arm synonym. Uses inherited metformin endpoint vocab
+    (mTOR signaling endpoint covers mTOR-related claims)."""
     os.environ["TOPIC_DOMAIN"] = "rapamycin"
     qe = _reload_quant_endpoints()
-    sentence = (
-        "Rapamycin treatment significantly increased autophagic flux "
-        "in skeletal muscle (p = 0.02)."
-    )
-    binding = qe.bind_claim(
-        sentence=sentence,
-        source_offset_in_section=sentence.find("autophag"),
-        sentence_offset_in_section=0,
-        claim_role="effect",
-    )
-    assert binding.endpoint == "autophagy"
-    assert binding.direction == "increase"
+    sentence = "Rapamycin reduced mTOR signaling (p = 0.02)."
+    arm = qe.match_arm(sentence)
+    assert arm.lower() in {
+        "rapamycin", "sirolimus", "rapamune", "rap", "rad001",
+    }
 
 
-def test_rapamycin_polarity_inverted_vs_metformin_for_mTOR() -> None:
-    """In the metformin pack mTOR signaling polarity is -1 (lower is
-    better in aging context). In the rapamycin pack, S6K1
-    phosphorylation polarity is -1 (mTOR target suppression =
-    drug-effective). Different schemas, both correct for their
-    domain."""
+def test_metformin_polarity_unchanged() -> None:
+    """Metformin polarity table still works post-refactor (backward
+    compat — metformin still has its own per-Python-vocab pack)."""
     os.environ.pop("TOPIC_DOMAIN", None)
     qe_met = _reload_quant_endpoints()
     assert qe_met.ENDPOINT_POLARITY["mTOR signaling"] == -1
-
-    os.environ["TOPIC_DOMAIN"] = "rapamycin"
-    qe_rap = _reload_quant_endpoints()
-    # mTOR INHIBITION is the goal of rapamycin therapy → +1
-    assert qe_rap.ENDPOINT_POLARITY["mTOR inhibition"] == +1
-    # S6K1 phosphorylation = mTOR-active → drug suppression desired
-    assert qe_rap.ENDPOINT_POLARITY["S6K1 phosphorylation"] == -1
+    assert qe_met.ENDPOINT_POLARITY["HbA1c"] == -1
+    assert qe_met.ENDPOINT_POLARITY["VO2max"] == +1
 
 
 def test_unknown_domain_falls_back_via_topic_pack() -> None:
@@ -140,20 +135,35 @@ def test_topic_pack_only_topic_auto_synthesizes_vocab() -> None:
 
 
 # Reviewer-fix MEDIUM 2 regression: ARM_VOCAB is per-domain.
-def test_rapamycin_arm_binds_to_rapamycin_not_falls_back() -> None:
+def test_rapamycin_arm_binds_to_active_drug_synonym() -> None:
     """Pre-fix the rapamycin pack inherited 'metformin'/'placebo' as
     bare-keyword fallbacks — a sentence about 'sirolimus 1 mg/day'
     couldn't bind arm and never reached high binding_confidence.
-    Now the rapamycin pack provides its own ARM_VOCAB with
-    rapamycin/sirolimus/RTB101 keywords."""
+
+    Refactor 2026-05-04: rapamycin pack auto-synthesized from
+    topic_packs/rapamycin.toml. The matcher returns the EXACT
+    synonym matched (sirolimus → 'sirolimus', rapamycin →
+    'rapamycin'). Downstream _claim_topic_effect() reads
+    pack.active_arm_synonyms and treats any match as +1 active-arm,
+    so both 'sirolimus' and 'rapamycin' produce the same effect
+    sign — what matters is the synonym is in active_arm_synonyms,
+    not which canonical name it collapses to."""
     os.environ["TOPIC_DOMAIN"] = "rapamycin"
     qe = _reload_quant_endpoints()
-    assert qe.match_arm(
-        "Sirolimus 1 mg/day reduced p70S6K phosphorylation.",
-    ) == "rapamycin"
-    assert qe.match_arm(
-        "The rapamycin group experienced more mucositis.",
-    ) == "rapamycin"
+    # Both 'sirolimus' and 'rapamycin' are valid active-arm matches
+    sir = qe.match_arm("Sirolimus 1 mg/day reduced p70S6K phosphorylation.")
+    rap = qe.match_arm("The rapamycin group experienced more mucositis.")
+    valid_synonyms = {
+        "rapamycin", "sirolimus", "rapamune", "rap", "rad001",
+    }
+    assert sir.lower() in valid_synonyms, (
+        f"Sirolimus sentence should bind to a rapamycin synonym; "
+        f"got {sir!r}"
+    )
+    assert rap.lower() in valid_synonyms, (
+        f"Rapamycin sentence should bind to a rapamycin synonym; "
+        f"got {rap!r}"
+    )
     # Placebo still binds correctly.
     assert qe.match_arm(
         "The placebo group showed no change.",

@@ -230,7 +230,7 @@ def triage(top_n: int = 15) -> dict[str, Any]:
 
 
 def _print_summary(result: dict[str, Any]) -> None:
-    print(f"=== Rapamycin Corpus Triage ===", file=sys.stderr)
+    print("=== Rapamycin Corpus Triage ===", file=sys.stderr)
     print(
         f"Seed cards:      {result['n_total']}\n"
         f"Excluded NCTs:   {result['n_excluded_nct']} "

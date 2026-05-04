@@ -1,0 +1,1041 @@
+{
+  "paper_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric",
+  "doi": "10.1177/03000605261416738",
+  "extracted_at": "2026-05-04T13:17:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "odds_ratio": 18,
+    "percentage": 8,
+    "sample_size": 8,
+    "confidence_interval": 18,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-l-1199",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio = 1.16",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1199,
+      "sentence": "Genetically proxied inhibition of HMGCR was associated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.07-1.25; p = 4.5e-04).",
+      "context_window": "ciated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.07-1.25; p = 4.5e-04). In contr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-1218",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1218,
+      "sentence": "Genetically proxied inhibition of HMGCR was associated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.07-1.25; p = 4.5e-04).",
+      "context_window": "eased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.07-1.25; p = 4.5e-04). In contrast,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-l-1366",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio = 0.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1366,
+      "sentence": "In contrast, NPC1L1 inhibition was associated with a decreased risk of major depressive disorder (odds ratio = 0.88; 95% confidence interval: 0.84-0.92; p = 8.1e-08).",
+      "context_window": "ociated with a decreased risk of major depressive disorder (odds ratio = 0.88; 95% confidence interval: 0.84-0.92; p = 8.1e-08). PCSK9 in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-1385",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1385,
+      "sentence": "In contrast, NPC1L1 inhibition was associated with a decreased risk of major depressive disorder (odds ratio = 0.88; 95% confidence interval: 0.84-0.92; p = 8.1e-08).",
+      "context_window": "eased risk of major depressive disorder (odds ratio = 0.88; 95% confidence interval: 0.84-0.92; p = 8.1e-08). PCSK9 inhibit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-l-1534",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio = 1.16",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1534,
+      "sentence": "PCSK9 inhibition was significantly associated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.06-1.26; p = 8.2e-04) and bipolar disorder (odds ratio = 1.28; 95% confidence interval: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "ciated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.06-1.26; p = 8.2e-04) and bipol",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-1553",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1553,
+      "sentence": "PCSK9 inhibition was significantly associated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.06-1.26; p = 8.2e-04) and bipolar disorder (odds ratio = 1.28; 95% confidence interval: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "eased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.06-1.26; p = 8.2e-04) and bipolar di",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-l-1624",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio = 1.28",
+      "numeric_values": [
+        1.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1624,
+      "sentence": "PCSK9 inhibition was significantly associated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.06-1.26; p = 8.2e-04) and bipolar disorder (odds ratio = 1.28; 95% confidence interval: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "nce interval: 1.06-1.26; p = 8.2e-04) and bipolar disorder (odds ratio = 1.28; 95% confidence interval: 1.19-1.38; p = 9.4e-12). No signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-1643",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1643,
+      "sentence": "PCSK9 inhibition was significantly associated with an increased risk of major depressive disorder (odds ratio = 1.16; 95% confidence interval: 1.06-1.26; p = 8.2e-04) and bipolar disorder (odds ratio = 1.28; 95% confidence interval: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "1.26; p = 8.2e-04) and bipolar disorder (odds ratio = 1.28; 95% confidence interval: 1.19-1.38; p = 9.4e-12). No significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-621",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 621,
+      "sentence": "For example, one meta-analysis suggested that statins reduced the risk of depression by 32%, 3 whereas a large cohort study involving 387,954 individuals reported an increased risk of depression among statin users (hazard ratio (HR) = 1.22; 95% confidence interval (CI): 1.12-1.32).",
+      "context_window": "is suggested that statins reduced the risk of depression by 32%, 3 whereas a large cohort study involving 387,954 individua",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-774",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 774,
+      "sentence": "For example, one meta-analysis suggested that statins reduced the risk of depression by 32%, 3 whereas a large cohort study involving 387,954 individuals reported an increased risk of depression among statin users (hazard ratio (HR) = 1.22; 95% confidence interval (CI): 1.12-1.32).",
+      "context_window": "of depression among statin users (hazard ratio (HR) = 1.22; 95% confidence interval (CI): 1.12-1.32). 4 These observational",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2446",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2446,
+      "sentence": "As detailed in Supplementary Table 1, GWAS summary statistics for anorexia nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) were obtained from the Psychiatric Genomics Consortium (PGC).",
+      "context_window": "tary Table 1, GWAS summary statistics for anorexia nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2477",
+      "claim_type": "sample_size",
+      "raw_text": "n = 413",
+      "numeric_values": [
+        413.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2477,
+      "sentence": "As detailed in Supplementary Table 1, GWAS summary statistics for anorexia nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) were obtained from the Psychiatric Genomics Consortium (PGC).",
+      "context_window": "istics for anorexia nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophreni",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2496",
+      "claim_type": "sample_size",
+      "raw_text": "n = 173",
+      "numeric_values": [
+        173.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2496,
+      "sentence": "As detailed in Supplementary Table 1, GWAS summary statistics for anorexia nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) were obtained from the Psychiatric Genomics Consortium (PGC).",
+      "context_window": "nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2515",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2515,
+      "sentence": "As detailed in Supplementary Table 1, GWAS summary statistics for anorexia nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) were obtained from the Psychiatric Genomics Consortium (PGC).",
+      "context_window": "7), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) were obtained from th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2547",
+      "claim_type": "sample_size",
+      "raw_text": "n = 320",
+      "numeric_values": [
+        320.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2547,
+      "sentence": "As detailed in Supplementary Table 1, GWAS summary statistics for anorexia nervosa (n = 14,477), bipolar disorder (n = 413,466), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) were obtained from the Psychiatric Genomics Consortium (PGC).",
+      "context_window": "6), MDD (n = 173,005), OCD (n = 33,925), and schizophrenia (n = 320,404) were obtained from the Psychiatric Genomics Consortium",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2647",
+      "claim_type": "sample_size",
+      "raw_text": "n = 160",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2647,
+      "sentence": "14 Data for neuroticism (n = 160,958) were derived from the Genetics of Personality Consortium (GPC), 15 and summary statistics for anxiety (n = 484,598) were sourced from the UK biobank.",
+      "context_window": "hiatric Genomics Consortium (PGC). 14 Data for neuroticism (n = 160,958) were derived from the Genetics of Personality Consorti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2763",
+      "claim_type": "sample_size",
+      "raw_text": "n = 484",
+      "numeric_values": [
+        484.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2763,
+      "sentence": "14 Data for neuroticism (n = 160,958) were derived from the Genetics of Personality Consortium (GPC), 15 and summary statistics for anxiety (n = 484,598) were sourced from the UK biobank.",
+      "context_window": "ty Consortium (GPC), 15 and summary statistics for anxiety (n = 484,598) were sourced from the UK biobank. The selected GWAS da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-401",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.07-1.25",
+      "numeric_values": [
+        1.07,
+        1.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 401,
+      "sentence": "Genetically proxied inhibition of HMGCR was significantly associated with an increased risk of MDD (odds ratio (OR) = 1.16; 95% CI: 1.07-1.25; p = 4.5e-04; Figure 2 ).",
+      "context_window": "ated with an increased risk of MDD (odds ratio (OR) = 1.16; 95% CI: 1.07-1.25; p = 4.5e-04; Figure 2 ). No significant associations were",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-p-743",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 743,
+      "sentence": "These null findings were consistent across multiple sensitivity analyses, and no evidence of horizontal pleiotropy was detected (all p > 0.05; Supplementary Table 3).",
+      "context_window": "and no evidence of horizontal pleiotropy was detected (all p > 0.05; Supplementary Table 3). However, moderate heterogeneity wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-1310",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1310,
+      "sentence": "Genetically proxied inhibition of NPC1L1 was associated with a protective effect on MDD (OR = 0.88; 95% CI: 0.84-0.92; p = 8.1e-08), whereas no significant associations were observed for the remaining six psychiatric outcomes.",
+      "context_window": "n of NPC1L1 was associated with a protective effect on MDD (OR = 0.88; 95% CI: 0.84-0.92; p = 8.1e-08), whereas no significant as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-1321",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.84-0.92",
+      "numeric_values": [
+        0.84,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1321,
+      "sentence": "Genetically proxied inhibition of NPC1L1 was associated with a protective effect on MDD (OR = 0.88; 95% CI: 0.84-0.92; p = 8.1e-08), whereas no significant associations were observed for the remaining six psychiatric outcomes.",
+      "context_window": "was associated with a protective effect on MDD (OR = 0.88; 95% CI: 0.84-0.92; p = 8.1e-08), whereas no significant associations were obs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-1663",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.16",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1663,
+      "sentence": "Genetically proxied inhibition of PCSK9 was significantly associated with increased risks of MDD (OR = 1.16; 95% CI: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR = 1.28; 95% CI: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "9 was significantly associated with increased risks of MDD (OR = 1.16; 95% CI: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-1674",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.06-1.26",
+      "numeric_values": [
+        1.06,
+        1.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1674,
+      "sentence": "Genetically proxied inhibition of PCSK9 was significantly associated with increased risks of MDD (OR = 1.16; 95% CI: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR = 1.28; 95% CI: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "ficantly associated with increased risks of MDD (OR = 1.16; 95% CI: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR = 1.28; 95% CI: 1.19",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-1728",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.28",
+      "numeric_values": [
+        1.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1728,
+      "sentence": "Genetically proxied inhibition of PCSK9 was significantly associated with increased risks of MDD (OR = 1.16; 95% CI: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR = 1.28; 95% CI: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "1.16; 95% CI: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR = 1.28; 95% CI: 1.19-1.38; p = 9.4e-12). The positive association",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-1739",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.19-1.38",
+      "numeric_values": [
+        1.19,
+        1.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1739,
+      "sentence": "Genetically proxied inhibition of PCSK9 was significantly associated with increased risks of MDD (OR = 1.16; 95% CI: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR = 1.28; 95% CI: 1.19-1.38; p = 9.4e-12).",
+      "context_window": "I: 1.06-1.26; p = 8.2e-04) and bipolar disorder (OR = 1.28; 95% CI: 1.19-1.38; p = 9.4e-12). The positive association between PCSK9 inhib",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-1917",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.16",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1917,
+      "sentence": "The positive association between PCSK9 inhibition and MDD was also confirmed in sensitivity analyses, including IVW under a fixed-effects model (OR = 1.16; 95% CI: 1.05-1.27; p = 2.1e-03) and the maximum likelihood method (OR = 1.16; 95% CI: 1.06-1.27; p = 2.0e-03).",
+      "context_window": "tivity analyses, including IVW under a fixed-effects model (OR = 1.16; 95% CI: 1.05-1.27; p = 2.1e-03) and the maximum likelihood",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-1928",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.05-1.27",
+      "numeric_values": [
+        1.05,
+        1.27
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1928,
+      "sentence": "The positive association between PCSK9 inhibition and MDD was also confirmed in sensitivity analyses, including IVW under a fixed-effects model (OR = 1.16; 95% CI: 1.05-1.27; p = 2.1e-03) and the maximum likelihood method (OR = 1.16; 95% CI: 1.06-1.27; p = 2.0e-03).",
+      "context_window": "yses, including IVW under a fixed-effects model (OR = 1.16; 95% CI: 1.05-1.27; p = 2.1e-03) and the maximum likelihood method (OR = 1.16;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-1995",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.16",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1995,
+      "sentence": "The positive association between PCSK9 inhibition and MDD was also confirmed in sensitivity analyses, including IVW under a fixed-effects model (OR = 1.16; 95% CI: 1.05-1.27; p = 2.1e-03) and the maximum likelihood method (OR = 1.16; 95% CI: 1.06-1.27; p = 2.0e-03).",
+      "context_window": "1.05-1.27; p = 2.1e-03) and the maximum likelihood method (OR = 1.16; 95% CI: 1.06-1.27; p = 2.0e-03). The positive association",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2006",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.06-1.27",
+      "numeric_values": [
+        1.06,
+        1.27
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2006,
+      "sentence": "The positive association between PCSK9 inhibition and MDD was also confirmed in sensitivity analyses, including IVW under a fixed-effects model (OR = 1.16; 95% CI: 1.05-1.27; p = 2.1e-03) and the maximum likelihood method (OR = 1.16; 95% CI: 1.06-1.27; p = 2.0e-03).",
+      "context_window": "p = 2.1e-03) and the maximum likelihood method (OR = 1.16; 95% CI: 1.06-1.27; p = 2.0e-03). The positive association between PCSK9 inhib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-2204",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.28",
+      "numeric_values": [
+        1.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2204,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "tivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2215",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.15-1.43",
+      "numeric_values": [
+        1.15,
+        1.43
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2215,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "yses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-2268",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.29",
+      "numeric_values": [
+        1.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2268,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2279",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.16-1.44",
+      "numeric_values": [
+        1.16,
+        1.44
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2279,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-2328",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.26",
+      "numeric_values": [
+        1.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2328,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2339",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.10-1.46",
+      "numeric_values": [
+        1.1,
+        1.46
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2339,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-2399",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.26",
+      "numeric_values": [
+        1.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2399,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2410",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.10-1.45",
+      "numeric_values": [
+        1.1,
+        1.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2410,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "0-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-2453",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2453,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "dian (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods. No significant as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2464",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.10-1.36",
+      "numeric_values": [
+        1.1,
+        1.36
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2464,
+      "sentence": "The positive association between PCSK9 inhibition and bipolar disorder was confirmed using multiple sensitivity analyses, including IVW under a fixed-effects model (OR = 1.28; 95% CI: 1.15-1.43; p = 4.6e-06), maximum likelihood (OR = 1.29; 95% CI: 1.16-1.44; p =3.9e-06), weighted median (OR = 1.26; 95% CI: 1.10-1.46; p = 1.1e-03), penalized weighted median (OR = 1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods.",
+      "context_window": "1.26; 95% CI: 1.10-1.45; p = 7.1e-04), and MVMR (OR = 1.22; 95% CI: 1.10-1.36; p = 2.0e-05) methods. No significant associations were obs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-1661",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.15",
+      "numeric_values": [
+        1.15
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1661,
+      "sentence": "4 Similarly, another MR study found a statistically significant increased risk of depression associated with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple comparisons.",
+      "context_window": "associated with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-1672",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.04-1.19",
+      "numeric_values": [
+        1.04,
+        1.19
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1672,
+      "sentence": "4 Similarly, another MR study found a statistically significant increased risk of depression associated with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple comparisons.",
+      "context_window": "with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-1712",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.19",
+      "numeric_values": [
+        1.19
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1712,
+      "sentence": "4 Similarly, another MR study found a statistically significant increased risk of depression associated with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple comparisons.",
+      "context_window": "statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple compariso",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-1723",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.1-1.29",
+      "numeric_values": [
+        1.1,
+        1.29
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1723,
+      "sentence": "4 Similarly, another MR study found a statistically significant increased risk of depression associated with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple comparisons.",
+      "context_window": "= 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple comparisons. 19 In contrast",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-2102",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.87",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2102,
+      "sentence": "19 In contrast, a meta-analysis of 13 observational studies (including 9 cohort, 3 case-control, and 1 cross-sectional study, totaling over 5 million participants across 11 countries) found no significant association between statin use and depression after adjusting for publication bias using trim-and-fill methods (OR = 0.87; 95% CI: 0.74-1.02).",
+      "context_window": "adjusting for publication bias using trim-and-fill methods (OR = 0.87; 95% CI: 0.74-1.02). 20 However, the included studies exhib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2113",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.74-1.02",
+      "numeric_values": [
+        0.74,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2113,
+      "sentence": "19 In contrast, a meta-analysis of 13 observational studies (including 9 cohort, 3 case-control, and 1 cross-sectional study, totaling over 5 million participants across 11 countries) found no significant association between statin use and depression after adjusting for publication bias using trim-and-fill methods (OR = 0.87; 95% CI: 0.74-1.02).",
+      "context_window": "or publication bias using trim-and-fill methods (OR = 0.87; 95% CI: 0.74-1.02). 20 However, the included studies exhibited considerable h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2659",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.525 to -0.094",
+      "numeric_values": [
+        -0.525,
+        -0.094
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2659,
+      "sentence": "The overall results suggested a significant reduction in depressive symptoms with statin use (standardized mean difference (SMD) = -0.309; 95% CI: -0.525 to -0.094; p = 0.005).",
+      "context_window": "th statin use (standardized mean difference (SMD) = -0.309; 95% CI: -0.525 to -0.094; p = 0.005). However, subgroup analysis showed that the eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-p-2685",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2685,
+      "sentence": "The overall results suggested a significant reduction in depressive symptoms with statin use (standardized mean difference (SMD) = -0.309; 95% CI: -0.525 to -0.094; p = 0.005).",
+      "context_window": "d mean difference (SMD) = -0.309; 95% CI: -0.525 to -0.094; p = 0.005). However, subgroup analysis showed that the effect was onl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2823",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.107 to -0.486",
+      "numeric_values": [
+        -1.107,
+        -0.486
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2823,
+      "sentence": "However, subgroup analysis showed that the effect was only significant in individuals with baseline depression (SMD = -0.796; 95% CI: -1.107 to -0.486; p = 0.001), but not in nondepressed individuals (SMD = 0.153; 95% CI: -0.047 to 0.353; p = 0.113).",
+      "context_window": "cant in individuals with baseline depression (SMD = -0.796; 95% CI: -1.107 to -0.486; p = 0.001), but not in nondepressed individuals (SMD = 0.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-p-2849",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2849,
+      "sentence": "However, subgroup analysis showed that the effect was only significant in individuals with baseline depression (SMD = -0.796; 95% CI: -1.107 to -0.486; p = 0.001), but not in nondepressed individuals (SMD = 0.153; 95% CI: -0.047 to 0.353; p = 0.113).",
+      "context_window": "aseline depression (SMD = -0.796; 95% CI: -1.107 to -0.486; p = 0.001), but not in nondepressed individuals (SMD = 0.153; 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2911",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.047 to 0.353",
+      "numeric_values": [
+        -0.047,
+        0.353
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2911,
+      "sentence": "However, subgroup analysis showed that the effect was only significant in individuals with baseline depression (SMD = -0.796; 95% CI: -1.107 to -0.486; p = 0.001), but not in nondepressed individuals (SMD = 0.153; 95% CI: -0.047 to 0.353; p = 0.113).",
+      "context_window": "= 0.001), but not in nondepressed individuals (SMD = 0.153; 95% CI: -0.047 to 0.353; p = 0.113). These results suggest that statins improve dep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-p-2936",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.113",
+      "numeric_values": [
+        0.113
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2936,
+      "sentence": "However, subgroup analysis showed that the effect was only significant in individuals with baseline depression (SMD = -0.796; 95% CI: -1.107 to -0.486; p = 0.001), but not in nondepressed individuals (SMD = 0.153; 95% CI: -0.047 to 0.353; p = 0.113).",
+      "context_window": "epressed individuals (SMD = 0.153; 95% CI: -0.047 to 0.353; p = 0.113). These results suggest that statins improve depressive sym",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-3418",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3418,
+      "sentence": "A Swedish national cohort study further suggested heterogeneity among different statins: simvastatin use was associated with a 7% reduction in depression risk, whereas atorvastatin use was linked to an 11% increased risk.",
+      "context_window": "ng different statins: simvastatin use was associated with a 7% reduction in depression risk, whereas atorvastatin use was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-3493",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3493,
+      "sentence": "A Swedish national cohort study further suggested heterogeneity among different statins: simvastatin use was associated with a 7% reduction in depression risk, whereas atorvastatin use was linked to an 11% increased risk.",
+      "context_window": "depression risk, whereas atorvastatin use was linked to an 11% increased risk. 22 These findings imply that only certain s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-or-a-4798",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.85",
+      "numeric_values": [
+        2.85
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4798,
+      "sentence": "A meta-analysis of eight RCTs reported that the use of PCSK9 inhibitors was associated with a more than twofold higher risk of neurocognitive impairment (OR = 2.85; 95% CI: 1.34-6.06).",
+      "context_window": "more than twofold higher risk of neurocognitive impairment (OR = 2.85; 95% CI: 1.34-6.06). 24 However, the limited number and het",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-4809",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.34-6.06",
+      "numeric_values": [
+        1.34,
+        6.06
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4809,
+      "sentence": "A meta-analysis of eight RCTs reported that the use of PCSK9 inhibitors was associated with a more than twofold higher risk of neurocognitive impairment (OR = 2.85; 95% CI: 1.34-6.06).",
+      "context_window": "wofold higher risk of neurocognitive impairment (OR = 2.85; 95% CI: 1.34-6.06). 24 However, the limited number and heterogeneity of exist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-8337",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 8337,
+      "sentence": "Third, our genetic instruments for NPC1L1 were limited in number (n = 3), which may have reduced the statistical power and increased uncertainty in causal estimation.",
+      "context_window": "our genetic instruments for NPC1L1 were limited in number (n = 3), which may have reduced the statistical power and increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1481 @@
+{
+  "paper_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio",
+  "doi": "10.1097/MD.0000000000037536",
+  "extracted_at": "2026-05-04T13:17:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 53,
+    "mean_sd": 5,
+    "percentage": 18,
+    "sample_size": 1,
+    "p_value": 2,
+    "confidence_interval": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-418",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 418,
+      "sentence": "The database is a longitudinal cohort study of Korean men and women 40 years of age or older who underwent comprehensive biannual screening health examinations by Korean National Health Insurance Service from January 1, 2002, to December 31, 2015.",
+      "context_window": "base is a longitudinal cohort study of Korean men and women 40 years of age or older who underwent comprehensive biannual screen",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-msd-946",
+      "claim_type": "mean_sd",
+      "raw_text": "81.2 \u00b1 6.6",
+      "numeric_values": [
+        81.2,
+        6.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 946,
+      "sentence": "A total of 20,322 participants without prior diabetes at baseline from 2009 to 2015 were followed up for a mean duration of 81.2 \u00b1 6.6 months.",
+      "context_window": "e from 2009 to 2015 were followed up for a mean duration of 81.2 \u00b1 6.6 months. The mean age of all participants at baseline was 59",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-953",
+      "claim_type": "unit_value",
+      "raw_text": "6.6 months",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "A total of 20,322 participants without prior diabetes at baseline from 2009 to 2015 were followed up for a mean duration of 81.2 \u00b1 6.6 months.",
+      "context_window": "2009 to 2015 were followed up for a mean duration of 81.2 \u00b1 6.6 months. The mean age of all participants at baseline was 59.2 \u00b1 8.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-msd-1014",
+      "claim_type": "mean_sd",
+      "raw_text": "59.2 \u00b1 8.4",
+      "numeric_values": [
+        59.2,
+        8.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1014,
+      "sentence": "The mean age of all participants at baseline was 59.2 \u00b1 8.4 years and 43.0% of them were male.",
+      "context_window": ".6 months. The mean age of all participants at baseline was 59.2 \u00b1 8.4 years and 43.0% of them were male. Their index low lipoprot",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1021",
+      "claim_type": "unit_value",
+      "raw_text": "8.4 years",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "The mean age of all participants at baseline was 59.2 \u00b1 8.4 years and 43.0% of them were male.",
+      "context_window": "hs. The mean age of all participants at baseline was 59.2 \u00b1 8.4 years and 43.0% of them were male. Their index low lipoprotein ch",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1035",
+      "claim_type": "percentage",
+      "raw_text": "43.0%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "The mean age of all participants at baseline was 59.2 \u00b1 8.4 years and 43.0% of them were male.",
+      "context_window": "ge of all participants at baseline was 59.2 \u00b1 8.4 years and 43.0% of them were male. Their index low lipoprotein cholesterol",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-msd-1165",
+      "claim_type": "mean_sd",
+      "raw_text": "337.4 \u00b1 52.3",
+      "numeric_values": [
+        337.4,
+        52.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1165,
+      "sentence": "Their index low lipoprotein cholesterol level was 130.4 \u00b1 mg/dL, the mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity statins.",
+      "context_window": "was 130.4 \u00b1 mg/dL, the mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1173",
+      "claim_type": "unit_value",
+      "raw_text": "52.3 days",
+      "numeric_values": [
+        52.3
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "Their index low lipoprotein cholesterol level was 130.4 \u00b1 mg/dL, the mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity statins.",
+      "context_window": ".4 \u00b1 mg/dL, the mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity stati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1188",
+      "claim_type": "percentage",
+      "raw_text": "93.9%",
+      "numeric_values": [
+        93.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1188,
+      "sentence": "Their index low lipoprotein cholesterol level was 130.4 \u00b1 mg/dL, the mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity statins.",
+      "context_window": "mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity statins. At that",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-2777",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg/dL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg/dL",
+      "source_section": "introduction",
+      "source_offset": 2777,
+      "sentence": "These guidelines justify their recommendation by citing insufficient evidence to support the widespread adoption of high-intensity statin therapy, except in select subpopulations characterized by heightened cardiovascular risk. [ 10 ] Moreover, a recent cohort study revealed that achieving a LDL-C level of 70 mg/dL or lower did not confer any additional clinical benefit. [ 11 ] Consequently, these findings challenge the veracity and universality of current treatment guidelines recommending for very low target LDL-C levels across all patients with established CVD.",
+      "context_window": "ecent cohort study revealed that achieving a LDL-C level of 70 mg/dL or lower did not confer any additional clinical benefit. [",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-3201",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3201,
+      "sentence": "The US Preventive Services Task Force reported in 2022 that those with one or more risk factors for CVD or an estimated 10-year risk of a CVD event of more than 10% had a moderate to high net benefit among adults 40 to 75 years old without a history of CVD.",
+      "context_window": "VD or an estimated 10-year risk of a CVD event of more than 10% had a moderate to high net benefit among adults 40 to 75 ye",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-3259",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3259,
+      "sentence": "The US Preventive Services Task Force reported in 2022 that those with one or more risk factors for CVD or an estimated 10-year risk of a CVD event of more than 10% had a moderate to high net benefit among adults 40 to 75 years old without a history of CVD.",
+      "context_window": "n 10% had a moderate to high net benefit among adults 40 to 75 years old without a history of CVD. It was recommended physicians",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1183",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1183,
+      "sentence": "The NHIS is also in charge of the national health examination programs, which include a general health examination for all insured employees or self-employed persons over the age of 40 years, as well as their dependents; it is also recommended that this examination be undertaken at least biannually.",
+      "context_window": "insured employees or self-employed persons over the age of 40 years, as well as their dependents; it is also recommended that t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1382",
+      "claim_type": "unit_value",
+      "raw_text": "66 years",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1382,
+      "sentence": "Moreover, life-transition examinations (for those reaching milestones of 40 and 66 years of age), cancer examinations, and pediatric examinations (for those between 4- and 71-months post-birth) are also managed by the NHIS.",
+      "context_window": "ition examinations (for those reaching milestones of 40 and 66 years of age), cancer examinations, and pediatric examinations (f",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1897",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1897,
+      "sentence": "To construct the NHIS-HEALS database, a sample cohort was first selected from the 2002 and 2003 health-screening participants, who were in the age group of 40 to 79 years in 2002 and followed up through to 2013.",
+      "context_window": "-screening participants, who were in the age group of 40 to 79 years in 2002 and followed up through to 2013. This database is a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-2074",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2074,
+      "sentence": "This database is a longitudinal cohort of a total of 514,866 health-screening participants who comprised a random selection of 10% of all health-screening participants in 2002 and 2003. [ 14 ] At the time of the health checkups, systolic and diastolic blood pressures (DBPs) were also measured; serum samples for fasting glucose, hemoglobin, total cholesterol, and LDL-C levels were also obtained after an overnight fast at each examination site.",
+      "context_window": "-screening participants who comprised a random selection of 10% of all health-screening participants in 2002 and 2003. [ 14",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-n-3609",
+      "claim_type": "sample_size",
+      "raw_text": "n = 350",
+      "numeric_values": [
+        350.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3609,
+      "sentence": "We used the database from 2009 to 2010 as a baseline because the results of LDL-C levels were available from that period (n = 350,041).",
+      "context_window": "he results of LDL-C levels were available from that period (n = 350,041). Patients with changes in the statin type and dose wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-3857",
+      "claim_type": "unit_value",
+      "raw_text": "35 cm",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3857,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-3866",
+      "claim_type": "unit_value",
+      "raw_text": "125 cm",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3866,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "ercentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-3918",
+      "claim_type": "unit_value",
+      "raw_text": "240 mm",
+      "numeric_values": [
+        240.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3918,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "5 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-3953",
+      "claim_type": "unit_value",
+      "raw_text": "160 mm",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3953,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "sure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose betwee",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4028",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 4028,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "globin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4072",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg/dL",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 4072,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 an",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4104",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 4104,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 an",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4143",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg/dL",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 4143,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4175",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg/dL",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 4175,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4271",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4271,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolle",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4293",
+      "claim_type": "unit_value",
+      "raw_text": "176.8 \u03bcmol",
+      "numeric_values": [
+        176.8
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 4293,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic b",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4379",
+      "claim_type": "unit_value",
+      "raw_text": "190 mm",
+      "numeric_values": [
+        190.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4379,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "betes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg). In addition, we excluded individual",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-4398",
+      "claim_type": "unit_value",
+      "raw_text": "100 mm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4398,
+      "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
+      "context_window": "hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg). In addition, we excluded individuals diagnosed with ca",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5216",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 5216,
+      "sentence": "We only included patients who were prescribed the same dose and type of statin for more than 180 consecutive days, at least during the last 1 year before LDL-C measurement in 2009 and 2010.",
+      "context_window": "or more than 180 consecutive days, at least during the last 1 year before LDL-C measurement in 2009 and 2010. They were select",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5397",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5397,
+      "sentence": "Our categorization of the LDL-C index was based on an observed achieved value after at least 180 days of statin treatment; however, this level may not have represented a stable LDL-C level over the subsequent years.",
+      "context_window": "ndex was based on an observed achieved value after at least 180 days of statin treatment; however, this level may not have repre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5689",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5689,
+      "sentence": "This observational cohort study compares the risk of mortality and CVD among patients with dyslipidemia without preexisting CVD by observing LDL-C levels after at least 6 months of statin therapy.",
+      "context_window": "ut preexisting CVD by observing LDL-C levels after at least 6 months of statin therapy. Patients between the ages of 40 to 79 ye",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5752",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5752,
+      "sentence": "Patients between the ages of 40 to 79 years with statin treatment were identified.",
+      "context_window": "onths of statin therapy. Patients between the ages of 40 to 79 years with statin treatment were identified. Statin intensity was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5884",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5884,
+      "sentence": "Statin intensity was sorted as High-intensity statin therapies are atorvastatin (40-80 mg) or rosuvastatin (Crestor; 20-40 mg).",
+      "context_window": "ted as High-intensity statin therapies are atorvastatin (40-80 mg) or rosuvastatin (Crestor; 20-40 mg). Moderate-intensity st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5920",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5920,
+      "sentence": "Statin intensity was sorted as High-intensity statin therapies are atorvastatin (40-80 mg) or rosuvastatin (Crestor; 20-40 mg).",
+      "context_window": "es are atorvastatin (40-80 mg) or rosuvastatin (Crestor; 20-40 mg). Moderate-intensity statin therapies include atorvastatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5989",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5989,
+      "sentence": "Moderate-intensity statin therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to the ACC/AHA guidelines 2013. [ 8 ]\n\nPatients hospitalized with a first diagnosis of CVD were recruited by eliminating those with a prior diagnosis of CVD before 2009.",
+      "context_window": "oderate-intensity statin therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6013",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6013,
+      "sentence": "Moderate-intensity statin therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to the ACC/AHA guidelines 2013. [ 8 ]\n\nPatients hospitalized with a first diagnosis of CVD were recruited by eliminating those with a prior diagnosis of CVD before 2009.",
+      "context_window": "therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavasta",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6037",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6037,
+      "sentence": "Moderate-intensity statin therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to the ACC/AHA guidelines 2013. [ 8 ]\n\nPatients hospitalized with a first diagnosis of CVD were recruited by eliminating those with a prior diagnosis of CVD before 2009.",
+      "context_window": "astatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and severa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6061",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6061,
+      "sentence": "Moderate-intensity statin therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to the ACC/AHA guidelines 2013. [ 8 ]\n\nPatients hospitalized with a first diagnosis of CVD were recruited by eliminating those with a prior diagnosis of CVD before 2009.",
+      "context_window": "vastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6085",
+      "claim_type": "unit_value",
+      "raw_text": "4 mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6085,
+      "sentence": "Moderate-intensity statin therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to the ACC/AHA guidelines 2013. [ 8 ]\n\nPatients hospitalized with a first diagnosis of CVD were recruited by eliminating those with a prior diagnosis of CVD before 2009.",
+      "context_window": "astatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to the ACC/AHA guidelines 20",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6450",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6450,
+      "sentence": "CVD was defined as the occurrence of coronary artery disease (codes I20-25 with documentation of coronary angiography or coronary artery bypass surgery within 7 days of admission), stroke (codes G46, I63-64 with documentation of computed tomography scan or magnetic resonance imaging within 7 days of admission), and/or peripheral artery disease (codes E10-E14 with.5 and I73).",
+      "context_window": "ronary angiography or coronary artery bypass surgery within 7 days of admission), stroke (codes G46, I63-64 with documentation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6582",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6582,
+      "sentence": "CVD was defined as the occurrence of coronary artery disease (codes I20-25 with documentation of coronary angiography or coronary artery bypass surgery within 7 days of admission), stroke (codes G46, I63-64 with documentation of computed tomography scan or magnetic resonance imaging within 7 days of admission), and/or peripheral artery disease (codes E10-E14 with.5 and I73).",
+      "context_window": "mputed tomography scan or magnetic resonance imaging within 7 days of admission), and/or peripheral artery disease (codes E10-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6896",
+      "claim_type": "unit_value",
+      "raw_text": "126 mg/dL",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 6896,
+      "sentence": "People who had been diagnosed with diabetes (ICD-10 codes E10-E14), or a fasting blood glucose level of 126 mg/dL or greater.",
+      "context_window": "(ICD-10 codes E10-E14), or a fasting blood glucose level of 126 mg/dL or greater. The primary outcome was the occurrence of the",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-7389",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7389,
+      "sentence": "We used the Cox proportional hazards model to estimate the coefficients and hazard ratios associated with each potential risk factor for the incidence of diabetes, and 95% confidence intervals for the comparison of event rates in each group.",
+      "context_window": "ch potential risk factor for the incidence of diabetes, and 95% confidence intervals for the comparison of event rates in e",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-321",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 321,
+      "sentence": "We excluded individuals who had missing values; any clinical diagnosis of CVD, cerebrovascular disease, cancer, or diabetes; or statin use for <180 days.",
+      "context_window": "rovascular disease, cancer, or diabetes; or statin use for <180 days. The study population consisted of 20,322 participants at t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-msd-462",
+      "claim_type": "mean_sd",
+      "raw_text": "81.2 \u00b1 6.6",
+      "numeric_values": [
+        81.2,
+        6.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 462,
+      "sentence": "The study population consisted of 20,322 participants at the baseline who were followed up to December 2015 for a mean duration of 81.2 \u00b1 6.6 months (Figs.",
+      "context_window": "ho were followed up to December 2015 for a mean duration of 81.2 \u00b1 6.6 months (Figs. 1 and 2 and Table 1 ). The mean age of all pa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-469",
+      "claim_type": "unit_value",
+      "raw_text": "6.6 months",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 469,
+      "sentence": "The study population consisted of 20,322 participants at the baseline who were followed up to December 2015 for a mean duration of 81.2 \u00b1 6.6 months (Figs.",
+      "context_window": "followed up to December 2015 for a mean duration of 81.2 \u00b1 6.6 months (Figs. 1 and 2 and Table 1 ). The mean age of all participa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-msd-559",
+      "claim_type": "mean_sd",
+      "raw_text": "59.3 \u00b1 8.4",
+      "numeric_values": [
+        59.3,
+        8.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 559,
+      "sentence": "The mean age of all participants at baseline was 59.3 \u00b1 8.4 years and 36.6% of them were male.",
+      "context_window": "Table 1 ). The mean age of all participants at baseline was 59.3 \u00b1 8.4 years and 36.6% of them were male. The baseline demographic",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-566",
+      "claim_type": "unit_value",
+      "raw_text": "8.4 years",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 566,
+      "sentence": "The mean age of all participants at baseline was 59.3 \u00b1 8.4 years and 36.6% of them were male.",
+      "context_window": "). The mean age of all participants at baseline was 59.3 \u00b1 8.4 years and 36.6% of them were male. The baseline demographic chara",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-580",
+      "claim_type": "percentage",
+      "raw_text": "36.6%",
+      "numeric_values": [
+        36.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 580,
+      "sentence": "The mean age of all participants at baseline was 59.3 \u00b1 8.4 years and 36.6% of them were male.",
+      "context_window": "ge of all participants at baseline was 59.3 \u00b1 8.4 years and 36.6% of them were male. The baseline demographic characteristics",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1019",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg/dL",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1019,
+      "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
+      "context_window": "eir achieved LDL-C level. For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1034",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg/dL",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1034,
+      "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
+      "context_window": "L-C level. For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1048",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1048,
+      "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
+      "context_window": "the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1064",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg/dL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1064,
+      "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
+      "context_window": "LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1115",
+      "claim_type": "unit_value",
+      "raw_text": "60.9 years",
+      "numeric_values": [
+        60.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1115,
+      "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
+      "context_window": "dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively. The average achieved LDL-C levels in each gr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1218",
+      "claim_type": "unit_value",
+      "raw_text": "58.3 mg/dL",
+      "numeric_values": [
+        58.3
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1218,
+      "sentence": "The average achieved LDL-C levels in each group were 158.8, 116.6, 87.5, and 58.3 mg/dL, respectively.",
+      "context_window": "ved LDL-C levels in each group were 158.8, 116.6, 87.5, and 58.3 mg/dL, respectively. The period of administration of the same dos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1346",
+      "claim_type": "unit_value",
+      "raw_text": "335 days",
+      "numeric_values": [
+        335.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1346,
+      "sentence": "The period of administration of the same dose and type of statin before the achieved LDL-C level was >335 days in each group.",
+      "context_window": "ose and type of statin before the achieved LDL-C level was >335 days in each group. The higher level of the achieved LDL-C had",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1650",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1650,
+      "sentence": "In terms of statin potency, the proportion of moderate-intensity use was >90% in each group, and in terms of component types, the proportion of use among all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order.",
+      "context_window": "atin potency, the proportion of moderate-intensity use was >90% in each group, and in terms of component types, the proport",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1765",
+      "claim_type": "percentage",
+      "raw_text": "67.9 %",
+      "numeric_values": [
+        67.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1765,
+      "sentence": "In terms of statin potency, the proportion of moderate-intensity use was >90% in each group, and in terms of component types, the proportion of use among all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order.",
+      "context_window": "proportion of use among all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1787",
+      "claim_type": "percentage",
+      "raw_text": "14.8 %",
+      "numeric_values": [
+        14.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1787,
+      "sentence": "In terms of statin potency, the proportion of moderate-intensity use was >90% in each group, and in terms of component types, the proportion of use among all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order.",
+      "context_window": "ng all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order. I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1810",
+      "claim_type": "percentage",
+      "raw_text": "10.8 %",
+      "numeric_values": [
+        10.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1810,
+      "sentence": "In terms of statin potency, the proportion of moderate-intensity use was >90% in each group, and in terms of component types, the proportion of use among all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order.",
+      "context_window": "atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order. In the main regression a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-2114",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2114,
+      "sentence": "Of the total 20,322, 386 deaths occurred, 25 (6.5%) were caused by CVD.",
+      "context_window": "in Table 2 . Of the total 20,322, 386 deaths occurred, 25 (6.5%) were caused by CVD. A total of 438 patients were hospitali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-2453",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg/dL",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 2453,
+      "sentence": "There were no significant differences in the ORs for all-cause death, CVD death, or CVD total between the groups, except for total CVD in the group with LDL-C > 130 mg/dL.",
+      "context_window": "the groups, except for total CVD in the group with LDL-C > 130 mg/dL. OR of major cardiac events (MACEs) according to achieved",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-p-2795",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2795,
+      "sentence": "Adjusting age, sex, BMI, SES, HTN, DM P < .05.",
+      "context_window": "ial economic status. Adjusting age, sex, BMI, SES, HTN, DM P < .05. The risks of MACEs and diabetes mellitus according to the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-ci-3130",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 2.082-6.531",
+      "numeric_values": [
+        2.082,
+        6.531
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3130,
+      "sentence": "The risks of MACEs and diabetes mellitus according to the statin intensity were analyzed. (Table 3 ) Compared to the low-intensity statin users, there were no significant differences in the ORs of all-cause death, CVD death, or CVD total between the groups, except for the total CVD in high-intensity statin users (OR 3.688, 95%CI 2.082-6.531).",
+      "context_window": "for the total CVD in high-intensity statin users (OR 3.688, 95%CI 2.082-6.531). In this study involving over 20,000 participants, only 29",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-3244",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3244,
+      "sentence": "In this study involving over 20,000 participants, only 293 individuals, accounting for a mere 1.4%, were found to have used high-intensity statins for primary prevention of cardiovascular disease (CVD).",
+      "context_window": "0 participants, only 293 individuals, accounting for a mere 1.4%, were found to have used high-intensity statins for primary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-p-4092",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4092,
+      "sentence": "Adjusting age, sex, BMI, SES, HTN, DM P < .05.",
+      "context_window": "ial economic status. Adjusting age, sex, BMI, SES, HTN, DM P < .05. The risk of new-onset diabetes was significantly lower in",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-ci-4239",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 0.528-0.995",
+      "numeric_values": [
+        0.528,
+        0.995
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4239,
+      "sentence": "The risk of new-onset diabetes was significantly lower in moderate-intensity statin users than in low-intensity statin users. (OR 0.725, 95%CI 0.528-0.995).",
+      "context_window": "statin users than in low-intensity statin users. (OR 0.725, 95%CI 0.528-0.995). Among all participants in this study, those who used mode",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-4443",
+      "claim_type": "percentage",
+      "raw_text": "93.9%",
+      "numeric_values": [
+        93.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4443,
+      "sentence": "Among all participants in this study, those who used moderate-intensity statins for primary prevention of cardiovascular disease (CVD) accounted for approximately 19,000, representing 93.9%.",
+      "context_window": "ease (CVD) accounted for approximately 19,000, representing 93.9%. In most cases, moderate-intensity statins were used for th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-4587",
+      "claim_type": "percentage",
+      "raw_text": "27.5%",
+      "numeric_values": [
+        27.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4587,
+      "sentence": "The risk of new-onset diabetes was observed to be 27.5% lower in users of moderate-intensity statins compared to users of low-intensity statins.",
+      "context_window": "n of CVD. The risk of new-onset diabetes was observed to be 27.5% lower in users of moderate-intensity statins compared to us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-4777",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4777,
+      "sentence": "The low-intensity statin users, whom we set as the control group, numbered 950, accounting for 4.7%.",
+      "context_window": "m we set as the control group, numbered 950, accounting for 4.7%. The significant difference, with nearly a 20-fold contrast",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-5020",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5020,
+      "sentence": "In reality, among those who used high-intensity statins, totaling 293 individuals (1.4%), there was no significant difference in the risk of developing diabetes compared to the low-intensity statin user population.",
+      "context_window": "who used high-intensity statins, totaling 293 individuals (1.4%), there was no significant difference in the risk of develo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-300",
+      "claim_type": "unit_value",
+      "raw_text": "70.0 mg/dL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg/dL",
+      "source_section": "discussion",
+      "source_offset": 300,
+      "sentence": "We found that an LDL-C level of 70.0 mg/dL or less had no statistically significant association with the risk of CVD compared to patients who had LDL-C between 70.1 and 100.0 mg/dL for primary prevention.",
+      "context_window": "n of achieved LDL-C levels. We found that an LDL-C level of 70.0 mg/dL or less had no statistically significant association with t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-437",
+      "claim_type": "unit_value",
+      "raw_text": "100.0 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "discussion",
+      "source_offset": 437,
+      "sentence": "We found that an LDL-C level of 70.0 mg/dL or less had no statistically significant association with the risk of CVD compared to patients who had LDL-C between 70.1 and 100.0 mg/dL for primary prevention.",
+      "context_window": "of CVD compared to patients who had LDL-C between 70.1 and 100.0 mg/dL for primary prevention. We did not find a significant, cons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-5347",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5347,
+      "sentence": "The most common adverse effects that occur in approximately 4% of statin-treated patients include gastrointestinal disorders, heartburn, and stomachaches.",
+      "context_window": "The most common adverse effects that occur in approximately 4% of statin-treated patients include gastrointestinal disorde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5801",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5801,
+      "sentence": "Rare and fatal adverse events such as hepatotoxicity and muscle toxicity can also occur. [ 4 ] Furthermore, there are well-documented adverse events such as myalgia, nephropathy, and onset of diabetes mellitus associated with intensified statin treatment that contribute to clinical considerations in statin regimen management. [ 28 , 29 ] In patients aged > 75 years, patients who are taking multiple drugs or drugs with the same metabolic pathway as statins, or those with conditions that require complex medication (e.g., heart transplant or AIDS), statins should be considered at low dosages. [ 21 ] In addition, healthcare professionals are concerned about the geriatric-specific adverse effects of high-intensity statins, such as myalgia and potential drug interactions.",
+      "context_window": "n statin regimen management. [ 28 , 29 ] In patients aged > 75 years, patients who are taking multiple drugs or drugs with the s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-7950",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7950,
+      "sentence": "To ensure the best treatment impact, we included only those patients who were at least 80% adherent to statin therapy during the year prior to the index LDL-C measurement.",
+      "context_window": "t impact, we included only those patients who were at least 80% adherent to statin therapy during the year prior to the ind",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-8154",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8154,
+      "sentence": "To inform long-term statin management, we included only patients who had been consistently taking statins for at least 180 days and evaluated the LDL-C levels of patients in community-based care.",
+      "context_window": "ients who had been consistently taking statins for at least 180 days and evaluated the LDL-C levels of patients in community-bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-8720",
+      "claim_type": "unit_value",
+      "raw_text": "82 months",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8720,
+      "sentence": "In addition, we were unable to detect significant differences in mortality according to the intensity of statin therapy, although our mean follow-up duration was 82 months.",
+      "context_window": "of statin therapy, although our mean follow-up duration was 82 months. This study focused on the association between LDL-C levels",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-9820",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "discussion",
+      "source_offset": 9820,
+      "sentence": "The findings suggest that targeting an LDL-C level of <100 mg/dL achieves the same cardiovascular risk reduction as more aggressive LDL-C targets, which could help minimize the adverse effects more common with higher statin doses needed for lower LDL targets while maximizing the benefits.",
+      "context_window": "apy. The findings suggest that targeting an LDL-C level of <100 mg/dL achieves the same cardiovascular risk reduction as more agg",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}
