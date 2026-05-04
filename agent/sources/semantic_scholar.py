@@ -1,14 +1,21 @@
 """Semantic Scholar adapter.
 
 Endpoint: https://api.semanticscholar.org/graph/v1/paper/search
-Free tier (no auth): 100 requests / 5min. Optional API key for
-higher rate limits — set SEMANTIC_SCHOLAR_API_KEY env var.
+Authenticated (with SEMANTIC_SCHOLAR_API_KEY): 1 req/s cumulative
+across all endpoints. Without key: ~100 req/5min public tier.
+
+Refactor 2026-05-04: added a class-level async rate limit (1 req/s)
+to keep the SourceAggregator's parallel fan-out below threshold.
+The user's S2 key (s2k-...) was approved with the standard 1 rps
+limit — exceeding that gets 429 + the key gets temporarily blocked.
 
 Returns rich citation graph + abstract + open-access PDFs.
 """
 from __future__ import annotations
 
+import asyncio
 import os
+import time
 from typing import Any
 
 import httpx
@@ -23,6 +30,26 @@ _FIELDS = (
     "paperId,title,abstract,year,authors,venue,externalIds,"
     "openAccessPdf,citationCount"
 )
+
+# Global rate-limit guard: at most 1 request every 1.1 seconds
+# (slight buffer above the 1 rps cumulative limit). Async-safe lock
+# protects last-call timestamp across concurrent SourceAggregator
+# fan-outs.
+_RATE_LIMIT_SEC = 1.1
+_rate_lock = asyncio.Lock()
+_last_call_ts: float = 0.0
+
+
+async def _await_rate_limit() -> None:
+    """Async-safe rate limiter: ensures at most 1 call per
+    _RATE_LIMIT_SEC seconds, cumulative across all instances."""
+    global _last_call_ts
+    async with _rate_lock:
+        now = time.monotonic()
+        wait = _RATE_LIMIT_SEC - (now - _last_call_ts)
+        if wait > 0:
+            await asyncio.sleep(wait)
+        _last_call_ts = time.monotonic()
 
 
 class SemanticScholarClient:
@@ -46,6 +73,8 @@ class SemanticScholarClient:
             "limit": str(max(1, min(limit, 25))),
             "fields": _FIELDS,
         }
+        # Rate-limit gate (1 req per 1.1s cumulative)
+        await _await_rate_limit()
         response = await client.get(
             _SEMANTIC_SCHOLAR_URL, params=params,
             headers=self._headers(),
