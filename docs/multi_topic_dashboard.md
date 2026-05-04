@@ -1,10 +1,10 @@
 # Researka Multi-Topic Dashboard
 
 **Topics attempted:** 6
-**Topics with ≥1 AAA run:** 2
+**Topics with ≥1 AAA run:** 3
 **Topics with consecutive-AAA cert:** 2
-**Total runs across all topics:** 79
-**Cumulative LLM cost:** $1.618
+**Total runs across all topics:** 83
+**Cumulative LLM cost:** $1.591
 **Total reviewer interventions logged:** 57 applied (3 via repair loop)
 
 ## Per-Topic Status
@@ -13,12 +13,25 @@
 |---|---|---|---|---|---|---|---|---|---|
 | metformin | AAA | 🏆 | 47 | 21 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
 | rapamycin | AAA | 🏆 | 20 | 5 | 13/13 | 0/0 | 100% | 9,002 | $0.306 |
-| aspirin | Trust-Spine Pass | — | 1 | 0 | 12/13 | 0/0 | 100% | 8,050 | $0.263 |
+| aspirin | AAA | ✅ | 5 | 1 | 13/13 | 0/0 | 100% | 7,553 | $0.236 |
 | statins | Trust-Spine Pass | — | 8 | 0 | 12/13 | 0/0 | 100% | 9,135 | $0.240 |
 | glp1 | SHIP-BLOCKED | — | 2 | 0 | 8/13 | 0/0 | 100% | 4,732 | $0.269 |
 | senolytics | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/0 | 100% | 6,462 | $0.178 |
 
 ## Best Run per Topic
+
+### aspirin
+
+- **Best run:** `synthesis-aspirin-v06-AAA4-2026-05-04T17-30-00Z`
+- **Verdict:** AAA
+- **Cert (consecutive-AAA gate):** pending
+- **Stage-1 audit:** 13/13
+- **Stage-2 consistency:** P1=0 P2=0
+- **Q2 numeric traceability:** 100%
+- **Grok unresolved P1:** 0
+- **Word count:** 7,553
+- **LLM cost:** $0.236
+- **Patches applied:** 4 (0 via repair loop)
 
 ### metformin
 
@@ -45,19 +58,6 @@
 - **Word count:** 9,002
 - **LLM cost:** $0.306
 - **Patches applied:** 8 (0 via repair loop)
-
-### aspirin
-
-- **Best run:** `synthesis-aspirin-v06-proof006-2026-05-04T16-05-37Z`
-- **Verdict:** Trust-Spine Pass
-- **Cert (consecutive-AAA gate):** pending
-- **Stage-1 audit:** 12/13
-- **Stage-2 consistency:** P1=0 P2=0
-- **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
-- **Word count:** 8,050
-- **LLM cost:** $0.263
-- **Patches applied:** 4 (0 via repair loop)
 
 ### statins
 
