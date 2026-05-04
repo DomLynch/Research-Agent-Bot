@@ -68,13 +68,47 @@ def _load_background_lit_numerics() -> set[str]:
 
 
 def _load_corpus_numerics() -> set[str]:
-    """All numeric tokens that appear in v0.6.0 high-confidence claims
-    PLUS pre-vetted background-literature thresholds (Fix #16)."""
+    """All numeric tokens that appear in v0.6.0 quant-claims PLUS
+    pre-vetted background-literature thresholds (Fix #16).
+
+    Refactor 2026-05-04 (aspirin Q2 fix): for objective-fact categories
+    (dose, sample_size, year, sample_count) the binding_confidence
+    filter is dropped. These are factual values pulled directly from
+    the source paper — partial confidence reflects uncertainty about
+    the claim's INTERPRETIVE ROLE (active vs control arm, primary vs
+    secondary endpoint), not about whether the number itself appears
+    in the corpus. The traceability audit asks "is this number in the
+    corpus?" — partial confidence is sufficient evidence for that.
+
+    For interpretive claims (hazard_ratio, odds_ratio, percentage tied
+    to an effect, p_value), high confidence is still required so the
+    writer can't backfill a fabricated effect with a coincidentally
+    matching partial-confidence value.
+    """
     nums: set[str] = set()
+    OBJECTIVE_TYPES = {
+        "unit_value",       # dose / age / years / kg
+        "sample_size",      # n=
+        "year",             # 2018, 2025
+        "sample_count",     # cohort sizes
+    }
     for path in QUANT_DIR.glob("*.quant_claims.json"):
         d = json.loads(path.read_text())
         for c in d.get("claims", []):
-            if c.get("binding_confidence") != "high":
+            confidence = c.get("binding_confidence", "")
+            claim_type = c.get("claim_type", "")
+            # Always accept high-confidence claims (interpretive +
+            # objective). Accept partial-confidence ONLY for
+            # objective-fact claim types where the number itself is a
+            # primary-source fact, not an interpretive judgment.
+            if confidence == "high":
+                pass
+            elif (
+                confidence == "partial"
+                and claim_type in OBJECTIVE_TYPES
+            ):
+                pass
+            else:
                 continue
             for v in c.get("numeric_values") or ():
                 nums.add(str(v))
