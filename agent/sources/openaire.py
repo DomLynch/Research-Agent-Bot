@@ -63,17 +63,19 @@ class OpenAireClient:
             )
             if not entity:
                 return None
-            # Title may be string or list
-            title_field = entity.get("title", "")
+            # Title may be: str, dict {"$": "..."}, or LIST of dicts
+            # (real shape — multiple title types: main title,
+            # alternative title, sub-title, etc., each as a dict).
+            # Pre-fix the parser only handled str/dict; lists silently
+            # raised AttributeError and the broad except swallowed
+            # every OpenAIRE record. This fix handles all three.
             title = clean_text(
-                title_field if isinstance(title_field, str)
-                else (title_field.get("$") or ""),
+                _extract_string_field(entity.get("title", ""),
+                                      prefer_classid="main title"),
                 limit=300,
             )
-            desc_field = entity.get("description", "")
             abstract = clean_text(
-                desc_field if isinstance(desc_field, str)
-                else (desc_field.get("$") or ""),
+                _extract_string_field(entity.get("description", "")),
                 limit=4000,
             )
             if not title or not abstract:
@@ -93,13 +95,11 @@ class OpenAireClient:
                     )
                     if doi:
                         break
-            # Year
-            date_field = entity.get("dateofacceptance", "")
-            year = None
-            date_str = (
-                date_field if isinstance(date_field, str)
-                else (date_field.get("$") or "")
+            # Year — same str/dict/list polymorphism as title
+            date_str = _extract_string_field(
+                entity.get("dateofacceptance", ""),
             )
+            year = None
             if date_str and date_str[:4].isdigit():
                 year = int(date_str[:4])
             url = (
@@ -120,3 +120,34 @@ class OpenAireClient:
             )
         except (KeyError, AttributeError, TypeError):
             return None
+
+
+def _extract_string_field(field: Any, *, prefer_classid: str = "") -> str:
+    """OpenAIRE wraps primitive values in {"$": "..."} dicts and
+    sometimes returns a LIST of such dicts (e.g. multiple titles per
+    record, classified by @classid="main title" / "alternative title").
+
+    Returns the best-string for any of: str, dict {"$": ...}, or
+    list of either. When `prefer_classid` is set and the input is a
+    list, picks the entry whose @classid matches first."""
+    if isinstance(field, str):
+        return field
+    if isinstance(field, dict):
+        return str(field.get("$") or "")
+    if isinstance(field, list):
+        if prefer_classid:
+            for item in field:
+                if (
+                    isinstance(item, dict)
+                    and item.get("@classid") == prefer_classid
+                ):
+                    return str(item.get("$") or "")
+        # Fall back to first usable string
+        for item in field:
+            if isinstance(item, str) and item:
+                return item
+            if isinstance(item, dict):
+                v = item.get("$")
+                if v:
+                    return str(v)
+    return ""
