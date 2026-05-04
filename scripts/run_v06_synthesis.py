@@ -1212,10 +1212,26 @@ async def _run_post_paper_pipeline(
         #   - "auto_stripped"       → repair loop exhausted; offending
         #                             BEFORE region deleted; resolved
         #                             agent-to-agent. NOT counted.
+        # Refactor 2026-05-04: distinguish Grok HALLUCINATIONS from
+        # genuine unresolved P1s. When Grok proposes a patch with a
+        # `before` text that doesn't exist in the paper, that's
+        # Grok hallucinating an issue — the paper itself is fine.
+        # The smart-gate rejects with reason starting "'before' text
+        # not found in paper". Don't count those as unresolved P1.
+        def _is_grok_hallucination(r) -> bool:
+            reason = (r.reason_for_decision or "").lower()
+            return (
+                "before' text not found" in reason
+                or "before text not found" in reason
+                or "appears 0x" in reason
+            )
         grok_unresolved_p1 = sum(
             1 for r in results
             if r.decision in ("rejected", "flagged")
-            and (r.severity or "").upper() in {"P1", "HIGH", "CRITICAL"}
+            and (r.severity or "").upper() in {
+                "P1", "HIGH", "CRITICAL",
+            }
+            and not _is_grok_hallucination(r)
         )
         print(
             f"[pipeline]   applied={n_applied} rejected={n_rejected} "
