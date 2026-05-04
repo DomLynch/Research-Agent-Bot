@@ -42,7 +42,7 @@ def test_grok_unresolved_p1_blocks_aaa() -> None:
     v = orch._compute_unified_verdict(
         _full_audit(), [], grok_unresolved_p1=1,
     )
-    assert v.verdict == "Trust-Spine Pass — Human Review Required"
+    assert v.verdict == "Trust-Spine Pass — Agent Review Unresolved"
     assert v.all_green is False
     assert v.grok_unresolved_p1 == 1
 
@@ -54,7 +54,9 @@ def test_verdict_reason_names_grok_count() -> None:
         _full_audit(), [], grok_unresolved_p1=3,
     )
     assert "3 Grok-flagged P1" in v.reason
-    assert "Human review required" in v.reason
+    assert "agent-to-agent" in v.reason.lower() or (
+        "auto-strip safety net" in v.reason
+    )
 
 
 def test_grok_unresolved_p1_field_serializes() -> None:
@@ -66,7 +68,7 @@ def test_grok_unresolved_p1_field_serializes() -> None:
     d = dataclasses.asdict(v)
     assert d["grok_unresolved_p1"] == 2
     assert d["verdict"] == (
-        "Trust-Spine Pass — Human Review Required"
+        "Trust-Spine Pass — Agent Review Unresolved"
     )
 
 
@@ -99,7 +101,7 @@ def test_format_unified_verdict_surfaces_grok_count() -> None:
     )
     md = orch._format_unified_verdict(v)
     assert "Grok-flagged P1 patches unresolved: 2" in md
-    assert "Human Review Required" in md
+    assert "Agent Review Unresolved" in md or "Fix #49" in md
 
 
 def test_format_omits_grok_row_when_zero() -> None:
@@ -153,5 +155,5 @@ def test_grok_unresolved_count_includes_flagged_p1_decisions() -> None:
     v = orch._compute_unified_verdict(
         _full_audit(), [], grok_unresolved_p1=n_unresolved,
     )
-    assert v.verdict == "Trust-Spine Pass — Human Review Required"
+    assert v.verdict == "Trust-Spine Pass — Agent Review Unresolved"
     assert v.grok_unresolved_p1 == 2

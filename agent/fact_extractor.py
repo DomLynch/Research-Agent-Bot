@@ -426,7 +426,7 @@ async def extract_facts_from_item(
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
     require_source_trace: bool = True,
-    temperature: float = 0.0,
+    temperature: float = 0.02,  # Fix #50: honest floor (0.0 is fake-deterministic on cloud LLMs)
     seed: int | None = None,
 ) -> tuple[list[Fact], list[FactRejection]]:
     """Extract facts from one abstract via the LLM chain.
@@ -546,7 +546,7 @@ async def extract_facts_from_bundle(
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
     require_source_trace: bool = True,
-    temperature: float = 0.0,
+    temperature: float = 0.02,  # Fix #50: honest floor (0.0 is fake-deterministic on cloud LLMs)
     max_concurrency: int = 4,
     seed: int | None = None,
 ) -> tuple[list[Fact], list[FactRejection]]:

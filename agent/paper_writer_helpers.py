@@ -52,7 +52,12 @@ async def call_llm_section(
                 chain=chain,
                 client=client,
                 ledger=ledger,
-                temperature=0.0,
+                # Fix #50: 0.0 → 0.5 for genuine synthesis
+                # reasoning. The deterministic gates (Q2/Q9/
+                # Q11-Q13/smart-gate/Fix #46) catch any
+                # hallucination — LLMs should think freely
+                # within the trust-spine envelope.
+                temperature=0.5,
                 seed=seed,
             ),
             timeout=PER_CALL_TIMEOUT_SEC,

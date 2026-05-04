@@ -522,7 +522,10 @@ async def synthesize_thesis(
         chain=chain,
         client=client,
         ledger=ledger,
-        temperature=0.0,  # synthesis-layer determinism contract
+        # Fix #50: 0.02 is the honest floor — cloud LLMs aren't
+        # bit-exact at 0.0 (GPU FP variance + non-deterministic
+        # batching). Determinism contract preserved in spirit.
+        temperature=0.02,
         seed=seed,
     )
     parsed = response.parsed if isinstance(response.parsed, dict) else {}

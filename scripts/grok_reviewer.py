@@ -207,7 +207,12 @@ async def _call_one(
     url = base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": model,
-        "temperature": 0.1,
+        # Fix #50: 0.1 → 0.5. Reviewer needs full reasoning
+        # variance to catch nuanced issues. Trust-spine gates
+        # (smart-gate Fix #39, post-apply audit guard, Fix #46
+        # auto-strip) catch unsafe patches downstream — Grok
+        # should think freely.
+        "temperature": 0.5,
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": user},
@@ -296,6 +301,98 @@ def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
         auto_applicable=auto,
         requires_trace=requires_trace,
     )
+
+
+def _build_repair_prompt(
+    flagged: list[tuple[Any, str]],
+    paper_md: str,
+) -> tuple[str, str]:
+    """Fix #49: build a focused repair-prompt for Grok. Each entry in
+    `flagged` is (rejected_patch, rejection_reason). Grok is asked
+    to propose a SHORTER alternative that passes the smart-gate, OR
+    explicitly state 'no safe fix possible' so the pipeline can
+    auto-strip the offending region."""
+    system = (
+        "You are repairing patches you previously proposed that the "
+        "deterministic smart-gate REJECTED. The gate auto-applies "
+        "claim/numeric patches ONLY when AFTER:\n"
+        "  - has no new numerics, citations, or capitalized "
+        "identifiers\n"
+        "  - has word count ≤ BEFORE\n"
+        "  - words are a strict subset of BEFORE\n"
+        "  - does not regress Q2 trace or Stage-2 audit\n\n"
+        "For each rejected patch below, propose ONE of:\n"
+        "  (a) A shorter/safer alternative that passes the gate "
+        "(prefer pure deletions — drop wrong words, keep clean ones)\n"
+        "  (b) An empty 'after' (delete the whole BEFORE)\n"
+        "  (c) JSON with `patch_type='unfixable'` if you cannot "
+        "propose a safe edit\n\n"
+        "Output ONLY a JSON object: {\"patches\": [<TypedPatch>...]}\n"
+        "Use the SAME `id` field as the rejected patch. New "
+        "patch_type can stay claim/numeric/citation/formatting/"
+        "structure OR 'unfixable'.\n"
+        "Output AT MOST one patch per rejected input.\n"
+    )
+    rejected_block = []
+    for p, reason in flagged:
+        rejected_block.append(
+            f"REJECTED PATCH {p.id}\n"
+            f"  patch_type: {p.patch_type}\n"
+            f"  severity: {p.severity}\n"
+            f"  before: {p.before!r}\n"
+            f"  after:  {p.after!r}\n"
+            f"  rejection_reason: {reason}\n"
+        )
+    user = (
+        "Repair the following patches. The full paper is below for "
+        "context.\n\n"
+        + "\n".join(rejected_block)
+        + "\n\n--- FULL PAPER ---\n\n" + paper_md
+    )
+    return system, user
+
+
+async def repair_flagged_patches(
+    flagged: list[tuple[Any, str]],
+    paper_md: str,
+    *,
+    model: str = "x-ai/grok-4.3",
+    fallback_model: str = "mistralai/mistral-small-2603",
+    api_key: str | None = None,
+    base_url: str = "https://openrouter.ai/api/v1",
+    client: Any | None = None,
+) -> list[TypedPatch]:
+    """Fix #49: agent-to-agent repair pass. Re-prompts Grok with the
+    rejection reasons; returns repaired TypedPatch list (or empty
+    list if Grok returns 'unfixable' for every entry).
+
+    Caller threads these through the SAME apply_patches gate; Grok's
+    proposals here have no special privilege — they pass or fail the
+    smart-gate the same way the original proposals did."""
+    if not flagged:
+        return []
+    api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
+    if not api_key:
+        return []  # silently skip if no key
+    system, user = _build_repair_prompt(flagged, paper_md)
+    import httpx
+    own_client = client is None
+    c = client or httpx.AsyncClient(timeout=300.0)
+    try:
+        raw, _model_used, _cost = await _call_with_fallback(
+            system, user, model, fallback_model, api_key, base_url, c,
+        )
+    finally:
+        if own_client:
+            await c.aclose()
+    out: list[TypedPatch] = []
+    for idx, p_raw in enumerate(raw.get("patches") or []):
+        if (p_raw.get("patch_type") or "").lower() == "unfixable":
+            continue  # Grok admits no safe fix; caller may auto-strip
+        np = _normalize_patch(p_raw, idx)
+        if np is not None:
+            out.append(np)
+    return out
 
 
 async def review_with_grok(
