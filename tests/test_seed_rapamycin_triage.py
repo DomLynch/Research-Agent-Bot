@@ -3,16 +3,36 @@
 The triage step is pure-Python (no LLM cost) and reads from the
 prior pipeline's evidence_cards.json (67 cards). Tests cover the
 selection contract: pinning, off-topic exclusion, scoring rank.
+
+Note: the seed cards file lives under runs/ which is gitignored,
+so it's local-only on the developer's MacBook. CI/VPS won't have
+the file → the data-dependent tests skip gracefully. The pure
+function tests (score monotonicity) always run.
 """
 from __future__ import annotations
 
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import seed_rapamycin_corpus as seed  # noqa: E402
 
 
+# Module-level skip marker for tests that require the local seed pool.
+_SEED_AVAILABLE = seed.SEED_CARDS.exists()
+_skip_no_seed = pytest.mark.skipif(
+    not _SEED_AVAILABLE,
+    reason=(
+        f"seed cards not found at {seed.SEED_CARDS} — runs/ is "
+        "gitignored, this test runs only on dev machines with the "
+        "prior pipeline's local artifacts"
+    ),
+)
+
+
+@_skip_no_seed
 def test_triage_excludes_off_topic_ncts() -> None:
     """Cards on EXCLUDE_NCTS list never appear in the selection,
     regardless of tier — alpha-ketoglutarate trial isn't a rapamycin
@@ -27,6 +47,7 @@ def test_triage_excludes_off_topic_ncts() -> None:
         )
 
 
+@_skip_no_seed
 def test_triage_filters_off_topic_abstracts() -> None:
     """Cards whose abstract+title don't mention rapamycin/sirolimus
     are excluded. The prior pipeline pulled some mTOR-adjacent
@@ -46,6 +67,7 @@ def test_triage_filters_off_topic_abstracts() -> None:
         )
 
 
+@_skip_no_seed
 def test_triage_pins_canonical_ncts_when_present() -> None:
     """Pinned NCTs are guaranteed slots — the moat per
     topic_packs/rapamycin.toml. They go in even if their score is
@@ -64,6 +86,7 @@ def test_triage_pins_canonical_ncts_when_present() -> None:
     )
 
 
+@_skip_no_seed
 def test_triage_returns_target_count_or_less() -> None:
     """top_n is a ceiling; selection ≤ top_n. If filtered candidate
     pool is smaller than top_n, return the full pool."""
@@ -72,6 +95,7 @@ def test_triage_returns_target_count_or_less() -> None:
     assert result["n_selected"] <= result["n_after_filter"]
 
 
+@_skip_no_seed
 def test_triage_writes_output_json() -> None:
     """Triage writes _triage.json to the corpus directory for
     downstream --extract to consume."""
@@ -99,6 +123,7 @@ def test_triage_score_function_monotonic() -> None:
     assert seed._score(a1_card) > seed._score(c_card)
 
 
+@_skip_no_seed
 def test_triage_pearl_bubbles_to_top() -> None:
     """PEARL is the load-bearing human RCT for rapamycin/aging.
     Even without canonical-NCT pinning (the seed card lacks an NCT
@@ -113,6 +138,7 @@ def test_triage_pearl_bubbles_to_top() -> None:
     )
 
 
+@_skip_no_seed
 def test_triage_pinned_ncts_appear_first() -> None:
     """Pinned cards come before unpinned in the selection list — so
     --extract processes the canonical trials first and burns its LLM
