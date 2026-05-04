@@ -46,12 +46,64 @@ _STALE_SPAR_SENT_RE = re.compile(
 )
 
 
+_DEPTH_PROTECTED_SECTIONS = {
+    # Sections whose post-strip word count is policed by Fix #53
+    # depth-preservation guard. Floors are SAFETY MARGINS above the
+    # audit thresholds (Q11=800, Q12=800), so a tiny drift below
+    # margin doesn't immediately break the audit gate. Limitations
+    # + Conclusion added per reviewer request — they're analytical-
+    # core too and easy strip-targets when claim-strength repair
+    # fires on hedged language.
+    "Discussion": 850,            # Q11 audit floor 800 + 50 margin
+    "Cross-Domain Synthesis": 850,  # Q12 audit floor 800 + 50 margin
+    "Limitations": 200,           # analytical-core, not Q-gated
+    "Conclusion": 150,            # analytical-core, not Q-gated
+}
+
+
+def _section_word_count(paper: str, heading: str) -> int:
+    """Word count for one ## heading section (header line excluded)."""
+    m = re.search(
+        rf"^##\s+{re.escape(heading)}(.*?)(?=^##\s+\w|\Z)",
+        paper, re.DOTALL | re.MULTILINE,
+    )
+    if not m:
+        return 0
+    return len(m.group(1).split())
+
+
+def _extract_section(paper: str, heading: str) -> tuple[int, int, str]:
+    """Return (start_offset, end_offset, body) of a ## heading
+    section. Used by Fix #53 to roll back over-aggressive strips."""
+    m = re.search(
+        rf"^##\s+{re.escape(heading)}(.*?)(?=^##\s+\w|\Z)",
+        paper, re.DOTALL | re.MULTILINE,
+    )
+    if not m:
+        return -1, -1, ""
+    return m.start(), m.end(), m.group(0)
+
+
 def apply_fixes(
     paper_md: str, issues: list[dict],
 ) -> tuple[str, list[dict]]:
-    """Apply auto-fixable patches; return (new_md, log)."""
+    """Apply auto-fixable patches; return (new_md, log).
+
+    Fix #53: snapshots Discussion, Cross-Domain Synthesis,
+    Limitations + Conclusion BEFORE any strip pass runs. After all
+    strips, if a protected section has dropped below its safety-
+    margin floor (Discussion/CD: 850 = Q11/Q12 800 + 50 margin;
+    Limitations: 200; Conclusion: 150), the section is restored to
+    its pre-strip state. Trust-spine deletion safety +
+    analytical-depth preservation."""
     new_md = paper_md
     log: list[dict] = []
+    # Snapshot for Fix #53 depth-preservation guard
+    pre_strip_sections: dict[str, str] = {}
+    for heading in _DEPTH_PROTECTED_SECTIONS:
+        _s, _e, body = _extract_section(new_md, heading)
+        if body:
+            pre_strip_sections[heading] = body
 
     # 1. Strip (potentially) inline artifacts (highest count, run first).
     pot_count_before = len(_POTENTIALLY_RE.findall(new_md))
@@ -272,6 +324,52 @@ def apply_fixes(
     # Strip residual blank-line runs created by deletions
     # (collapse 3+ newlines to a single paragraph break: \n\n).
     new_md = re.sub(r"\n{3,}", "\n\n", new_md)
+
+    # Fix #53: depth-preservation guard — restore protected sections
+    # if the cumulative strips above pushed Discussion / Cross-Domain
+    # / Limitations / Conclusion below their safety-margin floors.
+    # The analytical-depth backstop: trust-spine deletions are
+    # correct individually but can collectively over-aggress on the
+    # analytical-core sections (clean-repro showed Q12 dropping from
+    # 930 → 582 words after auto-strips). Only restores when:
+    #   (a) a snapshot was taken (section existed pre-strip), AND
+    #   (b) the post-strip count is BELOW the floor, AND
+    #   (c) the pre-strip count was ABOVE the floor (i.e. this
+    #       regression was strip-caused, not writer-caused).
+    # If the writer never produced enough words, the original
+    # depth-floor failure is preserved — Fix #53 rolls back over-
+    # aggressive strips, not writer shortfalls. Section heading
+    # vanishing entirely (e.g. SPAR-strip ate a header line) is
+    # handled by re-extracting after restore — the snapshot
+    # preserves the heading.
+    for heading, floor in _DEPTH_PROTECTED_SECTIONS.items():
+        if heading not in pre_strip_sections:
+            continue
+        post_count = _section_word_count(new_md, heading)
+        if post_count >= floor:
+            continue  # still above floor — strips were safe
+        pre_count = len(pre_strip_sections[heading].split())
+        if pre_count < floor:
+            continue  # was already below floor — not strip-caused
+        # Strips pushed a previously-deep section below its floor.
+        # Restore the snapshot.
+        s, e, _body = _extract_section(new_md, heading)
+        if s < 0:
+            continue  # heading vanished entirely — can't restore
+        new_md = new_md[:s] + pre_strip_sections[heading] + new_md[e:]
+        log.append({
+            "fix_type": "depth_preservation_restore",
+            "n_changes": 1,
+            "description": (
+                f"restored '{heading}' section to pre-strip state "
+                f"({post_count} → {pre_count} words; cumulative "
+                f"auto-strips would have dropped it below the "
+                f"depth-safety floor of {floor}; Fix #53 depth guard "
+                "reverted strips on this section)"
+            ),
+        })
+        # Re-collapse blank-line runs in case restoration mismatched.
+        new_md = re.sub(r"\n{3,}", "\n\n", new_md)
 
     return new_md, log
 
