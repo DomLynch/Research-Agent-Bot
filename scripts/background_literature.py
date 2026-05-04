@@ -175,12 +175,24 @@ def find_unsourced_background_uses(
     sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])|\n\n+")
     sentences = sent_split.split(paper_md)
     unsourced: list[tuple[str, str, str]] = []
+    # Build a digit-boundary-aware regex per entry. The numeric string
+    # may contain non-word chars ('%', '/', '.') so `\b` doesn't always
+    # work. We use a NEGATIVE LOOKBEHIND that forbids a leading digit
+    # to prevent '5%' from matching inside '95%' (CI notation).
+    # Refactor 2026-05-04: fixes a false positive where '5%' bg-lit
+    # entry was triggering on every '95% CI:' in the paper.
+    entry_patterns: dict[str, re.Pattern] = {}
     for entry in registry.values():
-        # Use word-boundary-ish substring match (numeric strings often
-        # contain non-word chars like `%`, `/`, `.` so simple `\b`
-        # doesn't always work — use literal substring).
+        # Anchor: not preceded by a digit, then literal numeric.
+        pat = (
+            r"(?<![\d.])"
+            + re.escape(entry.numeric)
+        )
+        entry_patterns[entry.key] = re.compile(pat)
+    for entry in registry.values():
+        pat = entry_patterns[entry.key]
         for sent in sentences:
-            if entry.numeric not in sent:
+            if not pat.search(sent):
                 continue
             if entry.citation_token in sent:
                 continue  # cited — admitted
