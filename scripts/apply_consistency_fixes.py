@@ -465,6 +465,27 @@ def apply_fixes(
             ),
         })
 
+    # Fix #53c (2026-05-04): re-strip cosmetic '(potentially)' inline
+    # repair-artifacts AFTER depth-preservation. The restore can put
+    # them back if the protected section dropped below its floor;
+    # losing 16 chars of artifact never threatens a 850-word floor,
+    # so this re-strip is unconditionally safe. Without this re-pass
+    # the C05 P2 issue resurfaces in the final consistency audit even
+    # though the strip "fired" earlier.
+    pot_re_count = len(_POTENTIALLY_RE.findall(new_md))
+    if pot_re_count:
+        new_md = _POTENTIALLY_RE.sub("", new_md)
+        log.append({
+            "fix_type": "repair_artifact_restrip_post_depth",
+            "n_changes": pot_re_count,
+            "description": (
+                "re-stripped '(potentially)' inline artifacts after "
+                "Fix #53 depth-preservation restore re-introduced "
+                "them. Cosmetic strip; safe to re-apply unconditionally "
+                "(Fix #53c)"
+            ),
+        })
+
     return new_md, log
 
 
