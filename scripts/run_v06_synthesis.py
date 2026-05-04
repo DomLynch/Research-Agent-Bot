@@ -1331,12 +1331,14 @@ async def _run_post_paper_pipeline(
             "extractor": _settings.mimo_model,
             "thesis": _settings.mimo_model,
         }
-        # Topic from the run dir name: synthesis-<topic>-v06-...
-        _name_parts = paper_path.parent.name.split("-")
-        _topic = (
-            _name_parts[1] if len(_name_parts) >= 2
-            else "unknown"
-        )
+        # P1 reviewer fix (2026-05-04 wave 5): use the orchestrator's
+        # _ACTIVE_TOPIC directly. The previous regex on the run-dir
+        # name (synthesis-<topic>-v06-...) only worked for the default
+        # naming convention; custom out-dirs (e.g.
+        # runs/publication/rapamycin/) have a single-segment dir name
+        # with no hyphens, so the parser fell through to "unknown" and
+        # leaked that string into the Search Provenance section.
+        _topic = _ACTIVE_TOPIC or "unknown"
         appendix_md = compose_appendix(
             manifest, audit=audit_report,
             model_stack=model_stack,
