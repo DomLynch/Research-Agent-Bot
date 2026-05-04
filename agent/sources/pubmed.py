@@ -5,9 +5,12 @@ Endpoints:
   efetch.fcgi   — returns full article XML for a PMID list
 
 Two calls per search. Polite pool: no API key, ≤3 req/s.
+With NCBI_API_KEY env var: 10 req/s (free key, register at
+https://account.ncbi.nlm.nih.gov/settings/).
 """
 from __future__ import annotations
 
+import os
 import xml.etree.ElementTree as ET
 
 import httpx
@@ -16,6 +19,14 @@ from agent.sources._base import clean_text, normalize_doi
 from agent.types import RawHit
 
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+
+
+def _ncbi_key() -> str | None:
+    """Return NCBI API key from env. None = polite-pool (3 req/s).
+    Set: NCBI_API_KEY=<your-key>.
+    Register at https://account.ncbi.nlm.nih.gov/settings/."""
+    key = os.environ.get("NCBI_API_KEY")
+    return key.strip() if key else None
 
 
 class PubMedClient:
@@ -43,6 +54,10 @@ class PubMedClient:
             "sort": "relevance",
             "term": clean_text(query, limit=240),
         }
+        # Add NCBI API key if available (3 req/s → 10 req/s)
+        key = _ncbi_key()
+        if key:
+            params["api_key"] = key
         response = await client.get(f"{EUTILS_BASE}/esearch.fcgi", params=params)
         response.raise_for_status()
         payload = response.json().get("esearchresult", {})
@@ -57,6 +72,10 @@ class PubMedClient:
         limit: int,
     ) -> list[RawHit]:
         params = {"db": "pubmed", "retmode": "xml", "id": ",".join(ids)}
+        # NCBI key bumps rate limit from 3/s → 10/s
+        key = _ncbi_key()
+        if key:
+            params["api_key"] = key
         response = await client.get(f"{EUTILS_BASE}/efetch.fcgi", params=params)
         response.raise_for_status()
         root = ET.fromstring(response.text)
