@@ -500,7 +500,7 @@ def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
 
 def build_thesis(
     receipts: list[ReceiptSummary], matrix: TensionMatrix,
-    topic: str = "metformin",
+    topic: str,
 ) -> SynthesisThesis:
     """Build a topic-generic deterministic thesis.
 
