@@ -1,0 +1,151 @@
+{
+  "model_used": "x-ai/grok-4.3",
+  "cost_usd": 0.260844,
+  "n_patches": 16,
+  "patches": [
+    {
+      "id": "P01",
+      "patch_type": "claim",
+      "severity": "P1",
+      "location": "Abstract",
+      "before": "The cardiometabolic evidence further complicates the picture: while metformin achieves glycemic control near the ADA 2024 target of 7% HbA1c and reduces mortality in hepatic steatosis populations (95% CI: 0.26\u20130.45), it simultaneously impairs insulin sensitivity within 10 days of initiation accordin",
+      "after": "The cardiometabolic evidence further complicates the picture: while metformin achieves glycemic control near the ADA 2024 target of 7% HbA1c and reduces mortality in hepatic steatosis populations (95% CI: 0.26\u20130.45).",
+      "reason": "Removes claim that metformin impairs insulin sensitivity to resolve direct contradiction with improved insulin sensitivity described for Vujovi\u0107 2026 in Cross-Domain Synthesis."
+    },
+    {
+      "id": "P02",
+      "patch_type": "claim",
+      "severity": "P1",
+      "location": "Introduction",
+      "before": "The drug has been shown to decrease insulin sensitivity over relatively short treatment durations, as demonstrated in mechanistic studies, and its effects on inflammatory signaling and cellular senescence have been explored in both in vitro and animal models.",
+      "after": "",
+      "reason": "Deletes sentence containing claim of decreased insulin sensitivity to eliminate contradiction with improved insulin sensitivity in other sections."
+    },
+    {
+      "id": "P03",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Abstract",
+      "before": "100\u2013300 \u03bcM (Owen 2000) that far exceed therapeutic plasma levels",
+      "after": "100\u2013300 \u03bcM that far exceed therapeutic plasma levels",
+      "reason": "Deletes citation to Owen 2000 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P04",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "approximately 5% (Anisimov 2008), though the magnitude",
+      "after": "approximately 5%, though the magnitude",
+      "reason": "Deletes citation to Anisimov 2008 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P05",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "at concentrations in the 100-300 \u03bcM range (Owen 2000), which is orders of magnitude",
+      "after": "at concentrations in the 100-300 \u03bcM range, which is orders of magnitude",
+      "reason": "Deletes citation to Owen 2000 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P06",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Cross-Domain Synthesis",
+      "before": "gait speed relative to a threshold like 0.8 m/s (Studenski 2011), to see if",
+      "after": "gait speed relative to a threshold like 0.8 m/s, to see if",
+      "reason": "Deletes citation to Studenski 2011 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P07",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Frailty and Physical Performance",
+      "before": "approximately 0.05 m/s per year (Bohannon 1997). The absence",
+      "after": "approximately 0.05 m/s per year. The absence",
+      "reason": "Deletes citation to Bohannon 1997 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P08",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "grip-strength cutoffs of 27 kg for men and 16 kg for women per Cruz-Jentoft 2019), and diverse",
+      "after": "grip-strength cutoffs of 27 kg for men and 16 kg for women), and diverse",
+      "reason": "Deletes citation to Cruz-Jentoft 2019 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P09",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "can reach approximately 20% (Schulz 2010), further complicates",
+      "after": "can reach approximately 20%, further complicates",
+      "reason": "Deletes citation to Schulz 2010 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P10",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Discussion",
+      "before": "approximated by Tancredi 2015 as a hazard ratio of 1.5 for all-cause mortality relative to the general population.",
+      "after": "approximated as a hazard ratio of 1.5 for all-cause mortality relative to the general population.",
+      "reason": "Deletes citation to Tancredi 2015 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P11",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Conclusion",
+      "before": "such as gait speed relative to clinical thresholds like 0.8 m/s (Studenski 2011), to resolve whether",
+      "after": "such as gait speed relative to clinical thresholds like 0.8 m/s, to resolve whether",
+      "reason": "Deletes citation to Studenski 2011 which is absent from the allowed body citations list."
+    },
+    {
+      "id": "P12",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "location": "Introduction",
+      "before": "  _Cited: `Vujovi\u0107 2026`_",
+      "after": "",
+      "reason": "Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens."
+    },
+    {
+      "id": "P13",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "location": "Introduction",
+      "before": "  _Cited: `Walton 2019`, `Konopka 2019`, `Witham 2025`, `Kuo 2026`, `Maio 2026`_",
+      "after": "",
+      "reason": "Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens."
+    },
+    {
+      "id": "P14",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "location": "Introduction",
+      "before": "  _Cited: `Walton 2019`, `Konopka 2019`_",
+      "after": "",
+      "reason": "Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens."
+    },
+    {
+      "id": "P15",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "location": "Background",
+      "before": "  _Cited: `Mohammed 2021`, `Vujovi\u0107 2026`_",
+      "after": "",
+      "reason": "Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens."
+    },
+    {
+      "id": "P16",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "location": "Background",
+      "before": "  _Cited: `Kuo 2026`, `Shadyab 2025`, `Hagstr\u00f6m 2026`, `Patel 2026`, `Konopka 2019`, `Maio 2026`, `Keys 2025`_",
+      "after": "",
+      "reason": "Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens."
+    }
+  ]
+}

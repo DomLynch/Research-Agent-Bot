@@ -1,0 +1,122 @@
+{
+  "applied_at": "2026-05-04T15:47:34+00:00",
+  "n_proposed": 16,
+  "n_applied": 16,
+  "n_rejected": 0,
+  "n_flagged": 0,
+  "n_auto_stripped": 0,
+  "patches": [
+    {
+      "patch_id": "P01",
+      "patch_type": "claim",
+      "severity": "P1",
+      "decision": "applied",
+      "reason_for_decision": "claim smart-gate: simplification pass \u2014 safe simplification (41 \u2192 30 words; AFTER words \u2286 BEFORE words; no new numerics/citations/identifiers). Grok rationale: 'Removes claim that metformin impairs insulin sensitivity to resolve direct contradiction with improved insulin sensitivity described for Vujovi\u0107 2026 in Cross-Domain Synthesis.'"
+    },
+    {
+      "patch_id": "P02",
+      "patch_type": "claim",
+      "severity": "P1",
+      "decision": "applied_via_repair",
+      "reason_for_decision": "AGENT-REPAIR: original flagged, replacement applied. Patch passed simplification gate but POST-APPLY audit regressed: Stage-2 P1+P2 count regressed (0 \u2192 1). claim smart-gate: simplification pass \u2014 safe simplification (38 \u2192 0 words; AFTER words \u2286 BEFORE words; no new numerics/citations/identifiers). Grok rationale: 'Deletes sentence containing claim of decreased insulin sensitivity to eliminate contradiction with improved insulin sensitivity in other sections.'"
+    },
+    {
+      "patch_id": "P03",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Owen 2000 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P04",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Anisimov 2008 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P05",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Owen 2000 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P06",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Studenski 2011 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P07",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Bohannon 1997 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P08",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Cruz-Jentoft 2019 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P09",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Schulz 2010 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P10",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Tancredi 2015 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P11",
+      "patch_type": "citation",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "citation verifier: pass \u2014 no novel citations. Grok rationale: 'Deletes citation to Studenski 2011 which is absent from the allowed body citations list.'"
+    },
+    {
+      "patch_id": "P12",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "formatting auto-apply per type contract. Grok rationale: 'Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens.'"
+    },
+    {
+      "patch_id": "P13",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "formatting auto-apply per type contract. Grok rationale: 'Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens.'"
+    },
+    {
+      "patch_id": "P14",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "formatting auto-apply per type contract. Grok rationale: 'Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens.'"
+    },
+    {
+      "patch_id": "P15",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "formatting auto-apply per type contract. Grok rationale: 'Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens.'"
+    },
+    {
+      "patch_id": "P16",
+      "patch_type": "formatting",
+      "severity": "P2",
+      "decision": "applied",
+      "reason_for_decision": "formatting auto-apply per type contract. Grok rationale: 'Removes pipeline artifact with backticks that violates body citation format requirement for Author-Year tokens.'"
+    }
+  ]
+}
