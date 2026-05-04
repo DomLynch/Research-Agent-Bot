@@ -15,12 +15,23 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "pytest>=8,<9",
+  # Required for async-test support: tests/test_source_hardening.py and
+  # tests/test_enrichment_v2.py use @pytest.mark.asyncio. Without this
+  # plugin a clean `pytest -q` fails 72 tests with "async def functions
+  # are not natively supported." Pinned to 1.x for the asyncio_mode auto
+  # default.
+  "pytest-asyncio>=1,<2",
   "ruff>=0.13,<1",
 ]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+# Auto-mode: pytest-asyncio treats `async def test_*` as async tests
+# without requiring per-test @pytest.mark.asyncio. Existing tests use
+# the marker explicitly; this keeps "strict" semantics consistent with
+# how the suite was written.
+asyncio_mode = "strict"
 
 [tool.setuptools.packages.find]
 # Only ship the V1 runtime. agent_legacy/ stays on disk for git archaeology
