@@ -91,7 +91,7 @@ _DATABASES_NOT_QUERIED = [
 
 
 def build_search_provenance_appendix(
-    manifest: dict[str, Any], topic: str = "metformin",
+    manifest: dict[str, Any], topic: str,
 ) -> str:
     """Compose the Search Provenance section.
 
@@ -530,7 +530,7 @@ def compose_appendix(
     audit: dict[str, Any] | None = None,
     model_stack: dict[str, str] | None = None,
     *,
-    topic: str = "metformin",
+    topic: str,
     run_id: str = "unknown-run",
     git_sha: str = "unknown",
     bundle_path: str | None = None,

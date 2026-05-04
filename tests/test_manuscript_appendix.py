@@ -70,7 +70,7 @@ def _fake_model_stack() -> dict:
 def test_search_provenance_names_databases_queried() -> None:
     """All four backbone databases must be named so a reader can
     reproduce the retrieval pool."""
-    md = appx.build_search_provenance_appendix(_fake_manifest())
+    md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
     assert "PubMed" in md
     assert "Europe PMC" in md
     assert "OpenAlex" in md
@@ -80,7 +80,7 @@ def test_search_provenance_names_databases_queried() -> None:
 def test_search_provenance_acknowledges_databases_not_queried() -> None:
     """Honest framing: name what we DIDN'T query so reviewers
     aren't surprised. PRISMA-grade transparency."""
-    md = appx.build_search_provenance_appendix(_fake_manifest())
+    md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
     assert "bioRxiv" in md or "biorxiv" in md.lower()
     assert "Web of Science" in md or "scopus" in md.lower()
     assert "Google Scholar" in md or "Cochrane" in md
@@ -89,7 +89,7 @@ def test_search_provenance_acknowledges_databases_not_queried() -> None:
 def test_search_provenance_does_not_claim_prisma_compliance() -> None:
     """Critical honesty constraint: must NOT claim PRISMA compliance.
     The reviewer flagged this exact issue."""
-    md = appx.build_search_provenance_appendix(_fake_manifest())
+    md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
     assert "not a PRISMA" in md or "not PRISMA" in md
     assert "do not claim" in md.lower() or (
         "we do not" in md.lower()
@@ -99,7 +99,7 @@ def test_search_provenance_does_not_claim_prisma_compliance() -> None:
 def test_search_provenance_reports_receipt_counts() -> None:
     """Reader must see the exact n_receipts / n_claims / n_tensions
     so they can audit the synthesis pool."""
-    md = appx.build_search_provenance_appendix(_fake_manifest())
+    md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
     assert "15" in md  # n_receipts
     assert "134" in md  # n_claims
     assert "42" in md  # n_tensions
@@ -107,7 +107,7 @@ def test_search_provenance_reports_receipt_counts() -> None:
 
 def test_search_provenance_includes_tier_distribution() -> None:
     """Tier breakdown must be present (3 A1 + 1 B1 in fake data)."""
-    md = appx.build_search_provenance_appendix(_fake_manifest())
+    md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
     assert "A1" in md
     assert "B1" in md
 
@@ -241,6 +241,7 @@ def test_compose_appendix_assembles_all_four_sections() -> None:
     md = appx.compose_appendix(
         _fake_manifest(),
         model_stack=_fake_model_stack(),
+        topic="metformin",
         run_id="r1",
         git_sha="abc1234",
     )

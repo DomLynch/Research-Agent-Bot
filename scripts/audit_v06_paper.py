@@ -21,15 +21,14 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-# Workstream A: topic-parameterized corpus paths. Defaults to
-# `metformin` for backward-compat. The orchestrator
-# (scripts/run_v06_synthesis.py:_set_topic) updates these globals
-# so the audit reads the correct corpus when running for rapamycin
-# / everolimus / etc.
-DEFAULT_TOPIC = "metformin"
-QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "quant_claims"
-PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "parsed"
-_ACTIVE_TOPIC: str = DEFAULT_TOPIC
+# Module-level corpus paths. Sentinel until _set_topic() runs — same
+# universal-fix pattern as scripts/run_v06_synthesis.py: no metformin
+# fallback. The orchestrator's _set_topic() calls this module's
+# _set_topic() in lockstep at the top of every pipeline invocation.
+_TOPIC_UNSET = REPO_ROOT / "_TOPIC_UNSET_call_set_topic_first"
+QUANT_DIR: Path = _TOPIC_UNSET
+PARSED_DIR: Path = _TOPIC_UNSET
+_ACTIVE_TOPIC: str = ""
 
 
 def _set_topic(topic: str) -> None:

@@ -44,11 +44,21 @@ def _reset_topic_domain():
         os.environ.pop("TOPIC_DOMAIN", None)
 
 
-def test_default_domain_loads_metformin() -> None:
-    """No TOPIC_DOMAIN → metformin pack (backward compat)."""
+def test_unset_domain_uses_cardiometabolic_shared_base_with_warning() -> None:
+    """When TOPIC_DOMAIN is unset, the vocab loader falls back to the
+    cardiometabolic shared base (vocab/metformin.py — used as endpoint
+    inheritance only) AND emits a stderr warning. This is test-time
+    backward compat; production callers always set TOPIC_DOMAIN via
+    run_v06_synthesis._set_topic before any work runs.
+
+    The fallback exposes the SHARED endpoint vocab (HbA1c, VO2max, thigh
+    muscle mass — all cross-cut cardiometabolic / aging drugs). It does
+    NOT mean 'pretend the topic is metformin'; production code never
+    reaches this path.
+    """
     qe = _reload_quant_endpoints()
     canonical_names = {name for name, _pat in qe.ENDPOINT_VOCAB}
-    # Metformin-specific endpoints
+    # Shared cardiometabolic endpoint vocab (cross-cuts all drug topics)
     assert "VO2max" in canonical_names
     assert "HbA1c" in canonical_names
     assert "thigh muscle mass" in canonical_names
