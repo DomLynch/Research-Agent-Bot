@@ -343,6 +343,30 @@ def apply_fixes(
             ),
         })
 
+    # Fix #56: strip internal pipeline metadata from prose body.
+    # The writer's title block produces a '**Submission:**
+    # `synthesis-metformin-v06-...`' line that's machine-friendly but
+    # publication-noise — reviewer flagged it as 'too much internal
+    # pipeline language'. The run-tag belongs in the supplement /
+    # reproducibility appendix (manifest.json), not the prose.
+    submission_re = re.compile(
+        r"^\*\*Submission:\*\*\s*`[^`]+`\s*\n+",
+        re.MULTILINE,
+    )
+    n_submission = len(submission_re.findall(new_md))
+    if n_submission:
+        new_md = submission_re.sub("", new_md)
+        log.append({
+            "fix_type": "internal_pipeline_metadata_strip",
+            "n_changes": n_submission,
+            "description": (
+                "stripped '**Submission:** `synthesis-...`' run-tag "
+                "from title block — internal pipeline metadata "
+                "belongs in manifest.json/supplement, not prose "
+                "(Fix #56 / cert old-defect scan)"
+            ),
+        })
+
     # Strip residual blank-line runs created by deletions
     # (collapse 3+ newlines to a single paragraph break: \n\n).
     new_md = re.sub(r"\n{3,}", "\n\n", new_md)
