@@ -440,6 +440,31 @@ def apply_fixes(
         # Re-collapse blank-line runs in case restoration mismatched.
         new_md = re.sub(r"\n{3,}", "\n\n", new_md)
 
+    # Fix #53b (Refactor 2026-05-04): re-strip unsourced bg-lit
+    # AFTER depth-preservation restore. The restore can re-introduce
+    # bg-lit-unsourced sentences that the strip just removed, leading
+    # to a Stage-2 P1 SHIP-BLOCKER even though the strip "fired".
+    # Apply just the bg-lit strip again post-restore. If this re-
+    # strip pushes a section below its floor again, the depth-floor
+    # failure is honest (we can't have BOTH no-unsourced-bg-lit AND
+    # 850-word Discussion if the only way to fill 850 is via
+    # unsourced bg-lit). Q11/Q12 P2 is preferable to C09 P1.
+    n_re_stripped = _strip_unsourced_background_sentences_inplace(
+        new_md, [],
+    )
+    if n_re_stripped:
+        new_md = _strip_unsourced_background_sentences(new_md)
+        log.append({
+            "fix_type": "background_lit_unsourced_restrip_post_depth",
+            "n_changes": n_re_stripped,
+            "description": (
+                "re-stripped bg-lit-unsourced sentences after Fix #53 "
+                "depth-preservation restore re-introduced them. "
+                "Choosing C09-clean over Q11/Q12-depth — P1 cleanliness "
+                "trumps P2 depth (Fix #53b)"
+            ),
+        })
+
     return new_md, log
 
 

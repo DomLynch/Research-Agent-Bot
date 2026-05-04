@@ -1004,6 +1004,8 @@ def _check_change_value_paragraph_threshold(
         return []
     issues: list[ConsistencyIssue] = []
     paragraphs = paper_md.split("\n\n")
+    # Extract unit from a change-numeric, e.g. "0.13 m/s" → "m/s"
+    unit_re = re.compile(r"\d+\.?\d*\s*([a-zA-Z/μ]+)")
     for para in paragraphs:
         para_lc = para.lower()
         # Skip tables (per Fix #21 follow-up convention)
@@ -1020,10 +1022,49 @@ def _check_change_value_paragraph_threshold(
         for numeric in change_numerics:
             if numeric not in para:
                 continue
-            # Does the paragraph contain a threshold-comparison marker?
-            has_threshold = any(
-                m in para_lc for m in _THRESHOLD_MARKERS
+            # Refactor 2026-05-04 / Fix #58 follow-up: require the
+            # change-numeric to share a UNIT with a threshold-marker
+            # in the paragraph. Without this, p-values (0.05) and
+            # p-value 'thresholds' (statistical-significance) get
+            # falsely flagged. Only flag if the change-numeric has
+            # an explicit unit (m/s, kg, mg, etc.) AND the paragraph
+            # contains a threshold-marker that includes that unit.
+            num_unit_m = unit_re.search(numeric)
+            if not num_unit_m:
+                continue  # no unit — not a comparable measurement
+            num_unit = num_unit_m.group(1).lower()
+            # Skip p-values (no unit, but caught above)
+            # Build "unit-compatible threshold markers": markers that
+            # contain the same unit OR generic explicit-comparison
+            # phrases ('below the cutoff', 'fall below').
+            generic_comparison_phrases = (
+                "below the cutoff", "below clinical",
+                "below normative", "below the normative",
+                "fall below", "falls below", "remained below",
+                "compared to the threshold",
+                "compared to clinical",
+                "minimal clinically important",
             )
+            has_unit_match = any(
+                num_unit in m.lower()
+                for m in _THRESHOLD_MARKERS
+                if num_unit in m.lower()
+            )
+            has_generic_comparison = any(
+                p in para_lc for p in generic_comparison_phrases
+            )
+            if not (has_unit_match and has_generic_comparison):
+                # Tighter: require BOTH a unit-matched threshold
+                # marker (e.g. "0.8 m/s") AND a comparison phrase
+                # ("fall below", "below clinical")
+                # Check if a unit-matched threshold marker is present
+                unit_matched_in_para = any(
+                    m in para_lc and num_unit in m.lower()
+                    for m in _THRESHOLD_MARKERS
+                )
+                if not unit_matched_in_para:
+                    continue
+            has_threshold = True
             if not has_threshold:
                 continue
             # Does the paragraph repeatedly affirm the change-word
