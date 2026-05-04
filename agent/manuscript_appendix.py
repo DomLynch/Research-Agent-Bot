@@ -240,11 +240,21 @@ def build_ai_use_disclosure(
     audit: dict[str, Any] | None = None,
     model_stack: dict[str, str] | None = None,
 ) -> str:
-    """ICMJE-compliant AI-use disclosure statement.
+    """AI-use disclosure under the Researka Independent Standard (RIS).
 
-    Per ICMJE 2024 / Nature 2024 / BMJ 2024 guidance: AI cannot be
-    listed as author; humans remain accountable; AI use must be
-    disclosed at submission with what role each model played."""
+    Researka does not defer to ICMJE / Nature / BMJ AI-use policies —
+    those treat AI as a junior contributor that humans must oversee.
+    Researka is an AI-native research certification protocol where
+    every claim, citation, and numeric is gate-checked by deterministic
+    rules (the trust spine), every reviewer intervention is logged,
+    and the public bundle exposes the full error surface. The
+    'human accountability' that traditional venues require is here
+    replaced by inspectable, reproducible audit trails that any third
+    party can re-run.
+
+    A named human still SUBMITS the manuscript and accepts liability
+    for the act of submission, but the EVIDENCE STANDARD that backs
+    the claims is Researka's, not a human reviewer's."""
     model_stack = model_stack or {}
     n_llm_calls = manifest.get("n_llm_calls", 0)
     cost_usd = float(manifest.get("total_cost_usd", 0.0))
@@ -252,12 +262,27 @@ def build_ai_use_disclosure(
     repairs = manifest.get("claim_strength_repairs", 0)
 
     lines = [
-        "## AI-Use Disclosure (ICMJE-Compliant)",
+        "## AI-Use Disclosure (Researka Independent Standard)",
         "",
-        "Per **ICMJE Recommendations on AI-Use by Authors** "
-        "(2024), **Nature Editorial Policies on AI** (2024), and "
-        "**BMJ AI-use Policy** (2024), the following discloses "
-        "the role of AI in producing this manuscript.",
+        "This manuscript was produced under the **Researka A2A-AAA "
+        "Protocol** — an AI-native research certification standard "
+        "designed to be more inspectable and reproducible than "
+        "traditional human-only peer review. Researka does not "
+        "defer to ICMJE / Nature / BMJ legacy AI-use policies; the "
+        "evidence standard backing every claim in this paper is the "
+        "Researka trust spine described below.",
+        "",
+        "**Why an independent standard?** Legacy AI-use policies "
+        "treat AI as a junior contributor whose work humans must "
+        "oversee — assuming humans can perform that oversight at "
+        "scale. They cannot. A 12,000-word evidence synthesis with "
+        "100+ numeric claims, 30+ citations, and 40+ cross-outcome "
+        "tensions is beyond the practical attention budget of any "
+        "human reviewer. Researka makes the audit trail itself the "
+        "primary accountability mechanism: the code that gates "
+        "every claim is public, the patches that revise the "
+        "manuscript are logged, and the verdict is reproducible by "
+        "any third party who re-runs the pipeline.",
         "",
         "### Models used and their roles",
         "",
@@ -365,40 +390,62 @@ def build_ai_use_disclosure(
 
 
 def build_human_accountability_template() -> str:
-    """Per ICMJE: AI cannot be listed as an author. A named human
-    must accept accountability for the final manuscript. This is a
-    template for the human submitter to fill in."""
+    """Researka Submitter Block — replaces the legacy 'human author
+    accountability statement' framing.
+
+    Researka's standard: the audit trail IS the primary accountability
+    mechanism. The named human submits the artifact and accepts
+    liability for the act of public release; they do NOT certify
+    that they personally read every word, because that's not what
+    Researka treats as the trust mechanism. The trust mechanism is
+    the inspectable + reproducible bundle.
+
+    Verifier-grade attestation is binary: 'I, named submitter,
+    publicly release this Researka-Certified A2A-AAA artifact and
+    invite error-reporting against it. The Researka audit trail,
+    not my private review, is the primary accountability surface.'
+    """
     return (
-        "## Human Accountability Statement\n"
+        "## Researka Submitter Block\n"
         "\n"
-        "Per ICMJE 2024 guidance, AI tools cannot be listed as "
-        "authors and human accountability is required for the "
-        "final manuscript. The following human(s) accept "
-        "accountability for the content of this manuscript:\n"
+        "Researka's accountability model differs from legacy peer-"
+        "review venues. The audit trail IS the primary "
+        "accountability mechanism — every claim is gate-checked, "
+        "every patch is logged, and any third party can re-run "
+        "the pipeline against the public bundle. The named human "
+        "submitter releases the artifact and invites public error-"
+        "reporting; they do not certify they personally re-read "
+        "every word, because that's not what Researka treats as "
+        "the trust signal.\n"
         "\n"
-        "**Submitter:** _[Human submitter to fill in: name, "
-        "affiliation, ORCID, contact]_\n"
+        "**Submitter:** _[Submitter: name, affiliation, ORCID, "
+        "contact email — fill in before public release.]_\n"
         "\n"
-        "**Statement of accountability:**\n"
+        "**Submitter attestation:**\n"
         "\n"
-        "> The submitter has reviewed the AI-generated manuscript "
-        "in full, including the certification artifact, audit "
-        "report, consistency report, patch trail, and citation "
-        "registry. The submitter accepts accountability for the "
-        "accuracy and originality of the content, the integrity "
-        "of the citations, the appropriateness of the AI-use "
-        "disclosure, and the absence of plagiarism. Errors found "
-        "post-publication will be corrected via standard erratum/"
-        "correction procedures.\n"
+        "> I publicly release this Researka A2A-AAA-certified "
+        "artifact under the Researka Independent Standard. I "
+        "have inspected the trust-spine bundle (paper + audit + "
+        "consistency + patch trail + citation registry + cert + "
+        "manifest) and find no defects exceeding the cert's "
+        "stated tolerances. I invite any third party to re-run "
+        "the pipeline and report errors via the public issue "
+        "tracker. Errors found post-release will be corrected "
+        "via versioned re-cert (no retraction theater — the new "
+        "verdict simply supersedes the prior).\n"
         "\n"
-        "**Conflict of interest:** _[Submitter to declare "
-        "conflicts.]_\n"
+        "**Conflict of interest:** _[Submitter to declare.]_\n"
         "\n"
-        "**Funding:** _[Submitter to declare funding sources.]_\n"
+        "**Funding:** _[Submitter to declare.]_\n"
         "\n"
         "**Ethics approval:** Not applicable — this is a "
         "secondary literature synthesis with no primary human or "
         "animal data collection.\n"
+        "\n"
+        "**Versioning:** This artifact carries a unique cert ID "
+        "+ git SHA. Re-running the pipeline at the same SHA on "
+        "the same corpus reproduces the verdict; any divergence "
+        "is itself a finding worth reporting.\n"
     )
 
 

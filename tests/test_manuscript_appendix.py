@@ -115,15 +115,18 @@ def test_search_provenance_includes_tier_distribution() -> None:
 # =========== AI-Use Disclosure ====================================
 
 
-def test_ai_use_disclosure_cites_icmje() -> None:
-    """ICMJE/Nature/BMJ are the three authority anchors for AI
-    disclosure; must reference all three."""
+def test_ai_use_disclosure_declares_researka_independent_standard() -> None:
+    """RIS framing: Researka does NOT defer to ICMJE/Nature/BMJ.
+    Researka is its own AI-native research certification standard.
+    The disclosure must explicitly position itself this way."""
     md = appx.build_ai_use_disclosure(
         _fake_manifest(), model_stack=_fake_model_stack(),
     )
-    assert "ICMJE" in md
-    assert "Nature" in md
-    assert "BMJ" in md
+    assert "Researka Independent Standard" in md
+    assert "Researka A2A-AAA" in md
+    # Naming legacy policies is fine — the manifesto explicitly
+    # contrasts with them — but the headline framing is RIS.
+    assert "trust spine" in md.lower() or "trust-spine" in md.lower()
 
 
 def test_ai_use_disclosure_names_every_model() -> None:
@@ -171,21 +174,29 @@ def test_ai_use_disclosure_reports_run_metadata() -> None:
 # =========== Human Accountability =================================
 
 
-def test_human_accountability_states_ai_cannot_be_author() -> None:
-    """ICMJE rule that must be acknowledged."""
+def test_submitter_block_is_researka_independent_standard() -> None:
+    """RIS replaces ICMJE-deferring 'Human Accountability Statement'.
+
+    Researka does NOT defer to legacy AI-use policies. The audit trail
+    is the primary accountability mechanism. The submitter releases
+    the artifact + invites public error-reporting; they do not claim
+    to have personally re-read every word."""
     md = appx.build_human_accountability_template()
-    assert "AI tools cannot" in md or "AI cannot" in md
-    assert "author" in md.lower()
+    assert "Researka Submitter Block" in md
+    assert "audit trail" in md.lower()
+    assert "Researka Independent Standard" in md
+    # No legacy ICMJE deference
+    assert "ICMJE" not in md
 
 
-def test_human_accountability_includes_template_placeholders() -> None:
-    """Submitter must fill in name + affiliation + ORCID."""
+def test_submitter_block_includes_template_placeholders() -> None:
+    """Submitter must fill in name + affiliation + ORCID + COI + funding."""
     md = appx.build_human_accountability_template()
-    assert "[Human submitter to fill in" in md
-    assert "ORCID" in md or "name" in md
-    # Conflict + funding placeholders
+    assert "ORCID" in md
     assert "Conflict of interest" in md
     assert "Funding" in md
+    # Versioning + re-cert framing
+    assert "versioned re-cert" in md.lower() or "Versioning" in md
 
 
 # =========== Data and Code Availability ===========================
@@ -235,12 +246,12 @@ def test_compose_appendix_assembles_all_four_sections() -> None:
     )
     sp_pos = md.find("## Search Provenance and Selection")
     ai_pos = md.find("## AI-Use Disclosure")
-    ha_pos = md.find("## Human Accountability Statement")
+    sb_pos = md.find("## Researka Submitter Block")
     dc_pos = md.find("## Data and Code Availability")
     assert sp_pos >= 0
     assert ai_pos > sp_pos
-    assert ha_pos > ai_pos
-    assert dc_pos > ha_pos
+    assert sb_pos > ai_pos
+    assert dc_pos > sb_pos
 
 
 # =========== Splice helper ========================================
