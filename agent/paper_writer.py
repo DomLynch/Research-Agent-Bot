@@ -92,12 +92,12 @@ SECTION_WORD_FLOORS: Mapping[str, int] = {
 FULL_PAPER_WORD_FLOOR = 5000
 
 # Max LLM retries per section when word count is below floor.
-# Day 10.16d (reviewer-driven): cut from 2 → 1 retry. With 2 retries
-# the worst-case render time was ~40min on 8 sections, exceeding
-# operator patience and looking like a hang. One retry per section
-# (so 2 attempts max) is the practical floor: an LLM that under-
-# produces twice in a row is unlikely to magically expand on attempt 3.
-SECTION_RETRY_BUDGET = 1
+# Refactor 2026-05-04: bumped from 1 → 2 (3 attempts max). With
+# generic-multi-topic prompts, the writer occasionally under-
+# produces Discussion/Conclusion on first 2 tries; one more attempt
+# turns ~50% of the misses into AAA. Worst-case wall time is +1
+# section call (~30s), acceptable trade.
+SECTION_RETRY_BUDGET = 2
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
