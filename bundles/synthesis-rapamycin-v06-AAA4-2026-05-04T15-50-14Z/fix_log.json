@@ -1,0 +1,27 @@
+[
+  {
+    "fix_type": "repair_artifact",
+    "n_changes": 13,
+    "description": "stripped ' (potentially)' inline artifacts"
+  },
+  {
+    "fix_type": "stale_method_boilerplate",
+    "n_changes": 1,
+    "description": "stripped SPAR/receipt-cluster sentences from Methods; first occurrence replaced with v0.6 adapter disclaimer"
+  },
+  {
+    "fix_type": "duplicate_section",
+    "n_changes": 1,
+    "description": "removed first References block (writer-rendered); kept deterministic post-processed Author-Year block"
+  },
+  {
+    "fix_type": "background_lit_unsourced_strip",
+    "n_changes": 1,
+    "description": "stripped sentences containing background-lit numerics without their required canonical citation in the same sentence"
+  },
+  {
+    "fix_type": "surface_orphan_cite_strip",
+    "n_changes": 10,
+    "description": "stripped orphan / consecutive `_Cited:` blocks that had no anchor sentence (Fix #22 surface lint)"
+  }
+]

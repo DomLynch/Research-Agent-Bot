@@ -3,16 +3,16 @@
 **Topics attempted:** 5
 **Topics with ≥1 AAA run:** 2
 **Topics with consecutive-AAA cert:** 2
-**Total runs across all topics:** 75
-**Cumulative LLM cost:** $1.310
-**Total reviewer interventions logged:** 54 applied (1 via repair loop)
+**Total runs across all topics:** 77
+**Cumulative LLM cost:** $1.340
+**Total reviewer interventions logged:** 55 applied (1 via repair loop)
 
 ## Per-Topic Status
 
 | Topic | Best verdict | Cert | n_runs | AAA-runs | Stage1 | Stage2 P1/P2 | Q2 trace | Words | Cost |
 |---|---|---|---|---|---|---|---|---|---|
 | metformin | AAA | 🏆 | 47 | 21 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
-| rapamycin | AAA | 🏆 | 18 | 4 | 13/13 | 0/0 | 100% | 9,275 | $0.277 |
+| rapamycin | AAA | 🏆 | 20 | 5 | 13/13 | 0/0 | 100% | 9,002 | $0.306 |
 | statins | Trust-Spine Pass | — | 7 | 0 | 12/13 | 0/0 | 100% | 10,127 | $0.226 |
 | glp1 | SHIP-BLOCKED | — | 2 | 0 | 8/13 | 0/0 | 100% | 4,732 | $0.269 |
 | senolytics | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/0 | 100% | 6,462 | $0.178 |
@@ -34,16 +34,16 @@
 
 ### rapamycin
 
-- **Best run:** `synthesis-rapamycin-v06-FINAL-2026-05-04T14-38-15Z`
+- **Best run:** `synthesis-rapamycin-v06-AAA4-2026-05-04T15-50-14Z`
 - **Verdict:** AAA
 - **Cert (consecutive-AAA gate):** PASS 🏆
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
 - **Grok unresolved P1:** 0
-- **Word count:** 9,275
-- **LLM cost:** $0.277
-- **Patches applied:** 7 (0 via repair loop)
+- **Word count:** 9,002
+- **LLM cost:** $0.306
+- **Patches applied:** 8 (0 via repair loop)
 
 ### statins
 

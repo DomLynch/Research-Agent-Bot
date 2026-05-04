@@ -1,0 +1,86 @@
+{
+  "score_out_of_10": 10.0,
+  "p1_pass": true,
+  "checks": [
+    {
+      "name": "Q1_word_count",
+      "p1": true,
+      "passed": true,
+      "detail": "word_count=8515 (threshold=5000)"
+    },
+    {
+      "name": "Q2_numeric_integrity",
+      "p1": true,
+      "passed": true,
+      "detail": "20/20 numerics trace to corpus (100%); per-category: percentage=5/5, p_value=5/5, sample_size=3/3, dose=6/6, speed=1/1; untraceable: {}"
+    },
+    {
+      "name": "Q3_no_paper_id_in_body",
+      "p1": true,
+      "passed": true,
+      "detail": "no paper-ID leakage"
+    },
+    {
+      "name": "Q4_no_polarity_error",
+      "p1": true,
+      "passed": true,
+      "detail": "no mortality/lifespan polarity error"
+    },
+    {
+      "name": "Q5_no_fabricated_methods",
+      "p1": true,
+      "passed": true,
+      "detail": "no fabricated methodology claims"
+    },
+    {
+      "name": "Q6_preclinical_hedge",
+      "p1": false,
+      "passed": true,
+      "detail": "unhedged preclinical\u2192human sentences: 1 (threshold \u22643)"
+    },
+    {
+      "name": "Q7_section_coverage",
+      "p1": true,
+      "passed": true,
+      "detail": "all required sections present"
+    },
+    {
+      "name": "Q8_thesis_present",
+      "p1": false,
+      "passed": true,
+      "detail": "thesis sentence found"
+    },
+    {
+      "name": "Q9_numeric_density",
+      "p1": false,
+      "passed": true,
+      "detail": "density 9.2 numerics/1000 words (threshold \u22658.0; contract=2026-05-03-v2; appendix excluded)"
+    },
+    {
+      "name": "Q10_hedge_density",
+      "p1": false,
+      "passed": true,
+      "detail": "10/14 hedge phrases in Discussion (threshold \u22654 \u2014 Fix #44 adaptive: corpus uncertainty-weighted)"
+    },
+    {
+      "name": "Q11_discussion_depth",
+      "p1": false,
+      "passed": true,
+      "detail": "Discussion 1506 words (threshold \u2265800 \u2014 Fix #41 depth gate)"
+    },
+    {
+      "name": "Q12_cross_domain_depth",
+      "p1": false,
+      "passed": true,
+      "detail": "Cross-Domain Synthesis 1132 words (threshold \u2265800 \u2014 Fix #42 depth gate)"
+    },
+    {
+      "name": "Q13_analytical_ratio",
+      "p1": false,
+      "passed": true,
+      "detail": "analytical ratio 31.0% (Discussion 1506 + Cross-Domain 1132 / body 8515; threshold \u226515% \u2014 Fix #43 depth gate)"
+    }
+  ],
+  "n_pass": 13,
+  "n_total": 13
+}

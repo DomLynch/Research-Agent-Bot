@@ -1,0 +1,54 @@
+{
+  "extractor_version": "v0.6.0",
+  "writer_path": "agent.paper_writer.render_full_paper (production)",
+  "generated_at": "2026-05-04T15:58:45+00:00",
+  "n_receipts": 3,
+  "n_high_confidence_claims_total": 18,
+  "n_non_orthogonal_tensions": 3,
+  "thesis": "Across 3 curated reference papers, rapamycin shows a context-dependent profile. Null findings dominate: cardiometabolic. The synthesis surfaces 3 non-orthogonal tensions across outcome classes \u2014 see Cross-Domain Synthesis. The rapamycin anti-aging case as currently constituted is incomplete: mechanistic plausibility coexists with mixed or sparse human-RCT evidence, and the boundary conditions remain to be established.",
+  "receipts": [
+    {
+      "receipt_id": "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte",
+      "outcome_class": "cardiometabolic",
+      "effect_direction": "null",
+      "evidence_tier": "A1",
+      "directness": "direct",
+      "n_claims": 10,
+      "canonical_trial_id": null
+    },
+    {
+      "receipt_id": "PMC13082878_exercise_and_weekly_sirolimus_rapamycin_in_older_adults_rapa",
+      "outcome_class": "cardiometabolic",
+      "effect_direction": "mixed",
+      "evidence_tier": "A1",
+      "directness": "direct",
+      "n_claims": 7,
+      "canonical_trial_id": null
+    },
+    {
+      "receipt_id": "PMC12794675_rapamycin_exerts_its_geroprotective_effects_in_the_ageing_hu",
+      "outcome_class": "cardiometabolic",
+      "effect_direction": "unclear",
+      "evidence_tier": "B2",
+      "directness": "indirect",
+      "n_claims": 1,
+      "canonical_trial_id": null
+    }
+  ],
+  "section_words": {
+    "abstract": 356,
+    "introduction": 1181,
+    "background": 1077,
+    "methods": 1104,
+    "results": 490,
+    "cross_domain_synthesis": 1169,
+    "discussion": 1594,
+    "limitations_full": 653,
+    "conclusion": 411,
+    "references_full": 153
+  },
+  "total_words": 9002,
+  "claim_strength_repairs": 13,
+  "n_llm_calls": 19,
+  "total_cost_usd": 0.01597
+}

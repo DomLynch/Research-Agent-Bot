@@ -1,0 +1,79 @@
+{
+  "model_used": "x-ai/grok-4.3",
+  "cost_usd": 0.290523,
+  "n_patches": 8,
+  "patches": [
+    {
+      "id": "P01",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "References",
+      "before": "DOI: 10.1038/nature08221. Rapamycin-induced insulin resistance is mediated by mTORC2 loss and uncoupled from longevity. Science. 2012;335(6076):1638-1643._ DOI: 10.1126/science.1215135. PMID: 22461615.",
+      "after": "DOI: 10.1038/nature08221.",
+      "reason": "Corrects the Harrison 2009 reference by removing text erroneously copied from the Lamming 2012 paper."
+    },
+    {
+      "id": "P02",
+      "patch_type": "citation",
+      "severity": "P1",
+      "location": "References",
+      "before": "- **Moel 2025.** _Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results._ Aging (Albany NY), 2025. DOI: 10.18632/aging.206235. PMID: 40188830.",
+      "after": "",
+      "reason": "Removes duplicate Moel 2025 entry; the full citation appears later in the Background References section."
+    },
+    {
+      "id": "P03",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "References",
+      "before": "- **Tinetti 1988.** _Tinetti ME, Speechley M, Ginter SF. Risk factors for falls among elderly persons living in the community. PMID: 3205267.",
+      "after": "",
+      "reason": "Removes unused and incomplete reference entry for Tinetti 1988, which does not appear in the body text."
+    },
+    {
+      "id": "P04",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Introduction",
+      "before": ", as noted by Lamming 2012",
+      "after": "",
+      "reason": "Lamming 2012 has no dedicated reference entry; removing the citation avoids a broken reference link."
+    },
+    {
+      "id": "P05",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "disruption (Lamming 2012) motivates intermittent dosing",
+      "after": "disruption motivates intermittent dosing",
+      "reason": "Removes citation to Lamming 2012 which lacks a proper reference entry."
+    },
+    {
+      "id": "P06",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Cross-Domain Synthesis",
+      "before": "insulin resistance (Lamming 2012). This pharmacological nuance has driven the field toward intermittent, low-dose regimens",
+      "after": "insulin resistance. This pharmacological nuance has driven the field toward intermittent, low-dose regimens",
+      "reason": "Removes citation to Lamming 2012 which lacks a proper reference entry."
+    },
+    {
+      "id": "P07",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Discussion",
+      "before": "two weeks (Lamming 2012) may trigger mTORC2 disruption that offsets mTORC1-mediated benefits",
+      "after": "two weeks may trigger mTORC2 disruption that offsets mTORC1-mediated benefits",
+      "reason": "Removes citation to Lamming 2012 which lacks a proper reference entry."
+    },
+    {
+      "id": "P08",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Discussion",
+      "before": "two weeks (Lamming 2012) may disrupt mTORC2 and offset mTORC1-mediated benefits",
+      "after": "two weeks may disrupt mTORC2 and offset mTORC1-mediated benefits",
+      "reason": "Removes citation to Lamming 2012 which lacks a proper reference entry."
+    }
+  ]
+}
