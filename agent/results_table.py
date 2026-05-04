@@ -89,10 +89,23 @@ def build_results_table(
     per-category quotas to maximize distinct-numeric diversity (the
     Q9 audit dedupes within category, so 12 sample_sizes count as 12
     distinct but 12 percentages add 12 ADDITIONAL distinct numerics).
-    Empty string when no qualifying claims exist."""
+    Empty string when no qualifying claims exist.
+
+    Cross-topic guard (P1 reviewer fix, 2026-05-04 wave 4): claims
+    whose `arm` field references a different drug than the topic's
+    active+placebo arm synonyms are dropped. A rapamycin-corpus paper
+    that quotes a metformin RCT comparator can otherwise leak
+    'arm=metformin' rows into a rapamycin Quantitative Evidence Index.
+    Looked up via the topic pack's active_arm_synonyms +
+    placebo_arm_synonyms fields; arm-empty claims are kept (no
+    cross-topic signal to filter on).
+    """
     rows: list[EvidenceRow] = []
     if not quant_dir.exists():
         return ""
+    # Load the topic's active+placebo arm synonyms once for the
+    # cross-topic filter. Missing pack → no filter (back-compat).
+    topic_arm_terms = _load_topic_arm_terms(topic)
     # candidates: list of (score, claim_type, EvidenceRow, raw_value)
     candidates: list[tuple[int, str, EvidenceRow, str]] = []
     for path in sorted(quant_dir.glob("*.quant_claims.json")):
@@ -105,6 +118,8 @@ def build_results_table(
         )
         for claim in data.get("claims", []) or []:
             if not _confidence_admissible(claim):
+                continue
+            if not _arm_belongs_to_topic(claim, topic_arm_terms):
                 continue
             row = _claim_to_row(claim, paper_id=paper_id)
             if row is None:
@@ -265,6 +280,56 @@ def _confidence_admissible(claim: dict[str, Any]) -> bool:
     """High or partial confidence admitted; 'none' / unbound rejected."""
     conf = (claim.get("binding_confidence") or "").lower()
     return conf in ("high", "partial")
+
+
+def _load_topic_arm_terms(topic: str) -> frozenset[str]:
+    """Return lowercased active+placebo arm synonyms from the topic
+    pack. Empty set if the pack is missing — caller treats empty as
+    'no filter' for back-compat. Used by _arm_belongs_to_topic to
+    drop cross-topic-arm rows from the table."""
+    repo = Path(__file__).resolve().parent.parent
+    tp_path = repo / "topic_packs" / f"{topic}.toml"
+    if not tp_path.exists():
+        return frozenset()
+    try:
+        from agent.topic_pack import load_topic_pack
+        pack = load_topic_pack(tp_path)
+    except (ImportError, OSError, ValueError):
+        return frozenset()
+    terms: set[str] = set()
+    for syn in (
+        list(getattr(pack, "active_arm_synonyms", []) or []) +
+        list(getattr(pack, "placebo_arm_synonyms", []) or [])
+    ):
+        s = str(syn).strip().lower()
+        if s:
+            terms.add(s)
+    # Generic placebo/control terms always allowed (cross-topic safe)
+    terms |= {"placebo", "control", "vehicle", "pooled"}
+    return frozenset(terms)
+
+
+def _arm_belongs_to_topic(
+    claim: dict[str, Any], topic_arm_terms: frozenset[str],
+) -> bool:
+    """Filter out claims whose arm references a non-topic drug.
+
+    - Empty topic_arm_terms (pack missing) → no filtering (back-compat).
+    - Empty claim arm → kept (no cross-topic signal to filter on).
+    - Non-empty arm: must match (case-insensitive substring) at least
+      one topic-pack arm synonym OR be a generic comparator term.
+    """
+    if not topic_arm_terms:
+        return True
+    arm = (claim.get("arm") or "").strip().lower()
+    if not arm:
+        return True
+    # Match by substring containment in either direction so 'low-dose
+    # aspirin' matches 'aspirin' and vice versa.
+    for term in topic_arm_terms:
+        if term in arm or arm in term:
+            return True
+    return False
 
 
 def _quality_score(claim: dict[str, Any]) -> int:

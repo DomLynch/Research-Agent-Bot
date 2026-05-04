@@ -9,10 +9,12 @@ import json
 
 from agent.results_table import (
     EvidenceRow,
+    _arm_belongs_to_topic,
     _claim_to_row,
     _confidence_admissible,
     _format_value,
     _format_statistic,
+    _load_topic_arm_terms,
     _quality_score,
     _short_citation,
     _truncate,
@@ -224,6 +226,61 @@ def test_build_results_table_caps_rows():
         md = build_results_table(d, topic="test", max_rows=5)
         n_data_rows = md.count("\n| PMC")
         assert n_data_rows <= 5
+
+
+# ---------- cross-topic arm filter (P1 reviewer fix) ---------------
+
+def test_topic_arm_terms_loads_from_pack():
+    """Verify the topic-arm filter pulls active+placebo synonyms from
+    the topic pack TOML."""
+    rapa = _load_topic_arm_terms("rapamycin")
+    metf = _load_topic_arm_terms("metformin")
+    asp = _load_topic_arm_terms("aspirin")
+    # Each pack contains its drug name as an active-arm synonym
+    assert "rapamycin" in rapa
+    assert "metformin" in metf
+    assert "aspirin" in asp
+    # Generic comparator terms are always present (cross-topic safe)
+    for terms in (rapa, metf, asp):
+        assert "placebo" in terms
+        assert "control" in terms
+
+
+def test_topic_arm_terms_missing_pack_returns_empty():
+    """No topic pack → empty set → filter is a no-op (back-compat)."""
+    assert _load_topic_arm_terms("nonexistent_topic_xyz") == frozenset()
+
+
+def test_arm_belongs_drops_cross_topic_leak():
+    """The reviewer-flagged P1: a rapamycin paper's metformin-arm row.
+    With the rapamycin topic-arm set loaded, an arm='metformin' claim
+    must be DROPPED to prevent leaking metformin numerics into a
+    rapamycin paper's Quantitative Evidence Index."""
+    rapa_terms = _load_topic_arm_terms("rapamycin")
+    cross_topic = {"arm": "metformin"}
+    on_topic = {"arm": "rapamycin"}
+    placebo = {"arm": "placebo"}
+    empty = {"arm": ""}
+    assert not _arm_belongs_to_topic(cross_topic, rapa_terms)
+    assert _arm_belongs_to_topic(on_topic, rapa_terms)
+    assert _arm_belongs_to_topic(placebo, rapa_terms)
+    # Empty-arm claims kept conservatively (no cross-topic signal)
+    assert _arm_belongs_to_topic(empty, rapa_terms)
+
+
+def test_arm_belongs_substring_match_handles_modifiers():
+    """'low-dose aspirin' ↔ 'aspirin' should match either direction —
+    so a paper saying 'low-dose aspirin treatment group' isn't dropped
+    just because the synonym list has the bare 'aspirin'."""
+    asp_terms = _load_topic_arm_terms("aspirin")
+    assert _arm_belongs_to_topic({"arm": "low-dose aspirin"}, asp_terms)
+    assert _arm_belongs_to_topic({"arm": "aspirin treatment"}, asp_terms)
+
+
+def test_arm_belongs_no_filter_when_pack_missing():
+    """Empty topic_arm_terms (e.g. unconfigured topic) → all claims
+    pass through. Back-compat for topics without a pack."""
+    assert _arm_belongs_to_topic({"arm": "anything"}, frozenset())
 
 
 def test_evidence_row_immutable():
