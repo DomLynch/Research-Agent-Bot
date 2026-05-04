@@ -1,0 +1,196 @@
+{
+  "model_used": "x-ai/grok-4.3",
+  "cost_usd": 0.34353,
+  "n_patches": 21,
+  "patches": [
+    {
+      "id": "P01",
+      "patch_type": "numeric",
+      "severity": "P1",
+      "location": "Table 1: Included Studies",
+      "before": "Maio 2026 | Observational | B2 | n=4 | adults | longevity | unclear | indirect | \u2014 | \u2014 | 14 |",
+      "after": "Maio 2026 | Observational | B2 | \u2014 | adults | longevity | unclear | indirect | \u2014 | \u2014 | 14 |",
+      "reason": "Incorrect sample size n=4 contradicts text describing a large population-based study; deletion removes erroneous numeric."
+    },
+    {
+      "id": "P02",
+      "patch_type": "numeric",
+      "severity": "P2",
+      "location": "Abstract",
+      "before": "The 42 non-orthogonal tensions identified across this corpus",
+      "after": "The non-orthogonal tensions identified across this corpus",
+      "reason": "Specific count of 42 may not align with Table 3 tensions; deletion avoids numeric inconsistency."
+    },
+    {
+      "id": "P03",
+      "patch_type": "numeric",
+      "severity": "P2",
+      "location": "Thesis",
+      "before": "The synthesis surfaces 42 non-orthogonal tensions across outcome classes",
+      "after": "The synthesis surfaces non-orthogonal tensions across outcome classes",
+      "reason": "Specific count of 42 may not align with Table 3 tensions; deletion avoids numeric inconsistency."
+    },
+    {
+      "id": "P04",
+      "patch_type": "numeric",
+      "severity": "P2",
+      "location": "Limitations",
+      "before": "as reflected in the 42 non-orthogonal tensions documented in the synthesis",
+      "after": "as reflected in the non-orthogonal tensions documented in the synthesis",
+      "reason": "Specific count of 42 may not align with Table 3 tensions; deletion avoids numeric inconsistency."
+    },
+    {
+      "id": "P05",
+      "patch_type": "numeric",
+      "severity": "P2",
+      "location": "Conclusion",
+      "before": "The synthesis identifies 42 non-orthogonal tensions, most notably",
+      "after": "The synthesis identifies non-orthogonal tensions, most notably",
+      "reason": "Specific count of 42 may not align with Table 3 tensions; deletion avoids numeric inconsistency."
+    },
+    {
+      "id": "P06",
+      "patch_type": "numeric",
+      "severity": "P2",
+      "location": "What This Synthesis Adds",
+      "before": "across 4 outcome classes and 42 non-orthogonal cross-domain tensions",
+      "after": "across 4 outcome classes and non-orthogonal cross-domain tensions",
+      "reason": "Specific count of 42 may not align with Table 3 tensions; deletion avoids numeric inconsistency."
+    },
+    {
+      "id": "P07",
+      "patch_type": "numeric",
+      "severity": "P2",
+      "location": "Results",
+      "before": "mortality reductions of 32%, 42%, 36%, 21%, and 16%, respectively.",
+      "after": "mortality reductions of 32%, 42%, 36%, 21%, and 16%.",
+      "reason": "Incorrect 'respectively' with mismatched studies and values; deletion corrects phrasing."
+    },
+    {
+      "id": "P08",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Abstract",
+      "before": "Konopka et al. 2019 demonstrated",
+      "after": "Konopka 2019 demonstrated",
+      "reason": "Standardizes to allowed Author-Year token without 'et al.'"
+    },
+    {
+      "id": "P09",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Abstract",
+      "before": "100\u2013300 \u03bcM range (Owen 2000), far exceeding",
+      "after": "100\u2013300 \u03bcM range, far exceeding",
+      "reason": "Removes non-allowed background citation from body prose."
+    },
+    {
+      "id": "P10",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Introduction",
+      "before": "100-300 \u03bcM (Owen 2000), which is orders",
+      "after": "100-300 \u03bcM, which is orders",
+      "reason": "Removes non-allowed background citation from body prose."
+    },
+    {
+      "id": "P11",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Introduction",
+      "before": "850 mg (ADA 2024), making it accessible",
+      "after": "850 mg, making it accessible",
+      "reason": "Removes non-allowed background citation from body prose."
+    },
+    {
+      "id": "P12",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "5% in some studies (Anisimov 2008; Mohammed 2021).",
+      "after": "5% in some studies (Mohammed 2021).",
+      "reason": "Removes non-allowed background citation from body prose."
+    },
+    {
+      "id": "P13",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "in humans (Owen 2000). This discrepancy",
+      "after": "in humans. This discrepancy",
+      "reason": "Removes non-allowed background citation from body prose."
+    },
+    {
+      "id": "P14",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Background",
+      "before": "must be reconciled (Owen 2000; Vujovi\u0107 2026).",
+      "after": "must be reconciled (Vujovi\u0107 2026).",
+      "reason": "Removes non-allowed background citation from body prose."
+    },
+    {
+      "id": "P15",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Discussion",
+      "before": "untreated diabetes (Tancredi 2015). However, the evidence",
+      "after": "untreated diabetes. However, the evidence",
+      "reason": "Removes non-allowed background citation from body prose."
+    },
+    {
+      "id": "P16",
+      "patch_type": "citation",
+      "severity": "P2",
+      "location": "Limitations",
+      "before": "complex inhibition (Owen 2000) far exceed achievable plasma levels from standard oral dosing (ADA 2024), and the typical preclinical lifespan extension of approximately 5% (Anisimov 2008) has not been",
+      "after": "complex inhibition far exceed achievable plasma levels from standard oral dosing, and the typical preclinical lifespan extension of approximately 5% has not been",
+      "reason": "Removes multiple non-allowed background citations from body prose."
+    },
+    {
+      "id": "P17",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "location": "Introduction",
+      "before": "  _Cited: `Vujovi\u0107 2026`, `Mohammed 2021`_",
+      "after": "",
+      "reason": "Removes internal identifier markup not permitted in body prose."
+    },
+    {
+      "id": "P18",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "location": "Introduction",
+      "before": "  _Cited: `Walton 2019`, `Konopka 2019`, `Witham 2025`, `Kuo 2026`, `Shadyab 2025`, `Keys 2025`, `Mohammed 2021`, `Patel 2026`_",
+      "after": "",
+      "reason": "Removes internal identifier markup not permitted in body prose."
+    },
+    {
+      "id": "P19",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "location": "Introduction",
+      "before": "  _Cited: `Walton 2019`, `Konopka 2019`, `Kuo 2026`, `Shadyab 2025`_",
+      "after": "",
+      "reason": "Removes internal identifier markup not permitted in body prose."
+    },
+    {
+      "id": "P20",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "location": "Introduction",
+      "before": "  _Cited: `Keys 2025`, `Mohammed 2021`, `Walton 2019`, `Witham 2025`_",
+      "after": "",
+      "reason": "Removes internal identifier markup not permitted in body prose."
+    },
+    {
+      "id": "P21",
+      "patch_type": "formatting",
+      "severity": "P3",
+      "location": "Background",
+      "before": "  _Cited: `Mohammed 2021`, `Vujovi\u0107 2026`_",
+      "after": "",
+      "reason": "Removes internal identifier markup not permitted in body prose."
+    }
+  ]
+}
