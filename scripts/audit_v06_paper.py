@@ -116,7 +116,15 @@ def _check_word_count(paper: str, threshold: int = 5000) -> tuple[bool, str]:
 # tripping the gate.
 _PATTERNS_BY_CATEGORY: tuple[tuple[str, str], ...] = (
     # (category, regex_with_one_capture_group)
-    ("percentage", r"\b(\d+\.?\d*)\s*%"),
+    # Refactor 2026-05-04: percentage regex now EXCLUDES confidence-
+    # interval notation '95% CI', '99% CI', '90% CI'. Without the
+    # negative lookahead, every CI in the paper got extracted as an
+    # untraceable '95%' percentage claim — false positives that
+    # SHIP-BLOCKED runs even on otherwise-clean papers.
+    (
+        "percentage",
+        r"\b(\d+\.?\d*)\s*%(?!\s*(?:CI|confidence\s+interval))",
+    ),
     ("p_value", r"\b[Pp]\s*[<>=]\s*(0?\.\d+)\b"),
     # Ratios: mandatory `=` or `:` separator + digit. Pre-fix
     # `OR\s*[=:]?` (optional separator) matched English "or" in
