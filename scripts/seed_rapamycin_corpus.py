@@ -5,11 +5,18 @@ Two phases:
   --triage   Read 67 cards from prior pipeline run, score + rank
              them, write top-N candidate list. NO LLM cost. Outputs
              docs/quality-reference/rapamycin/_triage.json for human
-             review before --extract spends money.
+             review before --extract.
 
-  --extract  (NOT in this iteration) For each triaged paper:
-             fetch full text → run agent.fact_extractor → write
-             quant_claims.json + paper_sections.json. Costs ~$2-3.
+  --extract  For each triaged paper:
+             1. Resolve identifier → PMCID via Europe PMC DOI lookup
+             2. Fetch full-text JATS XML via fetch_oa_corpus.py
+                (free Europe PMC API)
+             3. Run quant_claim_extract.py (deterministic regex,
+                no LLM cost)
+             4. Move artifacts to docs/quality-reference/rapamycin/
+                {quant_claims,parsed}/
+             Effectively FREE — only API calls + local regex. The
+             only LLM cost is the eventual synthesis run (~$0.04).
 
 The triage exists so a human (or Claude) can review the candidate
 list BEFORE LLM extraction spends money. The script prints the
@@ -234,6 +241,224 @@ def _print_summary(result: dict[str, Any]) -> None:
         print(f"       {title} ({year})", file=sys.stderr)
 
 
+def _resolve_pmcid_via_europepmc(
+    identifier: dict[str, Any],
+) -> str | None:
+    """Resolve a paper's source identifier (DOI / PMID / NCT) to a
+    PMCID via Europe PMC search. Returns None if no PMC full-text
+    is available (e.g. trial-only NCTs)."""
+    import urllib.request
+    import urllib.parse
+
+    doi = identifier.get("doi")
+    pmid = identifier.get("pmid")
+    if not (doi or pmid):
+        return None
+    query_parts = []
+    if doi:
+        query_parts.append(f"DOI:{doi}")
+    if pmid:
+        query_parts.append(f"EXT_ID:{pmid}")
+    query = " OR ".join(query_parts)
+    url = (
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?"
+        f"query={urllib.parse.quote(query)}"
+        "&format=json&pageSize=1"
+    )
+    try:
+        req = urllib.request.Request(
+            url, headers={
+                "User-Agent": "researka-rapamycin-corpus/0.1"
+            },
+        )
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.load(r)
+    except Exception as e:  # network / parse / timeout
+        print(
+            f"  ! resolve fail (doi={doi}): {e}",
+            file=sys.stderr,
+        )
+        return None
+    hits = data.get("resultList", {}).get("result", [])
+    if not hits:
+        return None
+    pmcid = hits[0].get("pmcid")
+    return pmcid
+
+
+def extract(top_n: int = 15) -> dict[str, Any]:
+    """Phase 2 of corpus seeding: resolve identifiers → PMCIDs →
+    fetch full text via Europe PMC → extract quant claims via
+    deterministic regex. All free except API rate limits.
+
+    Returns {'attempted': N, 'pmcid_resolved': N, 'fetched': N,
+             'extracted': N, 'failures': [...]}."""
+    import subprocess
+    triage_path = OUT_DIR / "_triage.json"
+    if not triage_path.exists():
+        raise FileNotFoundError(
+            f"run --triage first to produce {triage_path}"
+        )
+    triage_doc = json.loads(triage_path.read_text())
+    selected = triage_doc.get("selected", [])[:top_n]
+
+    parsed_dir = OUT_DIR / "parsed"
+    quant_dir = OUT_DIR / "quant_claims"
+    parsed_dir.mkdir(parents=True, exist_ok=True)
+    quant_dir.mkdir(parents=True, exist_ok=True)
+
+    result = {
+        "attempted": len(selected),
+        "pmcid_resolved": 0,
+        "fetched": 0,
+        "extracted": 0,
+        "failures": [],
+        "papers": [],
+    }
+    pmcids_to_fetch = []
+    paper_id_for_pmcid: dict[str, str] = {}
+
+    print(
+        f"=== Resolving identifiers → PMCIDs ({len(selected)} "
+        "papers) ===",
+        file=sys.stderr,
+    )
+    for p in selected:
+        paper_id = p["paper_id"]
+        identifier = {
+            "doi": p["source"].get("doi"),
+            "pmid": p["source"].get("pmid"),
+            "nct": p["source"].get("nct"),
+        }
+        if not (identifier["doi"] or identifier["pmid"]):
+            print(
+                f"  - {paper_id}: no DOI/PMID (likely trial-only) — "
+                "skip",
+                file=sys.stderr,
+            )
+            result["failures"].append({
+                "paper_id": paper_id,
+                "reason": "no DOI/PMID (trial-only)",
+            })
+            continue
+        pmcid = _resolve_pmcid_via_europepmc(identifier)
+        if pmcid:
+            print(
+                f"  ✓ {paper_id}: {pmcid}",
+                file=sys.stderr,
+            )
+            pmcids_to_fetch.append(pmcid)
+            paper_id_for_pmcid[pmcid] = paper_id
+            result["pmcid_resolved"] += 1
+        else:
+            print(
+                f"  - {paper_id}: PMCID not found in Europe PMC",
+                file=sys.stderr,
+            )
+            result["failures"].append({
+                "paper_id": paper_id,
+                "reason": "no PMCID (closed-access)",
+            })
+
+    if not pmcids_to_fetch:
+        print(
+            "No PMCIDs resolved; nothing to fetch.",
+            file=sys.stderr,
+        )
+        out_path = OUT_DIR / "_extract_report.json"
+        out_path.write_text(json.dumps(result, indent=2))
+        return result
+
+    # Fetch full text via fetch_oa_corpus.py
+    print(
+        f"\n=== Fetching {len(pmcids_to_fetch)} papers from "
+        "Europe PMC ===",
+        file=sys.stderr,
+    )
+    cmd = [
+        "python3", str(REPO / "scripts" / "fetch_oa_corpus.py"),
+        "--pmcids", ",".join(pmcids_to_fetch),
+        "--out-dir", str(parsed_dir),
+    ]
+    try:
+        subprocess.run(cmd, check=True, cwd=REPO)
+    except subprocess.CalledProcessError as e:
+        print(f"fetch_oa_corpus failed: {e}", file=sys.stderr)
+        result["failures"].append({
+            "paper_id": "BATCH",
+            "reason": f"fetch_oa_corpus exit {e.returncode}",
+        })
+
+    # Count fetched paper_sections.json files
+    fetched_files = list(parsed_dir.glob("*.paper_sections.json"))
+    result["fetched"] = len(fetched_files)
+
+    # Run quant_claim_extract.py on each
+    print(
+        f"\n=== Extracting quant claims from "
+        f"{result['fetched']} papers ===",
+        file=sys.stderr,
+    )
+    for pf in fetched_files:
+        target_qf = quant_dir / (
+            pf.stem.replace(".paper_sections", "")
+            + ".quant_claims.json"
+        )
+        if target_qf.exists():
+            print(
+                f"  ✓ {pf.stem}: already extracted, skip",
+                file=sys.stderr,
+            )
+            result["extracted"] += 1
+            continue
+        cmd = [
+            "python3",
+            str(REPO / "scripts" / "quant_claim_extract.py"),
+            str(pf),
+            "--out", str(target_qf),
+        ]
+        try:
+            subprocess.run(cmd, check=True, cwd=REPO)
+            result["extracted"] += 1
+            print(
+                f"  ✓ {pf.stem}: → {target_qf.name}",
+                file=sys.stderr,
+            )
+        except subprocess.CalledProcessError as e:
+            print(
+                f"  ! {pf.stem}: extract failed ({e})",
+                file=sys.stderr,
+            )
+            result["failures"].append({
+                "paper_id": pf.stem,
+                "reason": f"quant_claim_extract exit {e.returncode}",
+            })
+
+    # Write report
+    out_path = OUT_DIR / "_extract_report.json"
+    out_path.write_text(json.dumps(result, indent=2))
+    return result
+
+
+def _print_extract_summary(result: dict[str, Any]) -> None:
+    print(
+        f"\n=== Rapamycin Corpus Extract Summary ===\n"
+        f"Attempted:       {result['attempted']}\n"
+        f"PMCID resolved:  {result['pmcid_resolved']}\n"
+        f"Full-text fetch: {result['fetched']}\n"
+        f"Quant extracted: {result['extracted']}\n"
+        f"Failures:        {len(result['failures'])}",
+        file=sys.stderr,
+    )
+    if result["failures"]:
+        print("\nFailures:", file=sys.stderr)
+        for f in result["failures"]:
+            print(
+                f"  - {f['paper_id']}: {f['reason']}",
+                file=sys.stderr,
+            )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Seed the rapamycin corpus (Proof 002 Workstream C)",
@@ -244,24 +469,40 @@ def main(argv: list[str] | None = None) -> int:
              "(no LLM cost). Outputs _triage.json for review.",
     )
     parser.add_argument(
+        "--extract", action="store_true",
+        help="Resolve PMCIDs + fetch full text + extract quant "
+             "claims. Free (Europe PMC API + deterministic regex). "
+             "Requires _triage.json from a prior --triage run.",
+    )
+    parser.add_argument(
         "--top-n", type=int, default=15,
-        help="Number of papers to select (default: 15)",
+        help="Number of papers to select / extract (default: 15)",
     )
     args = parser.parse_args(argv)
 
-    if not args.triage:
-        parser.error(
-            "--triage is required for now; --extract is the next "
-            "phase (LLM cost ~$2-3) and not yet implemented"
-        )
+    if args.triage and args.extract:
+        # Run triage first, then extract
+        triage_result = triage(top_n=args.top_n)
+        _print_summary(triage_result)
+        extract_result = extract(top_n=args.top_n)
+        _print_extract_summary(extract_result)
+        return 0
 
-    result = triage(top_n=args.top_n)
-    _print_summary(result)
-    print(
-        f"\nWrote {OUT_DIR / '_triage.json'}",
-        file=sys.stderr,
-    )
-    return 0
+    if args.triage:
+        result = triage(top_n=args.top_n)
+        _print_summary(result)
+        print(
+            f"\nWrote {OUT_DIR / '_triage.json'}",
+            file=sys.stderr,
+        )
+        return 0
+
+    if args.extract:
+        result = extract(top_n=args.top_n)
+        _print_extract_summary(result)
+        return 0
+
+    parser.error("--triage or --extract (or both) required")
 
 
 if __name__ == "__main__":

@@ -426,32 +426,94 @@ def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
 
 def build_thesis(
     receipts: list[ReceiptSummary], matrix: TensionMatrix,
+    topic: str = "metformin",
 ) -> SynthesisThesis:
-    """Pick a thesis statement that names the cross-domain tension
-    in the metformin literature."""
+    """Build a topic-generic deterministic thesis.
+
+    Pre-Fix: hardcoded metformin-specific narrative ('MASTERS/
+    Konopka/MET-PREVENT', 'metformin's anti-aging case'). Caused
+    rapamycin synthesis to ship with metformin contamination in
+    its thesis text, which Grok flagged as P1 but couldn't repair
+    safely (ambiguous BEFORE replacement).
+
+    Post-Fix: composes thesis from the receipts' own metadata —
+    positive vs negative outcome-class signals, the dominant
+    evidence tiers, and the cross-domain tensions surfaced by the
+    matrix. Topic-name appears only as the subject; everything
+    else derives from the actual corpus."""
+    from collections import Counter
     receipt_ids = tuple(r.receipt_id for r in receipts)
     non_orth = matrix.non_orthogonal()
     addressed = tuple(t.summary for t in non_orth[:3])
-    text = (
-        "Across {n} curated reference papers, metformin shows a context-"
-        "dependent profile: positive cardiometabolic and longevity "
-        "signals (mortality reduction in observational analyses, "
-        "preclinical lifespan extension) coexist with consistent "
-        "negative effects on muscle and exercise adaptations in older "
-        "adult RCTs (MASTERS/Konopka/MET-PREVENT). The synthesis "
-        "thesis is that metformin's anti-aging case is incomplete: "
-        "metabolic plausibility is real, but the human functional-"
-        "fitness evidence is mixed and trends negative when paired "
-        "with exercise."
-    ).format(n=len(receipts))
+
+    # Aggregate outcome × effect signals
+    pos_outcomes: list[str] = []
+    neg_outcomes: list[str] = []
+    null_outcomes: list[str] = []
+    for r in receipts:
+        oc = (r.outcome_class or "").replace("_", " ")
+        ed = (r.effect_direction or "").lower()
+        if not oc:
+            continue
+        if ed == "positive":
+            pos_outcomes.append(oc)
+        elif ed == "negative":
+            neg_outcomes.append(oc)
+        elif ed == "null":
+            null_outcomes.append(oc)
+    pos_top = [
+        o for o, _ in Counter(pos_outcomes).most_common(2)
+    ]
+    neg_top = [
+        o for o, _ in Counter(neg_outcomes).most_common(2)
+    ]
+    null_top = [
+        o for o, _ in Counter(null_outcomes).most_common(2)
+    ]
+
+    n = len(receipts)
+    parts = [f"Across {n} curated reference paper"]
+    parts[-1] += "s" if n != 1 else ""
+    parts[-1] += f", {topic} shows a context-dependent profile."
+
+    if pos_top:
+        parts.append(
+            f"Positive signals appear in: "
+            f"{', '.join(pos_top)}."
+        )
+    if neg_top:
+        parts.append(
+            f"Negative signals appear in: "
+            f"{', '.join(neg_top)}."
+        )
+    if null_top:
+        parts.append(
+            f"Null findings dominate: "
+            f"{', '.join(null_top)}."
+        )
+    if non_orth:
+        parts.append(
+            f"The synthesis surfaces {len(non_orth)} non-"
+            "orthogonal tensions across outcome classes — see "
+            "Cross-Domain Synthesis."
+        )
+    parts.append(
+        f"The {topic} anti-aging case as currently constituted is "
+        "incomplete: mechanistic plausibility coexists with mixed "
+        "or sparse human-RCT evidence, and the boundary conditions "
+        "remain to be established."
+    )
+    text = " ".join(parts)
     return SynthesisThesis(
         text=text,
         receipt_ids_referenced=receipt_ids,
         tensions_addressed=addressed,
         rejected_candidates=(),
         picker_rationale=(
-            "Single deterministic thesis from cross-domain tension matrix; "
-            "no LLM tournament (Phase 6.1 minimal adapter)."
+            "Topic-generic deterministic thesis composed from "
+            "receipt outcome × effect signals + tension matrix; "
+            "no LLM tournament. Replaces the v0.6 metformin-"
+            "hardcoded thesis (which contaminated rapamycin runs)."
         ),
     )
 
@@ -690,7 +752,7 @@ async def _run(
         print("No high-confidence claims found.", file=sys.stderr)
         return 2
     matrix = build_tension_matrix(receipts)
-    thesis = build_thesis(receipts, matrix)
+    thesis = build_thesis(receipts, matrix, topic=topic)
 
     print(f"Thesis: {thesis.text[:160]}...", file=sys.stderr)
     print(
@@ -1159,6 +1221,7 @@ async def _run_post_paper_pipeline(
         from agent.manuscript_appendix import (
             compose_appendix, splice_appendix_before_references,
         )
+        from agent.settings import load_settings as _load_settings
         import subprocess as _sp
         try:
             git_sha = _sp.check_output(
@@ -1167,16 +1230,26 @@ async def _run_post_paper_pipeline(
             ).strip()
         except (_sp.SubprocessError, FileNotFoundError):
             git_sha = "unknown"
+        # Load settings here — Stage 5b runs in
+        # _run_post_paper_pipeline() which doesn't receive settings
+        # from the _run() scope. Cheap call (env-var read).
+        _settings = _load_settings()
         model_stack = {
-            "writer": settings.mimo_model,
-            "reviewer": settings.final_layer_reviewer_model,
-            "extractor": settings.mimo_model,
-            "thesis": settings.mimo_model,
+            "writer": _settings.mimo_model,
+            "reviewer": _settings.final_layer_reviewer_model,
+            "extractor": _settings.mimo_model,
+            "thesis": _settings.mimo_model,
         }
+        # Topic from the run dir name: synthesis-<topic>-v06-...
+        _name_parts = paper_path.parent.name.split("-")
+        _topic = (
+            _name_parts[1] if len(_name_parts) >= 2
+            else "unknown"
+        )
         appendix_md = compose_appendix(
             manifest, audit=audit_report,
             model_stack=model_stack,
-            topic=topic,
+            topic=_topic,
             run_id=paper_path.parent.name,
             git_sha=git_sha,
             bundle_path=f"bundles/{paper_path.parent.name}/",
@@ -1401,6 +1474,23 @@ def _maybe_run_no_regression_gate(new_run_dir: Path) -> None:
         return
     baseline_dir = (Path("runs") / baseline_name).resolve()
     if not baseline_dir.exists() or baseline_dir == new_run_dir:
+        return
+    # Fix: skip if topics differ (run dir names are
+    # 'synthesis-<topic>-v06-...'; comparing rapamycin to metformin
+    # baseline produces a meaningless 'regression').
+    def _topic_of(name: str) -> str:
+        parts = name.split("-")
+        return parts[1] if len(parts) >= 2 else ""
+    new_topic = _topic_of(new_run_dir.name)
+    baseline_topic = _topic_of(baseline_dir.name)
+    if new_topic != baseline_topic:
+        print(
+            f"[pipeline] Stage 6/6 — no-regression gate skipped: "
+            f"new run topic={new_topic!r} differs from baseline "
+            f"topic={baseline_topic!r} (cross-topic comparison "
+            "is not meaningful — promote a per-topic baseline)",
+            file=sys.stderr,
+        )
         return
     try:
         import no_regression_gate as _nrg
