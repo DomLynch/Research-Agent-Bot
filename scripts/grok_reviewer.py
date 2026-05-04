@@ -222,7 +222,12 @@ async def _call_one(
     r = await client.post(url, json=payload, headers=headers, timeout=300.0)
     r.raise_for_status()
     body = r.json()
-    text = body["choices"][0]["message"].get("content", "{}")
+    # Fix #48: defensive against `{"content": null}` — `.get(k, default)`
+    # returns None when the key is PRESENT but its value is None,
+    # which then crashed `text.strip()`. Empty string fallback lets
+    # the JSON parser report "Expecting value" cleanly so the
+    # fallback chain in _call_with_fallback kicks in.
+    text = body["choices"][0]["message"].get("content") or "{}"
     # Strip JSON fences if present
     text = re.sub(r"^```(?:json)?\s*", "", text.strip())
     text = re.sub(r"\s*```$", "", text)
