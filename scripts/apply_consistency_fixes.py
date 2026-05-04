@@ -252,6 +252,29 @@ def apply_fixes(
             ),
         })
 
+    # 6d. Fix #58 (C13c): strip threshold-comparison sentences
+    # from paragraphs that juxtapose a corpus change-numeric with
+    # threshold language. Reviewer's stronger requirement: catch
+    # ANY paragraph where the change-value is compared to a
+    # threshold, regardless of wording. The strip removes the
+    # threshold-comparison sentence(s); the change-numeric
+    # sentence stays.
+    new_md, n_para_stripped = (
+        _strip_change_value_paragraph_threshold_sentences(new_md)
+    )
+    if n_para_stripped:
+        log.append({
+            "fix_type": "change_value_paragraph_threshold_strip",
+            "n_changes": n_para_stripped,
+            "description": (
+                "stripped threshold-comparison sentences from "
+                "paragraphs that juxtaposed a corpus change-numeric "
+                "(e.g. 0.13 m/s) with threshold language without "
+                "the change-framing in proximity (Fix #58 / C13c "
+                "auto-fix)"
+            ),
+        })
+
     # 7. Fix #22: strip orphan / consecutive `_Cited:` blocks.
     # Stage-2 surface-render-lint flags these as P2 with
     # auto_fixable=True. Strip is safe by construction (no anchor
@@ -633,6 +656,123 @@ def _strip_change_value_anaphor_sentences(
             " ".join(kept_sentences) if kept_sentences else ""
         )
     new_md = "\n\n".join(p for p in out_paragraphs if p.strip() or p == "")
+    new_md = re.sub(r"\n{3,}", "\n\n", new_md)
+    return new_md, n_stripped
+
+
+def _strip_change_value_paragraph_threshold_sentences(
+    paper_md: str,
+) -> tuple[str, int]:
+    """Fix #58 (C13c) auto-strip: in paragraphs flagged as
+    juxtaposing a change-numeric with threshold language, remove
+    the threshold-comparison sentence(s). Keeps the sentence(s)
+    containing the change-numeric (those are corpus-traced and
+    legitimate; the misread is in the comparison framing).
+
+    Strategy: for each paragraph, build the change-numeric set and
+    threshold-marker set. If a paragraph has both AND lacks the
+    nearby change-word hedge, strip the sentence(s) that contain
+    threshold markers but DO NOT contain the change-numeric (those
+    are pure threshold-comparison sentences). Sentences with the
+    change-numeric stay (they're the corpus evidence)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import audit_v06_paper as _audit
+        if not _audit.QUANT_DIR.exists():
+            return paper_md, 0
+        from final_consistency_audit import (
+            _CHANGE_WORDS,
+            _THRESHOLD_MARKERS,
+        )
+        change_value_map: dict[str, set[str]] = {}
+        for qf in _audit.QUANT_DIR.glob("*.quant_claims.json"):
+            try:
+                data = json.loads(qf.read_text())
+            except (OSError, json.JSONDecodeError):
+                continue
+            for c in data.get("claims", []):
+                if c.get("binding_confidence") != "high":
+                    continue
+                raw = (c.get("raw_text") or "").strip()
+                if not raw:
+                    continue
+                sent_lc = (c.get("sentence") or "").lower()
+                hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+                if hits:
+                    change_value_map.setdefault(raw, set()).update(hits)
+    except (ImportError, OSError, ValueError):
+        return paper_md, 0
+    if not change_value_map:
+        return paper_md, 0
+    sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
+    n_stripped = 0
+    out_paragraphs: list[str] = []
+    for para in paper_md.split("\n\n"):
+        para_lc = para.lower()
+        # Skip tables
+        lines = [ln for ln in para.splitlines() if ln.strip()]
+        if lines and (
+            sum(1 for ln in lines if ln.lstrip().startswith("|"))
+            / len(lines) >= 0.5
+        ):
+            out_paragraphs.append(para)
+            continue
+        # Skip Limitations section (legitimate change-framing)
+        if "## limitations" in para_lc:
+            out_paragraphs.append(para)
+            continue
+        # Find change-numerics in the paragraph
+        present_numerics = [
+            n for n in change_value_map if n in para
+        ]
+        if not present_numerics:
+            out_paragraphs.append(para)
+            continue
+        has_threshold = any(
+            m in para_lc for m in _THRESHOLD_MARKERS
+        )
+        if not has_threshold:
+            out_paragraphs.append(para)
+            continue
+        # Check if any change-numeric has a nearby change-word hedge.
+        # If yes → paragraph is fine, keep as-is.
+        any_hedged = False
+        for numeric in present_numerics:
+            num_idx = para_lc.find(numeric.lower())
+            window = para_lc[
+                max(0, num_idx - 60):
+                min(len(para_lc), num_idx + len(numeric) + 60)
+            ]
+            change_words = change_value_map[numeric]
+            if any(w in window for w in change_words):
+                any_hedged = True
+                break
+        if any_hedged:
+            out_paragraphs.append(para)
+            continue
+        # Strip threshold-comparison sentences (those with a
+        # threshold marker but NOT the change-numeric).
+        sentences = sent_split.split(para)
+        kept: list[str] = []
+        for sent in sentences:
+            sent_lc = sent.lower()
+            has_marker = any(
+                m in sent_lc for m in _THRESHOLD_MARKERS
+            )
+            has_numeric = any(
+                n in sent for n in present_numerics
+            )
+            if has_marker and not has_numeric:
+                # Pure threshold-comparison sentence — strip
+                n_stripped += 1
+                continue
+            kept.append(sent)
+        out_paragraphs.append(
+            " ".join(kept) if kept else ""
+        )
+    new_md = "\n\n".join(
+        p for p in out_paragraphs if p.strip() or p == ""
+    )
     new_md = re.sub(r"\n{3,}", "\n\n", new_md)
     return new_md, n_stripped
 

@@ -414,6 +414,9 @@ def run_audit(
     issues.extend(_check_change_value_anaphor_misread(  # Fix #54
         paper_md, manifest,
     ))
+    issues.extend(_check_change_value_paragraph_threshold(  # Fix #58
+        paper_md, manifest,
+    ))
     issues.extend(_check_abstract_over_grouping(paper_md, manifest))  # Fix #38
     return issues
 
@@ -903,6 +906,162 @@ def _check_change_value_misread(
                         f"acknowledge it is a change/difference."
                     ),
                 ))
+    return issues
+
+
+# Fix #58: PARAGRAPH-level threshold-comparison detector.
+#
+# Reviewer feedback after Fix #57: "the detector must catch any
+# sentence/paragraph where 0.13 m/s is compared to 0.8 m/s,
+# 0.6 m/s, threshold, frailty, or mobility limitation, regardless
+# of wording."
+#
+# Where C13 (Fix #37) is per-sentence and Fix #54 (C13b) is
+# cross-sentence anaphoric, Fix #58 (C13c) is paragraph-scoped:
+# if a corpus-known change-numeric appears ANYWHERE in a paragraph
+# AND the paragraph ALSO contains a threshold-comparison marker,
+# the paragraph as a whole risks misreading the change-value as
+# absolute.
+#
+# This is the strictest of the three checks. It will flag some
+# legitimate paragraphs (false positives) — that's the trade. The
+# previous false-negatives leaked a P1 misread despite C13 + Fix
+# #54; reviewer demanded the broader net.
+
+_THRESHOLD_MARKERS = (
+    # Explicit threshold/cutoff terms (precise — these always
+    # signal comparison-to-norm framing)
+    "threshold", "thresholds", "cutoff", "cut-off", "cut off",
+    "clinical threshold", "clinically meaningful threshold",
+    "minimal clinically important", "frailty threshold",
+    "frailty cutoff", "mobility limitation",
+    "mobility-limitation",
+    # Common comparator gait-speed values in metformin/aging papers
+    # (exact numeric strings, no false-positive risk)
+    "0.8 m/s", "0.6 m/s", "0.5 m/s", "1.0 m/s", "0.78 m/s",
+    # Comparison-structure phrases (require below/above/compared)
+    "below the cutoff", "below clinical", "below normative",
+    "below the normative", "fall below", "falls below",
+    "remained below", "compared to the threshold",
+    "compared to clinical",
+)
+# Refactor 2026-05-04 / Fix #58 follow-up: removed bare 'frailty'
+# from the marker list. 'Frailty' as a topic word (in trial-
+# enrollment descriptions like 'frail or sarcopenic adults') was
+# false-positive flagging paragraphs that didn't actually compare
+# numerics to thresholds. The 'frailty threshold' / 'frailty
+# cutoff' compound forms ARE markers (those imply comparison);
+# the bare word is not.
+
+
+def _check_change_value_paragraph_threshold(
+    paper_md: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """Fix #58 (C13c): flag paragraphs where a corpus change-numeric
+    co-occurs with any threshold-comparison marker.
+
+    The change-numeric is treated as MISREAD-RISK regardless of
+    wording — broader net than C13 / Fix #54. Severity P1, NOT
+    auto-fixable (the rewrite is non-trivial; flagging surfaces
+    it to the agent for explicit handling).
+
+    Reviewer rationale: 0.13 m/s vs 0.8 m/s threshold IS the
+    clinical-significance question. If a paragraph juxtaposes the
+    corpus's change-value with the field's gait-speed threshold,
+    the paragraph IS making a comparison whether the wording says
+    so explicitly or not."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import run_v06_synthesis as _orch
+        quant_dir = _orch.QUANT_DIR
+    except (ImportError, AttributeError):
+        return []
+    if not quant_dir.exists():
+        return []
+    # Build the change-numeric set (corpus high-conf + change-word
+    # in source sentence).
+    change_numerics: set[str] = set()
+    change_value_words: dict[str, set[str]] = {}
+    for qf in quant_dir.glob("*.quant_claims.json"):
+        try:
+            data = json.loads(qf.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        for c in data.get("claims", []):
+            if c.get("binding_confidence") != "high":
+                continue
+            raw = (c.get("raw_text") or "").strip()
+            if not raw:
+                continue
+            sent_lc = (c.get("sentence") or "").lower()
+            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+            if change_hits:
+                change_numerics.add(raw)
+                change_value_words.setdefault(raw, set()).update(
+                    change_hits
+                )
+    if not change_numerics:
+        return []
+    issues: list[ConsistencyIssue] = []
+    paragraphs = paper_md.split("\n\n")
+    for para in paragraphs:
+        para_lc = para.lower()
+        # Skip tables (per Fix #21 follow-up convention)
+        lines = [ln for ln in para.splitlines() if ln.strip()]
+        if lines and (
+            sum(1 for ln in lines if ln.lstrip().startswith("|"))
+            / len(lines) >= 0.5
+        ):
+            continue
+        # Skip section headers + Limitations (Limitations explicitly
+        # discusses the change-as-change framing — that's allowed)
+        if "## limitations" in para_lc:
+            continue
+        for numeric in change_numerics:
+            if numeric not in para:
+                continue
+            # Does the paragraph contain a threshold-comparison marker?
+            has_threshold = any(
+                m in para_lc for m in _THRESHOLD_MARKERS
+            )
+            if not has_threshold:
+                continue
+            # Does the paragraph repeatedly affirm the change-word
+            # framing (e.g. "the change of X" or "improvement of X")?
+            # If the change-word is within ±60 chars of the numeric
+            # at least once, the paragraph is hedging properly.
+            num_idx = para_lc.find(numeric.lower())
+            window_start = max(0, num_idx - 60)
+            window_end = min(
+                len(para_lc), num_idx + len(numeric) + 60,
+            )
+            window = para_lc[window_start:window_end]
+            change_words = change_value_words.get(numeric, set())
+            if any(w in window for w in change_words):
+                continue
+            # Hits: this paragraph juxtaposes a change-numeric with
+            # a threshold marker, with no nearby change-word hedge.
+            snippet = para.strip()[:240]
+            issues.append(ConsistencyIssue(
+                id=f"C13c-paragraph-threshold-{hash(para) & 0xffffff}",
+                severity="P1",
+                issue_type="change_value_paragraph_threshold",
+                auto_fixable=True,  # Fix #58 ships an auto-strip
+                evidence=snippet,
+                suggested_fix=(
+                    f"Paragraph juxtaposes change-numeric "
+                    f"{numeric!r} with threshold-comparison "
+                    f"language without naming it as a "
+                    f"change/difference value within "
+                    f"±60 chars. The corpus says this numeric is "
+                    f"a change/improvement value (context word(s): "
+                    f"{sorted(change_words)}). Auto-strip removes "
+                    f"the threshold-comparison sentence(s) from "
+                    f"the paragraph; the change-numeric sentence "
+                    f"is preserved."
+                ),
+            ))
+            break  # one finding per paragraph
     return issues
 
 
