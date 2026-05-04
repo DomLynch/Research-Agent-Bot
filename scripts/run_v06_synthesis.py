@@ -97,11 +97,17 @@ def _set_topic(topic: str) -> None:
 
     Refactor 2026-05-04: also loads the topic pack so generic
     helpers (_claim_topic_effect, canonical RCT lists, etc.) can
-    read topic-specific data without hardcoded strings."""
+    read topic-specific data without hardcoded strings.
+
+    Also sets TOPIC_DOMAIN env var so vocab/__init__.py picks up
+    the correct vocab pack (auto-synthesizes from topic pack TOML
+    if no vocab/<topic>.py exists)."""
     global QUANT_DIR, PARSED_DIR, _TOPIC_PACK, _ACTIVE_TOPIC
+    import os
     QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims"
     PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "parsed"
     _ACTIVE_TOPIC = topic
+    os.environ["TOPIC_DOMAIN"] = topic
     # Keep audit module in lockstep
     _audit_v06._set_topic(topic)
     # Load topic pack (best-effort — pack may not exist for new topics)

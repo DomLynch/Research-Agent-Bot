@@ -1,0 +1,156 @@
+# Statins topic pack — Proof 003 (multi-topic scalability proof)
+#
+# This pack was created from scratch in one file to test the
+# generic multi-topic refactor. No code changes required to add
+# this topic — the entire pipeline (corpus discovery, synthesis,
+# audit, cert, bundle) reads from this TOML.
+
+topic   = "statins"
+class_  = "hmg_coa_reductase_inhibitor"
+
+aliases = [
+  "statin",
+  "statins",
+  "HMG-CoA reductase inhibitor",
+  "HMGCR inhibitor",
+  # Specific drugs
+  "atorvastatin",
+  "rosuvastatin",
+  "simvastatin",
+  "pravastatin",
+  "lovastatin",
+  "pitavastatin",
+  "fluvastatin",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "safety_tolerability",
+  "dosing_regimen",
+  "exercise_interaction",  # statin-induced myopathy interaction
+  "ongoing_trials",
+  "primary_prevention",    # statin-specific
+  "secondary_prevention",  # statin-specific
+]
+
+special_rules = [
+  "primary-prevention vs secondary-prevention RCTs must be tagged distinctly — different effect sizes",
+  "statin-induced myopathy is a known safety signal; trials must report myalgia/CK",
+  "any claim citing JUPITER, HOPE-3, or PROSPER must reference RCT design",
+  "observational data must flag indication-bias (high-risk patients selected for treatment)",
+]
+
+forbidden_verbs_for_protocol_role = [
+  "found", "showed", "improved", "reduced",
+  "demonstrated", "established", "proved",
+]
+
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned", "will assess", "pending", "ongoing", "awaiting",
+]
+
+
+# --- v2 generic-multi-topic top-level fields -------------------------
+
+active_arm_synonyms = [
+  "statin",
+  "atorvastatin",
+  "rosuvastatin",
+  "simvastatin",
+  "pravastatin",
+  "lovastatin",
+  "pitavastatin",
+  "STATIN",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+  "no statin",
+]
+
+corpus_search_queries = [
+  "statin AND aging AND human",
+  "statin AND (RCT OR clinical trial OR randomized)",
+  "(atorvastatin OR rosuvastatin OR simvastatin) AND (longevity OR healthspan OR mortality)",
+  "statin AND elderly AND (frailty OR sarcopenia OR muscle)",
+  "statin AND primary prevention AND cardiovascular",
+  "statin AND (myopathy OR myalgia OR adverse) AND elderly",
+  "statin AND mTOR AND mechanism",
+]
+
+# Empty initially — will be populated as canonical RCTs are
+# identified in the corpus. The pipeline still works without
+# entries here (it just doesn't apply the A1-direct override).
+canonical_rct_paper_ids = []
+
+
+# --- Canonical trials (informational; surface-check feeds qa_report) -
+
+[[canonical_trials]]
+id            = "NCT00352989"
+name          = "JUPITER"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT00468923"
+name          = "HOPE-3"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT00037960"
+name          = "PROSPER"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT00390845"
+name          = "STAREE"
+expected_role = "registered_pending"
+design        = "rct"
+
+
+# --- Hard-coded role overrides (the moat) ----------------------------
+
+[known_role_overrides.NCT00352989]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT00468923]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT00037960]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT00390845]
+role   = "registered_pending"
+design = "rct"
+tier   = "A1"
+
+
+# --- Endpoint polarity -----------------------------------------------
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiometabolic = "lower_is_better"
+muscle_function = "higher_is_better"
+ldl_cholesterol = "lower_is_better"
+incident_cv_event = "lower_is_better"
+inflammation = "lower_is_better"
+myopathy = "lower_is_better"
+
+# No background_literature entries yet — global gait_speed /
+# HbA1c / etc. entries from docs/background_literature.json apply
+# generically.
