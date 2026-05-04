@@ -289,11 +289,23 @@ def _check_preclinical_hedge(paper: str) -> tuple[bool, str]:
     paper_for_check = _strip_publication_appendix(paper)
     sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", paper_for_check)
     violations: list[str] = []
+    # Refactor 2026-05-04: expanded hedge phrase set. Previously
+    # missed "animal models" / "in mice" / "model organisms" /
+    # "in vitro" — sentences explicitly naming the preclinical
+    # context were getting flagged as unhedged because the writer's
+    # natural phrasing wasn't in the literal hedge list.
     hedges = (
-        "humans", "translation", "translate", "extrapolat", "limit",
-        "preclinical", "may not apply", "remains to be", "warrant",
-        "caution", "uncertain", "context-dependent", "speculative",
-        "mechanistic evidence",
+        # Translation-aware
+        "humans", "translation", "translate", "extrapolat",
+        "may not apply", "remains to be", "warrant", "caution",
+        "uncertain", "context-dependent", "speculative",
+        "mechanistic evidence", "limit",
+        # Self-tagged preclinical context (these explicitly name
+        # the non-human / preclinical setting, which IS the hedge)
+        "preclinical", "in mice", "in animals", "animal model",
+        "model organism", "in rodents", "rat", "murine", "mouse",
+        "c. elegans", "drosophila", "zebrafish", "in vitro",
+        "ex vivo", "cell culture", "rodent",
     )
     for i, sent in enumerate(sentences):
         if _PRECLINICAL_RE.search(sent):
