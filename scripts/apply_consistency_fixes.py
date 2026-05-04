@@ -511,7 +511,26 @@ def _strip_change_value_misread_sentences(
                 has_absolute = any(
                     p in sent_lc for p in _ABSOLUTE_VALUE_PHRASES
                 )
-                has_change = any(w in sent_lc for w in change_words)
+                # Fix #57: PROXIMITY check — change-word must be
+                # within ±40 chars of the numeric to count.
+                # Defends against long sentences where a change-
+                # word for a DIFFERENT metric ("no change in
+                # frailty, and walk speed was 0.13 m/s") falsely
+                # cleared the numeric.
+                from final_consistency_audit import (
+                    _CHANGE_WORD_PROXIMITY_CHARS,
+                )
+                num_idx = sent_lc.find(numeric.lower())
+                window_start = max(
+                    0, num_idx - _CHANGE_WORD_PROXIMITY_CHARS,
+                )
+                window_end = min(
+                    len(sent_lc),
+                    num_idx + len(numeric)
+                    + _CHANGE_WORD_PROXIMITY_CHARS,
+                )
+                window = sent_lc[window_start:window_end]
+                has_change = any(w in window for w in change_words)
                 if has_absolute and not has_change:
                     should_drop = True
                     n_stripped += 1

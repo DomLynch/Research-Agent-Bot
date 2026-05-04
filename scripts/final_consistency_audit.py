@@ -795,10 +795,25 @@ _CHANGE_WORDS = (
     "delta", "reduction", "rise", "decline", "gain",
 )
 _ABSOLUTE_VALUE_PHRASES = (
-    "falls below", "below the", "above the",
-    "value of", "level of",
-    "absolute", "indicates", "signals",
+    # Threshold-comparison patterns
+    "falls below", "below the", "above the", "below clinically",
+    "below threshold", "below thresholds", "remained below",
+    "below clinically meaningful", "below clinically significant",
+    "fell below", "below the cutoff", "below the cut-off",
+    "below the threshold",
+    # Absolute-value framing
+    "value of", "level of", "absolute",
+    # Inferred-meaning verbs
+    "indicates", "signals", "reflects",
 )
+# Refactor 2026-05-04 / Fix #57: change-word PROXIMITY requirement.
+# A misread can hide a change-word elsewhere in a long sentence
+# (e.g. "no change in frailty classification, AND walk speed was
+# reported at 0.13 m/s, which remained below clinical thresholds").
+# The change-word "no change" applies to FRAILTY, not the 0.13 m/s
+# walk-speed value. The change-word must be NEAR the numeric to
+# count as a proper hedge.
+_CHANGE_WORD_PROXIMITY_CHARS = 40  # ±40 chars around the numeric
 
 
 def _check_change_value_misread(
@@ -853,11 +868,25 @@ def _check_change_value_misread(
                 continue
             # Sentence is a misread iff it contains absolute-value
             # phrasing AND does NOT contain any of the source's
-            # change-words.
+            # change-words PROXIMITY-CLOSE to the numeric.
+            #
+            # Fix #57: proximity check. A long sentence may have a
+            # change-word that applies to a DIFFERENT metric ("no
+            # change in frailty classification, and walk speed was
+            # reported at 0.13 m/s, which remained below..."). The
+            # change-word must be within ±40 chars of the numeric
+            # to count as a hedge for THIS numeric.
             has_absolute = any(
                 p in sent_lc for p in _ABSOLUTE_VALUE_PHRASES
             )
-            has_change = any(w in sent_lc for w in change_words)
+            num_idx = sent_lc.find(numeric.lower())
+            window_start = max(0, num_idx - _CHANGE_WORD_PROXIMITY_CHARS)
+            window_end = min(
+                len(sent_lc),
+                num_idx + len(numeric) + _CHANGE_WORD_PROXIMITY_CHARS,
+            )
+            window = sent_lc[window_start:window_end]
+            has_change = any(w in window for w in change_words)
             if has_absolute and not has_change:
                 snippet = sent.strip()[:200]
                 issues.append(ConsistencyIssue(
