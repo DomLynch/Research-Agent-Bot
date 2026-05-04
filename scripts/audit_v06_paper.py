@@ -66,30 +66,63 @@ def _load_background_lit_numerics() -> set[str]:
         return set()
 
 
+_OBJECTIVE_PARTIAL_TYPES = {
+    # Objective-fact claim types where partial-confidence reflects
+    # interpretive-binding uncertainty (active-vs-control arm,
+    # primary-vs-secondary endpoint), not fabrication risk. The number
+    # itself is a primary-source fact extracted from the paper text.
+    "unit_value", "sample_size", "year", "sample_count",
+}
+
+
 def _load_corpus_numerics() -> set[str]:
-    """All numeric tokens that appear in v0.6.0 quant-claims PLUS
-    pre-vetted background-literature thresholds (Fix #16).
+    """STRICT pool for prose Q2: HIGH-confidence claims always, plus
+    PARTIAL-confidence claims for objective-fact claim types only.
+    This is the prose admissibility rule — used to gate any numeric
+    in the LLM-authored body sections (introduction, background,
+    results, discussion, etc.) where fabrication risk is real.
 
-    Refactor 2026-05-04 (Q2 universal-fix wave 2): admissibility is now
-    'is the number IN the corpus?'. Both high and partial confidence
-    are accepted for any numeric claim type. The 'partial' label
-    reflects the binder's uncertainty about which (endpoint, arm,
-    direction) tuple a value ties to — but the value itself was
-    extracted from the source paper text, so it IS in the corpus.
+    P1 reviewer fix (2026-05-04 wave 3): scoped the partial-confidence
+    admission to OBJECTIVE_PARTIAL_TYPES only. Loosening this further
+    risks turning 'value coincidentally exists in the corpus' into
+    'value is claim-bound', the very integrity trap the strict rule
+    prevents. The wider HIGH+ALL_PARTIAL pool is kept available for
+    the deterministic Quantitative Evidence Index via
+    _load_table_admissible_numerics() and applied only inside that
+    section by _check_numeric_integrity's scoped audit.
 
-    Fabrication prevention is handled at the WRITER prompt layer
-    (NUMERIC_DISCIPLINE_RULE in agent/paper_writer_prompts.py:
-    'You may use ONLY numerics from supplied receipts'), not here.
-    The audit's traceability check answers a narrower question that
-    partial confidence is sufficient for. This unification lets the
-    Quantitative Evidence Index (agent/results_table.py) emit any
-    value the audit will subsequently accept — single source of
-    truth, no admissibility-mismatch trapdoor.
-
-    Only 'none' / unbound-confidence values are still rejected — those
-    weren't tied to any paper section and could be regex-extraction
-    artifacts (page numbers, table-cell remnants).
+    Background-literature thresholds appended unconditionally (Fix #16
+    — admissible in prose ONLY when their canonical citation is in
+    the same sentence; enforced by Stage-2 _check_background_lit_*).
     """
+    nums: set[str] = set()
+    for path in QUANT_DIR.glob("*.quant_claims.json"):
+        d = json.loads(path.read_text())
+        for c in d.get("claims", []):
+            confidence = (c.get("binding_confidence") or "").lower()
+            claim_type = c.get("claim_type") or ""
+            admit = (
+                confidence == "high"
+                or (confidence == "partial"
+                    and claim_type in _OBJECTIVE_PARTIAL_TYPES)
+            )
+            if not admit:
+                continue
+            _add_claim_numerics(c, nums)
+    nums |= _load_background_lit_numerics()
+    return nums
+
+
+def _load_table_admissible_numerics() -> set[str]:
+    """LOOSE pool for the Quantitative Evidence Index table only.
+    HIGH or PARTIAL confidence accepted for any numeric claim type —
+    matches agent/results_table._confidence_admissible. Used by
+    _check_numeric_integrity to validate numerics that appear inside
+    the deterministic table block, where fabrication is structurally
+    impossible (table is built from corpus by code, not LLM).
+
+    NEVER applied to prose. Single-purpose function for the scoped
+    admissibility audit."""
     nums: set[str] = set()
     for path in QUANT_DIR.glob("*.quant_claims.json"):
         d = json.loads(path.read_text())
@@ -97,20 +130,23 @@ def _load_corpus_numerics() -> set[str]:
             confidence = (c.get("binding_confidence") or "").lower()
             if confidence not in ("high", "partial"):
                 continue
-            for v in c.get("numeric_values") or ():
-                nums.add(str(v))
-                # Also accept the integer form ("32" for 32.0)
-                if float(v).is_integer():
-                    nums.add(str(int(v)))
-            raw = (c.get("raw_text") or "").strip()
-            if raw:
-                nums.add(raw)
-    # Fix #16: extend with background-literature thresholds. These are
-    # admissible in body prose ONLY when their canonical citation is in
-    # the same sentence — enforced by Stage-2 _check_background_lit_*
-    # in final_consistency_audit.
+            _add_claim_numerics(c, nums)
     nums |= _load_background_lit_numerics()
     return nums
+
+
+def _add_claim_numerics(c: dict, nums: set[str]) -> None:
+    """Helper: extract numerics from one claim into the target set."""
+    for v in c.get("numeric_values") or ():
+        nums.add(str(v))
+        try:
+            if float(v).is_integer():
+                nums.add(str(int(v)))
+        except (TypeError, ValueError):
+            continue
+    raw = (c.get("raw_text") or "").strip()
+    if raw:
+        nums.add(raw)
 
 
 def _load_paper_metadata() -> dict[str, dict]:
@@ -159,52 +195,107 @@ _PATTERNS_BY_CATEGORY: tuple[tuple[str, str], ...] = (
 )
 
 
+# Marker for the deterministic Quantitative Evidence Index section.
+# Reviewer wave-3 fix (2026-05-04): partial-confidence numerics are
+# admissible ONLY inside this block (the table is built from corpus
+# by code, no LLM authorship, so fabrication is structurally
+# impossible). Prose stays strict.
+_TABLE_HEADING_RE = re.compile(
+    r"^##\s+Quantitative\s+Evidence\s+Index\b",
+    flags=re.MULTILINE,
+)
+_NEXT_SECTION_RE = re.compile(r"^##\s+", flags=re.MULTILINE)
+
+
+def _split_table_section(paper: str) -> tuple[str, str]:
+    """Split a paper into (prose_block, table_block).
+
+    Prose: everything outside the Quantitative Evidence Index section.
+    Table: the index section content (heading line through the last
+    line before the next ## heading).
+
+    Returns (paper, '') unchanged if no index section is present —
+    older runs without the deterministic table are audited entirely
+    under the strict prose rule, no behavior change.
+    """
+    m = _TABLE_HEADING_RE.search(paper)
+    if not m:
+        return paper, ""
+    table_start = m.start()
+    # Find the next ## heading after the table heading
+    rest = paper[m.end():]
+    next_m = _NEXT_SECTION_RE.search(rest)
+    if next_m:
+        table_end = m.end() + next_m.start()
+    else:
+        table_end = len(paper)
+    table_block = paper[table_start:table_end]
+    prose_block = paper[:table_start] + paper[table_end:]
+    return prose_block, table_block
+
+
 def _check_numeric_integrity(
     paper: str, corpus_nums: set[str],
 ) -> tuple[bool, str]:
-    # Strip CI-level anchors first ("95% CI", "99% CI") — they are
-    # statistical conventions, not findings. Pre-fix Phase 6.3 paper
-    # false-flagged "95" because corpus has no claim with raw value
-    # "95" — yet "95% CI" appears legitimately in CI reports.
+    """Q2: every reportable numeric in the paper must trace to the
+    corpus. Prose uses the STRICT pool (`corpus_nums` arg, from
+    _load_corpus_numerics — HIGH + objective-partial). The
+    Quantitative Evidence Index block is audited separately under
+    the LOOSE pool (HIGH + ALL_PARTIAL) since the table is
+    code-rendered and structurally cannot fabricate.
+    """
+    # Strip CI-level anchors before splitting (so the strip applies
+    # uniformly to both prose and table blocks).
     paper_clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
     )
+    prose_block, table_block = _split_table_section(paper_clean)
 
     by_cat: dict[str, set[str]] = {}
-    for cat, pat in _PATTERNS_BY_CATEGORY:
-        vals = set(re.findall(pat, paper_clean))
-        # Filter trivial integers ≤1.0 / ≥1000 ONLY for percentages —
-        # other categories legitimately use small/large numerics
-        # (p<0.05, n=12000, dose 850 mg).
-        if cat == "percentage":
-            vals = {v for v in vals if 1.0 < float(v) < 1000}
-        by_cat[cat] = vals
-
     untraceable_by_cat: dict[str, list[str]] = {}
     n_total = 0
     n_bad = 0
-    for cat, vals in by_cat.items():
-        bad = []
-        for v in vals:
-            f = float(v)
-            candidates = {v, str(f), str(int(f)) if f.is_integer() else v}
-            if not any(c in corpus_nums for c in candidates):
-                bad.append(v)
-        n_total += len(vals)
-        n_bad += len(bad)
-        if bad:
-            untraceable_by_cat[cat] = sorted(bad)[:3]
+
+    # Lazy-load the loose pool only when a table is present.
+    table_pool: set[str] | None = None
+    if table_block:
+        table_pool = _load_table_admissible_numerics()
+
+    def _audit_block(block: str, pool: set[str]) -> None:
+        nonlocal n_total, n_bad
+        for cat, pat in _PATTERNS_BY_CATEGORY:
+            vals = set(re.findall(pat, block))
+            if cat == "percentage":
+                vals = {v for v in vals if 1.0 < float(v) < 1000}
+            by_cat.setdefault(cat, set()).update(vals)
+            bad = []
+            for v in vals:
+                f = float(v)
+                candidates = {
+                    v, str(f),
+                    str(int(f)) if f.is_integer() else v,
+                }
+                if not any(c in pool for c in candidates):
+                    bad.append(v)
+            n_total += len(vals)
+            n_bad += len(bad)
+            if bad:
+                untraceable_by_cat.setdefault(cat, []).extend(bad)
+
+    _audit_block(prose_block, corpus_nums)
+    if table_block and table_pool is not None:
+        _audit_block(table_block, table_pool)
+
+    # Trim per-category untraceable lists for the readout
+    for cat, vals in untraceable_by_cat.items():
+        untraceable_by_cat[cat] = sorted(set(vals))[:3]
 
     pct_clean = (n_total - n_bad) / n_total if n_total else 1.0
     detail = ", ".join(
-        f"{cat}={len(by_cat[cat])-len(untraceable_by_cat.get(cat, []))}"
+        f"{cat}={len(by_cat[cat])-len([v for v in untraceable_by_cat.get(cat, []) if v in by_cat[cat]])}"
         f"/{len(by_cat[cat])}"
         for cat in by_cat if by_cat[cat]
     )
-    # Fix #8 reviewer-P1: STRICT zero-tolerance gate. AAA / PhD-grade
-    # papers require every reportable numeric to trace; pre-fix the
-    # 90% threshold let single untraceable values (e.g. a fabricated
-    # "59" percentage) silently pass. Now n_bad == 0 is the bar.
     return n_bad == 0, (
         f"{n_total - n_bad}/{n_total} numerics trace to corpus "
         f"({pct_clean:.0%}); per-category: {detail or 'none'}; "
