@@ -1077,8 +1077,14 @@ def _check_change_value_paragraph_threshold(
                 len(para_lc), num_idx + len(numeric) + 60,
             )
             window = para_lc[window_start:window_end]
-            change_words = change_value_words.get(numeric, set())
-            if any(w in window for w in change_words):
+            # Refactor 2026-05-04: accept ANY word from the GLOBAL
+            # _CHANGE_WORDS set within ±60 chars of the numeric.
+            # Corpus-source-specific subset was too strict — Witham's
+            # source used 'improvement'/'difference', but writer's
+            # natural prose says 'change of 0.13 m/s'. 'Change' is in
+            # _CHANGE_WORDS but wasn't in Witham's specific set, so
+            # the proximity check missed the legitimate hedge.
+            if any(w in window for w in _CHANGE_WORDS):
                 continue
             # Hits: this paragraph juxtaposes a change-numeric with
             # a threshold marker, with no nearby change-word hedge.
