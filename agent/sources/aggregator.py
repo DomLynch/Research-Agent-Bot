@@ -42,6 +42,8 @@ def _build_registry() -> dict:
     from agent.sources.openaire import OpenAireClient
     from agent.sources.pmc_oai import PmcOaiClient
     from agent.sources.chembl import ChemblClient
+    from agent.sources.arxiv import ArxivClient
+    from agent.sources.medrxiv import MedRxivClient
     return {
         # Tier 1: free, no auth, in default discovery set
         "pubmed": (PubMedClient(), True, None),
@@ -51,6 +53,7 @@ def _build_registry() -> dict:
             ClinicalTrialsClient(), True, None,
         ),
         "biorxiv": (BioRxivClient(), True, None),
+        "medrxiv": (MedRxivClient(), True, None),
         "semanticscholar": (
             SemanticScholarClient(), True, None,
         ),
@@ -58,9 +61,11 @@ def _build_registry() -> dict:
         "doaj": (DoajClient(), True, None),
         "openaire": (OpenAireClient(), True, None),
         "pmc_oai": (PmcOaiClient(), True, None),
-        # Tier 2: free with API key (off by default unless key set)
+        "arxiv": (ArxivClient(), True, None),
+        # Tier 2: free with API key (auto-enables when key set;
+        # the auth_env gate handles the "off without key" semantics)
         "core": (
-            CoreClient(), False, "CORE_API_KEY",
+            CoreClient(), True, "CORE_API_KEY",
         ),
         # Tier 3: supporting (drug pharmacology, opt-in)
         "chembl": (ChemblClient(), False, None),
