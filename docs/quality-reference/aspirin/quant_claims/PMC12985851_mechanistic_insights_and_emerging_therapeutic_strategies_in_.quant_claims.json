@@ -1,0 +1,336 @@
+{
+  "paper_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_",
+  "doi": "10.14797/mdcvj.1760",
+  "extracted_at": "2026-05-04T16:05:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-u-172",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 172,
+      "sentence": "Recurrent pericarditis is a heterogeneous and often debilitating inflammatory disorder characterized by recurrent flares following a symptom-free interval of at least 4 to 6 weeks.",
+      "context_window": "t flares following a symptom-free interval of at least 4 to 6 weeks. Although most cases in developed countries are idiopathic",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-u-260",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 260,
+      "sentence": "Recurrent pericarditis is defined as the recurrence of pericarditis after a symptom-free interval of at least 4 to 6 weeks following a documented initial episode.",
+      "context_window": "pericarditis after a symptom-free interval of at least 4 to 6 weeks following a documented initial episode. 1 This is distinct",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-464",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 464,
+      "sentence": "Epidemiologically, recurrent pericarditis occurs in approximately 15% to 30% of patients after a first episode of acute pericarditis in North America and Western Europe, with higher rates in certain risk groups (eg, those with multiple recurrences, incomplete course or response to first-line anti-inflammatory therapy, corticosteroid use, or underlying autoimmune disease).",
+      "context_window": "iologically, recurrent pericarditis occurs in approximately 15% to 30% of patients after a first episode of acute pericardi",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-471",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 471,
+      "sentence": "Epidemiologically, recurrent pericarditis occurs in approximately 15% to 30% of patients after a first episode of acute pericarditis in North America and Western Europe, with higher rates in certain risk groups (eg, those with multiple recurrences, incomplete course or response to first-line anti-inflammatory therapy, corticosteroid use, or underlying autoimmune disease).",
+      "context_window": "ally, recurrent pericarditis occurs in approximately 15% to 30% of patients after a first episode of acute pericarditis in",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-u-174",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 174,
+      "sentence": "The American College of Cardiology recommends that conventional therapy for recurrent pericarditis consists of high-dose aspirin or NSAIDs in combination with colchicine for 6 months as first-line treatment.",
+      "context_window": "h-dose aspirin or NSAIDs in combination with colchicine for 6 months as first-line treatment. Aspirin is preferred in patients w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-u-399",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 399,
+      "sentence": "1\n\nColchicine is a cornerstone due to its efficacy in reducing recurrence rates and should be continued for at least 6 months in recurrent cases.",
+      "context_window": "ucing recurrence rates and should be continued for at least 6 months in recurrent cases. 1 It is strongly supported by randomize",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-801",
+      "claim_type": "percentage",
+      "raw_text": "37.5%",
+      "numeric_values": [
+        37.5
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 801,
+      "sentence": "The 2013 Investigation on Colchicine for Acute Pericarditis (ICAP) trial established colchicine\u2019s efficacy in acute pericarditis, showing a reduction in incessant or recurrent pericarditis from 37.5% with placebo to 16.7% with colchicine over 3 months.",
+      "context_window": "ing a reduction in incessant or recurrent pericarditis from 37.5% with placebo to 16.7% with colchicine over 3 months. 22 For",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-823",
+      "claim_type": "percentage",
+      "raw_text": "16.7%",
+      "numeric_values": [
+        16.7
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 823,
+      "sentence": "The 2013 Investigation on Colchicine for Acute Pericarditis (ICAP) trial established colchicine\u2019s efficacy in acute pericarditis, showing a reduction in incessant or recurrent pericarditis from 37.5% with placebo to 16.7% with colchicine over 3 months.",
+      "context_window": "essant or recurrent pericarditis from 37.5% with placebo to 16.7% with colchicine over 3 months. 22 For recurrent pericarditi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-u-850",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 850,
+      "sentence": "The 2013 Investigation on Colchicine for Acute Pericarditis (ICAP) trial established colchicine\u2019s efficacy in acute pericarditis, showing a reduction in incessant or recurrent pericarditis from 37.5% with placebo to 16.7% with colchicine over 3 months.",
+      "context_window": "ditis from 37.5% with placebo to 16.7% with colchicine over 3 months. 22 For recurrent pericarditis, the Colchicine for Recurren",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-1088",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1088,
+      "sentence": "In CORP, among patients with a first recurrence, colchicine reduced subsequent recurrences from 55% (placebo) to 24%.",
+      "context_window": "recurrence, colchicine reduced subsequent recurrences from 55% (placebo) to 24%. 23 In CORP-2, which enrolled patients wit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-1105",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1105,
+      "sentence": "In CORP, among patients with a first recurrence, colchicine reduced subsequent recurrences from 55% (placebo) to 24%.",
+      "context_window": "hicine reduced subsequent recurrences from 55% (placebo) to 24%. 23 In CORP-2, which enrolled patients with multiple recurr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-1199",
+      "claim_type": "percentage",
+      "raw_text": "21.6%",
+      "numeric_values": [
+        21.6
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1199,
+      "sentence": "23 In CORP-2, which enrolled patients with multiple recurrences, the recurrence rate was 21.6% with colchicine versus 42.5% with placebo over 6 months (relative risk, 0.49; number needed to treat, 5).",
+      "context_window": "patients with multiple recurrences, the recurrence rate was 21.6% with colchicine versus 42.5% with placebo over 6 months (re",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-1228",
+      "claim_type": "percentage",
+      "raw_text": "42.5%",
+      "numeric_values": [
+        42.5
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1228,
+      "sentence": "23 In CORP-2, which enrolled patients with multiple recurrences, the recurrence rate was 21.6% with colchicine versus 42.5% with placebo over 6 months (relative risk, 0.49; number needed to treat, 5).",
+      "context_window": "ences, the recurrence rate was 21.6% with colchicine versus 42.5% with placebo over 6 months (relative risk, 0.49; number nee",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-u-1252",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 1252,
+      "sentence": "23 In CORP-2, which enrolled patients with multiple recurrences, the recurrence rate was 21.6% with colchicine versus 42.5% with placebo over 6 months (relative risk, 0.49; number needed to treat, 5).",
+      "context_window": "te was 21.6% with colchicine versus 42.5% with placebo over 6 months (relative risk, 0.49; number needed to treat, 5). 24 Corti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-u-1373",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg/kg/day",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg/kg/day",
+      "source_section": "limitations",
+      "source_offset": 1373,
+      "sentence": "24\n\nCorticosteroids (low to moderate dose, eg, prednisone 0.2-0.5 mg/kg/day) are reserved for patients who are refractory or intolerant to first-line therapy.",
+      "context_window": "Corticosteroids (low to moderate dose, eg, prednisone 0.2-0.5 mg/kg/day) are reserved for patients who are refractory or intolerant",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-1799",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1799,
+      "sentence": "1\n\nRelapse rates with conventional therapy (NSAID/colchicine) are approximately 15% to 30% but are significantly higher (up to 40-50%) in patients who require corticosteroids, especially if steroids are used early or tapered rapidly.",
+      "context_window": "h conventional therapy (NSAID/colchicine) are approximately 15% to 30% but are significantly higher (up to 40-50%) in patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-1806",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1806,
+      "sentence": "1\n\nRelapse rates with conventional therapy (NSAID/colchicine) are approximately 15% to 30% but are significantly higher (up to 40-50%) in patients who require corticosteroids, especially if steroids are used early or tapered rapidly.",
+      "context_window": "ntional therapy (NSAID/colchicine) are approximately 15% to 30% but are significantly higher (up to 40-50%) in patients who",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12985851_mechanistic_insights_and_emerging_therapeutic_strategies_in_-pct-1849",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1849,
+      "sentence": "1\n\nRelapse rates with conventional therapy (NSAID/colchicine) are approximately 15% to 30% but are significantly higher (up to 40-50%) in patients who require corticosteroids, especially if steroids are used early or tapered rapidly.",
+      "context_window": "oximately 15% to 30% but are significantly higher (up to 40-50%) in patients who require corticosteroids, especially if ste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

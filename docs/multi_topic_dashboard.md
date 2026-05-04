@@ -1,11 +1,11 @@
 # Researka Multi-Topic Dashboard
 
-**Topics attempted:** 5
+**Topics attempted:** 6
 **Topics with ≥1 AAA run:** 2
 **Topics with consecutive-AAA cert:** 2
-**Total runs across all topics:** 77
-**Cumulative LLM cost:** $1.340
-**Total reviewer interventions logged:** 55 applied (1 via repair loop)
+**Total runs across all topics:** 79
+**Cumulative LLM cost:** $1.618
+**Total reviewer interventions logged:** 57 applied (3 via repair loop)
 
 ## Per-Topic Status
 
@@ -13,7 +13,8 @@
 |---|---|---|---|---|---|---|---|---|---|
 | metformin | AAA | 🏆 | 47 | 21 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
 | rapamycin | AAA | 🏆 | 20 | 5 | 13/13 | 0/0 | 100% | 9,002 | $0.306 |
-| statins | Trust-Spine Pass | — | 7 | 0 | 12/13 | 0/0 | 100% | 10,127 | $0.226 |
+| aspirin | Trust-Spine Pass | — | 1 | 0 | 12/13 | 0/0 | 100% | 8,050 | $0.263 |
+| statins | Trust-Spine Pass | — | 8 | 0 | 12/13 | 0/0 | 100% | 9,135 | $0.240 |
 | glp1 | SHIP-BLOCKED | — | 2 | 0 | 8/13 | 0/0 | 100% | 4,732 | $0.269 |
 | senolytics | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/0 | 100% | 6,462 | $0.178 |
 
@@ -45,18 +46,31 @@
 - **LLM cost:** $0.306
 - **Patches applied:** 8 (0 via repair loop)
 
-### statins
+### aspirin
 
-- **Best run:** `synthesis-statins-v06-FINAL-2026-05-04T14-38-15Z`
+- **Best run:** `synthesis-aspirin-v06-proof006-2026-05-04T16-05-37Z`
 - **Verdict:** Trust-Spine Pass
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 12/13
 - **Stage-2 consistency:** P1=0 P2=0
 - **Q2 numeric traceability:** 100%
 - **Grok unresolved P1:** 0
-- **Word count:** 10,127
-- **LLM cost:** $0.226
-- **Patches applied:** 12 (0 via repair loop)
+- **Word count:** 8,050
+- **LLM cost:** $0.263
+- **Patches applied:** 4 (0 via repair loop)
+
+### statins
+
+- **Best run:** `synthesis-statins-v06-AAA-2026-05-04T16-05-37Z`
+- **Verdict:** Trust-Spine Pass
+- **Cert (consecutive-AAA gate):** pending
+- **Stage-1 audit:** 12/13
+- **Stage-2 consistency:** P1=0 P2=0
+- **Q2 numeric traceability:** 100%
+- **Grok unresolved P1:** 0
+- **Word count:** 9,135
+- **LLM cost:** $0.240
+- **Patches applied:** 10 (2 via repair loop)
 
 ### glp1
 

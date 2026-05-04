@@ -1,0 +1,1948 @@
+{
+  "paper_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p",
+  "doi": "10.1016/j.bjane.2026.844731",
+  "extracted_at": "2026-05-04T16:05:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 23,
+    "percentage": 31,
+    "risk_ratio": 25,
+    "confidence_interval": 25,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-778",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 778,
+      "sentence": "Meta-analyses were conducted using the Inverse Variance method under a random-effects model, with p < 0.05 considered statistically significant.",
+      "context_window": "Inverse Variance method under a random-effects model, with p < 0.05 considered statistically significant. Of the 23,149 patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-893",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 893,
+      "sentence": "Of the 23,149 patients in 20 RCTs and seven observational studies, 51% received antifibrinolytic agents (tranexamic acid or aprotinin).",
+      "context_window": "23,149 patients in 20 RCTs and seven observational studies, 51% received antifibrinolytic agents (tranexamic acid or aproti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-1109",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.72",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1109,
+      "sentence": "Significant reduction was found for overall mortality (RR = 0.72; [95% CI 0.54-0.95]) in the RCT subgroup.",
+      "context_window": "ses. Significant reduction was found for overall mortality (RR = 0.72; [95% CI 0.54-0.95]) in the RCT subgroup. Red-blood-cell tr",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1121",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.54-0.95",
+      "numeric_values": [
+        0.54,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "Significant reduction was found for overall mortality (RR = 0.72; [95% CI 0.54-0.95]) in the RCT subgroup.",
+      "context_window": "cant reduction was found for overall mortality (RR = 0.72; [95% CI 0.54-0.95]) in the RCT subgroup. Red-blood-cell transfusion requireme",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-1215",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1215,
+      "sentence": "Red-blood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement.",
+      "context_window": "roup. Red-blood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1227",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.53, 0.78",
+      "numeric_values": [
+        0.53,
+        0.78
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1227,
+      "sentence": "Red-blood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement.",
+      "context_window": "ood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-1269",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1269,
+      "sentence": "Red-blood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement.",
+      "context_window": "uced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1281",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.41, 0.84",
+      "numeric_values": [
+        0.41,
+        0.84
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1281,
+      "sentence": "Red-blood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement.",
+      "context_window": ".65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42])",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-1326",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1326,
+      "sentence": "Red-blood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement.",
+      "context_window": "s (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement. The RCT subg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1338",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.36, 0.42",
+      "numeric_values": [
+        0.36,
+        0.42
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1338,
+      "sentence": "Red-blood-cell transfusion requirements were reduced (RR = 0.65; [95% CI 0.53, 0.78]) as well as Platelets (RR = 0.59; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement.",
+      "context_window": "; [95% CI 0.41, 0.84]) and fresh-frozen-plasma (RR = 0.39; [95% CI 0.36, 0.42]) transfusion requirement. The RCT subgroup showed a reduct",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-1445",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1445,
+      "sentence": "The RCT subgroup showed a reduction in thromboembolic events (RR = 0.55; [95% CI 0.39, 0.79]).",
+      "context_window": "e RCT subgroup showed a reduction in thromboembolic events (RR = 0.55; [95% CI 0.39, 0.79]). In off-pump CABG, antifibrinolytics",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1457",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.39, 0.79",
+      "numeric_values": [
+        0.39,
+        0.79
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1457,
+      "sentence": "The RCT subgroup showed a reduction in thromboembolic events (RR = 0.55; [95% CI 0.39, 0.79]).",
+      "context_window": "up showed a reduction in thromboembolic events (RR = 0.55; [95% CI 0.39, 0.79]). In off-pump CABG, antifibrinolytics reduced the need fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4982",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4982,
+      "sentence": "The thresholds of 25%, 50% and 75% were used to define low, moderate and high heterogeneity, respectively.",
+      "context_window": "0.10) and described by the I 2 statistic. The thresholds of 25%, 50% and 75% were used to define low, moderate and high het",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4987",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4987,
+      "sentence": "The thresholds of 25%, 50% and 75% were used to define low, moderate and high heterogeneity, respectively.",
+      "context_window": "and described by the I 2 statistic. The thresholds of 25%, 50% and 75% were used to define low, moderate and high heteroge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4995",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4995,
+      "sentence": "The thresholds of 25%, 50% and 75% were used to define low, moderate and high heterogeneity, respectively.",
+      "context_window": "cribed by the I 2 statistic. The thresholds of 25%, 50% and 75% were used to define low, moderate and high heterogeneity, r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-5197",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5197,
+      "sentence": "Estimates were reported as Relative Risks (RR) for dichotomous outcomes and Mean Differences (MD) for discrete variables with 95% Confidence Intervals.",
+      "context_window": "comes and Mean Differences (MD) for discrete variables with 95% Confidence Intervals. Subgroup analyses moderated by study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-360",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 360,
+      "sentence": "A total of 11,899 (51%) patients received antifibrinolytics, and 11,250 (49%) received placebo or no intervention.",
+      "context_window": "om 20 RTCs and 7 non-randomized cohorts. A total of 11,899 (51%) patients received antifibrinolytics, and 11,250 (49%) rece",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-414",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 414,
+      "sentence": "A total of 11,899 (51%) patients received antifibrinolytics, and 11,250 (49%) received placebo or no intervention.",
+      "context_window": ",899 (51%) patients received antifibrinolytics, and 11,250 (49%) received placebo or no intervention. In the antifibrinolyt",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-495",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "In the antifibrinolytic group, 11,208 (94%) patients received TXA and 691 (6%) received aprotinin.",
+      "context_window": "or no intervention. In the antifibrinolytic group, 11,208 (94%) patients received TXA and 691 (6%) received aprotinin. The",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-531",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 531,
+      "sentence": "In the antifibrinolytic group, 11,208 (94%) patients received TXA and 691 (6%) received aprotinin.",
+      "context_window": "inolytic group, 11,208 (94%) patients received TXA and 691 (6%) received aprotinin. The dose regimen presented significant",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1615",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -77.82 to 42.88",
+      "numeric_values": [
+        -77.82,
+        42.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1615,
+      "sentence": "Reduction of the intraoperative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig.",
+      "context_window": "Reduction of the intraoperative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-1640",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1640,
+      "sentence": "Reduction of the intraoperative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig.",
+      "context_window": "perative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-1656",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1656,
+      "sentence": "Reduction of the intraoperative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig.",
+      "context_window": "oss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive care unit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1731",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.08 to 3.68",
+      "numeric_values": [
+        -2.08,
+        3.68
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1731,
+      "sentence": "Reduction of the intraoperative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig.",
+      "context_window": "until the discharge of the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig. S15 ). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-1754",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1754,
+      "sentence": "Reduction of the intraoperative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig.",
+      "context_window": "the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig. S15 ). The number of p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-1770",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1770,
+      "sentence": "Reduction of the intraoperative blood loss (MD = -17.47; [95% CI -77.82 to 42.88]; p > 0.05; I 2 = 38%) or in time until the discharge of the intensive care unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig.",
+      "context_window": "are unit (MD = 0.8; [95% CI -2.08 to 3.68]; p > 0.05; I 2 = 89%) were not observed ( Fig. S15 ). The number of patients who",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-1901",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1901,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "nt packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fres",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1913",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.53 to 0.67",
+      "numeric_values": [
+        0.53,
+        0.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1913,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "d blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-1935",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1935,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "on reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-1951",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1951,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "ficantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-1987",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1987,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-1999",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.31 to 0.82",
+      "numeric_values": [
+        0.31,
+        0.82
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1999,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-2021",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2021,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "r to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-2037",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2037,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "n plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-2057",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2057,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "[95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig. 2 ). The",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-2069",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.42 to 0.85",
+      "numeric_values": [
+        0.42,
+        0.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2069,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "1 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig. 2 ). There was no change in ei",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-2091",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2091,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig. 2 ). There was no change in either overal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-2107",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2107,
+      "sentence": "The number of patients who underwent packed red blood cell transfusion reduced significantly (RR = 0.59; [95% CI 0.53 to 0.67]; p < 0.05; I 2 = 5%) similar to fresh frozen plasma (RR = 0.50; [95% CI 0.31 to 0.82); p < 0.05; I 2 = 93%) and platelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig.",
+      "context_window": "latelets (RR = 0.60; [95% CI 0.42 to 0.85]; p < 0.05; I 2 = 0%) ( Fig. 2 ). There was no change in either overall mortalit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-2172",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 1.04",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2172,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": "Fig. 2 ). There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-2184",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.87 to 1.24",
+      "numeric_values": [
+        0.87,
+        1.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2184,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": "here was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08;",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-2206",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2206,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": "either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.9",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-2222",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2222,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": "ortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-2252",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 1.08",
+      "numeric_values": [
+        1.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2252,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": ".87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig. 3 ). Reg",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-2264",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.90 to 1.29",
+      "numeric_values": [
+        0.9,
+        1.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2264,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": "; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig. 3 ). Regarding thromboembolic",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-2286",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2286,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": "or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig. 3 ). Regarding thromboembolic outcomes, a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-2302",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2302,
+      "sentence": "There was no change in either overall mortality (RR = 1.04; [95% CI 0.87 to 1.24]; p = 0.65; I 2 = 0%) or in-hospital mortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig.",
+      "context_window": "ortality (RR = 1.08; [95% CI 0.90 to 1.29]; p = 0.35; I 2 = 0%] ( Fig. 3 ). Regarding thromboembolic outcomes, a non-signi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-2392",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2392,
+      "sentence": "Regarding thromboembolic outcomes, a non-significant result was observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig.",
+      "context_window": "mboembolic outcomes, a non-significant result was observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig. 4 ). Bloo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-2404",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.77, 1.19",
+      "numeric_values": [
+        0.77,
+        1.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2404,
+      "sentence": "Regarding thromboembolic outcomes, a non-significant result was observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig.",
+      "context_window": "utcomes, a non-significant result was observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig. 4 ). Blood transfusion requir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-2424",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.70",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2424,
+      "sentence": "Regarding thromboembolic outcomes, a non-significant result was observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig.",
+      "context_window": "ficant result was observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig. 4 ). Blood transfusion requirement fores",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-2440",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2440,
+      "sentence": "Regarding thromboembolic outcomes, a non-significant result was observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig.",
+      "context_window": "s observed (RR = 0.96; [95% CI 0.77, 1.19]; p = 0.70; I 2 = 0%] ( Fig. 4 ). Blood transfusion requirement forest plots. (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3104",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3104,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "ked red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-3116",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60 to 0.91",
+      "numeric_values": [
+        0.6,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3116,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "d cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3138",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3138,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3154",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3154,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3186",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3186,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "0 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%). Intra-hospital",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-3198",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.51 to 0.60",
+      "numeric_values": [
+        0.51,
+        0.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3198,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%). Intra-hospital mortality did not dec",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3220",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3220,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "d non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%). Intra-hospital mortality did not decrease in RC",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3236",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3236,
+      "sentence": "The result of packed red blood cells was reduced in both randomized studies (RR = 0.74; [95% CI 0.60 to 0.91]; p < 0.05; I 2 = 0%) and non-randomized studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%).",
+      "context_window": "studies (RR = 0.55; [95% CI 0.51 to 0.60]; p < 0.05; I 2 = 0%). Intra-hospital mortality did not decrease in RCTs (RR = 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3292",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3292,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "2 = 0%). Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-3304",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.29 to 1.41",
+      "numeric_values": [
+        0.29,
+        1.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3304,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "ra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95%",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3326",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3326,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3342",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3342,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p =",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3367",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 1.12",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3367,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%). Overall mortal",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-3379",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.93 to 1.35",
+      "numeric_values": [
+        0.93,
+        1.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3379,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%). Overall mortality showed different r",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3401",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3401,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%). Overall mortality showed different results betw",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3417",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3417,
+      "sentence": "Intra-hospital mortality did not decrease in RCTs (RR = 0.64; [95% CI 0.29 to 1.41]; p = 0.54; I 2 = 0%), unlike in non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%).",
+      "context_window": "non-RCTs (RR = 1.12; [95% CI 0.93 to 1.35]; p = 0.16; I 2 = 0%). Overall mortality showed different results between RCTs (",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3479",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.72",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3479,
+      "sentence": "Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07).",
+      "context_window": "). Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observation",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-3491",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.54 to 0.95",
+      "numeric_values": [
+        0.54,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3491,
+      "sentence": "Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07).",
+      "context_window": "ortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18;",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3513",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3513,
+      "sentence": "Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07).",
+      "context_window": "ent results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3529",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3529,
+      "sentence": "Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07).",
+      "context_window": "een RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41];",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3560",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 1.18",
+      "numeric_values": [
+        1.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3560,
+      "sentence": "Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07).",
+      "context_window": "54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07). Thromboembolic events show",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3572",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3572,
+      "sentence": "Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07).",
+      "context_window": "p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07). Thromboembolic events showed a d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3592",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3592,
+      "sentence": "Overall mortality showed different results between RCTs (RR = 0.72; [95% CI 0.54 to 0.95]; p < 0.05; I 2 = 0%) and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07).",
+      "context_window": "and observational studies (RR = 1.18; [95% CI 0.98; 1.41]; p = 0.07). Thromboembolic events showed a diverged result, with RCTs",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3682",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3682,
+      "sentence": "Thromboembolic events showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02).",
+      "context_window": "ts showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-3694",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.39 to 0.79",
+      "numeric_values": [
+        0.39,
+        0.79
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3694,
+      "sentence": "Thromboembolic events showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02).",
+      "context_window": "diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3716",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3716,
+      "sentence": "Thromboembolic events showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02).",
+      "context_window": "RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (R",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3732",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3732,
+      "sentence": "Thromboembolic events showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02).",
+      "context_window": "eduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-3783",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 1.2",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3783,
+      "sentence": "Thromboembolic events showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02).",
+      "context_window": "5; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02). Given the controversies su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-3794",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3794,
+      "sentence": "Thromboembolic events showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02).",
+      "context_window": "] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02). Given the controversies surround",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-3814",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3814,
+      "sentence": "Thromboembolic events showed a diverged result, with RCTs showing a reduction (RR = 0.55; [95% CI 0.39 to 0.79]; p < 0.05; I 2 = 0%] and observational studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02).",
+      "context_window": "studies showing an increase (RR = 1.2; [95% CI 1.06; 1.35]; p = 0.02). Given the controversies surrounding the availability of a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-4022",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.58",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4022,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": ": overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (R",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-4034",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.20 to 1.65",
+      "numeric_values": [
+        0.2,
+        1.65
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4034,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": "rtality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-4056",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4056,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": "d in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07];",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4072",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4072,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": "ther TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09;",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-4090",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4090,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": "8; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups. In-h",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-4102",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.51 to 1.07",
+      "numeric_values": [
+        0.51,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4102,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": ".20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups. In-hospital mortality was",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-4124",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4124,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": "; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups. In-hospital mortality was not reduced",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4140",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4140,
+      "sentence": "Given the controversies surrounding the availability of aprotinin, a stratified analysis was performed across the antifibrinolytic agents: overall mortality was not reduced in RCTs for either TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%) or aprotinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups.",
+      "context_window": "protinin (RR = 0.74; [95% CI 0.51 to 1.07]; p = 0.09; I 2 = 0%) subgroups. In-hospital mortality was not reduced in RCTs f",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-4210",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.58",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4210,
+      "sentence": "In-hospital mortality was not reduced in RCTs for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%].",
+      "context_window": "ups. In-hospital mortality was not reduced in RCTs for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%]. Thromboembolic",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-4222",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.20 to 1.65",
+      "numeric_values": [
+        0.2,
+        1.65
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4222,
+      "sentence": "In-hospital mortality was not reduced in RCTs for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%].",
+      "context_window": "ital mortality was not reduced in RCTs for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%]. Thromboembolic events were reduced i",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-4244",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4244,
+      "sentence": "In-hospital mortality was not reduced in RCTs for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%].",
+      "context_window": "reduced in RCTs for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%]. Thromboembolic events were reduced in RCTs with",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4260",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4260,
+      "sentence": "In-hospital mortality was not reduced in RCTs for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%].",
+      "context_window": "for TXA (RR = 0.58; [95% CI 0.20 to 1.65]; p = 0.19; I 2 = 0%]. Thromboembolic events were reduced in RCTs with aprotinin",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-4324",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4324,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no chang",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-4336",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.23 to 0.86",
+      "numeric_values": [
+        0.23,
+        0.86
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4336,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "lic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-4358",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4358,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "d in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4374",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4374,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "protinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-4420",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4420,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "= 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%). Rob-2 and ROB",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-4432",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60 to 1.01",
+      "numeric_values": [
+        0.6,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4432,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "= 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%). Rob-2 and ROBINS-I were used for qu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-4454",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4454,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "s were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%). Rob-2 and ROBINS-I were used for quality asses",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-4470",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4470,
+      "sentence": "Thromboembolic events were reduced in RCTs with aprotinin (RR = 0.44; [95% CI 0.23 to 0.86]; p = 0.02; I 2 = 0%), while no changes were observed with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%).",
+      "context_window": "with TXA (RR = 0.78; [95% CI 0.60 to 1.01]; p = 0.05; I 2 = 0%). Rob-2 and ROBINS-I were used for quality assessment, as",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-u-9844",
+      "claim_type": "unit_value",
+      "raw_text": "150 mL",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 9844,
+      "sentence": "27 initiated red blood cell transfusion when hemoglobin dropped below 8.5 g.dL -1 and/or the hematocrit level, while transfusion of fresh frozen plasma was initiated to correct suspected coagulation factor deficiencies when chest drain bleeding exceeded > 150 mL.h -1 or > 100 mL.h -1 for two consecutive hours.",
+      "context_window": "on factor deficiencies when chest drain bleeding exceeded > 150 mL.h -1 or > 100 mL.h -1 for two consecutive hours. Casati et",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-u-9861",
+      "claim_type": "unit_value",
+      "raw_text": "100 mL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 9861,
+      "sentence": "27 initiated red blood cell transfusion when hemoglobin dropped below 8.5 g.dL -1 and/or the hematocrit level, while transfusion of fresh frozen plasma was initiated to correct suspected coagulation factor deficiencies when chest drain bleeding exceeded > 150 mL.h -1 or > 100 mL.h -1 for two consecutive hours.",
+      "context_window": "ncies when chest drain bleeding exceeded > 150 mL.h -1 or > 100 mL.h -1 for two consecutive hours. Casati et al., 23 on the ot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-rr-a-11361",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 11361,
+      "sentence": "The analysis suggested a trend toward reduced risk (RR = 0.78; 95% CI 0.60-1.01; p = 0.055), although the confidence interval indicated non-significance.",
+      "context_window": "tation. The analysis suggested a trend toward reduced risk (RR = 0.78; 95% CI 0.60-1.01; p = 0.055), although the confidence inte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-ci-11372",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60-1.01",
+      "numeric_values": [
+        0.6,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 11372,
+      "sentence": "The analysis suggested a trend toward reduced risk (RR = 0.78; 95% CI 0.60-1.01; p = 0.055), although the confidence interval indicated non-significance.",
+      "context_window": "analysis suggested a trend toward reduced risk (RR = 0.78; 95% CI 0.60-1.01; p = 0.055), although the confidence interval indicated non",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-p-11390",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.055",
+      "numeric_values": [
+        0.055
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 11390,
+      "sentence": "The analysis suggested a trend toward reduced risk (RR = 0.78; 95% CI 0.60-1.01; p = 0.055), although the confidence interval indicated non-significance.",
+      "context_window": "d a trend toward reduced risk (RR = 0.78; 95% CI 0.60-1.01; p = 0.055), although the confidence interval indicated non-significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12992088_effectiveness_and_safety_of_antifibrinolytic_agents_in_off_p-pct-11499",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 11499,
+      "sentence": "The absence of heterogeneity (I 2 = 0%) supports consistency across studies, although there were few occurrences of the outcome and the borderline p-value raises concerns regarding the robustness of the finding.",
+      "context_window": "cated non-significance. The absence of heterogeneity (I 2 = 0%) supports consistency across studies, although there were f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

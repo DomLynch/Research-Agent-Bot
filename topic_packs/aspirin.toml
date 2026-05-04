@@ -1,0 +1,155 @@
+# Aspirin topic pack — Proof 006 (multi-topic scalability test #6)
+#
+# Aspirin / acetylsalicylic acid is the most-studied drug class in
+# cardiovascular medicine + has a contested aging-relevant signal
+# (ASPREE, primary prevention controversies, cancer-incidence
+# observational data). Massive OA literature → ideal stress-test
+# for the corpus-discovery pipeline.
+
+topic   = "aspirin"
+class_  = "salicylate_nsaid"
+
+aliases = [
+  "aspirin",
+  "acetylsalicylic acid",
+  "ASA",
+  "salicylate",
+  "low-dose aspirin",
+  "low dose aspirin",
+  # Trade names
+  "Bayer aspirin",
+  "Ecotrin",
+]
+
+expected_evidence_slots = [
+  "human_rcts",
+  "human_observational",
+  "human_mechanism",
+  "preclinical_lifespan",
+  "safety_tolerability",
+  "dosing_regimen",
+  "ongoing_trials",
+  "primary_prevention",         # ASPREE-driven controversy
+  "secondary_prevention",
+  "bleeding_risk",              # aspirin-specific safety axis
+  "cancer_incidence",           # observational signal
+]
+
+special_rules = [
+  "ASPREE 2018 was the landmark primary-prevention RCT in healthy older adults — must reference correctly",
+  "primary-prevention vs secondary-prevention RCTs must be tagged distinctly",
+  "low-dose (75-100mg) vs higher-dose (325mg+) aspirin have distinct safety/benefit profiles",
+  "GI bleeding + intracranial hemorrhage are dose-dependent safety signals — flag",
+  "any cancer-incidence claim from aspirin must hedge — mostly observational, indication-bias risk",
+]
+
+forbidden_verbs_for_protocol_role = [
+  "found", "showed", "improved", "reduced",
+  "demonstrated", "established", "proved",
+]
+
+forbidden_verbs_for_results_role_with_protocol_keywords = [
+  "planned", "will assess", "pending", "ongoing", "awaiting",
+]
+
+
+# --- v2 generic-multi-topic top-level fields -------------------------
+
+active_arm_synonyms = [
+  "aspirin",
+  "acetylsalicylic acid",
+  "ASA",
+  "salicylate",
+  "low-dose aspirin",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+  "no aspirin",
+]
+
+corpus_search_queries = [
+  "aspirin AND aging AND elderly",
+  "aspirin AND (RCT OR clinical trial OR randomized)",
+  "aspirin AND (longevity OR healthspan OR mortality)",
+  "aspirin AND ASPREE AND primary prevention",
+  "aspirin AND (cardiovascular event OR stroke OR myocardial infarction)",
+  "aspirin AND (cancer incidence OR cancer mortality OR colorectal)",
+  "aspirin AND (bleeding OR hemorrhage OR adverse) AND elderly",
+  "low-dose aspirin AND (frailty OR functional decline) AND elderly",
+  "aspirin AND meta-analysis AND mortality",
+  "aspirin AND mechanism AND (COX-1 OR COX-2 OR prostaglandin)",
+]
+
+canonical_rct_paper_ids = []
+
+
+# --- Canonical trials ------------------------------------------------
+
+[[canonical_trials]]
+id            = "NCT01038583"
+name          = "ASPREE"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT00390585"
+name          = "ARRIVE"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT00306904"
+name          = "ASCEND"
+expected_role = "published_results"
+design        = "rct"
+
+[[canonical_trials]]
+id            = "NCT01459380"
+name          = "TIPS-3"
+expected_role = "published_results"
+design        = "rct"
+
+
+# --- Hard-coded role overrides ---------------------------------------
+
+[known_role_overrides.NCT01038583]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT00390585]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT00306904]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+[known_role_overrides.NCT01459380]
+role   = "published_results"
+design = "rct"
+tier   = "A1"
+
+
+# --- Endpoint polarity -----------------------------------------------
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiometabolic = "lower_is_better"
+cardiovascular_outcome = "lower_is_better"
+incident_cv_event = "lower_is_better"
+incident_cancer = "lower_is_better"
+incident_stroke = "lower_is_better"
+incident_mi = "lower_is_better"
+muscle_function = "higher_is_better"
+frailty = "lower_is_better"
+gi_bleeding = "lower_is_better"
+intracranial_hemorrhage = "lower_is_better"
+inflammation = "lower_is_better"
+crp = "lower_is_better"

@@ -1,0 +1,282 @@
+{
+  "paper_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_",
+  "doi": "10.1016/j.je.2016.12.011",
+  "extracted_at": "2026-05-04T16:05:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 11,
+    "sample_size": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-698",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 698,
+      "sentence": "Patients in our cohort were followed up for a maximum of 12 years to observe the causes of death.",
+      "context_window": "s. Patients in our cohort were followed up for a maximum of 12 years to observe the causes of death. Kaplan-Meier estimates from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-1140",
+      "claim_type": "unit_value",
+      "raw_text": "66 years",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1140,
+      "sentence": "Our cohort included 41,930 patients with mean ages of 64-66 years and mean body mass indices of 24-25 kg/m 2 .",
+      "context_window": ". Our cohort included 41,930 patients with mean ages of 64-66 years and mean body mass indices of 24-25 kg/m 2 . Patients who r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-1182",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1182,
+      "sentence": "Our cohort included 41,930 patients with mean ages of 64-66 years and mean body mass indices of 24-25 kg/m 2 .",
+      "context_window": "h mean ages of 64-66 years and mean body mass indices of 24-25 kg/m 2 . Patients who received statin monotherapy and were tre",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-707",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 707,
+      "sentence": "To research the cumulative mortality associated with pharmacological interventions, we limited the patient age to \u226540 years.",
+      "context_window": "armacological interventions, we limited the patient age to \u226540 years. Moreover, to determine the overall mortality risk, we anal",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-1802",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 1802,
+      "sentence": "Chronic kidney disease was defined as an estimated glomerular filtration rate (eGFR) of <60 mL/min/1.73 m 2 at registration, although the guideline for clinical practice requires maintenance of this low level for \u22653 months.",
+      "context_window": "fined as an estimated glomerular filtration rate (eGFR) of <60 mL/min/1.73 m 2 at registration, although the guideline for clinic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-1927",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1927,
+      "sentence": "Chronic kidney disease was defined as an estimated glomerular filtration rate (eGFR) of <60 mL/min/1.73 m 2 at registration, although the guideline for clinical practice requires maintenance of this low level for \u22653 months.",
+      "context_window": "inical practice requires maintenance of this low level for \u22653 months. 31 Chronic respiratory disease included asthma, chronic ob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-n-159",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 159,
+      "sentence": "Among patients in the statin monotherapy group (n = 18,904), the proportion of men was slightly smaller than that of the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups.",
+      "context_window": "medicines. Among patients in the statin monotherapy group (n = 18,904), the proportion of men was slightly smaller than that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-n-260",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1495",
+      "numeric_values": [
+        1495.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 260,
+      "sentence": "Among patients in the statin monotherapy group (n = 18,904), the proportion of men was slightly smaller than that of the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups.",
+      "context_window": "ightly smaller than that of the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-n-288",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2761",
+      "numeric_values": [
+        2761.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 288,
+      "sentence": "Among patients in the statin monotherapy group (n = 18,904), the proportion of men was slightly smaller than that of the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups.",
+      "context_window": "the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups. The mean ages and B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-n-317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 317,
+      "sentence": "Among patients in the statin monotherapy group (n = 18,904), the proportion of men was slightly smaller than that of the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups.",
+      "context_window": "s (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups. The mean ages and BMI values of the four group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-403",
+      "claim_type": "unit_value",
+      "raw_text": "66 years",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 403,
+      "sentence": "The mean ages and BMI values of the four groups ranged from 64 to 66 years and from 24 to 25 kg/m 2 , respectively.",
+      "context_window": "an ages and BMI values of the four groups ranged from 64 to 66 years and from 24 to 25 kg/m 2 , respectively. The serum choleste",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-427",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 427,
+      "sentence": "The mean ages and BMI values of the four groups ranged from 64 to 66 years and from 24 to 25 kg/m 2 , respectively.",
+      "context_window": "f the four groups ranged from 64 to 66 years and from 24 to 25 kg/m 2 , respectively. The serum cholesterol levels in the sta",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-2461",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2461,
+      "sentence": "Among patients followed for 3-8 years, the resin monotherapy group was observed to have the longest survival time, followed by the statin monotherapy, no medication and polyunsaturated fatty acid monotherapy groups.",
+      "context_window": "s. statin monotherapy group). Among patients followed for 3-8 years, the resin monotherapy group was observed to have the longe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-2673",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2673,
+      "sentence": "Among those followed for \u22659 years, no difference was observed in the survival curves of the statin monotherapy, polyunsaturated fatty acid monotherapy and no medication groups.",
+      "context_window": "ed fatty acid monotherapy groups. Among those followed for \u22659 years, no difference was observed in the survival curves of the s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-140",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 140,
+      "sentence": "Our data suggest that, when measured from the baseline, patients treated with statin and other medicines had a higher rate of mortality at \u22655 years compared with those treated with either statin monotherapy, other medicines or no medication.",
+      "context_window": "atin and other medicines had a higher rate of mortality at \u22655 years compared with those treated with either statin monotherapy,",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

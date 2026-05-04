@@ -1,0 +1,1164 @@
+{
+  "paper_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco",
+  "doi": "10.3389/fcvm.2026.1722107",
+  "extracted_at": "2026-05-04T16:05:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 22,
+    "confidence_interval": 11,
+    "unit_value": 12,
+    "mean_sd": 3,
+    "sample_size": 6,
+    "p_value": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-781",
+      "claim_type": "percentage",
+      "raw_text": "40.0%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 781,
+      "sentence": "Overall, 11,918 patients (40.0%) developed NODM.",
+      "context_window": "cerebrovascular events (MACCE). Overall, 11,918 patients (40.0%) developed NODM. The incidence of NODM was comparable betwe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-887",
+      "claim_type": "percentage",
+      "raw_text": "42.9%",
+      "numeric_values": [
+        42.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 887,
+      "sentence": "The incidence of NODM was comparable between high- and moderate-intensity statins (42.9% vs.",
+      "context_window": "as comparable between high- and moderate-intensity statins (42.9% vs. 41.1%). In the moderate-intensity group, rosuvastatin (",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-897",
+      "claim_type": "percentage",
+      "raw_text": "41.1%",
+      "numeric_values": [
+        41.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "41.1%).",
+      "context_window": "ble between high- and moderate-intensity statins (42.9% vs. 41.1%). In the moderate-intensity group, rosuvastatin (adjusted H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-970",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01-1.14",
+      "numeric_values": [
+        1.01,
+        1.14
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 970,
+      "sentence": "In the moderate-intensity group, rosuvastatin (adjusted HR 1.07, 95% CI 1.01-1.14), pravastatin (HR 1.19, 95% CI 1.02-1.38), and simvastatin (HR 1.15, 95% CI 1.06-1.20) were associated with higher NODM risk compared with atorvastatin, while fluvastatin and pitavastatin showed no significant differences.",
+      "context_window": "e moderate-intensity group, rosuvastatin (adjusted HR 1.07, 95% CI 1.01-1.14), pravastatin (HR 1.19, 95% CI 1.02-1.38), and simvastatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-1011",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.02-1.38",
+      "numeric_values": [
+        1.02,
+        1.38
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1011,
+      "sentence": "In the moderate-intensity group, rosuvastatin (adjusted HR 1.07, 95% CI 1.01-1.14), pravastatin (HR 1.19, 95% CI 1.02-1.38), and simvastatin (HR 1.15, 95% CI 1.06-1.20) were associated with higher NODM risk compared with atorvastatin, while fluvastatin and pitavastatin showed no significant differences.",
+      "context_window": "(adjusted HR 1.07, 95% CI 1.01-1.14), pravastatin (HR 1.19, 95% CI 1.02-1.38), and simvastatin (HR 1.15, 95% CI 1.06-1.20) were associat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-1056",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.06-1.20",
+      "numeric_values": [
+        1.06,
+        1.2
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "In the moderate-intensity group, rosuvastatin (adjusted HR 1.07, 95% CI 1.01-1.14), pravastatin (HR 1.19, 95% CI 1.02-1.38), and simvastatin (HR 1.15, 95% CI 1.06-1.20) were associated with higher NODM risk compared with atorvastatin, while fluvastatin and pitavastatin showed no significant differences.",
+      "context_window": "atin (HR 1.19, 95% CI 1.02-1.38), and simvastatin (HR 1.15, 95% CI 1.06-1.20) were associated with higher NODM risk compared with atorva",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-154",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 154,
+      "sentence": "This study utilized data from the Korean National Health Insurance Service (NHIS) database, which provides comprehensive health information for more than 98% of the Korean population under a mandatory universal health insurance system.",
+      "context_window": "ich provides comprehensive health information for more than 98% of the Korean population under a mandatory universal health",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-652",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 652,
+      "sentence": "The second is the national health screening database, which is offered biennially to all insured individuals aged \u226540 years and includes standardized anthropometric and laboratory measurements - such as body mass index (BMI), blood pressure, fasting glucose, lipid profiles, along with self-reported lifestyle factors- such as smoking status, alcohol consumption, and physical activity.",
+      "context_window": "hich is offered biennially to all insured individuals aged \u226540 years and includes standardized anthropometric and laboratory mea",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-2404",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 2404,
+      "sentence": "Patients were excluded if they met any of the following criteria: (1) pre-existing diabetes mellitus within one year prior to the index date; (2-4) treatment stability criteria assessed during the first year after statin initiation, including discontinuation of statin therapy for >3 consecutive months during the first year after initiation; switching to another statin type or changing statin intensity within the first year; absence of healthcare utilization for >1 year during the follow-up; (5) comorbid conditions likely to confound the diagnosis of diabetes (e.g., chronic pancreatitis, pancreatic cancer, Cushing's syndrome); (6) malignancy at baseline; (7) missing baseline covariate data from the health screening program; finally (8) use of low-intensity statin therapy at the index date.",
+      "context_window": "thin the first year; absence of healthcare utilization for >1 year during the follow-up; (5) comorbid conditions likely to con",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-5132",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5132,
+      "sentence": "Crude incidence rates were calculated as the number of events per 100 person-years, with 95% confidence intervals (CIs) based on a Poisson distribution.",
+      "context_window": "lculated as the number of events per 100 person-years, with 95% confidence intervals (CIs) based on a Poisson distribution.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-5285",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5285,
+      "sentence": "Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% CIs for the risk of NODM.",
+      "context_window": "ession models were used to estimate hazard ratios (HRs) and 95% CIs for the risk of NODM. Multivariable models were adjuste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-107",
+      "claim_type": "percentage",
+      "raw_text": "2.7%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 107,
+      "sentence": "A total of 29,826 patients were included as first-line statin users for secondary prevention, of whom 809 (2.7%) received high-intensity statins and 29,017 (97.3%) received moderate-intensity statins, while 832 patients prescribed low-intensity statins were excluded from the analysis ( Figure 1 ).",
+      "context_window": "st-line statin users for secondary prevention, of whom 809 (2.7%) received high-intensity statins and 29,017 (97.3%) receive",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-157",
+      "claim_type": "percentage",
+      "raw_text": "97.3%",
+      "numeric_values": [
+        97.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 157,
+      "sentence": "A total of 29,826 patients were included as first-line statin users for secondary prevention, of whom 809 (2.7%) received high-intensity statins and 29,017 (97.3%) received moderate-intensity statins, while 832 patients prescribed low-intensity statins were excluded from the analysis ( Figure 1 ).",
+      "context_window": "whom 809 (2.7%) received high-intensity statins and 29,017 (97.3%) received moderate-intensity statins, while 832 patients pr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-msd-336",
+      "claim_type": "mean_sd",
+      "raw_text": "60 \u00b1 11",
+      "numeric_values": [
+        60.0,
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 336,
+      "sentence": "The mean age of study population was 60 \u00b1 11 years, and 49% were men.",
+      "context_window": "analysis ( Figure 1 ). The mean age of study population was 60 \u00b1 11 years, and 49% were men. The mean follow-up duration was 2.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-341",
+      "claim_type": "unit_value",
+      "raw_text": "11 years",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 341,
+      "sentence": "The mean age of study population was 60 \u00b1 11 years, and 49% were men.",
+      "context_window": "sis ( Figure 1 ). The mean age of study population was 60 \u00b1 11 years, and 49% were men. The mean follow-up duration was 2.3 \u00b1 1.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-355",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 355,
+      "sentence": "The mean age of study population was 60 \u00b1 11 years, and 49% were men.",
+      "context_window": "). The mean age of study population was 60 \u00b1 11 years, and 49% were men. The mean follow-up duration was 2.3 \u00b1 1.3 years (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-msd-401",
+      "claim_type": "mean_sd",
+      "raw_text": "2.3 \u00b1 1.3",
+      "numeric_values": [
+        2.3,
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 401,
+      "sentence": "The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome.",
+      "context_window": "11 years, and 49% were men. The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-407",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 years",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 407,
+      "sentence": "The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome.",
+      "context_window": "rs, and 49% were men. The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-425",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 years",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 425,
+      "sentence": "The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome.",
+      "context_window": "en. The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (medi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-msd-473",
+      "claim_type": "mean_sd",
+      "raw_text": "3.3 \u00b1 1.8",
+      "numeric_values": [
+        3.3,
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 473,
+      "sentence": "The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome.",
+      "context_window": "ars (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome. Baseline ch",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-479",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 years",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 479,
+      "sentence": "The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome.",
+      "context_window": "edian 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome. Baseline characte",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-497",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 years",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 497,
+      "sentence": "The mean follow-up duration was 2.3 \u00b1 1.3 years (median 2.1 years) for the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome.",
+      "context_window": "or the primary outcome analysis and 3.3 \u00b1 1.8 years (median 3.1 years) for secondary outcome. Baseline characteristics were gener",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-839",
+      "claim_type": "unit_value",
+      "raw_text": "132 mg/dL",
+      "numeric_values": [
+        132.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 839,
+      "sentence": "The mean LDL-C and total cholesterol levels were 132 mg/dL and 198 mg/dL, respectively, at baseline, reflecting suboptimal lipid control before statin initiation.",
+      "context_window": "Table 1 ). The mean LDL-C and total cholesterol levels were 132 mg/dL and 198 mg/dL, respectively, at baseline, reflecting subopt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-853",
+      "claim_type": "unit_value",
+      "raw_text": "198 mg/dL",
+      "numeric_values": [
+        198.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 853,
+      "sentence": "The mean LDL-C and total cholesterol levels were 132 mg/dL and 198 mg/dL, respectively, at baseline, reflecting suboptimal lipid control before statin initiation.",
+      "context_window": "mean LDL-C and total cholesterol levels were 132 mg/dL and 198 mg/dL, respectively, at baseline, reflecting suboptimal lipid con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-988",
+      "claim_type": "unit_value",
+      "raw_text": "97 mg/dL",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 988,
+      "sentence": "The mean fasting glucose level was 97 mg/dL, and the average BMI was 24 kg/m 2 , consistent with a typical east asian secondary prevention population.",
+      "context_window": "efore statin initiation. The mean fasting glucose level was 97 mg/dL, and the average BMI was 24 kg/m 2 , consistent with a typi",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-1022",
+      "claim_type": "unit_value",
+      "raw_text": "24 kg",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1022,
+      "sentence": "The mean fasting glucose level was 97 mg/dL, and the average BMI was 24 kg/m 2 , consistent with a typical east asian secondary prevention population.",
+      "context_window": "fasting glucose level was 97 mg/dL, and the average BMI was 24 kg/m 2 , consistent with a typical east asian secondary preven",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-1143",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1143,
+      "sentence": "Regarding comorbidities, approximately 44% of patients had hypertension, 42% had dyslipidemia, and 4.4% had a history of heart failure.",
+      "context_window": "evention population. Regarding comorbidities, approximately 44% of patients had hypertension, 42% had dyslipidemia, and 4.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-1177",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1177,
+      "sentence": "Regarding comorbidities, approximately 44% of patients had hypertension, 42% had dyslipidemia, and 4.4% had a history of heart failure.",
+      "context_window": "orbidities, approximately 44% of patients had hypertension, 42% had dyslipidemia, and 4.4% had a history of heart failure.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-1203",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1203,
+      "sentence": "Regarding comorbidities, approximately 44% of patients had hypertension, 42% had dyslipidemia, and 4.4% had a history of heart failure.",
+      "context_window": "44% of patients had hypertension, 42% had dyslipidemia, and 4.4% had a history of heart failure. The Charlson comorbidity in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-1394",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1394,
+      "sentence": "Smoking and alcohol consumption patterns were also similar, with 37% of patients being current or former smokers and nearly half reporting light alcohol use (<2 times per week).",
+      "context_window": "ng and alcohol consumption patterns were also similar, with 37% of patients being current or former smokers and nearly half",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-n-1589",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1589,
+      "sentence": "Among individual statins, atorvastatin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%).",
+      "context_window": "ns, atorvastatin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and ro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-1601",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1601,
+      "sentence": "Among individual statins, atorvastatin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%).",
+      "context_window": "atin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-n-1633",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1633,
+      "sentence": "Among individual statins, atorvastatin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%).",
+      "context_window": "scribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%). Detailed base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-1644",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1644,
+      "sentence": "Among individual statins, atorvastatin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%).",
+      "context_window": "nt ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%). Detailed baseline char",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-n-1668",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1668,
+      "sentence": "Among individual statins, atorvastatin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%).",
+      "context_window": "ollowed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%). Detailed baseline characteristics according to i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-1679",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1679,
+      "sentence": "Among individual statins, atorvastatin was the most frequently prescribed agent ( n = 19,661, 66%), followed by simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%).",
+      "context_window": "simvastatin ( n = 4,565, 15%) and rosuvastatin ( n = 3,062, 10%). Detailed baseline characteristics according to individual",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-2066",
+      "claim_type": "percentage",
+      "raw_text": "40.0%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2066,
+      "sentence": "During follow-up, 11,918 patients (40.0%) developed NODM.",
+      "context_window": "SD, standard deviation. During follow-up, 11,918 patients (40.0%) developed NODM. To minimize the bias related to statin int",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-2506",
+      "claim_type": "percentage",
+      "raw_text": "42.9%",
+      "numeric_values": [
+        42.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2506,
+      "sentence": "The overall cumulative incidence of NODM was comparable between high- and moderate-intensity groups (42.9% vs.",
+      "context_window": "was comparable between high- and moderate-intensity groups (42.9% vs. 41.1%, respectively; Table 2 ). Primary outcome: NODM",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-2516",
+      "claim_type": "percentage",
+      "raw_text": "41.1%",
+      "numeric_values": [
+        41.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2516,
+      "sentence": "41.1%, respectively; Table 2 ).",
+      "context_window": "able between high- and moderate-intensity groups (42.9% vs. 41.1%, respectively; Table 2 ). Primary outcome: NODM according",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-n-2735",
+      "claim_type": "sample_size",
+      "raw_text": "n = 809",
+      "numeric_values": [
+        809.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2735,
+      "sentence": "In the high-intensity group ( n = 809), 347 patients developed NODM.",
+      "context_window": "io; CI, confidence interval. In the high-intensity group ( n = 809), 347 patients developed NODM. Compared with atorvastatin,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-2977",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.93-1.44",
+      "numeric_values": [
+        0.93,
+        1.44
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2977,
+      "sentence": "100.4 per 100 person-years), though this difference did not reach statistical significance (adjusted HR 1.16, 95% CI 0.93-1.44, p = 0.18).",
+      "context_window": "e did not reach statistical significance (adjusted HR 1.16, 95% CI 0.93-1.44, p = 0.18). In the moderate-intensity group ( n = 28,185),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-2995",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2995,
+      "sentence": "100.4 per 100 person-years), though this difference did not reach statistical significance (adjusted HR 1.16, 95% CI 0.93-1.44, p = 0.18).",
+      "context_window": "atistical significance (adjusted HR 1.16, 95% CI 0.93-1.44, p = 0.18). In the moderate-intensity group ( n = 28,185), 11,571 pa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-n-3041",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3041,
+      "sentence": "In the moderate-intensity group ( n = 28,185), 11,571 patients developed NODM.",
+      "context_window": "CI 0.93-1.44, p = 0.18). In the moderate-intensity group ( n = 28,185), 11,571 patients developed NODM. Atorvastatin served a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-3200",
+      "claim_type": "percentage",
+      "raw_text": "41.3%",
+      "numeric_values": [
+        41.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3200,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-3225",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01-1.14",
+      "numeric_values": [
+        1.01,
+        1.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3225,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "icantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-3243",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3243,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "k (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-3289",
+      "claim_type": "percentage",
+      "raw_text": "43.4%",
+      "numeric_values": [
+        43.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3289,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (abso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-3305",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.02-1.38",
+      "numeric_values": [
+        1.02,
+        1.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3305,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "= 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-3323",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3323,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "ravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-pct-3364",
+      "claim_type": "percentage",
+      "raw_text": "43.8%",
+      "numeric_values": [
+        43.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3364,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001). In contrast, fluvas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-3380",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.06-1.20",
+      "numeric_values": [
+        1.06,
+        1.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3380,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "8; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001). In contrast, fluvastatin and pitavastatin show",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-3398",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3398,
+      "sentence": "Rosuvastatin was associated with a significantly higher risk (absolute risk 41.3%, adjusted HR 1.07, 95% CI 1.01-1.14; p = 0.03), as were pravastatin (absolute risk 43.4%, HR 1.19, 95% CI 1.02-1.38; p = 0.03) and simvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001).",
+      "context_window": "imvastatin (absolute risk 43.8%, HR 1.15, 95% CI 1.06-1.20; p < 0.001). In contrast, fluvastatin and pitavastatin showed no signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-3530",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.91-1.33",
+      "numeric_values": [
+        0.91,
+        1.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3530,
+      "sentence": "In contrast, fluvastatin and pitavastatin showed no significant differences relative to atorvastatin (adjusted HR 1.10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectively).",
+      "context_window": "ant differences relative to atorvastatin (adjusted HR 1.10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectivel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-3548",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3548,
+      "sentence": "In contrast, fluvastatin and pitavastatin showed no significant differences relative to atorvastatin (adjusted HR 1.10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectively).",
+      "context_window": "lative to atorvastatin (adjusted HR 1.10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectively). Kaplan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-3567",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.98-1.17",
+      "numeric_values": [
+        0.98,
+        1.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3567,
+      "sentence": "In contrast, fluvastatin and pitavastatin showed no significant differences relative to atorvastatin (adjusted HR 1.10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectively).",
+      "context_window": "tin (adjusted HR 1.10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectively). Kaplan-Meier curves for the cumul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-3585",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3585,
+      "sentence": "In contrast, fluvastatin and pitavastatin showed no significant differences relative to atorvastatin (adjusted HR 1.10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectively).",
+      "context_window": ".10, 95% CI 0.91-1.33, p = 0.35 and 1.07, 95% CI 0.98-1.17; p = 0.14, respectively). Kaplan-Meier curves for the cumulative inci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-u-4347",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4347,
+      "sentence": "The magnitude of excess risk appeared greater among patients with higher baseline LDL-C levels, current smokers, and those with BMI \u2265 25 kg/m 2 .",
+      "context_window": "aseline LDL-C levels, current smokers, and those with BMI \u2265 25 kg/m 2 . However, given the relatively small sample sizes in c",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-5242",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.57-1.00",
+      "numeric_values": [
+        0.57,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5242,
+      "sentence": "149 events), with borderline statistical significance (adjusted HR 0.75, 95% CI 0.57-1.00; p = 0.046).",
+      "context_window": "with borderline statistical significance (adjusted HR 0.75, 95% CI 0.57-1.00; p = 0.046). In the moderate-intensity group ( n = 28,185)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-5260",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5260,
+      "sentence": "149 events), with borderline statistical significance (adjusted HR 0.75, 95% CI 0.57-1.00; p = 0.046).",
+      "context_window": "atistical significance (adjusted HR 0.75, 95% CI 0.57-1.00; p = 0.046). In the moderate-intensity group ( n = 28,185), 6,140 pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-n-5307",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5307,
+      "sentence": "In the moderate-intensity group ( n = 28,185), 6,140 patients experienced MACCE.",
+      "context_window": "I 0.57-1.00; p = 0.046). In the moderate-intensity group ( n = 28,185), 6,140 patients experienced MACCE. When compared with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-5488",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5488,
+      "sentence": "When compared with atorvastatin, rosuvastatin, fluvastatin, pitavastatin, and pravastatin demonstrated comparable risks of MACCE (all p > 0.05), whereas simvastatin showed a modest but nonsignificant trend toward higher risk (adjusted HR 1.06, 95% CI 0.99-1.13; p = 0.11).",
+      "context_window": "and pravastatin demonstrated comparable risks of MACCE (all p > 0.05), whereas simvastatin showed a modest but nonsignificant tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-ci-5598",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.99-1.13",
+      "numeric_values": [
+        0.99,
+        1.13
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5598,
+      "sentence": "When compared with atorvastatin, rosuvastatin, fluvastatin, pitavastatin, and pravastatin demonstrated comparable risks of MACCE (all p > 0.05), whereas simvastatin showed a modest but nonsignificant trend toward higher risk (adjusted HR 1.06, 95% CI 0.99-1.13; p = 0.11).",
+      "context_window": "nonsignificant trend toward higher risk (adjusted HR 1.06, 95% CI 0.99-1.13; p = 0.11). Overall, no meaningful difference in cardiovas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008627_risk_of_new_onset_diabetes_across_individual_statins_in_seco-p-5616",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5616,
+      "sentence": "When compared with atorvastatin, rosuvastatin, fluvastatin, pitavastatin, and pravastatin demonstrated comparable risks of MACCE (all p > 0.05), whereas simvastatin showed a modest but nonsignificant trend toward higher risk (adjusted HR 1.06, 95% CI 0.99-1.13; p = 0.11).",
+      "context_window": "end toward higher risk (adjusted HR 1.06, 95% CI 0.99-1.13; p = 0.11). Overall, no meaningful difference in cardiovascular and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

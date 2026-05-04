@@ -82,6 +82,14 @@ corpus_search_queries = [
   "statin AND primary prevention AND cardiovascular",
   "statin AND (myopathy OR myalgia OR adverse) AND elderly",
   "statin AND mTOR AND mechanism",
+  # Refactor 2026-05-04: broader queries to deepen corpus density
+  # (Q9 audit needs ≥8 numerics/1000 words; thin corpus → low density)
+  "statin AND (LDL cholesterol OR lipid lowering) AND clinical",
+  "statin AND (PROSPER OR HOPE-3 OR JUPITER OR STAREE) AND outcomes",
+  "(atorvastatin OR rosuvastatin) AND (cognitive OR dementia OR Alzheimer) AND outcome",
+  "statin AND (cancer incidence OR cancer mortality) AND cohort",
+  "statin AND inflammation AND (CRP OR hsCRP OR cytokine)",
+  "statin AND meta-analysis AND (mortality OR cardiovascular event)",
 ]
 
 # Empty initially — will be populated as canonical RCTs are

@@ -1,0 +1,1058 @@
+{
+  "paper_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi",
+  "doi": "10.1002/jcsm.13660",
+  "extracted_at": "2026-05-04T16:05:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 25,
+    "sample_size": 2,
+    "percentage": 29,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-865",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 865,
+      "sentence": "The study participants, enlisted from the 2nd to the 6th waves (spanning from April 2000 to July 2010) of NILS\u2010LSA, were those who aged 40 years or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%).",
+      "context_window": "m April 2000 to July 2010) of NILS\u2010LSA, were those who aged 40 years or older and had initiated statin therapy ( n = 348, age: 6",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-n-918",
+      "claim_type": "sample_size",
+      "raw_text": "n = 348",
+      "numeric_values": [
+        348.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 918,
+      "sentence": "The study participants, enlisted from the 2nd to the 6th waves (spanning from April 2000 to July 2010) of NILS\u2010LSA, were those who aged 40 years or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%).",
+      "context_window": "o aged 40 years or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%). Individuals who were not",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-932",
+      "claim_type": "unit_value",
+      "raw_text": "64.1 years",
+      "numeric_values": [
+        64.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 932,
+      "sentence": "The study participants, enlisted from the 2nd to the 6th waves (spanning from April 2000 to July 2010) of NILS\u2010LSA, were those who aged 40 years or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%).",
+      "context_window": "s or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%). Individuals who were not administered stat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-952",
+      "claim_type": "percentage",
+      "raw_text": "63.5%",
+      "numeric_values": [
+        63.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 952,
+      "sentence": "The study participants, enlisted from the 2nd to the 6th waves (spanning from April 2000 to July 2010) of NILS\u2010LSA, were those who aged 40 years or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%).",
+      "context_window": "nitiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%). Individuals who were not administered statins ( n = 2559,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-n-1008",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2559",
+      "numeric_values": [
+        2559.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1008,
+      "sentence": "Individuals who were not administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen using a combined approach of propensity score (PS) matching and risk set sampling to form the control group (with a 1:4 matching ratio).",
+      "context_window": "le: 63.5%). Individuals who were not administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen us",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1023",
+      "claim_type": "unit_value",
+      "raw_text": "55.5 years",
+      "numeric_values": [
+        55.5
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1023,
+      "sentence": "Individuals who were not administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen using a combined approach of propensity score (PS) matching and risk set sampling to form the control group (with a 1:4 matching ratio).",
+      "context_window": "ividuals who were not administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen using a combined ap",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-1043",
+      "claim_type": "percentage",
+      "raw_text": "48.4%",
+      "numeric_values": [
+        48.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "Individuals who were not administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen using a combined approach of propensity score (PS) matching and risk set sampling to form the control group (with a 1:4 matching ratio).",
+      "context_window": "t administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen using a combined approach of prope",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1413",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "The secondary outcomes included low muscle mass (< 7.0 kg/m 2 for men and below 5.4 kg/m 2 for women by DXA), reduced skeletal muscle strength (handgrip strength < 28 kg in men and < 18 kg in women) and subpar physical performance (6\u2010min walking speed < 1.0 m/s).",
+      "context_window": "(AWGS). The secondary outcomes included low muscle mass (< 7.0 kg/m 2 for men and below 5.4 kg/m 2 for women by DXA), reduced",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1442",
+      "claim_type": "unit_value",
+      "raw_text": "5.4 kg",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1442,
+      "sentence": "The secondary outcomes included low muscle mass (< 7.0 kg/m 2 for men and below 5.4 kg/m 2 for women by DXA), reduced skeletal muscle strength (handgrip strength < 28 kg in men and < 18 kg in women) and subpar physical performance (6\u2010min walking speed < 1.0 m/s).",
+      "context_window": "es included low muscle mass (< 7.0 kg/m 2 for men and below 5.4 kg/m 2 for women by DXA), reduced skeletal muscle strength (ha",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1526",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1526,
+      "sentence": "The secondary outcomes included low muscle mass (< 7.0 kg/m 2 for men and below 5.4 kg/m 2 for women by DXA), reduced skeletal muscle strength (handgrip strength < 28 kg in men and < 18 kg in women) and subpar physical performance (6\u2010min walking speed < 1.0 m/s).",
+      "context_window": "DXA), reduced skeletal muscle strength (handgrip strength < 28 kg in men and < 18 kg in women) and subpar physical performanc",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1545",
+      "claim_type": "unit_value",
+      "raw_text": "18 kg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1545,
+      "sentence": "The secondary outcomes included low muscle mass (< 7.0 kg/m 2 for men and below 5.4 kg/m 2 for women by DXA), reduced skeletal muscle strength (handgrip strength < 28 kg in men and < 18 kg in women) and subpar physical performance (6\u2010min walking speed < 1.0 m/s).",
+      "context_window": "tal muscle strength (handgrip strength < 28 kg in men and < 18 kg in women) and subpar physical performance (6\u2010min walking sp",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1616",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "abstract",
+      "source_offset": 1616,
+      "sentence": "The secondary outcomes included low muscle mass (< 7.0 kg/m 2 for men and below 5.4 kg/m 2 for women by DXA), reduced skeletal muscle strength (handgrip strength < 28 kg in men and < 18 kg in women) and subpar physical performance (6\u2010min walking speed < 1.0 m/s).",
+      "context_window": "men) and subpar physical performance (6\u2010min walking speed < 1.0 m/s). The relationship between the use of statins and the outco",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-p-1841",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1841,
+      "sentence": "The relationship between the use of statins and the outcomes was estimated using a Cox proportional hazard model with time\u2010varying covariates, which included the status of statin use and other variables (two\u2010tailed p < 0.05 was considered statistically significant).",
+      "context_window": "ed the status of statin use and other variables (two\u2010tailed p < 0.05 was considered statistically significant). Stratification b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2326",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2326,
+      "sentence": "The use of statins was not associated with an increased risk of incident sarcopenia (adjusted hazard ratio [aHR], 1.43 [95% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0.66, 1.82]) or impaired physical performance (aHR, 0.73 [95% CI, 0.46, 1.17]).",
+      "context_window": "of incident sarcopenia (adjusted hazard ratio [aHR], 1.43 [95% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2387",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2387,
+      "sentence": "The use of statins was not associated with an increased risk of incident sarcopenia (adjusted hazard ratio [aHR], 1.43 [95% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0.66, 1.82]) or impaired physical performance (aHR, 0.73 [95% CI, 0.46, 1.17]).",
+      "context_window": "5% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2441",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2441,
+      "sentence": "The use of statins was not associated with an increased risk of incident sarcopenia (adjusted hazard ratio [aHR], 1.43 [95% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0.66, 1.82]) or impaired physical performance (aHR, 0.73 [95% CI, 0.46, 1.17]).",
+      "context_window": "1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0.66, 1.82]) or impaired physical performance (aHR, 0.7",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2507",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2507,
+      "sentence": "The use of statins was not associated with an increased risk of incident sarcopenia (adjusted hazard ratio [aHR], 1.43 [95% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0.66, 1.82]) or impaired physical performance (aHR, 0.73 [95% CI, 0.46, 1.17]).",
+      "context_window": ", 0.66, 1.82]) or impaired physical performance (aHR, 0.73 [95% CI, 0.46, 1.17]). These findings were consistent across age",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-286",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 286,
+      "sentence": "NILS\u2010LSA initially enrolled 2267 people 40-79 years old, stratified by age and sex, who were sampled at random from Obu City and Higashiura Town, near the National Center for Geriatrics and Gerontology (NCGG), Aichi Prefecture, Japan.",
+      "context_window": "Japanese [ 25 ]. NILS\u2010LSA initially enrolled 2267 people 40-79 years old, stratified by age and sex, who were sampled at random",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-859",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 859,
+      "sentence": "New participants aged 40-79 years, selected at random from the same residential areas, were recruited every year to provide age\u2010 and sex\u2010matched replacements for participants (< 80 years old) who were unable to attend the follow\u2010up surveys (e.g., due to moving elsewhere, dying or for other reasons) [ 25 ].",
+      "context_window": "e (July 2010 to July 2012) [ 25 ]. New participants aged 40-79 years, selected at random from the same residential areas, were r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1012",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1012,
+      "sentence": "New participants aged 40-79 years, selected at random from the same residential areas, were recruited every year to provide age\u2010 and sex\u2010matched replacements for participants (< 80 years old) who were unable to attend the follow\u2010up surveys (e.g., due to moving elsewhere, dying or for other reasons) [ 25 ].",
+      "context_window": "ovide age\u2010 and sex\u2010matched replacements for participants (< 80 years old) who were unable to attend the follow\u2010up surveys (e.g.,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-2116",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2116,
+      "sentence": "All prescription and over\u2010the\u2010counter medications used within the past 2 weeks were coded.",
+      "context_window": "ption and over\u2010the\u2010counter medications used within the past 2 weeks were coded. The coding system was based on the Japanese Pha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-2621",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2621,
+      "sentence": "Participants aged \u2265 40 years were recruited from the 2nd-6th waves (April 2000 to July 2010) of the NILS\u2010LSA.",
+      "context_window": "re any study\u2010related procedure ensued. Participants aged \u2265 40 years were recruited from the 2nd-6th waves (April 2000 to July 2",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-3715",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3715,
+      "sentence": "According to the AWGS 2019 guidelines, sarcopenia is characterized by (1) low muscle mass, assessed using a DXA scan (QDR\u20104500; Hologic, Bedford, MA, USA), with values below 7.0 kg/m 2 for men and 5.4 kg/m 2 for women; (2) low muscle strength, measured using a calibrated handgrip dynamometer (Takei Co., Niigata, Japan), with values less than 28 kg in men and 18 kg in women; and/or (3) poor physical performance, evaluated by walking speed using a walking analysis system (YW\u20103, Yagami Co., Aichi, Japan), with speeds slower than 1.0 m/s considered indicative of sarcopenia [ 24 ].",
+      "context_window": "an (QDR\u20104500; Hologic, Bedford, MA, USA), with values below 7.0 kg/m 2 for men and 5.4 kg/m 2 for women; (2) low muscle streng",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-3738",
+      "claim_type": "unit_value",
+      "raw_text": "5.4 kg",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3738,
+      "sentence": "According to the AWGS 2019 guidelines, sarcopenia is characterized by (1) low muscle mass, assessed using a DXA scan (QDR\u20104500; Hologic, Bedford, MA, USA), with values below 7.0 kg/m 2 for men and 5.4 kg/m 2 for women; (2) low muscle strength, measured using a calibrated handgrip dynamometer (Takei Co., Niigata, Japan), with values less than 28 kg in men and 18 kg in women; and/or (3) poor physical performance, evaluated by walking speed using a walking analysis system (YW\u20103, Yagami Co., Aichi, Japan), with speeds slower than 1.0 m/s considered indicative of sarcopenia [ 24 ].",
+      "context_window": "Bedford, MA, USA), with values below 7.0 kg/m 2 for men and 5.4 kg/m 2 for women; (2) low muscle strength, measured using a ca",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-3885",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3885,
+      "sentence": "According to the AWGS 2019 guidelines, sarcopenia is characterized by (1) low muscle mass, assessed using a DXA scan (QDR\u20104500; Hologic, Bedford, MA, USA), with values below 7.0 kg/m 2 for men and 5.4 kg/m 2 for women; (2) low muscle strength, measured using a calibrated handgrip dynamometer (Takei Co., Niigata, Japan), with values less than 28 kg in men and 18 kg in women; and/or (3) poor physical performance, evaluated by walking speed using a walking analysis system (YW\u20103, Yagami Co., Aichi, Japan), with speeds slower than 1.0 m/s considered indicative of sarcopenia [ 24 ].",
+      "context_window": "amometer (Takei Co., Niigata, Japan), with values less than 28 kg in men and 18 kg in women; and/or (3) poor physical perform",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-3902",
+      "claim_type": "unit_value",
+      "raw_text": "18 kg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3902,
+      "sentence": "According to the AWGS 2019 guidelines, sarcopenia is characterized by (1) low muscle mass, assessed using a DXA scan (QDR\u20104500; Hologic, Bedford, MA, USA), with values below 7.0 kg/m 2 for men and 5.4 kg/m 2 for women; (2) low muscle strength, measured using a calibrated handgrip dynamometer (Takei Co., Niigata, Japan), with values less than 28 kg in men and 18 kg in women; and/or (3) poor physical performance, evaluated by walking speed using a walking analysis system (YW\u20103, Yagami Co., Aichi, Japan), with speeds slower than 1.0 m/s considered indicative of sarcopenia [ 24 ].",
+      "context_window": "o., Niigata, Japan), with values less than 28 kg in men and 18 kg in women; and/or (3) poor physical performance, evaluated b",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-4073",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 4073,
+      "sentence": "According to the AWGS 2019 guidelines, sarcopenia is characterized by (1) low muscle mass, assessed using a DXA scan (QDR\u20104500; Hologic, Bedford, MA, USA), with values below 7.0 kg/m 2 for men and 5.4 kg/m 2 for women; (2) low muscle strength, measured using a calibrated handgrip dynamometer (Takei Co., Niigata, Japan), with values less than 28 kg in men and 18 kg in women; and/or (3) poor physical performance, evaluated by walking speed using a walking analysis system (YW\u20103, Yagami Co., Aichi, Japan), with speeds slower than 1.0 m/s considered indicative of sarcopenia [ 24 ].",
+      "context_window": "m (YW\u20103, Yagami Co., Aichi, Japan), with speeds slower than 1.0 m/s considered indicative of sarcopenia [ 24 ]. Demographic da",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-5998",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5998,
+      "sentence": "The absolute rate difference between groups and hazard ratios (HRs) with their corresponding 95% CIs were calculated.",
+      "context_window": "een groups and hazard ratios (HRs) with their corresponding 95% CIs were calculated. Considering the potential dynamic chan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-p-6518",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6518,
+      "sentence": "A two\u2010tailed p < 0.05 was considered statistically significant.",
+      "context_window": "ed using SAS, version 9.3 (SAS Institute Inc). A two\u2010tailed p < 0.05 was considered statistically significant. Stratification ba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-290",
+      "claim_type": "unit_value",
+      "raw_text": "55.5 years",
+      "numeric_values": [
+        55.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 290,
+      "sentence": "55.5 years), had a greater proportion of females (63.5% vs.",
+      "context_window": "ith the non\u2010statin group, statin users were older (64.1 vs. 55.5 years), had a greater proportion of females (63.5% vs. 48.4%), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-340",
+      "claim_type": "percentage",
+      "raw_text": "63.5%",
+      "numeric_values": [
+        63.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 340,
+      "sentence": "55.5 years), had a greater proportion of females (63.5% vs.",
+      "context_window": "(64.1 vs. 55.5 years), had a greater proportion of females (63.5% vs. 48.4%), a higher BMI (23.6 vs. 22.9 kg/m 2 ) and a high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-350",
+      "claim_type": "percentage",
+      "raw_text": "48.4%",
+      "numeric_values": [
+        48.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 350,
+      "sentence": "48.4%), a higher BMI (23.6 vs.",
+      "context_window": "55.5 years), had a greater proportion of females (63.5% vs. 48.4%), a higher BMI (23.6 vs. 22.9 kg/m 2 ) and a higher CCI (1.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-381",
+      "claim_type": "unit_value",
+      "raw_text": "22.9 kg",
+      "numeric_values": [
+        22.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 381,
+      "sentence": "22.9 kg/m 2 ) and a higher CCI (1.2 vs.",
+      "context_window": "ortion of females (63.5% vs. 48.4%), a higher BMI (23.6 vs. 22.9 kg/m 2 ) and a higher CCI (1.2 vs. 0.7), but lower mean LDL le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-464",
+      "claim_type": "unit_value",
+      "raw_text": "129.0 mg/dL",
+      "numeric_values": [
+        129.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 464,
+      "sentence": "129.0 mg/dL).",
+      "context_window": "her CCI (1.2 vs. 0.7), but lower mean LDL levels (122.7 vs. 129.0 mg/dL). Statin users also demonstrated lower socioeconomic status",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-611",
+      "claim_type": "percentage",
+      "raw_text": "25.6%",
+      "numeric_values": [
+        25.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 611,
+      "sentence": "Statin users also demonstrated lower socioeconomic status, with a higher proportion having household incomes below 3.50 million yen (25.6% vs.",
+      "context_window": "proportion having household incomes below 3.50 million yen (25.6% vs. 15.6%) and fewer years of education (11.8 vs. 12.4 year",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-621",
+      "claim_type": "percentage",
+      "raw_text": "15.6%",
+      "numeric_values": [
+        15.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 621,
+      "sentence": "15.6%) and fewer years of education (11.8 vs.",
+      "context_window": "having household incomes below 3.50 million yen (25.6% vs. 15.6%) and fewer years of education (11.8 vs. 12.4 years). Health",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-667",
+      "claim_type": "unit_value",
+      "raw_text": "12.4 years",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 667,
+      "sentence": "12.4 years).",
+      "context_window": "en (25.6% vs. 15.6%) and fewer years of education (11.8 vs. 12.4 years). Health\u2010wise, the statin group reported poorer health stat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-741",
+      "claim_type": "percentage",
+      "raw_text": "10.9%",
+      "numeric_values": [
+        10.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 741,
+      "sentence": "Health\u2010wise, the statin group reported poorer health status (10.9% vs.",
+      "context_window": "ealth\u2010wise, the statin group reported poorer health status (10.9% vs. 7.5% reporting \u2018bad\u2019 health) and showed a higher preval",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-751",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 751,
+      "sentence": "7.5% reporting \u2018bad\u2019 health) and showed a higher prevalence of hypertension (49.1% vs.",
+      "context_window": ", the statin group reported poorer health status (10.9% vs. 7.5% reporting \u2018bad\u2019 health) and showed a higher prevalence of h",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-828",
+      "claim_type": "percentage",
+      "raw_text": "49.1%",
+      "numeric_values": [
+        49.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 828,
+      "sentence": "7.5% reporting \u2018bad\u2019 health) and showed a higher prevalence of hypertension (49.1% vs.",
+      "context_window": "ad\u2019 health) and showed a higher prevalence of hypertension (49.1% vs. 20.4%) and diabetes (15.2% vs. 5.3%). Lifestyle factors",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-838",
+      "claim_type": "percentage",
+      "raw_text": "20.4%",
+      "numeric_values": [
+        20.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 838,
+      "sentence": "20.4%) and diabetes (15.2% vs.",
+      "context_window": ") and showed a higher prevalence of hypertension (49.1% vs. 20.4%) and diabetes (15.2% vs. 5.3%). Lifestyle factors also diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-859",
+      "claim_type": "percentage",
+      "raw_text": "15.2%",
+      "numeric_values": [
+        15.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 859,
+      "sentence": "20.4%) and diabetes (15.2% vs.",
+      "context_window": "prevalence of hypertension (49.1% vs. 20.4%) and diabetes (15.2% vs. 5.3%). Lifestyle factors also differed, with statin use",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-869",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 869,
+      "sentence": "5.3%).",
+      "context_window": "e of hypertension (49.1% vs. 20.4%) and diabetes (15.2% vs. 5.3%). Lifestyle factors also differed, with statin users having",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-973",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 973,
+      "sentence": "Lifestyle factors also differed, with statin users having a lower proportion of current smokers (7.5% vs.",
+      "context_window": "statin users having a lower proportion of current smokers (7.5% vs. 20.8%), married individuals (82.2% vs. 87.5%) and emplo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-982",
+      "claim_type": "percentage",
+      "raw_text": "20.8%",
+      "numeric_values": [
+        20.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 982,
+      "sentence": "20.8%), married individuals (82.2% vs.",
+      "context_window": "sers having a lower proportion of current smokers (7.5% vs. 20.8%), married individuals (82.2% vs. 87.5%) and employed indivi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-1011",
+      "claim_type": "percentage",
+      "raw_text": "82.2%",
+      "numeric_values": [
+        82.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1011,
+      "sentence": "20.8%), married individuals (82.2% vs.",
+      "context_window": "n of current smokers (7.5% vs. 20.8%), married individuals (82.2% vs. 87.5%) and employed individuals (43.7% vs. 64.6%). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-1021",
+      "claim_type": "percentage",
+      "raw_text": "87.5%",
+      "numeric_values": [
+        87.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1021,
+      "sentence": "87.5%) and employed individuals (43.7% vs.",
+      "context_window": "nt smokers (7.5% vs. 20.8%), married individuals (82.2% vs. 87.5%) and employed individuals (43.7% vs. 64.6%). The baseline c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-1054",
+      "claim_type": "percentage",
+      "raw_text": "43.7%",
+      "numeric_values": [
+        43.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1054,
+      "sentence": "87.5%) and employed individuals (43.7% vs.",
+      "context_window": "ied individuals (82.2% vs. 87.5%) and employed individuals (43.7% vs. 64.6%). The baseline characteristics were well balanced",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-1064",
+      "claim_type": "percentage",
+      "raw_text": "64.6%",
+      "numeric_values": [
+        64.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1064,
+      "sentence": "64.6%).",
+      "context_window": "duals (82.2% vs. 87.5%) and employed individuals (43.7% vs. 64.6%). The baseline characteristics were well balanced post\u2010matc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-1728",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1728,
+      "sentence": "The rate difference of sarcopenia was comparable in the statin and non\u2010statin group (rate difference, -0.53 per 1000 person\u2010years [95% CI, -3.58, 2.52]; aHR, 1.43 [95% CI, 0.86, 2.36]).",
+      "context_window": "statin group (rate difference, -0.53 per 1000 person\u2010years [95% CI, -3.58, 2.52]; aHR, 1.43 [95% CI, 0.86, 2.36]). Similar",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-1761",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1761,
+      "sentence": "The rate difference of sarcopenia was comparable in the statin and non\u2010statin group (rate difference, -0.53 per 1000 person\u2010years [95% CI, -3.58, 2.52]; aHR, 1.43 [95% CI, 0.86, 2.36]).",
+      "context_window": ".53 per 1000 person\u2010years [95% CI, -3.58, 2.52]; aHR, 1.43 [95% CI, 0.86, 2.36]). Similar results were found in risk of low",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2432",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2432,
+      "sentence": "First, we conducted a propensity score overlap weighting analysis and showed similar non\u2010significant results (sarcopenia: aHR, 0.78 [95% CI, 0.86, 2.36]; low muscle strength: aHR, 0.91 [95% CI, 0.58, 1.42]; low skeletal muscle mass index: aHR, 0.61 [95% CI, 0.35, 1.05] and poor physical performance: aHR, 0.83 [95% CI, 0.41, 1.64]).",
+      "context_window": "wed similar non\u2010significant results (sarcopenia: aHR, 0.78 [95% CI, 0.86, 2.36]; low muscle strength: aHR, 0.91 [95% CI, 0.",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2485",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2485,
+      "sentence": "First, we conducted a propensity score overlap weighting analysis and showed similar non\u2010significant results (sarcopenia: aHR, 0.78 [95% CI, 0.86, 2.36]; low muscle strength: aHR, 0.91 [95% CI, 0.58, 1.42]; low skeletal muscle mass index: aHR, 0.61 [95% CI, 0.35, 1.05] and poor physical performance: aHR, 0.83 [95% CI, 0.41, 1.64]).",
+      "context_window": "0.78 [95% CI, 0.86, 2.36]; low muscle strength: aHR, 0.91 [95% CI, 0.58, 1.42]; low skeletal muscle mass index: aHR, 0.61",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2549",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2549,
+      "sentence": "First, we conducted a propensity score overlap weighting analysis and showed similar non\u2010significant results (sarcopenia: aHR, 0.78 [95% CI, 0.86, 2.36]; low muscle strength: aHR, 0.91 [95% CI, 0.58, 1.42]; low skeletal muscle mass index: aHR, 0.61 [95% CI, 0.35, 1.05] and poor physical performance: aHR, 0.83 [95% CI, 0.41, 1.64]).",
+      "context_window": "CI, 0.58, 1.42]; low skeletal muscle mass index: aHR, 0.61 [95% CI, 0.35, 1.05] and poor physical performance: aHR, 0.83 [9",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2611",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2611,
+      "sentence": "First, we conducted a propensity score overlap weighting analysis and showed similar non\u2010significant results (sarcopenia: aHR, 0.78 [95% CI, 0.86, 2.36]; low muscle strength: aHR, 0.91 [95% CI, 0.58, 1.42]; low skeletal muscle mass index: aHR, 0.61 [95% CI, 0.35, 1.05] and poor physical performance: aHR, 0.83 [95% CI, 0.41, 1.64]).",
+      "context_window": "% CI, 0.35, 1.05] and poor physical performance: aHR, 0.83 [95% CI, 0.41, 1.64]). In the stratified analyses, the adjusted",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-55",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 55,
+      "sentence": "This Japanese population\u2010based cohort study, employing 10 years of longitudinal data with a median follow\u2010up period of approximately 9 years, found that long\u2010term statin use did not increase the risk of sarcopenia, diminished muscle strength, reduced muscle mass or impaired physical performance.",
+      "context_window": "This Japanese population\u2010based cohort study, employing 10 years of longitudinal data with a median follow\u2010up period of appr",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-133",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 133,
+      "sentence": "This Japanese population\u2010based cohort study, employing 10 years of longitudinal data with a median follow\u2010up period of approximately 9 years, found that long\u2010term statin use did not increase the risk of sarcopenia, diminished muscle strength, reduced muscle mass or impaired physical performance.",
+      "context_window": "udinal data with a median follow\u2010up period of approximately 9 years, found that long\u2010term statin use did not increase the risk",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1135",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1135,
+      "sentence": "Prior investigations, with follow\u2010up intervals spanning from a few weeks to a maximum of 3 years, have been inadequate for an in\u2010depth examination of the long\u2010term effects of statin on muscle function and the associated risk of sarcopenia manifestation [ 17 , 18 , 19 , 20 , 21 ].",
+      "context_window": "llow\u2010up intervals spanning from a few weeks to a maximum of 3 years, have been inadequate for an in\u2010depth examination of the lo",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

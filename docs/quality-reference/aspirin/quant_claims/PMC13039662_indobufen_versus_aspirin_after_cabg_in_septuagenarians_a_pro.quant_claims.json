@@ -1,0 +1,1435 @@
+{
+  "paper_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro",
+  "doi": "10.2147/CIA.S589035",
+  "extracted_at": "2026-05-04T16:05:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 12,
+    "percentage": 32,
+    "confidence_interval": 7,
+    "p_value": 10,
+    "sample_size": 9,
+    "mean_sd": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-195",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 195,
+      "sentence": "Patients aged 70-79 years who underwent CABG between 2020 and 2022 received either indobufen- or aspirin-based dual antiplatelet therapy (DAPT) (with clopidogrel) for 12 months, followed by monotherapy with their respective baseline agent (indobufen or aspirin) for an additional year.",
+      "context_window": "g coronary artery bypass grafting (CABG). Patients aged 70-79 years who underwent CABG between 2020 and 2022 received either in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-345",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 345,
+      "sentence": "Patients aged 70-79 years who underwent CABG between 2020 and 2022 received either indobufen- or aspirin-based dual antiplatelet therapy (DAPT) (with clopidogrel) for 12 months, followed by monotherapy with their respective baseline agent (indobufen or aspirin) for an additional year.",
+      "context_window": "sed dual antiplatelet therapy (DAPT) (with clopidogrel) for 12 months, followed by monotherapy with their respective baseline age",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-893",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 893,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "ing, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-901",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 901,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "obufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-ci-948",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.28-3.28",
+      "numeric_values": [
+        0.28,
+        3.28
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 948,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "rin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-966",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 966,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-1017",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1017,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). After match",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-1025",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1025,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). After matching, res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-ci-1041",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.04-2.38",
+      "numeric_values": [
+        0.04,
+        2.38
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1041,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "ower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). After matching, results remained consistent (MA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-1059",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1059,
+      "sentence": "Before matching, indobufen showed similar 2-year MACCE risk to aspirin (6.5% vs 6.8%; subdistribution hazard ratio [sHR] 0.96, 95% CI 0.28-3.28; p = 0.95) and lower BARC type 2, 3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "3, or 5 bleeding (2.2% vs 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). After matching, results remained consistent (MACCE 8.3% v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-1121",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": "= 0.23). After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-1129",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1129,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-ci-1146",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.21-3.10",
+      "numeric_values": [
+        0.21,
+        3.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1146,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": "results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-1164",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1164,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": "onsistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-1183",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1183,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": "3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14). Indobufen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-1191",
+      "claim_type": "percentage",
+      "raw_text": "11.8%",
+      "numeric_values": [
+        11.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1191,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": ".3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14). Indobufen reduced c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-ci-1208",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.03-1.87",
+      "numeric_values": [
+        0.03,
+        1.87
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1208,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": "% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14). Indobufen reduced clinically relevant bleeding",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-1226",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1226,
+      "sentence": "After matching, results remained consistent (MACCE 8.3% vs 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14).",
+      "context_window": "= 0.76; bleeding 2.8% vs 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14). Indobufen reduced clinically relevant bleeding by 9.0% (n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-1287",
+      "claim_type": "percentage",
+      "raw_text": "9.0%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1287,
+      "sentence": "Indobufen reduced clinically relevant bleeding by 9.0% (number needed to treat [NNT] \u2248 11) without compromising ischemic outcomes.",
+      "context_window": "= 0.14). Indobufen reduced clinically relevant bleeding by 9.0% (number needed to treat [NNT] \u2248 11) without compromising is",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-1963",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1963,
+      "sentence": "To address this gap, we compared the efficacy and safety of sequential antiplatelet therapy with indobufen and standard aspirin following CABG in patients aged 70-79 years at our institution.",
+      "context_window": "fen and standard aspirin following CABG in patients aged 70-79 years at our institution. We aimed to provide clinically relevant",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-74",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 74,
+      "sentence": "We conducted a retrospective cohort study of consecutive patients aged 70-79 years who underwent isolated CABG at our institution between January 2020 and December 2022.",
+      "context_window": "retrospective cohort study of consecutive patients aged 70-79 years who underwent isolated CABG at our institution between Janu",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-223",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 223,
+      "sentence": "Exclusion criteria included: (1) failure to complete 12 months of dual antiplatelet therapy (DAPT); (2) use of alternative antiplatelet monotherapy between 12 and 24 months; (3) oral anticoagulant use; (4) changes in antiplatelet therapy during follow-up; and (5) severe baseline comorbidities associated with limited life expectancy.",
+      "context_window": "2022. Exclusion criteria included: (1) failure to complete 12 months of dual antiplatelet therapy (DAPT); (2) use of alternative",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-333",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 333,
+      "sentence": "Exclusion criteria included: (1) failure to complete 12 months of dual antiplatelet therapy (DAPT); (2) use of alternative antiplatelet monotherapy between 12 and 24 months; (3) oral anticoagulant use; (4) changes in antiplatelet therapy during follow-up; and (5) severe baseline comorbidities associated with limited life expectancy.",
+      "context_window": "use of alternative antiplatelet monotherapy between 12 and 24 months; (3) oral anticoagulant use; (4) changes in antiplatelet th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-913",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 913,
+      "sentence": "DAPT consisted of clopidogrel plus either indobufen (100 mg twice daily) or aspirin (100 mg once daily), initiated within 24 hours after hemostasis and continued for 12 months.",
+      "context_window": "377). DAPT consisted of clopidogrel plus either indobufen (100 mg twice daily) or aspirin (100 mg once daily), initiated with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-945",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 945,
+      "sentence": "DAPT consisted of clopidogrel plus either indobufen (100 mg twice daily) or aspirin (100 mg once daily), initiated within 24 hours after hemostasis and continued for 12 months.",
+      "context_window": "grel plus either indobufen (100 mg twice daily) or aspirin (100 mg once daily), initiated within 24 hours after hemostasis and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-1026",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1026,
+      "sentence": "DAPT consisted of clopidogrel plus either indobufen (100 mg twice daily) or aspirin (100 mg once daily), initiated within 24 hours after hemostasis and continued for 12 months.",
+      "context_window": "nitiated within 24 hours after hemostasis and continued for 12 months. After the 12-month DAPT period, clopidogrel was discontinu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-1646",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1646,
+      "sentence": "Patients were systematically monitored at our outpatient clinic at 1, 6, 12, and 24 months, with additional telephone outreach.",
+      "context_window": "tically monitored at our outpatient clinic at 1, 6, 12, and 24 months, with additional telephone outreach. For patients with mult",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-3484",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3484,
+      "sentence": "Statistical significance (two-tailed p <0.05) was assessed using R v4.4.3 (The R Foundation, Austria) and SPSS v25.0 (IBM Corp., Armonk, New York, USA).",
+      "context_window": "r Fisher\u2019s exact test. Statistical significance (two-tailed p <0.05) was assessed using R v4.4.3 (The R Foundation, Austria) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-605",
+      "claim_type": "sample_size",
+      "raw_text": "n=250",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 605,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "sity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P val",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-622",
+      "claim_type": "sample_size",
+      "raw_text": "n=46",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 622,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "ng Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-644",
+      "claim_type": "sample_size",
+      "raw_text": "n=68",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 644,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "er Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-660",
+      "claim_type": "sample_size",
+      "raw_text": "n=36",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 660,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "rin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2367",
+      "claim_type": "mean_sd",
+      "raw_text": "201.45 \u00b1 57.90",
+      "numeric_values": [
+        201.45,
+        57.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2367,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "6.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 He",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2382",
+      "claim_type": "mean_sd",
+      "raw_text": "201.87 \u00b1 65.17",
+      "numeric_values": [
+        201.87,
+        65.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2382,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": ".50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2403",
+      "claim_type": "mean_sd",
+      "raw_text": "200.06 \u00b1 53.58",
+      "numeric_values": [
+        200.06,
+        53.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2403,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2418",
+      "claim_type": "mean_sd",
+      "raw_text": "204.44 \u00b1 63.82",
+      "numeric_values": [
+        204.44,
+        63.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2418,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 12",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2455",
+      "claim_type": "mean_sd",
+      "raw_text": "127.96 \u00b1 14.28",
+      "numeric_values": [
+        127.96,
+        14.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2455,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "7 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2470",
+      "claim_type": "mean_sd",
+      "raw_text": "124.89 \u00b1 11.56",
+      "numeric_values": [
+        124.89,
+        11.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2470,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "\u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2490",
+      "claim_type": "mean_sd",
+      "raw_text": "126.82 \u00b1 12.86",
+      "numeric_values": [
+        126.82,
+        12.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2490,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-msd-2505",
+      "claim_type": "mean_sd",
+      "raw_text": "125.89 \u00b1 11.89",
+      "numeric_values": [
+        125.89,
+        11.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2505,
+      "sentence": "Table 1 Baseline Characteristics Before and After Propensity Score Matching Before Matching After Matching Aspirin, n=250 Indobufen, n=46 P value Aspirin, n=68 Indobufen, n=36 P value Age, years 74.00 (71.00, 76.00) 74.50 (73.00, 76.00) 0.175 74.00 (72.00, 76.00) 75.00 (73.00, 76.00) 0.346 Gender Male, n (%) 197 (78.8) 33 (71.7) 0.387 52 (76.5) 26 (72.2) 0.812 Female, n (%) 53 (21.2) 13 (28.3) 16 (23.5) 10 (27.8) BMI, kg/m 2 23.85 (21.92, 25.80) 23.69 (21.00, 26.13) 0.818 23.95 (21.90, 25.95) 23.62 (20.78, 26.33) 0.452 Hypertension, n (%) 171 (68.4) 30 (65.2) 0.8 42 (61.8) 21 (58.3) 0.897 Diabetes, n (%) 100 (40.0) 17 (37.0) 0.823 21 (30.9) 12 (33.3) 0.973 Hyperlipidemia, n (%) 68 (27.2) 12 (26.1) 1 18 (26.5) 8 (22.2) 0.812 Current smoker, n (%) 52 (20.8) 8 (17.4) 0.742 15 (22.1) 5 (13.9) 0.457 Previous MI, n (%) 44 (17.6) 9 (19.6) 0.912 12 (17.6) 8 (22.2) 0.763 Previous stroke, n (%) 45 (18.0) 7 (15.2) 0.806 8 (11.8) 4 (11.1) 1 Previous cardiac surgery, n (%) 77 (30.8) 13 (28.3) 0.865 19 (27.9) 9 (25.0) 0.929 CKD, n (%) 63 (25.2) 12 (26.1) 1 15 (22.1) 10 (27.8) 0.683 Previous GIB, n (%) 11 (4.4) 10 (21.7) <0.001 5 (7.4) 4 (11.1) 0.778 Diagnosis at admission, n (%) Unstable angina 86 (34.4) 16 (34.8) 1 20 (29.4) 13 (36.1) 0.633 Stable angina 105 (42.0) 20 (43.5) 0.981 34 (50.0) 16 (44.4) 0.739 Target vessel, n (%) Left main 138 (55.2) 24 (52.2) 0.828 39 (57.4) 20 (55.6) 1 Left anterior descending 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Left circumflex 226 (90.4) 41 (89.1) 1 63 (92.6) 33 (91.7) 1 Right coronary artery 232 (92.8) 40 (87.0) 0.298 61 (89.7) 32 (88.9) 1 Multiple 250 (100.0) 46 (100.0) NA 68 (100.0) 36 (100.0) NA Grafts 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.527 3.00 (3.00, 3.00) 3.00 (3.00, 3.00) 0.619 LVEF, % 61.00 (54.25, 65.00) 62.50 (58.25, 66.00) 0.319 62.00 (56.75, 66.00) 62.50 (58.00, 66.00) 0.965 Platelet, \u00d7 10 9 /L 201.45 \u00b1 57.90 201.87 \u00b1 65.17 0.965 200.06 \u00b1 53.58 204.44 \u00b1 63.82 0.711 Hemoglobin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775 1.81 (1.35, 2.29) 1.78 (1.48, 2.05) 0.992 Positive FOBT, n (%) 10 (4.0) 3 (6.5) 0.707 1 (1.5) 1 (2.8) 1 PPI, n (%) 153 (61.2) 29 (63.0) 0.943 39 (57.4) 21 (58.3) 1 Beta blockers, n (%) 161 (64.4) 29 (63.0) 0.993 38 (55.9) 22 (61.1) 0.76 Ivabradine, n (%) 7 (2.8) 2 (4.3) 0.925 0 (0) 0 (0) NA ACEI/ARB, n (%) 88 (35.2) 14 (30.4) 0.648 17 (25.0) 12 (33.3) 0.502 ARNI, n (%) 5 (2.0) 6 (13.0) 0.001 4 (5.9) 1 (2.8) 0.824 CCB, n (%) 145 (58.0) 23 (50.0) 0.398 36 (52.9) 16 (44.4) 0.536 Statin, n (%) 247 (98.8) 45 (97.8) 1 66 (97.1) 35 (97.2) 1 Ezetimibe, n (%) 2 (0.8) 2 (4.3) 0.222 1 (1.5) 0 (0.0) 1 Fenofibrate, n (%) 2 (0.8) 1 (2.2) 0.957 2 (2.9) 1 (2.8) 1 PCSK9i, n (%) 3 (1.2) 1 (2.2) 1 1 (1.5) 0 (0.0) 1 Nitrate, n (%) 102 (40.8) 14 (30.4) 0.246 24 (35.3) 12 (33.3) 1 Diuretic, n (%) 22 (8.8) 2 (4.3) 0.47 4 (5.9) 2 (5.6) 1 On pump, n (%) 27 (10.8) 5 (10.9) 1 8 (11.8) 5 (13.9) 1 LIMA-LAD, n (%) 242 (96.8) 45 (97.8) 1 67 (98.5) 35 (97.2) 1 Notes : Values are presented as n (%), mean \u00b1 SD, or median (interquartile range).",
+      "context_window": "obin, g/L 127.96 \u00b1 14.28 124.89 \u00b1 11.56 0.17 126.82 \u00b1 12.86 125.89 \u00b1 11.89 0.718 LDL, mmol/L 1.83 (1.35, 2.30) 1.83 (1.54, 2.22) 0.775",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-6697",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6697,
+      "sentence": "During the 2-year follow-up, the cumulative incidence of MACCE was comparable between the groups after matching (8.3% vs.",
+      "context_window": "of MACCE was comparable between the groups after matching (8.3% vs. 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76). Similar f",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-6706",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6706,
+      "sentence": "10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76).",
+      "context_window": "was comparable between the groups after matching (8.3% vs. 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76). Similar findings we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-ci-6723",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.21-3.10",
+      "numeric_values": [
+        0.21,
+        3.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6723,
+      "sentence": "10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76).",
+      "context_window": "etween the groups after matching (8.3% vs. 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76). Similar findings were observed before matching.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-6741",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6741,
+      "sentence": "10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76).",
+      "context_window": "after matching (8.3% vs. 10.3%; sHR 0.81, 95% CI 0.21-3.10; p = 0.76). Similar findings were observed before matching. In the ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-6933",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6933,
+      "sentence": "In the matched cohort, the indobufen group had a lower cumulative incidence of BARC type 2, 3, or 5 bleeding than the aspirin group (2.8% vs.",
+      "context_window": "ce of BARC type 2, 3, or 5 bleeding than the aspirin group (2.8% vs. 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), correspon",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-6942",
+      "claim_type": "percentage",
+      "raw_text": "11.8%",
+      "numeric_values": [
+        11.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6942,
+      "sentence": "11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a 9% absolute reduction (number needed to treat [NNT] \u2248 11), despite limited power.",
+      "context_window": "C type 2, 3, or 5 bleeding than the aspirin group (2.8% vs. 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-ci-6959",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.03-1.87",
+      "numeric_values": [
+        0.03,
+        1.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6959,
+      "sentence": "11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a 9% absolute reduction (number needed to treat [NNT] \u2248 11), despite limited power.",
+      "context_window": "bleeding than the aspirin group (2.8% vs. 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a 9% absolute reduction (numbe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-6977",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6977,
+      "sentence": "11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a 9% absolute reduction (number needed to treat [NNT] \u2248 11), despite limited power.",
+      "context_window": "aspirin group (2.8% vs. 11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a 9% absolute reduction (number needed t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-7007",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7007,
+      "sentence": "11.8%; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a 9% absolute reduction (number needed to treat [NNT] \u2248 11), despite limited power.",
+      "context_window": "; sHR 0.24, 95% CI 0.03-1.87; p = 0.14), corresponding to a 9% absolute reduction (number needed to treat [NNT] \u2248 11), des",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-7141",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7141,
+      "sentence": "A similar trend was observed in the overall cohort (2.2% vs.",
+      "context_window": "power. A similar trend was observed in the overall cohort (2.2% vs. 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). Most bleed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-7150",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7150,
+      "sentence": "6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "similar trend was observed in the overall cohort (2.2% vs. 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). Most bleeding event",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-ci-7166",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.04-2.38",
+      "numeric_values": [
+        0.04,
+        2.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7166,
+      "sentence": "6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "as observed in the overall cohort (2.2% vs. 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). Most bleeding events occurred during the first",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-7184",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7184,
+      "sentence": "6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23).",
+      "context_window": "overall cohort (2.2% vs. 6.8%; sHR 0.32, 95% CI 0.04-2.38; p = 0.23). Most bleeding events occurred during the first postoperat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-7552",
+      "claim_type": "sample_size",
+      "raw_text": "n=250",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7552,
+      "sentence": "Table 2 Primary and Secondary Endpoints Analyzed by Fine-Gray Competing Risk Model Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%) 17 (6.8) 3 (6.5) 0.96 (0.28-3.28) 0.951 7 (10.3) 3 (8.3) 0.81 (0.21-3.10) 0.756 BARC type 2, 3, or 5 bleeding, n (%) 17 (6.8) 1 (2.2) 0.32 (0.04-2.38) 0.234 8 (11.8) 1 (2.8) 0.24 (0.03-1.87) 0.135 Secondary endpoints All-cause death, n (%) 12 (4.8) 2 (4.3) 0.92 (0.20-4.15) 0.911 5 (7.4) 2 (5.6) 0.77 (0.15-3.96) 0.756 Cardiovascular death, n (%) 7 (2.8) 1 (2.2) 0.78 (0.10-6.37) 0.815 3 (4.4) 1 (2.8) 0.64 (0.07-6.07) 0.695 Nonfatal MI, n (%) 6 (2.4) 1 (2.2) 0.90 (0.11-7.60) 0.926 2 (2.9) 1 (2.8) 0.94 (0.09-10.28) 0.959 Nonfatal ischemic stroke, n (%) 4 (1.6) 1 (2.2) 1.35 (0.16-11.8) 0.786 2 (2.9) 1 (2.8) 0.93 (0.09-9.90) 0.955 Repeated revascularization, n (%) 2 (0.8) 1 (2.2) 2.7 (0.24-29.85) 0.401 1 (1.5) 1 (2.8) 1.86 (0.12-29.46) 0.657 Bleeding site Subcutaneous, n (%) 8 (3.2) 2 (4.3) 1.34 (0.29-6.24) 0.71 1 (1.5) 1 (2.8) 1.90 (0.12-30.08) 0.643 Gastrointestinal, n (%) 26 (10.4) 3 (6.5) 0.62 (0.19-2.03) 0.423 10 (14.7) 2 (5.6) 0.37 (0.08-1.70) 0.182 Urogenital, n (%) 3 (1.2) 1 (2.2) 1.79 (0.19-17.17) 0.608 1 (1.5) 1 (2.8) 1.82 (0.11-29.41) 0.67 Intracranial, n (%) 2 (0.8) 0 0 (0-0) 0.539 0 0 No events No events Other site, n (%) 6 (2.4) 1 (2.2) 0.89 (0.11-7.49) 0.916 3 (4.4) 1 (2.8) 0.62 (0.06-6.02) 0.681 BARC-defined bleeding BARC1, n (%) 22 (8.8) 4 (8.7) 0.97 (0.33-2.83) 0.959 6 (8.8) 3 (8.3) 0.92 (0.23-3.74) 0.91 BARC2, n (%) 15 (6.0) 1 (2.2) 0.36 (0.05-2.71) 0.296 7 (10.6) 1 (2.8) 0.27 (0.03-2.16) 0.184 BARC3, n (%) 2 (0.8) 0 0 (0-0) 0.542 1 (1.5) 0 0 (0-0) 0.469 BARC4, n (%) 0 0 No events No events 0 0 No events No events BARC5, n (%) 0 0 No events No events 0 0 No events No events Note : Values are presented as n (%).",
+      "context_window": "ompeting Risk Model Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-7569",
+      "claim_type": "sample_size",
+      "raw_text": "n=46",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7569,
+      "sentence": "Table 2 Primary and Secondary Endpoints Analyzed by Fine-Gray Competing Risk Model Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%) 17 (6.8) 3 (6.5) 0.96 (0.28-3.28) 0.951 7 (10.3) 3 (8.3) 0.81 (0.21-3.10) 0.756 BARC type 2, 3, or 5 bleeding, n (%) 17 (6.8) 1 (2.2) 0.32 (0.04-2.38) 0.234 8 (11.8) 1 (2.8) 0.24 (0.03-1.87) 0.135 Secondary endpoints All-cause death, n (%) 12 (4.8) 2 (4.3) 0.92 (0.20-4.15) 0.911 5 (7.4) 2 (5.6) 0.77 (0.15-3.96) 0.756 Cardiovascular death, n (%) 7 (2.8) 1 (2.2) 0.78 (0.10-6.37) 0.815 3 (4.4) 1 (2.8) 0.64 (0.07-6.07) 0.695 Nonfatal MI, n (%) 6 (2.4) 1 (2.2) 0.90 (0.11-7.60) 0.926 2 (2.9) 1 (2.8) 0.94 (0.09-10.28) 0.959 Nonfatal ischemic stroke, n (%) 4 (1.6) 1 (2.2) 1.35 (0.16-11.8) 0.786 2 (2.9) 1 (2.8) 0.93 (0.09-9.90) 0.955 Repeated revascularization, n (%) 2 (0.8) 1 (2.2) 2.7 (0.24-29.85) 0.401 1 (1.5) 1 (2.8) 1.86 (0.12-29.46) 0.657 Bleeding site Subcutaneous, n (%) 8 (3.2) 2 (4.3) 1.34 (0.29-6.24) 0.71 1 (1.5) 1 (2.8) 1.90 (0.12-30.08) 0.643 Gastrointestinal, n (%) 26 (10.4) 3 (6.5) 0.62 (0.19-2.03) 0.423 10 (14.7) 2 (5.6) 0.37 (0.08-1.70) 0.182 Urogenital, n (%) 3 (1.2) 1 (2.2) 1.79 (0.19-17.17) 0.608 1 (1.5) 1 (2.8) 1.82 (0.11-29.41) 0.67 Intracranial, n (%) 2 (0.8) 0 0 (0-0) 0.539 0 0 No events No events Other site, n (%) 6 (2.4) 1 (2.2) 0.89 (0.11-7.49) 0.916 3 (4.4) 1 (2.8) 0.62 (0.06-6.02) 0.681 BARC-defined bleeding BARC1, n (%) 22 (8.8) 4 (8.7) 0.97 (0.33-2.83) 0.959 6 (8.8) 3 (8.3) 0.92 (0.23-3.74) 0.91 BARC2, n (%) 15 (6.0) 1 (2.2) 0.36 (0.05-2.71) 0.296 7 (10.6) 1 (2.8) 0.27 (0.03-2.16) 0.184 BARC3, n (%) 2 (0.8) 0 0 (0-0) 0.542 1 (1.5) 0 0 (0-0) 0.469 BARC4, n (%) 0 0 No events No events 0 0 No events No events BARC5, n (%) 0 0 No events No events 0 0 No events No events Note : Values are presented as n (%).",
+      "context_window": "el Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-7579",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7579,
+      "sentence": "Table 2 Primary and Secondary Endpoints Analyzed by Fine-Gray Competing Risk Model Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%) 17 (6.8) 3 (6.5) 0.96 (0.28-3.28) 0.951 7 (10.3) 3 (8.3) 0.81 (0.21-3.10) 0.756 BARC type 2, 3, or 5 bleeding, n (%) 17 (6.8) 1 (2.2) 0.32 (0.04-2.38) 0.234 8 (11.8) 1 (2.8) 0.24 (0.03-1.87) 0.135 Secondary endpoints All-cause death, n (%) 12 (4.8) 2 (4.3) 0.92 (0.20-4.15) 0.911 5 (7.4) 2 (5.6) 0.77 (0.15-3.96) 0.756 Cardiovascular death, n (%) 7 (2.8) 1 (2.2) 0.78 (0.10-6.37) 0.815 3 (4.4) 1 (2.8) 0.64 (0.07-6.07) 0.695 Nonfatal MI, n (%) 6 (2.4) 1 (2.2) 0.90 (0.11-7.60) 0.926 2 (2.9) 1 (2.8) 0.94 (0.09-10.28) 0.959 Nonfatal ischemic stroke, n (%) 4 (1.6) 1 (2.2) 1.35 (0.16-11.8) 0.786 2 (2.9) 1 (2.8) 0.93 (0.09-9.90) 0.955 Repeated revascularization, n (%) 2 (0.8) 1 (2.2) 2.7 (0.24-29.85) 0.401 1 (1.5) 1 (2.8) 1.86 (0.12-29.46) 0.657 Bleeding site Subcutaneous, n (%) 8 (3.2) 2 (4.3) 1.34 (0.29-6.24) 0.71 1 (1.5) 1 (2.8) 1.90 (0.12-30.08) 0.643 Gastrointestinal, n (%) 26 (10.4) 3 (6.5) 0.62 (0.19-2.03) 0.423 10 (14.7) 2 (5.6) 0.37 (0.08-1.70) 0.182 Urogenital, n (%) 3 (1.2) 1 (2.2) 1.79 (0.19-17.17) 0.608 1 (1.5) 1 (2.8) 1.82 (0.11-29.41) 0.67 Intracranial, n (%) 2 (0.8) 0 0 (0-0) 0.539 0 0 No events No events Other site, n (%) 6 (2.4) 1 (2.2) 0.89 (0.11-7.49) 0.916 3 (4.4) 1 (2.8) 0.62 (0.06-6.02) 0.681 BARC-defined bleeding BARC1, n (%) 22 (8.8) 4 (8.7) 0.97 (0.33-2.83) 0.959 6 (8.8) 3 (8.3) 0.92 (0.23-3.74) 0.91 BARC2, n (%) 15 (6.0) 1 (2.2) 0.36 (0.05-2.71) 0.296 7 (10.6) 1 (2.8) 0.27 (0.03-2.16) 0.184 BARC3, n (%) 2 (0.8) 0 0 (0-0) 0.542 1 (1.5) 0 0 (0-0) 0.469 BARC4, n (%) 0 0 No events No events 0 0 No events No events BARC5, n (%) 0 0 No events No events 0 0 No events No events Note : Values are presented as n (%).",
+      "context_window": "Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-7612",
+      "claim_type": "sample_size",
+      "raw_text": "n=68",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7612,
+      "sentence": "Table 2 Primary and Secondary Endpoints Analyzed by Fine-Gray Competing Risk Model Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%) 17 (6.8) 3 (6.5) 0.96 (0.28-3.28) 0.951 7 (10.3) 3 (8.3) 0.81 (0.21-3.10) 0.756 BARC type 2, 3, or 5 bleeding, n (%) 17 (6.8) 1 (2.2) 0.32 (0.04-2.38) 0.234 8 (11.8) 1 (2.8) 0.24 (0.03-1.87) 0.135 Secondary endpoints All-cause death, n (%) 12 (4.8) 2 (4.3) 0.92 (0.20-4.15) 0.911 5 (7.4) 2 (5.6) 0.77 (0.15-3.96) 0.756 Cardiovascular death, n (%) 7 (2.8) 1 (2.2) 0.78 (0.10-6.37) 0.815 3 (4.4) 1 (2.8) 0.64 (0.07-6.07) 0.695 Nonfatal MI, n (%) 6 (2.4) 1 (2.2) 0.90 (0.11-7.60) 0.926 2 (2.9) 1 (2.8) 0.94 (0.09-10.28) 0.959 Nonfatal ischemic stroke, n (%) 4 (1.6) 1 (2.2) 1.35 (0.16-11.8) 0.786 2 (2.9) 1 (2.8) 0.93 (0.09-9.90) 0.955 Repeated revascularization, n (%) 2 (0.8) 1 (2.2) 2.7 (0.24-29.85) 0.401 1 (1.5) 1 (2.8) 1.86 (0.12-29.46) 0.657 Bleeding site Subcutaneous, n (%) 8 (3.2) 2 (4.3) 1.34 (0.29-6.24) 0.71 1 (1.5) 1 (2.8) 1.90 (0.12-30.08) 0.643 Gastrointestinal, n (%) 26 (10.4) 3 (6.5) 0.62 (0.19-2.03) 0.423 10 (14.7) 2 (5.6) 0.37 (0.08-1.70) 0.182 Urogenital, n (%) 3 (1.2) 1 (2.2) 1.79 (0.19-17.17) 0.608 1 (1.5) 1 (2.8) 1.82 (0.11-29.41) 0.67 Intracranial, n (%) 2 (0.8) 0 0 (0-0) 0.539 0 0 No events No events Other site, n (%) 6 (2.4) 1 (2.2) 0.89 (0.11-7.49) 0.916 3 (4.4) 1 (2.8) 0.62 (0.06-6.02) 0.681 BARC-defined bleeding BARC1, n (%) 22 (8.8) 4 (8.7) 0.97 (0.33-2.83) 0.959 6 (8.8) 3 (8.3) 0.92 (0.23-3.74) 0.91 BARC2, n (%) 15 (6.0) 1 (2.2) 0.36 (0.05-2.71) 0.296 7 (10.6) 1 (2.8) 0.27 (0.03-2.16) 0.184 BARC3, n (%) 2 (0.8) 0 0 (0-0) 0.542 1 (1.5) 0 0 (0-0) 0.469 BARC4, n (%) 0 0 No events No events 0 0 No events No events BARC5, n (%) 0 0 No events No events 0 0 No events No events Note : Values are presented as n (%).",
+      "context_window": "n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-7628",
+      "claim_type": "sample_size",
+      "raw_text": "n=36",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7628,
+      "sentence": "Table 2 Primary and Secondary Endpoints Analyzed by Fine-Gray Competing Risk Model Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%) 17 (6.8) 3 (6.5) 0.96 (0.28-3.28) 0.951 7 (10.3) 3 (8.3) 0.81 (0.21-3.10) 0.756 BARC type 2, 3, or 5 bleeding, n (%) 17 (6.8) 1 (2.2) 0.32 (0.04-2.38) 0.234 8 (11.8) 1 (2.8) 0.24 (0.03-1.87) 0.135 Secondary endpoints All-cause death, n (%) 12 (4.8) 2 (4.3) 0.92 (0.20-4.15) 0.911 5 (7.4) 2 (5.6) 0.77 (0.15-3.96) 0.756 Cardiovascular death, n (%) 7 (2.8) 1 (2.2) 0.78 (0.10-6.37) 0.815 3 (4.4) 1 (2.8) 0.64 (0.07-6.07) 0.695 Nonfatal MI, n (%) 6 (2.4) 1 (2.2) 0.90 (0.11-7.60) 0.926 2 (2.9) 1 (2.8) 0.94 (0.09-10.28) 0.959 Nonfatal ischemic stroke, n (%) 4 (1.6) 1 (2.2) 1.35 (0.16-11.8) 0.786 2 (2.9) 1 (2.8) 0.93 (0.09-9.90) 0.955 Repeated revascularization, n (%) 2 (0.8) 1 (2.2) 2.7 (0.24-29.85) 0.401 1 (1.5) 1 (2.8) 1.86 (0.12-29.46) 0.657 Bleeding site Subcutaneous, n (%) 8 (3.2) 2 (4.3) 1.34 (0.29-6.24) 0.71 1 (1.5) 1 (2.8) 1.90 (0.12-30.08) 0.643 Gastrointestinal, n (%) 26 (10.4) 3 (6.5) 0.62 (0.19-2.03) 0.423 10 (14.7) 2 (5.6) 0.37 (0.08-1.70) 0.182 Urogenital, n (%) 3 (1.2) 1 (2.2) 1.79 (0.19-17.17) 0.608 1 (1.5) 1 (2.8) 1.82 (0.11-29.41) 0.67 Intracranial, n (%) 2 (0.8) 0 0 (0-0) 0.539 0 0 No events No events Other site, n (%) 6 (2.4) 1 (2.2) 0.89 (0.11-7.49) 0.916 3 (4.4) 1 (2.8) 0.62 (0.06-6.02) 0.681 BARC-defined bleeding BARC1, n (%) 22 (8.8) 4 (8.7) 0.97 (0.33-2.83) 0.959 6 (8.8) 3 (8.3) 0.92 (0.23-3.74) 0.91 BARC2, n (%) 15 (6.0) 1 (2.2) 0.36 (0.05-2.71) 0.296 7 (10.6) 1 (2.8) 0.27 (0.03-2.16) 0.184 BARC3, n (%) 2 (0.8) 0 0 (0-0) 0.542 1 (1.5) 0 0 (0-0) 0.469 BARC4, n (%) 0 0 No events No events 0 0 No events No events BARC5, n (%) 0 0 No events No events 0 0 No events No events Note : Values are presented as n (%).",
+      "context_window": "n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-7638",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7638,
+      "sentence": "Table 2 Primary and Secondary Endpoints Analyzed by Fine-Gray Competing Risk Model Before Matching After Matching Aspirin, n=250 Indobufen, n=46 sHR (95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%) 17 (6.8) 3 (6.5) 0.96 (0.28-3.28) 0.951 7 (10.3) 3 (8.3) 0.81 (0.21-3.10) 0.756 BARC type 2, 3, or 5 bleeding, n (%) 17 (6.8) 1 (2.2) 0.32 (0.04-2.38) 0.234 8 (11.8) 1 (2.8) 0.24 (0.03-1.87) 0.135 Secondary endpoints All-cause death, n (%) 12 (4.8) 2 (4.3) 0.92 (0.20-4.15) 0.911 5 (7.4) 2 (5.6) 0.77 (0.15-3.96) 0.756 Cardiovascular death, n (%) 7 (2.8) 1 (2.2) 0.78 (0.10-6.37) 0.815 3 (4.4) 1 (2.8) 0.64 (0.07-6.07) 0.695 Nonfatal MI, n (%) 6 (2.4) 1 (2.2) 0.90 (0.11-7.60) 0.926 2 (2.9) 1 (2.8) 0.94 (0.09-10.28) 0.959 Nonfatal ischemic stroke, n (%) 4 (1.6) 1 (2.2) 1.35 (0.16-11.8) 0.786 2 (2.9) 1 (2.8) 0.93 (0.09-9.90) 0.955 Repeated revascularization, n (%) 2 (0.8) 1 (2.2) 2.7 (0.24-29.85) 0.401 1 (1.5) 1 (2.8) 1.86 (0.12-29.46) 0.657 Bleeding site Subcutaneous, n (%) 8 (3.2) 2 (4.3) 1.34 (0.29-6.24) 0.71 1 (1.5) 1 (2.8) 1.90 (0.12-30.08) 0.643 Gastrointestinal, n (%) 26 (10.4) 3 (6.5) 0.62 (0.19-2.03) 0.423 10 (14.7) 2 (5.6) 0.37 (0.08-1.70) 0.182 Urogenital, n (%) 3 (1.2) 1 (2.2) 1.79 (0.19-17.17) 0.608 1 (1.5) 1 (2.8) 1.82 (0.11-29.41) 0.67 Intracranial, n (%) 2 (0.8) 0 0 (0-0) 0.539 0 0 No events No events Other site, n (%) 6 (2.4) 1 (2.2) 0.89 (0.11-7.49) 0.916 3 (4.4) 1 (2.8) 0.62 (0.06-6.02) 0.681 BARC-defined bleeding BARC1, n (%) 22 (8.8) 4 (8.7) 0.97 (0.33-2.83) 0.959 6 (8.8) 3 (8.3) 0.92 (0.23-3.74) 0.91 BARC2, n (%) 15 (6.0) 1 (2.2) 0.36 (0.05-2.71) 0.296 7 (10.6) 1 (2.8) 0.27 (0.03-2.16) 0.184 BARC3, n (%) 2 (0.8) 0 0 (0-0) 0.542 1 (1.5) 0 0 (0-0) 0.469 BARC4, n (%) 0 0 No events No events 0 0 No events No events BARC5, n (%) 0 0 No events No events 0 0 No events No events Note : Values are presented as n (%).",
+      "context_window": "(95% CI) P (Gray\u2019s Test) Aspirin, n=68 Indobufen, n=36 sHR (95% CI) P (Gray\u2019s Test) Primary endpoints MACCE, n (%) 17 (6.8)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-877",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 877,
+      "sentence": "Aspirin intolerance, affecting approximately 10% of patients after PCI, often leads to poor adherence and increased ischemic risk, whereas current strategies, such as PPI co-therapy or desensitization, have important safety and practical limitations.",
+      "context_window": "bleeding risk. Aspirin intolerance, affecting approximately 10% of patients after PCI, often leads to poor adherence and in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-2115",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2115,
+      "sentence": "In the OPTION trial (>4500 PCI patients with negative troponin), indobufen-based DAPT was noninferior to aspirin-based DAPT for cardiovascular death, MI, stroke, or stent thrombosis at 12 months (1.51% vs.",
+      "context_window": "or cardiovascular death, MI, stroke, or stent thrombosis at 12 months (1.51% vs. 1.40%; HR 1.08, p = 0.76) and significantly redu",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2126",
+      "claim_type": "percentage",
+      "raw_text": "1.51%",
+      "numeric_values": [
+        1.51
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2126,
+      "sentence": "In the OPTION trial (>4500 PCI patients with negative troponin), indobufen-based DAPT was noninferior to aspirin-based DAPT for cardiovascular death, MI, stroke, or stent thrombosis at 12 months (1.51% vs.",
+      "context_window": "scular death, MI, stroke, or stent thrombosis at 12 months (1.51% vs. 1.40%; HR 1.08, p = 0.76) and significantly reduced ble",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2136",
+      "claim_type": "percentage",
+      "raw_text": "1.40%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2136,
+      "sentence": "1.40%; HR 1.08, p = 0.76) and significantly reduced bleeding (BARC type 2, 3, or 5 bleeding 2.97% vs.",
+      "context_window": "th, MI, stroke, or stent thrombosis at 12 months (1.51% vs. 1.40%; HR 1.08, p = 0.76) and significantly reduced bleeding (BAR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-2152",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2152,
+      "sentence": "1.40%; HR 1.08, p = 0.76) and significantly reduced bleeding (BARC type 2, 3, or 5 bleeding 2.97% vs.",
+      "context_window": "or stent thrombosis at 12 months (1.51% vs. 1.40%; HR 1.08, p = 0.76) and significantly reduced bleeding (BARC type 2, 3, or 5 b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2228",
+      "claim_type": "percentage",
+      "raw_text": "2.97%",
+      "numeric_values": [
+        2.97
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2228,
+      "sentence": "1.40%; HR 1.08, p = 0.76) and significantly reduced bleeding (BARC type 2, 3, or 5 bleeding 2.97% vs.",
+      "context_window": "gnificantly reduced bleeding (BARC type 2, 3, or 5 bleeding 2.97% vs. 4.71%; HR 0.63). 14 Similarly, the ASPIRATION registry",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2238",
+      "claim_type": "percentage",
+      "raw_text": "4.71%",
+      "numeric_values": [
+        4.71
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2238,
+      "sentence": "4.71%; HR 0.63).",
+      "context_window": "y reduced bleeding (BARC type 2, 3, or 5 bleeding 2.97% vs. 4.71%; HR 0.63). 14 Similarly, the ASPIRATION registry (n = 7135)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-n-2294",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7135",
+      "numeric_values": [
+        7135.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2294,
+      "sentence": "14 Similarly, the ASPIRATION registry (n = 7135) showed identical 1-year MACCE rates (6.5% vs.",
+      "context_window": "vs. 4.71%; HR 0.63). 14 Similarly, the ASPIRATION registry (n = 7135) showed identical 1-year MACCE rates (6.5% vs. 6.5%; HR 0.9",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2341",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2341,
+      "sentence": "14 Similarly, the ASPIRATION registry (n = 7135) showed identical 1-year MACCE rates (6.5% vs.",
+      "context_window": "ON registry (n = 7135) showed identical 1-year MACCE rates (6.5% vs. 6.5%; HR 0.99) but a significant 75% relative risk redu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2350",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2350,
+      "sentence": "6.5%; HR 0.99) but a significant 75% relative risk reduction in BARC 2-5 bleeding with indobufen (3.0% vs.",
+      "context_window": "ry (n = 7135) showed identical 1-year MACCE rates (6.5% vs. 6.5%; HR 0.99) but a significant 75% relative risk reduction in",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2383",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2383,
+      "sentence": "6.5%; HR 0.99) but a significant 75% relative risk reduction in BARC 2-5 bleeding with indobufen (3.0% vs.",
+      "context_window": "year MACCE rates (6.5% vs. 6.5%; HR 0.99) but a significant 75% relative risk reduction in BARC 2-5 bleeding with indobufen",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2448",
+      "claim_type": "percentage",
+      "raw_text": "3.0%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2448,
+      "sentence": "6.5%; HR 0.99) but a significant 75% relative risk reduction in BARC 2-5 bleeding with indobufen (3.0% vs.",
+      "context_window": "elative risk reduction in BARC 2-5 bleeding with indobufen (3.0% vs. 11.9%; HR 0.24, p < 0.001), including patients with asp",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2457",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2457,
+      "sentence": "11.9%; HR 0.24, p < 0.001), including patients with aspirin intolerance.",
+      "context_window": "isk reduction in BARC 2-5 bleeding with indobufen (3.0% vs. 11.9%; HR 0.24, p < 0.001), including patients with aspirin intol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-p-2473",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2473,
+      "sentence": "11.9%; HR 0.24, p < 0.001), including patients with aspirin intolerance.",
+      "context_window": "BARC 2-5 bleeding with indobufen (3.0% vs. 11.9%; HR 0.24, p < 0.001), including patients with aspirin intolerance. 15 Despite t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2769",
+      "claim_type": "percentage",
+      "raw_text": "1.2%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2769,
+      "sentence": "For instance, Cataldo et al reported comparable 1-year graft patency with fewer GI bleeding events using indobufen (1.2% vs.",
+      "context_window": "raft patency with fewer GI bleeding events using indobufen (1.2% vs. 3.5%). 31 In a multicenter analysis of aspirin-intolera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2778",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2778,
+      "sentence": "3.5%).",
+      "context_window": "ncy with fewer GI bleeding events using indobufen (1.2% vs. 3.5%). 31 In a multicenter analysis of aspirin-intolerant CABG p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2927",
+      "claim_type": "percentage",
+      "raw_text": "15.8%",
+      "numeric_values": [
+        15.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2927,
+      "sentence": "31 In a multicenter analysis of aspirin-intolerant CABG patients, Ren et al found no MACCE events and markedly lower bleeding with indobufen (15.8% vs.",
+      "context_window": "no MACCE events and markedly lower bleeding with indobufen (15.8% vs. 55%). 32 Despite methodological limitations, these find",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-pct-2937",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2937,
+      "sentence": "55%).",
+      "context_window": "vents and markedly lower bleeding with indobufen (15.8% vs. 55%). 32 Despite methodological limitations, these findings ali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13039662_indobufen_versus_aspirin_after_cabg_in_septuagenarians_a_pro-u-121",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 121,
+      "sentence": "Over 2 years, indobufen-based therapy achieved comparable protection against MACCE, with a trend toward fewer clinically relevant bleeding events, particularly during the early postoperative phase.",
+      "context_window": "condary prevention in septuagenarians undergoing CABG. Over 2 years, indobufen-based therapy achieved comparable protection aga",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

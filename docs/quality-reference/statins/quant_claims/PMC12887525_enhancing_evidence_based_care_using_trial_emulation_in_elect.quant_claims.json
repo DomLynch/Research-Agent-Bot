@@ -1,0 +1,957 @@
+{
+  "paper_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect",
+  "doi": "10.1136/bmjdrc-2025-005672",
+  "extracted_at": "2026-05-04T16:05:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 29,
+    "confidence_interval": 6,
+    "unit_value": 10,
+    "sample_size": 6,
+    "risk_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1305",
+      "claim_type": "percentage",
+      "raw_text": "83.2%",
+      "numeric_values": [
+        83.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1305,
+      "sentence": "The majority of people prescribed empagliflozin would not have met the EMPA-REG RCT eligibility criteria (11,011/13,239, 83.2% RCT-ineligible).",
+      "context_window": "e met the EMPA-REG RCT eligibility criteria (11,011/13,239, 83.2% RCT-ineligible). During follow-up, all-cause mortality occu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1397",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "During follow-up, all-cause mortality occurred in 551 out of 13,239 (4.2%) in the empagliflozin group and 6,589 out of 49,264 (13.4%) in the active control group (adjusted HR 0.76, 95% CI 0.69 to 0.83).",
+      "context_window": "llow-up, all-cause mortality occurred in 551 out of 13,239 (4.2%) in the empagliflozin group and 6,589 out of 49,264 (13.4%)",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1455",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1455,
+      "sentence": "During follow-up, all-cause mortality occurred in 551 out of 13,239 (4.2%) in the empagliflozin group and 6,589 out of 49,264 (13.4%) in the active control group (adjusted HR 0.76, 95% CI 0.69 to 0.83).",
+      "context_window": "(4.2%) in the empagliflozin group and 6,589 out of 49,264 (13.4%) in the active control group (adjusted HR 0.76, 95% CI 0.69",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-ci-1509",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.69 to 0.83",
+      "numeric_values": [
+        0.69,
+        0.83
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1509,
+      "sentence": "During follow-up, all-cause mortality occurred in 551 out of 13,239 (4.2%) in the empagliflozin group and 6,589 out of 49,264 (13.4%) in the active control group (adjusted HR 0.76, 95% CI 0.69 to 0.83).",
+      "context_window": ",264 (13.4%) in the active control group (adjusted HR 0.76, 95% CI 0.69 to 0.83). There was no evidence of differential treatment effect by",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-183",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 183,
+      "sentence": "In the UK, over 3.5 million people live with T2DM, and by 2040, the prevalence of T2DM is estimated to increase by 50%.",
+      "context_window": "by 2040, the prevalence of T2DM is estimated to increase by 50%. 1 Since 2022, the UK National Institute for Health and Car",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-4562",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4562,
+      "sentence": "The only inclusion criteria we applied was being aged over 18 years and a confirmed diagnosis of T2DM.",
+      "context_window": "The only inclusion criteria we applied was being aged over 18 years and a confirmed diagnosis of T2DM. People were excluded fr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-6708",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6708,
+      "sentence": "22\n\nHbA1c was defined based on the most recent value up to 180 days before time zero.",
+      "context_window": "22 HbA1c was defined based on the most recent value up to 180 days before time zero. This 180-day window was selected as NICE",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-6816",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6816,
+      "sentence": "This 180-day window was selected as NICE recommends that HbA1c is measured every 6 months in people with T2DM.",
+      "context_window": "as selected as NICE recommends that HbA1c is measured every 6 months in people with T2DM. 19 For other measurements such as syst",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-7013",
+      "claim_type": "unit_value",
+      "raw_text": "540 days",
+      "numeric_values": [
+        540.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7013,
+      "sentence": "19 For other measurements such as systolic blood pressure, BMI, cholesterol, and estimated glomerular filtration rate (eGFR), the most recent value within a window of 540 days before baseline was used.",
+      "context_window": "ation rate (eGFR), the most recent value within a window of 540 days before baseline was used. This was informed by the UK prima",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-10663",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10663,
+      "sentence": "Estimate agreement: Emulated estimates fall within the 95% CIs of the RCT estimate.",
+      "context_window": "CT. Estimate agreement: Emulated estimates fall within the 95% CIs of the RCT estimate. Standardized difference: Compares",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-n-67",
+      "claim_type": "sample_size",
+      "raw_text": "n=13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 67,
+      "sentence": "A total of 62,503 people with T2DM initiated either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1, 2014 and December 31, 2022.",
+      "context_window": "of 62,503 people with T2DM initiated either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-77",
+      "claim_type": "percentage",
+      "raw_text": "21.2%",
+      "numeric_values": [
+        21.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 77,
+      "sentence": "A total of 62,503 people with T2DM initiated either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1, 2014 and December 31, 2022.",
+      "context_window": "people with T2DM initiated either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1, 2014 and De",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-n-95",
+      "claim_type": "sample_size",
+      "raw_text": "n=49",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 95,
+      "sentence": "A total of 62,503 people with T2DM initiated either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1, 2014 and December 31, 2022.",
+      "context_window": "initiated either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1, 2014 and December 31, 2022.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-105",
+      "claim_type": "percentage",
+      "raw_text": "78.8%",
+      "numeric_values": [
+        78.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 105,
+      "sentence": "A total of 62,503 people with T2DM initiated either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1, 2014 and December 31, 2022.",
+      "context_window": "either empagliflozin (n=13,239, 21.2%) or DPP-4i (n=49,264, 78.8%) between January 1, 2014 and December 31, 2022. A total of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-184",
+      "claim_type": "percentage",
+      "raw_text": "11.4%",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 184,
+      "sentence": "A total of 7,140 deaths (11.4%) were recorded in this trial emulation.",
+      "context_window": "ary 1, 2014 and December 31, 2022. A total of 7,140 deaths (11.4%) were recorded in this trial emulation. Death occurred in 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-267",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 267,
+      "sentence": "Death occurred in 551 out of 13,239 (4.2%) of the empagliflozin group and in 6,589 out of 49,264 (13.4%) of the DPP-4i (active control) group.",
+      "context_window": "this trial emulation. Death occurred in 551 out of 13,239 (4.2%) of the empagliflozin group and in 6,589 out of 49,264 (13.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-328",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 328,
+      "sentence": "Death occurred in 551 out of 13,239 (4.2%) of the empagliflozin group and in 6,589 out of 49,264 (13.4%) of the DPP-4i (active control) group.",
+      "context_window": ".2%) of the empagliflozin group and in 6,589 out of 49,264 (13.4%) of the DPP-4i (active control) group. The number of person",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-416",
+      "claim_type": "unit_value",
+      "raw_text": "646 years",
+      "numeric_values": [
+        646.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 416,
+      "sentence": "The number of person-years-at-risk was 200,646 years and the longest duration of follow-up was 9.6 years.",
+      "context_window": "control) group. The number of person-years-at-risk was 200,646 years and the longest duration of follow-up was 9.6 years. In th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-468",
+      "claim_type": "unit_value",
+      "raw_text": "9.6 years",
+      "numeric_values": [
+        9.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 468,
+      "sentence": "The number of person-years-at-risk was 200,646 years and the longest duration of follow-up was 9.6 years.",
+      "context_window": "was 200,646 years and the longest duration of follow-up was 9.6 years. In the trial emulation population, 12,970 individuals (20",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-535",
+      "claim_type": "percentage",
+      "raw_text": "20.8%",
+      "numeric_values": [
+        20.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 535,
+      "sentence": "In the trial emulation population, 12,970 individuals (20.8%) would have met the eligibility criteria for the EMPA-REG RCT.",
+      "context_window": "rs. In the trial emulation population, 12,970 individuals (20.8%) would have met the eligibility criteria for the EMPA-REG R",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-723",
+      "claim_type": "percentage",
+      "raw_text": "83.2%",
+      "numeric_values": [
+        83.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 723,
+      "sentence": "5 A total of 13,239 patients with T2DM received a first prescription of empagliflozin within the study period, of whom 83.2% (n=11,011/13,239) would not have met the eligibility criteria for the EMPA-REG RCT.",
+      "context_window": "scription of empagliflozin within the study period, of whom 83.2% (n=11,011/13,239) would not have met the eligibility criter",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-n-730",
+      "claim_type": "sample_size",
+      "raw_text": "n=11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 730,
+      "sentence": "5 A total of 13,239 patients with T2DM received a first prescription of empagliflozin within the study period, of whom 83.2% (n=11,011/13,239) would not have met the eligibility criteria for the EMPA-REG RCT.",
+      "context_window": "on of empagliflozin within the study period, of whom 83.2% (n=11,011/13,239) would not have met the eligibility criteria for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-n-922",
+      "claim_type": "sample_size",
+      "raw_text": "n=43",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 922,
+      "sentence": "Most initiators of study drugs would have been excluded for not having established CVD at baseline (excluded n=43,672, 70.0%, figure 1 ) or having a recorded baseline HbA1c outside of the appropriate range (excluded n=14,953, 23.9%).",
+      "context_window": "cluded for not having established CVD at baseline (excluded n=43,672, 70.0%, figure 1 ) or having a recorded baseline HbA1c",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-932",
+      "claim_type": "percentage",
+      "raw_text": "70.0%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 932,
+      "sentence": "Most initiators of study drugs would have been excluded for not having established CVD at baseline (excluded n=43,672, 70.0%, figure 1 ) or having a recorded baseline HbA1c outside of the appropriate range (excluded n=14,953, 23.9%).",
+      "context_window": "not having established CVD at baseline (excluded n=43,672, 70.0%, figure 1 ) or having a recorded baseline HbA1c outside of",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-n-1029",
+      "claim_type": "sample_size",
+      "raw_text": "n=14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1029,
+      "sentence": "Most initiators of study drugs would have been excluded for not having established CVD at baseline (excluded n=43,672, 70.0%, figure 1 ) or having a recorded baseline HbA1c outside of the appropriate range (excluded n=14,953, 23.9%).",
+      "context_window": "d baseline HbA1c outside of the appropriate range (excluded n=14,953, 23.9%). There were 36,088 individuals (57.7% of trial",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1039",
+      "claim_type": "percentage",
+      "raw_text": "23.9%",
+      "numeric_values": [
+        23.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1039,
+      "sentence": "Most initiators of study drugs would have been excluded for not having established CVD at baseline (excluded n=43,672, 70.0%, figure 1 ) or having a recorded baseline HbA1c outside of the appropriate range (excluded n=14,953, 23.9%).",
+      "context_window": "HbA1c outside of the appropriate range (excluded n=14,953, 23.9%). There were 36,088 individuals (57.7% of trial emulation p",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1078",
+      "claim_type": "percentage",
+      "raw_text": "57.7%",
+      "numeric_values": [
+        57.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1078,
+      "sentence": "There were 36,088 individuals (57.7% of trial emulation population) defined as RCT ineligible based on having a single exclusion criterion, with a further 13,445 people (21.5%) defined as RCT ineligible based on having more than one exclusion factor.",
+      "context_window": "(excluded n=14,953, 23.9%). There were 36,088 individuals (57.7% of trial emulation population) defined as RCT ineligible ba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1217",
+      "claim_type": "percentage",
+      "raw_text": "21.5%",
+      "numeric_values": [
+        21.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1217,
+      "sentence": "There were 36,088 individuals (57.7% of trial emulation population) defined as RCT ineligible based on having a single exclusion criterion, with a further 13,445 people (21.5%) defined as RCT ineligible based on having more than one exclusion factor.",
+      "context_window": "a single exclusion criterion, with a further 13,445 people (21.5%) defined as RCT ineligible based on having more than one ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-1372",
+      "claim_type": "unit_value",
+      "raw_text": "64.0 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1372,
+      "sentence": "The trial emulation population was older (average age in trial emulation 64.0 years, standard deviation (SD) 13.5 vs average age in the RCT 63.1, SD 8.6, table 2 ), had substantially greater representation of women (42.5% of the population were female in the trial emulation vs 28% in the RCT, table 2 ), and had a higher baseline HbA1c compared with the RCT population (average baseline HbA1c in trial emulation: 74.3 mmol/mol, SD 17.8 vs 64.7 mmol/mol in the RCT, table 2 ).",
+      "context_window": "lation population was older (average age in trial emulation 64.0 years, standard deviation (SD) 13.5 vs average age in the RCT 63.",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1515",
+      "claim_type": "percentage",
+      "raw_text": "42.5%",
+      "numeric_values": [
+        42.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1515,
+      "sentence": "The trial emulation population was older (average age in trial emulation 64.0 years, standard deviation (SD) 13.5 vs average age in the RCT 63.1, SD 8.6, table 2 ), had substantially greater representation of women (42.5% of the population were female in the trial emulation vs 28% in the RCT, table 2 ), and had a higher baseline HbA1c compared with the RCT population (average baseline HbA1c in trial emulation: 74.3 mmol/mol, SD 17.8 vs 64.7 mmol/mol in the RCT, table 2 ).",
+      "context_window": "ble 2 ), had substantially greater representation of women (42.5% of the population were female in the trial emulation vs 28%",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1577",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1577,
+      "sentence": "The trial emulation population was older (average age in trial emulation 64.0 years, standard deviation (SD) 13.5 vs average age in the RCT 63.1, SD 8.6, table 2 ), had substantially greater representation of women (42.5% of the population were female in the trial emulation vs 28% in the RCT, table 2 ), and had a higher baseline HbA1c compared with the RCT population (average baseline HbA1c in trial emulation: 74.3 mmol/mol, SD 17.8 vs 64.7 mmol/mol in the RCT, table 2 ).",
+      "context_window": ".5% of the population were female in the trial emulation vs 28% in the RCT, table 2 ), and had a higher baseline HbA1c comp",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-1713",
+      "claim_type": "unit_value",
+      "raw_text": "74.3 mmol",
+      "numeric_values": [
+        74.3
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1713,
+      "sentence": "The trial emulation population was older (average age in trial emulation 64.0 years, standard deviation (SD) 13.5 vs average age in the RCT 63.1, SD 8.6, table 2 ), had substantially greater representation of women (42.5% of the population were female in the trial emulation vs 28% in the RCT, table 2 ), and had a higher baseline HbA1c compared with the RCT population (average baseline HbA1c in trial emulation: 74.3 mmol/mol, SD 17.8 vs 64.7 mmol/mol in the RCT, table 2 ).",
+      "context_window": "RCT population (average baseline HbA1c in trial emulation: 74.3 mmol/mol, SD 17.8 vs 64.7 mmol/mol in the RCT, table 2 ). Table",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-1739",
+      "claim_type": "unit_value",
+      "raw_text": "64.7 mmol",
+      "numeric_values": [
+        64.7
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1739,
+      "sentence": "The trial emulation population was older (average age in trial emulation 64.0 years, standard deviation (SD) 13.5 vs average age in the RCT 63.1, SD 8.6, table 2 ), had substantially greater representation of women (42.5% of the population were female in the trial emulation vs 28% in the RCT, table 2 ), and had a higher baseline HbA1c compared with the RCT population (average baseline HbA1c in trial emulation: 74.3 mmol/mol, SD 17.8 vs 64.7 mmol/mol in the RCT, table 2 ).",
+      "context_window": "aseline HbA1c in trial emulation: 74.3 mmol/mol, SD 17.8 vs 64.7 mmol/mol in the RCT, table 2 ). Table comparing the randomized",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-2704",
+      "claim_type": "percentage",
+      "raw_text": "48.2%",
+      "numeric_values": [
+        48.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2704,
+      "sentence": "For example, much greater numbers were co-prescribed insulin in the RCT compared with the trial emulation (3,387 people in the RCT, 48.2% of RCT cohort vs 54,53 people in the trial emulation, 8.7%).",
+      "context_window": "compared with the trial emulation (3,387 people in the RCT, 48.2% of RCT cohort vs 54,53 people in the trial emulation, 8.7%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-2764",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2764,
+      "sentence": "For example, much greater numbers were co-prescribed insulin in the RCT compared with the trial emulation (3,387 people in the RCT, 48.2% of RCT cohort vs 54,53 people in the trial emulation, 8.7%).",
+      "context_window": "48.2% of RCT cohort vs 54,53 people in the trial emulation, 8.7%). Similar patterns can be seen across most anti-diabetes dr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-3513",
+      "claim_type": "percentage",
+      "raw_text": "25.7%",
+      "numeric_values": [
+        25.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3513,
+      "sentence": "People in the empagliflozin group tended to have lower burden of comorbidities-particularly for CVD (present in 3424/13,239, 25.7% of the empagliflozin group vs 15,407/49,264, 31.3% of the DPP-4i group) and dementia (present in 50/13,239, 0.4% of the empagliflozin group vs 1172, 2.4% of the DPP-4i group).",
+      "context_window": "comorbidities-particularly for CVD (present in 3424/13,239, 25.7% of the empagliflozin group vs 15,407/49,264, 31.3% of the D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-3564",
+      "claim_type": "percentage",
+      "raw_text": "31.3%",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3564,
+      "sentence": "People in the empagliflozin group tended to have lower burden of comorbidities-particularly for CVD (present in 3424/13,239, 25.7% of the empagliflozin group vs 15,407/49,264, 31.3% of the DPP-4i group) and dementia (present in 50/13,239, 0.4% of the empagliflozin group vs 1172, 2.4% of the DPP-4i group).",
+      "context_window": "/13,239, 25.7% of the empagliflozin group vs 15,407/49,264, 31.3% of the DPP-4i group) and dementia (present in 50/13,239, 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-3627",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3627,
+      "sentence": "People in the empagliflozin group tended to have lower burden of comorbidities-particularly for CVD (present in 3424/13,239, 25.7% of the empagliflozin group vs 15,407/49,264, 31.3% of the DPP-4i group) and dementia (present in 50/13,239, 0.4% of the empagliflozin group vs 1172, 2.4% of the DPP-4i group).",
+      "context_window": "3% of the DPP-4i group) and dementia (present in 50/13,239, 0.4% of the empagliflozin group vs 1172, 2.4% of the DPP-4i grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-3668",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3668,
+      "sentence": "People in the empagliflozin group tended to have lower burden of comorbidities-particularly for CVD (present in 3424/13,239, 25.7% of the empagliflozin group vs 15,407/49,264, 31.3% of the DPP-4i group) and dementia (present in 50/13,239, 0.4% of the empagliflozin group vs 1172, 2.4% of the DPP-4i group).",
+      "context_window": "sent in 50/13,239, 0.4% of the empagliflozin group vs 1172, 2.4% of the DPP-4i group). In addition, people in the empagliflo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-4498",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4498,
+      "sentence": "In the trial emulation, the primary outcome of all-cause mortality occurred in 551 out of 13,239 (4.2%) of the empagliflozin group and in 6,589 out of 49,264 (13.4%) of the active control group.",
+      "context_window": "tcome of all-cause mortality occurred in 551 out of 13,239 (4.2%) of the empagliflozin group and in 6,589 out of 49,264 (13.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-4559",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4559,
+      "sentence": "In the trial emulation, the primary outcome of all-cause mortality occurred in 551 out of 13,239 (4.2%) of the empagliflozin group and in 6,589 out of 49,264 (13.4%) of the active control group.",
+      "context_window": ".2%) of the empagliflozin group and in 6,589 out of 49,264 (13.4%) of the active control group. The adjusted HR for all-cause",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-ci-4683",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.69 to 0.83",
+      "numeric_values": [
+        0.69,
+        0.83
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4683,
+      "sentence": "The adjusted HR for all-cause mortality in the Cox proportional hazards model was 0.76 (95% CI 0.69 to 0.83), providing strong evidence of a mortality benefit for people initiated on empagliflozin compared with those who initiated DPP-4i ( figure 2 ).",
+      "context_window": "e mortality in the Cox proportional hazards model was 0.76 (95% CI 0.69 to 0.83), providing strong evidence of a mortality benefit for peop",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-ci-4975",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.03 to -0.01",
+      "numeric_values": [
+        -0.03,
+        -0.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4975,
+      "sentence": "There was a reduced 3-year risk of mortality in the empagliflozin group compared with the DPP-4i group (risk difference -0.02, 95% CI -0.03 to -0.01, figure 2 ).",
+      "context_window": "roup compared with the DPP-4i group (risk difference -0.02, 95% CI -0.03 to -0.01, figure 2 ). The corresponding NNT is 47 people (95% CI 30",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-ci-5046",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 30 to 66",
+      "numeric_values": [
+        30.0,
+        66.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5046,
+      "sentence": "The corresponding NNT is 47 people (95% CI 30 to 66, figure 2 ).",
+      "context_window": "3 to -0.01, figure 2 ). The corresponding NNT is 47 people (95% CI 30 to 66, figure 2 ). The IPTW analysis yielded similar results ( on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-rr-l-5293",
+      "claim_type": "risk_ratio",
+      "raw_text": "risk ratio 1.98",
+      "numeric_values": [
+        1.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5293,
+      "sentence": "The E-value for treatment assignment was risk ratio 1.98 (95% CI 1.70 to 2.27, online supplemental material 10 ).",
+      "context_window": "t in the treated. The E-value for treatment assignment was risk ratio 1.98 (95% CI 1.70 to 2.27, online supplemental material 10 ). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-ci-5310",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.70 to 2.27",
+      "numeric_values": [
+        1.7,
+        2.27
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5310,
+      "sentence": "The E-value for treatment assignment was risk ratio 1.98 (95% CI 1.70 to 2.27, online supplemental material 10 ).",
+      "context_window": "The E-value for treatment assignment was risk ratio 1.98 (95% CI 1.70 to 2.27, online supplemental material 10 ). This suggests that an u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-u-6281",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6281,
+      "sentence": "The NNT at 3 years from the RCT was within the 95% CIs for all trial emulation estimates, including both RCT-eligible and RCT-ineligible populations ( figure 2 ).",
+      "context_window": "bservational findings against the RCT findings. The NNT at 3 years from the RCT was within the 95% CIs for all trial emulation",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-6317",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6317,
+      "sentence": "The NNT at 3 years from the RCT was within the 95% CIs for all trial emulation estimates, including both RCT-eligible and RCT-ineligible populations ( figure 2 ).",
+      "context_window": "T findings. The NNT at 3 years from the RCT was within the 95% CIs for all trial emulation estimates, including both RCT-e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-990",
+      "claim_type": "percentage",
+      "raw_text": "16.8%",
+      "numeric_values": [
+        16.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 990,
+      "sentence": "29 A key finding of the present study is that as few as 16.8% of individuals with T2DM in the UK initiated on empagliflozin would have met the original EMPA-REG RCT eligibility criteria.",
+      "context_window": "ia. 29 A key finding of the present study is that as few as 16.8% of individuals with T2DM in the UK initiated on empaglifloz",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-pct-1182",
+      "claim_type": "percentage",
+      "raw_text": "18.7%",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1182,
+      "sentence": "This aligns with findings from a Taiwanese study, where only 18.7% of SGLT2i users met relevant RCT eligibility criteria.",
+      "context_window": "his aligns with findings from a Taiwanese study, where only 18.7% of SGLT2i users met relevant RCT eligibility criteria. 30 D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-n-2114",
+      "claim_type": "sample_size",
+      "raw_text": "n=4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2114,
+      "sentence": "2 9 31 A previous meta-analysis of 7 RCTs (n=4, 495) studying the effects of empagliflozin versus placebo in people with T2DM with low-medium burden of CVD concluded that there was no evidence supporting significant reduction in all-cause mortality (HR 0.67, 95% CI 0.28 to 1.63).",
+      "context_window": "ions and others. 2 9 31 A previous meta-analysis of 7 RCTs (n=4, 495) studying the effects of empagliflozin versus placebo",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12887525_enhancing_evidence_based_care_using_trial_emulation_in_elect-ci-2330",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.28 to 1.63",
+      "numeric_values": [
+        0.28,
+        1.63
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2330,
+      "sentence": "2 9 31 A previous meta-analysis of 7 RCTs (n=4, 495) studying the effects of empagliflozin versus placebo in people with T2DM with low-medium burden of CVD concluded that there was no evidence supporting significant reduction in all-cause mortality (HR 0.67, 95% CI 0.28 to 1.63).",
+      "context_window": "ting significant reduction in all-cause mortality (HR 0.67, 95% CI 0.28 to 1.63). 32 However, in the present study we show a significant an",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

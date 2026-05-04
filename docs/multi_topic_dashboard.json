@@ -1,5 +1,23 @@
 [
   {
+    "topic": "aspirin",
+    "n_runs": 1,
+    "best_run_id": "synthesis-aspirin-v06-proof006-2026-05-04T16-05-37Z",
+    "best_verdict": "Trust-Spine Pass",
+    "aaa_runs": [],
+    "certified": false,
+    "cert_runs": [],
+    "stage1_pass": "12/13",
+    "stage2_p1": 0,
+    "stage2_p2": 0,
+    "q2_traceability_pct": 100.0,
+    "grok_unresolved_p1": 0,
+    "word_count": 8050,
+    "cost_usd": 0.26335000000000003,
+    "n_patches_applied": 4,
+    "n_patches_repaired": 0
+  },
+  {
     "topic": "glp1",
     "n_runs": 2,
     "best_run_id": "synthesis-glp1-v06-proof004-2026-05-04T12-04-29Z",
@@ -101,8 +119,8 @@
   },
   {
     "topic": "statins",
-    "n_runs": 7,
-    "best_run_id": "synthesis-statins-v06-FINAL-2026-05-04T14-38-15Z",
+    "n_runs": 8,
+    "best_run_id": "synthesis-statins-v06-AAA-2026-05-04T16-05-37Z",
     "best_verdict": "Trust-Spine Pass",
     "aaa_runs": [],
     "certified": false,
@@ -112,9 +130,9 @@
     "stage2_p2": 0,
     "q2_traceability_pct": 100.0,
     "grok_unresolved_p1": 0,
-    "word_count": 10127,
-    "cost_usd": 0.225508,
-    "n_patches_applied": 12,
-    "n_patches_repaired": 0
+    "word_count": 9135,
+    "cost_usd": 0.240034,
+    "n_patches_applied": 10,
+    "n_patches_repaired": 2
   }
 ]
