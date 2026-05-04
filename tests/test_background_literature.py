@@ -37,9 +37,14 @@ def _registry(**entries: dict) -> dict[str, bg.BackgroundLitEntry]:
 
 def test_load_registry_returns_empty_when_seed_missing() -> None:
     """A non-existent seed file → empty registry (caller falls back
-    to corpus-only Q2 behaviour)."""
+    to corpus-only Q2 behaviour).
+
+    Refactor 2026-05-04: load_registry now auto-merges the active
+    topic pack's bg-lit entries when audit_v06_paper._ACTIVE_TOPIC
+    is set. Pass topic='__none__' (a topic with no pack file) to
+    suppress the auto-merge for this isolation test."""
     nowhere = Path("/tmp/this-file-does-not-exist-bglit.json")
-    assert bg.load_registry(nowhere) == {}
+    assert bg.load_registry(nowhere, topic="__none__") == {}
 
 
 def test_load_registry_parses_seed_json() -> None:

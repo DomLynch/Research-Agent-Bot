@@ -29,15 +29,22 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TOPIC = "metformin"
 QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "quant_claims"
 PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "parsed"
+_ACTIVE_TOPIC: str = DEFAULT_TOPIC
 
 
 def _set_topic(topic: str) -> None:
     """Re-point QUANT_DIR + PARSED_DIR to the given topic. Called
     by run_v06_synthesis._set_topic to keep the two modules in
-    lockstep (the orchestrator's _set_topic also calls this)."""
-    global QUANT_DIR, PARSED_DIR
+    lockstep (the orchestrator's _set_topic also calls this).
+
+    Refactor 2026-05-04: also tracks active topic so
+    _load_background_lit_numerics can pull topic-pack-specific
+    bg-lit entries (e.g. PEARL '80' for rapamycin) in addition
+    to the global registry."""
+    global QUANT_DIR, PARSED_DIR, _ACTIVE_TOPIC
     QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims"
     PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "parsed"
+    _ACTIVE_TOPIC = topic
 
 
 def _load_background_lit_numerics() -> set[str]:
@@ -45,11 +52,17 @@ def _load_background_lit_numerics() -> set[str]:
     Pre-vetted clinical thresholds, each with a canonical citation;
     Q2 admits these in addition to corpus_numerics, but the new Stage-2
     `_check_background_lit_citation_present` enforces that any use
-    must include the citation token in the same sentence."""
+    must include the citation token in the same sentence.
+
+    Refactor 2026-05-04: passes topic= so topic-pack-specific bg-lit
+    entries are merged into the lookup set (PEARL '80', Harrison '9%'
+    etc. live in topic_packs/<topic>.toml not the global JSON)."""
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     try:
         import background_literature as _bg
-        return _bg.numeric_values(_bg.load_registry())
+        return _bg.numeric_values(
+            _bg.load_registry(topic=_ACTIVE_TOPIC)
+        )
     except (ImportError, FileNotFoundError, ValueError):
         return set()
 

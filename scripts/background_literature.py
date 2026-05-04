@@ -63,11 +63,30 @@ def load_registry(
     when the seed file doesn't exist (caller falls back to corpus-
     only behaviour).
 
-    Refactor 2026-05-04: when `topic` is set, merge in the topic
-    pack's background_literature entries. This means topic-specific
-    canonical numerics (e.g. PEARL '80', Harrison '14%/9%') live in
-    topic_packs/<topic>.toml instead of polluting the global JSON.
+    Refactor 2026-05-04: when `topic` is set OR
+    audit_v06_paper._ACTIVE_TOPIC has been set by the orchestrator,
+    merge in the topic pack's background_literature entries. This
+    means topic-specific canonical numerics (e.g. PEARL '80',
+    Harrison '14%/9%') live in topic_packs/<topic>.toml instead of
+    polluting the global JSON.
+
+    Topic resolution order: explicit `topic=` arg → audit module's
+    _ACTIVE_TOPIC (set by orchestrator) → no topic merge.
     """
+    if topic is None:
+        # Best-effort read of the orchestrator's active topic so
+        # call sites that don't pass topic= still get topic-pack
+        # entries.
+        try:
+            import sys as _sys
+            from pathlib import Path as _P
+            _sys.path.insert(
+                0, str(_P(__file__).resolve().parent),
+            )
+            import audit_v06_paper as _av
+            topic = getattr(_av, "_ACTIVE_TOPIC", None)
+        except (ImportError, AttributeError):
+            topic = None
     p = path or _DEFAULT_SEED_PATH
     out: dict[str, BackgroundLitEntry] = {}
     if p.exists():
