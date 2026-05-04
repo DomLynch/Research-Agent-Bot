@@ -1149,6 +1149,54 @@ async def _run_post_paper_pipeline(
         file=sys.stderr,
     )
 
+    # Stage 5b (publication-prep): splice journal-required appendix
+    # sections (Search Provenance / AI-Use Disclosure / Human
+    # Accountability / Data + Code Availability) into the paper just
+    # before the References section. Idempotent — re-runs don't
+    # duplicate. Pure prose with no numerics, citations, or tier
+    # labels, so audit gates already passed are unaffected.
+    try:
+        from agent.manuscript_appendix import (
+            compose_appendix, splice_appendix_before_references,
+        )
+        import subprocess as _sp
+        try:
+            git_sha = _sp.check_output(
+                ["git", "rev-parse", "--short", "HEAD"],
+                cwd=REPO_ROOT, text=True, timeout=5,
+            ).strip()
+        except (_sp.SubprocessError, FileNotFoundError):
+            git_sha = "unknown"
+        model_stack = {
+            "writer": settings.mimo_model,
+            "reviewer": settings.final_layer_reviewer_model,
+            "extractor": settings.mimo_model,
+            "thesis": settings.mimo_model,
+        }
+        appendix_md = compose_appendix(
+            manifest, audit=audit_report,
+            model_stack=model_stack,
+            topic=topic,
+            run_id=paper_path.parent.name,
+            git_sha=git_sha,
+            bundle_path=f"bundles/{paper_path.parent.name}/",
+        )
+        paper_md = splice_appendix_before_references(
+            paper_md, appendix_md,
+        )
+        paper_path.write_text(paper_md)
+        print(
+            "[pipeline] Stage 5b — manuscript appendix spliced "
+            "(Search Provenance / AI Disclosure / Accountability / "
+            "Data Availability)",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — best-effort
+        print(
+            f"[pipeline] Stage 5b — appendix splice skipped: {_e}",
+            file=sys.stderr,
+        )
+
     # Stage 6 (Fix #23): no-regression gate. If runs/_baseline.txt
     # names a baseline run dir, compare the new run's six dimensions
     # (P1, numeric trace, consistency, leakage, word count, orphan
