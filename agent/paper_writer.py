@@ -598,23 +598,24 @@ async def render_full_paper(
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("background", sections["background"])
-    # Universal Q9 structural fix (2026-05-04): deterministic per-study
-    # results table built from corpus quant_claims. No LLM cost, no
-    # fabrication risk; lifts numeric density without displacing
-    # discussion/cross-domain content. See agent/results_table.py.
+    # Universal Q9 structural fix (2026-05-04): deterministic
+    # Quantitative Evidence Index built from raw corpus
+    # quant_claims.json — per-CLAIM rows, not per-receipt, so the
+    # table density doesn't bottleneck on SPAR strictness. No LLM
+    # cost, no fabrication risk; structurally lifts numeric density
+    # without prompt fragility. See agent/results_table.py.
     from pathlib import Path as _Path
     from agent.results_table import build_results_table
     _quant_dir = (
         _Path(__file__).resolve().parent.parent / "docs"
         / "quality-reference" / topic / "quant_claims"
     )
-    _table_md = build_results_table(receipts, _quant_dir, topic=topic)
+    _table_md = build_results_table(_quant_dir, topic=topic)
     if not _table_md:
         _table_md = (
-            f"## Quantitative Results Summary — {topic}\n\n"
-            "_No quantitative effect estimates extractable from the "
-            "current corpus; see Results section for narrative "
-            "synthesis._\n"
+            f"## Quantitative Evidence Index — {topic}\n\n"
+            "_No high-confidence quantitative claims in the current "
+            "corpus; see Results section for narrative synthesis._\n"
         )
     sections["quantitative_results_table"] = SynthesisSection(
         name="quantitative_results_table",

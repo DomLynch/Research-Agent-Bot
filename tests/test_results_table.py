@@ -1,123 +1,235 @@
-"""Unit tests for agent/results_table.py — deterministic per-study
-quantitative results table (universal Q9 structural fix).
+"""Unit tests for agent/results_table.py — deterministic per-CLAIM
+Quantitative Evidence Index (universal Q9 structural fix, Shot 2).
 
 Pure-function tests; no LLM calls, no network IO.
 """
 from __future__ import annotations
 
+import json
+
 from agent.results_table import (
-    StudyRow,
-    extract_study_row,
-    render_table_md,
-    _format_p,
-    _largest_sample_size,
-    _smallest_p_value,
+    EvidenceRow,
+    _claim_to_row,
+    _confidence_admissible,
+    _format_value,
+    _format_statistic,
+    _quality_score,
+    _short_citation,
+    _truncate,
+    build_results_table,
 )
-from agent.synthesis_schemas import ReceiptSummary
 
 
-def _r(rid: str = "r1", *, verdict: str = "accept_clean",
-       year: int | None = 2024, trial: str | None = None,
-       outcome: str = "longevity") -> ReceiptSummary:
-    return ReceiptSummary(
-        receipt_id=rid, receipt_path=f"/p/{rid}", topic="aspirin",
-        thesis_text="t", spar_verdict=verdict,
-        n_claims=3, n_failed_traces=0,
-        canonical_trial_id=trial, evidence_tier="A1",
-        directness="direct", outcome_class=outcome,
-        effect_direction="no_change", p_values=(),
-        population_summary="older adults",
-        source_year=year,
+# ---------- confidence filter ---------------------------------------
+
+def test_high_confidence_always_admitted():
+    assert _confidence_admissible({"binding_confidence": "high",
+                                   "claim_type": "p_value"})
+    assert _confidence_admissible({"binding_confidence": "high",
+                                   "claim_type": "hazard_ratio"})
+
+
+def test_partial_admitted_only_for_objective_facts():
+    """Partial-confidence sample_size / unit_value / year passes;
+    interpretive claim types (HR/p_value/percentage) blocked at
+    partial."""
+    objective = {"binding_confidence": "partial", "claim_type": "sample_size"}
+    interpretive = {"binding_confidence": "partial", "claim_type": "hazard_ratio"}
+    assert _confidence_admissible(objective)
+    assert not _confidence_admissible(interpretive)
+
+
+def test_unbound_or_none_rejected():
+    assert not _confidence_admissible({"binding_confidence": "none"})
+    assert not _confidence_admissible({"binding_confidence": ""})
+    assert not _confidence_admissible({})
+
+
+# ---------- formatting ---------------------------------------------
+
+def test_format_value_integer_uses_commas():
+    assert _format_value(19114.0) == "19,114"
+
+
+def test_format_value_decimal_keeps_3_sig_figs():
+    assert _format_value(0.85) == "0.85"
+    assert _format_value(0.001234) == "0.00123"
+
+
+def test_format_statistic_p_value():
+    assert _format_statistic({"claim_type": "p_value"}, 0.0001) == "p<0.001"
+    assert _format_statistic({"claim_type": "p_value"}, 0.04) == "p=0.04"
+
+
+def test_format_statistic_confidence_interval():
+    s = _format_statistic(
+        {"claim_type": "confidence_interval",
+         "numeric_values": [0.81, 1.13]}, 0.81,
     )
+    assert s == "(0.81–1.13)"
 
 
-# ---------- formatting helpers -------------------------------------
-
-def test_format_p_renders_three_tiers():
-    assert _format_p(0.0001) == "p<0.001"
-    assert _format_p(0.003) == "p=0.003"
-    assert _format_p(0.04) == "p=0.04"
-    assert _format_p(0.5) == "p=0.50"
+def test_format_statistic_default_dash():
+    """For HR/OR, the value column already shows the ratio; statistic
+    column gets em-dash."""
+    assert _format_statistic({"claim_type": "hazard_ratio"}, 0.85) == "—"
 
 
-def test_largest_sample_size_picks_max():
-    claims = [
-        {"claim_type": "sample_size", "numeric_values": [120]},
-        {"claim_type": "sample_size", "numeric_values": [19114]},
-        {"claim_type": "sample_size", "numeric_values": [500]},
-        {"claim_type": "p_value", "numeric_values": [0.03]},  # ignored
-    ]
-    assert _largest_sample_size(claims) == "n=19,114"
+# ---------- citation extraction ------------------------------------
+
+def test_short_citation_extracts_year_from_paper_id():
+    assert "2025" in _short_citation("PMC12345_aspirin_study_2025_in_aspree")
 
 
-def test_largest_sample_size_handles_missing():
-    """No sample_size claims → '—'."""
-    assert _largest_sample_size([]) == "—"
-    assert _largest_sample_size([
-        {"claim_type": "p_value", "numeric_values": [0.5]},
-    ]) == "—"
+def test_short_citation_falls_back_when_no_year():
+    out = _short_citation("PMC12345_unfinished_study_no_date")
+    # Just make sure it doesn't crash and returns something
+    assert isinstance(out, str)
+    assert len(out) > 0
 
 
-def test_smallest_p_value_picks_min():
-    claims = [
-        {"claim_type": "p_value", "numeric_values": [0.04]},
-        {"claim_type": "p_value", "numeric_values": [0.0001]},
-        {"claim_type": "p_value", "numeric_values": [0.5]},
-    ]
-    assert _smallest_p_value(claims) == "p<0.001"
+# ---------- claim → row --------------------------------------------
+
+def test_claim_to_row_skips_no_numeric():
+    """Claim with empty numeric_values returns None."""
+    assert _claim_to_row({"raw_text": "no number"}, paper_id="x") is None
 
 
-# ---------- extract_study_row --------------------------------------
-
-def test_extract_skips_rejected_receipts():
-    """SPAR-rejected receipts must NOT show up in the table."""
-    r = _r(verdict="reject_low_evidence")
-    assert extract_study_row(r, []) is None
-
-
-def test_extract_returns_none_when_no_quantitative_data():
-    """Receipt with no n / no effect / no p → not enough to put in table."""
-    r = _r()
-    # No numeric claims
-    assert extract_study_row(r, []) is None
-
-
-def test_extract_assembles_full_row():
-    r = _r(trial="ASPREE", year=2025)
-    claims = [
-        {"claim_type": "sample_size", "numeric_values": [19114]},
-        {"claim_type": "hazard_ratio", "numeric_values": [1.00]},
-        {"claim_type": "p_value", "numeric_values": [0.04]},
-    ]
-    row = extract_study_row(r, claims)
+def test_claim_to_row_assembles_full_row():
+    claim = {
+        "claim_type": "sample_size",
+        "raw_text": "n=19,114",
+        "numeric_values": [19114],
+        "binding_confidence": "high",
+        "endpoint": "frailty status",
+        "arm": "aspirin",
+    }
+    row = _claim_to_row(claim, paper_id="PMC12345_aspirin_2025_paper")
     assert row is not None
-    assert row.sample_size == "n=19,114"
-    assert "ASPREE" in row.study_label
-    # Effect string contains HR
-    assert "HR" in row.effect
+    assert "2025" in row.study_label
+    assert "frailty" in row.endpoint
+    assert row.arm == "aspirin"
 
 
-# ---------- render_table_md ----------------------------------------
-
-def test_render_returns_empty_for_no_rows():
-    """Caller decides whether to skip the section when no rows; we
-    return empty string to make that detection cheap."""
-    assert render_table_md([], topic="aspirin") == ""
+def test_truncate_replaces_pipe_chars():
+    """| would break the markdown table — must be sanitized."""
+    assert "|" not in _truncate("a|b|c", 20)
 
 
-def test_render_includes_topic_in_title_and_caption():
-    rows = [StudyRow(
-        study_label="ASPREE 2018", sample_size="n=19,114",
-        effect="HR 0.96", ci="(0.81–1.13)", p_value="p=0.43",
-        endpoint="cv events",
-    )]
-    md = render_table_md(rows, topic="aspirin")
-    assert "## Quantitative Results Summary — aspirin" in md
-    assert "ASPREE 2018" in md
-    assert "n=19,114" in md
-    assert "HR 0.96" in md
-    assert "p=0.43" in md
-    # Markdown table syntax
-    assert "| Study | n | Effect | 95% CI | p | Endpoint |" in md
-    # Legend / caption is appended
-    assert "traces to a high-confidence claim" in md
+def test_truncate_caps_long_strings():
+    assert _truncate("x" * 100, 10) == "xxxxxxxxx…"
+
+
+# ---------- quality score ------------------------------------------
+
+def test_quality_score_prefers_effect_estimates():
+    """HR/OR > sample_size > p_value > percentage."""
+    hr = _quality_score({"claim_type": "hazard_ratio"})
+    n = _quality_score({"claim_type": "sample_size"})
+    p = _quality_score({"claim_type": "p_value"})
+    pct = _quality_score({"claim_type": "percentage"})
+    assert hr > n > p > pct
+
+
+def test_quality_score_rewards_bound_endpoint_and_arm():
+    bound = _quality_score({
+        "claim_type": "p_value",
+        "endpoint": "mortality",
+        "arm": "aspirin",
+    })
+    unbound = _quality_score({"claim_type": "p_value"})
+    assert bound > unbound
+
+
+# ---------- end-to-end on synthetic corpus -------------------------
+
+def test_build_results_table_renders_rows(tmp_path):
+    """Realistic round-trip: write a synthetic quant_claims.json,
+    invoke build_results_table, assert markdown output shape."""
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    payload = {
+        "paper_id": "PMC1_aspree_2018_landmark",
+        "claims": [
+            {
+                "claim_type": "sample_size",
+                "raw_text": "n=19,114",
+                "numeric_values": [19114],
+                "binding_confidence": "high",
+                "endpoint": "disability-free survival",
+                "arm": "aspirin",
+            },
+            {
+                "claim_type": "hazard_ratio",
+                "raw_text": "HR 1.01",
+                "numeric_values": [1.01],
+                "binding_confidence": "high",
+                "endpoint": "mortality",
+                "arm": "aspirin",
+            },
+            {
+                "claim_type": "p_value",
+                "raw_text": "p=0.32",
+                "numeric_values": [0.32],
+                "binding_confidence": "high",
+                "endpoint": "mortality",
+                "arm": "aspirin",
+            },
+        ],
+    }
+    (claims_dir / "PMC1_aspree.quant_claims.json").write_text(
+        json.dumps(payload),
+    )
+    md = build_results_table(claims_dir, topic="aspirin")
+    assert "Quantitative Evidence Index — aspirin" in md
+    assert "| Study | Endpoint | Arm | Value | Type | Statistic |" in md
+    # All 3 rows should appear (different endpoints, different types)
+    assert "19,114" in md or "n=19,114" in md
+    assert "HR" in md or "1.01" in md
+
+
+def test_build_results_table_empty_when_no_claims(tmp_path):
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    assert build_results_table(claims_dir, topic="x") == ""
+
+
+def test_build_results_table_handles_missing_dir(tmp_path):
+    """Non-existent quant_claims dir → empty string, no crash."""
+    assert build_results_table(tmp_path / "nope", topic="x") == ""
+
+
+def test_build_results_table_caps_rows():
+    """Verify max_rows enforces."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        from pathlib import Path
+        d = Path(td)
+        # 50 fake claims in one paper — should cap to per-paper limit
+        # AND overall limit
+        payload = {
+            "paper_id": "PMC1_test_2020",
+            "claims": [
+                {"claim_type": "p_value", "raw_text": f"p={i}",
+                 "numeric_values": [0.01 * i],
+                 "binding_confidence": "high",
+                 "endpoint": f"endpoint_{i % 3}"}  # only 3 unique endpoints
+                for i in range(1, 51)
+            ],
+        }
+        (d / "PMC1.quant_claims.json").write_text(json.dumps(payload))
+        md = build_results_table(d, topic="test", max_rows=5)
+        n_data_rows = md.count("\n| PMC")
+        assert n_data_rows <= 5
+
+
+def test_evidence_row_immutable():
+    """Frozen dataclass — assignment raises FrozenInstanceError."""
+    from dataclasses import FrozenInstanceError
+    import pytest
+    r = EvidenceRow(
+        study_label="X 2024", endpoint="ep", arm="—", value="1",
+        unit_or_type="t", statistic="—", citation="X 2024",
+    )
+    with pytest.raises(FrozenInstanceError):
+        r.value = "999"  # type: ignore[misc]

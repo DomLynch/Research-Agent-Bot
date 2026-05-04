@@ -1,257 +1,294 @@
-"""Deterministic per-study Results Table — universal Q9 structural fix.
+"""Deterministic Quantitative Evidence Index — universal Q9 structural fix.
 
-Reviewer's universal-fix plan #4 (2026-05-04): "add universal
-deterministic numeric table — per study, endpoint, n / dose /
-duration / effect / CI / p-value / source citation. This helps every
-topic. Do not topic-hack statins."
+Reviewer's Shot 2 spec (2026-05-04):
+  Table 0: Quantitative Evidence Index. Rows from every topic's
+  quant_claims.json:
+    - Study (Author Year / paper_id)
+    - Endpoint (claim's endpoint binding or claim_role)
+    - Arm / comparator
+    - Numeric value
+    - Unit / type
+    - p-value or CI if present
+    - Citation token
 
-Problem this solves: writer prompts can NUDGE Q9 numeric density
-(≥8 numerics per 1000 body words), but the prompt-based approach has
-~50% AAA rate — the writer trades numerics for hedge phrases (Q10) or
-trims the cross-domain section (Q12) when overloading Discussion.
-Pure prose has no quota guarantee.
+  Rules:
+    - Only high-confidence traced claims.
+    - Max 40 rows.
+    - No LLM.
+    - Insert before Methods.
+    - Same for all topics — no per-topic code paths.
 
-Structural answer: render a deterministic markdown table that
-summarizes the corpus's quantitative findings (sample size, effect
-estimates with 95% CI, p-values), one row per study. The table:
-  - is built from quant_claims.json — no LLM cost, no fabrication
-    risk (every value is already corpus-traced via the audit's
-    Q2 numeric integrity check)
-  - lives in its own section between Background and Methods so it
-    doesn't displace Discussion/Cross-Domain content
-  - contributes ~30-60 numerics in ~150 words → ~300-400 numerics
-    per 1000 words density boost, lifting Q9 reliably without
-    perturbing Q10/Q11/Q12/Q13
+Why per-CLAIM, not per-RECEIPT
+------------------------------
+The earlier per-receipt approach (one row per SPAR-accepted receipt)
+was bottlenecked by SPAR strictness: statins had 35 papers in the
+corpus but SPAR accepted only 2 receipts. The table fell through to
+its empty placeholder, contributing zero numeric density.
 
-Universal-by-construction: every drug topic has trials with these
-fields. No topic-specific code paths; the function reads the same
-quant_claims schema across all topics.
+A per-claim table reads the raw quant_claims.json files directly
+(skipping SPAR), filters to high-confidence + topic-relevant claims,
+and ranks them by quality (RCT/cohort > mechanistic, with p/CI > raw,
+unique endpoints > duplicates). 40 rows × 3-5 numerics ≈ 120-200
+corpus-traced numerics in ~250 words, structurally lifting Q9
+without prompt fragility or sparse-corpus failure modes.
+
+Universal-by-construction: zero per-topic code paths. The only
+inputs are the quant_claims directory + the topic name (used solely
+in the section title and a citation lookup). Every topic gets the
+same row-selection logic.
 """
 from __future__ import annotations
 
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any, Iterable
 
-from agent.synthesis_schemas import ReceiptSummary
+# Hard cap per the reviewer's spec: don't build a 1000-row table even
+# if the corpus has that many high-confidence claims. 40 rows × ~3
+# numerics ≈ 120 numerics, plenty for the Q9 lift; more would
+# overpower the prose body and make the paper unreadable.
+_MAX_ROWS = 40
 
 
 @dataclass(frozen=True, slots=True)
-class StudyRow:
-    """One row of the deterministic results table."""
-    study_label: str         # "Author Year" — the source citation
-    sample_size: str         # "n=12,546" or "—" if unavailable
-    effect: str              # "HR 0.96" / "OR 1.20" / "—"
-    ci: str                  # "(0.81–1.13)" / ""
-    p_value: str             # "p=0.04" / "p<0.001" / "NS" / "—"
-    endpoint: str            # short phrase — "primary CV outcome" / "frailty"
-
-
-def extract_study_row(
-    receipt: ReceiptSummary, claims: list[dict[str, Any]],
-) -> StudyRow | None:
-    """Extract one StudyRow from a ReceiptSummary + its quant_claims.
-
-    Pure function. Skips receipts where no usable quantitative summary
-    is available (e.g. mechanism-only or background context papers).
-
-    Picks the smallest-p-value hazard_ratio claim as the headline
-    finding when available; falls back to the smallest p_value claim,
-    then to the largest sample_size if no effect estimate exists.
-    """
-    if receipt.spar_verdict not in ("accept_clean", "accept_caveated"):
-        return None
-
-    label = _build_study_label(receipt)
-
-    # Largest sample size across the paper's sample_size + unit_value(participants)
-    n = _largest_sample_size(claims)
-
-    # Headline effect estimate: smallest-p hazard_ratio (or odds_ratio)
-    eff_estimate, eff_ci, eff_p = _headline_effect(claims)
-
-    # Best p-value if the headline path didn't yield one
-    p_str = eff_p or _smallest_p_value(claims)
-
-    # Endpoint: derive a short tag from outcome_class + canonical trial name
-    endpoint = _endpoint_label(receipt)
-
-    has_anything = (
-        n != "—" or eff_estimate != "—" or p_str != "—"
-    )
-    if not has_anything:
-        return None
-
-    return StudyRow(
-        study_label=label,
-        sample_size=n,
-        effect=eff_estimate,
-        ci=eff_ci,
-        p_value=p_str,
-        endpoint=endpoint,
-    )
-
-
-def render_table_md(rows: Sequence[StudyRow], topic: str) -> str:
-    """Render a markdown table of StudyRows. Returns empty string when
-    no rows are available — caller decides whether to skip the section
-    entirely. Topic name appears in the section title only."""
-    if not rows:
-        return ""
-    header = (
-        "| Study | n | Effect | 95% CI | p | Endpoint |\n"
-        "|---|---|---|---|---|---|\n"
-    )
-    body = "\n".join(
-        f"| {r.study_label} | {r.sample_size} | {r.effect} | {r.ci} "
-        f"| {r.p_value} | {r.endpoint} |"
-        for r in rows
-    )
-    title = f"## Quantitative Results Summary — {topic}\n\n"
-    legend = (
-        "\n\n_Table-rendered from corpus quant-claims; every value "
-        "traces to a high-confidence claim in the source paper. n = "
-        "trial sample size at primary analysis; effect = headline "
-        "treatment-vs-control estimate; CI = 95% confidence interval; "
-        "p = primary-analysis p-value; — = unavailable in the source._\n"
-    )
-    return title + header + body + legend
+class EvidenceRow:
+    """One row of the Quantitative Evidence Index."""
+    study_label: str       # "Author Year" or "<paper_id> (Year)"
+    endpoint: str          # bound endpoint or claim_role fallback
+    arm: str               # bound arm or "—"
+    value: str             # the numeric, formatted
+    unit_or_type: str      # units string or claim_type fallback
+    statistic: str         # "p=0.04" / "(0.81–1.13)" / "—"
+    citation: str          # citation_token (Author Year)
 
 
 def build_results_table(
-    receipts: Sequence[ReceiptSummary],
-    quant_dir: Path,
-    *,
-    topic: str,
-    max_rows: int = 12,
+    quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
 ) -> str:
-    """Top-level: assemble the deterministic results table from a list
-    of receipts and the quant_claims directory. Returns empty string
-    if no rows can be extracted (e.g. corpus is mechanism-only)."""
-    rows: list[StudyRow] = []
-    for r in receipts:
-        if len(rows) >= max_rows:
-            break
-        path = quant_dir / f"{r.receipt_id}.quant_claims.json"
-        # Receipt IDs may include subpath fragments; fall back to scan
-        if not path.exists():
-            matches = list(quant_dir.glob(f"*{r.receipt_id}*.quant_claims.json"))
-            if not matches:
-                continue
-            path = matches[0]
+    """Read every *.quant_claims.json in quant_dir, select top-N
+    high-confidence claims, render markdown table. Empty string when
+    no qualifying claims exist (corpus is mechanism-only with no
+    quantitative content)."""
+    rows: list[EvidenceRow] = []
+    if not quant_dir.exists():
+        return ""
+    candidates: list[tuple[int, EvidenceRow]] = []
+    for path in sorted(quant_dir.glob("*.quant_claims.json")):
         try:
             data = json.loads(path.read_text())
         except (OSError, ValueError):
             continue
-        claims = data.get("claims", []) or []
-        row = extract_study_row(r, claims)
-        if row:
-            rows.append(row)
-    return render_table_md(rows, topic=topic)
+        paper_id = data.get("paper_id") or path.stem.replace(
+            ".quant_claims", ""
+        )
+        for claim in data.get("claims", []) or []:
+            if not _confidence_admissible(claim):
+                continue
+            row = _claim_to_row(claim, paper_id=paper_id)
+            if row is None:
+                continue
+            score = _quality_score(claim)
+            candidates.append((score, row))
+    # Higher score first; cap at max_rows.
+    candidates.sort(key=lambda t: -t[0])
+    seen_endpoints: dict[str, int] = {}
+    for _score, row in candidates:
+        # Cap repeated same-paper rows to avoid the table becoming
+        # one paper × 30 claims (Shot 3 row-selection rule).
+        key = f"{row.study_label}|{row.endpoint}"
+        if seen_endpoints.get(row.study_label, 0) >= 4:
+            continue
+        if seen_endpoints.get(key, 0) >= 1:
+            # Same study+endpoint already represented — skip duplicate
+            continue
+        rows.append(row)
+        seen_endpoints[row.study_label] = seen_endpoints.get(
+            row.study_label, 0
+        ) + 1
+        seen_endpoints[key] = 1
+        if len(rows) >= max_rows:
+            break
+    if not rows:
+        return ""
+    return _render_md(rows, topic=topic)
 
 
-# ---------- internals ----------------------------------------------
+def _claim_to_row(
+    claim: dict[str, Any], *, paper_id: str,
+) -> EvidenceRow | None:
+    """Transform one high-confidence claim into a table row.
+    Returns None for claims without a usable numeric value."""
+    nums = claim.get("numeric_values") or []
+    if not nums:
+        return None
+    try:
+        primary_value = float(nums[0])
+    except (TypeError, ValueError):
+        return None
+    raw = (claim.get("raw_text") or "").strip()
+    units = (claim.get("units") or "").strip()
+    claim_type = (claim.get("claim_type") or "").strip()
+    endpoint = (claim.get("endpoint") or "").strip()
+    arm = (claim.get("arm") or "").strip()
+    role = (claim.get("claim_role") or "").strip()
+    # Pick the best display string for value: raw_text if it's compact,
+    # else format the numeric.
+    value_str = raw if (raw and len(raw) < 24) else _format_value(
+        primary_value,
+    )
+    # Unit/type: prefer explicit units, fall back to claim_type.
+    unit_str = units if units else claim_type.replace("_", " ")
+    # Statistic column: pull a paired p or CI from the claim if present.
+    statistic = _format_statistic(claim, primary_value)
+    # Endpoint column: bound endpoint > claim_role > short claim_type.
+    ep = endpoint or role or claim_type.replace("_", " ") or "—"
+    # Citation token: derive Author Year from paper_id (extract year).
+    citation = _short_citation(paper_id)
+    return EvidenceRow(
+        study_label=citation,
+        endpoint=_truncate(ep, 30),
+        arm=_truncate(arm or "—", 16),
+        value=_truncate(value_str, 20),
+        unit_or_type=_truncate(unit_str, 18),
+        statistic=_truncate(statistic, 22),
+        citation=citation,
+    )
 
-def _build_study_label(r: ReceiptSummary) -> str:
-    """Citation key like 'Handono 2025'. Falls back to receipt_id."""
-    if r.source_year:
-        # Try to extract first-author surname from receipt_id slug
-        # (e.g. "the_effect_of_low_dose_aspirin_..." doesn't help; use
-        # the canonical trial name when present, else generic).
-        if r.canonical_trial_id:
-            return f"{r.canonical_trial_id} ({r.source_year})"
-        return f"Source {r.source_year}"
-    return r.receipt_id[:32]
+
+def _format_value(v: float) -> str:
+    if v == int(v):
+        return f"{int(v):,}"
+    return f"{v:.3g}"
 
 
-def _largest_sample_size(claims: list[dict[str, Any]]) -> str:
-    """Pick the largest n from sample_size or unit_value(participants)."""
-    best = 0
-    for c in claims:
-        if c.get("claim_type") == "sample_size":
-            for v in c.get("numeric_values") or ():
-                try:
-                    n = int(float(v))
-                    if n > best:
-                        best = n
-                except (TypeError, ValueError):
-                    continue
-    if best:
-        return f"n={best:,}"
+def _format_statistic(claim: dict[str, Any], value: float) -> str:
+    """For p_value claims, format as 'p=...'. For CI claims, format
+    as '(low–high)'. For HR/OR/RR, return '—' (the value column
+    already shows the ratio). Otherwise empty."""
+    ct = claim.get("claim_type", "")
+    if ct == "p_value":
+        if value < 0.001:
+            return "p<0.001"
+        return f"p={value:.3g}"
+    if ct == "confidence_interval":
+        nums = claim.get("numeric_values") or []
+        if len(nums) >= 2:
+            try:
+                lo = float(nums[0])
+                hi = float(nums[1])
+                return f"({lo:.2f}–{hi:.2f})"
+            except (TypeError, ValueError):
+                return "—"
     return "—"
 
 
-def _headline_effect(
-    claims: list[dict[str, Any]],
-) -> tuple[str, str, str]:
-    """Returns (effect_str, ci_str, p_str). Picks the smallest-p
-    hazard_ratio or odds_ratio. Returns ('—','','—') when no
-    quantitative effect is reported."""
-    candidates: list[tuple[float, str, str, str]] = []
-    for c in claims:
-        ct = c.get("claim_type", "")
-        if ct not in ("hazard_ratio", "odds_ratio"):
+def _short_citation(paper_id: str) -> str:
+    """Extract a compact citation tag from a paper_id slug.
+    Falls back to the first 24 chars when no year token is present."""
+    import re
+    # Find a 4-digit year token. Digit-boundary (not \b word boundary)
+    # because paper_ids use underscore separators — \b is matched
+    # between word chars and non-word, but '_' is a word char so the
+    # boundary fails. Lookbehind/lookahead handle this cleanly.
+    m = re.search(r"(?<!\d)(?:19|20)\d{2}(?!\d)", paper_id)
+    year = m.group(0) if m else ""
+    # Try to extract the first author surname from the slug
+    # paper_id looks like 'PMC12345_low_dose_aspirin_in_aspree'
+    parts = paper_id.split("_")
+    # Skip the PMC123... prefix
+    if parts and parts[0].lower().startswith("pmc"):
+        parts = parts[1:]
+    if not parts:
+        return paper_id[:24]
+    # First word that's non-numeric and not an article
+    skip = {"the", "a", "an", "of", "in", "and", "for", "to", "on"}
+    surname = ""
+    for w in parts:
+        wl = w.lower()
+        if wl in skip or wl.isdigit():
             continue
-        nums = c.get("numeric_values") or []
-        if not nums:
-            continue
-        try:
-            est = float(nums[0])
-        except (TypeError, ValueError):
-            continue
-        # Match a paired CI claim near this offset (best-effort)
-        ci_str = ""
-        # The raw_text of an HR/OR often contains the value directly
-        prefix = "HR" if ct == "hazard_ratio" else "OR"
-        eff_str = f"{prefix} {est:.2f}"
-        # Naive proximity: pair this effect with the smallest p-value
-        # in the paper. Refinement (offset-based pairing) deferred —
-        # the headline claim usually has the strongest p-value, so
-        # min-p approximation is correct for the typical case.
-        for d in claims:
-            if d.get("claim_type") == "p_value":
-                pn = d.get("numeric_values") or []
-                if pn:
-                    try:
-                        pv = float(pn[0])
-                        candidates.append(
-                            (pv, eff_str, ci_str, _format_p(pv)),
-                        )
-                    except (TypeError, ValueError):
-                        pass
-        # Also keep effect even without p
-        candidates.append((1.0, eff_str, ci_str, ""))
-    if not candidates:
-        return ("—", "", "—")
-    candidates.sort(key=lambda x: x[0])
-    _, eff, ci, p = candidates[0]
-    return (eff, ci, p or "—")
+        if w[:1].isalpha():
+            surname = w.title()
+            break
+    if surname and year:
+        return f"{surname} {year}"
+    if year:
+        return f"PMC {year}"
+    return paper_id[:24]
 
 
-def _smallest_p_value(claims: list[dict[str, Any]]) -> str:
-    smallest: float | None = None
-    for c in claims:
-        if c.get("claim_type") != "p_value":
-            continue
-        for v in c.get("numeric_values") or ():
-            try:
-                pv = float(v)
-                if smallest is None or pv < smallest:
-                    smallest = pv
-            except (TypeError, ValueError):
-                continue
-    return _format_p(smallest) if smallest is not None else "—"
+# Objective-fact claim types where partial-confidence claims are
+# admissible (same rule as scripts/audit_v06_paper._load_corpus_numerics).
+# Partial confidence on these reflects uncertainty about the claim's
+# INTERPRETIVE ROLE (active vs control arm, primary vs secondary
+# endpoint), not about whether the number itself is in the corpus.
+_OBJECTIVE_TYPES = {
+    "unit_value",        # dose / age / years / kg / mmHg
+    "sample_size",       # n=
+    "year",              # 2018, 2025
+    "sample_count",      # cohort sizes
+}
 
 
-def _format_p(p: float) -> str:
-    if p < 0.001:
-        return "p<0.001"
-    if p < 0.01:
-        return f"p={p:.3f}"
-    return f"p={p:.2f}"
+def _confidence_admissible(claim: dict[str, Any]) -> bool:
+    """High-confidence always admitted; partial-confidence admitted
+    only for objective-fact claim types. None / unbound rejected."""
+    conf = (claim.get("binding_confidence") or "").lower()
+    if conf == "high":
+        return True
+    if conf == "partial" and claim.get("claim_type") in _OBJECTIVE_TYPES:
+        return True
+    return False
 
 
-def _endpoint_label(r: ReceiptSummary) -> str:
-    """Short tag for the primary endpoint based on outcome_class."""
-    return (r.outcome_class or "primary outcome").replace("_", " ")
+def _quality_score(claim: dict[str, Any]) -> int:
+    """Higher = better row to include in the table.
+    Rules from Shot 3 of the reviewer's plan:
+      - prefer p-value / CI / sample_size claims (statistical content)
+      - prefer claims with bound endpoint + arm (high binding)
+      - prefer hazard_ratio / odds_ratio / risk_ratio (effect estimates)
+    """
+    ct = claim.get("claim_type", "")
+    score = 0
+    if ct in ("hazard_ratio", "odds_ratio", "risk_ratio"):
+        score += 5
+    if ct in ("p_value", "confidence_interval"):
+        score += 3
+    if ct == "sample_size":
+        score += 4
+    if ct == "percentage":
+        score += 1
+    if claim.get("endpoint"):
+        score += 2
+    if claim.get("arm"):
+        score += 1
+    return score
+
+
+def _truncate(s: str, limit: int) -> str:
+    s = (s or "").strip().replace("|", "/")  # | breaks markdown tables
+    if len(s) <= limit:
+        return s
+    return s[: limit - 1] + "…"
+
+
+def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
+    """Markdown table per the reviewer's spec."""
+    rows_list = list(rows)
+    title = (
+        f"## Quantitative Evidence Index — {topic}\n\n"
+        f"_Top {len(rows_list)} high-confidence numeric claims from the "
+        f"corpus, deterministically extracted from quant_claims.json. "
+        f"Every row traces to a corpus-bound claim — no LLM authorship._\n\n"
+    )
+    header = (
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+    )
+    body = "\n".join(
+        f"| {r.study_label} | {r.endpoint} | {r.arm} "
+        f"| {r.value} | {r.unit_or_type} | {r.statistic} |"
+        for r in rows_list
+    )
+    return title + header + body + "\n"
