@@ -21,8 +21,23 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
-PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
+# Workstream A: topic-parameterized corpus paths. Defaults to
+# `metformin` for backward-compat. The orchestrator
+# (scripts/run_v06_synthesis.py:_set_topic) updates these globals
+# so the audit reads the correct corpus when running for rapamycin
+# / everolimus / etc.
+DEFAULT_TOPIC = "metformin"
+QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "quant_claims"
+PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "parsed"
+
+
+def _set_topic(topic: str) -> None:
+    """Re-point QUANT_DIR + PARSED_DIR to the given topic. Called
+    by run_v06_synthesis._set_topic to keep the two modules in
+    lockstep (the orchestrator's _set_topic also calls this)."""
+    global QUANT_DIR, PARSED_DIR
+    QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims"
+    PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "parsed"
 
 
 def _load_background_lit_numerics() -> set[str]:

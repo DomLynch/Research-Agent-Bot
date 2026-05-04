@@ -69,8 +69,29 @@ import effect_direction as _direction  # noqa: E402
 import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
 
-QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_claims"
-PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "parsed"
+# Workstream A (autonomous): topic-parameterized pipeline.
+# Default topic is `metformin` for backward-compat (any caller that
+# imports QUANT_DIR/PARSED_DIR without setting a topic still works).
+# CLI accepts `--topic rapamycin` (or any topic with a corpus dir
+# at docs/quality-reference/<topic>/). _run() resets these globals
+# before any downstream code reads them, so the per-topic pipeline
+# uses the right corpus end-to-end.
+DEFAULT_TOPIC = "metformin"
+QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "quant_claims"
+PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "parsed"
+
+
+def _set_topic(topic: str) -> None:
+    """Update module-level corpus paths for the given topic across
+    BOTH the orchestrator AND the audit module. Called once by _run()
+    at the top of each pipeline invocation. Without the audit-side
+    update, the Q2 corpus trace would still read from the metformin
+    dir even when synthesising rapamycin."""
+    global QUANT_DIR, PARSED_DIR
+    QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims"
+    PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "parsed"
+    # Keep audit module in lockstep
+    _audit_v06._set_topic(topic)
 
 
 # v0.6.0 endpoint → SynthesisSchemas OutcomeClass mapping. Curated
@@ -271,10 +292,16 @@ def _load_paper_meta_by_id() -> dict[str, dict]:
     return paper_meta_by_id
 
 
-def build_receipts_from_quant_claims() -> list[ReceiptSummary]:
+def build_receipts_from_quant_claims(
+    topic: str = DEFAULT_TOPIC,
+) -> list[ReceiptSummary]:
     """Adapter: v0.6.0 quant_claims → ReceiptSummary list. One receipt
     per contributing paper. Only papers with ≥1 high-confidence
-    effect-role claim are included."""
+    effect-role claim are included.
+
+    Workstream A: `topic` parameter is the per-receipt label (set on
+    every ReceiptSummary). The corpus directory is QUANT_DIR which
+    has already been set by `_set_topic(topic)` upstream."""
     receipts: list[ReceiptSummary] = []
     paper_meta_by_id = _load_paper_meta_by_id()
 
@@ -308,7 +335,7 @@ def build_receipts_from_quant_claims() -> list[ReceiptSummary]:
         receipts.append(ReceiptSummary(
             receipt_id=paper_id,
             receipt_path=str(QUANT_DIR / f"{paper_id}.quant_claims.json"),
-            topic="metformin",
+            topic=topic,
             thesis_text=thesis_text,
             spar_verdict="accept_clean",  # v0.6.0 high-conf passes our filter
             n_claims=agg["n_claims"],
@@ -626,14 +653,34 @@ def _build_call_chain() -> list[CallSpec]:
     return chain
 
 
-async def _run(out_dir: Path, dry_run: bool = False) -> int:
+async def _run(
+    out_dir: Path,
+    dry_run: bool = False,
+    topic: str = DEFAULT_TOPIC,
+) -> int:
     settings = load_settings()
     if not settings.bot_enabled:
         print("BOT_ENABLED=false; aborting.", file=sys.stderr)
         return 1
 
-    print("Loading v0.6.0 quant_claims...", file=sys.stderr)
-    receipts = build_receipts_from_quant_claims()
+    # Workstream A: lock the corpus dirs to the requested topic
+    # before any downstream code reads them.
+    _set_topic(topic)
+    if not QUANT_DIR.exists():
+        print(
+            f"corpus directory does not exist for topic={topic!r}: "
+            f"{QUANT_DIR}\n"
+            f"Expected docs/quality-reference/{topic}/quant_claims/ "
+            f"with at least one *.quant_claims.json.",
+            file=sys.stderr,
+        )
+        return 4
+
+    print(
+        f"Loading v0.6.0 quant_claims (topic={topic!r})...",
+        file=sys.stderr,
+    )
+    receipts = build_receipts_from_quant_claims(topic=topic)
     print(
         f"  Built {len(receipts)} receipts "
         f"(one per contributing paper).",
@@ -711,7 +758,7 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(
             writer_receipts, writer_matrix, thesis,
-            topic="metformin", submission_id=submission_id,
+            topic=topic, submission_id=submission_id,
             chain=chain, client=client, ledger=ledger,
             background_lit_entries=bglit_entries,
         )
@@ -761,7 +808,7 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     # gives a PhD reviewer the explicit "beyond prior reviews"
     # statement right after the conclusion they just read.
     what_adds_md = build_what_this_adds_section(
-        writer_receipts, writer_matrix, thesis, topic="metformin",
+        writer_receipts, writer_matrix, thesis, topic=topic,
     )
     if what_adds_md:
         full_paper_md = full_paper_md.rstrip() + "\n\n" + what_adds_md
@@ -782,7 +829,7 @@ async def _run(out_dir: Path, dry_run: bool = False) -> int:
     # where Methods describes pipeline stages that didn't run.
     contract = _build_run_mode_contract(
         settings=settings,
-        topic="metformin",
+        topic=topic,
         submission_id=submission_id,
         n_papers=len(receipts),
         n_claims=sum(r.n_claims for r in receipts),
@@ -1389,7 +1436,18 @@ def main(argv: list[str] | None = None) -> int:
         description="Phase 6.1 — wire v0.6.0 bound claims into agent/paper_writer.py",
     )
     parser.add_argument(
-        "--out-dir", help="default: runs/synthesis-metformin-v06-{ISO}/",
+        "--topic", default=DEFAULT_TOPIC,
+        help=(
+            f"Topic to synthesise (default: {DEFAULT_TOPIC!r}). Must "
+            "match a directory at docs/quality-reference/<topic>/ "
+            "with quant_claims/ + parsed/ subdirs. Examples: "
+            "metformin, rapamycin, everolimus."
+        ),
+    )
+    parser.add_argument(
+        "--out-dir", help=(
+            "default: runs/synthesis-<topic>-v06-{ISO}/"
+        ),
     )
     parser.add_argument(
         "--dry-run", action="store_true",
@@ -1400,8 +1458,12 @@ def main(argv: list[str] | None = None) -> int:
         out_dir = Path(args.out_dir).resolve()
     else:
         ts = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H-%M-%SZ")
-        out_dir = REPO_ROOT / "runs" / f"synthesis-metformin-v06-{ts}"
-    return asyncio.run(_run(out_dir, dry_run=args.dry_run))
+        out_dir = (
+            REPO_ROOT / "runs" / f"synthesis-{args.topic}-v06-{ts}"
+        )
+    return asyncio.run(_run(
+        out_dir, dry_run=args.dry_run, topic=args.topic,
+    ))
 
 
 if __name__ == "__main__":
