@@ -17,7 +17,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 _EUROPEPMC_URL = (
@@ -48,16 +48,10 @@ class PmcOaiClient:
             "pageSize": str(max(1, min(limit, 25))),
             "resultType": "core",
         }
-        try:
-            response = await client.get(
-                _EUROPEPMC_URL, params=params, timeout=20.0,
-            )
-            response.raise_for_status()
-        except httpx.HTTPError:
+        data = await safe_get_json(client, _EUROPEPMC_URL, params=params)
+        if data is None:
             return []
-        records = (
-            response.json().get("resultList", {}).get("result", [])
-        )
+        records = data.get("resultList", {}).get("result", [])
         return [
             hit for hit in (
                 self._parse(r, query=query) for r in records

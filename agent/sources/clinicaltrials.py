@@ -11,7 +11,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text
+from agent.sources._base import clean_text, safe_get_json
 from agent.types import RawHit
 
 CTGOV_STUDIES_URL = "https://clinicaltrials.gov/api/v2/studies"
@@ -32,9 +32,10 @@ class ClinicalTrialsClient:
             "pageSize": str(max(1, min(limit, 25))),
             "format": "json",
         }
-        response = await client.get(CTGOV_STUDIES_URL, params=params)
-        response.raise_for_status()
-        studies = response.json().get("studies", []) or []
+        data = await safe_get_json(client, CTGOV_STUDIES_URL, params=params)
+        if data is None:
+            return []
+        studies = data.get("studies", []) or []
         return [hit for hit in (self._parse_study(s, query=query) for s in studies) if hit]
 
     def _parse_study(self, study: dict[str, Any], *, query: str) -> RawHit | None:

@@ -24,7 +24,7 @@ import xml.etree.ElementTree as ET
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_text
 from agent.types import RawHit
 
 _ARXIV_URL = "https://export.arxiv.org/api/query"
@@ -98,16 +98,11 @@ class ArxivClient:
             "sortOrder": "descending",
         }
         await _await_rate_limit()
-        try:
-            response = await client.get(
-                _ARXIV_URL, params=params, timeout=20.0,
-            )
-        except httpx.HTTPError:
-            return []
-        if response.status_code != 200 or not response.text:
+        text = await safe_get_text(client, _ARXIV_URL, params=params)
+        if text is None:
             return []
         try:
-            root = ET.fromstring(response.text)
+            root = ET.fromstring(text)
         except ET.ParseError:
             return []
         out: list[RawHit] = []

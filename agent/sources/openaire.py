@@ -9,7 +9,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 _OPENAIRE_URL = "https://api.openaire.eu/search/publications"
@@ -33,14 +33,8 @@ class OpenAireClient:
             "size": str(max(1, min(limit, 25))),
             "format": "json",
         }
-        try:
-            response = await client.get(
-                _OPENAIRE_URL, params=params, timeout=20.0,
-            )
-            if response.status_code != 200:
-                return []
-            data = response.json()
-        except (httpx.HTTPError, ValueError):
+        data = await safe_get_json(client, _OPENAIRE_URL, params=params)
+        if data is None:
             return []
         # OpenAIRE response structure:
         # response.results.result[].metadata.entity.result

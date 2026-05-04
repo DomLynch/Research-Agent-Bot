@@ -10,7 +10,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 EUROPEPMC_SEARCH_URL = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
@@ -34,10 +34,10 @@ class EuropePMCClient:
             # would cause every result to be silently dropped.
             "resultType": "core",
         }
-        response = await client.get(EUROPEPMC_SEARCH_URL, params=params)
-        response.raise_for_status()
-        result_list = response.json().get("resultList") or {}
-        records = result_list.get("result") or []
+        data = await safe_get_json(client, EUROPEPMC_SEARCH_URL, params=params)
+        if data is None:
+            return []
+        records = (data.get("resultList") or {}).get("result") or []
         return [hit for hit in (self._parse_record(r, query=query) for r in records) if hit]
 
     def _parse_record(self, record: dict[str, Any], *, query: str) -> RawHit | None:

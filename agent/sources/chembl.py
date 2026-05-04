@@ -18,7 +18,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text
+from agent.sources._base import clean_text, safe_get_json
 from agent.types import RawHit
 
 _CHEMBL_SEARCH_URL = (
@@ -40,14 +40,12 @@ class ChemblClient:
             "q": clean_text(query, limit=240),
             "limit": str(max(1, min(limit, 10))),
         }
-        try:
-            response = await client.get(
-                _CHEMBL_SEARCH_URL, params=params, timeout=15.0,
-            )
-            response.raise_for_status()
-        except httpx.HTTPError:
+        data = await safe_get_json(
+            client, _CHEMBL_SEARCH_URL, params=params, timeout=15.0,
+        )
+        if data is None:
             return []
-        molecules = response.json().get("molecules", [])
+        molecules = data.get("molecules", [])
         return [
             hit for hit in (
                 self._parse(m, query=query) for m in molecules

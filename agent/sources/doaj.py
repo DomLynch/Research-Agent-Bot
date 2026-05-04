@@ -10,7 +10,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 _DOAJ_URL = "https://doaj.org/api/search/articles/"
@@ -31,12 +31,8 @@ class DoajClient:
             f"{_DOAJ_URL}{q}"
             f"?pageSize={max(1, min(limit, 25))}"
         )
-        try:
-            response = await client.get(url, timeout=15.0)
-            if response.status_code != 200:
-                return []
-            data = response.json()
-        except (httpx.HTTPError, ValueError):
+        data = await safe_get_json(client, url, timeout=15.0)
+        if data is None:
             return []
         results = data.get("results", [])
         return [

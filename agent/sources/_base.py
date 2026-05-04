@@ -9,13 +9,84 @@ from __future__ import annotations
 
 import html
 import re
-from typing import Protocol
+from typing import Any, Protocol
 
 import httpx
 
 from agent.types import RawHit
 
 USER_AGENT = "research-agent/1.0 (+https://research-agent.domlynch.com)"
+
+# Default request timeout for all source adapters — long enough for slow
+# API endpoints (NCBI on bad days, OpenAIRE), short enough that one stuck
+# source doesn't strand the whole aggregator fan-out.
+_DEFAULT_TIMEOUT = 20.0
+
+
+async def safe_get_json(
+    client: httpx.AsyncClient,
+    url: str,
+    *,
+    params: dict[str, Any] | None = None,
+    headers: dict[str, str] | None = None,
+    timeout: float = _DEFAULT_TIMEOUT,
+) -> dict[str, Any] | None:
+    """GET + parse JSON, fail-soft on every failure mode.
+
+    Returns None when the call fails for any of these reasons (the caller
+    should treat None as "this source contributed 0 hits this run", and
+    the SourceAggregator continues with the other sources):
+      - Network/transport error (httpx.HTTPError, includes timeouts)
+      - Rate limit (429) or auth failure (401/403)
+      - Server error (5xx)
+      - Any non-200 status
+      - JSON parse failure (malformed body)
+
+    Centralizing this pattern lets every adapter say `data = await
+    safe_get_json(...); if data is None: return []` instead of repeating
+    the 8-line try/except/status/parse block. Also gives one place to
+    update the fail-soft policy (e.g. add 503 → retry-after handling).
+    """
+    try:
+        response = await client.get(
+            url, params=params, headers=headers, timeout=timeout,
+        )
+    except httpx.HTTPError:
+        return None
+    if response.status_code in (401, 403, 429):
+        return None
+    if response.status_code >= 500 or response.status_code != 200:
+        return None
+    try:
+        return response.json()
+    except ValueError:
+        return None
+
+
+async def safe_get_text(
+    client: httpx.AsyncClient,
+    url: str,
+    *,
+    params: dict[str, Any] | None = None,
+    headers: dict[str, str] | None = None,
+    timeout: float = _DEFAULT_TIMEOUT,
+) -> str | None:
+    """GET raw text body, fail-soft (for XML/Atom adapters).
+
+    Same fail-soft contract as safe_get_json but returns the raw response
+    text instead of parsed JSON. For PubMed (XML), arXiv (Atom), and any
+    future non-JSON adapter."""
+    try:
+        response = await client.get(
+            url, params=params, headers=headers, timeout=timeout,
+        )
+    except httpx.HTTPError:
+        return None
+    if response.status_code in (401, 403, 429):
+        return None
+    if response.status_code >= 500 or response.status_code != 200:
+        return None
+    return response.text or None
 
 
 # Inline formatting tags — '<sup>13</sup>C' should become '13C', not '13 C'.

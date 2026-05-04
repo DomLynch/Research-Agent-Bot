@@ -27,7 +27,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 OPENALEX_WORKS_URL = "https://api.openalex.org/works"
@@ -67,20 +67,14 @@ class OpenAlexClient:
             "select": SELECT_FIELDS,
         }
         params.update(self._auth_params())
-        try:
-            response = await client.get(
-                OPENALEX_WORKS_URL, params=params, timeout=20.0,
-            )
-        except httpx.HTTPError:
+        # 429 (daily-budget exhausted), 401/403 (bad key), 5xx → fail soft;
+        # aggregator continues with the other 14 sources.
+        data = await safe_get_json(
+            client, OPENALEX_WORKS_URL, params=params,
+        )
+        if data is None:
             return []
-        # 429 (daily-budget exhausted), 401/403 (bad key), 5xx → fail
-        # soft. Aggregator continues with the other 12 sources rather
-        # than aborting the whole discovery run.
-        if response.status_code in (401, 403, 429) or response.status_code >= 500:
-            return []
-        if response.status_code != 200:
-            return []
-        works = response.json().get("results", []) or []
+        works = data.get("results", []) or []
         return [hit for hit in (self._parse_work(w, query=query) for w in works) if hit]
 
     def _parse_work(self, work: dict[str, Any], *, query: str) -> RawHit | None:

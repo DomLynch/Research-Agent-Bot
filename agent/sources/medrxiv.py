@@ -21,7 +21,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 # Same Europe PMC endpoint as biorxiv.py — preprint-only filter.
@@ -56,17 +56,10 @@ class MedRxivClient:
             "pageSize": str(max(1, min(limit, 25))),
             "resultType": "core",
         }
-        try:
-            response = await client.get(
-                _PREPRINT_SEARCH_URL, params=params, timeout=20.0,
-            )
-        except httpx.HTTPError:
+        data = await safe_get_json(client, _PREPRINT_SEARCH_URL, params=params)
+        if data is None:
             return []
-        if response.status_code != 200:
-            return []
-        records = (
-            response.json().get("resultList", {}).get("result", [])
-        )
+        records = data.get("resultList", {}).get("result", [])
         return [
             hit for hit in (
                 self._parse(r, query=query) for r in records

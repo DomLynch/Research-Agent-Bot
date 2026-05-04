@@ -16,7 +16,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 # Europe PMC's preprint-only filter is the canonical way to search
@@ -50,11 +50,10 @@ class BioRxivClient:
             "pageSize": str(max(1, min(limit, 25))),
             "resultType": "core",
         }
-        response = await client.get(_BIORXIV_SEARCH_URL, params=params)
-        response.raise_for_status()
-        records = (
-            response.json().get("resultList", {}).get("result", [])
-        )
+        data = await safe_get_json(client, _BIORXIV_SEARCH_URL, params=params)
+        if data is None:
+            return []
+        records = data.get("resultList", {}).get("result", [])
         return [
             hit for hit in (
                 self._parse(r, query=query) for r in records

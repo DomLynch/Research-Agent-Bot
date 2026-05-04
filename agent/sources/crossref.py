@@ -14,7 +14,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 _CROSSREF_URL = "https://api.crossref.org/works"
@@ -42,13 +42,13 @@ class CrossrefClient:
             "filter": "type:journal-article,has-abstract:true",
             "select": "DOI,title,abstract,issued,container-title,author",
         }
-        response = await client.get(
-            _CROSSREF_URL, params=params, headers=self._headers(),
+        data = await safe_get_json(
+            client, _CROSSREF_URL,
+            params=params, headers=self._headers(),
         )
-        response.raise_for_status()
-        items = (
-            response.json().get("message", {}).get("items", [])
-        )
+        if data is None:
+            return []
+        items = data.get("message", {}).get("items", [])
         return [
             hit for hit in (
                 self._parse(r, query=query) for r in items

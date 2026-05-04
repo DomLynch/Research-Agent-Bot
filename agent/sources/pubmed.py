@@ -15,7 +15,12 @@ import xml.etree.ElementTree as ET
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import (
+    clean_text,
+    normalize_doi,
+    safe_get_json,
+    safe_get_text,
+)
 from agent.types import RawHit
 
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
@@ -58,9 +63,12 @@ class PubMedClient:
         key = _ncbi_key()
         if key:
             params["api_key"] = key
-        response = await client.get(f"{EUTILS_BASE}/esearch.fcgi", params=params)
-        response.raise_for_status()
-        payload = response.json().get("esearchresult", {})
+        data = await safe_get_json(
+            client, f"{EUTILS_BASE}/esearch.fcgi", params=params,
+        )
+        if data is None:
+            return []
+        payload = data.get("esearchresult", {})
         return [str(item) for item in payload.get("idlist", []) if str(item).strip()]
 
     async def _efetch(
@@ -76,9 +84,15 @@ class PubMedClient:
         key = _ncbi_key()
         if key:
             params["api_key"] = key
-        response = await client.get(f"{EUTILS_BASE}/efetch.fcgi", params=params)
-        response.raise_for_status()
-        root = ET.fromstring(response.text)
+        text = await safe_get_text(
+            client, f"{EUTILS_BASE}/efetch.fcgi", params=params,
+        )
+        if text is None:
+            return []
+        try:
+            root = ET.fromstring(text)
+        except ET.ParseError:
+            return []
         hits: list[RawHit] = []
         for article in root.findall(".//PubmedArticle"):
             hit = self._parse_article(article, query=query)

@@ -20,7 +20,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 _SEMANTIC_SCHOLAR_URL = (
@@ -75,15 +75,13 @@ class SemanticScholarClient:
         }
         # Rate-limit gate (1 req per 1.1s cumulative)
         await _await_rate_limit()
-        response = await client.get(
-            _SEMANTIC_SCHOLAR_URL, params=params,
-            headers=self._headers(),
+        payload = await safe_get_json(
+            client, _SEMANTIC_SCHOLAR_URL,
+            params=params, headers=self._headers(),
         )
-        if response.status_code == 429:
-            # Rate-limited — return empty rather than raising
+        if payload is None:
             return []
-        response.raise_for_status()
-        data = response.json().get("data", [])
+        data = payload.get("data", [])
         return [
             hit for hit in (
                 self._parse(r, query=query) for r in data

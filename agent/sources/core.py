@@ -13,7 +13,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import clean_text, normalize_doi
+from agent.sources._base import clean_text, normalize_doi, safe_get_json
 from agent.types import RawHit
 
 # CORE v3 requires trailing slash — without it the API returns 301
@@ -44,17 +44,13 @@ class CoreClient:
             "q": clean_text(query, limit=240),
             "limit": str(max(1, min(limit, 25))),
         }
-        try:
-            response = await client.get(
-                _CORE_URL, params=params,
-                headers=self._headers(), timeout=20.0,
-            )
-            if response.status_code in (401, 403, 429):
-                return []
-            response.raise_for_status()
-        except httpx.HTTPError:
+        data = await safe_get_json(
+            client, _CORE_URL,
+            params=params, headers=self._headers(),
+        )
+        if data is None:
             return []
-        results = response.json().get("results", [])
+        results = data.get("results", [])
         return [
             hit for hit in (
                 self._parse(r, query=query) for r in results
