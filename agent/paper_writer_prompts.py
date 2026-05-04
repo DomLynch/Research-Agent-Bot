@@ -82,6 +82,23 @@ HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)
 - Citation tokens for background context use the form "Author Year"
   or "Author et al. Year" (e.g. "Studenski 2011", "Cruz-Jentoft
   et al. 2019"). Do NOT invent citations.
+
+ACTIVE NUMERIC TARGET (paired with the forbidden-fabrication rules
+above; the two together = use the corpus, don't invent):
+- Final-paper target: ≥8 reportable numerics per 1000 body words.
+  "Reportable" = percentages, p-values, HR/OR/RR ratios, sample
+  sizes (n=...), doses (mg/g/mL), follow-up durations, effect-size
+  CIs. The audit measures this and gates ship-blocking on density
+  below the threshold.
+- Practical translation: every Results / Discussion / Background
+  paragraph should ground at least one quantitative claim with a
+  receipt-traced value. A paragraph that reads as pure prose
+  without a single numeric is almost certainly under-using the
+  receipts. Reach back into the bound-claims input — the writer
+  has more numeric ammunition than it tends to spend.
+- Sparse paragraphs are not neutral; they signal under-evidenced
+  prose and trigger a re-render at audit time. Bias toward
+  including a corpus numeric over omitting one.
 ================================================================
 
 """
