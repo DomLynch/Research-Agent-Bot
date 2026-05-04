@@ -70,24 +70,26 @@ import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
 
 # Workstream A (autonomous): topic-parameterized pipeline.
-# Default topic is `metformin` for backward-compat (any caller that
-# imports QUANT_DIR/PARSED_DIR without setting a topic still works).
+# Module-level corpus paths + active topic — populated by
+# _set_topic() at the top of every pipeline invocation. The sentinel
+# path `_TOPIC_UNSET` deliberately doesn't exist on disk: any code
+# path that reads QUANT_DIR/PARSED_DIR before _set_topic() ran will
+# get a Path that fails the .exists() check (and therefore returns
+# 0 hits), but won't crash on AttributeError as None would. This is
+# the universal-fix-no-hardcoding rule (2026-05-04): no metformin
+# fallback, but a placeholder that surfaces the bug at use-time.
 # CLI accepts `--topic rapamycin` (or any topic with a corpus dir
-# at docs/quality-reference/<topic>/). _run() resets these globals
-# before any downstream code reads them, so the per-topic pipeline
-# uses the right corpus end-to-end.
-# DEFAULT_TOPIC is intentionally not pinned to a specific drug —
-# the active topic is set per-invocation by _set_topic(). Tests
-# that need a baseline path use this fallback.
-DEFAULT_TOPIC = "metformin"  # historical default for backward-compat
-QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "quant_claims"
-PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / DEFAULT_TOPIC / "parsed"
+# at docs/quality-reference/<topic>/). _run() always calls
+# _set_topic() before any downstream code reads QUANT_DIR/PARSED_DIR.
+_TOPIC_UNSET = REPO_ROOT / "_TOPIC_UNSET_call_set_topic_first"
+QUANT_DIR: Path = _TOPIC_UNSET
+PARSED_DIR: Path = _TOPIC_UNSET
 
 # Active topic pack (set by _set_topic). Generic topic-aware logic
 # reads from this instead of hardcoded strings. None until first
 # _set_topic call.
 _TOPIC_PACK = None
-_ACTIVE_TOPIC: str = DEFAULT_TOPIC
+_ACTIVE_TOPIC: str = ""
 
 
 def _set_topic(topic: str) -> None:
@@ -365,7 +367,7 @@ def _load_paper_meta_by_id() -> dict[str, dict]:
 
 
 def build_receipts_from_quant_claims(
-    topic: str = DEFAULT_TOPIC,
+    topic: str,
 ) -> list[ReceiptSummary]:
     """Adapter: v0.6.0 quant_claims → ReceiptSummary list. One receipt
     per contributing paper. Only papers with ≥1 high-confidence
@@ -789,8 +791,9 @@ def _build_call_chain() -> list[CallSpec]:
 
 async def _run(
     out_dir: Path,
+    *,
+    topic: str,
     dry_run: bool = False,
-    topic: str = DEFAULT_TOPIC,
 ) -> int:
     settings = load_settings()
     if not settings.bot_enabled:

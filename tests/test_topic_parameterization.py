@@ -22,14 +22,23 @@ import audit_v06_paper as audit  # noqa: E402
 import run_v06_synthesis as orch  # noqa: E402
 
 
-def test_default_topic_is_metformin() -> None:
-    """Backward-compat: importing the module without setting a topic
-    yields the metformin corpus paths."""
-    assert orch.DEFAULT_TOPIC == "metformin"
-    # Re-set in case prior tests changed it
+def test_module_paths_set_via_set_topic_no_metformin_default() -> None:
+    """Universal-fix rule (2026-05-04): orchestrator's module-level
+    QUANT_DIR/PARSED_DIR are sentinel paths (non-existent on disk)
+    until _set_topic() is called explicitly. No silent metformin
+    fallback. There is no DEFAULT_TOPIC constant.
+
+    Test suite uses conftest.py to pre-call _set_topic('metformin')
+    for backward-compat; production callers go through main() which
+    requires --topic.
+    """
+    # No DEFAULT_TOPIC constant exists anymore.
+    assert not hasattr(orch, "DEFAULT_TOPIC")
+    # _set_topic propagates to both orchestrator + audit modules.
     orch._set_topic("metformin")
     assert "metformin" in str(orch.QUANT_DIR)
     assert "metformin" in str(audit.QUANT_DIR)
+    assert orch._ACTIVE_TOPIC == "metformin"
 
 
 def test_set_topic_updates_orchestrator_and_audit_in_lockstep() -> None:
