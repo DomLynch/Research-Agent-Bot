@@ -3,7 +3,7 @@
 **Topics attempted:** 6
 **Topics with ≥1 AAA run:** 3
 **Topics with consecutive-AAA cert:** 2
-**Total runs across all topics:** 83
+**Total runs across all topics:** 85
 **Cumulative LLM cost:** $1.591
 **Total reviewer interventions logged:** 57 applied (3 via repair loop)
 
@@ -11,9 +11,9 @@
 
 | Topic | Best verdict | Cert | n_runs | AAA-runs | Stage1 | Stage2 P1/P2 | Q2 trace | Words | Cost |
 |---|---|---|---|---|---|---|---|---|---|
-| metformin | AAA | 🏆 | 47 | 21 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
+| metformin | AAA | 🏆 | 48 | 22 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
 | rapamycin | AAA | 🏆 | 20 | 5 | 13/13 | 0/0 | 100% | 9,002 | $0.306 |
-| aspirin | AAA | ✅ | 5 | 1 | 13/13 | 0/0 | 100% | 7,553 | $0.236 |
+| aspirin | AAA | ✅ | 6 | 1 | 13/13 | 0/0 | 100% | 7,553 | $0.236 |
 | statins | Trust-Spine Pass | — | 8 | 0 | 12/13 | 0/0 | 100% | 9,135 | $0.240 |
 | glp1 | SHIP-BLOCKED | — | 2 | 0 | 8/13 | 0/0 | 100% | 4,732 | $0.269 |
 | senolytics | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/0 | 100% | 6,462 | $0.178 |
