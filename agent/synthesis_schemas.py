@@ -261,6 +261,10 @@ SectionName = Literal[
     "abstract",             # ~300 words; ANCHORED — every claim cites receipt
     "introduction",         # ~1500-2500; SCOPED — topic-relevant + hedged
     "background",           # ~1000-2000; SCOPED — broader field synthesis
+    "quantitative_results_table",  # DETERMINISTIC — per-study n / effect / CI / p
+                            # markdown table built from corpus quant_claims;
+                            # universal Q9 numeric-density structural fix.
+                            # See agent/results_table.py.
     "methods",              # ~1000-1500; DETERMINISTIC — describes SPAR pipeline
     "results",              # ~3000-5000; ANCHORED — multi-paragraph by outcome class
     "cross_domain_synthesis",  # ~800-1500; ANCHORED — integrates outcomes with

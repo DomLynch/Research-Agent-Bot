@@ -26,6 +26,15 @@ the full 15-source registry + 3-client enrichment layer + bullet-proof
 error handling. User explicitly authorized: "audit all data sources 2x
 and harden all. bullet proof." (2026-05-04).
 
+Wave 3 — universal Q9 structural fix (14,000 → 14,200): adds
+agent/results_table.py (~150 cloc) — deterministic per-study
+quantitative table built from corpus quant_claims. Replaces the
+unreliable prompt-nudge path with structural numeric density (the
+table contributes ~30-60 corpus-traced numerics in ~150 words,
+reliably lifting Q9 without prompt fragility). User mandated this
+as universal-not-topic-hack: "Do not prompt-hack aspirin/statins.
+Add universal deterministic numeric table" (2026-05-04).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -33,7 +42,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 14000
+TOTAL_LIMIT = 14200
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

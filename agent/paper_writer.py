@@ -489,6 +489,7 @@ _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
     "abstract",
     "introduction",
     "background",
+    "quantitative_results_table",
     "methods",
     "results",
     "cross_domain_synthesis",
@@ -597,6 +598,33 @@ async def render_full_paper(
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("background", sections["background"])
+    # Universal Q9 structural fix (2026-05-04): deterministic per-study
+    # results table built from corpus quant_claims. No LLM cost, no
+    # fabrication risk; lifts numeric density without displacing
+    # discussion/cross-domain content. See agent/results_table.py.
+    from pathlib import Path as _Path
+    from agent.results_table import build_results_table
+    _quant_dir = (
+        _Path(__file__).resolve().parent.parent / "docs"
+        / "quality-reference" / topic / "quant_claims"
+    )
+    _table_md = build_results_table(receipts, _quant_dir, topic=topic)
+    if not _table_md:
+        _table_md = (
+            f"## Quantitative Results Summary — {topic}\n\n"
+            "_No quantitative effect estimates extractable from the "
+            "current corpus; see Results section for narrative "
+            "synthesis._\n"
+        )
+    sections["quantitative_results_table"] = SynthesisSection(
+        name="quantitative_results_table",
+        body_md=_table_md,
+        anchors=(),
+    )
+    _log_section_done(
+        "quantitative_results_table (deterministic)",
+        sections["quantitative_results_table"],
+    )
     sections["methods"] = build_methods_section(
         receipts, topic=topic, submission_id=submission_id,
     )
