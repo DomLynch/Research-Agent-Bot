@@ -221,6 +221,79 @@ def test_strip_collapses_consecutive_cite_duplicates() -> None:
     assert "_Cited: `Y 2021`_" not in cleaned
 
 
+# ----- Fix #52 — sentence-fragment detection + strip ----------------
+
+
+def test_detect_single_letter_fragment_after_paren() -> None:
+    """Real defect from a2a run line 256: '...extension) e when
+    paired with exercise.' — a deterministic-template strip cut
+    most of the thesis text and left a single 'e' word fragment."""
+    paper = (
+        "## Discussion\n\n"
+        "Some prose here (a parenthetical list) e when paired with "
+        "exercise.\n"
+    )
+    findings = srl.detect_sentence_fragments(paper)
+    assert len(findings) == 1
+    assert findings[0].kind == "sentence_fragment_single_letter"
+
+
+def test_detect_lowercase_preposition_fragment() -> None:
+    """Real defect from a2a run line 146: '...over the study
+    period. on 2019 in a healthier older adult cohort.' — a
+    citation-prefix strip ate 'Konopka' or 'Walton' before the
+    year, leaving 'on 2019' as a subjectless fragment."""
+    paper = (
+        "## Discussion\n\n"
+        "MET-PREVENT showed no change over the study period. "
+        "on 2019 in a healthier older adult cohort. The next "
+        "sentence is fine.\n"
+    )
+    findings = srl.detect_sentence_fragments(paper)
+    fragment_finds = [
+        f for f in findings
+        if f.kind == "sentence_fragment_lowercase_start"
+    ]
+    assert len(fragment_finds) == 1
+
+
+def test_does_not_false_fire_on_legitimate_enumeration() -> None:
+    """`(a) a per-receipt evidence-weighting (Table 4: ...)` is a
+    legitimate enumerated list — NOT a fragment. Fix #52's pattern
+    must NOT trigger on this."""
+    paper = (
+        "## Discussion\n\n"
+        "This synthesis adds (a) a per-receipt evidence-weighting "
+        "(Table 4: tier × directness), (b) a deterministic per-paper "
+        "numeric index, and (c) an explicit pairwise tension matrix.\n"
+    )
+    findings = srl.detect_sentence_fragments(paper)
+    assert findings == [], (
+        f"enumeration pattern false-fired: {[f.evidence for f in findings]}"
+    )
+
+
+def test_strip_sentence_fragments_clears_real_defects() -> None:
+    """End-to-end on the actual a2a paper: the two known prose
+    defects (line 146 + 256) get stripped; clean paper post-fix."""
+    paper_path = (
+        Path(__file__).resolve().parent.parent
+        / "runs/synthesis-metformin-v06-a2a-"
+          "2026-05-04T06-33-54Z/full_paper.md"
+    )
+    if not paper_path.exists():
+        return  # archived run; skip silently
+    paper = paper_path.read_text()
+    fixed, n = srl.strip_sentence_fragments(paper)
+    assert n >= 2, f"expected ≥2 strips, got {n}"
+    # No remaining fragments after one pass
+    post = srl.detect_sentence_fragments(fixed)
+    assert post == []
+    # Specific defect strings gone
+    assert "on 2019 in a healthier older adult cohort." not in fixed
+    assert "extension) e when paired with exercise." not in fixed
+
+
 def test_strip_idempotent_after_one_pass() -> None:
     """Running strip twice gives same output as running once."""
     paper = (

@@ -210,6 +210,138 @@ def detect_sentence_end_authoryear(paper_md: str) -> list[SurfaceLintFinding]:
     return findings
 
 
+def detect_sentence_fragments(
+    paper_md: str,
+) -> list[SurfaceLintFinding]:
+    """Fix #52: catch broken sentence-fragments left behind by
+    upstream auto-strips or partial-text patches. Two patterns:
+
+    Pattern A — single-letter sentence-start (truncated word leftover):
+      "...lifespan extension) e when paired with exercise."
+      The "e" is the last letter of "negative" with the preceding
+      ~50 chars stripped by an over-aggressive regex.
+
+    Pattern B — lowercase sentence-start (subject missing):
+      "The findings showed no change. on 2019 in a healthier cohort."
+      The "on 2019..." fragment lost its leading "Konopka" or
+      "Walton" via a citation-strip pass.
+
+    Severity P2 (cosmetic but obvious to a reader); auto-fixable
+    via strip_sentence_fragments() — the fragment sentence is
+    deleted; the surrounding prose holds the argument."""
+    findings: list[SurfaceLintFinding] = []
+    line_starts = _line_indices(paper_md)
+    # Pattern A: " {single_letter} {word_starting_with_lowercase}"
+    # Anchored to a sentence-like boundary — `.` OR `)` — so we
+    # catch both "...end. e when..." (period) and "...extension) e
+    # when..." (closing-paren) — the latter is common when an
+    # over-aggressive strip eats most of a parenthetical-prefixed
+    # sentence and leaves only the trailing word fragment.
+    pat_a = re.compile(
+        # `\.` (sentence-end period) OR `[a-z]{2}\)` (closing paren
+        # of a real word, ≥2 letters before — excludes `(a)` `(b)`
+        # enumeration markers which are only ONE letter inside parens)
+        r"(?:\.|[a-z]{2}\))\s+([a-z])\s+([a-z]\w+)",
+    )
+    # Pattern B: ". <lowercase preposition/article> <Year-or-Word>"
+    # Sentence ending with `. ` followed by a lowercase word that's
+    # a typical truncation orphan ("on 2019", "in 2025", "of trial").
+    # Whitelist common legitimate continuation patterns (e.g. "i.e.",
+    # "vs.", "et al."). Restrict to known orphan-prone prepositions.
+    pat_b = re.compile(
+        r"\.\s+(on|in|at|by|of|for|with|to)\s+(\d{4}|[A-Z])",
+    )
+    for m in pat_a.finditer(paper_md):
+        line_no = _line_no_for_offset(line_starts, m.start())
+        snippet = paper_md[
+            max(0, m.start() - 40):m.end() + 40
+        ].strip()
+        findings.append(SurfaceLintFinding(
+            kind="sentence_fragment_single_letter",
+            line_no=line_no,
+            evidence=snippet[:200],
+            suggested_fix=(
+                f"Single-letter word {m.group(1)!r} starts a new "
+                "sentence — likely truncated word leftover from an "
+                "upstream strip. Delete the fragment sentence."
+            ),
+        ))
+    for m in pat_b.finditer(paper_md):
+        line_no = _line_no_for_offset(line_starts, m.start())
+        snippet = paper_md[
+            max(0, m.start() - 40):m.end() + 40
+        ].strip()
+        findings.append(SurfaceLintFinding(
+            kind="sentence_fragment_lowercase_start",
+            line_no=line_no,
+            evidence=snippet[:200],
+            suggested_fix=(
+                f"Sentence begins with lowercase preposition "
+                f"{m.group(1)!r} + {m.group(2)!r} — likely citation-"
+                "prefix stripped by upstream pass. Delete the "
+                "fragment sentence (subject missing)."
+            ),
+        ))
+    return findings
+
+
+def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
+    """Fix #52 auto-fix: delete sentences flagged as fragments.
+    Pure deletion — the fragment is by construction broken/
+    meaningless; no scientific content lost. Surrounding
+    paragraph survives.
+
+    Returns (new_md, n_stripped)."""
+    findings = detect_sentence_fragments(paper_md)
+    if not findings:
+        return paper_md, 0
+    # Build the strip targets: each finding tells us where the
+    # fragment STARTS. Walk forward to the next sentence terminator
+    # to identify the FULL fragment span. Then delete it.
+    out = paper_md
+    n = 0
+    # Re-derive offsets from the regexes (cleaner than re-using
+    # the SurfaceLintFinding which only carries line numbers).
+    pat_a = re.compile(
+        r"(?:\.|[a-z]{2}\))\s+([a-z])\s+([a-z]\w+)",
+    )
+    pat_b = re.compile(
+        r"\.\s+(on|in|at|by|of|for|with|to)\s+(\d{4}|[A-Z])",
+    )
+    spans: list[tuple[int, int]] = []
+    for pat in (pat_a, pat_b):
+        for m in pat.finditer(out):
+            # Fragment starts at m.start()+1 (right after the period
+            # of the GOOD prior sentence) and ends at the next
+            # period (inclusive) — that's the broken sentence.
+            frag_start = m.start() + 1
+            # Find the next sentence terminator
+            next_period = out.find(".", m.end())
+            if next_period == -1:
+                continue
+            frag_end = next_period + 1  # include the period
+            spans.append((frag_start, frag_end))
+    if not spans:
+        return paper_md, 0
+    # Coalesce overlapping spans + apply in reverse order so
+    # offsets stay stable.
+    spans.sort()
+    coalesced: list[tuple[int, int]] = []
+    for s, e in spans:
+        if coalesced and s <= coalesced[-1][1]:
+            coalesced[-1] = (coalesced[-1][0], max(coalesced[-1][1], e))
+        else:
+            coalesced.append((s, e))
+    for s, e in reversed(coalesced):
+        out = out[:s] + out[e:]
+        n += 1
+    # Collapse double spaces / triple newlines that the deletion
+    # may have left behind.
+    out = re.sub(r"  +", " ", out)
+    out = re.sub(r"\n{3,}", "\n\n", out)
+    return out, n
+
+
 def run_surface_lint(paper_md: str) -> list[SurfaceLintFinding]:
     """Full surface-render lint. Returns ALL findings, ordered by
     line_no for reader-friendly diagnostic output."""
@@ -217,6 +349,7 @@ def run_surface_lint(paper_md: str) -> list[SurfaceLintFinding]:
     findings.extend(detect_orphan_citations(paper_md))
     findings.extend(detect_abstract_cite_only_paragraphs(paper_md))
     findings.extend(detect_sentence_end_authoryear(paper_md))
+    findings.extend(detect_sentence_fragments(paper_md))  # Fix #52
     findings.sort(key=lambda f: f.line_no)
     return findings
 

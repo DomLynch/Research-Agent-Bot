@@ -198,6 +198,24 @@ def apply_fixes(
                     "that had no anchor sentence (Fix #22 surface lint)"
                 ),
             })
+        # Fix #52: strip sentence fragments (single-letter starts +
+        # lowercase preposition starts) left behind by upstream
+        # auto-strips. Pure deletion; the fragment is by construction
+        # broken/meaningless.
+        new_md, n_fragments_stripped = _srl.strip_sentence_fragments(
+            new_md,
+        )
+        if n_fragments_stripped > 0:
+            log.append({
+                "fix_type": "surface_sentence_fragment_strip",
+                "n_changes": n_fragments_stripped,
+                "description": (
+                    "stripped broken sentence fragments (single-letter "
+                    "starts like 'e when paired' or lowercase-"
+                    "preposition starts like 'on 2019 in...') left "
+                    "behind by upstream auto-strips (Fix #52)"
+                ),
+            })
     except ImportError:
         pass
 
