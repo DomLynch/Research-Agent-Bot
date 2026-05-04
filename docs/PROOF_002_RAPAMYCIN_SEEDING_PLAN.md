@@ -10,8 +10,10 @@ last blocker.**
 | **A. Pipeline topic-parameterization** | ✅ done | commit `7c7e96e` (Fix #20-50 series) |
 | **B. Rapamycin background literature** | ✅ done (4 canonical entries) | `docs/background_literature.json`: Harrison 2009 (14% mouse lifespan), Lamming 2012 (mTORC2 disruption at 2 weeks), Mannick 2014 (5 mg PEARL-style intermittent dose), Kahan 2000 (5-15 ng/mL transplant trough) |
 | **Topic pack + aliases** | ✅ pre-existing | `topic_packs/rapamycin.toml` |
-| **Smoke-test of `--topic rapamycin` CLI** | ✅ verified | Exits cleanly with code 4 ("corpus directory does not exist") + actionable error pointing at expected location |
-| **C. Corpus seeding (quant_claims + parsed papers)** | ⏸️ pending | This document |
+| **Smoke-test of `--topic rapamycin` CLI** | ✅ verified | Exits with actionable error pointing at the missing `docs/quality-reference/rapamycin/quant_claims/` directory |
+| **C1. Triage step (no LLM cost)** | ✅ done | `scripts/seed_rapamycin_corpus.py --triage` — 67 seed cards → 23 candidates after off-topic filter → 15 selected (5 pinned canonical NCTs + PEARL bubbled to top of unpinned ranking). Output: `docs/quality-reference/rapamycin/_triage.json`. Tests: `tests/test_seed_rapamycin_triage.py` (8 tests, gracefully skip on machines without local seed pool). |
+| **C2. Extraction step (LLM cost ~$2-3)** | ⏸️ blocked on user approval | Extracts quant_claims + paper_sections for the 15 triaged papers. Detailed gate below. |
+| **C3. Pipeline run (`--topic rapamycin`)** | ⏸️ blocked on C2 | Once C2 produces the corpus, the elite-grade pipeline runs unchanged. |
 
 Once Workstream C is done, the elite-grade metformin pipeline runs unchanged on rapamycin via:
 
@@ -135,20 +137,32 @@ Hand-curate all 15 papers' claim files using the metformin examples as template.
 **Path 2 (hybrid)**. Concrete next step:
 
 ```bash
-# Build the seed script
-touch scripts/seed_rapamycin_corpus.py
+# DONE — triage already ran. Inspect the output:
+cat docs/quality-reference/rapamycin/_triage.json
 
-# Triage
-python scripts/seed_rapamycin_corpus.py --triage
-# → outputs candidate papers for review
-
-# Extract (after triage is approved)
+# COST GATE — needs explicit user approval before running:
 python scripts/seed_rapamycin_corpus.py --extract --top-n 15
 # → writes docs/quality-reference/rapamycin/{quant_claims,parsed}/
 
-# Run the full pipeline
+# After extract, the pipeline runs unchanged:
 python scripts/run_v06_synthesis.py --topic rapamycin
 ```
+
+### Cost gate — what `--extract` will do
+
+For each of the 15 triaged papers (output of C1), `--extract` will:
+
+1. **Fetch full text** — try PMC OA → Europe PMC → fallback to abstract-only
+2. **Parse to paper_sections.json** — split intro/methods/results/discussion (deterministic regex on heading patterns)
+3. **Extract quant_claims** via `agent.fact_extractor` — LLM-driven; ~$0.10-0.20/paper at temperature 0.02
+4. **Validate** against the metformin schema (existing tests in `tests/test_quant_claims_schema.py`)
+5. **Write** to `docs/quality-reference/rapamycin/{quant_claims,parsed}/<paper_id>.{quant_claims,paper_sections}.json`
+
+**Estimated cost**: $1.50-3.00 (15 papers × $0.10-0.20). Wall-clock ~30 min.
+
+**Risk profile**: extraction quality varies; the metformin pipeline showed extractor-rate of ~80% high-confidence claims. Spot-check the top-5 RCT extractions (PEARL, Konopka, etc.) before running synthesis. The fact_extractor's `binding_confidence: high` filter does most of the quality control automatically.
+
+**Why this is gated**: $2-3 is small but non-zero, and the user's CLAUDE.md doesn't list LLM extraction as a pre-authorized action. Run `--extract` only after user confirms.
 
 ## Estimated time-to-Proof-002-AAA
 
