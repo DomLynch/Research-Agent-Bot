@@ -275,8 +275,12 @@ def test_retrieval_background_allow_loads_from_subblock() -> None:
 def test_retrieval_is_none_when_block_absent() -> None:
     """Packs without [retrieval] block fall back to legacy
     corpus_search_queries (back-compat)."""
-    pack = load_topic_pack(METFORMIN_PATH)
-    # metformin pack has not been migrated yet — retrieval should be None
+    aspirin = (
+        Path(__file__).parent.parent / "topic_packs" / "aspirin.toml"
+    )
+    pack = load_topic_pack(aspirin)
+    # aspirin pack has not yet been migrated to [retrieval] — should
+    # be None (back-compat fallback path).
     assert pack.retrieval is None
     # legacy field still works
     assert pack.corpus_search_queries  # non-empty

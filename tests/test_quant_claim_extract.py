@@ -511,16 +511,17 @@ def test_p1_corpus_shape_invariant_high_confidence_within_expected_range() -> No
         f"non-effect leakage in high-confidence: {high_non_effect}/{high_count}"
     )
     # Invariant 2: high-confidence count band. Phase 6.3 expanded
-    # the corpus from 42 to 74 papers via targeted evidence-typed
-    # queries; high-conf claims grew from 90 to ~134. Band loosened
-    # to [50, 300] to tolerate further corpus growth without
-    # breaking on every Phase 6.x re-fetch.
-    assert 50 <= high_count <= 300, (
-        f"high-confidence count {high_count} outside expected [50, 300]"
+    # the corpus from 42 to 74 papers; Slice 7 step 3 (calibrated
+    # retrieval) further expanded to ~230 papers via topic-pack
+    # [retrieval] block + wave-based seed. Band loosened to
+    # [50, 1500] — corpus is now an order of magnitude bigger
+    # than original Phase 6 baseline.
+    assert 50 <= high_count <= 1500, (
+        f"high-confidence count {high_count} outside expected [50, 1500]"
     )
-    # Invariant 3: total claim count sane.
-    assert 500 <= total <= 3000, (
-        f"total claim count {total} outside expected [500, 3000]"
+    # Invariant 3: total claim count sane (corpus growth scales).
+    assert 500 <= total <= 15000, (
+        f"total claim count {total} outside expected [500, 15000]"
     )
 
 

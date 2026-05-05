@@ -1006,6 +1006,11 @@ async def _run(
         "extractor_version": "v0.6.0",
         "writer_path": "agent.paper_writer.render_full_paper (production)",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        # Slice 7 step 3 fix: surface topic in manifest so Grok
+        # reviewer + audit hooks can resolve topic-pack
+        # background_literature for the active topic without
+        # depending on module globals.
+        "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),

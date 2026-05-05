@@ -185,16 +185,19 @@ def _build_grok_prompt(
     # (rapamycin publication run had 19 unresolved). Now Grok sees
     # both pools and only flags citations not in EITHER.
     bglit_lines: list[str] = []
+    seen_tokens: set[str] = set()
     try:
         from pathlib import Path
         import json as _json
+        # Pool 1: global docs/background_literature.json (canon
+        # citations shared across all topics: gait-speed thresholds,
+        # BMI cutoffs, ADA targets, Cochrane standards).
         bg_path = (
             Path(__file__).resolve().parent.parent
             / "docs" / "background_literature.json"
         )
         if bg_path.exists():
             bg_data = _json.loads(bg_path.read_text())
-            seen_tokens: set[str] = set()
             for entry in bg_data.values():
                 if not isinstance(entry, dict):
                     continue
@@ -206,8 +209,38 @@ def _build_grok_prompt(
                 bglit_lines.append(
                     f"- {token}: {numeric} ({entry.get('context', '')[:60]})"
                 )
+        # Pool 2 (Slice 7 step 3 fix): topic-pack [[background_literature]]
+        # entries (rapamycin pack has Harrison 2009 / Lamming 2012 /
+        # Mannick 2014 / Kahan 2000 / Kennedy 2014 / López-Otín 2013).
+        # Without this, Grok flagged every legitimate canon citation
+        # as 'unauthorized' on calibrated rapamycin runs.
+        topic = (manifest.get("topic")
+                 if isinstance(manifest, dict) else None)
+        if topic:
+            tp_path = (
+                Path(__file__).resolve().parent.parent
+                / "topic_packs" / f"{topic}.toml"
+            )
+            if tp_path.exists():
+                import sys as _sys
+                _sys.path.insert(
+                    0, str(Path(__file__).resolve().parent.parent),
+                )
+                from agent.topic_pack import (  # noqa: E402
+                    load_topic_pack as _ltp,
+                )
+                pack = _ltp(tp_path)
+                for entry in pack.background_literature:
+                    token = (entry.citation_token or "").strip()
+                    numeric = (entry.numeric or "").strip()
+                    if not token or token in seen_tokens:
+                        continue
+                    seen_tokens.add(token)
+                    bglit_lines.append(
+                        f"- {token}: {numeric} ({entry.context[:60]})"
+                    )
     except (OSError, ValueError, ImportError):
-        bglit_lines = []
+        bglit_lines = bglit_lines or []
     bglit_header = (
         "## Allowed body citations — background literature\n\n"
         "These canonical citations are ALSO permitted in body prose, "
