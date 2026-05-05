@@ -98,6 +98,46 @@ corpus_search_queries = [
 canonical_rct_paper_ids = []
 
 
+# --- Calibrated retrieval (Slice 6 step 2, 2026-05-05) -------------
+# Statins are the largest biomedical literature pool of any topic
+# (~140K PubMed papers). The exclusion list is tighter than rapamycin
+# because off-thesis cardiology mechanisms dominate the noise floor.
+
+[retrieval]
+topic_terms    = [
+  "statin", "atorvastatin", "rosuvastatin", "simvastatin",
+  "pravastatin", "lovastatin", "fluvastatin", "pitavastatin",
+  "HMG-CoA reductase inhibitor",
+]
+scope_terms    = [
+  "muscle", "myopathy", "myalgia", "sarcopenia", "frailty",
+  "older adults", "elderly", "geriatric", "exercise",
+  "all-cause mortality", "cardiovascular event", "cancer",
+  "incident diabetes", "cognitive decline", "alzheimer",
+]
+evidence_types = [
+  "clinical trial", "randomized controlled trial", "cohort study",
+  "observational study", "meta-analysis", "systematic review",
+]
+exclude_terms  = [
+  "stroke prevention only", "atrial fibrillation only",
+  "in vitro only", "rodent only", "neurovascular unit only",
+  "blood-brain barrier only", "PCSK9 inhibitor monotherapy only",
+  "pediatric only", "familial hypercholesterolemia only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+[retrieval.background]
+allow = [
+  "HMG-CoA reductase mechanism",
+  "muscle pathophysiology landmark",
+  "lipid metabolism history",
+  "Cochrane statin reviews",
+]
+
+
 # --- Canonical trials (informational; surface-check feeds qa_report) -
 
 [[canonical_trials]]

@@ -96,6 +96,43 @@ canonical_rct_paper_ids = [
 ]
 
 
+# --- Calibrated retrieval (Slice 6 step 2, 2026-05-05) -------------
+# See topic_packs/rapamycin.toml for the schema rationale. metformin
+# is the most mature topic — calibrated retrieval should pull a
+# substantial corpus (target: 1000+ retrieved, 300+ core_on_thesis).
+
+[retrieval]
+topic_terms    = [
+  "metformin", "biguanide", "MET", "Glucophage", "Fortamet",
+]
+scope_terms    = [
+  "aging", "longevity", "healthspan", "older adults", "elderly",
+  "geriatric", "geroscience", "senescence", "frailty", "sarcopenia",
+  "cardiometabolic",
+]
+evidence_types = [
+  "clinical trial", "randomized controlled trial", "cohort study",
+  "observational study", "meta-analysis", "systematic review",
+]
+exclude_terms  = [
+  "diabetes management only", "type 2 diabetes prevention only",
+  "in vitro only", "yeast", "drosophila", "c. elegans",
+  "pediatric only", "polycystic ovary syndrome only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+[retrieval.background]
+allow = [
+  "AMPK activation mechanism",
+  "preclinical lifespan landmark",
+  "biguanide history",
+  "anti-aging dose rationale",
+  "TAME trial design",
+]
+
+
 # --- Canonical trials (informational; surface-check feeds qa_report) -------
 
 [[canonical_trials]]
