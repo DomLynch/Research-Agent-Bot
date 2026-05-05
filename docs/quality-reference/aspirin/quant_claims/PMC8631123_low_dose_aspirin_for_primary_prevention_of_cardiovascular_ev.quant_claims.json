@@ -1,0 +1,1405 @@
+{
+  "paper_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev",
+  "doi": "10.4103/ijpvm.IJPVM_365_19",
+  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 41,
+    "unit_value": 16,
+    "mean_sd": 4,
+    "odds_ratio": 8,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-495",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 495,
+      "sentence": "We enrolled 275 consecutive postmenopausal women with type-2 diabetes, without an increased bleeding risk and without preexisting CV disease as coronary artery disease, stroke, and peripheral vascular disease, but with a high risk assessed by score >10%, aged 60-69 years.",
+      "context_window": "l vascular disease, but with a high risk assessed by score >10%, aged 60-69 years. All were receiving aspirin (75-100 mg da",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-508",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 508,
+      "sentence": "We enrolled 275 consecutive postmenopausal women with type-2 diabetes, without an increased bleeding risk and without preexisting CV disease as coronary artery disease, stroke, and peripheral vascular disease, but with a high risk assessed by score >10%, aged 60-69 years.",
+      "context_window": "sease, but with a high risk assessed by score >10%, aged 60-69 years. All were receiving aspirin (75-100 mg daily), aspirin grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-549",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 549,
+      "sentence": "All were receiving aspirin (75-100 mg daily), aspirin group (AG).",
+      "context_window": "core >10%, aged 60-69 years. All were receiving aspirin (75-100 mg daily), aspirin group (AG). 170 postmenopausal women with t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-752",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 752,
+      "sentence": "170 postmenopausal women with type-2 diabetes and without preexisting cardiovascular (CV) disease, but not on aspirin treatment, despite a high risk assessed by score >10%, were control group (CG).",
+      "context_window": "n aspirin treatment, despite a high risk assessed by score >10%, were control group (CG). Mean age was 66 \u00b1 4 years for AG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-msd-795",
+      "claim_type": "mean_sd",
+      "raw_text": "66 \u00b1 4",
+      "numeric_values": [
+        66.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 795,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG.",
+      "context_window": "sessed by score >10%, were control group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG. Our goal was to ident",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-800",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 800,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG.",
+      "context_window": "d by score >10%, were control group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG. Our goal was to identify th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-msd-819",
+      "claim_type": "mean_sd",
+      "raw_text": "65 \u00b1 7",
+      "numeric_values": [
+        65.0,
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 819,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG.",
+      "context_window": "re control group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG. Our goal was to identify the prevalence of lo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-824",
+      "claim_type": "unit_value",
+      "raw_text": "7 years",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 824,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG.",
+      "context_window": "ntrol group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG. Our goal was to identify the prevalence of low-dose",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1019",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1019,
+      "sentence": "Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i.",
+      "context_window": "linical conditions. Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1042",
+      "claim_type": "percentage",
+      "raw_text": "42.3%",
+      "numeric_values": [
+        42.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1042,
+      "sentence": "Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i.",
+      "context_window": "men with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.000",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-1072",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 0.2",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1072,
+      "sentence": "Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i.",
+      "context_window": "1/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.0001. Women affected by metabolic syndrome",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1093",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "95%, P < 0.0001.",
+      "context_window": "72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.0001. Women affected by metabolic syndrome were 105/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-1098",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1098,
+      "sentence": "95%, P < 0.0001.",
+      "context_window": "70 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.0001. Women affected by metabolic syndrome were 105/275 (38.1%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1161",
+      "claim_type": "percentage",
+      "raw_text": "38.1%",
+      "numeric_values": [
+        38.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1161,
+      "sentence": "Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i.",
+      "context_window": "0.0001. Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds rati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1186",
+      "claim_type": "percentage",
+      "raw_text": "27.6%",
+      "numeric_values": [
+        27.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1186,
+      "sentence": "Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i.",
+      "context_window": "y metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-1217",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 1.6",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1217,
+      "sentence": "Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i.",
+      "context_window": "75 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02. Women affected by metabolic cardiomyop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1238",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1238,
+      "sentence": "95%, P < 0.02.",
+      "context_window": "47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02. Women affected by metabolic cardiomyopathy were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-1243",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1243,
+      "sentence": "95%, P < 0.02.",
+      "context_window": "0 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02. Women affected by metabolic cardiomyopathy were 111/275 (4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1310",
+      "claim_type": "percentage",
+      "raw_text": "40.3%",
+      "numeric_values": [
+        40.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1310,
+      "sentence": "Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i.",
+      "context_window": "2. Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1335",
+      "claim_type": "percentage",
+      "raw_text": "25.9%",
+      "numeric_values": [
+        25.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1335,
+      "sentence": "Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i.",
+      "context_window": "bolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-1364",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 1.8",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1364,
+      "sentence": "Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i.",
+      "context_window": "/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004. Women affected by diabetic cardiomyop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1385",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1385,
+      "sentence": "95%, P < 0.004.",
+      "context_window": "d 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004. Women affected by diabetic cardiomyopathy were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-1390",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1390,
+      "sentence": "95%, P < 0.004.",
+      "context_window": "170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004. Women affected by diabetic cardiomyopathy were 18/275 (6.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1456",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1456,
+      "sentence": "Women affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i.",
+      "context_window": "004. Women affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1479",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1479,
+      "sentence": "Women affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i.",
+      "context_window": "diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95% , P < 0.2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-1509",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1509,
+      "sentence": "Women affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i.",
+      "context_window": "8/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95% , P < 0.2 n.s. Low-dose aspirin in our populatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1529",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1529,
+      "sentence": "95% , P < 0.2 n.s.",
+      "context_window": "nd 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95% , P < 0.2 n.s. Low-dose aspirin in our population is presc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-1535",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.2",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1535,
+      "sentence": "95% , P < 0.2 n.s.",
+      "context_window": "70 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95% , P < 0.2 n.s. Low-dose aspirin in our population is prescribed pref",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1204",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1204,
+      "sentence": "The absolute benefits were largely counterbalanced by the bleeding hazard.[ 10 ] The same assessment was in a meta-analysis of thirteen trials, where 53% of subjects were women, aged in the range of 53-74 years and 19% were diabetics.[ 11 ] There is a considerable variation in the reported efficacy of aspirin across the trials; approximately, 27% of the total variation could be accounted to the gender differences in the population.[ 12 ] Usually trials with predominantly male subjects demonstrated large benefits of aspirin in reducing non-fatal MI rates.",
+      "context_window": "assessment was in a meta-analysis of thirteen trials, where 53% of subjects were women, aged in the range of 53-74 years an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-1256",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1256,
+      "sentence": "The absolute benefits were largely counterbalanced by the bleeding hazard.[ 10 ] The same assessment was in a meta-analysis of thirteen trials, where 53% of subjects were women, aged in the range of 53-74 years and 19% were diabetics.[ 11 ] There is a considerable variation in the reported efficacy of aspirin across the trials; approximately, 27% of the total variation could be accounted to the gender differences in the population.[ 12 ] Usually trials with predominantly male subjects demonstrated large benefits of aspirin in reducing non-fatal MI rates.",
+      "context_window": ", where 53% of subjects were women, aged in the range of 53-74 years and 19% were diabetics.[ 11 ] There is a considerable varia",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1269",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1269,
+      "sentence": "The absolute benefits were largely counterbalanced by the bleeding hazard.[ 10 ] The same assessment was in a meta-analysis of thirteen trials, where 53% of subjects were women, aged in the range of 53-74 years and 19% were diabetics.[ 11 ] There is a considerable variation in the reported efficacy of aspirin across the trials; approximately, 27% of the total variation could be accounted to the gender differences in the population.[ 12 ] Usually trials with predominantly male subjects demonstrated large benefits of aspirin in reducing non-fatal MI rates.",
+      "context_window": "f subjects were women, aged in the range of 53-74 years and 19% were diabetics.[ 11 ] There is a considerable variation in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1399",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1399,
+      "sentence": "The absolute benefits were largely counterbalanced by the bleeding hazard.[ 10 ] The same assessment was in a meta-analysis of thirteen trials, where 53% of subjects were women, aged in the range of 53-74 years and 19% were diabetics.[ 11 ] There is a considerable variation in the reported efficacy of aspirin across the trials; approximately, 27% of the total variation could be accounted to the gender differences in the population.[ 12 ] Usually trials with predominantly male subjects demonstrated large benefits of aspirin in reducing non-fatal MI rates.",
+      "context_window": "orted efficacy of aspirin across the trials; approximately, 27% of the total variation could be accounted to the gender dif",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-2212",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2212,
+      "sentence": "These data are consistent with the assessment that aspirin therapy might be less effective in reducing non-fatal MI in women than in men.[ 13 ] Another point is that one-dose-fits-all aspirin approach gave only modest benefits in long-term prevention of CV events because of underdosing in patients of large body size and excess dosing in patients of small body size, which might also affect other outcomes.[ 14 ] Although women were included in only 2 trials and accounted for only 20% of the population studied, the US Preventive Services Task Force[ 15 ] and the American Heart Association[ 16 ] deemed aspirin therapy effective in decreasing the incidence of coronary heart disease in adults of both sexes with increased CV risk.",
+      "context_window": "women were included in only 2 trials and accounted for only 20% of the population studied, the US Preventive Services Task",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-2654",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2654,
+      "sentence": "Therefore, American Heart Association guidelines on CV primary prevention in women recommend the use of low-dose aspirin therapy in women whose 10-year risk of a first coronary event exceeds 20% and consider the use in women whose 10-year risk is 10% to 20%.[ 17 ] The Women's Health Study, a primary prevention trial of aspirin therapy in women,[ 18 ] demonstrated that aspirin decreased the risk of stroke without affecting the risk of MI or vascular death, a datum different from that found in studies that enrolled exclusively or predominantly men.",
+      "context_window": "women whose 10-year risk of a first coronary event exceeds 20% and consider the use in women whose 10-year risk is 10% to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-2710",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2710,
+      "sentence": "Therefore, American Heart Association guidelines on CV primary prevention in women recommend the use of low-dose aspirin therapy in women whose 10-year risk of a first coronary event exceeds 20% and consider the use in women whose 10-year risk is 10% to 20%.[ 17 ] The Women's Health Study, a primary prevention trial of aspirin therapy in women,[ 18 ] demonstrated that aspirin decreased the risk of stroke without affecting the risk of MI or vascular death, a datum different from that found in studies that enrolled exclusively or predominantly men.",
+      "context_window": "eds 20% and consider the use in women whose 10-year risk is 10% to 20%.[ 17 ] The Women's Health Study, a primary preventio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-2717",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2717,
+      "sentence": "Therefore, American Heart Association guidelines on CV primary prevention in women recommend the use of low-dose aspirin therapy in women whose 10-year risk of a first coronary event exceeds 20% and consider the use in women whose 10-year risk is 10% to 20%.[ 17 ] The Women's Health Study, a primary prevention trial of aspirin therapy in women,[ 18 ] demonstrated that aspirin decreased the risk of stroke without affecting the risk of MI or vascular death, a datum different from that found in studies that enrolled exclusively or predominantly men.",
+      "context_window": "and consider the use in women whose 10-year risk is 10% to 20%.[ 17 ] The Women's Health Study, a primary prevention trial",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-215",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 215,
+      "sentence": "We enrolled 275 consecutive postmenopausal women with type-2 diabetes and without preexisting CV disease as coronary artery disease, stroke, and peripheral vascular disease, but with an high risk assessed by score >10%, according to SCORE risk charts, from European Guidelines on CVD Prevention in Clinical Practice 2016,[ 20 ] aged between 60 and 69 years, without an increased risk for bleeding.",
+      "context_window": "vascular disease, but with an high risk assessed by score >10%, according to SCORE risk charts, from European Guidelines o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-348",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 348,
+      "sentence": "We enrolled 275 consecutive postmenopausal women with type-2 diabetes and without preexisting CV disease as coronary artery disease, stroke, and peripheral vascular disease, but with an high risk assessed by score >10%, according to SCORE risk charts, from European Guidelines on CVD Prevention in Clinical Practice 2016,[ 20 ] aged between 60 and 69 years, without an increased risk for bleeding.",
+      "context_window": "ention in Clinical Practice 2016,[ 20 ] aged between 60 and 69 years, without an increased risk for bleeding. Women with the his",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-567",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 567,
+      "sentence": "All of them were receiving aspirin (75 mg or 100 mg daily), prescribed by their general practitioner, aspirin group (AG).",
+      "context_window": "es drugs were excluded. All of them were receiving aspirin (75 mg or 100 mg daily), prescribed by their general practitioner,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-576",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 576,
+      "sentence": "All of them were receiving aspirin (75 mg or 100 mg daily), prescribed by their general practitioner, aspirin group (AG).",
+      "context_window": "were excluded. All of them were receiving aspirin (75 mg or 100 mg daily), prescribed by their general practitioner, aspirin g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-801",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 801,
+      "sentence": "170 postmenopausal women with type-2 diabetes and without preexisting CV disease, but not receiving aspirin, despite a high risk assessed by score >10%, (no-aspirin group) were the control group (CG).",
+      "context_window": "t receiving aspirin, despite a high risk assessed by score >10%, (no-aspirin group) were the control group (CG). Mean age w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-msd-867",
+      "claim_type": "mean_sd",
+      "raw_text": "66 \u00b1 4",
+      "numeric_values": [
+        66.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 867,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 .",
+      "context_window": "no-aspirin group) were the control group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 . Our goal wa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-872",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 872,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 .",
+      "context_window": "pirin group) were the control group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 . Our goal was to i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-msd-891",
+      "claim_type": "mean_sd",
+      "raw_text": "65 \u00b1 7",
+      "numeric_values": [
+        65.0,
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 891,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 .",
+      "context_window": "he control group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 . Our goal was to identify the preval",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-896",
+      "claim_type": "unit_value",
+      "raw_text": "7 years",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 896,
+      "sentence": "Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 .",
+      "context_window": "ntrol group (CG). Mean age was 66 \u00b1 4 years for AG and 65 \u00b1 7 years for CG, Table 1 . Our goal was to identify the prevalence o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1757",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1757,
+      "sentence": "Results are described as mean with 95% confidence interval (CI 95%).",
+      "context_window": "20.0 (Chicago, IL, USA). Results are described as mean with 95% confidence interval (CI 95%). Student's t -test was used fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1785",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1785,
+      "sentence": "Results are described as mean with 95% confidence interval (CI 95%).",
+      "context_window": "ults are described as mean with 95% confidence interval (CI 95%). Student's t -test was used for continuous variables and C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-39",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 39,
+      "sentence": "Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i.",
+      "context_window": "Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-62",
+      "claim_type": "percentage",
+      "raw_text": "42.3%",
+      "numeric_values": [
+        42.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 62,
+      "sentence": "Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i.",
+      "context_window": "men with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.000",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-92",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 0.2",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 92,
+      "sentence": "Women with only high risk were 41/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i.",
+      "context_window": "1/275 (15%) on AG and 72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.000 1 , therefore highlighting a lower cha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-113",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 113,
+      "sentence": "95%, P < 0.000 1 , therefore highlighting a lower chance to receive aspirin therapy for women with only high risk, Figure 1 .",
+      "context_window": "72/170 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.000 1 , therefore highlighting a lower chance to rec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-118",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 118,
+      "sentence": "95%, P < 0.000 1 , therefore highlighting a lower chance to receive aspirin therapy for women with only high risk, Figure 1 .",
+      "context_window": "70 (42.3%) on CG, Chi-squared 41, Odds ratio 0.2, c.i. 95%, P < 0.000 1 , therefore highlighting a lower chance to receive aspiri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-378",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 378,
+      "sentence": "Postmenopausal women receiving aspirin according to different clinical conditions\n\nWomen affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i.",
+      "context_window": "ons Women affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-401",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 401,
+      "sentence": "Postmenopausal women receiving aspirin according to different clinical conditions\n\nWomen affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i.",
+      "context_window": "diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95%, P < 0.2 n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-431",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 431,
+      "sentence": "Postmenopausal women receiving aspirin according to different clinical conditions\n\nWomen affected by diabetic cardiomyopathy were 18/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i.",
+      "context_window": "8/275 (6.6%) on AG and 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95%, P < 0.2 n.s., without statistical significant di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-451",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 451,
+      "sentence": "95%, P < 0.2 n.s., without statistical significant difference between women with cardiomyopathy and women without, receiving aspirin, Figure 1 .",
+      "context_window": "nd 7/170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95%, P < 0.2 n.s., without statistical significant difference b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-456",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.2",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 456,
+      "sentence": "95%, P < 0.2 n.s., without statistical significant difference between women with cardiomyopathy and women without, receiving aspirin, Figure 1 .",
+      "context_window": "170 (4.2%) on CG, Chi-squared 1.2, Odds ratio 16, c.i. 95%, P < 0.2 n.s., without statistical significant difference between wo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-648",
+      "claim_type": "percentage",
+      "raw_text": "38.1%",
+      "numeric_values": [
+        38.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 648,
+      "sentence": "Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i.",
+      "context_window": "ure 1 . Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds rati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-673",
+      "claim_type": "percentage",
+      "raw_text": "27.6%",
+      "numeric_values": [
+        27.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 673,
+      "sentence": "Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i.",
+      "context_window": "y metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-704",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 1.6",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 704,
+      "sentence": "Women affected by metabolic syndrome were 105/275 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i.",
+      "context_window": "75 (38.1%) on AG and 47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02, with high statistical significant diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-725",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 725,
+      "sentence": "95%, P < 0.02, with high statistical significant difference between women with metabolic syndrome and women without, those have a lower chance to receive aspirin therapy, Figure 1 .",
+      "context_window": "47/170 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02, with high statistical significant difference bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-730",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 730,
+      "sentence": "95%, P < 0.02, with high statistical significant difference between women with metabolic syndrome and women without, those have a lower chance to receive aspirin therapy, Figure 1 .",
+      "context_window": "0 (27.6%) on CG, Chi-squared 5.1, Odds ratio 1.6, c.i. 95%, P < 0.02, with high statistical significant difference between women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-965",
+      "claim_type": "percentage",
+      "raw_text": "40.3%",
+      "numeric_values": [
+        40.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 965,
+      "sentence": "Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i.",
+      "context_window": ". Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-990",
+      "claim_type": "percentage",
+      "raw_text": "25.9%",
+      "numeric_values": [
+        25.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 990,
+      "sentence": "Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i.",
+      "context_window": "bolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-or-l-1019",
+      "claim_type": "odds_ratio",
+      "raw_text": "Odds ratio 1.8",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1019,
+      "sentence": "Women affected by metabolic cardiomyopathy were 111/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i.",
+      "context_window": "/275 (40.3%) on AG and 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004, with high statistical significant dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1040",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1040,
+      "sentence": "95%, P < 0.004, with high statistical significant difference between women with metabolic cardiomyopathy and women without, those have a lower chance to receive aspirin therapy, Figure 1 .",
+      "context_window": "d 44/170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004, with high statistical significant difference be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-p-1045",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1045,
+      "sentence": "95%, P < 0.004, with high statistical significant difference between women with metabolic cardiomyopathy and women without, those have a lower chance to receive aspirin therapy, Figure 1 .",
+      "context_window": "170 (25.9%) on CG, Chi-squared 8, Odds ratio 1.8, c.i. 95%, P < 0.004, with high statistical significant difference between women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-564",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 564,
+      "sentence": "In our population of women all with diabetes and high CV risk, assessed by score >10%, according to SCORE risk charts, the low-dose aspirin treatment is mandatory for all the subjects.",
+      "context_window": "omen all with diabetes and high CV risk, assessed by score >10%, according to SCORE risk charts, the low-dose aspirin treat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-1257",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1257,
+      "sentence": "Low doses of aspirin (75-100 mg) are effective only to prevent vascular events in patients weighing less than 70 kg, and give no benefit in the 80% of men and nearly 50% of all women weighing 70 kg or more.",
+      "context_window": "cted by diabetes and high CV risk. Low doses of aspirin (75-100 mg) are effective only to prevent vascular events in patients",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-1342",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1342,
+      "sentence": "Low doses of aspirin (75-100 mg) are effective only to prevent vascular events in patients weighing less than 70 kg, and give no benefit in the 80% of men and nearly 50% of all women weighing 70 kg or more.",
+      "context_window": "y to prevent vascular events in patients weighing less than 70 kg, and give no benefit in the 80% of men and nearly 50% of al",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1376",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1376,
+      "sentence": "Low doses of aspirin (75-100 mg) are effective only to prevent vascular events in patients weighing less than 70 kg, and give no benefit in the 80% of men and nearly 50% of all women weighing 70 kg or more.",
+      "context_window": "tients weighing less than 70 kg, and give no benefit in the 80% of men and nearly 50% of all women weighing 70 kg or more.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-1398",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1398,
+      "sentence": "Low doses of aspirin (75-100 mg) are effective only to prevent vascular events in patients weighing less than 70 kg, and give no benefit in the 80% of men and nearly 50% of all women weighing 70 kg or more.",
+      "context_window": "han 70 kg, and give no benefit in the 80% of men and nearly 50% of all women weighing 70 kg or more. By contrast, higher do",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-1424",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1424,
+      "sentence": "Low doses of aspirin (75-100 mg) are effective only to prevent vascular events in patients weighing less than 70 kg, and give no benefit in the 80% of men and nearly 50% of all women weighing 70 kg or more.",
+      "context_window": "efit in the 80% of men and nearly 50% of all women weighing 70 kg or more. By contrast, higher doses of aspirin were only eff",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-1517",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1517,
+      "sentence": "By contrast, higher doses of aspirin were only effective in patients weighing 70 kg or more.",
+      "context_window": "r doses of aspirin were only effective in patients weighing 70 kg or more. Given that aspirin's effects on other outcomes, in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-4450",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4450,
+      "sentence": "Women are also more likely to demonstrate impaired vasodilatory responses to acetylcholine.[ 39 ] Moreover, when women develop atherosclerosis, their lesions are usually more diffuse and extensive than those observed in men.[ 40 ] Although in both men and women, the leading cause of morbidity and mortality is ischemic heart disease,[ 41 ] women, especially in the younger age groups (less than 50 years of age), have short-term mortality rates that are twice those observed in men.[ 42 ] Our findings in the context of the emerging literature regarding possible aspirin resistance in women suggest that clinicians should be cautious in prescribing aspirin in women, especially for primary prevention.",
+      "context_window": "41 ] women, especially in the younger age groups (less than 50 years of age), have short-term mortality rates that are twice tho",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-pct-408",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 408,
+      "sentence": "Future clinical studies specifically powered to evaluate sex-specific differences will determine whether all women with a high risk assessed by score >10%, aged between 60 and 69 years, without an increased risk for bleeding, need to be treated with low-dose aspirin, rather than high-dose aspirin or other antiplatelet agents more effective in women compared with aspirin.",
+      "context_window": "rmine whether all women with a high risk assessed by score >10%, aged between 60 and 69 years, without an increased risk fo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev-u-433",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 433,
+      "sentence": "Future clinical studies specifically powered to evaluate sex-specific differences will determine whether all women with a high risk assessed by score >10%, aged between 60 and 69 years, without an increased risk for bleeding, need to be treated with low-dose aspirin, rather than high-dose aspirin or other antiplatelet agents more effective in women compared with aspirin.",
+      "context_window": "ith a high risk assessed by score >10%, aged between 60 and 69 years, without an increased risk for bleeding, need to be treated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -2,19 +2,118 @@
   "topic": "statins",
   "retrieval_mode": "calibrated",
   "n_queries": 13,
-  "n_unique_candidates": 500,
-  "n_selected_for_fetch": 500,
-  "n_pmcid_resolved": 75,
-  "n_extracted": 108,
+  "n_unique_candidates": 600,
+  "n_selected_for_fetch": 600,
+  "n_pmcid_resolved": 55,
+  "n_extracted": 42,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10070635",
+    "PMC10199059",
+    "PMC10237439",
+    "PMC11020750",
+    "PMC11269069",
+    "PMC11321388",
+    "PMC11452672",
+    "PMC11931303",
+    "PMC12118777",
+    "PMC12228474",
+    "PMC12925127",
+    "PMC13049982",
+    "PMC1729169",
+    "PMC2040243",
+    "PMC2432025",
+    "PMC2714690",
+    "PMC2874131",
+    "PMC3149154",
+    "PMC3186780",
+    "PMC3384438",
+    "PMC3425581",
+    "PMC3662830",
+    "PMC4169720",
+    "PMC4450764",
+    "PMC4574822",
+    "PMC4950584",
+    "PMC5060003",
+    "PMC5231363",
+    "PMC5316146",
+    "PMC5543335",
+    "PMC5646357",
+    "PMC5848154",
+    "PMC6019601",
+    "PMC6123838",
+    "PMC6291090",
+    "PMC6296003",
+    "PMC6481400",
+    "PMC6915904",
+    "PMC7019839",
+    "PMC7034209",
+    "PMC7760915",
+    "PMC7825695",
+    "PMC8306262",
+    "PMC8559965",
+    "PMC8606632",
+    "PMC8620130",
+    "PMC8650150",
+    "PMC8958112",
+    "PMC9035072",
+    "PMC9178988",
+    "PMC9198832",
+    "PMC9703554",
+    "PMC9731457",
+    "PMC9889368",
+    "PMC9999569"
+  ],
+  "active_paper_ids": [
+    "PMC10070635_targeting_enterococcus_faecalis_hmg_coa_reductase_with_a_non",
+    "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin",
+    "PMC10237439_trends_and_outcome_of_statin_therapy_in_dialysis_patients_wi",
+    "PMC11020750_older_adult_attitudes_toward_deprescribing_statins_in_primar",
+    "PMC11269069_pcsk9_inhibitor_safe_alternative_to_fill_the_treatment_gap_i",
+    "PMC11321388_effects_silymarin_and_rosuvastatin_on_amyloid_carriers_level",
+    "PMC11452672_opposing_impact_of_hypertension_diabetes_following_hormone_t",
+    "PMC11931303_treatment_strategies_and_ldl_cholesterol_target_attainment_i",
+    "PMC12118777_sodium_oleate_functionalized_simvastatin_liposomes_boosting_",
+    "PMC12228474_role_of_statins_in_non_small_cell_lung_cancer_treatment_a_sy",
+    "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron",
+    "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy",
+    "PMC2040243_growth_hormone_gh_replacement_decreases_serum_total_and_ldl_",
+    "PMC2432025_statin_induced_myopathy_and_myalgia_time_trend_analysis_and_",
+    "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio",
+    "PMC2874131_unintended_effects_of_statins_in_men_and_women_in_england_an",
+    "PMC3425581_a_survey_of_the_fda_s_aers_database_regarding_muscle_and_ten",
+    "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin",
+    "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in",
+    "PMC5231363_efficacy_of_statin_treatment_in_early_stage_chronic_kidney_d",
+    "PMC5316146_evidence_for_benefit_of_statins_to_modify_cognitive_decline_",
+    "PMC5848154_evaluation_of_trace_elements_in_augmentation_of_statin_induc",
+    "PMC6123838_statins_for_primary_prevention_of_cardiovascular_events_and_",
+    "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor",
+    "PMC6296003_simvastatin_induced_changes_in_the_leukocytic_system_of_porc",
+    "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver",
+    "PMC7019839_statin_related_myotoxicity_a_comprehensive_review_of_pharmac",
+    "PMC7034209_statin_reload_before_off_pump_coronary_artery_bypass_graft_e",
+    "PMC7760915_statins_hmg_coa_reductase_inhibitors_as_potential_anticancer",
+    "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio",
+    "PMC8306262_statins_a_repurposed_drug_to_fight_cancer",
+    "PMC8559965_atorvastatin_mediated_rescue_of_cancer_related_cognitive_cha",
+    "PMC8606632_influence_of_statin_therapy_on_the_incidence_of_cardiovascul",
+    "PMC8620130_deep_venous_thrombosis_in_an_individual_with_statin_exposed_",
+    "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the",
+    "PMC8958112_a_meta_analysis_of_statin_use_and_risk_of_hepatocellular_car",
+    "PMC9178988_effects_of_lovastatin_on_brain_cancer_cells",
+    "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a",
+    "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_",
+    "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct",
+    "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit",
+    "PMC9999569_impact_of_oral_statin_therapy_on_clinical_outcomes_in_patien"
+  ],
   "failures": [
     {
       "title": "Trial of Acetylsalicylic Acid and Atorvastatin in Patients With Castrate-resista",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Assessment of Compliance With European and French Guidelines for the Management ",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -32,12 +131,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A EUROpean Randomized Study on Blood-thinners and Cholesterol-lowering Treatment",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statins to Prevent Cancer Associated Blood Clots",
       "doi": null,
       "pmid": null,
@@ -50,25 +143,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Optimal Target Low-density Lipoprotein Cholesterol Level for Small Vessel Occlus",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "High Cardiovascular Risk Intervention With Cardio-Oncology Consultation for Pros",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Comparison of Low-Intensity Statin Plus Ezetimibe Versus High-Intensity Statin T",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Rapid Escalation of LipiD Lowering Therapy to Reduce RecUrrent Cardiovascular Ev",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -80,25 +155,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Inclisiran Versus Placebo for the Prevention of Major Adverse Cardiovascular and",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Association Between the SPHERTEST in Vitro Test and Response to Checkpoint Inhib",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Comparison of Pitavastatin Plus Ezetimibe Versus High-Intensity Statin Therapy o",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Polypill and RiscOMeter to Prevent StrOke and CogniTive ImpairmEnt (PROMOTE)",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -134,12 +191,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Evaluation of Rovadicitinib Compared to the Protocol Selected by Researchers in ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Systemic Therapy of Open-label Prophylactic Pravastatin or Pentoxifylline/Tocoph",
       "doi": null,
       "pmid": null,
@@ -147,18 +198,6 @@
     },
     {
       "title": "Carvedilol + Simvastatin vs. Carvedilol Alone for Cirrhosis and Cirrhotic Cardio",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Moxie Self-Management and Education Support Program",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Stroke Minimization Through Additive Anti-atherosclerotic Agents in Routine Trea",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -177,12 +216,6 @@
     },
     {
       "title": "Atorvastatin to Reduce Cisplatin-Induced Hearing Loss Among Individuals With Hea",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Novel Approaches for Improving Vascular Function in Veterans With HFpEF",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -207,12 +240,6 @@
     },
     {
       "title": "Novel Treatment of Radiation Associated Dysphagia With Statins",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Intensive Cholesterol-Lowering and CD8+ T Cells in Prostate Cancer",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -243,12 +270,6 @@
     },
     {
       "title": "Efficacy of Probucol Combined with Statins Treatment for Ischemic Stroke",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Hyperlipoproteinemia A as a Marker of Cardiovascular Risk in Patients With Stage",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -296,37 +317,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effect of PCSK9 Inhibitors on Calcific Aortic Valve Stenosis",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Study of IDE196 in Patients With Solid Tumors Harboring GNAQ/11 Mutations or PRK",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statin Therapy in Primary Sclerosing Cholangitis (PSC): a Multi-omics Study",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "PCSK9 inhibitoRs for Early Passivation of coRonary athEroSclerotic plaqueS in Ac",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effectiveness of Interventional Therapy for Non-Flow-Limiting Vulnerable Plaques",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Artificial Intelligence for Early Detection of Peripheral Artery Disease",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -350,31 +341,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Efficacy and Safety of PCSK9 Inhibitors in Patients With Large-Artery Atheroscle",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Atorvastatin Pretreatment in Cerebrovascular Events (APICES) After Flow Diverter",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Statins in Patients With Clonal Cytopenia of Undetermined Significance (CCUS) an",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statins Against Bushfire Smoke",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Multicenter Real-World Cohort Study Evaluating the Impact of Early Intensive Lip",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -392,19 +365,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The Effect of Early Administration of PCSK9 Inhibitor to Acute Ischemic Stroke P",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statins in Reducing Events in the Elderly (STAREE) Heart Sub-study",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Randomized Controlled Trial of Alert-Based Computerized Decision Support for Pat",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -416,43 +377,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Prevalence of Sarcopenia-Promoting Medicines in Patients With Sarcopenia and Fal",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Korean NIRS-IVUS Multicenter Registry",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Phase IB Metformin, Digoxin, Simvastatin in Solid Tumors",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Screening for Familial Hypercholesterolemia in Children",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Chemotherapy Plus Pitavastatin Guided by Patient-Derived Tumor-like Cell Cluster",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Efficacy and Safety of Combined Therapy With Red Yeast Rice and Low-dose Sta",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Women's IschemiA TRial to Reduce Events In Non-ObstRuctive CAD",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -482,12 +413,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Dual vs Triple Lipid-Lowering Therapy in Type 2 Diabetes Mellitus Patients With ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Evaluate the Efficacy and Safety of Atorvastatin Combined With Temozolomide in t",
       "doi": null,
       "pmid": null,
@@ -500,12 +425,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Beijing Osteoporosis With Neurological Disorders in Epigenetic Changes Study",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "STREAM Trial - Statins in Multimorbid Older Adults Without Cardiovascular Diseas",
       "doi": null,
       "pmid": null,
@@ -513,30 +432,6 @@
     },
     {
       "title": "Preoperative Statin Use and Major Adverse Cardiovascular Events in Liver Transpl",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Drug-drug Interaction Study of ZT002 Injection in Overweight and Obese Participa",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Polygenic Risk Score for Optimizing Primary Prevention in Intermediate-Risk Popu",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Risk Factors and Outcomes of Ischemic Stroke Associated With Tandem or Isolated ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "INtensive liPid-lowering Therapy for Acute High-risk IntracRanial or Extracrania",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -584,25 +479,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Intensive Management of Blood Pressure and Cholesterol in Elderly Chinese With H",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "STREAM Trial - Biomarker",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Triple Antibiotic Paste vs Simvastatin for Lesion Sterilization and Tissue Repai",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Coronary Artery Calcification in Type 2 Diabetes Mellitus (USCAC Study)",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -632,19 +509,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "High-resolution Magnetic Resonance Imaging of Intracranial Atherosclerotic Plaqu",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Bempedoic Acid Versus Statins in Primary-Prevention Patients With Suboptimal Sta",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Trial of HRS-2189 in Combination With Fluvastatin\u00b1HRS-6209, or HRS-8080\u00b1HRS-62",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -668,55 +533,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Mechanism of Red Yeast Rice Regulating Intestinal Indole Metabolism Pathway to I",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statins and prOgression of Coronary atheRosclerosis in melanomA Patients Treated",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Improving Theempowerment in Patients With Severe Breast Fibrosis Radio-induced T",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study to Investigate the Effect of Capivasertib on the Pharmacokinetics of Ora",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Phase 1 Clinical Study to Evaluate the Effects of SHR7280 on the Pharmacokinet",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "An Exploratory Clinical Study of Statins for Improving Chemotherapy and Maintena",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study to Investigate the Effectiveness and Safety of Bempedoic Acid in Patient",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Pharmacogenomics in Prediction of Cardiovascular Drugs Adverse Reaction",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Evaluate the Effect of Vimseltinib on the Pharmacokinetics of a BCRP and OATP1B1",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -734,12 +557,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Non-interventional Implementation Study to Evaluate Treatment With Inclisiran ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Exercise Training & Statins for Cardiovascular Health",
       "doi": null,
       "pmid": null,
@@ -747,18 +564,6 @@
     },
     {
       "title": "Effect of SLC01B1 (rs4149956) Polymorphism on the Efficacy and Tolerability of A",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study of Atorvo+\u2122 in Healthy Adult Participants",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Early Initiation of Evolocumab on Lipid Profiles Changes in Patients W",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -776,31 +581,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Phase 1 Study of PROT-001.",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Evaluation of the Safety and Efficacy of SGLT2 Inhibitors in Pre-diabetic Patien",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Phase 1, Open-label, Drug-drug Interaction Study to Assess Effect Between Radipr",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Progesterone Therapeutic Regimen Plus Statins in Young Women With Early Endometr",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Cluster Randomized Trial of a Digital Quality Improvement Intervention on LDLCho",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -813,12 +594,6 @@
     },
     {
       "title": "A Clinical Trial of STAtin Therapy for Reducing Events in the Elderly (STAREE)",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Role of Simvastatin in the Epithelial-Mesenchymal Transition Process of Brea",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -842,31 +617,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Atherosclerosis in Rheumatoid Arthritis and Lupus: Restoring Cholesterol Balance",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Atorvastatin \u00b1 Aspirin in Lynch Syndrome Syndrome",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Investigation of the Effects of Omega-3 Supplementation in Chronic Kidney Diseas",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Cholesterol Disruption in Combination With the Standard of Care in Patients With",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Phase Ib/\u2161 Study of NTQ1062 in Combination With Fulvestrant in Patients With A",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -908,12 +659,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Ezetimibe Utilization Early After Acute Myocardial Infarction, \"EzAMI Trial\"",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Efficacy and Safety of Atorvastatin and Ezetimibe (10/10mg) Fixed Dose Combinati",
       "doi": null,
       "pmid": null,
@@ -932,31 +677,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effect of Intensive LDL-cholesterol Targeting for Elderly Patients With Cardiova",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study to Assess the Effects of BPN14770 on Rosuvastatin",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Testing Atorvastatin to Lower Colon Cancer Risk in Longstanding Ulcerative Colit",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Evaluation of the Pharmacokinetics of Microdose Midazolam, Dabigatran, Pitavasta",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Evolocumab on Saphenous Vein Graft Patency Following Coronary Artery B",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -968,80 +689,14 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Targeting HIF-2\u03b1 in Colorectal Cancer Reveals a Cholesterol Biosynthesis\u2013Depende",
-      "doi": "10.1101/2025.09.08.674939",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Integrative transcriptome-based drug repurposing in tuberculosis",
-      "doi": "10.1101/2025.06.02.657296",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Targeting Cholesterol-Dependent Piezo1 Activation Impairs Amoeboid Migration in ",
-      "doi": "10.1101/2025.07.11.664494",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Modeling Hepatocellular Carcinoma and its microenvironment on a chip Hepatocellu",
-      "doi": "10.1101/2025.07.10.663127",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Mevalonate pathway activation in Ewing sarcoma reveals a 3D-specific synergy bet",
-      "doi": "10.1101/2025.11.20.689456",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statin-dye conjugates for selective targeting of KRAS mutant cancer cells",
       "doi": "10.1101/2025.06.03.657329",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effect of prescribing and deprescribing oxycodone on pain and function in a mous",
-      "doi": "10.1101/2025.10.22.684045",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Selective induction by statins of FAM134B-mediated sarcoplasmic reticulum (SR)-p",
-      "doi": "10.1101/2025.11.26.690680",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Repurposing statins in combination therapy for effective ablation of metastatic ",
-      "doi": "10.1101/2025.05.25.655937",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Targeting protein glycosylation and cholesterol metabolism in chemoresistant pan",
-      "doi": "10.1101/2025.04.13.648567",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Dicloxacillin and flucloxacillin inhibit hepatic uptake transporters \u2013 in vitro ",
-      "doi": "10.1101/2025.10.21.683780",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Psychiatric symptom improvement from adjunctive statin prescribing in severe men",
       "doi": "10.1101/2025.01.20.25320829",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Repurposing probucol for prevention of dementia: Evidence from a nationwide coho",
-      "doi": "10.1101/2025.11.17.25340427",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -1094,25 +749,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Therapeutic Targeting of Quercetin Only to Breast Cancer Cells under In Vitro Co",
-      "doi": "10.2174/0115734048332611250106075111",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "IL15/IL15R\u03b1 Complex Induces an Antitumor Immune Response following Radiotherapy ",
-      "doi": "10.1158/1535-7163.mct-24-0900",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statin Reminders for Improving Prescribing in Primary Care",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Extracts of Amla, Walnut Leaf, Red Yeast Rice and Olive in Cardiovascular Preven",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1142,31 +779,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effect of Evolocumab on Chronic Total Occlusions (EVOLO-CTO)",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Use of Mobile Health Technology and Behavioral Economics to Encourage Adhere",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Effect of SLC01B1 (rs2306283) Polymorphism on the Efficacy and Safety Profile of",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Interactions of Medicine and Exercise With Meal Timing",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Serum LDL Cholesterol Concentration on Pancreatic Insulin Secretion",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1184,31 +797,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Assessing the Effect of DZD9008 on the Pharmacokinetics of the Cocktail Probes R",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Calisthenics Versus High Intensity Interval Training in NAFL",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Lipid Management in Renal Transplant Recipients Using Evolocumab.",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Impact of Statin Therapy on Adaptations to Aerobic Exercise",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Pharmacokinetics of Clinical Probes and Characteristics of Endogenous Biomarker ",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1226,19 +815,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Atherosclerosis in Chemotherapy-related Cardiotoxicity",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Anti-eryptotic Effect of a Food Supplement with Plants Sterols in Hypercholester",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Safety and Long-Term Clinical Benefit of PCSK9i in STEMI Patients",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1262,18 +839,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "VICTORION-ASCERTAIN: Implementation Study (v-ASCERTAIN)",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Clinical Trial to Investigate the Clinical Drug-Drug Interaction of Divarasib ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Combined Statin and PD-1/PD-L1 Inhibitors in Treating Non-small Cell Lung Cancer",
       "doi": null,
       "pmid": null,
@@ -1286,74 +851,14 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Drug-Drug Interaction Study of LY3537982 on Midazolam, Digoxin, and Rosuvastat",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Influence of JY09 on Pharmacokinetics of Metformin , Rosuvastatin , and Digoxin ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Patient Autonomy and Statin Therapy Adherence",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Modeling statin-induced myopathy with human iPSCs reveals that impaired proteost",
-      "doi": "10.1101/2024.08.23.608904",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Neratinib, a clinical drug against breast cancer, protects against atheroscleros",
-      "doi": "10.1101/2024.11.05.622073",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "In VivoSimvastatin and Brain Radiation in a Model of HER2+Inflammatory Breast Ca",
-      "doi": "10.1101/2024.05.25.595905",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "APOEGenotype and Statin Response: Evidence from Electronic Health Records in the",
       "doi": "10.1101/2024.12.13.24318985",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The Relationship Between Suspected Adverse Drug Reactions Of HMG-Coa Reductase I",
-      "doi": "10.1101/2024.04.02.24305224",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Association between prescription drugs and all-cause mortality risk in the UK po",
-      "doi": "10.1101/2024.03.08.24303967",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Cardiovascular outcomes and fracture risk after the discontinuation of preventat",
-      "doi": "10.1101/2024.03.08.24303980",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "APOE genotype and the effect of statins: a systematic review and meta-analysis",
       "doi": "10.1101/2024.12.13.24318973",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Omeprazole and cardiovascular risk via induction of statin dysmetabolism",
-      "doi": "10.1101/2024.10.14.24315493",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -1376,18 +881,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Abstract 5913: TEAD1/4 inhibitors exhibit deeper biological impact and broader a",
-      "doi": "10.1158/1538-7445.am2024-5913",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Persistent Targeting DNA Nanocarrier Made of 3D Structural Unit Assembled from O",
-      "doi": "10.1002/adhm.202303865",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Clinical Characteristics of Liver Injury Induced by Atorvastatin",
       "doi": "10.12114/j.issn.1007-9572.2023.0698",
       "pmid": null,
@@ -1400,25 +893,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Text Message-Based Nudges Prior to Primary Care Visits to Increase Care Gap Clos",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statins In The Elderly",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Mechanisms and Interventions to Address Cardiovascular Risk of Gender-affirming ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Combined Portfolio Diet and Exercise Study",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1436,49 +911,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Low-dose PCSK9 Inhibitor Combined With Stains on Serum Lipids in Chinese Populat",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Modulate Cellular Stress in the Immune Cells to Reduce Rate of Symptomatic Viral",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Comparison Between Atorvastatin and Rosuvastatin in Reduction of Inflammatory Bi",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Efficacy of Chemopreventive Agents on Disease-free and Overall Survival in Patie",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Telenhealth and Adherence to Stains",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Simvastatin Nasal Rinses for the Treatment of COVID-19 Mediated Dysomsia",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Dyslipidemia of Obesity Intervention in Teens",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Aerobic Training and Ginkgo Biloba on Lipids Levels in HIV-positive Pa",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1491,12 +930,6 @@
     },
     {
       "title": "A Comparative Study of Pravastatin vs Placebo as Primary Prevention of Severe Su",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Role of Meningeal Lymphatic Vessels in the Absorption of Chronic Subdural He",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1526,18 +959,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Precision Medicine to Predict the Trajectory of Liver Cirrhosis: Prospective Coh",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "LDL-c Level Variability and Trained Immunity",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "A BCT Intervention for Physical Activity Among Individuals on Statins",
       "doi": null,
       "pmid": null,
@@ -1550,25 +971,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Atorvastatin as an Antihypertensive Agent",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Neurotoxicity Prophylaxis With Intrathecal Dexamethasone and Simvastatin Post Ax",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Trial of Alirocumab and Plaque Regression in Peripheral Arterial Disease",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Apoptosis Proteins and Endothelial Dysfunction in Patients With Atherosclerosis ",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1586,31 +989,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Autophagy Activation for the Alleviation of Cardiomyopathy Symptoms After Anthra",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Treatment With HMG-COA Reductase Inhibitor of Growth and Bone Abnormalities in C",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Tracking of Lipid Lowering Therapy in Jordan",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Physical Activity Levels and Statin Therapy",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Use of Colchicine to Decrease Atrial Fibrillation Recurrence After Ablation",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1640,56 +1019,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "TOMM40 and TOMM22 of the Translocase Outer Mitochondrial Membrane Complex rescue",
-      "doi": "10.1101/2023.06.24.546411",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Development and application of an algorithm for statin-induced myopathy based on",
       "doi": "10.1101/2023.04.24.23289059",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Chronic Exposure of 5\u2010Alpha Reductase Inhibitor in Young Male Rats Induces Not O",
-      "doi": "10.1002/alz.074040",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Abstract 122: The P2x4 Inhibitor, Paroxetine Dramatically Prevents Not Only Grow",
-      "doi": "10.1161/str.54.suppl_1.122",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Abstract B170: The in vitro anti-tumor activity of the multi-kinase inhibitor ne",
-      "doi": "10.1158/1535-7163.targ-23-b170",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Is ATP the Only Nucleoside Triphosphate among ATP, CTP, GTP, and UTP to Have a R",
-      "doi": "10.3390/catal13020281",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Efficacy of Follow-up Monitoring for Patients with Very High Cardiovascular Risk",
-      "doi": "10.38025/2078-1962-2022-21-3-121-128",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Therapeutic influence of simvastatin on MCF-7 and MDA-MB-231 breast cancer cells",
-      "doi": "10.1016/j.adcanc.2023.100110",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study to Assess the Effect of AZD5462 on the Pharmacokinetics of Midazolam, Ro",
-      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -1706,37 +1037,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Sirtuin-1 and Advanced Glycation End-products in Postmenopausal Women With Coron",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Social Engagement Strategies to Improve Medication Adherence",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Pentoxifylline, Atorvastatin, and Vitamin E in Treating Patients With Erectile D",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Acute Probiotic Supplementation and Endothelial Function",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statin Neuroprotection and Carotid Endarterectomy: Safety, Feasibility and Outco",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Single-Center Prospective Study to Investigate the Difference in the Incidence o",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1749,24 +1056,6 @@
     },
     {
       "title": "Effects of High Intensity Statin Therapy on Steroid Hormones and Vitamin D in Ty",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "DataBase for Analysis of Rectal Cancer Oncological Results",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Impact of PCSK9 Inhibitors on Coronary Microvascular Dysfunction in Patients Wit",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Classic Secondary Prevention in Type 2 MI: A Target Trial Emulation St",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1802,18 +1091,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Study of Lazertinib (JNJ-73841937) in Healthy Participants",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "KF2019#1-trial: Effects of a Thrombocyte Inhibitor on a Cholesterol-lowering Dru",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Evaluation of Major Cardiovascular Events in Participants With, or at High Risk ",
       "doi": null,
       "pmid": null,
@@ -1826,44 +1103,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The Antihypercholestrolemic Effect of a Combined Nutritional Supplementation of ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Atorvastatin Mitigates WMH-Related Cognitive Impairment by Reducing VCAM-1",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "High-Throughput Functional Assay in Cystic Fibrosis Patient-Derived Organoids Al",
-      "doi": "10.1101/2022.07.14.500147",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Activation of Transposable Elements Upon Statin Treatment",
-      "doi": "10.1101/2022.05.01.490198",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Target-agnostic drug prediction integrated with medical record analysis uncovers",
-      "doi": "10.1101/2022.04.12.22273802",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Statin intolerance \u2013 Prevalence and practical management in a specialized lipid ",
       "doi": "10.1101/2022.05.05.22274716",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Common and rare variants in SLCO1B1 are associated with statin intolerance",
-      "doi": "10.1101/2022.08.09.22278584",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -1874,49 +1115,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Providing periodic exercise to stall-housed gestating sows influences only the t",
-      "doi": "10.1139/cjas-2021-0087",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Dysregulation of PER3 clock gene and its only pseudogene in colorectal cancer an",
-      "doi": "10.2298/abs220223009n",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Coronary heart disease and chronic kidney disease: the possibilities of PCSK9 in",
-      "doi": "10.35401/2541-9897-2022-25-2-14-21",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Estimating prevalence and characteristics of statin intolerance among high and v",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "PSUN63 Approach to hyperlipidemia management in Carnitine Palmitoyltransferase I",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Secondary Prevention of Cardiovascular Disease in the Elderly Trial",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Evolocumab Plus Ezetimibe in Haemodialized Statin-intolerant Patients With Hyper",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Neoadjuvant Zoledronate and Atorvastatin in Triple Negative Breast Cancer",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1934,12 +1139,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Drug-durg Interaction of SHR3680 With Digoxin, Rosuvastatin Calcium and Metformi",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "A Pharmacokinetic Interaction Study Between Apatinib and Rosuvastatin or Metform",
       "doi": null,
       "pmid": null,
@@ -1952,19 +1151,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "EVOlocumab in Stable Heart Failure With Reduced Ejection Fraction of Ischemic Et",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Effect of Upstream Treatment With High Intensity Statin on the Outcomes of STMI ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effectiveness and Safety of Medical Treatment for SARS-CoV-2 (COVID-19) in Colom",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -1977,12 +1164,6 @@
     },
     {
       "title": "Evaluation of the Effect of Rosuvastatin on Cisplatin-induced Nephrotoxicity and",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Stroke Minimization Through Additive Anti-atherosclerotic Agents in Routine Trea",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2042,19 +1223,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effect of Red Yeast Rice Beside Statin on Lipid Profile",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Study to Evaluate Organic Anion Transporting Polypeptide (OATP) Transporter-Medi",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Managing Endothelial Dysfunction in Critically Ill COVID-19 Patients at LAUMCRH",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2066,25 +1235,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effect of Coadministration of Sotorasib on the Pharmacokinetics of Rosuvastatin ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Pravastatin to Prevent Preeclampsia",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Observational Study of Cardiovascular Disease.",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Investigate the Effect of Ezetimibe, Simvastatin, and Omega 3- Fatty Acids on Dy",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2102,32 +1253,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Real-world Evidence for Preventive Effects of Statins on Cancer Incidence: A Tra",
-      "doi": "10.1101/2021.07.20.21260891",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Lipid-Modulating Agents for Prevention or Treatment of COVID-19 in Randomized Tr",
-      "doi": "10.1101/2021.05.03.21256468",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A prospective clinical and transcriptomic feasibility study of oral\u2010only hormona",
-      "doi": "10.1002/cncr.33556",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "FREQUENCY AND CORRELATES OF MYOPATHY IN PATIENTS WITH DIABETES TAKING ATORVASTAT",
       "doi": "10.51253/pafmj.v71i2.2924",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "COENZIMA Q10 VERSUS VITAMINA D EN EL MANEJO DE LAS MIALGIAS ASOCIADAS A ESTATINA",
-      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -2138,31 +1265,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Research progress on the effect of hypercholesterolemia on neural function and c",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "An updated review of pharmacokinetic drug interactions and pharmacogenetics of s",
-      "doi": "10.1080/17425255.2020.1801634",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Effect of Pitavastatin on Erythrocyte Membrane Fatty Acid Contents in Patients W",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of RVX000222 on Time to Major Adverse Cardiovascular Events in High-Risk ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Thyroid Hormone Replacement for Subclinical Hypothyroidism and Dyslipidemia in A",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2192,18 +1295,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effect of Evolocumab in Functional Status and LDL Oxidation of Patients With Per",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Capecitabine Plus Simvastatin in Locally Advanced Rectal Cancer Patients",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Effects of Pitavastatin Treatments on the Plasma Lgi3 Level in the Patients With",
       "doi": null,
       "pmid": null,
@@ -2216,12 +1307,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Integrating Pharmacogenetics In Clinical Care",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "MUscle Side-Effects of Atorvastatin in Coronary Patients (MUSE) -Follow-up Study",
       "doi": null,
       "pmid": null,
@@ -2229,36 +1314,6 @@
     },
     {
       "title": "Study to Learn the Effect of Drug BAY1817080 on the Way the Body Absorbs, Distri",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Specified Drug-use Survey of the Granular Capsule Formulation of Omega-3 Fatty A",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Development of a Risk Prediction Algorithm Through the Investigation of Genetic ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Imaging of Coronary Plaques in Participants Treated With Evolocumab",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "NIRS to Diagnose SAMS",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Optimal Blood Pressure and Cholesterol Targets for Preventing Recurrent Stroke i",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2288,30 +1343,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "PCSK 9 Inhibition as Secondary Prevention in Renal Transplant Patients",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study of Nivolumab +/- Docetaxel in Patients Previously Treated With Advanced ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Lipid-lowering Therapies in Vietnamese Chronic Kidney Disease Population",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Impact of LDL-cholesterol Lowering on Platelet Activation",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Preventing Anthracycline Cardiovascular Toxicity With Statins (PREVENT)",
       "doi": null,
       "pmid": null,
@@ -2319,12 +1350,6 @@
     },
     {
       "title": "A Phase I Study of High Dose Simvastatin in Patients With Gastrointestinal Tract",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Mechanism and Intervention Research of Atherosclerosis",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2342,32 +1367,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Cancer cachexia has many symptoms but only one cause: anoxia",
-      "doi": "10.12688/f1000research.22624.1",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Proteomic Analysis of Cell Lines and Primary Tumors in Pancreatic Cancer Identif",
-      "doi": "10.1097/mpa.0000000000001633",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Sex\u2010differences in Statin Effects: Long\u2010term Atorvastatin Administration Reduced",
-      "doi": "10.1096/fasebj.2020.34.s1.06428",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Attempts to use statins in cancer therapy: An update",
       "doi": "10.1177/1010428320941760",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Treat Stroke to Target",
-      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -2396,37 +1397,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Atorvastatin for the Treatment of Lithium-Induced Nephrogenic Diabetes Insipidus",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Drug-drug Interactions Between Antiretroviral Drugs and Cardiovascular Drugs in ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "DRUG EXPOSURE AND RISK OF DEMENTIA",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "CoQ10 in Statin-associated Asthenia",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Modification of Diet in Renal Transplantation (MDRT)",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Endogenous Mechanisms of Inactivation of the Endothelium Tumor",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2456,24 +1427,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Prediction and Prevention of Asymptomatic Cardiovascular Insult in Type 1 Diabet",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Prevention of Cardiovascular Disease in Middle-aged and Elderly Iranians Using a",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Improvement in Medication Adherence Through the Implementation of Personalized N",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Study of Statin for Reduction of Postoperative Paroxysmal Atrial Fibrillation",
       "doi": null,
       "pmid": null,
@@ -2481,12 +1434,6 @@
     },
     {
       "title": "Assessment of the Effects of Atorvastatin Therapy on Myocardial Deformation Char",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Impact of a Pharmacist-delivered Discharge and Follow-up Intervention for Patien",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -2504,18 +1451,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "a Prospective Pilot Study of Screening Out Rate and Clinical Management of Famil",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Lp(a) and Aortic Valve Calcification",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "High-intensity Rosuvastatin and Moderate-intensity Rosuvastatin/Ezetimibe in ASC",
       "doi": null,
       "pmid": null,
@@ -2528,32 +1463,1922 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Simvastatin Effect in Combination With Neoadjuvant Chemotherapy to Clinical Resp",
+      "title": "Role of Statin on the Gastric Inflammation in Patients at High Risk of Gastric C",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Curative Efficacy of Pravastatine in Patients Presented Delayed Cutaneous and Su",
+      "title": "Pravastatin Intervention to Delay Hepatocellular Carcinoma Recurrence",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Only low intensity of aerobic exercise improves respiratory compliance in pulmon",
-      "doi": "10.29328/journal.jccm.1001069",
+      "title": "The Effect of Rosuvastatin and Olmesartan on the Progression of Coronary Atheros",
+      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "PF337 ALRN\u20106924, A DUAL INHIBITOR OF MDMX AND MDM2 THAT CAUSES MINIMAL THROMBOCY",
-      "doi": "10.1097/01.hs9.0000559560.89454.04",
+      "title": "Effect of Low-dose vs. High-dose Pitavastatin on In-stent Restenosis",
+      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Potato product form impacts in vitro starch digestibility and glucose transport ",
-      "doi": "10.1039/c8fo02530d",
+      "title": "Exercise-induced Muscle Damage in Statin Users",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Pharmacogenomics Study of Simvastatin-Induced Adverse Drug Reaction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of AMR101 to Evaluate Its Ability to Reduce Cardiovascular Events in Hig",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of the Effect of Atorvastatin for Reducing Aging-related Complication in H",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensive Statin Treatment in Acute Ischemic Stroke Patients With INtracranial A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Therapy in Acute Influenza",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Pravastatin on Erythrocyte Membrane Fatty Acid Contents in Patients Wi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Puerarin Versus Atorvastatin in Treating Metabolism Syndrome in Patients With Ch",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin Effectiveness and Safety in Cardiology Patients in Real World Setti",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin Plus Rifaximin in Decompensated Cirrhosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Statin Therapy on Coronary Flow Reserve and Inflammatory Markers ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Atorvastatin on Fractional Flow Reserve in Coronary Artery Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Compliance of Patients With Non-insulin-dependent Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anaplastic Thyroid Cancer and Follicular Thyroid Cancer-derived Exosomal Analysi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Statin on Hepatocellular Carcinoma Recurrence After Liver Transplanta",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin Before Prostatectomy and Prostate Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Immune Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins Evaluation in Coronary Procedures and Revascularization Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose Optimization of Rosuvastatin in Early Stage and Metastatic Estrogen Recepto",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "7 Tesla MRI Study in Patients With Statin Related Muscle Complaints",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Pravastatin in the Subjects With Prediabetes or Early Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Safety and Efficacy Study of High Dose Atorvastatin After Thrombolytic Treat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Rosuvastatin on Prognosis of Clinical Response in Acute Ischemic Strok",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anti-Platelet and Statin Therapy to Prevent Cancer-Associated Thrombosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cholesterol and Statin in Healthy Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Detection and Prevention of Anthracycline-Related Cardiac Toxicity With Concurre",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Simvastatin and Micronized Trans-resveratrol Treatment on Polycystic ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin Treatment for Intracranial Arterial Stenosis Based on Magnetic Reso",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Goal Achievement After Utilizing an Anti-PCSK9 Antibody in Statin Intolerant Sub",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Statins on Glucose Homeostasis in Subjects With Impaired Fasting Glucose",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Tolerability of Evolocumab vs Ezetimibe in Patients With Muscle-Rel",
+      "doi": "10.1001/jama.2016.3608",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin-Associated Autoimmune Myopathy",
+      "doi": "10.1056/nejmra1515161",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "To Compare the Effect of Concomitant Administration of Probucol and Cilostazol W",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin Adherence App Study in China",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Rosuvastatin Therapy on HDL2 Level",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Evaluate the Safety of Rosuvastatin in Children and Adolescents With ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Overcoming Chemotherapy Resistance In Refractory Multiple Myeloma With Simvastat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Targeting the Hippo Transducer TAZ in Breast Cancer With Statins",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of Topical Subgingival Application of Simvastatin Gel in the Treatment of Pe",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin With Palliative Therapy for HCC",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessing the Role of \"Statin\" Therapy and Perioperative Inflammatory Response i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Living With Statins - The Impact of Cholesterol Lowering Drugs on Health, Lifest",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Clinical Study to Evaluate PK, PD, and PG of Rosuvastatin in the Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Interferon-Lovastatin Therapy for Malignant Melanoma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Detecting the Impact of Statin Therapy On Lowering Risk of Venous Thrombo-Emboli",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Permeability MRI in Cerebral Cavernous Malformations Type 1 in New Mexico: Effec",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Novel Window of Opportunity Trial to Evaluate the Impact of Statins to Oppose Pr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Trial of CoQ10 for Mild-to-Moderate Statin-Associated Muscle Symptoms",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Donor Simvastatin Treatment in Organ Transplantation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A High-Resolution Magnetic Resonance Imaging Study to Evaluate the Effect of Ros",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Atorvastatin in Combination With Radiotherapy and Temozol",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "LIFESTAT - Living With Statins, a Cross Sectional Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "BIBW 2992 Plus Simvastatin vs. BIBW 2992 in Previously Treated Patients With Adv",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ezetimibe Added to Statin Therapy after Acute Coronary Syndromes",
+      "doi": "10.1056/nejmoa1410489",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Exercise Adaptations in Patients on Stati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Different Perioperative Statin Regimens on the Protection Against Po",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Assess the Effect of AZD9291 on the Blood Levels of Rosuvastatin, in Pa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Assess the Effect of AZD9291 on the Blood Levels of Simvastatin in Pati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interaction of Statins and Nondepolarizing Muscle Relaxants",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Rosuvastatin on Function of High Density Lipoprotein Cholesterol in Ty",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Goal Achievement After Utilizing an Anti-PCSK9 Antibody in Statin Intolerant Sub",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin Effect on Radiation Therapy of Brain Metastases",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins for Pulmonary and Cardiac Complications of Chronic HIV - Coordinating Ce",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Trial of Atorvastatin on the Persistent Coronary Aneurysm in Children With Kawas",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Atorvastatin Treatment on Left Ventricular Diastolic Function in Peri",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy Study of Vitamin D and Statins to Treat Hypercholesterolemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sorafenib Tosylate With or Without Pravastatin in Treating Patients With Liver C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin to Treat Pulmonary Sarcoidosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lowering the Risk of Operative Complications Using Atorvastatin Loading Dose",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Neuroprotection With Statin Therapy for Acute Recovery Trial Phase 2",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin, Aspirin, Oxidative Stress, Coagulation and Platelet Activation Ind",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Muscle-Related Side Effects of Statins: Functional Impact, Mechanisms, and Poten",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin in Bronchiectasis in Patients With Pseudomonas Aeruginosa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Therapy in Young Adult Survivors of Childhood Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Carotid Intima-media Thickness in Japan Statin Treatment Against Recurrent Strok",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Primary Prevention of Major Adverse Cardiac Events (MACE) With Standard and Inte",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Alirocumab (REGN727/SAR236553) in Patients With Primary Hypercholestero",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Placebo-Controlled Study of Lovastatin in Children With Neurofibrom",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Actual Use Trial of Atorvastatin Calcium 10 mg",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hemodynamic Effect of Simvastatin With Beta Blockers in Clinical Portal Hyperten",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "LIpid Lowering With Highly Potent Statins in Hyperlipidaemia With Type 2 Diabete",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Intensive Statin Treatment on Left Ventricular Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Assess the Tolerability and Efficacy of Anacetrapib (MK-0859) Co-Admini",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Atorvastatin on the Frequency of Ventilator-associated Pneumonia in Pa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin in Treating Women With Cardiovascular Complications Who Are Undergo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Benefit of CoQ-10 in Patients on Statins",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DDI Study With Multiple-dose LX4211 and Single Dose Rosuvastatin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of the Safety and Efficacy of Anacetrapib (MK-0859) When Added to Ongoin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ekvasis of Atorvastatin (Antorcin\u00ae) Treatment in Patients With Acute Cardiovascu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin for Preventing Occlusion and Restenosis After Intracranial Artery S",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin in Treating Patients With Stage I or Stage II Colon Cancer That Was",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "hsCRP in Japan Statin Treatment Against Recurrent Stroke (J-STARS hsCRP)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Amlodipine Plus/Minus Atorvastatin for Protection of Arteries",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Phase I Study of a Statin + Erlotinib for Advanced Solid Malignancies With Focus",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin Calcium and Celecoxib in Treating Patients With Rising PSA Levels A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Atorvastatin Versus Placebo to Reduce Cardiopulmonary Complications Aft",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combined statin-fibrate therapy-induced rhabdomyolysis: Case report",
+      "doi": "10.5937/hpimj1401022j",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Severe Statin-induced Rhabdomyolysis following Cholestatic Hepatitis induced by ",
+      "doi": "10.12890/2014_000065",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative benefits of statins in the primary and secondary prevention of major",
+      "doi": "10.1177/2047487313480435",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of Statins and the Risk of Death in Patients With Prostate Cancer",
+      "doi": "10.1200/jco.2013.49.4757",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Tolerability and Harms of Individual Statins",
+      "doi": "10.1161/circoutcomes.111.000071",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent Nondaily Dosing Strategies in Patients with Previous Statin-Induced",
+      "doi": "10.1345/aph.1r509",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Trial of XP (Capecitabine/CDDP) Simvastatin in Advanced Gastric Cancer Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Simvastatin for the Treatment of COPD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Randomized Trial Sorafenib-Pravastatin Versus Sorafenib Alone for the Palliative",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pilot Program to Improve Statin Adherence and Lower Cholesterol in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose Escalation Phase I/II Study of Lovastatin With High-Dose Cytarabine for Ref",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High Potency Statins and the Risk of Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Trial of Atorvastatin as an Anti-Inflammatory Agent in Non-Cystic Fibrosis Bro",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Effects on Beta-Amyloid and Cerebral Perfusion in Adults at Risk for Alzh",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CoEnzyme Q10 in Statin Myopathy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of the Efficacy and Safety of ETC-1002 in Participants With Statin Intol",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Observational Follow-Up Study of the Incidence of Cancer and Mortality in Pat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Therapy Versus Placebo Prior to Prostatectomy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quality of Life in Patients With Statin-Associated Myopathy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Atorvastatin Versus Rosuvastatin Intensive Statin Regimens on Chinese ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin for Depression in Patients Undergoing Coronary Artery Bypass Graft",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins in Children With Type 1 Diabetes and Hypercholesterolemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of XueZhiKang on Fatigue\uff1aComparing With Simvastatin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Trial of Simvastatin and Gemcitabine in Pancreatic Cancer Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Patients With Statin Myopathy Using an N of 1 Trial Design",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin to Lower Circulating Tissue Factor Bearing Microparticles in Metast",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Ubiquinol on Mitochondrial Oxidative Capacity in Statin Patients U",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety Study of 5 mg and 10 mg Rosuvastatin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensive Statin Therapy in Patients With AMI",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Erythrocyte-bound Apolipoprotein B After Withdrawal of Statin Therapy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Aminobiphosphonates and Statins on Circulating Vgamma9Vdelta2-T Cells",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Use and Reduced Cancer-Related Mortality",
+      "doi": "10.1056/nejmoa1201735",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of LDL Cholesterol, Non\u2013HDL Cholesterol, and Apolipoprotein B Levels",
+      "doi": "10.1001/jama.2012.366",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Therapy in the Prevention of Recurrent Cardiovascular Events",
+      "doi": "10.1001/archinternmed.2012.2145",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lovastatin as a Potential Modulator of Apoptosis in Chronic Obstructive Pulmonar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Japan Prevention Trial of Diabetes by Pitavastatin in Patients With Impaired Glu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Retrospective Analysis of Statin Use and Outcome After Thoracic Cancer Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Zoledronate With Atorvastatin in Renal Cell Carcinoma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Replacement in Statin-Induced Myopathy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Etoposide and Cisplatin or Carboplatin as First-Line Chemotherapy With or Withou",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin in Hip Fracture",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin and Panitumumab in Treating Patients With Advanced or Metastatic Col",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Statins on Lipid Levels Following the First Acute Coronary Event (MK-0",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Observational Study to Understand Patients' and Physicians' Attitudes to Statins",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Short-term Atorvastatin Treatment on Vaccination Efficacy in Nonrespo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Coenzyme Q 10 Supplementation Reduce Muscle Pain Caused by Statins? (Choles",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cetuximab and Simvastatin in Treating Patients With Advanced or Metastatic Color",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensive Statin Therapy in PCI Patient With Acute Coronary Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cyclosporine, Pravastatin Sodium, Etoposide, and Mitoxantrone Hydrochloride in T",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ROsuvastatin LOading and Clinical Outcomes Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Observational Study of Statin Treatment Induced HDL Changes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metabolic Features of Post-Myopathy Patients Associated With Statin Treatment",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Almonds Added to Chronic Statin Therapy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Risk of Incident Diabetes With Intensive-Dose Compared With Moderate-Dose Statin",
+      "doi": "10.1001/jama.2011.860",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differential effect of the rs4149056 variant in SLCO1B1 on myopathy associated w",
+      "doi": "10.1038/tpj.2010.92",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Two Intensive Statin Regimens on Progression of Coronary Disease",
+      "doi": "10.1056/nejmoa1110874",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Simvastatin and Ezetimibe on Cardiovascular Risk Markers in Patients ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensive Statin Treatment in Chinese Coronary Artery Disease Patients Undergoin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Atorvastatin on Androgens, Glucose Metabolism and Inflammation in ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combination Statin, Acetylsalicylic Acid and Dutasteride Use in Prostate Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lovastatin in Reducing Side Effects After Radiation Therapy in Women With Breast",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular Events Based On Statin Initiation In The Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pilot Trial of Statin Use in Burn Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise, Statins, and the Metabolic Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Statin Medications on Muscle Performance (The STOMP Study)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-dose HMG-CoA Inhibitor Simvastatin Relapsed CLL",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin in Patients With Isolated Arterial Hypertension",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Rosuvastatin in Abdominal Sepsis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differential Intervention Trial by Standard Therapy Versus Pitavastatin in Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Versus Statins Versus Placebos in Reducing Atrial Fibrillation in Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pharmacoepidemiology and Pharmacogenetics of a Statin Adverse Event",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Additional KIF6 Risk Offers Better Adherence to Statins",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Efficacy Study of Pitavastatin in Patient With a Metabolic Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Therapy To Limit Cognitive Dysfunction After Cardiac Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Extended Japan Assessment of Pitavastatin and Atorvastatin in Acute Coronary Syn",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin in Waldenstrom's Macroglobulinemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Compare the Effect of Vytorin (Simvastatin/Ezetimibe) 10/20mg Versus At",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Muscle Characteristics Associated With Statin Therapy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Evaluate the Efficacy of Pravastatin on Survival and Recurrence of Adva",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Index of Microcirculatory Resistance After Drug-Eluting Stent Implantation With ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Clinical Study of Pitavastatin Treatment for Group of Mild to Moderate Alzhe",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Replacement: The Effect on Statin-Related Myalgias",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of the Safety and Tolerability Associated With PPD10558 Versus Atorvastati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins and All-Cause Mortality in High-Risk Primary Prevention",
+      "doi": "10.1001/archinternmed.2010.182",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Drug interactions with HMG-CoA reductase inhibitors (statins): the importance of",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Randomized controlled trial of atorvastatin in mild to moderate Alzheimer diseas",
+      "doi": "10.1212/wnl.0b013e3181d6476a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins and Breast Cancer Biomarkers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Short Term Statin Treatment and Endothelial Dysfunction Due to Ischemia and Repe",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Multicenter Atorvastatin Plaque Stabilization (MAPS) Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin and Sympathetic Activity in Chronic Kidney Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins and Endothelial Function in Patients With Coarctation of the Aorta",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Drugs to Prevent Complications During Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Determine if Atorvastatin Reduces Size and Stiffness of Muscle in the L",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Trial of Lipitor (Atorvastatin) for the Treatment of Polycystic Ovary Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Succinylcholine on Patients Using Statins",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High Dose and Low Dose of Atorvastatin in Patients With Unstable Angina and NSTE",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Phase II Study of Interaction of Lovastatin and Paclitaxel For Patients With R",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Phase 2 Study of Lovastatin as Breast Cancer Chemoprevention",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin Therapy in Smith-Lemli-Opitz Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins in Cerebral Blood Flow and Neuronal Activity--A Pilot Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin and Cardiovascular Events in Patients Undergoing Hemodialysis",
+      "doi": "10.1056/nejmoa0810177",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Narrative Review: Statin-Related Myopathy",
+      "doi": "10.7326/0003-4819-150-12-200906160-00009",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin to Prevent Vascular Events in Men and Women With Elevated C-Reactiv",
+      "doi": "10.1097/01.ogx.0000344393.60303.0a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Immune\u2010mediated necrotizing myopathy associated with statins",
+      "doi": "10.1002/mus.21486",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin therapy, muscle function and falls risk in community-dwelling older adult",
+      "doi": "10.1093/qjmed/hcp093",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Feasibility Study of Simvastatin in Hodgkin's Lymphoma Survivors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Atorvastatin Reduce Ischemia-Reperfusion Injury in Humans in-Vivo?",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DNA Diagnostic System for Statin Safety and Efficacy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Therapy in Heart Failure: Potential Mechanisms of Benefit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluating Simvastatin's Potential Role in Therapy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Assess the Cholesterol Lowering Effect of Ezetimibe/Simvastatin Combi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigations on Differences in Atorvastatin Metabolites Ratios as a Diagnostic",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Statin on the Course of Progressive Smoldering Multiple M",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of the Proper Dosage of Lovastatin and Docetaxel for Patients With Cance",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Using AtorVASTatin to Prevent VAscular Inflammatory OccLUSion in the Critically ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Simvastatin on Biochemical Parameters and Outcome of IVF-ICSI in Pcos",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Therapy in Asymptomatic Aortic Stenosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin Calcium, Oligofructose-Enriched Inulin, or Sulindac in Preventing C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment Effects of Atorvastatin on Hemostasis and Skin Microcirculation in Pat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SLCO1B1 Variants and Statin-Induced Myopathy \u2014 A Genomewide Study",
+      "doi": "10.1056/nejmoa0801936",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin to Prevent Vascular Events in Men and Women with Elevated C-Reactiv",
+      "doi": "10.1056/nejmoa0807646",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lipids, Apolipoproteins, and Their Ratios in Relation to Cardiovascular Events W",
+      "doi": "10.1161/circulationaha.107.713438",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin Reduces the Risk of Cardiovascular Events in Patients With Carotid ",
+      "doi": "10.1161/strokeaha.108.516450",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensive Lipid Lowering with Simvastatin and Ezetimibe in Aortic Stenosis",
+      "doi": "10.1056/nejmoa0804602",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "LDL-Cholesterol Lowering Effect of KB2115 as Add on to Statin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin Therapy for the Prevention of Atrial Fibrillation (SToP-AF)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of an Intensified Treatment With ACE-I,ATA II and Statins in Alport Synd",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin Use in Abdominal Aortic Aneurysm Repair",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Neuroprotection With Statin Therapy for Acute Recovery Trial (Neu-START)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lipitor Korean Atorvastatin Goal Achievement Across Risk Levels Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "GISSI-HF- Effects of n-3 PUFA and Rosuvastatin on Mortality-Morbidity of Patient",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Randomized Placebo-Controlled Trial of Atorvastatin in HIV-Positive Patients Not",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin in Rheumatoid Arthritis (RORA)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin in Visceral Adiposity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Lovastatin in Severe Persistent Asthma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin and Anastrozole in Treating Postmenopausal Women With Ductal Carcino",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Nicotinic Acid Plus Simvastatin Versus Simvastatin Alone on Carotid a",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differences in Atorvastatin Metabolite Ratios as a Diagnostic Tool in Detecting ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relative safety profiles of high dose statin regimens",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A systematic review and economic evaluation of statins for the prevention of cor",
+      "doi": "10.3310/hta11140",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin therapy is associated with reduced neuropathologic changes of Alzheimer d",
+      "doi": "10.1212/01.wnl.0000277657.95487.1c",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "To Evaluate the Safety and Effectiveness of Atorvastatin Plus a Cholinesterase I",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Phase II Study of Simvastatin Plus Irinotecan, Fluorouracil, and Leucovorin(FOLF",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Rosuvastatin on the, in Vivo, Kinetic of apoB and apoA1, Using Stable",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety FollowUp Study Of Cardiovascular Events In Subjects Who Participated In S",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins in Proteinuric Nephropathies",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Pitavastatin in Elderly Patients With Primary Hypercholesterolemia or C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Q10 and Selen Supplement on Muscular Adverse Events in Statin Ther",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Full-dose Atorvastatin After Acute Coronary Syndrome (ACS) in Non-revascularisab",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Double Blind Atorvastatin Amlodipine Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise And Rosuvastatin Treatment: Is There an Anti-Inflammatory Synergy?",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-Dose Atorvastatin after Stroke or Transient Ischemic Attack",
+      "doi": "10.1056/nejmoa061894",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins and Cancer Risk",
+      "doi": "10.1001/jama.295.1.74",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin-induced apoptosis and skeletal myopathy",
+      "doi": "10.1152/ajpcell.00226.2006",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Statins in Cancer Therapy",
+      "doi": "10.1634/theoncologist.11-3-306",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Compare the Efficacy and Safety of Pitavastatin and Pravastatin in Elde",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lovastatin and Its \u00df-hydroxy Acid From Four 600 mg LipoCol Forte\u00ae Capsules Compa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "TWICE (Ezetimibe Together With Any Statin Cholesterol Enhancement)(0653-060)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Simvastatin and Ezetimibe on Lipid and Inflammation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensive Lipid Lowering with Atorvastatin in Patients with Stable Coronary Dise",
+      "doi": "10.1056/nejmoa050461",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins and the Risk of Colorectal Cancer",
+      "doi": "10.1056/nejmoa043792",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Reduction in Cardiovascular Events With Atorvastatin in 2,532 Patients With Type",
+      "doi": "10.2337/diacare.28.5.1151",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-Dose Atorvastatin vs Usual-Dose Simvastatin for Secondary Prevention After ",
+      "doi": "10.1001/jama.294.19.2437",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin for the treatment of mild to moderate Alzheimer disease: preliminar",
+      "doi": "10.1001/archneur.62.5.753",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-dose statins and skeletal muscle metabolism in humans: A randomized, contro",
+      "doi": "10.1016/j.clpt.2005.03.006",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin in Patients with Type 2 Diabetes Mellitus Undergoing Hemodialysis",
+      "doi": "10.1056/nejmoa043545",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Outcomes in 45 Patients With Statin-Associated Myopathy",
+      "doi": "10.1001/archinte.165.22.2671",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Changes in Ubiquitin Proteasome Pathway Gene Expression in Skeletal Muscle With ",
+      "doi": "10.1161/01.atv.0000190608.28704.71",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Muscle Coenzyme Q10 Level in Statin-Related Myopathy",
+      "doi": "10.1001/archneur.62.11.1709",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Potential Adverse Effects of Statins on Muscle",
+      "doi": "10.1093/ptj/85.5.459",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin Therapy in Women With Polycystic Ovary Syndrome.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Short-Term Statins and NSAIDs on Levels of Beta-Amyloid, a Protein",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessment of the Efficacy of Rosuvastatin in Patient Groups With a Dissimilar R",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pravastatin, Idarubicin, and Cytarabine in Treating Patients With Acute Myeloid ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin Versus Simvastatin In The Prevention Of Coronary Heart Disease (CHD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Pravastatin on Carotid Artery Structure and Function in HIV-infecte",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Simvastatin Affect Insulin Sensitivity in Dyslipidemic Type 2 Diabetic Pati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin and Metformin Therapy in PCOS Women. Prospective Randomised Trial.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Chemical, pharmacokinetic and pharmacodynamic properties of statins: an update",
+      "doi": "10.1111/j.1472-8206.2004.00299.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensive versus Moderate Lipid Lowering with Statins after Acute Coronary Syndr",
+      "doi": "10.1056/nejmoa040583",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Pravastatin on Cardiovascular Events in People With Chronic Kidney Dis",
+      "doi": "10.1161/01.cir.0000143892.84582.60",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Fosinopril and Pravastatin on Cardiovascular Events in Subjects With ",
+      "doi": "10.1161/01.cir.0000146378.65439.7a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CARDS Is Designed To Show If Lowering Cholesterol With Atorvastatin In Type 2 Di",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin For The Reduction Of Ventricular Arrhythmias",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ezetimibe Plus Atorvastatin Versus Atorvastatin in Untreated Subjects With Prima",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Early Statin Treatment After Acute Myocardial Infarction (AMI) in Jap",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin-Associated Myopathy",
+      "doi": "10.1001/jama.289.13.1681",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Risk for Myopathy With Statin Therapy in High-Risk Patients",
+      "doi": "10.1001/archinte.163.5.553",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Secondary Prevention of Cardiovascular Events With Long-Term Pravastatin in Pati",
+      "doi": "10.2337/diacare.26.10.2713",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pravastatin for Secondary Prevention of Cardiovascular Events in Persons with Mi",
+      "doi": "10.7326/0003-4819-138-2-200301210-00010",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins Can Inhibit Proliferation of Human Breast Cancer Cells in Vitro",
+      "doi": "10.1055/s-2003-37501",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin Impact on Ventricular Remodelling Lipids and Cytokines",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pravastatin or Atorvastatin Evaluation and Infection Therapy (TIMI22)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin-exposed vascular smooth muscle cells secrete proteoglycans with decreased",
+      "doi": "10.1194/jlr.m300252-jlr200",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statin-Associated Myopathy with Normal Creatine Kinase Levels",
+      "doi": "10.7326/0003-4819-137-7-200210010-00009",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-term Persistence in Use of Statin Therapy in Elderly Patients",
+      "doi": "10.1001/jama.288.4.455",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adherence With Statin Therapy in Elderly Patients With and Without Acute Coronar",
+      "doi": "10.1001/jama.288.4.462",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Major Outcomes in Moderately Hypercholesterolemic, Hypertensive Patients Randomi",
+      "doi": "10.1001/jama.288.23.2998",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Colchicine-Induced Acute Myopathy in a Patient With Concomitant Use of Simvastat",
+      "doi": "10.1097/00002826-200209000-00008",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin and Niacin, Antioxidant Vitamins, or the Combination for the Prevent",
+      "doi": "10.1056/nejmoa011090",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Pravastatin on Endothelial Dysfunction Following a Single High Fat Mea",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Cardiovascular Events and Death with Pravastatin in Patients with ",
+      "doi": "10.1056/nejm199811053391902",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular Events and Their Reduction With Pravastatin in Diabetic and Gluco",
+      "doi": "10.1161/01.cir.98.23.2513",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Simvastatin but not pravastatin is very susceptible to interaction with the CYP3",
+      "doi": "10.1016/s0009-9236(98)90165-5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Primary Prevention of Acute Coronary Events With Lovastatin in Men and Women Wit",
+      "doi": "10.1001/jama.279.20.1615",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Pravastatin on Cardiovascular Events in Older Patients with Myocardial",
+      "doi": "10.7326/0003-4819-129-9-199811010-00002",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Reduction in Cardiovascular Events During Pravastatin Therapy",
+      "doi": "10.1161/01.cir.92.9.2419",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of lovastatin on early carotid atherosclerosis and cardiovascular events.",
+      "doi": "10.1161/01.cir.90.4.1679",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Myopathy and Rhabdomyolysis Associated With Lovastatin-Gemfibrozil Combination T",
+      "doi": "10.1001/jama.1990.03450010075034",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lovastatin, Nicotinic Acid, and Rhabdomyolysis",
+      "doi": "10.7326/0003-4819-109-7-597_2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Statins for people at low risk",
+      "doi": "10.1136/bmj.h3908",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dermatomyositis\u2010like syndrome and HMG\u2010CoA reductase inhibitor (statin) intake",
+      "doi": "10.1002/mus.20127",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The HMG-CoA reductase inhibitor simvastatin overcomes cell adhesion\u2013mediated dru",
+      "doi": "10.1182/blood-2003-12-4218",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "HMG-CoA Reductase Inhibitor, Atorvastatin, Promotes Sensorimotor Recovery, Suppr",
+      "doi": "10.1161/01.str.0000131270.45822.85",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pitavastatin: Efficacy and Safety Profiles of A Novel Synthetic HMG\u2010CoA Reductas",
+      "doi": "10.1111/j.1527-3466.2003.tb00116.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rosuvastatin: A Highly Effective New HMG\u2010CoA Reductase Inhibitor",
+      "doi": "10.1111/j.1527-3466.2002.tb00099.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin, a New HMG-CoA Reductase Inhibitor, Does Not Affect Glucocorticoid ",
+      "doi": "10.1177/107424849700200402",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atorvastatin, a New HMG-CoA Reductase Inhibitor as Monotherapy and Combined With",
+      "doi": "10.1177/107424849600100205",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Reduction of LDL Cholesterol by 25% to 60% in Patients With Primary Hypercholest",
+      "doi": "10.1161/01.atv.15.5.678",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Use of Simvastatin, an HMG CoA Reductase Inhibitor, in Older Patients with H",
+      "doi": "10.1111/j.1532-5415.1990.tb01589.x",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     }
@@ -2569,26 +3394,6 @@
         "doaj"
       ]
     },
-    "PMC12910054": {
-      "title": "Fluvastatin suppresses breast cancer initiation and progression via targeting CYP4Z1",
-      "doi": "10.1038/s42003-026-09532-y",
-      "pmid": null,
-      "year": 2026,
-      "venue": "Communications Biology",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC12985503": {
-      "title": "Co-Inhibition of Kv1.3 Channel Activity by Selected Chalcones and Statins in a Model of Cancer Cell Line Jurkat T",
-      "doi": "10.3390/molecules31050766",
-      "pmid": null,
-      "year": 2026,
-      "venue": "Molecules",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC13049982": {
       "title": "The impact of statin use on colorectal cancer prognosis: a systematic review and meta-analysis",
       "doi": "10.1186/s12876-025-04398-6",
@@ -2599,112 +3404,12 @@
         "doaj"
       ]
     },
-    "PMC12820341": {
-      "title": "Atorvastatin suppresses high-risk colorectal adenomas via reprogramming of lipid metabolism and Inhibition of stemness",
-      "doi": "10.1038/s41598-025-32406-y",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Scientific Reports",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11945117": {
-      "title": "Evaluation of Complex Drug Interactions Between Elexacaftor-Tezacaftor-Ivacaftor and Statins Using Physiologically Based Pharmacokinetic Modeling",
-      "doi": "10.3390/pharmaceutics17030318",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Pharmaceutics",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC11931303": {
       "title": "Treatment strategies and LDL cholesterol target attainment in patients with statin intolerance: Insights from the multicentre statin intolerance registry",
       "doi": "10.1016/j.ajpc.2025.100953",
       "pmid": null,
       "year": 2025,
       "venue": "American Journal of Preventive Cardiology",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11946866": {
-      "title": "Do Statins Affect Viral Infections Encountered by International Travelers?",
-      "doi": "10.3390/tropicalmed10030073",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Tropical Medicine and Infectious Disease",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC12728003": {
-      "title": "Safety and efficacy of extracranial vertebral artery stenting in elderly patients with symptomatic vertebral artery stenosis",
-      "doi": "10.3389/fnagi.2025.1667157",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Frontiers in Aging Neuroscience",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11769262": {
-      "title": "Enhancing the Therapeutic Effect and Bioavailability of Irradiated Silver Nanoparticle-Capped Chitosan-Coated Rosuvastatin Calcium Nanovesicles for the Treatment of Liver Cancer",
-      "doi": "10.3390/pharmaceutics17010072",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Pharmaceutics",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11869859": {
-      "title": "Multi-omics and machine learning-driven CD8+ T cell heterogeneity score for head and neck squamous cell carcinoma",
-      "doi": "10.1016/j.omtn.2024.102413",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Molecular Therapy: Nucleic Acids",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11897161": {
-      "title": "Medication time of metformin and sulfonylureas and incidence of cardiovascular diseases and mortality in type 2 diabetes: a pooled cohort analysis",
-      "doi": "10.1038/s41598-025-89721-7",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Scientific Reports",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC12592372": {
-      "title": "Atorvastatin improves spermatogenesis in murine and in vitro human chronic orchitis models through restoring blood-testis barriers",
-      "doi": "10.1038/s41420-025-02749-6",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Cell Death Discovery",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11943730": {
-      "title": "The Value of Clinical Variables and the Potential of Longitudinal Ultrasound Carotid Plaque Assessment in Major Adverse Cardiovascular Event Prediction After Uncomplicated Acute Coronary Syndrome",
-      "doi": "10.3390/life15030431",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Life",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC12388585": {
-      "title": "Low-Density Lipoprotein Cholesterol Target Attainment in Lithuania: A Nationwide Analysis of Real-World Health Data",
-      "doi": "10.3390/medicina61081484",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Medicina",
       "sources": [
         "doaj"
       ]
@@ -2729,52 +3434,12 @@
         "doaj"
       ]
     },
-    "PMC12358271": {
-      "title": "Statins regulate kinase signaling by causing changes in phosphorylation, rather than through changes in gene expression or direct inhibition: evidence in colorectal cancer",
-      "doi": "10.3389/fphar.2025.1653702",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Frontiers in Pharmacology",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11893939": {
-      "title": "ROsulord\u00ae sAfety for Patients with Dyslipidemia Study: A Non-interventional, Multicenter, Prospective, Observational Study in South Korea",
-      "doi": "10.1007/s40119-024-00391-4",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Cardiology and Therapy",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC11321388": {
       "title": "Effects silymarin and rosuvastatin on amyloid-carriers level in dyslipidemic Alzheimer\u2019s patients: A double-blind placebo-controlled randomized clinical trial",
       "doi": "10.1016/j.ibneur.2024.07.002",
       "pmid": null,
       "year": 2024,
       "venue": "IBRO Neuroscience Reports",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11565078": {
-      "title": "Establishing Medical Intelligence\u2014Leveraging Fast Healthcare Interoperability Resources to Improve Clinical Management: Retrospective Cohort and Clinical Implementation Study",
-      "doi": "10.2196/55148",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Journal of Medical Internet Research",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC11059436": {
-      "title": "A drug repurposing approach of Atorvastatin calcium for its antiproliferative activity for effective treatment of breast cancer: In vitro and in vivo assessment",
-      "doi": "10.1016/j.ijpx.2024.100249",
-      "pmid": null,
-      "year": 2024,
-      "venue": "International Journal of Pharmaceutics: X",
       "sources": [
         "doaj"
       ]
@@ -2799,82 +3464,12 @@
         "doaj"
       ]
     },
-    "PMC11555098": {
-      "title": "Wall-eyed bilateral internuclear ophthalmoplegia (WEBINO) syndrome secondary to dorsal pontine infarction",
-      "doi": "10.1136/bmjno-2024-000746",
-      "pmid": null,
-      "year": 2024,
-      "venue": "BMJ Neurology Open",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC10048736": {
-      "title": "How Genetic Variants in Children with Familial Hypercholesterolemia Not Only Guide Detection, but Also Treatment",
-      "doi": "10.3390/genes14030669",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Genes",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC10319729": {
-      "title": "LGR4 and LGR5 form distinct homodimers that only LGR4 complexes with RNF43/ZNRF3 to provide high affinity binding of R-spondin ligands",
-      "doi": "10.1038/s41598-023-37856-w",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Scientific Reports",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC10474731": {
-      "title": "Pharmacogenetic analysis of inter-ethnic variability in the uptake transporter SLCO1B1 gene in Colombian, Mozambican, and Portuguese populations",
-      "doi": "10.1186/s12920-023-01642-4",
-      "pmid": null,
-      "year": 2023,
-      "venue": "BMC Medical Genomics",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC10693308": {
-      "title": "Blockage of EGFR/AKT and mevalonate pathways synergize the antitumor effect of temozolomide by reprogramming energy metabolism in glioblastoma",
-      "doi": "10.1002/cac2.12502",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Cancer Communications",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC10199059": {
       "title": "Evaluation of rosuvastatin-induced QT prolongation risk using real-world data, in vitro cardiomyocyte studies, and mortality assessment",
       "doi": "10.1038/s41598-023-35146-z",
       "pmid": null,
       "year": 2023,
       "venue": "Scientific Reports",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC10530183": {
-      "title": "Cardiac Computed Tomography Angiography in CAD Risk Stratification and Revascularization Planning",
-      "doi": "10.3390/diagnostics13182902",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Diagnostics",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC10185746": {
-      "title": "PCSK9 inhibitors for acute coronary syndrome: the era of early implementation",
-      "doi": "10.3389/fcvm.2023.1138787",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Frontiers in Cardiovascular Medicine",
       "sources": [
         "doaj"
       ]
@@ -2909,36 +3504,6 @@
         "doaj"
       ]
     },
-    "PMC10267125": {
-      "title": "Mitochondrial complex III activity: from invasive muscle biopsies to patient-friendly buccal swab analysis",
-      "doi": "10.1038/s41598-023-36741-w",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Scientific Reports",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9944867": {
-      "title": "Mechanistic in vitro studies indicate that the clinical drug\u2013drug interactions between protease inhibitors and rosuvastatin are driven by inhibition of intestinal BCRP and hepatic OATP1B1 with minimal contribution from OATP1B3, NTCP and OAT3",
-      "doi": "10.1002/prp2.1060",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Pharmacology Research & Perspectives",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC10690971": {
-      "title": "Methodology and results of cost-effectiveness of LDL-C lowering with evolocumab in patients with acute myocardial infarction in China",
-      "doi": "10.1186/s12962-023-00501-4",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Cost Effectiveness and Resource Allocation",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC9035072": {
       "title": "The Clinical Pharmacogenetics Implementation Consortium Guideline for SLCO1B1, ABCG2, and CYP2C9 genotypes and Statin\u2010Associated Musculoskeletal Symptoms",
       "doi": "10.1002/cpt.2557",
@@ -2949,112 +3514,12 @@
         "openalex"
       ]
     },
-    "PMC9452634": {
-      "title": "U0126: Not only a MAPK kinase inhibitor",
-      "doi": "10.3389/fphar.2022.927083",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Frontiers in Pharmacology",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC8987438": {
-      "title": "OCT4 and SOX2 Specific Cytotoxic T Cells Exhibit Not Only Good Efficiency but Also Synergize PD-1 Inhibitor (Nivolumab) in Treating Breast Cancer Stem-Like Cells and Drug-Resistant Breast Cancer Mice",
-      "doi": "10.3389/fonc.2022.781093",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Frontiers in Oncology",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC8865731": {
-      "title": "Rosuvastatin exerts cardioprotective effect in lipopolysaccharide-mediated injury of cardiomyocytes in an MG53-dependent manner",
-      "doi": "10.1186/s12872-022-02458-3",
-      "pmid": null,
-      "year": 2022,
-      "venue": "BMC Cardiovascular Disorders",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC11269069": {
       "title": "PCSK9 Inhibitor: Safe Alternative to Fill the Treatment Gap in Statin-Limited Conditions?",
       "doi": "10.31083/j.rcm2311380",
       "pmid": null,
       "year": 2022,
       "venue": "Reviews in Cardiovascular Medicine",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9272390": {
-      "title": "Effects of general and central adiposity on circulating lipoprotein, lipid, and metabolite levels in UK Biobank: A multivariable Mendelian randomization study",
-      "doi": "10.1016/j.lanepe.2022.100457",
-      "pmid": null,
-      "year": 2022,
-      "venue": "The Lancet Regional Health. Europe",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9312999": {
-      "title": "Association between Higher Circulating Leucine-Rich \u03b1-2 Glycoprotein 1 Concentrations and Specific Plasma Ceramides in Postmenopausal Women with Type 2 Diabetes",
-      "doi": "10.3390/biom12070943",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Biomolecules",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9644588": {
-      "title": "Long-term atorvastatin improves cognitive decline by regulating gut function in naturally ageing rats",
-      "doi": "10.1186/s12979-022-00311-x",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Immunity & Ageing",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC8954000": {
-      "title": "Repurposing Lovastatin Cytotoxicity against the Tongue Carcinoma HSC3 Cell Line Using a Eucalyptus Oil-Based Nanoemulgel Carrier",
-      "doi": "10.3390/gels8030176",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Gels",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9581168": {
-      "title": "Potential effects of commonly applied drugs on neural stem cell proliferation and viability: A hypothesis-generating systematic review and meta-analysis",
-      "doi": "10.3389/fnmol.2022.975697",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Frontiers in Molecular Neuroscience",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9197185": {
-      "title": "Statin Treatment as a Targeted Therapy for APC-Mutated Colorectal Cancer",
-      "doi": "10.3389/fonc.2022.880552",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Frontiers in Oncology",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9773517": {
-      "title": "Safety and efficacy of a cardiovascular polypill in people at high and very high risk without a previous cardiovascular event: the international VULCANO randomised clinical trial",
-      "doi": "10.1186/s12872-022-03013-w",
-      "pmid": null,
-      "year": 2022,
-      "venue": "BMC Cardiovascular Disorders",
       "sources": [
         "doaj"
       ]
@@ -3079,32 +3544,12 @@
         "doaj"
       ]
     },
-    "PMC8928625": {
-      "title": "Gene signature associated with resistance to fluvastatin chemoprevention for breast cancer",
-      "doi": "10.1186/s12885-022-09353-2",
-      "pmid": null,
-      "year": 2022,
-      "venue": "BMC Cancer",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC8958112": {
       "title": "A Meta-Analysis of Statin Use and Risk of Hepatocellular Carcinoma",
       "doi": "10.1155/2022/5389044",
       "pmid": null,
       "year": 2022,
       "venue": "Canadian Journal of Gastroenterology and Hepatology",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC9649354": {
-      "title": "Effect of concomitant use of pitavastatin with neoadjuvant chemotherapy protocols in breast cancer patients: A randomized controlled clinical trial",
-      "doi": "10.1016/j.jsps.2022.07.011",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Saudi Pharmaceutical Journal",
       "sources": [
         "doaj"
       ]
@@ -3129,36 +3574,6 @@
         "openalex"
       ]
     },
-    "PMC8419101": {
-      "title": "Identification of a Locus Near ULK1 Associated With Progression-Free Survival in Ovarian Cancer",
-      "doi": "10.1158/1055-9965.epi-20-1817",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Cancer Epidemiology, Biomarkers & Prevention",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC8486002": {
-      "title": "Quantification of CYP3A and Drug Transporters Activity in Healthy Young, Healthy Elderly and Chronic Kidney Disease Elderly Patients by a Microdose Cocktail Approach",
-      "doi": "10.3389/fphar.2021.726669",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Frontiers in Pharmacology",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC8245783": {
-      "title": "Attenuating the Variability of Lipids Is Beneficial for the Hypertension Management to Reduce the Cardiovascular Morbidity and Mortality in Older Adults",
-      "doi": "10.3389/fcvm.2021.692773",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Frontiers in Cardiovascular Medicine",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC8606632": {
       "title": "Influence of Statin Therapy on the Incidence of Cardiovascular Events, Cancer, and All-Cause Mortality in People Living With HIV: A Meta-Analysis",
       "doi": "10.3389/fmed.2021.769740",
@@ -3175,36 +3590,6 @@
       "pmid": null,
       "year": 2021,
       "venue": "PLoS Computational Biology",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC7999777": {
-      "title": "Mediterranean Diet and Physical Activity Decrease the Initiation of Cardiovascular Drug Use in High Cardiovascular Risk Individuals: A Cohort Study",
-      "doi": "10.3390/antiox10030397",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Antioxidants",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC8585864": {
-      "title": "Remodeling tumor microenvironment by liposomal codelivery of DMXAA and simvastatin inhibits malignant melanoma progression",
-      "doi": "10.1038/s41598-021-01284-5",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Scientific Reports",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC8023327": {
-      "title": "A Patient With Focal Myositis and Primary Cutaneous Diffuse Large B-Cell Lymphoma: A Case Report",
-      "doi": "10.3389/fonc.2021.658907",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Frontiers in Oncology",
       "sources": [
         "doaj"
       ]
@@ -3239,42 +3624,12 @@
         "doaj"
       ]
     },
-    "PMC7271241": {
-      "title": "Sitagliptin and the Blood-Retina Barrier: Effects on Retinal Endothelial Cells Manifested Only after Prolonged Exposure",
-      "doi": "10.1155/2020/2450781",
-      "pmid": null,
-      "year": 2020,
-      "venue": "Journal of Diabetes Research",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC7049626": {
-      "title": "Severe hypertriglyceridemia during treatment with intraperitoneal cisplatin and paclitaxel for advanced stage fallopian tube carcinoma",
-      "doi": "10.1016/j.gore.2020.100552",
-      "pmid": null,
-      "year": 2020,
-      "venue": "Gynecologic Oncology Reports",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC7760915": {
       "title": "Statins: HMG-CoA Reductase Inhibitors as Potential Anticancer Agents against Malignant Neoplasms in Women",
       "doi": "10.3390/ph13120422",
       "pmid": null,
       "year": 2020,
       "venue": "Pharmaceuticals",
-      "sources": [
-        "doaj"
-      ]
-    },
-    "PMC7372911": {
-      "title": "Dysbiosis, gut barrier dysfunction and inflammation in dementia: a pilot study",
-      "doi": "10.1186/s12877-020-01644-2",
-      "pmid": null,
-      "year": 2020,
-      "venue": "BMC Geriatrics",
       "sources": [
         "doaj"
       ]
@@ -3299,12 +3654,282 @@
         "openalex"
       ]
     },
-    "PMC6553970": {
-      "title": "Blood Flow Restriction Only Increases Myofibrillar Protein Synthesis with Exercise",
-      "doi": "10.1249/mss.0000000000001899",
+    "PMC6915904": {
+      "title": "A prospective study of hepatic safety of statins used in very elderly patients",
+      "doi": "10.1186/s12877-019-1361-2",
       "pmid": null,
       "year": 2019,
-      "venue": "Medicine & Science in Sports & Exercise",
+      "venue": "BMC Geriatrics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6123838": {
+      "title": "Statins for primary prevention of cardiovascular events and mortality in old and very old adults with and without type 2 diabetes: retrospective cohort study",
+      "doi": "10.1136/bmj.k3359",
+      "pmid": null,
+      "year": 2018,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6019601": {
+      "title": "Statin-induced myalgia and myositis: an update on pathogenesis and clinical recommendations",
+      "doi": "10.1080/1744666x.2018.1440206",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Expert Review of Clinical Immunology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6296003": {
+      "title": "Simvastatin-induced changes in the leukocytic system of porcine bone marrow",
+      "doi": "10.2478/jvetres-2018-0034",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Journal of Veterinary Research",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5848154": {
+      "title": "Evaluation of Trace Elements in Augmentation of Statin-Induced Cytotoxicity in Uremic Serum-Exposed Human Rhabdomyosarcoma Cells",
+      "doi": "10.3390/toxins10020053",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Toxins",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6291090": {
+      "title": "Usefulness of baseline statin therapy in non-obstructive coronary artery disease by coronary computed tomographic angiography: From the CONFIRM (COronary CT Angiography EvaluatioN For Clinical Outcomes: An InteRnational Multicenter) study.",
+      "doi": "10.1371/journal.pone.0207194",
+      "pmid": null,
+      "year": 2018,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5316146": {
+      "title": "Evidence for benefit of statins to modify cognitive decline and risk in Alzheimer\u2019s disease",
+      "doi": "10.1186/s13195-017-0237-y",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Alzheimer s Research & Therapy",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5543335": {
+      "title": "Effect of Statin Treatment vs Usual Care on Primary Cardiovascular Prevention Among Older Adults",
+      "doi": "10.1001/jamainternmed.2017.1442",
+      "pmid": null,
+      "year": 2017,
+      "venue": "JAMA Internal Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5231363": {
+      "title": "Efficacy of Statin Treatment in Early-Stage Chronic Kidney Disease.",
+      "doi": "10.1371/journal.pone.0170017",
+      "pmid": null,
+      "year": 2017,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5646357": {
+      "title": "Sex and Race Differences in the Association Between Statin Use and the Incidence of Alzheimer Disease",
+      "doi": "10.1001/jamaneurol.2016.3783",
+      "pmid": null,
+      "year": 2016,
+      "venue": "JAMA Neurology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4950584": {
+      "title": "A remarkable hematological and molecular response pattern in a patient with polycythemia vera during combination therapy with simvastatin and alendronate",
+      "doi": "10.1016/j.lrr.2016.06.004",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Leukemia Research Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC4574822": {
+      "title": "Myopathy in older people receiving statin therapy: a systematic review and meta\u2010analysis",
+      "doi": "10.1111/bcp.12687",
+      "pmid": null,
+      "year": 2015,
+      "venue": "British Journal of Clinical Pharmacology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4169720": {
+      "title": "The Clinical Pharmacogenetics Implementation Consortium Guideline for SLCO1B1 and Simvastatin-Induced Myopathy: 2014 Update",
+      "doi": "10.1038/clpt.2014.125",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Clinical Pharmacology & Therapeutics",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3662830": {
+      "title": "Risk of incident diabetes among patients treated with statins: population based study",
+      "doi": "10.1136/bmj.f2610",
+      "pmid": null,
+      "year": 2013,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6481400": {
+      "title": "Statins for the primary prevention of cardiovascular disease",
+      "doi": "10.1002/14651858.cd004816.pub5",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4450764": {
+      "title": "Effect of Statins on Skeletal Muscle Function",
+      "doi": "10.1161/circulationaha.112.136101",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Circulation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3425581": {
+      "title": "A Survey of the FDA's AERS Database Regarding Muscle and Tendon Adverse Events Linked to the Statin Drug Class",
+      "doi": "10.1371/journal.pone.0042866",
+      "pmid": null,
+      "year": 2012,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3384438": {
+      "title": "The Clinical Pharmacogenomics Implementation Consortium: CPIC Guideline for SLCO1B1 and Simvastatin-Induced Myopathy",
+      "doi": "10.1038/clpt.2012.57",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Clinical Pharmacology & Therapeutics",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3149154": {
+      "title": "A randomized, double-blind, placebo-controlled trial of simvastatin to treat Alzheimer disease",
+      "doi": "10.1212/wnl.0b013e318228bf11",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Neurology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3186780": {
+      "title": "Statin Prescriptions and Breast Cancer Recurrence Risk: A Danish Nationwide Prospective Cohort Study",
+      "doi": "10.1093/jnci/djr291",
+      "pmid": null,
+      "year": 2011,
+      "venue": "JNCI Journal of the National Cancer Institute",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2874131": {
+      "title": "Unintended effects of statins in men and women in England and Wales: population based cohort study using the QResearch database",
+      "doi": "10.1136/bmj.c2197",
+      "pmid": null,
+      "year": 2010,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2714690": {
+      "title": "The benefits of statins in people without established cardiovascular disease but with cardiovascular risk factors: meta-analysis of randomised controlled trials",
+      "doi": "10.1136/bmj.b2376",
+      "pmid": null,
+      "year": 2009,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2432025": {
+      "title": "Statin Induced Myopathy and Myalgia: Time Trend Analysis and Comparison of Risk Associated with Statin Class from 1991\u20132006",
+      "doi": "10.1371/journal.pone.0002522",
+      "pmid": null,
+      "year": 2008,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10070635": {
+      "title": "Targeting Enterococcus faecalis HMG-CoA reductase with a non-statin inhibitor",
+      "doi": "10.1038/s42003-023-04639-y",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Communications Biology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9731457": {
+      "title": "The prognosis of lipid reprogramming with the HMG-CoA reductase inhibitor, rosuvastatin, in castrated Egyptian prostate cancer patients: Randomized trial",
+      "doi": "10.1371/journal.pone.0278282",
+      "pmid": null,
+      "year": 2022,
+      "venue": "PLOS ONE",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5060003": {
+      "title": "Absence of anti\u2013HMG\u2010CoA reductase autoantibodies in severe self\u2010limited statin\u2010related myopathy",
+      "doi": "10.1002/mus.25127",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Muscle & Nerve",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2040243": {
+      "title": "Growth hormone (GH) replacement decreases serum total and LDL\u2010cholesterol in hypopituitary patients on maintenance HMG CoA reductase inhibitor (statin) therapy",
+      "doi": "10.1111/j.1365-2265.2007.02935.x",
+      "pmid": null,
+      "year": 2007,
+      "venue": "Clinical Endocrinology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC1729169": {
+      "title": "Cost effectiveness of HMG-CoA reductase inhibitor (statin) treatment related to the risk of coronary heart disease and cost of drug treatment",
+      "doi": "10.1136/hrt.82.3.325",
+      "pmid": null,
+      "year": 1999,
+      "venue": "Heart",
       "sources": [
         "crossref"
       ]

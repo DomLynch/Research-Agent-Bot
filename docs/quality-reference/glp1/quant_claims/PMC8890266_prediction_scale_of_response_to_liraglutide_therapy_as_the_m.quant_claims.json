@@ -1,0 +1,1659 @@
+{
+  "paper_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m",
+  "doi": "10.2144/fsoa-2021-0070",
+  "extracted_at": "2026-05-05T21:26:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 6,
+    "unit_value": 22,
+    "p_value": 43,
+    "percentage": 18,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-msd-286",
+      "claim_type": "mean_sd",
+      "raw_text": "39.63 \u00b1 7.59",
+      "numeric_values": [
+        39.63,
+        7.59
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 286,
+      "sentence": "A total of 41 patients with BMI of 39.63 \u00b1 7.59 kg/m 2 who received liraglutide injection up to 1.8 or 3.0 mg/day for 6 months were enrolled.",
+      "context_window": "esponse to liraglutide. A total of 41 patients with BMI of 39.63 \u00b1 7.59 kg/m 2 who received liraglutide injection up to 1.8 or 3.0",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-294",
+      "claim_type": "unit_value",
+      "raw_text": "7.59 kg",
+      "numeric_values": [
+        7.59
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 294,
+      "sentence": "A total of 41 patients with BMI of 39.63 \u00b1 7.59 kg/m 2 who received liraglutide injection up to 1.8 or 3.0 mg/day for 6 months were enrolled.",
+      "context_window": "to liraglutide. A total of 41 patients with BMI of 39.63 \u00b1 7.59 kg/m 2 who received liraglutide injection up to 1.8 or 3.0 mg/",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-354",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 354,
+      "sentence": "A total of 41 patients with BMI of 39.63 \u00b1 7.59 kg/m 2 who received liraglutide injection up to 1.8 or 3.0 mg/day for 6 months were enrolled.",
+      "context_window": "7.59 kg/m 2 who received liraglutide injection up to 1.8 or 3.0 mg/day for 6 months were enrolled. Demographic and anthropometric",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-369",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 369,
+      "sentence": "A total of 41 patients with BMI of 39.63 \u00b1 7.59 kg/m 2 who received liraglutide injection up to 1.8 or 3.0 mg/day for 6 months were enrolled.",
+      "context_window": "received liraglutide injection up to 1.8 or 3.0 mg/day for 6 months were enrolled. Demographic and anthropometric data, paramet",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-589",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 589,
+      "sentence": "Weight reduction was dose-dependent (p = 0.007).",
+      "context_window": "naire were collected. Weight reduction was dose-dependent (p = 0.007). Liraglutide was not effective in patients with BMI >45 kg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-653",
+      "claim_type": "unit_value",
+      "raw_text": "45 kg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 653,
+      "sentence": "Liraglutide was not effective in patients with BMI >45 kg/m 2 .",
+      "context_window": "0.007). Liraglutide was not effective in patients with BMI >45 kg/m 2 . The baseline HbA1c level was a significant factor for",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-96",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 96,
+      "sentence": "The study included 41 patients who were obese with T2DM or prediabetes receiving liraglutide at 3.0 mg/day (34%) or by the standard scheme for liraglutide therapy for T2DM with dose titration not over 1.8 mg/day (66%).",
+      "context_window": "ere obese with T2DM or prediabetes receiving liraglutide at 3.0 mg/day (34%) or by the standard scheme for liraglutide therapy for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-108",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 108,
+      "sentence": "The study included 41 patients who were obese with T2DM or prediabetes receiving liraglutide at 3.0 mg/day (34%) or by the standard scheme for liraglutide therapy for T2DM with dose titration not over 1.8 mg/day (66%).",
+      "context_window": "th T2DM or prediabetes receiving liraglutide at 3.0 mg/day (34%) or by the standard scheme for liraglutide therapy for T2DM",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-201",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 mg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 201,
+      "sentence": "The study included 41 patients who were obese with T2DM or prediabetes receiving liraglutide at 3.0 mg/day (34%) or by the standard scheme for liraglutide therapy for T2DM with dose titration not over 1.8 mg/day (66%).",
+      "context_window": "r liraglutide therapy for T2DM with dose titration not over 1.8 mg/day (66%). The following data were collected for all patients:",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-213",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 213,
+      "sentence": "The study included 41 patients who were obese with T2DM or prediabetes receiving liraglutide at 3.0 mg/day (34%) or by the standard scheme for liraglutide therapy for T2DM with dose titration not over 1.8 mg/day (66%).",
+      "context_window": "e therapy for T2DM with dose titration not over 1.8 mg/day (66%). The following data were collected for all patients: gende",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-2590",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2590,
+      "sentence": "Data were collected prior liraglutide therapy and in 6 months of therapy.",
+      "context_window": "ch\u2019). Data were collected prior liraglutide therapy and in 6 months of therapy. According to the measurements of body weight an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-2689",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2689,
+      "sentence": "According to the measurements of body weight and glycated hemoglobin level in 6 months, all patients were divided as responders and non responders.",
+      "context_window": "easurements of body weight and glycated hemoglobin level in 6 months, all patients were divided as responders and non responders",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-2853",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2853,
+      "sentence": "Responders included patients whose body weight and glycated hemoglobin level were reduced by \u22647% from baseline and \u22651%, respectively.",
+      "context_window": "body weight and glycated hemoglobin level were reduced by \u22647% from baseline and \u22651%, respectively. All collected data, ex",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-2875",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2875,
+      "sentence": "Responders included patients whose body weight and glycated hemoglobin level were reduced by \u22647% from baseline and \u22651%, respectively.",
+      "context_window": "ted hemoglobin level were reduced by \u22647% from baseline and \u22651%, respectively. All collected data, excluding parameters dir",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-n-4023",
+      "claim_type": "sample_size",
+      "raw_text": "n = 41",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4023,
+      "sentence": "Analyses of treatment efficacy in relation to body weight and glycated hemoglobin were performed in all patients (n = 41) and in patients with T2DM (n = 27), respectively.",
+      "context_window": "ght and glycated hemoglobin were performed in all patients (n = 41) and in patients with T2DM (n = 27), respectively.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-n-4058",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4058,
+      "sentence": "Analyses of treatment efficacy in relation to body weight and glycated hemoglobin were performed in all patients (n = 41) and in patients with T2DM (n = 27), respectively.",
+      "context_window": "rformed in all patients (n = 41) and in patients with T2DM (n = 27), respectively.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-414",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 414,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "s follows: Treatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dos",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-456",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 456,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "ng liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect The body",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-593",
+      "claim_type": "unit_value",
+      "raw_text": "102.78 kg",
+      "numeric_values": [
+        102.78
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 593,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "efore the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p =",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-648",
+      "claim_type": "unit_value",
+      "raw_text": "121.86 kg",
+      "numeric_values": [
+        121.86
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 648,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "ers [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026]) Fasting glycemia before the treatment (mean f",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-659",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 659,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "kg] was lower than those of the non responders [121.86 kg; p = 0.026]) Fasting glycemia before the treatment (mean fasting glyc",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-755",
+      "claim_type": "unit_value",
+      "raw_text": "6.00 mmol",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 755,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p =",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-807",
+      "claim_type": "unit_value",
+      "raw_text": "7.94 mmol",
+      "numeric_values": [
+        7.94
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 807,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "onders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028) Nevertheless, if correction was made for th",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-821",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 821,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "mol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028) Nevertheless, if correction was made for the treatment gr",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-944",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.317",
+      "numeric_values": [
+        0.317
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 944,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "ent group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant fact",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-977",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.607",
+      "numeric_values": [
+        0.607
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 977,
+      "sentence": "The significant factors associated with treatment response in the T2DM and non-T2DM group were as follows:\n\nTreatment group (patients taking liraglutide at 3.0 mg/day were more frequent responders; p = 0.007) reflected the dose-dependent therapeutic effect\n\nThe body weight before the treatment (the average body weight in responders [102.78 kg] was lower than those of the non responders [121.86 kg; p = 0.026])\n\nFasting glycemia before the treatment (mean fasting glycemia values in responders [6.00 mmol/l] was lower than that of non responders [7.94 mmol/l]; p = 0.028)\n\nNevertheless, if correction was made for the treatment group (analysis of variance), the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors.",
+      "context_window": "the baseline body weight (p = 0.317) and fasting glycemia (p = 0.607) were not significant factors. The pretreatment BMI was no",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-msd-1387",
+      "claim_type": "mean_sd",
+      "raw_text": "0.318 \u00b1 0.084",
+      "numeric_values": [
+        0.318,
+        0.084
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1387,
+      "sentence": "The area under the ROC curve was 0.318 \u00b1 0.084, with CI of 0.1525-0.4825 (p = 0.030).",
+      "context_window": "esponse and baseline BMI. The area under the ROC curve was 0.318 \u00b1 0.084, with CI of 0.1525-0.4825 (p = 0.030). Therefore, we can sa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-1428",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1428,
+      "sentence": "The area under the ROC curve was 0.318 \u00b1 0.084, with CI of 0.1525-0.4825 (p = 0.030).",
+      "context_window": "the ROC curve was 0.318 \u00b1 0.084, with CI of 0.1525-0.4825 (p = 0.030). Therefore, we can say that BMI is a significant factor in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-1917",
+      "claim_type": "unit_value",
+      "raw_text": "46 kg",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1917,
+      "sentence": "Figure 1 shows the cluster of patients who have not responded to GLP-1RA therapy, in other words, patients with BMI >46 kg/m 2 .",
+      "context_window": "nded to GLP-1RA therapy, in other words, patients with BMI >46 kg/m 2 . The linear regression model based on the data of pat",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-1998",
+      "claim_type": "unit_value",
+      "raw_text": "46 kg",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1998,
+      "sentence": "The linear regression model based on the data of patients with BMI <46 kg/m 2 presented a positive linear coefficient (both with and without regard to liraglutide dosage); however, the correlation based on our data were not significant (p = 0.570 with regard to liraglutide dosage; p = 0.863 without regard to liraglutide dosage).",
+      "context_window": "ar regression model based on the data of patients with BMI <46 kg/m 2 presented a positive linear coefficient (both with and",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-2167",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.570",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2167,
+      "sentence": "The linear regression model based on the data of patients with BMI <46 kg/m 2 presented a positive linear coefficient (both with and without regard to liraglutide dosage); however, the correlation based on our data were not significant (p = 0.570 with regard to liraglutide dosage; p = 0.863 without regard to liraglutide dosage).",
+      "context_window": "er, the correlation based on our data were not significant (p = 0.570 with regard to liraglutide dosage; p = 0.863 without regard",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-2212",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.863",
+      "numeric_values": [
+        0.863
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2212,
+      "sentence": "The linear regression model based on the data of patients with BMI <46 kg/m 2 presented a positive linear coefficient (both with and without regard to liraglutide dosage); however, the correlation based on our data were not significant (p = 0.570 with regard to liraglutide dosage; p = 0.863 without regard to liraglutide dosage).",
+      "context_window": "t significant (p = 0.570 with regard to liraglutide dosage; p = 0.863 without regard to liraglutide dosage). Based on the obtain",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-2410",
+      "claim_type": "unit_value",
+      "raw_text": "45 kg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2410,
+      "sentence": "Based on the obtained data and previously published data, the conclusion appears appropriate that GLP-1RAs can be effective in patients with BMI 30-45 kg/m 2 ; however, it may be impossible to identify smaller BMI changes related to high treatment efficacy.",
+      "context_window": "iate that GLP-1RAs can be effective in patients with BMI 30-45 kg/m 2 ; however, it may be impossible to identify smaller BMI",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-2596",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2596,
+      "sentence": "The percentage of weight loss correlated strongly to baseline GLP-1 value (p = 0.030; linear coefficient: 0.64), in other words, GLP-1 increase by 1 ng/ml was associated with additional weight loss by 0.64% (correlation coefficient: 0.41%).",
+      "context_window": "of weight loss correlated strongly to baseline GLP-1 value (p = 0.030; linear coefficient: 0.64), in other words, GLP-1 increase",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-2722",
+      "claim_type": "percentage",
+      "raw_text": "0.64%",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2722,
+      "sentence": "The percentage of weight loss correlated strongly to baseline GLP-1 value (p = 0.030; linear coefficient: 0.64), in other words, GLP-1 increase by 1 ng/ml was associated with additional weight loss by 0.64% (correlation coefficient: 0.41%).",
+      "context_window": "se by 1 ng/ml was associated with additional weight loss by 0.64% (correlation coefficient: 0.41%). Therefore, with regard to",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-2754",
+      "claim_type": "percentage",
+      "raw_text": "0.41%",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2754,
+      "sentence": "The percentage of weight loss correlated strongly to baseline GLP-1 value (p = 0.030; linear coefficient: 0.64), in other words, GLP-1 increase by 1 ng/ml was associated with additional weight loss by 0.64% (correlation coefficient: 0.41%).",
+      "context_window": "h additional weight loss by 0.64% (correlation coefficient: 0.41%). Therefore, with regard to values of the intercept (5.07)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-2929",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2929,
+      "sentence": "Therefore, with regard to values of the intercept (5.07) and linear correlation coefficient (0.64), the threshold value of GLP-1 in predicting the body weight loss by 7% was 3 ng/ml.",
+      "context_window": "eshold value of GLP-1 in predicting the body weight loss by 7% was 3 ng/ml. Meanwhile, the non-T2DM group had a higher GL",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-msd-3022",
+      "claim_type": "mean_sd",
+      "raw_text": "4.36 \u00b1 3.76",
+      "numeric_values": [
+        4.36,
+        3.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3022,
+      "sentence": "Meanwhile, the non-T2DM group had a higher GLP-1 value than the T2DM group (4.36 \u00b1 3.76 vs 1.42 \u00b1 3.02; p = 0.0006) before the treatment.",
+      "context_window": "on-T2DM group had a higher GLP-1 value than the T2DM group (4.36 \u00b1 3.76 vs 1.42 \u00b1 3.02; p = 0.0006) before the treatment. The analy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-msd-3037",
+      "claim_type": "mean_sd",
+      "raw_text": "1.42 \u00b1 3.02",
+      "numeric_values": [
+        1.42,
+        3.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3037,
+      "sentence": "Meanwhile, the non-T2DM group had a higher GLP-1 value than the T2DM group (4.36 \u00b1 3.76 vs 1.42 \u00b1 3.02; p = 0.0006) before the treatment.",
+      "context_window": "ad a higher GLP-1 value than the T2DM group (4.36 \u00b1 3.76 vs 1.42 \u00b1 3.02; p = 0.0006) before the treatment. The analysis of the corr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-3050",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0006",
+      "numeric_values": [
+        0.0006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3050,
+      "sentence": "Meanwhile, the non-T2DM group had a higher GLP-1 value than the T2DM group (4.36 \u00b1 3.76 vs 1.42 \u00b1 3.02; p = 0.0006) before the treatment.",
+      "context_window": "LP-1 value than the T2DM group (4.36 \u00b1 3.76 vs 1.42 \u00b1 3.02; p = 0.0006) before the treatment. The analysis of the correlation betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-3276",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.394",
+      "numeric_values": [
+        0.394
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3276,
+      "sentence": "The analysis of the correlation between the percentage of body weight loss in the T2DM group and baseline GLP-1 value showed a not significant negative correlation (linear coefficient: -0.44; p = 0.394), and in the non-T2DM group, a positive significant correlation was found (linear coefficient: 0.84; p = 0.031); furthermore, the correlation coefficient was 0.60.",
+      "context_window": "ignificant negative correlation (linear coefficient: -0.44; p = 0.394), and in the non-T2DM group, a positive significant correla",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-3387",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3387,
+      "sentence": "The analysis of the correlation between the percentage of body weight loss in the T2DM group and baseline GLP-1 value showed a not significant negative correlation (linear coefficient: -0.44; p = 0.394), and in the non-T2DM group, a positive significant correlation was found (linear coefficient: 0.84; p = 0.031); furthermore, the correlation coefficient was 0.60.",
+      "context_window": "ignificant correlation was found (linear coefficient: 0.84; p = 0.031); furthermore, the correlation coefficient was 0.60. There",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-3549",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 3549,
+      "sentence": "Therefore, baseline GLP-1 level can be considered a predictor of response to liraglutide therapy (3.0 mg/day) in patients with obesity.",
+      "context_window": "considered a predictor of response to liraglutide therapy (3.0 mg/day) in patients with obesity. With regard to the intercept (5.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-3714",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3714,
+      "sentence": "With regard to the intercept (5.19) and linear coefficient (0.84), the threshold GLP-1 value of predicting body weight loss by 7% was 2.15 ng/ml.",
+      "context_window": "the threshold GLP-1 value of predicting body weight loss by 7% was 2.15 ng/ml. Data obtained in the common group are less",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-3907",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.373",
+      "numeric_values": [
+        0.373
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3907,
+      "sentence": "The GIP level was not significant in the comparison of responders and non responders (p = 0.373) or evaluation of correlation with weight loss (p = 0.409 without regard to T2DM; p = 0.375 with regard to T2DM).",
+      "context_window": "ificant in the comparison of responders and non responders (p = 0.373) or evaluation of correlation with weight loss (p = 0.409 w",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-3965",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.409",
+      "numeric_values": [
+        0.409
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3965,
+      "sentence": "The GIP level was not significant in the comparison of responders and non responders (p = 0.373) or evaluation of correlation with weight loss (p = 0.409 without regard to T2DM; p = 0.375 with regard to T2DM).",
+      "context_window": "(p = 0.373) or evaluation of correlation with weight loss (p = 0.409 without regard to T2DM; p = 0.375 with regard to T2DM). Th",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-3999",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.375",
+      "numeric_values": [
+        0.375
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3999,
+      "sentence": "The GIP level was not significant in the comparison of responders and non responders (p = 0.373) or evaluation of correlation with weight loss (p = 0.409 without regard to T2DM; p = 0.375 with regard to T2DM).",
+      "context_window": "elation with weight loss (p = 0.409 without regard to T2DM; p = 0.375 with regard to T2DM). The insulin level was not significan",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-4122",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.395",
+      "numeric_values": [
+        0.395
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4122,
+      "sentence": "The insulin level was not significant in the comparison of responders and non responders (p = 0.395) or evaluation of correlation with weight loss (p = 0.372 without regard to T2DM, p = 0.333 with regard to T2DM).",
+      "context_window": "ificant in the comparison of responders and non responders (p = 0.395) or evaluation of correlation with weight loss (p = 0.372 w",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-4180",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.372",
+      "numeric_values": [
+        0.372
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4180,
+      "sentence": "The insulin level was not significant in the comparison of responders and non responders (p = 0.395) or evaluation of correlation with weight loss (p = 0.372 without regard to T2DM, p = 0.333 with regard to T2DM).",
+      "context_window": "(p = 0.395) or evaluation of correlation with weight loss (p = 0.372 without regard to T2DM, p = 0.333 with regard to T2DM). Th",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-4214",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.333",
+      "numeric_values": [
+        0.333
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4214,
+      "sentence": "The insulin level was not significant in the comparison of responders and non responders (p = 0.395) or evaluation of correlation with weight loss (p = 0.372 without regard to T2DM, p = 0.333 with regard to T2DM).",
+      "context_window": "elation with weight loss (p = 0.372 without regard to T2DM, p = 0.333 with regard to T2DM). The C-peptide level was determined o",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-4396",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.500",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4396,
+      "sentence": "The factor was not significant in either comparison of responders and non responders (p = 0.500) or evaluation of correlation with body weight (p = 0.844).",
+      "context_window": "cant in either comparison of responders and non responders (p = 0.500) or evaluation of correlation with body weight (p = 0.844).",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-4454",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.844",
+      "numeric_values": [
+        0.844
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4454,
+      "sentence": "The factor was not significant in either comparison of responders and non responders (p = 0.500) or evaluation of correlation with body weight (p = 0.844).",
+      "context_window": "(p = 0.500) or evaluation of correlation with body weight (p = 0.844). Meanwhile, patients with C-peptide <0.25 nmol/l were not",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-5042",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.098",
+      "numeric_values": [
+        0.098
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5042,
+      "sentence": "The linear model of the relationship between body weight loss and baseline leptin level was plotted (linear regression coefficient: -0.067; correlation coefficient: -0.50; p = 0.098).",
+      "context_window": "ession coefficient: -0.067; correlation coefficient: -0.50; p = 0.098). Based on the linear regression model, weight loss by \u22657%",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-5108",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5108,
+      "sentence": "Based on the linear regression model, weight loss by \u22657% is predicted when the blood level of leptin does not exceed 117.5 ng/ml.",
+      "context_window": "098). Based on the linear regression model, weight loss by \u22657% is predicted when the blood level of leptin does not exceed",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-5359",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.866",
+      "numeric_values": [
+        0.866
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5359,
+      "sentence": "The type of eating behaviors was not different between the responders and non responders (p = 0.866, restrictive type; p = 0.856, external type; p = 0.361, emotional type).",
+      "context_window": "as not different between the responders and non responders (p = 0.866, restrictive type; p = 0.856, external type; p = 0.361, emo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-5388",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.856",
+      "numeric_values": [
+        0.856
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5388,
+      "sentence": "The type of eating behaviors was not different between the responders and non responders (p = 0.866, restrictive type; p = 0.856, external type; p = 0.361, emotional type).",
+      "context_window": "responders and non responders (p = 0.866, restrictive type; p = 0.856, external type; p = 0.361, emotional type). The factors of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-5414",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.361",
+      "numeric_values": [
+        0.361
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5414,
+      "sentence": "The type of eating behaviors was not different between the responders and non responders (p = 0.866, restrictive type; p = 0.856, external type; p = 0.361, emotional type).",
+      "context_window": "ers (p = 0.866, restrictive type; p = 0.856, external type; p = 0.361, emotional type). The factors of responses to appetite que",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-5567",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 5567,
+      "sentence": "The factors of responses to appetite questions were evaluated separately for patients with obesity receiving liraglutide at 3.0 mg/day.",
+      "context_window": "parately for patients with obesity receiving liraglutide at 3.0 mg/day. The response to the question, \u2018How sated do you feel?\u2019 wa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-5696",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.064",
+      "numeric_values": [
+        0.064
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5696,
+      "sentence": "The response to the question, \u2018How sated do you feel?\u2019 was not a significant predictor of weight-reducing response (p = 0.064); however, the correlation coefficient was 0.51 (linear regression coefficient, 0.88).",
+      "context_window": "as not a significant predictor of weight-reducing response (p = 0.064); however, the correlation coefficient was 0.51 (linear reg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-5920",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.097",
+      "numeric_values": [
+        0.097
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5920,
+      "sentence": "The response to the question, \u2018How much food could you eat now?\u2019, was not a significant predictor of weight-reducing response (p = 0.097), but the correlation coefficient was -0.46 (linear regression coefficient: -0.96).",
+      "context_window": "as not a significant predictor of weight-reducing response (p = 0.097), but the correlation coefficient was -0.46 (linear regress",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-6152",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.300",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6152,
+      "sentence": "The response to the question, \u2018How much do you want to eat now?\u2019, was not a significant factor associated with weight-reducing response (p = 0.300; correlation coefficient: -030).",
+      "context_window": "ignificant factor associated with weight-reducing response (p = 0.300; correlation coefficient: -030). Based on the obtained dat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-6314",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 6314,
+      "sentence": "Based on the obtained data, the significant factor in the prediction of response to therapy was the liraglutide dose (3.0 mg/day, dose-dependent efficacy), and for patients with obesity, the significant factor was baseline GLP-1 level in the blood (>2.15 ng/ml).",
+      "context_window": "prediction of response to therapy was the liraglutide dose (3.0 mg/day, dose-dependent efficacy), and for patients with obesity, t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-6524",
+      "claim_type": "unit_value",
+      "raw_text": "46 kg",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6524,
+      "sentence": "With regard to our data and previously published data, BMI of 30-46 kg/m 2 can be considered a predictor of high treatment efficacy with higher BMI values.",
+      "context_window": "regard to our data and previously published data, BMI of 30-46 kg/m 2 can be considered a predictor of high treatment efficac",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-7228",
+      "claim_type": "percentage",
+      "raw_text": "1.00%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7228,
+      "sentence": "Hypoglycemic efficacy was determined as the decrease of HbA1c by \u22651.00% and absolute HbA1c decrease.",
+      "context_window": "ycemic efficacy was determined as the decrease of HbA1c by \u22651.00% and absolute HbA1c decrease. Patients whose HbA1c level wa",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-7307",
+      "claim_type": "percentage",
+      "raw_text": "1.00%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7307,
+      "sentence": "Patients whose HbA1c level was reduced by \u22651.00% as a result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012).",
+      "context_window": "HbA1c decrease. Patients whose HbA1c level was reduced by \u22651.00% as a result of the treatment had higher baseline values (9.",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-msd-7370",
+      "claim_type": "mean_sd",
+      "raw_text": "9.21 \u00b1 1.20",
+      "numeric_values": [
+        9.21,
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7370,
+      "sentence": "Patients whose HbA1c level was reduced by \u22651.00% as a result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012).",
+      "context_window": "0% as a result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-7377",
+      "claim_type": "percentage",
+      "raw_text": "1.20%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7377,
+      "sentence": "Patients whose HbA1c level was reduced by \u22651.00% as a result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012).",
+      "context_window": "result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p =",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-msd-7425",
+      "claim_type": "mean_sd",
+      "raw_text": "7.64 \u00b1 1.05",
+      "numeric_values": [
+        7.64,
+        1.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7425,
+      "sentence": "Patients whose HbA1c level was reduced by \u22651.00% as a result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012).",
+      "context_window": "ues (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012). The linear correlation of absolute HbA1c decr",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-7432",
+      "claim_type": "percentage",
+      "raw_text": "1.05%",
+      "numeric_values": [
+        1.05
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7432,
+      "sentence": "Patients whose HbA1c level was reduced by \u22651.00% as a result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012).",
+      "context_window": "21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012). The linear correlation of absolute HbA1c decre",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-7439",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7439,
+      "sentence": "Patients whose HbA1c level was reduced by \u22651.00% as a result of the treatment had higher baseline values (9.21 \u00b1 1.20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012).",
+      "context_window": "20%) than patients with lower HbA1c decrease (7.64 \u00b1 1.05%; p = 0.012). The linear correlation of absolute HbA1c decrease dependi",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-7682",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7682,
+      "sentence": "The linear correlation of absolute HbA1c decrease depending on its baseline level, based on our data, are described by the following parameters: intercept, -2.75; linear regression coefficient: 0.43; correlation coefficient: 0.56 (p = 0.004).",
+      "context_window": "egression coefficient: 0.43; correlation coefficient: 0.56 (p = 0.004). Therefore, the increase in the baseline level of glycated",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-7766",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7766,
+      "sentence": "Therefore, the increase in the baseline level of glycated hemoglobin by 1% is associated with the additional predicted value decrease by 0.43% in 6 months.",
+      "context_window": "he increase in the baseline level of glycated hemoglobin by 1% is associated with the additional predicted value decrease",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-7831",
+      "claim_type": "percentage",
+      "raw_text": "0.43%",
+      "numeric_values": [
+        0.43
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7831,
+      "sentence": "Therefore, the increase in the baseline level of glycated hemoglobin by 1% is associated with the additional predicted value decrease by 0.43% in 6 months.",
+      "context_window": "associated with the additional predicted value decrease by 0.43% in 6 months. Figure 2 illustrates the relationship between",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-7840",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7840,
+      "sentence": "Therefore, the increase in the baseline level of glycated hemoglobin by 1% is associated with the additional predicted value decrease by 0.43% in 6 months.",
+      "context_window": "ed with the additional predicted value decrease by 0.43% in 6 months. Figure 2 illustrates the relationship between the absolute",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-8303",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8303,
+      "sentence": "Patients with baseline HbA1c value of at least 8.0% will receive the greatest benefit from liraglutide in relation to hypoglycemic drug efficacy.",
+      "context_window": "bA1c values. Patients with baseline HbA1c value of at least 8.0% will receive the greatest benefit from liraglutide in relat",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-8473",
+      "claim_type": "percentage",
+      "raw_text": "1.00%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8473,
+      "sentence": "When effective treatment response was evaluated as \u2018HbA1c decrease by 1.00%\u2019, other baseline parameters were not significant.",
+      "context_window": "tive treatment response was evaluated as \u2018HbA1c decrease by 1.00%\u2019, other baseline parameters were not significant. Responder",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8582",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.613",
+      "numeric_values": [
+        0.613
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8582,
+      "sentence": "Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood.",
+      "context_window": "icant. Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaem",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8607",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.690",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8607,
+      "sentence": "Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood.",
+      "context_window": "responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8624",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.979",
+      "numeric_values": [
+        0.979
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8624,
+      "sentence": "Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood.",
+      "context_window": "ot differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8655",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.076",
+      "numeric_values": [
+        0.076
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8655,
+      "sentence": "Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood.",
+      "context_window": "ody weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in t",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8676",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.143",
+      "numeric_values": [
+        0.143
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8676,
+      "sentence": "Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood.",
+      "context_window": "), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8752",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.493",
+      "numeric_values": [
+        0.493
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8752,
+      "sentence": "Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood.",
+      "context_window": "-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood. VAS values (satie",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8772",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.442",
+      "numeric_values": [
+        0.442
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8772,
+      "sentence": "Responders and non responders did not differ by age (p = 0.613), body weight (p = 0.690), BMI (p = 0.979), fasting glycaemia (p = 0.076), insulin (p = 0.143) and C-peptide (p = 1.000) levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood.",
+      "context_window": "levels in the blood, as well as GLP-1 (p = 0.493) and GIP (p = 0.442) levels in the blood. VAS values (satiety, desire to eat an",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8967",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.554",
+      "numeric_values": [
+        0.554
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8967,
+      "sentence": "VAS values (satiety, desire to eat and amount of food which could be eaten by a patient) were not significant factors for the prediction of hypoglycemic response (p = 0.554; p = 0.267 and p = 0.214).",
+      "context_window": "ficant factors for the prediction of hypoglycemic response (p = 0.554; p = 0.267 and p = 0.214).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8978",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.267",
+      "numeric_values": [
+        0.267
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8978,
+      "sentence": "VAS values (satiety, desire to eat and amount of food which could be eaten by a patient) were not significant factors for the prediction of hypoglycemic response (p = 0.554; p = 0.267 and p = 0.214).",
+      "context_window": "ors for the prediction of hypoglycemic response (p = 0.554; p = 0.267 and p = 0.214).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-8992",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.214",
+      "numeric_values": [
+        0.214
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8992,
+      "sentence": "VAS values (satiety, desire to eat and amount of food which could be eaten by a patient) were not significant factors for the prediction of hypoglycemic response (p = 0.554; p = 0.267 and p = 0.214).",
+      "context_window": "ediction of hypoglycemic response (p = 0.554; p = 0.267 and p = 0.214).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-pct-103",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 103,
+      "sentence": "Tikhonenko et al. (2019) obtained quite different data, that is, patients having achieved weight loss \u22655% has higher BMI at baseline (p = 0.028) and the GLP-1 level was lower (p = 0.036) [ 7 ].",
+      "context_window": "ferent data, that is, patients having achieved weight loss \u22655% has higher BMI at baseline (p = 0.028) and the GLP-1 level",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-134",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 134,
+      "sentence": "Tikhonenko et al. (2019) obtained quite different data, that is, patients having achieved weight loss \u22655% has higher BMI at baseline (p = 0.028) and the GLP-1 level was lower (p = 0.036) [ 7 ].",
+      "context_window": "having achieved weight loss \u22655% has higher BMI at baseline (p = 0.028) and the GLP-1 level was lower (p = 0.036) [ 7 ]. Their dat",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-176",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 176,
+      "sentence": "Tikhonenko et al. (2019) obtained quite different data, that is, patients having achieved weight loss \u22655% has higher BMI at baseline (p = 0.028) and the GLP-1 level was lower (p = 0.036) [ 7 ].",
+      "context_window": "BMI at baseline (p = 0.028) and the GLP-1 level was lower (p = 0.036) [ 7 ]. Their data contradict the results of our study. We",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-p-1136",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1136,
+      "sentence": "In the non-T2DM group with obesity, the level of leptin in the blood significantly correlated with the treatment response; the mean leptin level in the blood of responders (73.05 ng/ml) was lower than that in non responders (125.99 ng/ml; p = 0.018).",
+      "context_window": "ng/ml) was lower than that in non responders (125.99 ng/ml; p = 0.018). These results support the idea, that desensitization of l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8890266_prediction_scale_of_response_to_liraglutide_therapy_as_the_m-u-166",
+      "claim_type": "unit_value",
+      "raw_text": "45 kg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "kg",
+      "source_section": "conclusion",
+      "source_offset": 166,
+      "sentence": "Liraglutide is probably more effective in patients with BMI 30-45 kg/m 2 .",
+      "context_window": "aglutide is probably more effective in patients with BMI 30-45 kg/m 2 .",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

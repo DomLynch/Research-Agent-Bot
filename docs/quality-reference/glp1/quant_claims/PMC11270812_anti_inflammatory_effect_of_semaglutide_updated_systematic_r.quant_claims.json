@@ -1,0 +1,1067 @@
+{
+  "paper_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r",
+  "doi": "10.3389/fcvm.2024.1379189",
+  "extracted_at": "2026-05-05T21:26:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "confidence_interval": 8,
+    "percentage": 18,
+    "unit_value": 27,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-n-741",
+      "claim_type": "sample_size",
+      "raw_text": "n = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 741,
+      "sentence": "Thirteen randomised clinical trials were considered eligible ( n = 26,131).",
+      "context_window": "rteen randomised clinical trials were considered eligible ( n = 26,131). Overall, semaglutide therapy was associated with lowe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-868",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.69 to -0.43",
+      "numeric_values": [
+        -0.69,
+        -0.43
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 868,
+      "sentence": "Overall, semaglutide therapy was associated with lower CRP index values compared to the placebo group (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or the control group (SMD -0.45; 95% CI -0.68 to -0.23, I 2 82%).Such an association was similarly observed when different treatment regimens (subcutaneous vs. oral) or different populations (patients with or without T2DM) were analysed.",
+      "context_window": "CRP index values compared to the placebo group (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or the control group (SMD -0.45; 95% CI -0.68 to",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-895",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 895,
+      "sentence": "Overall, semaglutide therapy was associated with lower CRP index values compared to the placebo group (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or the control group (SMD -0.45; 95% CI -0.68 to -0.23, I 2 82%).Such an association was similarly observed when different treatment regimens (subcutaneous vs. oral) or different populations (patients with or without T2DM) were analysed.",
+      "context_window": "to the placebo group (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or the control group (SMD -0.45; 95% CI -0.68 to -0.23, I",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-933",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.68 to -0.23",
+      "numeric_values": [
+        -0.68,
+        -0.23
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 933,
+      "sentence": "Overall, semaglutide therapy was associated with lower CRP index values compared to the placebo group (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or the control group (SMD -0.45; 95% CI -0.68 to -0.23, I 2 82%).Such an association was similarly observed when different treatment regimens (subcutaneous vs. oral) or different populations (patients with or without T2DM) were analysed.",
+      "context_window": "I -0.69 to -0.43, I 2 92%) or the control group (SMD -0.45; 95% CI -0.68 to -0.23, I 2 82%).Such an association was similarly observed when d",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-960",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "Overall, semaglutide therapy was associated with lower CRP index values compared to the placebo group (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or the control group (SMD -0.45; 95% CI -0.68 to -0.23, I 2 82%).Such an association was similarly observed when different treatment regimens (subcutaneous vs. oral) or different populations (patients with or without T2DM) were analysed.",
+      "context_window": "or the control group (SMD -0.45; 95% CI -0.68 to -0.23, I 2 82%).Such an association was similarly observed when different",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-1351",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1351,
+      "sentence": "The following inclusion criteria were established: (a) Studies that have analysed the anti-inflammatory effect of semaglutide (expressed as ultra-sensitive blood CRP levels) compared to a placebo group or a group with another anti-diabetic regimen; (b) Studies with a duration of follow-up \u22653 months; (c) Randomized clinical trials.",
+      "context_window": "diabetic regimen; (b) Studies with a duration of follow-up \u22653 months; (c) Randomized clinical trials. Potential risks of bias w",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-2176",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2176,
+      "sentence": "Effect size measures were expressed as standardised mean differences (SMDs) between CRP indices with their respective 95% confidence intervals (95% CIs).",
+      "context_window": "ifferences (SMDs) between CRP indices with their respective 95% confidence intervals (95% CIs). These indices were obtained",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-2202",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2202,
+      "sentence": "Effect size measures were expressed as standardised mean differences (SMDs) between CRP indices with their respective 95% confidence intervals (95% CIs).",
+      "context_window": "CRP indices with their respective 95% confidence intervals (95% CIs). These indices were obtained by dividing the final val",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-2316",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2316,
+      "sentence": "The 95% CIs were calculated manually when not reported in the original publications ( 22 ).",
+      "context_window": "final value by the baseline CRP value into both groups. The 95% CIs were calculated manually when not reported in the origi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-n-495",
+      "claim_type": "sample_size",
+      "raw_text": "n = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "Thirteen randomised clinical trials ( n = 26,131 patients) were identified and considered eligible for this systematic review ( 10 , 24 - 35 ).",
+      "context_window": "y selection process. Thirteen randomised clinical trials ( n = 26,131 patients) were identified and considered eligible for t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-2053",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.69 to -0.43",
+      "numeric_values": [
+        -0.69,
+        -0.43
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2053,
+      "sentence": "Overall, this meta-analysis shows that semaglutide therapy was associated with lower CRP index values compared to placebo (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or when comparing semaglutide treatment vs. a control group consisting of patients medicated with other glucose-lowering drugs (SMD -0.45; 95% CI -0.68 to -0.23, I 382%) ( Figure 3 ).",
+      "context_window": "with lower CRP index values compared to placebo (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or when comparing semaglutide treatment vs. a con",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-2080",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2080,
+      "sentence": "Overall, this meta-analysis shows that semaglutide therapy was associated with lower CRP index values compared to placebo (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or when comparing semaglutide treatment vs. a control group consisting of patients medicated with other glucose-lowering drugs (SMD -0.45; 95% CI -0.68 to -0.23, I 382%) ( Figure 3 ).",
+      "context_window": "compared to placebo (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or when comparing semaglutide treatment vs. a control grou",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-2224",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.68 to -0.23",
+      "numeric_values": [
+        -0.68,
+        -0.23
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2224,
+      "sentence": "Overall, this meta-analysis shows that semaglutide therapy was associated with lower CRP index values compared to placebo (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or when comparing semaglutide treatment vs. a control group consisting of patients medicated with other glucose-lowering drugs (SMD -0.45; 95% CI -0.68 to -0.23, I 382%) ( Figure 3 ).",
+      "context_window": "nts medicated with other glucose-lowering drugs (SMD -0.45; 95% CI -0.68 to -0.23, I 382%) ( Figure 3 ). Effect of semaglutide therapy on CR",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-2249",
+      "claim_type": "percentage",
+      "raw_text": "382%",
+      "numeric_values": [
+        382.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2249,
+      "sentence": "Overall, this meta-analysis shows that semaglutide therapy was associated with lower CRP index values compared to placebo (SMD -0.56; 95% CI -0.69 to -0.43, I 2 92%) or when comparing semaglutide treatment vs. a control group consisting of patients medicated with other glucose-lowering drugs (SMD -0.45; 95% CI -0.68 to -0.23, I 382%) ( Figure 3 ).",
+      "context_window": "glucose-lowering drugs (SMD -0.45; 95% CI -0.68 to -0.23, I 382%) ( Figure 3 ). Effect of semaglutide therapy on CRP index.",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-2373",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2373,
+      "sentence": "Random-effects model, standardised mean differences (SMD), 95% confidence intervals (CI) and statistical I 2 .",
+      "context_window": "Random-effects model, standardised mean differences (SMD), 95% confidence intervals (CI) and statistical I 2 . Top: semagl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-2572",
+      "claim_type": "unit_value",
+      "raw_text": "14 mg",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2572,
+      "sentence": "PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively.",
+      "context_window": "sus other drugs. PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-2628",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semagl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-2639",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2639,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "rally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-2700",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2700,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semagluti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-2711",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 mg",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2711,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "neous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-2769",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2769,
+      "sentence": "STEP-8b: semaglutide 2.4 mg arm vs placebo.",
+      "context_window": "d 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg arm vs placebo. The stratified analysis was performed by a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-3093",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.75 to 0.08",
+      "numeric_values": [
+        -0.75,
+        0.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3093,
+      "sentence": "The stratified analysis was performed by analysing only the trials that used a placebo group as comparator, When the trials were analysed according to the different dosing schemes (subcutaneous vs. oral), the results were not statistically significantly different (oral semaglutide group: SMD -0.33; 95% CI -0.75 to 0.08, I 2 95%); semaglutide subcutaneous dose group: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ).",
+      "context_window": "significantly different (oral semaglutide group: SMD -0.33; 95% CI -0.75 to 0.08, I 2 95%); semaglutide subcutaneous dose group: SMD -0.69;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-3119",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3119,
+      "sentence": "The stratified analysis was performed by analysing only the trials that used a placebo group as comparator, When the trials were analysed according to the different dosing schemes (subcutaneous vs. oral), the results were not statistically significantly different (oral semaglutide group: SMD -0.33; 95% CI -0.75 to 0.08, I 2 95%); semaglutide subcutaneous dose group: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ).",
+      "context_window": "ral semaglutide group: SMD -0.33; 95% CI -0.75 to 0.08, I 2 95%); semaglutide subcutaneous dose group: SMD -0.69; 95% CI -0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-3173",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.78 to -0.60",
+      "numeric_values": [
+        -0.78,
+        -0.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3173,
+      "sentence": "The stratified analysis was performed by analysing only the trials that used a placebo group as comparator, When the trials were analysed according to the different dosing schemes (subcutaneous vs. oral), the results were not statistically significantly different (oral semaglutide group: SMD -0.33; 95% CI -0.75 to 0.08, I 2 95%); semaglutide subcutaneous dose group: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ).",
+      "context_window": ", I 2 95%); semaglutide subcutaneous dose group: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ). Furthermore,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-3200",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3200,
+      "sentence": "The stratified analysis was performed by analysing only the trials that used a placebo group as comparator, When the trials were analysed according to the different dosing schemes (subcutaneous vs. oral), the results were not statistically significantly different (oral semaglutide group: SMD -0.33; 95% CI -0.75 to 0.08, I 2 95%); semaglutide subcutaneous dose group: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ).",
+      "context_window": "cutaneous dose group: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ). Furthermore, when the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-p-3218",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.098",
+      "numeric_values": [
+        0.098
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3218,
+      "sentence": "The stratified analysis was performed by analysing only the trials that used a placebo group as comparator, When the trials were analysed according to the different dosing schemes (subcutaneous vs. oral), the results were not statistically significantly different (oral semaglutide group: SMD -0.33; 95% CI -0.75 to 0.08, I 2 95%); semaglutide subcutaneous dose group: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ).",
+      "context_window": "up: SMD -0.69; 95% CI -0.78 to -0.60, I 2 74%); interaction p = 0.098 ( Figure 4 ). Furthermore, when the trials were analysed ac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-3413",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.51 to -0.14",
+      "numeric_values": [
+        -0.51,
+        -0.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3413,
+      "sentence": "Furthermore, when the trials were analysed according to the included populations (patients with or without T2DM), the results were similar (patients with T2DM: SMD -0.32; 95% CI -0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ).",
+      "context_window": "), the results were similar (patients with T2DM: SMD -0.32; 95% CI -0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-3440",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3440,
+      "sentence": "Furthermore, when the trials were analysed according to the included populations (patients with or without T2DM), the results were similar (patients with T2DM: SMD -0.32; 95% CI -0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ).",
+      "context_window": "(patients with T2DM: SMD -0.32; 95% CI -0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-ci-3480",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.90 to -0.74",
+      "numeric_values": [
+        -0.9,
+        -0.74
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3480,
+      "sentence": "Furthermore, when the trials were analysed according to the included populations (patients with or without T2DM), the results were similar (patients with T2DM: SMD -0.32; 95% CI -0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ).",
+      "context_window": "-0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ). Effect of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-3507",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3507,
+      "sentence": "Furthermore, when the trials were analysed according to the included populations (patients with or without T2DM), the results were similar (patients with T2DM: SMD -0.32; 95% CI -0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ).",
+      "context_window": "atients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ). Effect of semagluti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-p-3525",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3525,
+      "sentence": "Furthermore, when the trials were analysed according to the included populations (patients with or without T2DM), the results were similar (patients with T2DM: SMD -0.32; 95% CI -0.51 to -0.14, I 2 86%); patients without T2DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ).",
+      "context_window": "DM: SMD -0.82; 95% CI -0.90 to -0.74, I 2 58%); interaction p \u2264 0.0001 ( Figure 5 ). Effect of semaglutide therapy on CRP rate st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-3783",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3783,
+      "sentence": "Random-effects model, standardised mean differences (SMD), 95% confidence intervals (CI) and statistical I 2 .",
+      "context_window": "Random-effects model, standardised mean differences (SMD), 95% confidence intervals (CI) and statistical I 2 . PIONEER-1 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-3878",
+      "claim_type": "unit_value",
+      "raw_text": "14 mg",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3878,
+      "sentence": "PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively.",
+      "context_window": "tatistical I 2 . PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-3934",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3934,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semagl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-3945",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3945,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "rally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4006",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4006,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semagluti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4017",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 mg",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4017,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "neous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4075",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4075,
+      "sentence": "STEP-8b: semaglutide 2.4 mg arm vs placebo.",
+      "context_window": "d 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg arm vs placebo. The effect of semaglutide therapy on the s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-4361",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4361,
+      "sentence": "Random-effects model, standardised mean differences (SMD), 95% confidence intervals (CI) and statistical I 2 .",
+      "context_window": "Random-effects model, standardised mean differences (SMD), 95% confidence intervals (CI) and statistical I 2 . PIONEER-1 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4456",
+      "claim_type": "unit_value",
+      "raw_text": "14 mg",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4456,
+      "sentence": "PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively.",
+      "context_window": "tatistical I 2 . PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4512",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4512,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semagl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4523",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4523,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "rally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4584",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4584,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semagluti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4595",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 mg",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4595,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "neous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-4653",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4653,
+      "sentence": "STEP-8b: semaglutide 2.4 mg arm vs. placebo.",
+      "context_window": "d 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg arm vs. placebo. The sensitivity analysis showed the same",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-p-4929",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.472",
+      "numeric_values": [
+        0.472
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4929,
+      "sentence": "The analytical evaluation by the Begg & Mazumdar and the Egger tests do not suggest publication bias ( p = 0.472 and p = 0,102, respectively).",
+      "context_window": "umdar and the Egger tests do not suggest publication bias ( p = 0.472 and p = 0,102, respectively). The graphic representation do",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-5229",
+      "claim_type": "unit_value",
+      "raw_text": "14 mg",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5229,
+      "sentence": "PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively.",
+      "context_window": "sus other drugs. PIONEER-1 a, b and c: semaglutide 3, 7 and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-5285",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5285,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "and 14 mg orally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semagl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-5296",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5296,
+      "sentence": "STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively.",
+      "context_window": "rally, respectively. STEP-2 a and b: semaglutide 2.4 mg and 1 mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-5357",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5357,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "mg subcutaneous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semagluti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-5368",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 mg",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5368,
+      "sentence": "STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively.",
+      "context_window": "neous, respectively. STEP-6 a and b: semaglutide 2.4 mg and 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-5426",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5426,
+      "sentence": "STEP-8b: semaglutide 2.4 mg arm vs. placebo.",
+      "context_window": "d 1.7 mg subcutaneously, respectively. STEP-8b: semaglutide 2.4 mg arm vs. placebo.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-408",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 408,
+      "sentence": "Compared to placebo or the control group receiving other glucose-lowering drugs, the CRP rate in the semaglutide treated group was 44% and 55% lower, respectively.",
+      "context_window": "ng drugs, the CRP rate in the semaglutide treated group was 44% and 55% lower, respectively. This value is adequately adjus",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-416",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 416,
+      "sentence": "Compared to placebo or the control group receiving other glucose-lowering drugs, the CRP rate in the semaglutide treated group was 44% and 55% lower, respectively.",
+      "context_window": ", the CRP rate in the semaglutide treated group was 44% and 55% lower, respectively. This value is adequately adjusted with",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-609",
+      "claim_type": "percentage",
+      "raw_text": "39.1%",
+      "numeric_values": [
+        39.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 609,
+      "sentence": "This value is adequately adjusted with the CRP reductions associated with the use of semaglutide observed in some of the studies included in this review (range between 39.1% and 59.6%) ( 10 , 30 , 31 , 33 , 35 ).",
+      "context_window": "some of the studies included in this review (range between 39.1% and 59.6%) ( 10 , 30 , 31 , 33 , 35 ). Evidence from epide",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-pct-619",
+      "claim_type": "percentage",
+      "raw_text": "59.6%",
+      "numeric_values": [
+        59.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 619,
+      "sentence": "This value is adequately adjusted with the CRP reductions associated with the use of semaglutide observed in some of the studies included in this review (range between 39.1% and 59.6%) ( 10 , 30 , 31 , 33 , 35 ).",
+      "context_window": "he studies included in this review (range between 39.1% and 59.6%) ( 10 , 30 , 31 , 33 , 35 ). Evidence from epidemiological",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-1795",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1795,
+      "sentence": "In clinical practice, CRP values exceeding 3 mg/L are considered as a marker of cardiovascular risk ( 40 , 41 ).",
+      "context_window": "tokines ( 39 ). In clinical practice, CRP values exceeding 3 mg/L are considered as a marker of cardiovascular risk ( 40 ,",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270812_anti_inflammatory_effect_of_semaglutide_updated_systematic_r-u-2002",
+      "claim_type": "unit_value",
+      "raw_text": "4.8 mg",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2002,
+      "sentence": "Interestingly, 6 of the 8 studies included in this systematic review reporting baseline CRP values showed elevated levels (between 3 and 4.8 mg/L), reflecting that the populations evaluated, mostly patients with T2DM and obesity, possess a chronic inflammatory state.",
+      "context_window": "g baseline CRP values showed elevated levels (between 3 and 4.8 mg/L), reflecting that the populations evaluated, mostly patie",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

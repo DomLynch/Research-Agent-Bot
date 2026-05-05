@@ -1,0 +1,2673 @@
+{
+  "paper_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev",
+  "doi": "10.1093/eurheartj/ehv500",
+  "extracted_at": "2026-05-05T21:30:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 5,
+    "unit_value": 53,
+    "percentage": 59,
+    "p_value": 19,
+    "confidence_interval": 1,
+    "mean_sd": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-n-1259",
+      "claim_type": "sample_size",
+      "raw_text": "n = 95",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1259,
+      "sentence": "Between 06 January 2014 and 21 September 2014, 191 patients (Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females) were enrolled at eight centres.",
+      "context_window": "January 2014 and 21 September 2014, 191 patients (Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-n-1276",
+      "claim_type": "sample_size",
+      "raw_text": "n = 96",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1276,
+      "sentence": "Between 06 January 2014 and 21 September 2014, 191 patients (Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females) were enrolled at eight centres.",
+      "context_window": "21 September 2014, 191 patients (Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females) were enrolled at",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1294",
+      "claim_type": "unit_value",
+      "raw_text": "58.6 years",
+      "numeric_values": [
+        58.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1294,
+      "sentence": "Between 06 January 2014 and 21 September 2014, 191 patients (Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females) were enrolled at eight centres.",
+      "context_window": ", 191 patients (Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females) were enrolled at eight centres. At 6 mo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1310",
+      "claim_type": "percentage",
+      "raw_text": "17.8%",
+      "numeric_values": [
+        17.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1310,
+      "sentence": "Between 06 January 2014 and 21 September 2014, 191 patients (Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females) were enrolled at eight centres.",
+      "context_window": "Absorb [ n = 95] or EES [ n = 96]; mean age 58.6 years old; 17.8% females) were enrolled at eight centres. At 6 months, HS wa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1360",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1360,
+      "sentence": "At 6 months, HS was lower in the Absorb arm when compared with EES arm [1.74 (2.39) vs.",
+      "context_window": "ears old; 17.8% females) were enrolled at eight centres. At 6 months, HS was lower in the Absorb arm when compared with EES arm",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1470",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1470,
+      "sentence": "2.80 (4.44); difference (90% CI) -1.06 (-1.96, -0.16); P non-inferiority <0.001].",
+      "context_window": "ared with EES arm [1.74 (2.39) vs. 2.80 (4.44); difference (90% CI) -1.06 (-1.96, -0.16); P non-inferiority <0.001]. Device",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1602",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1602,
+      "sentence": "Device-oriented composite endpoint was also comparably low between groups (1.1% Absorb vs.",
+      "context_window": "composite endpoint was also comparably low between groups (1.1% Absorb vs. 0% EES). One case of definite subacute stent thr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1618",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "0% EES).",
+      "context_window": "int was also comparably low between groups (1.1% Absorb vs. 0% EES). One case of definite subacute stent thrombosis occurr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1702",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1702,
+      "sentence": "One case of definite subacute stent thrombosis occurred in the Absorb arm (1.1% vs.",
+      "context_window": "inite subacute stent thrombosis occurred in the Absorb arm (1.1% vs. 0% EES; P = ns). Stenting of culprit lesions with Abso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1711",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1711,
+      "sentence": "0% EES; P = ns).",
+      "context_window": "acute stent thrombosis occurred in the Absorb arm (1.1% vs. 0% EES; P = ns). Stenting of culprit lesions with Absorb in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1890",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1890,
+      "sentence": "Stenting of culprit lesions with Absorb in the setting of STEMI resulted in a nearly complete arterial healing which was comparable with that of metallic EES at 6 months.",
+      "context_window": "l healing which was comparable with that of metallic EES at 6 months. These findings provide the basis for further exploration i",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-424",
+      "claim_type": "unit_value",
+      "raw_text": "1 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 424,
+      "sentence": "13 Briefly, the study included patients presenting with STEMI with the following ECG criteria: at least 1 mm in two or more standard leads or at least 2 mm in two or more contiguous precordial leads or new left bundle-branch block, within the first 24 h after the symptoms onset requiring emergent PCI with a vessel size ranging between 2.25 and 3.8 mm and following adequate lesion preparation.",
+      "context_window": "enting with STEMI with the following ECG criteria: at least 1 mm in two or more standard leads or at least 2 mm in two or mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-471",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 471,
+      "sentence": "13 Briefly, the study included patients presenting with STEMI with the following ECG criteria: at least 1 mm in two or more standard leads or at least 2 mm in two or more contiguous precordial leads or new left bundle-branch block, within the first 24 h after the symptoms onset requiring emergent PCI with a vessel size ranging between 2.25 and 3.8 mm and following adequate lesion preparation.",
+      "context_window": "ia: at least 1 mm in two or more standard leads or at least 2 mm in two or more contiguous precordial leads or new left bund",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-666",
+      "claim_type": "unit_value",
+      "raw_text": "3.8 mm",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 666,
+      "sentence": "13 Briefly, the study included patients presenting with STEMI with the following ECG criteria: at least 1 mm in two or more standard leads or at least 2 mm in two or more contiguous precordial leads or new left bundle-branch block, within the first 24 h after the symptoms onset requiring emergent PCI with a vessel size ranging between 2.25 and 3.8 mm and following adequate lesion preparation.",
+      "context_window": "ng emergent PCI with a vessel size ranging between 2.25 and 3.8 mm and following adequate lesion preparation. Main exclusion c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-843",
+      "claim_type": "unit_value",
+      "raw_text": "3.80 mm",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 843,
+      "sentence": "Main exclusion criteria included cardiogenic shock, severe tortuosity, or calcification, and inadequate vessel size (<2.25 or >3.80 mm).",
+      "context_window": "ty, or calcification, and inadequate vessel size (<2.25 or >3.80 mm). All patients were randomized 1:1 to one of the two treatm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1960",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1960,
+      "sentence": "13 In brief, the primary endpoint is the optical frequency domain imaging (OFDI)-derived healing score (HS) assessed at 6 months.",
+      "context_window": "omain imaging (OFDI)-derived healing score (HS) assessed at 6 months. The HS is based on four stent-related characteristics: pre",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-2980",
+      "claim_type": "unit_value",
+      "raw_text": "36 months",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2980,
+      "sentence": "13 , 16 Secondary clinical endpoints included device-oriented composite endpoint (DOCE: composite of cardiac death, target vessel myocardial infarction (MI), or clinically driven target lesion revascularization, TLR) at 1, 6, and 36 months; the individual components of DOCE; device and procedural success, all-cause death; any myocardial infarction; non-clinically driven TLR; clinically indicated and non-clinically driven target vessel revascularization; stent thrombosis according to Academic Research Consortium definition 17 ; angina status classified according to Canadian Society of Cardiology class at 6-month follow-up.",
+      "context_window": "y driven target lesion revascularization, TLR) at 1, 6, and 36 months; the individual components of DOCE; device and procedural s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-3662",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3662,
+      "sentence": "18 , 19 Device success was defined as the implantation of the assigned study device with a post-procedure residual stenosis <30%.",
+      "context_window": "igned study device with a post-procedure residual stenosis <30%. 13 Procedure success was defined as device success without",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-3922",
+      "claim_type": "unit_value",
+      "raw_text": "36 months",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3922,
+      "sentence": "Clinical follow-up was scheduled at 1, 6, 12, 24, and 36 months.",
+      "context_window": "ttee. Clinical follow-up was scheduled at 1, 6, 12, 24, and 36 months. Angiographic follow-up was scheduled at 6 months. Primary",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-3973",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3973,
+      "sentence": "Angiographic follow-up was scheduled at 6 months.",
+      "context_window": "24, and 36 months. Angiographic follow-up was scheduled at 6 months. Primary PCI was performed according to standard practice.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4469",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mm",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4469,
+      "sentence": "13 , 20 The Absorb stent was available in the diameters of 2.5, 3.0, and 3.5 mm and in the lengths of 8, 12, 18, and 28 mm.",
+      "context_window": "bsorb stent was available in the diameters of 2.5, 3.0, and 3.5 mm and in the lengths of 8, 12, 18, and 28 mm. It was recommen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4513",
+      "claim_type": "unit_value",
+      "raw_text": "28 mm",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4513,
+      "sentence": "13 , 20 The Absorb stent was available in the diameters of 2.5, 3.0, and 3.5 mm and in the lengths of 8, 12, 18, and 28 mm.",
+      "context_window": "f 2.5, 3.0, and 3.5 mm and in the lengths of 8, 12, 18, and 28 mm. It was recommended to use similar sizes for the EES (Xienc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4912",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4912,
+      "sentence": "It was recommended that patients received a loading dose of aspirin and a P2Y12 inhibitor pre-procedure, followed by dual antiplatelet therapy for at least 12 months.",
+      "context_window": "ocedure, followed by dual antiplatelet therapy for at least 12 months. Angiographic endpoints at 6 months included percent diame",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4950",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4950,
+      "sentence": "Angiographic endpoints at 6 months included percent diameter stenosis, minimal lumen diameter (MLD), late lumen loss, and binary restenosis.",
+      "context_window": "therapy for at least 12 months. Angiographic endpoints at 6 months included percent diameter stenosis, minimal lumen diameter",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-5226",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5226,
+      "sentence": "Optical frequency domain imaging endpoints were assessed at 6 months and included all individual components of the HS (see above), the mean and minimal stent and diameter, area and volume, the frequency of incomplete strut apposition including area and volume, the percentage of uncovered struts, the mean neointima thickness, and neointimal hyperplasia area on top of the strut and interstrut, and volume, the mean flow area and volume and intraluminal defect area and volume.",
+      "context_window": "Optical frequency domain imaging endpoints were assessed at 6 months and included all individual components of the HS (see above",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6286",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6286,
+      "sentence": "16\n\nAngiographic or OFDI data from patients returning for any repeat angiography within 14 days after the index procedure were not used in calculation of the HS and Quantitative coronary angiography (QCA), since the need for repeat revascularization in this period was not related to neointimal healing but rather to an acute response of the lesion to the procedure.",
+      "context_window": "a from patients returning for any repeat angiography within 14 days after the index procedure were not used in calculation of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-7247",
+      "claim_type": "unit_value",
+      "raw_text": "13 months",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 7247,
+      "sentence": "22 The HS of the EES was anticipated to be similar as the one observed with the Absorb (with similar SD) based on a historical 13 months data showing an HS of 10.8 (SD 15.3).",
+      "context_window": "ved with the Absorb (with similar SD) based on a historical 13 months data showing an HS of 10.8 (SD 15.3). 23 With a non-inferio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7413",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7413,
+      "sentence": "23 With a non-inferiority margin of 4.5 points, a one-sided significance level ( \u03b1 ) of 0.05 and an attrition rate of 20%, 190 patients would provide 90% power to confirm non-inferiority.",
+      "context_window": "d significance level ( \u03b1 ) of 0.05 and an attrition rate of 20%, 190 patients would provide 90% power to confirm non-inferi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7445",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7445,
+      "sentence": "23 With a non-inferiority margin of 4.5 points, a one-sided significance level ( \u03b1 ) of 0.05 and an attrition rate of 20%, 190 patients would provide 90% power to confirm non-inferiority.",
+      "context_window": "05 and an attrition rate of 20%, 190 patients would provide 90% power to confirm non-inferiority. For the superiority anal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7541",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7541,
+      "sentence": "For the superiority analysis of the primary endpoint the 95% two-sided confidence interval for the difference in the mean HS between Absorb and EES arms, was calculated using the Students t-distribution.",
+      "context_window": ". For the superiority analysis of the primary endpoint the 95% two-sided confidence interval for the difference in the mea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8195",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8195,
+      "sentence": "The variable means were evaluated by a two-sample t -test; differences between treatments with the corresponding 95% confidence interval were presented.",
+      "context_window": "test; differences between treatments with the corresponding 95% confidence interval were presented. Categorical variables w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-488",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 488,
+      "sentence": "Smoking followed by dyslipidaemia were the most commonly encountered coronary risk factors (72 and 60%, respectively).",
+      "context_window": "the most commonly encountered coronary risk factors (72 and 60%, respectively). Diabetes mellitus was found in 17% of patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-539",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 539,
+      "sentence": "Diabetes mellitus was found in 17% of patients.",
+      "context_window": "(72 and 60%, respectively). Diabetes mellitus was found in 17% of patients. Time from symptom onset to treatment, door-to-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-766",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 766,
+      "sentence": "Thrombectomy was attempted in 90% of the patients and pre-dilatation in half of the population without differences between groups.",
+      "context_window": "s were presented in Table 2 . Thrombectomy was attempted in 90% of the patients and pre-dilatation in half of the populatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-941",
+      "claim_type": "percentage",
+      "raw_text": "25.5%",
+      "numeric_values": [
+        25.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 941,
+      "sentence": "25.5%, P < 0.001).",
+      "context_window": "n was more frequently performed in the Absorb arm (50.5 vs. 25.5%, P < 0.001). On average, a total of 1.2 stents were implant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-948",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 948,
+      "sentence": "25.5%, P < 0.001).",
+      "context_window": "ore frequently performed in the Absorb arm (50.5 vs. 25.5%, P < 0.001). On average, a total of 1.2 stents were implanted at the c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1061",
+      "claim_type": "unit_value",
+      "raw_text": "18.0 mm",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 1061,
+      "sentence": "On average, a total of 1.2 stents were implanted at the culprit lesion with a median total length of 18.0 mm in both groups.",
+      "context_window": "planted at the culprit lesion with a median total length of 18.0 mm in both groups. Mean nominal diameter was larger in the Abs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1146",
+      "claim_type": "unit_value",
+      "raw_text": "3.12 mm",
+      "numeric_values": [
+        3.12
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 1146,
+      "sentence": "3.12 mm; P = 0.005).",
+      "context_window": "ean nominal diameter was larger in the Absorb arm (3.25 vs. 3.12 mm; P = 0.005). No differences were observed in the antiplatel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-1155",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1155,
+      "sentence": "3.12 mm; P = 0.005).",
+      "context_window": "al diameter was larger in the Absorb arm (3.25 vs. 3.12 mm; P = 0.005). No differences were observed in the antiplatelet and anti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1276",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1276,
+      "sentence": "Most patients (43%) received the combination of aspirin and ticagrelor loading doses before the intervention.",
+      "context_window": "and anticoagulation regimens between groups. Most patients (43%) received the combination of aspirin and ticagrelor loading",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1461",
+      "claim_type": "percentage",
+      "raw_text": "37.6%",
+      "numeric_values": [
+        37.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1461,
+      "sentence": "Overall, the combination of unfractionated heparin with IIb/IIIa inhibitors accounted for 37.6% of patients, unfractionated heparin alone 35.6%, and bivalirudin alone 8.4%.",
+      "context_window": "fractionated heparin with IIb/IIIa inhibitors accounted for 37.6% of patients, unfractionated heparin alone 35.6%, and bivali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1509",
+      "claim_type": "percentage",
+      "raw_text": "35.6%",
+      "numeric_values": [
+        35.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1509,
+      "sentence": "Overall, the combination of unfractionated heparin with IIb/IIIa inhibitors accounted for 37.6% of patients, unfractionated heparin alone 35.6%, and bivalirudin alone 8.4%.",
+      "context_window": "counted for 37.6% of patients, unfractionated heparin alone 35.6%, and bivalirudin alone 8.4%. Device and procedure success r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1538",
+      "claim_type": "percentage",
+      "raw_text": "8.4%",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1538,
+      "sentence": "Overall, the combination of unfractionated heparin with IIb/IIIa inhibitors accounted for 37.6% of patients, unfractionated heparin alone 35.6%, and bivalirudin alone 8.4%.",
+      "context_window": ", unfractionated heparin alone 35.6%, and bivalirudin alone 8.4%. Device and procedure success rates were both 95.8% in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1589",
+      "claim_type": "percentage",
+      "raw_text": "95.8%",
+      "numeric_values": [
+        95.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1589,
+      "sentence": "Device and procedure success rates were both 95.8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P = 0.06, respectively.",
+      "context_window": "in alone 8.4%. Device and procedure success rates were both 95.8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1617",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1617,
+      "sentence": "Device and procedure success rates were both 95.8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P = 0.06, respectively.",
+      "context_window": "ocedure success rates were both 95.8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P = 0.06, respectively. This d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-1638",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1638,
+      "sentence": "Device and procedure success rates were both 95.8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P = 0.06, respectively.",
+      "context_window": "were both 95.8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P = 0.06, respectively. This difference was related to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-1651",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1651,
+      "sentence": "Device and procedure success rates were both 95.8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P = 0.06, respectively.",
+      "context_window": ".8% in the Absorb arm and 100% in the EES arm; P = 0.06 and P = 0.06, respectively. This difference was related to the higher fr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1777",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1777,
+      "sentence": "This difference was related to the higher frequency of post-procedure residual stenosis in excess of >30% in the Absorb arm, 3 vs.",
+      "context_window": "frequency of post-procedure residual stenosis in excess of >30% in the Absorb arm, 3 vs. 0 patients in the EES arm. Flow c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1971",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1971,
+      "sentence": "At 6 months, clinical follow-up was obtained in 189 patients and optical frequency domain imaging analysis was available in 171 lesions.",
+      "context_window": "ruitment period. Of them 191 were included in the trial. At 6 months, clinical follow-up was obtained in 189 patients and optica",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-2985",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2985,
+      "sentence": "At discharge, aspirin and ticagrelor constituted the most frequently prescribed dual antiplatelet regimen (55%) followed by aspirin and prasugrel (35%).",
+      "context_window": "d the most frequently prescribed dual antiplatelet regimen (55%) followed by aspirin and prasugrel (35%). Quantitative cor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-3025",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3025,
+      "sentence": "At discharge, aspirin and ticagrelor constituted the most frequently prescribed dual antiplatelet regimen (55%) followed by aspirin and prasugrel (35%).",
+      "context_window": "tiplatelet regimen (55%) followed by aspirin and prasugrel (35%). Quantitative coronary angiography (as treated analysis)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-ci-3525",
+      "claim_type": "confidence_interval",
+      "raw_text": "90% CI -1.96 to -0.16",
+      "numeric_values": [
+        -1.96,
+        -0.16
+      ],
+      "units": "90%CI",
+      "source_section": "results",
+      "source_offset": 3525,
+      "sentence": "2.80 [4.44] in the EES arm (difference -1.06, 90% CI -1.96 to -0.16; P non-inferiority < 0.001), reaching the pre-specified non-inferiority criterion.",
+      "context_window": "bsorb arm vs. 2.80 [4.44] in the EES arm (difference -1.06, 90% CI -1.96 to -0.16; P non-inferiority < 0.001), reaching the pre-specified non",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4584",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4584,
+      "sentence": "At 6 months, the late loss was 0.13 mm ( C ).",
+      "context_window": "sorb stent in the mid right coronary artery ( A and B ). At 6 months, the late loss was 0.13 mm ( C ). On optical frequency doma",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4612",
+      "claim_type": "unit_value",
+      "raw_text": "0.13 mm",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 4612,
+      "sentence": "At 6 months, the late loss was 0.13 mm ( C ).",
+      "context_window": "coronary artery ( A and B ). At 6 months, the late loss was 0.13 mm ( C ). On optical frequency domain imaging (longitudinal vi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-5211",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5211,
+      "sentence": "The angiography and optical frequency domain imaging at 6 months showed minimal neointimal hyperplasia (angiography: L , longitudinal and cross-sectional optical frequency domain imaging: M and N - Q , foldout view: R ) with excellent neointimal coverage (HS = 0).",
+      "context_window": "). The angiography and optical frequency domain imaging at 6 months showed minimal neointimal hyperplasia (angiography: L , lon",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-5634",
+      "claim_type": "unit_value",
+      "raw_text": "0.16 mm",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 5634,
+      "sentence": "The 6-month angiographic late loss was 0.16 mm ( C ), however, optical frequency domain imaging (longitudinal view: D , cross-sections: E-H ) showed malapposed struts ( E , F , and G ) and uncovered struts ( G and H ).",
+      "context_window": "artery ( A and B ). The 6-month angiographic late loss was 0.16 mm ( C ), however, optical frequency domain imaging (longitudi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6658",
+      "claim_type": "unit_value",
+      "raw_text": "8.19 mm",
+      "numeric_values": [
+        8.19
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 6658,
+      "sentence": "The abluminal mean stent areas amounted to 8.73 and 8.19 mm 2 in Absorb and EES, respectively ( P = 0.07).",
+      "context_window": "ority. The abluminal mean stent areas amounted to 8.73 and 8.19 mm 2 in Absorb and EES, respectively ( P = 0.07). The neointim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-6702",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6702,
+      "sentence": "The abluminal mean stent areas amounted to 8.73 and 8.19 mm 2 in Absorb and EES, respectively ( P = 0.07).",
+      "context_window": "ted to 8.73 and 8.19 mm 2 in Absorb and EES, respectively ( P = 0.07). The neointima area was significantly larger in the Absorb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6799",
+      "claim_type": "unit_value",
+      "raw_text": "1.35 mm",
+      "numeric_values": [
+        1.35
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 6799,
+      "sentence": "The neointima area was significantly larger in the Absorb compared with EES (1.52 and 1.35 mm 2 P = 0.018).",
+      "context_window": "nificantly larger in the Absorb compared with EES (1.52 and 1.35 mm 2 P = 0.018). As a result, the mean luminal area was simila",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-6809",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6809,
+      "sentence": "The neointima area was significantly larger in the Absorb compared with EES (1.52 and 1.35 mm 2 P = 0.018).",
+      "context_window": "larger in the Absorb compared with EES (1.52 and 1.35 mm 2 P = 0.018). As a result, the mean luminal area was similar in both gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6892",
+      "claim_type": "unit_value",
+      "raw_text": "7.02 mm",
+      "numeric_values": [
+        7.02
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 6892,
+      "sentence": "As a result, the mean luminal area was similar in both groups 7.06 and 7.02 mm 2 in Absorb and EES, respectively ( P = 0.89).",
+      "context_window": ", the mean luminal area was similar in both groups 7.06 and 7.02 mm 2 in Absorb and EES, respectively ( P = 0.89). In addition,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-6936",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.89",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6936,
+      "sentence": "As a result, the mean luminal area was similar in both groups 7.06 and 7.02 mm 2 in Absorb and EES, respectively ( P = 0.89).",
+      "context_window": "groups 7.06 and 7.02 mm 2 in Absorb and EES, respectively ( P = 0.89). In addition, the minimum stent area (7.30 and 7.04 mm 2 i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6993",
+      "claim_type": "unit_value",
+      "raw_text": "7.04 mm",
+      "numeric_values": [
+        7.04
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 6993,
+      "sentence": "In addition, the minimum stent area (7.30 and 7.04 mm 2 in Absorb and EES, respectively; P = 0.34) and the minimum luminal area (5.40 and 5.53 mm 2 in Absorb and EES, respectively; P = 0.65) were similar in both groups ( Supplementary material online, Figure SB and appendix ).",
+      "context_window": "( P = 0.89). In addition, the minimum stent area (7.30 and 7.04 mm 2 in Absorb and EES, respectively; P = 0.34) and the minimu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-7036",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.34",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7036,
+      "sentence": "In addition, the minimum stent area (7.30 and 7.04 mm 2 in Absorb and EES, respectively; P = 0.34) and the minimum luminal area (5.40 and 5.53 mm 2 in Absorb and EES, respectively; P = 0.65) were similar in both groups ( Supplementary material online, Figure SB and appendix ).",
+      "context_window": "t area (7.30 and 7.04 mm 2 in Absorb and EES, respectively; P = 0.34) and the minimum luminal area (5.40 and 5.53 mm 2 in Absorb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-7085",
+      "claim_type": "unit_value",
+      "raw_text": "5.53 mm",
+      "numeric_values": [
+        5.53
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 7085,
+      "sentence": "In addition, the minimum stent area (7.30 and 7.04 mm 2 in Absorb and EES, respectively; P = 0.34) and the minimum luminal area (5.40 and 5.53 mm 2 in Absorb and EES, respectively; P = 0.65) were similar in both groups ( Supplementary material online, Figure SB and appendix ).",
+      "context_window": "pectively; P = 0.34) and the minimum luminal area (5.40 and 5.53 mm 2 in Absorb and EES, respectively; P = 0.65) were similar i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-7128",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7128,
+      "sentence": "In addition, the minimum stent area (7.30 and 7.04 mm 2 in Absorb and EES, respectively; P = 0.34) and the minimum luminal area (5.40 and 5.53 mm 2 in Absorb and EES, respectively; P = 0.65) were similar in both groups ( Supplementary material online, Figure SB and appendix ).",
+      "context_window": "l area (5.40 and 5.53 mm 2 in Absorb and EES, respectively; P = 0.65) were similar in both groups ( Supplementary material onlin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7275",
+      "claim_type": "percentage",
+      "raw_text": "16.9%",
+      "numeric_values": [
+        16.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7275,
+      "sentence": "The percentage of volume obstruction was 17.9 and 16.9% in Absorb and EES, respectively ( P = 0.27).",
+      "context_window": "pendix ). The percentage of volume obstruction was 17.9 and 16.9% in Absorb and EES, respectively ( P = 0.27). Quantitative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-7315",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7315,
+      "sentence": "The percentage of volume obstruction was 17.9 and 16.9% in Absorb and EES, respectively ( P = 0.27).",
+      "context_window": "uction was 17.9 and 16.9% in Absorb and EES, respectively ( P = 0.27). Quantitative coronary angiography data at 6-month follow",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-7454",
+      "claim_type": "mean_sd",
+      "raw_text": "0.17 \u00b1 0.24",
+      "numeric_values": [
+        0.17,
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7454,
+      "sentence": "The mean in-device late lumen loss was 0.17 \u00b1 0.24 mm in the Absorb group vs.",
+      "context_window": "marized in Table 3 . The mean in-device late lumen loss was 0.17 \u00b1 0.24 mm in the Absorb group vs. 0.08 \u00b1 0.28 mm in the EES arm (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-7461",
+      "claim_type": "unit_value",
+      "raw_text": "0.24 mm",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 7461,
+      "sentence": "The mean in-device late lumen loss was 0.17 \u00b1 0.24 mm in the Absorb group vs.",
+      "context_window": "in Table 3 . The mean in-device late lumen loss was 0.17 \u00b1 0.24 mm in the Absorb group vs. 0.08 \u00b1 0.28 mm in the EES arm ( P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-7493",
+      "claim_type": "mean_sd",
+      "raw_text": "0.08 \u00b1 0.28",
+      "numeric_values": [
+        0.08,
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7493,
+      "sentence": "0.08 \u00b1 0.28 mm in the EES arm ( P = 0.024).",
+      "context_window": "late lumen loss was 0.17 \u00b1 0.24 mm in the Absorb group vs. 0.08 \u00b1 0.28 mm in the EES arm ( P = 0.024). Cumulative curves of late l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-7500",
+      "claim_type": "unit_value",
+      "raw_text": "0.28 mm",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 7500,
+      "sentence": "0.08 \u00b1 0.28 mm in the EES arm ( P = 0.024).",
+      "context_window": "umen loss was 0.17 \u00b1 0.24 mm in the Absorb group vs. 0.08 \u00b1 0.28 mm in the EES arm ( P = 0.024). Cumulative curves of late loss",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-7525",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7525,
+      "sentence": "0.08 \u00b1 0.28 mm in the EES arm ( P = 0.024).",
+      "context_window": "mm in the Absorb group vs. 0.08 \u00b1 0.28 mm in the EES arm ( P = 0.024). Cumulative curves of late loss are presented in Supplemen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7696",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7696,
+      "sentence": "In-device, binary restenosis rate was similarly low in both groups (0% in Absorb vs.",
+      "context_window": "e, binary restenosis rate was similarly low in both groups (0% in Absorb vs. 1.1% in EES; difference -1.1% [-3.3%, 1.1%];",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7713",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7713,
+      "sentence": "1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0).",
+      "context_window": "sis rate was similarly low in both groups (0% in Absorb vs. 1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0). The DOCE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7738",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7738,
+      "sentence": "1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0).",
+      "context_window": "w in both groups (0% in Absorb vs. 1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0). The DOCE rates were low (Absorb:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7745",
+      "claim_type": "percentage",
+      "raw_text": "3.3%",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7745,
+      "sentence": "1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0).",
+      "context_window": "th groups (0% in Absorb vs. 1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0). The DOCE rates were low (Absorb: 1.1% vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7751",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7751,
+      "sentence": "1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0).",
+      "context_window": "ups (0% in Absorb vs. 1.1% in EES; difference -1.1% [-3.3%, 1.1%]; P = 1.0). The DOCE rates were low (Absorb: 1.1% vs. Xien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7802",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7802,
+      "sentence": "The DOCE rates were low (Absorb: 1.1% vs.",
+      "context_window": "[-3.3%, 1.1%]; P = 1.0). The DOCE rates were low (Absorb: 1.1% vs. Xience: 0%) at 6 months. There was no death in both gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7819",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7819,
+      "sentence": "Xience: 0%) at 6 months.",
+      "context_window": "= 1.0). The DOCE rates were low (Absorb: 1.1% vs. Xience: 0%) at 6 months. There was no death in both groups. There was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-7826",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7826,
+      "sentence": "Xience: 0%) at 6 months.",
+      "context_window": ". The DOCE rates were low (Absorb: 1.1% vs. Xience: 0%) at 6 months. There was no death in both groups. There was only one pati",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-8102",
+      "claim_type": "unit_value",
+      "raw_text": "1.92 mm",
+      "numeric_values": [
+        1.92
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 8102,
+      "sentence": "In this patient, an inadequate matching of the vessel and device size was observed (vessel size 1.92 mm; stent size 2.5 mm).",
+      "context_window": "ing of the vessel and device size was observed (vessel size 1.92 mm; stent size 2.5 mm). There were in each group one non-clini",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-8122",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mm",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 8122,
+      "sentence": "In this patient, an inadequate matching of the vessel and device size was observed (vessel size 1.92 mm; stent size 2.5 mm).",
+      "context_window": "d device size was observed (vessel size 1.92 mm; stent size 2.5 mm). There were in each group one non-clinically driven TLR at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-8197",
+      "claim_type": "unit_value",
+      "raw_text": "198 days",
+      "numeric_values": [
+        198.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8197,
+      "sentence": "There were in each group one non-clinically driven TLR at 178 and 198 days.",
+      "context_window": "were in each group one non-clinically driven TLR at 178 and 198 days. One patient in the Xience arm underwent a non-clinically d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-8335",
+      "claim_type": "unit_value",
+      "raw_text": "198 days",
+      "numeric_values": [
+        198.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8335,
+      "sentence": "One patient in the Xience arm underwent a non-clinically driven target vessel revascularization outside of the target lesion at 198 days.",
+      "context_window": "et vessel revascularization outside of the target lesion at 198 days. In addition, there were five and four non-target vessel re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8566",
+      "claim_type": "percentage",
+      "raw_text": "46.2%",
+      "numeric_values": [
+        46.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8566,
+      "sentence": "Most of the patients were on dual antiplatelet regimen (aspirin + ticagrelor: 46.2% in Absorb vs.",
+      "context_window": "ts were on dual antiplatelet regimen (aspirin + ticagrelor: 46.2% in Absorb vs. 46.9% in EES arm; P = 0.92; aspirin + prasugr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8586",
+      "claim_type": "percentage",
+      "raw_text": "46.9%",
+      "numeric_values": [
+        46.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8586,
+      "sentence": "46.9% in EES arm; P = 0.92; aspirin + prasugrel: 31.9% in Absorb vs.",
+      "context_window": "platelet regimen (aspirin + ticagrelor: 46.2% in Absorb vs. 46.9% in EES arm; P = 0.92; aspirin + prasugrel: 31.9% in Absorb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-8604",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8604,
+      "sentence": "46.9% in EES arm; P = 0.92; aspirin + prasugrel: 31.9% in Absorb vs.",
+      "context_window": "aspirin + ticagrelor: 46.2% in Absorb vs. 46.9% in EES arm; P = 0.92; aspirin + prasugrel: 31.9% in Absorb vs. 37.9% in EES arm;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8635",
+      "claim_type": "percentage",
+      "raw_text": "31.9%",
+      "numeric_values": [
+        31.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8635,
+      "sentence": "46.9% in EES arm; P = 0.92; aspirin + prasugrel: 31.9% in Absorb vs.",
+      "context_window": "Absorb vs. 46.9% in EES arm; P = 0.92; aspirin + prasugrel: 31.9% in Absorb vs. 37.9% in EES arm; P = 0.39). At follow-up, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8655",
+      "claim_type": "percentage",
+      "raw_text": "37.9%",
+      "numeric_values": [
+        37.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8655,
+      "sentence": "37.9% in EES arm; P = 0.39).",
+      "context_window": "EES arm; P = 0.92; aspirin + prasugrel: 31.9% in Absorb vs. 37.9% in EES arm; P = 0.39). At follow-up, angina-free patients w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-8673",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8673,
+      "sentence": "37.9% in EES arm; P = 0.39).",
+      "context_window": "aspirin + prasugrel: 31.9% in Absorb vs. 37.9% in EES arm; P = 0.39). At follow-up, angina-free patients were 91.4 vs. 91.7% in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8733",
+      "claim_type": "percentage",
+      "raw_text": "91.7%",
+      "numeric_values": [
+        91.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8733,
+      "sentence": "91.7% in the Absorb and EES group, respectively ( P = 0.94).",
+      "context_window": "P = 0.39). At follow-up, angina-free patients were 91.4 vs. 91.7% in the Absorb and EES group, respectively ( P = 0.94).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-8783",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.94",
+      "numeric_values": [
+        0.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8783,
+      "sentence": "91.7% in the Absorb and EES group, respectively ( P = 0.94).",
+      "context_window": "91.4 vs. 91.7% in the Absorb and EES group, respectively ( P = 0.94).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-436",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 436,
+      "sentence": "Specifically, mean rate of uncovered stents appeared to be as high as 49% in culprit lesions from STEMI when compared with 9% in stable plaques after first-generation DES implantation.",
+      "context_window": "ly, mean rate of uncovered stents appeared to be as high as 49% in culprit lesions from STEMI when compared with 9% in stab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-489",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 489,
+      "sentence": "Specifically, mean rate of uncovered stents appeared to be as high as 49% in culprit lesions from STEMI when compared with 9% in stable plaques after first-generation DES implantation.",
+      "context_window": "igh as 49% in culprit lesions from STEMI when compared with 9% in stable plaques after first-generation DES implantation.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-795",
+      "claim_type": "mean_sd",
+      "raw_text": "0.4 \u00b1 0.8",
+      "numeric_values": [
+        0.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 795,
+      "sentence": "In an in vivo animal model, the use of EES when compared with first-generation sirolimus-eluting stent was associated with a lower incidence of uncovered struts (0.4 \u00b1 0.8 vs.",
+      "context_window": "was associated with a lower incidence of uncovered struts (0.4 \u00b1 0.8 vs. 41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflam",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-809",
+      "claim_type": "mean_sd",
+      "raw_text": "41.7 \u00b1 27.0",
+      "numeric_values": [
+        41.7,
+        27.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 809,
+      "sentence": "41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflammatory reaction (inflammation score 0.5 \u00b1 0.4 vs.",
+      "context_window": "d with a lower incidence of uncovered struts (0.4 \u00b1 0.8 vs. 41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflammatory reaction",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-816",
+      "claim_type": "percentage",
+      "raw_text": "27.0%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 816,
+      "sentence": "41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflammatory reaction (inflammation score 0.5 \u00b1 0.4 vs.",
+      "context_window": "a lower incidence of uncovered struts (0.4 \u00b1 0.8 vs. 41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflammatory reaction (",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-823",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 823,
+      "sentence": "41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflammatory reaction (inflammation score 0.5 \u00b1 0.4 vs.",
+      "context_window": "incidence of uncovered struts (0.4 \u00b1 0.8 vs. 41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflammatory reaction (inflammatio",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-900",
+      "claim_type": "mean_sd",
+      "raw_text": "0.5 \u00b1 0.4",
+      "numeric_values": [
+        0.5,
+        0.4
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 900,
+      "sentence": "41.7 \u00b1 27.0%; P = 0.004) and a minimal degree of inflammatory reaction (inflammation score 0.5 \u00b1 0.4 vs.",
+      "context_window": "minimal degree of inflammatory reaction (inflammation score 0.5 \u00b1 0.4 vs. 2.9 \u00b1 1.4; P = 0.001). 24 These findings have been corr",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-914",
+      "claim_type": "mean_sd",
+      "raw_text": "2.9 \u00b1 1.4",
+      "numeric_values": [
+        2.9,
+        1.4
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 914,
+      "sentence": "2.9 \u00b1 1.4; P = 0.001).",
+      "context_window": "of inflammatory reaction (inflammation score 0.5 \u00b1 0.4 vs. 2.9 \u00b1 1.4; P = 0.001). 24 These findings have been corroborated in hu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-925",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 925,
+      "sentence": "2.9 \u00b1 1.4; P = 0.001).",
+      "context_window": "atory reaction (inflammation score 0.5 \u00b1 0.4 vs. 2.9 \u00b1 1.4; P = 0.001). 24 These findings have been corroborated in humans in who",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1118",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1118,
+      "sentence": "5.2% and 2.1 vs.",
+      "context_window": "osed struts compared with paclitaxel-eluting stent (2.3 vs. 5.2% and 2.1 vs. 5.7%, respectively; P < 0.001) as assessed by o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1135",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1135,
+      "sentence": "5.7%, respectively; P < 0.001) as assessed by optical coherence tomography (OCT).",
+      "context_window": "red with paclitaxel-eluting stent (2.3 vs. 5.2% and 2.1 vs. 5.7%, respectively; P < 0.001) as assessed by optical coherence",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-1155",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1155,
+      "sentence": "5.7%, respectively; P < 0.001) as assessed by optical coherence tomography (OCT).",
+      "context_window": "eluting stent (2.3 vs. 5.2% and 2.1 vs. 5.7%, respectively; P < 0.001) as assessed by optical coherence tomography (OCT). 25 Hist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-1419",
+      "claim_type": "mean_sd",
+      "raw_text": "1.2 \u00b1 2.3",
+      "numeric_values": [
+        1.2,
+        2.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1419,
+      "sentence": "26 In a multi-imaging study, rates of uncovered struts (1.2 \u00b1 2.3% vs.",
+      "context_window": "ES. 26 In a multi-imaging study, rates of uncovered struts (1.2 \u00b1 2.3% vs. 1.0 \u00b1 2.3%) and percentage of stents fully covered wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1425",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1425,
+      "sentence": "26 In a multi-imaging study, rates of uncovered struts (1.2 \u00b1 2.3% vs.",
+      "context_window": "In a multi-imaging study, rates of uncovered struts (1.2 \u00b1 2.3% vs. 1.0 \u00b1 2.3%) and percentage of stents fully covered with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-1434",
+      "claim_type": "mean_sd",
+      "raw_text": "1.0 \u00b1 2.3",
+      "numeric_values": [
+        1.0,
+        2.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1434,
+      "sentence": "1.0 \u00b1 2.3%) and percentage of stents fully covered with neointima (60.9 vs.",
+      "context_window": "ti-imaging study, rates of uncovered struts (1.2 \u00b1 2.3% vs. 1.0 \u00b1 2.3%) and percentage of stents fully covered with neointima (60",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1440",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1440,
+      "sentence": "1.0 \u00b1 2.3%) and percentage of stents fully covered with neointima (60.9 vs.",
+      "context_window": "ging study, rates of uncovered struts (1.2 \u00b1 2.3% vs. 1.0 \u00b1 2.3%) and percentage of stents fully covered with neointima (60.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-1510",
+      "claim_type": "percentage",
+      "raw_text": "61.1%",
+      "numeric_values": [
+        61.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1510,
+      "sentence": "61.1%) appeared to be similar in STEMI vs. stable coronary plaques at 12 months with the use of EES.",
+      "context_window": "percentage of stents fully covered with neointima (60.9 vs. 61.1%) appeared to be similar in STEMI vs. stable coronary plaque",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1580",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1580,
+      "sentence": "61.1%) appeared to be similar in STEMI vs. stable coronary plaques at 12 months with the use of EES.",
+      "context_window": "eared to be similar in STEMI vs. stable coronary plaques at 12 months with the use of EES. 27 Stenting of culprit lesions with A",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-1775",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1775,
+      "sentence": "27\n\nStenting of culprit lesions with Absorb in the setting of STEMI resulted in nearly complete arterial healing, which was comparable with that of metallic EES at 6 months.",
+      "context_window": "healing, which was comparable with that of metallic EES at 6 months. Frequency of malapposed, and both malapposed and uncovere",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-2009",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2009,
+      "sentence": "At 6 months, late lumen loss was lower in the EES arm, but binary restenosis rate was comparably low between groups.",
+      "context_window": "QCA revealed similar acute gain and MLD post-procedure. At 6 months, late lumen loss was lower in the EES arm, but binary reste",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-2378",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2378,
+      "sentence": "21 , 28 A comprehensive network meta-analysis involving 51 trials that included a total of 52 158 randomized patients with follow-up duration \u22653 years recently demonstrated that EES was associated with lower rates of mortality, definite stent thrombosis, and myocardial infarction than bare-metal stents and first-generation DES.",
+      "context_window": "otal of 52 158 randomized patients with follow-up duration \u22653 years recently demonstrated that EES was associated with lower ra",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-3379",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3379,
+      "sentence": "4.5%; P = 0.11).",
+      "context_window": "overed strut rate was also similar between devices (5.3 vs. 4.5%; P = 0.11). Our results are promising as they have been obt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-3385",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3385,
+      "sentence": "4.5%; P = 0.11).",
+      "context_window": "strut rate was also similar between devices (5.3 vs. 4.5%; P = 0.11). Our results are promising as they have been obtained at a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-3480",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3480,
+      "sentence": "Our results are promising as they have been obtained at a shorter follow-up period (6 months) and in the context of high thrombogenic milieu.",
+      "context_window": "g as they have been obtained at a shorter follow-up period (6 months) and in the context of high thrombogenic milieu. Fourth, t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4052",
+      "claim_type": "unit_value",
+      "raw_text": "0.08 mm",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 4052,
+      "sentence": "0.08 mm in the EES arm; P = 0.024) although this was not translated into any increase in binary restenosis rate (Absorb: 0% vs.",
+      "context_window": "e loss was significantly higher in the Absorb arm (0.17 vs. 0.08 mm in the EES arm; P = 0.024) although this was not translated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-p-4076",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4076,
+      "sentence": "0.08 mm in the EES arm; P = 0.024) although this was not translated into any increase in binary restenosis rate (Absorb: 0% vs.",
+      "context_window": "higher in the Absorb arm (0.17 vs. 0.08 mm in the EES arm; P = 0.024) although this was not translated into any increase in bina",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-4173",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4173,
+      "sentence": "0.08 mm in the EES arm; P = 0.024) although this was not translated into any increase in binary restenosis rate (Absorb: 0% vs.",
+      "context_window": "slated into any increase in binary restenosis rate (Absorb: 0% vs. Xience: 1%, Table 3 ). The observed late lumen loss is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-4188",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4188,
+      "sentence": "Xience: 1%, Table 3 ).",
+      "context_window": "increase in binary restenosis rate (Absorb: 0% vs. Xience: 1%, Table 3 ). The observed late lumen loss is comparable with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4546",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4546,
+      "sentence": "33 The primary endpoint (late loss at 9 months) was comparable between groups (0.28 mm in Absorb, 0.25 mm in EES/BES group).",
+      "context_window": "-eluting stent (BES). 33 The primary endpoint (late loss at 9 months) was comparable between groups (0.28 mm in Absorb, 0.25 mm",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4587",
+      "claim_type": "unit_value",
+      "raw_text": "0.28 mm",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 4587,
+      "sentence": "33 The primary endpoint (late loss at 9 months) was comparable between groups (0.28 mm in Absorb, 0.25 mm in EES/BES group).",
+      "context_window": "oint (late loss at 9 months) was comparable between groups (0.28 mm in Absorb, 0.25 mm in EES/BES group). Of note, only 10% of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-4606",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 mm",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 4606,
+      "sentence": "33 The primary endpoint (late loss at 9 months) was comparable between groups (0.28 mm in Absorb, 0.25 mm in EES/BES group).",
+      "context_window": "9 months) was comparable between groups (0.28 mm in Absorb, 0.25 mm in EES/BES group). Of note, only 10% of patients included i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-4647",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4647,
+      "sentence": "Of note, only 10% of patients included in EVERBIO II trial presented with STEMI.",
+      "context_window": "0.28 mm in Absorb, 0.25 mm in EES/BES group). Of note, only 10% of patients included in EVERBIO II trial presented with STE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-5666",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5666,
+      "sentence": "32 In our trial, >90% of the patients were found to be free from angina at 6-month follow-up.",
+      "context_window": "ses and by improving vasomotor responses. 32 In our trial, >90% of the patients were found to be free from angina at 6-mont",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-n-6337",
+      "claim_type": "sample_size",
+      "raw_text": "n = 290",
+      "numeric_values": [
+        290.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6337,
+      "sentence": "35 Recently, a propensity score matching between Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the context of STEMI showed a comparable incidence of device-oriented endpoint either at 30 days or at 1 year.",
+      "context_window": ". 35 Recently, a propensity score matching between Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-n-6366",
+      "claim_type": "sample_size",
+      "raw_text": "n = 290",
+      "numeric_values": [
+        290.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6366,
+      "sentence": "35 Recently, a propensity score matching between Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the context of STEMI showed a comparable incidence of device-oriented endpoint either at 30 days or at 1 year.",
+      "context_window": "core matching between Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the context of STEMI showed a compa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-n-6386",
+      "claim_type": "sample_size",
+      "raw_text": "n = 290",
+      "numeric_values": [
+        290.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6386,
+      "sentence": "35 Recently, a propensity score matching between Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the context of STEMI showed a comparable incidence of device-oriented endpoint either at 30 days or at 1 year.",
+      "context_window": "n Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the context of STEMI showed a comparable incidence of d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6487",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6487,
+      "sentence": "35 Recently, a propensity score matching between Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the context of STEMI showed a comparable incidence of device-oriented endpoint either at 30 days or at 1 year.",
+      "context_window": "comparable incidence of device-oriented endpoint either at 30 days or at 1 year. Of interest, definite/probable thrombosis rat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6501",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 6501,
+      "sentence": "35 Recently, a propensity score matching between Absorb ( n = 290), bare-metal stent ( n = 290), and EES ( n = 290) in the context of STEMI showed a comparable incidence of device-oriented endpoint either at 30 days or at 1 year.",
+      "context_window": "cidence of device-oriented endpoint either at 30 days or at 1 year. Of interest, definite/probable thrombosis rate was found t",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6613",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6613,
+      "sentence": "Of interest, definite/probable thrombosis rate was found to be numerically higher with Absorb either at 30 days (2.1% vs.",
+      "context_window": "te was found to be numerically higher with Absorb either at 30 days (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-6622",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6622,
+      "sentence": "Of interest, definite/probable thrombosis rate was found to be numerically higher with Absorb either at 30 days (2.1% vs.",
+      "context_window": "und to be numerically higher with Absorb either at 30 days (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7%), wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-6631",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6631,
+      "sentence": "0.3%, vs.",
+      "context_window": "numerically higher with Absorb either at 30 days (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7%), when compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-6641",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6641,
+      "sentence": "1.0%) or 1 year (2.4% vs.",
+      "context_window": "ly higher with Absorb either at 30 days (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7%), when compared with EE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-6650",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 6650,
+      "sentence": "1.0%) or 1 year (2.4% vs.",
+      "context_window": "with Absorb either at 30 days (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7%), when compared with EES or bare-m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-6658",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6658,
+      "sentence": "1.0%) or 1 year (2.4% vs.",
+      "context_window": "sorb either at 30 days (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7%), when compared with EES or bare-metal s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-6667",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6667,
+      "sentence": "1.4%, vs.",
+      "context_window": "er at 30 days (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7%), when compared with EES or bare-metal stent, res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-6677",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6677,
+      "sentence": "1.7%), when compared with EES or bare-metal stent, respectively.",
+      "context_window": "ays (2.1% vs. 0.3%, vs. 1.0%) or 1 year (2.4% vs. 1.4%, vs. 1.7%), when compared with EES or bare-metal stent, respectively.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-7142",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 7142,
+      "sentence": "Finally, another potential clinical implication regards to the observed nearly complete healing at 6 months.",
+      "context_window": "lication regards to the observed nearly complete healing at 6 months. This is reassuring for an eventual need of antiplatelet tr",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-7430",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7430,
+      "sentence": "This may be related to the highly selected population (only 10% of the STEMI patients admitted during the recruitment period were included), due to inclusion and exclusion criteria, need to consent in the acute phase of STEMI, need to randomize after successful lesion preparation, and the requirement of an angiographic follow-up.",
+      "context_window": "This may be related to the highly selected population (only 10% of the STEMI patients admitted during the recruitment perio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-7837",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 7837,
+      "sentence": "Secondly, our study assess arterial healing at 6 months which is an intermediate time point in which the resorption process is not complete and the process of neointima formation in EES has not picked yet.",
+      "context_window": "from STEMI. Secondly, our study assess arterial healing at 6 months which is an intermediate time point in which the resorption",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8663",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8663,
+      "sentence": "The original non-inferiority margin of 4.5 was determined as 50% of the observed HS of 9.0 in the Absorb stent in a stable angina population.",
+      "context_window": "he original non-inferiority margin of 4.5 was determined as 50% of the observed HS of 9.0 in the Absorb stent in a stable a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-pct-8875",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8875,
+      "sentence": "If we apply this relative non-inferiority margin to the current observation, the ( post hoc ) non-inferiority margin would be 1.4 (50% of the HS in the control group: 2.80).",
+      "context_window": "tion, the ( post hoc ) non-inferiority margin would be 1.4 (50% of the HS in the control group: 2.80). Non-inferiority is m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-9161",
+      "claim_type": "mean_sd",
+      "raw_text": "0.73 \u00b1 0.72",
+      "numeric_values": [
+        0.73,
+        0.72
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 9161,
+      "sentence": "When the log-transformation was performed, the non-inferiority was still achieved with a P -value of <0.001 (log-transformed HS: 0.73 \u00b1 0.72 vs.",
+      "context_window": "ill achieved with a P -value of <0.001 (log-transformed HS: 0.73 \u00b1 0.72 vs. Xience: 0.86 \u00b1 0.92, difference: -0.13). Finally, sampl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-msd-9185",
+      "claim_type": "mean_sd",
+      "raw_text": "0.86 \u00b1 0.92",
+      "numeric_values": [
+        0.86,
+        0.92
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 9185,
+      "sentence": "Xience: 0.86 \u00b1 0.92, difference: -0.13).",
+      "context_window": "alue of <0.001 (log-transformed HS: 0.73 \u00b1 0.72 vs. Xience: 0.86 \u00b1 0.92, difference: -0.13). Finally, sample size does not allow us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4712350_everolimus_eluting_bioresorbable_stent_vs_durable_polymer_ev-u-9409",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 9409,
+      "sentence": "In conclusion, this randomized trial demonstrated a nearly complete arterial healing at 6 months after both Absorb and EES implantation in the setting of STEMI.",
+      "context_window": "ed trial demonstrated a nearly complete arterial healing at 6 months after both Absorb and EES implantation in the setting of ST",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

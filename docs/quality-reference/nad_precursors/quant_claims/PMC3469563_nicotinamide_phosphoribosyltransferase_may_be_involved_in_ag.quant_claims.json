@@ -1,0 +1,808 @@
+{
+  "paper_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag",
+  "doi": "10.1371/journal.pone.0044933",
+  "extracted_at": "2026-05-05T21:28:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 21,
+    "unit_value": 7,
+    "sample_size": 8,
+    "mean_sd": 1,
+    "p_value": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-2356",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2356,
+      "sentence": "In brain, iNAMPT is mainly expressed in neurons [2] , [3] , thus to meet the large energy demand, as neuron accounts for \u223c70% of oxidative metabolism in cortical gray matter while brain accounts for \u223c20% of total body oxygen consumption [25] .",
+      "context_window": "us to meet the large energy demand, as neuron accounts for \u223c70% of oxidative metabolism in cortical gray matter while brain",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-2434",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2434,
+      "sentence": "In brain, iNAMPT is mainly expressed in neurons [2] , [3] , thus to meet the large energy demand, as neuron accounts for \u223c70% of oxidative metabolism in cortical gray matter while brain accounts for \u223c20% of total body oxygen consumption [25] .",
+      "context_window": "etabolism in cortical gray matter while brain accounts for \u223c20% of total body oxygen consumption [25] . Upon aging, energy",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-306",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 306,
+      "sentence": "All animal was deeply anesthetized under 10% chloral hydrate before sacrifice, and all efforts were made to minimize suffering.",
+      "context_window": "chool of Medicine. All animal was deeply anesthetized under 10% chloral hydrate before sacrifice, and all efforts were made",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-u-401",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 401,
+      "sentence": "Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory Animal Center of Zhejiang University (Zhejiang, PR China).",
+      "context_window": "e, and all efforts were made to minimize suffering. Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-415",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 415,
+      "sentence": "Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory Animal Center of Zhejiang University (Zhejiang, PR China).",
+      "context_window": "orts were made to minimize suffering. Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 month",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-u-437",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 437,
+      "sentence": "Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory Animal Center of Zhejiang University (Zhejiang, PR China).",
+      "context_window": "mize suffering. Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-452",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 452,
+      "sentence": "Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory Animal Center of Zhejiang University (Zhejiang, PR China).",
+      "context_window": "Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-u-473",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 473,
+      "sentence": "Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory Animal Center of Zhejiang University (Zhejiang, PR China).",
+      "context_window": ", n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-488",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 488,
+      "sentence": "Young (2 months old, n = 31), middle-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory Animal Center of Zhejiang University (Zhejiang, PR China).",
+      "context_window": "le-aged (10 months old, n = 12) and aged (16\u223c18 months old, n = 20) female ICR mice were purchased from Laboratory Animal Cent",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-msd-654",
+      "claim_type": "mean_sd",
+      "raw_text": "22\u00b11",
+      "numeric_values": [
+        22.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 654,
+      "sentence": "Mice were housed in a temperature-conditioned room (22\u00b11\u00b0C) under a 12-h light/dark cycle (light off from 18:00 to 6:00), and were given free access to food and water.",
+      "context_window": "China). Mice were housed in a temperature-conditioned room (22\u00b11\u00b0C) under a 12-h light/dark cycle (light off from 18:00 to 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-808",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 808,
+      "sentence": "Sprague-Dawley rats born within 12 h (n = 6) were purchased from Laboratory Animal Center of Zhejiang Academy of Medical Science, China.",
+      "context_window": "ss to food and water. Sprague-Dawley rats born within 12 h (n = 6) were purchased from Laboratory Animal Center of Zhejiang A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1153",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1153,
+      "sentence": "Cells were cultured in RPMI media 1640 medium (Gibco, Paisley, United Kingdom) supplemented with 10% heat inactivated fetal calf serum (FCS; Gibco) and 100 U/ml penicillin and streptomycin, at 37\u00b0C in a humidified atmosphere containing 95% air and 5% CO 2 .",
+      "context_window": "0 medium (Gibco, Paisley, United Kingdom) supplemented with 10% heat inactivated fetal calf serum (FCS; Gibco) and 100 U/ml",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1292",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1292,
+      "sentence": "Cells were cultured in RPMI media 1640 medium (Gibco, Paisley, United Kingdom) supplemented with 10% heat inactivated fetal calf serum (FCS; Gibco) and 100 U/ml penicillin and streptomycin, at 37\u00b0C in a humidified atmosphere containing 95% air and 5% CO 2 .",
+      "context_window": "streptomycin, at 37\u00b0C in a humidified atmosphere containing 95% air and 5% CO 2 . Cortical neurons were prepared from the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1304",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1304,
+      "sentence": "Cells were cultured in RPMI media 1640 medium (Gibco, Paisley, United Kingdom) supplemented with 10% heat inactivated fetal calf serum (FCS; Gibco) and 100 U/ml penicillin and streptomycin, at 37\u00b0C in a humidified atmosphere containing 95% air and 5% CO 2 .",
+      "context_window": ", at 37\u00b0C in a humidified atmosphere containing 95% air and 5% CO 2 . Cortical neurons were prepared from the brains of S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1626",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1626,
+      "sentence": "Cells were grown in the plating medium containing 80% high-glucose DMEM, 10% fetal bovine serum, 10% horse serum, 2 mM glutamine and 100 U/mL penicillin/streptomycin (Gibco, Grand Island, NY, USA) for 24 h.",
+      "context_window": "MO, USA). Cells were grown in the plating medium containing 80% high-glucose DMEM, 10% fetal bovine serum, 10% horse serum,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1649",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1649,
+      "sentence": "Cells were grown in the plating medium containing 80% high-glucose DMEM, 10% fetal bovine serum, 10% horse serum, 2 mM glutamine and 100 U/mL penicillin/streptomycin (Gibco, Grand Island, NY, USA) for 24 h.",
+      "context_window": "own in the plating medium containing 80% high-glucose DMEM, 10% fetal bovine serum, 10% horse serum, 2 mM glutamine and 100",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1673",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1673,
+      "sentence": "Cells were grown in the plating medium containing 80% high-glucose DMEM, 10% fetal bovine serum, 10% horse serum, 2 mM glutamine and 100 U/mL penicillin/streptomycin (Gibco, Grand Island, NY, USA) for 24 h.",
+      "context_window": "m containing 80% high-glucose DMEM, 10% fetal bovine serum, 10% horse serum, 2 mM glutamine and 100 U/mL penicillin/strepto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1843",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1843,
+      "sentence": "The plating medium was changed to feeding medium containing 95% high-glucose DMEM, 5% horse serum, 2 mM glutamine, 100 U/mL penicillin/streptomycin, 0.01% N2 and 0.04% B27 (Gibco).",
+      "context_window": "The plating medium was changed to feeding medium containing 95% high-glucose DMEM, 5% horse serum, 2 mM glutamine, 100 U/mL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1866",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1866,
+      "sentence": "The plating medium was changed to feeding medium containing 95% high-glucose DMEM, 5% horse serum, 2 mM glutamine, 100 U/mL penicillin/streptomycin, 0.01% N2 and 0.04% B27 (Gibco).",
+      "context_window": "changed to feeding medium containing 95% high-glucose DMEM, 5% horse serum, 2 mM glutamine, 100 U/mL penicillin/streptomyc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1932",
+      "claim_type": "percentage",
+      "raw_text": "0.01%",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1932,
+      "sentence": "The plating medium was changed to feeding medium containing 95% high-glucose DMEM, 5% horse serum, 2 mM glutamine, 100 U/mL penicillin/streptomycin, 0.01% N2 and 0.04% B27 (Gibco).",
+      "context_window": "se serum, 2 mM glutamine, 100 U/mL penicillin/streptomycin, 0.01% N2 and 0.04% B27 (Gibco). The day of plating was identified",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-1945",
+      "claim_type": "percentage",
+      "raw_text": "0.04%",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1945,
+      "sentence": "The plating medium was changed to feeding medium containing 95% high-glucose DMEM, 5% horse serum, 2 mM glutamine, 100 U/mL penicillin/streptomycin, 0.01% N2 and 0.04% B27 (Gibco).",
+      "context_window": "M glutamine, 100 U/mL penicillin/streptomycin, 0.01% N2 and 0.04% B27 (Gibco). The day of plating was identified as day-in-vi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-u-2201",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2201,
+      "sentence": "Half of the feeding medium was changed every 3 days, and cultures were maintained at 37\u00b0C until DIV 10 in a humidified atmosphere (5% CO 2 and 95% air).",
+      "context_window": "euronal cells. Half of the feeding medium was changed every 3 days, and cultures were maintained at 37\u00b0C until DIV 10 in a hum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-2287",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2287,
+      "sentence": "Half of the feeding medium was changed every 3 days, and cultures were maintained at 37\u00b0C until DIV 10 in a humidified atmosphere (5% CO 2 and 95% air).",
+      "context_window": "maintained at 37\u00b0C until DIV 10 in a humidified atmosphere (5% CO 2 and 95% air). 100-200 \u00b5l blood was obtained and serum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-2299",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2299,
+      "sentence": "Half of the feeding medium was changed every 3 days, and cultures were maintained at 37\u00b0C until DIV 10 in a humidified atmosphere (5% CO 2 and 95% air).",
+      "context_window": "t 37\u00b0C until DIV 10 in a humidified atmosphere (5% CO 2 and 95% air). 100-200 \u00b5l blood was obtained and serum was collecte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-3956",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3956,
+      "sentence": "The sections were permeabilized in PBS with 0.3% Triton X-100 and 10% donkey serum for 30 min at room temperature.",
+      "context_window": "brain sections. The sections were permeabilized in PBS with 0.3% Triton X-100 and 10% donkey serum for 30 min at room temper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-3978",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3978,
+      "sentence": "The sections were permeabilized in PBS with 0.3% Triton X-100 and 10% donkey serum for 30 min at room temperature.",
+      "context_window": "ctions were permeabilized in PBS with 0.3% Triton X-100 and 10% donkey serum for 30 min at room temperature. After wash, ea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-u-5441",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5441,
+      "sentence": "The bEnd.3 cells were continuously applied with 200 ng/ml recombinant NAMPT (continuously applied for 5 generations, for total 15 days), then rinsed twice and incubated in Earle's solution without glucose and then the cells were introduced into an anaerobic chamber filled with 95% N 2 and 5% CO 2 at 37\u00b0C for 1.5 h.",
+      "context_window": "nt NAMPT (continuously applied for 5 generations, for total 15 days), then rinsed twice and incubated in Earle's solution witho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-5592",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5592,
+      "sentence": "The bEnd.3 cells were continuously applied with 200 ng/ml recombinant NAMPT (continuously applied for 5 generations, for total 15 days), then rinsed twice and incubated in Earle's solution without glucose and then the cells were introduced into an anaerobic chamber filled with 95% N 2 and 5% CO 2 at 37\u00b0C for 1.5 h.",
+      "context_window": "cells were introduced into an anaerobic chamber filled with 95% N 2 and 5% CO 2 at 37\u00b0C for 1.5 h. The control cells were i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-5604",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5604,
+      "sentence": "The bEnd.3 cells were continuously applied with 200 ng/ml recombinant NAMPT (continuously applied for 5 generations, for total 15 days), then rinsed twice and incubated in Earle's solution without glucose and then the cells were introduced into an anaerobic chamber filled with 95% N 2 and 5% CO 2 at 37\u00b0C for 1.5 h.",
+      "context_window": "ntroduced into an anaerobic chamber filled with 95% N 2 and 5% CO 2 at 37\u00b0C for 1.5 h. The control cells were incubated in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-5747",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5747,
+      "sentence": "The control cells were incubated in Earle's solution without glucose and kept in a humidified atmosphere containing 5% CO 2 and 95% air for 1.5 h.",
+      "context_window": "hout glucose and kept in a humidified atmosphere containing 5% CO 2 and 95% air for 1.5 h. MTT assay was used to assess c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-pct-5759",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5759,
+      "sentence": "The control cells were incubated in Earle's solution without glucose and kept in a humidified atmosphere containing 5% CO 2 and 95% air for 1.5 h.",
+      "context_window": "and kept in a humidified atmosphere containing 5% CO 2 and 95% air for 1.5 h. MTT assay was used to assess cell viability",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-u-5898",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5898,
+      "sentence": "Cells cultured in 96-well plates were incubated with 100 \u00b5l MTT solution (0.5 mg/ml thiazolyl blue tetrazolium bromide in PBS) for 2 h at 37\u00b0C.",
+      "context_window": "in 96-well plates were incubated with 100 \u00b5l MTT solution (0.5 mg/ml thiazolyl blue tetrazolium bromide in PBS) for 2 h at 37",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-p-6681",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6681,
+      "sentence": "P <0.05 was considered statistically significant.",
+      "context_window": "Software, San Diego, CA) was used for statistical analysis. P <0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-931",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 931,
+      "sentence": "N = 10 for young mice and 11 for aged mice.",
+      "context_window": "od serum. D) statistical analyses of NAMPT expression in C. N = 10 for young mice and 11 for aged mice. Mean \u00b1 SEM. * P <0.05,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-p-989",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 989,
+      "sentence": "Mean \u00b1 SEM. * P <0.05, *** P <0.001, compared with young mice, unpaired t test.",
+      "context_window": ". N = 10 for young mice and 11 for aged mice. Mean \u00b1 SEM. * P <0.05, *** P <0.001, compared with young mice, unpaired t test.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-p-1002",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1002,
+      "sentence": "Mean \u00b1 SEM. * P <0.05, *** P <0.001, compared with young mice, unpaired t test.",
+      "context_window": "young mice and 11 for aged mice. Mean \u00b1 SEM. * P <0.05, *** P <0.001, compared with young mice, unpaired t test. The tNAD level",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-1535",
+      "claim_type": "sample_size",
+      "raw_text": "N = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1535,
+      "sentence": "N = 6.",
+      "context_window": "ce brain between young and middle age mice ( Figure S2B ). N = 6. Mean \u00b1 SEM. * P <0.05, compared with young mice, unpaired",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-p-1556",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1556,
+      "sentence": "Mean \u00b1 SEM. * P <0.05, compared with young mice, unpaired t test.",
+      "context_window": "g and middle age mice ( Figure S2B ). N = 6. Mean \u00b1 SEM. * P <0.05, compared with young mice, unpaired t test. In young mice,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-3531",
+      "claim_type": "sample_size",
+      "raw_text": "N = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3531,
+      "sentence": "N = 12. ** P <0.01, *** P <0.001, compared with control, One-way ANOVA.",
+      "context_window": "elease was determined at 72 h after the treatment of FK866. N = 12. ** P <0.01, *** P <0.001, compared with control, One-way A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-p-3542",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3542,
+      "sentence": "N = 12. ** P <0.01, *** P <0.001, compared with control, One-way ANOVA.",
+      "context_window": "determined at 72 h after the treatment of FK866. N = 12. ** P <0.01, *** P <0.001, compared with control, One-way ANOVA. Conti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-p-3555",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3555,
+      "sentence": "N = 12. ** P <0.01, *** P <0.001, compared with control, One-way ANOVA.",
+      "context_window": "72 h after the treatment of FK866. N = 12. ** P <0.01, *** P <0.001, compared with control, One-way ANOVA. Continuous applicat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-u-3661",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3661,
+      "sentence": "Continuous application (5 generations and for a total of 15 days) of 200 ng/ml recombined NAMPT to vascular endothelia bEnd.3 cells aggravated OGD 1.5 h induced cell damages ( Fig.",
+      "context_window": ". Continuous application (5 generations and for a total of 15 days) of 200 ng/ml recombined NAMPT to vascular endothelia bEnd.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-n-3791",
+      "claim_type": "sample_size",
+      "raw_text": "N = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3791,
+      "sentence": "N = 6. ## P <0.01, compared with OGD, One-way ANOVA.",
+      "context_window": "ells aggravated OGD 1.5 h induced cell damages ( Fig. 7 ). N = 6. ## P <0.01, compared with OGD, One-way ANOVA.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag-p-3801",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3801,
+      "sentence": "N = 6. ## P <0.01, compared with OGD, One-way ANOVA.",
+      "context_window": "vated OGD 1.5 h induced cell damages ( Fig. 7 ). N = 6. ## P <0.01, compared with OGD, One-way ANOVA.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

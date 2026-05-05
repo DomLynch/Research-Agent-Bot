@@ -1,0 +1,300 @@
+{
+  "paper_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab",
+  "doi": "10.1210/jendso/bvaf149.039",
+  "extracted_at": "2026-05-05T21:26:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 11,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-248",
+      "claim_type": "unit_value",
+      "raw_text": "26 years",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 248,
+      "sentence": "Medical history: From 26 years of age, he became obese with a BMI of about 30.",
+      "context_window": "ix years and uncontrolled overweight. Medical history: From 26 years of age, he became obese with a BMI of about 30. At 29 years",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-308",
+      "claim_type": "unit_value",
+      "raw_text": "29 years",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 308,
+      "sentence": "At 29 years of age, he was diagnosed with bitemporal hemianopsia at a certain hospital, and a few months later, he visited the neurosurgery department of the same hospital with headaches and was given diagnosis of a non-functioning pituitary tumor, suspected pituitary apoplexy, associate with hypopituitarism, and diabetes (HbA1c 8.2%).",
+      "context_window": "26 years of age, he became obese with a BMI of about 30. At 29 years of age, he was diagnosed with bitemporal hemianopsia at a c",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-pct-636",
+      "claim_type": "percentage",
+      "raw_text": "8.2%",
+      "numeric_values": [
+        8.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 636,
+      "sentence": "At 29 years of age, he was diagnosed with bitemporal hemianopsia at a certain hospital, and a few months later, he visited the neurosurgery department of the same hospital with headaches and was given diagnosis of a non-functioning pituitary tumor, suspected pituitary apoplexy, associate with hypopituitarism, and diabetes (HbA1c 8.2%).",
+      "context_window": "oplexy, associate with hypopituitarism, and diabetes (HbA1c 8.2%). Trans-sphenoidal surgery for pituitary tumor was performe",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-811",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg/day",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "After surgery, he was administered hydrocortisone 15 mg/day, levothyroxine 75 \u03bcg/day replacement therapy, diabetic SGLT2 inhibitors, DPP4 inhibitors, metformin, and pioglitazone, but his BMI worsened to 31.6 and his obesity worsened, and his HbA1c worsened to 12.0%.",
+      "context_window": "ranuloma. After surgery, he was administered hydrocortisone 15 mg/day, levothyroxine 75 \u03bcg/day replacement therapy, diabetic SGLT",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-836",
+      "claim_type": "unit_value",
+      "raw_text": "75 \u03bcg/day",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "\u03bcg/day",
+      "source_section": "abstract",
+      "source_offset": 836,
+      "sentence": "After surgery, he was administered hydrocortisone 15 mg/day, levothyroxine 75 \u03bcg/day replacement therapy, diabetic SGLT2 inhibitors, DPP4 inhibitors, metformin, and pioglitazone, but his BMI worsened to 31.6 and his obesity worsened, and his HbA1c worsened to 12.0%.",
+      "context_window": "he was administered hydrocortisone 15 mg/day, levothyroxine 75 \u03bcg/day replacement therapy, diabetic SGLT2 inhibitors, DPP4 inhibi",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-pct-1021",
+      "claim_type": "percentage",
+      "raw_text": "12.0%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "After surgery, he was administered hydrocortisone 15 mg/day, levothyroxine 75 \u03bcg/day replacement therapy, diabetic SGLT2 inhibitors, DPP4 inhibitors, metformin, and pioglitazone, but his BMI worsened to 31.6 and his obesity worsened, and his HbA1c worsened to 12.0%.",
+      "context_window": "to 31.6 and his obesity worsened, and his HbA1c worsened to 12.0%. At age of 34, he was referred to our department. GH secret",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-1137",
+      "claim_type": "unit_value",
+      "raw_text": "0.18ng/mL",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "ng/mL",
+      "source_section": "abstract",
+      "source_offset": 1137,
+      "sentence": "GH secretion was severely insufficient with a peak value of 0.18ng/mL in the GHRP2 test, and in the LH-RH test, both pre- and peak values \u200b\u200bof LH were less than 0.10mIU/mL, FSH peak value was 0.54mIU/mL, and blood testosterone was below the sensitivity level.",
+      "context_window": "GH secretion was severely insufficient with a peak value of 0.18ng/mL in the GHRP2 test, and in the LH-RH test, both pre- and pea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-1518",
+      "claim_type": "unit_value",
+      "raw_text": "0.75mg",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1518,
+      "sentence": "Calorie restriction and rhGH administration were started to correct obesity (no desire for hypogonadal treatment), and DPP4 inhibitors were discontinued and switched to dulaglutide 0.75mg, but the effect was insufficient with HbA1c in the 8% range and BMI 30.9.",
+      "context_window": "P4 inhibitors were discontinued and switched to dulaglutide 0.75mg, but the effect was insufficient with HbA1c in the 8% range",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-pct-1576",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1576,
+      "sentence": "Calorie restriction and rhGH administration were started to correct obesity (no desire for hypogonadal treatment), and DPP4 inhibitors were discontinued and switched to dulaglutide 0.75mg, but the effect was insufficient with HbA1c in the 8% range and BMI 30.9.",
+      "context_window": "e 0.75mg, but the effect was insufficient with HbA1c in the 8% range and BMI 30.9. After switching to semaglutide and grad",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-1669",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 mg",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1669,
+      "sentence": "After switching to semaglutide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2.",
+      "context_window": "ching to semaglutide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0%",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-1685",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1685,
+      "sentence": "After switching to semaglutide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2.",
+      "context_window": "tide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-1704",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1704,
+      "sentence": "After switching to semaglutide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2.",
+      "context_window": "increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-pct-1731",
+      "claim_type": "percentage",
+      "raw_text": "6.0%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1731,
+      "sentence": "After switching to semaglutide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2.",
+      "context_window": "25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-1763",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1763,
+      "sentence": "After switching to semaglutide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2.",
+      "context_window": "6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2. A 75g oral glucose",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-pct-1792",
+      "claim_type": "percentage",
+      "raw_text": "5.5%",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1792,
+      "sentence": "After switching to semaglutide and gradually increasing the dose from 0.25 mg/week to 1.0 mg/week, after 6 months Hb1c decreased to 6.0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2.",
+      "context_window": ".0% and BMI to 27.6, and after 12 months HbA1c decreased to 5.5% and BMI to 26.2. A 75g oral glucose tolerance test showed n",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12544328_mon_701_a_case_which_glp_1_receptor_agonist_semaglutide_enab-u-1929",
+      "claim_type": "unit_value",
+      "raw_text": "117 mg/dL",
+      "numeric_values": [
+        117.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1929,
+      "sentence": "A 75g oral glucose tolerance test showed normalized fasting blood glucose levels of 64 m/dL and 2-hour values \u200b\u200bof 117 mg/dL.",
+      "context_window": "ting blood glucose levels of 64 m/dL and 2-hour values \u200b\u200bof 117 mg/dL. Conclusion: This patient with hypopituitarism accompanied",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

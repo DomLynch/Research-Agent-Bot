@@ -1,0 +1,1622 @@
+{
+  "paper_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r",
+  "doi": "10.1371/journal.pone.0160046",
+  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 33,
+    "percentage": 27,
+    "confidence_interval": 22,
+    "risk_ratio": 2,
+    "sample_size": 3,
+    "hazard_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-621",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 621,
+      "sentence": "Systematic searches of Medline and Embase were conducted to identify observational studies published between 1946 and 4 March 2015 that reported the risks of gastrointestinal (GI) bleeding or intracranial hemorrhage (ICH) with long-term, low-dose aspirin (75-325 mg/day).",
+      "context_window": "anial hemorrhage (ICH) with long-term, low-dose aspirin (75-325 mg/day). Pooled estimates of the relative risk (RR) for bleeding e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-1084",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "The incidence of GI bleeding with low-dose aspirin was 0.48-3.64 cases per 1000 person-years, and the overall pooled estimate of the RR with low-dose aspirin was 1.4 (95% confidence interval [CI]: 1.2-1.7).",
+      "context_window": "ll pooled estimate of the RR with low-dose aspirin was 1.4 (95% confidence interval [CI]: 1.2-1.7). For upper and lower GI",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-554",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 554,
+      "sentence": "Reviews, editorials, comments, clinical trials and pediatric studies were excluded, as were studies using only aspirin doses higher than 325 mg per day.",
+      "context_window": "luded, as were studies using only aspirin doses higher than 325 mg per day. The results were supplemented by a PubMed search f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-1872",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1872,
+      "sentence": "The outcomes recorded were the incidences of GI bleeding and ICH and measures of their association (OR, RR, HR, IRR, SIR) with low-dose aspirin (75-325 mg per day).",
+      "context_window": "ssociation (OR, RR, HR, IRR, SIR) with low-dose aspirin (75-325 mg per day). In addition, several factors were examined for th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-2680",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2680,
+      "sentence": "This model weights individual studies by sample size and variance (both within- and between-study variance) and yields a pooled point estimate and 95% confidence interval (CI).",
+      "context_window": "ween-study variance) and yields a pooled point estimate and 95% confidence interval (CI). Heterogeneity was assessed using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-740",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 740,
+      "sentence": "When specified, the duration of aspirin use ranged from 1 month to more than 20 years, and reported follow-up was 4-14 years.",
+      "context_window": "10. When specified, the duration of aspirin use ranged from 1 month to more than 20 years, and reported follow-up was 4-14 year",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-761",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 761,
+      "sentence": "When specified, the duration of aspirin use ranged from 1 month to more than 20 years, and reported follow-up was 4-14 years.",
+      "context_window": "he duration of aspirin use ranged from 1 month to more than 20 years, and reported follow-up was 4-14 years. Studies evaluated d",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-800",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 800,
+      "sentence": "When specified, the duration of aspirin use ranged from 1 month to more than 20 years, and reported follow-up was 4-14 years.",
+      "context_window": "1 month to more than 20 years, and reported follow-up was 4-14 years. Studies evaluated daily and/or regular use of aspirin. The",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-1056",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1056,
+      "sentence": "The criteria for participants to be considered \u2018current users\u2019 of aspirin varied among studies: the maximum time period between stopping aspirin use and the study index date ranged from 7 to 90 days.",
+      "context_window": "pping aspirin use and the study index date ranged from 7 to 90 days. Eight studies reported measures of the RR for all GI blee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-1601",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 1601,
+      "sentence": "The highest risk was reported in Japanese patients prescribed low-dose aspirin for CVD for more than 1 year, although the confidence intervals were wide [ 33 ].",
+      "context_window": "patients prescribed low-dose aspirin for CVD for more than 1 year, although the confidence intervals were wide [ 33 ]. With t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-1980",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.2-2.5",
+      "numeric_values": [
+        1.2,
+        2.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1980,
+      "sentence": "The pooled estimates of the RR for GI bleeding with low-dose aspirin were 1.7 (95% CI: 1.2-2.5) for case-control studies and 1.3 (95% CI: 1.0-1.7) for cohort studies ( Fig 2 ).",
+      "context_window": "s of the RR for GI bleeding with low-dose aspirin were 1.7 (95% CI: 1.2-2.5) for case-control studies and 1.3 (95% CI: 1.0-1.7) for coh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-2031",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.0-1.7",
+      "numeric_values": [
+        1.0,
+        1.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2031,
+      "sentence": "The pooled estimates of the RR for GI bleeding with low-dose aspirin were 1.7 (95% CI: 1.2-2.5) for case-control studies and 1.3 (95% CI: 1.0-1.7) for cohort studies ( Fig 2 ).",
+      "context_window": "ere 1.7 (95% CI: 1.2-2.5) for case-control studies and 1.3 (95% CI: 1.0-1.7) for cohort studies ( Fig 2 ). There was significant hetero",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-2143",
+      "claim_type": "percentage",
+      "raw_text": "86.4%",
+      "numeric_values": [
+        86.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2143,
+      "sentence": "There was significant heterogeneity among cohort studies ( I 2 = 86.4%) and less heterogeneity among case-control studies ( I 2 = 59.0%).",
+      "context_window": "was significant heterogeneity among cohort studies ( I 2 = 86.4%) and less heterogeneity among case-control studies ( I 2 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-2208",
+      "claim_type": "percentage",
+      "raw_text": "59.0%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2208,
+      "sentence": "There was significant heterogeneity among cohort studies ( I 2 = 86.4%) and less heterogeneity among case-control studies ( I 2 = 59.0%).",
+      "context_window": ") and less heterogeneity among case-control studies ( I 2 = 59.0%). The overall pooled estimate of the RR for GI bleeding wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-2325",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.2-1.7",
+      "numeric_values": [
+        1.2,
+        1.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2325,
+      "sentence": "The overall pooled estimate of the RR for GI bleeding with low-dose aspirin, for all eight studies, was 1.4 (95% CI: 1.2-1.7) ( Fig 2 ), although there was significant heterogeneity among studies ( I 2 = 79.7%).",
+      "context_window": "ding with low-dose aspirin, for all eight studies, was 1.4 (95% CI: 1.2-1.7) ( Fig 2 ), although there was significant heterogeneity am",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-2420",
+      "claim_type": "percentage",
+      "raw_text": "79.7%",
+      "numeric_values": [
+        79.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2420,
+      "sentence": "The overall pooled estimate of the RR for GI bleeding with low-dose aspirin, for all eight studies, was 1.4 (95% CI: 1.2-1.7) ( Fig 2 ), although there was significant heterogeneity among studies ( I 2 = 79.7%).",
+      "context_window": "h there was significant heterogeneity among studies ( I 2 = 79.7%). Data are shown as adjusted OR, adjusted RR (unless other",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-2538",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2538,
+      "sentence": "Data are shown as adjusted OR, adjusted RR (unless otherwise stated), adjusted IRR, or multivariate HR, plus 95% CIs, for the risk of any gastrointestinal bleeding with low-dose aspirin vs no aspirin.",
+      "context_window": "s otherwise stated), adjusted IRR, or multivariate HR, plus 95% CIs, for the risk of any gastrointestinal bleeding with low",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-4070",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.0-2.7",
+      "numeric_values": [
+        2.0,
+        2.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4070,
+      "sentence": "In the case-control studies, the majority of RRs for UGIB with low-dose aspirin were in the range 1.4-4.0 and the pooled estimate was 2.3 (95% CI: 2.0-2.7) ( Fig 4 ).",
+      "context_window": "were in the range 1.4-4.0 and the pooled estimate was 2.3 (95% CI: 2.0-2.7) ( Fig 4 ). RRs in the cohort studies fell within a similar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-4194",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.5-2.7",
+      "numeric_values": [
+        1.5,
+        2.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4194,
+      "sentence": "RRs in the cohort studies fell within a similar range (1.2-4.5), with a pooled estimate of 2.0 (95% CI: 1.5-2.7).",
+      "context_window": "n a similar range (1.2-4.5), with a pooled estimate of 2.0 (95% CI: 1.5-2.7). The overall pooled estimate of the RR for UGIB with low-d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-4311",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.0-2.6",
+      "numeric_values": [
+        2.0,
+        2.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4311,
+      "sentence": "The overall pooled estimate of the RR for UGIB with low-dose aspirin, for all 24 studies, was 2.3 (95% CI: 2.0-2.6).",
+      "context_window": "or UGIB with low-dose aspirin, for all 24 studies, was 2.3 (95% CI: 2.0-2.6). There was significant heterogeneity among both case-contr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-4397",
+      "claim_type": "percentage",
+      "raw_text": "76.2%",
+      "numeric_values": [
+        76.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4397,
+      "sentence": "There was significant heterogeneity among both case-control ( I 2 = 76.2%) and cohort studies ( I 2 = 80.7%) and among all studies ( I 2 = 80.5%).",
+      "context_window": "s significant heterogeneity among both case-control ( I 2 = 76.2%) and cohort studies ( I 2 = 80.7%) and among all studies (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-4431",
+      "claim_type": "percentage",
+      "raw_text": "80.7%",
+      "numeric_values": [
+        80.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4431,
+      "sentence": "There was significant heterogeneity among both case-control ( I 2 = 76.2%) and cohort studies ( I 2 = 80.7%) and among all studies ( I 2 = 80.5%).",
+      "context_window": "both case-control ( I 2 = 76.2%) and cohort studies ( I 2 = 80.7%) and among all studies ( I 2 = 80.5%). Three case-control s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-4468",
+      "claim_type": "percentage",
+      "raw_text": "80.5%",
+      "numeric_values": [
+        80.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4468,
+      "sentence": "There was significant heterogeneity among both case-control ( I 2 = 76.2%) and cohort studies ( I 2 = 80.7%) and among all studies ( I 2 = 80.5%).",
+      "context_window": "cohort studies ( I 2 = 80.7%) and among all studies ( I 2 = 80.5%). Three case-control studies reported risks higher than tho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-4775",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4775,
+      "sentence": "For case-control studies, data are shown as adjusted or multivariate ORs or RRs, plus 95% CIs, for the risk of upper gastrointestinal bleeding with low-dose aspirin vs no aspirin.",
+      "context_window": "data are shown as adjusted or multivariate ORs or RRs, plus 95% CIs, for the risk of upper gastrointestinal bleeding with l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-4973",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4973,
+      "sentence": "For cohort studies, data are shown as multivariate ORs, SIR, multivariate HR, or multivariate RRs, plus 95% CIs, for the risk of upper gastrointestinal bleeding with low-dose aspirin vs no aspirin.",
+      "context_window": "ariate ORs, SIR, multivariate HR, or multivariate RRs, plus 95% CIs, for the risk of upper gastrointestinal bleeding with l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-5285",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5285,
+      "sentence": "A test for heterogeneity ( I 2 statistic) is provided. a Data for duodenal bleeding and gastric bleeding (defined as bleeds located in the upper gastrointestinal tract, at sites other than the duodenum) [\u2264 250 and 251-325 mg per day]; b Data for plain, enteric-coated, and buffered aspirin; c Data for different alcohol consumption categories (current drinker/never drinker/ex-drinker); d Data for gastric ulcer and duodenal ulcer bleeding (defined as the presence of melena, haematemesis or haematochezia with a substantial decrease in haemoglobin and a peptic ulcer identified endoscopically); e Data for primary and secondary prevention; f Risk of erosive esophagitis; g Acute defined as regular or sporadic aspirin use for 5-30 days before endoscopy; h Chronic defined as regular aspirin use for more than 1 month before endoscopy; i OR; j RR; k SIR; l HR.",
+      "context_window": "nal tract, at sites other than the duodenum) [\u2264 250 and 251-325 mg per day]; b Data for plain, enteric-coated, and buffered as",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-5796",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5796,
+      "sentence": "A test for heterogeneity ( I 2 statistic) is provided. a Data for duodenal bleeding and gastric bleeding (defined as bleeds located in the upper gastrointestinal tract, at sites other than the duodenum) [\u2264 250 and 251-325 mg per day]; b Data for plain, enteric-coated, and buffered aspirin; c Data for different alcohol consumption categories (current drinker/never drinker/ex-drinker); d Data for gastric ulcer and duodenal ulcer bleeding (defined as the presence of melena, haematemesis or haematochezia with a substantial decrease in haemoglobin and a peptic ulcer identified endoscopically); e Data for primary and secondary prevention; f Risk of erosive esophagitis; g Acute defined as regular or sporadic aspirin use for 5-30 days before endoscopy; h Chronic defined as regular aspirin use for more than 1 month before endoscopy; i OR; j RR; k SIR; l HR.",
+      "context_window": "s; g Acute defined as regular or sporadic aspirin use for 5-30 days before endoscopy; h Chronic defined as regular aspirin use",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-5877",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 5877,
+      "sentence": "A test for heterogeneity ( I 2 statistic) is provided. a Data for duodenal bleeding and gastric bleeding (defined as bleeds located in the upper gastrointestinal tract, at sites other than the duodenum) [\u2264 250 and 251-325 mg per day]; b Data for plain, enteric-coated, and buffered aspirin; c Data for different alcohol consumption categories (current drinker/never drinker/ex-drinker); d Data for gastric ulcer and duodenal ulcer bleeding (defined as the presence of melena, haematemesis or haematochezia with a substantial decrease in haemoglobin and a peptic ulcer identified endoscopically); e Data for primary and secondary prevention; f Risk of erosive esophagitis; g Acute defined as regular or sporadic aspirin use for 5-30 days before endoscopy; h Chronic defined as regular aspirin use for more than 1 month before endoscopy; i OR; j RR; k SIR; l HR.",
+      "context_window": "opy; h Chronic defined as regular aspirin use for more than 1 month before endoscopy; i OR; j RR; k SIR; l HR. CI, confidence i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-6300",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6300,
+      "sentence": "The RR for UGIB with low-dose aspirin alone compared with non-use was higher in the primary than in the secondary prevention cohort (adjusted RR [95% CI]: 1.90 [1.59-2.26] and 1.40 [1.14-1.72], respectively).",
+      "context_window": "imary than in the secondary prevention cohort (adjusted RR [95% CI]: 1.90 [1.59-2.26] and 1.40 [1.14-1.72], respectively).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-7335",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7335,
+      "sentence": "300 mg) showed marked differences between the studies.",
+      "context_window": "in regimens [ 24 , 26 , 36 , 48 ]. RRs for some doses (e.g. 300 mg) showed marked differences between the studies. Data are s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-7448",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7448,
+      "sentence": "Data are shown as adjusted RR, adjusted OR, or SIR, plus 95% CIs, for the risk of upper gastrointestinal bleeding with low-dose aspirin vs no aspirin. a One dose equals one 325 mg tablet; b adjusted RR; c Adjusted OR; d SIR.",
+      "context_window": ". Data are shown as adjusted RR, adjusted OR, or SIR, plus 95% CIs, for the risk of upper gastrointestinal bleeding with l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-7564",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7564,
+      "sentence": "Data are shown as adjusted RR, adjusted OR, or SIR, plus 95% CIs, for the risk of upper gastrointestinal bleeding with low-dose aspirin vs no aspirin. a One dose equals one 325 mg tablet; b adjusted RR; c Adjusted OR; d SIR.",
+      "context_window": "with low-dose aspirin vs no aspirin. a One dose equals one 325 mg tablet; b adjusted RR; c Adjusted OR; d SIR. CI, confidence",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-7804",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7804,
+      "sentence": "Two studies suggested that the duration of continuous low-dose aspirin treatment up to 10 or 20 years has little effect on the RR of UGIB, when adjusted for treatment dose [ 31 , 32 ].",
+      "context_window": "ration of continuous low-dose aspirin treatment up to 10 or 20 years has little effect on the RR of UGIB, when adjusted for trea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-8078",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 8078,
+      "sentence": "Similarly, another study reported an increase in the RR of UGIB with low-dose aspirin monotherapy, irrespective of whether patients had received treatment for less than or more than 1 year [ 26 ].",
+      "context_window": "patients had received treatment for less than or more than 1 year [ 26 ]. However, it has also been shown that the risk of UG",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-8198",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8198,
+      "sentence": "However, it has also been shown that the risk of UGIB with low-dose aspirin is greatest during the first 2 months of therapy, and decreases with increasing treatment duration [ 24 ], with a similar effect also being observed in another study [ 41 ].",
+      "context_window": "of UGIB with low-dose aspirin is greatest during the first 2 months of therapy, and decreases with increasing treatment duratio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-8721",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8721,
+      "sentence": "One study reported recent discontinuation of low-dose aspirin (i.e. use ending 15-180 days before the index date) in 11.2% of cases and 13.1% of controls [ 23 ].",
+      "context_window": "ent discontinuation of low-dose aspirin (i.e. use ending 15-180 days before the index date) in 11.2% of cases and 13.1% of contr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-8756",
+      "claim_type": "percentage",
+      "raw_text": "11.2%",
+      "numeric_values": [
+        11.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8756,
+      "sentence": "One study reported recent discontinuation of low-dose aspirin (i.e. use ending 15-180 days before the index date) in 11.2% of cases and 13.1% of controls [ 23 ].",
+      "context_window": "irin (i.e. use ending 15-180 days before the index date) in 11.2% of cases and 13.1% of controls [ 23 ]. The data suggested t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-8775",
+      "claim_type": "percentage",
+      "raw_text": "13.1%",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8775,
+      "sentence": "One study reported recent discontinuation of low-dose aspirin (i.e. use ending 15-180 days before the index date) in 11.2% of cases and 13.1% of controls [ 23 ].",
+      "context_window": "ng 15-180 days before the index date) in 11.2% of cases and 13.1% of controls [ 23 ]. The data suggested that the risk of UGI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-rr-a-8972",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8972,
+      "sentence": "The data suggested that the risk of UGIB was reduced in those who had recently discontinued low-dose aspirin when compared with patients who continued treatment (adjusted RR: 0.71 [95% CI: 0.42-1.20]).",
+      "context_window": "en compared with patients who continued treatment (adjusted RR: 0.71 [95% CI: 0.42-1.20]). Among the patients who had discontinu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-8982",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.42-1.20",
+      "numeric_values": [
+        0.42,
+        1.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8982,
+      "sentence": "The data suggested that the risk of UGIB was reduced in those who had recently discontinued low-dose aspirin when compared with patients who continued treatment (adjusted RR: 0.71 [95% CI: 0.42-1.20]).",
+      "context_window": "d with patients who continued treatment (adjusted RR: 0.71 [95% CI: 0.42-1.20]). Among the patients who had discontinued, the risk of UGI",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-9177",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.80-5.95",
+      "numeric_values": [
+        0.8,
+        5.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9177,
+      "sentence": "Among the patients who had discontinued, the risk of UGIB was higher for those who had discontinued aspirin for safety-related reasons (RR compared with continued use: 2.18 [95% CI: 0.80-5.95]) than for patients who had discontinued for non-safety related reasons, primarily non-adherence (RR: 0.52 [95% CI: 0.28-0.99]).",
+      "context_window": "fety-related reasons (RR compared with continued use: 2.18 [95% CI: 0.80-5.95]) than for patients who had discontinued for non-safety rel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-rr-a-9293",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9293,
+      "sentence": "Among the patients who had discontinued, the risk of UGIB was higher for those who had discontinued aspirin for safety-related reasons (RR compared with continued use: 2.18 [95% CI: 0.80-5.95]) than for patients who had discontinued for non-safety related reasons, primarily non-adherence (RR: 0.52 [95% CI: 0.28-0.99]).",
+      "context_window": "ed for non-safety related reasons, primarily non-adherence (RR: 0.52 [95% CI: 0.28-0.99]). Four studies reported overall incide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-9303",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.28-0.99",
+      "numeric_values": [
+        0.28,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9303,
+      "sentence": "Among the patients who had discontinued, the risk of UGIB was higher for those who had discontinued aspirin for safety-related reasons (RR compared with continued use: 2.18 [95% CI: 0.80-5.95]) than for patients who had discontinued for non-safety related reasons, primarily non-adherence (RR: 0.52 [95% CI: 0.28-0.99]).",
+      "context_window": "-safety related reasons, primarily non-adherence (RR: 0.52 [95% CI: 0.28-0.99]). Four studies reported overall incidences of UGIB with l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-9890",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.1-3.0",
+      "numeric_values": [
+        1.1,
+        3.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9890,
+      "sentence": "RRs for LGIB with low-dose aspirin varied from 0.8 to 5.0 ( S1 Fig ), with a pooled estimate of 1.8 (95% CI: 1.1-3.0).",
+      "context_window": "from 0.8 to 5.0 ( S1 Fig ), with a pooled estimate of 1.8 (95% CI: 1.1-3.0). There was significant heterogeneity among studies ( I 2 =",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-9966",
+      "claim_type": "percentage",
+      "raw_text": "81.1%",
+      "numeric_values": [
+        81.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9966,
+      "sentence": "There was significant heterogeneity among studies ( I 2 = 81.1%).",
+      "context_window": ". There was significant heterogeneity among studies ( I 2 = 81.1%). The highest risk was reported in a Japanese study involvi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-10094",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 10094,
+      "sentence": "The highest risk was reported in a Japanese study involving patients with CVD prescribed low-dose aspirin for more than 1 year (OR 5.03 [95% CI: 0.59-43.16]) [ 33 ]; however, few (n < 10) cases of bleeding were observed, so the CI was wide and the finding not statistically significant.",
+      "context_window": "patients with CVD prescribed low-dose aspirin for more than 1 year (OR 5.03 [95% CI: 0.59-43.16]) [ 33 ]; however, few (n < 10",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-10111",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.59-43.16",
+      "numeric_values": [
+        0.59,
+        43.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10111,
+      "sentence": "The highest risk was reported in a Japanese study involving patients with CVD prescribed low-dose aspirin for more than 1 year (OR 5.03 [95% CI: 0.59-43.16]) [ 33 ]; however, few (n < 10) cases of bleeding were observed, so the CI was wide and the finding not statistically significant.",
+      "context_window": "prescribed low-dose aspirin for more than 1 year (OR 5.03 [95% CI: 0.59-43.16]) [ 33 ]; however, few (n < 10) cases of bleeding were obse",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-10348",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 10348,
+      "sentence": "A second Japanese study reported a significantly increased risk of LGIB with low-dose (100 mg) aspirin (OR 3.7 [95% CI: 1.3-10.9]), although again, relatively few cases of bleeding (n = 44) were observed [ 50 ].",
+      "context_window": "orted a significantly increased risk of LGIB with low-dose (100 mg) aspirin (OR 3.7 [95% CI: 1.3-10.9]), although again, relat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-10373",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.3-10.9",
+      "numeric_values": [
+        1.3,
+        10.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10373,
+      "sentence": "A second Japanese study reported a significantly increased risk of LGIB with low-dose (100 mg) aspirin (OR 3.7 [95% CI: 1.3-10.9]), although again, relatively few cases of bleeding (n = 44) were observed [ 50 ].",
+      "context_window": "reased risk of LGIB with low-dose (100 mg) aspirin (OR 3.7 [95% CI: 1.3-10.9]), although again, relatively few cases of bleeding (n = 44",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-n-10443",
+      "claim_type": "sample_size",
+      "raw_text": "n = 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10443,
+      "sentence": "A second Japanese study reported a significantly increased risk of LGIB with low-dose (100 mg) aspirin (OR 3.7 [95% CI: 1.3-10.9]), although again, relatively few cases of bleeding (n = 44) were observed [ 50 ].",
+      "context_window": "3-10.9]), although again, relatively few cases of bleeding (n = 44) were observed [ 50 ]. In a recent Spanish case-control stu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-10956",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 10956,
+      "sentence": "One reported a significant increase in the risk of diverticular bleeding with low-dose aspirin (2-5.9 tablets of 325 mg per week; multivariate HR: 2.32 [95% CI: 1.34-4.02]) compared with no aspirin [ 51 ].",
+      "context_window": "verticular bleeding with low-dose aspirin (2-5.9 tablets of 325 mg per week; multivariate HR: 2.32 [95% CI: 1.34-4.02]) compar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-hr-a-10986",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 2.32",
+      "numeric_values": [
+        2.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10986,
+      "sentence": "One reported a significant increase in the risk of diverticular bleeding with low-dose aspirin (2-5.9 tablets of 325 mg per week; multivariate HR: 2.32 [95% CI: 1.34-4.02]) compared with no aspirin [ 51 ].",
+      "context_window": "ose aspirin (2-5.9 tablets of 325 mg per week; multivariate HR: 2.32 [95% CI: 1.34-4.02]) compared with no aspirin [ 51 ]. Howev",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-10996",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.34-4.02",
+      "numeric_values": [
+        1.34,
+        4.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10996,
+      "sentence": "One reported a significant increase in the risk of diverticular bleeding with low-dose aspirin (2-5.9 tablets of 325 mg per week; multivariate HR: 2.32 [95% CI: 1.34-4.02]) compared with no aspirin [ 51 ].",
+      "context_window": "n (2-5.9 tablets of 325 mg per week; multivariate HR: 2.32 [95% CI: 1.34-4.02]) compared with no aspirin [ 51 ]. However, no significant",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-11178",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.88-2.82",
+      "numeric_values": [
+        0.88,
+        2.82
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11178,
+      "sentence": "However, no significant increase in risk was observed with either 0.1-1.9 or \u2265 6 aspirin tablets per week (multivariate HR 1.58 [95% CI: 0.88-2.82] and 1.65 [95% CI: 0.84-3.26], respectively).",
+      "context_window": "-1.9 or \u2265 6 aspirin tablets per week (multivariate HR 1.58 [95% CI: 0.88-2.82] and 1.65 [95% CI: 0.84-3.26], respectively). The other coh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-11207",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.84-3.26",
+      "numeric_values": [
+        0.84,
+        3.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11207,
+      "sentence": "However, no significant increase in risk was observed with either 0.1-1.9 or \u2265 6 aspirin tablets per week (multivariate HR 1.58 [95% CI: 0.88-2.82] and 1.65 [95% CI: 0.84-3.26], respectively).",
+      "context_window": "er week (multivariate HR 1.58 [95% CI: 0.88-2.82] and 1.65 [95% CI: 0.84-3.26], respectively). The other cohort study reported no signifi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-12326",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12326,
+      "sentence": "Estimates of RRs for ICH with low-dose aspirin were 0.82-1.71 across the studies, and for most studies the 95% CI included 1.0.",
+      "context_window": "were 0.82-1.71 across the studies, and for most studies the 95% CI included 1.0. The pooled estimates of the RR for ICH wit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-12418",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.8-1.2",
+      "numeric_values": [
+        0.8,
+        1.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12418,
+      "sentence": "The pooled estimates of the RR for ICH with low-dose aspirin were 1.0 (95% CI: 0.8-1.2) for case-control studies and 1.5 (95% CI: 1.4-1.7) for cohort studies, and 1.4 (95% CI 1.2-1.7) overall.",
+      "context_window": "estimates of the RR for ICH with low-dose aspirin were 1.0 (95% CI: 0.8-1.2) for case-control studies and 1.5 (95% CI: 1.4-1.7) for coh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-12469",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.4-1.7",
+      "numeric_values": [
+        1.4,
+        1.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12469,
+      "sentence": "The pooled estimates of the RR for ICH with low-dose aspirin were 1.0 (95% CI: 0.8-1.2) for case-control studies and 1.5 (95% CI: 1.4-1.7) for cohort studies, and 1.4 (95% CI 1.2-1.7) overall.",
+      "context_window": "ere 1.0 (95% CI: 0.8-1.2) for case-control studies and 1.5 (95% CI: 1.4-1.7) for cohort studies, and 1.4 (95% CI 1.2-1.7) overall. Hete",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-12515",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.2-1.7",
+      "numeric_values": [
+        1.2,
+        1.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12515,
+      "sentence": "The pooled estimates of the RR for ICH with low-dose aspirin were 1.0 (95% CI: 0.8-1.2) for case-control studies and 1.5 (95% CI: 1.4-1.7) for cohort studies, and 1.4 (95% CI 1.2-1.7) overall.",
+      "context_window": "dies and 1.5 (95% CI: 1.4-1.7) for cohort studies, and 1.4 (95% CI 1.2-1.7) overall. Heterogeneity was high among all studies ( I 2 =",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-12589",
+      "claim_type": "percentage",
+      "raw_text": "92.0%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12589,
+      "sentence": "Heterogeneity was high among all studies ( I 2 = 92.0%) and among case-control studies ( I 2 = 71.7%), but there was less heterogeneity among cohort studies ( I 2 < 0.05%).",
+      "context_window": ") overall. Heterogeneity was high among all studies ( I 2 = 92.0%) and among case-control studies ( I 2 = 71.7%), but there w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-12635",
+      "claim_type": "percentage",
+      "raw_text": "71.7%",
+      "numeric_values": [
+        71.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12635,
+      "sentence": "Heterogeneity was high among all studies ( I 2 = 92.0%) and among case-control studies ( I 2 = 71.7%), but there was less heterogeneity among cohort studies ( I 2 < 0.05%).",
+      "context_window": "udies ( I 2 = 92.0%) and among case-control studies ( I 2 = 71.7%), but there was less heterogeneity among cohort studies ( I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-12705",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12705,
+      "sentence": "Heterogeneity was high among all studies ( I 2 = 92.0%) and among case-control studies ( I 2 = 71.7%), but there was less heterogeneity among cohort studies ( I 2 < 0.05%).",
+      "context_window": "t there was less heterogeneity among cohort studies ( I 2 < 0.05%). One study reported the overall incidence of ICH with low-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-12957",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12957,
+      "sentence": "Data are shown as adjusted OR, multivariate HR or adjusted IRR, plus 95% CIs, for the risk of intracranial (including intracerebral) hemorrhage with low-dose aspirin vs no aspirin.",
+      "context_window": "shown as adjusted OR, multivariate HR or adjusted IRR, plus 95% CIs, for the risk of intracranial (including intracerebral)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-13934",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 13934,
+      "sentence": "One of these two studies showed an increase of 3.24 cases per 1000 person-years in men aged \u2265 70 years compared with men aged 16-59 years [ 48 ], and the other demonstrated an increase of 2.22 cases per 1000 person-years in men aged \u2265 80 years compared with men aged 40-59 years [ 25 ].",
+      "context_window": "increase of 3.24 cases per 1000 person-years in men aged \u2265 70 years compared with men aged 16-59 years [ 48 ], and the other de",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-13969",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 13969,
+      "sentence": "One of these two studies showed an increase of 3.24 cases per 1000 person-years in men aged \u2265 70 years compared with men aged 16-59 years [ 48 ], and the other demonstrated an increase of 2.22 cases per 1000 person-years in men aged \u2265 80 years compared with men aged 40-59 years [ 25 ].",
+      "context_window": "rson-years in men aged \u2265 70 years compared with men aged 16-59 years [ 48 ], and the other demonstrated an increase of 2.22 case",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-14075",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 14075,
+      "sentence": "One of these two studies showed an increase of 3.24 cases per 1000 person-years in men aged \u2265 70 years compared with men aged 16-59 years [ 48 ], and the other demonstrated an increase of 2.22 cases per 1000 person-years in men aged \u2265 80 years compared with men aged 40-59 years [ 25 ].",
+      "context_window": "increase of 2.22 cases per 1000 person-years in men aged \u2265 80 years compared with men aged 40-59 years [ 25 ]. Data on the eff",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-14110",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 14110,
+      "sentence": "One of these two studies showed an increase of 3.24 cases per 1000 person-years in men aged \u2265 70 years compared with men aged 16-59 years [ 48 ], and the other demonstrated an increase of 2.22 cases per 1000 person-years in men aged \u2265 80 years compared with men aged 40-59 years [ 25 ].",
+      "context_window": "rson-years in men aged \u2265 80 years compared with men aged 40-59 years [ 25 ]. Data on the effects of age on the RR of major blee",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-868",
+      "claim_type": "unit_value",
+      "raw_text": "84 years",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 868,
+      "sentence": "The estimated range of 0.79-4.92 cases per 1000 person-years in men aged from 50-84 years is comparable to the range of incidence values presented in this review.",
+      "context_window": "f 0.79-4.92 cases per 1000 person-years in men aged from 50-84 years is comparable to the range of incidence values presented in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-1877",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.30-1.82",
+      "numeric_values": [
+        1.3,
+        1.82
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1877,
+      "sentence": "Similarly, the 2009 ATTC meta-analysis reported an RR of 1.54 (95% CI: 1.30-1.82) for major extracranial bleeds with low-dose aspirin in six primary prevention trials [ 6 ], and a recent systematic review conducted for the US Preventive Services Task Force (USPSTF) reported an OR of 1.59 (95% CI: 1.32-1.91) for major GI bleeding with aspirin (50-500 mg per day) in seven CVD primary prevention trials and an IRR of 1.55 (5.58 and 3.60 events per 1000 person-years in aspirin users and non-users, respectively) for the same outcome in cohort data [ 56 ].",
+      "context_window": "ilarly, the 2009 ATTC meta-analysis reported an RR of 1.54 (95% CI: 1.30-1.82) for major extracranial bleeds with low-dose aspirin in six",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-2104",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.32-1.91",
+      "numeric_values": [
+        1.32,
+        1.91
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2104,
+      "sentence": "Similarly, the 2009 ATTC meta-analysis reported an RR of 1.54 (95% CI: 1.30-1.82) for major extracranial bleeds with low-dose aspirin in six primary prevention trials [ 6 ], and a recent systematic review conducted for the US Preventive Services Task Force (USPSTF) reported an OR of 1.59 (95% CI: 1.32-1.91) for major GI bleeding with aspirin (50-500 mg per day) in seven CVD primary prevention trials and an IRR of 1.55 (5.58 and 3.60 events per 1000 person-years in aspirin users and non-users, respectively) for the same outcome in cohort data [ 56 ].",
+      "context_window": "entive Services Task Force (USPSTF) reported an OR of 1.59 (95% CI: 1.32-1.91) for major GI bleeding with aspirin (50-500 mg per day) in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-2162",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2162,
+      "sentence": "Similarly, the 2009 ATTC meta-analysis reported an RR of 1.54 (95% CI: 1.30-1.82) for major extracranial bleeds with low-dose aspirin in six primary prevention trials [ 6 ], and a recent systematic review conducted for the US Preventive Services Task Force (USPSTF) reported an OR of 1.59 (95% CI: 1.32-1.91) for major GI bleeding with aspirin (50-500 mg per day) in seven CVD primary prevention trials and an IRR of 1.55 (5.58 and 3.60 events per 1000 person-years in aspirin users and non-users, respectively) for the same outcome in cohort data [ 56 ].",
+      "context_window": "(95% CI: 1.32-1.91) for major GI bleeding with aspirin (50-500 mg per day) in seven CVD primary prevention trials and an IRR",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-4621",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00-1.75",
+      "numeric_values": [
+        1.0,
+        1.75
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4621,
+      "sentence": "These findings are consistent with those from the 2009 meta-analysis by the ATTC, which showed a non-significant increase in the incidence of hemorrhagic stroke in patients taking low-dose aspirin for primary prevention (rate ratio: 1.32 [95% CI: 1.00-1.75]) [ 6 ] and the recent systematic review performed for the USPSTF, which reported an OR of 1.33 (95% CI: 1.03-1.71) for hemorrhagic stroke with aspirin in CVD primary prevention trials [ 56 ].",
+      "context_window": "low-dose aspirin for primary prevention (rate ratio: 1.32 [95% CI: 1.00-1.75]) [ 6 ] and the recent systematic review performed for the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-ci-4736",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.03-1.71",
+      "numeric_values": [
+        1.03,
+        1.71
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4736,
+      "sentence": "These findings are consistent with those from the 2009 meta-analysis by the ATTC, which showed a non-significant increase in the incidence of hemorrhagic stroke in patients taking low-dose aspirin for primary prevention (rate ratio: 1.32 [95% CI: 1.00-1.75]) [ 6 ] and the recent systematic review performed for the USPSTF, which reported an OR of 1.33 (95% CI: 1.03-1.71) for hemorrhagic stroke with aspirin in CVD primary prevention trials [ 56 ].",
+      "context_window": "iew performed for the USPSTF, which reported an OR of 1.33 (95% CI: 1.03-1.71) for hemorrhagic stroke with aspirin in CVD primary prevent",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-4975",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4975,
+      "sentence": "In considering these findings, it should be borne in mind that, although life-threatening, ICH is a rare event in individuals under the age of 70 years [ 60 ].",
+      "context_window": "tening, ICH is a rare event in individuals under the age of 70 years [ 60 ]. Only one of the studies that reported risks of ICH",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-6305",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6305,
+      "sentence": "Two cohort studies included in the present review, which investigated a wide range of aspirin dosing regimens (0.5->14 tablets (325 mg) per week), showed an increased risk of UGIB with more frequent dosing [ 31 , 32 ].",
+      "context_window": "d a wide range of aspirin dosing regimens (0.5->14 tablets (325 mg) per week), showed an increased risk of UGIB with more freq",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-6899",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6899,
+      "sentence": "Indeed, one study included in this review reported smaller risk estimates when aspirin was used for more than 5 years, compared with short-term aspirin use [ 24 ].",
+      "context_window": "smaller risk estimates when aspirin was used for more than 5 years, compared with short-term aspirin use [ 24 ]. Another study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-n-10639",
+      "claim_type": "sample_size",
+      "raw_text": "n = 39",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10639,
+      "sentence": "A key strength of this review is that it collates data from a large number (n = 39) of observational studies, which reflect the effects of aspirin in the real world.",
+      "context_window": "f this review is that it collates data from a large number (n = 39) of observational studies, which reflect the effects of asp",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-12658",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 12658,
+      "sentence": "In a recent recommendation statement, the USPSTF recommends low-dose aspirin for the primary prevention of CVD and colorectal cancer in adults aged 50-59 years who have a 10-year CVD risk of \u2265 10%, are not at increased risk of bleeding, have a life expectancy of at least 10 years, and are willing to take low-dose aspirin daily for at least 10 years [ 71 ].",
+      "context_window": "y prevention of CVD and colorectal cancer in adults aged 50-59 years who have a 10-year CVD risk of \u2265 10%, are not at increased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-12700",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12700,
+      "sentence": "In a recent recommendation statement, the USPSTF recommends low-dose aspirin for the primary prevention of CVD and colorectal cancer in adults aged 50-59 years who have a 10-year CVD risk of \u2265 10%, are not at increased risk of bleeding, have a life expectancy of at least 10 years, and are willing to take low-dose aspirin daily for at least 10 years [ 71 ].",
+      "context_window": "in adults aged 50-59 years who have a 10-year CVD risk of \u2265 10%, are not at increased risk of bleeding, have a life expecta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-12779",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 12779,
+      "sentence": "In a recent recommendation statement, the USPSTF recommends low-dose aspirin for the primary prevention of CVD and colorectal cancer in adults aged 50-59 years who have a 10-year CVD risk of \u2265 10%, are not at increased risk of bleeding, have a life expectancy of at least 10 years, and are willing to take low-dose aspirin daily for at least 10 years [ 71 ].",
+      "context_window": "reased risk of bleeding, have a life expectancy of at least 10 years, and are willing to take low-dose aspirin daily for at leas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-12849",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 12849,
+      "sentence": "In a recent recommendation statement, the USPSTF recommends low-dose aspirin for the primary prevention of CVD and colorectal cancer in adults aged 50-59 years who have a 10-year CVD risk of \u2265 10%, are not at increased risk of bleeding, have a life expectancy of at least 10 years, and are willing to take low-dose aspirin daily for at least 10 years [ 71 ].",
+      "context_window": "and are willing to take low-dose aspirin daily for at least 10 years [ 71 ]. For adults aged 60-69 years with a 10-year CVD risk",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-u-12885",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 12885,
+      "sentence": "For adults aged 60-69 years with a 10-year CVD risk of >10%, the USPSTF recommends that the decision to use low-dose aspirin to prevent CVD and colorectal cancer be made on an individual basis, after consideration of the balance between benefits and risks [ 71 ].",
+      "context_window": "irin daily for at least 10 years [ 71 ]. For adults aged 60-69 years with a 10-year CVD risk of >10%, the USPSTF recommends that",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-12922",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12922,
+      "sentence": "For adults aged 60-69 years with a 10-year CVD risk of >10%, the USPSTF recommends that the decision to use low-dose aspirin to prevent CVD and colorectal cancer be made on an individual basis, after consideration of the balance between benefits and risks [ 71 ].",
+      "context_window": "]. For adults aged 60-69 years with a 10-year CVD risk of >10%, the USPSTF recommends that the decision to use low-dose as",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-13272",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 13272,
+      "sentence": "There was an approximately 40% increased risk of all GI bleeding with low-dose aspirin in the observational studies reviewed here, a finding very similar to that reported in randomized trials [ 6 , 20 ].",
+      "context_window": "enefit-risk profile of aspirin. There was an approximately 40% increased risk of all GI bleeding with low-dose aspirin in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-13729",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 13729,
+      "sentence": "The overall risk of ICH was also increased by approximately 40% with long-term low-dose aspirin, which is also similar to the estimates from randomized trials, although an increase in risk was not consistently reported in all studies.",
+      "context_window": "The overall risk of ICH was also increased by approximately 40% with long-term low-dose aspirin, which is also similar to t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-n-76",
+      "claim_type": "sample_size",
+      "raw_text": "n = 39",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 76,
+      "sentence": "A key strength of this review is that it collates data from a large number (n = 39) of observational studies, which reflect the effects of aspirin in the real world.",
+      "context_window": "f this review is that it collates data from a large number (n = 39) of observational studies, which reflect the effects of asp",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-27",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 27,
+      "sentence": "There was an approximately 40% increased risk of all GI bleeding with low-dose aspirin in the observational studies reviewed here, a finding very similar to that reported in randomized trials [ 6 , 20 ].",
+      "context_window": "There was an approximately 40% increased risk of all GI bleeding with low-dose aspirin in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r-pct-484",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 484,
+      "sentence": "The overall risk of ICH was also increased by approximately 40% with long-term low-dose aspirin, which is also similar to the estimates from randomized trials, although an increase in risk was not consistently reported in all studies.",
+      "context_window": "The overall risk of ICH was also increased by approximately 40% with long-term low-dose aspirin, which is also similar to t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

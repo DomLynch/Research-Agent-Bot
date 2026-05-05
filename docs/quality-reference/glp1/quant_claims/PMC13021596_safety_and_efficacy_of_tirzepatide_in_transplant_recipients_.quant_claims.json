@@ -1,0 +1,2361 @@
+{
+  "paper_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_",
+  "doi": "10.3389/fphar.2026.1735987",
+  "extracted_at": "2026-05-05T21:26:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 41,
+    "confidence_interval": 6,
+    "unit_value": 65,
+    "p_value": 12,
+    "sample_size": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "Using the Weighted Median of the Difference of Medians statistical test, tirzepatide was associated with absolute reductions in hemoglobin A1c of -1.4% (95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (95% CI: -5.9 to -1.1) in solid organ transplant recipients.",
+      "context_window": "s associated with absolute reductions in hemoglobin A1c of -1.4% (95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-ci-1063",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.7 to -0.4",
+      "numeric_values": [
+        -1.7,
+        -0.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1063,
+      "sentence": "Using the Weighted Median of the Difference of Medians statistical test, tirzepatide was associated with absolute reductions in hemoglobin A1c of -1.4% (95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (95% CI: -5.9 to -1.1) in solid organ transplant recipients.",
+      "context_window": "ciated with absolute reductions in hemoglobin A1c of -1.4% (95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (95% CI: -5.9 to -1.1)",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-1109",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 kg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1109,
+      "sentence": "Using the Weighted Median of the Difference of Medians statistical test, tirzepatide was associated with absolute reductions in hemoglobin A1c of -1.4% (95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (95% CI: -5.9 to -1.1) in solid organ transplant recipients.",
+      "context_window": "A1c of -1.4% (95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (95% CI: -5.9 to -1.1) in solid organ transplant recipi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-ci-1121",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -5.9 to -1.1",
+      "numeric_values": [
+        -5.9,
+        -1.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "Using the Weighted Median of the Difference of Medians statistical test, tirzepatide was associated with absolute reductions in hemoglobin A1c of -1.4% (95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (95% CI: -5.9 to -1.1) in solid organ transplant recipients.",
+      "context_window": "(95% CI: -1.7 to -0.4) and body mass index of -1.2 kg/m 2 (95% CI: -5.9 to -1.1) in solid organ transplant recipients. Pooled proportions i",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-1248",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "Pooled proportions indicated a tirzepatide discontinuation rate of 3.1% (95% CI: 0.0-7.1) due to adverse drug reactions, suggesting the therapy was well tolerated in this population.",
+      "context_window": "proportions indicated a tirzepatide discontinuation rate of 3.1% (95% CI: 0.0-7.1) due to adverse drug reactions, suggesting",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-ci-1254",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.0-7.1",
+      "numeric_values": [
+        0.0,
+        7.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1254,
+      "sentence": "Pooled proportions indicated a tirzepatide discontinuation rate of 3.1% (95% CI: 0.0-7.1) due to adverse drug reactions, suggesting the therapy was well tolerated in this population.",
+      "context_window": "tions indicated a tirzepatide discontinuation rate of 3.1% (95% CI: 0.0-7.1) due to adverse drug reactions, suggesting the therapy was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-1469",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1469,
+      "sentence": "PTDM occurs in 10%-40% of SOTRs ( Liu et al., 2024 ), with risk factors including age, family history of diabetes, genetic predisposition, post-surgical hyperglycemia, donor and recipient characteristics, treatment of acute rejection, and post-transplant lifestyle changes such as weight gain and increased visceral adiposity ( Sharif et al., 2014 ; Chastagner et al., 2024 ).",
+      "context_window": "sease severity ( Sharif and Cohney, 2016 ). PTDM occurs in 10%-40% of SOTRs ( Liu et al., 2024 ), with risk factors includ",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-1473",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1473,
+      "sentence": "PTDM occurs in 10%-40% of SOTRs ( Liu et al., 2024 ), with risk factors including age, family history of diabetes, genetic predisposition, post-surgical hyperglycemia, donor and recipient characteristics, treatment of acute rejection, and post-transplant lifestyle changes such as weight gain and increased visceral adiposity ( Sharif et al., 2014 ; Chastagner et al., 2024 ).",
+      "context_window": "e severity ( Sharif and Cohney, 2016 ). PTDM occurs in 10%-40% of SOTRs ( Liu et al., 2024 ), with risk factors including",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-4989",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4989,
+      "sentence": "Trials directly comparing GLP-1 RAs showed all agents produced reductions in hemoglobin A1c (HbA1c), ranging between 0.8% and 1.8%, with variable onset and magnitude of body weight reduction.",
+      "context_window": "duced reductions in hemoglobin A1c (HbA1c), ranging between 0.8% and 1.8%, with variable onset and magnitude of body weight",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-4998",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4998,
+      "sentence": "Trials directly comparing GLP-1 RAs showed all agents produced reductions in hemoglobin A1c (HbA1c), ranging between 0.8% and 1.8%, with variable onset and magnitude of body weight reduction.",
+      "context_window": "uctions in hemoglobin A1c (HbA1c), ranging between 0.8% and 1.8%, with variable onset and magnitude of body weight reduction",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5160",
+      "claim_type": "unit_value",
+      "raw_text": "7 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 5160,
+      "sentence": "Specifically in patients with T2DM, mean weight loss with GLP-1 RAs typically ranges from \u223c2 to 7 kg across randomized controlled trials, with greater reductions (up to 15 kg with semaglutide) reported in obesity trials.",
+      "context_window": "mean weight loss with GLP-1 RAs typically ranges from \u223c2 to 7 kg across randomized controlled trials, with greater reduction",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5233",
+      "claim_type": "unit_value",
+      "raw_text": "15 kg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 5233,
+      "sentence": "Specifically in patients with T2DM, mean weight loss with GLP-1 RAs typically ranges from \u223c2 to 7 kg across randomized controlled trials, with greater reductions (up to 15 kg with semaglutide) reported in obesity trials.",
+      "context_window": "andomized controlled trials, with greater reductions (up to 15 kg with semaglutide) reported in obesity trials. While general",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-6252",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6252,
+      "sentence": "In SURPASS-1, which evaluated tirzepatide as monotherapy compared with placebo in patients treated with diet and exercise, HbA1c decreased by nearly 2% and body weight was reduced by approximately 9 kg ( Rosenstock et al., 2021 ).",
+      "context_window": "s treated with diet and exercise, HbA1c decreased by nearly 2% and body weight was reduced by approximately 9 kg ( Rosenst",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6300",
+      "claim_type": "unit_value",
+      "raw_text": "9 kg",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 6300,
+      "sentence": "In SURPASS-1, which evaluated tirzepatide as monotherapy compared with placebo in patients treated with diet and exercise, HbA1c decreased by nearly 2% and body weight was reduced by approximately 9 kg ( Rosenstock et al., 2021 ).",
+      "context_window": "d by nearly 2% and body weight was reduced by approximately 9 kg ( Rosenstock et al., 2021 ). Tirzepatide was compared dire",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6386",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 6386,
+      "sentence": "Tirzepatide was compared directly with semaglutide 1 mg in the SURPASS-2 trial providing greater reduction in HbA1c (up to -2.30% vs. -1.86%) and larger decrease in body weight, with differences exceeding 5 kg, indicating superior efficacy to an established GLP-1 RA comparator ( Fr\u00edas et al., 2021 ).",
+      "context_window": "2021 ). Tirzepatide was compared directly with semaglutide 1 mg in the SURPASS-2 trial providing greater reduction in HbA1c",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-6459",
+      "claim_type": "percentage",
+      "raw_text": "2.30%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6459,
+      "sentence": "Tirzepatide was compared directly with semaglutide 1 mg in the SURPASS-2 trial providing greater reduction in HbA1c (up to -2.30% vs. -1.86%) and larger decrease in body weight, with differences exceeding 5 kg, indicating superior efficacy to an established GLP-1 RA comparator ( Fr\u00edas et al., 2021 ).",
+      "context_window": "URPASS-2 trial providing greater reduction in HbA1c (up to -2.30% vs. -1.86%) and larger decrease in body weight, with differ",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-6470",
+      "claim_type": "percentage",
+      "raw_text": "1.86%",
+      "numeric_values": [
+        1.86
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6470,
+      "sentence": "Tirzepatide was compared directly with semaglutide 1 mg in the SURPASS-2 trial providing greater reduction in HbA1c (up to -2.30% vs. -1.86%) and larger decrease in body weight, with differences exceeding 5 kg, indicating superior efficacy to an established GLP-1 RA comparator ( Fr\u00edas et al., 2021 ).",
+      "context_window": "ial providing greater reduction in HbA1c (up to -2.30% vs. -1.86%) and larger decrease in body weight, with differences excee",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6540",
+      "claim_type": "unit_value",
+      "raw_text": "5 kg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 6540,
+      "sentence": "Tirzepatide was compared directly with semaglutide 1 mg in the SURPASS-2 trial providing greater reduction in HbA1c (up to -2.30% vs. -1.86%) and larger decrease in body weight, with differences exceeding 5 kg, indicating superior efficacy to an established GLP-1 RA comparator ( Fr\u00edas et al., 2021 ).",
+      "context_window": "larger decrease in body weight, with differences exceeding 5 kg, indicating superior efficacy to an established GLP-1 RA co",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6811",
+      "claim_type": "unit_value",
+      "raw_text": "9 kg",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 6811,
+      "sentence": "When assessed against basal insulin regimens, tirzepatide demonstrated superiority in lowering HbA1c by more than 2 percentage points, while reducing body weight by up to 8-9 kg, in contrast to the weight gain typically observed with insulin degludec or insulin glargine, even in patients with elevated cardiovascular risk ( Del et al., 2021 ; Dahl et al., 2022 ).Though efficacy outcomes favored treatment with tirzepatide, adverse events were more prominent in this cohort.",
+      "context_window": "2 percentage points, while reducing body weight by up to 8-9 kg, in contrast to the weight gain typically observed with ins",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-7219",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7219,
+      "sentence": "Gastrointestinal effects, such as nausea and diarrhea, led to treatment discontinuation in approximately 2%-3% of tirzepatide recipients compared with lower rates in comparator groups.",
+      "context_window": "diarrhea, led to treatment discontinuation in approximately 2%-3% of tirzepatide recipients compared with lower rates in c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-7222",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7222,
+      "sentence": "Gastrointestinal effects, such as nausea and diarrhea, led to treatment discontinuation in approximately 2%-3% of tirzepatide recipients compared with lower rates in comparator groups.",
+      "context_window": "rrhea, led to treatment discontinuation in approximately 2%-3% of tirzepatide recipients compared with lower rates in comp",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-1018",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1018,
+      "sentence": "Studies that met the eligibility criteria were marked for inclusion: Population: Adults (\u226518 years) who are SOT (kidney, liver, heart, lung, pancreas or combined), in the post-transplant period.",
+      "context_window": "ty criteria were marked for inclusion: Population: Adults (\u226518 years) who are SOT (kidney, liver, heart, lung, pancreas or combi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-1542",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1542,
+      "sentence": "Population: Adults (\u226518 years) who are SOT (kidney, liver, heart, lung, pancreas or combined), in the post-transplant period.",
+      "context_window": "e/retrospective cohorts, registries). Population: Adults (\u226518 years) who are SOT (kidney, liver, heart, lung, pancreas or combi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-7174",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7174,
+      "sentence": "Results were reported as pooled proportions with 95% confidence intervals (95% CI).",
+      "context_window": "ro events. Results were reported as pooled proportions with 95% confidence intervals (95% CI). Heterogeneity was assessed t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-7200",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7200,
+      "sentence": "Results were reported as pooled proportions with 95% confidence intervals (95% CI).",
+      "context_window": "ported as pooled proportions with 95% confidence intervals (95% CI). Heterogeneity was assessed through \u03c4 2 , I 2 , and H s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-9392",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9392,
+      "sentence": "Statistical significance was defined as p < 0.05.",
+      "context_window": "r publication bias. Statistical significance was defined as p < 0.05. Given the small number of included studies, publication b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-n-1738",
+      "claim_type": "sample_size",
+      "raw_text": "n = 86",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1738,
+      "sentence": "Baseline characteristics of the four included studies (n = 86 patients) are summarized in Table 1 ( Sweiss et al., 2025 ; Donald et al., 2024 ; January et al., 2025 ; El Khatib et al., 2025 ).",
+      "context_window": "is. Baseline characteristics of the four included studies (n = 86 patients) are summarized in Table 1 ( Sweiss et al., 2025 ;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-1912",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1912,
+      "sentence": "Patients\u2019 median age ranged from 58-59 years, with one study reporting a mean age of 60 years ( Sweiss et al., 2025 ; Donald et al., 2024 ; January et al., 2025 ; El Khatib et al., 2025 ).",
+      "context_window": "Khatib et al., 2025 ). Patients\u2019 median age ranged from 58-59 years, with one study reporting a mean age of 60 years ( Sweiss e",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-1961",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1961,
+      "sentence": "Patients\u2019 median age ranged from 58-59 years, with one study reporting a mean age of 60 years ( Sweiss et al., 2025 ; Donald et al., 2024 ; January et al., 2025 ; El Khatib et al., 2025 ).",
+      "context_window": "ed from 58-59 years, with one study reporting a mean age of 60 years ( Sweiss et al., 2025 ; Donald et al., 2024 ; January et al",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-2101",
+      "claim_type": "percentage",
+      "raw_text": "55.8%",
+      "numeric_values": [
+        55.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2101,
+      "sentence": "Sex distribution was a total of 48 (55.8%) males and 37 (43%) females.",
+      "context_window": "Khatib et al., 2025 ). Sex distribution was a total of 48 (55.8%) males and 37 (43%) females. One study was missing data for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-2122",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2122,
+      "sentence": "Sex distribution was a total of 48 (55.8%) males and 37 (43%) females.",
+      "context_window": "). Sex distribution was a total of 48 (55.8%) males and 37 (43%) females. One study was missing data for one participant re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-2532",
+      "claim_type": "unit_value",
+      "raw_text": "598 days",
+      "numeric_values": [
+        598.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2532,
+      "sentence": "Time from transplant to tirzepatide initiation varied widely (range: 896 to 1,598 days).",
+      "context_window": "nt to tirzepatide initiation varied widely (range: 896 to 1,598 days). Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-2570",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2570,
+      "sentence": "Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 .",
+      "context_window": "dely (range: 896 to 1,598 days). Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI range",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-2574",
+      "claim_type": "unit_value",
+      "raw_text": "53 mmol",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 2574,
+      "sentence": "Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 .",
+      "context_window": "(range: 896 to 1,598 days). Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-2590",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2590,
+      "sentence": "Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 .",
+      "context_window": "1,598 days). Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-2596",
+      "claim_type": "unit_value",
+      "raw_text": "72 mmol",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 2596,
+      "sentence": "Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 .",
+      "context_window": "days). Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-2639",
+      "claim_type": "unit_value",
+      "raw_text": "32.4 kg",
+      "numeric_values": [
+        32.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2639,
+      "sentence": "Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 .",
+      "context_window": "ol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 . Some baseline data were missing, as de",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-2654",
+      "claim_type": "unit_value",
+      "raw_text": "38.8 kg",
+      "numeric_values": [
+        38.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2654,
+      "sentence": "Baseline HbA1c ranged from 7% (53 mmol/mol) to 8.7% (72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 .",
+      "context_window": "(72 mmol/mol), and baseline BMI ranged from 32.4 kg/m 2 to 38.8 kg/m 2 . Some baseline data were missing, as detailed in Table",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-4807",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4807,
+      "sentence": "Efficacy of tirzepatide was assessed using fasting blood glucose (FBG), HbA1c, body weight, BMI, and serum creatinine (SCr). \u201cNadirs\u201d were defined in the original study as the lowest laboratory values obtained from patient charts within the 1-6 months and 1-12 months periods and were compared with baseline values.",
+      "context_window": "laboratory values obtained from patient charts within the 1-6 months and 1-12 months periods and were compared with baseline val",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-4822",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4822,
+      "sentence": "Efficacy of tirzepatide was assessed using fasting blood glucose (FBG), HbA1c, body weight, BMI, and serum creatinine (SCr). \u201cNadirs\u201d were defined in the original study as the lowest laboratory values obtained from patient charts within the 1-6 months and 1-12 months periods and were compared with baseline values.",
+      "context_window": "es obtained from patient charts within the 1-6 months and 1-12 months periods and were compared with baseline values. Safety was",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-4905",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4905,
+      "sentence": "Safety was assessed over 6 months by graft failure, hospitalizations, and reporting of adverse events, including nausea/vomiting, pancreatitis, and hypoglycemia.",
+      "context_window": "ere compared with baseline values. Safety was assessed over 6 months by graft failure, hospitalizations, and reporting of advers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5190",
+      "claim_type": "unit_value",
+      "raw_text": "132 mg/dL",
+      "numeric_values": [
+        132.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 5190,
+      "sentence": "At the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 .",
+      "context_window": "l outcomes. At the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5203",
+      "claim_type": "unit_value",
+      "raw_text": "109 mg/dL",
+      "numeric_values": [
+        109.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 5203,
+      "sentence": "At the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 .",
+      "context_window": "t the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI dec",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5241",
+      "claim_type": "unit_value",
+      "raw_text": "97.5 kg",
+      "numeric_values": [
+        97.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5241,
+      "sentence": "At the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 .",
+      "context_window": "sed from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5252",
+      "claim_type": "unit_value",
+      "raw_text": "94.1 kg",
+      "numeric_values": [
+        94.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5252,
+      "sentence": "At the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 .",
+      "context_window": "2 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 . These",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5284",
+      "claim_type": "unit_value",
+      "raw_text": "32.7 kg",
+      "numeric_values": [
+        32.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5284,
+      "sentence": "At the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 .",
+      "context_window": "t decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 . These reductions remained statisticall",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5299",
+      "claim_type": "unit_value",
+      "raw_text": "31.0 kg",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5299,
+      "sentence": "At the 1- to 12-month nadir, FBG decreased from 132 mg/dL to 109 mg/dL, body weight decreased from 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 .",
+      "context_window": "m 97.5 kg to 94.1 kg, and BMI decreased from 32.7 kg/m 2 to 31.0 kg/m 2 . These reductions remained statistically significant,",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-5390",
+      "claim_type": "percentage",
+      "raw_text": "7.0%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5390,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5396",
+      "claim_type": "unit_value",
+      "raw_text": "53 mmol",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 5396,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "ed statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/d",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-5412",
+      "claim_type": "percentage",
+      "raw_text": "6.65%",
+      "numeric_values": [
+        6.65
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5412,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/d",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5419",
+      "claim_type": "unit_value",
+      "raw_text": "49 mmol",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 5419,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "icant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-5433",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.2266",
+      "numeric_values": [
+        0.2266
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5433,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "hanges in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not rea",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5454",
+      "claim_type": "unit_value",
+      "raw_text": "1.06 mg/dL",
+      "numeric_values": [
+        1.06
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 5454,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "[53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance. Tirz",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-5468",
+      "claim_type": "unit_value",
+      "raw_text": "1.02 mg/dL",
+      "numeric_values": [
+        1.02
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 5468,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance. Tirzepatide was di",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-5480",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0784",
+      "numeric_values": [
+        0.0784
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5480,
+      "sentence": "These reductions remained statistically significant, while changes in HbA1c (7.0% [53 mmol/mol] to 6.65% [49 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance.",
+      "context_window": "9 mmol/mol], p = 0.2266) and SCr (1.06 mg/dL to 1.02 mg/dL, p = 0.0784) did not reach significance. Tirzepatide was discontinued i",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6130",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 6130,
+      "sentence": "Patients were excluded if therapy lasted less than 1 month, if the medication was never initiated, or if it was not resumed post-transplant.",
+      "context_window": "nsplant. Patients were excluded if therapy lasted less than 1 month, if the medication was never initiated, or if it was not re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-6674",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6674,
+      "sentence": "Medians and interquartile ranges were reported for non-normally distributed data, with p < 0.05 considered statistically significant.",
+      "context_window": "anges were reported for non-normally distributed data, with p < 0.05 considered statistically significant. Among tirzepatide rec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-6777",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6777,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "nt. Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-6788",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6788,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "irzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreas",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6794",
+      "claim_type": "unit_value",
+      "raw_text": "72 mmol",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 6794,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "tide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-6810",
+      "claim_type": "percentage",
+      "raw_text": "7.0%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6810,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6816",
+      "claim_type": "unit_value",
+      "raw_text": "53 mmol",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 6816,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "n HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 t",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6858",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 kg",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6858,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "mol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline. There were",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6870",
+      "claim_type": "unit_value",
+      "raw_text": "36.8 kg",
+      "numeric_values": [
+        36.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6870,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline. There were also decreas",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-6885",
+      "claim_type": "unit_value",
+      "raw_text": "35.7 kg",
+      "numeric_values": [
+        35.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6885,
+      "sentence": "Among tirzepatide recipients, median HbA1c decreased by 1.7% (from 8.7% [72 mmol/mol] to 7.0% [53 mmol/mol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline.",
+      "context_window": "ol]) and median BMI decreased by 1.1 kg/m 2 (36.8 kg/m 2 to 35.7 kg/m 2 ) from baseline. There were also decreases to median LD",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-8227",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8227,
+      "sentence": "Patients without spirometry testing after therapy or those who began the agent fewer than 90 days post-transplant were excluded.",
+      "context_window": "sting after therapy or those who began the agent fewer than 90 days post-transplant were excluded. In the published cohort, pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-8892",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8892,
+      "sentence": "In the full cohort of 81 patients, increases were observed in nearly half of patients for FEV1 (49%) and FVC (46%), but results did not reach statistical significance.",
+      "context_window": "ncreases were observed in nearly half of patients for FEV1 (49%) and FVC (46%), but results did not reach statistical signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-8906",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8906,
+      "sentence": "In the full cohort of 81 patients, increases were observed in nearly half of patients for FEV1 (49%) and FVC (46%), but results did not reach statistical significance.",
+      "context_window": "observed in nearly half of patients for FEV1 (49%) and FVC (46%), but results did not reach statistical significance. A sub",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-9023",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 9023,
+      "sentence": "A subgroup analysis was conducted for patients with a BMI \u226530 kg/m 2 , and a sensitivity analysis excluded patients who experienced any degree of rejection.",
+      "context_window": "A subgroup analysis was conducted for patients with a BMI \u226530 kg/m 2 , and a sensitivity analysis excluded patients who expe",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-9300",
+      "claim_type": "percentage",
+      "raw_text": "7.05%",
+      "numeric_values": [
+        7.05
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9300,
+      "sentence": "Median HbA1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the conclusion of the study.",
+      "context_window": "inically meaningful weight loss. Median HbA1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the con",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-9307",
+      "claim_type": "unit_value",
+      "raw_text": "53 mmol",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 9307,
+      "sentence": "Median HbA1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the conclusion of the study.",
+      "context_window": "y meaningful weight loss. Median HbA1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the conclusion o",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-9335",
+      "claim_type": "percentage",
+      "raw_text": "5.85%",
+      "numeric_values": [
+        5.85
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9335,
+      "sentence": "Median HbA1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the conclusion of the study.",
+      "context_window": "dian HbA1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the conclusion of the study. Median BMI de",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-9342",
+      "claim_type": "unit_value",
+      "raw_text": "41 mmol",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 9342,
+      "sentence": "Median HbA1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the conclusion of the study.",
+      "context_window": "A1c improved from 7.05% (53 mmol/mol) at baseline to 5.85% (41 mmol/mol) at the conclusion of the study. Median BMI decreased f",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-9413",
+      "claim_type": "unit_value",
+      "raw_text": "38.8 kg",
+      "numeric_values": [
+        38.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 9413,
+      "sentence": "Median BMI decreased from 38.8 kg/m 2 at baseline to 32.9 kg/m 2 at day 300 of therapy.",
+      "context_window": ") at the conclusion of the study. Median BMI decreased from 38.8 kg/m 2 at baseline to 32.9 kg/m 2 at day 300 of therapy. Repor",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-9440",
+      "claim_type": "unit_value",
+      "raw_text": "32.9 kg",
+      "numeric_values": [
+        32.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 9440,
+      "sentence": "Median BMI decreased from 38.8 kg/m 2 at baseline to 32.9 kg/m 2 at day 300 of therapy.",
+      "context_window": "study. Median BMI decreased from 38.8 kg/m 2 at baseline to 32.9 kg/m 2 at day 300 of therapy. Reported adverse events included",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10063",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 10063,
+      "sentence": "El Khatib et al. (2025) conducted a retrospective medical record review of patients who received tirzepatide treatment post-transplant, excluding those who received treatment for less than 3 months post-transplant.",
+      "context_window": "plant, excluding those who received treatment for less than 3 months post-transplant. To evaluate efficacy, changes in body weig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10448",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 10448,
+      "sentence": "For dosing, tirzepatide was initiated on 2.5 mg once weekly and titrated in 2.5-mg increments, with a median dose of 5 mg at study end.",
+      "context_window": "cally significant. For dosing, tirzepatide was initiated on 2.5 mg once weekly and titrated in 2.5-mg increments, with a media",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10524",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 10524,
+      "sentence": "For dosing, tirzepatide was initiated on 2.5 mg once weekly and titrated in 2.5-mg increments, with a median dose of 5 mg at study end.",
+      "context_window": "ly and titrated in 2.5-mg increments, with a median dose of 5 mg at study end. Only 1 patient reached the maximum weekly dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10593",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 10593,
+      "sentence": "Only 1 patient reached the maximum weekly dose of 15 mg during the study period.",
+      "context_window": "tudy end. Only 1 patient reached the maximum weekly dose of 15 mg during the study period. The median treatment duration was",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10658",
+      "claim_type": "unit_value",
+      "raw_text": "11 months",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 10658,
+      "sentence": "The median treatment duration was 11 months.",
+      "context_window": "during the study period. The median treatment duration was 11 months. Among the 34 patients included (2 heart, 23 kidney, 7 live",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-10834",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10834,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "y), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (3",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10840",
+      "claim_type": "unit_value",
+      "raw_text": "85 kg",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10840,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "rzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10846",
+      "claim_type": "unit_value",
+      "raw_text": "79.5 kg",
+      "numeric_values": [
+        79.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10846,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "ide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 3",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-10855",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10855,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "ficantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10884",
+      "claim_type": "unit_value",
+      "raw_text": "1.15 kg",
+      "numeric_values": [
+        1.15
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10884,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001). Reductions to",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10897",
+      "claim_type": "unit_value",
+      "raw_text": "32.4 kg",
+      "numeric_values": [
+        32.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10897,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001). Reductions to median HbA1c",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-10912",
+      "claim_type": "unit_value",
+      "raw_text": "31.3 kg",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10912,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "g, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001). Reductions to median HbA1c and FBG compar",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-10926",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10926,
+      "sentence": "Among the 34 patients included (2 heart, 23 kidney, 7 liver, 1 lung-kidney, 1 simultaneous pancreas-kidney), tirzepatide significantly reduced median body weight by 6.5% (85 kg-79.5 kg, p < 0.001) and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001).",
+      "context_window": "and median BMI by 1.15 kg/m 2 (32.4 kg/m 2 to 31.3 kg/m 2 , p < 0.001). Reductions to median HbA1c and FBG compared to baseline a",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-11058",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11058,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-11064",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11064,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "strated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-11070",
+      "claim_type": "unit_value",
+      "raw_text": "67 mmol",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11070,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "d statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-11086",
+      "claim_type": "percentage",
+      "raw_text": "6.9%",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11086,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "gnificance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L)",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-11092",
+      "claim_type": "unit_value",
+      "raw_text": "52 mmol",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11092,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "ance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respect",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-11110",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 mmol",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11110,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "ases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-11122",
+      "claim_type": "unit_value",
+      "raw_text": "10.55 mmol",
+      "numeric_values": [
+        10.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11122,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "(8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001). Total daily in",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-11138",
+      "claim_type": "unit_value",
+      "raw_text": "6.65 mmol",
+      "numeric_values": [
+        6.65
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11138,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001). Total daily insulin requireme",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-11166",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11166,
+      "sentence": "Reductions to median HbA1c and FBG compared to baseline also demonstrated statistical significance through decreases of 1.4% (8.3% [67 mmol/mol] to 6.9% [52 mmol/mol]) and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001).",
+      "context_window": "and 3.9 mmol/L (10.55 mmol/L to 6.65 mmol/L), respectively (p < 0.001). Total daily insulin requirements decreased from 46 units",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-11248",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11248,
+      "sentence": "Total daily insulin requirements decreased from 46 units to 34 units (p = 0.01).",
+      "context_window": "y insulin requirements decreased from 46 units to 34 units (p = 0.01). TG levels also decreased significantly from baseline with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-11330",
+      "claim_type": "unit_value",
+      "raw_text": "2.48 mg/dL",
+      "numeric_values": [
+        2.48
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 11330,
+      "sentence": "TG levels also decreased significantly from baseline with tirzepatide (2.48 mg/dL to 1.52 mg/dL) whereas SCr was unchanged. eGFR significantly improved (p = 0.04).",
+      "context_window": "lso decreased significantly from baseline with tirzepatide (2.48 mg/dL to 1.52 mg/dL) whereas SCr was unchanged. eGFR significantl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-11344",
+      "claim_type": "unit_value",
+      "raw_text": "1.52 mg/dL",
+      "numeric_values": [
+        1.52
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 11344,
+      "sentence": "TG levels also decreased significantly from baseline with tirzepatide (2.48 mg/dL to 1.52 mg/dL) whereas SCr was unchanged. eGFR significantly improved (p = 0.04).",
+      "context_window": "significantly from baseline with tirzepatide (2.48 mg/dL to 1.52 mg/dL) whereas SCr was unchanged. eGFR significantly improved (p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-11412",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11412,
+      "sentence": "TG levels also decreased significantly from baseline with tirzepatide (2.48 mg/dL to 1.52 mg/dL) whereas SCr was unchanged. eGFR significantly improved (p = 0.04).",
+      "context_window": "dL) whereas SCr was unchanged. eGFR significantly improved (p = 0.04). The authors also performed a subgroup analysis to determi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-11818",
+      "claim_type": "percentage",
+      "raw_text": "23.5%",
+      "numeric_values": [
+        23.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11818,
+      "sentence": "For safety, 23.5% (n = 8) of patients required visits to the emergency department (ED) due to GI intolerance or hypoglycemia, which led to hospital admission for 17.6% (n = 6) of these patients.",
+      "context_window": "eases in SCr in non-kidney transplant patients. For safety, 23.5% (n = 8) of patients required visits to the emergency depart",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-n-11825",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11825,
+      "sentence": "For safety, 23.5% (n = 8) of patients required visits to the emergency department (ED) due to GI intolerance or hypoglycemia, which led to hospital admission for 17.6% (n = 6) of these patients.",
+      "context_window": "n SCr in non-kidney transplant patients. For safety, 23.5% (n = 8) of patients required visits to the emergency department (E",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-11968",
+      "claim_type": "percentage",
+      "raw_text": "17.6%",
+      "numeric_values": [
+        17.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11968,
+      "sentence": "For safety, 23.5% (n = 8) of patients required visits to the emergency department (ED) due to GI intolerance or hypoglycemia, which led to hospital admission for 17.6% (n = 6) of these patients.",
+      "context_window": "erance or hypoglycemia, which led to hospital admission for 17.6% (n = 6) of these patients. Only 2 patients discontinued tir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-n-11975",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11975,
+      "sentence": "For safety, 23.5% (n = 8) of patients required visits to the emergency department (ED) due to GI intolerance or hypoglycemia, which led to hospital admission for 17.6% (n = 6) of these patients.",
+      "context_window": "or hypoglycemia, which led to hospital admission for 17.6% (n = 6) of these patients. Only 2 patients discontinued tirzepatid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-n-12384",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12384,
+      "sentence": "Four studies ( n = 5-34 per group) contributed to the analysis of HbA1c.",
+      "context_window": "/GIP receptor agonists on gastric emptying. Four studies ( n = 5-34 per group) contributed to the analysis of HbA1c. Median",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-12477",
+      "claim_type": "percentage",
+      "raw_text": "7.0%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12477,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "o the analysis of HbA1c. Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up median",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-12483",
+      "claim_type": "unit_value",
+      "raw_text": "53 mmol",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12483,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "analysis of HbA1c. Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-12499",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12499,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "c. Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (4",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-12505",
+      "claim_type": "unit_value",
+      "raw_text": "72 mmol",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12505,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "ian baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-12555",
+      "claim_type": "percentage",
+      "raw_text": "5.85%",
+      "numeric_values": [
+        5.85
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12555,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol). Using the Weighted Med",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-12562",
+      "claim_type": "unit_value",
+      "raw_text": "41 mmol",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12562,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol). Using the Weighted Median of th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-12578",
+      "claim_type": "percentage",
+      "raw_text": "7.0%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12578,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol). Using the Weighted Median of the Difference",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-12584",
+      "claim_type": "unit_value",
+      "raw_text": "53 mmol",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12584,
+      "sentence": "Median baseline values ranged from 7.0% (53 mmol/mol) to 8.7% (72 mmol/mol), while follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol).",
+      "context_window": "follow-up medians ranged from 5.85% (41 mmol/mol) to 7.0% (53 mmol/mol). Using the Weighted Median of the Difference of Median",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-12719",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12719,
+      "sentence": "Using the Weighted Median of the Difference of Medians method, the pooled estimate indicated a significant reduction of -1.4% (95% CI: -1.7 to -0.4).",
+      "context_window": ", the pooled estimate indicated a significant reduction of -1.4% (95% CI: -1.7 to -0.4). This decrease is clinically meaning",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-ci-12725",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.7 to -0.4",
+      "numeric_values": [
+        -1.7,
+        -0.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12725,
+      "sentence": "Using the Weighted Median of the Difference of Medians method, the pooled estimate indicated a significant reduction of -1.4% (95% CI: -1.7 to -0.4).",
+      "context_window": "pooled estimate indicated a significant reduction of -1.4% (95% CI: -1.7 to -0.4). This decrease is clinically meaningful, as a reduction of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-12813",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12813,
+      "sentence": "This decrease is clinically meaningful, as a reduction of around 1% in HbA1c is generally associated with a lower risk of diabetes-related complications ( Authors, 1999 ).",
+      "context_window": "decrease is clinically meaningful, as a reduction of around 1% in HbA1c is generally associated with a lower risk of diabe",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-n-13853",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13853,
+      "sentence": "Four studies ( n = 5-34 per group) contributed to the analysis of BMI.",
+      "context_window": "line and follow-up for each included study. Four studies ( n = 5-34 per group) contributed to the analysis of BMI. Median BM",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-13959",
+      "claim_type": "unit_value",
+      "raw_text": "38.8 kg",
+      "numeric_values": [
+        38.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 13959,
+      "sentence": "Median BMI values at baseline ranged from 32.4 to 38.8 kg/m 2 , while follow-up values ranged from 31.0 to 35.7 kg/m 2 .",
+      "context_window": "s of BMI. Median BMI values at baseline ranged from 32.4 to 38.8 kg/m 2 , while follow-up values ranged from 31.0 to 35.7 kg/m",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-14016",
+      "claim_type": "unit_value",
+      "raw_text": "35.7 kg",
+      "numeric_values": [
+        35.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 14016,
+      "sentence": "Median BMI values at baseline ranged from 32.4 to 38.8 kg/m 2 , while follow-up values ranged from 31.0 to 35.7 kg/m 2 .",
+      "context_window": "to 38.8 kg/m 2 , while follow-up values ranged from 31.0 to 35.7 kg/m 2 . Using the Weighted Median of the Difference of Median",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-ci-14162",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -5.9 to -1.1",
+      "numeric_values": [
+        -5.9,
+        -1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 14162,
+      "sentence": "Using the Weighted Median of the Difference of Medians method, the pooled estimate indicated a significant reduction of -1.2 units (95% CI: -5.9 to -1.1).",
+      "context_window": "d estimate indicated a significant reduction of -1.2 units (95% CI: -5.9 to -1.1). Given the small number of included studies, formal influe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-15748",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15748,
+      "sentence": "Only 3 adverse events leading to treatment discontinuation with tirzepatide were recorded overall, corresponding to a pooled event rate of 3.1% (95% CI: 0.0-7.1).",
+      "context_window": "e recorded overall, corresponding to a pooled event rate of 3.1% (95% CI: 0.0-7.1). Both common-effect and random-effects mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-ci-15754",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.0-7.1",
+      "numeric_values": [
+        0.0,
+        7.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 15754,
+      "sentence": "Only 3 adverse events leading to treatment discontinuation with tirzepatide were recorded overall, corresponding to a pooled event rate of 3.1% (95% CI: 0.0-7.1).",
+      "context_window": "rded overall, corresponding to a pooled event rate of 3.1% (95% CI: 0.0-7.1). Both common-effect and random-effects models yielded iden",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-15885",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15885,
+      "sentence": "Both common-effect and random-effects models yielded identical results, with no evidence of heterogeneity (I 2 = 0.0%; p = 0.859) ( Figure 4 ).",
+      "context_window": "identical results, with no evidence of heterogeneity (I 2 = 0.0%; p = 0.859) ( Figure 4 ). Funnel plot asymmetry analyses di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-15891",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.859",
+      "numeric_values": [
+        0.859
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15891,
+      "sentence": "Both common-effect and random-effects models yielded identical results, with no evidence of heterogeneity (I 2 = 0.0%; p = 0.859) ( Figure 4 ).",
+      "context_window": "cal results, with no evidence of heterogeneity (I 2 = 0.0%; p = 0.859) ( Figure 4 ). Funnel plot asymmetry analyses did not indic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-15994",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.72",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15994,
+      "sentence": "Funnel plot asymmetry analyses did not indicate publication bias (Egger test: p = 0.72; Thompson & Sharp test: p = 0.83) ( Figure 5 ).",
+      "context_window": "try analyses did not indicate publication bias (Egger test: p = 0.72; Thompson & Sharp test: p = 0.83) ( Figure 5 ). Although th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-p-16027",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16027,
+      "sentence": "Funnel plot asymmetry analyses did not indicate publication bias (Egger test: p = 0.72; Thompson & Sharp test: p = 0.83) ( Figure 5 ).",
+      "context_window": "lication bias (Egger test: p = 0.72; Thompson & Sharp test: p = 0.83) ( Figure 5 ). Although the absence of bias signals support",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-pct-17897",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17897,
+      "sentence": "Overall, 75% of the studies were found to have a serious or critical risk of bias, while only one study was judged as moderate ( Figure 8 ).",
+      "context_window": "lective reporting due to convenience of follow-up. Overall, 75% of the studies were found to have a serious or critical ris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-u-2101",
+      "claim_type": "unit_value",
+      "raw_text": "10 kg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2101,
+      "sentence": "A meta-analysis of the SURPASS program confirmed HbA1c reductions of 2.0-2.4 percentage points and body weight loss often exceeding 10 kg, with consistent benefits across different patient groups ( Rosenstock et al., 2021 ).",
+      "context_window": "-2.4 percentage points and body weight loss often exceeding 10 kg, with consistent benefits across different patient groups (",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13021596_safety_and_efficacy_of_tirzepatide_in_transplant_recipients_-n-1980",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 1980,
+      "sentence": "The wide confidence interval observed for BMI change was largely driven by the lung-transplant cohort reported by January et al. (n = 8), which demonstrated a markedly larger reduction compared with other studies.",
+      "context_window": "n by the lung-transplant cohort reported by January et al. (n = 8), which demonstrated a markedly larger reduction compared w",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

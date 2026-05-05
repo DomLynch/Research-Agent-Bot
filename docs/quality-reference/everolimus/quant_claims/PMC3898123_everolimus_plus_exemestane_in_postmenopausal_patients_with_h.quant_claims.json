@@ -1,0 +1,2105 @@
+{
+  "paper_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h",
+  "doi": "10.1007/s12325-013-0060-1",
+  "extracted_at": "2026-05-05T21:30:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 34,
+    "hazard_ratio": 2,
+    "percentage": 60,
+    "p_value": 8,
+    "sample_size": 11,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-500",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 500,
+      "sentence": "BOLERO-2 is a phase 3, double-blind, randomized, international trial comparing everolimus (10 mg/day) plus exemestane (25 mg/day) versus placebo plus exemestane in postmenopausal women with HR + advanced BC with recurrence/progression during or after NSAIs.",
+      "context_window": "lind, randomized, international trial comparing everolimus (10 mg/day) plus exemestane (25 mg/day) versus placebo plus exemestane",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-528",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg/day",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 528,
+      "sentence": "BOLERO-2 is a phase 3, double-blind, randomized, international trial comparing everolimus (10 mg/day) plus exemestane (25 mg/day) versus placebo plus exemestane in postmenopausal women with HR + advanced BC with recurrence/progression during or after NSAIs.",
+      "context_window": "nal trial comparing everolimus (10 mg/day) plus exemestane (25 mg/day) versus placebo plus exemestane in postmenopausal women wit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-1069",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 months",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1069,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": "us placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-hr-l-1095",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": "[investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-1116",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1116,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": ": 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; centra",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-1161",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1161,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": "ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; haza",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-1201",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 months",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1201,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": ".38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-hr-l-1227",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio = 0.38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1227,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": "0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-1248",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": "11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-1293",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1293,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": "ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-1462",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "Final study results with median 18-month follow-up show that median PFS remained significantly longer with everolimus plus exemestane versus placebo plus exemestane [investigator review: 7.8 versus 3.2 months, respectively; hazard ratio = 0.45 (95% confidence interval 0.38-0.54); log-rank P < 0.0001; central review: 11.0 versus 4.1 months, respectively; hazard ratio = 0.38 (95% confidence interval 0.31-0.48); log-rank P < 0.0001] in the overall population and in all prospectively defined subgroups, including patients with visceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "context_window": "ceral metastases, patients with recurrence during or within 12 months of completion of adjuvant therapy, and irrespective of age.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-60",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 60,
+      "sentence": "The majority of women with breast cancer (BC; approximately 70% worldwide) have hormone-receptor-positive (HR + ) tumors [ 1 ].",
+      "context_window": "The majority of women with breast cancer (BC; approximately 70% worldwide) have hormone-receptor-positive (HR + ) tumors [",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-2387",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2387,
+      "sentence": "Data from the protocol-defined interim analysis at 7.6-month median follow-up of this randomized, placebo-controlled, phase 3 trial demonstrated that EVE+EXE significantly improved progression-free survival (PFS) compared with placebo (PBO) + EXE [hazard ratio (HR) 0.43; P < 0.001 based on local investigator assessment; HR 0.36; P < 0.001 based on the independent central radiology assessment] [ 16 ].",
+      "context_window": "compared with placebo (PBO) + EXE [hazard ratio (HR) 0.43; P < 0.001 based on local investigator assessment; HR 0.36; P < 0.001",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-2446",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2446,
+      "sentence": "Data from the protocol-defined interim analysis at 7.6-month median follow-up of this randomized, placebo-controlled, phase 3 trial demonstrated that EVE+EXE significantly improved progression-free survival (PFS) compared with placebo (PBO) + EXE [hazard ratio (HR) 0.43; P < 0.001 based on local investigator assessment; HR 0.36; P < 0.001 based on the independent central radiology assessment] [ 16 ].",
+      "context_window": "P < 0.001 based on local investigator assessment; HR 0.36; P < 0.001 based on the independent central radiology assessment] [ 16",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-343",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 343,
+      "sentence": "Enrolled patients were adult postmenopausal women with HR + metastatic/locally advanced BC not amenable to surgery or radiotherapy and progressing after anastrozole or letrozole (defined as disease recurrence during or within 12 months of end of adjuvant treatment or progression during or within 1 month of end of treatment for advanced disease).",
+      "context_window": "r letrozole (defined as disease recurrence during or within 12 months of end of adjuvant treatment or progression during or withi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-414",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 414,
+      "sentence": "Enrolled patients were adult postmenopausal women with HR + metastatic/locally advanced BC not amenable to surgery or radiotherapy and progressing after anastrozole or letrozole (defined as disease recurrence during or within 12 months of end of adjuvant treatment or progression during or within 1 month of end of treatment for advanced disease).",
+      "context_window": "f end of adjuvant treatment or progression during or within 1 month of end of treatment for advanced disease). Patients whose t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-1378",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 1378,
+      "sentence": "Patients were randomly allocated in a 2:1 ratio to receive EVE 10 mg/day or matching PBO in a blinded manner; all patients received open-label EXE 25 mg/day ( N = 724).",
+      "context_window": "ients were randomly allocated in a 2:1 ratio to receive EVE 10 mg/day or matching PBO in a blinded manner; all patients received",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-1462",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg/day",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 1462,
+      "sentence": "Patients were randomly allocated in a 2:1 ratio to receive EVE 10 mg/day or matching PBO in a blinded manner; all patients received open-label EXE 25 mg/day ( N = 724).",
+      "context_window": "O in a blinded manner; all patients received open-label EXE 25 mg/day ( N = 724). Patients were stratified according to the prese",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-1474",
+      "claim_type": "sample_size",
+      "raw_text": "N = 724",
+      "numeric_values": [
+        724.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1474,
+      "sentence": "Patients were randomly allocated in a 2:1 ratio to receive EVE 10 mg/day or matching PBO in a blinded manner; all patients received open-label EXE 25 mg/day ( N = 724).",
+      "context_window": "ed manner; all patients received open-label EXE 25 mg/day ( N = 724). Patients were stratified according to the presence of vis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2038",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2038,
+      "sentence": "Secondary endpoints included overall response rate (complete response or partial response); clinical benefit rate (CBR; defined as complete response + partial response + stable disease for at least 24 weeks); overall survival (OS); quality of life (QOL), changes in bone marker levels, and patient safety.",
+      "context_window": "e response + partial response + stable disease for at least 24 weeks); overall survival (OS); quality of life (QOL), changes in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2302",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2302,
+      "sentence": "Tumor assessments were based on computed tomography (CT) scans or magnetic resonance imaging (MRI) of the chest, abdomen, and pelvis at baseline and every 6 weeks until disease progression.",
+      "context_window": "RI) of the chest, abdomen, and pelvis at baseline and every 6 weeks until disease progression. Patients who discontinued one or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2587",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2587,
+      "sentence": "A bone scan or skeletal survey using radiography, CT scanning, or MRI was required within 6 weeks before randomization.",
+      "context_window": "using radiography, CT scanning, or MRI was required within 6 weeks before randomization. Abnormalities observed on bone scans",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2696",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2696,
+      "sentence": "Abnormalities observed on bone scans were assessed using the same method every 6 weeks.",
+      "context_window": "ved on bone scans were assessed using the same method every 6 weeks. After discontinuation of treatment, patients who progresse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2785",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2785,
+      "sentence": "After discontinuation of treatment, patients who progressed were followed every 3 months for survival.",
+      "context_window": "n of treatment, patients who progressed were followed every 3 months for survival. Hematologic parameters, biochemical measures",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2957",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2957,
+      "sentence": "Hematologic parameters, biochemical measures, and vital signs were assessed at baseline and at each visit, and the lipid profile was assessed every 6 weeks.",
+      "context_window": "and at each visit, and the lipid profile was assessed every 6 weeks. Adverse events (AEs) were monitored continuously throughou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3234",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3234,
+      "sentence": "The primary efficacy analysis of PFS by local investigator assessment required 528 PFS events to achieve 90% power to detect an HR of 0.74 (26% risk reduction) using a log-rank test and 2-look Lan-DeMets group [ 18 ] sequential design with O\u2019Brien-Fleming-type boundary at a one-sided cumulative 2.5% significance level; one interim analysis was conducted after observing 60% of events (previously reported) [ 16 ].",
+      "context_window": "investigator assessment required 528 PFS events to achieve 90% power to detect an HR of 0.74 (26% risk reduction) using a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3269",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3269,
+      "sentence": "The primary efficacy analysis of PFS by local investigator assessment required 528 PFS events to achieve 90% power to detect an HR of 0.74 (26% risk reduction) using a log-rank test and 2-look Lan-DeMets group [ 18 ] sequential design with O\u2019Brien-Fleming-type boundary at a one-sided cumulative 2.5% significance level; one interim analysis was conducted after observing 60% of events (previously reported) [ 16 ].",
+      "context_window": "28 PFS events to achieve 90% power to detect an HR of 0.74 (26% risk reduction) using a log-rank test and 2-look Lan-DeMets",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3425",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3425,
+      "sentence": "The primary efficacy analysis of PFS by local investigator assessment required 528 PFS events to achieve 90% power to detect an HR of 0.74 (26% risk reduction) using a log-rank test and 2-look Lan-DeMets group [ 18 ] sequential design with O\u2019Brien-Fleming-type boundary at a one-sided cumulative 2.5% significance level; one interim analysis was conducted after observing 60% of events (previously reported) [ 16 ].",
+      "context_window": "ith O\u2019Brien-Fleming-type boundary at a one-sided cumulative 2.5% significance level; one interim analysis was conducted afte",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3501",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3501,
+      "sentence": "The primary efficacy analysis of PFS by local investigator assessment required 528 PFS events to achieve 90% power to detect an HR of 0.74 (26% risk reduction) using a log-rank test and 2-look Lan-DeMets group [ 18 ] sequential design with O\u2019Brien-Fleming-type boundary at a one-sided cumulative 2.5% significance level; one interim analysis was conducted after observing 60% of events (previously reported) [ 16 ].",
+      "context_window": "e level; one interim analysis was conducted after observing 60% of events (previously reported) [ 16 ]. Based on the magnit",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-96",
+      "claim_type": "sample_size",
+      "raw_text": "n = 485",
+      "numeric_values": [
+        485.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 96,
+      "sentence": "A total of 724 patients were randomized between June 2009 and January 2011 to receive EVE+EXE ( n = 485) or PBO+EXE ( n = 239).",
+      "context_window": "zed between June 2009 and January 2011 to receive EVE+EXE ( n = 485) or PBO+EXE ( n = 239). Baseline characteristics were simil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-118",
+      "claim_type": "sample_size",
+      "raw_text": "n = 239",
+      "numeric_values": [
+        239.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 118,
+      "sentence": "A total of 724 patients were randomized between June 2009 and January 2011 to receive EVE+EXE ( n = 485) or PBO+EXE ( n = 239).",
+      "context_window": "and January 2011 to receive EVE+EXE ( n = 485) or PBO+EXE ( n = 239). Baseline characteristics were similar between treatment g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-223",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 223,
+      "sentence": "At baseline, 77% of patients had bone lesions (21% had bone-only lesions), and of the approximately 59% with visceral disease, 84% had involvement at 2 or more sites.",
+      "context_window": "ar between treatment groups (Table 1 ) [ 16 ]. At baseline, 77% of patients had bone lesions (21% had bone-only lesions), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-257",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 257,
+      "sentence": "At baseline, 77% of patients had bone lesions (21% had bone-only lesions), and of the approximately 59% with visceral disease, 84% had involvement at 2 or more sites.",
+      "context_window": "1 ) [ 16 ]. At baseline, 77% of patients had bone lesions (21% had bone-only lesions), and of the approximately 59% with v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-310",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 310,
+      "sentence": "At baseline, 77% of patients had bone lesions (21% had bone-only lesions), and of the approximately 59% with visceral disease, 84% had involvement at 2 or more sites.",
+      "context_window": "sions (21% had bone-only lesions), and of the approximately 59% with visceral disease, 84% had involvement at 2 or more sit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-337",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 337,
+      "sentence": "At baseline, 77% of patients had bone lesions (21% had bone-only lesions), and of the approximately 59% with visceral disease, 84% had involvement at 2 or more sites.",
+      "context_window": "sions), and of the approximately 59% with visceral disease, 84% had involvement at 2 or more sites. Approximately 48% of pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-391",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 391,
+      "sentence": "Approximately 48% of patients had been previously treated with tamoxifen (TAM), and approximately 17% had previously received fulvestrant (both in addition to the NSAI required per inclusion criteria).",
+      "context_window": "ease, 84% had involvement at 2 or more sites. Approximately 48% of patients had been previously treated with tamoxifen (TAM",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-475",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 475,
+      "sentence": "Approximately 48% of patients had been previously treated with tamoxifen (TAM), and approximately 17% had previously received fulvestrant (both in addition to the NSAI required per inclusion criteria).",
+      "context_window": "previously treated with tamoxifen (TAM), and approximately 17% had previously received fulvestrant (both in addition to th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-593",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 593,
+      "sentence": "Approximately 80% of patients received prior therapy for metastatic disease, including chemotherapy (26%), whereas 20% of patients received study treatment as their first therapy for metastatic disease.",
+      "context_window": "to the NSAI required per inclusion criteria). Approximately 80% of patients received prior therapy for metastatic disease,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-680",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 680,
+      "sentence": "Approximately 80% of patients received prior therapy for metastatic disease, including chemotherapy (26%), whereas 20% of patients received study treatment as their first therapy for metastatic disease.",
+      "context_window": "ior therapy for metastatic disease, including chemotherapy (26%), whereas 20% of patients received study treatment as their",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-694",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 694,
+      "sentence": "Approximately 80% of patients received prior therapy for metastatic disease, including chemotherapy (26%), whereas 20% of patients received study treatment as their first therapy for metastatic disease.",
+      "context_window": "r metastatic disease, including chemotherapy (26%), whereas 20% of patients received study treatment as their first therapy",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-884",
+      "claim_type": "sample_size",
+      "raw_text": "n = 485",
+      "numeric_values": [
+        485.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 884,
+      "sentence": "Table 1 Patient demographic, baseline disease, and treatment characteristics Characteristic EVE+EXE ( n = 485), % PBO+EXE ( n = 239), % Median age, years (range) 62 (34-93) 61 (28-90) Race White 74 78 Asian 20 19 Black 3 1 Other 3 2 ECOG performance status 0 60 59 Visceral disease 58 59 Measurable disease a 70 68 Metastatic site Lung 30 33 Liver 33 30 Bone 77 77 Prior therapy Setting of most recent treatment Adjuvant 21 16 Advanced/metastatic disease 79 84 LET or ANA as most recent treatment 74 75 Tamoxifen 47 50 Fulvestrant 17 16 Chemotherapy (any setting) 69 65 Chemotherapy for metastatic BC 26 26 Radiotherapy 70 69 Number of prior therapies b 1 or 2 46 47 \u22653 54 53 From Baselga et al. [ 16 ].",
+      "context_window": "ase, and treatment characteristics Characteristic EVE+EXE ( n = 485), % PBO+EXE ( n = 239), % Median age, years (range) 62 (34-",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-906",
+      "claim_type": "sample_size",
+      "raw_text": "n = 239",
+      "numeric_values": [
+        239.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 906,
+      "sentence": "Table 1 Patient demographic, baseline disease, and treatment characteristics Characteristic EVE+EXE ( n = 485), % PBO+EXE ( n = 239), % Median age, years (range) 62 (34-93) 61 (28-90) Race White 74 78 Asian 20 19 Black 3 1 Other 3 2 ECOG performance status 0 60 59 Visceral disease 58 59 Measurable disease a 70 68 Metastatic site Lung 30 33 Liver 33 30 Bone 77 77 Prior therapy Setting of most recent treatment Adjuvant 21 16 Advanced/metastatic disease 79 84 LET or ANA as most recent treatment 74 75 Tamoxifen 47 50 Fulvestrant 17 16 Chemotherapy (any setting) 69 65 Chemotherapy for metastatic BC 26 26 Radiotherapy 70 69 Number of prior therapies b 1 or 2 46 47 \u22653 54 53 From Baselga et al. [ 16 ].",
+      "context_window": "racteristics Characteristic EVE+EXE ( n = 485), % PBO+EXE ( n = 239), % Median age, years (range) 62 (34-93) 61 (28-90) Race Wh",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2920",
+      "claim_type": "unit_value",
+      "raw_text": "17.7 months",
+      "numeric_values": [
+        17.7
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2920,
+      "sentence": "The median duration of follow-up at data cutoff was 17.7 months (range 10.9-28.6 months).",
+      "context_window": "review. The median duration of follow-up at data cutoff was 17.7 months (range 10.9-28.6 months). Eighty-one patients (16.7%) in th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-2944",
+      "claim_type": "unit_value",
+      "raw_text": "28.6 months",
+      "numeric_values": [
+        28.6
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2944,
+      "sentence": "The median duration of follow-up at data cutoff was 17.7 months (range 10.9-28.6 months).",
+      "context_window": "ion of follow-up at data cutoff was 17.7 months (range 10.9-28.6 months). Eighty-one patients (16.7%) in the EVE+EXE arm and 10 pat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-2979",
+      "claim_type": "percentage",
+      "raw_text": "16.7%",
+      "numeric_values": [
+        16.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2979,
+      "sentence": "Eighty-one patients (16.7%) in the EVE+EXE arm and 10 patients (4.2%) in the PBO+EXE arm continued to receive study treatment.",
+      "context_window": "17.7 months (range 10.9-28.6 months). Eighty-one patients (16.7%) in the EVE+EXE arm and 10 patients (4.2%) in the PBO+EXE a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3022",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3022,
+      "sentence": "Eighty-one patients (16.7%) in the EVE+EXE arm and 10 patients (4.2%) in the PBO+EXE arm continued to receive study treatment.",
+      "context_window": "ty-one patients (16.7%) in the EVE+EXE arm and 10 patients (4.2%) in the PBO+EXE arm continued to receive study treatment.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3145",
+      "claim_type": "unit_value",
+      "raw_text": "23.9 weeks",
+      "numeric_values": [
+        23.9
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3145,
+      "sentence": "In the EVE+EXE arm, median duration of exposure to EVE was 23.9 weeks (range 1.0-123.3 weeks) and median exposure to EXE was 29.5 weeks (range 1.0-123.3 weeks).",
+      "context_window": "In the EVE+EXE arm, median duration of exposure to EVE was 23.9 weeks (range 1.0-123.3 weeks) and median exposure to EXE was 29.5",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3167",
+      "claim_type": "unit_value",
+      "raw_text": "123.3 weeks",
+      "numeric_values": [
+        123.3
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3167,
+      "sentence": "In the EVE+EXE arm, median duration of exposure to EVE was 23.9 weeks (range 1.0-123.3 weeks) and median exposure to EXE was 29.5 weeks (range 1.0-123.3 weeks).",
+      "context_window": "edian duration of exposure to EVE was 23.9 weeks (range 1.0-123.3 weeks) and median exposure to EXE was 29.5 weeks (range 1.0-123.3",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3211",
+      "claim_type": "unit_value",
+      "raw_text": "29.5 weeks",
+      "numeric_values": [
+        29.5
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3211,
+      "sentence": "In the EVE+EXE arm, median duration of exposure to EVE was 23.9 weeks (range 1.0-123.3 weeks) and median exposure to EXE was 29.5 weeks (range 1.0-123.3 weeks).",
+      "context_window": "eeks (range 1.0-123.3 weeks) and median exposure to EXE was 29.5 weeks (range 1.0-123.3 weeks). In the PBO+EXE arm, median exposur",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3233",
+      "claim_type": "unit_value",
+      "raw_text": "123.3 weeks",
+      "numeric_values": [
+        123.3
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3233,
+      "sentence": "In the EVE+EXE arm, median duration of exposure to EVE was 23.9 weeks (range 1.0-123.3 weeks) and median exposure to EXE was 29.5 weeks (range 1.0-123.3 weeks).",
+      "context_window": "weeks) and median exposure to EXE was 29.5 weeks (range 1.0-123.3 weeks). In the PBO+EXE arm, median exposure to EXE was 14.07 week",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3294",
+      "claim_type": "unit_value",
+      "raw_text": "14.07 weeks",
+      "numeric_values": [
+        14.07
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3294,
+      "sentence": "In the PBO+EXE arm, median exposure to EXE was 14.07 weeks (range 1.0-101.0 weeks ) .",
+      "context_window": "23.3 weeks). In the PBO+EXE arm, median exposure to EXE was 14.07 weeks (range 1.0-101.0 weeks ) . The median relative dose intensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3317",
+      "claim_type": "unit_value",
+      "raw_text": "101.0 weeks",
+      "numeric_values": [
+        101.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3317,
+      "sentence": "In the PBO+EXE arm, median exposure to EXE was 14.07 weeks (range 1.0-101.0 weeks ) .",
+      "context_window": "+EXE arm, median exposure to EXE was 14.07 weeks (range 1.0-101.0 weeks ) . The median relative dose intensities for EVE and EXE we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3391",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3391,
+      "sentence": "The median relative dose intensities for EVE and EXE were 86% and 100%, respectively, in the EVE+EXE arm.",
+      "context_window": ". The median relative dose intensities for EVE and EXE were 86% and 100%, respectively, in the EVE+EXE arm. The median rela",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3399",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3399,
+      "sentence": "The median relative dose intensities for EVE and EXE were 86% and 100%, respectively, in the EVE+EXE arm.",
+      "context_window": "dian relative dose intensities for EVE and EXE were 86% and 100%, respectively, in the EVE+EXE arm. The median relative dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3486",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3486,
+      "sentence": "The median relative dose intensity for EXE was 100% in the PBO+EXE arm.",
+      "context_window": "EVE+EXE arm. The median relative dose intensity for EXE was 100% in the PBO+EXE arm. This represents an increase in drug exp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3580",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3580,
+      "sentence": "This represents an increase in drug exposure of 117.5 patient-years (60%) in the EVE+EXE arm and 23.7 patient-years (32%) in the PBO+EXE arm compared with the protocol-specified interim analysis [ 16 ].",
+      "context_window": "esents an increase in drug exposure of 117.5 patient-years (60%) in the EVE+EXE arm and 23.7 patient-years (32%) in the PBO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3628",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3628,
+      "sentence": "This represents an increase in drug exposure of 117.5 patient-years (60%) in the EVE+EXE arm and 23.7 patient-years (32%) in the PBO+EXE arm compared with the protocol-specified interim analysis [ 16 ].",
+      "context_window": "ient-years (60%) in the EVE+EXE arm and 23.7 patient-years (32%) in the PBO+EXE arm compared with the protocol-specified in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3805",
+      "claim_type": "percentage",
+      "raw_text": "61.9%",
+      "numeric_values": [
+        61.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3805,
+      "sentence": "The main reason for treatment discontinuation in both study arms was disease progression (61.9% for EVE+EXE vs 88.7% for PBO+EXE).",
+      "context_window": "discontinuation in both study arms was disease progression (61.9% for EVE+EXE vs 88.7% for PBO+EXE). Among the patients who d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-3826",
+      "claim_type": "percentage",
+      "raw_text": "88.7%",
+      "numeric_values": [
+        88.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3826,
+      "sentence": "The main reason for treatment discontinuation in both study arms was disease progression (61.9% for EVE+EXE vs 88.7% for PBO+EXE).",
+      "context_window": "th study arms was disease progression (61.9% for EVE+EXE vs 88.7% for PBO+EXE). Among the patients who discontinued from trea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4012",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4012,
+      "sentence": "Among the patients who discontinued from treatment, the proportion receiving new anticancer therapy was numerically smaller in the EVE+EXE arm compared with PBO+EXE (81% in the EVE+EXE arm vs 91% in the PBO+EXE arm).",
+      "context_window": "merically smaller in the EVE+EXE arm compared with PBO+EXE (81% in the EVE+EXE arm vs 91% in the PBO+EXE arm). The most com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4038",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4038,
+      "sentence": "Among the patients who discontinued from treatment, the proportion receiving new anticancer therapy was numerically smaller in the EVE+EXE arm compared with PBO+EXE (81% in the EVE+EXE arm vs 91% in the PBO+EXE arm).",
+      "context_window": "VE+EXE arm compared with PBO+EXE (81% in the EVE+EXE arm vs 91% in the PBO+EXE arm). The most common post-study systemic tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4175",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4175,
+      "sentence": "The most common post-study systemic treatments in the EVE+EXE and PBO+EXE arms included cytotoxic chemotherapy (42% and 59% of patients, respectively), and hormonal therapy (35% and 40% of patients, respectively).",
+      "context_window": "e EVE+EXE and PBO+EXE arms included cytotoxic chemotherapy (42% and 59% of patients, respectively), and hormonal therapy (3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4183",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4183,
+      "sentence": "The most common post-study systemic treatments in the EVE+EXE and PBO+EXE arms included cytotoxic chemotherapy (42% and 59% of patients, respectively), and hormonal therapy (35% and 40% of patients, respectively).",
+      "context_window": "E and PBO+EXE arms included cytotoxic chemotherapy (42% and 59% of patients, respectively), and hormonal therapy (35% and 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4237",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4237,
+      "sentence": "The most common post-study systemic treatments in the EVE+EXE and PBO+EXE arms included cytotoxic chemotherapy (42% and 59% of patients, respectively), and hormonal therapy (35% and 40% of patients, respectively).",
+      "context_window": "% and 59% of patients, respectively), and hormonal therapy (35% and 40% of patients, respectively). The addition of EVE to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4245",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4245,
+      "sentence": "The most common post-study systemic treatments in the EVE+EXE and PBO+EXE arms included cytotoxic chemotherapy (42% and 59% of patients, respectively), and hormonal therapy (35% and 40% of patients, respectively).",
+      "context_window": "% of patients, respectively), and hormonal therapy (35% and 40% of patients, respectively). The addition of EVE to EXE sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-4403",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 months",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4403,
+      "sentence": "The addition of EVE to EXE significantly prolonged median PFS versus EXE alone per assessment by local investigators [7.8 vs 3.2 months, respectively; HR 0.45 (95% confidence interval (CI) 0.38-0.54); log-rank P < 0.0001] (Fig.",
+      "context_window": "sus EXE alone per assessment by local investigators [7.8 vs 3.2 months, respectively; HR 0.45 (95% confidence interval (CI) 0.38-0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4438",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4438,
+      "sentence": "The addition of EVE to EXE significantly prolonged median PFS versus EXE alone per assessment by local investigators [7.8 vs 3.2 months, respectively; HR 0.45 (95% confidence interval (CI) 0.38-0.54); log-rank P < 0.0001] (Fig.",
+      "context_window": "al investigators [7.8 vs 3.2 months, respectively; HR 0.45 (95% confidence interval (CI) 0.38-0.54); log-rank P < 0.0001] (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-4488",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4488,
+      "sentence": "The addition of EVE to EXE significantly prolonged median PFS versus EXE alone per assessment by local investigators [7.8 vs 3.2 months, respectively; HR 0.45 (95% confidence interval (CI) 0.38-0.54); log-rank P < 0.0001] (Fig.",
+      "context_window": "HR 0.45 (95% confidence interval (CI) 0.38-0.54); log-rank P < 0.0001] (Fig. 1 a). Analysis by central assessment confirmed the P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-4570",
+      "claim_type": "unit_value",
+      "raw_text": "11.0 months",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4570,
+      "sentence": "Analysis by central assessment confirmed the PFS benefit [11.0 months for EVE+EXE vs 4.1 months for PBO+EXE; HR 0.38 (95% CI 0.31-0.48); log-rank P < 0.0001] (Fig.",
+      "context_window": ". Analysis by central assessment confirmed the PFS benefit [11.0 months for EVE+EXE vs 4.1 months for PBO+EXE; HR 0.38 (95% CI 0.31",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-4597",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 months",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4597,
+      "sentence": "Analysis by central assessment confirmed the PFS benefit [11.0 months for EVE+EXE vs 4.1 months for PBO+EXE; HR 0.38 (95% CI 0.31-0.48); log-rank P < 0.0001] (Fig.",
+      "context_window": "sment confirmed the PFS benefit [11.0 months for EVE+EXE vs 4.1 months for PBO+EXE; HR 0.38 (95% CI 0.31-0.48); log-rank P < 0.000",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-ci-4630",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.31-0.48",
+      "numeric_values": [
+        0.31,
+        0.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4630,
+      "sentence": "Analysis by central assessment confirmed the PFS benefit [11.0 months for EVE+EXE vs 4.1 months for PBO+EXE; HR 0.38 (95% CI 0.31-0.48); log-rank P < 0.0001] (Fig.",
+      "context_window": "11.0 months for EVE+EXE vs 4.1 months for PBO+EXE; HR 0.38 (95% CI 0.31-0.48); log-rank P < 0.0001] (Fig. 1 b). The effect of EVE+EXE tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-4658",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4658,
+      "sentence": "Analysis by central assessment confirmed the PFS benefit [11.0 months for EVE+EXE vs 4.1 months for PBO+EXE; HR 0.38 (95% CI 0.31-0.48); log-rank P < 0.0001] (Fig.",
+      "context_window": ".1 months for PBO+EXE; HR 0.38 (95% CI 0.31-0.48); log-rank P < 0.0001] (Fig. 1 b). The effect of EVE+EXE treatment (assessed by l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-6515",
+      "claim_type": "percentage",
+      "raw_text": "25.4%",
+      "numeric_values": [
+        25.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6515,
+      "sentence": "ECOG Eastern Cooperative Oncology Group, EVE everolimus, EXE exemestane, HR hazard ratio, NSAI nonsteroidal aromatase inhibitor, PBO placebo, PFS progression-free survival, PgR progesterone receptor\n\nAt the time of analysis, fewer deaths were reported with EVE+EXE (25.4%) versus PBO+EXE (32.2%; Table 2 ).",
+      "context_window": "time of analysis, fewer deaths were reported with EVE+EXE (25.4%) versus PBO+EXE (32.2%; Table 2 ). A final analysis of OS i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-6538",
+      "claim_type": "percentage",
+      "raw_text": "32.2%",
+      "numeric_values": [
+        32.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6538,
+      "sentence": "ECOG Eastern Cooperative Oncology Group, EVE everolimus, EXE exemestane, HR hazard ratio, NSAI nonsteroidal aromatase inhibitor, PBO placebo, PFS progression-free survival, PgR progesterone receptor\n\nAt the time of analysis, fewer deaths were reported with EVE+EXE (25.4%) versus PBO+EXE (32.2%; Table 2 ).",
+      "context_window": "r deaths were reported with EVE+EXE (25.4%) versus PBO+EXE (32.2%; Table 2 ). A final analysis of OS is planned after 398 eve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-7292",
+      "claim_type": "sample_size",
+      "raw_text": "n = 485",
+      "numeric_values": [
+        485.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7292,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "onse Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) B",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-7311",
+      "claim_type": "sample_size",
+      "raw_text": "n = 239",
+      "numeric_values": [
+        239.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7311,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall respons",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-7330",
+      "claim_type": "sample_size",
+      "raw_text": "n = 485",
+      "numeric_values": [
+        485.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7330,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete resp",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-7349",
+      "claim_type": "sample_size",
+      "raw_text": "n = 239",
+      "numeric_values": [
+        239.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7349,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-7598",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7598,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "known 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-7663",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7663,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "I for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-7697",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7697,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confi",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-7916",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7916,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "e rate, PBO placebo * Statistically significant difference, P < 0.0001 Between-arm differences in overall survival over time OS",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-p-8361",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8361,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "rate, PBO placebo * Statistically significant difference, P < 0.0001 The most commonly reported AEs (affecting >25% of patients",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-8416",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8416,
+      "sentence": "Table 2 Between-arm differences in overall survival over time PFS interim (7-month follow-up) PFS update (12-month follow-up) PFS final (18-month follow-up) Cutoff date Feb 11, 2011 Jul 8, 2011 Dec 15, 2011 OS events, n EVE vs PBO, % of events 83 10.6 vs 13.0 137 17.3 vs 22.7 200 25.4 vs 32.2 \u0394 OS events, % of events 2.4 5.4 6.8 EVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change Table 3 Summary of tumor response Response Local assessment Central assessment EVE+EXE ( n = 485) PBO+EXE ( n = 239) EVE+EXE ( n = 485) PBO+EXE ( n = 239) Best overall response (%) Complete response (CR) 0.6 0 0 0 Partial response (PR) 12.0 1.7 12.6 2.1 Stable disease (SD) 71.3 59.0 73.4 62.8 Progressive disease 10.1 32.6 5.8 23.4 Unknown 6.0 6.7 8.2 11.7 ORR (CR or PR), % 12.6* 1.7 12.6 2.1 95% CI for ORR 9.8-15.9 0.5-4.2 9.8-15.9 0.7-4.8 CBR (CR+PR+SD \u2265 24 weeks), % 51.3* 26.4 49.9 22.2 95% CI for CBR 46.8-55.9 20.9-32.4 45.4-54.4 17.1-28.0 CI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo * Statistically significant difference, P < 0.0001\n\nBetween-arm differences in overall survival over time\n\nOS events, n\n\nEVE vs PBO, % of events\n\n83\n\n10.6 vs 13.0\n\n137\n\n17.3 vs 22.7\n\n200\n\n25.4 vs 32.2\n\nEVE everolimus, OS overall survival, PBO placebo, PFS progression-free survival, \u0394 change\n\nSummary of tumor response\n\nCI confidence interval, CBR clinical benefit rate, EVE everolimus, EXE exemestane, ORR objective response rate, PBO placebo\n\n* Statistically significant difference, P < 0.0001\n\nThe most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash, fatigue, diarrhea, nausea, decreased appetite, weight loss, and cough, versus nausea and fatigue in the PBO+EXE arm.",
+      "context_window": "nce, P < 0.0001 The most commonly reported AEs (affecting >25% of patients) in the EVE+EXE arm included stomatitis, rash,",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-9106",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9106,
+      "sentence": "Table 4 Most common adverse events (reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3 4 Stomatitis 59 29 22 8 0 12 9 2 <1 0 Rash 39 29 9 1 0 7 5 2 0 0 Fatigue 37 18 14 4 <1 27 16 10 1 0 Diarrhea 34 26 6 2 <1 19 14 4 <1 0 Nausea 31 21 9 <1 <1 29 21 7 1 0 Decreased appetite 31 19 10 1 0 13 8 4 <1 0 Weight decreased 28 10 16 1 0 7 3 5 0 0 Cough 26 21 4 <1 0 12 8 3 0 0 Dysgeusia 22 18 4 0 0 6 6 0 0 0 Dyspnea 22 10 6 5 <1 11 8 2 <1 <1 Headache 23 17 6 <1 0 15 13 2 0 0 Arthralgia 21 15 5 <1 0 17 11 5 <1 0 Peripheral edema 21 14 6 1 0 6 5 <1 <1 0 Anemia 21 4 10 7 <1 5 2 2 <1 <1 Epistaxis 17 16 2 0 0 1 1 0 0 0 Vomiting 17 11 6 <1 <1 13 9 3 <1 0 Pyrexia 16 13 3 <1 0 7 5 <1 <1 0 Pneumonitis 16 7 6 3 0 0 0 0 0 0 Constipation 15 11 2 <1 0 13 8 5 <1 0 Back pain 15 10 5 <1 0 11 5 3 2 0 Pruritus 13 11 2 <1 0 5 3 2 0 0 Insomnia 14 10 4 <1 0 8 6 3 0 0 Asthenia 14 7 5 2 <1 4 3 <1 <1 0 AST increased 14 6 5 3 <1 5 2 2 1 0 Hyperglycemia 14 4 5 5 <1 2 <1 <1 <1 0 ALT increased 12 5 4 3 <1 5 <1 2 2 0 Dry mouth 11 10 1 0 0 7 7 <1 0 0 Alopecia 10 9 1 0 0 5 5 0 0 0 Nasopharyngitis 10 9 1 0 0 9 7 2 0 0 Pain in extremity 10 6 3 <1 0 12 5 5 2 0 Urinary tract infection 10 3 7 <1 0 2 <1 2 0 0 GGT increase 10 2 2 5 2 9 <1 <1 5 2 AE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nMost common adverse events (reported in \u226510% of patients)\n\nAE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nIn the EVE+EXE arm, 66.8% of patients required dose interruptions or reductions for EVE and 23.9% of patients required dose interruptions or reductions for EXE.",
+      "context_window": "XE [ 19 ]. Table 4 Most common adverse events (reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-9153",
+      "claim_type": "sample_size",
+      "raw_text": "n = 482",
+      "numeric_values": [
+        482.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9153,
+      "sentence": "Table 4 Most common adverse events (reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3 4 Stomatitis 59 29 22 8 0 12 9 2 <1 0 Rash 39 29 9 1 0 7 5 2 0 0 Fatigue 37 18 14 4 <1 27 16 10 1 0 Diarrhea 34 26 6 2 <1 19 14 4 <1 0 Nausea 31 21 9 <1 <1 29 21 7 1 0 Decreased appetite 31 19 10 1 0 13 8 4 <1 0 Weight decreased 28 10 16 1 0 7 3 5 0 0 Cough 26 21 4 <1 0 12 8 3 0 0 Dysgeusia 22 18 4 0 0 6 6 0 0 0 Dyspnea 22 10 6 5 <1 11 8 2 <1 <1 Headache 23 17 6 <1 0 15 13 2 0 0 Arthralgia 21 15 5 <1 0 17 11 5 <1 0 Peripheral edema 21 14 6 1 0 6 5 <1 <1 0 Anemia 21 4 10 7 <1 5 2 2 <1 <1 Epistaxis 17 16 2 0 0 1 1 0 0 0 Vomiting 17 11 6 <1 <1 13 9 3 <1 0 Pyrexia 16 13 3 <1 0 7 5 <1 <1 0 Pneumonitis 16 7 6 3 0 0 0 0 0 0 Constipation 15 11 2 <1 0 13 8 5 <1 0 Back pain 15 10 5 <1 0 11 5 3 2 0 Pruritus 13 11 2 <1 0 5 3 2 0 0 Insomnia 14 10 4 <1 0 8 6 3 0 0 Asthenia 14 7 5 2 <1 4 3 <1 <1 0 AST increased 14 6 5 3 <1 5 2 2 1 0 Hyperglycemia 14 4 5 5 <1 2 <1 <1 <1 0 ALT increased 12 5 4 3 <1 5 <1 2 2 0 Dry mouth 11 10 1 0 0 7 7 <1 0 0 Alopecia 10 9 1 0 0 5 5 0 0 0 Nasopharyngitis 10 9 1 0 0 9 7 2 0 0 Pain in extremity 10 6 3 <1 0 12 5 5 2 0 Urinary tract infection 10 3 7 <1 0 2 <1 2 0 0 GGT increase 10 2 2 5 2 9 <1 <1 5 2 AE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nMost common adverse events (reported in \u226510% of patients)\n\nAE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nIn the EVE+EXE arm, 66.8% of patients required dose interruptions or reductions for EVE and 23.9% of patients required dose interruptions or reductions for EXE.",
+      "context_window": "reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-n-9175",
+      "claim_type": "sample_size",
+      "raw_text": "n = 238",
+      "numeric_values": [
+        238.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9175,
+      "sentence": "Table 4 Most common adverse events (reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3 4 Stomatitis 59 29 22 8 0 12 9 2 <1 0 Rash 39 29 9 1 0 7 5 2 0 0 Fatigue 37 18 14 4 <1 27 16 10 1 0 Diarrhea 34 26 6 2 <1 19 14 4 <1 0 Nausea 31 21 9 <1 <1 29 21 7 1 0 Decreased appetite 31 19 10 1 0 13 8 4 <1 0 Weight decreased 28 10 16 1 0 7 3 5 0 0 Cough 26 21 4 <1 0 12 8 3 0 0 Dysgeusia 22 18 4 0 0 6 6 0 0 0 Dyspnea 22 10 6 5 <1 11 8 2 <1 <1 Headache 23 17 6 <1 0 15 13 2 0 0 Arthralgia 21 15 5 <1 0 17 11 5 <1 0 Peripheral edema 21 14 6 1 0 6 5 <1 <1 0 Anemia 21 4 10 7 <1 5 2 2 <1 <1 Epistaxis 17 16 2 0 0 1 1 0 0 0 Vomiting 17 11 6 <1 <1 13 9 3 <1 0 Pyrexia 16 13 3 <1 0 7 5 <1 <1 0 Pneumonitis 16 7 6 3 0 0 0 0 0 0 Constipation 15 11 2 <1 0 13 8 5 <1 0 Back pain 15 10 5 <1 0 11 5 3 2 0 Pruritus 13 11 2 <1 0 5 3 2 0 0 Insomnia 14 10 4 <1 0 8 6 3 0 0 Asthenia 14 7 5 2 <1 4 3 <1 <1 0 AST increased 14 6 5 3 <1 5 2 2 1 0 Hyperglycemia 14 4 5 5 <1 2 <1 <1 <1 0 ALT increased 12 5 4 3 <1 5 <1 2 2 0 Dry mouth 11 10 1 0 0 7 7 <1 0 0 Alopecia 10 9 1 0 0 5 5 0 0 0 Nasopharyngitis 10 9 1 0 0 9 7 2 0 0 Pain in extremity 10 6 3 <1 0 12 5 5 2 0 Urinary tract infection 10 3 7 <1 0 2 <1 2 0 0 GGT increase 10 2 2 5 2 9 <1 <1 5 2 AE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nMost common adverse events (reported in \u226510% of patients)\n\nAE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nIn the EVE+EXE arm, 66.8% of patients required dose interruptions or reductions for EVE and 23.9% of patients required dose interruptions or reductions for EXE.",
+      "context_window": "tients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3 4 Stomatitis 59 29 22",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-10548",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10548,
+      "sentence": "Table 4 Most common adverse events (reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3 4 Stomatitis 59 29 22 8 0 12 9 2 <1 0 Rash 39 29 9 1 0 7 5 2 0 0 Fatigue 37 18 14 4 <1 27 16 10 1 0 Diarrhea 34 26 6 2 <1 19 14 4 <1 0 Nausea 31 21 9 <1 <1 29 21 7 1 0 Decreased appetite 31 19 10 1 0 13 8 4 <1 0 Weight decreased 28 10 16 1 0 7 3 5 0 0 Cough 26 21 4 <1 0 12 8 3 0 0 Dysgeusia 22 18 4 0 0 6 6 0 0 0 Dyspnea 22 10 6 5 <1 11 8 2 <1 <1 Headache 23 17 6 <1 0 15 13 2 0 0 Arthralgia 21 15 5 <1 0 17 11 5 <1 0 Peripheral edema 21 14 6 1 0 6 5 <1 <1 0 Anemia 21 4 10 7 <1 5 2 2 <1 <1 Epistaxis 17 16 2 0 0 1 1 0 0 0 Vomiting 17 11 6 <1 <1 13 9 3 <1 0 Pyrexia 16 13 3 <1 0 7 5 <1 <1 0 Pneumonitis 16 7 6 3 0 0 0 0 0 0 Constipation 15 11 2 <1 0 13 8 5 <1 0 Back pain 15 10 5 <1 0 11 5 3 2 0 Pruritus 13 11 2 <1 0 5 3 2 0 0 Insomnia 14 10 4 <1 0 8 6 3 0 0 Asthenia 14 7 5 2 <1 4 3 <1 <1 0 AST increased 14 6 5 3 <1 5 2 2 1 0 Hyperglycemia 14 4 5 5 <1 2 <1 <1 <1 0 ALT increased 12 5 4 3 <1 5 <1 2 2 0 Dry mouth 11 10 1 0 0 7 7 <1 0 0 Alopecia 10 9 1 0 0 5 5 0 0 0 Nasopharyngitis 10 9 1 0 0 9 7 2 0 0 Pain in extremity 10 6 3 <1 0 12 5 5 2 0 Urinary tract infection 10 3 7 <1 0 2 <1 2 0 0 GGT increase 10 2 2 5 2 9 <1 <1 5 2 AE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nMost common adverse events (reported in \u226510% of patients)\n\nAE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nIn the EVE+EXE arm, 66.8% of patients required dose interruptions or reductions for EVE and 23.9% of patients required dose interruptions or reductions for EXE.",
+      "context_window": "rase, PBO placebo Most common adverse events (reported in \u226510% of patients) AE adverse event, ALT alanine aminotransferas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-10742",
+      "claim_type": "percentage",
+      "raw_text": "66.8%",
+      "numeric_values": [
+        66.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10742,
+      "sentence": "Table 4 Most common adverse events (reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3 4 Stomatitis 59 29 22 8 0 12 9 2 <1 0 Rash 39 29 9 1 0 7 5 2 0 0 Fatigue 37 18 14 4 <1 27 16 10 1 0 Diarrhea 34 26 6 2 <1 19 14 4 <1 0 Nausea 31 21 9 <1 <1 29 21 7 1 0 Decreased appetite 31 19 10 1 0 13 8 4 <1 0 Weight decreased 28 10 16 1 0 7 3 5 0 0 Cough 26 21 4 <1 0 12 8 3 0 0 Dysgeusia 22 18 4 0 0 6 6 0 0 0 Dyspnea 22 10 6 5 <1 11 8 2 <1 <1 Headache 23 17 6 <1 0 15 13 2 0 0 Arthralgia 21 15 5 <1 0 17 11 5 <1 0 Peripheral edema 21 14 6 1 0 6 5 <1 <1 0 Anemia 21 4 10 7 <1 5 2 2 <1 <1 Epistaxis 17 16 2 0 0 1 1 0 0 0 Vomiting 17 11 6 <1 <1 13 9 3 <1 0 Pyrexia 16 13 3 <1 0 7 5 <1 <1 0 Pneumonitis 16 7 6 3 0 0 0 0 0 0 Constipation 15 11 2 <1 0 13 8 5 <1 0 Back pain 15 10 5 <1 0 11 5 3 2 0 Pruritus 13 11 2 <1 0 5 3 2 0 0 Insomnia 14 10 4 <1 0 8 6 3 0 0 Asthenia 14 7 5 2 <1 4 3 <1 <1 0 AST increased 14 6 5 3 <1 5 2 2 1 0 Hyperglycemia 14 4 5 5 <1 2 <1 <1 <1 0 ALT increased 12 5 4 3 <1 5 <1 2 2 0 Dry mouth 11 10 1 0 0 7 7 <1 0 0 Alopecia 10 9 1 0 0 5 5 0 0 0 Nasopharyngitis 10 9 1 0 0 9 7 2 0 0 Pain in extremity 10 6 3 <1 0 12 5 5 2 0 Urinary tract infection 10 3 7 <1 0 2 <1 2 0 0 GGT increase 10 2 2 5 2 9 <1 <1 5 2 AE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nMost common adverse events (reported in \u226510% of patients)\n\nAE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nIn the EVE+EXE arm, 66.8% of patients required dose interruptions or reductions for EVE and 23.9% of patients required dose interruptions or reductions for EXE.",
+      "context_window": "gamma-glutamyltransferase, PBO placebo In the EVE+EXE arm, 66.8% of patients required dose interruptions or reductions for E",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-10814",
+      "claim_type": "percentage",
+      "raw_text": "23.9%",
+      "numeric_values": [
+        23.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10814,
+      "sentence": "Table 4 Most common adverse events (reported in \u226510% of patients) AE (preferred term) EVE+EXE ( n = 482), % PBO+EXE ( n = 238), % Grade Grade All 1 2 3 4 All 1 2 3 4 Stomatitis 59 29 22 8 0 12 9 2 <1 0 Rash 39 29 9 1 0 7 5 2 0 0 Fatigue 37 18 14 4 <1 27 16 10 1 0 Diarrhea 34 26 6 2 <1 19 14 4 <1 0 Nausea 31 21 9 <1 <1 29 21 7 1 0 Decreased appetite 31 19 10 1 0 13 8 4 <1 0 Weight decreased 28 10 16 1 0 7 3 5 0 0 Cough 26 21 4 <1 0 12 8 3 0 0 Dysgeusia 22 18 4 0 0 6 6 0 0 0 Dyspnea 22 10 6 5 <1 11 8 2 <1 <1 Headache 23 17 6 <1 0 15 13 2 0 0 Arthralgia 21 15 5 <1 0 17 11 5 <1 0 Peripheral edema 21 14 6 1 0 6 5 <1 <1 0 Anemia 21 4 10 7 <1 5 2 2 <1 <1 Epistaxis 17 16 2 0 0 1 1 0 0 0 Vomiting 17 11 6 <1 <1 13 9 3 <1 0 Pyrexia 16 13 3 <1 0 7 5 <1 <1 0 Pneumonitis 16 7 6 3 0 0 0 0 0 0 Constipation 15 11 2 <1 0 13 8 5 <1 0 Back pain 15 10 5 <1 0 11 5 3 2 0 Pruritus 13 11 2 <1 0 5 3 2 0 0 Insomnia 14 10 4 <1 0 8 6 3 0 0 Asthenia 14 7 5 2 <1 4 3 <1 <1 0 AST increased 14 6 5 3 <1 5 2 2 1 0 Hyperglycemia 14 4 5 5 <1 2 <1 <1 <1 0 ALT increased 12 5 4 3 <1 5 <1 2 2 0 Dry mouth 11 10 1 0 0 7 7 <1 0 0 Alopecia 10 9 1 0 0 5 5 0 0 0 Nasopharyngitis 10 9 1 0 0 9 7 2 0 0 Pain in extremity 10 6 3 <1 0 12 5 5 2 0 Urinary tract infection 10 3 7 <1 0 2 <1 2 0 0 GGT increase 10 2 2 5 2 9 <1 <1 5 2 AE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nMost common adverse events (reported in \u226510% of patients)\n\nAE adverse event, ALT alanine aminotransferase, AST aspartate aminotransferase, EVE everolimus, EXE exemestane, GGT gamma-glutamyltransferase, PBO placebo\n\nIn the EVE+EXE arm, 66.8% of patients required dose interruptions or reductions for EVE and 23.9% of patients required dose interruptions or reductions for EXE.",
+      "context_window": "ients required dose interruptions or reductions for EVE and 23.9% of patients required dose interruptions or reductions for E",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-10903",
+      "claim_type": "percentage",
+      "raw_text": "11.8%",
+      "numeric_values": [
+        11.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10903,
+      "sentence": "In the PBO+EXE arm, 11.8% of patients required dose modifications for EXE.",
+      "context_window": "se interruptions or reductions for EXE. In the PBO+EXE arm, 11.8% of patients required dose modifications for EXE. The most c",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11033",
+      "claim_type": "percentage",
+      "raw_text": "62.4%",
+      "numeric_values": [
+        62.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11033,
+      "sentence": "The most common reasons for dose modification in both study arms were AEs (62.4% for EVE in the EVE+EXE arm vs 5.5% for EXE in the PBO+EXE arm).",
+      "context_window": "reasons for dose modification in both study arms were AEs (62.4% for EVE in the EVE+EXE arm vs 5.5% for EXE in the PBO+EXE a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11069",
+      "claim_type": "percentage",
+      "raw_text": "5.5%",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11069,
+      "sentence": "The most common reasons for dose modification in both study arms were AEs (62.4% for EVE in the EVE+EXE arm vs 5.5% for EXE in the PBO+EXE arm).",
+      "context_window": "th study arms were AEs (62.4% for EVE in the EVE+EXE arm vs 5.5% for EXE in the PBO+EXE arm). Stomatitis (23.7%), pneumoniti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11115",
+      "claim_type": "percentage",
+      "raw_text": "23.7%",
+      "numeric_values": [
+        23.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11115,
+      "sentence": "Stomatitis (23.7%), pneumonitis (7.5%), and thrombocytopenia (5.4%) were the most common AEs leading to dose modifications in the EVE+EXE arm (versus no single AE as a predominant cause in the PBO+EXE arm).",
+      "context_window": "VE+EXE arm vs 5.5% for EXE in the PBO+EXE arm). Stomatitis (23.7%), pneumonitis (7.5%), and thrombocytopenia (5.4%) were the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11136",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11136,
+      "sentence": "Stomatitis (23.7%), pneumonitis (7.5%), and thrombocytopenia (5.4%) were the most common AEs leading to dose modifications in the EVE+EXE arm (versus no single AE as a predominant cause in the PBO+EXE arm).",
+      "context_window": "r EXE in the PBO+EXE arm). Stomatitis (23.7%), pneumonitis (7.5%), and thrombocytopenia (5.4%) were the most common AEs lead",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11165",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11165,
+      "sentence": "Stomatitis (23.7%), pneumonitis (7.5%), and thrombocytopenia (5.4%) were the most common AEs leading to dose modifications in the EVE+EXE arm (versus no single AE as a predominant cause in the PBO+EXE arm).",
+      "context_window": "omatitis (23.7%), pneumonitis (7.5%), and thrombocytopenia (5.4%) were the most common AEs leading to dose modifications in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11500",
+      "claim_type": "percentage",
+      "raw_text": "26.3%",
+      "numeric_values": [
+        26.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11500,
+      "sentence": "Adverse events leading to discontinuation of at least 1 study drug were reported in 26.3% of patients in the EVE+EXE arm versus 5% of patients in the PBO+EXE arm.",
+      "context_window": "o discontinuation of at least 1 study drug were reported in 26.3% of patients in the EVE+EXE arm versus 5% of patients in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11544",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11544,
+      "sentence": "Adverse events leading to discontinuation of at least 1 study drug were reported in 26.3% of patients in the EVE+EXE arm versus 5% of patients in the PBO+EXE arm.",
+      "context_window": "ere reported in 26.3% of patients in the EVE+EXE arm versus 5% of patients in the PBO+EXE arm. Rates of AEs leading to dis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11683",
+      "claim_type": "percentage",
+      "raw_text": "21.4%",
+      "numeric_values": [
+        21.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11683,
+      "sentence": "Rates of AEs leading to discontinuation that were suspected to be related to at least 1 study drug were 21.4% (EVE+EXE) versus 3.4% (PBO+EXE).",
+      "context_window": "were suspected to be related to at least 1 study drug were 21.4% (EVE+EXE) versus 3.4% (PBO+EXE). The 2 most common AEs lead",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11706",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11706,
+      "sentence": "Rates of AEs leading to discontinuation that were suspected to be related to at least 1 study drug were 21.4% (EVE+EXE) versus 3.4% (PBO+EXE).",
+      "context_window": "elated to at least 1 study drug were 21.4% (EVE+EXE) versus 3.4% (PBO+EXE). The 2 most common AEs leading to treatment disco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11818",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11818,
+      "sentence": "The 2 most common AEs leading to treatment discontinuation in the EVE+EXE arm were pneumonitis (5.6%) and stomatitis (2.7%).",
+      "context_window": "atment discontinuation in the EVE+EXE arm were pneumonitis (5.6%) and stomatitis (2.7%). The most common AEs leading to trea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11840",
+      "claim_type": "percentage",
+      "raw_text": "2.7%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11840,
+      "sentence": "The 2 most common AEs leading to treatment discontinuation in the EVE+EXE arm were pneumonitis (5.6%) and stomatitis (2.7%).",
+      "context_window": "in the EVE+EXE arm were pneumonitis (5.6%) and stomatitis (2.7%). The most common AEs leading to treatment discontinuation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-11991",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11991,
+      "sentence": "The most common AEs leading to treatment discontinuation in the PBO+EXE arm were laboratory abnormalities [increased gamma-glutamyltransferase (1.7%) and increased aspartate aminotransferase (1.3%)].",
+      "context_window": "oratory abnormalities [increased gamma-glutamyltransferase (1.7%) and increased aspartate aminotransferase (1.3%)]. Higher i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-12039",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12039,
+      "sentence": "The most common AEs leading to treatment discontinuation in the PBO+EXE arm were laboratory abnormalities [increased gamma-glutamyltransferase (1.7%) and increased aspartate aminotransferase (1.3%)].",
+      "context_window": "ransferase (1.7%) and increased aspartate aminotransferase (1.3%)]. Higher incidences of AEs, dose modifications, and treatm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-12345",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12345,
+      "sentence": "The incidence of death because of AEs was 1.4% among patients receiving EVE+EXE versus 0.4% among patients receiving PBO+EXE.",
+      "context_window": "ther manuscript. The incidence of death because of AEs was 1.4% among patients receiving EVE+EXE versus 0.4% among patients",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-12390",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12390,
+      "sentence": "The incidence of death because of AEs was 1.4% among patients receiving EVE+EXE versus 0.4% among patients receiving PBO+EXE.",
+      "context_window": "use of AEs was 1.4% among patients receiving EVE+EXE versus 0.4% among patients receiving PBO+EXE. In the EVE+EXE arm, one d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-349",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 349,
+      "sentence": "At 18-month median follow-up, EVE+EXE more than doubled median PFS (as assessed by the local investigator) versus PBO+EXE (an absolute difference in median PFS >4 months) in patients with HR + , HER2 - advanced BC recurring/progressing on/after initial NSAI therapy.",
+      "context_window": "ator) versus PBO+EXE (an absolute difference in median PFS >4 months) in patients with HR + , HER2 - advanced BC recurring/progr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-758",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 758,
+      "sentence": "Moreover, subgroup analyses indicate that EVE+EXE is an effective therapeutic option in all patients, regardless of age, prior chemotherapy in the advanced setting, visceral disease, skeletal involvement, or setting of last prior therapy [adjuvant/neoadjuvant (i.e., those who recurred during or within 12 months of completion of adjuvant treatment and received study therapy as first-line treatment for metastatic disease) or therapy for advanced/metastatic disease].",
+      "context_window": "vant/neoadjuvant (i.e., those who recurred during or within 12 months of completion of adjuvant treatment and received study ther",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-1534",
+      "claim_type": "unit_value",
+      "raw_text": "8.6 months",
+      "numeric_values": [
+        8.6
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1534,
+      "sentence": "In the TAMRAD study, EVE+TAM prolonged median PFS to 8.6 months (versus 4.5 months with TAM; HR 0.54), and demonstrated survival benefit (HR 0.45) [ 13 ].",
+      "context_window": "13 ]. In the TAMRAD study, EVE+TAM prolonged median PFS to 8.6 months (versus 4.5 months with TAM; HR 0.54), and demonstrated sur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-1553",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 months",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1553,
+      "sentence": "In the TAMRAD study, EVE+TAM prolonged median PFS to 8.6 months (versus 4.5 months with TAM; HR 0.54), and demonstrated survival benefit (HR 0.45) [ 13 ].",
+      "context_window": "D study, EVE+TAM prolonged median PFS to 8.6 months (versus 4.5 months with TAM; HR 0.54), and demonstrated survival benefit (HR 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-2915",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2915,
+      "sentence": "Although endocrine therapy has a favorable toxicity profile, second- or third-line endocrine-directed approach has so far demonstrated modest efficacy, with CBR ranging from 25% to 35% [ 6 , 8 ].",
+      "context_window": "so far demonstrated modest efficacy, with CBR ranging from 25% to 35% [ 6 , 8 ]. Randomized controlled comparisons of expe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-2922",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2922,
+      "sentence": "Although endocrine therapy has a favorable toxicity profile, second- or third-line endocrine-directed approach has so far demonstrated modest efficacy, with CBR ranging from 25% to 35% [ 6 , 8 ].",
+      "context_window": "demonstrated modest efficacy, with CBR ranging from 25% to 35% [ 6 , 8 ]. Randomized controlled comparisons of experimenta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3129",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 months",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3129,
+      "sentence": "Randomized controlled comparisons of experimental single [ 6 , 7 ] or combination endocrine agents [ 8 , 10 ] showed minimal to no improvement in median PFS or time to progression versus EXE (3.7 months post-NSAI) [ 6 ] or fulvestrant (from 4.4 months post-NSAI to 6.5 months post-AI/antiestrogen) [ 7 ].",
+      "context_window": "mprovement in median PFS or time to progression versus EXE (3.7 months post-NSAI) [ 6 ] or fulvestrant (from 4.4 months post-NSAI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3178",
+      "claim_type": "unit_value",
+      "raw_text": "4.4 months",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3178,
+      "sentence": "Randomized controlled comparisons of experimental single [ 6 , 7 ] or combination endocrine agents [ 8 , 10 ] showed minimal to no improvement in median PFS or time to progression versus EXE (3.7 months post-NSAI) [ 6 ] or fulvestrant (from 4.4 months post-NSAI to 6.5 months post-AI/antiestrogen) [ 7 ].",
+      "context_window": "ersus EXE (3.7 months post-NSAI) [ 6 ] or fulvestrant (from 4.4 months post-NSAI to 6.5 months post-AI/antiestrogen) [ 7 ]. In con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-u-3202",
+      "claim_type": "unit_value",
+      "raw_text": "6.5 months",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3202,
+      "sentence": "Randomized controlled comparisons of experimental single [ 6 , 7 ] or combination endocrine agents [ 8 , 10 ] showed minimal to no improvement in median PFS or time to progression versus EXE (3.7 months post-NSAI) [ 6 ] or fulvestrant (from 4.4 months post-NSAI to 6.5 months post-AI/antiestrogen) [ 7 ].",
+      "context_window": "st-NSAI) [ 6 ] or fulvestrant (from 4.4 months post-NSAI to 6.5 months post-AI/antiestrogen) [ 7 ]. In contrast, the BOLERO-2 stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3898123_everolimus_plus_exemestane_in_postmenopausal_patients_with_h-pct-4826",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4826,
+      "sentence": "Notably, these updated analyses show no substantial risk of cumulative toxicities or new safety signals despite a 60% increase in cumulative treatment exposure in the EVE+EXE arm.",
+      "context_window": "sk of cumulative toxicities or new safety signals despite a 60% increase in cumulative treatment exposure in the EVE+EXE ar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

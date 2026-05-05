@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC11567261_targeting_cellular_senescence_in_aging_and_age_related_disea",
+  "doi": "10.14336/AD.2024.0206",
+  "extracted_at": "2026-05-05T21:22:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11567261_targeting_cellular_senescence_in_aging_and_age_related_disea-pct-2208",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2208,
+      "sentence": "Aging is the largest risk factor for impaired cardiovascular health, and cardiovascular disease is the cause of death in 40% of people over the age of 65 [ 19 ].",
+      "context_window": "health, and cardiovascular disease is the cause of death in 40% of people over the age of 65 [ 19 ]. Recently, Xia et al. c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11567261_targeting_cellular_senescence_in_aging_and_age_related_disea-u-2878",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2878,
+      "sentence": "The majority of AD patients are diagnosed by people over 65 years of age.",
+      "context_window": "g. The majority of AD patients are diagnosed by people over 65 years of age. Previous studies have found that clearing SnCs is a",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

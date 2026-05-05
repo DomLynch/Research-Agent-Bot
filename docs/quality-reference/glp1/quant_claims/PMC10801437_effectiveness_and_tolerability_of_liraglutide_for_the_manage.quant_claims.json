@@ -1,0 +1,1129 @@
+{
+  "paper_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage",
+  "doi": "10.1002/osp4.706",
+  "extracted_at": "2026-05-05T21:26:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 24,
+    "p_value": 6,
+    "percentage": 32
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-675",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 675,
+      "sentence": "Following a median liraglutide treatment duration of approximately 3 months, the mean post\u2010treatment weight was 90.19 (26.82) kg.",
+      "context_window": "ng a median liraglutide treatment duration of approximately 3 months, the mean post\u2010treatment weight was 90.19 (26.82) kg. This",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-p-819",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 819,
+      "sentence": "This represents a statistically significant mean weight loss of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight.",
+      "context_window": "tistically significant mean weight loss of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-858",
+      "claim_type": "percentage",
+      "raw_text": "6.20%",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 858,
+      "sentence": "This represents a statistically significant mean weight loss of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight.",
+      "context_window": "of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight. Patients aged 31-40 years achieved",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-906",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 906,
+      "sentence": "Patients aged 31-40 years achieved a greater post\u2010treatment weight loss of 7.63 (7.41) kg, a loss of 7.80%, relative to age groups after treatment ( p = 0.047).",
+      "context_window": "o a loss of 6.20% of pre\u2010treatment weight. Patients aged 31-40 years achieved a greater post\u2010treatment weight loss of 7.63 (7.41",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-990",
+      "claim_type": "percentage",
+      "raw_text": "7.80%",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 990,
+      "sentence": "Patients aged 31-40 years achieved a greater post\u2010treatment weight loss of 7.63 (7.41) kg, a loss of 7.80%, relative to age groups after treatment ( p = 0.047).",
+      "context_window": "ter post\u2010treatment weight loss of 7.63 (7.41) kg, a loss of 7.80%, relative to age groups after treatment ( p = 0.047). Patie",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-p-1038",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "Patients aged 31-40 years achieved a greater post\u2010treatment weight loss of 7.63 (7.41) kg, a loss of 7.80%, relative to age groups after treatment ( p = 0.047).",
+      "context_window": ", a loss of 7.80%, relative to age groups after treatment ( p = 0.047). Patients who tolerated \u22652.4 mg of liraglutide recorded a",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-1074",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1074,
+      "sentence": "Patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.42 (7.63) kg, a loss of 8.10% ( p = 0.010).",
+      "context_window": "roups after treatment ( p = 0.047). Patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.42 (",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-1160",
+      "claim_type": "percentage",
+      "raw_text": "8.10%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1160,
+      "sentence": "Patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.42 (7.63) kg, a loss of 8.10% ( p = 0.010).",
+      "context_window": "rded a higher mean weight loss of 8.42 (7.63) kg, a loss of 8.10% ( p = 0.010). The use of liraglutide may be an effective a",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-p-1168",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "Patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.42 (7.63) kg, a loss of 8.10% ( p = 0.010).",
+      "context_window": "igher mean weight loss of 8.42 (7.63) kg, a loss of 8.10% ( p = 0.010). The use of liraglutide may be an effective adjunct treat",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-362",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 362,
+      "sentence": "3 Evidence shows that, on average, patients achieve 30%-45% weight loss with MBS.",
+      "context_window": "trends. 3 Evidence shows that, on average, patients achieve 30%-45% weight loss with MBS. 4 However, evidence from literatu",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-366",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 366,
+      "sentence": "3 Evidence shows that, on average, patients achieve 30%-45% weight loss with MBS.",
+      "context_window": "ds. 3 Evidence shows that, on average, patients achieve 30%-45% weight loss with MBS. 4 However, evidence from literature h",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-487",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 487,
+      "sentence": "4 However, evidence from literature has also demonstrated that a substantial proportion (up to 20%) of patients do not achieve long\u2010term desirable weight reduction goals or regain weight even after successful MBS procedures.",
+      "context_window": "has also demonstrated that a substantial proportion (up to 20%) of patients do not achieve long\u2010term desirable weight redu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-1142",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 mg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1142,
+      "sentence": "Liraglutide therapy followed a dosing schedule starting at 0.6 mg and adjusted weekly until reaching the maximum clinical dose of 3.0 mg.",
+      "context_window": "Liraglutide therapy followed a dosing schedule starting at 0.6 mg and adjusted weekly until reaching the maximum clinical dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-1213",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1213,
+      "sentence": "Liraglutide therapy followed a dosing schedule starting at 0.6 mg and adjusted weekly until reaching the maximum clinical dose of 3.0 mg.",
+      "context_window": "adjusted weekly until reaching the maximum clinical dose of 3.0 mg. In line with international standards, treatment was kept a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-1912",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1912,
+      "sentence": "The study population comprised consenting adults \u226518 years of age, who had undergone SG, had a BMI greater than 30 kg/m 2 , and were prescribed liraglutide to manage weight regain post\u2010SG surgery.",
+      "context_window": "nicians. The study population comprised consenting adults \u226518 years of age, who had undergone SG, had a BMI greater than 30 kg/",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-1974",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1974,
+      "sentence": "The study population comprised consenting adults \u226518 years of age, who had undergone SG, had a BMI greater than 30 kg/m 2 , and were prescribed liraglutide to manage weight regain post\u2010SG surgery.",
+      "context_window": "years of age, who had undergone SG, had a BMI greater than 30 kg/m 2 , and were prescribed liraglutide to manage weight rega",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-2174",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2174,
+      "sentence": "Specifically, participants who met the study eligibility criteria were those prescribed liraglutide due to: (1) a \u226510% weight regain from the lowest post\u2010SG weight and (2) patients experiencing inadequate weight loss (<20% weight loss from preoperative weight).",
+      "context_window": "y criteria were those prescribed liraglutide due to: (1) a \u226510% weight regain from the lowest post\u2010SG weight and (2) patien",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-2278",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2278,
+      "sentence": "Specifically, participants who met the study eligibility criteria were those prescribed liraglutide due to: (1) a \u226510% weight regain from the lowest post\u2010SG weight and (2) patients experiencing inadequate weight loss (<20% weight loss from preoperative weight).",
+      "context_window": "ight and (2) patients experiencing inadequate weight loss (<20% weight loss from preoperative weight). Patients who were o",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-2502",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2502,
+      "sentence": "Participants who discontinued the liraglutide therapy before 4 weeks or initiated normal feeding before 4 weeks were also excluded from the study.",
+      "context_window": "articipants who discontinued the liraglutide therapy before 4 weeks or initiated normal feeding before 4 weeks were also exclud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-2545",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2545,
+      "sentence": "Participants who discontinued the liraglutide therapy before 4 weeks or initiated normal feeding before 4 weeks were also excluded from the study.",
+      "context_window": "e therapy before 4 weeks or initiated normal feeding before 4 weeks were also excluded from the study. All patients undergoing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-342",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 342,
+      "sentence": "The pre\u2010SG weight of the patients was 121.5 (34.5) kg, which went down to 77.8 (22.5) kg post\u2010SG in 1-2 years, a weight loss of 36.0%.",
+      "context_window": "5 (34.5) kg, which went down to 77.8 (22.5) kg post\u2010SG in 1-2 years, a weight loss of 36.0%. During liraglutide treatment, the",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-368",
+      "claim_type": "percentage",
+      "raw_text": "36.0%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 368,
+      "sentence": "The pre\u2010SG weight of the patients was 121.5 (34.5) kg, which went down to 77.8 (22.5) kg post\u2010SG in 1-2 years, a weight loss of 36.0%.",
+      "context_window": "wn to 77.8 (22.5) kg post\u2010SG in 1-2 years, a weight loss of 36.0%. During liraglutide treatment, the median (IQR) age of the",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-478",
+      "claim_type": "percentage",
+      "raw_text": "54.39%",
+      "numeric_values": [
+        54.39
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 478,
+      "sentence": "During liraglutide treatment, the median (IQR) age of the patients was 36.71 (9.86) with the majority (54.39%) of them being in the 30-49 age group and 42 (73.68%) being female.",
+      "context_window": "QR) age of the patients was 36.71 (9.86) with the majority (54.39%) of them being in the 30-49 age group and 42 (73.68%) being",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-531",
+      "claim_type": "percentage",
+      "raw_text": "73.68%",
+      "numeric_values": [
+        73.68
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 531,
+      "sentence": "During liraglutide treatment, the median (IQR) age of the patients was 36.71 (9.86) with the majority (54.39%) of them being in the 30-49 age group and 42 (73.68%) being female.",
+      "context_window": "ority (54.39%) of them being in the 30-49 age group and 42 (73.68%) being female. About a quarter (26.32%) of the patients rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-570",
+      "claim_type": "percentage",
+      "raw_text": "26.32%",
+      "numeric_values": [
+        26.32
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 570,
+      "sentence": "About a quarter (26.32%) of the patients reported one or more underlying chronic conditions; 2 (3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%) had liver diseases, and the remaining 8 (14.04%) had other chronic conditions (including polycystic ovary syndrome, hypothyroidism, multiple sclerosis, hypercholesterolemia, glucose\u20106\u2010phosphate dehydrogenase deficiency, asthma, hepatic hydatid disease, pulmonary embolism, deep venous thrombosis, thalassemia minor and obstructive sleep apnea).",
+      "context_window": "49 age group and 42 (73.68%) being female. About a quarter (26.32%) of the patients reported one or more underlying chronic co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-649",
+      "claim_type": "percentage",
+      "raw_text": "3.51%",
+      "numeric_values": [
+        3.51
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 649,
+      "sentence": "About a quarter (26.32%) of the patients reported one or more underlying chronic conditions; 2 (3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%) had liver diseases, and the remaining 8 (14.04%) had other chronic conditions (including polycystic ovary syndrome, hypothyroidism, multiple sclerosis, hypercholesterolemia, glucose\u20106\u2010phosphate dehydrogenase deficiency, asthma, hepatic hydatid disease, pulmonary embolism, deep venous thrombosis, thalassemia minor and obstructive sleep apnea).",
+      "context_window": "ents reported one or more underlying chronic conditions; 2 (3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-680",
+      "claim_type": "percentage",
+      "raw_text": "5.26%",
+      "numeric_values": [
+        5.26
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 680,
+      "sentence": "About a quarter (26.32%) of the patients reported one or more underlying chronic conditions; 2 (3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%) had liver diseases, and the remaining 8 (14.04%) had other chronic conditions (including polycystic ovary syndrome, hypothyroidism, multiple sclerosis, hypercholesterolemia, glucose\u20106\u2010phosphate dehydrogenase deficiency, asthma, hepatic hydatid disease, pulmonary embolism, deep venous thrombosis, thalassemia minor and obstructive sleep apnea).",
+      "context_window": "lying chronic conditions; 2 (3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%) had liver diseases, and the re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-708",
+      "claim_type": "percentage",
+      "raw_text": "3.51%",
+      "numeric_values": [
+        3.51
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 708,
+      "sentence": "About a quarter (26.32%) of the patients reported one or more underlying chronic conditions; 2 (3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%) had liver diseases, and the remaining 8 (14.04%) had other chronic conditions (including polycystic ovary syndrome, hypothyroidism, multiple sclerosis, hypercholesterolemia, glucose\u20106\u2010phosphate dehydrogenase deficiency, asthma, hepatic hydatid disease, pulmonary embolism, deep venous thrombosis, thalassemia minor and obstructive sleep apnea).",
+      "context_window": "(3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%) had liver diseases, and the remaining 8 (14.04%) had other",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-756",
+      "claim_type": "percentage",
+      "raw_text": "14.04%",
+      "numeric_values": [
+        14.04
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 756,
+      "sentence": "About a quarter (26.32%) of the patients reported one or more underlying chronic conditions; 2 (3.51%) had Type 2 diabetes, 3 (5.26%) had hypertension, 2 (3.51%) had liver diseases, and the remaining 8 (14.04%) had other chronic conditions (including polycystic ovary syndrome, hypothyroidism, multiple sclerosis, hypercholesterolemia, glucose\u20106\u2010phosphate dehydrogenase deficiency, asthma, hepatic hydatid disease, pulmonary embolism, deep venous thrombosis, thalassemia minor and obstructive sleep apnea).",
+      "context_window": "tension, 2 (3.51%) had liver diseases, and the remaining 8 (14.04%) had other chronic conditions (including polycystic ovary s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-1405",
+      "claim_type": "percentage",
+      "raw_text": "23.6%",
+      "numeric_values": [
+        23.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1405,
+      "sentence": "Mean (\u00b1SD) sample weight pre\u2010treatment was 96.12 (29.26) kg, a weight regain of 23.6% post SG.",
+      "context_window": "ight pre\u2010treatment was 96.12 (29.26) kg, a weight regain of 23.6% post SG. Table 2 shows the distribution of pre\u2010treatment we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-1610",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1610,
+      "sentence": "Following a median liraglutide treatment duration of approximately 3 months, the mean post\u2010treatment weight was 90.19 (26.82) kg across all patients included in the analysis.",
+      "context_window": "ng a median liraglutide treatment duration of approximately 3 months, the mean post\u2010treatment weight was 90.19 (26.82) kg across",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-p-1799",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1799,
+      "sentence": "This represents a statistically significant mean weight loss of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight.",
+      "context_window": "tistically significant mean weight loss of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-1838",
+      "claim_type": "percentage",
+      "raw_text": "6.20%",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1838,
+      "sentence": "This represents a statistically significant mean weight loss of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight.",
+      "context_window": "of 5.94 (6.31) kg ( p < 0.001), corresponding to a loss of 6.20% of pre\u2010treatment weight. There was a statistically signific",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-1979",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1979,
+      "sentence": "There was a statistically significant difference in weight reduction across age groups, with patients aged 31-40 years achieving the highest mean weight loss of 7.80% after treatment ( p = 0.047).",
+      "context_window": "n weight reduction across age groups, with patients aged 31-40 years achieving the highest mean weight loss of 7.80% after treat",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-2030",
+      "claim_type": "percentage",
+      "raw_text": "7.80%",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2030,
+      "sentence": "There was a statistically significant difference in weight reduction across age groups, with patients aged 31-40 years achieving the highest mean weight loss of 7.80% after treatment ( p = 0.047).",
+      "context_window": "aged 31-40 years achieving the highest mean weight loss of 7.80% after treatment ( p = 0.047). Similarly, patients who toler",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-p-2054",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2054,
+      "sentence": "There was a statistically significant difference in weight reduction across age groups, with patients aged 31-40 years achieving the highest mean weight loss of 7.80% after treatment ( p = 0.047).",
+      "context_window": "ing the highest mean weight loss of 7.80% after treatment ( p = 0.047). Similarly, patients who tolerated \u22652.4 mg of liraglutide",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-2101",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2101,
+      "sentence": "Similarly, patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.10% ( p = 0.010) than those who received lower doses (Table 2 ).",
+      "context_window": "treatment ( p = 0.047). Similarly, patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.10%",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-2161",
+      "claim_type": "percentage",
+      "raw_text": "8.10%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2161,
+      "sentence": "Similarly, patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.10% ( p = 0.010) than those who received lower doses (Table 2 ).",
+      "context_window": "2.4 mg of liraglutide recorded a higher mean weight loss of 8.10% ( p = 0.010) than those who received lower doses (Table 2 )",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-p-2169",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2169,
+      "sentence": "Similarly, patients who tolerated \u22652.4 mg of liraglutide recorded a higher mean weight loss of 8.10% ( p = 0.010) than those who received lower doses (Table 2 ).",
+      "context_window": "f liraglutide recorded a higher mean weight loss of 8.10% ( p = 0.010) than those who received lower doses (Table 2 ). Patients'",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-3039",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3039,
+      "sentence": "Box and whisker plots of mean post\u2010treatment percentage weight changes after 3 months. (A) Pre\u2010treatment and post\u2010treatment weight of patients. (B) Weight loss percentage of male and female patients post\u2010liraglutide treatment. (C) Weight loss percentage of patients based on treatment duration. (D) Weight loss percentage across age group. (E) Weight loss percentage based on liraglutide dosage.",
+      "context_window": "lots of mean post\u2010treatment percentage weight changes after 3 months. (A) Pre\u2010treatment and post\u2010treatment weight of patients. (",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-3378",
+      "claim_type": "percentage",
+      "raw_text": "54.39%",
+      "numeric_values": [
+        54.39
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3378,
+      "sentence": "A slight majority (54.39%) of the patients achieved a weight loss of \u22655% of their pre\u2010treatment weight (see Table 2 ).",
+      "context_window": "percentage based on liraglutide dosage. A slight majority (54.39%) of the patients achieved a weight loss of \u22655% of their pre",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-3429",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3429,
+      "sentence": "A slight majority (54.39%) of the patients achieved a weight loss of \u22655% of their pre\u2010treatment weight (see Table 2 ).",
+      "context_window": "ajority (54.39%) of the patients achieved a weight loss of \u22655% of their pre\u2010treatment weight (see Table 2 ). The mean max",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-3529",
+      "claim_type": "unit_value",
+      "raw_text": "2.21 mg",
+      "numeric_values": [
+        2.21
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3529,
+      "sentence": "The mean maximally tolerated liraglutide dose was 2.21 mg.",
+      "context_window": "ble 2 ). The mean maximally tolerated liraglutide dose was 2.21 mg. Only about two\u2010fifths (39.58%) of patients received up to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-3561",
+      "claim_type": "percentage",
+      "raw_text": "39.58%",
+      "numeric_values": [
+        39.58
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3561,
+      "sentence": "Only about two\u2010fifths (39.58%) of patients received up to the optimally recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2.4 mg.",
+      "context_window": "erated liraglutide dose was 2.21 mg. Only about two\u2010fifths (39.58%) of patients received up to the optimally recommended daily",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-3636",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3636,
+      "sentence": "Only about two\u2010fifths (39.58%) of patients received up to the optimally recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2.4 mg.",
+      "context_window": "ents received up to the optimally recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-3667",
+      "claim_type": "percentage",
+      "raw_text": "20.84%",
+      "numeric_values": [
+        20.84
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3667,
+      "sentence": "Only about two\u2010fifths (39.58%) of patients received up to the optimally recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2.4 mg.",
+      "context_window": "ly recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-3710",
+      "claim_type": "unit_value",
+      "raw_text": "2.9 mg",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3710,
+      "sentence": "Only about two\u2010fifths (39.58%) of patients received up to the optimally recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2.4 mg.",
+      "context_window": ", while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-3741",
+      "claim_type": "percentage",
+      "raw_text": "39.58%",
+      "numeric_values": [
+        39.58
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3741,
+      "sentence": "Only about two\u2010fifths (39.58%) of patients received up to the optimally recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2.4 mg.",
+      "context_window": "ed doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2.4 mg. The medical records used",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-3775",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3775,
+      "sentence": "Only about two\u2010fifths (39.58%) of patients received up to the optimally recommended daily dose of 3.0 mg per day, while a fifth (20.84%) received doses ranging from 2.4 to 2.9 mg and another two\u2010fifths (39.58%) received doses lower than 2.4 mg.",
+      "context_window": "g and another two\u2010fifths (39.58%) received doses lower than 2.4 mg. The medical records used for this study did not have suffi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-520",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 520,
+      "sentence": "Particularly, the mean weight loss of 6% of pre\u2010treatment weight following a median treatment duration of 3 months in the current study is consistent with those found in both previous trials and real\u2010world studies.",
+      "context_window": "patient populations. Particularly, the mean weight loss of 6% of pre\u2010treatment weight following a median treatment durati",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-588",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 588,
+      "sentence": "Particularly, the mean weight loss of 6% of pre\u2010treatment weight following a median treatment duration of 3 months in the current study is consistent with those found in both previous trials and real\u2010world studies.",
+      "context_window": "e\u2010treatment weight following a median treatment duration of 3 months in the current study is consistent with those found in both",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-2574",
+      "claim_type": "percentage",
+      "raw_text": "54.39%",
+      "numeric_values": [
+        54.39
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2574,
+      "sentence": "6 , 7 , 23 , 24\n\nA slight majority (54.39%) of the patients achieved a weight loss of \u22655% of their pre\u2010treatment weight.",
+      "context_window": "s in post\u2010MBS patients. 6 , 7 , 23 , 24 A slight majority (54.39%) of the patients achieved a weight loss of \u22655% of their pre",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-2625",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2625,
+      "sentence": "6 , 7 , 23 , 24\n\nA slight majority (54.39%) of the patients achieved a weight loss of \u22655% of their pre\u2010treatment weight.",
+      "context_window": "ajority (54.39%) of the patients achieved a weight loss of \u22655% of their pre\u2010treatment weight. This is similar to the findi",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-2893",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2893,
+      "sentence": "25 Current guidelines for the use of liraglutide as a weight management pharmaceutical stipulate that treatment with liraglutide should be discontinued after 12 weeks on the 3.0 mg/day dose if a patient has not lost at least 5% of their initial body weight.",
+      "context_window": "hat treatment with liraglutide should be discontinued after 12 weeks on the 3.0 mg/day dose if a patient has not lost at least 5",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-2909",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 2909,
+      "sentence": "25 Current guidelines for the use of liraglutide as a weight management pharmaceutical stipulate that treatment with liraglutide should be discontinued after 12 weeks on the 3.0 mg/day dose if a patient has not lost at least 5% of their initial body weight.",
+      "context_window": "th liraglutide should be discontinued after 12 weeks on the 3.0 mg/day dose if a patient has not lost at least 5% of their initial",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-2960",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2960,
+      "sentence": "25 Current guidelines for the use of liraglutide as a weight management pharmaceutical stipulate that treatment with liraglutide should be discontinued after 12 weeks on the 3.0 mg/day dose if a patient has not lost at least 5% of their initial body weight.",
+      "context_window": "s on the 3.0 mg/day dose if a patient has not lost at least 5% of their initial body weight. 26 However, whether these gui",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-3257",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3257,
+      "sentence": "In this study, the mean weight loss was higher in the patients who tolerated up to 2.4 mg of liraglutide compared with those who tolerated lower doses.",
+      "context_window": "weight loss was higher in the patients who tolerated up to 2.4 mg of liraglutide compared with those who tolerated lower dose",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-3906",
+      "claim_type": "percentage",
+      "raw_text": "33.33%",
+      "numeric_values": [
+        33.33
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3906,
+      "sentence": "While previous studies have shown that liraglutide is generally well tolerated, 29 the current study found that only a third (33.33%) of patients received up to the optimally recommended dose of 3.0 mg per day, while about half (49.51%) received doses lower than 2.4 mg.",
+      "context_window": "ll tolerated, 29 the current study found that only a third (33.33%) of patients received up to the optimally recommended dose",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-3975",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3975,
+      "sentence": "While previous studies have shown that liraglutide is generally well tolerated, 29 the current study found that only a third (33.33%) of patients received up to the optimally recommended dose of 3.0 mg per day, while about half (49.51%) received doses lower than 2.4 mg.",
+      "context_window": "f patients received up to the optimally recommended dose of 3.0 mg per day, while about half (49.51%) received doses lower tha",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-4009",
+      "claim_type": "percentage",
+      "raw_text": "49.51%",
+      "numeric_values": [
+        49.51
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4009,
+      "sentence": "While previous studies have shown that liraglutide is generally well tolerated, 29 the current study found that only a third (33.33%) of patients received up to the optimally recommended dose of 3.0 mg per day, while about half (49.51%) received doses lower than 2.4 mg.",
+      "context_window": "mally recommended dose of 3.0 mg per day, while about half (49.51%) received doses lower than 2.4 mg. The medical records used",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-u-4043",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4043,
+      "sentence": "While previous studies have shown that liraglutide is generally well tolerated, 29 the current study found that only a third (33.33%) of patients received up to the optimally recommended dose of 3.0 mg per day, while about half (49.51%) received doses lower than 2.4 mg.",
+      "context_window": "er day, while about half (49.51%) received doses lower than 2.4 mg. The medical records used for this study lacked sufficient",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10801437_effectiveness_and_tolerability_of_liraglutide_for_the_manage-pct-4394",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4394,
+      "sentence": "Previous studies found that liraglutide treatment was discontinued in about 5% of patients due to adverse events, most commonly gastrointestinal complaints such as nausea, vomiting, and diarrhea.",
+      "context_window": "found that liraglutide treatment was discontinued in about 5% of patients due to adverse events, most commonly gastrointe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,713 @@
+{
+  "paper_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide",
+  "doi": "10.1038/s41598-024-79255-9",
+  "extracted_at": "2026-05-05T21:26:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "percentage": 9,
+    "confidence_interval": 8,
+    "unit_value": 14,
+    "mean_sd": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-n-413",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 413,
+      "sentence": "In this new-user design, comparative and retrospective cohort study, patients with type 2 diabetes mellitus with prescription for GLP-1RAs from January 1, 2016 to December 31, 2022 ( n = 8,278) were included.",
+      "context_window": "on for GLP-1RAs from January 1, 2016 to December 31, 2022 ( n = 8,278) were included. Primary outcome was composite cardiovas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-1244",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1244,
+      "sentence": "The risk of cardiovascular outcomes did not significantly differ between groups (hazard ratio [HR] 0.99, 95% confidence interval [CI] 0.85-1.15).",
+      "context_window": "ignificantly differ between groups (hazard ratio [HR] 0.99, 95% confidence interval [CI] 0.85-1.15). Moreover, the risk of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-1393",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.995-1.16",
+      "numeric_values": [
+        0.995,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1393,
+      "sentence": "Moreover, the risk of composite renal outcomes was also comparable between groups (subdistribution HR 1.07, 95% CI 0.995-1.16).",
+      "context_window": "as also comparable between groups (subdistribution HR 1.07, 95% CI 0.995-1.16). Liraglutide and dulaglutide demonstrated comparable cardi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-197",
+      "claim_type": "percentage",
+      "raw_text": "8.5%",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 197,
+      "sentence": "This represents a global prevalence of 8.5% among adults in this age range 1 .",
+      "context_window": "diabetes worldwide. This represents a global prevalence of 8.5% among adults in this age range 1 . In patients with type 2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-802",
+      "claim_type": "unit_value",
+      "raw_text": "3.8 years",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 802,
+      "sentence": "After a median follow-up of 3.8 years, the study showed a reduction in major adverse cardiovascular events (MACE), primarily driven by a decrease in cardiovascular mortality.",
+      "context_window": "ant cardiovascular benefits 2 . After a median follow-up of 3.8 years, the study showed a reduction in major adverse cardiovascul",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-1075",
+      "claim_type": "unit_value",
+      "raw_text": "5.4 years",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1075,
+      "sentence": "With a median follow-up of 5.4 years, the study also demonstrated a reduction in MACE, largely due to a lower incidence of stroke 3 .",
+      "context_window": "with lower cardiovascular risk. With a median follow-up of 5.4 years, the study also demonstrated a reduction in MACE, largely d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-msd-501",
+      "claim_type": "mean_sd",
+      "raw_text": "53.6 \u00b1 15",
+      "numeric_values": [
+        53.6,
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 501,
+      "sentence": "Prior to adjustment, patients prescribed with liraglutide had an average age of 53.6 \u00b1 15 years, while those prescribed with dulaglutide had an average age of 58.8 \u00b1 14.3 years (Table 1 , left side).",
+      "context_window": "patients prescribed with liraglutide had an average age of 53.6 \u00b1 15 years, while those prescribed with dulaglutide had an avera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-508",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 508,
+      "sentence": "Prior to adjustment, patients prescribed with liraglutide had an average age of 53.6 \u00b1 15 years, while those prescribed with dulaglutide had an average age of 58.8 \u00b1 14.3 years (Table 1 , left side).",
+      "context_window": "ts prescribed with liraglutide had an average age of 53.6 \u00b1 15 years, while those prescribed with dulaglutide had an average age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-msd-580",
+      "claim_type": "mean_sd",
+      "raw_text": "58.8 \u00b1 14.3",
+      "numeric_values": [
+        58.8,
+        14.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 580,
+      "sentence": "Prior to adjustment, patients prescribed with liraglutide had an average age of 53.6 \u00b1 15 years, while those prescribed with dulaglutide had an average age of 58.8 \u00b1 14.3 years (Table 1 , left side).",
+      "context_window": "ile those prescribed with dulaglutide had an average age of 58.8 \u00b1 14.3 years (Table 1 , left side). The liraglutide group was char",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-587",
+      "claim_type": "unit_value",
+      "raw_text": "14.3 years",
+      "numeric_values": [
+        14.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 587,
+      "sentence": "Prior to adjustment, patients prescribed with liraglutide had an average age of 53.6 \u00b1 15 years, while those prescribed with dulaglutide had an average age of 58.8 \u00b1 14.3 years (Table 1 , left side).",
+      "context_window": "se prescribed with dulaglutide had an average age of 58.8 \u00b1 14.3 years (Table 1 , left side). The liraglutide group was characteri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-msd-679",
+      "claim_type": "mean_sd",
+      "raw_text": "53.6 \u00b1 15.0",
+      "numeric_values": [
+        53.6,
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 679,
+      "sentence": "The liraglutide group was characterized by a younger age (53.6 \u00b1 15.0 vs.",
+      "context_window": ". The liraglutide group was characterized by a younger age (53.6 \u00b1 15.0 vs. 58.8 \u00b1 14.3 years old respectively), higher body mass i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-msd-695",
+      "claim_type": "mean_sd",
+      "raw_text": "58.8 \u00b1 14.3",
+      "numeric_values": [
+        58.8,
+        14.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 695,
+      "sentence": "58.8 \u00b1 14.3 years old respectively), higher body mass index (BMI) (29.5 \u00b1 6.0 vs.",
+      "context_window": "e group was characterized by a younger age (53.6 \u00b1 15.0 vs. 58.8 \u00b1 14.3 years old respectively), higher body mass index (BMI) (29.5",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-702",
+      "claim_type": "unit_value",
+      "raw_text": "14.3 years",
+      "numeric_values": [
+        14.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 702,
+      "sentence": "58.8 \u00b1 14.3 years old respectively), higher body mass index (BMI) (29.5 \u00b1 6.0 vs.",
+      "context_window": "was characterized by a younger age (53.6 \u00b1 15.0 vs. 58.8 \u00b1 14.3 years old respectively), higher body mass index (BMI) (29.5 \u00b1 6.0",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-msd-762",
+      "claim_type": "mean_sd",
+      "raw_text": "29.5 \u00b1 6.0",
+      "numeric_values": [
+        29.5,
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 762,
+      "sentence": "58.8 \u00b1 14.3 years old respectively), higher body mass index (BMI) (29.5 \u00b1 6.0 vs.",
+      "context_window": "14.3 years old respectively), higher body mass index (BMI) (29.5 \u00b1 6.0 vs. 28.5 \u00b1 5.5 kg/m2 respectively), a shorter duration of d",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-msd-777",
+      "claim_type": "mean_sd",
+      "raw_text": "28.5 \u00b1 5.5",
+      "numeric_values": [
+        28.5,
+        5.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 777,
+      "sentence": "28.5 \u00b1 5.5 kg/m2 respectively), a shorter duration of diabetes (4.3 vs.",
+      "context_window": "respectively), higher body mass index (BMI) (29.5 \u00b1 6.0 vs. 28.5 \u00b1 5.5 kg/m2 respectively), a shorter duration of diabetes (4.3 vs",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-784",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 kg/m2",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "kg/m2",
+      "source_section": "results",
+      "source_offset": 784,
+      "sentence": "28.5 \u00b1 5.5 kg/m2 respectively), a shorter duration of diabetes (4.3 vs.",
+      "context_window": "ively), higher body mass index (BMI) (29.5 \u00b1 6.0 vs. 28.5 \u00b1 5.5 kg/m2 respectively), a shorter duration of diabetes (4.3 vs. 8.0",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-849",
+      "claim_type": "unit_value",
+      "raw_text": "8.0 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 849,
+      "sentence": "8.0 years respectively), and a lower established ASCVD (27.6% and 34.6% respectively and lower multiple risk factors for ASCVD (40.6% vs.",
+      "context_window": "g/m2 respectively), a shorter duration of diabetes (4.3 vs. 8.0 years respectively), and a lower established ASCVD (27.6% and 34.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-905",
+      "claim_type": "percentage",
+      "raw_text": "27.6%",
+      "numeric_values": [
+        27.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 905,
+      "sentence": "8.0 years respectively), and a lower established ASCVD (27.6% and 34.6% respectively and lower multiple risk factors for ASCVD (40.6% vs.",
+      "context_window": "vs. 8.0 years respectively), and a lower established ASCVD (27.6% and 34.6% respectively and lower multiple risk factors for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-915",
+      "claim_type": "percentage",
+      "raw_text": "34.6%",
+      "numeric_values": [
+        34.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 915,
+      "sentence": "8.0 years respectively), and a lower established ASCVD (27.6% and 34.6% respectively and lower multiple risk factors for ASCVD (40.6% vs.",
+      "context_window": "ars respectively), and a lower established ASCVD (27.6% and 34.6% respectively and lower multiple risk factors for ASCVD (40.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-977",
+      "claim_type": "percentage",
+      "raw_text": "40.6%",
+      "numeric_values": [
+        40.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 977,
+      "sentence": "8.0 years respectively), and a lower established ASCVD (27.6% and 34.6% respectively and lower multiple risk factors for ASCVD (40.6% vs.",
+      "context_window": ".6% respectively and lower multiple risk factors for ASCVD (40.6% vs. 53.9 respectively). Notably, no significant differences",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-1359",
+      "claim_type": "unit_value",
+      "raw_text": "2.8 years",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1359,
+      "sentence": "The mean follow-up in the IPTW-adjusted cohort was 2.8 years (standard deviation = 1.8 years) without considering censoring and was 2.4 years with considering censoring for both groups (Table 1 ).",
+      "context_window": "onists. The mean follow-up in the IPTW-adjusted cohort was 2.8 years (standard deviation = 1.8 years) without considering censor",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-1391",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 years",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1391,
+      "sentence": "The mean follow-up in the IPTW-adjusted cohort was 2.8 years (standard deviation = 1.8 years) without considering censoring and was 2.4 years with considering censoring for both groups (Table 1 ).",
+      "context_window": "he IPTW-adjusted cohort was 2.8 years (standard deviation = 1.8 years) without considering censoring and was 2.4 years with consi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-1440",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 years",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1440,
+      "sentence": "The mean follow-up in the IPTW-adjusted cohort was 2.8 years (standard deviation = 1.8 years) without considering censoring and was 2.4 years with considering censoring for both groups (Table 1 ).",
+      "context_window": "eviation = 1.8 years) without considering censoring and was 2.4 years with considering censoring for both groups (Table 1 ). The",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-1788",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1788,
+      "sentence": "The risk of the composite cardiovascular outcome did not significantly differ between groups (hazard ratio [HR] 0.99, 95% confidence interval [CI] 0.85-1.15) (Fig.",
+      "context_window": "ignificantly differ between groups (hazard ratio [HR] 0.99, 95% confidence interval [CI] 0.85-1.15) (Fig. 2 A). The risks o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-2059",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.79-1.30",
+      "numeric_values": [
+        0.79,
+        1.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2059,
+      "sentence": "The risks of individual components of composite cardiovascular outcome, including cardiovascular death and non-fatal ischemic stroke, were also not significantly different between groups (cardiovascular death: HR 1.01, 95% CI 0.79-1.30; ischemic stroke: subdistribution HR 1.18, 95% CI 0.94-1.49).",
+      "context_window": "ly different between groups (cardiovascular death: HR 1.01, 95% CI 0.79-1.30; ischemic stroke: subdistribution HR 1.18, 95% CI 0.94-1.49",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-2119",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.94-1.49",
+      "numeric_values": [
+        0.94,
+        1.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2119,
+      "sentence": "The risks of individual components of composite cardiovascular outcome, including cardiovascular death and non-fatal ischemic stroke, were also not significantly different between groups (cardiovascular death: HR 1.01, 95% CI 0.79-1.30; ischemic stroke: subdistribution HR 1.18, 95% CI 0.94-1.49).",
+      "context_window": "95% CI 0.79-1.30; ischemic stroke: subdistribution HR 1.18, 95% CI 0.94-1.49). Notably, there was less risk of non-fatal myocardial infa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-2287",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.52-0.91",
+      "numeric_values": [
+        0.52,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2287,
+      "sentence": "Notably, there was less risk of non-fatal myocardial infarction in the liraglutide group compared to the dulaglutide group (subdistribution HR 0.69, 95% CI 0.52-0.91) (Fig.",
+      "context_window": "compared to the dulaglutide group (subdistribution HR 0.69, 95% CI 0.52-0.91) (Fig. 2 B). Regarding renal outcomes, no significant diffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-2594",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.995-1.16",
+      "numeric_values": [
+        0.995,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2594,
+      "sentence": "Regarding renal outcomes, no significant difference between groups was observed, including macroalbuminuria, worsening of estimated glomerular filtration rate (eGFR), progression to dialysis, doubling of serum creatinine, and composite renal outcomes (subdistribution HR 1.07, 95% CI 0.995-1.16) (Fig.",
+      "context_window": "ine, and composite renal outcomes (subdistribution HR 1.07, 95% CI 0.995-1.16) (Fig. 2 C). Follow-up outcomes of patients who received l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-3821",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.91-1.20",
+      "numeric_values": [
+        0.91,
+        1.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3821,
+      "sentence": "For the secondary outcomes, there was no statistical difference in the risks of all-cause death (HR 1.05, 95% CI 0.91-1.20) (Fig.",
+      "context_window": "stical difference in the risks of all-cause death (HR 1.05, 95% CI 0.91-1.20) (Fig. 2 D). The risk of admission due to heart failure was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-3982",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.81-1.13",
+      "numeric_values": [
+        0.81,
+        1.13
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3982,
+      "sentence": "The risk of admission due to heart failure was comparable between the liraglutide and dulaglutide groups (subdistribution HR 0.96, 95% CI 0.81-1.13).",
+      "context_window": "iraglutide and dulaglutide groups (subdistribution HR 0.96, 95% CI 0.81-1.13). There was no statistical difference in the risk of advers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-ci-4162",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83-1.21",
+      "numeric_values": [
+        0.83,
+        1.21
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4162,
+      "sentence": "There was no statistical difference in the risk of adverse effects such as hypoglycemia between the liraglutide and dulaglutide groups (subdistribution HR 1.00, 95% CI 0.83-1.21).",
+      "context_window": "iraglutide and dulaglutide groups (subdistribution HR 1.00, 95% CI 0.83-1.21). During the follow up measurements every six months until",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-1527",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1527,
+      "sentence": "The LEADER trial included a higher proportion of patients with very high cardiovascular risk (81%), whereas the REWIND trial included a lower proportion of high-risk patients (31%) 2 , 3 .",
+      "context_window": "proportion of patients with very high cardiovascular risk (81%), whereas the REWIND trial included a lower proportion of h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-1609",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1609,
+      "sentence": "The LEADER trial included a higher proportion of patients with very high cardiovascular risk (81%), whereas the REWIND trial included a lower proportion of high-risk patients (31%) 2 , 3 .",
+      "context_window": "ND trial included a lower proportion of high-risk patients (31%) 2 , 3 . This difference in patient populations suggests va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-5112",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5112,
+      "sentence": "Additionally, we demonstrated better weight control with liraglutide, consistent with the result of the AWARD-6 trial, which showed significantly larger body weight reduction associated with liraglutide compared to dulaglutide at 26 weeks 26 .",
+      "context_window": "tion associated with liraglutide compared to dulaglutide at 26 weeks 26 . The reason for the different effects on body weight is",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-5570",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5570,
+      "sentence": "The AWARD-6 trial demonstrated the non-inferiority of reduction in HbA1c of dulaglutide versus liraglutide at 26 weeks 26 .",
+      "context_window": "of reduction in HbA1c of dulaglutide versus liraglutide at 26 weeks 26 . Interestingly, a Japanese trial also showed the compar",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-5678",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5678,
+      "sentence": "Interestingly, a Japanese trial also showed the comparable effect on lowering HbA1c effect at 26 weeks 28 .",
+      "context_window": "so showed the comparable effect on lowering HbA1c effect at 26 weeks 28 . However, with a longer follow-up period, the Japanese",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-u-5827",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5827,
+      "sentence": "However, with a longer follow-up period, the Japanese trial reported significant HbA1c reduction for dulaglutide versus liraglutide at 52 weeks 29 .",
+      "context_window": "icant HbA1c reduction for dulaglutide versus liraglutide at 52 weeks 29 . Our real-world study is consistent with previous resea",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11555252_comparative_cardiovascular_and_renal_outcomes_of_liraglutide-pct-1864",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1864,
+      "sentence": "The study demonstrated that semaglutide reduced the risk of major kidney disease events by 24% and slowed the annual decline in kidney function in patients with type 2 diabetes and CKD.",
+      "context_window": "aglutide reduced the risk of major kidney disease events by 24% and slowed the annual decline in kidney function in patient",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

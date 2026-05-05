@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC10943199_computational_identification_of_natural_senotherapeutic_comp",
+  "doi": "10.1038/s41598-024-55870-4",
+  "extracted_at": "2026-05-05T21:22:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10943199_computational_identification_of_natural_senotherapeutic_comp-u-2308",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2308,
+      "sentence": "After intraperitoneal injection of 10 mg/kg piperlongumine, no changes in body weight or pathological alterations in liver, kidney and tumor tissues were reported, and no significant infiltration of immune cells in those tissues was found, while the piperlongumine-treated mice had significantly lower tumor volumes compared to control mice 65 .",
+      "context_window": "l of thyroid cancer 65 . After intraperitoneal injection of 10 mg/kg piperlongumine, no changes in body weight or pathologica",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943199_computational_identification_of_natural_senotherapeutic_comp-pct-2898",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2898,
+      "sentence": "Incubating senescent WI human fibroblasts for 72 h leaves 30% of the senescent cells viable 29 .",
+      "context_window": ". Incubating senescent WI human fibroblasts for 72 h leaves 30% of the senescent cells viable 29 . In this study, the same",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,3990 @@
+{
+  "paper_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man",
+  "doi": "10.1038/s41598-025-99622-4",
+  "extracted_at": "2026-05-05T21:26:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 97,
+    "percentage": 31,
+    "unit_value": 2,
+    "confidence_interval": 69,
+    "odds_ratio": 18
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-995",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 995,
+      "sentence": "GLP-1RAs significantly reduced BMI, body weight, WC, WHR and AG ( P < 0.0001 in all cases).",
+      "context_window": "As significantly reduced BMI, body weight, WC, WHR and AG ( P < 0.0001 in all cases). For glucose homeostasis, GLP-1RAs significan",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-1266",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1266,
+      "sentence": "In addition, GLP-1RAs increased nausea ( P = 0.02), vomiting (0.04) and dizziness (0.03).",
+      "context_window": "ed were unchanged. In addition, GLP-1RAs increased nausea ( P = 0.02), vomiting (0.04) and dizziness (0.03). GLP-1RAs effectivel",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-657",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 657,
+      "sentence": "These issues affect women throughout their lives, impacting approximately 5-10% of women of reproductive age 5 .",
+      "context_window": "ect women throughout their lives, impacting approximately 5-10% of women of reproductive age 5 . The exact cause of PCOS r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-u-1058",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1058,
+      "sentence": "Studies were eligible if they met the following criteria: (1) The participants were adult women aged 18-45 years diagnosed with PCOS. (2) The intervention group received GLP-1RAs, while the control group received either metformin or placebo. (3) The study reported outcomes related to anthropometric measures (BMI, body weight, WC, waist-to-hip ratio (WHR), abdominal girth (AG)) and metabolic markers (fasting glucose, fasting insulin, HOMA-IR, dehydroepiandrosterone sulfate (DHEAS), SHBG, total testosterone, free testosterone and cholesterol levels).",
+      "context_window": "ing criteria: (1) The participants were adult women aged 18-45 years diagnosed with PCOS. (2) The intervention group received GL",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-u-1658",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1658,
+      "sentence": "The exclusion criteria were: (1) Studies with incomplete data for key outcomes. (2) Non-RCT studies. (3) Trials with a follow-up period of less than 12 weeks.",
+      "context_window": "CT studies. (3) Trials with a follow-up period of less than 12 weeks. Adherence to inclusion and exclusion criteria was assessed",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-2825",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2825,
+      "sentence": "The mean differences (MDs) with 95% confidence intervals (CIs) were calculated for continuous outcomes.",
+      "context_window": "ftware package version 5.0. The mean differences (MDs) with 95% confidence intervals (CIs) were calculated for continuous o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-2973",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2973,
+      "sentence": "A random effects model was used for analyses with high heterogeneity (I 2 > 50%), while a fixed effects model was applied when the heterogeneity of the data was low (I 2 < 50%).",
+      "context_window": "model was used for analyses with high heterogeneity (I 2 > 50%), while a fixed effects model was applied when the heteroge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-3069",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3069,
+      "sentence": "A random effects model was used for analyses with high heterogeneity (I 2 > 50%), while a fixed effects model was applied when the heterogeneity of the data was low (I 2 < 50%).",
+      "context_window": "s applied when the heterogeneity of the data was low (I 2 < 50%). Heterogeneity was assessed using the I 2 statistic and Ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-1913",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1913,
+      "sentence": "Due to the heterogeneity observed in the included studies (I 2 = 74%, P < 0.0001), we used a random-effects model (Fig.",
+      "context_window": "o the heterogeneity observed in the included studies (I 2 = 74%, P < 0.0001), we used a random-effects model (Fig. 3 A). GL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-1918",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1918,
+      "sentence": "Due to the heterogeneity observed in the included studies (I 2 = 74%, P < 0.0001), we used a random-effects model (Fig.",
+      "context_window": "heterogeneity observed in the included studies (I 2 = 74%, P < 0.0001), we used a random-effects model (Fig. 3 A). GLP-1RA interv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-2093",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.07 to -1.10",
+      "numeric_values": [
+        -2.07,
+        -1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2093,
+      "sentence": "GLP-1RA interventions was associated with a reduction in BMI when compared to either metformin or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001; Fig.",
+      "context_window": "I when compared to either metformin or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001; Fig. 3 A). A meta-analysis of BMI changes fou",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-2116",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2116,
+      "sentence": "GLP-1RA interventions was associated with a reduction in BMI when compared to either metformin or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001; Fig.",
+      "context_window": "er metformin or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001; Fig. 3 A). A meta-analysis of BMI changes found in this s",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-2529",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.84 to -0.38",
+      "numeric_values": [
+        -1.84,
+        -0.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2529,
+      "sentence": "S1 A, GLP-1RA intervention was associated with a reduction in BMI when compared to metformin (MD = -1.11; 95% CI -1.84 to -0.38; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001).",
+      "context_window": "a reduction in BMI when compared to metformin (MD = -1.11; 95% CI -1.84 to -0.38; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10;",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-2552",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2552,
+      "sentence": "S1 A, GLP-1RA intervention was associated with a reduction in BMI when compared to metformin (MD = -1.11; 95% CI -1.84 to -0.38; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001).",
+      "context_window": "n compared to metformin (MD = -1.11; 95% CI -1.84 to -0.38; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001)",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-2587",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.07 to -1.10",
+      "numeric_values": [
+        -2.07,
+        -1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2587,
+      "sentence": "S1 A, GLP-1RA intervention was associated with a reduction in BMI when compared to metformin (MD = -1.11; 95% CI -1.84 to -0.38; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001).",
+      "context_window": "; 95% CI -1.84 to -0.38; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001). In terms of reduction in body weight, 10 stu",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-2610",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2610,
+      "sentence": "S1 A, GLP-1RA intervention was associated with a reduction in BMI when compared to metformin (MD = -1.11; 95% CI -1.84 to -0.38; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001).",
+      "context_window": "; P = 0.003) or placebo (MD = -1.59; 95% CI -2.07 to -1.10; P < 0.0001). In terms of reduction in body weight, 10 studies (with 3",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-2859",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2859,
+      "sentence": "Due to the presence of heterogeneity among the included studies (I 2 = 87%, P < 0.0001), a random-effects model was used (Fig.",
+      "context_window": "presence of heterogeneity among the included studies (I 2 = 87%, P < 0.0001), a random-effects model was used (Fig. 3 B). G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-2864",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2864,
+      "sentence": "Due to the presence of heterogeneity among the included studies (I 2 = 87%, P < 0.0001), a random-effects model was used (Fig.",
+      "context_window": "nce of heterogeneity among the included studies (I 2 = 87%, P < 0.0001), a random-effects model was used (Fig. 3 B). GLP-1RA inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-3052",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -5.15 to -1.99",
+      "numeric_values": [
+        -5.15,
+        -1.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3052,
+      "sentence": "GLP-1RA intervention was associated with a reduction in body weight when compared to those given metformin or placebo (MD = -3.57; 95% CI -5.15 to -1.99; P < 0.0001; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -3.57; 95% CI -5.15 to -1.99; P < 0.0001; Fig. 3 A). For the subgroup analysis, the stud",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-3075",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3075,
+      "sentence": "GLP-1RA intervention was associated with a reduction in body weight when compared to those given metformin or placebo (MD = -3.57; 95% CI -5.15 to -1.99; P < 0.0001; Fig.",
+      "context_window": "en metformin or placebo (MD = -3.57; 95% CI -5.15 to -1.99; P < 0.0001; Fig. 3 A). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-3363",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.60 to -1.01",
+      "numeric_values": [
+        -2.6,
+        -1.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3363,
+      "sentence": "S1 B, GLP-1RA intervention was associated with a reduction in body weight when compared to metformin (MD = -1.81; 95% CI -2.60 to -1.01; P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99; P < 0.0001).",
+      "context_window": "tion in body weight when compared to metformin (MD = -1.81; 95% CI -2.60 to -1.01; P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99;",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-3386",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3386,
+      "sentence": "S1 B, GLP-1RA intervention was associated with a reduction in body weight when compared to metformin (MD = -1.81; 95% CI -2.60 to -1.01; P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99; P < 0.0001).",
+      "context_window": "n compared to metformin (MD = -1.81; 95% CI -2.60 to -1.01; P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99; P < 0.0001)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-3422",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -5.90 to -4.99",
+      "numeric_values": [
+        -5.9,
+        -4.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3422,
+      "sentence": "S1 B, GLP-1RA intervention was associated with a reduction in body weight when compared to metformin (MD = -1.81; 95% CI -2.60 to -1.01; P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99; P < 0.0001).",
+      "context_window": "95% CI -2.60 to -1.01; P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99; P < 0.0001). In terms of reduction in WC, 8 studies (with",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-3445",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3445,
+      "sentence": "S1 B, GLP-1RA intervention was associated with a reduction in body weight when compared to metformin (MD = -1.81; 95% CI -2.60 to -1.01; P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99; P < 0.0001).",
+      "context_window": "P < 0.0001) or placebo (MD = -5.44; 95% CI -5.90 to -4.99; P < 0.0001). In terms of reduction in WC, 8 studies (with 232 and 189",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-3676",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3676,
+      "sentence": "No heterogeneity was presented in the included studies, (I 2 = 0%, P = 0.47), and therefore the fixed effects model was used (Fig.",
+      "context_window": "heterogeneity was presented in the included studies, (I 2 = 0%, P = 0.47), and therefore the fixed effects model was used",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-3680",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3680,
+      "sentence": "No heterogeneity was presented in the included studies, (I 2 = 0%, P = 0.47), and therefore the fixed effects model was used (Fig.",
+      "context_window": "rogeneity was presented in the included studies, (I 2 = 0%, P = 0.47), and therefore the fixed effects model was used (Fig. 3 C)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-3872",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -5.56 to -4.37",
+      "numeric_values": [
+        -5.56,
+        -4.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3872,
+      "sentence": "GLP-1RA intervention was associated with a reduction in WC when compared to those given metformin or placebo (MD = -4.97; 95% CI -5.56 to -4.37; P < 0.0001; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -4.97; 95% CI -5.56 to -4.37; P < 0.0001; Fig. 3 C). For the subgroup analysis, the stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-3895",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3895,
+      "sentence": "GLP-1RA intervention was associated with a reduction in WC when compared to those given metformin or placebo (MD = -4.97; 95% CI -5.56 to -4.37; P < 0.0001; Fig.",
+      "context_window": "en metformin or placebo (MD = -4.97; 95% CI -5.56 to -4.37; P < 0.0001; Fig. 3 C). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-4189",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -5.33 to -2.31",
+      "numeric_values": [
+        -5.33,
+        -2.31
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4189,
+      "sentence": "S1 C, GLP-1RAs intervention was associated with a reduction in body weight when compared to metformin (MD = -3.82; 95% CI -5.33 to -2.31; P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53; P < 0.0001).",
+      "context_window": "tion in body weight when compared to metformin (MD = -3.82; 95% CI -5.33 to -2.31; P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53;",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-4212",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4212,
+      "sentence": "S1 C, GLP-1RAs intervention was associated with a reduction in body weight when compared to metformin (MD = -3.82; 95% CI -5.33 to -2.31; P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53; P < 0.0001).",
+      "context_window": "n compared to metformin (MD = -3.82; 95% CI -5.33 to -2.31; P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53; P < 0.0001)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-4248",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -5.82 to -4.53",
+      "numeric_values": [
+        -5.82,
+        -4.53
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4248,
+      "sentence": "S1 C, GLP-1RAs intervention was associated with a reduction in body weight when compared to metformin (MD = -3.82; 95% CI -5.33 to -2.31; P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53; P < 0.0001).",
+      "context_window": "95% CI -5.33 to -2.31; P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53; P < 0.0001). With respect to the reduction in WHR, 4 stud",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-4271",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4271,
+      "sentence": "S1 C, GLP-1RAs intervention was associated with a reduction in body weight when compared to metformin (MD = -3.82; 95% CI -5.33 to -2.31; P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53; P < 0.0001).",
+      "context_window": "P < 0.0001) or placebo (MD = -5.17; 95% CI -5.82 to -4.53; P < 0.0001). With respect to the reduction in WHR, 4 studies (with 22",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-4511",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4511,
+      "sentence": "No heterogeneity was presented in the included studies, (I 2 = 19%, P = 0.30), and so the fixed effects model was used (Fig.",
+      "context_window": "heterogeneity was presented in the included studies, (I 2 = 19%, P = 0.30), and so the fixed effects model was used (Fig. 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-4516",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.30",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4516,
+      "sentence": "No heterogeneity was presented in the included studies, (I 2 = 19%, P = 0.30), and so the fixed effects model was used (Fig.",
+      "context_window": "ogeneity was presented in the included studies, (I 2 = 19%, P = 0.30), and so the fixed effects model was used (Fig. 3 D). GLP-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-4702",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.03 to -0.03",
+      "numeric_values": [
+        -0.03,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4702,
+      "sentence": "GLP-1RA intervention was associated with a reduction in WHR when compared to those given metformin or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001; Fig. 3 D). For the subgroup analysis, the stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-4725",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4725,
+      "sentence": "GLP-1RA intervention was associated with a reduction in WHR when compared to those given metformin or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001; Fig.",
+      "context_window": "en metformin or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001; Fig. 3 D). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-5010",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.04 to -0.02",
+      "numeric_values": [
+        -0.04,
+        -0.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5010,
+      "sentence": "S1 D, GLP-1RA intervention was associated with a reduction in WHR when compared to metformin (MD = -0.03; 95% CI -0.04 to -0.02; P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001).",
+      "context_window": "a reduction in WHR when compared to metformin (MD = -0.03; 95% CI -0.04 to -0.02; P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-5033",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5033,
+      "sentence": "S1 D, GLP-1RA intervention was associated with a reduction in WHR when compared to metformin (MD = -0.03; 95% CI -0.04 to -0.02; P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001).",
+      "context_window": "n compared to metformin (MD = -0.03; 95% CI -0.04 to -0.02; P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-5069",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.03 to -0.03",
+      "numeric_values": [
+        -0.03,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5069,
+      "sentence": "S1 D, GLP-1RA intervention was associated with a reduction in WHR when compared to metformin (MD = -0.03; 95% CI -0.04 to -0.02; P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001).",
+      "context_window": "95% CI -0.04 to -0.02; P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001). In terms of reduction in AG, 3 studies (with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-5092",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5092,
+      "sentence": "S1 D, GLP-1RA intervention was associated with a reduction in WHR when compared to metformin (MD = -0.03; 95% CI -0.04 to -0.02; P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001).",
+      "context_window": "P < 0.0001) or placebo (MD = -0.03; 95% CI -0.03 to -0.03; P < 0.0001). In terms of reduction in AG, 3 studies (with 117 and 121",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-5319",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5319,
+      "sentence": "No heterogeneity was presented in the included studies, (I 2 = 0%, P = 0.65), and so the fixed effects model was used (Fig.",
+      "context_window": "heterogeneity was presented in the included studies, (I 2 = 0%, P = 0.65), and so the fixed effects model was used (Fig. 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-5323",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5323,
+      "sentence": "No heterogeneity was presented in the included studies, (I 2 = 0%, P = 0.65), and so the fixed effects model was used (Fig.",
+      "context_window": "rogeneity was presented in the included studies, (I 2 = 0%, P = 0.65), and so the fixed effects model was used (Fig. 3 E). GLP-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-5508",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.93 to -1.16",
+      "numeric_values": [
+        -2.93,
+        -1.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5508,
+      "sentence": "GLP-1RA intervention was associated with a reduction in AG when compared to those given metformin or placebo (MD = -2.05; 95% CI -2.93 to -1.16; P < 0.0001; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -2.05; 95% CI -2.93 to -1.16; P < 0.0001; Fig. 3 E). Funnel plots of the reductions in B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-5531",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5531,
+      "sentence": "GLP-1RA intervention was associated with a reduction in AG when compared to those given metformin or placebo (MD = -2.05; 95% CI -2.93 to -1.16; P < 0.0001; Fig.",
+      "context_window": "en metformin or placebo (MD = -2.05; 95% CI -2.93 to -1.16; P < 0.0001; Fig. 3 E). Funnel plots of the reductions in BMI, body wei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-6067",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6067,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 95%, P < 0.0001), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies, (I 2 = 95%, P < 0.0001), we used the random effects model (Fig. 4 A).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-6072",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6072,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 95%, P < 0.0001), we used the random effects model (Fig.",
+      "context_window": "eterogeneity presented in the included studies, (I 2 = 95%, P < 0.0001), we used the random effects model (Fig. 4 A). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-6275",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.28 to 0.04",
+      "numeric_values": [
+        -0.28,
+        0.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6275,
+      "sentence": "GLP-1RA intervention was not associated with a reduction in fasting glucose level when compared to those given metformin or placebo (MD = -0.12; 95% CI -0.28 to 0.04; P = 0.14; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.12; 95% CI -0.28 to 0.04; P = 0.14; Fig. 4 A). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-6297",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6297,
+      "sentence": "GLP-1RA intervention was not associated with a reduction in fasting glucose level when compared to those given metformin or placebo (MD = -0.12; 95% CI -0.28 to 0.04; P = 0.14; Fig.",
+      "context_window": "ven metformin or placebo (MD = -0.12; 95% CI -0.28 to 0.04; P = 0.14; Fig. 4 A). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-6596",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.33 to -0.25",
+      "numeric_values": [
+        -0.33,
+        -0.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6596,
+      "sentence": "S3 A, GLP-1RA intervention was associated with a reduction in fasting glucose level when compared to placebo (MD = -0.29; 95% CI -0.33 to -0.25; P < 0.0001), but not metformin (MD = -0.02; 95% CI -0.07 to 0.04; P = 0.57).",
+      "context_window": "fasting glucose level when compared to placebo (MD = -0.29; 95% CI -0.33 to -0.25; P < 0.0001), but not metformin (MD = -0.02; 95% CI -0.07 t",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-6619",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6619,
+      "sentence": "S3 A, GLP-1RA intervention was associated with a reduction in fasting glucose level when compared to placebo (MD = -0.29; 95% CI -0.33 to -0.25; P < 0.0001), but not metformin (MD = -0.02; 95% CI -0.07 to 0.04; P = 0.57).",
+      "context_window": "hen compared to placebo (MD = -0.29; 95% CI -0.33 to -0.25; P < 0.0001), but not metformin (MD = -0.02; 95% CI -0.07 to 0.04; P =",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-6663",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.07 to 0.04",
+      "numeric_values": [
+        -0.07,
+        0.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6663,
+      "sentence": "S3 A, GLP-1RA intervention was associated with a reduction in fasting glucose level when compared to placebo (MD = -0.29; 95% CI -0.33 to -0.25; P < 0.0001), but not metformin (MD = -0.02; 95% CI -0.07 to 0.04; P = 0.57).",
+      "context_window": "-0.33 to -0.25; P < 0.0001), but not metformin (MD = -0.02; 95% CI -0.07 to 0.04; P = 0.57). Meta-analysis of the fasting glucose ( A ), gl",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-6685",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6685,
+      "sentence": "S3 A, GLP-1RA intervention was associated with a reduction in fasting glucose level when compared to placebo (MD = -0.29; 95% CI -0.33 to -0.25; P < 0.0001), but not metformin (MD = -0.02; 95% CI -0.07 to 0.04; P = 0.57).",
+      "context_window": "0001), but not metformin (MD = -0.02; 95% CI -0.07 to 0.04; P = 0.57). Meta-analysis of the fasting glucose ( A ), glucose at 2",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-7096",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7096,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 86%, P < 0.0001), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies, (I 2 = 86%, P < 0.0001), we used the random effects model (Fig. 4 B).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-7101",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7101,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 86%, P < 0.0001), we used the random effects model (Fig.",
+      "context_window": "eterogeneity presented in the included studies, (I 2 = 86%, P < 0.0001), we used the random effects model (Fig. 4 B). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-7311",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.01 to 0.07",
+      "numeric_values": [
+        -1.01,
+        0.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7311,
+      "sentence": "GLP-1RA intervention was associated with a reduction in glucose levels at 2 h after OGTT when compared to those given metformin or placebo (MD = -0.54; 95% CI -1.01 to 0.07; P = 0.02; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.54; 95% CI -1.01 to 0.07; P = 0.02; Fig. 4 B). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-7333",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7333,
+      "sentence": "GLP-1RA intervention was associated with a reduction in glucose levels at 2 h after OGTT when compared to those given metformin or placebo (MD = -0.54; 95% CI -1.01 to 0.07; P = 0.02; Fig.",
+      "context_window": "ven metformin or placebo (MD = -0.54; 95% CI -1.01 to 0.07; P = 0.02; Fig. 4 B). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-7643",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -3.33 to -0.95",
+      "numeric_values": [
+        -3.33,
+        -0.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7643,
+      "sentence": "S3 B, GLP-1RA intervention was associated with a reduction in glucose levels at 2 h after OGTT when compared to placebo (MD = -2.14; 95% CI -3.33 to -0.95; P = 0.0004), but not metformin (MD = -0.34; 95% CI -0.76 to 0.09; P = 0.12).",
+      "context_window": "els at 2 h after OGTT when compared to placebo (MD = -2.14; 95% CI -3.33 to -0.95; P = 0.0004), but not metformin (MD = -0.34; 95% CI -0.76 t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-7666",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0004",
+      "numeric_values": [
+        0.0004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7666,
+      "sentence": "S3 B, GLP-1RA intervention was associated with a reduction in glucose levels at 2 h after OGTT when compared to placebo (MD = -2.14; 95% CI -3.33 to -0.95; P = 0.0004), but not metformin (MD = -0.34; 95% CI -0.76 to 0.09; P = 0.12).",
+      "context_window": "hen compared to placebo (MD = -2.14; 95% CI -3.33 to -0.95; P = 0.0004), but not metformin (MD = -0.34; 95% CI -0.76 to 0.09; P =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-7710",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.76 to 0.09",
+      "numeric_values": [
+        -0.76,
+        0.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7710,
+      "sentence": "S3 B, GLP-1RA intervention was associated with a reduction in glucose levels at 2 h after OGTT when compared to placebo (MD = -2.14; 95% CI -3.33 to -0.95; P = 0.0004), but not metformin (MD = -0.34; 95% CI -0.76 to 0.09; P = 0.12).",
+      "context_window": "-3.33 to -0.95; P = 0.0004), but not metformin (MD = -0.34; 95% CI -0.76 to 0.09; P = 0.12). In terms of reduction in fasting insulin level",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-7732",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7732,
+      "sentence": "S3 B, GLP-1RA intervention was associated with a reduction in glucose levels at 2 h after OGTT when compared to placebo (MD = -2.14; 95% CI -3.33 to -0.95; P = 0.0004), but not metformin (MD = -0.34; 95% CI -0.76 to 0.09; P = 0.12).",
+      "context_window": "0004), but not metformin (MD = -0.34; 95% CI -0.76 to 0.09; P = 0.12). In terms of reduction in fasting insulin levels, 5 studi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-7982",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7982,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 78%, P = 0.001), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies, (I 2 = 78%, P = 0.001), we used the random effects model (Fig. 4 C). G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-7987",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7987,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 78%, P = 0.001), we used the random effects model (Fig.",
+      "context_window": "eterogeneity presented in the included studies, (I 2 = 78%, P = 0.001), we used the random effects model (Fig. 4 C). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-8186",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.65 to -0.15",
+      "numeric_values": [
+        -2.65,
+        -0.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8186,
+      "sentence": "GLP-1RA intervention was associated with a reduction in fasting insulin levels when compared to those given metformin or placebo (MD = -1.40; 95% CI -2.65 to -0.15; P = 0.03; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -1.40; 95% CI -2.65 to -0.15; P = 0.03; Fig. 4 C). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-8209",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8209,
+      "sentence": "GLP-1RA intervention was associated with a reduction in fasting insulin levels when compared to those given metformin or placebo (MD = -1.40; 95% CI -2.65 to -0.15; P = 0.03; Fig.",
+      "context_window": "en metformin or placebo (MD = -1.40; 95% CI -2.65 to -0.15; P = 0.03; Fig. 4 C). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-8520",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.75 to -0.11",
+      "numeric_values": [
+        -2.75,
+        -0.11
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8520,
+      "sentence": "S3 C, GLP-1RA intervention was associated with a reduction in fasting insulin when compared to those given metformin (MD = -1.43; 95% CI -2.75 to -0.11; P = 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.34; P = 0.83).",
+      "context_window": "insulin when compared to those given metformin (MD = -1.43; 95% CI -2.75 to -0.11; P = 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-8543",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8543,
+      "sentence": "S3 C, GLP-1RA intervention was associated with a reduction in fasting insulin when compared to those given metformin (MD = -1.43; 95% CI -2.75 to -0.11; P = 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.34; P = 0.83).",
+      "context_window": "o those given metformin (MD = -1.43; 95% CI -2.75 to -0.11; P = 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.34; P = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-8583",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -6.62 to 5.34",
+      "numeric_values": [
+        -6.62,
+        5.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8583,
+      "sentence": "S3 C, GLP-1RA intervention was associated with a reduction in fasting insulin when compared to those given metformin (MD = -1.43; 95% CI -2.75 to -0.11; P = 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.34; P = 0.83).",
+      "context_window": "CI -2.75 to -0.11; P = 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.34; P = 0.83). In terms of reduction in insulin levels at 2 h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-8605",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8605,
+      "sentence": "S3 C, GLP-1RA intervention was associated with a reduction in fasting insulin when compared to those given metformin (MD = -1.43; 95% CI -2.75 to -0.11; P = 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.34; P = 0.83).",
+      "context_window": "= 0.03), but not placebo (MD = -0.64; 95% CI -6.62 to 5.34; P = 0.83). In terms of reduction in insulin levels at 2 h after OGT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-8864",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8864,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 82%, P = 0.0008), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies, (I 2 = 82%, P = 0.0008), we used the random effects model (Fig. 4 D).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-8869",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0008",
+      "numeric_values": [
+        0.0008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8869,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 82%, P = 0.0008), we used the random effects model (Fig.",
+      "context_window": "eterogeneity presented in the included studies, (I 2 = 82%, P = 0.0008), we used the random effects model (Fig. 4 D). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-9078",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -38.58 to -17.17",
+      "numeric_values": [
+        -38.58,
+        -17.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9078,
+      "sentence": "GLP-1RA intervention was associated with a reduction in insulin levels at h after OGTT when compared to those given metformin or placebo (MD = -27.88; 95% CI -38.58 to -17.17; P < 0.0001; Fig.",
+      "context_window": "compared to those given metformin or placebo (MD = -27.88; 95% CI -38.58 to -17.17; P < 0.0001; Fig. 4 D). For the subgroup analysis, the stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-9103",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9103,
+      "sentence": "GLP-1RA intervention was associated with a reduction in insulin levels at h after OGTT when compared to those given metformin or placebo (MD = -27.88; 95% CI -38.58 to -17.17; P < 0.0001; Fig.",
+      "context_window": "metformin or placebo (MD = -27.88; 95% CI -38.58 to -17.17; P < 0.0001; Fig. 4 D). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-9422",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -29.57 to -14.79",
+      "numeric_values": [
+        -29.57,
+        -14.79
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9422,
+      "sentence": "S3 D, GLP-1RA intervention was associated with a reduction in insulin levels at 2 h after OGTT when compared to metformin (MD = -22.18; 95% CI -29.57 to -14.79; P < 0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33.60; P < 0.00001).",
+      "context_window": "at 2 h after OGTT when compared to metformin (MD = -22.18; 95% CI -29.57 to -14.79; P < 0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-9447",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9447,
+      "sentence": "S3 D, GLP-1RA intervention was associated with a reduction in insulin levels at 2 h after OGTT when compared to metformin (MD = -22.18; 95% CI -29.57 to -14.79; P < 0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33.60; P < 0.00001).",
+      "context_window": "ompared to metformin (MD = -22.18; 95% CI -29.57 to -14.79; P < 0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33.60; P < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-9485",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -69.84 to -33.60",
+      "numeric_values": [
+        -69.84,
+        -33.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9485,
+      "sentence": "S3 D, GLP-1RA intervention was associated with a reduction in insulin levels at 2 h after OGTT when compared to metformin (MD = -22.18; 95% CI -29.57 to -14.79; P < 0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33.60; P < 0.00001).",
+      "context_window": "CI -29.57 to -14.79; P < 0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33.60; P < 0.00001). In terms of reduction in HOMA-IR, 10 studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-9510",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9510,
+      "sentence": "S3 D, GLP-1RA intervention was associated with a reduction in insulin levels at 2 h after OGTT when compared to metformin (MD = -22.18; 95% CI -29.57 to -14.79; P < 0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33.60; P < 0.00001).",
+      "context_window": "0.00001) or placebo (MD = -51.72; 95% CI -69.84 to -33.60; P < 0.00001). In terms of reduction in HOMA-IR, 10 studies (with 338 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-9748",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9748,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 91%, P < 0.00001), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies, (I 2 = 91%, P < 0.00001), we used the random effects model (Fig. 4 E).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-9753",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9753,
+      "sentence": "Due to the heterogeneity presented in the included studies, (I 2 = 91%, P < 0.00001), we used the random effects model (Fig.",
+      "context_window": "eterogeneity presented in the included studies, (I 2 = 91%, P < 0.00001), we used the random effects model (Fig. 4 E). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-9939",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.98 to -0.19",
+      "numeric_values": [
+        -0.98,
+        -0.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9939,
+      "sentence": "GLP-1RA intervention was associated with a reduction in HOMA-IR when compared to those given metformin or placebo (MD = -0.58; 95% CI -0.98 to -0.19; P = 0.004; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.58; 95% CI -0.98 to -0.19; P = 0.004; Fig. 4 E). For the subgroup analysis, the studi",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-9962",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9962,
+      "sentence": "GLP-1RA intervention was associated with a reduction in HOMA-IR when compared to those given metformin or placebo (MD = -0.58; 95% CI -0.98 to -0.19; P = 0.004; Fig.",
+      "context_window": "en metformin or placebo (MD = -0.58; 95% CI -0.98 to -0.19; P = 0.004; Fig. 4 E). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-10250",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.07 to -0.38",
+      "numeric_values": [
+        -1.07,
+        -0.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10250,
+      "sentence": "S3 E, GLP-1RA intervention was associated with a reduction in HOMA-IR when compared to metformin (MD = -0.73; 95% CI -1.07 to -0.38; P < 0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -0.19; P = 0.26).",
+      "context_window": "eduction in HOMA-IR when compared to metformin (MD = -0.73; 95% CI -1.07 to -0.38; P < 0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-10273",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10273,
+      "sentence": "S3 E, GLP-1RA intervention was associated with a reduction in HOMA-IR when compared to metformin (MD = -0.73; 95% CI -1.07 to -0.38; P < 0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -0.19; P = 0.26).",
+      "context_window": "n compared to metformin (MD = -0.73; 95% CI -1.07 to -0.38; P < 0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -0.19; P = 0.",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-10314",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.98 to -0.19",
+      "numeric_values": [
+        -0.98,
+        -0.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10314,
+      "sentence": "S3 E, GLP-1RA intervention was associated with a reduction in HOMA-IR when compared to metformin (MD = -0.73; 95% CI -1.07 to -0.38; P < 0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -0.19; P = 0.26).",
+      "context_window": "CI -1.07 to -0.38; P < 0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -0.19; P = 0.26). Funnel plots of reduction in the fasting glucos",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-10337",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10337,
+      "sentence": "S3 E, GLP-1RA intervention was associated with a reduction in HOMA-IR when compared to metformin (MD = -0.73; 95% CI -1.07 to -0.38; P < 0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -0.19; P = 0.26).",
+      "context_window": "0.0001) but not placebo (MD = -0.40; 95% CI -0.98 to -0.19; P = 0.26). Funnel plots of reduction in the fasting glucose and insu",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-10756",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10756,
+      "sentence": "Due to the presence of heterogeneity in the included studies (I 2 = 96%, P < 0.00001), the random effects model was used (Fig.",
+      "context_window": "he presence of heterogeneity in the included studies (I 2 = 96%, P < 0.00001), the random effects model was used (Fig. 5 A)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-10761",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10761,
+      "sentence": "Due to the presence of heterogeneity in the included studies (I 2 = 96%, P < 0.00001), the random effects model was used (Fig.",
+      "context_window": "esence of heterogeneity in the included studies (I 2 = 96%, P < 0.00001), the random effects model was used (Fig. 5 A). GLP-1 RA in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-10955",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -31.99 to 7.03",
+      "numeric_values": [
+        -31.99,
+        7.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10955,
+      "sentence": "GLP-1 RA intervention was not associated with changes in DHEAS levels when compared to those given metformin or placebo (MD = -12.84; 95% CI -31.99 to 7.03; P = 0.21; Fig.",
+      "context_window": "compared to those given metformin or placebo (MD = -12.84; 95% CI -31.99 to 7.03; P = 0.21; Fig. 5 A). For subgroup analysis, the studies we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-10978",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.21",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10978,
+      "sentence": "GLP-1 RA intervention was not associated with changes in DHEAS levels when compared to those given metformin or placebo (MD = -12.84; 95% CI -31.99 to 7.03; P = 0.21; Fig.",
+      "context_window": "n metformin or placebo (MD = -12.84; 95% CI -31.99 to 7.03; P = 0.21; Fig. 5 A). For subgroup analysis, the studies were classif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-11248",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -23.13 to -13.23",
+      "numeric_values": [
+        -23.13,
+        -13.23
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11248,
+      "sentence": "S5 A, GLP-1 RA intervention was associated with a reduction in DHEAS levels when compared to placebo (MD = -18.20; 95% CI -23.13 to -13.23; P < 0.0001), but not when compared to those given metformin (MD = -10.83; 95% CI -38.87 to 17.22; P = 0.45).",
+      "context_window": "tion in DHEAS levels when compared to placebo (MD = -18.20; 95% CI -23.13 to -13.23; P < 0.0001), but not when compared to those given metformi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-11273",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11273,
+      "sentence": "S5 A, GLP-1 RA intervention was associated with a reduction in DHEAS levels when compared to placebo (MD = -18.20; 95% CI -23.13 to -13.23; P < 0.0001), but not when compared to those given metformin (MD = -10.83; 95% CI -38.87 to 17.22; P = 0.45).",
+      "context_window": "compared to placebo (MD = -18.20; 95% CI -23.13 to -13.23; P < 0.0001), but not when compared to those given metformin (MD = -10.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-11347",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -38.87 to 17.22",
+      "numeric_values": [
+        -38.87,
+        17.22
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11347,
+      "sentence": "S5 A, GLP-1 RA intervention was associated with a reduction in DHEAS levels when compared to placebo (MD = -18.20; 95% CI -23.13 to -13.23; P < 0.0001), but not when compared to those given metformin (MD = -10.83; 95% CI -38.87 to 17.22; P = 0.45).",
+      "context_window": "ut not when compared to those given metformin (MD = -10.83; 95% CI -38.87 to 17.22; P = 0.45). Meta-analysis of the DHEAS ( A ), SHBG ( B ),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-11371",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11371,
+      "sentence": "S5 A, GLP-1 RA intervention was associated with a reduction in DHEAS levels when compared to placebo (MD = -18.20; 95% CI -23.13 to -13.23; P < 0.0001), but not when compared to those given metformin (MD = -10.83; 95% CI -38.87 to 17.22; P = 0.45).",
+      "context_window": "those given metformin (MD = -10.83; 95% CI -38.87 to 17.22; P = 0.45). Meta-analysis of the DHEAS ( A ), SHBG ( B ), total test",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-11741",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11741,
+      "sentence": "No heterogeneity was present in the included studies (I 2 = 0%, P = 0.87), and so a fixed effects model was used (Fig.",
+      "context_window": "No heterogeneity was present in the included studies (I 2 = 0%, P = 0.87), and so a fixed effects model was used (Fig. 5 B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-11745",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.87",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11745,
+      "sentence": "No heterogeneity was present in the included studies (I 2 = 0%, P = 0.87), and so a fixed effects model was used (Fig.",
+      "context_window": "eterogeneity was present in the included studies (I 2 = 0%, P = 0.87), and so a fixed effects model was used (Fig. 5 B). GLP-1 R",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-11937",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.05 to 2.97",
+      "numeric_values": [
+        -1.05,
+        2.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11937,
+      "sentence": "GLP-1 RA intervention was not associated with changes in SHBG levels when compared to those given metformin or placebo (MD = 0.96; 95% CI -1.05 to 2.97; P = 0.35; Fig.",
+      "context_window": "en compared to those given metformin or placebo (MD = 0.96; 95% CI -1.05 to 2.97; P = 0.35; Fig. 5 B). In terms of the reduction in total t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-11959",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11959,
+      "sentence": "GLP-1 RA intervention was not associated with changes in SHBG levels when compared to those given metformin or placebo (MD = 0.96; 95% CI -1.05 to 2.97; P = 0.35; Fig.",
+      "context_window": "iven metformin or placebo (MD = 0.96; 95% CI -1.05 to 2.97; P = 0.35; Fig. 5 B). In terms of the reduction in total testosteron",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-12222",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12222,
+      "sentence": "Due to the presence of heterogeneity in the included studies (I 2 = 74%, P = 0.0002), the random effects model was used (Fig.",
+      "context_window": "he presence of heterogeneity in the included studies (I 2 = 74%, P = 0.0002), the random effects model was used (Fig. 5 C).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-12227",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12227,
+      "sentence": "Due to the presence of heterogeneity in the included studies (I 2 = 74%, P = 0.0002), the random effects model was used (Fig.",
+      "context_window": "esence of heterogeneity in the included studies (I 2 = 74%, P = 0.0002), the random effects model was used (Fig. 5 C). GLP-1 RA in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-12425",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.20 to 0.11",
+      "numeric_values": [
+        -0.2,
+        0.11
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12425,
+      "sentence": "GLP-1 RA intervention was not associated with changes in total testosterone when compared to those given metformin or placebo (MD = -0.05; 95% CI -0.20 to 0.11; P = 0.53; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.05; 95% CI -0.20 to 0.11; P = 0.53; Fig. 5 C). For subgroup analysis, the studies we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-12447",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12447,
+      "sentence": "GLP-1 RA intervention was not associated with changes in total testosterone when compared to those given metformin or placebo (MD = -0.05; 95% CI -0.20 to 0.11; P = 0.53; Fig.",
+      "context_window": "ven metformin or placebo (MD = -0.05; 95% CI -0.20 to 0.11; P = 0.53; Fig. 5 C). For subgroup analysis, the studies were classif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-12741",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.27 to -0.17",
+      "numeric_values": [
+        -0.27,
+        -0.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12741,
+      "sentence": "S5 B, GLP-1 RA intervention was associated with a reduction in total testosterone levels when compared to those given placebo (MD = -0.22; 95% CI -0.27 to -0.17; P < 0.0001), but not to those given metformin (MD = 0.13; 95% CI -0.16 to 0.42; P = 0.37).",
+      "context_window": "ne levels when compared to those given placebo (MD = -0.22; 95% CI -0.27 to -0.17; P < 0.0001), but not to those given metformin (MD = 0.13;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-12764",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12764,
+      "sentence": "S5 B, GLP-1 RA intervention was associated with a reduction in total testosterone levels when compared to those given placebo (MD = -0.22; 95% CI -0.27 to -0.17; P < 0.0001), but not to those given metformin (MD = 0.13; 95% CI -0.16 to 0.42; P = 0.37).",
+      "context_window": "to those given placebo (MD = -0.22; 95% CI -0.27 to -0.17; P < 0.0001), but not to those given metformin (MD = 0.13; 95% CI -0.16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-12822",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.16 to 0.42",
+      "numeric_values": [
+        -0.16,
+        0.42
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12822,
+      "sentence": "S5 B, GLP-1 RA intervention was associated with a reduction in total testosterone levels when compared to those given placebo (MD = -0.22; 95% CI -0.27 to -0.17; P < 0.0001), but not to those given metformin (MD = 0.13; 95% CI -0.16 to 0.42; P = 0.37).",
+      "context_window": "; P < 0.0001), but not to those given metformin (MD = 0.13; 95% CI -0.16 to 0.42; P = 0.37). In terms of the reduction in levels of free te",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-12844",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12844,
+      "sentence": "S5 B, GLP-1 RA intervention was associated with a reduction in total testosterone levels when compared to those given placebo (MD = -0.22; 95% CI -0.27 to -0.17; P < 0.0001), but not to those given metformin (MD = 0.13; 95% CI -0.16 to 0.42; P = 0.37).",
+      "context_window": "to those given metformin (MD = 0.13; 95% CI -0.16 to 0.42; P = 0.37). In terms of the reduction in levels of free testosterone",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-13092",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13092,
+      "sentence": "Due to the heterogeneity in the included studies (I 2 = 83%, P = 0.003), the random effects model was used (Fig.",
+      "context_window": "is. Due to the heterogeneity in the included studies (I 2 = 83%, P = 0.003), the random effects model was used (Fig. 5 D).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-13097",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13097,
+      "sentence": "Due to the heterogeneity in the included studies (I 2 = 83%, P = 0.003), the random effects model was used (Fig.",
+      "context_window": "ue to the heterogeneity in the included studies (I 2 = 83%, P = 0.003), the random effects model was used (Fig. 5 D). GLP-1 RA in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-13292",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.39 to 2.44",
+      "numeric_values": [
+        -1.39,
+        2.44
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 13292,
+      "sentence": "GLP-1 RA intervention was not associated with changes in free testosterone when compared to those given metformin or placebo (MD = 0.53; 95% CI -1.39 to 2.44; P = 0.59; Fig.",
+      "context_window": "en compared to those given metformin or placebo (MD = 0.53; 95% CI -1.39 to 2.44; P = 0.59; Fig. 5 D). In terms of the reduction in FAI, 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-13314",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13314,
+      "sentence": "GLP-1 RA intervention was not associated with changes in free testosterone when compared to those given metformin or placebo (MD = 0.53; 95% CI -1.39 to 2.44; P = 0.59; Fig.",
+      "context_window": "iven metformin or placebo (MD = 0.53; 95% CI -1.39 to 2.44; P = 0.59; Fig. 5 D). In terms of the reduction in FAI, 6 studies (w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-13561",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13561,
+      "sentence": "Due to the presence of heterogeneity in the included studies (I 2 = 80%, P = 0.0001), the random effects model was used (Fig.",
+      "context_window": "he presence of heterogeneity in the included studies (I 2 = 80%, P = 0.0001), the random effects model was used (Fig. 5 E).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-13566",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13566,
+      "sentence": "Due to the presence of heterogeneity in the included studies (I 2 = 80%, P = 0.0001), the random effects model was used (Fig.",
+      "context_window": "esence of heterogeneity in the included studies (I 2 = 80%, P = 0.0001), the random effects model was used (Fig. 5 E). GLP-1 RA in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-13749",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.94 to -1.50",
+      "numeric_values": [
+        -1.94,
+        -1.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 13749,
+      "sentence": "GLP-1 RA intervention was not associated with changes in FAI when compared to those given metformin or placebo (MD = -1.72; 95% CI -1.94 to -1.50; P = 0.54; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -1.72; 95% CI -1.94 to -1.50; P = 0.54; Fig. 5 E). For subgroup analysis, the studies we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-13772",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13772,
+      "sentence": "GLP-1 RA intervention was not associated with changes in FAI when compared to those given metformin or placebo (MD = -1.72; 95% CI -1.94 to -1.50; P = 0.54; Fig.",
+      "context_window": "en metformin or placebo (MD = -1.72; 95% CI -1.94 to -1.50; P = 0.54; Fig. 5 E). For subgroup analysis, the studies were classif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-14044",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.98 to -1.50",
+      "numeric_values": [
+        -1.98,
+        -1.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 14044,
+      "sentence": "S5 E, GLP-1 RA intervention was associated with a reduction in FAI when compared to those given placebo (MD = -0.48; 95% CI -1.98 to -1.50; P < 0.0001), but not to those given metformin (MD = 0.26; 95% CI -2.08 to 2.61; P = 0.83).",
+      "context_window": "on in FAI when compared to those given placebo (MD = -0.48; 95% CI -1.98 to -1.50; P < 0.0001), but not to those given metformin (MD = 0.26;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-14067",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14067,
+      "sentence": "S5 E, GLP-1 RA intervention was associated with a reduction in FAI when compared to those given placebo (MD = -0.48; 95% CI -1.98 to -1.50; P < 0.0001), but not to those given metformin (MD = 0.26; 95% CI -2.08 to 2.61; P = 0.83).",
+      "context_window": "to those given placebo (MD = -0.48; 95% CI -1.98 to -1.50; P < 0.0001), but not to those given metformin (MD = 0.26; 95% CI -2.08",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-14125",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.08 to 2.61",
+      "numeric_values": [
+        -2.08,
+        2.61
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 14125,
+      "sentence": "S5 E, GLP-1 RA intervention was associated with a reduction in FAI when compared to those given placebo (MD = -0.48; 95% CI -1.98 to -1.50; P < 0.0001), but not to those given metformin (MD = 0.26; 95% CI -2.08 to 2.61; P = 0.83).",
+      "context_window": "; P < 0.0001), but not to those given metformin (MD = 0.26; 95% CI -2.08 to 2.61; P = 0.83). Funnels plot of the reduction in DHEAS, SHBG, t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-14147",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14147,
+      "sentence": "S5 E, GLP-1 RA intervention was associated with a reduction in FAI when compared to those given placebo (MD = -0.48; 95% CI -1.98 to -1.50; P < 0.0001), but not to those given metformin (MD = 0.26; 95% CI -2.08 to 2.61; P = 0.83).",
+      "context_window": "to those given metformin (MD = 0.26; 95% CI -2.08 to 2.61; P = 0.83). Funnels plot of the reduction in DHEAS, SHBG, total testo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-14528",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14528,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.56), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 0%, P = 0.56), and we used the fixed effects model (Fig. 6 A).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-14532",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14532,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.56), and we used the fixed effects model (Fig.",
+      "context_window": "erogeneity was presented in the included studies (I 2 = 0%, P = 0.56), and we used the fixed effects model (Fig. 6 A). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-14739",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.07 to 0.00",
+      "numeric_values": [
+        -0.07,
+        0.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 14739,
+      "sentence": "GLP-1RA intervention was not associated with the changes in total cholesterol levels when compared to those given metformin or placebo (MD = -0.03; 95% CI -0.07 to 0.00; P = 0.06; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.03; 95% CI -0.07 to 0.00; P = 0.06; Fig. 6 A). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-14761",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14761,
+      "sentence": "GLP-1RA intervention was not associated with the changes in total cholesterol levels when compared to those given metformin or placebo (MD = -0.03; 95% CI -0.07 to 0.00; P = 0.06; Fig.",
+      "context_window": "ven metformin or placebo (MD = -0.03; 95% CI -0.07 to 0.00; P = 0.06; Fig. 6 A). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-15056",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.08 to 0.00",
+      "numeric_values": [
+        -0.08,
+        0.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 15056,
+      "sentence": "S7 A, GLP-1RA intervention was associated with a reduction in total cholesterol when compared to placebo (MD = -0.04; 95% CI -0.08 to 0.00; P = 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.10; P = 0.83).",
+      "context_window": "in total cholesterol when compared to placebo (MD = -0.04; 95% CI -0.08 to 0.00; P = 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-15078",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15078,
+      "sentence": "S7 A, GLP-1RA intervention was associated with a reduction in total cholesterol when compared to placebo (MD = -0.04; 95% CI -0.08 to 0.00; P = 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.10; P = 0.83).",
+      "context_window": "when compared to placebo (MD = -0.04; 95% CI -0.08 to 0.00; P = 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.10; P = 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-15118",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.08 to 0.10",
+      "numeric_values": [
+        -0.08,
+        0.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 15118,
+      "sentence": "S7 A, GLP-1RA intervention was associated with a reduction in total cholesterol when compared to placebo (MD = -0.04; 95% CI -0.08 to 0.00; P = 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.10; P = 0.83).",
+      "context_window": "% CI -0.08 to 0.00; P = 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.10; P = 0.83). Meta-analysis of the total cholesterol ( A ),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-15140",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15140,
+      "sentence": "S7 A, GLP-1RA intervention was associated with a reduction in total cholesterol when compared to placebo (MD = -0.04; 95% CI -0.08 to 0.00; P = 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.10; P = 0.83).",
+      "context_window": "= 0.03) but not metformin (MD = 0.01; 95% CI -0.08 to 0.10; P = 0.83). Meta-analysis of the total cholesterol ( A ), HDL ( B ),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-15487",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15487,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 49%, P = 0.05), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 49%, P = 0.05), and we used the fixed effects model (Fig. 6 B).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-15492",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15492,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 49%, P = 0.05), and we used the fixed effects model (Fig.",
+      "context_window": "rogeneity was presented in the included studies (I 2 = 49%, P = 0.05), and we used the fixed effects model (Fig. 6 B). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-15674",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.04 to -0.01",
+      "numeric_values": [
+        -0.04,
+        -0.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 15674,
+      "sentence": "GLP-1RA intervention was associated with a reduction in HDL when compared to those given metformin or placebo (MD = -0.02; 95% CI -0.04 to -0.01; P = 0.0001; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.02; 95% CI -0.04 to -0.01; P = 0.0001; Fig. 6 B). For the subgroup analysis, the stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-15697",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15697,
+      "sentence": "GLP-1RA intervention was associated with a reduction in HDL when compared to those given metformin or placebo (MD = -0.02; 95% CI -0.04 to -0.01; P = 0.0001; Fig.",
+      "context_window": "en metformin or placebo (MD = -0.02; 95% CI -0.04 to -0.01; P = 0.0001; Fig. 6 B). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-15980",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.03 to -0.01",
+      "numeric_values": [
+        -0.03,
+        -0.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 15980,
+      "sentence": "S7 B, GLP-1RA intervention was associated with a reduction in HDL when compared to placebo (MD = -0.02; 95% CI -0.03 to -0.01; P = 0.001) but not metformin (MD = -0.04; 95% CI -0.07 to -0.01; P = 0.83).",
+      "context_window": "th a reduction in HDL when compared to placebo (MD = -0.02; 95% CI -0.03 to -0.01; P = 0.001) but not metformin (MD = -0.04; 95% CI -0.07 to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-16003",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16003,
+      "sentence": "S7 B, GLP-1RA intervention was associated with a reduction in HDL when compared to placebo (MD = -0.02; 95% CI -0.03 to -0.01; P = 0.001) but not metformin (MD = -0.04; 95% CI -0.07 to -0.01; P = 0.83).",
+      "context_window": "hen compared to placebo (MD = -0.02; 95% CI -0.03 to -0.01; P = 0.001) but not metformin (MD = -0.04; 95% CI -0.07 to -0.01; P =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-16045",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.07 to -0.01",
+      "numeric_values": [
+        -0.07,
+        -0.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 16045,
+      "sentence": "S7 B, GLP-1RA intervention was associated with a reduction in HDL when compared to placebo (MD = -0.02; 95% CI -0.03 to -0.01; P = 0.001) but not metformin (MD = -0.04; 95% CI -0.07 to -0.01; P = 0.83).",
+      "context_window": "I -0.03 to -0.01; P = 0.001) but not metformin (MD = -0.04; 95% CI -0.07 to -0.01; P = 0.83). In terms of reduction in total LDL levels, 9 s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-16068",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16068,
+      "sentence": "S7 B, GLP-1RA intervention was associated with a reduction in HDL when compared to placebo (MD = -0.02; 95% CI -0.03 to -0.01; P = 0.001) but not metformin (MD = -0.04; 95% CI -0.07 to -0.01; P = 0.83).",
+      "context_window": ".001) but not metformin (MD = -0.04; 95% CI -0.07 to -0.01; P = 0.83). In terms of reduction in total LDL levels, 9 studies (wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-16306",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16306,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.98), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 0%, P = 0.98), and we used the fixed effects model (Fig. 6 C).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-16310",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16310,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.98), and we used the fixed effects model (Fig.",
+      "context_window": "erogeneity was presented in the included studies (I 2 = 0%, P = 0.98), and we used the fixed effects model (Fig. 6 C). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-16491",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.03 to 0.05",
+      "numeric_values": [
+        -0.03,
+        0.05
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 16491,
+      "sentence": "GLP-1RA intervention was associated with a reduction in LDL when compared to those given metformin or placebo (MD = 0.01; 95% CI -0.03 to 0.05; P = 0.59; Fig.",
+      "context_window": "en compared to those given metformin or placebo (MD = 0.01; 95% CI -0.03 to 0.05; P = 0.59; Fig. 6 C). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-16513",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16513,
+      "sentence": "GLP-1RA intervention was associated with a reduction in LDL when compared to those given metformin or placebo (MD = 0.01; 95% CI -0.03 to 0.05; P = 0.59; Fig.",
+      "context_window": "iven metformin or placebo (MD = 0.01; 95% CI -0.03 to 0.05; P = 0.59; Fig. 6 C). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-16797",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.03 to -0.06",
+      "numeric_values": [
+        -0.03,
+        -0.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 16797,
+      "sentence": "S7 C, GLP-1RA intervention was not associated with a reduction in LDL when compared to placebo (MD = 0.01; 95% CI -0.03 to -0.06; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10; P = 0.92).",
+      "context_window": "ith a reduction in LDL when compared to placebo (MD = 0.01; 95% CI -0.03 to -0.06; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-16820",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16820,
+      "sentence": "S7 C, GLP-1RA intervention was not associated with a reduction in LDL when compared to placebo (MD = 0.01; 95% CI -0.03 to -0.06; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10; P = 0.92).",
+      "context_window": "when compared to placebo (MD = 0.01; 95% CI -0.03 to -0.06; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10; P = 0.92).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-16856",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.09 to 0.10",
+      "numeric_values": [
+        -0.09,
+        0.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 16856,
+      "sentence": "S7 C, GLP-1RA intervention was not associated with a reduction in LDL when compared to placebo (MD = 0.01; 95% CI -0.03 to -0.06; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10; P = 0.92).",
+      "context_window": "95% CI -0.03 to -0.06; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10; P = 0.92). In terms of reduction in TG levels, 9 studies",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-16878",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16878,
+      "sentence": "S7 C, GLP-1RA intervention was not associated with a reduction in LDL when compared to placebo (MD = 0.01; 95% CI -0.03 to -0.06; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10; P = 0.92).",
+      "context_window": "; P = 0.001) or metformin (MD = 0.00; 95% CI -0.09 to 0.10; P = 0.92). In terms of reduction in TG levels, 9 studies (with 324",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-17113",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17113,
+      "sentence": "Due to the heterogeneity presented in the included studies (I 2 = 84%, P < 0.0001), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies (I 2 = 84%, P < 0.0001), we used the random effects model (Fig. 6 D).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-17118",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17118,
+      "sentence": "Due to the heterogeneity presented in the included studies (I 2 = 84%, P < 0.0001), we used the random effects model (Fig.",
+      "context_window": "heterogeneity presented in the included studies (I 2 = 84%, P < 0.0001), we used the random effects model (Fig. 6 D). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-17307",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.18 to 0.09",
+      "numeric_values": [
+        -0.18,
+        0.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 17307,
+      "sentence": "GLP-1RA intervention was not associated with reduction in TG levels when compared to those given metformin or placebo (MD = -0.04; 95% CI -0.18 to 0.09; P = 0.50; Fig.",
+      "context_window": "n compared to those given metformin or placebo (MD = -0.04; 95% CI -0.18 to 0.09; P = 0.50; Fig. 6 D). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-17329",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17329,
+      "sentence": "GLP-1RA intervention was not associated with reduction in TG levels when compared to those given metformin or placebo (MD = -0.04; 95% CI -0.18 to 0.09; P = 0.50; Fig.",
+      "context_window": "ven metformin or placebo (MD = -0.04; 95% CI -0.18 to 0.09; P = 0.50; Fig. 6 D). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-17609",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.18 to 0.09",
+      "numeric_values": [
+        -0.18,
+        0.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 17609,
+      "sentence": "S7 D, GLP-1RA intervention was associated with a reduction in TG when compared to placebo (MD = -0.20; 95% CI -0.18 to 0.09; P = 0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0.18; P = 0.26).",
+      "context_window": "ith a reduction in TG when compared to placebo (MD = -0.20; 95% CI -0.18 to 0.09; P = 0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-17631",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17631,
+      "sentence": "S7 D, GLP-1RA intervention was associated with a reduction in TG when compared to placebo (MD = -0.20; 95% CI -0.18 to 0.09; P = 0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0.18; P = 0.26).",
+      "context_window": "when compared to placebo (MD = -0.20; 95% CI -0.18 to 0.09; P = 0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0.18; P = 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-17672",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.05 to 0.18",
+      "numeric_values": [
+        -0.05,
+        0.18
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 17672,
+      "sentence": "S7 D, GLP-1RA intervention was associated with a reduction in TG when compared to placebo (MD = -0.20; 95% CI -0.18 to 0.09; P = 0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0.18; P = 0.26).",
+      "context_window": "CI -0.18 to 0.09; P = 0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0.18; P = 0.26). Funnel plots of reduction in total cholesterol,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-17694",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17694,
+      "sentence": "S7 D, GLP-1RA intervention was associated with a reduction in TG when compared to placebo (MD = -0.20; 95% CI -0.18 to 0.09; P = 0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0.18; P = 0.26).",
+      "context_window": "0.001) but not metformin (MD = 0.07; 95% CI -0.05 to 0.18; P = 0.26). Funnel plots of reduction in total cholesterol, HDL, LDL",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-18020",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18020,
+      "sentence": "Due to the heterogeneity presented in the included studies (I 2 = 52%, P = 0.02), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies (I 2 = 52%, P = 0.02), we used the random effects model (Fig. 7 A). GL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-18025",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18025,
+      "sentence": "Due to the heterogeneity presented in the included studies (I 2 = 52%, P = 0.02), we used the random effects model (Fig.",
+      "context_window": "heterogeneity presented in the included studies (I 2 = 52%, P = 0.02), we used the random effects model (Fig. 7 A). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-18201",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.07",
+      "numeric_values": [
+        3.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18201,
+      "sentence": "GLP-1RA intervention was associated with higher nausea events when compared to the patients given metformin or placebo (OR = 3.07; 95% CI 1.56 to 6.03; P = 0.02; Fig.",
+      "context_window": "s when compared to the patients given metformin or placebo (OR = 3.07; 95% CI 1.56 to 6.03; P = 0.02; Fig. 7 A). For the subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-18212",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.56 to 6.03",
+      "numeric_values": [
+        1.56,
+        6.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18212,
+      "sentence": "GLP-1RA intervention was associated with higher nausea events when compared to the patients given metformin or placebo (OR = 3.07; 95% CI 1.56 to 6.03; P = 0.02; Fig.",
+      "context_window": "ared to the patients given metformin or placebo (OR = 3.07; 95% CI 1.56 to 6.03; P = 0.02; Fig. 7 A). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-18233",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18233,
+      "sentence": "GLP-1RA intervention was associated with higher nausea events when compared to the patients given metformin or placebo (OR = 3.07; 95% CI 1.56 to 6.03; P = 0.02; Fig.",
+      "context_window": "given metformin or placebo (OR = 3.07; 95% CI 1.56 to 6.03; P = 0.02; Fig. 7 A). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-18507",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 5.33",
+      "numeric_values": [
+        5.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18507,
+      "sentence": "S9 A, GLP-1RA intervention was associated with increased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02).",
+      "context_window": "ated with increased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-18518",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.53 to 18.63",
+      "numeric_values": [
+        1.53,
+        18.63
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18518,
+      "sentence": "S9 A, GLP-1RA intervention was associated with increased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02).",
+      "context_window": "ncreased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-18540",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18540,
+      "sentence": "S9 A, GLP-1RA intervention was associated with increased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02).",
+      "context_window": "when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-18565",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.58",
+      "numeric_values": [
+        2.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18565,
+      "sentence": "S9 A, GLP-1RA intervention was associated with increased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02).",
+      "context_window": "(OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02). Meta-analysis of nausea (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-18576",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.15 to 5.76",
+      "numeric_values": [
+        1.15,
+        5.76
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18576,
+      "sentence": "S9 A, GLP-1RA intervention was associated with increased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02).",
+      "context_window": "; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02). Meta-analysis of nausea ( A ), vomiting ( B ),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-18597",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18597,
+      "sentence": "S9 A, GLP-1RA intervention was associated with increased nausea events when compared to placebo (OR = 5.33; 95% CI 1.53 to 18.63; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02).",
+      "context_window": "3; P = 0.009) or metformin (OR = 2.58; 95% CI 1.15 to 5.76; P = 0.02). Meta-analysis of nausea ( A ), vomiting ( B ), diarrhea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-19020",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19020,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.92), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 0%, P = 0.92), and we used the fixed effects model (Fig. 7 B).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-19024",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19024,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.92), and we used the fixed effects model (Fig.",
+      "context_window": "erogeneity was presented in the included studies (I 2 = 0%, P = 0.92), and we used the fixed effects model (Fig. 7 B). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-19205",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.05",
+      "numeric_values": [
+        2.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19205,
+      "sentence": "GLP-1RA intervention was associated with higher vomiting events when compared to the patients given metformin or placebo (OR = 2.05; 95% CI 1.04 to 4.06; P = 0.04; Fig.",
+      "context_window": "s when compared to the patients given metformin or placebo (OR = 2.05; 95% CI 1.04 to 4.06; P = 0.04; Fig. 7 B). For the subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-19216",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.04 to 4.06",
+      "numeric_values": [
+        1.04,
+        4.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 19216,
+      "sentence": "GLP-1RA intervention was associated with higher vomiting events when compared to the patients given metformin or placebo (OR = 2.05; 95% CI 1.04 to 4.06; P = 0.04; Fig.",
+      "context_window": "ared to the patients given metformin or placebo (OR = 2.05; 95% CI 1.04 to 4.06; P = 0.04; Fig. 7 B). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-19237",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19237,
+      "sentence": "GLP-1RA intervention was associated with higher vomiting events when compared to the patients given metformin or placebo (OR = 2.05; 95% CI 1.04 to 4.06; P = 0.04; Fig.",
+      "context_window": "given metformin or placebo (OR = 2.05; 95% CI 1.04 to 4.06; P = 0.04; Fig. 7 B). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-19517",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 5.99",
+      "numeric_values": [
+        5.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19517,
+      "sentence": "S9 B, GLP-1RA intervention was not associated with increased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09).",
+      "context_window": "ed with increased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-19528",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.32 to 112.41",
+      "numeric_values": [
+        0.32,
+        112.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 19528,
+      "sentence": "S9 B, GLP-1RA intervention was not associated with increased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09).",
+      "context_window": "reased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-19551",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19551,
+      "sentence": "S9 B, GLP-1RA intervention was not associated with increased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09).",
+      "context_window": "when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-19575",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.85",
+      "numeric_values": [
+        1.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19575,
+      "sentence": "S9 B, GLP-1RA intervention was not associated with increased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09).",
+      "context_window": "(OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09). In terms of diarrhea, 9 s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-19586",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.91 to 3.76",
+      "numeric_values": [
+        0.91,
+        3.76
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 19586,
+      "sentence": "S9 B, GLP-1RA intervention was not associated with increased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09).",
+      "context_window": "; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09). In terms of diarrhea, 9 studies (with 369 and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-19607",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19607,
+      "sentence": "S9 B, GLP-1RA intervention was not associated with increased vomiting events when compared to placebo (OR = 5.99; 95% CI 0.32 to 112.41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09).",
+      "context_window": "41; P = 0.23) or metformin (OR = 1.85; 95% CI 0.91 to 3.76; P = 0.09). In terms of diarrhea, 9 studies (with 369 and 319 subjec",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-19824",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19824,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.39), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 0%, P = 0.39), and we used the fixed effects model (Fig. 7 C).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-19828",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19828,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.39), and we used the fixed effects model (Fig.",
+      "context_window": "erogeneity was presented in the included studies (I 2 = 0%, P = 0.39), and we used the fixed effects model (Fig. 7 C). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-20013",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.06",
+      "numeric_values": [
+        2.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20013,
+      "sentence": "GLP-1RA intervention was not associated with higher diarrhea events when compared to the patients given metformin or placebo (OR = 2.06; 95% CI 0.58 to 6.20; P = 0.20; Fig.",
+      "context_window": "s when compared to the patients given metformin or placebo (OR = 2.06; 95% CI 0.58 to 6.20; P = 0.20; Fig. 7 C). For the subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-20024",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.58 to 6.20",
+      "numeric_values": [
+        0.58,
+        6.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 20024,
+      "sentence": "GLP-1RA intervention was not associated with higher diarrhea events when compared to the patients given metformin or placebo (OR = 2.06; 95% CI 0.58 to 6.20; P = 0.20; Fig.",
+      "context_window": "ared to the patients given metformin or placebo (OR = 2.06; 95% CI 0.58 to 6.20; P = 0.20; Fig. 7 C). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-20045",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20045,
+      "sentence": "GLP-1RA intervention was not associated with higher diarrhea events when compared to the patients given metformin or placebo (OR = 2.06; 95% CI 0.58 to 6.20; P = 0.20; Fig.",
+      "context_window": "given metformin or placebo (OR = 2.06; 95% CI 0.58 to 6.20; P = 0.20; Fig. 7 C). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-20325",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 13.08",
+      "numeric_values": [
+        13.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20325,
+      "sentence": "S9 C, GLP-1RA intervention was not associated with increased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6).",
+      "context_window": "ed with increased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-20337",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 2.06 to 82.80",
+      "numeric_values": [
+        2.06,
+        82.8
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 20337,
+      "sentence": "S9 C, GLP-1RA intervention was not associated with increased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6).",
+      "context_window": "eased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-20359",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20359,
+      "sentence": "S9 C, GLP-1RA intervention was not associated with increased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6).",
+      "context_window": "when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6). I",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-20384",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.37",
+      "numeric_values": [
+        1.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20384,
+      "sentence": "S9 C, GLP-1RA intervention was not associated with increased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6).",
+      "context_window": "(OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6). In terms of constipation,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-20395",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.40 to 4.67",
+      "numeric_values": [
+        0.4,
+        4.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 20395,
+      "sentence": "S9 C, GLP-1RA intervention was not associated with increased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6).",
+      "context_window": "; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6). In terms of constipation, 7 studies (with 331 a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-20416",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.6",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20416,
+      "sentence": "S9 C, GLP-1RA intervention was not associated with increased diarrhea events when compared to placebo (OR = 13.08; 95% CI 2.06 to 82.80; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6).",
+      "context_window": "0; P = 0.006) or metformin (OR = 1.37; 95% CI 0.40 to 4.67; P = 0.6). In terms of constipation, 7 studies (with 331 and 279 su",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-20636",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20636,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 47%, P = 0.09), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 47%, P = 0.09), and we used the fixed effects model (Fig. 7 D).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-20641",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20641,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 47%, P = 0.09), and we used the fixed effects model (Fig.",
+      "context_window": "rogeneity was presented in the included studies (I 2 = 47%, P = 0.09), and we used the fixed effects model (Fig. 7 D). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-20830",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.82",
+      "numeric_values": [
+        0.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20830,
+      "sentence": "GLP-1RA intervention was not associated with higher constipation events when compared to the patients given metformin or placebo (OR = 0.82; 95% CI 0.38 to 1.75; P = 0.60; Fig.",
+      "context_window": "s when compared to the patients given metformin or placebo (OR = 0.82; 95% CI 0.38 to 1.75; P = 0.60; Fig. 7 D). For the subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-20841",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.38 to 1.75",
+      "numeric_values": [
+        0.38,
+        1.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 20841,
+      "sentence": "GLP-1RA intervention was not associated with higher constipation events when compared to the patients given metformin or placebo (OR = 0.82; 95% CI 0.38 to 1.75; P = 0.60; Fig.",
+      "context_window": "ared to the patients given metformin or placebo (OR = 0.82; 95% CI 0.38 to 1.75; P = 0.60; Fig. 7 D). For the subgroup analysis, the studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-20862",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20862,
+      "sentence": "GLP-1RA intervention was not associated with higher constipation events when compared to the patients given metformin or placebo (OR = 0.82; 95% CI 0.38 to 1.75; P = 0.60; Fig.",
+      "context_window": "given metformin or placebo (OR = 0.82; 95% CI 0.38 to 1.75; P = 0.60; Fig. 7 D). For the subgroup analysis, the studies were cla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-21146",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.50",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21146,
+      "sentence": "S9 D, GLP-1RA intervention was not associated with increased constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49).",
+      "context_window": "ith increased constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 9",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-21157",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.15 to 15.14",
+      "numeric_values": [
+        0.15,
+        15.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 21157,
+      "sentence": "S9 D, GLP-1RA intervention was not associated with increased constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49).",
+      "context_window": "ed constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-21179",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.73",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21179,
+      "sentence": "S9 D, GLP-1RA intervention was not associated with increased constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49).",
+      "context_window": "when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-21203",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.75",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21203,
+      "sentence": "S9 D, GLP-1RA intervention was not associated with increased constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49).",
+      "context_window": "o (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49). In terms of stomachache,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-21214",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.33 to 1.70",
+      "numeric_values": [
+        0.33,
+        1.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 21214,
+      "sentence": "S9 D, GLP-1RA intervention was not associated with increased constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49).",
+      "context_window": "0; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49). In terms of stomachache, 4 studies (with 229 s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-21235",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.49",
+      "numeric_values": [
+        0.49
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21235,
+      "sentence": "S9 D, GLP-1RA intervention was not associated with increased constipation events when compared to placebo (OR = 1.50; 95% CI 0.15 to 15.14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49).",
+      "context_window": "14; P = 0.73) or metformin (OR = 0.75; 95% CI 0.33 to 1.70; P = 0.49). In terms of stomachache, 4 studies (with 229 subjects fr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-21416",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 21416,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.96), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 0%, P = 0.96), and we used the fixed effects model (Fig. 7 D).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-21420",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21420,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.96), and we used the fixed effects model (Fig.",
+      "context_window": "erogeneity was presented in the included studies (I 2 = 0%, P = 0.96), and we used the fixed effects model (Fig. 7 D). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-21603",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21603,
+      "sentence": "GLP-1RA intervention was associated with lower stomachache events when compared to the patients given metformin or placebo (OR = 0.15; 95% CI 0.03 to 0.66; P = 0.01; Fig.",
+      "context_window": "s when compared to the patients given metformin or placebo (OR = 0.15; 95% CI 0.03 to 0.66; P = 0.01; Fig. 7 E). In terms of bloa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-21614",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.03 to 0.66",
+      "numeric_values": [
+        0.03,
+        0.66
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 21614,
+      "sentence": "GLP-1RA intervention was associated with lower stomachache events when compared to the patients given metformin or placebo (OR = 0.15; 95% CI 0.03 to 0.66; P = 0.01; Fig.",
+      "context_window": "ared to the patients given metformin or placebo (OR = 0.15; 95% CI 0.03 to 0.66; P = 0.01; Fig. 7 E). In terms of bloating, 4 studies (with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-21635",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21635,
+      "sentence": "GLP-1RA intervention was associated with lower stomachache events when compared to the patients given metformin or placebo (OR = 0.15; 95% CI 0.03 to 0.66; P = 0.01; Fig.",
+      "context_window": "given metformin or placebo (OR = 0.15; 95% CI 0.03 to 0.66; P = 0.01; Fig. 7 E). In terms of bloating, 4 studies (with 229 subje",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-21822",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 21822,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.78), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 0%, P = 0.78), and we used the fixed effects model (Fig. 7 F).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-21826",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21826,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 0.78), and we used the fixed effects model (Fig.",
+      "context_window": "erogeneity was presented in the included studies (I 2 = 0%, P = 0.78), and we used the fixed effects model (Fig. 7 F). GLP-1RA i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-22007",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22007,
+      "sentence": "GLP-1RA intervention was not associated with increased bloating events when compared to those given metformin or placebo (OR = 0.83; 95% CI 0.38-1.93; P = 0.67; Fig.",
+      "context_window": "g events when compared to those given metformin or placebo (OR = 0.83; 95% CI 0.38-1.93; P = 0.67; Fig. 7 F). In terms of dizzin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-22018",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.38-1.93",
+      "numeric_values": [
+        0.38,
+        1.93
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 22018,
+      "sentence": "GLP-1RA intervention was not associated with increased bloating events when compared to those given metformin or placebo (OR = 0.83; 95% CI 0.38-1.93; P = 0.67; Fig.",
+      "context_window": "en compared to those given metformin or placebo (OR = 0.83; 95% CI 0.38-1.93; P = 0.67; Fig. 7 F). In terms of dizziness, 5 studies (wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-22036",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22036,
+      "sentence": "GLP-1RA intervention was not associated with increased bloating events when compared to those given metformin or placebo (OR = 0.83; 95% CI 0.38-1.93; P = 0.67; Fig.",
+      "context_window": "se given metformin or placebo (OR = 0.83; 95% CI 0.38-1.93; P = 0.67; Fig. 7 F). In terms of dizziness, 5 studies (with 276 and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-22264",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22264,
+      "sentence": "No heterogeneity was presented in the included studies (I 2 = 0%, P = 1.00), and we used the fixed effects model (Fig.",
+      "context_window": "heterogeneity was presented in the included studies (I 2 = 0%, P = 1.00), and we used the fixed effects model (Fig. 7 G).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-22439",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 5.58",
+      "numeric_values": [
+        5.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22439,
+      "sentence": "GLP-1RA intervention was associated with increased dizziness when compared to those given metformin or placebo (OR = 5.58; 95% CI 1.23-25.22; P = 0.03; Fig.",
+      "context_window": "izziness when compared to those given metformin or placebo (OR = 5.58; 95% CI 1.23-25.22; P = 0.03; Fig. 7 G). In terms of fatig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-22450",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.23-25.22",
+      "numeric_values": [
+        1.23,
+        25.22
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 22450,
+      "sentence": "GLP-1RA intervention was associated with increased dizziness when compared to those given metformin or placebo (OR = 5.58; 95% CI 1.23-25.22; P = 0.03; Fig.",
+      "context_window": "en compared to those given metformin or placebo (OR = 5.58; 95% CI 1.23-25.22; P = 0.03; Fig. 7 G). In terms of fatigue, 1 study (with 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-22469",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22469,
+      "sentence": "GLP-1RA intervention was associated with increased dizziness when compared to those given metformin or placebo (OR = 5.58; 95% CI 1.23-25.22; P = 0.03; Fig.",
+      "context_window": "e given metformin or placebo (OR = 5.58; 95% CI 1.23-25.22; P = 0.03; Fig. 7 G). In terms of fatigue, 1 study (with 20 subjects",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-22695",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22695,
+      "sentence": "GLP-1RA intervention was not associated with fatigue when compared to those given metformin or placebo (OR = 0.18; 95% CI 0.01-4.01; P = 0.28; Fig.",
+      "context_window": "fatigue when compared to those given metformin or placebo (OR = 0.18; 95% CI 0.01-4.01; P = 0.28; Fig. 7 H). In terms of headach",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-22706",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.01-4.01",
+      "numeric_values": [
+        0.01,
+        4.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 22706,
+      "sentence": "GLP-1RA intervention was not associated with fatigue when compared to those given metformin or placebo (OR = 0.18; 95% CI 0.01-4.01; P = 0.28; Fig.",
+      "context_window": "en compared to those given metformin or placebo (OR = 0.18; 95% CI 0.01-4.01; P = 0.28; Fig. 7 H). In terms of headache, 4 studies (with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-22724",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22724,
+      "sentence": "GLP-1RA intervention was not associated with fatigue when compared to those given metformin or placebo (OR = 0.18; 95% CI 0.01-4.01; P = 0.28; Fig.",
+      "context_window": "se given metformin or placebo (OR = 0.18; 95% CI 0.01-4.01; P = 0.28; Fig. 7 H). In terms of headache, 4 studies (with 92 and 68",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-pct-22952",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22952,
+      "sentence": "Due to the heterogeneity presented in the included studies (I 2 = 66%, P = 0.05), we used the random effects model (Fig.",
+      "context_window": "the heterogeneity presented in the included studies (I 2 = 66%, P = 0.05), we used the random effects model (Fig. 7 I). GL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-22957",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22957,
+      "sentence": "Due to the heterogeneity presented in the included studies (I 2 = 66%, P = 0.05), we used the random effects model (Fig.",
+      "context_window": "heterogeneity presented in the included studies (I 2 = 66%, P = 0.05), we used the random effects model (Fig. 7 I). GLP-1RA inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-23136",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.20",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23136,
+      "sentence": "GLP-1RA intervention was not associated with increased dizziness events when compared to those given metformin or placebo (OR = 1.20; 95% CI 0.05-26.11; P = 0.91; Fig.",
+      "context_window": "s events when compared to those given metformin or placebo (OR = 1.20; 95% CI 0.05-26.11; P = 0.91; Fig. 7 I). In terms of insom",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-23147",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.05-26.11",
+      "numeric_values": [
+        0.05,
+        26.11
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 23147,
+      "sentence": "GLP-1RA intervention was not associated with increased dizziness events when compared to those given metformin or placebo (OR = 1.20; 95% CI 0.05-26.11; P = 0.91; Fig.",
+      "context_window": "en compared to those given metformin or placebo (OR = 1.20; 95% CI 0.05-26.11; P = 0.91; Fig. 7 I). In terms of insomnia, 1 study (with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-23166",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.91",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23166,
+      "sentence": "GLP-1RA intervention was not associated with increased dizziness events when compared to those given metformin or placebo (OR = 1.20; 95% CI 0.05-26.11; P = 0.91; Fig.",
+      "context_window": "e given metformin or placebo (OR = 1.20; 95% CI 0.05-26.11; P = 0.91; Fig. 7 I). In terms of insomnia, 1 study (with 14 subject",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-or-a-23408",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.22",
+      "numeric_values": [
+        3.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23408,
+      "sentence": "GLP-1RA intervention was not associated with insomnia events when compared to the patients given metformin or placebo (OR = 3.22; 95% CI 0.12-86.09; P = 0.49; Fig.",
+      "context_window": "s when compared to the patients given metformin or placebo (OR = 3.22; 95% CI 0.12-86.09; P = 0.49; Fig. 7 J). Funnel plots of na",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-ci-23419",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.12-86.09",
+      "numeric_values": [
+        0.12,
+        86.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 23419,
+      "sentence": "GLP-1RA intervention was not associated with insomnia events when compared to the patients given metformin or placebo (OR = 3.22; 95% CI 0.12-86.09; P = 0.49; Fig.",
+      "context_window": "ared to the patients given metformin or placebo (OR = 3.22; 95% CI 0.12-86.09; P = 0.49; Fig. 7 J). Funnel plots of nausea, vomiting, dia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12075827_efficacy_and_safety_of_glp_1_receptor_agonists_on_weight_man-p-23438",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.49",
+      "numeric_values": [
+        0.49
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23438,
+      "sentence": "GLP-1RA intervention was not associated with insomnia events when compared to the patients given metformin or placebo (OR = 3.22; 95% CI 0.12-86.09; P = 0.49; Fig.",
+      "context_window": "s given metformin or placebo (OR = 3.22; 95% CI 0.12-86.09; P = 0.49; Fig. 7 J). Funnel plots of nausea, vomiting, diarrhea, con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "paper_id": "PMC12650194_employing_an_artificial_intelligence_platform_to_enhance_tre",
+  "doi": "10.3390/biomedicines13112645",
+  "extracted_at": "2026-05-05T21:26:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12650194_employing_an_artificial_intelligence_platform_to_enhance_tre-pct-1473",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1473,
+      "sentence": "A percentage coefficient of variation (CV) threshold of 36% is often used to distinguish between stable and unstable glycemia, with higher variability being strongly associated with an increased risk of hypoglycemia, particularly in patients treated with insulin [ 86 , 87 ].",
+      "context_window": "ds. A percentage coefficient of variation (CV) threshold of 36% is often used to distinguish between stable and unstable gl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12650194_employing_an_artificial_intelligence_platform_to_enhance_tre-pct-2679",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 2679,
+      "sentence": "Collectively, these findings support considering glycemic variability (CV > 36%) as a marker of elevated cardiovascular risk in diabetes, emphasizing the need for therapeutic strategies that stabilize glycemia and reduce fluctuations [ 91 ].",
+      "context_window": "ese findings support considering glycemic variability (CV > 36%) as a marker of elevated cardiovascular risk in diabetes, e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12650194_employing_an_artificial_intelligence_platform_to_enhance_tre-u-3212",
+      "claim_type": "unit_value",
+      "raw_text": "3.6 years",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 3212,
+      "sentence": "The trial was discontinued early (after a mean follow-up of 3.6 years, rather than the planned 5.6 years) due to an observed increase in all-cause mortality in the intensive treatment group.",
+      "context_window": "The trial was discontinued early (after a mean follow-up of 3.6 years, rather than the planned 5.6 years) due to an observed incr",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12650194_employing_an_artificial_intelligence_platform_to_enhance_tre-u-3247",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 years",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 3247,
+      "sentence": "The trial was discontinued early (after a mean follow-up of 3.6 years, rather than the planned 5.6 years) due to an observed increase in all-cause mortality in the intensive treatment group.",
+      "context_window": "fter a mean follow-up of 3.6 years, rather than the planned 5.6 years) due to an observed increase in all-cause mortality in the",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

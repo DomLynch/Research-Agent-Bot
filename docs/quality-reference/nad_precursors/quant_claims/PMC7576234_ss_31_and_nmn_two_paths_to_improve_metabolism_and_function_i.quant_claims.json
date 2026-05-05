@@ -1,0 +1,823 @@
+{
+  "paper_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i",
+  "doi": "10.1111/acel.13213",
+  "extracted_at": "2026-05-05T21:28:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 20,
+    "p_value": 17,
+    "sample_size": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-2836",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2836,
+      "sentence": "We have recently demonstrated that SS\u201031 improves diastolic function and reduces oxidative stress in the hearts of aged mice when delivered for 8 weeks (Chiao et al., 2020 ).",
+      "context_window": "dative stress in the hearts of aged mice when delivered for 8 weeks (Chiao et al., 2020 ). NMN is a naturally occurring nucleo",
+      "claim_role": "population",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-4376",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 4376,
+      "sentence": "To test the effects of these drugs on the aged heart, mice aged 24 months at the start of treatment (Old) were randomly sorted into Control, SS\u201031, NMN, or Combined (SS\u201031 + NMN) treatment groups for comparison with mice 5-6 months of age (Young).",
+      "context_window": "est the effects of these drugs on the aged heart, mice aged 24 months at the start of treatment (Old) were randomly sorted into C",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-4535",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 4535,
+      "sentence": "To test the effects of these drugs on the aged heart, mice aged 24 months at the start of treatment (Old) were randomly sorted into Control, SS\u201031, NMN, or Combined (SS\u201031 + NMN) treatment groups for comparison with mice 5-6 months of age (Young).",
+      "context_window": "d (SS\u201031 + NMN) treatment groups for comparison with mice 5-6 months of age (Young). Treatment doses of SS\u201031 and NMN were in al",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-83",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 83,
+      "sentence": "Echocardiography was performed on all mice at baseline and again on Old mice after 8 weeks of treatment.",
+      "context_window": "rformed on all mice at baseline and again on Old mice after 8 weeks of treatment. Diastolic function was assessed by determinin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-598",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 598,
+      "sentence": "Old Control mice had a significantly ( p < 0.05) lower Ea/Aa compared to Young mice at their baseline, indicating a decline in diastolic function with age.",
+      "context_window": ", & Howlett, 2019 ). Old Control mice had a significantly ( p < 0.05) lower Ea/Aa compared to Young mice at their baseline, indi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-809",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 809,
+      "sentence": "As found previously (Chiao et al., 2020 ), Old mice treated with SS\u201031 showed a significant ( p < 0.05) improvement in Ea/Aa, restoring it approximately halfway to that of Young Ea/Aa values, whereas the Control and NMN\u2010treated groups showed no change in this parameter (Figure 1a ).",
+      "context_window": "2020 ), Old mice treated with SS\u201031 showed a significant ( p < 0.05) improvement in Ea/Aa, restoring it approximately halfway t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1232",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1232,
+      "sentence": "Effect of SS\u201031 and NMN on heart function. (a) Ea/Aa ratio at baseline (treatment day 0) and endpoint (8 weeks of treatment) and (b) percent fractional shortening at low work (\u2010dobutamine) and high work (+dobutamine) at the 8 week treatment endpoint, measured by echocardiography.",
+      "context_window": "(a) Ea/Aa ratio at baseline (treatment day 0) and endpoint (8 weeks of treatment) and (b) percent fractional shortening at low",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1353",
+      "claim_type": "unit_value",
+      "raw_text": "8 week",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 1353,
+      "sentence": "Effect of SS\u201031 and NMN on heart function. (a) Ea/Aa ratio at baseline (treatment day 0) and endpoint (8 weeks of treatment) and (b) percent fractional shortening at low work (\u2010dobutamine) and high work (+dobutamine) at the 8 week treatment endpoint, measured by echocardiography.",
+      "context_window": "t low work (\u2010dobutamine) and high work (+dobutamine) at the 8 week treatment endpoint, measured by echocardiography. N = 29 Yo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-1410",
+      "claim_type": "sample_size",
+      "raw_text": "N = 29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1410,
+      "sentence": "N = 29 Young, 49 Old Control, 29 Old SS\u201031, 28 Old NMN, 10 Old Combined. (c) High work (+dobutamine) percent fractional shortening measured by echocardiography in Young and Old mice at 0, 1, 6, 10, 20, 30, 42, and 56 days of NMN treatment.",
+      "context_window": "he 8 week treatment endpoint, measured by echocardiography. N = 29 Young, 49 Old Control, 29 Old SS\u201031, 28 Old NMN, 10 Old Com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1624",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1624,
+      "sentence": "N = 29 Young, 49 Old Control, 29 Old SS\u201031, 28 Old NMN, 10 Old Combined. (c) High work (+dobutamine) percent fractional shortening measured by echocardiography in Young and Old mice at 0, 1, 6, 10, 20, 30, 42, and 56 days of NMN treatment.",
+      "context_window": "raphy in Young and Old mice at 0, 1, 6, 10, 20, 30, 42, and 56 days of NMN treatment. N = 8 Young, 19 Old. (d) Ratio of heart w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-1650",
+      "claim_type": "sample_size",
+      "raw_text": "N = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1650,
+      "sentence": "N = 8 Young, 19 Old. (d) Ratio of heart weight (g) to tibia length (mm) assessed at endpoint (8 weeks of treatment) as a measure of cardiac hypertrophy.",
+      "context_window": "e at 0, 1, 6, 10, 20, 30, 42, and 56 days of NMN treatment. N = 8 Young, 19 Old. (d) Ratio of heart weight (g) to tibia lengt",
+      "claim_role": "duration",
+      "endpoint": "muscle hypertrophy",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1744",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1744,
+      "sentence": "N = 8 Young, 19 Old. (d) Ratio of heart weight (g) to tibia length (mm) assessed at endpoint (8 weeks of treatment) as a measure of cardiac hypertrophy.",
+      "context_window": "heart weight (g) to tibia length (mm) assessed at endpoint (8 weeks of treatment) as a measure of cardiac hypertrophy. N = 21 Y",
+      "claim_role": "duration",
+      "endpoint": "muscle hypertrophy",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-1803",
+      "claim_type": "sample_size",
+      "raw_text": "N = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1803,
+      "sentence": "N = 21 Young, 21 Old Control, 16 Old SS\u201031, 15 Old NMN, 14 Old Combined.",
+      "context_window": "(8 weeks of treatment) as a measure of cardiac hypertrophy. N = 21 Young, 21 Old Control, 16 Old SS\u201031, 15 Old NMN, 14 Old Com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-2506",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2506,
+      "sentence": "Long\u2010term assessment of heart rates showed that dobutamine administration results in a similar significant ( p < 0.001) increase in heart rate across all groups (Figure S1 ).",
+      "context_window": "obutamine administration results in a similar significant ( p < 0.001) increase in heart rate across all groups (Figure S1 ). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-2847",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2847,
+      "sentence": "Under higher workload conditions, however, Old Control mice manifested a significantly ( p < 0.0001) lower percent fractional shortening than Young mice, indicating a decline in high work systolic function with age.",
+      "context_window": "ons, however, Old Control mice manifested a significantly ( p < 0.0001) lower percent fractional shortening than Young mice, indic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-3099",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3099,
+      "sentence": "SS\u201031 treatment did not significantly affect fractional shortening, but NMN and the Combined treatments both significantly ( p < 0.005) improved high work percent fractional shortening in Old mice, fully restoring it to Young levels (Figure 1b ).",
+      "context_window": "g, but NMN and the Combined treatments both significantly ( p < 0.005) improved high work percent fractional shortening in Old mi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-3324",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3324,
+      "sentence": "While our previous studies have shown that SS\u201031 induces a partial effect on diastolic function after 4 weeks of treatment and appears to reach its peak effect at 8 weeks (Chiao et al., 2020 ), it was unknown on what timescale the cardiac functional improvements induced by NMN occur.",
+      "context_window": "SS\u201031 induces a partial effect on diastolic function after 4 weeks of treatment and appears to reach its peak effect at 8 week",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-3385",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3385,
+      "sentence": "While our previous studies have shown that SS\u201031 induces a partial effect on diastolic function after 4 weeks of treatment and appears to reach its peak effect at 8 weeks (Chiao et al., 2020 ), it was unknown on what timescale the cardiac functional improvements induced by NMN occur.",
+      "context_window": "weeks of treatment and appears to reach its peak effect at 8 weeks (Chiao et al., 2020 ), it was unknown on what timescale the",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-3684",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3684,
+      "sentence": "After 10 days of treatment, Old mice treated with NMN showed a significant ( p < 0.05) improvement in high work fractional shortening, restoring it to Young levels.",
+      "context_window": "high work percent fractional shortening (Figure 1c ). After 10 days of treatment, Old mice treated with NMN showed a significan",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-3755",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3755,
+      "sentence": "After 10 days of treatment, Old mice treated with NMN showed a significant ( p < 0.05) improvement in high work fractional shortening, restoring it to Young levels.",
+      "context_window": "treatment, Old mice treated with NMN showed a significant ( p < 0.05) improvement in high work fractional shortening, restoring",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-4141",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4141,
+      "sentence": "Young mice were also given SS\u201031 to determine whether there was any effect on diastolic function, but the Ea/Aa ratio was not significantly changed after 4 or 8 weeks of SS\u201031 treatment (Figure S3 ).",
+      "context_window": "ut the Ea/Aa ratio was not significantly changed after 4 or 8 weeks of SS\u201031 treatment (Figure S3 ). The persistence of the fun",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-4364",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4364,
+      "sentence": "In contrast to SS\u201031, which we have previously shown to maintain half its functional effect 4 weeks after cessation of treatment (Chiao et al., 2020 ), NMN's effect on aged hearts is more transient.",
+      "context_window": "ave previously shown to maintain half its functional effect 4 weeks after cessation of treatment (Chiao et al., 2020 ), NMN's e",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-4694",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4694,
+      "sentence": "After stopping NMN treatment, high work fractional shortening remained the same one day later but then declined at approximately the rate it had improved after starting treatment, matching the baseline for Old hearts after 10 days without treatment (Figure S4 ).",
+      "context_window": "rting treatment, matching the baseline for Old hearts after 10 days without treatment (Figure S4 ). Relative to Young mice, Ol",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-4799",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4799,
+      "sentence": "Relative to Young mice, Old Control mice showed a significant ( p < 0.05) increase in cardiac hypertrophy, measured as the ratio of heart weight to tibia length (Figure 1d ).",
+      "context_window": "tive to Young mice, Old Control mice showed a significant ( p < 0.05) increase in cardiac hypertrophy, measured as the ratio of",
+      "claim_role": "unknown",
+      "endpoint": "muscle hypertrophy",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-6102",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6102,
+      "sentence": "However, when NMN and SS\u201031 were given in combination, there was a significant ( p < 0.05) increase in NAD(H) levels.",
+      "context_window": "SS\u201031 were given in combination, there was a significant ( p < 0.05) increase in NAD(H) levels. The ratio of NAD + to NADH did",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-6453",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6453,
+      "sentence": "Of the assayed NAD precursors, only nicotinamide (NAM) showed a difference between groups, with a significant ( p < 0.02) decrease in levels between Young and Old Control hearts, and a restoration by both NMN and Combined treatments ( p < 0.05) (Figure 2c ).",
+      "context_window": "M) showed a difference between groups, with a significant ( p < 0.02) decrease in levels between Young and Old Control hearts, a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-6576",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6576,
+      "sentence": "Of the assayed NAD precursors, only nicotinamide (NAM) showed a difference between groups, with a significant ( p < 0.02) decrease in levels between Young and Old Control hearts, and a restoration by both NMN and Combined treatments ( p < 0.05) (Figure 2c ).",
+      "context_window": "ts, and a restoration by both NMN and Combined treatments ( p < 0.05) (Figure 2c ). NMN, nicotinamide riboside (NR), and nicotin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-7002",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7002,
+      "sentence": "Endpoint (8 weeks of treatment) levels of (a) NAD(H), (b) NADP + , (c) NAM, (d) NMN, (e) NR, (f) NA, and (g) NAAD in mouse hearts as measured by targeted LC\u2010MS/MS.",
+      "context_window": "sis of endpoint NAD + \u2010related metabolite levels. Endpoint (8 weeks of treatment) levels of (a) NAD(H), (b) NADP + , (c) NAM, (",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-7290",
+      "claim_type": "sample_size",
+      "raw_text": "N = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7290,
+      "sentence": "N = 11 Young, 10 Old Control, 11 Old SS\u201031, 11 Old NMN, 8 Old Combined.",
+      "context_window": "ent. The significance noted is based on these total values. N = 11 Young, 10 Old Control, 11 Old SS\u201031, 11 Old NMN, 8 Old Comb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-8947",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8947,
+      "sentence": "Endpoint (8 weeks of treatment) levels of (a) 1\u2010methylnicotinamide (MNA), (b) xanthine, and (c) choline as measured by general targeted metabolomics.",
+      "context_window": ". General metabolomics analysis of mouse hearts. Endpoint (8 weeks of treatment) levels of (a) 1\u2010methylnicotinamide (MNA), (b)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-9087",
+      "claim_type": "sample_size",
+      "raw_text": "N = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9087,
+      "sentence": "N = 12 Young, 10 Old Control, 12 Old SS\u201031, 11 Old NMN, 8 Old Combined.",
+      "context_window": "d (c) choline as measured by general targeted metabolomics. N = 12 Young, 10 Old Control, 12 Old SS\u201031, 11 Old NMN, 8 Old Comb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-9342",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9342,
+      "sentence": "Means are calculated from postprocessed values and are not log2\u2010transformed. (d) Heatmap of metabolic changes in the top 20 canonical pathways based on all changes with an unadjusted p < 0.05 when comparing Young to Old Control. (e and f) Quantification of the heatmap, separated into metabolites that decreased (e) or increased (f) with age.",
+      "context_window": "canonical pathways based on all changes with an unadjusted p < 0.05 when comparing Young to Old Control. (e and f) Quantificati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-9605",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9605,
+      "sentence": "Analysis of general trends in canonical pathways from this dataset was performed based on all changes p < 0.05 (unadjusted p \u2010values) in Young relative to Old Control hearts using Ingenuity Pathway Analysis (Qiagen, Hilden, Germany).",
+      "context_window": "thways from this dataset was performed based on all changes p < 0.05 (unadjusted p \u2010values) in Young relative to Old Control hea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-11068",
+      "claim_type": "sample_size",
+      "raw_text": "N = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11068,
+      "sentence": "N = 11 Young, 11 Old Control, 11 Old SS\u201031, 13 Old NMN, 10 Old Combined. (c) Representative image of the automated fitting model. (d) Comparison of MRS and metabolomics Old Control results.",
+      "context_window": "(b) Change in PCr/ATP ratio after injection of dobutamine. N = 11 Young, 11 Old Control, 11 Old SS\u201031, 13 Old NMN, 10 Old Com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-11258",
+      "claim_type": "sample_size",
+      "raw_text": "N = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11258,
+      "sentence": "N = 11 MRS, 10 metabolomics. (e and f) Change in (e) NAD + and (f) mitochondrial NAD(P)H after injection of dobutamine.",
+      "context_window": "(d) Comparison of MRS and metabolomics Old Control results. N = 11 MRS, 10 metabolomics. (e and f) Change in (e) NAD + and (f)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-n-11378",
+      "claim_type": "sample_size",
+      "raw_text": "N = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11378,
+      "sentence": "N = 11 Young, 10 Old Control, 9 Old SS\u201031, 11 Old NMN, 10 Old Combined.",
+      "context_window": "nd (f) mitochondrial NAD(P)H after injection of dobutamine. N = 11 Young, 10 Old Control, 9 Old SS\u201031, 11 Old NMN, 10 Old Comb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-12013",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12013,
+      "sentence": "While Young mouse hearts showed no change in PCr/ATP in response to increased workload, Old Control mouse hearts had a significant ( p < 0.05) decrease in PCr/ATP following dobutamine injection, indicating a diminished ability of the heart to handle such a workload with age.",
+      "context_window": "ased workload, Old Control mouse hearts had a significant ( p < 0.05) decrease in PCr/ATP following dobutamine injection, indica",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-14400",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.066",
+      "numeric_values": [
+        0.066
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14400,
+      "sentence": "The MRS data showed a trend of NAD + remaining stable or decreasing slightly in Young hearts with higher workload but increasing in Old Control hearts ( p = 0.066) (Figure 4e ).",
+      "context_window": "with higher workload but increasing in Old Control hearts ( p = 0.066) (Figure 4e ). SS\u201031 and the Combined treatment appeared to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-14665",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14665,
+      "sentence": "Conversely, NMN treatment did not reverse the age\u2010related change and the increase in NAD + at higher workload in these mice was significantly ( p < 0.05) different from the Young state at higher workload.",
+      "context_window": "NAD + at higher workload in these mice was significantly ( p < 0.05) different from the Young state at higher workload. Mitocho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-14996",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.074",
+      "numeric_values": [
+        0.074
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14996,
+      "sentence": "While Young and Old Control hearts had a trend of slightly decreased mitochondrial NAD(P)H with the increased heart rate, SS\u201031 and NMN\u2010treated hearts appeared to reverse this trend ( p = 0.074 and p < 0.05, respectively), as these treatments increased mitochondrial NAD(P)H in response to a higher workload.",
+      "context_window": "\u201031 and NMN\u2010treated hearts appeared to reverse this trend ( p = 0.074 and p < 0.05, respectively), as these treatments increased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-p-15010",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15010,
+      "sentence": "While Young and Old Control hearts had a trend of slightly decreased mitochondrial NAD(P)H with the increased heart rate, SS\u201031 and NMN\u2010treated hearts appeared to reverse this trend ( p = 0.074 and p < 0.05, respectively), as these treatments increased mitochondrial NAD(P)H in response to a higher workload.",
+      "context_window": "eated hearts appeared to reverse this trend ( p = 0.074 and p < 0.05, respectively), as these treatments increased mitochondrial",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1156",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1156,
+      "sentence": "While NMN achieves its peak functional effect after just 10 days of treatment, we have previously observed that SS\u201031 treatment takes approximately 8 weeks to reach its peak effect on the heart (Chiao et al., 2020 ).",
+      "context_window": "1. While NMN achieves its peak functional effect after just 10 days of treatment, we have previously observed that SS\u201031 treatm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1247",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1247,
+      "sentence": "While NMN achieves its peak functional effect after just 10 days of treatment, we have previously observed that SS\u201031 treatment takes approximately 8 weeks to reach its peak effect on the heart (Chiao et al., 2020 ).",
+      "context_window": "reviously observed that SS\u201031 treatment takes approximately 8 weeks to reach its peak effect on the heart (Chiao et al., 2020 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1343",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1343,
+      "sentence": "NMN's effect was halved by 6 days after treatment cessation and completely gone after 10 days, whereas a partial SS\u201031 effect persisted for several weeks after cessation of treatment (Chiao et al., 2020 ).",
+      "context_window": "the heart (Chiao et al., 2020 ). NMN's effect was halved by 6 days after treatment cessation and completely gone after 10 days",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i-u-1402",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1402,
+      "sentence": "NMN's effect was halved by 6 days after treatment cessation and completely gone after 10 days, whereas a partial SS\u201031 effect persisted for several weeks after cessation of treatment (Chiao et al., 2020 ).",
+      "context_window": "6 days after treatment cessation and completely gone after 10 days, whereas a partial SS\u201031 effect persisted for several weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

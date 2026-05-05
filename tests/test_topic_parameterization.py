@@ -187,3 +187,26 @@ def test_build_receipts_filters_to_active_extract_report(
     monkeypatch.setattr(orch, "PARSED_DIR", pdir)
     receipts = orch.build_receipts_from_quant_claims(topic="test_topic")
     assert [r.receipt_id for r in receipts] == ["active_paper"]
+
+
+def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
+    claim = {
+        "binding_confidence": "high",
+        "raw_text": "77.1%",
+        "sentence": (
+            "More participants in the semaglutide group than in the "
+            "placebo group achieved weight loss at week 104."
+        ),
+        # Simulate a noisy extractor arm label. Receipt prose must not
+        # turn this into a false cross-topic claim.
+        "arm": "metformin",
+        "direction": "increase",
+        "endpoint": "body weight",
+    }
+    thesis = orch._build_receipt_thesis_text(
+        paper_id="paper",
+        paper_title="STEP trial",
+        claims=[claim],
+    )
+    assert "semaglutide group" in thesis
+    assert "metformin increase" not in thesis

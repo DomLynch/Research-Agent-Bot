@@ -1,0 +1,1122 @@
+{
+  "paper_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi",
+  "doi": "10.1186/1475-2840-10-22",
+  "extracted_at": "2026-05-05T21:26:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 26,
+    "percentage": 19,
+    "confidence_interval": 4,
+    "sample_size": 6,
+    "mean_sd": 4,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-580",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 580,
+      "sentence": "Individual participant data was pooled to assess the relative risk (RR) of CV events with exenatide BID versus a pooled comparator (PC) group treated with either placebo or insulin from 12 controlled, randomized, clinical trials ranging from 12-52 weeks.",
+      "context_window": "12 controlled, randomized, clinical trials ranging from 12-52 weeks. Mean baseline values for HbA 1c (8.33-8.38%), BMI (31.3-31",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-628",
+      "claim_type": "percentage",
+      "raw_text": "8.38%",
+      "numeric_values": [
+        8.38
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 628,
+      "sentence": "Mean baseline values for HbA 1c (8.33-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 y) were similar between groups.",
+      "context_window": "ing from 12-52 weeks. Mean baseline values for HbA 1c (8.33-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 y) w",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-646",
+      "claim_type": "unit_value",
+      "raw_text": "31.5 kg",
+      "numeric_values": [
+        31.5
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 646,
+      "sentence": "Mean baseline values for HbA 1c (8.33-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 y) were similar between groups.",
+      "context_window": "ks. Mean baseline values for HbA 1c (8.33-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 y) were similar between",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-ci-1002",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.38, 1.31",
+      "numeric_values": [
+        0.38,
+        1.31
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1002,
+      "sentence": "The Primary MACE RR (0.7; 95% CI 0.38, 1.31), calculated by the Mantel-Haenszel method (stratified by study), suggested that exenatide use (vs.",
+      "context_window": "and revascularization procedures. The Primary MACE RR (0.7; 95% CI 0.38, 1.31), calculated by the Mantel-Haenszel method (stratified by s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-518",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 518,
+      "sentence": "Randomized, controlled trials (8 blinded, 4 open-label) that were completed by September 30, 2008 and of at least 12 weeks in duration, that were included in this analysis were designed to compare the efficacy and tolerability of exenatide BID to placebo or insulin (Table 1 ).",
+      "context_window": ") that were completed by September 30, 2008 and of at least 12 weeks in duration, that were included in this analysis were desig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1293",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1293,
+      "sentence": "Summary of controlled studies included in CV analysis\n\nD + E = diet and exercise therapy; ITT = Intent-to-Treat Population; Meg = meglitinide; Met = metformin; OAD = oral antidiabetic medications; SFU = sulfonylurea; TZD = thiazolidinedione\n\n*Duration of treatment with randomized study medication\n\n\u2020 Includes treatment with exenatide 2.5 mcg or 5 mcg BID for duration of study, or 4 weeks of exenatide 5 mcg BID followed by exenatide 10 mcg BID for remainder of study\n\n\u2021 NCT00099619 had a crossover design, with 16 weeks per period (exenatide or insulin glargine)\n\nThe current analyses included patients from the intent-to-treat populations (i.e., patients who received at least 1 dose of randomized study medication) of each study (Table 1 ).",
+      "context_window": "th exenatide 2.5 mcg or 5 mcg BID for duration of study, or 4 weeks of exenatide 5 mcg BID followed by exenatide 10 mcg BID for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1424",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1424,
+      "sentence": "Summary of controlled studies included in CV analysis\n\nD + E = diet and exercise therapy; ITT = Intent-to-Treat Population; Meg = meglitinide; Met = metformin; OAD = oral antidiabetic medications; SFU = sulfonylurea; TZD = thiazolidinedione\n\n*Duration of treatment with randomized study medication\n\n\u2020 Includes treatment with exenatide 2.5 mcg or 5 mcg BID for duration of study, or 4 weeks of exenatide 5 mcg BID followed by exenatide 10 mcg BID for remainder of study\n\n\u2021 NCT00099619 had a crossover design, with 16 weeks per period (exenatide or insulin glargine)\n\nThe current analyses included patients from the intent-to-treat populations (i.e., patients who received at least 1 dose of randomized study medication) of each study (Table 1 ).",
+      "context_window": "ainder of study \u2021 NCT00099619 had a crossover design, with 16 weeks per period (exenatide or insulin glargine) The current ana",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1815",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1815,
+      "sentence": "All patients were 18 to 75 years-of-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25 to 45 kg/m 2 , and a history of stable body weight (\u226410% change) for at least 3 months.",
+      "context_window": "FU, or TZD alone or in combination. All patients were 18 to 75 years-of-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-1846",
+      "claim_type": "percentage",
+      "raw_text": "11.0%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1846,
+      "sentence": "All patients were 18 to 75 years-of-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25 to 45 kg/m 2 , and a history of stable body weight (\u226410% change) for at least 3 months.",
+      "context_window": "ion. All patients were 18 to 75 years-of-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25 to 45 kg/m 2 , and a history",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1886",
+      "claim_type": "unit_value",
+      "raw_text": "45 kg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1886,
+      "sentence": "All patients were 18 to 75 years-of-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25 to 45 kg/m 2 , and a history of stable body weight (\u226410% change) for at least 3 months.",
+      "context_window": "-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25 to 45 kg/m 2 , and a history of stable body weight (\u226410% change) for",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-1936",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1936,
+      "sentence": "All patients were 18 to 75 years-of-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25 to 45 kg/m 2 , and a history of stable body weight (\u226410% change) for at least 3 months.",
+      "context_window": "of 25 to 45 kg/m 2 , and a history of stable body weight (\u226410% change) for at least 3 months. Patients were excluded if th",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1961",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1961,
+      "sentence": "All patients were 18 to 75 years-of-age, had a HbA 1c \u226411.0%, a body mass index (BMI) of 25 to 45 kg/m 2 , and a history of stable body weight (\u226410% change) for at least 3 months.",
+      "context_window": "a history of stable body weight (\u226410% change) for at least 3 months. Patients were excluded if they had used weight loss drugs",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-2173",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 2173,
+      "sentence": "Investigators were asked to exclude patients with evidence of active cardiac disease within 1 year prior to the study, i.e., MI, clinically significant arrhythmia, unstable angina, moderate to severe congestive heart failure, coronary artery bypass surgery, or angioplasty.",
+      "context_window": "ude patients with evidence of active cardiac disease within 1 year prior to the study, i.e., MI, clinically significant arrhyt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-2372",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 2372,
+      "sentence": "Patients with a >1 year history of MI, transient ischemic attack or large vessel disease or with a history of microvascular disease were eligible for enrollment.",
+      "context_window": "ary artery bypass surgery, or angioplasty. Patients with a >1 year history of MI, transient ischemic attack or large vessel di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-5048",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5048,
+      "sentence": "Data from approximately 4,000 patients with type 2 diabetes and an average exposure of 24 weeks were included [ 18 - 29 ].",
+      "context_window": "00 patients with type 2 diabetes and an average exposure of 24 weeks were included [ 18 - 29 ]. Pooled data from placebo- and in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-n-5291",
+      "claim_type": "sample_size",
+      "raw_text": "n = 37",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5291,
+      "sentence": "The exenatide cohort included participants randomized to receive exenatide BID 2.5 mcg (n = 37), 5 mcg (n = 594), or 10 mcg (n = 1,685).",
+      "context_window": "d participants randomized to receive exenatide BID 2.5 mcg (n = 37), 5 mcg (n = 594), or 10 mcg (n = 1,685). Because of the lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-n-5307",
+      "claim_type": "sample_size",
+      "raw_text": "n = 594",
+      "numeric_values": [
+        594.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5307,
+      "sentence": "The exenatide cohort included participants randomized to receive exenatide BID 2.5 mcg (n = 37), 5 mcg (n = 594), or 10 mcg (n = 1,685).",
+      "context_window": "andomized to receive exenatide BID 2.5 mcg (n = 37), 5 mcg (n = 594), or 10 mcg (n = 1,685). Because of the low number of CV ev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-n-5328",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5328,
+      "sentence": "The exenatide cohort included participants randomized to receive exenatide BID 2.5 mcg (n = 37), 5 mcg (n = 594), or 10 mcg (n = 1,685).",
+      "context_window": "exenatide BID 2.5 mcg (n = 37), 5 mcg (n = 594), or 10 mcg (n = 1,685). Because of the low number of CV events, the 3 exenati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-5519",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5519,
+      "sentence": "For the primary analysis, the Relative Risk (RR) of an incident CV event and the corresponding 95% confidence interval (CI) were calculated using Mantel-Haenszel method stratified by study.",
+      "context_window": "ive Risk (RR) of an incident CV event and the corresponding 95% confidence interval (CI) were calculated using Mantel-Haens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-5665",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5665,
+      "sentence": "In order to demonstrate robustness, the RR and its 95% CI were calculated using the following additional methods: pooled RR (without stratification by study and with common continuity correction [i.e., adding 0.5 to all cells if one of the treatment groups had no events]) and Shuster's RR [ 38 ] (weights all trials equally and included studies with no events).",
+      "context_window": "y study. In order to demonstrate robustness, the RR and its 95% CI were calculated using the following additional methods:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-6596",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6596,
+      "sentence": "Exposure Adjusted Incidence Rate (EAIR) and its 95% CI were calculated using the Exact method [ 40 ].",
+      "context_window": "diac event. Exposure Adjusted Incidence Rate (EAIR) and its 95% CI were calculated using the Exact method [ 40 ]. The RR an",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-6665",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6665,
+      "sentence": "The RR and its 95% CI based on EAIR and event rate were provided [ 41 ].",
+      "context_window": "re calculated using the Exact method [ 40 ]. The RR and its 95% CI based on EAIR and event rate were provided [ 41 ]. Addi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-n-102",
+      "claim_type": "sample_size",
+      "raw_text": "N = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 102,
+      "sentence": "The data included in these analyses represented 1,072 patient-years (PY) exposure with exenatide BID (N = 2,316) and 780 PY exposure with comparators (placebo, n = 971; insulin, n = 658).",
+      "context_window": "ented 1,072 patient-years (PY) exposure with exenatide BID (N = 2,316) and 780 PY exposure with comparators (placebo, n = 971",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-n-160",
+      "claim_type": "sample_size",
+      "raw_text": "n = 971",
+      "numeric_values": [
+        971.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 160,
+      "sentence": "The data included in these analyses represented 1,072 patient-years (PY) exposure with exenatide BID (N = 2,316) and 780 PY exposure with comparators (placebo, n = 971; insulin, n = 658).",
+      "context_window": "(N = 2,316) and 780 PY exposure with comparators (placebo, n = 971; insulin, n = 658). Demographic and baseline characteristic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-n-178",
+      "claim_type": "sample_size",
+      "raw_text": "n = 658",
+      "numeric_values": [
+        658.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 178,
+      "sentence": "The data included in these analyses represented 1,072 patient-years (PY) exposure with exenatide BID (N = 2,316) and 780 PY exposure with comparators (placebo, n = 971; insulin, n = 658).",
+      "context_window": "80 PY exposure with comparators (placebo, n = 971; insulin, n = 658). Demographic and baseline characteristics were similar bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-337",
+      "claim_type": "percentage",
+      "raw_text": "8.33%",
+      "numeric_values": [
+        8.33
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 337,
+      "sentence": "Participants had similar mean baseline values for HbA 1c (8.33%-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 years).",
+      "context_window": ". Participants had similar mean baseline values for HbA 1c (8.33%-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-343",
+      "claim_type": "percentage",
+      "raw_text": "8.38%",
+      "numeric_values": [
+        8.38
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 343,
+      "sentence": "Participants had similar mean baseline values for HbA 1c (8.33%-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 years).",
+      "context_window": "icipants had similar mean baseline values for HbA 1c (8.33%-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 year",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-361",
+      "claim_type": "unit_value",
+      "raw_text": "31.5 kg",
+      "numeric_values": [
+        31.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 361,
+      "sentence": "Participants had similar mean baseline values for HbA 1c (8.33%-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 years).",
+      "context_window": "ar mean baseline values for HbA 1c (8.33%-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 years). Of note, the mea",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-402",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 402,
+      "sentence": "Participants had similar mean baseline values for HbA 1c (8.33%-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 years).",
+      "context_window": "-8.38%), BMI (31.3-31.5 kg/m 2 ), and duration of diabetes (8 years). Of note, the mean systolic blood pressures at baseline fo",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-msd-489",
+      "claim_type": "mean_sd",
+      "raw_text": "131 \u00b1 4",
+      "numeric_values": [
+        131.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 489,
+      "sentence": "Of note, the mean systolic blood pressures at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled comparator cohorts, respectively.",
+      "context_window": "systolic blood pressures at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-495",
+      "claim_type": "unit_value",
+      "raw_text": "4 mm",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "Of note, the mean systolic blood pressures at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled comparator cohorts, respectively.",
+      "context_window": "lic blood pressures at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-msd-507",
+      "claim_type": "mean_sd",
+      "raw_text": "132 \u00b1 5",
+      "numeric_values": [
+        132.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 507,
+      "sentence": "Of note, the mean systolic blood pressures at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled comparator cohorts, respectively.",
+      "context_window": "essures at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled comparator cohorts,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-513",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 513,
+      "sentence": "Of note, the mean systolic blood pressures at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled comparator cohorts, respectively.",
+      "context_window": "s at baseline for both cohorts were 131 \u00b1 4 mm Hg and 132 \u00b1 5 mm Hg for the exenatide and the pooled comparator cohorts, res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-msd-777",
+      "claim_type": "mean_sd",
+      "raw_text": "0.5 \u00b1 9.8",
+      "numeric_values": [
+        0.5,
+        9.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 777,
+      "sentence": "From baseline to endpoint, heart rate changes were +0.5 \u00b1 9.8 beats per minute (bpm) for exenatide and +0.1 \u00b1 9.2 bpm for the pooled comparators (mean \u00b1 SD).",
+      "context_window": "tions). From baseline to endpoint, heart rate changes were +0.5 \u00b1 9.8 beats per minute (bpm) for exenatide and +0.1 \u00b1 9.2 bpm for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-msd-829",
+      "claim_type": "mean_sd",
+      "raw_text": "0.1 \u00b1 9.2",
+      "numeric_values": [
+        0.1,
+        9.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 829,
+      "sentence": "From baseline to endpoint, heart rate changes were +0.5 \u00b1 9.8 beats per minute (bpm) for exenatide and +0.1 \u00b1 9.2 bpm for the pooled comparators (mean \u00b1 SD).",
+      "context_window": "s were +0.5 \u00b1 9.8 beats per minute (bpm) for exenatide and +0.1 \u00b1 9.2 bpm for the pooled comparators (mean \u00b1 SD). Baseline chara",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-835",
+      "claim_type": "unit_value",
+      "raw_text": "9.2 bpm",
+      "numeric_values": [
+        9.2
+      ],
+      "units": "bpm",
+      "source_section": "results",
+      "source_offset": 835,
+      "sentence": "From baseline to endpoint, heart rate changes were +0.5 \u00b1 9.8 beats per minute (bpm) for exenatide and +0.1 \u00b1 9.2 bpm for the pooled comparators (mean \u00b1 SD).",
+      "context_window": "+0.5 \u00b1 9.8 beats per minute (bpm) for exenatide and +0.1 \u00b1 9.2 bpm for the pooled comparators (mean \u00b1 SD). Baseline character",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1144",
+      "claim_type": "unit_value",
+      "raw_text": "80 mL/min",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 1144,
+      "sentence": "Percentages may not add to 100 due to rounding\n\n* Renal function is defined based on creatinine clearance (CrCl) as calculated by the Cockcroft-Gault equation: normal, CrCl >80 mL/min; mild impairment, CrCl >50-80 mL/min; moderate impairment, CrCl >30-50 mL/min\n\nIncidence rates of Primary MACE were similar for 5 mcg (0.9%) and 10 mcg (1.1%) exenatide dose groups, and no events were observed in the 2.5 mcg group.",
+      "context_window": "s calculated by the Cockcroft-Gault equation: normal, CrCl >80 mL/min; mild impairment, CrCl >50-80 mL/min; moderate impairment,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1181",
+      "claim_type": "unit_value",
+      "raw_text": "80 mL/min",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 1181,
+      "sentence": "Percentages may not add to 100 due to rounding\n\n* Renal function is defined based on creatinine clearance (CrCl) as calculated by the Cockcroft-Gault equation: normal, CrCl >80 mL/min; mild impairment, CrCl >50-80 mL/min; moderate impairment, CrCl >30-50 mL/min\n\nIncidence rates of Primary MACE were similar for 5 mcg (0.9%) and 10 mcg (1.1%) exenatide dose groups, and no events were observed in the 2.5 mcg group.",
+      "context_window": "quation: normal, CrCl >80 mL/min; mild impairment, CrCl >50-80 mL/min; moderate impairment, CrCl >30-50 mL/min Incidence rates o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-1222",
+      "claim_type": "unit_value",
+      "raw_text": "50 mL/min",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 1222,
+      "sentence": "Percentages may not add to 100 due to rounding\n\n* Renal function is defined based on creatinine clearance (CrCl) as calculated by the Cockcroft-Gault equation: normal, CrCl >80 mL/min; mild impairment, CrCl >50-80 mL/min; moderate impairment, CrCl >30-50 mL/min\n\nIncidence rates of Primary MACE were similar for 5 mcg (0.9%) and 10 mcg (1.1%) exenatide dose groups, and no events were observed in the 2.5 mcg group.",
+      "context_window": "pairment, CrCl >50-80 mL/min; moderate impairment, CrCl >30-50 mL/min Incidence rates of Primary MACE were similar for 5 mcg (0.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-1289",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1289,
+      "sentence": "Percentages may not add to 100 due to rounding\n\n* Renal function is defined based on creatinine clearance (CrCl) as calculated by the Cockcroft-Gault equation: normal, CrCl >80 mL/min; mild impairment, CrCl >50-80 mL/min; moderate impairment, CrCl >30-50 mL/min\n\nIncidence rates of Primary MACE were similar for 5 mcg (0.9%) and 10 mcg (1.1%) exenatide dose groups, and no events were observed in the 2.5 mcg group.",
+      "context_window": "in Incidence rates of Primary MACE were similar for 5 mcg (0.9%) and 10 mcg (1.1%) exenatide dose groups, and no events wer",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-1307",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1307,
+      "sentence": "Percentages may not add to 100 due to rounding\n\n* Renal function is defined based on creatinine clearance (CrCl) as calculated by the Cockcroft-Gault equation: normal, CrCl >80 mL/min; mild impairment, CrCl >50-80 mL/min; moderate impairment, CrCl >30-50 mL/min\n\nIncidence rates of Primary MACE were similar for 5 mcg (0.9%) and 10 mcg (1.1%) exenatide dose groups, and no events were observed in the 2.5 mcg group.",
+      "context_window": "s of Primary MACE were similar for 5 mcg (0.9%) and 10 mcg (1.1%) exenatide dose groups, and no events were observed in the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-1703",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1703,
+      "sentence": "Overall, 26 participants experienced serious adverse CV events: 15 (0.6%) in the exenatide group and 11 (0.7%) in the pooled comparator group (data not shown).",
+      "context_window": "26 participants experienced serious adverse CV events: 15 (0.6%) in the exenatide group and 11 (0.7%) in the pooled compara",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-1740",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1740,
+      "sentence": "Overall, 26 participants experienced serious adverse CV events: 15 (0.6%) in the exenatide group and 11 (0.7%) in the pooled comparator group (data not shown).",
+      "context_window": "adverse CV events: 15 (0.6%) in the exenatide group and 11 (0.7%) in the pooled comparator group (data not shown). Four fata",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-2581",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2581,
+      "sentence": "Incidence rates and exposure-adjusted incidence rates for primary MACE and secondary CV endpoints\n\nCI = confidence interval; CV = cardiovascular; EAIR = exposure-adjusted incidence rate; MACE = major adverse cardiovascular events; RR = risk ratio\n\nRR for the incidence was calculated using the Mantel-Haenszel estimate with study as a stratification factor\n\nEAIR and event rate were calculated based on the Exact method, with corresponding RR calculated using the log-normal approximation\n\nThe point estimates for Primary MACE and Secondary CV endpoints between exenatide BID and the pooled comparator were both 0.7 (the upper limits of the 95% CIs were 1.3 and 1.0, respectively), in favor of exenatide (Figure 1 ).",
+      "context_window": "he pooled comparator were both 0.7 (the upper limits of the 95% CIs were 1.3 and 1.0, respectively), in favor of exenatide",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-2890",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2890,
+      "sentence": "In addition, the RRs and 95% CIs for the Primary MACE were consistent across multiple methods of analysis (including sensitivity analyses of RR based on incidence and RR based on EAIR event rate), with point estimates ranging from 0.5 to 0.8, and the upper limit of the 95% CIs ranging from 1.3 to 1.5 (Figure 3 ).",
+      "context_window": "rm controlled studies (Figure 2 ). In addition, the RRs and 95% CIs for the Primary MACE were consistent across multiple me",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-3135",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3135,
+      "sentence": "In addition, the RRs and 95% CIs for the Primary MACE were consistent across multiple methods of analysis (including sensitivity analyses of RR based on incidence and RR based on EAIR event rate), with point estimates ranging from 0.5 to 0.8, and the upper limit of the 95% CIs ranging from 1.3 to 1.5 (Figure 3 ).",
+      "context_window": "timates ranging from 0.5 to 0.8, and the upper limit of the 95% CIs ranging from 1.3 to 1.5 (Figure 3 ). Similar point esti",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-3289",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3289,
+      "sentence": "Similar point estimates were observed for the broader secondary CV endpoint; however, the upper limit of the 95% CI was <1.3 for all methods (Figure 3 ).",
+      "context_window": "ader secondary CV endpoint; however, the upper limit of the 95% CI was <1.3 for all methods (Figure 3 ). A weighted Kaplan-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-3517",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 3517,
+      "sentence": "A weighted Kaplan-Meier plot shows that a significantly higher percentage of exenatide-treated patients than pooled comparator-treated patients were free of a primary MACE event over 1 year ( P < 0.0001; Figure 4 ).",
+      "context_window": "tor-treated patients were free of a primary MACE event over 1 year ( P < 0.0001; Figure 4 ). Risk of primary MACE and seconda",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-p-3526",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3526,
+      "sentence": "A weighted Kaplan-Meier plot shows that a significantly higher percentage of exenatide-treated patients than pooled comparator-treated patients were free of a primary MACE event over 1 year ( P < 0.0001; Figure 4 ).",
+      "context_window": "ed patients were free of a primary MACE event over 1 year ( P < 0.0001; Figure 4 ). Risk of primary MACE and secondary CV endpoin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-1198",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1198,
+      "sentence": "These results statistically excluded a 1.8-fold increase of the CV risk by exenatide and were consistent with the FDA guideline that state that the upper limit of a 2-sided 95% CI for new diabetes therapies should be <1.8.",
+      "context_window": "FDA guideline that state that the upper limit of a 2-sided 95% CI for new diabetes therapies should be <1.8. In fact, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-ci-1706",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.68-0.91",
+      "numeric_values": [
+        0.68,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1706,
+      "sentence": "Our results are consistent with those of a recent retrospective analysis of a large insurance database in which the 39,275 patients treated with exenatide twice daily were found to be significantly less likely to have a CV event than were the 381,218 patients treated with other glucose-lowering therapies (HR 0.81, 95% CI 0.68-0.91, P = 0.01) [ 42 ].",
+      "context_window": "nts treated with other glucose-lowering therapies (HR 0.81, 95% CI 0.68-0.91, P = 0.01) [ 42 ]. Although the results of the current meta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-p-1724",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1724,
+      "sentence": "Our results are consistent with those of a recent retrospective analysis of a large insurance database in which the 39,275 patients treated with exenatide twice daily were found to be significantly less likely to have a CV event than were the 381,218 patients treated with other glucose-lowering therapies (HR 0.81, 95% CI 0.68-0.91, P = 0.01) [ 42 ].",
+      "context_window": "ther glucose-lowering therapies (HR 0.81, 95% CI 0.68-0.91, P = 0.01) [ 42 ]. Although the results of the current meta-analysis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-ci-3910",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83-0.98",
+      "numeric_values": [
+        0.83,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3910,
+      "sentence": "The systematic review of these 4 trials in a pooled analysis did show a reduction in CV disease (RR 0.90, 95% CI 0.83-0.98) and coronary heart disease (RR 0.89, 95% CI 0.81-0.96), but not in stroke, coronary heart failure, CV disease mortality, or all-cause mortality [ 52 ].",
+      "context_window": "ooled analysis did show a reduction in CV disease (RR 0.90, 95% CI 0.83-0.98) and coronary heart disease (RR 0.89, 95% CI 0.81-0.96), bu",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-ci-3965",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.81-0.96",
+      "numeric_values": [
+        0.81,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3965,
+      "sentence": "The systematic review of these 4 trials in a pooled analysis did show a reduction in CV disease (RR 0.90, 95% CI 0.83-0.98) and coronary heart disease (RR 0.89, 95% CI 0.81-0.96), but not in stroke, coronary heart failure, CV disease mortality, or all-cause mortality [ 52 ].",
+      "context_window": ".90, 95% CI 0.83-0.98) and coronary heart disease (RR 0.89, 95% CI 0.81-0.96), but not in stroke, coronary heart failure, CV disease mor",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-pct-4589",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4589,
+      "sentence": "Recently, lower HbA 1C values in the intensive arm were reported to be associated with reduced CV disease events [ 54 ] and difficulty in lowering HbA 1C below 7% in the intensive group may actually have been the best predictor of CV events [ 54 ].",
+      "context_window": "sease events [ 54 ] and difficulty in lowering HbA 1C below 7% in the intensive group may actually have been the best pred",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-7847",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7847,
+      "sentence": "In open-label extension studies lasting up to 3 years, exenatide BID treatment resulted in improved glycemic control accompanied by moderate weight loss and improvements in BP, cholesterol levels, inflammatory markers, and insulin resistance for some patients [ 15 - 17 ].",
+      "context_window": "trial [ 67 ]. In open-label extension studies lasting up to 3 years, exenatide BID treatment resulted in improved glycemic cont",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-8930",
+      "claim_type": "unit_value",
+      "raw_text": "2 bpm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 8930,
+      "sentence": "Exenatide therapy has been associated with 1 or 2 bpm increases in heart rate in individual clinical trials [ 29 , 67 ].",
+      "context_window": "ht [ 69 ]. Exenatide therapy has been associated with 1 or 2 bpm increases in heart rate in individual clinical trials [ 29",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-9051",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 bpm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 9051,
+      "sentence": "In this analysis, mean heart rate changes were +0.5 bpm for exenatide and +0.1 bpm for the pooled comparators.",
+      "context_window": "29 , 67 ]. In this analysis, mean heart rate changes were +0.5 bpm for exenatide and +0.1 bpm for the pooled comparators. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-9078",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 bpm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 9078,
+      "sentence": "In this analysis, mean heart rate changes were +0.5 bpm for exenatide and +0.1 bpm for the pooled comparators.",
+      "context_window": "s, mean heart rate changes were +0.5 bpm for exenatide and +0.1 bpm for the pooled comparators. The clinical importance of smal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-9277",
+      "claim_type": "unit_value",
+      "raw_text": "10 bpm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 9277,
+      "sentence": "The majority of epidemiological studies in patients with diabetes have studied the effects of 10 bpm increases in heart rate from any cause, which are associated with increased CV risk [ 70 , 71 ].",
+      "context_window": "udies in patients with diabetes have studied the effects of 10 bpm increases in heart rate from any cause, which are associate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3070629_cardiovascular_safety_of_exenatide_bid_an_integrated_analysi-u-10587",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 10587,
+      "sentence": "Dahl salt-sensitive rats fed a high-salt diet were found to have less hypertension, renal dysfunction, and mortality after 4 weeks of continuous therapy with a GLP-1 analog than were those without treatment [ 76 ].",
+      "context_window": "e less hypertension, renal dysfunction, and mortality after 4 weeks of continuous therapy with a GLP-1 analog than were those w",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

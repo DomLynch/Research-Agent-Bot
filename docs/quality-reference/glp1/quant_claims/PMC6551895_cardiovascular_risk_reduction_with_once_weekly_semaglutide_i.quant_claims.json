@@ -1,0 +1,2445 @@
+{
+  "paper_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i",
+  "doi": "10.1186/s12933-019-0871-8",
+  "extracted_at": "2026-05-05T21:26:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 56,
+    "percentage": 41,
+    "p_value": 26,
+    "sample_size": 10,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-71",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 71,
+      "sentence": "The SUSTAIN 6 trial demonstrated that once-weekly semaglutide (0.5 and 1.0 mg) significantly reduced major adverse cardiovascular (CV) events (MACE) vs placebo in subjects with type 2 diabetes (T2D) and high CV risk.",
+      "context_window": "6 trial demonstrated that once-weekly semaglutide (0.5 and 1.0 mg) significantly reduced major adverse cardiovascular (CV) ev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-377",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 377,
+      "sentence": "Subjects were grouped according to gender, age (50-65 years and > 65 years), and CV risk profile at baseline (prior myocardial infarction [MI] or stroke vs no prior MI or stroke, and established CV disease [CVD] vs CV risk factors alone, including subjects with chronic kidney disease).",
+      "context_window": "study. Subjects were grouped according to gender, age (50-65 years and > 65 years), and CV risk profile at baseline (prior myo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-392",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 392,
+      "sentence": "Subjects were grouped according to gender, age (50-65 years and > 65 years), and CV risk profile at baseline (prior myocardial infarction [MI] or stroke vs no prior MI or stroke, and established CV disease [CVD] vs CV risk factors alone, including subjects with chronic kidney disease).",
+      "context_window": "ts were grouped according to gender, age (50-65 years and > 65 years), and CV risk profile at baseline (prior myocardial infarct",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-1042",
+      "claim_type": "percentage",
+      "raw_text": "60.7%",
+      "numeric_values": [
+        60.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1042,
+      "sentence": "The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had established CVD.",
+      "context_window": "l of 3297 subjects were included. The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-1060",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had established CVD.",
+      "context_window": "were included. The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1071",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1071,
+      "sentence": "The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had established CVD.",
+      "context_window": "ded. The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-1088",
+      "claim_type": "percentage",
+      "raw_text": "41.5%",
+      "numeric_values": [
+        41.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1088,
+      "sentence": "The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had established CVD.",
+      "context_window": "of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had established CV",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-1129",
+      "claim_type": "percentage",
+      "raw_text": "76.8%",
+      "numeric_values": [
+        76.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1129,
+      "sentence": "The majority of subjects (60.7%) were male; 43% were > 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had established CVD.",
+      "context_window": "> 65 years of age; 41.5% had a history of MI or stroke; and 76.8% had established CVD. Compared with placebo, semaglutide red",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1033",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1033,
+      "sentence": "In the SUSTAIN 6 CV outcomes trial (CVOT), once-weekly semaglutide (0.5 or 1.0 mg) added to standard of care significantly reduced the occurrence of a first major adverse CV event (MACE: CV death, nonfatal myocardial infarction [MI], or nonfatal stroke) vs placebo over 2 years in 3297 subjects with T2D and high CV risk [ 12 ].",
+      "context_window": "6 CV outcomes trial (CVOT), once-weekly semaglutide (0.5 or 1.0 mg) added to standard of care significantly reduced the occurr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1228",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1228,
+      "sentence": "In the SUSTAIN 6 CV outcomes trial (CVOT), once-weekly semaglutide (0.5 or 1.0 mg) added to standard of care significantly reduced the occurrence of a first major adverse CV event (MACE: CV death, nonfatal myocardial infarction [MI], or nonfatal stroke) vs placebo over 2 years in 3297 subjects with T2D and high CV risk [ 12 ].",
+      "context_window": "ardial infarction [MI], or nonfatal stroke) vs placebo over 2 years in 3297 subjects with T2D and high CV risk [ 12 ]. Given th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-232",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 232,
+      "sentence": "In brief, SUSTAIN 6 was a randomized, double-blind, placebo-controlled, parallel-group trial to evaluate once-weekly semaglutide 0.5 or 1.0 mg vs volume-matched placebo over a 104-week treatment period plus a 5-week follow-up period.",
+      "context_window": "llel-group trial to evaluate once-weekly semaglutide 0.5 or 1.0 mg vs volume-matched placebo over a 104-week treatment period",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-712",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 712,
+      "sentence": "A total of 3297 subjects with T2D (HbA 1c \u2265 7%) were randomized to receive once-weekly semaglutide 0.5 or 1.0 mg or placebo for 104 weeks.",
+      "context_window": "commencement. A total of 3297 subjects with T2D (HbA 1c \u2265 7%) were randomized to receive once-weekly semaglutide 0.5 or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-774",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 774,
+      "sentence": "A total of 3297 subjects with T2D (HbA 1c \u2265 7%) were randomized to receive once-weekly semaglutide 0.5 or 1.0 mg or placebo for 104 weeks.",
+      "context_window": ") were randomized to receive once-weekly semaglutide 0.5 or 1.0 mg or placebo for 104 weeks. Subjects were \u2265 50 years of age w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-796",
+      "claim_type": "unit_value",
+      "raw_text": "104 weeks",
+      "numeric_values": [
+        104.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 796,
+      "sentence": "A total of 3297 subjects with T2D (HbA 1c \u2265 7%) were randomized to receive once-weekly semaglutide 0.5 or 1.0 mg or placebo for 104 weeks.",
+      "context_window": "eceive once-weekly semaglutide 0.5 or 1.0 mg or placebo for 104 weeks. Subjects were \u2265 50 years of age with established CVD (defi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-823",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 823,
+      "sentence": "Subjects were \u2265 50 years of age with established CVD (defined as previous CV, cerebrovascular, or peripheral vascular disease), chronic heart failure (New York Heart Association class II or III), or chronic kidney disease (CKD) of stage 3 or higher, or were \u2265 60 years of age with at least one CV risk factor (microalbuminuria or proteinuria, hypertension and left ventricular hypertrophy, left ventricular systolic or diastolic dysfunction or ankle-brachial index < 0.9).",
+      "context_window": "ide 0.5 or 1.0 mg or placebo for 104 weeks. Subjects were \u2265 50 years of age with established CVD (defined as previous CV, cerebr",
+      "claim_role": "protocol",
+      "endpoint": "muscle hypertrophy",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1067",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1067,
+      "sentence": "Subjects were \u2265 50 years of age with established CVD (defined as previous CV, cerebrovascular, or peripheral vascular disease), chronic heart failure (New York Heart Association class II or III), or chronic kidney disease (CKD) of stage 3 or higher, or were \u2265 60 years of age with at least one CV risk factor (microalbuminuria or proteinuria, hypertension and left ventricular hypertrophy, left ventricular systolic or diastolic dysfunction or ankle-brachial index < 0.9).",
+      "context_window": "hronic kidney disease (CKD) of stage 3 or higher, or were \u2265 60 years of age with at least one CV risk factor (microalbuminuria o",
+      "claim_role": "protocol",
+      "endpoint": "muscle hypertrophy",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1384",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 mg",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1384,
+      "sentence": "All subjects treated with semaglutide followed a fixed dose-escalation regimen, with a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was reached.",
+      "context_window": "ed a fixed dose-escalation regimen, with a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1396",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1396,
+      "sentence": "All subjects treated with semaglutide followed a fixed dose-escalation regimen, with a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was reached.",
+      "context_window": "ose-escalation regimen, with a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1422",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1422,
+      "sentence": "All subjects treated with semaglutide followed a fixed dose-escalation regimen, with a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was reached.",
+      "context_window": "th a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1433",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1433,
+      "sentence": "All subjects treated with semaglutide followed a fixed dose-escalation regimen, with a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was reached.",
+      "context_window": "ng dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was reached. Th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1476",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1476,
+      "sentence": "All subjects treated with semaglutide followed a fixed dose-escalation regimen, with a starting dose of 0.25 mg for 4 weeks that escalated to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was reached.",
+      "context_window": "ed to 0.5 mg for 4 weeks until the maintenance dose (0.5 or 1.0 mg) was reached. The primary composite outcome (MACE) was the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1837",
+      "claim_type": "unit_value",
+      "raw_text": "104 weeks",
+      "numeric_values": [
+        104.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1837,
+      "sentence": "All outcomes were collected after 104 weeks of treatment.",
+      "context_window": "ges in HbA 1c and weight. All outcomes were collected after 104 weeks of treatment. This post hoc analysis examined the effect o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1947",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1947,
+      "sentence": "This post hoc analysis examined the effect of gender, age (subjects aged 50-65 and > 65 years), and CV risk profile at baseline on time to first occurrence of MACE, the individual components of MACE (CV death, nonfatal MI, or nonfatal stroke), hospitalization for unstable angina or heart failure, and revascularization.",
+      "context_window": "amined the effect of gender, age (subjects aged 50-65 and > 65 years), and CV risk profile at baseline on time to first occurren",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-2771",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2771,
+      "sentence": "Efficacy and safety were assessed by age group using post hoc subgroup analyses of subjects \u2264 65 and > 65 years.",
+      "context_window": "oup using post hoc subgroup analyses of subjects \u2264 65 and > 65 years. Post-baseline responses for time to first occurrence of MA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-3243",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3243,
+      "sentence": "A significance level for interaction of 5% was considered significant.",
+      "context_window": "city was performed. A significance level for interaction of 5% was considered significant. To investigate more general lin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3599",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3599,
+      "sentence": "Analyses were based on pooled data using semaglutide 0.5 mg and 1.0 mg doses for MACE and its components, hospitalization due to angina or heart failure, revascularization, and AEs.",
+      "context_window": "ge \u201d). Analyses were based on pooled data using semaglutide 0.5 mg and 1.0 mg doses for MACE and its components, hospitalizati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3610",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3610,
+      "sentence": "Analyses were based on pooled data using semaglutide 0.5 mg and 1.0 mg doses for MACE and its components, hospitalization due to angina or heart failure, revascularization, and AEs.",
+      "context_window": "yses were based on pooled data using semaglutide 0.5 mg and 1.0 mg doses for MACE and its components, hospitalization due to a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-4218",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4218,
+      "sentence": "To assess the effect of baseline CV risk profiles on outcomes, two separate subgroup analyses were performed: (1) for subjects who had experienced a prior MI or stroke compared with those who had not, and (2) for those with established CVD, defined as prior stroke, ischemic heart disease (including MI), peripheral arterial disease, \u2265 50% arterial stenosis in any artery, coronary revascularization (percutaneous coronary intervention or coronary artery bypass graft), or heart failure vs those with CV risk factors alone and no manifestations of CVD as defined above.",
+      "context_window": "eart disease (including MI), peripheral arterial disease, \u2265 50% arterial stenosis in any artery, coronary revascularization",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-5101",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5101,
+      "sentence": "A significance level for interaction of 5% was considered significant.",
+      "context_window": "city was performed. A significance level for interaction of 5% was considered significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-299",
+      "claim_type": "percentage",
+      "raw_text": "26.1%",
+      "numeric_values": [
+        26.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 299,
+      "sentence": "There were no clear differences in subject demographics or key baseline characteristics between men and women, with the exception of weight (men tended to be heavier) and smoking status (51.7 vs 26.1% and 56.1 vs 23.0% of men vs women had a history of smoking in the semaglutide and placebo groups, respectively).",
+      "context_window": "ight (men tended to be heavier) and smoking status (51.7 vs 26.1% and 56.1 vs 23.0% of men vs women had a history of smoking",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-317",
+      "claim_type": "percentage",
+      "raw_text": "23.0%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 317,
+      "sentence": "There were no clear differences in subject demographics or key baseline characteristics between men and women, with the exception of weight (men tended to be heavier) and smoking status (51.7 vs 26.1% and 56.1 vs 23.0% of men vs women had a history of smoking in the semaglutide and placebo groups, respectively).",
+      "context_window": "o be heavier) and smoking status (51.7 vs 26.1% and 56.1 vs 23.0% of men vs women had a history of smoking in the semaglutide",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-659",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 659,
+      "sentence": "MACE occurred in lower proportions of subjects treated with semaglutide vs placebo in both men and women, and this overall benefit was independent of gender (p = 0.45 for interaction) (Fig.",
+      "context_window": "women, and this overall benefit was independent of gender (p = 0.45 for interaction) (Fig. 1 ). The same pattern was noted acro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-956",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.46",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 956,
+      "sentence": "The same pattern was noted across the individual MACE components of CV death, nonfatal MI and nonfatal stroke; lower or similar proportions of both men and women experienced events with semaglutide vs placebo, and p-values for interaction were nonsignificant (p = 0.46, p = 0.34 and p = 0.74, respectively, for each endpoint) (Fig.",
+      "context_window": "placebo, and p-values for interaction were nonsignificant (p = 0.46, p = 0.34 and p = 0.74, respectively, for each endpoint) (F",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-966",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.34",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 966,
+      "sentence": "The same pattern was noted across the individual MACE components of CV death, nonfatal MI and nonfatal stroke; lower or similar proportions of both men and women experienced events with semaglutide vs placebo, and p-values for interaction were nonsignificant (p = 0.46, p = 0.34 and p = 0.74, respectively, for each endpoint) (Fig.",
+      "context_window": "and p-values for interaction were nonsignificant (p = 0.46, p = 0.34 and p = 0.74, respectively, for each endpoint) (Fig. 1 ). G",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-979",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 979,
+      "sentence": "The same pattern was noted across the individual MACE components of CV death, nonfatal MI and nonfatal stroke; lower or similar proportions of both men and women experienced events with semaglutide vs placebo, and p-values for interaction were nonsignificant (p = 0.46, p = 0.34 and p = 0.74, respectively, for each endpoint) (Fig.",
+      "context_window": "for interaction were nonsignificant (p = 0.46, p = 0.34 and p = 0.74, respectively, for each endpoint) (Fig. 1 ). Gender had no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-1109",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1109,
+      "sentence": "Gender had no apparent effect on first hospitalization for unstable angina (p = 0.35 for interaction) or heart failure (p = 0.55 for interaction), or time to first revascularization procedure (p = 0.50 for interaction; Fig.",
+      "context_window": "parent effect on first hospitalization for unstable angina (p = 0.35 for interaction) or heart failure (p = 0.55 for interaction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-1153",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1153,
+      "sentence": "Gender had no apparent effect on first hospitalization for unstable angina (p = 0.35 for interaction) or heart failure (p = 0.55 for interaction), or time to first revascularization procedure (p = 0.50 for interaction; Fig.",
+      "context_window": "nstable angina (p = 0.35 for interaction) or heart failure (p = 0.55 for interaction), or time to first revascularization proced",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-1226",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1226,
+      "sentence": "Gender had no apparent effect on first hospitalization for unstable angina (p = 0.35 for interaction) or heart failure (p = 0.55 for interaction), or time to first revascularization procedure (p = 0.50 for interaction; Fig.",
+      "context_window": "interaction), or time to first revascularization procedure (p = 0.50 for interaction; Fig. 2 ). Baseline characteristics and de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3308",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3308,
+      "sentence": "CI confidence interval, CV cardiovascular, HR hazard ratio, NE non-estimable\n\nIn the SUSTAIN 6 study, 1879 subjects were 50-65 years of age and 1418 were > 65 years (Table 1 B).",
+      "context_window": "on-estimable In the SUSTAIN 6 study, 1879 subjects were 50-65 years of age and 1418 were > 65 years (Table 1 B). There were no",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3340",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3340,
+      "sentence": "CI confidence interval, CV cardiovascular, HR hazard ratio, NE non-estimable\n\nIn the SUSTAIN 6 study, 1879 subjects were 50-65 years of age and 1418 were > 65 years (Table 1 B).",
+      "context_window": "tudy, 1879 subjects were 50-65 years of age and 1418 were > 65 years (Table 1 B). There were no clear differences in subject dem",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3513",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3513,
+      "sentence": "Duration of diabetes was greater in subjects > 65 years compared with those \u2264 65 years (16.4 vs 12.6 years for the semaglutide group and 15.2 vs 12.4 years for the placebo group).",
+      "context_window": "ween groups. Duration of diabetes was greater in subjects > 65 years compared with those \u2264 65 years (16.4 vs 12.6 years for the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3544",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3544,
+      "sentence": "Duration of diabetes was greater in subjects > 65 years compared with those \u2264 65 years (16.4 vs 12.6 years for the semaglutide group and 15.2 vs 12.4 years for the placebo group).",
+      "context_window": "es was greater in subjects > 65 years compared with those \u2264 65 years (16.4 vs 12.6 years for the semaglutide group and 15.2 vs 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3562",
+      "claim_type": "unit_value",
+      "raw_text": "12.6 years",
+      "numeric_values": [
+        12.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3562,
+      "sentence": "Duration of diabetes was greater in subjects > 65 years compared with those \u2264 65 years (16.4 vs 12.6 years for the semaglutide group and 15.2 vs 12.4 years for the placebo group).",
+      "context_window": "subjects > 65 years compared with those \u2264 65 years (16.4 vs 12.6 years for the semaglutide group and 15.2 vs 12.4 years for the pl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3611",
+      "claim_type": "unit_value",
+      "raw_text": "12.4 years",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3611,
+      "sentence": "Duration of diabetes was greater in subjects > 65 years compared with those \u2264 65 years (16.4 vs 12.6 years for the semaglutide group and 15.2 vs 12.4 years for the placebo group).",
+      "context_window": "s (16.4 vs 12.6 years for the semaglutide group and 15.2 vs 12.4 years for the placebo group). Similar proportions of subjects in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-3858",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3858,
+      "sentence": "HRs for time to first confirmed MACE were all below 1.0 for subjects treated with semaglutide vs placebo, irrespective of age (p = 0.92 for interaction, Fig.",
+      "context_window": "s treated with semaglutide vs placebo, irrespective of age (p = 0.92 for interaction, Fig. 1 ). Results were consistent for the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-3984",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3984,
+      "sentence": "1 ; p = 0.35, p = 0.42, and p = 0.45 for interaction, respectively, for CV death, nonfatal MI, and nonfatal stroke).",
+      "context_window": "e individual components of MACE across age groups (Fig. 1 ; p = 0.35, p = 0.42, and p = 0.45 for interaction, respectively, for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-3994",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3994,
+      "sentence": "1 ; p = 0.35, p = 0.42, and p = 0.45 for interaction, respectively, for CV death, nonfatal MI, and nonfatal stroke).",
+      "context_window": "al components of MACE across age groups (Fig. 1 ; p = 0.35, p = 0.42, and p = 0.45 for interaction, respectively, for CV death,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-4008",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4008,
+      "sentence": "1 ; p = 0.35, p = 0.42, and p = 0.45 for interaction, respectively, for CV death, nonfatal MI, and nonfatal stroke).",
+      "context_window": "of MACE across age groups (Fig. 1 ; p = 0.35, p = 0.42, and p = 0.45 for interaction, respectively, for CV death, nonfatal MI, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-4173",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4173,
+      "sentence": "Age had no apparent effect on first hospitalization due to unstable angina (p = 0.16 for interaction), heart failure (p = 0.26 for interaction) or revascularization procedures (p = 0.97 for interaction; Fig.",
+      "context_window": "ent effect on first hospitalization due to unstable angina (p = 0.16 for interaction), heart failure (p = 0.26 for interaction)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-4215",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4215,
+      "sentence": "Age had no apparent effect on first hospitalization due to unstable angina (p = 0.16 for interaction), heart failure (p = 0.26 for interaction) or revascularization procedures (p = 0.97 for interaction; Fig.",
+      "context_window": "unstable angina (p = 0.16 for interaction), heart failure (p = 0.26 for interaction) or revascularization procedures (p = 0.97",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-4274",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4274,
+      "sentence": "Age had no apparent effect on first hospitalization due to unstable angina (p = 0.16 for interaction), heart failure (p = 0.26 for interaction) or revascularization procedures (p = 0.97 for interaction; Fig.",
+      "context_window": "(p = 0.26 for interaction) or revascularization procedures (p = 0.97 for interaction; Fig. 2 ). A series of regression analyses",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-5303",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5303,
+      "sentence": "Similar results were observed across the individual components of MACE, with the exception of CV death in subjects with a prior MI or stroke or with established CVD (p = 0.22 for interaction between subjects with prior MI or stroke vs no prior MI or stroke; p = 0.52 for interaction between subjects with established CVD vs risk factors only) (Fig.",
+      "context_window": "subjects with a prior MI or stroke or with established CVD (p = 0.22 for interaction between subjects with prior MI or stroke vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-5395",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5395,
+      "sentence": "Similar results were observed across the individual components of MACE, with the exception of CV death in subjects with a prior MI or stroke or with established CVD (p = 0.22 for interaction between subjects with prior MI or stroke vs no prior MI or stroke; p = 0.52 for interaction between subjects with established CVD vs risk factors only) (Fig.",
+      "context_window": "subjects with prior MI or stroke vs no prior MI or stroke; p = 0.52 for interaction between subjects with established CVD vs ri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-5619",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.75",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5619,
+      "sentence": "In subjects with a prior MI/stroke ( a ) vs no prior MI/stroke ( b ) (p = 0.75 for interaction) and in subjects with established CVD ( c ) vs CV risk factors only (including CKD) (p = 0.22 for interaction) ( d ).",
+      "context_window": "s with a prior MI/stroke ( a ) vs no prior MI/stroke ( b ) (p = 0.75 for interaction) and in subjects with established CVD ( c )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-5729",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5729,
+      "sentence": "In subjects with a prior MI/stroke ( a ) vs no prior MI/stroke ( b ) (p = 0.75 for interaction) and in subjects with established CVD ( c ) vs CV risk factors only (including CKD) (p = 0.22 for interaction) ( d ).",
+      "context_window": "ablished CVD ( c ) vs CV risk factors only (including CKD) (p = 0.22 for interaction) ( d ). Kaplan-Meier estimates: Cox proport",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-6609",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6609,
+      "sentence": "The between-group interaction for unstable angina in subjects with prior MI or stroke compared with no prior MI or stroke was significant (p = 0.02 for interaction), with a significant reduction in hospitalization for unstable angina for semaglutide vs placebo in subjects with no prior MI or stroke (p = 0.03).",
+      "context_window": "stroke compared with no prior MI or stroke was significant (p = 0.02 for interaction), with a significant reduction in hospitali",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-6771",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6771,
+      "sentence": "The between-group interaction for unstable angina in subjects with prior MI or stroke compared with no prior MI or stroke was significant (p = 0.02 for interaction), with a significant reduction in hospitalization for unstable angina for semaglutide vs placebo in subjects with no prior MI or stroke (p = 0.03).",
+      "context_window": "aglutide vs placebo in subjects with no prior MI or stroke (p = 0.03). No significant interactions were noted for hospitalizatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-6901",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6901,
+      "sentence": "2 ; p = 0.59 for interaction between subjects with prior MI or stroke vs no prior MI or stroke and p = 0.93 for interaction between subjects with established CVD vs CV risk factors only).",
+      "context_window": "for heart failure between the various risk groups (Fig. 2 ; p = 0.59 for interaction between subjects with prior MI or stroke vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-6996",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6996,
+      "sentence": "2 ; p = 0.59 for interaction between subjects with prior MI or stroke vs no prior MI or stroke and p = 0.93 for interaction between subjects with established CVD vs CV risk factors only).",
+      "context_window": "bjects with prior MI or stroke vs no prior MI or stroke and p = 0.93 for interaction between subjects with established CVD vs CV",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-7287",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.25",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7287,
+      "sentence": "Semaglutide reduced time to first revascularization vs placebo in the overall study; this result was observed regardless of baseline CV risk profile, with no significant differences between subgroups (p = 0.25 for interaction between subjects with prior MI or stroke vs no prior MI or stroke and p = 0.27 for interaction between subjects with established CVD vs CV risk factors only).",
+      "context_window": "profile, with no significant differences between subgroups (p = 0.25 for interaction between subjects with prior MI or stroke vs",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-7382",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7382,
+      "sentence": "Semaglutide reduced time to first revascularization vs placebo in the overall study; this result was observed regardless of baseline CV risk profile, with no significant differences between subgroups (p = 0.25 for interaction between subjects with prior MI or stroke vs no prior MI or stroke and p = 0.27 for interaction between subjects with established CVD vs CV risk factors only).",
+      "context_window": "bjects with prior MI or stroke vs no prior MI or stroke and p = 0.27 for interaction between subjects with established CVD vs CV",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-7678",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7678,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "as consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7699",
+      "claim_type": "percentage",
+      "raw_text": "0.65%",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7699,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "h genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7706",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7706,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "rs (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7735",
+      "claim_type": "percentage",
+      "raw_text": "0.96%",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7735,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "nd 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7742",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7742,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7794",
+      "claim_type": "percentage",
+      "raw_text": "0.75%",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7794,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7801",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7801,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "[95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7830",
+      "claim_type": "percentage",
+      "raw_text": "1.09%",
+      "numeric_values": [
+        1.09
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7830,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "ectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig. 4 a)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7837",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7837,
+      "sentence": "Significantly greater reductions in HbA 1c were achieved by subjects treated with semaglutide than by those receiving placebo, and this decrease was consistent for both genders (ETD for semaglutide 0.5 and 1.0 mg vs placebo: - 0.65% [95% CI - 0.80; - 0.49] and - 0.96% [95% CI - 1.11; - 0.81], respectively in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig.",
+      "context_window": "y in males and - 0.75% [95% CI - 0.94; - 0.56] and - 1.09% [95% CI - 1.28; - 0.89], respectively in females; Fig. 4 a) and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-7948",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7948,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "g. 4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7973",
+      "claim_type": "percentage",
+      "raw_text": "0.72%",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7973,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "oups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-7980",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7980,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "TDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8009",
+      "claim_type": "percentage",
+      "raw_text": "1.13%",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8009,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": ".0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and -",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8016",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8016,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "s placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8059",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8059,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI -",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8075",
+      "claim_type": "percentage",
+      "raw_text": "0.66%",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8075,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "[95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8082",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8082,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "- 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8111",
+      "claim_type": "percentage",
+      "raw_text": "0.85%",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8111,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "y, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8118",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8118,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig. 4 b).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8161",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8161,
+      "sentence": "4 a) and across age groups (ETDs for semaglutide 0.5 and 1.0 mg vs placebo were - 0.72% [95% CI - 0.88; - 0.56] and - 1.13% [95% CI - 1.29; - 0.97], respectively, in \u2264 65 years, and - 0.66% [95% CI - 0.84; - 0.47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig.",
+      "context_window": "47] and - 0.85% [95% CI - 1.03; - 0.67], respectively, in > 65 years; Fig. 4 b). The p-values for all comparisons between gender",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8460",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8460,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "Greater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% C",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8512",
+      "claim_type": "unit_value",
+      "raw_text": "2.86 kg",
+      "numeric_values": [
+        2.86
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8512,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.0",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8521",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8521,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": ".0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8550",
+      "claim_type": "unit_value",
+      "raw_text": "3.68 kg",
+      "numeric_values": [
+        3.68
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8550,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "n both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8559",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8559,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "nders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; -",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8597",
+      "claim_type": "unit_value",
+      "raw_text": "3.04 kg",
+      "numeric_values": [
+        3.04
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8597,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.4",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8606",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8606,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "d - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8635",
+      "claim_type": "unit_value",
+      "raw_text": "5.27 kg",
+      "numeric_values": [
+        5.27
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8635,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig. 4 c) and in subjec",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8644",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8644,
+      "sentence": "ETD estimated treatment difference\n\nGreater weight loss was observed with semaglutide 0.5 and 1.0 mg compared with placebo in both genders (ETD - 2.86 kg [95% CI - 3.52; - 2.19] and - 3.68 kg [95% CI - 4.33; - 3.03] in males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig.",
+      "context_window": "males and - 3.04 kg [95% CI - 3.85; - 2.23] and - 5.27 kg [95% CI - 6.11; - 4.43] in females; Fig. 4 c) and in subjects \u2264",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8716",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8716,
+      "sentence": "4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig.",
+      "context_window": "1; - 4.43] in females; Fig. 4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8762",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8762,
+      "sentence": "4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig.",
+      "context_window": "ts \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8783",
+      "claim_type": "unit_value",
+      "raw_text": "2.90 kg",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8783,
+      "sentence": "4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig.",
+      "context_window": "s of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-8792",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8792,
+      "sentence": "4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig.",
+      "context_window": "(ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respecti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8821",
+      "claim_type": "unit_value",
+      "raw_text": "3.87 kg",
+      "numeric_values": [
+        3.87
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8821,
+      "sentence": "4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig.",
+      "context_window": "1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8867",
+      "claim_type": "unit_value",
+      "raw_text": "3.02 kg",
+      "numeric_values": [
+        3.02
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8867,
+      "sentence": "4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig.",
+      "context_window": "- 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respective",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-8898",
+      "claim_type": "unit_value",
+      "raw_text": "4.72 kg",
+      "numeric_values": [
+        4.72
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8898,
+      "sentence": "4 c) and in subjects \u2264 65 and > 65 years of age (ETDs for semaglutide 0.5 and 1.0 mg vs placebo: - 2.90 kg [95% CI - 3.58; - 2.23] and - 3.87 kg [- 4.56; - 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig.",
+      "context_window": "- 3.18], respectively, and - 3.02 kg [- 3.82; - 2.22] and - 4.72 kg [- 5.50; - 3.95], respectively; Fig. 4 d). The p-values for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-9197",
+      "claim_type": "percentage",
+      "raw_text": "36.2%",
+      "numeric_values": [
+        36.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9197,
+      "sentence": "Proportions of serious AEs were comparable between semaglutide and placebo for males (32.5 vs 36.2%) and females (27.9 vs 33.0%).",
+      "context_window": "mparable between semaglutide and placebo for males (32.5 vs 36.2%) and females (27.9 vs 33.0%). The most frequently reported",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-9225",
+      "claim_type": "percentage",
+      "raw_text": "33.0%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9225,
+      "sentence": "Proportions of serious AEs were comparable between semaglutide and placebo for males (32.5 vs 36.2%) and females (27.9 vs 33.0%).",
+      "context_window": "and placebo for males (32.5 vs 36.2%) and females (27.9 vs 33.0%). The most frequently reported AEs were gastrointestinal (G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-9468",
+      "claim_type": "percentage",
+      "raw_text": "48.5%",
+      "numeric_values": [
+        48.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9468,
+      "sentence": "Female subjects reported more GI AEs in all groups compared with men (55.6 vs 48.5% for semaglutide and 37.7 vs 32.0% for placebo).",
+      "context_window": "ported more GI AEs in all groups compared with men (55.6 vs 48.5% for semaglutide and 37.7 vs 32.0% for placebo). Comparable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-9502",
+      "claim_type": "percentage",
+      "raw_text": "32.0%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9502,
+      "sentence": "Female subjects reported more GI AEs in all groups compared with men (55.6 vs 48.5% for semaglutide and 37.7 vs 32.0% for placebo).",
+      "context_window": "ompared with men (55.6 vs 48.5% for semaglutide and 37.7 vs 32.0% for placebo). Comparable proportions of men and women prema",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-9618",
+      "claim_type": "percentage",
+      "raw_text": "13.9%",
+      "numeric_values": [
+        13.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9618,
+      "sentence": "Comparable proportions of men and women prematurely discontinued treatment due to AEs (12.5 and 13.9%, respectively).",
+      "context_window": "men prematurely discontinued treatment due to AEs (12.5 and 13.9%, respectively). A similar proportion of males and females r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-9978",
+      "claim_type": "unit_value",
+      "raw_text": "42 days",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9978,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "nd-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10100",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1007",
+      "numeric_values": [
+        1007.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10100,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "drawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; plac",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10131",
+      "claim_type": "sample_size",
+      "raw_text": "n = 635",
+      "numeric_values": [
+        635.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10131,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "me first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10155",
+      "claim_type": "sample_size",
+      "raw_text": "n = 987",
+      "numeric_values": [
+        987.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10155,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "les: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10181",
+      "claim_type": "sample_size",
+      "raw_text": "n = 657",
+      "numeric_values": [
+        657.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10181,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10346",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1013",
+      "numeric_values": [
+        1013.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10346,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "he American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; plac",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10377",
+      "claim_type": "sample_size",
+      "raw_text": "n = 635",
+      "numeric_values": [
+        635.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10377,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "n [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660). AE adve",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10401",
+      "claim_type": "sample_size",
+      "raw_text": "n = 989",
+      "numeric_values": [
+        989.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10401,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "les: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660). AE adverse event To investigat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-10427",
+      "claim_type": "sample_size",
+      "raw_text": "n = 660",
+      "numeric_values": [
+        660.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10427,
+      "sentence": "Adverse events by gender in SUSTAIN 6. *On-treatment analysis comprising events with onset from the date of first dose to either the end-of-treatment follow-up visit, the date of last dose plus 42 days, the end-of-trial follow-up visit, or the date of withdrawal from trial, whichever came first (semaglutide males: n = 1007; semaglutide females: n = 635; placebo males: n = 987; placebo females: n = 657). \u2020 Full analysis set documented symptomatic hypoglycemia and severe hypoglycemia as defined by the American Diabetes Association [ 17 ] (semaglutide males: n = 1013; semaglutide females: n = 635; placebo males: n = 989; placebo females: n = 660).",
+      "context_window": "females: n = 635; placebo males: n = 989; placebo females: n = 660). AE adverse event To investigate the potential effects of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-851",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 851,
+      "sentence": "In SUSTAIN 6, subjects with T2D at high CV risk treated with semaglutide had a 26% lower risk of the primary composite outcome of first MACE (death from CV causes, nonfatal MI, or nonfatal stroke) vs those receiving placebo over 2 years (p = 0.02 for superiority [post hoc]) [ 12 ].",
+      "context_window": "cts with T2D at high CV risk treated with semaglutide had a 26% lower risk of the primary composite outcome of first MACE (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1001",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1001,
+      "sentence": "In SUSTAIN 6, subjects with T2D at high CV risk treated with semaglutide had a 26% lower risk of the primary composite outcome of first MACE (death from CV causes, nonfatal MI, or nonfatal stroke) vs those receiving placebo over 2 years (p = 0.02 for superiority [post hoc]) [ 12 ].",
+      "context_window": "tal MI, or nonfatal stroke) vs those receiving placebo over 2 years (p = 0.02 for superiority [post hoc]) [ 12 ]. Results of th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-1010",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1010,
+      "sentence": "In SUSTAIN 6, subjects with T2D at high CV risk treated with semaglutide had a 26% lower risk of the primary composite outcome of first MACE (death from CV causes, nonfatal MI, or nonfatal stroke) vs those receiving placebo over 2 years (p = 0.02 for superiority [post hoc]) [ 12 ].",
+      "context_window": "r nonfatal stroke) vs those receiving placebo over 2 years (p = 0.02 for superiority [post hoc]) [ 12 ]. Results of this post ho",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-1222",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1222,
+      "sentence": "Results of this post hoc analysis of the SUSTAIN 6 trial suggest the beneficial effects of semaglutide vs placebo were similar for men and women, for both younger (50-65 years) and older (> 65) populations studied, and for subjects with varying CV risk profiles at baseline.",
+      "context_window": "lacebo were similar for men and women, for both younger (50-65 years) and older (> 65) populations studied, and for subjects wit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-2466",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2466,
+      "sentence": "Cardiovascular risk reduction in populations > 65 years deserves considerable attention alongside the efficacy and safety associated with any intervention.",
+      "context_window": "rs for CVD. Cardiovascular risk reduction in populations > 65 years deserves considerable attention alongside the efficacy and",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-2823",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2823,
+      "sentence": "In this analysis, treatment with semaglutide reduced the risk of a MACE and its components in subjects aged 50\u201265 and > 65 years.",
+      "context_window": "k of a MACE and its components in subjects aged 50\u201265 and > 65 years. Further subgroup analysis in subjects > 75 years could not",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-2873",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2873,
+      "sentence": "Further subgroup analysis in subjects > 75 years could not be conducted due to insufficient numbers for accurate assessment.",
+      "context_window": "\u201265 and > 65 years. Further subgroup analysis in subjects > 75 years could not be conducted due to insufficient numbers for accu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3156",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3156,
+      "sentence": "A post hoc analysis from the LEADER (Liraglutide Effect and Action in Diabetes: Evaluation of Cardiovascular Outcome Results) trial examined the effects of liraglutide vs placebo in subjects aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ].",
+      "context_window": "ed the effects of liraglutide vs placebo in subjects aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ].",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-3166",
+      "claim_type": "sample_size",
+      "raw_text": "n = 836",
+      "numeric_values": [
+        836.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3166,
+      "sentence": "A post hoc analysis from the LEADER (Liraglutide Effect and Action in Diabetes: Evaluation of Cardiovascular Outcome Results) trial examined the effects of liraglutide vs placebo in subjects aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ].",
+      "context_window": "ects of liraglutide vs placebo in subjects aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ]. Treatment",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3196",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3196,
+      "sentence": "A post hoc analysis from the LEADER (Liraglutide Effect and Action in Diabetes: Evaluation of Cardiovascular Outcome Results) trial examined the effects of liraglutide vs placebo in subjects aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ].",
+      "context_window": "in subjects aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ]. Treatment with liraglutide led to a grea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-n-3206",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6183",
+      "numeric_values": [
+        6183.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3206,
+      "sentence": "A post hoc analysis from the LEADER (Liraglutide Effect and Action in Diabetes: Evaluation of Cardiovascular Outcome Results) trial examined the effects of liraglutide vs placebo in subjects aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ].",
+      "context_window": "ts aged \u2265 75 years (n = 836) and in those aged 60-74 years (n = 6183) [ 34 ]. Treatment with liraglutide led to a greater MACE r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3307",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3307,
+      "sentence": "Treatment with liraglutide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "context_window": "ide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u2012",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-hr-a-3317",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3317,
+      "sentence": "Treatment with liraglutide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "context_window": "a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-3327",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3327,
+      "sentence": "Treatment with liraglutide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "context_window": "MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-3375",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3375,
+      "sentence": "Treatment with liraglutide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "context_window": "(HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-hr-a-3385",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3385,
+      "sentence": "Treatment with liraglutide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "context_window": "[95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction). A pre-ex",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-3396",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3396,
+      "sentence": "Treatment with liraglutide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "context_window": "49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction). A pre-existent",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-p-3417",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3417,
+      "sentence": "Treatment with liraglutide led to a greater MACE risk reduction in subjects aged \u2265 75 years (HR: 0.66 [95% CI 0.49; 0.89]) compared with those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction).",
+      "context_window": "ith those aged 60\u201274 years (HR: 0.95; [95% CI 0.83; 1.09]) (p = 0.05 for interaction). A pre-existent history of MI or stroke i",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-5097",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5097,
+      "sentence": "The current analysis evaluated the tolerability of semaglutide across genders and both age groups (50\u201265 and > 65 years).",
+      "context_window": "semaglutide across genders and both age groups (50\u201265 and > 65 years). Overall, a higher proportion of women reported GI AEs com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-5834",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 years",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5834,
+      "sentence": "Limitations of the current analysis include the relatively short duration of follow-up (2.1 years) and the relatively small number of MACE, both in the semaglutide group (108/1648 subjects; 6.6%) and in subjects randomized to receive placebo (146/1649 subjects; 8.9%), leading to weaker statistical power in the subgroup results.",
+      "context_window": "nalysis include the relatively short duration of follow-up (2.1 years) and the relatively small number of MACE, both in the semag",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-5936",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5936,
+      "sentence": "Limitations of the current analysis include the relatively short duration of follow-up (2.1 years) and the relatively small number of MACE, both in the semaglutide group (108/1648 subjects; 6.6%) and in subjects randomized to receive placebo (146/1649 subjects; 8.9%), leading to weaker statistical power in the subgroup results.",
+      "context_window": "of MACE, both in the semaglutide group (108/1648 subjects; 6.6%) and in subjects randomized to receive placebo (146/1649 su",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-pct-6008",
+      "claim_type": "percentage",
+      "raw_text": "8.9%",
+      "numeric_values": [
+        8.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6008,
+      "sentence": "Limitations of the current analysis include the relatively short duration of follow-up (2.1 years) and the relatively small number of MACE, both in the semaglutide group (108/1648 subjects; 6.6%) and in subjects randomized to receive placebo (146/1649 subjects; 8.9%), leading to weaker statistical power in the subgroup results.",
+      "context_window": "subjects randomized to receive placebo (146/1649 subjects; 8.9%), leading to weaker statistical power in the subgroup resul",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-165",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 165,
+      "sentence": "In this post hoc analysis of the SUSTAIN 6 trial, once-weekly semaglutide vs placebo reduced the risk of MACE in all subjects regardless of gender, age (50\u201265 and > 65 years), or baseline CV risk profile (prior MI or stroke vs no prior MI or stroke or established CVD vs CV risk factors alone).",
+      "context_window": "MACE in all subjects regardless of gender, age (50\u201265 and > 65 years), or baseline CV risk profile (prior MI or stroke vs no pri",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6551895_cardiovascular_risk_reduction_with_once_weekly_semaglutide_i-u-531",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 531,
+      "sentence": "In addition, similar reductions in HbA 1c and weight were observed with semaglutide compared with placebo across gender and age groups, and safety profiles were comparable between men and women and in subjects above or below the age of 65 years.",
+      "context_window": "een men and women and in subjects above or below the age of 65 years.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

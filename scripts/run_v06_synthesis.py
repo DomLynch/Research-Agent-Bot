@@ -507,6 +507,45 @@ def _extract_canonical_trial_id(claims: list[dict]) -> str | None:
     return None
 
 
+def _shorten_claim_sentence(sentence: str, limit: int = 180) -> str:
+    clean = " ".join((sentence or "").replace("\xa0", " ").split())
+    if len(clean) <= limit:
+        return clean
+    return clean[: limit - 1].rstrip() + "…"
+
+
+def _build_receipt_thesis_text(
+    paper_id: str,
+    paper_title: str,
+    claims: list[dict],
+) -> str:
+    """Build a neutral receipt summary from source sentences.
+
+    Do not paraphrase extractor arm/direction fields here. Those fields
+    are useful for audit scoring, but at corpus scale they can be noisy;
+    receipt prose should preserve the source sentence so a bad arm label
+    cannot become a false synthesis claim.
+    """
+    evidence_lines: list[str] = []
+    seen: set[str] = set()
+    for claim in claims:
+        sentence = _shorten_claim_sentence(claim.get("sentence") or "")
+        if not sentence or sentence in seen:
+            continue
+        seen.add(sentence)
+        raw = (claim.get("raw_text") or "").strip()
+        if raw and raw not in sentence:
+            evidence_lines.append(f"{sentence} [{raw}]")
+        else:
+            evidence_lines.append(sentence)
+        if len(evidence_lines) >= 3:
+            break
+    title = paper_title or paper_id
+    if not evidence_lines:
+        return f"{title} — high-confidence quantitative evidence available."
+    return f"{title} — source excerpts: " + " | ".join(evidence_lines)
+
+
 def _load_paper_meta_by_id() -> dict[str, dict]:
     """Load all parsed-paper metadata (paper_id → dict). Used both
     by the receipt builder AND by Fix #10's citation-registry call
@@ -562,17 +601,10 @@ def build_receipts_from_quant_claims(
         meta = paper_meta_by_id.get(paper_id, {})
         agg = _aggregate_paper(paper_id, claims)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
-        # Most-common bound thesis as a one-line summary.
-        thesis_lines = []
-        for c in claims[:5]:
-            ep = c.get("endpoint") or "?"
-            arm = c.get("arm") or "?"
-            dirn = c.get("direction") or "?"
-            val = c.get("raw_text") or "?"
-            thesis_lines.append(f"{arm} {dirn} {ep} ({val})")
-        thesis_text = (
-            f"{meta.get('title', paper_id)} — bound findings: "
-            + "; ".join(thesis_lines[:3])
+        thesis_text = _build_receipt_thesis_text(
+            paper_id=paper_id,
+            paper_title=meta.get("title") or "",
+            claims=claims,
         )
         receipts.append(ReceiptSummary(
             receipt_id=paper_id,

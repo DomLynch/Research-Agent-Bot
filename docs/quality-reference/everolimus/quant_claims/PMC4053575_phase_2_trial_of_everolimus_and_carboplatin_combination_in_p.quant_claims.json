@@ -1,0 +1,3024 @@
+{
+  "paper_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p",
+  "doi": "10.1186/bcr3634",
+  "extracted_at": "2026-05-05T21:30:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 72,
+    "percentage": 81,
+    "confidence_interval": 3,
+    "p_value": 2,
+    "sample_size": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-486",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 486,
+      "sentence": "The primary objective of this study was to determine clinical benefit rate (CBR), that is (complete remission (CR) + partial remission (PR) + stable disease (SD) lasting \u22656 months) and the toxicity of everolimus/carboplatin in women with metastatic TNBC.",
+      "context_window": "CR) + partial remission (PR) + stable disease (SD) lasting \u22656 months) and the toxicity of everolimus/carboplatin in women with m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-736",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 736,
+      "sentence": "Treatment consisted of intravenous carboplatin area under the curve (AUC) 6 (later decreased to AUC 5 and subsequently to AUC 4) every 3 weeks with daily 5 mg everolimus.",
+      "context_window": "(later decreased to AUC 5 and subsequently to AUC 4) every 3 weeks with daily 5 mg everolimus. We enrolled 25 patients in thi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-755",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 755,
+      "sentence": "Treatment consisted of intravenous carboplatin area under the curve (AUC) 6 (later decreased to AUC 5 and subsequently to AUC 4) every 3 weeks with daily 5 mg everolimus.",
+      "context_window": "o AUC 5 and subsequently to AUC 4) every 3 weeks with daily 5 mg everolimus. We enrolled 25 patients in this study. Median",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-827",
+      "claim_type": "unit_value",
+      "raw_text": "58 years",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 827,
+      "sentence": "Median age was 58 years.",
+      "context_window": "mus. We enrolled 25 patients in this study. Median age was 58 years. There were one CR, six PRs, seven SDs and eight PDs (progr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-923",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 923,
+      "sentence": "CBR was 36% (95% confidence interval (CI) 21.1 to 57.4%).",
+      "context_window": ", seven SDs and eight PDs (progression of disease). CBR was 36% (95% confidence interval (CI) 21.1 to 57.4%). One SD was ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-928",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 928,
+      "sentence": "CBR was 36% (95% confidence interval (CI) 21.1 to 57.4%).",
+      "context_window": "en SDs and eight PDs (progression of disease). CBR was 36% (95% confidence interval (CI) 21.1 to 57.4%). One SD was achieve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-965",
+      "claim_type": "percentage",
+      "raw_text": "57.4%",
+      "numeric_values": [
+        57.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 965,
+      "sentence": "CBR was 36% (95% confidence interval (CI) 21.1 to 57.4%).",
+      "context_window": "disease). CBR was 36% (95% confidence interval (CI) 21.1 to 57.4%). One SD was achieved in a patient progressing on single ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1094",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1094,
+      "sentence": "The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached).",
+      "context_window": "carboplatin. The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-ci-1104",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.6 to 4.6",
+      "numeric_values": [
+        1.6,
+        4.6
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1104,
+      "sentence": "The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached).",
+      "context_window": "n. The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1118",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 months",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached).",
+      "context_window": "progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 mont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1160",
+      "claim_type": "unit_value",
+      "raw_text": "16.6 months",
+      "numeric_values": [
+        16.6
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1160,
+      "sentence": "The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached).",
+      "context_window": "hs (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached). There were seven patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached).",
+      "context_window": "6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached). There were seven patients (2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1180",
+      "claim_type": "unit_value",
+      "raw_text": "7.3 months",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1180,
+      "sentence": "The median progression free survival (PFS) was 3 months (95% CI 1.6 to 4.6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached).",
+      "context_window": "6 months) and overall survival (OS) was 16.6 months (95% CI 7.3 months to not reached). There were seven patients (28%) with \u2265 gra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1235",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1235,
+      "sentence": "There were seven patients (28%) with \u2265 grade 3 thrombocytopenia; three (12%) with grade 3 neutropenia (no bleeding/febrile neutropenia) and one (4%) with grade 3 anemia.",
+      "context_window": "% CI 7.3 months to not reached). There were seven patients (28%) with \u2265 grade 3 thrombocytopenia; three (12%) with grade 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1280",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1280,
+      "sentence": "There were seven patients (28%) with \u2265 grade 3 thrombocytopenia; three (12%) with grade 3 neutropenia (no bleeding/febrile neutropenia) and one (4%) with grade 3 anemia.",
+      "context_window": "even patients (28%) with \u2265 grade 3 thrombocytopenia; three (12%) with grade 3 neutropenia (no bleeding/febrile neutropenia)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1353",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1353,
+      "sentence": "There were seven patients (28%) with \u2265 grade 3 thrombocytopenia; three (12%) with grade 3 neutropenia (no bleeding/febrile neutropenia) and one (4%) with grade 3 anemia.",
+      "context_window": "de 3 neutropenia (no bleeding/febrile neutropenia) and one (4%) with grade 3 anemia. Greater hematological toxicity was se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-329",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 329,
+      "sentence": "Triple negative breast cancer (TNBC) is a breast cancer subtype characterized by the lack of expression of estrogen receptor (ER), progesterone receptor (PR) as well as HER-2 neu amplification (grade 3+ on immunohistochemistry (IHC) or fluorescent in-situ hybridization (FISH)-positive) on the cancer cells and constitutes about 15% of all breast cancers [ 1 ].",
+      "context_window": "(FISH)-positive) on the cancer cells and constitutes about 15% of all breast cancers [ 1 ]. Women with TNBC tend to be you",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-448",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 448,
+      "sentence": "Women with TNBC tend to be younger and demonstrate early recurrence (within the first 2 years), higher histological grade, higher rate of visceral metastasis and increased mortality rates when compared to hormone-positive breast cancer [ 2 ].",
+      "context_window": "younger and demonstrate early recurrence (within the first 2 years), higher histological grade, higher rate of visceral metast",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-719",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 719,
+      "sentence": "3 years with other subtypes of breast cancer [ 3 ].",
+      "context_window": "median survival of only one year when compared to about 2 . 3 years with other subtypes of breast cancer [ 3 ]. Due to lack of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1992",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1992,
+      "sentence": "In a phase 2 study of cisplatin in BRCA-1-mutated metastatic triple-negative breast cancer, overall response rates as high as 80% (complete response (CR) rates of 45% and PRes 35%) have been observed.",
+      "context_window": "e-negative breast cancer, overall response rates as high as 80% (complete response (CR) rates of 45% and PRes 35%) have bee",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2029",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2029,
+      "sentence": "In a phase 2 study of cisplatin in BRCA-1-mutated metastatic triple-negative breast cancer, overall response rates as high as 80% (complete response (CR) rates of 45% and PRes 35%) have been observed.",
+      "context_window": "ponse rates as high as 80% (complete response (CR) rates of 45% and PRes 35%) have been observed. Median time to progressio",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2042",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2042,
+      "sentence": "In a phase 2 study of cisplatin in BRCA-1-mutated metastatic triple-negative breast cancer, overall response rates as high as 80% (complete response (CR) rates of 45% and PRes 35%) have been observed.",
+      "context_window": "s high as 80% (complete response (CR) rates of 45% and PRes 35%) have been observed. Median time to progression was 12 mont",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2098",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2098,
+      "sentence": "Median time to progression was 12 months: 55% of patients had undergone prior chemotherapy for metastatic disease [ 9 ].",
+      "context_window": "Res 35%) have been observed. Median time to progression was 12 months: 55% of patients had undergone prior chemotherapy for metas",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2109",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2109,
+      "sentence": "Median time to progression was 12 months: 55% of patients had undergone prior chemotherapy for metastatic disease [ 9 ].",
+      "context_window": "ve been observed. Median time to progression was 12 months: 55% of patients had undergone prior chemotherapy for metastatic",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2335",
+      "claim_type": "percentage",
+      "raw_text": "63.5%",
+      "numeric_values": [
+        63.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2335,
+      "sentence": "Of the patients, 63.5% were triple negative.",
+      "context_window": "tastatic setting in a retrospective study. Of the patients, 63.5% were triple negative. The most common combination was Cispl",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2429",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2429,
+      "sentence": "The most common combination was Cisplatin and ifosfamide, used in 70% of the subjects.",
+      "context_window": "st common combination was Cisplatin and ifosfamide, used in 70% of the subjects. Other chemotherapy combinations used were",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2516",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2516,
+      "sentence": "Other chemotherapy combinations used were carboplatin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%).",
+      "context_window": "chemotherapy combinations used were carboplatin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcit",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2557",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2557,
+      "sentence": "Other chemotherapy combinations used were carboplatin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%).",
+      "context_window": "platin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%);",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2587",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2587,
+      "sentence": "Other chemotherapy combinations used were carboplatin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%).",
+      "context_window": "latin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2615",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2615,
+      "sentence": "Other chemotherapy combinations used were carboplatin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%).",
+      "context_window": "(4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2650",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2650,
+      "sentence": "Other chemotherapy combinations used were carboplatin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%).",
+      "context_window": "%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%). Response rates to",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2690",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2690,
+      "sentence": "Other chemotherapy combinations used were carboplatin-ifosfamide (5.6%); cisplatin-ifosfamide-bevacizumab (4.2%); cisplatin-gemcitabine (2.8%); cisplatin-docetaxel (4.2%); cisplatin-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%).",
+      "context_window": "n-cyclophosphamide (2.1%) and navelbine platine ifosfamide (7.7%). Response rates to individual regimens were not reported b",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2818",
+      "claim_type": "percentage",
+      "raw_text": "33.3%",
+      "numeric_values": [
+        33.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2818,
+      "sentence": "Response rates to individual regimens were not reported but the response rate to the platinum-based regimens in TNBC was 33.3% versus 22.0% in the non-TNBC group [ 10 ].",
+      "context_window": "he response rate to the platinum-based regimens in TNBC was 33.3% versus 22.0% in the non-TNBC group [ 10 ]. In another phase",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2831",
+      "claim_type": "percentage",
+      "raw_text": "22.0%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2831,
+      "sentence": "Response rates to individual regimens were not reported but the response rate to the platinum-based regimens in TNBC was 33.3% versus 22.0% in the non-TNBC group [ 10 ].",
+      "context_window": "ate to the platinum-based regimens in TNBC was 33.3% versus 22.0% in the non-TNBC group [ 10 ]. In another phase II study, th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3003",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3003,
+      "sentence": "In another phase II study, the combination of carboplatin with gemcitabine for metastatic TNBC showed an overall response rate (ORR) of 32% [ 11 ].",
+      "context_window": "or metastatic TNBC showed an overall response rate (ORR) of 32% [ 11 ]. Everolimus is a selective inhibitor of mammalian t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3666",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3666,
+      "sentence": "Loss of phosphatase and tensin homolog (PTEN) expression has been reported in 37 to 74% of metastatic triple-negative breast cancers [ 14 - 16 ], which results in activation of the PI3K/PTEN/AKT/mTOR pathway, making mTOR inhibitors also a potential molecular target for treating TNBC [ 17 , 18 ].",
+      "context_window": "tensin homolog (PTEN) expression has been reported in 37 to 74% of metastatic triple-negative breast cancers [ 14 - 16 ], w",
+      "claim_role": "background",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5295",
+      "claim_type": "unit_value",
+      "raw_text": "10.6 months",
+      "numeric_values": [
+        10.6
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 5295,
+      "sentence": "Progression-free survival (PFS) was 10.6 months in the combination group versus 4.1 months in the exemestane alone group (hazard ratio (HR) 0.36; 95% CI 0.27, 0.47; P <0.001).",
+      "context_window": "estane plus everolimus. Progression-free survival (PFS) was 10.6 months in the combination group versus 4.1 months in the exemestan",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5339",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 months",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 5339,
+      "sentence": "Progression-free survival (PFS) was 10.6 months in the combination group versus 4.1 months in the exemestane alone group (hazard ratio (HR) 0.36; 95% CI 0.27, 0.47; P <0.001).",
+      "context_window": "vival (PFS) was 10.6 months in the combination group versus 4.1 months in the exemestane alone group (hazard ratio (HR) 0.36; 95%",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-ci-5405",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.27, 0.47",
+      "numeric_values": [
+        0.27,
+        0.47
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 5405,
+      "sentence": "Progression-free survival (PFS) was 10.6 months in the combination group versus 4.1 months in the exemestane alone group (hazard ratio (HR) 0.36; 95% CI 0.27, 0.47; P <0.001).",
+      "context_window": "nths in the exemestane alone group (hazard ratio (HR) 0.36; 95% CI 0.27, 0.47; P <0.001). Response rates were 0.4% and 9.5% respectively",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-p-5424",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 5424,
+      "sentence": "Progression-free survival (PFS) was 10.6 months in the combination group versus 4.1 months in the exemestane alone group (hazard ratio (HR) 0.36; 95% CI 0.27, 0.47; P <0.001).",
+      "context_window": "ane alone group (hazard ratio (HR) 0.36; 95% CI 0.27, 0.47; P <0.001). Response rates were 0.4% and 9.5% respectively [ 24 ]. In",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-5455",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5455,
+      "sentence": "Response rates were 0.4% and 9.5% respectively [ 24 ].",
+      "context_window": "HR) 0.36; 95% CI 0.27, 0.47; P <0.001). Response rates were 0.4% and 9.5% respectively [ 24 ]. In preclinical models, mTOR i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-5464",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5464,
+      "sentence": "Response rates were 0.4% and 9.5% respectively [ 24 ].",
+      "context_window": "95% CI 0.27, 0.47; P <0.001). Response rates were 0.4% and 9.5% respectively [ 24 ]. In preclinical models, mTOR inhibitors",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-5779",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5779,
+      "sentence": "In a phase I/II trial of trastuzumab combined with mTOR inhibitor everolimus for Her-2-positive MBC, partial responses were seen in 15% of patients and stable disease lasting for at least 6 months in 19% (clinical benefit rate (CBR) 34%) [ 26 ].",
+      "context_window": "imus for Her-2-positive MBC, partial responses were seen in 15% of patients and stable disease lasting for at least 6 month",
+      "claim_role": "background",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5835",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 5835,
+      "sentence": "In a phase I/II trial of trastuzumab combined with mTOR inhibitor everolimus for Her-2-positive MBC, partial responses were seen in 15% of patients and stable disease lasting for at least 6 months in 19% (clinical benefit rate (CBR) 34%) [ 26 ].",
+      "context_window": "in 15% of patients and stable disease lasting for at least 6 months in 19% (clinical benefit rate (CBR) 34%) [ 26 ]. BOLERO-3 i",
+      "claim_role": "background",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-5847",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5847,
+      "sentence": "In a phase I/II trial of trastuzumab combined with mTOR inhibitor everolimus for Her-2-positive MBC, partial responses were seen in 15% of patients and stable disease lasting for at least 6 months in 19% (clinical benefit rate (CBR) 34%) [ 26 ].",
+      "context_window": "atients and stable disease lasting for at least 6 months in 19% (clinical benefit rate (CBR) 34%) [ 26 ]. BOLERO-3 is a pha",
+      "claim_role": "background",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-5880",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5880,
+      "sentence": "In a phase I/II trial of trastuzumab combined with mTOR inhibitor everolimus for Her-2-positive MBC, partial responses were seen in 15% of patients and stable disease lasting for at least 6 months in 19% (clinical benefit rate (CBR) 34%) [ 26 ].",
+      "context_window": "g for at least 6 months in 19% (clinical benefit rate (CBR) 34%) [ 26 ]. BOLERO-3 is a phase III trial comparing vinorelbin",
+      "claim_role": "background",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-6246",
+      "claim_type": "unit_value",
+      "raw_text": "5.8 months",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 6246,
+      "sentence": "The median time to progression was 5.8 months in the control arm and 7 months in the everolimus arm (HR for progression 0.78; 95% CI 0.65, 0.95; P <0.01).",
+      "context_window": "annual meeting in 2013. The median time to progression was 5.8 months in the control arm and 7 months in the everolimus arm (HR f",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-6280",
+      "claim_type": "unit_value",
+      "raw_text": "7 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 6280,
+      "sentence": "The median time to progression was 5.8 months in the control arm and 7 months in the everolimus arm (HR for progression 0.78; 95% CI 0.65, 0.95; P <0.01).",
+      "context_window": "n time to progression was 5.8 months in the control arm and 7 months in the everolimus arm (HR for progression 0.78; 95% CI 0.65",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-ci-6337",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.65, 0.95",
+      "numeric_values": [
+        0.65,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 6337,
+      "sentence": "The median time to progression was 5.8 months in the control arm and 7 months in the everolimus arm (HR for progression 0.78; 95% CI 0.65, 0.95; P <0.01).",
+      "context_window": "nd 7 months in the everolimus arm (HR for progression 0.78; 95% CI 0.65, 0.95; P <0.01). The response rates were not significantly differ",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-p-6356",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 6356,
+      "sentence": "The median time to progression was 5.8 months in the control arm and 7 months in the everolimus arm (HR for progression 0.78; 95% CI 0.65, 0.95; P <0.01).",
+      "context_window": "everolimus arm (HR for progression 0.78; 95% CI 0.65, 0.95; P <0.01). The response rates were not significantly different betwe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-6442",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6442,
+      "sentence": "The response rates were not significantly different between the two groups (41% in the everolimus arm versus 37.2% in the non-everolimus arm).",
+      "context_window": "es were not significantly different between the two groups (41% in the everolimus arm versus 37.2% in the non-everolimus ar",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-6475",
+      "claim_type": "percentage",
+      "raw_text": "37.2%",
+      "numeric_values": [
+        37.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6475,
+      "sentence": "The response rates were not significantly different between the two groups (41% in the everolimus arm versus 37.2% in the non-everolimus arm).",
+      "context_window": "nt between the two groups (41% in the everolimus arm versus 37.2% in the non-everolimus arm). The data on overall survival, t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-6987",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 6987,
+      "sentence": "In this study 15 patients with pretreated MBC were treated with weekly carboplatin, with an area under the curve (AUC) of 2, and different dose levels of everolimus (level I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg).",
+      "context_window": "UC) of 2, and different dose levels of everolimus (level I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg). Th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-7005",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 7005,
+      "sentence": "In this study 15 patients with pretreated MBC were treated with weekly carboplatin, with an area under the curve (AUC) of 2, and different dose levels of everolimus (level I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg).",
+      "context_window": "erent dose levels of everolimus (level I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg). Three patients wer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-7022",
+      "claim_type": "unit_value",
+      "raw_text": "7.5 mg",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 7022,
+      "sentence": "In this study 15 patients with pretreated MBC were treated with weekly carboplatin, with an area under the curve (AUC) of 2, and different dose levels of everolimus (level I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg).",
+      "context_window": "of everolimus (level I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg). Three patients were each treated with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-7043",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 7043,
+      "sentence": "In this study 15 patients with pretreated MBC were treated with weekly carboplatin, with an area under the curve (AUC) of 2, and different dose levels of everolimus (level I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg).",
+      "context_window": "I: 2.5 mg, level II: 5 mg, level III: 7.5 mg and level IV: 10 mg). Three patients were each treated with levels I through II",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-7213",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 7213,
+      "sentence": "Three patients had PRes and three had stable disease (SD) lasting >24 weeks, making the CBR 40%.",
+      "context_window": "atients had PRes and three had stable disease (SD) lasting >24 weeks, making the CBR 40%. Median PFS was 19 weeks and overall su",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-7238",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7238,
+      "sentence": "Three patients had PRes and three had stable disease (SD) lasting >24 weeks, making the CBR 40%.",
+      "context_window": "e had stable disease (SD) lasting >24 weeks, making the CBR 40%. Median PFS was 19 weeks and overall survival (OS) was 35.3",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-7258",
+      "claim_type": "unit_value",
+      "raw_text": "19 weeks",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 7258,
+      "sentence": "Median PFS was 19 weeks and overall survival (OS) was 35.3 weeks [ 28 ].",
+      "context_window": "(SD) lasting >24 weeks, making the CBR 40%. Median PFS was 19 weeks and overall survival (OS) was 35.3 weeks [ 28 ]. This is th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-7297",
+      "claim_type": "unit_value",
+      "raw_text": "35.3 weeks",
+      "numeric_values": [
+        35.3
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 7297,
+      "sentence": "Median PFS was 19 weeks and overall survival (OS) was 35.3 weeks [ 28 ].",
+      "context_window": "40%. Median PFS was 19 weeks and overall survival (OS) was 35.3 weeks [ 28 ]. This is the first study that looks at an mTOR inhib",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-144",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 144,
+      "sentence": "The primary objective of the study was to determine the clinical benefit (CR + PRes + SD lasting \u22656 months) and toxicity of everolimus and carboplatin combination in women with metastatic TNBC who have had 0 to 3 prior chemotherapy regimens for metastatic disease.",
+      "context_window": "to determine the clinical benefit (CR + PRes + SD lasting \u22656 months) and toxicity of everolimus and carboplatin combination in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-714",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 714,
+      "sentence": "Eligible patients were women with metastatic histologically confirmed triple-negative breast cancer (ER <10%, PR <10%, HER-2neu IHC 0 or 1, or FISH-negative).",
+      "context_window": "histologically confirmed triple-negative breast cancer (ER <10%, PR <10%, HER-2neu IHC 0 or 1, or FISH-negative). Additiona",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-723",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 723,
+      "sentence": "Eligible patients were women with metastatic histologically confirmed triple-negative breast cancer (ER <10%, PR <10%, HER-2neu IHC 0 or 1, or FISH-negative).",
+      "context_window": "cally confirmed triple-negative breast cancer (ER <10%, PR <10%, HER-2neu IHC 0 or 1, or FISH-negative). Additional eligibi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-814",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 814,
+      "sentence": "Additional eligibility criteria included age \u226518 years; World Health Organization (WHO) performance status \u22642; adequate bone marrow function (absolute neutrophil count \u22651 .",
+      "context_window": "SH-negative). Additional eligibility criteria included age \u226518 years; World Health Organization (WHO) performance status \u22642; ade",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1374",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1374,
+      "sentence": "5 \u00d7 ULN (\u22645 \u00d7 ULN in patients with liver metastases)); patients on stable dose of lower molecular weight heparin for >2 weeks at time of treatment; adequate renal function (serum creatinine \u22641 .",
+      "context_window": "ients on stable dose of lower molecular weight heparin for >2 weeks at time of treatment; adequate renal function (serum creati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1488",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1488,
+      "sentence": "5 \u00d7 ULN); fasting serum cholesterol \u2264300 mg/dL or \u22647 .",
+      "context_window": "(serum creatinine \u22641 . 5 \u00d7 ULN); fasting serum cholesterol \u2264300 mg/dL or \u22647 . 75 mmol/L and fasting triglycerides \u22642 . 5 \u00d7 ULN (i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1506",
+      "claim_type": "unit_value",
+      "raw_text": "75 mmol",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1506,
+      "sentence": "75 mmol/L and fasting triglycerides \u22642 .",
+      "context_window": "\u22641 . 5 \u00d7 ULN); fasting serum cholesterol \u2264300 mg/dL or \u22647 . 75 mmol/L and fasting triglycerides \u22642 . 5 \u00d7 ULN (in case one or bo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1811",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1811,
+      "sentence": "5 \u00d7 ULN (in case one or both of these thresholds were exceeded, the patient could only be included after initiation of appropriate lipid-lowering medication); baseline lung computed tomography (CT) scan or positron emission tomography (PET)/CT; oxygen saturation \u226590% in room air; and negative serum pregnancy test within 7 days prior to starting treatment.",
+      "context_window": "r positron emission tomography (PET)/CT; oxygen saturation \u226590% in room air; and negative serum pregnancy test within 7 day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1869",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1869,
+      "sentence": "5 \u00d7 ULN (in case one or both of these thresholds were exceeded, the patient could only be included after initiation of appropriate lipid-lowering medication); baseline lung computed tomography (CT) scan or positron emission tomography (PET)/CT; oxygen saturation \u226590% in room air; and negative serum pregnancy test within 7 days prior to starting treatment.",
+      "context_window": "\u226590% in room air; and negative serum pregnancy test within 7 days prior to starting treatment. Patients could have had 0 to 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2143",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2143,
+      "sentence": "Exclusion criteria included: history of having received other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization with attenuated live vaccines within one week of study entry; uncontrolled brain or leptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or basal or squamous cell carcinomas of the skin; uncontrolled medical conditions such as symptomatic congestive heart failure of New York Heart Association Class III or IV, unstable angina pectoris, symptomatic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease; severely impaired lung function (spirometry and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasting serum glucose \u22651.5 \u00d7 ULN); uncontrolled severe infections; liver disease such as cirrhosis, chronic active hepatitis or chronic persistent hepatitis; known history of HIV seropositivity, impairment of gastrointestinal function or gastrointestinal disease that may significantly alter the absorption of everolimus (ulcerative disease, uncontrolled nausea, vomiting, diarrhea, malabsorption or small bowel resection); active, bleeding diathesis; pregnancy or lactation; prior treatment with an mTOR inhibitor or known hypersensitivity to mTOR inhibitors; history of noncompliance to medical regimens; unwillingness to comply or inability to comply with the protocol, or an ongoing alcohol or drug addiction.",
+      "context_window": "other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significan",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2236",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2236,
+      "sentence": "Exclusion criteria included: history of having received other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization with attenuated live vaccines within one week of study entry; uncontrolled brain or leptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or basal or squamous cell carcinomas of the skin; uncontrolled medical conditions such as symptomatic congestive heart failure of New York Heart Association Class III or IV, unstable angina pectoris, symptomatic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease; severely impaired lung function (spirometry and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasting serum glucose \u22651.5 \u00d7 ULN); uncontrolled severe infections; liver disease such as cirrhosis, chronic active hepatitis or chronic persistent hepatitis; known history of HIV seropositivity, impairment of gastrointestinal function or gastrointestinal disease that may significantly alter the absorption of everolimus (ulcerative disease, uncontrolled nausea, vomiting, diarrhea, malabsorption or small bowel resection); active, bleeding diathesis; pregnancy or lactation; prior treatment with an mTOR inhibitor or known hypersensitivity to mTOR inhibitors; history of noncompliance to medical regimens; unwillingness to comply or inability to comply with the protocol, or an ongoing alcohol or drug addiction.",
+      "context_window": "drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2301",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/day",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 2301,
+      "sentence": "Exclusion criteria included: history of having received other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization with attenuated live vaccines within one week of study entry; uncontrolled brain or leptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or basal or squamous cell carcinomas of the skin; uncontrolled medical conditions such as symptomatic congestive heart failure of New York Heart Association Class III or IV, unstable angina pectoris, symptomatic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease; severely impaired lung function (spirometry and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasting serum glucose \u22651.5 \u00d7 ULN); uncontrolled severe infections; liver disease such as cirrhosis, chronic active hepatitis or chronic persistent hepatitis; known history of HIV seropositivity, impairment of gastrointestinal function or gastrointestinal disease that may significantly alter the absorption of everolimus (ulcerative disease, uncontrolled nausea, vomiting, diarrhea, malabsorption or small bowel resection); active, bleeding diathesis; pregnancy or lactation; prior treatment with an mTOR inhibitor or known hypersensitivity to mTOR inhibitors; history of noncompliance to medical regimens; unwillingness to comply or inability to comply with the protocol, or an ongoing alcohol or drug addiction.",
+      "context_window": "ks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2516",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2516,
+      "sentence": "Exclusion criteria included: history of having received other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization with attenuated live vaccines within one week of study entry; uncontrolled brain or leptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or basal or squamous cell carcinomas of the skin; uncontrolled medical conditions such as symptomatic congestive heart failure of New York Heart Association Class III or IV, unstable angina pectoris, symptomatic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease; severely impaired lung function (spirometry and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasting serum glucose \u22651.5 \u00d7 ULN); uncontrolled severe infections; liver disease such as cirrhosis, chronic active hepatitis or chronic persistent hepatitis; known history of HIV seropositivity, impairment of gastrointestinal function or gastrointestinal disease that may significantly alter the absorption of everolimus (ulcerative disease, uncontrolled nausea, vomiting, diarrhea, malabsorption or small bowel resection); active, bleeding diathesis; pregnancy or lactation; prior treatment with an mTOR inhibitor or known hypersensitivity to mTOR inhibitors; history of noncompliance to medical regimens; unwillingness to comply or inability to comply with the protocol, or an ongoing alcohol or drug addiction.",
+      "context_window": "ptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or ba",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2845",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2845,
+      "sentence": "Exclusion criteria included: history of having received other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization with attenuated live vaccines within one week of study entry; uncontrolled brain or leptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or basal or squamous cell carcinomas of the skin; uncontrolled medical conditions such as symptomatic congestive heart failure of New York Heart Association Class III or IV, unstable angina pectoris, symptomatic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease; severely impaired lung function (spirometry and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasting serum glucose \u22651.5 \u00d7 ULN); uncontrolled severe infections; liver disease such as cirrhosis, chronic active hepatitis or chronic persistent hepatitis; known history of HIV seropositivity, impairment of gastrointestinal function or gastrointestinal disease that may significantly alter the absorption of everolimus (ulcerative disease, uncontrolled nausea, vomiting, diarrhea, malabsorption or small bowel resection); active, bleeding diathesis; pregnancy or lactation; prior treatment with an mTOR inhibitor or known hypersensitivity to mTOR inhibitors; history of noncompliance to medical regimens; unwillingness to comply or inability to comply with the protocol, or an ongoing alcohol or drug addiction.",
+      "context_window": "atic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac ar",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3077",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3077,
+      "sentence": "Exclusion criteria included: history of having received other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization with attenuated live vaccines within one week of study entry; uncontrolled brain or leptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or basal or squamous cell carcinomas of the skin; uncontrolled medical conditions such as symptomatic congestive heart failure of New York Heart Association Class III or IV, unstable angina pectoris, symptomatic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease; severely impaired lung function (spirometry and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasting serum glucose \u22651.5 \u00d7 ULN); uncontrolled severe infections; liver disease such as cirrhosis, chronic active hepatitis or chronic persistent hepatitis; known history of HIV seropositivity, impairment of gastrointestinal function or gastrointestinal disease that may significantly alter the absorption of everolimus (ulcerative disease, uncontrolled nausea, vomiting, diarrhea, malabsorption or small bowel resection); active, bleeding diathesis; pregnancy or lactation; prior treatment with an mTOR inhibitor or known hypersensitivity to mTOR inhibitors; history of noncompliance to medical regimens; unwillingness to comply or inability to comply with the protocol, or an ongoing alcohol or drug addiction.",
+      "context_window": "y and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3144",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3144,
+      "sentence": "Exclusion criteria included: history of having received other anticancer therapies or investigational drugs within 2 weeks of the start of the study drug; major surgery or significant traumatic injury within 4 weeks; patients receiving chronic systemic corticosteroids at \u226520 mg/day or other immunosuppressive agents; history of immunization with attenuated live vaccines within one week of study entry; uncontrolled brain or leptomeningeal metastases; other malignancies within the past 3 years except for adequately treated carcinoma of the cervix or basal or squamous cell carcinomas of the skin; uncontrolled medical conditions such as symptomatic congestive heart failure of New York Heart Association Class III or IV, unstable angina pectoris, symptomatic congestive heart failure, myocardial infarction within 6 months of start of the study drug; serious uncontrolled cardiac arrhythmia or any other clinically significant cardiac disease; severely impaired lung function (spirometry and diffusing capacity for carbon monoxide (DLCO) that is 50% of the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasting serum glucose \u22651.5 \u00d7 ULN); uncontrolled severe infections; liver disease such as cirrhosis, chronic active hepatitis or chronic persistent hepatitis; known history of HIV seropositivity, impairment of gastrointestinal function or gastrointestinal disease that may significantly alter the absorption of everolimus (ulcerative disease, uncontrolled nausea, vomiting, diarrhea, malabsorption or small bowel resection); active, bleeding diathesis; pregnancy or lactation; prior treatment with an mTOR inhibitor or known hypersensitivity to mTOR inhibitors; history of noncompliance to medical regimens; unwillingness to comply or inability to comply with the protocol, or an ongoing alcohol or drug addiction.",
+      "context_window": "the normal predicted value and/or oxygen saturation that is 89% or lower at rest in room air); uncontrolled diabetes (fasti",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-4024",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4024,
+      "sentence": "Patients were required to have baseline pulmonary function tests if their oxygen saturation was lower than 90% on room air.",
+      "context_window": "ry function tests if their oxygen saturation was lower than 90% on room air. Either PET/CT or CT chest/abdomen/pelvis or bo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4182",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4182,
+      "sentence": "Either PET/CT or CT chest/abdomen/pelvis or bone scan were obtained at baseline and then after every two cycles of treatment (that is, every 6 weeks).",
+      "context_window": "nd then after every two cycles of treatment (that is, every 6 weeks). At baseline, tumor lesions were categorized as measurable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4491",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4491,
+      "sentence": "0. a physical examination, vital signs, and tumor markers (carcinoembryonic acid (CEA) and cancer antigen (CA) 27/29) were checked at baseline and then every 3 weeks.",
+      "context_window": "antigen (CA) 27/29) were checked at baseline and then every 3 weeks. A baseline electrocardiogram was also obtained. Laboratory",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4888",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4888,
+      "sentence": "According to the original study plan, carboplatin AUC 6 was to be given intravenously every 3 weeks: 5 mg of everolimus was to be given daily with a three-patient run-in and then 10 mg daily if there were no dose-limiting toxicities.",
+      "context_window": "plan, carboplatin AUC 6 was to be given intravenously every 3 weeks: 5 mg of everolimus was to be given daily with a three-pati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4897",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4897,
+      "sentence": "According to the original study plan, carboplatin AUC 6 was to be given intravenously every 3 weeks: 5 mg of everolimus was to be given daily with a three-patient run-in and then 10 mg daily if there were no dose-limiting toxicities.",
+      "context_window": "boplatin AUC 6 was to be given intravenously every 3 weeks: 5 mg of everolimus was to be given daily with a three-patient ru",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4975",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4975,
+      "sentence": "According to the original study plan, carboplatin AUC 6 was to be given intravenously every 3 weeks: 5 mg of everolimus was to be given daily with a three-patient run-in and then 10 mg daily if there were no dose-limiting toxicities.",
+      "context_window": "was to be given daily with a three-patient run-in and then 10 mg daily if there were no dose-limiting toxicities. Due to hig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5199",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5199,
+      "sentence": "Due to high incidence of severe thrombocytopenia seen with carboplatin AUC 6, the dose of carboplatin was first amended to AUC 5 on 2 August 2010 and then to AUC 4 with 5 mg of everolimus (with no escalation of everolimus to 10 mg) on 4 April 2011.",
+      "context_window": "st amended to AUC 5 on 2 August 2010 and then to AUC 4 with 5 mg of everolimus (with no escalation of everolimus to 10 mg) o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5255",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5255,
+      "sentence": "Due to high incidence of severe thrombocytopenia seen with carboplatin AUC 6, the dose of carboplatin was first amended to AUC 5 on 2 August 2010 and then to AUC 4 with 5 mg of everolimus (with no escalation of everolimus to 10 mg) on 4 April 2011.",
+      "context_window": "ith 5 mg of everolimus (with no escalation of everolimus to 10 mg) on 4 April 2011. According to the most recent study plan,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5408",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5408,
+      "sentence": "According to the most recent study plan, carboplatin was administered with AUC of 4 on day 1 of every cycle, and repeated every 3 weeks.",
+      "context_window": "d with AUC of 4 on day 1 of every cycle, and repeated every 3 weeks. Everolimus was provided by Novartis. The patients were ins",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5491",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5491,
+      "sentence": "The patients were instructed to take 5 mg of everolimus orally once daily continuously from study day 1 until progression of disease or unacceptable toxicity.",
+      "context_window": "provided by Novartis. The patients were instructed to take 5 mg of everolimus orally once daily continuously from study day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-5792",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5792,
+      "sentence": "With 25 subjects (Figure 1 ), this study had 80% power to test the null hypothesis that the clinical benefit rate (CR + PRes + SD \u22656 months) is \u22640 .",
+      "context_window": "hase II trial. With 25 subjects (Figure 1 ), this study had 80% power to test the null hypothesis that the clinical benefit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-5878",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5878,
+      "sentence": "With 25 subjects (Figure 1 ), this study had 80% power to test the null hypothesis that the clinical benefit rate (CR + PRes + SD \u22656 months) is \u22640 .",
+      "context_window": "hypothesis that the clinical benefit rate (CR + PRes + SD \u22656 months) is \u22640 . 10 versus the alternative hypothesis that clinical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-6026",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6026,
+      "sentence": "If the number of responses (including CR + PR + SD \u2265 6 months) was six or more, the hypothesis that P \u22640 .",
+      "context_window": ". 30. If the number of responses (including CR + PR + SD \u2265 6 months) was six or more, the hypothesis that P \u22640 . 10 would be re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-6319",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6319,
+      "sentence": "200 (power of 80%) and an actual error rate of 0 .",
+      "context_window": "d be rejected with a target error rate of 0 . 200 (power of 80%) and an actual error rate of 0 . 193. These estimated clini",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-6655",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6655,
+      "sentence": "The benefit rate was estimated along with the exact 95% CI.",
+      "context_window": "events. The benefit rate was estimated along with the exact 95% CI. Kaplan-Meier curves were provided for PFS and OS in thi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-6771",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6771,
+      "sentence": "Kaplan-Meier curves were provided for PFS and OS in this study; the corresponding median survival times and 95% CI were also estimated.",
+      "context_window": "in this study; the corresponding median survival times and 95% CI were also estimated. SAS 9 . 3 was used for all analyses",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-108",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 108,
+      "sentence": "Additional file 1 : Table S1 shows the distributions of the demographic characteristics of the 25 patients: 44% of patients had received no prior line of treatment for metastatic disease, 28% had received one prior line of treatment, 24% had received two prior lines of treatment and 4% had received three prior lines of treatment for metastatic disease.",
+      "context_window": "ions of the demographic characteristics of the 25 patients: 44% of patients had received no prior line of treatment for met",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-188",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 188,
+      "sentence": "Additional file 1 : Table S1 shows the distributions of the demographic characteristics of the 25 patients: 44% of patients had received no prior line of treatment for metastatic disease, 28% had received one prior line of treatment, 24% had received two prior lines of treatment and 4% had received three prior lines of treatment for metastatic disease.",
+      "context_window": "received no prior line of treatment for metastatic disease, 28% had received one prior line of treatment, 24% had received",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-234",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 234,
+      "sentence": "Additional file 1 : Table S1 shows the distributions of the demographic characteristics of the 25 patients: 44% of patients had received no prior line of treatment for metastatic disease, 28% had received one prior line of treatment, 24% had received two prior lines of treatment and 4% had received three prior lines of treatment for metastatic disease.",
+      "context_window": "atic disease, 28% had received one prior line of treatment, 24% had received two prior lines of treatment and 4% had receiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-284",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 284,
+      "sentence": "Additional file 1 : Table S1 shows the distributions of the demographic characteristics of the 25 patients: 44% of patients had received no prior line of treatment for metastatic disease, 28% had received one prior line of treatment, 24% had received two prior lines of treatment and 4% had received three prior lines of treatment for metastatic disease.",
+      "context_window": "reatment, 24% had received two prior lines of treatment and 4% had received three prior lines of treatment for metastatic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-407",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 407,
+      "sentence": "In this study clinical benefit (CR + PRes + SD of >30% lasting more >6 months) was achieved in 9/25 patients (36%; 95% CI 21 .",
+      "context_window": "isease. In this study clinical benefit (CR + PRes + SD of >30% lasting more >6 months) was achieved in 9/25 patients (36%;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-425",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 425,
+      "sentence": "In this study clinical benefit (CR + PRes + SD of >30% lasting more >6 months) was achieved in 9/25 patients (36%; 95% CI 21 .",
+      "context_window": "tudy clinical benefit (CR + PRes + SD of >30% lasting more >6 months) was achieved in 9/25 patients (36%; 95% CI 21 . 1, 57 . 4%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-466",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 466,
+      "sentence": "In this study clinical benefit (CR + PRes + SD of >30% lasting more >6 months) was achieved in 9/25 patients (36%; 95% CI 21 .",
+      "context_window": ">30% lasting more >6 months) was achieved in 9/25 patients (36%; 95% CI 21 . 1, 57 . 4%). There was one patient with CR, si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-471",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 471,
+      "sentence": "In this study clinical benefit (CR + PRes + SD of >30% lasting more >6 months) was achieved in 9/25 patients (36%; 95% CI 21 .",
+      "context_window": "lasting more >6 months) was achieved in 9/25 patients (36%; 95% CI 21 . 1, 57 . 4%). There was one patient with CR, six wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-491",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 491,
+      "sentence": "4%).",
+      "context_window": "hs) was achieved in 9/25 patients (36%; 95% CI 21 . 1, 57 . 4%). There was one patient with CR, six with PRes, seven with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 662,
+      "sentence": "One patient with CR and four with PR were on a carboplatin dose of AUC 4 combined with 5 mg of everolimus.",
+      "context_window": "r with PR were on a carboplatin dose of AUC 4 combined with 5 mg of everolimus. Two patients had stable disease lasting long",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-734",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 734,
+      "sentence": "Two patients had stable disease lasting longer than 6 months.",
+      "context_window": "olimus. Two patients had stable disease lasting longer than 6 months. Three patients did not complete the first cycle of chemoth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1158",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1158,
+      "sentence": "Among the four patients treated with carboplatin AUC 6 and everolimus 5 mg daily, there was one with PRes and one with SD lasting longer than 6 months.",
+      "context_window": "four patients treated with carboplatin AUC 6 and everolimus 5 mg daily, there was one with PRes and one with SD lasting long",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1230",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1230,
+      "sentence": "Among the four patients treated with carboplatin AUC 6 and everolimus 5 mg daily, there was one with PRes and one with SD lasting longer than 6 months.",
+      "context_window": "there was one with PRes and one with SD lasting longer than 6 months. Among the three patients treated with carboplatin AUC 5, t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1355",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1355,
+      "sentence": "Among the three patients treated with carboplatin AUC 5, there was one with PR and one with SD lasting longer than 6 months.",
+      "context_window": ", there was one with PR and one with SD lasting longer than 6 months. Among the 18 patients treated with AUC 4, there were one w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1477",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1477,
+      "sentence": "Among the 18 patients treated with AUC 4, there were one with CR and four with PRes (response rate (RR) and CBR 28%).",
+      "context_window": "one with CR and four with PRes (response rate (RR) and CBR 28%). Kaplan-Meier curves for PFS and OS are shown in Figures",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1586",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1586,
+      "sentence": "The median PFS time was 3 months (95% CI 1 .",
+      "context_window": "wn in Figures 2 and 3 respectively. The median PFS time was 3 months (95% CI 1 . 6, 4 . 6 months) and overall survival time was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1596",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1596,
+      "sentence": "The median PFS time was 3 months (95% CI 1 .",
+      "context_window": "res 2 and 3 respectively. The median PFS time was 3 months (95% CI 1 . 6, 4 . 6 months) and overall survival time was 16 .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1614",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1614,
+      "sentence": "6 months) and overall survival time was 16 .",
+      "context_window": "tively. The median PFS time was 3 months (95% CI 1 . 6, 4 . 6 months) and overall survival time was 16 . 6 months (95% CI 7.3 mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1659",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1659,
+      "sentence": "6 months (95% CI 7.3 months - not reached).",
+      "context_window": "CI 1 . 6, 4 . 6 months) and overall survival time was 16 . 6 months (95% CI 7.3 months - not reached). Progression-free surviv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1669",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1669,
+      "sentence": "6 months (95% CI 7.3 months - not reached).",
+      "context_window": "4 . 6 months) and overall survival time was 16 . 6 months (95% CI 7.3 months - not reached). Progression-free survival cu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1676",
+      "claim_type": "unit_value",
+      "raw_text": "7.3 months",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1676,
+      "sentence": "6 months (95% CI 7.3 months - not reached).",
+      "context_window": "months) and overall survival time was 16 . 6 months (95% CI 7.3 months - not reached). Progression-free survival curve. Kaplan-Me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1922",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1922,
+      "sentence": "The median PFS time was 3 months (95% CI 1 .",
+      "context_window": "ed with everolimus and carboplatin. The median PFS time was 3 months (95% CI 1 . 6, 4 . 6 months). Overall survival curve in pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1932",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1932,
+      "sentence": "The median PFS time was 3 months (95% CI 1 .",
+      "context_window": "erolimus and carboplatin. The median PFS time was 3 months (95% CI 1 . 6, 4 . 6 months). Overall survival curve in patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1950",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1950,
+      "sentence": "6 months).",
+      "context_window": "platin. The median PFS time was 3 months (95% CI 1 . 6, 4 . 6 months). Overall survival curve in patients with triple-negative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2252",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2252,
+      "sentence": "6 months (95% CI 7.3 months - not reached).",
+      "context_window": "imus and carboplatin. Median overall survival (OS) was 16 . 6 months (95% CI 7.3 months - not reached). Hematological toxicity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2262",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2262,
+      "sentence": "6 months (95% CI 7.3 months - not reached).",
+      "context_window": "arboplatin. Median overall survival (OS) was 16 . 6 months (95% CI 7.3 months - not reached). Hematological toxicity (thro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-2269",
+      "claim_type": "unit_value",
+      "raw_text": "7.3 months",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2269,
+      "sentence": "6 months (95% CI 7.3 months - not reached).",
+      "context_window": "tin. Median overall survival (OS) was 16 . 6 months (95% CI 7.3 months - not reached). Hematological toxicity (thrombocytopenia,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2590",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2590,
+      "sentence": "Seven patients (28%) had grade 3 or higher thrombocytopenia.",
+      "context_window": "e provided in Additional file 2 : Table S2. Seven patients (28%) had grade 3 or higher thrombocytopenia. Five of these seve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2773",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2773,
+      "sentence": "Since protocol amendment, only two of the eighteen patients (11%) treated with carboplatin doses of AUC 4 had grade 3 thrombocytopenia.",
+      "context_window": "ince protocol amendment, only two of the eighteen patients (11%) treated with carboplatin doses of AUC 4 had grade 3 thromb",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-2864",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2864,
+      "sentence": "Three patients (12%) had grade 3 neutropenia with two of these patients being treated prior to second amendment for carboplatin dose.",
+      "context_window": "oses of AUC 4 had grade 3 thrombocytopenia. Three patients (12%) had grade 3 neutropenia with two of these patients being t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3141",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3141,
+      "sentence": "Growth factor support was required in seven patients (28%) and transfusion support in six patients (24%).",
+      "context_window": "emia. Growth factor support was required in seven patients (28%) and transfusion support in six patients (24%). Non-hemato",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3187",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3187,
+      "sentence": "Growth factor support was required in seven patients (28%) and transfusion support in six patients (24%).",
+      "context_window": "ven patients (28%) and transfusion support in six patients (24%). Non-hematological toxicity data related to the treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3365",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3365,
+      "sentence": "This study is notable for minimal incidence of mucositis (one patient, 4%), that can probably be attributed to the lower dose of everolimus used.",
+      "context_window": "is notable for minimal incidence of mucositis (one patient, 4%), that can probably be attributed to the lower dose of ever",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3509",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3509,
+      "sentence": "The other grade 3 non-hematological toxicities included dehydration (n = 1, carboplatin AUC 4), nausea and vomiting (n = 1, carboplatin AUC 4), and hypersensitivity to carboplatin (n = 1, carboplatin AUC 4).",
+      "context_window": "grade 3 non-hematological toxicities included dehydration (n = 1, carboplatin AUC 4), nausea and vomiting (n = 1, carboplati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3557",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3557,
+      "sentence": "The other grade 3 non-hematological toxicities included dehydration (n = 1, carboplatin AUC 4), nausea and vomiting (n = 1, carboplatin AUC 4), and hypersensitivity to carboplatin (n = 1, carboplatin AUC 4).",
+      "context_window": "ehydration (n = 1, carboplatin AUC 4), nausea and vomiting (n = 1, carboplatin AUC 4), and hypersensitivity to carboplatin (n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3621",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3621,
+      "sentence": "The other grade 3 non-hematological toxicities included dehydration (n = 1, carboplatin AUC 4), nausea and vomiting (n = 1, carboplatin AUC 4), and hypersensitivity to carboplatin (n = 1, carboplatin AUC 4).",
+      "context_window": "1, carboplatin AUC 4), and hypersensitivity to carboplatin (n = 1, carboplatin AUC 4). Grade 3 insomnia (n = 1), headache (n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3666",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3666,
+      "sentence": "Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but these adverse events were thought to be unrelated to treatment.",
+      "context_window": "o carboplatin (n = 1, carboplatin AUC 4). Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 ele",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3684",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3684,
+      "sentence": "Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but these adverse events were thought to be unrelated to treatment.",
+      "context_window": "1, carboplatin AUC 4). Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3712",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3712,
+      "sentence": "Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but these adverse events were thought to be unrelated to treatment.",
+      "context_window": "e 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in the setting of infection (n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3774",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3774,
+      "sentence": "Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but these adverse events were thought to be unrelated to treatment.",
+      "context_window": "= 1), grade 3 elevation of INR in the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3806",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3806,
+      "sentence": "Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but these adverse events were thought to be unrelated to treatment.",
+      "context_window": "n the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-n-3838",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3838,
+      "sentence": "Grade 3 insomnia (n = 1), headache (n = 1), grade 3 cellulitis (n = 1), grade 3 elevation of INR in the setting of infection (n = 1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but these adverse events were thought to be unrelated to treatment.",
+      "context_window": "1); grade 3 foot infection (n = 1) and shortness of breath (n = 2) were also observed but these adverse events were thought t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-4095",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4095,
+      "sentence": "The four patients in the AUC-6 carboplatin cohort received 70% of the planned total dose of carboplatin, the three patients in the AUC-5 cohort received 68% of the planned dose and the 18 patients in the AUC-4 cohort received 64% of the total planned dose.",
+      "context_window": "The four patients in the AUC-6 carboplatin cohort received 70% of the planned total dose of carboplatin, the three patient",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-4189",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4189,
+      "sentence": "The four patients in the AUC-6 carboplatin cohort received 70% of the planned total dose of carboplatin, the three patients in the AUC-5 cohort received 68% of the planned dose and the 18 patients in the AUC-4 cohort received 64% of the total planned dose.",
+      "context_window": "arboplatin, the three patients in the AUC-5 cohort received 68% of the planned dose and the 18 patients in the AUC-4 cohort",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-4262",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4262,
+      "sentence": "The four patients in the AUC-6 carboplatin cohort received 70% of the planned total dose of carboplatin, the three patients in the AUC-5 cohort received 68% of the planned dose and the 18 patients in the AUC-4 cohort received 64% of the total planned dose.",
+      "context_window": "anned dose and the 18 patients in the AUC-4 cohort received 64% of the total planned dose. This result seems paradoxical bu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-4558",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4558,
+      "sentence": "If we exclude that patient, 84% of the planned dose of carboplatin could be delivered in the AUC-4 group.",
+      "context_window": "everolimus for 14 more cycles. If we exclude that patient, 84% of the planned dose of carboplatin could be delivered in th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-4654",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4654,
+      "sentence": "Fifteen patients (60%) required treatment interruptions and nine (36%) patients required dose reductions.",
+      "context_window": "in could be delivered in the AUC-4 group. Fifteen patients (60%) required treatment interruptions and nine (36%) patients r",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-4702",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4702,
+      "sentence": "Fifteen patients (60%) required treatment interruptions and nine (36%) patients required dose reductions.",
+      "context_window": "n patients (60%) required treatment interruptions and nine (36%) patients required dose reductions. In seven patients, the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4997",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4997,
+      "sentence": "In five patients, the dose of everolimus was decreased to 5 mg on alternate days.",
+      "context_window": ". In five patients, the dose of everolimus was decreased to 5 mg on alternate days. Five patients (20%) were hospitalized fo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-5036",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5036,
+      "sentence": "Five patients (20%) were hospitalized for the following reasons: hypersensitivity reaction to carboplatin, cellulitis (unrelated to treatment regimen), foot infection (unrelated to treatment regimen), shortness of breath (unrelated to treatment regimen), headache and dehydration respectively.",
+      "context_window": "mus was decreased to 5 mg on alternate days. Five patients (20%) were hospitalized for the following reasons: hypersensitiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-135",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 135,
+      "sentence": "Everolimus 5 mg daily given orally and carboplatin AUC 4 administered intravenously every 3 weeks was both safe and efficacious in metastatic TNBC with a CBR of 36% and median PFS of 3 months.",
+      "context_window": "tin in triple-negative metastatic breast cancer. Everolimus 5 mg daily given orally and carboplatin AUC 4 administered intra",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-214",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 214,
+      "sentence": "Everolimus 5 mg daily given orally and carboplatin AUC 4 administered intravenously every 3 weeks was both safe and efficacious in metastatic TNBC with a CBR of 36% and median PFS of 3 months.",
+      "context_window": "ally and carboplatin AUC 4 administered intravenously every 3 weeks was both safe and efficacious in metastatic TNBC with a CBR",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-285",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 285,
+      "sentence": "Everolimus 5 mg daily given orally and carboplatin AUC 4 administered intravenously every 3 weeks was both safe and efficacious in metastatic TNBC with a CBR of 36% and median PFS of 3 months.",
+      "context_window": "both safe and efficacious in metastatic TNBC with a CBR of 36% and median PFS of 3 months. When carboplatin was administer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-307",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 307,
+      "sentence": "Everolimus 5 mg daily given orally and carboplatin AUC 4 administered intravenously every 3 weeks was both safe and efficacious in metastatic TNBC with a CBR of 36% and median PFS of 3 months.",
+      "context_window": "ious in metastatic TNBC with a CBR of 36% and median PFS of 3 months. When carboplatin was administered at a dose of AUC 5 or gr",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-948",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 948,
+      "sentence": "Of patients in arm 1, 32% and 52% of patients in the combination arm had received no prior chemotherapy for metastatic disease.",
+      "context_window": "plus carboplatin from the beginning. Of patients in arm 1, 32% and 52% of patients in the combination arm had received no",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-956",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 956,
+      "sentence": "Of patients in arm 1, 32% and 52% of patients in the combination arm had received no prior chemotherapy for metastatic disease.",
+      "context_window": "rboplatin from the beginning. Of patients in arm 1, 32% and 52% of patients in the combination arm had received no prior ch",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1102",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1102,
+      "sentence": "The response rate to single-agent cetuximab was 6% whereas with the combination of cetuximab and carboplatin it was 17%.",
+      "context_window": "ic disease. The response rate to single-agent cetuximab was 6% whereas with the combination of cetuximab and carboplatin i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1170",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1170,
+      "sentence": "The response rate to single-agent cetuximab was 6% whereas with the combination of cetuximab and carboplatin it was 17%.",
+      "context_window": "as with the combination of cetuximab and carboplatin it was 17%. The dose of carboplatin administered in the above-mentione",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-1262",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1262,
+      "sentence": "The dose of carboplatin administered in the above-mentioned study was AUC 2 weekly for 3 weeks over a 28-day cycle.",
+      "context_window": "inistered in the above-mentioned study was AUC 2 weekly for 3 weeks over a 28-day cycle. Our patient population was similar to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1350",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1350,
+      "sentence": "Our patient population was similar to the Carey study with 44% of patients having received no prior treatment for metastatic disease.",
+      "context_window": "Our patient population was similar to the Carey study with 44% of patients having received no prior treatment for metastat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1529",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1529,
+      "sentence": "However, the combination of carboplatin and everolimus was able to achieve a much higher response rate (28% in our study) despite a lower dose of carboplatin, demonstrating synergy of the combination [ 29 ].",
+      "context_window": "everolimus was able to achieve a much higher response rate (28% in our study) despite a lower dose of carboplatin, demonstr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1959",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1959,
+      "sentence": "In a series of 151 patients with metastatic TNBC, response rates with treatment using platinum combination therapy (cisplatin combined with either paclitaxel or vinorelbine) was higher than with other chemotherapy regimens (42% versus 23%).",
+      "context_window": "orelbine) was higher than with other chemotherapy regimens (42% versus 23%). In another small series of eight patients with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-1970",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1970,
+      "sentence": "In a series of 151 patients with metastatic TNBC, response rates with treatment using platinum combination therapy (cisplatin combined with either paclitaxel or vinorelbine) was higher than with other chemotherapy regimens (42% versus 23%).",
+      "context_window": "as higher than with other chemotherapy regimens (42% versus 23%). In another small series of eight patients with metastatic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-3066",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg/d",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 3066,
+      "sentence": "5 mg/d, 5.0 mg/d, 7 .",
+      "context_window": "rboplatin (AUC 2) and everolimus at escalating doses of 2 . 5 mg/d, 5.0 mg/d, 7 . 5 mg/d or 10.0 mg/d, with 40% of patients re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-3074",
+      "claim_type": "unit_value",
+      "raw_text": "5.0 mg/d",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 3074,
+      "sentence": "5 mg/d, 5.0 mg/d, 7 .",
+      "context_window": "n (AUC 2) and everolimus at escalating doses of 2 . 5 mg/d, 5.0 mg/d, 7 . 5 mg/d or 10.0 mg/d, with 40% of patients receiving 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-3088",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg/d",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 3088,
+      "sentence": "5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d.",
+      "context_window": "everolimus at escalating doses of 2 . 5 mg/d, 5.0 mg/d, 7 . 5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d. The s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-3098",
+      "claim_type": "unit_value",
+      "raw_text": "10.0 mg/d",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 3098,
+      "sentence": "5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d.",
+      "context_window": "at escalating doses of 2 . 5 mg/d, 5.0 mg/d, 7 . 5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d. The study showed a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3114",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3114,
+      "sentence": "5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d.",
+      "context_window": "oses of 2 . 5 mg/d, 5.0 mg/d, 7 . 5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d. The study showed a CBR in 6/",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-3140",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/d",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 3140,
+      "sentence": "5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d.",
+      "context_window": "/d, 7 . 5 mg/d or 10.0 mg/d, with 40% of patients receiving 10 mg/d. The study showed a CBR in 6/14 patients (43%). Of note, 4/",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3190",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3190,
+      "sentence": "The study showed a CBR in 6/14 patients (43%).",
+      "context_window": "receiving 10 mg/d. The study showed a CBR in 6/14 patients (43%). Of note, 4/6 patients treated with everolimus 10 mg/day h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-3242",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 3242,
+      "sentence": "Of note, 4/6 patients treated with everolimus 10 mg/day had dose reductions due to grade-3 or -4 hematological toxicity or grade-4 fatigue.",
+      "context_window": "tients (43%). Of note, 4/6 patients treated with everolimus 10 mg/day had dose reductions due to grade-3 or -4 hematological toxi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3379",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3379,
+      "sentence": "There was also a higher rate of mucositis (60%) observed, compared to only 4% in our study, likely due to the lower dose of everolimus.",
+      "context_window": "grade-4 fatigue. There was also a higher rate of mucositis (60%) observed, compared to only 4% in our study, likely due to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-pct-3411",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3411,
+      "sentence": "There was also a higher rate of mucositis (60%) observed, compared to only 4% in our study, likely due to the lower dose of everolimus.",
+      "context_window": "a higher rate of mucositis (60%) observed, compared to only 4% in our study, likely due to the lower dose of everolimus. G",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4277",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4277,
+      "sentence": "3 months after carboplatin was discontinued secondary to neutropenia.",
+      "context_window": "maintained this response on single-agent everolimus for 8 . 3 months after carboplatin was discontinued secondary to neutropenia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053575_phase_2_trial_of_everolimus_and_carboplatin_combination_in_p-u-4584",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4584,
+      "sentence": "Carboplatin at AUC 4 when combined with 5 mg daily everolimus is safe and efficacious.",
+      "context_window": "atic breast cancer. Carboplatin at AUC 4 when combined with 5 mg daily everolimus is safe and efficacious.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,56 +1,111 @@
 {
   "topic": "aspirin",
+  "retrieval_mode": "calibrated",
   "n_queries": 10,
-  "n_unique_candidates": 667,
-  "n_selected_for_fetch": 50,
-  "n_pmcid_resolved": 23,
-  "n_extracted": 16,
+  "n_unique_candidates": 327,
+  "n_selected_for_fetch": 327,
+  "n_pmcid_resolved": 55,
+  "n_extracted": 27,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10684304",
+    "PMC10927007",
+    "PMC11664752",
+    "PMC11977457",
+    "PMC12146176",
+    "PMC13090850",
+    "PMC1463851",
+    "PMC1729640",
+    "PMC1838122",
+    "PMC1856452",
+    "PMC2014771",
+    "PMC2125731",
+    "PMC2213873",
+    "PMC2527654",
+    "PMC2658865",
+    "PMC27417",
+    "PMC2774388",
+    "PMC2782995",
+    "PMC28250",
+    "PMC2875463",
+    "PMC3114321",
+    "PMC3195738",
+    "PMC3234022",
+    "PMC3482605",
+    "PMC3491860",
+    "PMC3708487",
+    "PMC40824",
+    "PMC4090734",
+    "PMC4122498",
+    "PMC4215843",
+    "PMC4317158",
+    "PMC4412344",
+    "PMC4589917",
+    "PMC4973997",
+    "PMC5118504",
+    "PMC5219640",
+    "PMC558207",
+    "PMC5861878",
+    "PMC6289056",
+    "PMC6426126",
+    "PMC6433466",
+    "PMC6439678",
+    "PMC6515567",
+    "PMC6827248",
+    "PMC7041201",
+    "PMC7116860",
+    "PMC7217722",
+    "PMC7298605",
+    "PMC7936068",
+    "PMC8245534",
+    "PMC8631123",
+    "PMC8969428",
+    "PMC9536436",
+    "PMC9908069",
+    "PMC9981985"
+  ],
+  "active_paper_ids": [
+    "PMC10684304_prevalence_of_acetylsalicylic_acid_use_for_primary_preventio",
+    "PMC11664752_twilight_a_randomized_trial_of_ticagrelor_monotherapy_versus",
+    "PMC12146176_methods_and_validity_indicators_for_measuring_adherence_and_",
+    "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi",
+    "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event",
+    "PMC2527654_low_dose_aspirin_and_cognitive_function_in_middle_aged_to_el",
+    "PMC2658865_the_prevention_of_progression_of_arterial_disease_and_diabet",
+    "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p",
+    "PMC2782995_aspirin_for_the_primary_prevention_of_cardiovascular_events",
+    "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p",
+    "PMC3114321_differential_effect_of_low_dose_aspirin_for_primary_preventi",
+    "PMC3234022_might_salicylate_exert_benefits_against_childhood_cancer",
+    "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl",
+    "PMC4090734_molecular_targets_of_aspirin_and_cancer_prevention",
+    "PMC4122498_low_dose_aspirin_for_prevention_of_cardiovascular_disease_in",
+    "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta",
+    "PMC4589917_benefit_harm_analysis_and_charts_for_individualized_and_pref",
+    "PMC4973997_bleeding_risk_with_long_term_low_dose_aspirin_a_systematic_r",
+    "PMC5118504_impact_of_postoperative_duration_of_aspirin_use_on_longevity",
+    "PMC5219640_recent_trends_in_the_prevalence_of_low_dose_aspirin_use_for_",
+    "PMC6827248_aspirin_for_primary_prevention_of_cardiovascular_disease_a_m",
+    "PMC7041201_adherence_to_recommended_practices_for_perioperative_anesthe",
+    "PMC7936068_effect_of_aspirin_on_cancer_incidence_and_mortality_in_older",
+    "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car",
+    "PMC8631123_low_dose_aspirin_for_primary_prevention_of_cardiovascular_ev",
+    "PMC8969428_the_effect_of_low_dose_aspirin_on_frailty_in_older_adults_in",
+    "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma"
+  ],
   "failures": [
     {
-      "title": "Investigating aspirin and post-colonoscopy colorectal cancer and cancer-specific",
-      "doi": "10.1097/meg.0000000000003177",
-      "pmid": "41870898",
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Association between Low-Dose Aspirin Use and Colorectal Cancer Incidence using J",
-      "doi": "10.1158/1055-9965.epi-25-2015",
-      "pmid": "42012454",
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Low-dose aspirin use and cancer-specific mortality: a meta-analysis of cohort st",
-      "doi": "10.1093/pubmed/fdz114",
-      "pmid": "31781767",
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Prasugrel versus clopidogrel in patients with acute coronary syndromes.",
-      "doi": "10.1056/nejmoa0706482",
-      "pmid": "17982182",
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Aspirin-Resistant Thromboxane Biosynthesis and the Risk of Myocardial Infarction",
-      "doi": "10.1161/01.cir.0000013777.21160.07",
+      "title": "Low\u2010dose aspirin for secondary cardiovascular prevention \u2013 cardiovascular risks ",
+      "doi": "10.1111/j.1365-2796.2005.01477.x",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "China Headache and Vertigo Registry Study",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Testing a New Treatment Strategy to Improve Secondary Stroke Prevention for Olde",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "PFO Closure, Oral Anticoagulants or Antiplatelet Therapy After PFO-associated St",
-      "doi": null,
+      "title": "Primary Prevention of Cardiovascular Events With Low-Dose Aspirin and Vitamin E ",
+      "doi": "10.2337/diacare.26.12.3264",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -61,87 +116,129 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Regorafenib With Low-dose Chemotherapies and Aspirin Followed by Standard Chemot",
+      "title": "Aspirin Continuation or Interruption in Patients at Moderate Risk for Cardiovasc",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Safety and Efficacy of Very Short DAPT in Older Patients Undergoing PCI",
+      "title": "Aspirin-free Strategy With Ticagrelor in Patients With a Myocardial Infarction T",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Prognostic Value of NETosis Markers for Thrombosis During Myeloproliferative Neo",
+      "title": "Clopidogrel vs. Aspirin for Cardiovascular Risk Reduction in Patients With S. Au",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "IndObufen Versus asPirin After Coronary Drug-eluting Stent implantaTION in Elder",
+      "title": "Effectiveness of Two Aspirin Doses for Prevention of Hypertensive Disorders of P",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Identification of Critical Thermal Environments for Aged Adults",
+      "title": "Aspirin for Patients With Metabolic Dysfunction-Associated Steatotic Liver Disea",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Aspirin 50 mg vs. 100 mg in Elderly Cardiovascular Disease Patients",
+      "title": "Safety and Effectiveness of Early Aspirin Administration After Mitral Valve Repa",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "PCSK9 Inhibitor With Statin Therapy for Asymptomatic Intracranial Atherosclerosi",
+      "title": "Finding the Best Dose of Aspirin to Prevent Lynch Syndrome Cancers",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Phase 3 Study to Assess the Efficacy, Safety, and Tolerability of Itepekimab (",
+      "title": "AVAJAK: Apixaban/Rivaroxaban Versus Aspirin for Primary Prevention of Thrombo-em",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Delivery and Implementation of a Randomised Crossover Trial on Thrombosis",
+      "title": "Aspirin in Subclinical Coronary Artery Disease: A Pilot Randomised Controlled Tr",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Advancing Reperfusion Therapy for Ischemic Stroke (ARTS): Tenecteplase in Medium",
+      "title": "Aspirin Dosing in Pregnancy",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Study to Assess the Safety and Efficacy of Different Doses of ELV001 to Treat ",
+      "title": "Aspirin and Hemocompatibility Events in Chronic Advanced Heart Failure Patients ",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Low-Dose Aspirin and Central Presbycusis: A Substudy of the ASPREE Randomized Cl",
-      "doi": "10.1001/jamaoto.2026.0338",
-      "pmid": "41954898",
+      "title": "Low Dose Aspirin to Lower Inflammation and Prevent Endometrial Cancer in Postmen",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The effects of daily low-dose aspirin on white matter hyperintensity lesions and",
-      "doi": "10.1016/j.lanhl.2025.100815",
-      "pmid": "41698380",
+      "title": "Aspirin and a PoTent P2Y12 Inhibitor Versus Aspirin and Clopidogrel in Patients ",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "White matter hyperintensities, retinal vascular calibre and changes in age-relat",
-      "doi": "10.1093/braincomms/fcag133",
-      "pmid": "42063522",
+      "title": "Perioperative Risk in Patients on Chronic Aspirin Undergoing Craniotomy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Early Low-dose ASpirin Use After Intravenous Thrombolysis for Acute Ischemic Cer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Coated or Chewable Aspirin and a Hybrid Strategy to Mitigate Adverse Effects of ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin and Preeclampsia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Trial to Determine Effective Aspirin Dose in COPD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "AntiCoagulation Versus AcetylSalicylic Acid After Transcatheter Aortic Valve Imp",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Frailty Assessment Reveals Cognitive Differences in ASA Classification: Anesthes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment With Aspirin After Preeclampsia: TAP Trial",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
@@ -151,266 +248,2038 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Cancer Incidence and Mortality With Aspirin in Older Adults: Follow-Up of the AS",
-      "doi": "10.1001/jamaoncol.2025.6196",
-      "pmid": "41609798",
+      "title": "Effect of Indobufen and Aspirin on Platelet Aggregation and Long Term Prognosis ",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Post hoc Feasibility Analysis of a Randomized Controlled Trial Comparing Low-dos",
-      "doi": "10.4103/aam.aam_487_25",
-      "pmid": "41656484",
+      "title": "Low-dose Evaluation of Aspirin After STEMI Patients With PCI: A Multicenter, Dou",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "STrategies for antithrombotic tRreatment following transcatheter edge-to-edge re",
-      "doi": "10.1016/j.ahj.2026.107362",
-      "pmid": "41616808",
+      "title": "Effect of Chemoprevention by Low-dose Aspirin of New or Recurrent Colorectal Ade",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ASA in Prevention of Ovarian Cancer (STICs and STONEs)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ASA or CFS for ICU Prediction in Geriatric Hip Fracture",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Heparin Alone vs. Heparin-Aspirin Combo in Free Flap Survival",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study for Exploring the Efficacy of Naoxintong Capsules in the Treatment of Co",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combining Aspirin With Ticagrelor or Clopidogrel in Large-vessel Minor Stroke or",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VTE Incidence After Rivaroxaban + Aspirin or SAPT After Lower-limb Revasculariza",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin and Neutrophils in Preeclampsia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study on Tirofiban With Aspirin in the Treatment of Acute Penetrating Artery Ter",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of 81 vs 325mg of ASA in Treatment of BCVI",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SAVES-IBD: Safety & Efficacy of Aspirin vs. Standard of Care for VTE Prophylaxis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Treatment for Small Unruptured InTracranial Aneurysms With Ischemic cere",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Dose Comparison in Elderly PCI Patients: 30mg vs. 75mg in Acute Coronary",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Low-Dose Rivaroxaban Plus Aspirin on Carotid Plaque Inflammation (SPIR",
+      "doi": "10.1101/2025.11.18.25340536",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Emerging Trends of Myocardial Infarction in Young Indian Adults: Epidemiology, R",
+      "doi": "10.21276/amit.2025.v12.i3.121",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anticoagulation Using Rivaroxaban on Top of Aspirin in Intracranial Atherosclero",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin\u00ae Plus Rivaroxaban Versus Rivaroxaban Alone for the Prevention of Venous ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low Molecular Weight hEparin vs. Aspirin Post-partum",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin to Target Arterial Events in Chronic Kidney Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ticagrelor With and Without Aspirin in Patients With Diabetes Mellitus",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "PAtients With Symptomatic Peripheral Artery Disease on Rivaroxaban-acetylsalicyl",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Utilization of Aspirin for Prevention of Pre-Eclampsia in Nigeria: A Explanatory",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Learn More About the Safety and Effectiveness of Rivaroxaban (Xarelto) ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Stroke rates, risk factors, and aspirin prescribing trends in the Canadian Fabry",
+      "doi": "10.1101/2024.07.17.24310571",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development and validation of a tool to stratify the treatment effect of low-dos",
+      "doi": "10.1101/2024.06.07.24308636",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Which patients with myocardial infarction can be prescribed only P2Y12 inhibitor",
+      "doi": "10.21518/at2023-011",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Short Term Dabigatran Etexilate Followed by Aspirin Monotherapy Afte",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rivaroxaban Plus ASA in Embolic Stroke of Undetermined Source(AREST-ESUS)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevalence of Aspirin Resistance in Ischemic Stroke Patients at Assiut Universit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of Higher Aspirin Dosing for Prevention of Preeclampsia in High Ri",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Expanded statistical analysis plan for legacy and long-term effects of aspirin i",
+      "doi": "10.1101/2023.09.13.23295514",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The prevalence of low dose aspirin use for prevention of adverse cardiovascular ",
+      "doi": "10.1101/2023.02.13.23285845",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acetylsalicylic acid as the only pharmacological method for the prevention of pr",
+      "doi": "10.26442/20795696.2023.2.202231",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin overuse in primary prevention: nationwide temporal trends in low-dose as",
+      "doi": "10.1093/eurheartj/ehad655.2374",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low Dose Aspirin for Primary Prevention of Adverse Pregnancy Outcome",
+      "doi": "10.53339/aimdr.2023.9.14",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acetylsalicylic Acid (Aspirin) for Primary Prevention of Cardiovascular Events i",
+      "doi": "10.2174/1570161121666230131120544",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Temporal trends in low-dose aspirin therapy for primary prevention of cardiovasc",
+      "doi": "10.1093/eurjpc/zwad092",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Use to Prevent Cardiovascular Disease",
+      "doi": "10.1001/jama.2022.4983",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Use to Prevent Cardiovascular Disease and Colorectal Cancer",
+      "doi": "10.1001/jama.2022.3337",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Potential Impact of the 2019 ACC/AHA Guidelines on the Primary Prevention of Car",
+      "doi": "10.1161/circoutcomes.121.007979",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Evaluate BMS-986141 Added on to Aspirin or Ticagrelor or the Combinat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "COMT on Aspirin Platelets Effects (CAPE)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rivaroxaban or Aspirin in Patients With CHD & GD Undergoing PCI",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Aspirin in Preventing Venous Thromboembolism",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "INVestIgation of rheumatiC AF Treatment Using Vitamin K Antagonists, Rivaroxaban",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin in Colorectal Cancer Liver Metastases",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Discontinuation After Left Atrial Appendage Occlusion in Atrial Fibrilla",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rivaroxaban or Aspirin for Biological Aortic Prosthesis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cilostazol and Aspirin in Stroke and TIA",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigation of Relation With Preoperative Fragility and ASA Score in Elderly P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Evolocumab on the Antiplatelet Effects of Ticagrelor and Aspirin in Pa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mobilization of Endothelial Progenitor Cells and Aspirin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of mortality and aspirin use for COVID-19 residents at VA Community ",
+      "doi": "10.1101/2022.08.03.22278392",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-dose aspirin as primary prevention for adults without cardiovascular disease",
+      "doi": "10.1097/jxx.0000000000000792",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rationale for Expanding the Use of Low-Dose Aspirin for Primary Cardiovascular P",
+      "doi": "10.18103/mra.v10i10.3159",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-dose aspirin for the prevention of atherothrombosis across the cardiovascula",
+      "doi": "10.1097/cp9.0000000000000017",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Long Term Effect of Low Dose Aspirin on Uric Acid in Chinese Patients With C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "To Evaluate the Safety and Tolerability of Combined Administration of SHR2285 Ta",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Thromboxane B2 and Platelet Function Testing as Measures of Aspirin Resistance i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clopidogrel With Aspirin in High-risk Patients With Acute Non-disabling Cerebrov",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Synergistic Influence of Rivaroxaban on Inflammation and Coagulation Biomarkers ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the VerifyNow\u00ae Aspirin Test and PRUTest\u00ae Platelet Reactivity Tests",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin in Preventing Recurrence of Cancer in Patients With HER2 Negative Stage ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "TiVi Evaluation of Microcirculatory Reactivity of the Skin to Galvanic Stimulati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clopidogrel Aspirin Therapy (CAT) Versus Apixiban Aspirin Therapy (AAT) After Lo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A protocol for DUAL pathway inhibition (low-dose rivaroxaban and aspirin) as com",
+      "doi": "10.1097/md9.0000000000000163",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Low-Dose Aspirin on Frailty in Older Adults in the Aspirin in Redu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cancer prevention with aspirin in hereditary colorectal cancer (Lynch syndrome),",
+      "doi": "10.1016/s0140-6736(20)30366-4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of HFNO on Spontaneous Ventilation in Patients of Different ASA Risk D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Investigation Into The Impact Of Enteric Coated Of Aspirin In Patients With N",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Protective Effect of Aspirin on COVID-19 Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of PeriOPerative Aspirin-ResisTance and CardioVascular Outcome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Aspirin and Clopidogrel in the Atrial Fibrillation With L",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The LEAD COVID-19 Trial: Low-risk, Early Aspirin and Vitamin D to Reduce COVID-1",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ticagrelol Versus Aspirin in Ischemic Stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Clinical Benefit and Risk of Oral Aspirin for Unruptured Intracranial Aneury",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THALES - Acute STroke or Transient IscHaemic Attack Treated With TicAgreLor and ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EffectiveNess of Low-dose Aspirin in Prevention of Cancer in the Stomach and Oes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Unruptured Intracranial Aneurysm Aspirin Trial (UIAAT).",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the Efficacy of Ticagrelor Combined With ASA to ASA Alone in Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caution Regarding Low-Dose Aspirin for Primary Prevention of Cardiovascular Even",
+      "doi": "10.1097/01.naj.0000577440.62103.d9",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Aspirin for Primary Prevention in Persons with Diabetes Mellitus",
+      "doi": "10.1056/nejmoa1804988",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long\u2010term use of low\u2010dose aspirin for cancer prevention: A 10\u2010year population co",
+      "doi": "10.1002/ijc.32083",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin-free strategies in cardiovascular disease and cardioembolic stroke preve",
+      "doi": "10.1038/s41569-018-0049-1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ACOG Committee Opinion No. 743: Low-Dose Aspirin Use During Pregnancy",
+      "doi": "10.1097/aog.0000000000002708",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Should Aspirin Be Used for Primary Prevention in the Post-Statin Era?",
+      "doi": "10.1056/nejme1812000",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety of aspirin for primary prevention of cardiovascular events: ",
+      "doi": "10.1093/eurheartj/ehy813",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin and Enoxaparin for VTE in Trauma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ticagrelor Monotherapy Compared to Aspirin Monotherapy in Patients With History ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "PPARGC1\u03b2 and CNTN4 Genotype Aspirin Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Early Administration of Aspirin in Patients With Acute Ischemic Stroke Treated W",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin and Renal Disease Progression in Patients With Type 2 Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study Comparing Ticagrelor With Aspirin for Prevention of Vascular Events in Pat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rivaroxaban Versus Aspirin in Secondary Prevention of Stroke and Prevention of S",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does low-dose aspirin use for cardiovascular disease prevention reduce colorecta",
+      "doi": "10.1097/cej.0000000000000319",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "To continue or discontinue aspirin? The risk of perioperative complications",
+      "doi": "10.5281/m9.figshare.6983222",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rivaroxaban with or without Aspirin in Stable Cardiovascular Disease",
+      "doi": "10.1056/nejmoa1709118",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin Discontinuation and Risk of Cardiovascular Events",
+      "doi": "10.1161/circulationaha.117.028321",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Longterm Hydroxychloroquine Therapy and Low-dose Aspirin May Have an Additive Ef",
+      "doi": "10.3899/jrheum.161351",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin as a Novel Anti-Inflammatory Modality in the Fontan Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Epidemiological Study on the Safety of Aspirin in The Health Improvement Network",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "WilL LOWer Dose Aspirin be More Effective Following ACS? (WILLOW-ACS)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Allopurinol on Mono and Co-administration With Statins on Platelets Re",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Platelet Function After Administration of Aspirin Versus Lysine Acetyls",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Resistance and Sleep Apnea in Type-2 Diabetic Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Misoprostol for Small Bowel Ulcers and Obscure Bleeding Due to Aspirin or Nonste",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Effectiveness Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Continuation of Aspirin Before Isolated Heart Valve Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Kinetics of cEVs Over the 24-hour Dosing Interval After Low-dose Aspirin Adminis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin in Older Adults",
+      "doi": "10.1177/1074248417696820",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Underutilization of aspirin in people living with human immunodeficiency virus a",
+      "doi": "10.4103/jcpc.jcpc_13_17",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "LOW DOSAGE ACETYLSALICYLIC ACID: A VARIETY OF FORMULATIONS",
+      "doi": "10.15829/1728-8800-2017-4-68-75",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Use for the Primary Prevention of Cardiovascular Disease and Colorectal ",
+      "doi": "10.7326/m16-0577",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin for Primary Prevention of Cardiovascular Events in Patients Wit",
+      "doi": "10.1161/circulationaha.116.025760",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Events: A Systematic Eviden",
+      "doi": "10.7326/m15-2113",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bleeding Risks With Aspirin Use for Primary Prevention in Adults: A Systematic R",
+      "doi": "10.7326/m15-2112",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for Primary Cardiovascular Risk Prevention and Beyond in Diabetes Mellit",
+      "doi": "10.1161/circulationaha.116.023164",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for Primary Prevention of Atherosclerotic Cardiovascular Disease",
+      "doi": "10.1001/jamainternmed.2016.2648",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Disease and Colorectal Canc",
+      "doi": "10.7326/m15-2129",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Compare the Safety of Rivaroxaban Versus Acetylsalicylic Acid in Addi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Perioperative Aspirin Usage Survey",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "[SOCRATES -Acute Stroke Or Transient IsChaemic Attack TReated With Aspirin or Ti",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of aSpirin Versus CilOstazol for Inhibition of Antiplatelet aggRegaTion i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A comparative study of Bupivacaine 0.5% versus Ropivacaine 0.5% for supraclavicu",
+      "doi": "10.7439/ijasr.v2i10.3639",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract P307: The Impact of Aspirin Primary Prevention Treatment Guidelines, 20",
+      "doi": "10.1161/circ.133.suppl_1.p307",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Warfarin Versus Aspirin in Patients With Atrial Fibrillation and Chronic Kidney ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment of Rivaroxaban Versus Aspirin for Non-disabling Cerebrovascular Events",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acetylsalicylic Acid and Colorectal Cancer Prevention: Exploring the Platelet Fu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of Night Administration of Low Dose Aspirin in Hypertensive Patien",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Phenprocoumon and Acetylsalicylic Acid (ASA)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Are the current recommendations for the use of aspirin in primary prevention of ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin for Primary Prevention of Cardiovascular Events in Japanese Pat",
+      "doi": "10.1001/jama.2014.15690",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Therapy in Primary Cardiovascular Disease Prevention",
+      "doi": "10.1016/j.jacc.2014.03.049",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Cardiovascular Events (eg, Death From Heart or Vascular Disease, H",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-dose Acetylsalicylic Acid Before Non-cardiac Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Early Re-administration of Aspirin/Clopidogrel Increase the Risk of Bleedin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Antiplatelet Activity of Aspirin in Infants After Aortopulmonary and Cavopulmona",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect Of Aspirin On Survival in in Patients Undergoing Chronic Hemodialysis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Discontinuation of Aspirin Treatment Following Head Trauma Decrease the Inc",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 385: The Impact of Aspirin Primary Prevention Treatment Guidelines: Tem",
+      "doi": "10.1161/circoutcomes.7.suppl_1.385",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin and Upper Gastrointestinal Bleeding in Primary Versus Secondary",
+      "doi": "10.1161/circoutcomes.113.000494",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-dose aspirin in primary prevention: cardioprotection, chemoprevention, both,",
+      "doi": "10.1093/eurheartj/eht058",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of perinatal death and adverse perinatal outcome using low\u2010dose aspir",
+      "doi": "10.1002/uog.12421",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for prophylactic use in the primary prevention of cardiovascular disease",
+      "doi": "10.3310/hta17430",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Multiple Daily Doses Of Aspirin To Overcome Aspirin Hyporesponsiveness Post Card",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Bochum Optimizing Clopidogrel-Aspirin Therapy and MORTality Study (BOCLA-Mor",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Dorner Tablets and Aspirin for Prevention of Arterioscler",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Recurrent Ulcer Bleeding in High-risk Users of Low-dose Aspirin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Platelet Hyperreactivity to Aspirin and Stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Residual Platelet Activity Despite Aspirin Utilization in Coronary Heart Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Aspirin and TPA in Acute Ischemic Stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endoscopic Mucosal Colonic Resection and Polypectomy Under Aspirin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "COMbination of Clopidogrel and Aspirin for Prevention of Early REcurrence in Acu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Prevention of Recurrent Venous Thromboembolism",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ASA Plavix Feasibility Study With WATCHMAN Left Atrial Appendage Closure Technol",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anticoagulant After Implantation of Biological Aortic Valve Comparing With Aspir",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Resistance in Coronary Artery Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Aspirin on Hemostatic and Vascular Function After Live Fire Fighting",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Platelet Function Analysis in Head Trauma: ASA/Plavix",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Twice Daily in Diabetic Patients With Coronary Artery Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Benign Acute Pericarditis: Brief Versus Longer Treatment Using Aspirin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Esomeprazole Magnesium With or Without Aspirin in Preventing Esophageal Cancer i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Platelet Administration To Patients With Traumatic Brain Injury Who Were Treated",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association Between Low Dose Acetylsalicylic Acid (ASA) and Proton Pump Inhibito",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Primary prevention of colorectal cancer with low-dose aspirin in combination wit",
+      "doi": "10.1136/gutjnl-2011-300206",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Preeclampsia and Intrauterine Growth Restriction With Aspirin Star",
+      "doi": "10.1097/aog.0b013e3181e9322a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for Prevention of Cardiovascular Events in a General Population Screened",
+      "doi": "10.1001/jama.2010.221",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Continuation of low-dose aspirin therapy in peptic ulcer bleeding: a randomized ",
+      "doi": "10.7326/0003-4819-152-1-201001050-00179",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Recurrent Ulcer Bleeding in High-risk Aspirin Users Who Are Not In",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Aspirin Treatment on Fibrin Network Formation in Patients With Type 1",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin and Antiretroviral Therapy in HIV Infected Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving Aspirin Use Among Adults at Risk for Cardiovascular Disease (CVD)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Non-responsiveness and Clopidogrel Endpoint Trial.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Study on Profile and Genetic Factors of Aspirin Resistance (ProGEAR Study)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Prevention of Cardiovascular Disease: U.S. Preventive Services T",
+      "doi": "10.7326/0003-4819-150-6-200903170-00008",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Events: An Update of the Ev",
+      "doi": "10.7326/0003-4819-150-6-200903170-00009",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Prevention of Cardiovascular Events in Patients With Peripheral ",
+      "doi": "10.1001/jama.2009.623",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin to Prevent Cardiovascular Disease: The Association of Aspirin Dose and C",
+      "doi": "10.7326/0003-4819-150-6-200903170-00006",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Dose and Atherosclerosis in Patients With Heart Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of Aspirin and Simvastatin in Pulmonary Arterial Hypertension",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Duration of Platelet Inhibition by Aspirin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of the Onset and Offset of Antiplatelet Effects Comparing Ticagrelor, Cl",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EARLY 3-months Aggrenox Treatment Started Within 24 Hrs of Ischemic Stroke Onset",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Dose and Atherosclerosis in Patients With Metabolic Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Prophylaxis for Venous Thromboembolism in Glioblastoma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pharmacy Based Pharmacoepidemiological Observational Study With Aspirin Protect ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mechanism Based Resistance to Aspirin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin for Primary Prevention of Atherosclerotic Events in Patients Wi",
+      "doi": "10.1001/jama.2008.623",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cost-Effectiveness of Aspirin Treatment in the Primary Prevention of Cardiovascu",
+      "doi": "10.1161/circulationaha.107.735340",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Feasibility of conducting a primary prevention trial of low\u2010dose aspirin for maj",
+      "doi": "10.5694/j.1326-5377.2008.tb01932.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preoperative Aspirin and Postoperative Antiplatelets in Coronary Artery Bypass G",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rivaroxaban in Combination With Aspirin Alone or With Aspirin and a Thienopyridi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Japanese Primary Prevention of Atherosclerosis With Aspirin for Diabetes (JPAD) ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Awakening Versus Bedtime Dosing of Aspirin in Pre-Hypertension or ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Overcome Biochemical Aspirin Resistance Through Cilostazol Combination",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Enteric Coating as a Factor in Aspirin Resistance",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Dose for the Prevention of Cardiovascular Disease",
+      "doi": "10.1001/jama.297.18.2018",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of Laboratory-Defined Aspirin Resistance With a Higher Risk of Recur",
+      "doi": "10.1001/archinte.167.15.1593",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Disease in Women",
+      "doi": "10.1001/archinte.167.3.290",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pharmacodynamic-pharmacokinetic Trial, of Slow Release ASA, in the Platelet Func",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Fluvastatin on Top of Clopidogrel and Aspirin in Patients After DES Im",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Events in Women and Men",
+      "doi": "10.1001/jama.295.3.306",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clopidogrel and Aspirin versus Aspirin Alone for the Prevention of Atherothrombo",
+      "doi": "10.1056/nejmoa060989",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin, Statins, or Both Drugs for the Primary Prevention of Coronary Heart Dis",
+      "doi": "10.7326/0003-4819-144-5-200603070-00007",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Renal effects of low dose aspirin in elderly patients.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Different Doses of Aspirin on Pathophysiological Markers in Type 2 Di",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Trial of Low-Dose Aspirin in the Primary Prevention of Cardiovascul",
+      "doi": "10.1056/nejmoa050613",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin in the Primary Prevention of Cancer",
+      "doi": "10.1001/jama.294.1.47",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Trial of Low-Dose Aspirin in the Primary Prevention of Cardiovascul",
+      "doi": "10.1097/01.ogx.0000172386.83719.df",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin Does Not Reduce Cancer Incidence in Women Cook NR, Lee IM, Gazi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving Aspirin Use in Diabetes: A Cluster Randomized Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Adding Clopidogrel to Aspirin or Use of Metoprolol in Myo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Celecoxib on the Antiplatelet Effect of Aspirin and Clopidogrel in",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Celecoxib, Ibuprofen and the Antiplatelet Effect of Aspirin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Low-Dose Aspirin in Polycythemia Vera",
+      "doi": "10.1056/nejmoa035572",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-molecular-weight heparin versus low-dose aspirin in women with one fetal los",
+      "doi": "10.1182/blood-2003-12-4250",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sarpogrelate-Aspirin Comparative Clinical Study for Efficacy and Safety in Secon",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Update on Aspirin in the Primary Prevention of Cardiovascular Disease",
+      "doi": "10.1001/archinte.163.17.2006",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin Or Warfarin To Prevent Stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of Aspirin and Clopidogrel in Patients With Idiopathic Pulmonary Arteria",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin-Resistant Thromboxane Biosynthesis and the Risk of Myocardial Infarction",
+      "doi": "10.1161/01.cir.0000013777.21160.07",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Events: A Summary of the Ev",
+      "doi": "10.7326/0003-4819-136-2-200201150-00016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the Benefits and Risks of Low-Dose Aspirin in the Secondary Preven",
+      "doi": "10.1001/archinte.162.19.2197",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Events: Recommendation and ",
+      "doi": "10.7326/0003-4819-136-2-200201150-00015",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Risk of upper gastrointestinal bleeding in patients taking low\u2010dose aspirin for ",
+      "doi": "10.1046/j.1365-2036.2002.01355.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Benefit and harm of low-dose aspirin in well-treated hypertensives at different ",
+      "doi": "10.1097/00004872-200211000-00031",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Age-Related Maculopathy in a Randomized Trial of Low-Dose Aspirin Among US Physi",
+      "doi": "10.1001/archopht.119.8.1143",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Clopidogrel in Addition to Aspirin in Patients with Acute Coronary Sy",
+      "doi": "10.1056/nejmoa010746",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preventing Recurrent Upper Gastrointestinal Bleeding in Patients withHelicobacte",
+      "doi": "10.1056/nejm200103293441304",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Observational Aspirin Use and CVD in the Physicians' Health Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differential Effects of Aspirin and Non-Aspirin Nonsteroidal Antiinflammatory Dr",
+      "doi": "10.1097/00001648-200007000-00004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of gender and age on preventing cardiovascular disease by antihyperten",
+      "doi": "10.1097/00004872-200018050-00017",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin for the primary prevention of stroke and other major vascular events: me",
+      "doi": "10.1001/archneur.57.3.326",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Warfarin Versus Aspirin Recurrent Stroke Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Thrombosis prevention trial: randomised trial of low-intensity oral anticoagulat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Dose Aspirin to Prevent Preeclampsia in Women at High Risk",
+      "doi": "10.1056/nejm199803123381101",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Inflammation, Aspirin, and the Risk of Cardiovascular Disease in Apparently Heal",
+      "doi": "10.1056/nejm199704033361401",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aspirin in the Treatment of Acute Myocardial Infarction in Elderly Medicare Bene",
+      "doi": "10.1161/01.cir.92.10.2841",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Norepinephrine-induced human platelet activation in vivo is only partly countera",
+      "doi": "10.1161/01.cir.89.5.1951",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adverse effects of low-dose aspirin in a healthy elderly population",
+      "doi": "10.1038/clpt.1993.115",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Prospective Study of Aspirin Use and Primary Prevention of Cardiovascular Dise",
+      "doi": "10.1001/jama.1991.03470040085027",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Final Report on the Aspirin Component of the Ongoing Physicians' Health Study",
+      "doi": "10.1056/nejm198907203210301",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Plasma Aspirin Esterase: the Influence of Old Age and Frailty",
+      "doi": "10.1093/ageing/18.1.39",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intolerance to Aspirin",
+      "doi": "10.7326/0003-4819-68-5-975",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long term Low-Dose Aspirin Therapy: Is Gastric Protection Necessary?",
+      "doi": "10.33591/sfp.43.2.p1",
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     }
   ],
   "papers_resolved": {
-    "PMC1834946": {
-      "title": "Aspirin and bleeding peptic ulcers in the elderly.",
-      "doi": "10.1136/bmj.297.6659.1311",
-      "pmid": "3144369",
-      "year": 1988,
-      "venue": "BMJ",
+    "PMC2014771": {
+      "title": "Aspirin and Simvastatin Combination for Cardiovascular Events Prevention Trial in Diabetes (ACCEPT-D): design of a randomized study of the efficacy of low-dose aspirin in the prevention of cardiovascular events in subjects with diabetes mellitus treated with statins",
+      "doi": "10.1186/1745-6215-8-21",
+      "pmid": null,
+      "year": 2007,
+      "venue": "Trials",
       "sources": [
         "crossref",
-        "openalex",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC12551462": {
-      "title": "Aspirin and healthy lifespan in older people: main outcome of the ASPREE-XT observational study.",
-      "doi": "10.1016/j.lanhl.2025.100764",
-      "pmid": "41043446",
-      "year": 2025,
-      "venue": "Lancet Healthy Longev",
+    "PMC13090850": {
+      "title": "Low-Dose Aspirin for Cardiovascular Disease Primary Prevention in Patients With Giant Cell Arteritis",
+      "doi": "10.1001/jamanetworkopen.2026.6579",
+      "pmid": null,
+      "year": 2026,
+      "venue": "JAMA Network Open",
       "sources": [
-        "europepmc",
-        "pubmed"
+        "crossref"
       ]
     },
-    "PMC12350516": {
-      "title": "Association between long-term (current) aspirin use and sepsis-related delirium in elderly patients: a retrospective cohort study.",
-      "doi": "10.1007/s40520-025-03152-y",
-      "pmid": "40802113",
+    "PMC12146176": {
+      "title": "Methods and validity indicators for measuring adherence and persistence to aspirin in secondary cardiovascular prevention: a systematic review",
+      "doi": "10.3389/fcvm.2025.1570331",
+      "pmid": null,
       "year": 2025,
-      "venue": "Aging Clin Exp Res",
+      "venue": "Frontiers in Cardiovascular Medicine",
       "sources": [
-        "europepmc",
-        "pubmed"
+        "doaj"
       ]
     },
-    "PMC12680471": {
-      "title": "Prevalence of Iron Deficiency Anaemia in Elderly Aged > 60 Taking Daily Low-Dose Aspirin.",
-      "doi": "10.1155/jare/6989003",
-      "pmid": "41356605",
-      "year": 2025,
-      "venue": "Journal of Aging Research",
-      "sources": [
-        "crossref",
-        "europepmc"
-      ]
-    },
-    "PMC12614313": {
-      "title": "Adjudication of cause of death in older adults: Learnings for death certification from the ASPirin in Reducing Events in the Elderly study.",
-      "doi": "10.1177/17407745251368001",
-      "pmid": "41045146",
-      "year": 2025,
-      "venue": "Clinical Trials",
-      "sources": [
-        "crossref",
-        "europepmc"
-      ]
-    },
-    "PMC12461696": {
-      "title": "The effect of low-dose aspirin on reversing frailty status in older prefrail and frail adults: a secondary analysis of the ASPREE randomised clinical trial.",
-      "doi": "10.1093/ageing/afaf271",
-      "pmid": "40996142",
-      "year": 2025,
-      "venue": "Age Ageing",
-      "sources": [
-        "europepmc",
-        "pubmed"
-      ]
-    },
-    "PMC11216950": {
-      "title": "Aspirin and lipoprotein(a) in primary prevention.",
-      "doi": "10.1097/mol.0000000000000891",
-      "pmid": "37527183",
+    "PMC10684304": {
+      "title": "Prevalence of Acetylsalicylic Acid Use for Primary Prevention of Cardiovascular Disease Amongst Older Adults From 2017\u20142021: a Retrospective Cross-Sectional Study",
+      "doi": "10.5770/cgj.26.693",
+      "pmid": null,
       "year": 2023,
-      "venue": "Curr Opin Lipidol",
+      "venue": "Canadian Geriatrics Journal",
       "sources": [
-        "crossref",
-        "pubmed"
+        "crossref"
       ]
     },
-    "PMC7957959": {
-      "title": "Major GI bleeding in older persons using aspirin: incidence and risk factors in the ASPREE randomised controlled trial.",
-      "doi": "10.1136/gutjnl-2020-321585",
-      "pmid": "32747412",
+    "PMC9536436": {
+      "title": "The Effect of Low-Dose Aspirin on Frailty Phenotype and Frailty Index in Community-Dwelling Older Adults in the ASPirin in Reducing Events in the Elderly Study",
+      "doi": "10.1093/gerona/glab340",
+      "pmid": null,
       "year": 2021,
-      "venue": "Gut",
+      "venue": "The Journals of Gerontology Series A",
       "sources": [
-        "openalex",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC6470443": {
-      "title": "Aspirin Exposure and Mortality Risk among Prostate Cancer Patients: A Systematic Review and Meta-Analysis.",
-      "doi": "10.1155/2019/9379602",
-      "pmid": "31073532",
-      "year": 2019,
-      "venue": "Biomed Res Int",
+    "PMC9908069": {
+      "title": "Comparative Effectiveness of Aspirin Dosing in Cardiovascular Disease",
+      "doi": "10.1056/nejmoa2102137",
+      "pmid": null,
+      "year": 2021,
+      "venue": "New England Journal of Medicine",
       "sources": [
-        "crossref",
-        "pubmed"
+        "openalex"
+      ]
+    },
+    "PMC8969428": {
+      "title": "The Effect of Low-Dose Aspirin on Frailty in Older Adults in the Aspirin in Reducing Events in the Elderly Study",
+      "doi": "10.1093/geroni/igab046.3009",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8245534": {
+      "title": "Low-dose aspirin for primary and secondary prevention of cardiovascular events in Denmark 1998\u20132018",
+      "doi": "10.1038/s41598-021-93179-8",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11977457": {
+      "title": "Aspirin and statin therapy for primary prevention of cardiovascular disease in older adults",
+      "doi": "10.1136/heartjnl-2021-320154",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Heart",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8631123": {
+      "title": "Low-dose Aspirin for Primary Prevention of Cardiovascular Events in Postmenopausal Women with Type-2 Diabetes: The Prescriptive Approach in the Real World",
+      "doi": "10.4103/ijpvm.ijpvm_365_19",
+      "pmid": null,
+      "year": 2021,
+      "venue": "International Journal of Preventive Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7217722": {
+      "title": "Coronary Artery Calcium for Personalized Allocation of Aspirin in Primary Prevention of Cardiovascular Disease in 2019",
+      "doi": "10.1161/circulationaha.119.045010",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Circulation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7936068": {
+      "title": "Effect of Aspirin on Cancer Incidence and Mortality in Older Adults",
+      "doi": "10.1093/jnci/djaa114",
+      "pmid": null,
+      "year": 2020,
+      "venue": "JNCI Journal of the National Cancer Institute",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7116860": {
+      "title": "Polypill with or without Aspirin in Persons without Cardiovascular Disease",
+      "doi": "10.1056/nejmoa2028220",
+      "pmid": null,
+      "year": 2020,
+      "venue": "New England Journal of Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7041201": {
+      "title": "Adherence to recommended practices for perioperative anesthesia care for older adults among US anesthesiologists: results from the ASA Committee on Geriatric Anesthesia-Perioperative Brain Health Initiative ASA member survey",
+      "doi": "10.1186/s13741-020-0136-9",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Perioperative Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7298605": {
+      "title": "Effect of Ticagrelor Monotherapy vs Ticagrelor With Aspirin on Major Bleeding and Cardiovascular Events in Patients With Acute Coronary Syndrome",
+      "doi": "10.1001/jama.2020.7580",
+      "pmid": null,
+      "year": 2020,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11664752": {
+      "title": "TWILIGHT: A Randomized Trial of Ticagrelor Monotherapy Versus Ticagrelor Plus Aspirin Beginning at 3 Months in High-risk Patients Undergoing Percutaneous Coronary Intervention",
+      "doi": "10.15420/usc.2019.02",
+      "pmid": null,
+      "year": 2020,
+      "venue": "US Cardiology Review",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6439678": {
+      "title": "Association of Aspirin Use for Primary Prevention With Cardiovascular Events and Bleeding Events",
+      "doi": "10.1001/jama.2018.20578",
+      "pmid": null,
+      "year": 2019,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6515567": {
+      "title": "Frequency of Intracranial Hemorrhage With Low-Dose Aspirin in Individuals Without Symptomatic Cardiovascular Disease",
+      "doi": "10.1001/jamaneurol.2019.1120",
+      "pmid": null,
+      "year": 2019,
+      "venue": "JAMA Neurology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6827248": {
+      "title": "Aspirin for primary prevention of cardiovascular disease: a meta-analysis with a particular focus on subgroups",
+      "doi": "10.1186/s12916-019-1428-0",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMC Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6289056": {
+      "title": "Effect of Aspirin on Cardiovascular Events and Bleeding in the Healthy Elderly",
+      "doi": "10.1056/nejmoa1805819",
+      "pmid": null,
+      "year": 2018,
+      "venue": "New England Journal of Medicine",
+      "sources": [
+        "openalex"
       ]
     },
     "PMC6433466": {
-      "title": "Effect of Aspirin on All-Cause Mortality in the Healthy Elderly.",
+      "title": "Effect of Aspirin on All-Cause Mortality in the Healthy Elderly",
       "doi": "10.1056/nejmoa1803955",
-      "pmid": "30221595",
+      "pmid": null,
       "year": 2018,
-      "venue": "N Engl J Med",
+      "venue": "New England Journal of Medicine",
       "sources": [
-        "openalex",
-        "pubmed"
+        "openalex"
       ]
     },
     "PMC6426126": {
-      "title": "Effect of Aspirin on Disability-free Survival in the Healthy Elderly.",
+      "title": "Effect of Aspirin on Disability-free Survival in the Healthy Elderly",
       "doi": "10.1056/nejmoa1800722",
-      "pmid": "30221596",
+      "pmid": null,
       "year": 2018,
-      "venue": "N Engl J Med",
+      "venue": "New England Journal of Medicine",
       "sources": [
-        "openalex",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC3297524": {
-      "title": "Aspirin for the prevention of cognitive decline in the elderly: rationale and design of a neuro-vascular imaging study (ENVIS-ion).",
-      "doi": "10.1186/1471-2377-12-3",
-      "pmid": "22315948",
+    "PMC5861878": {
+      "title": "Baseline Characteristics of Participants in the ASPREE (ASPirin in Reducing Events in the Elderly) Study",
+      "doi": "10.1093/gerona/glw342",
+      "pmid": null,
+      "year": 2017,
+      "venue": "The Journals of Gerontology Series A",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5219640": {
+      "title": "Recent trends in the prevalence of low-dose aspirin use for primary and secondary prevention of cardiovascular disease in the United States, 2012\u20132015",
+      "doi": "10.1016/j.pmedr.2016.12.023",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Preventive Medicine Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4973997": {
+      "title": "Bleeding Risk with Long-Term Low-Dose Aspirin: A Systematic Review of Observational Studies",
+      "doi": "10.1371/journal.pone.0160046",
+      "pmid": null,
+      "year": 2016,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5118504": {
+      "title": "Impact of postoperative duration of Aspirin use on longevity of bioprosthetic pulmonary valve in patients who underwent congenital heart disease repair",
+      "doi": "10.3345/kjp.2016.59.11.446",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Korean Journal of Pediatrics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC4589917": {
+      "title": "Benefit-harm analysis and charts for individualized and preference-sensitive prevention: example of low dose aspirin for primary prevention of cardiovascular disease and cancer",
+      "doi": "10.1186/s12916-015-0493-2",
+      "pmid": null,
+      "year": 2015,
+      "venue": "BMC Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4317158": {
+      "title": "The Role of Aspirin in the Prevention of Cardiovascular Disease",
+      "doi": "10.3121/cmr.2013.1197",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Clinical Medicine & Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4412344": {
+      "title": "Use of Coronary Artery Calcium Testing to Guide Aspirin Utilization for Primary Prevention: Estimates From the Multi-Ethnic Study of Atherosclerosis",
+      "doi": "10.1161/circoutcomes.113.000690",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Circulation Cardiovascular Quality and Outcomes",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4215843": {
+      "title": "Aspirin for Primary Prevention of Cardiovascular Events: Meta-Analysis of Randomized Controlled Trials and Subgroup Analysis by Sex and Diabetes Status",
+      "doi": "10.1371/journal.pone.0090286",
+      "pmid": null,
+      "year": 2014,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4122498": {
+      "title": "Low-Dose Aspirin for Prevention of Cardiovascular Disease in Patients with Chronic Kidney Disease",
+      "doi": "10.1371/journal.pone.0104179",
+      "pmid": null,
+      "year": 2014,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4090734": {
+      "title": "Molecular targets of aspirin and cancer prevention",
+      "doi": "10.1038/bjc.2014.271",
+      "pmid": null,
+      "year": 2014,
+      "venue": "British Journal of Cancer",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3491860": {
+      "title": "Underutilization of Aspirin for Primary Prevention of Cardiovascular Disease Among HIV-Infected Patients",
+      "doi": "10.1093/cid/cis752",
+      "pmid": null,
       "year": 2012,
-      "venue": "BMC Neurol",
+      "venue": "Clinical Infectious Diseases",
       "sources": [
-        "doaj",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC13027806": {
-      "title": "A Multicenter Propensity Score-Matched Cohort Study of Preoperative Antiplatelet Therapy and Postoperative Outcomes in Elderly Surgical Patients.",
-      "doi": "10.3390/medicina62030521",
-      "pmid": "41901602",
-      "year": 2026,
-      "venue": null,
-      "sources": [
-        "europepmc"
-      ]
-    },
-    "PMC13026497": {
-      "title": "The Co-Occurrence of Pertrochanteric Fracture and Acute Coronary Syndrome in a Geriatric Patient: A Case Report and Review of the Literature.",
-      "doi": "10.3390/jcdd13030132",
-      "pmid": "41892720",
-      "year": 2026,
-      "venue": null,
-      "sources": [
-        "europepmc"
-      ]
-    },
-    "PMC13048643": {
-      "title": "Association between atrial fibrillation and gastrointestinal bleeding: pathophysiology, risk stratification, and management - a narrative review.",
-      "doi": "10.1097/ms9.0000000000004806",
-      "pmid": "41939102",
-      "year": 2026,
-      "venue": null,
-      "sources": [
-        "europepmc"
-      ]
-    },
-    "PMC12993419": {
-      "title": "Polymeric anti-platelet carriers for the precision-targeting of age-related cardiovascular and cerebrovascular diseases.",
-      "doi": "10.1016/j.mtbio.2026.102920",
-      "pmid": "41852888",
-      "year": 2026,
-      "venue": null,
-      "sources": [
-        "europepmc"
-      ]
-    },
-    "PMC13039662": {
-      "title": "Indobufen versus Aspirin After CABG in Septuagenarians: A Propensity Score-Matched Cohort Study.",
-      "doi": "10.2147/cia.s589035",
-      "pmid": "41929263",
-      "year": 2026,
-      "venue": null,
-      "sources": [
-        "europepmc"
-      ]
-    },
-    "PMC12805017": {
-      "title": "Clonal Hematopoiesis and Kidney Function in the ASPREE Cohort",
-      "doi": "10.1016/j.ekir.2025.11.037",
+    "PMC3482605": {
+      "title": "Comparative evaluation of treatment with low-dose aspirin plus dipyridamole versus aspirin only in patients with acute ischaemic stroke",
+      "doi": "10.1186/1471-2377-12-67",
       "pmid": null,
-      "year": 2026,
-      "venue": "Kidney International Reports",
+      "year": 2012,
+      "venue": "BMC Neurology",
       "sources": [
-        "doaj"
+        "crossref"
       ]
     },
-    "PMC12828538": {
-      "title": "Association between statin use and risk of incident cancer in healthy older adults: a target trial emulation using data from a multicentre, randomised trial of community-dwelling older adults in Australia and the USAResearch in context",
-      "doi": "10.1016/j.eclinm.2025.103746",
+    "PMC3114321": {
+      "title": "Differential Effect of Low-Dose Aspirin for Primary Prevention of Atherosclerotic Events in Diabetes Management",
+      "doi": "10.2337/dc10-2451",
       "pmid": null,
-      "year": 2026,
-      "venue": "EClinicalMedicine",
+      "year": 2011,
+      "venue": "Diabetes Care",
       "sources": [
-        "doaj"
+        "crossref"
       ]
     },
-    "PMC12992088": {
-      "title": "Effectiveness and safety of antifibrinolytic agents in off-pump coronary artery bypass grafting: a systematic review and meta-analysis.",
-      "doi": "10.1016/j.bjane.2026.844731",
-      "pmid": "41587690",
-      "year": 2026,
-      "venue": null,
+    "PMC2875463": {
+      "title": "Aspirin for Primary Prevention of Cardiovascular Events in People With Diabetes",
+      "doi": "10.2337/dc10-0555",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Diabetes Care",
       "sources": [
-        "europepmc"
+        "openalex"
       ]
     },
-    "PMC13061583": {
-      "title": "Epidemiology, Pathophysiology, and Medical Management of Intracranial Atherosclerotic Disease.",
-      "doi": "10.5797/jnet.ra.2026-0017",
-      "pmid": "41958855",
-      "year": 2026,
-      "venue": null,
+    "PMC2774388": {
+      "title": "Aspirin for primary prevention of cardiovascular events in people with diabetes: meta-analysis of randomised controlled trials",
+      "doi": "10.1136/bmj.b4531",
+      "pmid": null,
+      "year": 2009,
+      "venue": "BMJ",
       "sources": [
-        "europepmc"
+        "openalex"
       ]
     },
-    "PMC12985851": {
-      "title": "Mechanistic Insights and Emerging Therapeutic Strategies in Recurrent Pericarditis.",
-      "doi": "10.14797/mdcvj.1760",
-      "pmid": "41835354",
-      "year": 2026,
-      "venue": null,
+    "PMC2782995": {
+      "title": "Aspirin for the Primary Prevention of Cardiovascular Events",
+      "doi": "10.2337/dc09-1297",
+      "pmid": null,
+      "year": 2009,
+      "venue": "Diabetes Care",
       "sources": [
-        "europepmc"
+        "openalex"
       ]
     },
-    "PMC13017925": {
-      "title": "Topical analgesics for neuropathic pain: an evidence-informed guide for the practicing clinician.",
-      "doi": "10.1093/pm/pnaf130",
-      "pmid": "41017645",
-      "year": 2026,
-      "venue": null,
+    "PMC2213873": {
+      "title": "Aspirin \u201cresistance\u201d and risk of cardiovascular morbidity: systematic review and meta-analysis",
+      "doi": "10.1136/bmj.39430.529549.be",
+      "pmid": null,
+      "year": 2008,
+      "venue": "BMJ",
       "sources": [
-        "europepmc"
+        "openalex"
+      ]
+    },
+    "PMC2527654": {
+      "title": "Low dose aspirin and cognitive function in middle aged to elderly adults: randomised controlled trial",
+      "doi": "10.1136/bmj.a1198",
+      "pmid": null,
+      "year": 2008,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2658865": {
+      "title": "The prevention of progression of arterial disease and diabetes (POPADAD) trial: factorial randomised placebo controlled trial of aspirin and antioxidants in patients with diabetes and asymptomatic peripheral arterial disease",
+      "doi": "10.1136/bmj.a1840",
+      "pmid": null,
+      "year": 2008,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1856452": {
+      "title": "Risk of upper gastrointestinal ulcer bleeding associated with selective cyclo-oxygenase-2 inhibitors, traditional non-aspirin non-steroidal anti-inflammatory drugs, aspirin and combinations",
+      "doi": "10.1136/gut.2005.080754",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Gut",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC558207": {
+      "title": "Epidemiological modelling of routine use of low dose aspirin for the primary prevention of coronary heart disease and stroke in those aged \u226570",
+      "doi": "10.1136/bmj.38456.676806.8f",
+      "pmid": null,
+      "year": 2005,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1729640": {
+      "title": "Aspirin for primary prevention of coronary heart disease: safety and absolute benefit related to coronary risk derived from meta-analysis of randomised trials",
+      "doi": "10.1136/heart.85.3.265",
+      "pmid": null,
+      "year": 2001,
+      "venue": "Heart",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC27417": {
+      "title": "Determination of who may derive most benefit from aspirin in primary prevention: subgroup results from a randomised controlled trial",
+      "doi": "10.1136/bmj.321.7252.13",
+      "pmid": null,
+      "year": 2000,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC28250": {
+      "title": "Primary prevention of arterial thromboembolism in non-rheumatic atrial fibrillation in primary care: randomised controlled trial comparing two intensities of coumarin with aspirin",
+      "doi": "10.1136/bmj.319.7215.958",
+      "pmid": null,
+      "year": 1999,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2125731": {
+      "title": "Randomised controlled trial of aspirin and aspirin plus heparin in pregnant women with recurrent miscarriage associated with phospholipid antibodies (or antiphospholipid antibodies)",
+      "doi": "10.1136/bmj.314.7076.253",
+      "pmid": null,
+      "year": 1997,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC40824": {
+      "title": "Aspirin triggers previously undescribed bioactive eicosanoids by human endothelial cell-leukocyte interactions.",
+      "doi": "10.1073/pnas.92.21.9475",
+      "pmid": null,
+      "year": 1995,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1838122": {
+      "title": "Aspirin use and chronic diseases: a cohort study of the elderly.",
+      "doi": "10.1136/bmj.299.6710.1247",
+      "pmid": null,
+      "year": 1989,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1463851": {
+      "title": "The effects of age and sex on the disposition of acetylsalicylic acid and its metabolites.",
+      "doi": "10.1111/j.1365-2125.1985.tb02695.x",
+      "pmid": null,
+      "year": 1985,
+      "venue": "British Journal of Clinical Pharmacology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9981985": {
+      "title": "Aspirin Use Is Associated With Improved Outcomes in Inflammatory Breast Cancer Patients",
+      "doi": "10.4048/jbc.2023.26.e3",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of Breast Cancer",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10927007": {
+      "title": "Aspirin and nonaspirin nonsteroidal antiinflammatory drug use and occurrence of colorectal adenoma in Black American women",
+      "doi": "10.1002/ijc.34674",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Cancer",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3195738": {
+      "title": "Anti\u2010platelet therapy: cyclo\u2010oxygenase inhibition and the use of aspirin with particular regard to dual anti\u2010platelet therapy",
+      "doi": "10.1111/j.1365-2125.2011.03943.x",
+      "pmid": null,
+      "year": 2011,
+      "venue": "British Journal of Clinical Pharmacology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3708487": {
+      "title": "Serum Salicylate Levels and Risk of Recurrent Colorectal Adenomas",
+      "doi": "10.1158/1055-9965.epi-10-1135",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Cancer Epidemiology Biomarkers & Prevention",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3234022": {
+      "title": "Might salicylate exert benefits against childhood cancer?",
+      "doi": "10.3332/ecancer.2010.156",
+      "pmid": null,
+      "year": 2010,
+      "venue": "ecancermedicalscience",
+      "sources": [
+        "openalex"
       ]
     }
   }

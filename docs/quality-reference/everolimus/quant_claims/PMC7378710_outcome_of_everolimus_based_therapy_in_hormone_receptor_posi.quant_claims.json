@@ -1,0 +1,1439 @@
+{
+  "paper_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi",
+  "doi": "10.1177/1178223420944864",
+  "extracted_at": "2026-05-05T21:30:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 34,
+    "percentage": 41,
+    "confidence_interval": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-827",
+      "claim_type": "unit_value",
+      "raw_text": "61 years",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 827,
+      "sentence": "Out of 41 women with median age 61 years (33, 87) enrolled, 66% had received adjuvant systemic therapy, 61% had visceral disease, and 95% had prior nonsteroidal aromatase inhibitors.",
+      "context_window": "and overall survival (OS). Out of 41 women with median age 61 years (33, 87) enrolled, 66% had received adjuvant systemic thera",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-855",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "Out of 41 women with median age 61 years (33, 87) enrolled, 66% had received adjuvant systemic therapy, 61% had visceral disease, and 95% had prior nonsteroidal aromatase inhibitors.",
+      "context_window": "Out of 41 women with median age 61 years (33, 87) enrolled, 66% had received adjuvant systemic therapy, 61% had visceral di",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-899",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 899,
+      "sentence": "Out of 41 women with median age 61 years (33, 87) enrolled, 66% had received adjuvant systemic therapy, 61% had visceral disease, and 95% had prior nonsteroidal aromatase inhibitors.",
+      "context_window": ", 87) enrolled, 66% had received adjuvant systemic therapy, 61% had visceral disease, and 95% had prior nonsteroidal aromat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-929",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 929,
+      "sentence": "Out of 41 women with median age 61 years (33, 87) enrolled, 66% had received adjuvant systemic therapy, 61% had visceral disease, and 95% had prior nonsteroidal aromatase inhibitors.",
+      "context_window": "ed adjuvant systemic therapy, 61% had visceral disease, and 95% had prior nonsteroidal aromatase inhibitors. About 83% wome",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-984",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 984,
+      "sentence": "About 83% women had 3 or more chemotherapy or hormonal therapies prior to everolimus.",
+      "context_window": "and 95% had prior nonsteroidal aromatase inhibitors. About 83% women had 3 or more chemotherapy or hormonal therapies prio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-1110",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 months",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1110,
+      "sentence": "Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2).",
+      "context_window": "o everolimus. Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2). The median OS was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1122",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1122,
+      "sentence": "Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2).",
+      "context_window": ". Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2). The median OS was 18.7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-1180",
+      "claim_type": "unit_value",
+      "raw_text": "18.7 months",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1180,
+      "sentence": "The median OS was 18.7 months (95% CI 9.5 to not reached).",
+      "context_window": "(95% confidence interval [CI]: 3.2-6.2). The median OS was 18.7 months (95% CI 9.5 to not reached). Objective response rate and CB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1193",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1193,
+      "sentence": "The median OS was 18.7 months (95% CI 9.5 to not reached).",
+      "context_window": "nce interval [CI]: 3.2-6.2). The median OS was 18.7 months (95% CI 9.5 to not reached). Objective response rate and CBR wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1263",
+      "claim_type": "percentage",
+      "raw_text": "17.1%",
+      "numeric_values": [
+        17.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1263,
+      "sentence": "Objective response rate and CBR were both 17.1%.",
+      "context_window": "to not reached). Objective response rate and CBR were both 17.1%. Everolimus was associated with modest PFS and ORR in HR+",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-485",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 485,
+      "sentence": "Based on the American Society of Clinical Oncology/College of American Pathologists guidelines, breast carcinomas with 1% of more immuno-reactive tumor cells for ER on immunohistochemistry (IHC) or an Allred score of 3 or more were considered as ER+ breast cancer.",
+      "context_window": "of American Pathologists guidelines, breast carcinomas with 1% of more immuno-reactive tumor cells for ER on immunohistoch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-1240",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1240,
+      "sentence": "Women who received everolimus or palbociclib for less than 4 weeks were excluded to ensure minimum meaningful exposure to both drugs in enrolled patients.",
+      "context_window": "Women who received everolimus or palbociclib for less than 4 weeks were excluded to ensure minimum meaningful exposure to both",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-2148",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2148,
+      "sentence": "Clinical benefit (CB) was defined as CR or PR or stable disease (SD) of at least 6 months.",
+      "context_window": "was defined as CR or PR or stable disease (SD) of at least 6 months. Separate institutional review board (IRB) approvals were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-265",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 265,
+      "sentence": "Initial query on electronic medical records from Roswell Park main campus and a satellite location yielded 31 eligible patients, out of which 7 patients were excluded: 4 patients received everolimus prior to palbociclib, 1 patient received everolimus for less than 4 weeks, 1 patient received insurance approval for everolimus but never used it and last patient\u2019s subsequent biopsy showed triple-negative breast cancer though she had ER+ primary breast cancer in the past.",
+      "context_window": "to palbociclib, 1 patient received everolimus for less than 4 weeks, 1 patient received insurance approval for everolimus but n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-585",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 585,
+      "sentence": "Similarly, out of 27 initial patients from UPMC, 10 were excluded: 5 patients received everolimus for less than 4 weeks, 4 patients received everolimus prior to palbociclib and 1 patient received palbociclib for less than 4 weeks.",
+      "context_window": "were excluded: 5 patients received everolimus for less than 4 weeks, 4 patients received everolimus prior to palbociclib and 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-695",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 695,
+      "sentence": "Similarly, out of 27 initial patients from UPMC, 10 were excluded: 5 patients received everolimus for less than 4 weeks, 4 patients received everolimus prior to palbociclib and 1 patient received palbociclib for less than 4 weeks.",
+      "context_window": "albociclib and 1 patient received palbociclib for less than 4 weeks. Among those 6 ineligible patients who received everolimus",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-776",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 776,
+      "sentence": "Among those 6 ineligible patients who received everolimus for less than 4 weeks, everolimus was discontinued due to progression of disease in 3 patients, intolerance in 1, and data were immature (less than 4 weeks) for the remaining 2 patients.",
+      "context_window": "6 ineligible patients who received everolimus for less than 4 weeks, everolimus was discontinued due to progression of disease",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-910",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 910,
+      "sentence": "Among those 6 ineligible patients who received everolimus for less than 4 weeks, everolimus was discontinued due to progression of disease in 3 patients, intolerance in 1, and data were immature (less than 4 weeks) for the remaining 2 patients.",
+      "context_window": "tients, intolerance in 1, and data were immature (less than 4 weeks) for the remaining 2 patients. Full data extraction and ana",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-1056",
+      "claim_type": "unit_value",
+      "raw_text": "61 years",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1056,
+      "sentence": "Median age of the patients was 61 years (range: 33-87).",
+      "context_window": "on a total of 41 patients. Median age of the patients was 61 years (range: 33-87). Thirty-eight patients had biopsy proven ER+",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1525",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1525,
+      "sentence": "Around 72% of the women had progesterone-receptor-positive tumor, all of the women had HER2- (56% by IHC alone, remaining confirmed by FISH) disease.",
+      "context_window": "ite. These patients were also enrolled in the study. Around 72% of the women had progesterone-receptor-positive tumor, all",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1612",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1612,
+      "sentence": "Around 72% of the women had progesterone-receptor-positive tumor, all of the women had HER2- (56% by IHC alone, remaining confirmed by FISH) disease.",
+      "context_window": "terone-receptor-positive tumor, all of the women had HER2- (56% by IHC alone, remaining confirmed by FISH) disease. Median",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-1774",
+      "claim_type": "unit_value",
+      "raw_text": "60 months",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1774,
+      "sentence": "Median disease-free interval (duration between diagnosis of primary breast cancer and the recurrence) was 60 months (4, 276).",
+      "context_window": "diagnosis of primary breast cancer and the recurrence) was 60 months (4, 276). Twenty-six out of 41 patients (66%) had received",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1825",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1825,
+      "sentence": "Twenty-six out of 41 patients (66%) had received adjuvant therapy (chemotherapy and/or hormonal therapy).",
+      "context_window": "nce) was 60 months (4, 276). Twenty-six out of 41 patients (66%) had received adjuvant therapy (chemotherapy and/or hormona",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2031",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2031,
+      "sentence": "About 77% patients had demonstrated prior sensitivity to endocrine therapy, which was defined as at least 24 months of endocrine therapy before recurrence in the adjuvant setting or a complete or partial response or stabilization of disease for at least 24 weeks on endocrine therapy for advanced disease.",
+      "context_window": "hormonal therapy, 8 were de novo metastatic disease. About 77% patients had demonstrated prior sensitivity to endocrine th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-2131",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2131,
+      "sentence": "About 77% patients had demonstrated prior sensitivity to endocrine therapy, which was defined as at least 24 months of endocrine therapy before recurrence in the adjuvant setting or a complete or partial response or stabilization of disease for at least 24 weeks on endocrine therapy for advanced disease.",
+      "context_window": "itivity to endocrine therapy, which was defined as at least 24 months of endocrine therapy before recurrence in the adjuvant sett",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-2279",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2279,
+      "sentence": "About 77% patients had demonstrated prior sensitivity to endocrine therapy, which was defined as at least 24 months of endocrine therapy before recurrence in the adjuvant setting or a complete or partial response or stabilization of disease for at least 24 weeks on endocrine therapy for advanced disease.",
+      "context_window": "r partial response or stabilization of disease for at least 24 weeks on endocrine therapy for advanced disease. About 61% women",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2337",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2337,
+      "sentence": "About 61% women had visceral disease, 90% of the women had bone metastases, and 32% had 3 or more organs involved with metastases.",
+      "context_window": "t 24 weeks on endocrine therapy for advanced disease. About 61% women had visceral disease, 90% of the women had bone metas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2369",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2369,
+      "sentence": "About 61% women had visceral disease, 90% of the women had bone metastases, and 32% had 3 or more organs involved with metastases.",
+      "context_window": "for advanced disease. About 61% women had visceral disease, 90% of the women had bone metastases, and 32% had 3 or more org",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2411",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2411,
+      "sentence": "About 61% women had visceral disease, 90% of the women had bone metastases, and 32% had 3 or more organs involved with metastases.",
+      "context_window": "visceral disease, 90% of the women had bone metastases, and 32% had 3 or more organs involved with metastases. Almost 95% h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2469",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2469,
+      "sentence": "Almost 95% had prior non-steroidal AIs, 41% had prior exemestane, and 66% had prior tamoxifen.",
+      "context_window": "d 32% had 3 or more organs involved with metastases. Almost 95% had prior non-steroidal AIs, 41% had prior exemestane, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2502",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2502,
+      "sentence": "Almost 95% had prior non-steroidal AIs, 41% had prior exemestane, and 66% had prior tamoxifen.",
+      "context_window": "ed with metastases. Almost 95% had prior non-steroidal AIs, 41% had prior exemestane, and 66% had prior tamoxifen. Around 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2532",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2532,
+      "sentence": "Almost 95% had prior non-steroidal AIs, 41% had prior exemestane, and 66% had prior tamoxifen.",
+      "context_window": "had prior non-steroidal AIs, 41% had prior exemestane, and 66% had prior tamoxifen. Around 71% had received prior chemothe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2564",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2564,
+      "sentence": "Around 71% had received prior chemotherapy for breast cancer, of which 45% had received it in adjuvant/neoadjuvant settings while the remainder received chemotherapy in the metastatic or in both settings.",
+      "context_window": "% had prior exemestane, and 66% had prior tamoxifen. Around 71% had received prior chemotherapy for breast cancer, of which",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2628",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "Around 71% had received prior chemotherapy for breast cancer, of which 45% had received it in adjuvant/neoadjuvant settings while the remainder received chemotherapy in the metastatic or in both settings.",
+      "context_window": "had received prior chemotherapy for breast cancer, of which 45% had received it in adjuvant/neoadjuvant settings while the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2874",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2874,
+      "sentence": "Median number of therapies, counting chemotherapy, and hormonal therapy, prior to everolimus was 4 (1, 11), and 83% had 3 or more prior chemotherapy or hormonal therapies prior to everolimus.",
+      "context_window": "nd hormonal therapy, prior to everolimus was 4 (1, 11), and 83% had 3 or more prior chemotherapy or hormonal therapies prio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-3087",
+      "claim_type": "unit_value",
+      "raw_text": "7 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3087,
+      "sentence": "Median order of palbociclib was 4th (1st, 11th) in the sequence of therapies, and median duration of palbociclib-based therapies was 7 months (2, 24).",
+      "context_window": "ies, and median duration of palbociclib-based therapies was 7 months (2, 24). Median duration of everolimus combinations was 3.2",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-3152",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 months",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3152,
+      "sentence": "Median duration of everolimus combinations was 3.2 months (0.9, 15.4).",
+      "context_window": "ths (2, 24). Median duration of everolimus combinations was 3.2 months (0.9, 15.4). See Table 1 for patients\u2019 characteristics of s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-3784",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 months",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3784,
+      "sentence": "Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2) ( Figure 1 ).",
+      "context_window": "to hospice). Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2) ( Figure 1 ). At a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-3796",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3796,
+      "sentence": "Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2) ( Figure 1 ).",
+      "context_window": ". Kaplan-Meier estimates showed a median PFS of 4.2 months (95% confidence interval [CI]: 3.2-6.2) ( Figure 1 ). At a media",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-3874",
+      "claim_type": "unit_value",
+      "raw_text": "7.4 months",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3874,
+      "sentence": "At a median follow up of 7.4 months (0.9, 23.2), 10 patients had died.",
+      "context_window": "erval [CI]: 3.2-6.2) ( Figure 1 ). At a median follow up of 7.4 months (0.9, 23.2), 10 patients had died. The median OS was 18.7 m",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-3938",
+      "claim_type": "unit_value",
+      "raw_text": "18.7 months",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3938,
+      "sentence": "The median OS was 18.7 months (95% CI: 9.5 to not reached) ( Figure 2 ).",
+      "context_window": "months (0.9, 23.2), 10 patients had died. The median OS was 18.7 months (95% CI: 9.5 to not reached) ( Figure 2 ). About 17.1% of w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-3951",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3951,
+      "sentence": "The median OS was 18.7 months (95% CI: 9.5 to not reached) ( Figure 2 ).",
+      "context_window": "23.2), 10 patients had died. The median OS was 18.7 months (95% CI: 9.5 to not reached) ( Figure 2 ). About 17.1% of women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-3999",
+      "claim_type": "percentage",
+      "raw_text": "17.1%",
+      "numeric_values": [
+        17.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3999,
+      "sentence": "About 17.1% of women had partial response, 36.6% had stable disease, 31.7% had progressive disease, and 14.6% had not reached a response yet.",
+      "context_window": "8.7 months (95% CI: 9.5 to not reached) ( Figure 2 ). About 17.1% of women had partial response, 36.6% had stable disease, 31",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-4036",
+      "claim_type": "percentage",
+      "raw_text": "36.6%",
+      "numeric_values": [
+        36.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4036,
+      "sentence": "About 17.1% of women had partial response, 36.6% had stable disease, 31.7% had progressive disease, and 14.6% had not reached a response yet.",
+      "context_window": "d) ( Figure 2 ). About 17.1% of women had partial response, 36.6% had stable disease, 31.7% had progressive disease, and 14.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-4062",
+      "claim_type": "percentage",
+      "raw_text": "31.7%",
+      "numeric_values": [
+        31.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4062,
+      "sentence": "About 17.1% of women had partial response, 36.6% had stable disease, 31.7% had progressive disease, and 14.6% had not reached a response yet.",
+      "context_window": "1% of women had partial response, 36.6% had stable disease, 31.7% had progressive disease, and 14.6% had not reached a respon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-4097",
+      "claim_type": "percentage",
+      "raw_text": "14.6%",
+      "numeric_values": [
+        14.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4097,
+      "sentence": "About 17.1% of women had partial response, 36.6% had stable disease, 31.7% had progressive disease, and 14.6% had not reached a response yet.",
+      "context_window": "6.6% had stable disease, 31.7% had progressive disease, and 14.6% had not reached a response yet. About 17.1% had objective r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-4141",
+      "claim_type": "percentage",
+      "raw_text": "17.1%",
+      "numeric_values": [
+        17.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4141,
+      "sentence": "About 17.1% had objective responses on everolimus combinations, 63.4% did not have any objective responses while 19.5% had not reached objective responses at the time of data extraction.",
+      "context_window": "ve disease, and 14.6% had not reached a response yet. About 17.1% had objective responses on everolimus combinations, 63.4% d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-4199",
+      "claim_type": "percentage",
+      "raw_text": "63.4%",
+      "numeric_values": [
+        63.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4199,
+      "sentence": "About 17.1% had objective responses on everolimus combinations, 63.4% did not have any objective responses while 19.5% had not reached objective responses at the time of data extraction.",
+      "context_window": "t 17.1% had objective responses on everolimus combinations, 63.4% did not have any objective responses while 19.5% had not re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-4248",
+      "claim_type": "percentage",
+      "raw_text": "19.5%",
+      "numeric_values": [
+        19.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4248,
+      "sentence": "About 17.1% had objective responses on everolimus combinations, 63.4% did not have any objective responses while 19.5% had not reached objective responses at the time of data extraction.",
+      "context_window": "binations, 63.4% did not have any objective responses while 19.5% had not reached objective responses at the time of data ext",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-4360",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 months",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4360,
+      "sentence": "Median time to objective response was 3.1 months (2.0, 4.2).",
+      "context_window": "e of data extraction. Median time to objective response was 3.1 months (2.0, 4.2). By the time of final data extraction, 7 (17.1%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-4424",
+      "claim_type": "percentage",
+      "raw_text": "17.1%",
+      "numeric_values": [
+        17.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4424,
+      "sentence": "By the time of final data extraction, 7 (17.1%) patients had achieved clinical benefit with everolimus combinations.",
+      "context_window": "months (2.0, 4.2). By the time of final data extraction, 7 (17.1%) patients had achieved clinical benefit with everolimus com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-4540",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4540,
+      "sentence": "Median duration of clinical benefit was 8 months (7, 16) with mentionable duration of 13 and 16 months in 2 women.",
+      "context_window": "limus combinations. Median duration of clinical benefit was 8 months (7, 16) with mentionable duration of 13 and 16 months in 2",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-4593",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4593,
+      "sentence": "Median duration of clinical benefit was 8 months (7, 16) with mentionable duration of 13 and 16 months in 2 women.",
+      "context_window": "it was 8 months (7, 16) with mentionable duration of 13 and 16 months in 2 women. Twenty-four patients failed to achieve clinical",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-4899",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 months",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4899,
+      "sentence": "Kaplan-Meier estimates show a median progression-free survival of 4.2 months (95% CI: 3.2-6.2).",
+      "context_window": "-Meier estimates show a median progression-free survival of 4.2 months (95% CI: 3.2-6.2). CI indicates confidence interval. Kapla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-ci-4911",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.2-6.2",
+      "numeric_values": [
+        3.2,
+        6.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4911,
+      "sentence": "Kaplan-Meier estimates show a median progression-free survival of 4.2 months (95% CI: 3.2-6.2).",
+      "context_window": "ates show a median progression-free survival of 4.2 months (95% CI: 3.2-6.2). CI indicates confidence interval. Kaplan-Meier estimates",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-5021",
+      "claim_type": "unit_value",
+      "raw_text": "18.7 months",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5021,
+      "sentence": "Kaplan-Meier estimates show a median overall survival of 18.7 months (95% CI: 9.5 to not reached).",
+      "context_window": ". Kaplan-Meier estimates show a median overall survival of 18.7 months (95% CI: 9.5 to not reached). CI indicates confidence inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-5034",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5034,
+      "sentence": "Kaplan-Meier estimates show a median overall survival of 18.7 months (95% CI: 9.5 to not reached).",
+      "context_window": "er estimates show a median overall survival of 18.7 months (95% CI: 9.5 to not reached). CI indicates confidence interval.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-199",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 months",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 199,
+      "sentence": "The median PFS of our study cohort was 4.2 months (95% CI: 3.2-6.2) while that of the everolimus plus exemestane arm of the BOLERO2 was 6.9 months (95% CI: 6.4-8.1).",
+      "context_window": "-based combinations. The median PFS of our study cohort was 4.2 months (95% CI: 3.2-6.2) while that of the everolimus plus exemest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-ci-211",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.2-6.2",
+      "numeric_values": [
+        3.2,
+        6.2
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 211,
+      "sentence": "The median PFS of our study cohort was 4.2 months (95% CI: 3.2-6.2) while that of the everolimus plus exemestane arm of the BOLERO2 was 6.9 months (95% CI: 6.4-8.1).",
+      "context_window": "nations. The median PFS of our study cohort was 4.2 months (95% CI: 3.2-6.2) while that of the everolimus plus exemestane arm of the BO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-296",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 months",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 296,
+      "sentence": "The median PFS of our study cohort was 4.2 months (95% CI: 3.2-6.2) while that of the everolimus plus exemestane arm of the BOLERO2 was 6.9 months (95% CI: 6.4-8.1).",
+      "context_window": "at of the everolimus plus exemestane arm of the BOLERO2 was 6.9 months (95% CI: 6.4-8.1). 1 The median OS of our study cohort was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-ci-308",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 6.4-8.1",
+      "numeric_values": [
+        6.4,
+        8.1
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 308,
+      "sentence": "The median PFS of our study cohort was 4.2 months (95% CI: 3.2-6.2) while that of the everolimus plus exemestane arm of the BOLERO2 was 6.9 months (95% CI: 6.4-8.1).",
+      "context_window": "erolimus plus exemestane arm of the BOLERO2 was 6.9 months (95% CI: 6.4-8.1). 1 The median OS of our study cohort was 18.7 months (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-366",
+      "claim_type": "unit_value",
+      "raw_text": "18.7 months",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 366,
+      "sentence": "1 The median OS of our study cohort was 18.7 months (95% CI: 9.5 to not reached), while that of the everolimus cohort of BOLERO2 was 31.0 months (95% CI: 28.0-34.6).",
+      "context_window": "(95% CI: 6.4-8.1). 1 The median OS of our study cohort was 18.7 months (95% CI: 9.5 to not reached), while that of the everolimus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-379",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 379,
+      "sentence": "1 The median OS of our study cohort was 18.7 months (95% CI: 9.5 to not reached), while that of the everolimus cohort of BOLERO2 was 31.0 months (95% CI: 28.0-34.6).",
+      "context_window": "-8.1). 1 The median OS of our study cohort was 18.7 months (95% CI: 9.5 to not reached), while that of the everolimus cohor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-459",
+      "claim_type": "unit_value",
+      "raw_text": "31.0 months",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 459,
+      "sentence": "1 The median OS of our study cohort was 18.7 months (95% CI: 9.5 to not reached), while that of the everolimus cohort of BOLERO2 was 31.0 months (95% CI: 28.0-34.6).",
+      "context_window": "eached), while that of the everolimus cohort of BOLERO2 was 31.0 months (95% CI: 28.0-34.6). 22 About 17.1% of women in our study c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-ci-472",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 28.0-34.6",
+      "numeric_values": [
+        28.0,
+        34.6
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 472,
+      "sentence": "1 The median OS of our study cohort was 18.7 months (95% CI: 9.5 to not reached), while that of the everolimus cohort of BOLERO2 was 31.0 months (95% CI: 28.0-34.6).",
+      "context_window": "e that of the everolimus cohort of BOLERO2 was 31.0 months (95% CI: 28.0-34.6). 22 About 17.1% of women in our study cohort had an object",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-501",
+      "claim_type": "percentage",
+      "raw_text": "17.1%",
+      "numeric_values": [
+        17.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 501,
+      "sentence": "22 About 17.1% of women in our study cohort had an objective response and same percentage achieved predefined clinical benefit.",
+      "context_window": "rt of BOLERO2 was 31.0 months (95% CI: 28.0-34.6). 22 About 17.1% of women in our study cohort had an objective response and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-626",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 626,
+      "sentence": "About 9.5% women in the everolimus cohort of BOLERO2 had an objective response.",
+      "context_window": "same percentage achieved predefined clinical benefit. About 9.5% women in the everolimus cohort of BOLERO2 had an objective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1086",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1086,
+      "sentence": "About 83% women in the study cohort received 3 or more lines of therapy prior to the everolimus combination while only 54% women in the everolimus plus exemestane cohort of BOLERO2 had 3 or more lines of prior therapy.",
+      "context_window": "a median of 3 lines of therapy on the BOLERO2 cohort. About 83% women in the study cohort received 3 or more lines of thera",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-1199",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1199,
+      "sentence": "About 83% women in the study cohort received 3 or more lines of therapy prior to the everolimus combination while only 54% women in the everolimus plus exemestane cohort of BOLERO2 had 3 or more lines of prior therapy.",
+      "context_window": "s of therapy prior to the everolimus combination while only 54% women in the everolimus plus exemestane cohort of BOLERO2 h",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-1505",
+      "claim_type": "unit_value",
+      "raw_text": "23.6 months",
+      "numeric_values": [
+        23.6
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1505,
+      "sentence": "In addition, our cohort received up to 23.6 months (median 7.0 months) of palbociclib therapy in the earlier part of the MBC therapy.",
+      "context_window": "to BOLERO2 cohorts. In addition, our cohort received up to 23.6 months (median 7.0 months) of palbociclib therapy in the earlier p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-1525",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1525,
+      "sentence": "In addition, our cohort received up to 23.6 months (median 7.0 months) of palbociclib therapy in the earlier part of the MBC therapy.",
+      "context_window": "In addition, our cohort received up to 23.6 months (median 7.0 months) of palbociclib therapy in the earlier part of the MBC ther",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-2971",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2971,
+      "sentence": "However, 41% of the patients had prior exemestane in our cohort, 95% had prior letrozole or anastrozole, and 66% had prior fulvestrant or tamoxifen.",
+      "context_window": "erolimus was not obtained during the chart review. However, 41% of the patients had prior exemestane in our cohort, 95% had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-3027",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3027,
+      "sentence": "However, 41% of the patients had prior exemestane in our cohort, 95% had prior letrozole or anastrozole, and 66% had prior fulvestrant or tamoxifen.",
+      "context_window": "er, 41% of the patients had prior exemestane in our cohort, 95% had prior letrozole or anastrozole, and 66% had prior fulve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-3071",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3071,
+      "sentence": "However, 41% of the patients had prior exemestane in our cohort, 95% had prior letrozole or anastrozole, and 66% had prior fulvestrant or tamoxifen.",
+      "context_window": "in our cohort, 95% had prior letrozole or anastrozole, and 66% had prior fulvestrant or tamoxifen. Everolimus toxicity and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-3978",
+      "claim_type": "unit_value",
+      "raw_text": "9.1 months",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3978,
+      "sentence": "Hao et al 24 performed a chart review of 192 ER+ MBC patients from community-based oncology practices, who received everolimus combination after progression on an AI, showing a median PFS was 9.1 months.",
+      "context_window": "nation after progression on an AI, showing a median PFS was 9.1 months. Similarly, Xie et al 25 performed a chart review of 243 ER",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-4202",
+      "claim_type": "unit_value",
+      "raw_text": "8.5 months",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4202,
+      "sentence": "Similarly, Xie et al 25 performed a chart review of 243 ER+ MBC patients from community-based oncology practices, who had received everolimus combination after progression on an AI, demonstrating a median PFS of 8.5 months.",
+      "context_window": "n after progression on an AI, demonstrating a median PFS of 8.5 months. Our study is the first to provide evidence of clinical be",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-227",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 months",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 227,
+      "sentence": "The combination was associated with a modest PFS of 4.2 months and ORR of 17.1%.",
+      "context_window": "R+ MBC. The combination was associated with a modest PFS of 4.2 months and ORR of 17.1%. Only 7 out of 41 women achieved clinical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-pct-249",
+      "claim_type": "percentage",
+      "raw_text": "17.1%",
+      "numeric_values": [
+        17.1
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 249,
+      "sentence": "The combination was associated with a modest PFS of 4.2 months and ORR of 17.1%.",
+      "context_window": "n was associated with a modest PFS of 4.2 months and ORR of 17.1%. Only 7 out of 41 women achieved clinical benefit, but 2 of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7378710_outcome_of_everolimus_based_therapy_in_hormone_receptor_posi-u-352",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 352,
+      "sentence": "Only 7 out of 41 women achieved clinical benefit, but 2 of them had prolonged benefit of 13 and 16 months.",
+      "context_window": "ical benefit, but 2 of them had prolonged benefit of 13 and 16 months. These results will assist clinicians in having an informed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

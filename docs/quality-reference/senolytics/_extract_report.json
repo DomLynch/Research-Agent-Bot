@@ -1,25 +1,138 @@
 {
   "topic": "senolytics",
+  "retrieval_mode": "calibrated",
   "n_queries": 7,
-  "n_unique_candidates": 252,
-  "n_selected_for_fetch": 25,
-  "n_pmcid_resolved": 13,
-  "n_extracted": 13,
+  "n_unique_candidates": 156,
+  "n_selected_for_fetch": 156,
+  "n_pmcid_resolved": 52,
+  "n_extracted": 46,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10006434",
+    "PMC10217382",
+    "PMC10229558",
+    "PMC10275874",
+    "PMC10400526",
+    "PMC10598643",
+    "PMC10724067",
+    "PMC10875739",
+    "PMC10929829",
+    "PMC10934575",
+    "PMC10943199",
+    "PMC11012227",
+    "PMC11171952",
+    "PMC11243040",
+    "PMC11309366",
+    "PMC11405506",
+    "PMC11488301",
+    "PMC11567261",
+    "PMC11858573",
+    "PMC11893712",
+    "PMC11907475",
+    "PMC11996976",
+    "PMC12418413",
+    "PMC4854923",
+    "PMC5085255",
+    "PMC5593348",
+    "PMC5907463",
+    "PMC6110594",
+    "PMC6366974",
+    "PMC6412088",
+    "PMC6796530",
+    "PMC6816502",
+    "PMC7202514",
+    "PMC7302972",
+    "PMC7408442",
+    "PMC7453018",
+    "PMC7530780",
+    "PMC7811843",
+    "PMC8004226",
+    "PMC8042157",
+    "PMC8282237",
+    "PMC8387860",
+    "PMC8416555",
+    "PMC8890612",
+    "PMC8924288",
+    "PMC8946554",
+    "PMC9028163",
+    "PMC9406955",
+    "PMC9447902",
+    "PMC9493043",
+    "PMC9499634",
+    "PMC9513037"
+  ],
+  "active_paper_ids": [
+    "PMC10006434_senolytics_dasatinib_and_quercetin_in_idiopathic_pulmonary_f",
+    "PMC10217382_therapeutic_perspectives_for_inflammation_and_senescence_in_",
+    "PMC10229558_rankl_senescent_cells_under_mechanical_stress_a_therapeutic_",
+    "PMC10275874_a_short_dasatinib_and_quercetin_treatment_is_sufficient_to_r",
+    "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_",
+    "PMC10598643_impact_of_senolytic_treatment_on_immunity_aging_and_disease",
+    "PMC10724067_senolytic_therapy_alleviates_physiological_human_brain_aging",
+    "PMC10929829_exploring_the_effects_of_dasatinib_quercetin_and_fisetin_on_",
+    "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i",
+    "PMC10943199_computational_identification_of_natural_senotherapeutic_comp",
+    "PMC11012227_the_differential_effect_of_senolytics_on_sasp_cytokine_secre",
+    "PMC11171952_chronological_and_biological_aging_in_amyotrophic_lateral_sc",
+    "PMC11243040_the_role_of_quercetin_as_a_plant_derived_bioactive_agent_in_",
+    "PMC11405506_targeting_cell_senescence_and_senolytics_novel_interventions",
+    "PMC11488301_a_novel_senolytic_drug_for_pulmonary_fibrosis_btsa1_targets_",
+    "PMC11567261_targeting_cellular_senescence_in_aging_and_age_related_disea",
+    "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos",
+    "PMC11893712_quercetin_ingestion_alters_motor_unit_behavior_and_enhances_",
+    "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit",
+    "PMC11996976_senolytics_charting_a_new_course_or_enhancing_existing_anti_",
+    "PMC12418413_evaluation_of_exploratory_fluid_biomarkers_from_a_phase_1_se",
+    "PMC4854923_identification_of_a_novel_senolytic_agent_navitoclax_targeti",
+    "PMC5593348_senolytic_drugs_target_alveolar_epithelial_cell_function_and",
+    "PMC5907463_effects_of_senolytic_drugs_on_human_mesenchymal_stromal_cell",
+    "PMC6366974_the_curcumin_analog_ef24_is_a_novel_senolytic_agent",
+    "PMC6412088_senolytics_in_idiopathic_pulmonary_fibrosis_results_from_a_f",
+    "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re",
+    "PMC7202514_covid_19_and_chronological_aging_senolytics_and_other_anti_a",
+    "PMC7408442_dna_damage_but_not_enzalutamide_induced_senescence_in_prosta",
+    "PMC7453018_senolytics_prevent_mt_dna_induced_inflammation_and_promote_t",
+    "PMC7530780_clearance_of_therapy_induced_senescent_tumor_cells_by_the_se",
+    "PMC7811843_is_exercise_a_senolytic_medicine_a_systematic_review",
+    "PMC8004226_chemoinformatic_screening_for_the_selection_of_potential_sen",
+    "PMC8042157_therapeutic_potential_of_quercetin_to_alleviate_endothelial_",
+    "PMC8282237_senolytics_alleviate_the_degenerative_disorders_of_temporoma",
+    "PMC8387860_senescence_and_senolytics_in_cardiovascular_disease_promise_",
+    "PMC8416555_anti_aging_senolytics_or_gerostatics_unconventional_view",
+    "PMC8890612_why_senescent_cells_are_resistant_to_apoptosis_an_insight_fo",
+    "PMC8924288_senolytics_eliminating_senescent_cells_and_alleviating_inter",
+    "PMC8946554_taking_advantage_of_the_senescence_promoting_effect_of_olapa",
+    "PMC9028163_cellular_senescence_molecular_targets_biomarkers_and_senolyt",
+    "PMC9406955_abrogation_of_cellular_senescence_induced_by_temozolomide_in",
+    "PMC9447902_network_pharmacology_identify_intersection_genes_of_querceti",
+    "PMC9493043_nutritional_senolytics_and_senomorphics_implications_to_immu",
+    "PMC9499634_senescence_independent_anti_inflammatory_activity_of_the_sen",
+    "PMC9513037_case_report_pleural_effusion_during_tyrosine_kinase_inhibito"
+  ],
   "failures": [
     {
-      "title": "Deciphering the Factors of Longevity Through a Multi-Omics Study in Long-Lived I",
+      "title": "A Study Testing the Combination of Dasatinib or Imatinib to Chemotherapy Treatme",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Proteomic Biomarker Tests in Blood Samples from Children with Autism Spectrum Di",
+      "title": "Investigating Senolytic Properties in Pulmonary Rehabilitation and Metformin in ",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Pilot Trial of Fisetin in Healthy Volunteers and Older Patients With Multimorbid",
+      "title": "Prevention of Frailty With Fisetin and Exercise in Breast Cancer Survivors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study on the Efficacy of Quercetin Intake in Patients With Fibrotic Interstitial",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -37,189 +150,1116 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Single Nuclei RNA-seq to Map Adipose Cellular Populations and Senescent Cells in",
+      "title": "Senolytics for Secondary Progressive MS",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Nutritional Intervention for Body, Brain, and Longevity Effects (NIBBLE)",
+      "title": "Sequential Treatments or Combinations Including Dasatinib, Quercetin, Fisetin an",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Vocal Emotion Communication With Cochlear Implants",
+      "title": "A Comparison of Fisetin Kinetics in Young and Old Adults",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Boosting Olfactory and Sensory Training Study (BOOST)",
+      "title": "Immune Preconditioning with Oral Quercetin Supplement and COVID-19 mRNA Vaccine ",
+      "doi": "10.1016/j.tjnut.2026.101431",
+      "pmid": "41759822",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alleviation by Fisetin of Frailty, Inflammation, and Related Measures in Older W",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Targeting the FOXO4-p53 axis by retro-inverso peptide senolytic agents: a pharma",
-      "doi": "10.1007/s00210-026-05309-6",
-      "pmid": "42024235",
+      "title": "Senolytics to Improve Osteoporosis Therapy",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Senolytic Treatment With Fisetin Reverses Age-Related Endothelial Dysfunction Pa",
-      "doi": "10.1111/acel.70500",
-      "pmid": "42021544",
+      "title": "Senolytics To slOw Progression of Sepsis (STOP-Sepsis) Trial",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Vascular Aging: A Central Driver of Multimorbidity.",
-      "doi": "10.1016/j.arr.2026.103117",
-      "pmid": "41933553",
+      "title": "Adding Ruxolitinib to a Combination of Dasatinib Plus Dexamethasone in Remission",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alleviation by Fisetin of Frailty, Inflammation, and Related Measures in Older A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety, Tolerance and Antiretroviral Activity of Dasatinib: a Pilot Clinical Tri",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fisetin to Reduce Senescence and Mobility Impairment in PAD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pilot Study of Fisetin to Improve Fatigue Among Older Adult Cancer Survivors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fisetin in Mild Alzheimer's Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fisetin to Improve Vascular Function in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Urolithin A and Fisetin on Improving Sleep and Aging Biomarkers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib and Quercetin to Treat Fibrotic Non-alcoholic Fatty Liver Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fisetin to Improve Physical Function in Stage I-III Breast Cancer Survivors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetin as a therapeutic agent for skin problems: a systematic review and meta",
+      "doi": "10.1007/s00210-024-03722-3",
+      "pmid": "39738831",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use quercetin for pulmonary fibrosis: a preclinical systematic review and meta-a",
+      "doi": "10.1007/s10787-025-01678-1",
+      "pmid": "40038212",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetins efficacy on bone and inflammatory markers, body composition, and phys",
+      "doi": "10.1007/s00774-025-01592-0",
+      "pmid": "40053115",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of quercetin ingestion on neuromuscular system following single session ",
+      "doi": "10.1139/apnm-2025-0169",
+      "pmid": "41056568",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Oral Navitoclax Tablet in Combination With Oral Ruxolitinib Tablet Vers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of Senolytic and Anti-Fibrotic Agents to Improve the Beneficial Effect of Bo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Open-Label Pilot Study of Qualia Senolytic Supplementation for the Attenuatio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib Plus Anti-CD19/CD22 Bispecific CAR-T Cell Therapy for Elderly Ph-posit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Investigate the Health Benefits of a Quercetin/Curcumin-Based Supplemen",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SenolyticSynergy: An Attention-Based Network for Discovering Novel Senolytic Com",
+      "doi": "10.1101/2025.05.28.655258",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Therapeutic Targeting of Quercetin Only to Breast Cancer Cells under In Vitro Co",
+      "doi": "10.2174/0115734048332611250106075111",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Senolytic effects of exercise in human muscles require acute inflammation.",
+      "doi": "10.18632/aging.205827",
+      "pmid": "38752873",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "One-week quercetin intervention modifies motor unit recruitment patterns before ",
+      "doi": "10.1016/j.physbeh.2024.114585",
+      "pmid": "38762195",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the Efficacy of Respicure\u00ae (Resveratrol / Quercetin) in the Manage",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "COVID-FIS: Pilot in COVID-19 (SARS-CoV-2) of Fisetin in Older Adults in Nursing ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of Fisetin to Treat Carpal Tunnel Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Feasibility of Dasatinib and Quercetin in Adults at Risk for Alzheime",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Senolytic Agent Improve the Benefit of Platelet-Rich Plasma and Losartan",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Natural Senolytic Agents & NLRP3 Inhibitors on Osteoarthritis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetin as Possible Supportive Therapy for Mild to Moderate Hyperuricemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib Combined With Quercetin to Reverse Chemo Resistance in Triple Negative",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Identification of lipid senolytics targeting senescent cells through ferroptosis",
+      "doi": "10.1101/2024.10.14.618023",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Therapeutic potential of senolytic agent quercetin in osteoarthritis: A systemat",
+      "doi": "10.1016/j.arr.2023.101989",
+      "pmid": "37442369",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib plus prednisone as induction and consolidation for adults with Ph-posi",
+      "doi": "10.1111/bjh.18975",
+      "pmid": "37434414",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fisetin Attenuates Cellular Senescence Accumulation During Culture Expansion of ",
+      "doi": "10.1093/stmcls/sxad036",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Senolytic Drugs Attenuate Osteoarthritis-Related Articular Cartilage Degeneratio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Research for Azacitidine Combined With Low-dose Dasatinib in Maintenanc",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Trial of Quercetin, Bromelain, Rye Flower Pollen & Papain on Reducing Severity o",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetin for Cardio-Skeletal Muscle Health and Estrogen Deficiency",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetin in Coronary Artery By-pass Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib for the Prevention of Oxaliplatin-Induced Neuropathy in Patients With ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Oral Navitoclax Tablet In Combination With Oral Ruxolitinib Tablet When",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Targeting Cellular Senescence With Senolytics to Improve Skeletal Health in Olde",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exploring the effects of Dasatinib, Quercetin, and Fisetin on DNA methylation cl",
+      "doi": "10.1101/2023.09.22.23295961",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Targeting cellular senescence with senotherapeutics: senolytics and senomorphics",
+      "doi": "10.1111/febs.16350",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Senolytics Cocktail Dasatinib and Quercetin Alleviate Human Umbilical Vein Endot",
+      "doi": "10.1159/000522656",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Quercetin on Metabolic Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Possible Pharmacological Effect of Quercetin in the Management of Hyperuricemia ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetin Phytosome\u00ae Chronic Fatigue Symptoms",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Blinatumomab and Combination Chemotherapy or Dasatinib, Prednisone, and Blinatum",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fisetin Attenuates Cellular Senescence Accumulation During Culture Expansion of ",
+      "doi": "10.1101/2022.11.15.516580",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ORALLY ACTIVE, CLINICALLY TRANSLATABLE SENOLYTICS RESTORE \u0391-KLOTHO IN MICE AND H",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-dose dasatinib in older patients with chronic myeloid leukaemia in chronic p",
+      "doi": "10.1016/s2352-3026(21)00333-1",
+      "pmid": "34826413",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Effectivness of Quercetin & Dasatinib on Epigenetic Aging",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Senolytic therapy ameliorates renal fibrosis postacute kidney injury by alleviat",
+      "doi": "10.1096/fj.202001855rr",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetin's Effect on Bone Health and Inflammatory Markers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Study of Quadruple Therapy Zinc, Quercetin, Bromelain and Vitamin C on the C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapid reduction in BCR-ABL1 transcript predicts deep molecular response in dasat",
+      "doi": "10.1111/ejh.12969",
+      "pmid": "28895203",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Bioequivalence Study of Dasatinib Tablet",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Phase 1B Study to Investigate the Safety and Preliminary Efficacy for the Comb",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Phase II Study of 5-FU, Oxaliplatin Plus Dasatinib in Metastatic Pancreatic Aden",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Dasatinib and All-Trans Retinoic Acid for Relapsed/Refractory and/or El",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Fungal Endophyte Nigrospora oryzae Produces Quercetin Monoglycosides Previou",
+      "doi": "10.1002/slct.201600478",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Phase IV, Open-label, Multicenter Study of Dasatinib in Chronic-Phase Chronic My",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Beneficial Effects of Quercetin in Chronic Obstructive Pulmonary Disease (COPD)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigating the Use of Quercetin on Glucose Absorption in Obesity, and Obesity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Frontline Dasatinib Plus Chemotherapy in Philadelphia Chromosome Positi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Induction Therapy With Cytarabine, High-Dose Mitoxantrone and Dasatinib for Pati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Quercetin on Blood Sugar and Blood Vessel Function in Type 2 Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib in Treating Patients With Solid Tumors or Lymphomas That Are Metastati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib and Bevacizumab in Treating Patients With Recurrent or Progressive Hig",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Quercetin Supplements on Healthy Males: a Four-Week Randomized Cross-O",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cediranib Maleate With or Without Dasatinib in Patients With HRPC-Resistant to T",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study on the Effects of Epicatechin and Quercetin Supplementation on Vascular Fu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "S0622, Dasatinib in Treating Patients With Stage IV Breast Cancer That Has Sprea",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib in Treating Patients With Metastatic Pancreatic Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Randomized Study Comparing Docetaxel Plus Dasatinib to Docetaxel Plus Placebo in",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Dasatinib and Docetaxel in Metastatic Hormone Refractory Prostate Cance",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Modulation of Cerebral Blood Flow Using Quercetin, a Nutritional Supplement",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Dasatinib in Children and Adolescents With Relapsed or Refractory Leuke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Efficacy of Exemestane Plus Dasatinib Versus Placebo for Advanced ER+",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib and Low Intensity Chemotherapy for Ph+ Acute Lymphoblastic Leukemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Combined Exercise, Heat, and Quercetin Supplementation on Whole Body S",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib (BMS-354825) in Subjects With Myeloid Blast Phase Chronic Myeloid Leuk",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of BMS-354825 (Dasatinib) in Patients With Chronic Myeloid Leukemia Who Ar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dasatinib (BMS-354835) Versus Imatinib Mesylate in Subjects With Chronic Myeloid",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Dasatinib (BMS-354825) in Patients With Accelerated Phase Chronic Myelo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "344 The Potential Benefits of Using Senolytics in Colorectal Cancer Treatment",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quercetin induces senolysis of doxorubicin-induced senescent fibroblasts by redu",
+      "doi": "10.1016/j.mad.2024.111957",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Computational identification of natural senotherapeutic compounds that mimic das",
+      "doi": "10.1101/2022.05.26.492763",
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     }
   ],
   "papers_resolved": {
-    "PMC11137034": {
-      "title": "A randomized, controlled clinical trial demonstrates improved owner-assessed cognitive function in senior dogs receiving a senolytic and NAD+ precursor combination.",
-      "doi": "10.1038/s41598-024-63031-w",
-      "pmid": "38811634",
-      "year": 2024,
-      "venue": "Sci Rep",
+    "PMC10006434": {
+      "title": "Senolytics dasatinib and quercetin in idiopathic pulmonary fibrosis: results of a phase I, single-blind, single-center, randomized, placebo-controlled pilot trial on feasibility and tolerability.",
+      "doi": "10.1016/j.ebiom.2023.104481",
+      "pmid": "36857968",
+      "year": 2023,
+      "venue": "EBioMedicine",
       "sources": [
-        "crossref",
         "openalex",
         "pubmed"
       ]
     },
-    "PMC9924942": {
-      "title": "Senolytic drugs, dasatinib and quercetin, attenuate adipose tissue inflammation, and ameliorate metabolic function in old age.",
-      "doi": "10.1111/acel.13767",
-      "pmid": "36637079",
+    "PMC6412088": {
+      "title": "Senolytics in idiopathic pulmonary fibrosis: Results from a first-in-human, open-label, pilot study.",
+      "doi": "10.1016/j.ebiom.2018.12.052",
+      "pmid": "30616998",
+      "year": 2019,
+      "venue": "EBioMedicine",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC6796530": {
+      "title": "Senolytics decrease senescent cells in humans: Preliminary report from a clinical trial of Dasatinib plus Quercetin in individuals with diabetic kidney diseaseResearch in context",
+      "doi": "10.1016/j.ebiom.2019.08.069",
+      "pmid": null,
+      "year": 2019,
+      "venue": "EBioMedicine",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC12418413": {
+      "title": "Evaluation of exploratory fluid biomarkers from a phase 1 senolytic trial in mild Alzheimer's disease.",
+      "doi": "10.1016/j.neurot.2025.e00591",
+      "pmid": "40274471",
+      "year": 2025,
+      "venue": "Neurotherapeutics",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11893712": {
+      "title": "Quercetin ingestion alters motor unit behavior and enhances improvement in muscle strength following resistance training in older adults: a randomized, double-blind, controlled trial.",
+      "doi": "10.1007/s00394-025-03634-9",
+      "pmid": "40063125",
+      "year": 2025,
+      "venue": "Eur J Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11858573": {
+      "title": "Preliminary Data on the Senolytic Effects of Agrimonia pilosa Ledeb. Extract Containing Agrimols for Immunosenescence in Middle-Aged Humans: A Randomized, Double-Blind, Placebo-Controlled, Parallel-Group Comparison Study.",
+      "doi": "10.3390/nu17040667",
+      "pmid": "40004995",
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11907475": {
+      "title": "A pilot study of senolytics to improve cognition and mobility in older adults at risk for Alzheimer\u2019s disease",
+      "doi": "10.1016/j.ebiom.2025.105612",
+      "pmid": null,
+      "year": 2025,
+      "venue": "EBioMedicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11405506": {
+      "title": "Targeting Cell Senescence and Senolytics: Novel Interventions for Age-Related Endocrine Dysfunction",
+      "doi": "10.1210/endrev/bnae010",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Endocrine Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11012227": {
+      "title": "The Differential Effect of Senolytics on SASP Cytokine Secretion and Regulation of EMT by CAFs",
+      "doi": "10.3390/ijms25074031",
+      "pmid": null,
+      "year": 2024,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11309366": {
+      "title": "Cardiomyocyte senescence and the potential therapeutic role of senolytics in the heart",
+      "doi": "10.20517/jca.2024.06",
+      "pmid": null,
+      "year": 2024,
+      "venue": "The Journal of Cardiovascular Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11567261": {
+      "title": "Targeting Cellular Senescence in Aging and Age-Related Diseases: Challenges, Considerations, and the Emerging Role of Senolytic and Senomorphic Therapies",
+      "doi": "10.14336/ad.2024.0206",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Aging and Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11243040": {
+      "title": "The Role of Quercetin as a Plant-Derived Bioactive Agent in Preventive Medicine and Treatment in Skin Disorders",
+      "doi": "10.3390/molecules29133206",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Molecules",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11171952": {
+      "title": "Chronological and Biological Aging in Amyotrophic Lateral Sclerosis and the Potential of Senolytic Therapies",
+      "doi": "10.3390/cells13110928",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Cells",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10875739": {
+      "title": "Senolytic therapy in mild Alzheimer's disease: a phase 1 feasibility trial.",
+      "doi": "10.1038/s41591-023-02543-w",
+      "pmid": "37679434",
       "year": 2023,
+      "venue": "Nat Med",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10400526": {
+      "title": "Increased cellular senescence in doxorubicin-induced murine ovarian injury: effect of senolytics",
+      "doi": "10.1007/s11357-023-00728-2",
+      "pmid": null,
+      "year": 2023,
+      "venue": "GeroScience",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10724067": {
+      "title": "Senolytic therapy alleviates physiological human brain aging and COVID-19 neuropathology",
+      "doi": "10.1038/s43587-023-00519-6",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Nature Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10598643": {
+      "title": "Impact of senolytic treatment on immunity, aging, and disease",
+      "doi": "10.3389/fragi.2023.1161799",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10217382": {
+      "title": "Therapeutic Perspectives for Inflammation and Senescence in Osteoarthritis Using Mesenchymal Stem Cells, Mesenchymal Stem Cell-Derived Extracellular Vesicles and Senolytic Agents",
+      "doi": "10.3390/cells12101421",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Cells",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9028163": {
+      "title": "Cellular Senescence: Molecular Targets, Biomarkers, and Senolytic Drugs",
+      "doi": "10.3390/ijms23084168",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9406955": {
+      "title": "Abrogation of Cellular Senescence Induced by Temozolomide in Glioblastoma Cells: Search for Senolytics",
+      "doi": "10.3390/cells11162588",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Cells",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9493043": {
+      "title": "Nutritional senolytics and senomorphics: Implications to immune cells metabolism and aging \u2013 from theory to practice",
+      "doi": "10.3389/fnut.2022.958563",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9499634": {
+      "title": "Senescence-Independent Anti-Inflammatory Activity of the Senolytic Drugs Dasatinib, Navitoclax, and Venetoclax in Zebrafish Models of Chronic Inflammation",
+      "doi": "10.3390/ijms231810468",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8890612": {
+      "title": "Why Senescent Cells Are Resistant to Apoptosis: An Insight for Senolytic Development",
+      "doi": "10.3389/fcell.2022.822816",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Cell and Developmental Biology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8946554": {
+      "title": "Taking Advantage of the Senescence-Promoting Effect of Olaparib after X-ray and Proton Irradiation Using the Senolytic Drug, ABT-263",
+      "doi": "10.3390/cancers14061460",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Cancers",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9513037": {
+      "title": "Case report: Pleural effusion during tyrosine-kinase inhibitor treatment in chronic myeloid leukemia: Not only a dasatinib-related adverse event",
+      "doi": "10.3389/fonc.2022.1012268",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Oncology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9447902": {
+      "title": "Network pharmacology identify intersection genes of quercetin and Alzheimer\u2019s disease as potential therapeutic targets",
+      "doi": "10.3389/fnagi.2022.902092",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7811843": {
+      "title": "Is exercise a senolytic medicine? A systematic review.",
+      "doi": "10.1111/acel.13294",
+      "pmid": "33378138",
+      "year": 2021,
       "venue": "Aging Cell",
       "sources": [
-        "crossref",
-        "openalex",
         "pubmed"
       ]
     },
-    "PMC11492760": {
-      "title": "Senolytics To slOw Progression of Sepsis (STOP-Sepsis) in elderly patients: Study protocol for a multicenter, randomized, adaptive allocation clinical trial",
-      "doi": "10.1186/s13063-024-08474-2",
+    "PMC8387860": {
+      "title": "Senescence and senolytics in cardiovascular disease: Promise and potential pitfalls",
+      "doi": "10.1016/j.mad.2021.111540",
       "pmid": null,
-      "year": 2024,
-      "venue": "Trials",
+      "year": 2021,
+      "venue": "Mechanisms of Ageing and Development",
       "sources": [
-        "doaj",
         "openalex"
       ]
     },
-    "PMC8612719": {
-      "title": "Senolytic Therapy to Modulate the Progression of Alzheimer's Disease (SToMP-AD): A Pilot Clinical Trial.",
-      "doi": "10.14283/jpad.2021.62",
-      "pmid": "35098970",
-      "year": 2022,
-      "venue": "J Prev Alzheimers Dis",
-      "sources": [
-        "openalex",
-        "pubmed"
-      ]
-    },
-    "PMC8417260": {
-      "title": "Long-term treatment with senolytic drugs Dasatinib and Quercetin ameliorates age-dependent intervertebral disc degeneration in mice.",
-      "doi": "10.1038/s41467-021-25453-2",
-      "pmid": "34480023",
+    "PMC8416555": {
+      "title": "Anti-aging: senolytics or gerostatics (unconventional view)",
+      "doi": "10.18632/oncotarget.28049",
+      "pmid": null,
       "year": 2021,
-      "venue": "Nat Commun",
+      "venue": "Oncotarget",
       "sources": [
-        "openalex",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC8564044": {
-      "title": "Design of a Randomized Placebo-Controlled Trial to Evaluate the Anti-inflammatory and Senolytic Effects of Quercetin in Patients Undergoing Coronary Artery Bypass Graft Surgery.",
-      "doi": "10.3389/fcvm.2021.741542",
-      "pmid": "34746258",
+    "PMC8282237": {
+      "title": "Senolytics alleviate the degenerative disorders of temporomandibular joint in old age",
+      "doi": "10.1111/acel.13394",
+      "pmid": null,
       "year": 2021,
-      "venue": "Front Cardiovasc Med",
+      "venue": "Aging Cell",
       "sources": [
-        "doaj",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC7405395": {
-      "title": "Senolytic drugs: from discovery to translation.",
-      "doi": "10.1111/joim.13141",
-      "pmid": "32686219",
+    "PMC8042157": {
+      "title": "Therapeutic Potential of Quercetin to Alleviate Endothelial Dysfunction in Age-Related Cardiovascular Diseases",
+      "doi": "10.3389/fcvm.2021.658400",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Cardiovascular Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8004226": {
+      "title": "Chemoinformatic Screening for the Selection of Potential Senolytic Compounds from Natural Products",
+      "doi": "10.3390/biom11030467",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Biomolecules",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7202514": {
+      "title": "COVID-19 and chronological aging: senolytics and other anti-aging drugs for the treatment or prevention of corona virus infection?",
+      "doi": "10.18632/aging.103001",
+      "pmid": null,
       "year": 2020,
-      "venue": "J Intern Med",
+      "venue": "Aging",
       "sources": [
-        "openalex",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC7768911": {
-      "title": "Clinical Review: Navitoclax as a Pro-Apoptotic and Anti-Fibrotic Agent.",
-      "doi": "10.3389/fphar.2020.564108",
-      "pmid": "33381025",
+    "PMC7453018": {
+      "title": "Senolytics prevent mt-DNA-induced inflammation and promote the survival of aged organs following transplantation",
+      "doi": "10.1038/s41467-020-18039-x",
+      "pmid": null,
       "year": 2020,
-      "venue": "Front Pharmacol",
+      "venue": "Nature Communications",
       "sources": [
-        "crossref",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC6197652": {
-      "title": "Fisetin is a senotherapeutic that extends health and lifespanResearch in Context",
-      "doi": "10.1016/j.ebiom.2018.09.015",
+    "PMC7530780": {
+      "title": "Clearance of therapy\u2010induced senescent tumor cells by the senolytic ABT\u2010263 via interference with BCL\u2010XL\u2013BAX interaction",
+      "doi": "10.1002/1878-0261.12761",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Molecular Oncology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7408442": {
+      "title": "DNA Damage- But Not Enzalutamide-Induced Senescence in Prostate Cancer Promotes Senolytic Bcl-xL Inhibitor Sensitivity",
+      "doi": "10.3390/cells9071593",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Cells",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7302972": {
+      "title": "Discovery, development, and future application of senolytics: theories and predictions",
+      "doi": "10.1111/febs.15264",
+      "pmid": null,
+      "year": 2020,
+      "venue": "FEBS Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6816502": {
+      "title": "Senolytic therapies for healthy longevity",
+      "doi": "10.1126/science.aaw1299",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6366974": {
+      "title": "The curcumin analog EF24 is a novel senolytic agent",
+      "doi": "10.18632/aging.101787",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6110594": {
+      "title": "Hsp90 inhibitors as senolytic drugs to extend healthy aging",
+      "doi": "10.1080/15384101.2018.1475828",
       "pmid": null,
       "year": 2018,
-      "venue": "EBioMedicine",
+      "venue": "Cell Cycle",
       "sources": [
-        "doaj",
         "openalex"
       ]
     },
-    "PMC5514381": {
-      "title": "Cellular Senescence: A Translational Perspective.",
-      "doi": "10.1016/j.ebiom.2017.04.013",
-      "pmid": "28416161",
+    "PMC5907463": {
+      "title": "Effects of senolytic drugs on human mesenchymal stromal cells",
+      "doi": "10.1186/s13287-018-0857-6",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Stem Cell Research & Therapy",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5593348": {
+      "title": "Senolytic drugs target alveolar epithelial cell function and attenuate experimental lung fibrosisex vivo",
+      "doi": "10.1183/13993003.02367-2016",
+      "pmid": null,
       "year": 2017,
-      "venue": "EBioMedicine",
+      "venue": "European Respiratory Journal",
       "sources": [
-        "doaj",
-        "pubmed"
+        "openalex"
       ]
     },
-    "PMC13050697": {
-      "title": "Cellular senescence and metabolic aging in type 2 diabetes: mechanistic insights and translational implications.",
-      "doi": "10.3389/fendo.2026.1799261",
-      "pmid": "41948554",
-      "year": 2026,
-      "venue": null,
+    "PMC5085255": {
+      "title": "Dasatinib and low-intensity chemotherapy in elderly patients with Philadelphia chromosome\u2013positive ALL",
+      "doi": "10.1182/blood-2016-02-700153",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Blood",
       "sources": [
-        "europepmc"
+        "openalex"
       ]
     },
-    "PMC12938503": {
-      "title": "DNA Methylation Signatures of Cellular Senescence Are Not Reversed by Senolytic Treatment.",
-      "doi": "10.1111/acel.70430",
-      "pmid": "41746138",
-      "year": 2026,
-      "venue": null,
+    "PMC4854923": {
+      "title": "Identification of a novel senolytic agent, navitoclax, targeting the Bcl\u20102 family of anti\u2010apoptotic factors",
+      "doi": "10.1111/acel.12445",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Aging Cell",
       "sources": [
-        "europepmc"
+        "openalex"
       ]
     },
-    "PMC13024385": {
-      "title": "Polyphenol-Rich Extracts from <i>Annurca</i> Apple Differentially Modulate Oxidative Stress-Induced Senescence in Human Dermal Fibroblasts.",
-      "doi": "10.3390/antiox15030372",
-      "pmid": "41897518",
-      "year": 2026,
-      "venue": null,
+    "PMC11488301": {
+      "title": "A novel senolytic drug for pulmonary fibrosis: BTSA1 targets apoptosis of senescent myofibroblasts by activating BAX",
+      "doi": "10.1111/acel.14229",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Aging Cell",
       "sources": [
-        "europepmc"
+        "openalex"
+      ]
+    },
+    "PMC10929829": {
+      "title": "Exploring the effects of Dasatinib, Quercetin, and Fisetin on DNA methylation clocks: a longitudinal study on senolytic interventions",
+      "doi": "10.18632/aging.205581",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11996976": {
+      "title": "Senolytics: charting a new course or enhancing existing anti-tumor therapies?",
+      "doi": "10.1007/s13402-024-01018-5",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Cellular Oncology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10943199": {
+      "title": "Computational identification of natural senotherapeutic compounds that mimic dasatinib based on gene expression data",
+      "doi": "10.1038/s41598-024-55870-4",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10934575": {
+      "title": "Quercetin in the Prevention of Induced Periodontal Disease in Animal Models: A Systematic Review and Meta-Analysis",
+      "doi": "10.3390/nu16050735",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10275874": {
+      "title": "A short dasatinib and quercetin treatment is sufficient to reinstate potent adult neuroregenesis in the aged killifish",
+      "doi": "10.1038/s41536-023-00304-4",
+      "pmid": null,
+      "year": 2023,
+      "venue": "npj Regenerative Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10229558": {
+      "title": "RANKL+ senescent cells under mechanical stress: a therapeutic target for orthodontic root resorption using senolytics",
+      "doi": "10.1038/s41368-023-00228-1",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Oral Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8924288": {
+      "title": "Senolytics: Eliminating Senescent Cells and Alleviating Intervertebral Disc Degeneration",
+      "doi": "10.3389/fbioe.2022.823945",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Bioengineering and Biotechnology",
+      "sources": [
+        "openalex"
       ]
     }
   }

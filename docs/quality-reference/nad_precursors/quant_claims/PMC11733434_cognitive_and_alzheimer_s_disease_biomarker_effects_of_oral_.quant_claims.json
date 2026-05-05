@@ -1,0 +1,1405 @@
+{
+  "paper_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_",
+  "doi": "10.1002/trc2.70023",
+  "extracted_at": "2026-05-05T21:28:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 25,
+    "percentage": 25,
+    "p_value": 22,
+    "mean_sd": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-489",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 489,
+      "sentence": "A crossover, double\u2010blind, randomized placebo (PBO) controlled trial was conducted to test the safety and efficacy of 8 weeks' active treatment with NR (1 g/day) on cognition and plasma AD biomarkers in older adults with subjective cognitive decline and mild cognitive impairment.",
+      "context_window": "lled trial was conducted to test the safety and efficacy of 8 weeks' active treatment with NR (1 g/day) on cognition and plasma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-1472",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1472,
+      "sentence": "For the between\u2010group comparison, there was a 7% reduction in pTau 217 concentrations after taking NR, while an 18% increase with PBO ( p = 0.02).",
+      "context_window": "tment phases. For the between\u2010group comparison, there was a 7% reduction in pTau 217 concentrations after taking NR, while",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-1538",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1538,
+      "sentence": "For the between\u2010group comparison, there was a 7% reduction in pTau 217 concentrations after taking NR, while an 18% increase with PBO ( p = 0.02).",
+      "context_window": "uction in pTau 217 concentrations after taking NR, while an 18% increase with PBO ( p = 0.02). No significant between\u2010group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-1562",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1562,
+      "sentence": "For the between\u2010group comparison, there was a 7% reduction in pTau 217 concentrations after taking NR, while an 18% increase with PBO ( p = 0.02).",
+      "context_window": "ntrations after taking NR, while an 18% increase with PBO ( p = 0.02). No significant between\u2010group differences were observed fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-1847",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1847,
+      "sentence": "For the within\u2010individual comparison, pTau 217 concentrations significantly decreased during the NR phase compared to the PBO ( p = 0.02), while step counts significantly increased during the NR phase than PBO ( p = 0.04).",
+      "context_window": "icantly decreased during the NR phase compared to the PBO ( p = 0.02), while step counts significantly increased during the NR p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-1931",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1931,
+      "sentence": "For the within\u2010individual comparison, pTau 217 concentrations significantly decreased during the NR phase compared to the PBO ( p = 0.02), while step counts significantly increased during the NR phase than PBO ( p = 0.04).",
+      "context_window": "unts significantly increased during the NR phase than PBO ( p = 0.04). Eight weeks NR supplementation is safe and lowered pTau",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3570",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3570,
+      "sentence": "18 , 29 , 30 , 31 , 32 Airhart et al. conducted a non\u2010randomized dose\u2010escalation study on eight healthy adults, finding that 1 g of NR twice daily is well\u2010tolerated and increased whole\u2010blood NAD+ levels by 35%-168% above baseline by day 9.",
+      "context_window": "is well\u2010tolerated and increased whole\u2010blood NAD+ levels by 35%-168% above baseline by day 9. 30 Conze et al. assessed the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3574",
+      "claim_type": "percentage",
+      "raw_text": "168%",
+      "numeric_values": [
+        168.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3574,
+      "sentence": "18 , 29 , 30 , 31 , 32 Airhart et al. conducted a non\u2010randomized dose\u2010escalation study on eight healthy adults, finding that 1 g of NR twice daily is well\u2010tolerated and increased whole\u2010blood NAD+ levels by 35%-168% above baseline by day 9.",
+      "context_window": "well\u2010tolerated and increased whole\u2010blood NAD+ levels by 35%-168% above baseline by day 9. 30 Conze et al. assessed the kinet",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-3810",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3810,
+      "sentence": "29 Doses of 100, 300, and 1000 mg NR chloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant adverse events (AEs).",
+      "context_window": "3\u201012 h with a half\u2010life of 2.7 h. 29 Doses of 100, 300, and 1000 mg NR chloride significantly increased blood NAD+ by 22%, 51%,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3868",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3868,
+      "sentence": "29 Doses of 100, 300, and 1000 mg NR chloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant adverse events (AEs).",
+      "context_window": "d 1000 mg NR chloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no signif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3873",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3873,
+      "sentence": "29 Doses of 100, 300, and 1000 mg NR chloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant adverse events (AEs).",
+      "context_window": "0 mg NR chloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3882",
+      "claim_type": "percentage",
+      "raw_text": "142%",
+      "numeric_values": [
+        142.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3882,
+      "sentence": "29 Doses of 100, 300, and 1000 mg NR chloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant adverse events (AEs).",
+      "context_window": "hloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant adverse e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-3894",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3894,
+      "sentence": "29 Doses of 100, 300, and 1000 mg NR chloride significantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant adverse events (AEs).",
+      "context_window": "ificantly increased blood NAD+ by 22%, 51%, and 142% within 2 weeks, respectively, with no significant adverse events (AEs). Or",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-1776",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1776,
+      "sentence": "After the initial visit of the lead\u2010in period, all participants were provided PBO (two pills twice/day) for 4 weeks.",
+      "context_window": "ll participants were provided PBO (two pills twice/day) for 4 weeks. After the PBO lead\u2010in period, participants had a baseline",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-1889",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1889,
+      "sentence": "After the PBO lead\u2010in period, participants had a baseline assessment visit and were provided either NR (250 mg, two pills twice/day) or PBO (two pills twice/day) for 8 weeks based on their sequence assignment.",
+      "context_window": "ad a baseline assessment visit and were provided either NR (250 mg, two pills twice/day) or PBO (two pills twice/day) for 8 we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-1951",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1951,
+      "sentence": "After the PBO lead\u2010in period, participants had a baseline assessment visit and were provided either NR (250 mg, two pills twice/day) or PBO (two pills twice/day) for 8 weeks based on their sequence assignment.",
+      "context_window": "0 mg, two pills twice/day) or PBO (two pills twice/day) for 8 weeks based on their sequence assignment. A second assessment was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-2141",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2141,
+      "sentence": "A second assessment was conducted at the end of Block 1 after which NR or PBO was switched to PBO or NR in Block 2, with assessment at the end of 8 weeks.",
+      "context_window": "ched to PBO or NR in Block 2, with assessment at the end of 8 weeks. A brief check\u2010in about safety was performed at baseline, c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-2599",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2599,
+      "sentence": "In the two\u2010arm parallel design framework, participants are randomly assigned to 8 weeks of NR orPBO to examine between\u2010group changes.",
+      "context_window": "lel design framework, participants are randomly assigned to 8 weeks of NR orPBO to examine between\u2010group changes. The added cro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-2685",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2685,
+      "sentence": "The added crossover phase after 8 weeks NR/PBO allows all participants to receive NR and PBO at different times.",
+      "context_window": "mine between\u2010group changes. The added crossover phase after 8 weeks NR/PBO allows all participants to receive NR and PBO at dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-6869",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6869,
+      "sentence": "The average daily step count over the last 14 days was used to assess walking intensity at baseline and during each block.",
+      "context_window": "ts for each day. The average daily step count over the last 14 days was used to assess walking intensity at baseline and during",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-7514",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7514,
+      "sentence": "Participants were instructed to play six unique Lumosity games at least once per day for 6 days/week throughout the trial, but participants were allowed to play as much as they liked.",
+      "context_window": "to play six unique Lumosity games at least once per day for 6 days/week throughout the trial, but participants were allowed to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-7939",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7939,
+      "sentence": "For analysis, daily total scores were extracted and averaged over the 2 weeks before baseline visits, the 2 weeks before crossover, and the 2 weeks before end\u2010of\u2010study to map with other assessments.",
+      "context_window": "is, daily total scores were extracted and averaged over the 2 weeks before baseline visits, the 2 weeks before crossover, and t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-7975",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7975,
+      "sentence": "For analysis, daily total scores were extracted and averaged over the 2 weeks before baseline visits, the 2 weeks before crossover, and the 2 weeks before end\u2010of\u2010study to map with other assessments.",
+      "context_window": "d and averaged over the 2 weeks before baseline visits, the 2 weeks before crossover, and the 2 weeks before end\u2010of\u2010study to ma",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-8009",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8009,
+      "sentence": "For analysis, daily total scores were extracted and averaged over the 2 weeks before baseline visits, the 2 weeks before crossover, and the 2 weeks before end\u2010of\u2010study to map with other assessments.",
+      "context_window": "fore baseline visits, the 2 weeks before crossover, and the 2 weeks before end\u2010of\u2010study to map with other assessments. The mean",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-215",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 215,
+      "sentence": "Twenty\u2010one participants (51%) were assigned to follow the NR\u2010PBO sequence, and 20 participants (49%) were assigned to follow PBO\u2010NR sequence.",
+      "context_window": "7 completed the trial (Figure 2 ). Twenty\u2010one participants (51%) were assigned to follow the NR\u2010PBO sequence, and 20 partic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-286",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 286,
+      "sentence": "Twenty\u2010one participants (51%) were assigned to follow the NR\u2010PBO sequence, and 20 participants (49%) were assigned to follow PBO\u2010NR sequence.",
+      "context_window": "ssigned to follow the NR\u2010PBO sequence, and 20 participants (49%) were assigned to follow PBO\u2010NR sequence. NR\u2010PBO and PBO\u2010NR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-msd-1305",
+      "claim_type": "mean_sd",
+      "raw_text": "94.22 \u00b1 4.91",
+      "numeric_values": [
+        94.22,
+        4.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1305,
+      "sentence": "The average pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respectively (Figure S1 ).",
+      "context_window": "espectively. The average pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-1313",
+      "claim_type": "percentage",
+      "raw_text": "4.91%",
+      "numeric_values": [
+        4.91
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1313,
+      "sentence": "The average pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respectively (Figure S1 ).",
+      "context_window": "ely. The average pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respecti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-msd-1323",
+      "claim_type": "mean_sd",
+      "raw_text": "94.78 \u00b1 7.16",
+      "numeric_values": [
+        94.78,
+        7.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1323,
+      "sentence": "The average pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respectively (Figure S1 ).",
+      "context_window": "average pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respectively (Figure S1 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-1331",
+      "claim_type": "percentage",
+      "raw_text": "7.16%",
+      "numeric_values": [
+        7.16
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1331,
+      "sentence": "The average pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respectively (Figure S1 ).",
+      "context_window": "pill\u2010taking compliance rates were 94.22 \u00b1 4.91% and 94.78 \u00b1 7.16% in the NR\u2010PBO and PBO\u2010NR groups, respectively (Figure S1 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-1515",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1515,
+      "sentence": "There were no differences in the pill\u2010taking compliance rate between two groups and across study visits (group*study; p = 0.57).",
+      "context_window": "te between two groups and across study visits (group*study; p = 0.57). Three participants exhibited a low compliance rate (<80%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-1579",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1579,
+      "sentence": "Three participants exhibited a low compliance rate (<80%) during Block 2 (two in the NR\u2010PBO; one in the PBO\u2010NR).",
+      "context_window": "0.57). Three participants exhibited a low compliance rate (<80%) during Block 2 (two in the NR\u2010PBO; one in the PBO\u2010NR). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-2696",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2696,
+      "sentence": "As for the primary analysis (between\u2010group comparison during the first 8 weeks), there were no differences in the RBANS total scaled score ( p = 0.55), nor for the five subdomains (Figure 3 ).",
+      "context_window": "primary analysis (between\u2010group comparison during the first 8 weeks), there were no differences in the RBANS total scaled score",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-2766",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2766,
+      "sentence": "As for the primary analysis (between\u2010group comparison during the first 8 weeks), there were no differences in the RBANS total scaled score ( p = 0.55), nor for the five subdomains (Figure 3 ).",
+      "context_window": "there were no differences in the RBANS total scaled score ( p = 0.55), nor for the five subdomains (Figure 3 ). There was a sign",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-3010",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3010,
+      "sentence": "There was a significant difference in RBANS attention scores, with the PBO\u2010treated group demonstrating, on average, higher attention scores compared to the NR\u2010treated group (difference: 5.07, p = 0.04).",
+      "context_window": "scores compared to the NR\u2010treated group (difference: 5.07, p = 0.04). However, this finding became insignificant after controll",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-3786",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3786,
+      "sentence": "AI, attention index; DMI, delayed memory index; IMI, immediate memory index; LI, language index; MMRM, mixed\u2010effects model repeated measures; NR, nicotinamide riboside; RBANS, Repeatable Battery for the Assessment of Neuropsychological Status; VCI, visuospatial index\n\nAs for the primary analysis (between\u2010group comparison during the first 8 weeks), there was a significant group difference in pTau 217 concentrations (Cohen's d = 0.8; p = 0.02) (Figure 4 ).",
+      "context_window": "primary analysis (between\u2010group comparison during the first 8 weeks), there was a significant group difference in pTau 217 conc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-3882",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3882,
+      "sentence": "AI, attention index; DMI, delayed memory index; IMI, immediate memory index; LI, language index; MMRM, mixed\u2010effects model repeated measures; NR, nicotinamide riboside; RBANS, Repeatable Battery for the Assessment of Neuropsychological Status; VCI, visuospatial index\n\nAs for the primary analysis (between\u2010group comparison during the first 8 weeks), there was a significant group difference in pTau 217 concentrations (Cohen's d = 0.8; p = 0.02) (Figure 4 ).",
+      "context_window": "oup difference in pTau 217 concentrations (Cohen's d = 0.8; p = 0.02) (Figure 4 ). The NR\u2010PBO group experienced a 7% reduction i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3936",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3936,
+      "sentence": "The NR\u2010PBO group experienced a 7% reduction in pTau 217 concentrations after taking NR, while the PBO\u2010NR group showed an 18% increase in pTau 217 concentrations with PBO.",
+      "context_window": "0.8; p = 0.02) (Figure 4 ). The NR\u2010PBO group experienced a 7% reduction in pTau 217 concentrations after taking NR, while",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-4026",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4026,
+      "sentence": "The NR\u2010PBO group experienced a 7% reduction in pTau 217 concentrations after taking NR, while the PBO\u2010NR group showed an 18% increase in pTau 217 concentrations with PBO.",
+      "context_window": "ntrations after taking NR, while the PBO\u2010NR group showed an 18% increase in pTau 217 concentrations with PBO. To further su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-4290",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4290,
+      "sentence": "The significant group difference at crossover in pTau 217 remained (Cohen's d = 0.71; p = 0.04).",
+      "context_window": "erence at crossover in pTau 217 remained (Cohen's d = 0.71; p = 0.04). There were no group differences in GFAP ( p = 0.35) or Nf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-4343",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4343,
+      "sentence": "There were no group differences in GFAP ( p = 0.35) or NfL ( p = 0.42) (Figure 4 ).",
+      "context_window": "0.71; p = 0.04). There were no group differences in GFAP ( p = 0.35) or NfL ( p = 0.42) (Figure 4 ). Change of ADRD plasma bio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-4362",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4362,
+      "sentence": "There were no group differences in GFAP ( p = 0.35) or NfL ( p = 0.42) (Figure 4 ).",
+      "context_window": "here were no group differences in GFAP ( p = 0.35) or NfL ( p = 0.42) (Figure 4 ). Change of ADRD plasma biomarkers concentrati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-4976",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4976,
+      "sentence": "The gray horizontal line showed no within\u2010individual changes (0%).",
+      "context_window": "e gray horizontal line showed no within\u2010individual changes (0%). The bar plots excluded two participants who only had base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-5373",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5373,
+      "sentence": "As for the secondary analysis (within\u2010individual comparisons), there was a reduction in pTau 217 during NR phase (3% reduction) compared to PBO phase (17% increase) ( t = 2.35, p = 0.02) (Figure 4 ).",
+      "context_window": "risons), there was a reduction in pTau 217 during NR phase (3% reduction) compared to PBO phase (17% increase) ( t = 2.35,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-5410",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5410,
+      "sentence": "As for the secondary analysis (within\u2010individual comparisons), there was a reduction in pTau 217 during NR phase (3% reduction) compared to PBO phase (17% increase) ( t = 2.35, p = 0.02) (Figure 4 ).",
+      "context_window": "u 217 during NR phase (3% reduction) compared to PBO phase (17% increase) ( t = 2.35, p = 0.02) (Figure 4 ). There were no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-5436",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5436,
+      "sentence": "As for the secondary analysis (within\u2010individual comparisons), there was a reduction in pTau 217 during NR phase (3% reduction) compared to PBO phase (17% increase) ( t = 2.35, p = 0.02) (Figure 4 ).",
+      "context_window": "reduction) compared to PBO phase (17% increase) ( t = 2.35, p = 0.02) (Figure 4 ). There were no between\u2010phase differences in GF",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-5541",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5541,
+      "sentence": "There were no between\u2010phase differences in GFAP and NfL, respectively ( t = 1.70, p = 0.10; t = 1.17, p = 0.27).",
+      "context_window": "phase differences in GFAP and NfL, respectively ( t = 1.70, p = 0.10; t = 1.17, p = 0.27). The concentrations of plasma biomarke",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-5561",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5561,
+      "sentence": "There were no between\u2010phase differences in GFAP and NfL, respectively ( t = 1.70, p = 0.10; t = 1.17, p = 0.27).",
+      "context_window": "GFAP and NfL, respectively ( t = 1.70, p = 0.10; t = 1.17, p = 0.27). The concentrations of plasma biomarker were provided (Tab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-5834",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5834,
+      "sentence": "No significant results were found for pTau 217 ( p = 0.48) and NfL ( p = 0.90).",
+      "context_window": "PBO group. No significant results were found for pTau 217 ( p = 0.48) and NfL ( p = 0.90). However, higher GFAP concentrations w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-5854",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.90",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5854,
+      "sentence": "No significant results were found for pTau 217 ( p = 0.48) and NfL ( p = 0.90).",
+      "context_window": "icant results were found for pTau 217 ( p = 0.48) and NfL ( p = 0.90). However, higher GFAP concentrations were observed at the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-5957",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5957,
+      "sentence": "However, higher GFAP concentrations were observed at the end\u2010of\u2010study compared to lead\u2010in ( p = 0.01), suggesting a null finding and indicating that the 8\u2010week washout period was sufficient.",
+      "context_window": "ons were observed at the end\u2010of\u2010study compared to lead\u2010in ( p = 0.01), suggesting a null finding and indicating that the 8\u2010week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-6104",
+      "claim_type": "percentage",
+      "raw_text": "73.88%",
+      "numeric_values": [
+        73.88
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6104,
+      "sentence": "On average, participants played Lumosity games 73.88% of total enrolled days generating data from 705.51\u00b1443.53 game sessions during the trial (Figure S1 ).",
+      "context_window": "sufficient. On average, participants played Lumosity games 73.88% of total enrolled days generating data from 705.51\u00b1443.53 g",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-msd-6155",
+      "claim_type": "mean_sd",
+      "raw_text": "705.51\u00b1443.53",
+      "numeric_values": [
+        705.51,
+        443.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6155,
+      "sentence": "On average, participants played Lumosity games 73.88% of total enrolled days generating data from 705.51\u00b1443.53 game sessions during the trial (Figure S1 ).",
+      "context_window": "ty games 73.88% of total enrolled days generating data from 705.51\u00b1443.53 game sessions during the trial (Figure S1 ). There were no",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-6334",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6334,
+      "sentence": "There were no differences in the percentage days played between two groups and across study events (group*study events; p = 0.44), nor for number of game sessions played between the two groups at crossover ( p = 0.59) and end\u2010of\u2010study ( p = 0.53).",
+      "context_window": "een two groups and across study events (group*study events; p = 0.44), nor for number of game sessions played between the two gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-6422",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6422,
+      "sentence": "There were no differences in the percentage days played between two groups and across study events (group*study events; p = 0.44), nor for number of game sessions played between the two groups at crossover ( p = 0.59) and end\u2010of\u2010study ( p = 0.53).",
+      "context_window": "game sessions played between the two groups at crossover ( p = 0.59) and end\u2010of\u2010study ( p = 0.53). In terms of NR effect, ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-6451",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6451,
+      "sentence": "There were no differences in the percentage days played between two groups and across study events (group*study events; p = 0.44), nor for number of game sessions played between the two groups at crossover ( p = 0.59) and end\u2010of\u2010study ( p = 0.53).",
+      "context_window": "the two groups at crossover ( p = 0.59) and end\u2010of\u2010study ( p = 0.53). In terms of NR effect, there was no between\u2010group or wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-msd-6645",
+      "claim_type": "mean_sd",
+      "raw_text": "90.23 \u00b1 12.85",
+      "numeric_values": [
+        90.23,
+        12.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6645,
+      "sentence": "The percentage of days with step count data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR group.",
+      "context_window": "gure S2 ). The percentage of days with step count data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-6653",
+      "claim_type": "percentage",
+      "raw_text": "12.85%",
+      "numeric_values": [
+        12.85
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6653,
+      "sentence": "The percentage of days with step count data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR group.",
+      "context_window": "). The percentage of days with step count data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-msd-6685",
+      "claim_type": "mean_sd",
+      "raw_text": "92.72 \u00b1 10.74",
+      "numeric_values": [
+        92.72,
+        10.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6685,
+      "sentence": "The percentage of days with step count data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR group.",
+      "context_window": "step count data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR group. There were no significant difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-6693",
+      "claim_type": "percentage",
+      "raw_text": "10.74%",
+      "numeric_values": [
+        10.74
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6693,
+      "sentence": "The percentage of days with step count data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR group.",
+      "context_window": "nt data was 90.23 \u00b1 12.85% for the NR\u2010PBO group and 92.72 \u00b1 10.74% for the PBO\u2010NR group. There were no significant differences",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-6875",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6875,
+      "sentence": "There were no significant differences in the percentage of days with step count data between the two groups and across study events (group*study events; p = 0.22).",
+      "context_window": "the two groups and across study events (group*study events; p = 0.22). As for the primary analysis (between\u2010group comparison du",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-6958",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6958,
+      "sentence": "As for the primary analysis (between\u2010group comparison during the first 8 weeks), no significant difference was observed ( p = 0.37).",
+      "context_window": "primary analysis (between\u2010group comparison during the first 8 weeks), no significant difference was observed ( p = 0.37). Howev",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-7009",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7009,
+      "sentence": "As for the primary analysis (between\u2010group comparison during the first 8 weeks), no significant difference was observed ( p = 0.37).",
+      "context_window": "he first 8 weeks), no significant difference was observed ( p = 0.37). However, in the secondary analysis that focused on within",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-7111",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7111,
+      "sentence": "However, in the secondary analysis that focused on within\u2010individual changes, there was an 11% increase in step counts following the use of NR, in contrast to a 4% decrease in step counts after using the placebo ( t = 2.07, p = 0.04).",
+      "context_window": "sis that focused on within\u2010individual changes, there was an 11% increase in step counts following the use of NR, in contras",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-7181",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7181,
+      "sentence": "However, in the secondary analysis that focused on within\u2010individual changes, there was an 11% increase in step counts following the use of NR, in contrast to a 4% decrease in step counts after using the placebo ( t = 2.07, p = 0.04).",
+      "context_window": "se in step counts following the use of NR, in contrast to a 4% decrease in step counts after using the placebo ( t = 2.07,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-p-7244",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7244,
+      "sentence": "However, in the secondary analysis that focused on within\u2010individual changes, there was an 11% increase in step counts following the use of NR, in contrast to a 4% decrease in step counts after using the placebo ( t = 2.07, p = 0.04).",
+      "context_window": "decrease in step counts after using the placebo ( t = 2.07, p = 0.04). The raw step counts were provided (Table S4 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-796",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 796,
+      "sentence": "We did not observe between\u2010group differences in either RBANS, or the more novel, densely sampled Lumosity measures, suggesting that 8 weeks treatment with NR did not provide additional cognitive benefits compared with PBO.",
+      "context_window": "e novel, densely sampled Lumosity measures, suggesting that 8 weeks treatment with NR did not provide additional cognitive bene",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-1453",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/day",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 1453,
+      "sentence": "31 Their NR dosage was set to increase by 250 mg/day each week until reaching 1g/day at 4 weeks.",
+      "context_window": "adults with MCI. 31 Their NR dosage was set to increase by 250 mg/day each week until reaching 1g/day at 4 weeks. This target dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-1499",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1499,
+      "sentence": "31 Their NR dosage was set to increase by 250 mg/day each week until reaching 1g/day at 4 weeks.",
+      "context_window": "o increase by 250 mg/day each week until reaching 1g/day at 4 weeks. This target dose was the same dose we used (from the start",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-1686",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1686,
+      "sentence": "Their results showed that the NR group had less decline in MoCA over the 10 weeks than the PBO group, although this was not significant.",
+      "context_window": "showed that the NR group had less decline in MoCA over the 10 weeks than the PBO group, although this was not significant. Howe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-2271",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2271,
+      "sentence": "10 weeks) as Orr et al.",
+      "context_window": "es. We used a similar dosage and treatment duration (8 vs. 10 weeks) as Orr et al. 31 but employed an integrated design. Howeve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-3268",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3268,
+      "sentence": "We observed a significant difference in pTau 217 concentrations by 1.23\u2010folds between the randomized groups after 8 weeks.",
+      "context_window": "ntrations by 1.23\u2010folds between the randomized groups after 8 weeks. Our analysis revealed no significant difference between le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-3709",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3709,
+      "sentence": "41 , 42 , 43 This suggests that 8 weeks of NR treatment might reduce the difference of pTau 217 concentrations between the normal and MCI by 39%-72% (e.g., 1\u2010(1.23/2) = 39%).",
+      "context_window": "tively unimpaired controls. 41 , 42 , 43 This suggests that 8 weeks of NR treatment might reduce the difference of pTau 217 con",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3818",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3818,
+      "sentence": "41 , 42 , 43 This suggests that 8 weeks of NR treatment might reduce the difference of pTau 217 concentrations between the normal and MCI by 39%-72% (e.g., 1\u2010(1.23/2) = 39%).",
+      "context_window": "ce of pTau 217 concentrations between the normal and MCI by 39%-72% (e.g., 1\u2010(1.23/2) = 39%). Our findings are comparable t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3822",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3822,
+      "sentence": "41 , 42 , 43 This suggests that 8 weeks of NR treatment might reduce the difference of pTau 217 concentrations between the normal and MCI by 39%-72% (e.g., 1\u2010(1.23/2) = 39%).",
+      "context_window": "f pTau 217 concentrations between the normal and MCI by 39%-72% (e.g., 1\u2010(1.23/2) = 39%). Our findings are comparable to th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-pct-3846",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3846,
+      "sentence": "41 , 42 , 43 This suggests that 8 weeks of NR treatment might reduce the difference of pTau 217 concentrations between the normal and MCI by 39%-72% (e.g., 1\u2010(1.23/2) = 39%).",
+      "context_window": "s between the normal and MCI by 39%-72% (e.g., 1\u2010(1.23/2) = 39%). Our findings are comparable to those of a 6\u2010week randomiz",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_-u-4032",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4032,
+      "sentence": "After 6 weeks of oral NR (1g/day), amyloid \u03b242 was significantly reduced among 9 out of 18 treatment responders whose NAD+ levels were increased.",
+      "context_window": "fects of NR on AD markers in 22 healthy older adults. After 6 weeks of oral NR (1g/day), amyloid \u03b242 was significantly reduced",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

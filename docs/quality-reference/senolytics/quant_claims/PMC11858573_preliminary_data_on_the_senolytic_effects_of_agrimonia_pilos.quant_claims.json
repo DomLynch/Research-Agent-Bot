@@ -1,0 +1,878 @@
+{
+  "paper_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos",
+  "doi": "10.3390/nu17040667",
+  "extracted_at": "2026-05-05T21:22:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 25,
+    "p_value": 5,
+    "percentage": 16,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-534",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 534,
+      "sentence": "Intervention: Participants were randomly assigned to receive 50 mg APE containing 0.2 mg of agrimols or a placebo for eight consecutive weeks.",
+      "context_window": "ntervention: Participants were randomly assigned to receive 50 mg APE containing 0.2 mg of agrimols or a placebo for eight co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-555",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mg",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 555,
+      "sentence": "Intervention: Participants were randomly assigned to receive 50 mg APE containing 0.2 mg of agrimols or a placebo for eight consecutive weeks.",
+      "context_window": "ants were randomly assigned to receive 50 mg APE containing 0.2 mg of agrimols or a placebo for eight consecutive weeks. Measu",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-732",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 732,
+      "sentence": "Measurements: The primary endpoint was the change in the proportion of CD8+ T cells with high SA-\u03b2Gal expression at 8 weeks of intake from the baseline.",
+      "context_window": "proportion of CD8+ T cells with high SA-\u03b2Gal expression at 8 weeks of intake from the baseline. The secondary endpoints includ",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-p-1349",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1349,
+      "sentence": "In the male population, the proportion of CD8+ T cells with high SA-\u03b2Gal expression was reduced by APE intake ( p = 0.044).",
+      "context_window": "ls with high SA-\u03b2Gal expression was reduced by APE intake ( p = 0.044). Furthermore, the proportion of na\u00efve CD8+ T cells increas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-131",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 131,
+      "sentence": "In recent years, the global population has been growing older, and it is estimated that the proportion of the world\u2019s elderly aged 65 years or older will reach 16% by 2050, compared to approximately 10% in 2022 [ 1 ].",
+      "context_window": "s estimated that the proportion of the world\u2019s elderly aged 65 years or older will reach 16% by 2050, compared to approximately",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-160",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 160,
+      "sentence": "In recent years, the global population has been growing older, and it is estimated that the proportion of the world\u2019s elderly aged 65 years or older will reach 16% by 2050, compared to approximately 10% in 2022 [ 1 ].",
+      "context_window": "on of the world\u2019s elderly aged 65 years or older will reach 16% by 2050, compared to approximately 10% in 2022 [ 1 ]. While",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-199",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 199,
+      "sentence": "In recent years, the global population has been growing older, and it is estimated that the proportion of the world\u2019s elderly aged 65 years or older will reach 16% by 2050, compared to approximately 10% in 2022 [ 1 ].",
+      "context_window": "or older will reach 16% by 2050, compared to approximately 10% in 2022 [ 1 ]. While the average lifespan is increasing, th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-2929",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2929,
+      "sentence": "Participants were selected based on the following criteria: Japanese male and female participants aged 40-59 years at the time of obtaining consent, participants with a relatively high proportion of high-SA-\u03b2Gal CD8+ T cells, subjects who could provide consent, and those who did not meet the exclusion criteria.",
+      "context_window": "ing criteria: Japanese male and female participants aged 40-59 years at the time of obtaining consent, participants with a relat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-5152",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5152,
+      "sentence": "This calculation accounted for an anticipated difference of 4.6% in the change in the proportion of high-SA-\u03b2Gal CD8+ T cells between the APE group and the placebo group, with a common standard deviation of 8.1%.",
+      "context_window": "This calculation accounted for an anticipated difference of 4.6% in the change in the proportion of high-SA-\u03b2Gal CD8+ T cell",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-5299",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5299,
+      "sentence": "This calculation accounted for an anticipated difference of 4.6% in the change in the proportion of high-SA-\u03b2Gal CD8+ T cells between the APE group and the placebo group, with a common standard deviation of 8.1%.",
+      "context_window": "and the placebo group, with a common standard deviation of 8.1%. This study assumed a two-sided significance level of 5% an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-5358",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5358,
+      "sentence": "This study assumed a two-sided significance level of 5% and a power of 0.8 for the Student\u2019s t -test, considering potential dropout cases during the trial or exclusions due to protocol violations.",
+      "context_window": "8.1%. This study assumed a two-sided significance level of 5% and a power of 0.8 for the Student\u2019s t -test, considering p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-5927",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5927,
+      "sentence": "The specification for the APE ensured that it contained at least 0.4% agrimols.",
+      "context_window": "pecification for the APE ensured that it contained at least 0.4% agrimols. The test food consisted of hard capsules contain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-5995",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5995,
+      "sentence": "The test food consisted of hard capsules containing 50 mg APE per capsule.",
+      "context_window": "imols. The test food consisted of hard capsules containing 50 mg APE per capsule. Each 50 mg of APE contained 0.2 mg of agri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-6023",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6023,
+      "sentence": "Each 50 mg of APE contained 0.2 mg of agrimols, including agrimol B.",
+      "context_window": "ted of hard capsules containing 50 mg APE per capsule. Each 50 mg of APE contained 0.2 mg of agrimols, including agrimol B. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-6046",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mg",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6046,
+      "sentence": "Each 50 mg of APE contained 0.2 mg of agrimols, including agrimol B.",
+      "context_window": "ntaining 50 mg APE per capsule. Each 50 mg of APE contained 0.2 mg of agrimols, including agrimol B. The placebo capsules were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-6357",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6357,
+      "sentence": "The test food was administered to the subjects in the form of one capsule (50 mg APE or placebo) per day, taken with water or warm water.",
+      "context_window": "as administered to the subjects in the form of one capsule (50 mg APE or placebo) per day, taken with water or warm water. I",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-6869",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6869,
+      "sentence": "Therefore, the intake period for the study food in this research was set to eight weeks (56 days).",
+      "context_window": "for the study food in this research was set to eight weeks (56 days). This was a randomized, double-blind, placebo-controlled,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-7886",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7886,
+      "sentence": "Starting from the first day of intake, participants returned for follow-up visits at 4 and 8 weeks, where they underwent weight measurement, blood pressure and pulse measurement, blood sampling (for PBMC and serum), urine collection, medical interviews, and questionnaire surveys.",
+      "context_window": "intake, participants returned for follow-up visits at 4 and 8 weeks, where they underwent weight measurement, blood pressure an",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-9201",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 9201,
+      "sentence": "Blood tests included counts and measurements of white blood cells, red blood cells, hemoglobin, hematocrit, MCV, MCH, MCHC, platelets, total protein (TP), albumin (Alb), A/G ratio, total bilirubin (TB), direct bilirubin (D-B), indirect bilirubin (I-B), ALP at screening and at 8 weeks of intake, AST (GOT), ALT (GPT), LD, \u03b3GT (\u03b3GTP), total cholesterol (TC), triglycerides (TG), HDL cholesterol (HDL-C), LDL cholesterol (LDL-C), urea nitrogen (UN), creatinine (Cr), uric acid (UA), Na, K, Cl, blood sugar (GLU), HbA1c, insulin, Fe, total iron binding capacity (TIBC), unsaturated iron binding capacity (UIBC), and cystatin C.",
+      "context_window": "in (D-B), indirect bilirubin (I-B), ALP at screening and at 8 weeks of intake, AST (GOT), ALT (GPT), LD, \u03b3GT (\u03b3GTP), total chol",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-9994",
+      "claim_type": "unit_value",
+      "raw_text": "8 mL",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9994,
+      "sentence": "Blood was drawn for PBMC collection in 8 mL volumes on each test day.",
+      "context_window": "lin Lakes, NJ, USA). Blood was drawn for PBMC collection in 8 mL volumes on each test day. After blood collection, the sampl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-10135",
+      "claim_type": "unit_value",
+      "raw_text": "15 mL",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 10135,
+      "sentence": "The PBMC layer was then collected into 15 mL tubes, resuspended in PBS(-) (Thermo Fisher Scientific, Inc., Waltham, MA, USA), and centrifuged again.",
+      "context_window": "ed to isolate PBMCs. The PBMC layer was then collected into 15 mL tubes, resuspended in PBS(-) (Thermo Fisher Scientific, Inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-10838",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10838,
+      "sentence": "After thawing cryopreserved 5 \u00d7 10 5 human PBMCs and washing them with FACS Buffer (PBS(-), 2% FBS ( v / v ) (Thermo Fisher Scientific, Inc.), 2 mM EDTA (Thermo Fisher Scientific, Inc.) and 1% penicillin-streptomycin (Sigma Aldrich, St.",
+      "context_window": "10 5 human PBMCs and washing them with FACS Buffer (PBS(-), 2% FBS ( v / v ) (Thermo Fisher Scientific, Inc.), 2 mM EDTA (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-10936",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10936,
+      "sentence": "After thawing cryopreserved 5 \u00d7 10 5 human PBMCs and washing them with FACS Buffer (PBS(-), 2% FBS ( v / v ) (Thermo Fisher Scientific, Inc.), 2 mM EDTA (Thermo Fisher Scientific, Inc.) and 1% penicillin-streptomycin (Sigma Aldrich, St.",
+      "context_window": "ific, Inc.), 2 mM EDTA (Thermo Fisher Scientific, Inc.) and 1% penicillin-streptomycin (Sigma Aldrich, St. Louis, MO, USA)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-16902",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16902,
+      "sentence": "The significance level for the tests was set at 5% (two-sided).",
+      "context_window": "dard error. The significance level for the tests was set at 5% (two-sided). Statistical analyses were performed using IBM",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-n-193",
+      "claim_type": "sample_size",
+      "raw_text": "N = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 193,
+      "sentence": "All 110 selected subjects were randomly assigned to the placebo group (N = 55; male, 28; female, 27) or the test food group (N = 55; male, 27; female, 28).",
+      "context_window": "ected subjects were randomly assigned to the placebo group (N = 55; male, 28; female, 27) or the test food group (N = 55; male",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-n-247",
+      "claim_type": "sample_size",
+      "raw_text": "N = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 247,
+      "sentence": "All 110 selected subjects were randomly assigned to the placebo group (N = 55; male, 28; female, 27) or the test food group (N = 55; male, 27; female, 28).",
+      "context_window": "roup (N = 55; male, 28; female, 27) or the test food group (N = 55; male, 27; female, 28). A comparison of the screening test",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-2434",
+      "claim_type": "percentage",
+      "raw_text": "89.3%",
+      "numeric_values": [
+        89.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2434,
+      "sentence": "Of the 108 patients who completed the study schedule, one (placebo group) had an 89.3% intake rate of the trial supplement, one (placebo group) had a 96.4% intake rate, four (two in the placebo group and two in the APE group) had a 98.2% intake rate, and the remaining 102 had a 100% intake rate.",
+      "context_window": "ho completed the study schedule, one (placebo group) had an 89.3% intake rate of the trial supplement, one (placebo group) ha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-2503",
+      "claim_type": "percentage",
+      "raw_text": "96.4%",
+      "numeric_values": [
+        96.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2503,
+      "sentence": "Of the 108 patients who completed the study schedule, one (placebo group) had an 89.3% intake rate of the trial supplement, one (placebo group) had a 96.4% intake rate, four (two in the placebo group and two in the APE group) had a 98.2% intake rate, and the remaining 102 had a 100% intake rate.",
+      "context_window": "ake rate of the trial supplement, one (placebo group) had a 96.4% intake rate, four (two in the placebo group and two in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-2585",
+      "claim_type": "percentage",
+      "raw_text": "98.2%",
+      "numeric_values": [
+        98.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2585,
+      "sentence": "Of the 108 patients who completed the study schedule, one (placebo group) had an 89.3% intake rate of the trial supplement, one (placebo group) had a 96.4% intake rate, four (two in the placebo group and two in the APE group) had a 98.2% intake rate, and the remaining 102 had a 100% intake rate.",
+      "context_window": "r (two in the placebo group and two in the APE group) had a 98.2% intake rate, and the remaining 102 had a 100% intake rate.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-2632",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2632,
+      "sentence": "Of the 108 patients who completed the study schedule, one (placebo group) had an 89.3% intake rate of the trial supplement, one (placebo group) had a 96.4% intake rate, four (two in the placebo group and two in the APE group) had a 98.2% intake rate, and the remaining 102 had a 100% intake rate.",
+      "context_window": "group) had a 98.2% intake rate, and the remaining 102 had a 100% intake rate. The average intake rates were 99.7% for the pl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-2680",
+      "claim_type": "percentage",
+      "raw_text": "99.7%",
+      "numeric_values": [
+        99.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2680,
+      "sentence": "The average intake rates were 99.7% for the placebo group and 99.97% for the APE group.",
+      "context_window": "g 102 had a 100% intake rate. The average intake rates were 99.7% for the placebo group and 99.97% for the APE group. Of the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-2712",
+      "claim_type": "percentage",
+      "raw_text": "99.97%",
+      "numeric_values": [
+        99.97
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2712,
+      "sentence": "The average intake rates were 99.7% for the placebo group and 99.97% for the APE group.",
+      "context_window": "e average intake rates were 99.7% for the placebo group and 99.97% for the APE group. Of the 110 patients allocated to the tri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-pct-4569",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4569,
+      "sentence": "For the proportion of PD-1-positive CD8+ T cells, both groups showed approximately 6% higher proportions at eight weeks compared to the baseline.",
+      "context_window": "D-1-positive CD8+ T cells, both groups showed approximately 6% higher proportions at eight weeks compared to the baseline.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-5118",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5118,
+      "sentence": "The baseline values represent the measured values, while the values at 4 and 8 weeks indicate changes from baseline.",
+      "context_window": "es represent the measured values, while the values at 4 and 8 weeks indicate changes from baseline. The changes in the proport",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-5326",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5326,
+      "sentence": "Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after the start of trial supplement intake. \u201cNaive\u201d, \u201cCM\u201d, \u201cEM\u201d, and \u201cTEMRA\u201d mean naive T cell, central memory T cell, effector memory T cell, and TEMRA cell, respectively.",
+      "context_window": "d APE mean Placebo and APE groups, respectively. Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-5340",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5340,
+      "sentence": "Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after the start of trial supplement intake. \u201cNaive\u201d, \u201cCM\u201d, \u201cEM\u201d, and \u201cTEMRA\u201d mean naive T cell, central memory T cell, effector memory T cell, and TEMRA cell, respectively.",
+      "context_window": "cebo and APE groups, respectively. Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after the start of tri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-5820",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5820,
+      "sentence": "Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after the start of trial supplement intake. \u201cNaive\u201d, \u201cCM\u201d, \u201cEM\u201d, and \u201cTEMRA\u201d means naive T cell, central memory T cell, effector memory T cell, and TEMRA cell, respectively.",
+      "context_window": "d APE mean Placebo and APE groups, respectively. Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-5834",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5834,
+      "sentence": "Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after the start of trial supplement intake. \u201cNaive\u201d, \u201cCM\u201d, \u201cEM\u201d, and \u201cTEMRA\u201d means naive T cell, central memory T cell, effector memory T cell, and TEMRA cell, respectively.",
+      "context_window": "cebo and APE groups, respectively. Note that \u201c4 weeks\u201d and \u201c8 weeks\u201d indicate the time points (in weeks) after the start of tri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-6369",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6369,
+      "sentence": "In terms of the proportion of high-SA-\u03b2Gal CD8+ T cells in male subjects, both groups showed a decrease at 8 weeks from the baseline; however, the APE group showed significantly lower values than the placebo group at the same period ( Table 3 ).",
+      "context_window": "T cells in male subjects, both groups showed a decrease at 8 weeks from the baseline; however, the APE group showed significan",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-6567",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6567,
+      "sentence": "In contrast, for females, both groups showed a decrease at 8 weeks from the baseline, but there was no significant difference between the groups ( Table 3 ).",
+      "context_window": "In contrast, for females, both groups showed a decrease at 8 weeks from the baseline, but there was no significant difference",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-p-7127",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.6546",
+      "numeric_values": [
+        0.6546
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7127,
+      "sentence": "No differences were observed between the placebo and APE groups in the CD8+ T cell/lymphocyte ratio and the CD4+/CD8+ ratio ( p = 0.6546 and 0.1378, respectively).",
+      "context_window": "the CD8+ T cell/lymphocyte ratio and the CD4+/CD8+ ratio ( p = 0.6546 and 0.1378, respectively). Although a significant differenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-p-7251",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7251,
+      "sentence": "Although a significant difference was observed in the CD4+/CD8+ ratio among females ( p = 0.048), the ANCOVA showed no significant difference ( p = 0.0875).",
+      "context_window": "ference was observed in the CD4+/CD8+ ratio among females ( p = 0.048), the ANCOVA showed no significant difference ( p = 0.0875)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-p-7309",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0875",
+      "numeric_values": [
+        0.0875
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7309,
+      "sentence": "Although a significant difference was observed in the CD4+/CD8+ ratio among females ( p = 0.048), the ANCOVA showed no significant difference ( p = 0.0875).",
+      "context_window": "( p = 0.048), the ANCOVA showed no significant difference ( p = 0.0875). For the T cell subset, the proportion of na\u00efve CD8+ T ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-7521",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7521,
+      "sentence": "For the T cell subset, the proportion of na\u00efve CD8+ T cells in males increased in both groups after the start of intake but became significantly higher in the APE group than in the placebo group at 8 weeks ( Table S1 , Figure 2 ).",
+      "context_window": "cantly higher in the APE group than in the placebo group at 8 weeks ( Table S1 , Figure 2 ). In contrast, the proportion of eff",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-7641",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7641,
+      "sentence": "In contrast, the proportion of effector memory CD8+ T cells decreased from baseline to 8 weeks in the APE group, whereas the placebo group showed little change from baseline.",
+      "context_window": "of effector memory CD8+ T cells decreased from baseline to 8 weeks in the APE group, whereas the placebo group showed little c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-7732",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7732,
+      "sentence": "At 8 weeks, the APE group showed a lower value than the placebo group (ANCOVA, p = 0.0462).",
+      "context_window": "as the placebo group showed little change from baseline. At 8 weeks, the APE group showed a lower value than the placebo group",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-p-7808",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0462",
+      "numeric_values": [
+        0.0462
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7808,
+      "sentence": "At 8 weeks, the APE group showed a lower value than the placebo group (ANCOVA, p = 0.0462).",
+      "context_window": "group showed a lower value than the placebo group (ANCOVA, p = 0.0462). This suggests that the increase in the number of na\u00efve T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858573_preliminary_data_on_the_senolytic_effects_of_agrimonia_pilos-u-113",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 113,
+      "sentence": "In this study, an A. pilosa extract containing agrimols (APE) was administered to men and women aged 40 to under 60 years with immunosenescence.",
+      "context_window": "ls (APE) was administered to men and women aged 40 to under 60 years with immunosenescence. Our findings indicated that the inta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "paper_id": "PMC10474001_incretin_hormones_and_type_2_diabetes",
+  "doi": "10.1007/s00125-023-05956-x",
+  "extracted_at": "2026-05-05T21:26:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10474001_incretin_hormones_and_type_2_diabetes-u-370",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 370,
+      "sentence": "While 35 years ago, GIP was judged to be devoid of any therapeutic potential, novel compounds such as tirzepatide, which also stimulates GIP receptors and has a remarkably improved effectiveness for controlling plasma glucose concentrations and reducing body weight (vs selective GLP-1 receptor agonists), have renewed interest and sparked studies into the novel roles of GIP in preventing ectopic fat deposition and improving insulin sensitivity and in reducing appetite and energy intake (to date shown only in animal models).",
+      "context_window": "ully exploited by developing GLP-1 receptor agonists. While 35 years ago, GIP was judged to be devoid of any therapeutic potenti",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

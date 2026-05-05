@@ -1,15 +1,151 @@
 {
   "topic": "nad_precursors",
+  "retrieval_mode": "calibrated",
   "n_queries": 7,
-  "n_unique_candidates": 349,
-  "n_selected_for_fetch": 30,
-  "n_pmcid_resolved": 15,
-  "n_extracted": 15,
+  "n_unique_candidates": 185,
+  "n_selected_for_fetch": 185,
+  "n_pmcid_resolved": 68,
+  "n_extracted": 59,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10181269",
+    "PMC10289437",
+    "PMC10563221",
+    "PMC10579603",
+    "PMC10828186",
+    "PMC10893221",
+    "PMC10959782",
+    "PMC10963276",
+    "PMC11336149",
+    "PMC11366984",
+    "PMC11436296",
+    "PMC11491622",
+    "PMC11557618",
+    "PMC11645284",
+    "PMC11733434",
+    "PMC11772665",
+    "PMC11786771",
+    "PMC12022230",
+    "PMC12171214",
+    "PMC12177089",
+    "PMC12332177",
+    "PMC12341770",
+    "PMC12439037",
+    "PMC12638573",
+    "PMC12907335",
+    "PMC12939981",
+    "PMC13030513",
+    "PMC13095416",
+    "PMC177533",
+    "PMC2248696",
+    "PMC2756609",
+    "PMC3469563",
+    "PMC3665594",
+    "PMC5141431",
+    "PMC5701244",
+    "PMC5795269",
+    "PMC5876407",
+    "PMC6102308",
+    "PMC6145238",
+    "PMC6206880",
+    "PMC6256357",
+    "PMC6497790",
+    "PMC6751327",
+    "PMC7511885",
+    "PMC7576234",
+    "PMC7741721",
+    "PMC8066965",
+    "PMC8127959",
+    "PMC8389214",
+    "PMC8472622",
+    "PMC8485915",
+    "PMC8521518",
+    "PMC8788318",
+    "PMC8877443",
+    "PMC9127073",
+    "PMC9183138",
+    "PMC9234841",
+    "PMC9261366",
+    "PMC9269339",
+    "PMC9295440",
+    "PMC9299865",
+    "PMC9400576",
+    "PMC9526896",
+    "PMC9628119",
+    "PMC9646745",
+    "PMC9735188",
+    "PMC9861325",
+    "PMC9935856"
+  ],
+  "active_paper_ids": [
+    "PMC10181269_ex_vivo_transdermal_delivery_of_nicotinamide_mononucleotide_",
+    "PMC10289437_mechanisms_involved_in_nicotinamide_adenine_dinucleotide_pho",
+    "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo",
+    "PMC10579603_the_effects_of_nad_precursor_nicotinic_acid_and_nicotinamide",
+    "PMC10893221_the_role_of_nad_and_nad_boosting_therapies_in_inflammatory_r",
+    "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card",
+    "PMC10963276_trigonelline_is_an_nad_precursor_that_improves_muscle_functi",
+    "PMC11366984_effects_of_nicotinamide_adenine_dinucleotide_on_older_patien",
+    "PMC11557618_effects_of_nicotinamide_mononucleotide_on_glucose_and_lipid_",
+    "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co",
+    "PMC11733434_cognitive_and_alzheimer_s_disease_biomarker_effects_of_oral_",
+    "PMC11772665_nad_world_3_0_the_importance_of_the_nmn_transporter_and_enam",
+    "PMC11786771_adp_ribosyltransferase_based_biocatalysis_of_nonhydrolyzable",
+    "PMC12022230_the_effect_of_nicotinamide_mononucleotide_and_riboside_on_sk",
+    "PMC12171214_unveiling_the_role_of_nad_glycohydrolase_cd38_in_aging_and_a",
+    "PMC12177089_the_role_of_nad_metabolism_and_its_modulation_of_mitochondri",
+    "PMC12332177_nicotinamide_phosphoribosyltransferase_in_nad_metabolism_phy",
+    "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w",
+    "PMC12439037_structural_basis_of_sirt2_pre_catalysis_nad_binding_dynamics",
+    "PMC12638573_nicotinamide_riboside_combined_with_exercise_to_treat_hypert",
+    "PMC12907335_intravenous_infusion_of_nicotinamide_adenine_dinucleotide_na",
+    "PMC12939981_mitochondrial_resilience_in_glaucoma_targeting_nad_metabolis",
+    "PMC13030513_next_generation_minimally_invasive_anti_aging_therapy_incorp",
+    "PMC3469563_nicotinamide_phosphoribosyltransferase_may_be_involved_in_ag",
+    "PMC3665594_the_evolutionary_portrait_of_metazoan_nad_salvage",
+    "PMC5141431_replicatively_senescent_human_fibroblasts_reveal_a_distinct_",
+    "PMC5701244_repeat_dose_nrpt_nicotinamide_riboside_and_pterostilbene_inc",
+    "PMC5795269_nad_biosynthesis_aging_and_disease",
+    "PMC5876407_chronic_nicotinamide_riboside_supplementation_is_well_tolera",
+    "PMC6102308_author_correction_repeat_dose_nrpt_nicotinamide_riboside_and",
+    "PMC6145238_the_emergence_of_the_nicotinamide_riboside_kinases_in_the_re",
+    "PMC6256357_facile_chemoenzymatic_synthesis_of_a_novel_stable_mimic_of_n",
+    "PMC6497790_sirt2_erk_and_nrf2_mediate_nad_treatment_induced_increase_in",
+    "PMC6751327_a_pilot_study_investigating_changes_in_the_human_plasma_and_",
+    "PMC7511885_mitochondrial_dna_mutation_exacerbates_female_reproductive_a",
+    "PMC7576234_ss_31_and_nmn_two_paths_to_improve_metabolism_and_function_i",
+    "PMC7741721_nicotinamide_and_sugar_metabolism_associated_with_muscle_mas",
+    "PMC8066965_nicotinamide_supplementation_improves_oocyte_quality_and_off",
+    "PMC8127959_oxidative_stress_induces_cell_death_partially_by_decreasing_",
+    "PMC8389214_mechanistic_basis_and_clinical_evidence_for_the_applications",
+    "PMC8472622_nicotinamide_adenine_nucleotide_the_fountain_of_youth_to_pre",
+    "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac",
+    "PMC8521518_nicotinamide_adenine_dinucleotide_dependent_flavin_oxidoredu",
+    "PMC8788318_metabolic_disease_nad_metabolism_nicotinamide_riboside_and_t",
+    "PMC8877443_effect_of_12_week_intake_of_nicotinamide_mononucleotide_on_s",
+    "PMC9127073_nicotinamide_riboside_supplementation_for_treating_elevated_",
+    "PMC9183138_a_combination_of_nicotinamide_and_d_ribose_riagev_is_safe_an",
+    "PMC9234841_rationale_for_nicotinamide_adenine_dinucleotide_nad_metabolo",
+    "PMC9261366_a_multicentre_randomised_double_blind_parallel_design_placeb",
+    "PMC9269339_nicotinamide_riboside_and_dihydronicotinic_acid_riboside_syn",
+    "PMC9295440_exercise_training_and_nr_supplementation_to_improve_muscle_m",
+    "PMC9299865_the_key_role_of_the_nad_biosynthetic_enzyme_nicotinamide_mon",
+    "PMC9400576_safety_evaluation_of_nicotinamide_mononucleotide_oral_admini",
+    "PMC9526896_relationship_between_sperm_nad_concentration_and_reproductiv",
+    "PMC9628119_odp205_hepatic_steatosis_induced_by_nicotine_plus_coca_cola_",
+    "PMC9646745_porcine_placental_extract_increase_the_cellular_nad_levels_i",
+    "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s",
+    "PMC9861325_potential_synergistic_supplementation_of_nad_promoting_compo",
+    "PMC9935856_nicotinamide_adenine_dinucleotide_metabolism_and_arterial_st"
+  ],
   "failures": [
     {
-      "title": "Effect of oral administration of nicotinamide mononucleotide on clinical paramet",
-      "doi": "10.1507/endocrj.ej19-0313",
-      "pmid": "31685720",
+      "title": "The NAD-HD Study: A Study to Investigate Efficacy and Safety of Nicotinamide Rib",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
@@ -19,31 +155,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Pilot Study of the Efficacy of Nicotinamide (Vitamin B3) in Leber's Hereditary O",
+      "title": "Nicotinamide Chemoprevention for Keratinocyte Carcinoma in Solid Organ Transplan",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "ALIGN: A Non-randomised Study Delivering Injectable Lenacapavir for HIV Preventi",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Phase I/II Trial of ALETA-001 for the Treatment of Participants With B-cell Ma",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Validation of NAD+ Measurements for Human Clinical Studies",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Efficacy and Safety of Coenzyme I for Injection on Vascular Aging.",
+      "title": "The Effect of NAD Supplementation on Brain Vascular Health in Aging",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -55,21 +173,27 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effects of NR Supplementation on Metabolic Flexibility in Zone 2 Training",
+      "title": "Validation of NAD+ Measurements for Human Clinical Studies",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Irritation Potential and Acute Efficacy of Topically Applied Niagen\u00ae (Niacinamid",
-      "doi": "10.20944/preprints202603.1657.v1",
+      "title": "Nicotinamide Riboside (NR) to Treat Moyamoya-like Cerebrovascular Disease in Smo",
+      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "NAD\u207a supplementation for anti-aging and wellness: A PRISMA-guided systematic rev",
-      "doi": "10.1016/j.arr.2026.103057",
-      "pmid": "41655607",
+      "title": "Effect of Nicotinamide Riboside on Ketosis, Fat Oxidation & Metabolic Rate",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Nicotinamide Mononucleotide on Retinal Thickness of Older Patients Wit",
+      "doi": "10.1111/ggi.70516",
+      "pmid": "42082179",
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
@@ -79,58 +203,692 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "ACEs, SIRT1, and Premature Vascular Aging in Humans",
+      "title": "Nicotinamide Adenine Dinucleotide Responses to a Nutritional Supplement",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Role of nicotinamide adenine dinucleotide in cardiovascular disease.",
-      "doi": "10.1097/hco.0000000000001292",
-      "pmid": "42047243",
+      "title": "NAD+ Oral Supplement Pilot Intervention in Adult Females",
+      "doi": null,
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Elastic cationic liposomal nanogels: a novel platform for topical nicotinamide m",
-      "doi": "10.1080/08982104.2025.2584982",
-      "pmid": "41383026",
+      "title": "NAD Augmentation in Diabetes Kidney Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The NO-ALS Study: A Trial of Nicotinamide/Pterostilbene Supplement in ALS.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Passive Sensor Identification of Digital Biomarkers to Assess Effects of Orally ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NADream: Effects of Nicotinamide Adenine Dinucleotide Supplementation on Sleep Q",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Tracing the Metabolic Flux of Orally Administered NAD+ Precursors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Mononucleotide Supplementation for Exercise Tolerance Improvement i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Nicotinamide Riboside on Bioenergetics and Oxidative Stress in Mild C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quzhou Population Cohort Research Project (Aging Related Research: Intervention ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise Training and NR Supplementation Trial to Improve Fitness in AYA HCT Sur",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NR and Exercise for Blood Pressure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Nicotinamide Mononucleotide Supplementation on Muscle and Liver Funct",
+      "doi": "10.2174/0113892010306242240808094303",
+      "pmid": "39185644",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of oral nicotinamide mononucleotide supplementation on glucose and lipi",
+      "doi": "10.1080/10408398.2024.2387324",
+      "pmid": "39116016",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of anti-aging effect of PQQ (Pyrroloquinoline quinone) and NMN/NR (Ni",
+      "doi": "10.1016/j.arr.2025.102992",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of a Combined Serum Containing Melasyl\u2122, 10% Niacinamide, Hy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Absorption and Tolerability of Injectable Administration of Niagen\u00ae+, as Compare",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Riboside for Treating Elevated Systolic Blood Pressure and Arterial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "N-DOSE AD: A Dose Optimization Trial of Nicotinamide Riboside in Alzheimer's Dis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preliminary Clinical Study of NMN Intervention in Mild Ulcerative Colitis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigate the Efficacy of Using NMN to Improve Embryo Development Capacity.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sirtuin-NAD Activator in Alzheimer's Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metabolic Changes Induced by NMN in Healthy Subjects With Acute Binge Drink",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Niacinamide Supplementation in Glaucoma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Chemotherapy accelerated bone ageing is reversed by NMN",
+      "doi": "10.1101/2025.10.13.679926",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dynamics of blood NAD and glutathione in health, disease, aging and under NAD-bo",
+      "doi": "10.1101/2025.02.24.639825",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Qualia NAD+\u00ae Increases NAD+ Levels In Human Participants: A Randomized, Double-B",
+      "doi": "10.1101/2025.03.19.25324259",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "O-070 NAD+ precursor nicotinamide mononucleotide improves the developmental comp",
+      "doi": "10.1093/humrep/deaf097.070",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "O-217 Nicotinamide mononucleotide-a NAD+ precursor- a new hope for rejuvinating ",
+      "doi": "10.1093/humrep/deaf097.217",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intervention Study Comparing Blood NAD+ Concentrations with Liposomal and Non-Li",
+      "doi": "10.47829/acmcr.2025.141102",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluating gvhd outcomes after chemotherapy-only conditioning in nicotinamide-ex",
+      "doi": "10.1182/blood-2025-4223",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exploring NAD+ Biology in Fish: From Cellular Metabolism to Ecological Adaptatio",
+      "doi": "10.3390/fishes10120647",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of safety and effectiveness of NAD in different clinical conditions: ",
+      "doi": "10.1152/ajpendo.00242.2023",
+      "pmid": "37971292",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The therapeutic perspective of NAD+ precursors in age-related diseases",
+      "doi": "10.1016/j.bbrc.2024.149590",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and efficacy of long-term nicotinamide mononucleotide supplementation on ",
+      "doi": "10.1507/endocrj.ej23-0431",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD Supplementation to Prevent Progressive Neurological Disease in Ataxia Telang",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "IV Administration of ChromaDex's Niagen\u00ae as Compared to NAD+",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mental Intervention and Nicotinamide Riboside Supplementation in Long Covid",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD Therapy for Improving Memory and Brain Blood Flow in Older Adults With Mild ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD Supplementation and Vascular Health in PAD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin B3 Derivative Nicotinamide Riboside (NR) in Bone, Skeletal Mu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized, Controlled Clinical Trial Demonstrates Improved Cognitive Function",
+      "doi": "10.1101/2024.02.26.581616",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EFFICACY OF NICOTINAMIDE MONONUCLEOTIDE SUPPLEMENTATION (NMN) IN BLOOD NICOTINAM",
+      "doi": "10.61841/gyj2gr52",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Updated Review on the Mechanisms, Pre\u2010Clinical and Clinical Comparisons of Ni",
+      "doi": "10.1002/fft2.511",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide and pyridoxine stimulate muscle stem cell expansion and enhance reg",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Insight into the application of nicotinamide mononucleotide (NMN) to age-related",
+      "doi": "10.46439/immunol.2.014",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Riboside as an Enhancer of Exercise Therapy in Hypertensive Older A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Skin Cancer Prevention With Nicotinamide in Transplant Recipients - Pilot Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD+controls circadian rhythmicity during cardiac aging",
+      "doi": "10.1101/2023.11.02.565150",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quantitative dynamics of intracellular NMN by genetically encoded biosensor",
+      "doi": "10.1101/2023.10.23.563573",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Mononucleotide (NMN) as a Solution of Decrease Nicotinamide Adenine",
+      "doi": "10.52403/ijrr.20230871",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Circulating factors in plasma from patients with COVID-19 cause endothelial cell",
+      "doi": "10.1152/physiol.2023.38.s1.5725747",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aging of PLA/NR electrospun fibers under the influence of UV-irradiation, water ",
+      "doi": "10.1051/e3sconf/202341302019",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Crossover Trial for Nicotinamide Riboside in Subjective Cognitive Decline and Mi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Inflammation in COPD and the Effect of Nicotinamide Riboside",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pilot Study to Evaluate the Effect of Nicotinamide Riboside on Immune Activation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Renewal-NAD+: A Study of Oral NAD+ and Its Multi-omic Impact in a Healthy Cohort",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Measurement of NAD+ Synthesis in Human Skeletal Muscle",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NR Supplementation and Exercise",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectivity and Safety of Combination Cream of Salicylic Acid, Aqua Posae Filifo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Riboside in Hospitalized Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide as an Early Alzheimer's Disease Treatment",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Mononucleotide in Hypertensive Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "To Evaluate the Efficacy and Safety of NMN as an Anti-ageing Supplement in Middl",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anti-ageing Efficacy of a Cosmetic Formulation Containing NMN (2%) Versus Placeb",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Nicotinamide Riboside on the Clinical Outcome of Covid-19 in the Elde",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluate the Efficacy and Safety of Uthever NMN(Nicotinamide Mononucleotide, a F",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Trial of Nicotinamide Riboside and Co-enzyme Q10 in Chronic Kidney Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving the Thermal Aging Resistance of \u03b3-Vulcanized Polybutadiene Rubber (BR)",
+      "doi": "10.1155/2021/5782539",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD+ therapy in age-related degenerative disorders: A benefit/risk analysis.",
+      "doi": "10.1016/j.exger.2020.110831",
+      "pmid": "31917996",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Mononucleotide Supplementation Reverses the Declining Quality of Ma",
+      "doi": "10.1016/j.celrep.2020.107987",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Nicotinamide Riboside and Pterostilbene Supplementation on Muscle Rege",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD Supplementation Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide riboside augments the human skeletal muscle NAD + metabolome and in",
+      "doi": "10.1101/680462",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of \"Nicotinamide Mononucleotide\" (NMN) on Cardiometabolic Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Nicotinamide Riboside on Metabolism and Vascular Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Nicotinamide Riboside on Skeletal Muscle Function in Heart Failure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Nicotinamide Adenine Dinucleotide (NAD) on Brain Function and Cog",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Riboside on Mitochondrial Function in Li-Fraumeni Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Adenine Dinucleotide and Skeletal Muscle Metabolic Phenotype",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Immunosuppression reverse engineered from cancer: Reducing nicotinamide adenine ",
+      "doi": "10.4049/jimmunol.200.supp.55.27",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide adenine dinucleotide (NAD) oxidation preserves T cell function unde",
+      "doi": "10.4049/jimmunol.200.supp.177.4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cellular NAD\u207a Level: A Key Determinant of Mitochondrial Quality and Health",
+      "doi": "10.4235/agmr.2017.21.4.149",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety & Efficacy of Nicotinamide Riboside Supplementation for Improving Physiol",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD + in aging, metabolism, and neurodegeneration",
+      "doi": "10.1126/science.aac4854",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety Study of Nicotinamide to Treat Alzheimer's Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Trial of 4% Niacinamide Versus 0.05% Desonide for the Treatment of Axil",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinic Acid, Nicotinamide, and Nicotinamide Riboside: A Molecular Evaluation ",
+      "doi": "10.1146/annurev.nutr.28.061807.155443",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The clinical anti\u2010aging effects of topical kinetin and niacinamide in Asians: a ",
+      "doi": "10.1111/j.1473-2165.2007.00342.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Extension of Human Cell Lifespan by Nicotinamide Phosphoribosyltransferase",
+      "doi": "10.1074/jbc.c700018200",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of blend ratio on aging, oil and ozone resistance of silica-filled chloro",
+      "doi": "10.3144/expresspolymlett.2007.3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Poly(ADP-ribosyl)ation by PARP-1: `PAR-laying' NAD+ into a nuclear signal",
+      "doi": "10.1101/gad.1331805",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Topical niacinamide reduces yellowing, wrinkling, red blotchiness, and hyperpigm",
+      "doi": "10.1111/j.1467-2494.2004.00228.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nicotinamide Riboside Lowers Systolic Blood Pressure and Improves Vascular Endot",
+      "doi": "10.1152/physiol.2025.40.s1.1901",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A biocompatible polydopamine platform for targeted delivery of nicotinamide mono",
+      "doi": "10.1039/d4nr02934h",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Computationally Driven Discovery and Characterization of SIRT3 Activating Compou",
+      "doi": "10.1101/2023.11.09.566481",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Defined stereoisomers of 2\u2033-amino NAD+ and their activity against human sirtuins",
+      "doi": "10.1016/j.bmc.2022.116875",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Compartmentation of NAD+\u2010dependent signalling",
+      "doi": "10.1016/j.febslet.2011.03.045",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resveratrol Increases Intracellular NAD+ Levels Through Up regulation of The NAD",
+      "doi": "10.1038/npre.2010.4421.1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cloning and Characterization of NAD-dependent Deacetylase Sirtuin 2 Homolog from",
+      "doi": "10.5539/ijb.v1n1p92",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Extracellular \u03b2\u2010NAD (Beta\u2010nicotinamide adenine dinucleotide) Participates in the",
+      "doi": "10.1096/fasebj.23.1_supplement.816.9",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The NAD + Precursor Nicotinamide Governs Neuronal Survival During Oxidative Stre",
+      "doi": "10.1097/01.wcb.0000122746.72175.0e",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Regulation of cytotoxic T cells by ecto-nicotinamide adenine dinucleotide (NAD) ",
+      "doi": "10.4049/jimmunol.153.9.4048",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impaired nicotinamide adenine dinucleotide synthesis in pyruvate kinase- deficie",
+      "doi": "10.1182/blood.v69.4.999.bloodjournal694999",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impaired nicotinamide adenine dinucleotide synthesis in pyruvate kinase- deficie",
+      "doi": "10.1182/blood.v69.4.999.999",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Activity of NMN+, nicotinamide ribose and analogs in alcohol oxidation promoted ",
+      "doi": "10.1111/j.1432-1033.1986.tb09505.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of nicotinamide on NAD and poly (ADP\u2010ribose) metabolism in DNA\u2010damaged h",
+      "doi": "10.1002/jsscb.1981.380160308",
+      "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     }
   ],
   "papers_resolved": {
-    "PMC11137034": {
-      "title": "A randomized, controlled clinical trial demonstrates improved owner-assessed cognitive function in senior dogs receiving a senolytic and NAD+ precursor combination.",
-      "doi": "10.1038/s41598-024-63031-w",
-      "pmid": "38811634",
-      "year": 2024,
-      "venue": "Sci Rep",
+    "PMC5876407": {
+      "title": "Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD+ in healthy middle-aged and older adults.",
+      "doi": "10.1038/s41467-018-03421-7",
+      "pmid": "29599478",
+      "year": 2018,
+      "venue": "Nat Commun",
       "sources": [
         "crossref",
-        "doaj",
         "openalex",
         "pubmed"
       ]
     },
-    "PMC12907335": {
-      "title": "Intravenous infusion of nicotinamide adenine dinucleotide (NAD<sup>+</sup>) versus nicotinamide riboside (NR): a retrospective tolerability pilot study in a real-world setting.",
-      "doi": "10.3389/fragi.2026.1652582",
-      "pmid": "41704678",
-      "year": 2026,
-      "venue": "Frontiers in Aging",
+    "PMC12638573": {
+      "title": "Nicotinamide riboside combined with exercise to treat hypertension in middle-aged and older adults: a pilot randomized clinical trial.",
+      "doi": "10.1007/s11357-025-01815-2",
+      "pmid": "40770531",
+      "year": 2025,
+      "venue": "Geroscience",
       "sources": [
-        "crossref",
-        "europepmc"
+        "openalex",
+        "pubmed"
       ]
     },
-    "PMC11810848": {
-      "title": "Norharmane prevents muscle aging via activation of SKN-1/NRF2 stress response pathways",
-      "doi": "10.1016/j.redox.2025.103512",
-      "pmid": null,
+    "PMC12171214": {
+      "title": "Unveiling the role of NAD glycohydrolase CD38 in aging and age-related diseases: insights from bibliometric analysis and comprehensive review.",
+      "doi": "10.3389/fimmu.2025.1579924",
+      "pmid": "40529366",
       "year": 2025,
-      "venue": "Redox Biology",
+      "venue": "Front Immunol",
       "sources": [
         "doaj",
-        "openalex"
+        "pubmed"
+      ]
+    },
+    "PMC12022230": {
+      "title": "The Effect of Nicotinamide Mononucleotide and Riboside on Skeletal Muscle Mass and Function: A Systematic Review and Meta-Analysis.",
+      "doi": "10.1002/jcsm.13799",
+      "pmid": "40275690",
+      "year": 2025,
+      "venue": "J Cachexia Sarcopenia Muscle",
+      "sources": [
+        "crossref",
+        "pubmed"
       ]
     },
     "PMC9735188": {
@@ -144,118 +902,639 @@
         "pubmed"
       ]
     },
-    "PMC9039735": {
-      "title": "Nicotinamide mononucleotide (NMN) as an anti-aging health product - Promises and safety concerns.",
-      "doi": "10.1016/j.jare.2021.08.003",
-      "pmid": "35499054",
-      "year": 2022,
-      "venue": "J Adv Res",
+    "PMC11491622": {
+      "title": "Nicotinamide Adenine Dinucleotide Augmentation in Overweight or Obese Middle-Aged and Older Adults: A Physiologic Study.",
+      "doi": "10.1210/clinem/dgad027",
+      "pmid": "36740954",
+      "year": 2023,
+      "venue": "J Clin Endocrinol Metab",
       "sources": [
         "openalex",
         "pubmed"
       ]
     },
-    "PMC8265078": {
-      "title": "Nicotinamide mononucleotide supplementation enhances aerobic capacity in amateur runners: a randomized, double-blind study.",
-      "doi": "10.1186/s12970-021-00442-4",
-      "pmid": "34238308",
-      "year": 2021,
-      "venue": "J Int Soc Sports Nutr",
+    "PMC8877443": {
+      "title": "Effect of 12-Week Intake of Nicotinamide Mononucleotide on Sleep Quality, Fatigue, and Physical Performance in Older Japanese Adults: A Randomized, Double-Blind Placebo-Controlled Study.",
+      "doi": "10.3390/nu14040755",
+      "pmid": "35215405",
+      "year": 2022,
+      "venue": "Nutrients",
       "sources": [
-        "doaj",
+        "openalex",
         "pubmed"
       ]
     },
-    "PMC7083210": {
-      "title": "Compassionate Use of the ROCK Inhibitor Fasudil in Three Patients With Amyotrophic Lateral Sclerosis",
-      "doi": "10.3389/fneur.2020.00173",
+    "PMC9127073": {
+      "title": "Nicotinamide Riboside Supplementation for Treating Elevated Systolic Blood Pressure and Arterial Stiffness in Midlife and Older Adults",
+      "doi": "10.3389/fcvm.2022.881703",
       "pmid": null,
-      "year": 2020,
-      "venue": "Frontiers in Neurology",
+      "year": 2022,
+      "venue": "Frontiers in Cardiovascular Medicine",
       "sources": [
         "doaj",
         "openalex"
       ]
     },
-    "PMC6702140": {
-      "title": "Nicotinamide Riboside Augments the Aged Human Skeletal Muscle NAD+ Metabolome and Induces Transcriptomic and Anti-inflammatory Signatures.",
-      "doi": "10.1016/j.celrep.2019.07.043",
-      "pmid": "31412242",
-      "year": 2019,
-      "venue": "Cell Rep",
+    "PMC8389214": {
+      "title": "Mechanistic Basis and Clinical Evidence for the Applications of Nicotinamide (Niacinamide) to Control Skin Aging and Pigmentation",
+      "doi": "10.3390/antiox10081315",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Antioxidants",
       "sources": [
-        "openalex",
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC3469563": {
+      "title": "Nicotinamide phosphoribosyltransferase may be involved in age-related brain diseases.",
+      "doi": "10.1371/journal.pone.0044933",
+      "pmid": null,
+      "year": 2012,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC12907335": {
+      "title": "Intravenous infusion of nicotinamide adenine dinucleotide (NAD+) versus nicotinamide riboside (NR): a retrospective tolerability pilot study in a real-world setting",
+      "doi": "10.3389/fragi.2026.1652582",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12939981": {
+      "title": "Mitochondrial Resilience in Glaucoma: Targeting NAD+ Metabolism and Oxidative Stress in Retinal Ganglion Cell Degeneration with Nicotinamide Riboside and Berberine: Preliminary Clinical Evidence",
+      "doi": "10.3390/diseases14020056",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Diseases",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC13030513": {
+      "title": "Next-Generation Minimally Invasive Anti-Aging Therapy: Incorporation of Resveratrol-Nicotinamide Cerosomes into PLGA Microneedles for Enhanced Skin Permeation",
+      "doi": "10.3390/pharmaceutics18030326",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Pharmaceutics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12341770": {
+      "title": "Nicotinamide Riboside Supplementation Benefits in Patients With Werner Syndrome: A Double-Blind Randomized Crossover Placebo-Controlled Trial.",
+      "doi": "10.1111/acel.70093",
+      "pmid": "40459998",
+      "year": 2025,
+      "venue": "Aging Cell",
+      "sources": [
         "pubmed"
       ]
     },
-    "PMC13073631": {
-      "title": "NAD<sup>+</sup> Enhancer Nicotinamide Riboside Alters Extracellular Purine Metabolism in Human Endothelial Cells.",
-      "doi": "10.3390/ijms27073267",
-      "pmid": "41977445",
-      "year": 2026,
-      "venue": null,
+    "PMC13095416": {
+      "title": "Effects of NAD+ supplementation with oral nicotinamide riboside on vascular health and cognitive function in older adults with peripheral artery disease: Results from a pilot 4-week open-label clinical trial.",
+      "doi": "10.1016/j.jpet.2025.103607",
+      "pmid": "40479886",
+      "year": 2025,
+      "venue": "J Pharmacol Exp Ther",
       "sources": [
-        "europepmc"
+        "pubmed"
       ]
     },
-    "PMC13092247": {
-      "title": "SRN-901, a Novel Longevity Drug, Extends Lifespan and Healthspan by Targeting Multiple Aging Pathways.",
-      "doi": "10.2147/dddt.s594895",
-      "pmid": "42011226",
-      "year": 2026,
-      "venue": null,
+    "PMC11733434": {
+      "title": "Cognitive and Alzheimer's disease biomarker effects of oral nicotinamide riboside (NR) supplementation in older adults with subjective cognitive decline and mild cognitive impairment",
+      "doi": "10.1002/trc2.70023",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Alzheimer s & Dementia Translational Research & Clinical Interventions",
       "sources": [
-        "europepmc"
+        "openalex"
       ]
     },
-    "PMC13039344": {
-      "title": "NAD<sup>+</sup> controls circadian rhythmicity during cardiac aging.",
-      "doi": "10.1038/s42003-026-09818-1",
-      "pmid": "41813966",
-      "year": 2026,
-      "venue": null,
+    "PMC11772665": {
+      "title": "NAD World 3.0: the importance of the NMN transporter and eNAMPT in mammalian aging and longevity control",
+      "doi": "10.1038/s41514-025-00192-6",
+      "pmid": null,
+      "year": 2025,
+      "venue": "npj Aging",
       "sources": [
-        "europepmc"
+        "openalex"
       ]
     },
-    "PMC12823639": {
-      "title": "Modulation of SIRT1/PPAR\u03b3 pathways and tight junction proteins by nicotinamide riboside under chronic variable stress.",
-      "doi": "10.1007/s13105-026-01153-7",
-      "pmid": "41566055",
-      "year": 2026,
-      "venue": null,
+    "PMC12177089": {
+      "title": "The role of NAD+ metabolism and its modulation of mitochondria in aging and disease",
+      "doi": "10.1038/s44324-025-00067-0",
+      "pmid": null,
+      "year": 2025,
+      "venue": "npj Metabolic Health and Disease",
       "sources": [
-        "europepmc"
+        "doaj"
       ]
     },
-    "PMC12786874": {
-      "title": "Mitochondrial Health Through Nicotinamide Riboside and Berberine: Shared Pathways and Therapeutic Potential.",
-      "doi": "10.3390/ijms27010485",
-      "pmid": "41516357",
-      "year": 2026,
-      "venue": null,
+    "PMC10828186": {
+      "title": "A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment.",
+      "doi": "10.1007/s11357-023-00999-9",
+      "pmid": "37994989",
+      "year": 2024,
+      "venue": "Geroscience",
       "sources": [
-        "europepmc"
+        "pubmed"
       ]
     },
-    "PMC12727671": {
-      "title": "Promising Results With NAD Supplementation in Rare Diseases With Premature Aging and DNA Damage.",
-      "doi": "10.1111/acel.70319",
-      "pmid": "41436848",
-      "year": 2026,
-      "venue": null,
+    "PMC11645284": {
+      "title": "Effect of nicotinamide riboside on airway inflammation in COPD: a randomized, placebo-controlled trial.",
+      "doi": "10.1038/s43587-024-00758-1",
+      "pmid": "39548320",
+      "year": 2024,
+      "venue": "Nat Aging",
       "sources": [
-        "europepmc"
+        "pubmed"
       ]
     },
-    "PMC13028934": {
-      "title": "Effects of Nicotinamide Mononucleotide Supplementation on Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
-      "doi": "10.3390/nu18060890",
-      "pmid": "41901064",
-      "year": 2026,
-      "venue": null,
+    "PMC11336149": {
+      "title": "Ingestion of \u03b2-nicotinamide mononucleotide increased blood NAD levels, maintained walking speed, and improved sleep quality in older adults in a double-blind randomized, placebo-controlled study.",
+      "doi": "10.1007/s11357-024-01204-1",
+      "pmid": "38789831",
+      "year": 2024,
+      "venue": "Geroscience",
       "sources": [
-        "europepmc"
+        "pubmed"
+      ]
+    },
+    "PMC11557618": {
+      "title": "Effects of Nicotinamide Mononucleotide on Glucose and Lipid Metabolism in Adults: A Systematic Review and Meta-analysis of Randomised Controlled Trials.",
+      "doi": "10.1007/s11892-024-01557-z",
+      "pmid": "39531138",
+      "year": 2024,
+      "venue": "Curr Diab Rep",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10963276": {
+      "title": "Trigonelline is an NAD+ precursor that improves muscle function during ageing and is reduced in human sarcopenia",
+      "doi": "10.1038/s42255-024-00997-x",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Nature Metabolism",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11366984": {
+      "title": "Effects of Nicotinamide Adenine Dinucleotide on Older Patients with Heart Failure",
+      "doi": "10.31083/j.rcm2508297",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Reviews in Cardiovascular Medicine",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10893221": {
+      "title": "The Role of NAD+ and NAD+-Boosting Therapies in Inflammatory Response by IL-13",
+      "doi": "10.3390/ph17020226",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Pharmaceuticals",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9935856": {
+      "title": "Nicotinamide adenine dinucleotide metabolism and arterial stiffness after long-term nicotinamide mononucleotide supplementation: a randomized, double-blind, placebo-controlled trial.",
+      "doi": "10.1038/s41598-023-29787-3",
+      "pmid": "36797393",
+      "year": 2023,
+      "venue": "Sci Rep",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9861325": {
+      "title": "Potential Synergistic Supplementation of NAD+ Promoting Compounds as a Strategy for Increasing Healthspan",
+      "doi": "10.3390/nu15020445",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10181269": {
+      "title": "Ex Vivo Transdermal Delivery of Nicotinamide Mononucleotide Using Polyvinyl Alcohol Microneedles",
+      "doi": "10.3390/polym15092031",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Polymers",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10959782": {
+      "title": "Nicotinamide Riboside, an NAD + Precursor, Protects Against Cardiac Mitochondrial Dysfunction in Fetal Guinea Pigs Exposed to Gestational Hypoxia",
+      "doi": "10.1007/s43032-023-01387-6",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Reproductive Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10289437": {
+      "title": "Mechanisms involved in nicotinamide adenine dinucleotide phosphate (NADPH) oxidase (Nox)-derived reactive oxygen species (ROS) modulation of muscle function in human and dog bladders.",
+      "doi": "10.1371/journal.pone.0287212",
+      "pmid": null,
+      "year": 2023,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9295440": {
+      "title": "Exercise training and NR supplementation to improve muscle mass and fitness in adolescent and young adult hematopoietic cell transplant survivors: a randomized controlled trial {1}.",
+      "doi": "10.1186/s12885-022-09845-1",
+      "pmid": "35854224",
+      "year": 2022,
+      "venue": "BMC Cancer",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9526896": {
+      "title": "Relationship between sperm NAD + concentration and reproductive aging in normozoospermia men:A Cohort study.",
+      "doi": "10.1186/s12894-022-01107-3",
+      "pmid": "36182928",
+      "year": 2022,
+      "venue": "BMC Urol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9183138": {
+      "title": "A Combination of Nicotinamide and D-Ribose (RiaGev) Is Safe and Effective to Increase NAD+ Metabolome in Healthy Middle-Aged Adults: A Randomized, Triple-Blind, Placebo-Controlled, Cross-Over Pilot Clinical Trial.",
+      "doi": "10.3390/nu14112219",
+      "pmid": "35684021",
+      "year": 2022,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9400576": {
+      "title": "Safety evaluation of \u03b2-nicotinamide mononucleotide oral administration in healthy adult men and women",
+      "doi": "10.1038/s41598-022-18272-y",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9261366": {
+      "title": "A Multicentre, Randomised, Double Blind, Parallel Design, Placebo Controlled Study to Evaluate the Efficacy and Safety of Uthever (NMN Supplement), an Orally Administered Supplementation in Middle Aged and Older Adults",
+      "doi": "10.3389/fragi.2022.851698",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9646745": {
+      "title": "Porcine placental extract increase the cellular NAD levels in human epidermal keratinocytes",
+      "doi": "10.1038/s41598-022-23446-9",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9628119": {
+      "title": "ODP205 Hepatic steatosis induced by Nicotine plus Coca Cola is prevented by Nicotinamide riboside (NR) that increases mitochondrial NAD+",
+      "doi": "10.1210/jendso/bvac150.657",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of the Endocrine Society",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8485915": {
+      "title": "NAD+-Precursor Supplementation With L-Tryptophan, Nicotinic Acid, and Nicotinamide Does Not Affect Mitochondrial Function or Skeletal Muscle Function in Physically Compromised Older Adults.",
+      "doi": "10.1093/jn/nxab193",
+      "pmid": "34191033",
+      "year": 2021,
+      "venue": "J Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8521518": {
+      "title": "Nicotinamide Adenine Dinucleotide-Dependent Flavin Oxidoreductase of Mycoplasma hyopneumoniae Functions as a Potential Novel Virulence Factor and Not Only as a Metabolic Enzyme",
+      "doi": "10.3389/fmicb.2021.747421",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Microbiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9299865": {
+      "title": "The key role of the NAD biosynthetic enzyme nicotinamide mononucleotide adenylyltransferase in regulating cell functions",
+      "doi": "10.1002/iub.2584",
+      "pmid": null,
+      "year": 2021,
+      "venue": "IUBMB Life",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8472622": {
+      "title": "Nicotinamide Adenine Nucleotide\u2014The Fountain of Youth to Prevent Oocyte Aging?",
+      "doi": "10.3390/cells10092441",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Cells",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8066965": {
+      "title": "Nicotinamide Supplementation Improves Oocyte Quality and Offspring Development by Modulating Mitochondrial Function in an Aged Caenorhabditis elegans Model",
+      "doi": "10.3390/antiox10040519",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Antioxidants",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8127959": {
+      "title": "Oxidative stress induces cell death partially by decreasing both mRNA and protein levels of nicotinamide phosphoribosyltransferase in differentiated PC12 cells",
+      "doi": "10.7717/peerj.11401",
+      "pmid": null,
+      "year": 2021,
+      "venue": "PeerJ",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7511885": {
+      "title": "Mitochondrial DNA mutation exacerbates female reproductive aging via impairment of the NADH/NAD+ redox",
+      "doi": "10.1111/acel.13206",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7576234": {
+      "title": "SS\u201031 and NMN: Two paths to improve metabolism and function in aged hearts",
+      "doi": "10.1111/acel.13213",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7741721": {
+      "title": "Nicotinamide and Sugar Metabolism Associated With Muscle Mass Loss During Calorie Restriction in Older Adults",
+      "doi": "10.1093/geroni/igaa057.415",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6751327": {
+      "title": "A Pilot Study Investigating Changes in the Human Plasma and Urine NAD+ Metabolome During a 6 Hour Intravenous Infusion of NAD+",
+      "doi": "10.3389/fnagi.2019.00257",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6497790": {
+      "title": "SIRT2, ERK and Nrf2 Mediate NAD+ Treatment-Induced Increase in the Antioxidant Capacity of PC12 Cells Under Basal Conditions",
+      "doi": "10.3389/fnmol.2019.00108",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Frontiers in Molecular Neuroscience",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5795269": {
+      "title": "NAD+ biosynthesis, aging, and disease",
+      "doi": "10.12688/f1000research.12120.1",
+      "pmid": null,
+      "year": 2018,
+      "venue": "F1000Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6206880": {
+      "title": "Sirtuins and NAD + in the Development and Treatment of Metabolic and Cardiovascular Diseases",
+      "doi": "10.1161/circresaha.118.312498",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Circulation Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6102308": {
+      "title": "Author Correction: Repeat dose NRPT (nicotinamide riboside and pterostilbene) increases NAD+ levels in humans safely and sustainably: a randomized, double-blind, placebo-controlled study",
+      "doi": "10.1038/s41514-018-0027-1",
+      "pmid": null,
+      "year": 2018,
+      "venue": "npj Aging and Mechanisms of Disease",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5701244": {
+      "title": "Repeat dose NRPT (nicotinamide riboside and pterostilbene) increases NAD+ levels in humans safely and sustainably: a randomized, double-blind, placebo-controlled study",
+      "doi": "10.1038/s41514-017-0016-9",
+      "pmid": null,
+      "year": 2017,
+      "venue": "npj Aging and Mechanisms of Disease",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5141431": {
+      "title": "Replicatively senescent human fibroblasts reveal a distinct intracellular metabolic profile with alterations in NAD+ and nicotinamide metabolism",
+      "doi": "10.1038/srep38489",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3665594": {
+      "title": "The evolutionary portrait of metazoan NAD salvage.",
+      "doi": "10.1371/journal.pone.0064674",
+      "pmid": null,
+      "year": 2013,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC2756609": {
+      "title": "The Vitamin Nicotinamide: Translating Nutrition into Clinical Care",
+      "doi": "10.3390/molecules14093446",
+      "pmid": null,
+      "year": 2009,
+      "venue": "Molecules",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2248696": {
+      "title": "Cell Life Versus Cell Longevity: The Mysteries Surrounding the NAD+ Precursor Nicotinamide",
+      "doi": "10.2174/092986706776361058",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Current Medicinal Chemistry",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC12439037": {
+      "title": "Structural basis of SIRT2 pre-catalysis NAD + binding dynamics and mechanism",
+      "doi": "10.1039/d5cb00169b",
+      "pmid": null,
+      "year": 2025,
+      "venue": "RSC Chemical Biology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC12332177": {
+      "title": "Nicotinamide phosphoribosyltransferase in NAD+ metabolism: physiological and pathophysiological implications",
+      "doi": "10.1038/s41420-025-02672-w",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Cell Death Discovery",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11786771": {
+      "title": "ADP-ribosyltransferase-based biocatalysis of nonhydrolyzable NAD+ analogs",
+      "doi": "10.1016/j.jbc.2024.108106",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Journal of Biological Chemistry",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11436296": {
+      "title": "Acute nicotinamide riboside supplementation increases human cerebral <scp>NAD</scp>+ levels in vivo",
+      "doi": "10.1002/mrm.30227",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Magnetic Resonance in Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10579603": {
+      "title": "The effects of NAD+ precursor (nicotinic acid and nicotinamide) supplementation on weight loss and related hormones: a systematic review and meta-regression analysis of randomized controlled trials",
+      "doi": "10.3389/fnut.2023.1208734",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10563221": {
+      "title": "The complexity of nicotinamide adenine dinucleotide (NAD), hypoxic, and aryl hydrocarbon receptor cell signaling in chronic kidney disease",
+      "doi": "10.1186/s12967-023-04584-8",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of Translational Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9234841": {
+      "title": "Rationale for Nicotinamide Adenine Dinucleotide (NAD+) Metabolome Disruption as a Pathogenic Mechanism of Post-Acute COVID-19 Syndrome",
+      "doi": "10.1177/2632010x221106986",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Clinical Pathology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8788318": {
+      "title": "Metabolic Disease, NAD Metabolism, Nicotinamide Riboside, and the Gut Microbiome: Connecting the Dots from the Gut to Physiology",
+      "doi": "10.1128/msystems.01223-21",
+      "pmid": null,
+      "year": 2022,
+      "venue": "mSystems",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9269339": {
+      "title": "Nicotinamide Riboside and Dihydronicotinic Acid Riboside Synergistically Increase Intracellular NAD+ by Generating Dihydronicotinamide Riboside",
+      "doi": "10.3390/nu14132752",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6256357": {
+      "title": "Facile chemoenzymatic synthesis of a novel stable mimic of NAD+",
+      "doi": "10.1039/c8sc03899f",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Chemical Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6145238": {
+      "title": "The emergence of the nicotinamide riboside kinases in the regulation of NAD+ metabolism",
+      "doi": "10.1530/jme-18-0085",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Journal of Molecular Endocrinology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC177533": {
+      "title": "Isolation of NAD cycle mutants defective in nicotinamide mononucleotide deamidase in Salmonella typhimurium",
+      "doi": "10.1128/jb.177.23.6711-6717.1995",
+      "pmid": null,
+      "year": 1995,
+      "venue": "Journal of Bacteriology",
+      "sources": [
+        "crossref"
       ]
     }
   }

@@ -1,0 +1,120 @@
+{
+  "paper_id": "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in",
+  "doi": "10.1016/j.lrr.2016.06.004",
+  "extracted_at": "2026-05-05T21:20:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in-u-211",
+      "claim_type": "unit_value",
+      "raw_text": "56 months",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 211,
+      "sentence": "The patient was treated with this combination for 56 months, and during this period the patient has been in complete hematological remission.",
+      "context_window": "ndronate. The patient was treated with this combination for 56 months, and during this period the patient has been in complete he",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in-pct-349",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 349,
+      "sentence": "The JAK2-V617F allele burden has dropped from 64% to sustained values below 20%, and follow-up bone marrow biopsies have revealed no change in PV features, without any regular cytoreductive treatment.",
+      "context_window": "al remission. The JAK2-V617F allele burden has dropped from 64% to sustained values below 20%, and follow-up bone marrow bi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in-pct-379",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 379,
+      "sentence": "The JAK2-V617F allele burden has dropped from 64% to sustained values below 20%, and follow-up bone marrow biopsies have revealed no change in PV features, without any regular cytoreductive treatment.",
+      "context_window": "llele burden has dropped from 64% to sustained values below 20%, and follow-up bone marrow biopsies have revealed no change",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in-u-2281",
+      "claim_type": "unit_value",
+      "raw_text": "18 days",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2281,
+      "sentence": "Regarding the reduction in JAK2-V617F allele burden, the patient only received treatment with HU for 18 days during the initial disease course.",
+      "context_window": "ele burden, the patient only received treatment with HU for 18 days during the initial disease course. Thus, it is reasonable t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in-u-2440",
+      "claim_type": "unit_value",
+      "raw_text": "44 months",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2440,
+      "sentence": "Thus, it is reasonable to conclude, that the ensuing marked decrease in the JAK2-V617F allele burden over the first 44 months after the PV diagnosis was not related to HU-treatment.",
+      "context_window": "ked decrease in the JAK2-V617F allele burden over the first 44 months after the PV diagnosis was not related to HU-treatment. Alt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4950584_a_remarkable_hematological_and_molecular_response_pattern_in-u-2966",
+      "claim_type": "unit_value",
+      "raw_text": "44 months",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2966,
+      "sentence": "However, since 44 months elapsed between the first two JAK2-V617F analyses, we are unable to relate the decrease in the JAK2-V617F allele burden directly to the initiation of alendronate treatment.",
+      "context_window": "d from month 31 the addition of alendronate. However, since 44 months elapsed between the first two JAK2-V617F analyses, we are u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

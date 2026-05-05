@@ -1,0 +1,4248 @@
+{
+  "paper_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m",
+  "doi": "10.1186/1471-2407-13-136",
+  "extracted_at": "2026-05-05T21:30:14+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 22,
+    "unit_value": 67,
+    "percentage": 140,
+    "p_value": 3,
+    "mean_sd": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-760",
+      "claim_type": "sample_size",
+      "raw_text": "N = 64",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 760,
+      "sentence": "An open-label, multicenter phase 1b study enrolled Chinese patients with mRCC who were intolerant to, or progressed on, previous VEGFr-TKI therapy (N = 64).",
+      "context_window": "ntolerant to, or progressed on, previous VEGFr-TKI therapy (N = 64). Patients received everolimus 10 mg daily until objective",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-798",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 798,
+      "sentence": "Patients received everolimus 10 mg daily until objective tumor progression (according to RECIST, version 1.0), unacceptable toxicity, death, or study discontinuation for any other reason.",
+      "context_window": "us VEGFr-TKI therapy (N = 64). Patients received everolimus 10 mg daily until objective tumor progression (according to RECIS",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1084",
+      "claim_type": "unit_value",
+      "raw_text": "52 years",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "Median age was 52 years (range, 19-75 years) and 69% of patients were male.",
+      "context_window": "l of 64 patients were included in the study. Median age was 52 years (range, 19-75 years) and 69% of patients were male. Median",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1104",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1104,
+      "sentence": "Median age was 52 years (range, 19-75 years) and 69% of patients were male.",
+      "context_window": "e included in the study. Median age was 52 years (range, 19-75 years) and 69% of patients were male. Median duration of everolim",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1118",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "Median age was 52 years (range, 19-75 years) and 69% of patients were male.",
+      "context_window": "the study. Median age was 52 years (range, 19-75 years) and 69% of patients were male. Median duration of everolimus therap",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1187",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 months",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1187,
+      "sentence": "Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months).",
+      "context_window": "tients were male. Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). Expected known class-effect toxic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1210",
+      "claim_type": "unit_value",
+      "raw_text": "16.1 months",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1210,
+      "sentence": "Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months).",
+      "context_window": "n duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). Expected known class-effect toxicities related to mTOR in",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1330",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1330,
+      "sentence": "Expected known class-effect toxicities related to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%).",
+      "context_window": "to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyper",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1358",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1358,
+      "sentence": "Expected known class-effect toxicities related to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%).",
+      "context_window": "ere observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholest",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1382",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1382,
+      "sentence": "Expected known class-effect toxicities related to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%).",
+      "context_window": "anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulm",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1403",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "Expected known class-effect toxicities related to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%).",
+      "context_window": "iglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%). C",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1431",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1431,
+      "sentence": "Expected known class-effect toxicities related to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%).",
+      "context_window": "lceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%). Common grade 3/4 adverse even",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1459",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1459,
+      "sentence": "Expected known class-effect toxicities related to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%).",
+      "context_window": "ia (52%), hypercholesterolemia (50%), and pulmonary events (31%). Common grade 3/4 adverse events were anemia (20%), hyperg",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1510",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "events (31%). Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1531",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1531,
+      "sentence": "Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1574",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1574,
+      "sentence": "Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": ", hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1594",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1594,
+      "sentence": "Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1608",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1608,
+      "sentence": "Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "amma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%). Median P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1635",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1635,
+      "sentence": "Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "1%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%). Median PFS was 6.9 months (95% CI,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1657",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1657,
+      "sentence": "Common grade 3/4 adverse events were anemia (20%), hyperglycemia (13%), increased gamma-glutamyltransferase (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": ", dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%). Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1677",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 months",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1677,
+      "sentence": "Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%).",
+      "context_window": "rtriglyceridemia (6%), and lymphopenia (6%). Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1689",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1689,
+      "sentence": "Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%).",
+      "context_window": "emia (6%), and lymphopenia (6%). Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1701",
+      "claim_type": "unit_value",
+      "raw_text": "12.5 months",
+      "numeric_values": [
+        12.5
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1701,
+      "sentence": "Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%).",
+      "context_window": "nd lymphopenia (6%). Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1754",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1754,
+      "sentence": "Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%).",
+      "context_window": "I, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%). The majority of patients (61%) had stable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1758",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1758,
+      "sentence": "Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%).",
+      "context_window": ".7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%). The majority of patients (61%) had stable disea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1768",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1768,
+      "sentence": "Median PFS was 6.9 months (95% CI, 3.7-12.5 months) and the overall tumor response rate was 5% (95% CI, 1-13%).",
+      "context_window": "nths) and the overall tumor response rate was 5% (95% CI, 1-13%). The majority of patients (61%) had stable disease as thei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1800",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1800,
+      "sentence": "The majority of patients (61%) had stable disease as their best overall tumor response.",
+      "context_window": "onse rate was 5% (95% CI, 1-13%). The majority of patients (61%) had stable disease as their best overall tumor response.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-85",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 85,
+      "sentence": "Renal cell carcinoma (RCC), the most common form of kidney tumor, accounts for up to 92% of all cases of kidney cancer [ 1 ].",
+      "context_window": "), the most common form of kidney tumor, accounts for up to 92% of all cases of kidney cancer [ 1 ]. In the United States a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3189",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3189,
+      "sentence": "Phase 1 PK/PD studies demonstrated that continuous daily dosing with everolimus 10 mg resulted in a more profound and sustained inhibition of mTOR than that achieved with a weekly dosage schedule [ 20 , 21 ].",
+      "context_window": "s demonstrated that continuous daily dosing with everolimus 10 mg resulted in a more profound and sustained inhibition of mTO",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3352",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3352,
+      "sentence": "Anti-tumor activity of everolimus 10 mg daily was shown in a phase 2 trial of patients with mRCC [ 22 , 23 ], and results of the phase 3 RECORD-1 study demonstrated a progression-free survival (PFS) benefit of everolimus 10 mg daily over placebo in patients with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ].",
+      "context_window": "age schedule [ 20 , 21 ]. Anti-tumor activity of everolimus 10 mg daily was shown in a phase 2 trial of patients with mRCC [",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3539",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3539,
+      "sentence": "Anti-tumor activity of everolimus 10 mg daily was shown in a phase 2 trial of patients with mRCC [ 22 , 23 ], and results of the phase 3 RECORD-1 study demonstrated a progression-free survival (PFS) benefit of everolimus 10 mg daily over placebo in patients with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ].",
+      "context_window": "ted a progression-free survival (PFS) benefit of everolimus 10 mg daily over placebo in patients with VEGFr-TKI-refractory mR",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3615",
+      "claim_type": "unit_value",
+      "raw_text": "1.9 months",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 3615,
+      "sentence": "Anti-tumor activity of everolimus 10 mg daily was shown in a phase 2 trial of patients with mRCC [ 22 , 23 ], and results of the phase 3 RECORD-1 study demonstrated a progression-free survival (PFS) benefit of everolimus 10 mg daily over placebo in patients with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ].",
+      "context_window": "placebo in patients with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ]. In addition,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3636",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3636,
+      "sentence": "Anti-tumor activity of everolimus 10 mg daily was shown in a phase 2 trial of patients with mRCC [ 22 , 23 ], and results of the phase 3 RECORD-1 study demonstrated a progression-free survival (PFS) benefit of everolimus 10 mg daily over placebo in patients with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ].",
+      "context_window": "with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ]. In addition, pharmacodynam",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-p-3655",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3655,
+      "sentence": "Anti-tumor activity of everolimus 10 mg daily was shown in a phase 2 trial of patients with mRCC [ 22 , 23 ], and results of the phase 3 RECORD-1 study demonstrated a progression-free survival (PFS) benefit of everolimus 10 mg daily over placebo in patients with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ].",
+      "context_window": "actory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ]. In addition, pharmacodynamic modeling of tumor gro",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3789",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3789,
+      "sentence": "In addition, pharmacodynamic modeling of tumor growth in patients enrolled in RECORD-1 demonstrated that everolimus 5 mg daily and 10 mg daily significantly slowed the growth of mRCC target lesions, non-target lesions, and new metastases compared with placebo ( P < .001) [ 24 , 25 ].",
+      "context_window": "patients enrolled in RECORD-1 demonstrated that everolimus 5 mg daily and 10 mg daily significantly slowed the growth of mR",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3804",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3804,
+      "sentence": "In addition, pharmacodynamic modeling of tumor growth in patients enrolled in RECORD-1 demonstrated that everolimus 5 mg daily and 10 mg daily significantly slowed the growth of mRCC target lesions, non-target lesions, and new metastases compared with placebo ( P < .001) [ 24 , 25 ].",
+      "context_window": "led in RECORD-1 demonstrated that everolimus 5 mg daily and 10 mg daily significantly slowed the growth of mRCC target lesion",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-p-3935",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3935,
+      "sentence": "In addition, pharmacodynamic modeling of tumor growth in patients enrolled in RECORD-1 demonstrated that everolimus 5 mg daily and 10 mg daily significantly slowed the growth of mRCC target lesions, non-target lesions, and new metastases compared with placebo ( P < .001) [ 24 , 25 ].",
+      "context_window": "-target lesions, and new metastases compared with placebo ( P < .001) [ 24 , 25 ]. A phase 1 study in Chinese patients with adv",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-4023",
+      "claim_type": "sample_size",
+      "raw_text": "N = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4023,
+      "sentence": "A phase 1 study in Chinese patients with advanced solid tumors (N = 24), including mRCC (n = 6), was conducted to specifically evaluate the efficacy and safety of everolimus in a Chinese population [ 26 ].",
+      "context_window": "ase 1 study in Chinese patients with advanced solid tumors (N = 24), including mRCC (n = 6), was conducted to specifically eva",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-4048",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4048,
+      "sentence": "A phase 1 study in Chinese patients with advanced solid tumors (N = 24), including mRCC (n = 6), was conducted to specifically evaluate the efficacy and safety of everolimus in a Chinese population [ 26 ].",
+      "context_window": "tients with advanced solid tumors (N = 24), including mRCC (n = 6), was conducted to specifically evaluate the efficacy and s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4211",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 4211,
+      "sentence": "Results demonstrated that everolimus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients experienced stable disease as their best overall tumor response [ 26 ].",
+      "context_window": "ation [ 26 ]. Results demonstrated that everolimus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients ex",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4220",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 4220,
+      "sentence": "Results demonstrated that everolimus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients experienced stable disease as their best overall tumor response [ 26 ].",
+      "context_window": "6 ]. Results demonstrated that everolimus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients experienced",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4257",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4257,
+      "sentence": "Results demonstrated that everolimus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients experienced stable disease as their best overall tumor response [ 26 ].",
+      "context_window": "imus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients experienced stable disease as their best overal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4411",
+      "claim_type": "unit_value",
+      "raw_text": "26.4 weeks",
+      "numeric_values": [
+        26.4
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 4411,
+      "sentence": "Median duration of everolimus exposure for patients with mRCC was 26.4 weeks (6.1 months).",
+      "context_window": "duration of everolimus exposure for patients with mRCC was 26.4 weeks (6.1 months). Herein, we report results of a larger study o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4423",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 months",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 4423,
+      "sentence": "Median duration of everolimus exposure for patients with mRCC was 26.4 weeks (6.1 months).",
+      "context_window": "everolimus exposure for patients with mRCC was 26.4 weeks (6.1 months). Herein, we report results of a larger study of everolimus",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-77",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 77,
+      "sentence": "In this open-label, multicenter phase 1b study, patients received everolimus 10 mg (2 \u00d7 5-mg tablets) daily until objective tumor progression (according to RECIST, version 1.0), unacceptable toxicity, death, or study discontinuation for any other reason.",
+      "context_window": "l, multicenter phase 1b study, patients received everolimus 10 mg (2 \u00d7 5-mg tablets) daily until objective tumor progression",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-322",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 322,
+      "sentence": "If a patient experienced unacceptable toxicity, dose reductions to 5 mg daily or 5 mg every other day or dose interruptions were permitted.",
+      "context_window": "tient experienced unacceptable toxicity, dose reductions to 5 mg daily or 5 mg every other day or dose interruptions were pe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-336",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 336,
+      "sentence": "If a patient experienced unacceptable toxicity, dose reductions to 5 mg daily or 5 mg every other day or dose interruptions were permitted.",
+      "context_window": "ced unacceptable toxicity, dose reductions to 5 mg daily or 5 mg every other day or dose interruptions were permitted. This",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1415",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1415,
+      "sentence": "Adult Chinese patients with mRCC who were intolerant to or who progressed while still on or after stopping treatment with VEGFr-TKI therapy within 6 months were enrolled (N = 64).",
+      "context_window": "n or after stopping treatment with VEGFr-TKI therapy within 6 months were enrolled (N = 64). Patients were required to have conf",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-1439",
+      "claim_type": "sample_size",
+      "raw_text": "N = 64",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1439,
+      "sentence": "Adult Chinese patients with mRCC who were intolerant to or who progressed while still on or after stopping treatment with VEGFr-TKI therapy within 6 months were enrolled (N = 64).",
+      "context_window": "tment with VEGFr-TKI therapy within 6 months were enrolled (N = 64). Patients were required to have confirmed clear cell mRCC",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1601",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1601,
+      "sentence": "Patients were required to have confirmed clear cell mRCC with at least 1 measurable lesion (RECIST, version 1.0), a Karnofsky Performance Status (KPS) \u2265 70%, and adequate bone marrow, liver, and renal function.",
+      "context_window": "ECIST, version 1.0), a Karnofsky Performance Status (KPS) \u2265 70%, and adequate bone marrow, liver, and renal function. Patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1991",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1991,
+      "sentence": "Patients were ineligible if they had received previous chemotherapy, immunotherapy, radiotherapy, or an investigational agent (at the time of study protocol preparation, pazopanib and axitinib were included) within 4 weeks of study entry or sunitinib and/or sorafenib within 2 weeks of first everolimus dose.",
+      "context_window": "l preparation, pazopanib and axitinib were included) within 4 weeks of study entry or sunitinib and/or sorafenib within 2 weeks",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-2051",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2051,
+      "sentence": "Patients were ineligible if they had received previous chemotherapy, immunotherapy, radiotherapy, or an investigational agent (at the time of study protocol preparation, pazopanib and axitinib were included) within 4 weeks of study entry or sunitinib and/or sorafenib within 2 weeks of first everolimus dose.",
+      "context_window": "4 weeks of study entry or sunitinib and/or sorafenib within 2 weeks of first everolimus dose. Previous treatment with mTOR inhi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-2674",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2674,
+      "sentence": "AE monitoring continued for 4 weeks after patients received their last dose of study drug.",
+      "context_window": "lipid profile, and vital signs. AE monitoring continued for 4 weeks after patients received their last dose of study drug. The",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3091",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3091,
+      "sentence": "The estimated raw incidence (95% CI) of grade 3-4 AEs and of SAEs was identified as the primary safety analysis.",
+      "context_window": "e Events (CTCAE) v 3.0 [ 27 ]. The estimated raw incidence (95% CI) of grade 3-4 AEs and of SAEs was identified as the prim",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3497",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3497,
+      "sentence": "For efficacy evaluation, CT/MRI scans and/or bone scan if bone metastases were present or suspected were carried out at baseline and every 8 weeks for the first year of treatment, then every 12 weeks and at treatment discontinuation.",
+      "context_window": "present or suspected were carried out at baseline and every 8 weeks for the first year of treatment, then every 12 weeks and at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3549",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3549,
+      "sentence": "For efficacy evaluation, CT/MRI scans and/or bone scan if bone metastases were present or suspected were carried out at baseline and every 8 weeks for the first year of treatment, then every 12 weeks and at treatment discontinuation.",
+      "context_window": "d every 8 weeks for the first year of treatment, then every 12 weeks and at treatment discontinuation. Assessment of overall les",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-5018",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 ng/mL",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 5018,
+      "sentence": "The lower limit of quantitation was 0.3 ng/mL.",
+      "context_window": "solid phase extraction. The lower limit of quantitation was 0.3 ng/mL. Pre-dose trough samples (C min ) collected at cycle 2 day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-5081",
+      "claim_type": "unit_value",
+      "raw_text": "2 day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 5081,
+      "sentence": "Pre-dose trough samples (C min ) collected at cycle 2 day 1 and cycle 4 day 1 could represent the minimum everolimus exposure under steady-state conditions.",
+      "context_window": "ng/mL. Pre-dose trough samples (C min ) collected at cycle 2 day 1 and cycle 4 day 1 could represent the minimum everolimus",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-5099",
+      "claim_type": "unit_value",
+      "raw_text": "4 day",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 5099,
+      "sentence": "Pre-dose trough samples (C min ) collected at cycle 2 day 1 and cycle 4 day 1 could represent the minimum everolimus exposure under steady-state conditions.",
+      "context_window": "rough samples (C min ) collected at cycle 2 day 1 and cycle 4 day 1 could represent the minimum everolimus exposure under ste",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-5322",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 5322,
+      "sentence": "A linear mixed model analysis of log-transformed steady-state pre-dose minimum plasma concentrations (C min ) normalized to the dose of 10 mg/day, including the cycle as fixed effect and the patient as random effect, overall mean, 90% CI, and inter- and intra-patient variability, were estimated.",
+      "context_window": "um plasma concentrations (C min ) normalized to the dose of 10 mg/day, including the cycle as fixed effect and the patient as ran",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-5417",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5417,
+      "sentence": "A linear mixed model analysis of log-transformed steady-state pre-dose minimum plasma concentrations (C min ) normalized to the dose of 10 mg/day, including the cycle as fixed effect and the patient as random effect, overall mean, 90% CI, and inter- and intra-patient variability, were estimated.",
+      "context_window": "ixed effect and the patient as random effect, overall mean, 90% CI, and inter- and intra-patient variability, were estimate",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-5965",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5965,
+      "sentence": "The study included a preplanned interim analysis of safety, which was conducted 4 months after treatment initiation by the last patient enrolled, and a final analysis after 12 months of treatment.",
+      "context_window": "preplanned interim analysis of safety, which was conducted 4 months after treatment initiation by the last patient enrolled, an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6058",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6058,
+      "sentence": "The study included a preplanned interim analysis of safety, which was conducted 4 months after treatment initiation by the last patient enrolled, and a final analysis after 12 months of treatment.",
+      "context_window": "on by the last patient enrolled, and a final analysis after 12 months of treatment. All patients still receiving everolimus at th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-48",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 48,
+      "sentence": "At the time of the final analysis, 54 patients (84%) had discontinued treatment.",
+      "context_window": "At the time of the final analysis, 54 patients (84%) had discontinued treatment. The most frequent reasons for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-157",
+      "claim_type": "sample_size",
+      "raw_text": "n = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 157,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "t reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-165",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 165,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "s for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-176",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 176,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "ntinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-184",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 184,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "on included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-213",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 213,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "on (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%). The full analysis set compris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-220",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 220,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%). The full analysis set comprised 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-236",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 236,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%). The full analysis set comprised 64 patients who rece",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-243",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "The most frequent reasons for discontinuation included disease progression (n = 26, 41%), AEs (n = 15, 23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%).",
+      "context_window": "23%), withdrawal of consent (n = 6, 9%), and death (n = 3, 5%). The full analysis set comprised 64 patients who received",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-329",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 329,
+      "sentence": "The full analysis set comprised 64 patients who received \u2265 1 dose of everolimus 10 mg/day (Table 1 ).",
+      "context_window": "t comprised 64 patients who received \u2265 1 dose of everolimus 10 mg/day (Table 1 ). The majority of patients were male (n = 44, 69%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-387",
+      "claim_type": "sample_size",
+      "raw_text": "n = 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 387,
+      "sentence": "The majority of patients were male (n = 44, 69%) and all patients were of Chinese ethnicity.",
+      "context_window": "s 10 mg/day (Table 1 ). The majority of patients were male (n = 44, 69%) and all patients were of Chinese ethnicity. Median ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-395",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 395,
+      "sentence": "The majority of patients were male (n = 44, 69%) and all patients were of Chinese ethnicity.",
+      "context_window": "day (Table 1 ). The majority of patients were male (n = 44, 69%) and all patients were of Chinese ethnicity. Median age was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-459",
+      "claim_type": "unit_value",
+      "raw_text": "52 years",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 459,
+      "sentence": "Median age was 52 years and most patients were < 65 years of age (n = 58, 91%).",
+      "context_window": "and all patients were of Chinese ethnicity. Median age was 52 years and most patients were < 65 years of age (n = 58, 91%). Mos",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-493",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 493,
+      "sentence": "Median age was 52 years and most patients were < 65 years of age (n = 58, 91%).",
+      "context_window": "ethnicity. Median age was 52 years and most patients were < 65 years of age (n = 58, 91%). Most patients presented with histolog",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-510",
+      "claim_type": "sample_size",
+      "raw_text": "n = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 510,
+      "sentence": "Median age was 52 years and most patients were < 65 years of age (n = 58, 91%).",
+      "context_window": "age was 52 years and most patients were < 65 years of age (n = 58, 91%). Most patients presented with histologically or cytol",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-518",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 518,
+      "sentence": "Median age was 52 years and most patients were < 65 years of age (n = 58, 91%).",
+      "context_window": "52 years and most patients were < 65 years of age (n = 58, 91%). Most patients presented with histologically or cytologica",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-637",
+      "claim_type": "sample_size",
+      "raw_text": "n = 62",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 637,
+      "sentence": "Most patients presented with histologically or cytologically confirmed clear-cell adenocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months.",
+      "context_window": "gically confirmed clear-cell adenocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-645",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 645,
+      "sentence": "Most patients presented with histologically or cytologically confirmed clear-cell adenocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months.",
+      "context_window": "confirmed clear-cell adenocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-668",
+      "claim_type": "sample_size",
+      "raw_text": "n = 41",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 668,
+      "sentence": "Most patients presented with histologically or cytologically confirmed clear-cell adenocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months.",
+      "context_window": "enocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months. Twent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-676",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 676,
+      "sentence": "Most patients presented with histologically or cytologically confirmed clear-cell adenocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months.",
+      "context_window": "noma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months. Twenty-six",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-718",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 718,
+      "sentence": "Most patients presented with histologically or cytologically confirmed clear-cell adenocarcinoma of the kidneys (n = 62, 97%) and the majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months.",
+      "context_window": "majority (n = 41, 64%) had a time since initial diagnosis \u2265 24 months. Twenty-six patients (41%) had metastatic involvement of \u2265",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-750",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 750,
+      "sentence": "Twenty-six patients (41%) had metastatic involvement of \u2265 3 organs, and the lungs were the most common site of metastasis (n = 52, 81%).",
+      "context_window": "e since initial diagnosis \u2265 24 months. Twenty-six patients (41%) had metastatic involvement of \u2265 3 organs, and the lungs we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-852",
+      "claim_type": "sample_size",
+      "raw_text": "n = 52",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 852,
+      "sentence": "Twenty-six patients (41%) had metastatic involvement of \u2265 3 organs, and the lungs were the most common site of metastasis (n = 52, 81%).",
+      "context_window": "ans, and the lungs were the most common site of metastasis (n = 52, 81%). All patients had undergone surgery and received prev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-860",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 860,
+      "sentence": "Twenty-six patients (41%) had metastatic involvement of \u2265 3 organs, and the lungs were the most common site of metastasis (n = 52, 81%).",
+      "context_window": "the lungs were the most common site of metastasis (n = 52, 81%). All patients had undergone surgery and received previous",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1182",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 months",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1182,
+      "sentence": "Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months).",
+      "context_window": "inase inhibitor. Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). The mean cumulative dose was 1616",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1205",
+      "claim_type": "unit_value",
+      "raw_text": "16.1 months",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1205,
+      "sentence": "Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months).",
+      "context_window": "n duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). The mean cumulative dose was 1616.88 mg, with a mean dose",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1248",
+      "claim_type": "unit_value",
+      "raw_text": "1616.88 mg",
+      "numeric_values": [
+        1616.88
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1248,
+      "sentence": "The mean cumulative dose was 1616.88 mg, with a mean dose intensity of 8.95 mg/day (median, 9.90 mg/day), corresponding to a mean relative dose intensity of 0.89 (median, 0.99).",
+      "context_window": "nths (range, 0.0-16.1 months). The mean cumulative dose was 1616.88 mg, with a mean dose intensity of 8.95 mg/day (median, 9.90 mg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1290",
+      "claim_type": "unit_value",
+      "raw_text": "8.95 mg/day",
+      "numeric_values": [
+        8.95
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 1290,
+      "sentence": "The mean cumulative dose was 1616.88 mg, with a mean dose intensity of 8.95 mg/day (median, 9.90 mg/day), corresponding to a mean relative dose intensity of 0.89 (median, 0.99).",
+      "context_window": "mulative dose was 1616.88 mg, with a mean dose intensity of 8.95 mg/day (median, 9.90 mg/day), corresponding to a mean relative dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1311",
+      "claim_type": "unit_value",
+      "raw_text": "9.90 mg/day",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 1311,
+      "sentence": "The mean cumulative dose was 1616.88 mg, with a mean dose intensity of 8.95 mg/day (median, 9.90 mg/day), corresponding to a mean relative dose intensity of 0.89 (median, 0.99).",
+      "context_window": "6.88 mg, with a mean dose intensity of 8.95 mg/day (median, 9.90 mg/day), corresponding to a mean relative dose intensity of 0.89 (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-1423",
+      "claim_type": "sample_size",
+      "raw_text": "n = 45",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1423,
+      "sentence": "The majority of patients (n = 45, 70%) had a relative dose intensity between 0.90 and < 1.10.",
+      "context_window": "intensity of 0.89 (median, 0.99). The majority of patients (n = 45, 70%) had a relative dose intensity between 0.90 and < 1.10",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1431",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1431,
+      "sentence": "The majority of patients (n = 45, 70%) had a relative dose intensity between 0.90 and < 1.10.",
+      "context_window": "y of 0.89 (median, 0.99). The majority of patients (n = 45, 70%) had a relative dose intensity between 0.90 and < 1.10. Ove",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1513",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1513,
+      "sentence": "Overall, 37 patients (58%) required \u2265 1 dose reduction/interruption of everolimus: 14 patients (22%) had their dose reduced/interrupted once, and 23 patients (36%) required dose reductions/interruptions more than once over the course of the study.",
+      "context_window": "se intensity between 0.90 and < 1.10. Overall, 37 patients (58%) required \u2265 1 dose reduction/interruption of everolimus: 14",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1587",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1587,
+      "sentence": "Overall, 37 patients (58%) required \u2265 1 dose reduction/interruption of everolimus: 14 patients (22%) had their dose reduced/interrupted once, and 23 patients (36%) required dose reductions/interruptions more than once over the course of the study.",
+      "context_window": "\u2265 1 dose reduction/interruption of everolimus: 14 patients (22%) had their dose reduced/interrupted once, and 23 patients (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1650",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1650,
+      "sentence": "Overall, 37 patients (58%) required \u2265 1 dose reduction/interruption of everolimus: 14 patients (22%) had their dose reduced/interrupted once, and 23 patients (36%) required dose reductions/interruptions more than once over the course of the study.",
+      "context_window": ") had their dose reduced/interrupted once, and 23 patients (36%) required dose reductions/interruptions more than once over",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-1817",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1817,
+      "sentence": "The most common reason for dose reduction/interruption was management of AEs (n = 24, 38%).",
+      "context_window": "ason for dose reduction/interruption was management of AEs (n = 24, 38%). Seven patients died within 28 days of treatment dis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1825",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1825,
+      "sentence": "The most common reason for dose reduction/interruption was management of AEs (n = 24, 38%).",
+      "context_window": "dose reduction/interruption was management of AEs (n = 24, 38%). Seven patients died within 28 days of treatment disconti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1859",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1859,
+      "sentence": "Seven patients died within 28 days of treatment discontinuation.",
+      "context_window": "anagement of AEs (n = 24, 38%). Seven patients died within 28 days of treatment discontinuation. The principal cause of death",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2146",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2146,
+      "sentence": "A total of 27 patients (42%, 95% CI, 30-55%) reported \u2265 1 on-treatment SAE.",
+      "context_window": "uspected to be study drug-related. A total of 27 patients (42%, 95% CI, 30-55%) reported \u2265 1 on-treatment SAE. The most co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2151",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2151,
+      "sentence": "A total of 27 patients (42%, 95% CI, 30-55%) reported \u2265 1 on-treatment SAE.",
+      "context_window": "ted to be study drug-related. A total of 27 patients (42%, 95% CI, 30-55%) reported \u2265 1 on-treatment SAE. The most common",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2162",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2162,
+      "sentence": "A total of 27 patients (42%, 95% CI, 30-55%) reported \u2265 1 on-treatment SAE.",
+      "context_window": "tudy drug-related. A total of 27 patients (42%, 95% CI, 30-55%) reported \u2265 1 on-treatment SAE. The most common SAEs occurr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2234",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2234,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "d \u2265 1 on-treatment SAE. The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2267",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2267,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-org",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2281",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2281,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "curring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2302",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2302,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "tients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2315",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2315,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "ed dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2341",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2341,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%). SAEs we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2367",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2367,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%). SAEs were suspected to be treatme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2391",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2391,
+      "sentence": "The most common SAEs occurring in \u2265 3% of patients included dyspnea (9%), pyrexia (6%), lung infection (3%), anemia (3%), multi-organ failure (3%), respiratory failure (3%), and renal failure (3%).",
+      "context_window": "failure (3%), respiratory failure (3%), and renal failure (3%). SAEs were suspected to be treatment related in 11 patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2456",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2456,
+      "sentence": "SAEs were suspected to be treatment related in 11 patients (17%).",
+      "context_window": "SAEs were suspected to be treatment related in 11 patients (17%). Treatment-related SAEs occurring in \u2265 3% of patients were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2500",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2500,
+      "sentence": "Treatment-related SAEs occurring in \u2265 3% of patients were pyrexia (5%) and anemia (3%).",
+      "context_window": "in 11 patients (17%). Treatment-related SAEs occurring in \u2265 3% of patients were pyrexia (5%) and anemia (3%). AEs regardl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2529",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2529,
+      "sentence": "Treatment-related SAEs occurring in \u2265 3% of patients were pyrexia (5%) and anemia (3%).",
+      "context_window": "nt-related SAEs occurring in \u2265 3% of patients were pyrexia (5%) and anemia (3%). AEs regardless of relationship to study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2545",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2545,
+      "sentence": "Treatment-related SAEs occurring in \u2265 3% of patients were pyrexia (5%) and anemia (3%).",
+      "context_window": "occurring in \u2265 3% of patients were pyrexia (5%) and anemia (3%). AEs regardless of relationship to study drug were report",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2626",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2626,
+      "sentence": "AEs regardless of relationship to study drug were reported in 62 patients (97%).",
+      "context_window": "of relationship to study drug were reported in 62 patients (97%). The most frequently occurring AEs were anemia (64%), hype",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2679",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2679,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "ients (97%). The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyper",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2707",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2707,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "ntly occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholest",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2731",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2731,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2752",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2752,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "iglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lact",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2780",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2780,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "lceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2795",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2795,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": ", hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2834",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2834,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "emia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2849",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2849,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "exia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2897",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2897,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": "), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ). A total of 48 patients (75%, 9",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2913",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2913,
+      "sentence": "The most frequently occurring AEs were anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), pyrexia (41%), increased lactate dehydrogenase (38%), fatigue (31%), increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ).",
+      "context_window": ", increased gamma-glutamyltransferase (GGT, 31%), and rash (31%) (Table 2 ). A total of 48 patients (75%, 95% CI, 63-85%) e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2954",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2954,
+      "sentence": "A total of 48 patients (75%, 95% CI, 63-85%) experienced at least one grade 3 or 4 AE regardless of relationship to study drug.",
+      "context_window": "T, 31%), and rash (31%) (Table 2 ). A total of 48 patients (75%, 95% CI, 63-85%) experienced at least one grade 3 or 4 AE r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2959",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2959,
+      "sentence": "A total of 48 patients (75%, 95% CI, 63-85%) experienced at least one grade 3 or 4 AE regardless of relationship to study drug.",
+      "context_window": "%), and rash (31%) (Table 2 ). A total of 48 patients (75%, 95% CI, 63-85%) experienced at least one grade 3 or 4 AE regard",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2970",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2970,
+      "sentence": "A total of 48 patients (75%, 95% CI, 63-85%) experienced at least one grade 3 or 4 AE regardless of relationship to study drug.",
+      "context_window": "h (31%) (Table 2 ). A total of 48 patients (75%, 95% CI, 63-85%) experienced at least one grade 3 or 4 AE regardless of rel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3092",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3092,
+      "sentence": "Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "lationship to study drug. Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3113",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3113,
+      "sentence": "Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "rug. Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hyp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3134",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3134,
+      "sentence": "Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3154",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3154,
+      "sentence": "Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3168",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3168,
+      "sentence": "Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "mia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%). All-gra",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3195",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3195,
+      "sentence": "Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": "1%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%). All-grade AEs occurring in \u2265 10% o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3217",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3217,
+      "sentence": "Common grade 3/4 AEs were anemia (20%), hyperglycemia (13%), increased GGT (11%), hyponatremia (8%), dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%).",
+      "context_window": ", dyspnea (8%), hypertriglyceridemia (6%), and lymphopenia (6%). All-grade AEs occurring in \u2265 10% of patients and corresp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3252",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3252,
+      "sentence": "All-grade AEs occurring in \u2265 10% of patients and corresponding grades 3 and 4 AEs\n\nAE, adverse event.",
+      "context_window": "a (6%), and lymphopenia (6%). All-grade AEs occurring in \u2265 10% of patients and corresponding grades 3 and 4 AEs AE, adver",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3390",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3390,
+      "sentence": "Non-infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%).",
+      "context_window": "infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-3435",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3435,
+      "sentence": "Non-infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%).",
+      "context_window": "n 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3443",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3443,
+      "sentence": "Non-infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%).",
+      "context_window": "ients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-3462",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3462,
+      "sentence": "Non-infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%).",
+      "context_window": "luded interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%). Grade 3 non-infec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3469",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3469,
+      "sentence": "Non-infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%).",
+      "context_window": "nterstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%). Grade 3 non-infectiou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-3498",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3498,
+      "sentence": "Non-infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%).",
+      "context_window": "14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%). Grade 3 non-infectious pneumonitis was reported in 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3505",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3505,
+      "sentence": "Non-infectious pneumonitis events were reported in 20 patients (31%) and included interstitial lung disease (n = 14, 22%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%).",
+      "context_window": "%), pneumonitis (n = 5, 8%), and pulmonary fibrosis (n = 1, 2%). Grade 3 non-infectious pneumonitis was reported in 4 pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3573",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3573,
+      "sentence": "Grade 3 non-infectious pneumonitis was reported in 4 patients (6%), all of whom had lung metastases at study entry: 3 events improved to grade 1/2 after steroid therapy, oxygen inhalation, and/or dose adjustment; 1 event of pulmonary fibrosis improved to grade 2 following discontinuation of everolimus.",
+      "context_window": "de 3 non-infectious pneumonitis was reported in 4 patients (6%), all of whom had lung metastases at study entry: 3 events",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3950",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3950,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3954",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3954,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3964",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3964,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "on-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months. The medi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3972",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 3972,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "tious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months. The median time to f",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3984",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3984,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "nitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months. The median time to first occ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3989",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3989,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months. The median time to first occurren",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4001",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4001,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "ed to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months. The median time to first occurrence of non-in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4009",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4009,
+      "sentence": "The probability of onset of non-infectious pneumonitis was estimated to be 6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months.",
+      "context_window": "6% (95% CI, 3-16%) at 1 month and 32% (95% CI, 21- 46%) at 4 months. The median time to first occurrence of non-infectious pneu",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4184",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4184,
+      "sentence": "The most frequently observed laboratory abnormalities were decreased hemoglobin (80%), increased triglycerides (77%), increased fasting glucose (72%), increased cholesterol (61%), and decreased absolute lymphocyte count (61%).",
+      "context_window": "bserved laboratory abnormalities were decreased hemoglobin (80%), increased triglycerides (77%), increased fasting glucose",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4215",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4215,
+      "sentence": "The most frequently observed laboratory abnormalities were decreased hemoglobin (80%), increased triglycerides (77%), increased fasting glucose (72%), increased cholesterol (61%), and decreased absolute lymphocyte count (61%).",
+      "context_window": "s were decreased hemoglobin (80%), increased triglycerides (77%), increased fasting glucose (72%), increased cholesterol (6",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4248",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4248,
+      "sentence": "The most frequently observed laboratory abnormalities were decreased hemoglobin (80%), increased triglycerides (77%), increased fasting glucose (72%), increased cholesterol (61%), and decreased absolute lymphocyte count (61%).",
+      "context_window": ", increased triglycerides (77%), increased fasting glucose (72%), increased cholesterol (61%), and decreased absolute lymph",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4277",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4277,
+      "sentence": "The most frequently observed laboratory abnormalities were decreased hemoglobin (80%), increased triglycerides (77%), increased fasting glucose (72%), increased cholesterol (61%), and decreased absolute lymphocyte count (61%).",
+      "context_window": "%), increased fasting glucose (72%), increased cholesterol (61%), and decreased absolute lymphocyte count (61%). Common gra",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4324",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4324,
+      "sentence": "The most frequently observed laboratory abnormalities were decreased hemoglobin (80%), increased triglycerides (77%), increased fasting glucose (72%), increased cholesterol (61%), and decreased absolute lymphocyte count (61%).",
+      "context_window": "cholesterol (61%), and decreased absolute lymphocyte count (61%). Common grade 3/4 laboratory abnormalities included decrea",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4403",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4403,
+      "sentence": "Common grade 3/4 laboratory abnormalities included decreased hemoglobin (23%), decreased absolute lymphocytes (20%), and increased GGT (16%).",
+      "context_window": "3/4 laboratory abnormalities included decreased hemoglobin (23%), decreased absolute lymphocytes (20%), and increased GGT (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4441",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4441,
+      "sentence": "Common grade 3/4 laboratory abnormalities included decreased hemoglobin (23%), decreased absolute lymphocytes (20%), and increased GGT (16%).",
+      "context_window": "decreased hemoglobin (23%), decreased absolute lymphocytes (20%), and increased GGT (16%). At the data cut-off date, media",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4466",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4466,
+      "sentence": "Common grade 3/4 laboratory abnormalities included decreased hemoglobin (23%), decreased absolute lymphocytes (20%), and increased GGT (16%).",
+      "context_window": "), decreased absolute lymphocytes (20%), and increased GGT (16%). At the data cut-off date, median PFS was estimated to be",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4530",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 months",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4530,
+      "sentence": "At the data cut-off date, median PFS was estimated to be 6.9 months (95% CI, 3.7-12.5 months, Table 3 and Figure 1 ).",
+      "context_window": ". At the data cut-off date, median PFS was estimated to be 6.9 months (95% CI, 3.7-12.5 months, Table 3 and Figure 1 ). The estim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4542",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4542,
+      "sentence": "At the data cut-off date, median PFS was estimated to be 6.9 months (95% CI, 3.7-12.5 months, Table 3 and Figure 1 ).",
+      "context_window": "ta cut-off date, median PFS was estimated to be 6.9 months (95% CI, 3.7-12.5 months, Table 3 and Figure 1 ). The estimated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4554",
+      "claim_type": "unit_value",
+      "raw_text": "12.5 months",
+      "numeric_values": [
+        12.5
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4554,
+      "sentence": "At the data cut-off date, median PFS was estimated to be 6.9 months (95% CI, 3.7-12.5 months, Table 3 and Figure 1 ).",
+      "context_window": "ate, median PFS was estimated to be 6.9 months (95% CI, 3.7-12.5 months, Table 3 and Figure 1 ). The estimated probability of PFS w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4628",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4628,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "able 3 and Figure 1 ). The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 mon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4633",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4633,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "3 and Figure 1 ). The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4644",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4644,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "e 1 ). The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4652",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4652,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "he estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%)",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4662",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4662,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "ed probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4667",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4667,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "obability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 mon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4678",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4678,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "f PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months. Median",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4686",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4686,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "s 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months. Median OS was not r",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4700",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4700,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months. Median OS was not reached (F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4705",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4705,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "3%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months. Median OS was not reached (Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4716",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4716,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "nths, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months. Median OS was not reached (Figure 2 ). The e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4724",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4724,
+      "sentence": "The estimated probability of PFS was 62% (95% CI, 47-73%) at 4 months, 52% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months.",
+      "context_window": "% (95% CI, 38-64%) at 6 months, and 36% (95% CI, 22-51%) at 12 months. Median OS was not reached (Figure 2 ). The estimated proba",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4810",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4810,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "ot reached (Figure 2 ). The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4815",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4815,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "ached (Figure 2 ). The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 mont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4826",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4826,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "re 2 ). The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months. Summar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4834",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4834,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months. Summary of efficacy",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4847",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4847,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months. Summary of efficacy measure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4852",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4852,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "ability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months. Summary of efficacy measures *I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4863",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4863,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months. Summary of efficacy measures *Includes pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4871",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4871,
+      "sentence": "The estimated probability of OS was 76% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months.",
+      "context_window": "6% (95% CI, 64-85%) at 6 months and 56% (95% CI, 42-68%) at 12 months. Summary of efficacy measures *Includes patients with no",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-5843",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5843,
+      "sentence": "Confirmed objective tumor responses (all PRs) evaluated by investigator assessment were seen in 3 patients, corresponding to an ORR of 5% (95% CI, 1-13%, Table 3 ).",
+      "context_window": "essment were seen in 3 patients, corresponding to an ORR of 5% (95% CI, 1-13%, Table 3 ). Stable disease was reported in 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-5847",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5847,
+      "sentence": "Confirmed objective tumor responses (all PRs) evaluated by investigator assessment were seen in 3 patients, corresponding to an ORR of 5% (95% CI, 1-13%, Table 3 ).",
+      "context_window": "ent were seen in 3 patients, corresponding to an ORR of 5% (95% CI, 1-13%, Table 3 ). Stable disease was reported in 39 pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-5857",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5857,
+      "sentence": "Confirmed objective tumor responses (all PRs) evaluated by investigator assessment were seen in 3 patients, corresponding to an ORR of 5% (95% CI, 1-13%, Table 3 ).",
+      "context_window": "een in 3 patients, corresponding to an ORR of 5% (95% CI, 1-13%, Table 3 ). Stable disease was reported in 39 patients (61%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-5917",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5917,
+      "sentence": "Stable disease was reported in 39 patients (61%).",
+      "context_window": "13%, Table 3 ). Stable disease was reported in 39 patients (61%). Everolimus therapy in this patient population was associa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-5998",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5998,
+      "sentence": "Everolimus therapy in this patient population was associated with a DCR of 66% (95% CI, 53-77%).",
+      "context_window": "apy in this patient population was associated with a DCR of 66% (95% CI, 53-77%). Mean C min after administration of evero",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-6003",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6003,
+      "sentence": "Everolimus therapy in this patient population was associated with a DCR of 66% (95% CI, 53-77%).",
+      "context_window": "n this patient population was associated with a DCR of 66% (95% CI, 53-77%). Mean C min after administration of everolimus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-6014",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6014,
+      "sentence": "Everolimus therapy in this patient population was associated with a DCR of 66% (95% CI, 53-77%).",
+      "context_window": "ent population was associated with a DCR of 66% (95% CI, 53-77%). Mean C min after administration of everolimus 10 mg/day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6067",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 6067,
+      "sentence": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22).",
+      "context_window": "CI, 53-77%). Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-msd-6081",
+      "claim_type": "mean_sd",
+      "raw_text": "21.4 \u00b1 12.4",
+      "numeric_values": [
+        21.4,
+        12.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6081,
+      "sentence": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22).",
+      "context_window": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at c",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6088",
+      "claim_type": "unit_value",
+      "raw_text": "12.4 ng/mL",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6088,
+      "sentence": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22).",
+      "context_window": "min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6118",
+      "claim_type": "sample_size",
+      "raw_text": "n = 36",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6118,
+      "sentence": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22).",
+      "context_window": "erolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-msd-6130",
+      "claim_type": "mean_sd",
+      "raw_text": "15.0 \u00b1 9.97",
+      "numeric_values": [
+        15.0,
+        9.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6130,
+      "sentence": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22).",
+      "context_window": "mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C min after administ",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6137",
+      "claim_type": "unit_value",
+      "raw_text": "9.97 ng/mL",
+      "numeric_values": [
+        9.97
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6137,
+      "sentence": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22).",
+      "context_window": "was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C min after administration",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6167",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6167,
+      "sentence": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22).",
+      "context_window": "2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C min after administration of everolimus 5 mg/day wa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6222",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg/day",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 6222,
+      "sentence": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3).",
+      "context_window": "y 1 (n = 22). Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6235",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 ng/mL",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6235,
+      "sentence": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3).",
+      "context_window": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6264",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6264,
+      "sentence": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3).",
+      "context_window": "ion of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-msd-6275",
+      "claim_type": "mean_sd",
+      "raw_text": "8.8 \u00b1 1.14",
+      "numeric_values": [
+        8.8,
+        1.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6275,
+      "sentence": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3).",
+      "context_window": "olimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min at cycle 4, day",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6281",
+      "claim_type": "unit_value",
+      "raw_text": "1.14 ng/mL",
+      "numeric_values": [
+        1.14
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6281,
+      "sentence": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3).",
+      "context_window": "5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min at cycle 4, day 1 at",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6311",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6311,
+      "sentence": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3).",
+      "context_window": "le 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min at cycle 4, day 1 at the 10-mg/day dose was ap",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-6711",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6711,
+      "sentence": "However, the corresponding 95% CI (0.273-1.668) included unity, thereby precluding conclusion of any statistically significant relationship.",
+      "context_window": "me-normalized everolimus C min . However, the corresponding 95% CI (0.273-1.668) included unity, thereby precluding conclus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6931",
+      "claim_type": "unit_value",
+      "raw_text": "10 ng/mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6931,
+      "sentence": "There was no apparent difference between patients in the everolimus time-normalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectious pneumonitis and stomatitis/oral mucositis.",
+      "context_window": "nts in the everolimus time-normalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6944",
+      "claim_type": "unit_value",
+      "raw_text": "25 ng/mL",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6944,
+      "sentence": "There was no apparent difference between patients in the everolimus time-normalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectious pneumonitis and stomatitis/oral mucositis.",
+      "context_window": "erolimus time-normalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectious pneumoniti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6960",
+      "claim_type": "unit_value",
+      "raw_text": "25 ng/mL",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6960,
+      "sentence": "There was no apparent difference between patients in the everolimus time-normalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectious pneumonitis and stomatitis/oral mucositis.",
+      "context_window": "rmalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectious pneumonitis and stomatitis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-402",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 402,
+      "sentence": "In RECORD-1, everolimus 10 mg daily was generally well tolerated in patients with mRCC whose disease had progressed despite previous VEGFr-TKI therapy.",
+      "context_window": "with advanced solid tumors [ 26 ]. In RECORD-1, everolimus 10 mg daily was generally well tolerated in patients with mRCC wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-803",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 803,
+      "sentence": "Common AEs reported in patients treated with everolimus included stomatitis, infections, asthenia, fatigue, and diarrhea; common laboratory abnormalities included decreased hemoglobin, increased glucose, and increased cholesterol and triglycerides; pneumonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ].",
+      "context_window": "ased cholesterol and triglycerides; pneumonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ]. A phase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-829",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 829,
+      "sentence": "Common AEs reported in patients treated with everolimus included stomatitis, infections, asthenia, fatigue, and diarrhea; common laboratory abnormalities included decreased hemoglobin, increased glucose, and increased cholesterol and triglycerides; pneumonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ].",
+      "context_window": "ycerides; pneumonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ]. A phase 1 study investigated eve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-842",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 842,
+      "sentence": "Common AEs reported in patients treated with everolimus included stomatitis, infections, asthenia, fatigue, and diarrhea; common laboratory abnormalities included decreased hemoglobin, increased glucose, and increased cholesterol and triglycerides; pneumonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ].",
+      "context_window": "umonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ]. A phase 1 study investigated everolimus 5 mg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-899",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 899,
+      "sentence": "A phase 1 study investigated everolimus 5 mg and 10 mg daily in Chinese patients with different tumor types (breast cancer, non-small cell lung cancer, RCC, and gastric cancer), results of which confirmed the safety of everolimus in Chinese patients.",
+      "context_window": "4, 0%) [ 10 , 28 ]. A phase 1 study investigated everolimus 5 mg and 10 mg daily in Chinese patients with different tumor ty",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-908",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 908,
+      "sentence": "A phase 1 study investigated everolimus 5 mg and 10 mg daily in Chinese patients with different tumor types (breast cancer, non-small cell lung cancer, RCC, and gastric cancer), results of which confirmed the safety of everolimus in Chinese patients.",
+      "context_window": "10 , 28 ]. A phase 1 study investigated everolimus 5 mg and 10 mg daily in Chinese patients with different tumor types (breas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1647",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1647,
+      "sentence": "Although anemia occurred in 64% of the patients, only 16% and 5% of patients experienced grade 3 or 4 events, respectively.",
+      "context_window": "AEs were grade 1/2 in severity. Although anemia occurred in 64% of the patients, only 16% and 5% of patients experienced gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1673",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1673,
+      "sentence": "Although anemia occurred in 64% of the patients, only 16% and 5% of patients experienced grade 3 or 4 events, respectively.",
+      "context_window": "rity. Although anemia occurred in 64% of the patients, only 16% and 5% of patients experienced grade 3 or 4 events, respect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1681",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1681,
+      "sentence": "Although anemia occurred in 64% of the patients, only 16% and 5% of patients experienced grade 3 or 4 events, respectively.",
+      "context_window": "though anemia occurred in 64% of the patients, only 16% and 5% of patients experienced grade 3 or 4 events, respectively.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1902",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1902,
+      "sentence": "It is important to note that a large portion of the study population had abnormal hematologic values at baseline, including grades 1-2 decreased hemoglobin in 52% of patients.",
+      "context_window": "s at baseline, including grades 1-2 decreased hemoglobin in 52% of patients. Many patients also had abnormal biochemistry v",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1994",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1994,
+      "sentence": "Many patients also had abnormal biochemistry values at baseline, including 44% with increased triglycerides (grades 1-2) and 28% with increased glucose (grades 1-2).",
+      "context_window": "lso had abnormal biochemistry values at baseline, including 44% with increased triglycerides (grades 1-2) and 28% with incr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2044",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2044,
+      "sentence": "Many patients also had abnormal biochemistry values at baseline, including 44% with increased triglycerides (grades 1-2) and 28% with increased glucose (grades 1-2).",
+      "context_window": "including 44% with increased triglycerides (grades 1-2) and 28% with increased glucose (grades 1-2). Non-infectious pneumon",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2196",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2196,
+      "sentence": "Non-infectious pneumonitis events (interstitial lung disease, pneumonitis, and pulmonary fibrosis) occurred in 31% of patients in this study.",
+      "context_window": "g disease, pneumonitis, and pulmonary fibrosis) occurred in 31% of patients in this study. Although this percentage was hig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2345",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2345,
+      "sentence": "Although this percentage was higher than in the overall RECORD-1 population based on blinded investigator assessment (14%) [ 10 ], it was similar to the incidence reported based on prospective, blinded independent review of CT scans from patients in the RECORD-1 trial in whom a diagnosis of clinical pneumonitis was not made but who experienced radiographic changes while receiving everolimus (38.9%) [ 31 ].",
+      "context_window": "CORD-1 population based on blinded investigator assessment (14%) [ 10 ], it was similar to the incidence reported based on",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2622",
+      "claim_type": "percentage",
+      "raw_text": "38.9%",
+      "numeric_values": [
+        38.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2622,
+      "sentence": "Although this percentage was higher than in the overall RECORD-1 population based on blinded investigator assessment (14%) [ 10 ], it was similar to the incidence reported based on prospective, blinded independent review of CT scans from patients in the RECORD-1 trial in whom a diagnosis of clinical pneumonitis was not made but who experienced radiographic changes while receiving everolimus (38.9%) [ 31 ].",
+      "context_window": "xperienced radiographic changes while receiving everolimus (38.9%) [ 31 ]. Additionally, our results were consistent with the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2779",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2779,
+      "sentence": "Additionally, our results were consistent with the incidence of noninfectious pneumonitis reported in the Japanese subpopulation of RECORD-1 (27%) [ 32 ].",
+      "context_window": "monitis reported in the Japanese subpopulation of RECORD-1 (27%) [ 32 ]. In the current study, most pulmonary events were g",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2860",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2860,
+      "sentence": "In the current study, most pulmonary events were grade 1 or 2; only 6% of patients experienced a grade 3 pulmonary event.",
+      "context_window": "urrent study, most pulmonary events were grade 1 or 2; only 6% of patients experienced a grade 3 pulmonary event. In the o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-2953",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2953,
+      "sentence": "In the overall population of RECORD-1, 4% of patients experienced a grade 3 pulmonary event and there were no grade 4 events; in the Japanese subpopulation of RECORD-1 there were no grade 3 events [ 10 , 32 ].",
+      "context_window": "e 3 pulmonary event. In the overall population of RECORD-1, 4% of patients experienced a grade 3 pulmonary event and there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3261",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3261,
+      "sentence": "The confirmed objective tumor response rate (all PRs) was 5% in this study versus 1.8% in RECORD-1 [ 10 ].",
+      "context_window": ". The confirmed objective tumor response rate (all PRs) was 5% in this study versus 1.8% in RECORD-1 [ 10 ]. DCR was 66%,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3285",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3285,
+      "sentence": "The confirmed objective tumor response rate (all PRs) was 5% in this study versus 1.8% in RECORD-1 [ 10 ].",
+      "context_window": "e tumor response rate (all PRs) was 5% in this study versus 1.8% in RECORD-1 [ 10 ]. DCR was 66%, which was also comparable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3318",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3318,
+      "sentence": "DCR was 66%, which was also comparable to the 69% of patients who achieved PR or SD in RECORD-1.",
+      "context_window": "as 5% in this study versus 1.8% in RECORD-1 [ 10 ]. DCR was 66%, which was also comparable to the 69% of patients who achie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-3356",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3356,
+      "sentence": "DCR was 66%, which was also comparable to the 69% of patients who achieved PR or SD in RECORD-1.",
+      "context_window": "ORD-1 [ 10 ]. DCR was 66%, which was also comparable to the 69% of patients who achieved PR or SD in RECORD-1. In RECORD-1,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3431",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3431,
+      "sentence": "In RECORD-1, everolimus 10 mg daily provided clinical benefit to patients with mRCC whose disease had progressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001).",
+      "context_window": "who achieved PR or SD in RECORD-1. In RECORD-1, everolimus 10 mg daily provided clinical benefit to patients with mRCC whose",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3559",
+      "claim_type": "unit_value",
+      "raw_text": "4.9 months",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3559,
+      "sentence": "In RECORD-1, everolimus 10 mg daily provided clinical benefit to patients with mRCC whose disease had progressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001).",
+      "context_window": "sease had progressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001). In compariso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3573",
+      "claim_type": "unit_value",
+      "raw_text": "1.9 months",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3573,
+      "sentence": "In RECORD-1, everolimus 10 mg daily provided clinical benefit to patients with mRCC whose disease had progressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001).",
+      "context_window": "ressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001). In comparison, the median",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-p-3606",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3606,
+      "sentence": "In RECORD-1, everolimus 10 mg daily provided clinical benefit to patients with mRCC whose disease had progressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001).",
+      "context_window": "(median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001). In comparison, the median PFS associated with everolimus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-3764",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 months",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3764,
+      "sentence": "In comparison, the median PFS associated with everolimus in Chinese patients refractory to previous VEGFr-TKI therapy in this single-arm study was 6.9 months.",
+      "context_window": "to previous VEGFr-TKI therapy in this single-arm study was 6.9 months.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

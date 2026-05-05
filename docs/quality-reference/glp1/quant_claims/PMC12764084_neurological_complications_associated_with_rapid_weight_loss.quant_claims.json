@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMC12764084_neurological_complications_associated_with_rapid_weight_loss",
+  "doi": "10.1186/s12883-025-04540-7",
+  "extracted_at": "2026-05-05T21:26:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12764084_neurological_complications_associated_with_rapid_weight_loss-pct-3855",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3855,
+      "sentence": "Notably, a substantial reduction in HbA1c exceeding 4% points within a 3-month timeframe is associated with a significantly elevated (80%) absolute risk of developing TIND [ 5 ].",
+      "context_window": "r TIND. Notably, a substantial reduction in HbA1c exceeding 4% points within a 3-month timeframe is associated with a sign",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12764084_neurological_complications_associated_with_rapid_weight_loss-pct-3937",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3937,
+      "sentence": "Notably, a substantial reduction in HbA1c exceeding 4% points within a 3-month timeframe is associated with a significantly elevated (80%) absolute risk of developing TIND [ 5 ].",
+      "context_window": "onth timeframe is associated with a significantly elevated (80%) absolute risk of developing TIND [ 5 ]. GLP-1 receptor ago",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12764084_neurological_complications_associated_with_rapid_weight_loss-pct-4811",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4811,
+      "sentence": "Recent literature has associated the use of GLP-1 receptor agonists with an increased likelihood of developing diabetic lumbosacral radiculoplexus neuropathy (DLRPN) and common fibular neuropathy (CFN), with a recently published case-control study on this topic indicating a 51% and 30% increased risk, respectively [ 9 ].",
+      "context_window": "tly published case-control study on this topic indicating a 51% and 30% increased risk, respectively [ 9 ]. This associatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12764084_neurological_complications_associated_with_rapid_weight_loss-pct-4819",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4819,
+      "sentence": "Recent literature has associated the use of GLP-1 receptor agonists with an increased likelihood of developing diabetic lumbosacral radiculoplexus neuropathy (DLRPN) and common fibular neuropathy (CFN), with a recently published case-control study on this topic indicating a 51% and 30% increased risk, respectively [ 9 ].",
+      "context_window": "ished case-control study on this topic indicating a 51% and 30% increased risk, respectively [ 9 ]. This association appear",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1186 @@
+{
+  "paper_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin",
+  "doi": "10.1136/bmj.f2610",
+  "extracted_at": "2026-05-05T21:20:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "hazard_ratio": 8,
+    "percentage": 27,
+    "risk_ratio": 2,
+    "unit_value": 24,
+    "sample_size": 2,
+    "odds_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-963",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 963,
+      "sentence": "Results Compared with pravastatin (the reference drug in all analyses), there was an increased risk of incident diabetes with atorvastatin (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29), rosuvastatin (1.18, 1.10 to 1.26), and simvastatin (1.10, 1.04 to 1.17).",
+      "context_window": "s an increased risk of incident diabetes with atorvastatin (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29), rosuvastatin (1.18,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-991",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 991,
+      "sentence": "Results Compared with pravastatin (the reference drug in all analyses), there was an increased risk of incident diabetes with atorvastatin (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29), rosuvastatin (1.18, 1.10 to 1.26), and simvastatin (1.10, 1.04 to 1.17).",
+      "context_window": "ent diabetes with atorvastatin (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29), rosuvastatin (1.18, 1.10",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-1834",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.01",
+      "numeric_values": [
+        1.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1834,
+      "sentence": "Although similar results were observed when statins were grouped by potency, the risk of incident diabetes associated with use of rosuvastatin became non-significant (adjusted hazard ratio 1.01, 0.94 to 1.09) when dose was taken into account.",
+      "context_window": "associated with use of rosuvastatin became non-significant (adjusted hazard ratio 1.01, 0.94 to 1.09) when dose was taken into account. Conclusio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-474",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 474,
+      "sentence": "2 In the JUPITER (justification for the use of statins in prevention: an intervention trial evaluating rosuvastatin) trial, rosuvastatin was associated with a 27% increased risk of new onset diabetes compared with placebo.",
+      "context_window": "ing rosuvastatin) trial, rosuvastatin was associated with a 27% increased risk of new onset diabetes compared with placebo.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-762",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 762,
+      "sentence": "4 5 6 7 In contrast, the West of Scotland coronary prevention study (WOSCOPS) suggested that patients taking pravastatin faced a 30% lower risk of diabetes compared with placebo (relative risk 0.7, 95% confidence interval 0.5 to 0.99).",
+      "context_window": "WOSCOPS) suggested that patients taking pravastatin faced a 30% lower risk of diabetes compared with placebo (relative risk",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-rr-l-812",
+      "claim_type": "risk_ratio",
+      "raw_text": "relative risk 0.7",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 812,
+      "sentence": "4 5 6 7 In contrast, the West of Scotland coronary prevention study (WOSCOPS) suggested that patients taking pravastatin faced a 30% lower risk of diabetes compared with placebo (relative risk 0.7, 95% confidence interval 0.5 to 0.99).",
+      "context_window": "n faced a 30% lower risk of diabetes compared with placebo (relative risk 0.7, 95% confidence interval 0.5 to 0.99). 8 In light of these",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-831",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 831,
+      "sentence": "4 5 6 7 In contrast, the West of Scotland coronary prevention study (WOSCOPS) suggested that patients taking pravastatin faced a 30% lower risk of diabetes compared with placebo (relative risk 0.7, 95% confidence interval 0.5 to 0.99).",
+      "context_window": "risk of diabetes compared with placebo (relative risk 0.7, 95% confidence interval 0.5 to 0.99). 8 In light of these disc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1506",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1506,
+      "sentence": "22 23 Additionally, validation studies of the administration databases in Ontario have shown that the drug database used in this study has an error rate of <1%.",
+      "context_window": "the drug database used in this study has an error rate of <1%. 24 We identified statin treatment based on prescriptions",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-3380",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3380,
+      "sentence": "The primary outcome was incident diabetes, defined as a diagnosis of diabetes in the Ontario Diabetes Database, which is a validated registry of all Ontarians diagnosed with diabetes (sensitivity and specificity of 86-90% and 92-97%, respectively).",
+      "context_window": "diagnosed with diabetes (sensitivity and specificity of 86-90% and 92-97%, respectively). 19 In a sensitivity analysis, we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-3391",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3391,
+      "sentence": "The primary outcome was incident diabetes, defined as a diagnosis of diabetes in the Ontario Diabetes Database, which is a validated registry of all Ontarians diagnosed with diabetes (sensitivity and specificity of 86-90% and 92-97%, respectively).",
+      "context_window": "with diabetes (sensitivity and specificity of 86-90% and 92-97%, respectively). 19 In a sensitivity analysis, we expanded t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5164",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5164,
+      "sentence": "We developed multivariable models adjusting for age, sex, year of cohort entry, history of cardiac disease and cardiac procedures, Charlson comorbidity index, 27 and history of drug use, including drugs with an impact on glycemic control in the past 12 months.",
+      "context_window": "luding drugs with an impact on glycemic control in the past 12 months. We used adjusted Kaplan-Meier curves to compare the time t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5659",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5659,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5683",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5683,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "ategories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5722",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5722,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5742",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5742,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "\u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5749",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5749,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5773",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5773,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "atin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5808",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5808,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravast",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5906",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5906,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "tatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high pot",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5926",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5926,
+      "sentence": "Doses were stratified into three categories (high dose: atorvastatin \u226580 mg and rosuvastatin \u226540 mg; moderate dose: atorvastatin 20-<80 mg, rosuvastatin 10 mg-<40 mg, and simvastatin \u226580 mg; and low dose: atorvastatin <20 mg, fluvastatin at all doses, lovastatin at all doses, pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin, atorvastatin; moderate potency: simvastatin; low potency: fluvastatin, lovastatin, pravastatin).",
+      "context_window": "pravastatin at all doses, rosuvastatin <10 mg, simvastatin <80 mg) as were the potency analyses (high potency: rosuvastatin,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-9",
+      "claim_type": "unit_value",
+      "raw_text": "14 year",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 9,
+      "sentence": "Over the 14 year study period, we identified 471 250 patients with no history of diabetes who were newly treated with a statin.",
+      "context_window": "Over the 14 year study period, we identified 471 250 patients with no histor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-147",
+      "claim_type": "percentage",
+      "raw_text": "48.3%",
+      "numeric_values": [
+        48.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 147,
+      "sentence": "Of these, 227 994 (48.3%) received a statin for primary prevention, while 243 256 (51.7%) received a statin for secondary prevention.",
+      "context_window": "es who were newly treated with a statin. Of these, 227 994 (48.3%) received a statin for primary prevention, while 243 256 (5",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-211",
+      "claim_type": "percentage",
+      "raw_text": "51.7%",
+      "numeric_values": [
+        51.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 211,
+      "sentence": "Of these, 227 994 (48.3%) received a statin for primary prevention, while 243 256 (51.7%) received a statin for secondary prevention.",
+      "context_window": "%) received a statin for primary prevention, while 243 256 (51.7%) received a statin for secondary prevention. The median age",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-352",
+      "claim_type": "percentage",
+      "raw_text": "54.1%",
+      "numeric_values": [
+        54.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 352,
+      "sentence": "The median age at the outset of treatment was 73 (interquartile range 69-78) and 254 915 (54.1%) were women.",
+      "context_window": "f treatment was 73 (interquartile range 69-78) and 254 915 (54.1%) were women. Atorvastatin accounted for more than half of a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-827",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 827,
+      "sentence": "Figures are numbers (percentage) of patients unless stated otherwise\n\n*Standardized mean difference >0.1.\n\n\u2020Based on 5 years before cohort entry.\n\n\u2021Based on 5 years of data from Canadian Institute for Health Information Discharge Abstract Database before cohort entry\n\n\u00a7Defined as \u226580 mg/day (atorvastatin, simvastatin, fluvastatin) or 40 mg/day (lovastatin, pravastatin, rosuvastatin); daily doses: (quantity*strength)/days supplied.",
+      "context_window": "d otherwise *Standardized mean difference >0.1. \u2020Based on 5 years before cohort entry. \u2021Based on 5 years of data from Canadi",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-867",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 867,
+      "sentence": "Figures are numbers (percentage) of patients unless stated otherwise\n\n*Standardized mean difference >0.1.\n\n\u2020Based on 5 years before cohort entry.\n\n\u2021Based on 5 years of data from Canadian Institute for Health Information Discharge Abstract Database before cohort entry\n\n\u00a7Defined as \u226580 mg/day (atorvastatin, simvastatin, fluvastatin) or 40 mg/day (lovastatin, pravastatin, rosuvastatin); daily doses: (quantity*strength)/days supplied.",
+      "context_window": "ce >0.1. \u2020Based on 5 years before cohort entry. \u2021Based on 5 years of data from Canadian Institute for Health Information Disc",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-992",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 992,
+      "sentence": "Figures are numbers (percentage) of patients unless stated otherwise\n\n*Standardized mean difference >0.1.\n\n\u2020Based on 5 years before cohort entry.\n\n\u2021Based on 5 years of data from Canadian Institute for Health Information Discharge Abstract Database before cohort entry\n\n\u00a7Defined as \u226580 mg/day (atorvastatin, simvastatin, fluvastatin) or 40 mg/day (lovastatin, pravastatin, rosuvastatin); daily doses: (quantity*strength)/days supplied.",
+      "context_window": "scharge Abstract Database before cohort entry \u00a7Defined as \u226580 mg/day (atorvastatin, simvastatin, fluvastatin) or 40 mg/day (lova",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-1046",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 1046,
+      "sentence": "Figures are numbers (percentage) of patients unless stated otherwise\n\n*Standardized mean difference >0.1.\n\n\u2020Based on 5 years before cohort entry.\n\n\u2021Based on 5 years of data from Canadian Institute for Health Information Discharge Abstract Database before cohort entry\n\n\u00a7Defined as \u226580 mg/day (atorvastatin, simvastatin, fluvastatin) or 40 mg/day (lovastatin, pravastatin, rosuvastatin); daily doses: (quantity*strength)/days supplied.",
+      "context_window": "d as \u226580 mg/day (atorvastatin, simvastatin, fluvastatin) or 40 mg/day (lovastatin, pravastatin, rosuvastatin); daily doses: (quan",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1881",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1881,
+      "sentence": "After adjustment for known confounders, and compared with patients treated with pravastatin, those treated with atorvastatin faced a 22% increase in the risk of new onset diabetes (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29).",
+      "context_window": "d with pravastatin, those treated with atorvastatin faced a 22% increase in the risk of new onset diabetes (adjusted hazard",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-1929",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1929,
+      "sentence": "After adjustment for known confounders, and compared with patients treated with pravastatin, those treated with atorvastatin faced a 22% increase in the risk of new onset diabetes (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29).",
+      "context_window": "tin faced a 22% increase in the risk of new onset diabetes (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29). We also observed a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1957",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1957,
+      "sentence": "After adjustment for known confounders, and compared with patients treated with pravastatin, those treated with atorvastatin faced a 22% increase in the risk of new onset diabetes (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29).",
+      "context_window": "the risk of new onset diabetes (adjusted hazard ratio 1.22, 95% confidence interval 1.15 to 1.29). We also observed a signi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-3687",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.20",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3687,
+      "sentence": "Relative to pravastatin, treatment with atorvastatin (adjusted hazard ratio 1.20, 95% confidence interval 1.10 to 1.30), rosuvastatin (1.12, 1.02 to 1.23), or simvastatin (1.12, 1.02 to 1.23) was associated with a significantly increased risk of new onset diabetes in the primary prevention cohort, while no increased risk was observed for patients treated with lovastatin (0.98, 0.79 to 1.22) or fluvastatin (1.01, 0.82 to 1.23).",
+      "context_window": "tion. Relative to pravastatin, treatment with atorvastatin (adjusted hazard ratio 1.20, 95% confidence interval 1.10 to 1.30), rosuvastatin (1.12,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-3715",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3715,
+      "sentence": "Relative to pravastatin, treatment with atorvastatin (adjusted hazard ratio 1.20, 95% confidence interval 1.10 to 1.30), rosuvastatin (1.12, 1.02 to 1.23), or simvastatin (1.12, 1.02 to 1.23) was associated with a significantly increased risk of new onset diabetes in the primary prevention cohort, while no increased risk was observed for patients treated with lovastatin (0.98, 0.79 to 1.22) or fluvastatin (1.01, 0.82 to 1.23).",
+      "context_window": "n, treatment with atorvastatin (adjusted hazard ratio 1.20, 95% confidence interval 1.10 to 1.30), rosuvastatin (1.12, 1.02",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-4164",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4164,
+      "sentence": "Overall, moderate (adjusted hazard ratio 1.22, 95% confidence interval 1.19 to 1.26) and high doses (1.30, 1.20 to 1.40) were associated with an increased risk of incident diabetes compared with low doses of statins (table 5 ).",
+      "context_window": "secondary prevention users (table 3 ). Overall, moderate (adjusted hazard ratio 1.22, 95% confidence interval 1.19 to 1.26) and high doses (1.30",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-4192",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4192,
+      "sentence": "Overall, moderate (adjusted hazard ratio 1.22, 95% confidence interval 1.19 to 1.26) and high doses (1.30, 1.20 to 1.40) were associated with an increased risk of incident diabetes compared with low doses of statins (table 5 ).",
+      "context_window": "(table 3 ). Overall, moderate (adjusted hazard ratio 1.22, 95% confidence interval 1.19 to 1.26) and high doses (1.30, 1.2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-4934",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4934,
+      "sentence": "When we considered potency, our findings were consistent with our primary analyses (high potency statins (rosuvastatin, atorvastatin) adjusted hazard ratio 1.22, 1.15 to 1.29; moderate potency statins (simvastatin) 1.11, 1.04 to 1.18; low potency statins (fluvastatin, lovastatin) 0.97, 0.87 to 1.09; table 6 ).",
+      "context_window": "analyses (high potency statins (rosuvastatin, atorvastatin) adjusted hazard ratio 1.22, 1.15 to 1.29; moderate potency statins (simvastatin) 1.11,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-5264",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5264,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "nd dose in new users of statins. Figures are hazard ratios (95% confidence intervals) *Adjusted for age, sex, year of coho",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5555",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5555,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "blocker, \u03b2 blocker, hormones and analogues. \u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5644",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5644,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg. \u2021Atorvastatin 20-<80 mg, rosuvastatin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5664",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5664,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "s, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg. \u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvasta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5690",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5690,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "rosuvastatin <10 mg, simvastatin <80 mg. \u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg. \u00a7Atorvastatin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5714",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5714,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "vastatin <80 mg. \u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg. \u00a7Atorvastatin \u226580 mg, rosuvastatin \u22654",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5736",
+      "claim_type": "unit_value",
+      "raw_text": "0mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5736,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "rvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg. \u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg. Analysis of p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5757",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5757,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "rosuvastatin 10-<40 mg, simvastatin \u22658 0mg. \u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg. Analysis of primary outcome of diagn",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-5778",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5778,
+      "sentence": "Figures are hazard ratios (95% confidence intervals)\n\n*Adjusted for age, sex, year of cohort entry, recent acute coronary syndrome, chronic coronary artery disease, Charlson score, and previous use of diuretic (thiazide), nitroglycerin, angiotensin receptor blocker, \u03b2 blocker, hormones and analogues.\n\n\u2020Atorvastatin <20 mg, fluvastatin all doses, lovastatin all doses, pravastatin all doses, rosuvastatin <10 mg, simvastatin <80 mg.\n\n\u2021Atorvastatin 20-<80 mg, rosuvastatin 10-<40 mg, simvastatin \u22658 0mg.\n\n\u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg.",
+      "context_window": "g, simvastatin \u22658 0mg. \u00a7Atorvastatin \u226580 mg, rosuvastatin \u226540 mg. Analysis of primary outcome of diagnosis of diabetes in O",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-483",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 483,
+      "sentence": "Overall, we observed a 10-22% increased risk of diabetes for some statins that is consistent with findings from previously published meta-analyses of clinical trials.",
+      "context_window": "primary or secondary prevention. Overall, we observed a 10-22% increased risk of diabetes for some statins that is consist",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-n-939",
+      "claim_type": "sample_size",
+      "raw_text": "n=57",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 939,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": ". 3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interv",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-957",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 957,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "alysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23)",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-rr-l-962",
+      "claim_type": "risk_ratio",
+      "raw_text": "relative risk 1.13",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 962,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "s of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-982",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 982,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "ntrolled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of di",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-u-1115",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 years",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1115,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-n-1201",
+      "claim_type": "sample_size",
+      "raw_text": "n=91",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1201,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1221",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1221,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "alysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) inc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-or-l-1225",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 1.09",
+      "numeric_values": [
+        1.09
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1225,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "is of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1242",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1242,
+      "sentence": "3 In 2009, an analysis of five placebo controlled trials (n=57 593) found a 13% (relative risk 1.13, 95% confidence interval 1.03 to 1.23) increased incidence of diabetes in people taking statins compared with placebo over an average 3.9 years of follow-up, 9 with a subsequent analysis of 13 placebo controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of diabetes over four years of follow-up.",
+      "context_window": "controlled trials (n=91 140) showing a 9% (odds ratio 1.09, 95% confidence interval 1.02 to 1.17) increased incidence of di",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-or-l-1520",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 1.12",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1520,
+      "sentence": "10 More recently, two meta-analyses have suggested a dose dependent effect for patients receiving high dose atorvastatin or simvastatin treatment versus moderate dose treatment (odds ratio 1.12, 95% confidence interval 1.04 to 1.22) and when considering only atorvastatin trials.",
+      "context_window": "in or simvastatin treatment versus moderate dose treatment (odds ratio 1.12, 95% confidence interval 1.04 to 1.22) and when considering",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1537",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1537,
+      "sentence": "10 More recently, two meta-analyses have suggested a dose dependent effect for patients receiving high dose atorvastatin or simvastatin treatment versus moderate dose treatment (odds ratio 1.12, 95% confidence interval 1.04 to 1.22) and when considering only atorvastatin trials.",
+      "context_window": "treatment versus moderate dose treatment (odds ratio 1.12, 95% confidence interval 1.04 to 1.22) and when considering only",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1720",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1720,
+      "sentence": "11 12 Our results differ from those of the Women\u2019s Health Initiative study, which showed a nearly 50% increase in new onset diabetes with statins compared with placebo (hazard ratio 1.48, 95% confidence interval 1.38 to 1.59), with no differential risk among low potency (fluvastatin, lovastatin, pravastatin) and high potency (simvastatin, atorvastatin) statins.",
+      "context_window": "the Women\u2019s Health Initiative study, which showed a nearly 50% increase in new onset diabetes with statins compared with p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-1791",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.48",
+      "numeric_values": [
+        1.48
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1791,
+      "sentence": "11 12 Our results differ from those of the Women\u2019s Health Initiative study, which showed a nearly 50% increase in new onset diabetes with statins compared with placebo (hazard ratio 1.48, 95% confidence interval 1.38 to 1.59), with no differential risk among low potency (fluvastatin, lovastatin, pravastatin) and high potency (simvastatin, atorvastatin) statins.",
+      "context_window": "e in new onset diabetes with statins compared with placebo (hazard ratio 1.48, 95% confidence interval 1.38 to 1.59), with no differentia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-1810",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1810,
+      "sentence": "11 12 Our results differ from those of the Women\u2019s Health Initiative study, which showed a nearly 50% increase in new onset diabetes with statins compared with placebo (hazard ratio 1.48, 95% confidence interval 1.38 to 1.59), with no differential risk among low potency (fluvastatin, lovastatin, pravastatin) and high potency (simvastatin, atorvastatin) statins.",
+      "context_window": "etes with statins compared with placebo (hazard ratio 1.48, 95% confidence interval 1.38 to 1.59), with no differential ris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-hr-l-2127",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.25",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2127,
+      "sentence": "14 Our findings, however, are consistent with the findings of Zaharan and colleagues in 2012, who found an increased risk with atorvastatin (hazard ratio 1.25, 1.21 to 1.28), rosuvastatin (1.42, 1.33 to 1.52), and simvastatin (1.14, 1.06 to 1.23).",
+      "context_window": "ues in 2012, who found an increased risk with atorvastatin (hazard ratio 1.25, 1.21 to 1.28), rosuvastatin (1.42, 1.33 to 1.52), and simv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-4258",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4258,
+      "sentence": "The ODD, however, has been shown to be both sensitive (86-90%) and specific (92-97%).",
+      "context_window": ". The ODD, however, has been shown to be both sensitive (86-90%) and specific (92-97%). 19 Furthermore, we had no data on m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-4280",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4280,
+      "sentence": "The ODD, however, has been shown to be both sensitive (86-90%) and specific (92-97%).",
+      "context_window": "s been shown to be both sensitive (86-90%) and specific (92-97%). 19 Furthermore, we had no data on marketing or promotiona",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-619",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 619,
+      "sentence": "The ODD, however, has been shown to be both sensitive (86-90%) and specific (92-97%).",
+      "context_window": ". The ODD, however, has been shown to be both sensitive (86-90%) and specific (92-97%). 19 Furthermore, we had no data on m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3662830_risk_of_incident_diabetes_among_patients_treated_with_statin-pct-641",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 641,
+      "sentence": "The ODD, however, has been shown to be both sensitive (86-90%) and specific (92-97%).",
+      "context_window": "s been shown to be both sensitive (86-90%) and specific (92-97%). 19 Furthermore, we had no data on marketing or promotiona",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

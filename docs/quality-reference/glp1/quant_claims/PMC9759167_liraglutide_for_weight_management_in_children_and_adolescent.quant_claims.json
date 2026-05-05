@@ -1,0 +1,1562 @@
+{
+  "paper_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent",
+  "doi": "10.1210/clinem/dgac549",
+  "extracted_at": "2026-05-05T21:26:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 50,
+    "percentage": 30,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-n-415",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 415,
+      "sentence": "Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity were included.",
+      "context_window": "ed trial with a 16-week double-blinded period. Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-431",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 431,
+      "sentence": "Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity were included.",
+      "context_window": "16-week double-blinded period. Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; T",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-n-473",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 473,
+      "sentence": "Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity were included.",
+      "context_window": "(n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity wer",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-488",
+      "claim_type": "unit_value",
+      "raw_text": "11 years",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 488,
+      "sentence": "Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity were included.",
+      "context_window": "12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity were included. Patie",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-595",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 595,
+      "sentence": "Patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or placebo for 16 weeks, after which placebo was stopped.",
+      "context_window": "were included. Patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or placebo for 16 weeks, after",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-645",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 645,
+      "sentence": "Patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or placebo for 16 weeks, after which placebo was stopped.",
+      "context_window": "raglutide 3.0 mg (or maximum-tolerated dose) or placebo for 16 weeks, after which placebo was stopped. Liraglutide was continued",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-718",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 718,
+      "sentence": "Liraglutide was continued for 52 weeks.",
+      "context_window": "er which placebo was stopped. Liraglutide was continued for 52 weeks. All patients followed a structured diet and exercise progr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-927",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 927,
+      "sentence": "The coprimary endpoints were change in body mass index (BMI) standard deviation score (SDS) from baseline to 16 and 52 weeks.",
+      "context_window": "BMI) standard deviation score (SDS) from baseline to 16 and 52 weeks. Secondary endpoints included other weight-related paramete",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1289",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1289,
+      "sentence": "Male or female adolescents aged \u226512 to <18 years with pubertal development Tanner stage 2-5 and children aged \u22656 to <12 years with Tanner stage <2 (premature adrenarche permitted) with genetically confirmed PWS were eligible for inclusion if they met the following criteria: obesity, defined as BMI corresponding to \u226530 kg/m 2 for adults by international cut-off points ( 14 ) and \u226595th percentile for age and sex; and stable body weight, defined as a self-reported weight change of <10 kg during the 90 days before screening.",
+      "context_window": "on of the authors. Male or female adolescents aged \u226512 to <18 years with pubertal development Tanner stage 2-5 and children age",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1366",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1366,
+      "sentence": "Male or female adolescents aged \u226512 to <18 years with pubertal development Tanner stage 2-5 and children aged \u22656 to <12 years with Tanner stage <2 (premature adrenarche permitted) with genetically confirmed PWS were eligible for inclusion if they met the following criteria: obesity, defined as BMI corresponding to \u226530 kg/m 2 for adults by international cut-off points ( 14 ) and \u226595th percentile for age and sex; and stable body weight, defined as a self-reported weight change of <10 kg during the 90 days before screening.",
+      "context_window": "ertal development Tanner stage 2-5 and children aged \u22656 to <12 years with Tanner stage <2 (premature adrenarche permitted) with",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1566",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1566,
+      "sentence": "Male or female adolescents aged \u226512 to <18 years with pubertal development Tanner stage 2-5 and children aged \u22656 to <12 years with Tanner stage <2 (premature adrenarche permitted) with genetically confirmed PWS were eligible for inclusion if they met the following criteria: obesity, defined as BMI corresponding to \u226530 kg/m 2 for adults by international cut-off points ( 14 ) and \u226595th percentile for age and sex; and stable body weight, defined as a self-reported weight change of <10 kg during the 90 days before screening.",
+      "context_window": "llowing criteria: obesity, defined as BMI corresponding to \u226530 kg/m 2 for adults by international cut-off points ( 14 ) and \u2265",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1733",
+      "claim_type": "unit_value",
+      "raw_text": "10 kg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1733,
+      "sentence": "Male or female adolescents aged \u226512 to <18 years with pubertal development Tanner stage 2-5 and children aged \u22656 to <12 years with Tanner stage <2 (premature adrenarche permitted) with genetically confirmed PWS were eligible for inclusion if they met the following criteria: obesity, defined as BMI corresponding to \u226530 kg/m 2 for adults by international cut-off points ( 14 ) and \u226595th percentile for age and sex; and stable body weight, defined as a self-reported weight change of <10 kg during the 90 days before screening.",
+      "context_window": "e body weight, defined as a self-reported weight change of <10 kg during the 90 days before screening. Key exclusion criteria",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1750",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1750,
+      "sentence": "Male or female adolescents aged \u226512 to <18 years with pubertal development Tanner stage 2-5 and children aged \u22656 to <12 years with Tanner stage <2 (premature adrenarche permitted) with genetically confirmed PWS were eligible for inclusion if they met the following criteria: obesity, defined as BMI corresponding to \u226530 kg/m 2 for adults by international cut-off points ( 14 ) and \u226595th percentile for age and sex; and stable body weight, defined as a self-reported weight change of <10 kg during the 90 days before screening.",
+      "context_window": "fined as a self-reported weight change of <10 kg during the 90 days before screening. Key exclusion criteria included diagnosis",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-2718",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2718,
+      "sentence": "Patients and investigators were blinded to the assigned study treatment for the first 16 weeks of treatment.",
+      "context_window": "were blinded to the assigned study treatment for the first 16 weeks of treatment. Treatment allocation was unblinded after week",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-2958",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2958,
+      "sentence": "Within 2 weeks of screening, patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or matched placebo for the initial 16 weeks (double-blind period).",
+      "context_window": "the goal of achieving weight loss during the trial. Within 2 weeks of screening, patients were randomized 2:1 to liraglutide 3",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3024",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3024,
+      "sentence": "Within 2 weeks of screening, patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or matched placebo for the initial 16 weeks (double-blind period).",
+      "context_window": "s of screening, patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or matched placebo for the init",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3094",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3094,
+      "sentence": "Within 2 weeks of screening, patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or matched placebo for the initial 16 weeks (double-blind period).",
+      "context_window": "maximum-tolerated dose) or matched placebo for the initial 16 weeks (double-blind period). From weeks 17 to 52, patients assign",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3493",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 mg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3493,
+      "sentence": "Liraglutide was initiated at 0.6 mg and escalated in weekly increments of 0.6 mg until the target or maximum-tolerated dose was achieved.",
+      "context_window": "abdomen, thigh, or upper arm. Liraglutide was initiated at 0.6 mg and escalated in weekly increments of 0.6 mg until the targ",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3538",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 mg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3538,
+      "sentence": "Liraglutide was initiated at 0.6 mg and escalated in weekly increments of 0.6 mg until the target or maximum-tolerated dose was achieved.",
+      "context_window": "s initiated at 0.6 mg and escalated in weekly increments of 0.6 mg until the target or maximum-tolerated dose was achieved. Fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3628",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3628,
+      "sentence": "For children (aged \u22656 to <12 years) with body weight <45 kg, liraglutide was initiated at 0.3 mg up to a maximum dose of 2.4 mg as a precautionary measure due to the difficulty in relying on symptomology to assess tolerability in children with PWS.",
+      "context_window": "imum-tolerated dose was achieved. For children (aged \u22656 to <12 years) with body weight <45 kg, liraglutide was initiated at 0.3",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3656",
+      "claim_type": "unit_value",
+      "raw_text": "45 kg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3656,
+      "sentence": "For children (aged \u22656 to <12 years) with body weight <45 kg, liraglutide was initiated at 0.3 mg up to a maximum dose of 2.4 mg as a precautionary measure due to the difficulty in relying on symptomology to assess tolerability in children with PWS.",
+      "context_window": "eved. For children (aged \u22656 to <12 years) with body weight <45 kg, liraglutide was initiated at 0.3 mg up to a maximum dose o",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3692",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 mg",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3692,
+      "sentence": "For children (aged \u22656 to <12 years) with body weight <45 kg, liraglutide was initiated at 0.3 mg up to a maximum dose of 2.4 mg as a precautionary measure due to the difficulty in relying on symptomology to assess tolerability in children with PWS.",
+      "context_window": "ears) with body weight <45 kg, liraglutide was initiated at 0.3 mg up to a maximum dose of 2.4 mg as a precautionary measure d",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3723",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3723,
+      "sentence": "For children (aged \u22656 to <12 years) with body weight <45 kg, liraglutide was initiated at 0.3 mg up to a maximum dose of 2.4 mg as a precautionary measure due to the difficulty in relying on symptomology to assess tolerability in children with PWS.",
+      "context_window": "liraglutide was initiated at 0.3 mg up to a maximum dose of 2.4 mg as a precautionary measure due to the difficulty in relying",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3956",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3956,
+      "sentence": "The coprimary efficacy endpoints were change in BMI standard deviation score (BMI SDS) from baseline to 16 weeks and to 52 weeks.",
+      "context_window": "in BMI standard deviation score (BMI SDS) from baseline to 16 weeks and to 52 weeks. BMI SDS is a measure of the number of SDs",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-3972",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3972,
+      "sentence": "The coprimary efficacy endpoints were change in BMI standard deviation score (BMI SDS) from baseline to 16 weeks and to 52 weeks.",
+      "context_window": "deviation score (BMI SDS) from baseline to 16 weeks and to 52 weeks. BMI SDS is a measure of the number of SDs from the populat",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-4161",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4161,
+      "sentence": "Key supportive secondary endpoints included the proportion of patients achieving \u22655% and \u226510% reduction in baseline BMI at weeks 16 and 52; proportion of patients with no increase in baseline BMI SDS at weeks 16 and 52; changes from baseline to week 16 and week 52 in BMI, body weight (%, kg), waist circumference, waist-to-hip circumference ratio, hyperphagia score (total score, hyperphagic behavior, drive, and severity scores, assessed using Dykens original 13-item questionnaire ( 15 )), high sensitivity C-reactive protein, fasting lipids (total cholesterol, low-density lipoprotein cholesterol, high-density lipoprotein [HDL] cholesterol, non-HDL cholesterol, very-low-density lipoprotein cholesterol, triglycerides, and free fatty acids), systolic and diastolic blood pressure, and glucose metabolism parameters (glycated hemoglobin, fasting plasma glucose, fasting insulin, fasting C-peptide, glycemic category, homeostasis model assessment of beta-cell function, and insulin resistance parameters).",
+      "context_window": "ry endpoints included the proportion of patients achieving \u22655% and \u226510% reduction in baseline BMI at weeks 16 and 52; prop",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-4169",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4169,
+      "sentence": "Key supportive secondary endpoints included the proportion of patients achieving \u22655% and \u226510% reduction in baseline BMI at weeks 16 and 52; proportion of patients with no increase in baseline BMI SDS at weeks 16 and 52; changes from baseline to week 16 and week 52 in BMI, body weight (%, kg), waist circumference, waist-to-hip circumference ratio, hyperphagia score (total score, hyperphagic behavior, drive, and severity scores, assessed using Dykens original 13-item questionnaire ( 15 )), high sensitivity C-reactive protein, fasting lipids (total cholesterol, low-density lipoprotein cholesterol, high-density lipoprotein [HDL] cholesterol, non-HDL cholesterol, very-low-density lipoprotein cholesterol, triglycerides, and free fatty acids), systolic and diastolic blood pressure, and glucose metabolism parameters (glycated hemoglobin, fasting plasma glucose, fasting insulin, fasting C-peptide, glycemic category, homeostasis model assessment of beta-cell function, and insulin resistance parameters).",
+      "context_window": "ints included the proportion of patients achieving \u22655% and \u226510% reduction in baseline BMI at weeks 16 and 52; proportion of",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-5308",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5308,
+      "sentence": "Mental health was assessed in adolescents (aged \u226512 to <18 years) using the Columbia-Suicide Severity Rating Score questionnaire and the Patient Health Questionnaire-9 (PHQ-9).",
+      "context_window": "2). Mental health was assessed in adolescents (aged \u226512 to <18 years) using the Columbia-Suicide Severity Rating Score questionn",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-5672",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5672,
+      "sentence": "For the first coprimary endpoint, a sample size of 57 patients was determined to provide the trial with a power of 80% to demonstrate a significant treatment difference between liraglutide and placebo of -0.23 (corresponding to a 5-6% decrease in BMI), with a SD of 0.25 and a withdrawal rate of 10% at week 16.",
+      "context_window": "atients was determined to provide the trial with a power of 80% to demonstrate a significant treatment difference between l",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-5789",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5789,
+      "sentence": "For the first coprimary endpoint, a sample size of 57 patients was determined to provide the trial with a power of 80% to demonstrate a significant treatment difference between liraglutide and placebo of -0.23 (corresponding to a 5-6% decrease in BMI), with a SD of 0.25 and a withdrawal rate of 10% at week 16.",
+      "context_window": "ween liraglutide and placebo of -0.23 (corresponding to a 5-6% decrease in BMI), with a SD of 0.25 and a withdrawal rate o",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-5853",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5853,
+      "sentence": "For the first coprimary endpoint, a sample size of 57 patients was determined to provide the trial with a power of 80% to demonstrate a significant treatment difference between liraglutide and placebo of -0.23 (corresponding to a 5-6% decrease in BMI), with a SD of 0.25 and a withdrawal rate of 10% at week 16.",
+      "context_window": "ecrease in BMI), with a SD of 0.25 and a withdrawal rate of 10% at week 16. All randomized patients who received at least",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-6624",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 6624,
+      "sentence": "The superiority of liraglutide vs placebo was assessed in hierarchical order starting at 16 weeks before testing superiority at 52 weeks, with superiority at a significance level of 5%.",
+      "context_window": "e vs placebo was assessed in hierarchical order starting at 16 weeks before testing superiority at 52 weeks, with superiority at",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-6663",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 6663,
+      "sentence": "The superiority of liraglutide vs placebo was assessed in hierarchical order starting at 16 weeks before testing superiority at 52 weeks, with superiority at a significance level of 5%.",
+      "context_window": "al order starting at 16 weeks before testing superiority at 52 weeks, with superiority at a significance level of 5%. For the se",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-6717",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6717,
+      "sentence": "The superiority of liraglutide vs placebo was assessed in hierarchical order starting at 16 weeks before testing superiority at 52 weeks, with superiority at a significance level of 5%.",
+      "context_window": "ty at 52 weeks, with superiority at a significance level of 5%. For the secondary endpoints, comparisons were not adjusted",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-6900",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6900,
+      "sentence": "Hypothesis testing was 2-sided, and data are presented as estimated treatment differences (ETDs) with 95% CIs.",
+      "context_window": "re presented as estimated treatment differences (ETDs) with 95% CIs. Missing data were handled by a jump-to-reference multi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-347",
+      "claim_type": "percentage",
+      "raw_text": "94.7%",
+      "numeric_values": [
+        94.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 347,
+      "sentence": "In patients randomized to liraglutide, 94.7% of adolescents and 58.8% of children reached the target dose of 3.0 mg.",
+      "context_window": "f postbaseline data. In patients randomized to liraglutide, 94.7% of adolescents and 58.8% of children reached the target dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-372",
+      "claim_type": "percentage",
+      "raw_text": "58.8%",
+      "numeric_values": [
+        58.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 372,
+      "sentence": "In patients randomized to liraglutide, 94.7% of adolescents and 58.8% of children reached the target dose of 3.0 mg.",
+      "context_window": "atients randomized to liraglutide, 94.7% of adolescents and 58.8% of children reached the target dose of 3.0 mg. Of those ran",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-417",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 417,
+      "sentence": "In patients randomized to liraglutide, 94.7% of adolescents and 58.8% of children reached the target dose of 3.0 mg.",
+      "context_window": "dolescents and 58.8% of children reached the target dose of 3.0 mg. Of those randomized to placebo, 91.7% of adolescents and 7",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-457",
+      "claim_type": "percentage",
+      "raw_text": "91.7%",
+      "numeric_values": [
+        91.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 457,
+      "sentence": "Of those randomized to placebo, 91.7% of adolescents and 71.4% of children reached a target dose of 3.0 mg.",
+      "context_window": "the target dose of 3.0 mg. Of those randomized to placebo, 91.7% of adolescents and 71.4% of children reached a target dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-482",
+      "claim_type": "percentage",
+      "raw_text": "71.4%",
+      "numeric_values": [
+        71.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 482,
+      "sentence": "Of those randomized to placebo, 91.7% of adolescents and 71.4% of children reached a target dose of 3.0 mg.",
+      "context_window": "g. Of those randomized to placebo, 91.7% of adolescents and 71.4% of children reached a target dose of 3.0 mg. Seven children",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-525",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 525,
+      "sentence": "Of those randomized to placebo, 91.7% of adolescents and 71.4% of children reached a target dose of 3.0 mg.",
+      "context_window": "adolescents and 71.4% of children reached a target dose of 3.0 mg. Seven children (5 randomized to liraglutide and 2 randomiz",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-628",
+      "claim_type": "unit_value",
+      "raw_text": "45 kg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 628,
+      "sentence": "Seven children (5 randomized to liraglutide and 2 randomized to placebo) had body weight below 45 kg, and those randomized to liraglutide received liraglutide at the target dose of 2.4 mg (Table S1 ( 13 )).",
+      "context_window": "aglutide and 2 randomized to placebo) had body weight below 45 kg, and those randomized to liraglutide received liraglutide a",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-714",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 714,
+      "sentence": "Seven children (5 randomized to liraglutide and 2 randomized to placebo) had body weight below 45 kg, and those randomized to liraglutide received liraglutide at the target dose of 2.4 mg (Table S1 ( 13 )).",
+      "context_window": "d to liraglutide received liraglutide at the target dose of 2.4 mg (Table S1 ( 13 )). Most baseline patient characteristics we",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-936",
+      "claim_type": "percentage",
+      "raw_text": "52.6%",
+      "numeric_values": [
+        52.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 936,
+      "sentence": "In adolescents randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg).",
+      "context_window": "noted. In adolescents randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 k",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-958",
+      "claim_type": "percentage",
+      "raw_text": "41.7%",
+      "numeric_values": [
+        41.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 958,
+      "sentence": "In adolescents randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg).",
+      "context_window": "randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weig",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-979",
+      "claim_type": "unit_value",
+      "raw_text": "36.3 kg",
+      "numeric_values": [
+        36.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 979,
+      "sentence": "In adolescents randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg).",
+      "context_window": "tide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-995",
+      "claim_type": "unit_value",
+      "raw_text": "40.2 kg",
+      "numeric_values": [
+        40.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 995,
+      "sentence": "In adolescents randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg).",
+      "context_window": "52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg). In childr",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1030",
+      "claim_type": "unit_value",
+      "raw_text": "90.1 kg",
+      "numeric_values": [
+        90.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1030,
+      "sentence": "In adolescents randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg).",
+      "context_window": "BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg). In children randomized to liraglutide vs pla",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1042",
+      "claim_type": "unit_value",
+      "raw_text": "102.0 kg",
+      "numeric_values": [
+        102.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1042,
+      "sentence": "In adolescents randomized to liraglutide vs placebo, 52.6% were female (vs 41.7%), mean BMI was 36.3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg).",
+      "context_window": "3 kg/m 2 (vs 40.2 kg/m 2 ), and body weight was 90.1 kg (vs 102.0 kg). In children randomized to liraglutide vs placebo, 64.7% w",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-1103",
+      "claim_type": "percentage",
+      "raw_text": "64.7%",
+      "numeric_values": [
+        64.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1103,
+      "sentence": "In children randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg).",
+      "context_window": "02.0 kg). In children randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 k",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-1125",
+      "claim_type": "percentage",
+      "raw_text": "28.6%",
+      "numeric_values": [
+        28.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1125,
+      "sentence": "In children randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg).",
+      "context_window": "randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weig",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1146",
+      "claim_type": "unit_value",
+      "raw_text": "32.4 kg",
+      "numeric_values": [
+        32.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1146,
+      "sentence": "In children randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg).",
+      "context_window": "tide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1162",
+      "claim_type": "unit_value",
+      "raw_text": "30.3 kg",
+      "numeric_values": [
+        30.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1162,
+      "sentence": "In children randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg).",
+      "context_window": "64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg). Mean BMI S",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1197",
+      "claim_type": "unit_value",
+      "raw_text": "57.1 kg",
+      "numeric_values": [
+        57.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1197,
+      "sentence": "In children randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg).",
+      "context_window": "BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg). Mean BMI SDS was 3.35 in adolescents receivin",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1209",
+      "claim_type": "unit_value",
+      "raw_text": "55.5 kg",
+      "numeric_values": [
+        55.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1209,
+      "sentence": "In children randomized to liraglutide vs placebo, 64.7% were female (vs 28.6%), mean BMI was 32.4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg).",
+      "context_window": "4 kg/m 2 (vs 30.3 kg/m 2 ), and body weight was 57.1 kg (vs 55.5 kg). Mean BMI SDS was 3.35 in adolescents receiving liraglutid",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-1512",
+      "claim_type": "percentage",
+      "raw_text": "42.1%",
+      "numeric_values": [
+        42.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1512,
+      "sentence": "The proportions of adolescents receiving concomitant growth hormone treatment during the study were 42.1% in the liraglutide arm and 50.0% in the placebo arm.",
+      "context_window": "concomitant growth hormone treatment during the study were 42.1% in the liraglutide arm and 50.0% in the placebo arm. The pr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-1545",
+      "claim_type": "percentage",
+      "raw_text": "50.0%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1545,
+      "sentence": "The proportions of adolescents receiving concomitant growth hormone treatment during the study were 42.1% in the liraglutide arm and 50.0% in the placebo arm.",
+      "context_window": "ment during the study were 42.1% in the liraglutide arm and 50.0% in the placebo arm. The proportions of children receiving g",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-1675",
+      "claim_type": "percentage",
+      "raw_text": "47.1%",
+      "numeric_values": [
+        47.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1675,
+      "sentence": "The proportions of children receiving growth hormone treatment in the liraglutide and placebo arms were 47.1% and 57.1%, respectively.",
+      "context_window": "hormone treatment in the liraglutide and placebo arms were 47.1% and 57.1%, respectively. Consolidated standards of reporti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-1685",
+      "claim_type": "percentage",
+      "raw_text": "57.1%",
+      "numeric_values": [
+        57.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1685,
+      "sentence": "The proportions of children receiving growth hormone treatment in the liraglutide and placebo arms were 47.1% and 57.1%, respectively.",
+      "context_window": "reatment in the liraglutide and placebo arms were 47.1% and 57.1%, respectively. Consolidated standards of reporting trials",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-2489",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2489,
+      "sentence": "The superiority of liraglutide was not confirmed for the coprimary endpoints, as no statistically significant differences were observed between liraglutide and placebo/no treatment in BMI SDS from baseline for either adolescents (ETD [95% CI] -0.07 [-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.62, 0.34]; P = .57 at week 52) or children (-0.06 [-1.06, 0.93]; P = .90 at week 16 and -0.07 [-0.89, 0.76]; P = .88 at week 52; Table 2 and Fig.",
+      "context_window": "tment in BMI SDS from baseline for either adolescents (ETD [95% CI] -0.07 [-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.6",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-p-2518",
+      "claim_type": "p_value",
+      "raw_text": "P = .38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2518,
+      "sentence": "The superiority of liraglutide was not confirmed for the coprimary endpoints, as no statistically significant differences were observed between liraglutide and placebo/no treatment in BMI SDS from baseline for either adolescents (ETD [95% CI] -0.07 [-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.62, 0.34]; P = .57 at week 52) or children (-0.06 [-1.06, 0.93]; P = .90 at week 16 and -0.07 [-0.89, 0.76]; P = .88 at week 52; Table 2 and Fig.",
+      "context_window": "e for either adolescents (ETD [95% CI] -0.07 [-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.62, 0.34]; P = .57 at week 52) or",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-p-2562",
+      "claim_type": "p_value",
+      "raw_text": "P = .57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2562,
+      "sentence": "The superiority of liraglutide was not confirmed for the coprimary endpoints, as no statistically significant differences were observed between liraglutide and placebo/no treatment in BMI SDS from baseline for either adolescents (ETD [95% CI] -0.07 [-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.62, 0.34]; P = .57 at week 52) or children (-0.06 [-1.06, 0.93]; P = .90 at week 16 and -0.07 [-0.89, 0.76]; P = .88 at week 52; Table 2 and Fig.",
+      "context_window": "[-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.62, 0.34]; P = .57 at week 52) or children (-0.06 [-1.06, 0.93]; P = .90 at we",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-p-2616",
+      "claim_type": "p_value",
+      "raw_text": "P = .90",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2616,
+      "sentence": "The superiority of liraglutide was not confirmed for the coprimary endpoints, as no statistically significant differences were observed between liraglutide and placebo/no treatment in BMI SDS from baseline for either adolescents (ETD [95% CI] -0.07 [-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.62, 0.34]; P = .57 at week 52) or children (-0.06 [-1.06, 0.93]; P = .90 at week 16 and -0.07 [-0.89, 0.76]; P = .88 at week 52; Table 2 and Fig.",
+      "context_window": ".34]; P = .57 at week 52) or children (-0.06 [-1.06, 0.93]; P = .90 at week 16 and -0.07 [-0.89, 0.76]; P = .88 at week 52; Tab",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-p-2660",
+      "claim_type": "p_value",
+      "raw_text": "P = .88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2660,
+      "sentence": "The superiority of liraglutide was not confirmed for the coprimary endpoints, as no statistically significant differences were observed between liraglutide and placebo/no treatment in BMI SDS from baseline for either adolescents (ETD [95% CI] -0.07 [-0.23, 0.09]; P = .38 at week 16 and -0.14 [-0.62, 0.34]; P = .57 at week 52) or children (-0.06 [-1.06, 0.93]; P = .90 at week 16 and -0.07 [-0.89, 0.76]; P = .88 at week 52; Table 2 and Fig.",
+      "context_window": "[-1.06, 0.93]; P = .90 at week 16 and -0.07 [-0.89, 0.76]; P = .88 at week 52; Table 2 and Fig. 2 ). Primary and selected sec",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-3656",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3656,
+      "sentence": "The proportion of patients with a reduction of \u22655% in BMI from baseline at week 16 or 52 did not differ between treatment arms ( Table 2 and Fig.",
+      "context_window": "ion score. The proportion of patients with a reduction of \u22655% in BMI from baseline at week 16 or 52 did not differ betwee",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-3789",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3789,
+      "sentence": "Few patients achieved \u226510% reduction in BMI from baseline at either timepoint ( Table 2 ); thus, this endpoint was not analyzed statistically.",
+      "context_window": "arms ( Table 2 and Fig. S2 ( 13 )). Few patients achieved \u226510% reduction in BMI from baseline at either timepoint ( Table",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-4118",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4118,
+      "sentence": "Change in body weight was similar between treatment groups at weeks 16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.55, 5.22] in children) and 52 (-2.48 kg [-12.81, 7.86] in adolescents and -1.91 kg [-10.74, 6.93] in children; Fig.",
+      "context_window": "ight was similar between treatment groups at weeks 16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-4127",
+      "claim_type": "unit_value",
+      "raw_text": "1.39 kg",
+      "numeric_values": [
+        1.39
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4127,
+      "sentence": "Change in body weight was similar between treatment groups at weeks 16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.55, 5.22] in children) and 52 (-2.48 kg [-12.81, 7.86] in adolescents and -1.91 kg [-10.74, 6.93] in children; Fig.",
+      "context_window": "similar between treatment groups at weeks 16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.55, 5.22] in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-4169",
+      "claim_type": "unit_value",
+      "raw_text": "0.16 kg",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4169,
+      "sentence": "Change in body weight was similar between treatment groups at weeks 16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.55, 5.22] in children) and 52 (-2.48 kg [-12.81, 7.86] in adolescents and -1.91 kg [-10.74, 6.93] in children; Fig.",
+      "context_window": "16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.55, 5.22] in children) and 52 (-2.48 kg [-12.81, 7.86]",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-4213",
+      "claim_type": "unit_value",
+      "raw_text": "2.48 kg",
+      "numeric_values": [
+        2.48
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4213,
+      "sentence": "Change in body weight was similar between treatment groups at weeks 16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.55, 5.22] in children) and 52 (-2.48 kg [-12.81, 7.86] in adolescents and -1.91 kg [-10.74, 6.93] in children; Fig.",
+      "context_window": "dolescents and -0.16 kg [-5.55, 5.22] in children) and 52 (-2.48 kg [-12.81, 7.86] in adolescents and -1.91 kg [-10.74, 6.93] i",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-4256",
+      "claim_type": "unit_value",
+      "raw_text": "1.91 kg",
+      "numeric_values": [
+        1.91
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4256,
+      "sentence": "Change in body weight was similar between treatment groups at weeks 16 (ETD [95% CI] -1.39 kg [-5.23, 2.44] in adolescents and -0.16 kg [-5.55, 5.22] in children) and 52 (-2.48 kg [-12.81, 7.86] in adolescents and -1.91 kg [-10.74, 6.93] in children; Fig.",
+      "context_window": "ildren) and 52 (-2.48 kg [-12.81, 7.86] in adolescents and -1.91 kg [-10.74, 6.93] in children; Fig. S4 and Fig. S5 ( 13 )). No",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-4548",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4548,
+      "sentence": "At week 52, reductions in hyperphagia total score (ETD [95% CI] -6.42 [-11.40, -1.45]) and hyperphagia drive score (-3.87 [-7.45, -0.30]) were observed for liraglutide vs no treatment in adolescents; however, the analysis was not controlled for type 1 error ( Table 3 and Fig.",
+      "context_window": ")). At week 52, reductions in hyperphagia total score (ETD [95% CI] -6.42 [-11.40, -1.45]) and hyperphagia drive score (-3.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-5731",
+      "claim_type": "percentage",
+      "raw_text": "55.0%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5731,
+      "sentence": "Gastrointestinal events were reported throughout the trial, most were mild or moderate in severity, and were more frequently reported with liraglutide than with placebo (55.0% of patients [52 events] vs 41.7% [9 events] in adolescents and 58.8% [91 events] vs 28.6% [2 events] in children, with liraglutide and placebo, respectively; Table 4 and Fig.",
+      "context_window": "ore frequently reported with liraglutide than with placebo (55.0% of patients [52 events] vs 41.7% [9 events] in adolescents",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-5764",
+      "claim_type": "percentage",
+      "raw_text": "41.7%",
+      "numeric_values": [
+        41.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5764,
+      "sentence": "Gastrointestinal events were reported throughout the trial, most were mild or moderate in severity, and were more frequently reported with liraglutide than with placebo (55.0% of patients [52 events] vs 41.7% [9 events] in adolescents and 58.8% [91 events] vs 28.6% [2 events] in children, with liraglutide and placebo, respectively; Table 4 and Fig.",
+      "context_window": "glutide than with placebo (55.0% of patients [52 events] vs 41.7% [9 events] in adolescents and 58.8% [91 events] vs 28.6% [2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-5800",
+      "claim_type": "percentage",
+      "raw_text": "58.8%",
+      "numeric_values": [
+        58.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5800,
+      "sentence": "Gastrointestinal events were reported throughout the trial, most were mild or moderate in severity, and were more frequently reported with liraglutide than with placebo (55.0% of patients [52 events] vs 41.7% [9 events] in adolescents and 58.8% [91 events] vs 28.6% [2 events] in children, with liraglutide and placebo, respectively; Table 4 and Fig.",
+      "context_window": "patients [52 events] vs 41.7% [9 events] in adolescents and 58.8% [91 events] vs 28.6% [2 events] in children, with liragluti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-5821",
+      "claim_type": "percentage",
+      "raw_text": "28.6%",
+      "numeric_values": [
+        28.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5821,
+      "sentence": "Gastrointestinal events were reported throughout the trial, most were mild or moderate in severity, and were more frequently reported with liraglutide than with placebo (55.0% of patients [52 events] vs 41.7% [9 events] in adolescents and 58.8% [91 events] vs 28.6% [2 events] in children, with liraglutide and placebo, respectively; Table 4 and Fig.",
+      "context_window": "vs 41.7% [9 events] in adolescents and 58.8% [91 events] vs 28.6% [2 events] in children, with liraglutide and placebo, respe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-7316",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mmol",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 7316,
+      "sentence": "Two adolescents treated with liraglutide experienced 1 episode each of clinically significant hypoglycemia (<3.0 mmol/L [54 mg/dL]) (Table S5 ( 13 )).",
+      "context_window": "ced 1 episode each of clinically significant hypoglycemia (<3.0 mmol/L [54 mg/dL]) (Table S5 ( 13 )). One child treated with lir",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-7328",
+      "claim_type": "unit_value",
+      "raw_text": "54 mg/dL",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 7328,
+      "sentence": "Two adolescents treated with liraglutide experienced 1 episode each of clinically significant hypoglycemia (<3.0 mmol/L [54 mg/dL]) (Table S5 ( 13 )).",
+      "context_window": "e each of clinically significant hypoglycemia (<3.0 mmol/L [54 mg/dL]) (Table S5 ( 13 )). One child treated with liraglutide exp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-7478",
+      "claim_type": "unit_value",
+      "raw_text": "3.6 mmol",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 7478,
+      "sentence": "However, this episode (plasma glucose 3.6 mmol/L [65 mg/dL]) did not meet the American Diabetes Association 2018, International Society for Pediatric and Adolescent Diabetes 2018, and International Hypoglycaemia Study Group 2017 criteria for severe hypoglycemia as the child did not have cognitive impairment associated with the event; this classification was used because of the need for assistance due to the patient's young age.",
+      "context_window": "severe hypoglycemia. However, this episode (plasma glucose 3.6 mmol/L [65 mg/dL]) did not meet the American Diabetes Associatio",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-7490",
+      "claim_type": "unit_value",
+      "raw_text": "65 mg/dL",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 7490,
+      "sentence": "However, this episode (plasma glucose 3.6 mmol/L [65 mg/dL]) did not meet the American Diabetes Association 2018, International Society for Pediatric and Adolescent Diabetes 2018, and International Hypoglycaemia Study Group 2017 criteria for severe hypoglycemia as the child did not have cognitive impairment associated with the event; this classification was used because of the need for assistance due to the patient's young age.",
+      "context_window": "glycemia. However, this episode (plasma glucose 3.6 mmol/L [65 mg/dL]) did not meet the American Diabetes Association 2018, Inte",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-8907",
+      "claim_type": "percentage",
+      "raw_text": "10.8%",
+      "numeric_values": [
+        10.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8907,
+      "sentence": "Among patients receiving liraglutide, 4 (10.8%) had antiliraglutide antibodies at a single visit only (2 at week 16 [1 adolescent, 1 child] and 2 at week 54 [2 adolescents]).",
+      "context_window": "Fig. S12 ( 13 )). Among patients receiving liraglutide, 4 (10.8%) had antiliraglutide antibodies at a single visit only (2 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-pct-9055",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9055,
+      "sentence": "Two children (5.4% of patients) had antiliraglutide antibodies at 2 visits (1 at week 16 and week 52 and 1 at week 16 and week 54).",
+      "context_window": ", 1 child] and 2 at week 54 [2 adolescents]). Two children (5.4% of patients) had antiliraglutide antibodies at 2 visits (1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-504",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 504,
+      "sentence": "Consistent with the coprimary endpoint findings, no significant differences were seen between liraglutide and placebo/no treatment groups for other weight-related endpoints at 16 or 52 weeks.",
+      "context_window": "reatment groups for other weight-related endpoints at 16 or 52 weeks. By comparison, treatment with liraglutide for 56 weeks in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-560",
+      "claim_type": "unit_value",
+      "raw_text": "56 weeks",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 560,
+      "sentence": "By comparison, treatment with liraglutide for 56 weeks in adolescents with obesity but without PWS was superior to placebo in reducing BMI SDS, with numerical improvements observed for other weight-related endpoints for liraglutide vs placebo ( 12 ).",
+      "context_window": "or 52 weeks. By comparison, treatment with liraglutide for 56 weeks in adolescents with obesity but without PWS was superior to",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-827",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 827,
+      "sentence": "In another study, treatment with liraglutide or exenatide for 24 months in 6 adults with PWS and type 2 diabetes showed a tendency towards decreased BMI and waist circumference ( 19 ).",
+      "context_window": "another study, treatment with liraglutide or exenatide for 24 months in 6 adults with PWS and type 2 diabetes showed a tendency",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9759167_liraglutide_for_weight_management_in_children_and_adolescent-u-1892",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1892,
+      "sentence": "Treatment with once-weekly exenatide for 36 weeks was associated with a significant decrease in body fat, waist circumference, and deposition of adipose tissue in the Energy Balance & Weight Loss in Craniopharyngioma-related or Other Hypothalamic Tumors in Hypothalamic Obesity (ECHO) trial, which enrolled 42 10- to 25-year-olds with hypothalamic injury and obesity following an intracranial tumor ( 22 ).",
+      "context_window": "year-old patient. Treatment with once-weekly exenatide for 36 weeks was associated with a significant decrease in body fat, wai",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

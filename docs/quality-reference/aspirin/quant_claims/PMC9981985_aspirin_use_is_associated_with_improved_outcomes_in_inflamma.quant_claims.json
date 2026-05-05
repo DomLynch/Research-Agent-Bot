@@ -1,0 +1,985 @@
+{
+  "paper_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma",
+  "doi": "10.4048/jbc.2023.26.e3",
+  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 20,
+    "percentage": 24,
+    "unit_value": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-885",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 885,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": "sers were identified. ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-906",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 906,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-944",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": "p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-950",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 950,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": ".03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-964",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 964,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": "( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-970",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 970,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": "0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-992",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 992,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": "and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users. In univariate ana",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1000",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1000,
+      "sentence": "ASA users demonstrated increased OS ( p = 0.03) and DMFS ( p = 0.02), with 5-year OS and DMFS of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users.",
+      "context_window": "of 92% ( p = 0.01) and 85% ( p = 0.01) compared to 51% and 43%, respectively, for non-ASA users. In univariate analysis, p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-1126",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "In univariate analysis, pT stage, pN stage, and ASA use were significantly correlated ( p < 0.05) with OS and DFS.",
+      "context_window": "tage, pN stage, and ASA use were significantly correlated ( p < 0.05) with OS and DFS. On multivariable analysis, ASA use (hazar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1214",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1214,
+      "sentence": "On multivariable analysis, ASA use (hazard ratio [HR], 0.11; 95% confidence interval [CI], 0.01-0.8) and lymph node stage (HR, 5.9; 95% CI, 1.4-25.9) remained significant for OS and DFS ASA use (HR, 0.13; 95% CI, 0.03-0.56) and lymph node stage (HR, 5.6; 95% CI, 1.9-16.4).",
+      "context_window": "n multivariable analysis, ASA use (hazard ratio [HR], 0.11; 95% confidence interval [CI], 0.01-0.8) and lymph node stage (H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1285",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1285,
+      "sentence": "On multivariable analysis, ASA use (hazard ratio [HR], 0.11; 95% confidence interval [CI], 0.01-0.8) and lymph node stage (HR, 5.9; 95% CI, 1.4-25.9) remained significant for OS and DFS ASA use (HR, 0.13; 95% CI, 0.03-0.56) and lymph node stage (HR, 5.6; 95% CI, 1.9-16.4).",
+      "context_window": "nce interval [CI], 0.01-0.8) and lymph node stage (HR, 5.9; 95% CI, 1.4-25.9) remained significant for OS and DFS ASA use (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1358",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1358,
+      "sentence": "On multivariable analysis, ASA use (hazard ratio [HR], 0.11; 95% confidence interval [CI], 0.01-0.8) and lymph node stage (HR, 5.9; 95% CI, 1.4-25.9) remained significant for OS and DFS ASA use (HR, 0.13; 95% CI, 0.03-0.56) and lymph node stage (HR, 5.6; 95% CI, 1.9-16.4).",
+      "context_window": "5.9) remained significant for OS and DFS ASA use (HR, 0.13; 95% CI, 0.03-0.56) and lymph node stage (HR, 5.6; 95% CI, 1.9-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1408",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1408,
+      "sentence": "On multivariable analysis, ASA use (hazard ratio [HR], 0.11; 95% confidence interval [CI], 0.01-0.8) and lymph node stage (HR, 5.9; 95% CI, 1.4-25.9) remained significant for OS and DFS ASA use (HR, 0.13; 95% CI, 0.03-0.56) and lymph node stage (HR, 5.6; 95% CI, 1.9-16.4).",
+      "context_window": "HR, 0.13; 95% CI, 0.03-0.56) and lymph node stage (HR, 5.6; 95% CI, 1.9-16.4). ASA use during remission was associated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-479",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 479,
+      "sentence": "Of all BCs, inflammatory breast cancer (IBC) is estimated to make up 1%-5% [ 2 ].",
+      "context_window": "s, inflammatory breast cancer (IBC) is estimated to make up 1%-5% [ 2 ]. Although somewhat rare, IBC, which is one of the",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-482",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 482,
+      "sentence": "Of all BCs, inflammatory breast cancer (IBC) is estimated to make up 1%-5% [ 2 ].",
+      "context_window": "inflammatory breast cancer (IBC) is estimated to make up 1%-5% [ 2 ]. Although somewhat rare, IBC, which is one of the mor",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-872",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 872,
+      "sentence": "For patients with stage III disease, the 5-year survival rate was 56%.",
+      "context_window": "tients with stage III disease, the 5-year survival rate was 56%. If the cancer has spread to a distant part of the body (on",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1003",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1003,
+      "sentence": "If the cancer has spread to a distant part of the body (one-third of those diagnosed), the 5-year survival rate is reduced to 19% [ 5 6 ].",
+      "context_window": "of those diagnosed), the 5-year survival rate is reduced to 19% [ 5 6 ]. This is a significantly worse outcome compared to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1146",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1146,
+      "sentence": "This is a significantly worse outcome compared to other locally advanced or metastatic BC patients, with 5-year survival rates of 86% and 28% respectively [ 5 ].",
+      "context_window": "ed or metastatic BC patients, with 5-year survival rates of 86% and 28% respectively [ 5 ]. As expected, metastasis accoun",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1154",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1154,
+      "sentence": "This is a significantly worse outcome compared to other locally advanced or metastatic BC patients, with 5-year survival rates of 86% and 28% respectively [ 5 ].",
+      "context_window": "tastatic BC patients, with 5-year survival rates of 86% and 28% respectively [ 5 ]. As expected, metastasis accounts for t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-3034",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3034,
+      "sentence": "In our study, we set out to determine whether patients with IBC, taking ASA in the remission period (beginning within 2 years of diagnosis and lasting for a minimum of 60 days) and at high risk for distant metastasis would have improved outcomes compared to non-ASA users.",
+      "context_window": "h IBC, taking ASA in the remission period (beginning within 2 years of diagnosis and lasting for a minimum of 60 days) and at h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-3084",
+      "claim_type": "unit_value",
+      "raw_text": "60 days",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 3084,
+      "sentence": "In our study, we set out to determine whether patients with IBC, taking ASA in the remission period (beginning within 2 years of diagnosis and lasting for a minimum of 60 days) and at high risk for distant metastasis would have improved outcomes compared to non-ASA users.",
+      "context_window": "ng within 2 years of diagnosis and lasting for a minimum of 60 days) and at high risk for distant metastasis would have improve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1476",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1476,
+      "sentence": "Estrogen receptor and progesterone receptor (PR) were considered positive with any IHC staining (e.g., 1%-100%).",
+      "context_window": "(PR) were considered positive with any IHC staining (e.g., 1%-100%). All patients were staged according to the American J",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-1479",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1479,
+      "sentence": "Estrogen receptor and progesterone receptor (PR) were considered positive with any IHC staining (e.g., 1%-100%).",
+      "context_window": "R) were considered positive with any IHC staining (e.g., 1%-100%). All patients were staged according to the American Joint",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-2286",
+      "claim_type": "unit_value",
+      "raw_text": "60 days",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2286,
+      "sentence": "Patients were assigned to the ASA group if more than 60 days of ASA use was found in their medical records between the date of their diagnosis and two years thereafter.",
+      "context_window": "erest. Patients were assigned to the ASA group if more than 60 days of ASA use was found in their medical records between the d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-2587",
+      "claim_type": "unit_value",
+      "raw_text": "60 days",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2587,
+      "sentence": "The criteria for ASA use for 60 days were made to identify patients consistently using ASA and omit those taking it intermittently.",
+      "context_window": "laced in the reference group. The criteria for ASA use for 60 days were made to identify patients consistently using ASA and o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3562",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3562,
+      "sentence": "Multivariable Cox proportional hazards regression analyses were conducted in a stepwise fashion using the backward selection approach, in which candidate variables with p < 0.10 on univariate analyses were included in the initial multivariable models.",
+      "context_window": "kward selection approach, in which candidate variables with p < 0.10 on univariate analyses were included in the initial multiva",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-4083",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4083,
+      "sentence": "All statistical tests were 2-sided and significant was set at p < 0.05.",
+      "context_window": "l statistical tests were 2-sided and significant was set at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-361",
+      "claim_type": "unit_value",
+      "raw_text": "450 days",
+      "numeric_values": [
+        450.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 361,
+      "sentence": "Of the 14 ASA users, the median time that ASA use was started after diagnosis was 450 days (range, 20-625 days).",
+      "context_window": "he median time that ASA use was started after diagnosis was 450 days (range, 20-625 days). Of the 14 patients who were ASA users",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-381",
+      "claim_type": "unit_value",
+      "raw_text": "625 days",
+      "numeric_values": [
+        625.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 381,
+      "sentence": "Of the 14 ASA users, the median time that ASA use was started after diagnosis was 450 days (range, 20-625 days).",
+      "context_window": "ASA use was started after diagnosis was 450 days (range, 20-625 days). Of the 14 patients who were ASA users, information on the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-651",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 651,
+      "sentence": "The most common dose was 81 mg, although three patients received 325 mg.",
+      "context_window": "r arthritis and five were unknown. The most common dose was 81 mg, although three patients received 325 mg. The duration of A",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-691",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 691,
+      "sentence": "The most common dose was 81 mg, although three patients received 325 mg.",
+      "context_window": "ost common dose was 81 mg, although three patients received 325 mg. The duration of ASA use varied, ranging from a few months",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-1368",
+      "claim_type": "unit_value",
+      "raw_text": "49.0 years",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1368,
+      "sentence": "The median age of the control group was 53.6, and 49.0 years for the ASA group.",
+      "context_window": "than 0. The median age of the control group was 53.6, and 49.0 years for the ASA group. The median (interquartile range) follow-",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-2075",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2075,
+      "sentence": "For DFS, higher pT stage ( p = 0.022), higher pN stage ( p = 0.019), and lymph node positive on biopsy (cN+) ( p = 0.006) were significantly associated with worse outcomes when evaluating typical prognostic factors.",
+      "context_window": "A use on DFS and OS ( Table 3 ). For DFS, higher pT stage ( p = 0.022), higher pN stage ( p = 0.019), and lymph node positive on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-2105",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2105,
+      "sentence": "For DFS, higher pT stage ( p = 0.022), higher pN stage ( p = 0.019), and lymph node positive on biopsy (cN+) ( p = 0.006) were significantly associated with worse outcomes when evaluating typical prognostic factors.",
+      "context_window": "). For DFS, higher pT stage ( p = 0.022), higher pN stage ( p = 0.019), and lymph node positive on biopsy (cN+) ( p = 0.006) were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-2159",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2159,
+      "sentence": "For DFS, higher pT stage ( p = 0.022), higher pN stage ( p = 0.019), and lymph node positive on biopsy (cN+) ( p = 0.006) were significantly associated with worse outcomes when evaluating typical prognostic factors.",
+      "context_window": "age ( p = 0.019), and lymph node positive on biopsy (cN+) ( p = 0.006) were significantly associated with worse outcomes when eva",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-2356",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2356,
+      "sentence": "However, there was a statistically significant improvement in DFS with ASA administration ( p = 0.017, Figure 1 ).",
+      "context_window": "ly significant improvement in DFS with ASA administration ( p = 0.017, Figure 1 ). In the ASA group, only two patients had recurr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-2431",
+      "claim_type": "percentage",
+      "raw_text": "14.3%",
+      "numeric_values": [
+        14.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2431,
+      "sentence": "In the ASA group, only two patients had recurrence (14.3%) and 26 patients (57.8%) in the control group.",
+      "context_window": "re 1 ). In the ASA group, only two patients had recurrence (14.3%) and 26 patients (57.8%) in the control group. DFS = disea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-2455",
+      "claim_type": "percentage",
+      "raw_text": "57.8%",
+      "numeric_values": [
+        57.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2455,
+      "sentence": "In the ASA group, only two patients had recurrence (14.3%) and 26 patients (57.8%) in the control group.",
+      "context_window": ", only two patients had recurrence (14.3%) and 26 patients (57.8%) in the control group. DFS = disease free survival; OS = o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-2831",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2831,
+      "sentence": "In the ASA group, there was only one death (7.1%), as opposed to 21 deaths in the control group (46.7%).",
+      "context_window": "e ( Figure 1 ). In the ASA group, there was only one death (7.1%), as opposed to 21 deaths in the control group (46.7%). A s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-2884",
+      "claim_type": "percentage",
+      "raw_text": "46.7%",
+      "numeric_values": [
+        46.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2884,
+      "sentence": "In the ASA group, there was only one death (7.1%), as opposed to 21 deaths in the control group (46.7%).",
+      "context_window": "death (7.1%), as opposed to 21 deaths in the control group (46.7%). A significant reduction in the 5-year OS rate was observe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-2969",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2969,
+      "sentence": "A significant reduction in the 5-year OS rate was observed in the ASA group (92% in the ASA group vs.",
+      "context_window": "uction in the 5-year OS rate was observed in the ASA group (92% in the ASA group vs. 51% in the control group, p = 0.01). F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-2994",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2994,
+      "sentence": "51% in the control group, p = 0.01).",
+      "context_window": "ate was observed in the ASA group (92% in the ASA group vs. 51% in the control group, p = 0.01). For OS on univariate analy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3020",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3020,
+      "sentence": "51% in the control group, p = 0.01).",
+      "context_window": "A group (92% in the ASA group vs. 51% in the control group, p = 0.01). For OS on univariate analysis, higher pN stage ( p = 0.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3080",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3080,
+      "sentence": "For OS on univariate analysis, higher pN stage ( p = 0.011) and the presence of clinically positive lymph nodes on biopsy ( p = 0.011) were significantly associated with worse outcomes, whereas ASA use ( p = 0.027) was associated with improved OS.",
+      "context_window": "p = 0.01). For OS on univariate analysis, higher pN stage ( p = 0.011) and the presence of clinically positive lymph nodes on bio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3155",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3155,
+      "sentence": "For OS on univariate analysis, higher pN stage ( p = 0.011) and the presence of clinically positive lymph nodes on biopsy ( p = 0.011) were significantly associated with worse outcomes, whereas ASA use ( p = 0.027) was associated with improved OS.",
+      "context_window": "the presence of clinically positive lymph nodes on biopsy ( p = 0.011) were significantly associated with worse outcomes, whereas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3235",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3235,
+      "sentence": "For OS on univariate analysis, higher pN stage ( p = 0.011) and the presence of clinically positive lymph nodes on biopsy ( p = 0.011) were significantly associated with worse outcomes, whereas ASA use ( p = 0.027) was associated with improved OS.",
+      "context_window": "ificantly associated with worse outcomes, whereas ASA use ( p = 0.027) was associated with improved OS. No other prognostic facto",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3605",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3605,
+      "sentence": "ASA use was associated with significantly improved OS ( p = 0.029) and DFS ( p = 0.008) in the multivariable analysis ( Table 4 ).",
+      "context_window": "is. ASA use was associated with significantly improved OS ( p = 0.029) and DFS ( p = 0.008) in the multivariable analysis ( Table",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3626",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3626,
+      "sentence": "ASA use was associated with significantly improved OS ( p = 0.029) and DFS ( p = 0.008) in the multivariable analysis ( Table 4 ).",
+      "context_window": "iated with significantly improved OS ( p = 0.029) and DFS ( p = 0.008) in the multivariable analysis ( Table 4 ). Multivariable a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3860",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3860,
+      "sentence": "Multivariable analysis also demonstrated that clinical node positive disease (positive lymph nodes on biopsy) status remained a significant risk factor associated with worse DFS ( p = 0.001) and OS ( p = 0.007) ( Table 4 ).",
+      "context_window": "ained a significant risk factor associated with worse DFS ( p = 0.001) and OS ( p = 0.007) ( Table 4 ). Of the 59 patients, 22 di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-3880",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3880,
+      "sentence": "Multivariable analysis also demonstrated that clinical node positive disease (positive lymph nodes on biopsy) status remained a significant risk factor associated with worse DFS ( p = 0.001) and OS ( p = 0.007) ( Table 4 ).",
+      "context_window": "risk factor associated with worse DFS ( p = 0.001) and OS ( p = 0.007) ( Table 4 ). Of the 59 patients, 22 died during the study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-4296",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4296,
+      "sentence": "A significant reduction in the 5-year rate of distant metastases was found in the ASA group (85% vs.",
+      "context_window": "year rate of distant metastases was found in the ASA group (85% vs. 43% in the ASA and control groups, respectively). A Kap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-pct-4304",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4304,
+      "sentence": "43% in the ASA and control groups, respectively).",
+      "context_window": "e of distant metastases was found in the ASA group (85% vs. 43% in the ASA and control groups, respectively). A Kaplan-Meie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-p-4434",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4434,
+      "sentence": "A Kaplan-Meier DMFS curve was generated, showing this significant improvement ( p = 0.01, Figure 1 ).",
+      "context_window": "curve was generated, showing this significant improvement ( p = 0.01, Figure 1 ). A multivariable analysis of DMFS was not perfo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9981985_aspirin_use_is_associated_with_improved_outcomes_in_inflamma-u-2313",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2313,
+      "sentence": "Although different doses of ASA are often used in the clinical setting, the main function of ASA when administered at lower doses (< 100 mg) is platelet inactivation.",
+      "context_window": "he main function of ASA when administered at lower doses (< 100 mg) is platelet inactivation. Given that many patients were be",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

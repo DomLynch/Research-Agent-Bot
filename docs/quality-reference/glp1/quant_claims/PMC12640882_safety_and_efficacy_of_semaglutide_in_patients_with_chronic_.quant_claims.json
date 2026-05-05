@@ -1,0 +1,2249 @@
+{
+  "paper_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_",
+  "doi": "10.1002/edm2.70136",
+  "extracted_at": "2026-05-05T21:26:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 12,
+    "percentage": 59,
+    "risk_ratio": 17,
+    "confidence_interval": 17,
+    "p_value": 16,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-783",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 783,
+      "sentence": "Studies comparing semaglutide with placebo or standard care in adults (\u2265 18 years) with CKD, with or without T2DM were included.",
+      "context_window": "ring semaglutide with placebo or standard care in adults (\u2265 18 years) with CKD, with or without T2DM were included. Primary outc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-1389",
+      "claim_type": "unit_value",
+      "raw_text": "15 mL/min",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 1389,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": ", kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR fr",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1423",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1423,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "ained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-1511",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1511,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-1521",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.71-0.87",
+      "numeric_values": [
+        0.71,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1521,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-1540",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1540,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.6",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1559",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1559,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "ed causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-1590",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1590,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": ".71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (define",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-1600",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.62-0.88",
+      "numeric_values": [
+        0.62,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1600,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-1619",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0008",
+      "numeric_values": [
+        0.0008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1619,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascu",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1637",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1637,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "r mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death,",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-1753",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1753,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%). Semaglutide de",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-1763",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.70-0.87",
+      "numeric_values": [
+        0.7,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1763,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "fatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%). Semaglutide demonstrates a favour",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-1782",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1782,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "farction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%). Semaglutide demonstrates a favourable safety p",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1801",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1801,
+      "sentence": "The findings showed that semaglutide substantially decreased major kidney\u2010related adverse events (defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes) (RR: 0.79; 95% CI: 0.71-0.87; p < 0.00001; I 2 = 0%), cardiovascular mortality (RR: 0.74; 95% CI: 0.62-0.88; p = 0.0008; I 2 = 36%) and MACE (defined as a composite of cardiovascular death, nonfatal myocardial infarction and nonfatal stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%).",
+      "context_window": "al stroke) (RR: 0.78; 95% CI: 0.70-0.87; p < 0.00001; I 2 = 0%). Semaglutide demonstrates a favourable safety profile and",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-35",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 35,
+      "sentence": "With a global prevalence of around 9% and affecting over half a billion people, chronic kidney disease (CKD) is the 12th leading cause of death worldwide.",
+      "context_window": "With a global prevalence of around 9% and affecting over half a billion people, chronic kidney di",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-306",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 306,
+      "sentence": "Around 40% of the population aged above 70 years is affected by early\u2010stage CKD (stages 1-3), accounting for the majority of the disease's public health burden [ 3 , 4 ].",
+      "context_window": "ogression to kidney failure and mortality [ 1 , 2 ]. Around 40% of the population aged above 70 years is affected by early\u2010",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-339",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 339,
+      "sentence": "Around 40% of the population aged above 70 years is affected by early\u2010stage CKD (stages 1-3), accounting for the majority of the disease's public health burden [ 3 , 4 ].",
+      "context_window": "ortality [ 1 , 2 ]. Around 40% of the population aged above 70 years is affected by early\u2010stage CKD (stages 1-3), accounting for",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-548",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 548,
+      "sentence": "The leading cause of CKD is type 2 diabetes mellitus (T2DM), affecting nearly 50% of the patients [ 5 ].",
+      "context_window": "of CKD is type 2 diabetes mellitus (T2DM), affecting nearly 50% of the patients [ 5 ]. In recent years, treatment strategi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-1448",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1448,
+      "sentence": "The inclusion criteria consisted of RCTs that involved adult participants (\u2265 18 years) diagnosed with both T2DM and CKD.",
+      "context_window": "teria consisted of RCTs that involved adult participants (\u2265 18 years) diagnosed with both T2DM and CKD. The studies that were el",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-1994",
+      "claim_type": "unit_value",
+      "raw_text": "15 mL/min",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 1994,
+      "sentence": "Major kidney\u2010related adverse events were defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation, or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes.",
+      "context_window": "kidney transplantation, or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR fr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-2028",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2028,
+      "sentence": "Major kidney\u2010related adverse events were defined as a composite outcome encompassing the onset of kidney failure (including long\u2010term dialysis, kidney transplantation, or a sustained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to kidney\u2010related causes.",
+      "context_window": "ained eGFR reduction to < 15 mL/min/1.73 m 2 ), a sustained 50% or greater reduction in eGFR from baseline, or death due to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4003",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4003,
+      "sentence": "To account for any heterogeneity among studies, risk ratios (RRs) with 95% CIs were computed using a random\u2010effects model for dichotomous outcomes.",
+      "context_window": "for any heterogeneity among studies, risk ratios (RRs) with 95% CIs were computed using a random\u2010effects model for dichotom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4252",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4252,
+      "sentence": "Low, moderate and high heterogeneity were indicated by I 2 values of 25%, 50% and 75%, respectively [ 17 ].",
+      "context_window": "rate and high heterogeneity were indicated by I 2 values of 25%, 50% and 75%, respectively [ 17 ]. A significant p \u2010value w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4257",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4257,
+      "sentence": "Low, moderate and high heterogeneity were indicated by I 2 values of 25%, 50% and 75%, respectively [ 17 ].",
+      "context_window": "and high heterogeneity were indicated by I 2 values of 25%, 50% and 75%, respectively [ 17 ]. A significant p \u2010value was de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4265",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4265,
+      "sentence": "Low, moderate and high heterogeneity were indicated by I 2 values of 25%, 50% and 75%, respectively [ 17 ].",
+      "context_window": "heterogeneity were indicated by I 2 values of 25%, 50% and 75%, respectively [ 17 ]. A significant p \u2010value was defined as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-656",
+      "claim_type": "unit_value",
+      "raw_text": "67 years",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 656,
+      "sentence": "The included studies assessed a predominantly older population (mean age 64-67 years), except for Apperloo et al. [ 15 ], which had a younger cohort (54.9 \u00b1 12 years in the semaglutide group).",
+      "context_window": "dies assessed a predominantly older population (mean age 64-67 years), except for Apperloo et al. [ 15 ], which had a younger co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-msd-730",
+      "claim_type": "mean_sd",
+      "raw_text": "54.9 \u00b1 12",
+      "numeric_values": [
+        54.9,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 730,
+      "sentence": "The included studies assessed a predominantly older population (mean age 64-67 years), except for Apperloo et al. [ 15 ], which had a younger cohort (54.9 \u00b1 12 years in the semaglutide group).",
+      "context_window": "ept for Apperloo et al. [ 15 ], which had a younger cohort (54.9 \u00b1 12 years in the semaglutide group). Gender distribution showed",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-737",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 737,
+      "sentence": "The included studies assessed a predominantly older population (mean age 64-67 years), except for Apperloo et al. [ 15 ], which had a younger cohort (54.9 \u00b1 12 years in the semaglutide group).",
+      "context_window": "Apperloo et al. [ 15 ], which had a younger cohort (54.9 \u00b1 12 years in the semaglutide group). Gender distribution showed a hig",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-889",
+      "claim_type": "unit_value",
+      "raw_text": "89.5 kg",
+      "numeric_values": [
+        89.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 889,
+      "sentence": "Baseline bodyweight ranged from 89.5 kg to 108.7 kg, with semaglutide groups generally having slightly higher body weights.",
+      "context_window": "articipants across studies. Baseline bodyweight ranged from 89.5 kg to 108.7 kg, with semaglutide groups generally having sligh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-900",
+      "claim_type": "unit_value",
+      "raw_text": "108.7 kg",
+      "numeric_values": [
+        108.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 900,
+      "sentence": "Baseline bodyweight ranged from 89.5 kg to 108.7 kg, with semaglutide groups generally having slightly higher body weights.",
+      "context_window": "across studies. Baseline bodyweight ranged from 89.5 kg to 108.7 kg, with semaglutide groups generally having slightly higher b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-1012",
+      "claim_type": "unit_value",
+      "raw_text": "37.0 kg",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1012,
+      "sentence": "BMI values varied from 31.9 to 37.0 kg/m 2 , with the highest observed in Apperloo et al. [ 15 ] (37.0 \u00b1 7.0 in the semaglutide group).",
+      "context_window": "lightly higher body weights. BMI values varied from 31.9 to 37.0 kg/m 2 , with the highest observed in Apperloo et al. [ 15 ] (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-msd-1079",
+      "claim_type": "mean_sd",
+      "raw_text": "37.0 \u00b1 7.0",
+      "numeric_values": [
+        37.0,
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1079,
+      "sentence": "BMI values varied from 31.9 to 37.0 kg/m 2 , with the highest observed in Apperloo et al. [ 15 ] (37.0 \u00b1 7.0 in the semaglutide group).",
+      "context_window": "/m 2 , with the highest observed in Apperloo et al. [ 15 ] (37.0 \u00b1 7.0 in the semaglutide group). Baseline glycated haemoglobin (H",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1232",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1232,
+      "sentence": "Baseline glycated haemoglobin (HbA1c) levels were comparable between treatment groups across studies, ranging from 5.6% to 8.7%.",
+      "context_window": "rable between treatment groups across studies, ranging from 5.6% to 8.7%. Mean systolic blood pressure was consistently arou",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1240",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1240,
+      "sentence": "Baseline glycated haemoglobin (HbA1c) levels were comparable between treatment groups across studies, ranging from 5.6% to 8.7%.",
+      "context_window": "tween treatment groups across studies, ranging from 5.6% to 8.7%. Mean systolic blood pressure was consistently around 135-1",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-1303",
+      "claim_type": "unit_value",
+      "raw_text": "138 mmHg",
+      "numeric_values": [
+        138.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1303,
+      "sentence": "Mean systolic blood pressure was consistently around 135-138 mmHg, while diastolic blood pressure ranged from 76 to 78 mmHg, with no notable differences between treatment groups.",
+      "context_window": "%. Mean systolic blood pressure was consistently around 135-138 mmHg, while diastolic blood pressure ranged from 76 to 78 mmHg,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-u-1362",
+      "claim_type": "unit_value",
+      "raw_text": "78 mmHg",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1362,
+      "sentence": "Mean systolic blood pressure was consistently around 135-138 mmHg, while diastolic blood pressure ranged from 76 to 78 mmHg, with no notable differences between treatment groups.",
+      "context_window": "-138 mmHg, while diastolic blood pressure ranged from 76 to 78 mmHg, with no notable differences between treatment groups. All",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1680",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1680,
+      "sentence": "Four trials-Perkovic et al. [ 11 ], Marso et al. [ 12 ], Husain et al. [ 13 ] and Pratley et al. [ 14 ]-exclusively enrolled patients with T2DM, resulting in a 100% prevalence of T2DM in those study populations [ 11 , 12 , 13 , 14 ].",
+      "context_window": "4 ]-exclusively enrolled patients with T2DM, resulting in a 100% prevalence of T2DM in those study populations [ 11 , 12 , 1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1923",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1923,
+      "sentence": "In contrast, Apperloo et al. [ 15 ] was the only trial to include patients with CKD without diabetes, enrolling a cohort composed entirely of non\u2010diabetic participants (0% T2DM) [ 15 ].",
+      "context_window": "ng a cohort composed entirely of non\u2010diabetic participants (0% T2DM) [ 15 ]. Cochrane's Risk\u2010of\u2010Bias Tool was implemented",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-2654",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2654,
+      "sentence": "Subjects receiving semaglutide showed a statistically significant reduction in cardiovascular mortality relative to placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ).",
+      "context_window": "reduction in cardiovascular mortality relative to placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ).",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-2664",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.62 to 0.88",
+      "numeric_values": [
+        0.62,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2664,
+      "sentence": "Subjects receiving semaglutide showed a statistically significant reduction in cardiovascular mortality relative to placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ).",
+      "context_window": "in cardiovascular mortality relative to placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ). Relative risk reductio",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-2686",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0008",
+      "numeric_values": [
+        0.0008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2686,
+      "sentence": "Subjects receiving semaglutide showed a statistically significant reduction in cardiovascular mortality relative to placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ).",
+      "context_window": "tality relative to placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ). Relative risk reduction in death f",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-2704",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2704,
+      "sentence": "Subjects receiving semaglutide showed a statistically significant reduction in cardiovascular mortality relative to placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ).",
+      "context_window": "placebo (RR: 0.74; 95% CI: 0.62 to 0.88; p = 0.0008; I 2 = 36%) (Figure 2 ). Relative risk reduction in death from cardiov",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-2803",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2803,
+      "sentence": "Relative risk reduction in death from cardiovascular causes was calculated to be 26%.",
+      "context_window": "on in death from cardiovascular causes was calculated to be 26%. However, the moderate heterogeneity ( I 2 = 36%) indicates",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-2852",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2852,
+      "sentence": "However, the moderate heterogeneity ( I 2 = 36%) indicates some variability among studies.",
+      "context_window": "ated to be 26%. However, the moderate heterogeneity ( I 2 = 36%) indicates some variability among studies. Death from card",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-3037",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3037,
+      "sentence": "The incidence of MACE also drastically decreased on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figure 3 ).",
+      "context_window": "f MACE also drastically decreased on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-3047",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.70 to 0.87",
+      "numeric_values": [
+        0.7,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3047,
+      "sentence": "The incidence of MACE also drastically decreased on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figure 3 ).",
+      "context_window": "o drastically decreased on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk red",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-3069",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3069,
+      "sentence": "The incidence of MACE also drastically decreased on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figure 3 ).",
+      "context_window": "d on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figur",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3088",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3088,
+      "sentence": "The incidence of MACE also drastically decreased on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figure 3 ).",
+      "context_window": "glutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figure 3 ). The",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3106",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3106,
+      "sentence": "The incidence of MACE also drastically decreased on receiving semaglutide (RR: 0.78; 95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figure 3 ).",
+      "context_window": "95% CI: 0.70 to 0.87; p < 0.00001; I 2 = 0%), indicating a 22% relative risk reduction (Figure 3 ). The absence of heterog",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3184",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3184,
+      "sentence": "The absence of heterogeneity ( I 2 = 0%) indicates consistency among the included studies, strengthening the reliability of this finding.",
+      "context_window": "reduction (Figure 3 ). The absence of heterogeneity ( I 2 = 0%) indicates consistency among the included studies, strength",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-3464",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3464,
+      "sentence": "A notable fall in major kidney adverse events was noted upon analysis of patients treated with semaglutide in contrast to those on placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ).",
+      "context_window": "s treated with semaglutide in contrast to those on placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-3474",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.71 to 0.87",
+      "numeric_values": [
+        0.71,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3474,
+      "sentence": "A notable fall in major kidney adverse events was noted upon analysis of patients treated with semaglutide in contrast to those on placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ).",
+      "context_window": "with semaglutide in contrast to those on placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ). Relative risk reductio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-3496",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3496,
+      "sentence": "A notable fall in major kidney adverse events was noted upon analysis of patients treated with semaglutide in contrast to those on placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ).",
+      "context_window": "ntrast to those on placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ). Relative risk reduction score stand",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3515",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3515,
+      "sentence": "A notable fall in major kidney adverse events was noted upon analysis of patients treated with semaglutide in contrast to those on placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ).",
+      "context_window": "placebo (RR: 0.79; 95% CI: 0.71 to 0.87; p < 0.00001; I 2 = 0%) (Figure 4 ). Relative risk reduction score stands at 20%.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3572",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3572,
+      "sentence": "Relative risk reduction score stands at 20%.",
+      "context_window": "= 0%) (Figure 4 ). Relative risk reduction score stands at 20%. The absence of heterogeneity ( I 2 = 0%) indicates consist",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3614",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3614,
+      "sentence": "The absence of heterogeneity ( I 2 = 0%) indicates consistency among the included studies, strengthening the reliability of this finding.",
+      "context_window": "n score stands at 20%. The absence of heterogeneity ( I 2 = 0%) indicates consistency among the included studies, strength",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-3908",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3908,
+      "sentence": "Semaglutide group was less likely to develop nonfatal myocardial infarction when compared to placebo, but this difference did not reach statistical significance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ).",
+      "context_window": "but this difference did not reach statistical significance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ). Re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-3918",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.66 to 1.12",
+      "numeric_values": [
+        0.66,
+        1.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3918,
+      "sentence": "Semaglutide group was less likely to develop nonfatal myocardial infarction when compared to placebo, but this difference did not reach statistical significance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ).",
+      "context_window": "ifference did not reach statistical significance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ). Relative risk reduction",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-3940",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3940,
+      "sentence": "Semaglutide group was less likely to develop nonfatal myocardial infarction when compared to placebo, but this difference did not reach statistical significance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ).",
+      "context_window": "h statistical significance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ). Relative risk reduction was 14%, b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3956",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3956,
+      "sentence": "Semaglutide group was less likely to develop nonfatal myocardial infarction when compared to placebo, but this difference did not reach statistical significance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ).",
+      "context_window": "gnificance (RR: 0.86; 95% CI: 0.66 to 1.12; p = 0.27; I 2 = 24%) (Figure 5 ). Relative risk reduction was 14%, but the wide",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4002",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4002,
+      "sentence": "Relative risk reduction was 14%, but the wide confidence interval crossing unity indicates uncertainty in the effect estimate.",
+      "context_window": "= 0.27; I 2 = 24%) (Figure 5 ). Relative risk reduction was 14%, but the wide confidence interval crossing unity indicates",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4145",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4145,
+      "sentence": "The low heterogeneity among studies ( I 2 = 24%) suggests consistent findings.",
+      "context_window": "ffect estimate. The low heterogeneity among studies ( I 2 = 24%) suggests consistent findings. Nonfatal myocardial infarct",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-4330",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4330,
+      "sentence": "No statistically significant difference in nonfatal stroke was observed between the semaglutide and placebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ).",
+      "context_window": "ke was observed between the semaglutide and placebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ). The h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-4340",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.53-1.40",
+      "numeric_values": [
+        0.53,
+        1.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4340,
+      "sentence": "No statistically significant difference in nonfatal stroke was observed between the semaglutide and placebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ).",
+      "context_window": "erved between the semaglutide and placebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ). The high heterogeneity (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-4359",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4359,
+      "sentence": "No statistically significant difference in nonfatal stroke was observed between the semaglutide and placebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ).",
+      "context_window": "emaglutide and placebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ). The high heterogeneity ( I 2 = 64%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4375",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4375,
+      "sentence": "No statistically significant difference in nonfatal stroke was observed between the semaglutide and placebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ).",
+      "context_window": "lacebo groups (RR: 0.86; 95% CI: 0.53-1.40; p = 0.54; I 2 = 64%) (Figure 6 ). The high heterogeneity ( I 2 = 64%) indicates",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4424",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4424,
+      "sentence": "The high heterogeneity ( I 2 = 64%) indicates substantial variability among studies; however, the non\u2010significant heterogeneity test ( p = 0.06) suggests that this variability may not be impactful.",
+      "context_window": ".54; I 2 = 64%) (Figure 6 ). The high heterogeneity ( I 2 = 64%) indicates substantial variability among studies; however,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-4528",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4528,
+      "sentence": "The high heterogeneity ( I 2 = 64%) indicates substantial variability among studies; however, the non\u2010significant heterogeneity test ( p = 0.06) suggests that this variability may not be impactful.",
+      "context_window": "studies; however, the non\u2010significant heterogeneity test ( p = 0.06) suggests that this variability may not be impactful. A sen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-4813",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4813,
+      "sentence": "After excluding this study, the results favored semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ).",
+      "context_window": "fter excluding this study, the results favored semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ). Nonf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-4823",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.44-0.97",
+      "numeric_values": [
+        0.44,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4823,
+      "sentence": "After excluding this study, the results favored semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ).",
+      "context_window": "ding this study, the results favored semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ). Nonfatal stroke. A non",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-4842",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4842,
+      "sentence": "After excluding this study, the results favored semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ).",
+      "context_window": "e results favored semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ). Nonfatal stroke. A non\u2010significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4858",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4858,
+      "sentence": "After excluding this study, the results favored semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ).",
+      "context_window": "d semaglutide (RR: 0.65; 95% CI: 0.44-0.97; p = 0.04; I 2 = 0%) (Figure S1 ). Nonfatal stroke. A non\u2010significant trend w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-4981",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4981,
+      "sentence": "A non\u2010significant trend was observed in all\u2010cause mortality in the semaglutide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ).",
+      "context_window": "s observed in all\u2010cause mortality in the semaglutide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ).",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-4991",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.68 to 0.93",
+      "numeric_values": [
+        0.68,
+        0.93
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4991,
+      "sentence": "A non\u2010significant trend was observed in all\u2010cause mortality in the semaglutide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ).",
+      "context_window": "in all\u2010cause mortality in the semaglutide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ). This indicates a 20% r",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-5013",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5013,
+      "sentence": "A non\u2010significant trend was observed in all\u2010cause mortality in the semaglutide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ).",
+      "context_window": "y in the semaglutide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ). This indicates a 20% relative ris",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-5030",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5030,
+      "sentence": "A non\u2010significant trend was observed in all\u2010cause mortality in the semaglutide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ).",
+      "context_window": "ide group (RR: 0.80; 95% CI: 0.68 to 0.93; p = 0.004; I 2 = 44%) (Figure S2 ). This indicates a 20% relative risk reduction",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-5066",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5066,
+      "sentence": "This indicates a 20% relative risk reduction, with moderate heterogeneity ( I 2 = 44%), which is not statistically significant ( p = 0.15), indicating relatively consistent findings across studies.",
+      "context_window": "0.93; p = 0.004; I 2 = 44%) (Figure S2 ). This indicates a 20% relative risk reduction, with moderate heterogeneity ( I 2",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-5131",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5131,
+      "sentence": "This indicates a 20% relative risk reduction, with moderate heterogeneity ( I 2 = 44%), which is not statistically significant ( p = 0.15), indicating relatively consistent findings across studies.",
+      "context_window": "elative risk reduction, with moderate heterogeneity ( I 2 = 44%), which is not statistically significant ( p = 0.15), indic",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-5178",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5178,
+      "sentence": "This indicates a 20% relative risk reduction, with moderate heterogeneity ( I 2 = 44%), which is not statistically significant ( p = 0.15), indicating relatively consistent findings across studies.",
+      "context_window": "eity ( I 2 = 44%), which is not statistically significant ( p = 0.15), indicating relatively consistent findings across studies.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-5353",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5353,
+      "sentence": "A sloping trend of serious adverse events was observed in semaglutide subjects when compared to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ).",
+      "context_window": "observed in semaglutide subjects when compared to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-5363",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.74 to 0.99",
+      "numeric_values": [
+        0.74,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5363,
+      "sentence": "A sloping trend of serious adverse events was observed in semaglutide subjects when compared to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ).",
+      "context_window": "in semaglutide subjects when compared to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ). A favourable safety pr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-5385",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5385,
+      "sentence": "A sloping trend of serious adverse events was observed in semaglutide subjects when compared to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ).",
+      "context_window": "s when compared to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ). A favourable safety profile for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-5401",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5401,
+      "sentence": "A sloping trend of serious adverse events was observed in semaglutide subjects when compared to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ).",
+      "context_window": "to placebo (RR: 0.86; 95% CI: 0.74 to 0.99; p = 0.04; I 2 = 87%) (Figure S3A ). A favourable safety profile for semaglutide",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-5486",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5486,
+      "sentence": "A favourable safety profile for semaglutide was highlighted by a 14% relative risk reduction.",
+      "context_window": "ourable safety profile for semaglutide was highlighted by a 14% relative risk reduction. The high heterogeneity indicates s",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-5890",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5890,
+      "sentence": "After excluding this study, the results became more significant towards semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ).",
+      "context_window": "y, the results became more significant towards semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-5900",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.87-0.98",
+      "numeric_values": [
+        0.87,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5900,
+      "sentence": "After excluding this study, the results became more significant towards semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ).",
+      "context_window": "ults became more significant towards semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ). There was no notable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-5919",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5919,
+      "sentence": "After excluding this study, the results became more significant towards semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ).",
+      "context_window": "gnificant towards semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ). There was no notable difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-5935",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5935,
+      "sentence": "After excluding this study, the results became more significant towards semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ).",
+      "context_window": "s semaglutide (RR: 0.92; 95% CI: 0.87-0.98; p = 0.01; I 2 = 14%) (Figure S3B ). There was no notable difference between th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-6087",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 1.01",
+      "numeric_values": [
+        1.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6087,
+      "sentence": "There was no notable difference between the two groups: semaglutide and placebo regarding hospitalizations due to unstable angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ).",
+      "context_window": "placebo regarding hospitalizations due to unstable angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ). T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-6097",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.55 to 1.84",
+      "numeric_values": [
+        0.55,
+        1.84
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6097,
+      "sentence": "There was no notable difference between the two groups: semaglutide and placebo regarding hospitalizations due to unstable angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ).",
+      "context_window": "egarding hospitalizations due to unstable angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ). The risk ratio close to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-6119",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6119,
+      "sentence": "There was no notable difference between the two groups: semaglutide and placebo regarding hospitalizations due to unstable angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ).",
+      "context_window": "ons due to unstable angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ). The risk ratio close to 1 suggest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-6135",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6135,
+      "sentence": "There was no notable difference between the two groups: semaglutide and placebo regarding hospitalizations due to unstable angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ).",
+      "context_window": "ble angina (RR: 1.01; 95% CI: 0.55 to 1.84; p = 0.98; I 2 = 27%) (Figure S4 ). The risk ratio close to 1 suggests no effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-6320",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6320,
+      "sentence": "The low heterogeneity ( I 2 = 27%) indicates uniform results across studies.",
+      "context_window": "n due to minimal event rates. The low heterogeneity ( I 2 = 27%) indicates uniform results across studies. The rate of hos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-6465",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6465,
+      "sentence": "The rate of hospitalizations for cardiac failure was not affected by semaglutide administration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ).",
+      "context_window": "iac failure was not affected by semaglutide administration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-6475",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.76 to 1.40",
+      "numeric_values": [
+        0.76,
+        1.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6475,
+      "sentence": "The rate of hospitalizations for cardiac failure was not affected by semaglutide administration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ).",
+      "context_window": "e was not affected by semaglutide administration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ). The lack of heterogeneit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-p-6497",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6497,
+      "sentence": "The rate of hospitalizations for cardiac failure was not affected by semaglutide administration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ).",
+      "context_window": "semaglutide administration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ). The lack of heterogeneity ( I 2 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-6513",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6513,
+      "sentence": "The rate of hospitalizations for cardiac failure was not affected by semaglutide administration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ).",
+      "context_window": "nistration (RR: 1.03; 95% CI: 0.76 to 1.40; p = 0.86; I 2 = 0%) (Figure S5 ). The lack of heterogeneity ( I 2 = 0%) sugges",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-6565",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6565,
+      "sentence": "The lack of heterogeneity ( I 2 = 0%) suggests that the findings are consistent among the included studies.",
+      "context_window": "; I 2 = 0%) (Figure S5 ). The lack of heterogeneity ( I 2 = 0%) suggests that the findings are consistent among the includ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-6947",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6947,
+      "sentence": "Improved cardiovascular outcomes have potentially led to a reduced need for cardiovascular pharmacological interventions as depicted by a 14% relative risk reduction.",
+      "context_window": "rdiovascular pharmacological interventions as depicted by a 14% relative risk reduction. The low heterogeneity supports the",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-687",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 687,
+      "sentence": "The observed 2% risk reduction in cardiovascular mortality among patients on semaglutide, is particularly compelling, given the elevated cardiovascular risk that is intrinsic to individuals with CKD [ 1 , 2 ].",
+      "context_window": "sk population, is elucidated by this as well. The observed 2% risk reduction in cardiovascular mortality among patients o",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-919",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 919,
+      "sentence": "The moderate heterogeneity ( I 2 = 36%) suggests some variability in study populations or methodologies, and warrants further investigation into the subgroups that benefit the most.",
+      "context_window": "uals with CKD [ 1 , 2 ]. The moderate heterogeneity ( I 2 = 36%) suggests some variability in study populations or methodol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1070",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1070,
+      "sentence": "The 22% risk reduction in MACE, further substantiates this, with an absence of heterogeneity ( I 2 = 0%), confirming its consistency across the included studies.",
+      "context_window": "investigation into the subgroups that benefit the most. The 22% risk reduction in MACE, further substantiates this, with an",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1167",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1167,
+      "sentence": "The 22% risk reduction in MACE, further substantiates this, with an absence of heterogeneity ( I 2 = 0%), confirming its consistency across the included studies.",
+      "context_window": "ubstantiates this, with an absence of heterogeneity ( I 2 = 0%), confirming its consistency across the included studies. B",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1451",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1451,
+      "sentence": "Both of these collectively reinforce semaglutide's potential to mitigate the burden of cardiovascular disease in CKD, which aligns with the latest meta\u2010analysis on this topic, conducted by Ashraf et al., which discovered a 29% decrease in cardiovascular mortality, and a 20% decrease seen in MACE [ 10 ].",
+      "context_window": "this topic, conducted by Ashraf et al., which discovered a 29% decrease in cardiovascular mortality, and a 20% decrease se",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-1499",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1499,
+      "sentence": "Both of these collectively reinforce semaglutide's potential to mitigate the burden of cardiovascular disease in CKD, which aligns with the latest meta\u2010analysis on this topic, conducted by Ashraf et al., which discovered a 29% decrease in cardiovascular mortality, and a 20% decrease seen in MACE [ 10 ].",
+      "context_window": "iscovered a 29% decrease in cardiovascular mortality, and a 20% decrease seen in MACE [ 10 ]. The risk of nonfatal myocardi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-2149",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2149,
+      "sentence": "The 20% risk reduction in major kidney adverse events exemplifies the favourable impact of semaglutide on renal outcomes.",
+      "context_window": "rapy in patients with high cardiovascular risk [ 23 ]. The 20% risk reduction in major kidney adverse events exemplifies t",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-2304",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2304,
+      "sentence": "The absence of heterogeneity ( I 2 = 0%) strengthens the confidence in this finding.",
+      "context_window": "ide on renal outcomes. The absence of heterogeneity ( I 2 = 0%) strengthens the confidence in this finding. This observati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3185",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3185,
+      "sentence": "A significant reduction of 20% was also observed in all\u2010cause mortality.",
+      "context_window": "and other studies [ 10 , 11 ]. A significant reduction of 20% was also observed in all\u2010cause mortality. Additional trials",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3350",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3350,
+      "sentence": "Additional trials with longer follow\u2010ups should be conducted to confirm this due to the moderate heterogeneity ( I 2 = 44%).",
+      "context_window": "d to confirm this due to the moderate heterogeneity ( I 2 = 44%). This has been found previously as well for GLP\u20101RAs [ 29",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-3837",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3837,
+      "sentence": "The drug's favourable safety profile and the potential for reducing the overall burden of cardiovascular disease was supported by the 14% relative reduction in serious adverse events compared to placebo, coupled with the reduced need for cardiovascular medications in the semaglutide group.",
+      "context_window": "erall burden of cardiovascular disease was supported by the 14% relative reduction in serious adverse events compared to pl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4028",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4028,
+      "sentence": "Substantial heterogeneity ( I 2 = 87%), however, raises concerns regarding variations in adverse event reporting across studies.",
+      "context_window": "in the semaglutide group. Substantial heterogeneity ( I 2 = 87%), however, raises concerns regarding variations in adverse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4369",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4369,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": "] of three RCTs, which included 10,013 patients. It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-4416",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4416,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": ". It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular morta",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-4426",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.71-0.89",
+      "numeric_values": [
+        0.71,
+        0.89
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4426,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": "a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95%",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4448",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4448,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": "ney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.5",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-4490",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4490,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": "CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 9",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-4500",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.52-0.97",
+      "numeric_values": [
+        0.52,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4500,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": ".89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4525",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4525,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": "ardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91). The main di",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-rr-a-4547",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4547,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": "y (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91). The main distinctions between the two",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-ci-4557",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.71-0.91",
+      "numeric_values": [
+        0.71,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4557,
+      "sentence": "It found a 20% decrease in kidney\u2010related adverse events (RR: 0.80; 95% CI: 0.71-0.89), a 29% decrease in cardiovascular mortality (RR: 0.71; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91).",
+      "context_window": "1; 95% CI: 0.52-0.97) and a 20% decrease in MACE (RR: 0.80; 95% CI: 0.71-0.91). The main distinctions between the two meta\u2010analyses are i",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4941",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4941,
+      "sentence": "These discrepancies are the probable explanation for the reduced effect size in our cardiovascular outcomes, that is, a 26% decrease in cardiovascular mortality and an 18% decrease in MACE, compared to Ashraf et al.'s higher estimates.",
+      "context_window": "uced effect size in our cardiovascular outcomes, that is, a 26% decrease in cardiovascular mortality and an 18% decrease in",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12640882_safety_and_efficacy_of_semaglutide_in_patients_with_chronic_-pct-4989",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4989,
+      "sentence": "These discrepancies are the probable explanation for the reduced effect size in our cardiovascular outcomes, that is, a 26% decrease in cardiovascular mortality and an 18% decrease in MACE, compared to Ashraf et al.'s higher estimates.",
+      "context_window": "that is, a 26% decrease in cardiovascular mortality and an 18% decrease in MACE, compared to Ashraf et al.'s higher estima",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

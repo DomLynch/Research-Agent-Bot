@@ -1,0 +1,823 @@
+{
+  "paper_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event",
+  "doi": "10.1186/1745-6215-8-21",
+  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 26,
+    "percentage": 17,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-1040",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "The ACCEPT-D is an open-label trial assessing whether 100 mg/daily of aspirin prevent cardiovascular events in patients without clinically manifest vascular disease and treated with simvastatin (starting dose 20 mg/die).",
+      "context_window": "ors. The ACCEPT-D is an open-label trial assessing whether 100 mg/daily of aspirin prevent cardiovascular events in patients",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-1195",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "The ACCEPT-D is an open-label trial assessing whether 100 mg/daily of aspirin prevent cardiovascular events in patients without clinically manifest vascular disease and treated with simvastatin (starting dose 20 mg/die).",
+      "context_window": "ascular disease and treated with simvastatin (starting dose 20 mg/die). Eligible patients will be randomly assigned to receiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-1363",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "Eligibility criteria: male and female individuals aged >=50 years with diagnosis of type 1 or type 2 diabetes, already on treatment with statins or candidate to start the treatment (LDL-cholesterol >=100 mg/dL persisting after 3 months of dietary advise).",
+      "context_window": "e. Eligibility criteria: male and female individuals aged >=50 years with diagnosis of type 1 or type 2 diabetes, already on tre",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-1506",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1506,
+      "sentence": "Eligibility criteria: male and female individuals aged >=50 years with diagnosis of type 1 or type 2 diabetes, already on treatment with statins or candidate to start the treatment (LDL-cholesterol >=100 mg/dL persisting after 3 months of dietary advise).",
+      "context_window": "tins or candidate to start the treatment (LDL-cholesterol >=100 mg/dL persisting after 3 months of dietary advise). The primary c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-1533",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1533,
+      "sentence": "Eligibility criteria: male and female individuals aged >=50 years with diagnosis of type 1 or type 2 diabetes, already on treatment with statins or candidate to start the treatment (LDL-cholesterol >=100 mg/dL persisting after 3 months of dietary advise).",
+      "context_window": "the treatment (LDL-cholesterol >=100 mg/dL persisting after 3 months of dietary advise). The primary combined end-point will inc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-1960",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1960,
+      "sentence": "A total of 515 first events are needed to detect a reduction in the risk of major cardiovascular events of 25% (alpha = 0.05; 1-beta = 0.90).",
+      "context_window": "t a reduction in the risk of major cardiovascular events of 25% (alpha = 0.05; 1-beta = 0.90). Overall, 5170 patients will",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-851",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 851,
+      "sentence": "Furthermore, the case fatality rate after a myocardial infarction among individuals with diabetes is higher than that for patients without diabetes; after a first cardiac event, 50% of patients with diabetes die within one year, and half of those who die do so before they reach the hospital (sudden deaths) [ 2 ].",
+      "context_window": "for patients without diabetes; after a first cardiac event, 50% of patients with diabetes die within one year, and half of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-2111",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2111,
+      "sentence": "The substantial lack of clear evidence is reflected by the low use of this drug in clinical practice; in fact, only 10% of diabetic patients are treated with aspirin for the prevention of cardiovascular events [ 5 ].",
+      "context_window": "he low use of this drug in clinical practice; in fact, only 10% of diabetic patients are treated with aspirin for the preve",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-3936",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3936,
+      "sentence": "The meta-analysis on the efficacy of antiplatelet therapy showed a clear benefit for the whole population of over 140.000 subjects (22% reduction in the risk of major cardiovascular [CV] events), but no statistically significant benefit was documented in the subgroup of about 5.000 diabetic patients (7% risk reduction) [ 9 ].",
+      "context_window": "benefit for the whole population of over 140.000 subjects (22% reduction in the risk of major cardiovascular [CV] events),",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-4106",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4106,
+      "sentence": "The meta-analysis on the efficacy of antiplatelet therapy showed a clear benefit for the whole population of over 140.000 subjects (22% reduction in the risk of major cardiovascular [CV] events), but no statistically significant benefit was documented in the subgroup of about 5.000 diabetic patients (7% risk reduction) [ 9 ].",
+      "context_window": "ocumented in the subgroup of about 5.000 diabetic patients (7% risk reduction) [ 9 ]. More recently, an analysis on more t",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-4304",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4304,
+      "sentence": "More recently, an analysis on more than 1000 patients with diabetes enrolled in the Primary Prevention Project (PPP) confirmed a non statistically significant reduction of 10% in the incidence of major CV events in individuals treated with aspirin as compared with controls [ 10 ].",
+      "context_window": "PPP) confirmed a non statistically significant reduction of 10% in the incidence of major CV events in individuals treated",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-67",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 67,
+      "sentence": "Aim of this trial is to evaluate the efficacy of low-dose aspirin (100 mg/daily) in the prevention of major cardiovascular events in diabetic patients without clinically manifest vascular disease and candidate for treatment with statins.",
+      "context_window": "this trial is to evaluate the efficacy of low-dose aspirin (100 mg/daily) in the prevention of major cardiovascular events in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-2071",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2071,
+      "sentence": "This is a trial designed to assess whether 100 mg/daily of aspirin prevent cardiovascular events in diabetic patients without clinically manifest vascular disease and treated with simvastatin (starting dose 20 mg/die).",
+      "context_window": "so be assessed. This is a trial designed to assess whether 100 mg/daily of aspirin prevent cardiovascular events in diabetic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-2235",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2235,
+      "sentence": "This is a trial designed to assess whether 100 mg/daily of aspirin prevent cardiovascular events in diabetic patients without clinically manifest vascular disease and treated with simvastatin (starting dose 20 mg/die).",
+      "context_window": "ascular disease and treated with simvastatin (starting dose 20 mg/die). A prospective, randomized, open, blinded endpoint ev",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-2519",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2519,
+      "sentence": "Male and female subjects aged \u226550 years are eligible for the study if they meet the following inclusion criteria:\n\n\u2022 Written informed consent to participate in this study;\n\n\u2022 Clinical diagnosis of type 1 or type 2 diabetes, based on standard diagnostic criteria (Patients on treatment with oral hypoglycaemic agents or insulin or with fasting plasma glucose \u2265126 mg/dl, confirmed on a second occasion, or 2 hour post-challenge glucose (after 75 g OGTT) \u2265200 mg/dl) irrespective of diabetes treatment;\n\n\u2022 Need for statin treatment:\n\n\u25e6 Patients already receiving statin therapy irrespective of their actual LDL cholesterol and total cholesterol levels or\n\n\u25e6 Patients not currently on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advise (Threshold levels for the initiation of statin treatment according to Third Joint Task Force of European and other Societies on Cardiovascular Disease Prevention in Clinical Practice [ 25 ]);\n\n\u2022 Ability and willingness to comply with all study requirements.\n\n\u2022 Previous major vascular events (non-fatal myocardial infarction, non-fatal stroke, angina, transient ischemic attack, revascularization procedures, peripheral vascular disease);\n\n\u2022 Poor metabolic control (HbA 1c > 14.0%);\n\n\u2022 Any condition requiring elective treatment with aspirin;\n\n\u2022 Contraindications to aspirin (history of aspirin allergy, bleeding tendency, gastrointestinal haemorrhage or peptic ulcer within six months, active hepatic disease, asthma, renal failure, use of anticoagulant therapy.\n\n\u2022 Contraindications to simvastatin (history of allergy, chronic liver disease or abnormal liver function [i.e.",
+      "context_window": "(Figure 1 ). Study design. Male and female subjects aged \u226550 years are eligible for the study if they meet the following inclu",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-2847",
+      "claim_type": "unit_value",
+      "raw_text": "126 mg",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2847,
+      "sentence": "Male and female subjects aged \u226550 years are eligible for the study if they meet the following inclusion criteria:\n\n\u2022 Written informed consent to participate in this study;\n\n\u2022 Clinical diagnosis of type 1 or type 2 diabetes, based on standard diagnostic criteria (Patients on treatment with oral hypoglycaemic agents or insulin or with fasting plasma glucose \u2265126 mg/dl, confirmed on a second occasion, or 2 hour post-challenge glucose (after 75 g OGTT) \u2265200 mg/dl) irrespective of diabetes treatment;\n\n\u2022 Need for statin treatment:\n\n\u25e6 Patients already receiving statin therapy irrespective of their actual LDL cholesterol and total cholesterol levels or\n\n\u25e6 Patients not currently on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advise (Threshold levels for the initiation of statin treatment according to Third Joint Task Force of European and other Societies on Cardiovascular Disease Prevention in Clinical Practice [ 25 ]);\n\n\u2022 Ability and willingness to comply with all study requirements.\n\n\u2022 Previous major vascular events (non-fatal myocardial infarction, non-fatal stroke, angina, transient ischemic attack, revascularization procedures, peripheral vascular disease);\n\n\u2022 Poor metabolic control (HbA 1c > 14.0%);\n\n\u2022 Any condition requiring elective treatment with aspirin;\n\n\u2022 Contraindications to aspirin (history of aspirin allergy, bleeding tendency, gastrointestinal haemorrhage or peptic ulcer within six months, active hepatic disease, asthma, renal failure, use of anticoagulant therapy.\n\n\u2022 Contraindications to simvastatin (history of allergy, chronic liver disease or abnormal liver function [i.e.",
+      "context_window": "glycaemic agents or insulin or with fasting plasma glucose \u2265126 mg/dl, confirmed on a second occasion, or 2 hour post-challeng",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-2942",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2942,
+      "sentence": "Male and female subjects aged \u226550 years are eligible for the study if they meet the following inclusion criteria:\n\n\u2022 Written informed consent to participate in this study;\n\n\u2022 Clinical diagnosis of type 1 or type 2 diabetes, based on standard diagnostic criteria (Patients on treatment with oral hypoglycaemic agents or insulin or with fasting plasma glucose \u2265126 mg/dl, confirmed on a second occasion, or 2 hour post-challenge glucose (after 75 g OGTT) \u2265200 mg/dl) irrespective of diabetes treatment;\n\n\u2022 Need for statin treatment:\n\n\u25e6 Patients already receiving statin therapy irrespective of their actual LDL cholesterol and total cholesterol levels or\n\n\u25e6 Patients not currently on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advise (Threshold levels for the initiation of statin treatment according to Third Joint Task Force of European and other Societies on Cardiovascular Disease Prevention in Clinical Practice [ 25 ]);\n\n\u2022 Ability and willingness to comply with all study requirements.\n\n\u2022 Previous major vascular events (non-fatal myocardial infarction, non-fatal stroke, angina, transient ischemic attack, revascularization procedures, peripheral vascular disease);\n\n\u2022 Poor metabolic control (HbA 1c > 14.0%);\n\n\u2022 Any condition requiring elective treatment with aspirin;\n\n\u2022 Contraindications to aspirin (history of aspirin allergy, bleeding tendency, gastrointestinal haemorrhage or peptic ulcer within six months, active hepatic disease, asthma, renal failure, use of anticoagulant therapy.\n\n\u2022 Contraindications to simvastatin (history of allergy, chronic liver disease or abnormal liver function [i.e.",
+      "context_window": "casion, or 2 hour post-challenge glucose (after 75 g OGTT) \u2265200 mg/dl) irrespective of diabetes treatment; \u2022 Need for statin",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-3216",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 3216,
+      "sentence": "Male and female subjects aged \u226550 years are eligible for the study if they meet the following inclusion criteria:\n\n\u2022 Written informed consent to participate in this study;\n\n\u2022 Clinical diagnosis of type 1 or type 2 diabetes, based on standard diagnostic criteria (Patients on treatment with oral hypoglycaemic agents or insulin or with fasting plasma glucose \u2265126 mg/dl, confirmed on a second occasion, or 2 hour post-challenge glucose (after 75 g OGTT) \u2265200 mg/dl) irrespective of diabetes treatment;\n\n\u2022 Need for statin treatment:\n\n\u25e6 Patients already receiving statin therapy irrespective of their actual LDL cholesterol and total cholesterol levels or\n\n\u25e6 Patients not currently on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advise (Threshold levels for the initiation of statin treatment according to Third Joint Task Force of European and other Societies on Cardiovascular Disease Prevention in Clinical Practice [ 25 ]);\n\n\u2022 Ability and willingness to comply with all study requirements.\n\n\u2022 Previous major vascular events (non-fatal myocardial infarction, non-fatal stroke, angina, transient ischemic attack, revascularization procedures, peripheral vascular disease);\n\n\u2022 Poor metabolic control (HbA 1c > 14.0%);\n\n\u2022 Any condition requiring elective treatment with aspirin;\n\n\u2022 Contraindications to aspirin (history of aspirin allergy, bleeding tendency, gastrointestinal haemorrhage or peptic ulcer within six months, active hepatic disease, asthma, renal failure, use of anticoagulant therapy.\n\n\u2022 Contraindications to simvastatin (history of allergy, chronic liver disease or abnormal liver function [i.e.",
+      "context_window": "currently on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advi",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-3227",
+      "claim_type": "unit_value",
+      "raw_text": "2.59 mmol",
+      "numeric_values": [
+        2.59
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3227,
+      "sentence": "Male and female subjects aged \u226550 years are eligible for the study if they meet the following inclusion criteria:\n\n\u2022 Written informed consent to participate in this study;\n\n\u2022 Clinical diagnosis of type 1 or type 2 diabetes, based on standard diagnostic criteria (Patients on treatment with oral hypoglycaemic agents or insulin or with fasting plasma glucose \u2265126 mg/dl, confirmed on a second occasion, or 2 hour post-challenge glucose (after 75 g OGTT) \u2265200 mg/dl) irrespective of diabetes treatment;\n\n\u2022 Need for statin treatment:\n\n\u25e6 Patients already receiving statin therapy irrespective of their actual LDL cholesterol and total cholesterol levels or\n\n\u25e6 Patients not currently on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advise (Threshold levels for the initiation of statin treatment according to Third Joint Task Force of European and other Societies on Cardiovascular Disease Prevention in Clinical Practice [ 25 ]);\n\n\u2022 Ability and willingness to comply with all study requirements.\n\n\u2022 Previous major vascular events (non-fatal myocardial infarction, non-fatal stroke, angina, transient ischemic attack, revascularization procedures, peripheral vascular disease);\n\n\u2022 Poor metabolic control (HbA 1c > 14.0%);\n\n\u2022 Any condition requiring elective treatment with aspirin;\n\n\u2022 Contraindications to aspirin (history of aspirin allergy, bleeding tendency, gastrointestinal haemorrhage or peptic ulcer within six months, active hepatic disease, asthma, renal failure, use of anticoagulant therapy.\n\n\u2022 Contraindications to simvastatin (history of allergy, chronic liver disease or abnormal liver function [i.e.",
+      "context_window": "on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advise (Thresho",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-3763",
+      "claim_type": "percentage",
+      "raw_text": "14.0%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3763,
+      "sentence": "Male and female subjects aged \u226550 years are eligible for the study if they meet the following inclusion criteria:\n\n\u2022 Written informed consent to participate in this study;\n\n\u2022 Clinical diagnosis of type 1 or type 2 diabetes, based on standard diagnostic criteria (Patients on treatment with oral hypoglycaemic agents or insulin or with fasting plasma glucose \u2265126 mg/dl, confirmed on a second occasion, or 2 hour post-challenge glucose (after 75 g OGTT) \u2265200 mg/dl) irrespective of diabetes treatment;\n\n\u2022 Need for statin treatment:\n\n\u25e6 Patients already receiving statin therapy irrespective of their actual LDL cholesterol and total cholesterol levels or\n\n\u25e6 Patients not currently on statin treatment with LDL-cholesterol levels \u2265100 mg/dL (2.59 mmol/L) persisting after three months of dietary advise (Threshold levels for the initiation of statin treatment according to Third Joint Task Force of European and other Societies on Cardiovascular Disease Prevention in Clinical Practice [ 25 ]);\n\n\u2022 Ability and willingness to comply with all study requirements.\n\n\u2022 Previous major vascular events (non-fatal myocardial infarction, non-fatal stroke, angina, transient ischemic attack, revascularization procedures, peripheral vascular disease);\n\n\u2022 Poor metabolic control (HbA 1c > 14.0%);\n\n\u2022 Any condition requiring elective treatment with aspirin;\n\n\u2022 Contraindications to aspirin (history of aspirin allergy, bleeding tendency, gastrointestinal haemorrhage or peptic ulcer within six months, active hepatic disease, asthma, renal failure, use of anticoagulant therapy.\n\n\u2022 Contraindications to simvastatin (history of allergy, chronic liver disease or abnormal liver function [i.e.",
+      "context_window": "eral vascular disease); \u2022 Poor metabolic control (HbA 1c > 14.0%); \u2022 Any condition requiring elective treatment with aspiri",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-4285",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4285,
+      "sentence": "ALT or AST \u22651.5 times the upper limit of normal], severe renal disease or evidence of renal impairment [i.e. creatinine >2 mg/dl], concomitant use of potent inhibitor of CYP3A4.\n\n\u2022 Chronic use of non-steroidal anti-inflammatory drugs;\n\n\u2022 Presence of any life-threatening condition;\n\n\u2022 Child-bearing potential (pre-menopausal women not using reliable contraception);\n\n\u2022 History of active substance or alcohol abuse within the last year.",
+      "context_window": "l disease or evidence of renal impairment [i.e. creatinine >2 mg/dl], concomitant use of potent inhibitor of CYP3A4. \u2022 Chro",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-4963",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4963,
+      "sentence": "All randomized patients will be instructed to take one or two tablets daily; in particular, if the patient will be assigned to \"aspirin+simvastatin arm\", he will be instructed to take one tablet containing simvastatin (one 20 mg tablet every evening), and the other containing aspirin.",
+      "context_window": "e instructed to take one tablet containing simvastatin (one 20 mg tablet every evening), and the other containing aspirin. Ot",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-5184",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5184,
+      "sentence": "An initial dose of 20 mg/daily of simvastatin will be prescribed to patients not previously on treatment with statins.",
+      "context_window": "will be prescribed by the investigator. An initial dose of 20 mg/daily of simvastatin will be prescribed to patients not pre",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-5329",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 5329,
+      "sentence": "The dose of simvastatin can be increased to 40 mg/day at month 3 in those patients whose plasma LDL cholesterol remains \u2265100 mg/dL (2.59 mmol/L).",
+      "context_window": "with statins. The dose of simvastatin can be increased to 40 mg/day at month 3 in those patients whose plasma LDL cholesterol r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-5406",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 5406,
+      "sentence": "The dose of simvastatin can be increased to 40 mg/day at month 3 in those patients whose plasma LDL cholesterol remains \u2265100 mg/dL (2.59 mmol/L).",
+      "context_window": "h 3 in those patients whose plasma LDL cholesterol remains \u2265100 mg/dL (2.59 mmol/L). Patients already on statins treatment at st",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-5417",
+      "claim_type": "unit_value",
+      "raw_text": "2.59 mmol",
+      "numeric_values": [
+        2.59
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5417,
+      "sentence": "The dose of simvastatin can be increased to 40 mg/day at month 3 in those patients whose plasma LDL cholesterol remains \u2265100 mg/dL (2.59 mmol/L).",
+      "context_window": "e patients whose plasma LDL cholesterol remains \u2265100 mg/dL (2.59 mmol/L). Patients already on statins treatment at study entry w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-5730",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5730,
+      "sentence": "If target LDL cholesterol levels will not be reached with 40 mg/daily, clinicians may modify therapeutic strategies (changes of statin, addition of other drugs such as ezetimibe, fenofibrate, nicotinic acid, omega-3 fatty acid).",
+      "context_window": "If target LDL cholesterol levels will not be reached with 40 mg/daily, clinicians may modify therapeutic strategies (change",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-6880",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6880,
+      "sentence": "In the PPP trial the cumulative incidence of major cardiovascular events (cardiovascular death, myocardial infarction, stroke, transient ischemic attack, peripheral vascular disease, revascularization procedures), after a median follow-up of 4 years, was of 11.5% in subjects not assigned to aspirin treatment (incidence rate of 2.88% per annum).",
+      "context_window": "revascularization procedures), after a median follow-up of 4 years, was of 11.5% in subjects not assigned to aspirin treatment",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-6896",
+      "claim_type": "percentage",
+      "raw_text": "11.5%",
+      "numeric_values": [
+        11.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6896,
+      "sentence": "In the PPP trial the cumulative incidence of major cardiovascular events (cardiovascular death, myocardial infarction, stroke, transient ischemic attack, peripheral vascular disease, revascularization procedures), after a median follow-up of 4 years, was of 11.5% in subjects not assigned to aspirin treatment (incidence rate of 2.88% per annum).",
+      "context_window": "on procedures), after a median follow-up of 4 years, was of 11.5% in subjects not assigned to aspirin treatment (incidence ra",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-6967",
+      "claim_type": "percentage",
+      "raw_text": "2.88%",
+      "numeric_values": [
+        2.88
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6967,
+      "sentence": "In the PPP trial the cumulative incidence of major cardiovascular events (cardiovascular death, myocardial infarction, stroke, transient ischemic attack, peripheral vascular disease, revascularization procedures), after a median follow-up of 4 years, was of 11.5% in subjects not assigned to aspirin treatment (incidence rate of 2.88% per annum).",
+      "context_window": "bjects not assigned to aspirin treatment (incidence rate of 2.88% per annum). Assuming that treatment with statins can reduce",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-7265",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7265,
+      "sentence": "Assuming that treatment with statins can reduce such an event rate by approximately one quarter (based on the results of the meta-analysis of primary prevention studies in patients with diabetes [ 26 ]), we can expect an incidence rate of major cardiovascular events of about 2.1-2.2% per annum.",
+      "context_window": "incidence rate of major cardiovascular events of about 2.1-2.2% per annum. Since the primary cumulative end-point of the st",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-7477",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7477,
+      "sentence": "Since the primary cumulative end-point of the study also includes hospitalizations for major vascular causes, sample size calculations for the proposed trial are based on a conservative estimated 2.5% annual rate of major vascular events.",
+      "context_window": "or the proposed trial are based on a conservative estimated 2.5% annual rate of major vascular events. Aspirin has been sho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-7729",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7729,
+      "sentence": "The sample size is thus estimated to detect with a statistical power of 90% (\u03b1 = 0.05) a reduction in the risk of major cardiovascular events of 25% (HR = 0.75).",
+      "context_window": "ize is thus estimated to detect with a statistical power of 90% (\u03b1 = 0.05) a reduction in the risk of major cardiovascular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-7802",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7802,
+      "sentence": "The sample size is thus estimated to detect with a statistical power of 90% (\u03b1 = 0.05) a reduction in the risk of major cardiovascular events of 25% (HR = 0.75).",
+      "context_window": ") a reduction in the risk of major cardiovascular events of 25% (HR = 0.75). Given these assumptions, a total of 515 first",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-hr-a-7807",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.75",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7807,
+      "sentence": "The sample size is thus estimated to detect with a statistical power of 90% (\u03b1 = 0.05) a reduction in the risk of major cardiovascular events of 25% (HR = 0.75).",
+      "context_window": "eduction in the risk of major cardiovascular events of 25% (HR = 0.75). Given these assumptions, a total of 515 first events are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-8115",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8115,
+      "sentence": "From the PPP trial [ 29 ], it is possible to foresee a trial discontinuation rate of 10%.",
+      "context_window": ", it is possible to foresee a trial discontinuation rate of 10%. Therefore, a total of 5.170 patients will be enrolled (2.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-8280",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8280,
+      "sentence": "80%) to detect a smaller reduction in the risk of major events (i.e.",
+      "context_window": "events will also ensure an adequate statistical power (i.e. 80%) to detect a smaller reduction in the risk of major events",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-hr-a-8349",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8349,
+      "sentence": "HR = 0.78).",
+      "context_window": "etect a smaller reduction in the risk of major events (i.e. HR = 0.78). All the efficacy analyses will be based on the intent to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-8941",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 8941,
+      "sentence": "Aspirin efficacy will also be tested in the following different circumstances:\n\n- Men vs. women;\n\n- Age \u226565 vs. <65 years;\n\n- Type of diabetes;\n\n- Metabolic control (quartiles of HbA 1c );\n\n- Baseline cholesterol levels (quartiles of total and LDL-cholesterol levels);\n\n- Presence of microvascular complications (retinopathy, nephropathy);\n\n- Treatment with other cardiovascular drugs (in particular \u03b2-blockers, ACE-inhibitors, Angiotensin Receptor Blockers).",
+      "context_window": "different circumstances: - Men vs. women; - Age \u226565 vs. <65 years; - Type of diabetes; - Metabolic control (quartiles of Hb",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-9600",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9600,
+      "sentence": "During the study one interim analysis will be performed after the achievement of a number of events equal to 50% of the planned number.",
+      "context_window": "formed after the achievement of a number of events equal to 50% of the planned number. Data will be analyzed with the doubl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-11655",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 11655,
+      "sentence": "If the last HbA 1c measurement was performed more than 3 months before randomization and all the other measurements were performed more than 6 months before randomization, the measurement should be performed again, according to the standards of medical care for patients at high cardiovascular risk.",
+      "context_window": "med. If the last HbA 1c measurement was performed more than 3 months before randomization and all the other measurements were pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-11741",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 11741,
+      "sentence": "If the last HbA 1c measurement was performed more than 3 months before randomization and all the other measurements were performed more than 6 months before randomization, the measurement should be performed again, according to the standards of medical care for patients at high cardiovascular risk.",
+      "context_window": "ion and all the other measurements were performed more than 6 months before randomization, the measurement should be performed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-12627",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 12627,
+      "sentence": "The duration of the enrolment phase will be of 18 months.",
+      "context_window": "collected. The duration of the enrolment phase will be of 18 months. The total trial duration is event-driven. A total of 515",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-u-12774",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 12774,
+      "sentence": "A total duration of follow-up of 5 years after the first randomized patient is anticipated, if 5170 patients will be recruited and if the event rate will be of the same entity of that anticipated (incidence of 2.5% per annum).",
+      "context_window": "scular event are required. A total duration of follow-up of 5 years after the first randomized patient is anticipated, if 5170",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2014771_aspirin_and_simvastatin_combination_for_cardiovascular_event-pct-12951",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12951,
+      "sentence": "A total duration of follow-up of 5 years after the first randomized patient is anticipated, if 5170 patients will be recruited and if the event rate will be of the same entity of that anticipated (incidence of 2.5% per annum).",
+      "context_window": "ill be of the same entity of that anticipated (incidence of 2.5% per annum). If the number of patients enrolled or the even",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

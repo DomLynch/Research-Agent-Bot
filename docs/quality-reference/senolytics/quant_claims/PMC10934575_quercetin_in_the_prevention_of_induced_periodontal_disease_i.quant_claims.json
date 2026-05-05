@@ -1,0 +1,232 @@
+{
+  "paper_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i",
+  "doi": "10.3390/nu16050735",
+  "extracted_at": "2026-05-05T21:22:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "confidence_interval": 2,
+    "p_value": 1,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-u-1035",
+      "claim_type": "unit_value",
+      "raw_text": "1.88 mm",
+      "numeric_values": [
+        1.88
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "The meta-analysis showed that quercetin administration decreased alveolar bone loss (\u03c4 2 = 0.31, 1.88 mm 95%CI: 1.09, 2.67) in experimental periodontal disease animal models.",
+      "context_window": "in administration decreased alveolar bone loss (\u03c4 2 = 0.31, 1.88 mm 95%CI: 1.09, 2.67) in experimental periodontal disease anim",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-ci-1043",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.09, 2.67",
+      "numeric_values": [
+        1.09,
+        2.67
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "The meta-analysis showed that quercetin administration decreased alveolar bone loss (\u03c4 2 = 0.31, 1.88 mm 95%CI: 1.09, 2.67) in experimental periodontal disease animal models.",
+      "context_window": "istration decreased alveolar bone loss (\u03c4 2 = 0.31, 1.88 mm 95%CI: 1.09, 2.67) in experimental periodontal disease animal models. However",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-p-2557",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2557,
+      "sentence": "Statistical significance was set to p < 0.05.",
+      "context_window": "lored by the I 2 index. Statistical significance was set to p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-u-1150",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1150,
+      "sentence": "The duration of the ligature-induced periodontal disease with and without quercetin ranged from 7 to 15 days.",
+      "context_window": "odontal disease with and without quercetin ranged from 7 to 15 days. The administration routes of quercetin were oral feeding [",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-u-1364",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1364,
+      "sentence": "Doses varied from 40 to 150 mg/kg per day.",
+      "context_window": "d intraperitoneal injection [ 14 ]. Doses varied from 40 to 150 mg/kg per day. All studies evaluated alveolar bone loss ( Tabl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-pct-2283",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2283,
+      "sentence": "The SYCLE tool showed that 60% of the studies had a low risk of bias in the sequence generation.",
+      "context_window": "and RANKL compared to control. The SYCLE tool showed that 60% of the studies had a low risk of bias in the sequence gener",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-pct-3217",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3217,
+      "sentence": "The statistical heterogeneity among the four included studies showed an I 2 index of 49%.",
+      "context_window": "eity among the four included studies showed an I 2 index of 49%. The meta-analysis showed that quercetin administration sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-u-3323",
+      "claim_type": "unit_value",
+      "raw_text": "1.88 mm",
+      "numeric_values": [
+        1.88
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3323,
+      "sentence": "The meta-analysis showed that quercetin administration significantly decreased alveolar bone loss by 1.88 mm (95%CI: 1.09, 2.67; (\u03c4 2 = 0.31) in experimental periodontal disease animal models ( Figure 2 ).",
+      "context_window": "dministration significantly decreased alveolar bone loss by 1.88 mm (95%CI: 1.09, 2.67; (\u03c4 2 = 0.31) in experimental periodonta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-ci-3332",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.09, 2.67",
+      "numeric_values": [
+        1.09,
+        2.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3332,
+      "sentence": "The meta-analysis showed that quercetin administration significantly decreased alveolar bone loss by 1.88 mm (95%CI: 1.09, 2.67; (\u03c4 2 = 0.31) in experimental periodontal disease animal models ( Figure 2 ).",
+      "context_window": "tion significantly decreased alveolar bone loss by 1.88 mm (95%CI: 1.09, 2.67; (\u03c4 2 = 0.31) in experimental periodontal disease animal mo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-u-726",
+      "claim_type": "unit_value",
+      "raw_text": "800 mg",
+      "numeric_values": [
+        800.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 726,
+      "sentence": "Depending on food intake and consumption of fruits and vegetables, the dietary intake of quercetin adds up to 50 to 800 mg per day [ 15 ].",
+      "context_window": "egetables, the dietary intake of quercetin adds up to 50 to 800 mg per day [ 15 ]. The poor aqueous solubility of quercetin ha",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-pct-7590",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7590,
+      "sentence": "Additionally, a 4% quercetin/polycaprolactone fibrous membrane showed enhanced periodontal bone regeneration in an in vivo rat model compared to an unloaded membrane [ 57 ].",
+      "context_window": "apability of \u03b2-tricalcium phosphate [ 56 ]. Additionally, a 4% quercetin/polycaprolactone fibrous membrane showed enhanced",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10934575_quercetin_in_the_prevention_of_induced_periodontal_disease_i-pct-10856",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10856,
+      "sentence": "In a local in vitro setting, a polylactic acid nanofibers membrane loaded with 5-10% of quercetin inhibited subgingival biofilm maturation of Pseudomonas aeruginosa and Streptococcus mutans .",
+      "context_window": "etting, a polylactic acid nanofibers membrane loaded with 5-10% of quercetin inhibited subgingival biofilm maturation of Ps",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}
