@@ -75,6 +75,12 @@ into operator-actionable expansion workflows; this slice is the
 foundation other slices (Journal-Ready verdict, dashboard, Corpus
 Factory v1, domain adapters) build on (2026-05-05).
 
+Wave 7 cont. — Evidence Factory slice 3 (14,900 → 15,050):
+agent/topic_maturity.py (~116 cloc — L0-L5 ladder + Journal-Ready
+gate). Universal: same module classifies metformin (L4/L5),
+rapamycin (L3), statins (L2). Plays into Slice 4 dashboard which
+reads maturity_level from the verdict per topic (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -82,7 +88,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 14900
+TOTAL_LIMIT = 15050
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

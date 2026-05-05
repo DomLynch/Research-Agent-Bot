@@ -306,3 +306,108 @@ def test_format_unified_verdict_omits_expansion_when_no_gaps() -> None:
     v = orch._compute_unified_verdict(s1, [])
     md = orch._format_unified_verdict(v)
     assert "Corpus Expansion To-Do" not in md
+
+
+# ---------- Wave 7 / Slice 3: maturity ladder + Journal-Ready -------
+
+def test_l5_journal_ready_on_clean_aaa_run() -> None:
+    """AAA + manifest above floor + zero grok + zero auto-strip → L5."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 15, "n_high_confidence_claims_total": 134,
+        "n_non_orthogonal_tensions": 42,
+        "receipts": [
+            {"outcome_class": ["a", "b", "c"][i % 3],
+             "evidence_tier": "A1", "directness": "direct",
+             "receipt_id": f"P{i}"} for i in range(15)
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+        manifest=manifest, auto_stripped_count=0,
+    )
+    assert v.verdict == "AAA"
+    assert v.maturity_level == 5
+    assert v.maturity_label == "L5 — JOURNAL-READY"
+    assert v.journal_ready is True
+
+
+def test_l4_aaa_but_surgery_blocks_journal_ready() -> None:
+    """AAA but auto-strip had to remove sentences → L4, not journal-ready."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 15, "n_high_confidence_claims_total": 134,
+        "n_non_orthogonal_tensions": 42,
+        "receipts": [
+            {"outcome_class": ["a", "b", "c"][i % 3],
+             "evidence_tier": "A1", "directness": "direct",
+             "receipt_id": f"P{i}"} for i in range(15)
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+        manifest=manifest, auto_stripped_count=4,
+    )
+    assert v.maturity_level == 4
+    assert v.journal_ready is False
+
+
+def test_l2_when_corpus_thin() -> None:
+    """Below cert floor with claims → L2."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 3, "n_high_confidence_claims_total": 12,
+        "n_non_orthogonal_tensions": 1, "receipts": [],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=3, n_high_conf_claims=12,
+        n_non_orthogonal_tensions=1, manifest=manifest,
+    )
+    assert v.maturity_level == 2
+    assert v.journal_ready is False
+
+
+def test_format_unified_verdict_renders_maturity_badge_and_journal_line() -> None:
+    """Both the maturity badge and the journal-ready line must
+    appear in the rendered markdown."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 15, "n_high_confidence_claims_total": 134,
+        "n_non_orthogonal_tensions": 42,
+        "receipts": [
+            {"outcome_class": ["a", "b", "c"][i % 3],
+             "evidence_tier": "A1", "directness": "direct",
+             "receipt_id": f"P{i}"} for i in range(15)
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+        manifest=manifest, auto_stripped_count=0,
+    )
+    md = orch._format_unified_verdict(v)
+    assert "**Maturity:" in md
+    assert "L5 — JOURNAL-READY" in md
+    assert "**Journal-Ready: yes**" in md
+
+
+def test_format_unified_verdict_journal_ready_no_when_thin() -> None:
+    """Thin corpus → 'Journal-Ready: no' surfaces explicitly."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 3, "n_high_confidence_claims_total": 12,
+        "n_non_orthogonal_tensions": 1, "receipts": [],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=3, n_high_conf_claims=12,
+        n_non_orthogonal_tensions=1, manifest=manifest,
+    )
+    md = orch._format_unified_verdict(v)
+    assert "**Journal-Ready: no**" in md

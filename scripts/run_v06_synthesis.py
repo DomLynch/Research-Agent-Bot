@@ -1247,6 +1247,7 @@ async def _run_post_paper_pipeline(
         )
     else:
         grok_unresolved_p1 = 0
+        n_stripped = 0
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
     # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok
@@ -1303,6 +1304,7 @@ async def _run_post_paper_pipeline(
         n_non_orthogonal_tensions=_n_tens,
         cert_floors=_cert_floors,
         manifest=manifest,
+        auto_stripped_count=n_stripped,
     )
     paper_path.with_suffix(".final_verdict.json").write_text(
         json.dumps(dataclasses.asdict(unified), indent=2)
@@ -1678,7 +1680,12 @@ class UnifiedVerdict:
     Wave 7 (2026-05-05): adds corpus_gaps + expansion_targets so a
     sub-AAA verdict carries the actionable to-do list for the next
     run instead of being a dead-end signal. Empty tuples when corpus
-    meets all gates."""
+    meets all gates.
+
+    Slice 3 (Wave 7 cont.): adds maturity_level (L0-L5) and
+    journal_ready bool so dashboards / readers see the topic's
+    position on the certification ladder. L5 == Journal-Ready
+    (AAA + zero unresolved Grok + zero auto-strip surgery)."""
     verdict: str
     reason: str
     stage1_p1_pass: bool
@@ -1692,6 +1699,9 @@ class UnifiedVerdict:
     grok_unresolved_p1: int = 0
     corpus_gaps: tuple[str, ...] = ()
     expansion_targets: tuple[str, ...] = ()
+    maturity_level: int = 0
+    maturity_label: str = "L0 — UNSEEDED"
+    journal_ready: bool = False
 
 
 def _is_blocking(severity: str) -> bool:
@@ -1711,6 +1721,7 @@ def _compute_unified_verdict(
     n_non_orthogonal_tensions: int = 0,
     cert_floors: dict[str, int] | None = None,
     manifest: dict[str, Any] | None = None,
+    auto_stripped_count: int = 0,
 ) -> UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
     fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
@@ -1882,6 +1893,29 @@ def _compute_unified_verdict(
         except (ImportError, ValueError):
             corpus_gaps, expansion_targets = (), ()
 
+    # Slice 3 (Wave 7 cont.): topic maturity ladder L0-L5 +
+    # Journal-Ready compound gate. Universal — derived from manifest
+    # signals + verdict + hardening counters. Empty manifest → L0.
+    maturity_level = 0
+    maturity_label = "L0 — UNSEEDED"
+    journal_ready = False
+    try:
+        from agent.topic_maturity import (
+            compute_maturity_level, format_maturity_label,
+            is_journal_ready,
+        )
+        maturity_level = compute_maturity_level(
+            manifest or {},
+            verdict=verdict,
+            grok_unresolved_p1=grok_unresolved_p1,
+            auto_stripped_count=auto_stripped_count,
+            cert_floors=cert_floors,
+        )
+        maturity_label = format_maturity_label(maturity_level)
+        journal_ready = is_journal_ready(maturity_level)
+    except ImportError:
+        pass
+
     return UnifiedVerdict(
         verdict=verdict,
         reason=reason,
@@ -1896,6 +1930,9 @@ def _compute_unified_verdict(
         grok_unresolved_p1=grok_unresolved_p1,
         corpus_gaps=corpus_gaps,
         expansion_targets=expansion_targets,
+        maturity_level=maturity_level,
+        maturity_label=maturity_label,
+        journal_ready=journal_ready,
     )
 
 
@@ -1911,9 +1948,19 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         )
     except ImportError:
         expansion_md = ""
+    # Slice 3 (Wave 7): journal-ready badge + maturity ladder line.
+    journal_line = (
+        "**Journal-Ready: yes** — submission-grade certification "
+        "(AAA + zero unresolved Grok + zero auto-strip surgery).\n\n"
+        if u.journal_ready
+        else "**Journal-Ready: no** — see maturity level + components "
+             "for what gates remain.\n\n"
+    )
     return (
         f"# Unified Final Verdict\n\n"
         f"**Verdict: {u.verdict}**\n\n"
+        f"**Maturity: {u.maturity_label}**\n\n"
+        f"{journal_line}"
         f"**Reason:** {u.reason}\n\n"
         f"## Components\n\n"
         f"- Stage-1 audit (Q1-Q10): "
