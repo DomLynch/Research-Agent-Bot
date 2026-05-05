@@ -235,10 +235,40 @@ def build_search_provenance_appendix(
     return "\n".join(lines) + "\n"
 
 
+def _verdict_phrase(verdict: str) -> str:
+    """Conditional certification phrase. Verdict-honest by construction:
+    AAA            → 'Researka-Certified A2A-AAA artifact'
+    Trust-Spine    → 'Researka Trust-Spine Pass artifact (pending AAA
+                      certification on consecutive-run stability)'
+    SHIP-BLOCKED   → 'Researka preliminary audit-trail artifact (not yet
+                      certification-eligible)'
+    other / unset  → 'Researka audit-trail artifact'
+    Reviewer P1 (2026-05-05): the prior hardcoded 'A2A-AAA-certified'
+    language overclaimed for Trust-Spine Pass artifacts (e.g. the
+    statins publication run, which fails Q9 honestly)."""
+    v = (verdict or "").strip()
+    if v == "AAA":
+        return "Researka-Certified A2A-AAA artifact"
+    if v in ("Trust-Spine Pass",
+             "Trust-Spine Pass — Agent Review Unresolved"):
+        return (
+            "Researka Trust-Spine Pass artifact (pending AAA "
+            "certification on consecutive-run stability)"
+        )
+    if v == "SHIP-BLOCKED":
+        return (
+            "Researka preliminary audit-trail artifact (not yet "
+            "certification-eligible)"
+        )
+    return "Researka audit-trail artifact"
+
+
 def build_ai_use_disclosure(
     manifest: dict[str, Any],
     audit: dict[str, Any] | None = None,
     model_stack: dict[str, str] | None = None,
+    *,
+    verdict: str = "",
 ) -> str:
     """AI-use disclosure under the Researka Independent Standard (RIS).
 
@@ -389,7 +419,7 @@ def build_ai_use_disclosure(
     return "\n".join(lines) + "\n"
 
 
-def build_human_accountability_template() -> str:
+def build_human_accountability_template(*, verdict: str = "") -> str:
     """Researka Submitter Block — replaces the legacy 'human author
     accountability statement' framing.
 
@@ -423,8 +453,8 @@ def build_human_accountability_template() -> str:
         "\n"
         "**Submitter attestation:**\n"
         "\n"
-        "> I publicly release this Researka A2A-AAA-certified "
-        "artifact under the Researka Independent Standard. I "
+        f"> I publicly release this {_verdict_phrase(verdict)} "
+        "under the Researka Independent Standard. I "
         "have inspected the trust-spine bundle (paper + audit + "
         "consistency + patch trail + citation registry + cert + "
         "manifest) and find no defects exceeding the cert's "
@@ -534,6 +564,7 @@ def compose_appendix(
     run_id: str = "unknown-run",
     git_sha: str = "unknown",
     bundle_path: str | None = None,
+    verdict: str = "",
 ) -> str:
     """Top-level composer. Returns the full appendix block, ready
     to splice into the paper before the References section.
@@ -541,11 +572,18 @@ def compose_appendix(
     Order matters — Search Provenance comes first because it sets
     the methodological frame; AI-Use is the longest and most
     journal-required; Accountability and Data/Code are short
-    closers."""
+    closers.
+
+    Verdict-aware (2026-05-05 wave 6 P1 reviewer fix): the
+    'A2A-AAA-certified' language in the submitter block + AI-use
+    disclosure is gated on the actual verdict. Trust-Spine Pass and
+    SHIP-BLOCKED artifacts no longer overclaim AAA."""
     blocks = [
         build_search_provenance_appendix(manifest, topic=topic),
-        build_ai_use_disclosure(manifest, audit, model_stack),
-        build_human_accountability_template(),
+        build_ai_use_disclosure(
+            manifest, audit, model_stack, verdict=verdict,
+        ),
+        build_human_accountability_template(verdict=verdict),
         build_data_code_availability(
             run_id, git_sha, bundle_path=bundle_path, topic=topic,
         ),

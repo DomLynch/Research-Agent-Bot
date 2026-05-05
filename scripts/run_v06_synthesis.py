@@ -1286,8 +1286,22 @@ async def _run_post_paper_pipeline(
     paper_path.with_suffix(".consistency.md").write_text(
         _consistency_audit._format_summary(final_issues)
     )
+    # Pull corpus-density signals from manifest for cert-floor check
+    _n_rec = int(manifest.get("n_receipts", 0))
+    _n_claims = int(manifest.get("n_high_confidence_claims_total", 0))
+    _n_tens = int(manifest.get("n_non_orthogonal_tensions", 0))
+    # Topic-pack override of cert floors (optional)
+    _cert_floors = None
+    if _TOPIC_PACK is not None:
+        _floors_obj = getattr(_TOPIC_PACK, "certification_floors", None)
+        if _floors_obj:
+            _cert_floors = dict(_floors_obj)
     unified = _compute_unified_verdict(
         audit_report, final_issues, grok_unresolved_p1=grok_unresolved_p1,
+        n_receipts=_n_rec,
+        n_high_conf_claims=_n_claims,
+        n_non_orthogonal_tensions=_n_tens,
+        cert_floors=_cert_floors,
     )
     paper_path.with_suffix(".final_verdict.json").write_text(
         json.dumps(dataclasses.asdict(unified), indent=2)
@@ -1346,6 +1360,7 @@ async def _run_post_paper_pipeline(
             run_id=paper_path.parent.name,
             git_sha=git_sha,
             bundle_path=f"bundles/{paper_path.parent.name}/",
+            verdict=unified.verdict,
         )
         paper_md = splice_appendix_before_references(
             paper_md, appendix_md,
@@ -1682,6 +1697,11 @@ def _compute_unified_verdict(
     stage1_report: dict[str, Any] | None,
     stage2_issues: list[Any],
     grok_unresolved_p1: int = 0,
+    *,
+    n_receipts: int = 0,
+    n_high_conf_claims: int = 0,
+    n_non_orthogonal_tensions: int = 0,
+    cert_floors: dict[str, int] | None = None,
 ) -> UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
     fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
@@ -1724,14 +1744,43 @@ def _compute_unified_verdict(
 
     p1_clean = s1_p1_pass and s2_p1_blocking == 0
     grok_clean = grok_unresolved_p1 == 0
+    # Certification floors (2026-05-05 wave 7 reviewer fix): even with
+    # all-green audits, AAA requires the corpus to be substantive
+    # enough to support a real synthesis. Reviewer recommendation:
+    #   ≥ min_receipts (default 10)
+    #   ≥ min_high_conf_claims (default 50)
+    #   ≥ min_non_orthogonal_tensions (default 10)
+    # Topic packs may override these in [certification_floors] table.
+    # Below floor → max verdict is Trust-Spine Pass; never AAA.
+    floors = cert_floors or {}
+    min_rec = floors.get("min_receipts", 10)
+    min_claims = floors.get("min_high_conf_claims", 50)
+    min_tens = floors.get("min_non_orthogonal_tensions", 10)
+    # Skip floor check when caller passes no corpus signals (legacy
+    # test callers using the pre-2026-05-05 signature). Production
+    # callers from run_v06_synthesis always pass real values.
+    has_corpus_signals = (
+        n_receipts > 0 or n_high_conf_claims > 0
+        or n_non_orthogonal_tensions > 0
+    )
+    cert_floor_clean = (
+        not has_corpus_signals
+        or (
+            n_receipts >= min_rec
+            and n_high_conf_claims >= min_claims
+            and n_non_orthogonal_tensions >= min_tens
+        )
+    )
     # AAA requires positive evidence: at least one check ran AND all
-    # passed AND zero stage-2 issues AND zero unresolved Grok P1.
+    # passed AND zero stage-2 issues AND zero unresolved Grok P1
+    # AND corpus floor met.
     all_green = (
         p1_clean
         and grok_clean
         and s1_n_total > 0
         and s1_n_pass == s1_n_total
         and s2_p2 == 0
+        and cert_floor_clean
     )
 
     if not p1_clean:
@@ -1765,6 +1814,21 @@ def _compute_unified_verdict(
             "net (Fix #49). The pipeline exhausted its autonomous "
             "options; the issue is materially unresolvable without "
             "either a corpus-side fix or an out-of-band edit."
+        )
+    elif p1_clean and grok_clean and s2_p2 == 0 and (
+        s1_n_total > 0 and s1_n_pass == s1_n_total
+    ) and not cert_floor_clean:
+        # Audits all-green but corpus below the certification floor —
+        # honest signal that the pipeline ran cleanly on a thin corpus.
+        verdict = "Trust-Spine Pass"
+        reason = (
+            f"All audits green (stage1 {s1_n_pass}/{s1_n_total}, "
+            f"stage2 zero issues, grok zero) BUT corpus below "
+            f"certification floor: receipts={n_receipts}/{min_rec}, "
+            f"high-conf claims={n_high_conf_claims}/{min_claims}, "
+            f"non-orthogonal tensions="
+            f"{n_non_orthogonal_tensions}/{min_tens}. AAA requires "
+            f"both clean audits AND substantive corpus."
         )
     else:
         verdict = "Trust-Spine Pass"

@@ -148,3 +148,45 @@ def test_p3_and_info_are_nonblocking() -> None:
     assert u.stage2_p1 == 0
     assert u.stage2_p2 == 0
     assert u.stage2_unknown_severity_count == 0
+
+
+# ---------- Certification floors (2026-05-05 wave 7 reviewer fix) --------
+
+def test_aaa_blocked_when_below_cert_floor() -> None:
+    """All audits clean but corpus thin → Trust-Spine Pass, not AAA.
+    Reviewer-mandated floor: ≥10 receipts, ≥50 claims, ≥10 tensions."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=3, n_high_conf_claims=18,
+        n_non_orthogonal_tensions=3,
+    )
+    assert v.verdict == "Trust-Spine Pass"
+    assert "below certification floor" in v.reason
+
+
+def test_aaa_clears_when_above_cert_floor() -> None:
+    """Same all-green audits + corpus above floor → AAA."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+    )
+    assert v.verdict == "AAA"
+
+
+def test_cert_floor_overridable_via_topic_pack() -> None:
+    """Topic pack can lower or raise floors via cert_floors arg."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    # Lowered floor → corpus that was previously below now passes
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=3, n_high_conf_claims=18,
+        n_non_orthogonal_tensions=3,
+        cert_floors={
+            "min_receipts": 3, "min_high_conf_claims": 15,
+            "min_non_orthogonal_tensions": 3,
+        },
+    )
+    assert v.verdict == "AAA"
