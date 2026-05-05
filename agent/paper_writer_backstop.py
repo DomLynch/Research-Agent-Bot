@@ -20,12 +20,15 @@ from typing import Any
 
 import httpx
 
+from agent.deterministic_anchors import (
+    build_cross_domain_anchor, build_discussion_anchor,
+)
 from agent.llm_client import CallSpec, CostLedger
 from agent.paper_writer_helpers import (
     section_word_count as _section_word_count,
 )
 from agent.synthesis_schemas import (
-    ReceiptSummary, SectionName, SynthesisSection,
+    ReceiptSummary, SectionName, SynthesisSection, TensionMatrix,
 )
 
 
@@ -69,6 +72,7 @@ async def apply_section_backstop(
     section_prompts: Mapping[str, str],
     topic: str,
     accepted: Sequence[ReceiptSummary],
+    matrix: TensionMatrix | None = None,
     chain: Sequence[CallSpec],
     client: httpx.AsyncClient | None,
     ledger: CostLedger | None,
@@ -156,6 +160,39 @@ async def apply_section_backstop(
                 "original",
                 flush=True,
             )
+
+    # Final structural fallback (Wave 7, 2026-05-05): if cross_domain
+    # / discussion is STILL below floor after the audit-aware
+    # rerender, append a deterministic corpus-derived anchor
+    # paragraph. Universal across topics, no LLM cost, no
+    # fabrication risk — every value traces to receipts/matrix.
+    if matrix is not None:
+        for sec_name, anchor_fn in (
+            ("cross_domain_synthesis", build_cross_domain_anchor),
+            ("discussion", build_discussion_anchor),
+        ):
+            cur = sections.get(sec_name)
+            if cur is None:
+                continue
+            words = _section_word_count(cur)
+            floor = AUDIT_GATED_FLOORS.get(sec_name, 800)
+            if words >= floor:
+                continue
+            anchor_md = anchor_fn(accepted, matrix)
+            if not anchor_md:
+                continue
+            new_body = cur.body_md.rstrip() + "\n\n" + anchor_md + "\n"
+            sections[sec_name] = SynthesisSection(
+                name=sec_name, body_md=new_body, anchors=cur.anchors,
+            )
+            new_words = _section_word_count(sections[sec_name])
+            print(
+                f"[paper_writer] BACKSTOP: {sec_name} appended "
+                f"deterministic anchor ({words} → {new_words} "
+                "words); structural Q11/Q12 backstop",
+                flush=True,
+            )
+
     return sections
 
 

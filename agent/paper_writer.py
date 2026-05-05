@@ -702,6 +702,7 @@ async def render_full_paper(
         section_prompts=_prompts,
         topic=topic,
         accepted=accepted,
+        matrix=matrix,
         chain=chain, client=client, ledger=ledger, seed=seed,
         background_lit_entries=background_lit_entries,
         write_anchored_fn=_write_anchored_section,
