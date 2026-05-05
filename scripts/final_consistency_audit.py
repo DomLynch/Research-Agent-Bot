@@ -418,7 +418,34 @@ def run_audit(
         paper_md, manifest,
     ))
     issues.extend(_check_abstract_over_grouping(paper_md, manifest))  # Fix #38
+    issues.extend(_check_numeric_role_guard(paper_md))  # 2026-05-05 universal
     return issues
+
+
+# Universal Numeric Role Guard (2026-05-05): catches three classes of
+# numeric-misinterpretation in prose that earlier point-fixes
+# (#54/#57/#58/#58c) addressed only as specific patterns. See
+# scripts/numeric_role_guard.py for the full rule set:
+#   - arithmetic_violation: 'X below Y' when X > Y (or vice versa)
+#   - role_mismatch: change-score compared to absolute threshold
+#   - malformed_subject: 'the X group <verb> ... for the X group <was>'
+#     repair-artifact pattern
+def _check_numeric_role_guard(paper_md: str) -> list[ConsistencyIssue]:
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from numeric_role_guard import scan_paper as _scan
+    out: list[ConsistencyIssue] = []
+    for issue in _scan(paper_md):
+        out.append(ConsistencyIssue(
+            id=f"C14-numeric-role-{abs(hash(issue.sentence)) % 99999:05d}",
+            severity=issue.severity,
+            issue_type=issue.issue_type,
+            evidence=issue.sentence[:200],
+            suggested_fix=issue.suggested_fix,
+            auto_fixable=issue.severity == "P1",
+        ))
+    return out
 
 
 # Fix #33: pipeline-internal tier labels that must NOT appear in

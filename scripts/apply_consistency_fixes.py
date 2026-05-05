@@ -486,6 +486,34 @@ def apply_fixes(
             ),
         })
 
+    # Universal Numeric Role Guard auto-fix (2026-05-05): strip P1
+    # sentences flagged for arithmetic_violation or role_mismatch.
+    # Catches the metformin '0.13 m/s falls at or below 0.1 m/s'
+    # pattern and the 'duplicate-subject group' repair artifact.
+    # See scripts/numeric_role_guard.py.
+    try:
+        from numeric_role_guard import (
+            scan_paper as _scan, auto_strip_offending_sentences as _strip,
+        )
+    except ImportError:
+        _scan = None
+    if _scan is not None:
+        nrg_issues = _scan(new_md)
+        if nrg_issues:
+            new_md, n_stripped = _strip(new_md, nrg_issues)
+            if n_stripped:
+                log.append({
+                    "fix_type": "numeric_role_guard_strip",
+                    "n_changes": n_stripped,
+                    "description": (
+                        "stripped sentences flagged by Numeric Role "
+                        "Guard (arithmetic violation, role mismatch, "
+                        "or malformed-subject repair artifact). "
+                        "Universal class-level fix subsuming "
+                        "Fixes #54/#57/#58/#58c."
+                    ),
+                })
+
     return new_md, log
 
 
