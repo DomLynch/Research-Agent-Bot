@@ -1,8 +1,29 @@
 {
   "paper_id": "PMC6203200_high_protein_intake_during_the_early_phase_of_critical_illne",
   "doi": "10.1186/s13054-018-2196-5",
-  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extracted_at": "2026-05-05T23:37:10+00:00",
   "extractor_version": "0.6.0",
-  "claims_count_by_type": {},
-  "claims": []
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6203200_high_protein_intake_during_the_early_phase_of_critical_illne-u-1191",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 g/kg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 1191,
+      "sentence": "A wide range of interventions are being tested and compared to the standards of care, from supplemental proteins (1.5-3.0 g/kg/day) alone to combination with standardized physical activity.",
+      "context_window": "d to the standards of care, from supplemental proteins (1.5-3.0 g/kg/day) alone to combination with standardized physical activity.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
 }

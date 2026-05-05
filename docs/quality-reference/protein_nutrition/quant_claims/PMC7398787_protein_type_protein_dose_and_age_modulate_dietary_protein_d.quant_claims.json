@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d",
   "doi": "10.1093/jn/nxaa024",
-  "extracted_at": "2026-05-05T22:35:37+00:00",
+  "extracted_at": "2026-05-05T23:37:14+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 53,
@@ -26,7 +26,7 @@
       "context_window": "ed controlled trials with a total of 602 participants [age: 53 \u00b1 23 y; BMI (kg/m 2 ): 24.8 \u00b1 3.3] who consumed various quantiti",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "a total of 602 participants [age: 53 \u00b1 23 y; BMI (kg/m 2 ): 24.8 \u00b1 3.3] who consumed various quantities of intrinsically l -[1- 13",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -63,7 +63,7 @@
       "context_window": "of intrinsically l -[1- 13 C]-phenylalanine-labeled whey ( n = 137), casein ( n = 393), or milk ( n = 72) protein and received",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -81,7 +81,7 @@
       "context_window": "-[1- 13 C]-phenylalanine-labeled whey ( n = 137), casein ( n = 393), or milk ( n = 72) protein and received intravenous infusi",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -99,7 +99,7 @@
       "context_window": "anine-labeled whey ( n = 137), casein ( n = 393), or milk ( n = 72) protein and received intravenous infusions of l -[ring- 2",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -155,9 +155,9 @@
       "context_window": "3 y) and 83 older (aged 71 \u00b1 5 y) individuals. A total of 50% \u00b1 14% of dietary protein-derived phenylalanine appeared in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-1102",
@@ -173,9 +173,9 @@
       "context_window": "and 83 older (aged 71 \u00b1 5 y) individuals. A total of 50% \u00b1 14% of dietary protein-derived phenylalanine appeared in the ci",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-1247",
@@ -191,7 +191,7 @@
       "context_window": "ostprandial period. Casein ingestion resulted in a smaller (45% \u00b1 11%), whey protein ingestion in an intermediate (57% \u00b1 10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -209,7 +209,7 @@
       "context_window": "ndial period. Casein ingestion resulted in a smaller (45% \u00b1 11%), whey protein ingestion in an intermediate (57% \u00b1 10%), an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -227,7 +227,7 @@
       "context_window": "ler (45% \u00b1 11%), whey protein ingestion in an intermediate (57% \u00b1 10%), and milk protein ingestion in a greater (65% \u00b1 13%)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -245,7 +245,7 @@
       "context_window": "5% \u00b1 11%), whey protein ingestion in an intermediate (57% \u00b1 10%), and milk protein ingestion in a greater (65% \u00b1 13%) fract",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -263,7 +263,7 @@
       "context_window": "diate (57% \u00b1 10%), and milk protein ingestion in a greater (65% \u00b1 13%) fraction of dietary protein-derived phenylalanine ap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -281,7 +281,7 @@
       "context_window": "(57% \u00b1 10%), and milk protein ingestion in a greater (65% \u00b1 13%) fraction of dietary protein-derived phenylalanine appearin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -299,7 +299,7 @@
       "context_window": "rotein-derived phenylalanine appearing in the circulation ( P < 0.001). The postprandial availability of dietary protein-derived",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -317,7 +317,7 @@
       "context_window": "ion increased with the ingestion of greater protein doses ( P < 0.05). Protein digestion and phenylalanine absorption kinetics w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -335,7 +335,7 @@
       "context_window": "enuated in older when compared with young individuals, with 45% \u00b1 10% vs. 51% \u00b1 14% of dietary protein-derived phenylalanin",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -353,7 +353,7 @@
       "context_window": "d in older when compared with young individuals, with 45% \u00b1 10% vs. 51% \u00b1 14% of dietary protein-derived phenylalanine appe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -371,9 +371,9 @@
       "context_window": "er when compared with young individuals, with 45% \u00b1 10% vs. 51% \u00b1 14% of dietary protein-derived phenylalanine appearing in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-1760",
@@ -389,9 +389,9 @@
       "context_window": "n compared with young individuals, with 45% \u00b1 10% vs. 51% \u00b1 14% of dietary protein-derived phenylalanine appearing in the c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-p-1850",
@@ -407,9 +407,9 @@
       "context_window": "phenylalanine appearing in the circulation, respectively ( P = 0.001). Protein type, protein dose, and age modulate dietary pro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-917",
@@ -425,9 +425,9 @@
       "context_window": "majority of participants were men, with only a few women ( n = 12) included from a recent study in which we showed that dieta",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1313",
@@ -443,9 +443,9 @@
       "context_window": "rom all 602 participants who consumed either whey protein ( n = 137), casein ( n = 393), or milk protein concentrate ( n = 72;",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1332",
@@ -461,9 +461,9 @@
       "context_window": "pants who consumed either whey protein ( n = 137), casein ( n = 393), or milk protein concentrate ( n = 72; see Table 1 for par",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1372",
@@ -479,9 +479,9 @@
       "context_window": "n = 137), casein ( n = 393), or milk protein concentrate ( n = 72; see Table 1 for participants\u2019 characteristics). To investi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1798",
@@ -497,9 +497,9 @@
       "context_window": "protein ingestion were included. This approach resulted in n = 76 for whey protein and n = 359 for casein. Protein dose was e",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1826",
@@ -515,9 +515,9 @@
       "context_window": "uded. This approach resulted in n = 76 for whey protein and n = 359 for casein. Protein dose was expressed in grams of protein",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-2911",
@@ -697,9 +697,9 @@
       "context_window": "rotein was produced by infusing l -[1- 13 C]-phenylalanine (420 \u03bcmol/min) into lactating Holstein dairy cows as described previo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-6973",
@@ -715,9 +715,9 @@
       "context_window": "th reverse osmosis (RO) water, and further concentrated to \u223c14% dry matter (containing 90% protein). The concentrated casei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-7000",
@@ -733,9 +733,9 @@
       "context_window": "er, and further concentrated to \u223c14% dry matter (containing 90% protein). The concentrated casein solution was pasteurized",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-7270",
@@ -751,9 +751,9 @@
       "context_window": "with RO water and concentrated to an end concentration of \u223c5.5% dry matter (containing 96% protein). The whey protein conce",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-7298",
@@ -769,9 +769,9 @@
       "context_window": "ted to an end concentration of \u223c5.5% dry matter (containing 96% protein). The whey protein concentrate was sterile filtrate",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-7690",
@@ -787,9 +787,9 @@
       "context_window": "e size of 20 kDa at 10\u00b0C. The permeate was concentrated to \u223c18% dry matter (containing \u223c80% protein) and spray dried. All p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-7718",
@@ -805,9 +805,9 @@
       "context_window": "e permeate was concentrated to \u223c18% dry matter (containing \u223c80% protein) and spray dried. All protein batches met the chemi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-8053",
@@ -824,9 +824,9 @@
       "context_window": "he mean enrichment of the intrinsically labeled protein was 33.3 \u00b1 9.6 mole percent excess (MPE). The ingestion of intrinsically",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-u-11469",
@@ -842,9 +842,9 @@
       "context_window": "termined using GC-MS. The average phenylalanine content was 228 \u03bcmol/g for whey protein, 317 \u03bcmol/g for casein, and 259 \u03bcmol/g f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-u-11498",
@@ -860,9 +860,9 @@
       "context_window": "rage phenylalanine content was 228 \u03bcmol/g for whey protein, 317 \u03bcmol/g for casein, and 259 \u03bcmol/g for milk protein. Plasma pheny",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-u-11525",
@@ -878,9 +878,9 @@
       "context_window": "was 228 \u03bcmol/g for whey protein, 317 \u03bcmol/g for casein, and 259 \u03bcmol/g for milk protein. Plasma phenylalanine availability was c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-p-12924",
@@ -914,9 +914,9 @@
       "context_window": "The complete dataset of 602 participants showed that 50% \u00b1 14% of dietary protein-derived phenylalanine appeared in",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-59",
@@ -932,9 +932,9 @@
       "context_window": "The complete dataset of 602 participants showed that 50% \u00b1 14% of dietary protein-derived phenylalanine appeared in the ci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-755",
@@ -951,7 +951,7 @@
       "context_window": "enous phenylalanine appearance rates increased to a peak of 0.35 \u00b1 0.09 \u03bcmol . kg -1 . min -1 at 49 \u00b1 20 min after whey protein ing",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -969,7 +969,7 @@
       "context_window": "henylalanine appearance rates increased to a peak of 0.35 \u00b1 0.09 \u03bcmol . kg -1 . min -1 at 49 \u00b1 20 min after whey protein ingestio",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -988,7 +988,7 @@
       "context_window": "increased to a peak of 0.35 \u00b1 0.09 \u03bcmol . kg -1 . min -1 at 49 \u00b1 20 min after whey protein ingestion compared with 0.25 \u00b1 0.10",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1007,7 +1007,7 @@
       "context_window": "1 at 49 \u00b1 20 min after whey protein ingestion compared with 0.25 \u00b1 0.10 \u03bcmol . kg -1 . min -1 at 96 \u00b1 72 min after casein ingestion",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1025,7 +1025,7 @@
       "context_window": "\u00b1 20 min after whey protein ingestion compared with 0.25 \u00b1 0.10 \u03bcmol . kg -1 . min -1 at 96 \u00b1 72 min after casein ingestion ( P",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1044,7 +1044,7 @@
       "context_window": "ngestion compared with 0.25 \u00b1 0.10 \u03bcmol . kg -1 . min -1 at 96 \u00b1 72 min after casein ingestion ( P < 0.001 for both peak and ti",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1062,7 +1062,7 @@
       "context_window": "ol . kg -1 . min -1 at 96 \u00b1 72 min after casein ingestion ( P < 0.001 for both peak and time-to-peak; Table 1 ). The ingestion of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1081,9 +1081,9 @@
       "context_window": "intermediate peak exogenous phenylalanine appearance rates (0.29 \u00b1 0.10 \u03bcmol . kg -1 . min -1 ), with the time-to-peak being simila",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-u-1083",
@@ -1099,9 +1099,9 @@
       "context_window": "diate peak exogenous phenylalanine appearance rates (0.29 \u00b1 0.10 \u03bcmol . kg -1 . min -1 ), with the time-to-peak being similar to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-1170",
@@ -1118,9 +1118,9 @@
       "context_window": "), with the time-to-peak being similar to casein ingestion (101 \u00b1 55 min). Rate of appearance of dietary protein-derived phenyl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-1420",
@@ -1137,9 +1137,9 @@
       "context_window": "ostprandial period (B, insert) in participants who consumed 23 \u00b1 5, 24 \u00b1 7, and 26 \u00b1 11 g intrinsically labeled whey ( n = 137",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-1428",
@@ -1156,9 +1156,9 @@
       "context_window": "ial period (B, insert) in participants who consumed 23 \u00b1 5, 24 \u00b1 7, and 26 \u00b1 11 g intrinsically labeled whey ( n = 137), casei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-1440",
@@ -1175,9 +1175,9 @@
       "context_window": "B, insert) in participants who consumed 23 \u00b1 5, 24 \u00b1 7, and 26 \u00b1 11 g intrinsically labeled whey ( n = 137), casein ( n = 393),",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1479",
@@ -1193,9 +1193,9 @@
       "context_window": "23 \u00b1 5, 24 \u00b1 7, and 26 \u00b1 11 g intrinsically labeled whey ( n = 137), casein ( n = 393), and milk ( n = 72) protein, respective",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1498",
@@ -1211,9 +1211,9 @@
       "context_window": "d 26 \u00b1 11 g intrinsically labeled whey ( n = 137), casein ( n = 393), and milk ( n = 72) protein, respectively. Values are mean",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-1519",
@@ -1229,9 +1229,9 @@
       "context_window": "ally labeled whey ( n = 137), casein ( n = 393), and milk ( n = 72) protein, respectively. Values are means \u00b1 SEMs. Labeled me",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-p-1621",
@@ -1265,7 +1265,7 @@
       "context_window": "tion of casein, whey, and milk protein resulted in a lower (45% \u00b1 11%), intermediate (57% \u00b1 10%), and greater (65% \u00b1 13%) f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1283,7 +1283,7 @@
       "context_window": "f casein, whey, and milk protein resulted in a lower (45% \u00b1 11%), intermediate (57% \u00b1 10%), and greater (65% \u00b1 13%) fractio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1301,7 +1301,7 @@
       "context_window": "milk protein resulted in a lower (45% \u00b1 11%), intermediate (57% \u00b1 10%), and greater (65% \u00b1 13%) fraction of dietary protein",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1319,7 +1319,7 @@
       "context_window": "rotein resulted in a lower (45% \u00b1 11%), intermediate (57% \u00b1 10%), and greater (65% \u00b1 13%) fraction of dietary protein-deriv",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1337,7 +1337,7 @@
       "context_window": "a lower (45% \u00b1 11%), intermediate (57% \u00b1 10%), and greater (65% \u00b1 13%) fraction of dietary protein-derived phenylalanine ap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1355,7 +1355,7 @@
       "context_window": "r (45% \u00b1 11%), intermediate (57% \u00b1 10%), and greater (65% \u00b1 13%) fraction of dietary protein-derived phenylalanine appearin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1373,7 +1373,7 @@
       "context_window": "phenylalanine appearing in the circulation, respectively ( P < 0.001; Figure 1B , insert). We observed a dose-response relation",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1392,7 +1392,7 @@
       "context_window": "nous phenylalanine appearance rates reaching peak values of 0.28 \u00b1 0.07, 0.38 \u00b1 0.06, and 0.43 \u00b1 0.08 \u03bcmol . kg -1 . min -1 after c",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1411,7 +1411,7 @@
       "context_window": "anine appearance rates reaching peak values of 0.28 \u00b1 0.07, 0.38 \u00b1 0.06, and 0.43 \u00b1 0.08 \u03bcmol . kg -1 . min -1 after consuming the",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1430,7 +1430,7 @@
       "context_window": "rates reaching peak values of 0.28 \u00b1 0.07, 0.38 \u00b1 0.06, and 0.43 \u00b1 0.08 \u03bcmol . kg -1 . min -1 after consuming the lower, medium, an",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1448,7 +1448,7 @@
       "context_window": "eaching peak values of 0.28 \u00b1 0.07, 0.38 \u00b1 0.06, and 0.43 \u00b1 0.08 \u03bcmol . kg -1 . min -1 after consuming the lower, medium, and hig",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1466,7 +1466,7 @@
       "context_window": "suming the lower, medium, and higher dose of whey protein ( P < 0.001; Table 2 ). Peak exogenous phenylalanine appearance rates w",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1485,7 +1485,7 @@
       "context_window": "ak exogenous phenylalanine appearance rates were reached at 45 \u00b1 22 min, 43 \u00b1 11 min, and 50 \u00b1 20 min after ingesting the lower",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1504,7 +1504,7 @@
       "context_window": "phenylalanine appearance rates were reached at 45 \u00b1 22 min, 43 \u00b1 11 min, and 50 \u00b1 20 min after ingesting the lower, medium, and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1523,7 +1523,7 @@
       "context_window": "earance rates were reached at 45 \u00b1 22 min, 43 \u00b1 11 min, and 50 \u00b1 20 min after ingesting the lower, medium, and highest whey pro",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1541,7 +1541,7 @@
       "context_window": "spectively, with no significant differences between doses ( P = 0.382). Rate of appearance of dietary protein-derived phenylalan",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1559,9 +1559,9 @@
       "context_window": "ticipants who consumed intrinsically labeled whey protein ( n = 76) by tertile of protein dose in grams per kilogram of BM (0.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-3444",
@@ -1578,9 +1578,9 @@
       "context_window": "76) by tertile of protein dose in grams per kilogram of BM (0.23 \u00b1 0.04 vs. 0.29 \u00b1 0.01 vs. 0.35 \u00b1 0.04 g/kg BM). Values are means",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-3460",
@@ -1652,7 +1652,7 @@
       "context_window": "h onwards ( Figure 2B ). Over the 5-h postprandial period, 51% \u00b1 10%, 57% \u00b1 9%, and 61% \u00b1 7% of the dietary protein-derive",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1670,7 +1670,7 @@
       "context_window": "ards ( Figure 2B ). Over the 5-h postprandial period, 51% \u00b1 10%, 57% \u00b1 9%, and 61% \u00b1 7% of the dietary protein-derived phen",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1688,7 +1688,7 @@
       "context_window": "( Figure 2B ). Over the 5-h postprandial period, 51% \u00b1 10%, 57% \u00b1 9%, and 61% \u00b1 7% of the dietary protein-derived phenylala",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1706,7 +1706,7 @@
       "context_window": "re 2B ). Over the 5-h postprandial period, 51% \u00b1 10%, 57% \u00b1 9%, and 61% \u00b1 7% of the dietary protein-derived phenylalanine",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1724,7 +1724,7 @@
       "context_window": "Over the 5-h postprandial period, 51% \u00b1 10%, 57% \u00b1 9%, and 61% \u00b1 7% of the dietary protein-derived phenylalanine had appea",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1742,7 +1742,7 @@
       "context_window": "the 5-h postprandial period, 51% \u00b1 10%, 57% \u00b1 9%, and 61% \u00b1 7% of the dietary protein-derived phenylalanine had appeared i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1760,7 +1760,7 @@
       "context_window": "ermediate, and greater dose of whey protein, respectively ( P = 0.001; Figure 2B , insert). When calculating the estimated plasma",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1779,7 +1779,7 @@
       "context_window": "ion < 0.001; Figure 2C ). Over the 5-h postprandial period, 11.4 \u00b1 3.0 g, 13.4 \u00b1 3.0 g, and 14.4 \u00b1 1.8 g of the dietary protein-de",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1798,7 +1798,7 @@
       "context_window": "igure 2C ). Over the 5-h postprandial period, 11.4 \u00b1 3.0 g, 13.4 \u00b1 3.0 g, and 14.4 \u00b1 1.8 g of the dietary protein-derived amino ac",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1817,7 +1817,7 @@
       "context_window": "he 5-h postprandial period, 11.4 \u00b1 3.0 g, 13.4 \u00b1 3.0 g, and 14.4 \u00b1 1.8 g of the dietary protein-derived amino acids had appeared i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1835,7 +1835,7 @@
       "context_window": "ermediate, and greater dose of whey protein, respectively ( P < 0.001; Figure 2C , insert). We subsequently assessed the dose-re",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2021,9 +2021,9 @@
       "context_window": "in participants who consumed intrinsically labeled casein ( n = 359) by tertile of protein dose in grams per kilogram of BM (0.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-5955",
@@ -2040,9 +2040,9 @@
       "context_window": "59) by tertile of protein dose in grams per kilogram of BM (0.24 \u00b1 0.01 vs. 0.28 \u00b1 0.02 vs. 0.44 \u00b1 0.07 g/kg BM). Values are means",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-5971",
@@ -2114,7 +2114,7 @@
       "context_window": "asein at all time points. Over the 5-h postprandial period, 47% \u00b1 12% and 47% \u00b1 10% of dietary protein-derived phenylalanin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2132,7 +2132,7 @@
       "context_window": "at all time points. Over the 5-h postprandial period, 47% \u00b1 12% and 47% \u00b1 10% of dietary protein-derived phenylalanine appe",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2150,7 +2150,7 @@
       "context_window": "ime points. Over the 5-h postprandial period, 47% \u00b1 12% and 47% \u00b1 10% of dietary protein-derived phenylalanine appeared in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2168,7 +2168,7 @@
       "context_window": "ints. Over the 5-h postprandial period, 47% \u00b1 12% and 47% \u00b1 10% of dietary protein-derived phenylalanine appeared in the ci",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2186,7 +2186,7 @@
       "context_window": "on of the smaller and intermediate protein doses, with only 41% \u00b1 11% of the larger casein dose entering the circulation (",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2204,7 +2204,7 @@
       "context_window": "the smaller and intermediate protein doses, with only 41% \u00b1 11% of the larger casein dose entering the circulation ( P < 0.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2222,7 +2222,7 @@
       "context_window": "\u00b1 11% of the larger casein dose entering the circulation ( P < 0.001; Figure 3B , insert). Despite the lower relative fraction,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2445,7 +2445,7 @@
       "context_window": "ion < 0.001; Figure 4B ). Over the 5-h postprandial period, 45% \u00b1 10% of dietary protein-derived phenylalanine had appeared",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2463,7 +2463,7 @@
       "context_window": "0.001; Figure 4B ). Over the 5-h postprandial period, 45% \u00b1 10% of dietary protein-derived phenylalanine had appeared in th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2481,7 +2481,7 @@
       "context_window": "as significantly lower compared with the young individuals (51% \u00b1 14%; P = 0.001; Figure 4B , insert). This translated to a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2499,7 +2499,7 @@
       "context_window": "nificantly lower compared with the young individuals (51% \u00b1 14%; P = 0.001; Figure 4B , insert). This translated to an esti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2517,7 +2517,7 @@
       "context_window": "antly lower compared with the young individuals (51% \u00b1 14%; P = 0.001; Figure 4B , insert). This translated to an estimated 9.6 \u00b1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2536,9 +2536,9 @@
       "context_window": "0.001; Figure 4B , insert). This translated to an estimated 9.6 \u00b1 2.2 g compared with 10.9 \u00b1 2.7 g dietary protein-derived amino",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-8690",
@@ -2555,9 +2555,9 @@
       "context_window": ". This translated to an estimated 9.6 \u00b1 2.2 g compared with 10.9 \u00b1 2.7 g dietary protein-derived amino acids appearing in the circ",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-p-8861",
@@ -2573,9 +2573,9 @@
       "context_window": "d in the older versus the young individuals, respectively ( P = 0.001; Figure 4C ). Similar results were obtained when excluding",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-9294",
@@ -2592,9 +2592,9 @@
       "context_window": "ared in the circulation in grams (C) after the ingestion of 22 \u00b1 5 g intrinsically labeled casein in young ( n = 82) and older",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-9343",
@@ -2610,9 +2610,9 @@
       "context_window": "gestion of 22 \u00b1 5 g intrinsically labeled casein in young ( n = 82) and older ( n = 83) men. Values are means \u00b1 SEMs. *Differe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-n-9363",
@@ -2628,9 +2628,9 @@
       "context_window": "intrinsically labeled casein in young ( n = 82) and older ( n = 83) men. Values are means \u00b1 SEMs. *Different from young men, P",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-p-9428",
@@ -2664,9 +2664,9 @@
       "context_window": "d data from 18 RCTs with >600 participants and showed that \u223c50% of dietary protein-derived phenylalanine appeared in the ci",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-271",
@@ -2682,9 +2682,9 @@
       "context_window": "nt the ingested protein amount or type. This suggests that \u226550% of dietary protein is effectively digested and absorbed and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-417",
@@ -2700,9 +2700,9 @@
       "context_window": "peripheral tissues such as skeletal muscle, while the other 50% of dietary protein is either not (yet) digested and absorbe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-1123",
@@ -2718,9 +2718,9 @@
       "context_window": "henylalanine released into the circulation, ranging between 25% and 80% of the ingested dietary protein. As such, we invest",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-1131",
@@ -2736,9 +2736,9 @@
       "context_window": "nine released into the circulation, ranging between 25% and 80% of the ingested dietary protein. As such, we investigated w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-2106",
@@ -2754,7 +2754,7 @@
       "context_window": "e appeared in the circulation after milk protein ingestion (65% \u00b1 13%) when compared with whey protein (57% \u00b1 10%) or casei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2772,7 +2772,7 @@
       "context_window": "ared in the circulation after milk protein ingestion (65% \u00b1 13%) when compared with whey protein (57% \u00b1 10%) or casein (45%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2790,7 +2790,7 @@
       "context_window": "tein ingestion (65% \u00b1 13%) when compared with whey protein (57% \u00b1 10%) or casein (45% \u00b1 11%) ingestion. These findings indi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2808,7 +2808,7 @@
       "context_window": "ngestion (65% \u00b1 13%) when compared with whey protein (57% \u00b1 10%) or casein (45% \u00b1 11%) ingestion. These findings indicate t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2826,7 +2826,7 @@
       "context_window": "13%) when compared with whey protein (57% \u00b1 10%) or casein (45% \u00b1 11%) ingestion. These findings indicate that ingestion of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2844,7 +2844,7 @@
       "context_window": "hen compared with whey protein (57% \u00b1 10%) or casein (45% \u00b1 11%) ingestion. These findings indicate that ingestion of a die",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2862,7 +2862,7 @@
       "context_window": "rculation. After consuming the higher dose of whey protein, 61% \u00b1 7% of the dietary protein-derived phenylalanine had appea",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2880,7 +2880,7 @@
       "context_window": "ion. After consuming the higher dose of whey protein, 61% \u00b1 7% of the dietary protein-derived phenylalanine had appeared i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2898,7 +2898,7 @@
       "context_window": "ation throughout the 5-h postprandial period, compared with 51% \u00b1 10% after ingesting the lower whey protein dose. This tra",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2916,7 +2916,7 @@
       "context_window": "throughout the 5-h postprandial period, compared with 51% \u00b1 10% after ingesting the lower whey protein dose. This translate",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2972,7 +2972,7 @@
       "context_window": "re 3B ). After consuming the higher doses of casein, merely 41% \u00b1 11% of protein-derived phenylalanine had appeared in the",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2990,7 +2990,7 @@
       "context_window": "). After consuming the higher doses of casein, merely 41% \u00b1 11% of protein-derived phenylalanine had appeared in the circul",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3008,7 +3008,7 @@
       "context_window": "henylalanine had appeared in the circulation, compared with 47% \u00b1 12% after consuming the lower protein dose. Nonetheless,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3026,7 +3026,7 @@
       "context_window": "lanine had appeared in the circulation, compared with 47% \u00b1 12% after consuming the lower protein dose. Nonetheless, a grea",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3045,7 +3045,7 @@
       "context_window": "ids appeared in the circulation after consuming the higher (13.0 \u00b1 3.6 g) compared with the lower (9.4 \u00b1 2.4 g) casein dose. These",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3064,7 +3064,7 @@
       "context_window": "onsuming the higher (13.0 \u00b1 3.6 g) compared with the lower (9.4 \u00b1 2.4 g) casein dose. These findings are in line with recent work",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3082,9 +3082,9 @@
       "context_window": "ary protein-derived phenylalanine in the circulation. While 51% \u00b1 14% of dietary protein-derived phenylalanine had appeared",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-6617",
@@ -3100,9 +3100,9 @@
       "context_window": "otein-derived phenylalanine in the circulation. While 51% \u00b1 14% of dietary protein-derived phenylalanine had appeared in th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-6745",
@@ -3118,9 +3118,9 @@
       "context_window": "culation over the 5-h postprandial period in the young men, 45% \u00b1 10% appeared in the circulation in older men. This transl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-pct-6751",
@@ -3136,9 +3136,9 @@
       "context_window": "on over the 5-h postprandial period in the young men, 45% \u00b1 10% appeared in the circulation in older men. This translates t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-6839",
@@ -3155,9 +3155,9 @@
       "context_window": "ion in older men. This translates to an estimated amount of 10.9 \u00b1 2.7 g when compared with 9.6 \u00b1 2.2 g of dietary protein-derived",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7398787_protein_type_protein_dose_and_age_modulate_dietary_protein_d-msd-6871",
@@ -3174,9 +3174,9 @@
       "context_window": "s to an estimated amount of 10.9 \u00b1 2.7 g when compared with 9.6 \u00b1 2.2 g of dietary protein-derived amino acids (of the \u223c22 g inge",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

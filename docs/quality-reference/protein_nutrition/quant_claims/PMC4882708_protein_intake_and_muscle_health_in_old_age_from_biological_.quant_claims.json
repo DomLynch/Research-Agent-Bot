@@ -1,12 +1,49 @@
 {
   "paper_id": "PMC4882708_protein_intake_and_muscle_health_in_old_age_from_biological_",
   "doi": "10.3390/nu8050295",
-  "extracted_at": "2026-05-05T22:35:41+00:00",
+  "extracted_at": "2026-05-05T23:37:07+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
+    "unit_value": 2,
     "percentage": 1
   },
   "claims": [
+    {
+      "claim_id": "PMC4882708_protein_intake_and_muscle_health_in_old_age_from_biological_-u-318",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 318,
+      "sentence": "Furthermore, the current recommended dietary allowance for protein (0.8 g/kg/day) might be inadequate for maintaining muscle health in older adults, probably as a consequence of \u201canabolic resistance\u201d in aged muscle.",
+      "context_window": "ore, the current recommended dietary allowance for protein (0.8 g/kg/day) might be inadequate for maintaining muscle health in older",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4882708_protein_intake_and_muscle_health_in_old_age_from_biological_-u-304",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 304,
+      "sentence": "Furthermore, the current recommended dietary allowance (RDA) for protein (0.8 g/kg/day) might not be sufficient for preserving muscle mass and quality in old age [ 1 ].",
+      "context_window": "he current recommended dietary allowance (RDA) for protein (0.8 g/kg/day) might not be sufficient for preserving muscle mass and qua",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC4882708_protein_intake_and_muscle_health_in_old_age_from_biological_-pct-1380",
       "claim_type": "percentage",
@@ -21,7 +58,7 @@
       "context_window": "pants in the highest quintile of protein intake lost nearly 40% less appendicular lean mass than did those in the lowest qu",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     }

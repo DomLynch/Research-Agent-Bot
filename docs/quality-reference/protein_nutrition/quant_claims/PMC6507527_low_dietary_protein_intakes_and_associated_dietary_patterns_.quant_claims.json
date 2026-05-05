@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_",
   "doi": "10.1007/s12603-019-1174-1",
-  "extracted_at": "2026-05-05T22:35:30+00:00",
+  "extracted_at": "2026-05-05T23:37:11+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 49,
+    "unit_value": 58,
     "sample_size": 6,
     "percentage": 20,
     "p_value": 14
@@ -119,6 +119,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-505",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 505,
+      "sentence": "Adults were stratified by meeting or not meeting the protein recommendation (0.8 g/kg/d) to compare demographics, diet quality with Healthy Eating Index- 2015, functional limitations, and other dietary intakes.",
+      "context_window": "ified by meeting or not meeting the protein recommendation (0.8 g/kg/d) to compare demographics, diet quality with Healthy Eating",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-858",
       "claim_type": "percentage",
       "raw_text": "46%",
@@ -132,7 +150,7 @@
       "context_window": "es were significantly lower in older age groups, with up to 46% of the oldest adults not meeting the protein intake recomme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -150,9 +168,9 @@
       "context_window": "ad significantly poorer diet quality across all age groups (P<0.01), however, overall diet quality was better in older adults.",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-1413",
@@ -168,7 +186,7 @@
       "context_window": ", while grip strength was significantly lower in those over 70 years old. Lower protein intakes, and lower diet quality and phy",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -222,9 +240,9 @@
       "context_window": "how that protein consumption was greatest in adults aged 19-30 years (mean 91 g per day), but lowest for older adults with mean",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-29",
@@ -240,9 +258,9 @@
       "context_window": "Data from 11,680 adults over 51 years old from the 2005- 2014 National Health and Nutrition Exami",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-2899",
@@ -315,6 +333,24 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-3110",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 3110,
+      "sentence": "Adults were then stratified by either meeting or not the recommended 0.8 g of protein/kg of body weight/d (0.8 g/kg/d) of protein to compare demographic characteristics, overall diet quality, nutrient intakes, physical functioning, and grip strength.",
+      "context_window": "r not the recommended 0.8 g of protein/kg of body weight/d (0.8 g/kg/d) of protein to compare demographic characteristics, overall",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-65",
@@ -456,7 +492,7 @@
       "context_window": "his analysis ( Table 1 ). Across all age categories, males (69% of 51-60 year old, 63% of 61-70 year old, and 58% of those",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -474,7 +510,7 @@
       "context_window": "is ( Table 1 ). Across all age categories, males (69% of 51-60 year old, 63% of 61-70 year old, and 58% of those over 70 years",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -492,7 +528,7 @@
       "context_window": "). Across all age categories, males (69% of 51-60 year old, 63% of 61-70 year old, and 58% of those over 70 years old) are",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -510,7 +546,7 @@
       "context_window": "all age categories, males (69% of 51-60 year old, 63% of 61-70 year old, and 58% of those over 70 years old) are more likely to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -528,7 +564,7 @@
       "context_window": "s, males (69% of 51-60 year old, 63% of 61-70 year old, and 58% of those over 70 years old) are more likely to meet recomme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -546,7 +582,7 @@
       "context_window": "1-60 year old, 63% of 61-70 year old, and 58% of those over 70 years old) are more likely to meet recommended protein intakes co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -564,7 +600,7 @@
       "context_window": "ly to meet recommended protein intakes compared to females (55% of 51-60 year old\u2019s, 52% of 61-70 year old, and 50% of thos",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,7 +618,7 @@
       "context_window": "recommended protein intakes compared to females (55% of 51-60 year old\u2019s, 52% of 61-70 year old, and 50% of those over 70 year",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -600,7 +636,7 @@
       "context_window": "otein intakes compared to females (55% of 51-60 year old\u2019s, 52% of 61-70 year old, and 50% of those over 70 years old). Non",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -618,7 +654,7 @@
       "context_window": "kes compared to females (55% of 51-60 year old\u2019s, 52% of 61-70 year old, and 50% of those over 70 years old). Non-Hispanic blac",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -636,7 +672,7 @@
       "context_window": "emales (55% of 51-60 year old\u2019s, 52% of 61-70 year old, and 50% of those over 70 years old). Non-Hispanic blacks and those",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -654,7 +690,7 @@
       "context_window": "60 year old\u2019s, 52% of 61-70 year old, and 50% of those over 70 years old). Non-Hispanic blacks and those who were single, divorc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -672,7 +708,7 @@
       "context_window": "ein intake had significantly lower intakes of total energy (P<0.001) and energy adjusted protein (P<0.001, Table 2 ). Those not",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -690,7 +726,7 @@
       "context_window": "akes of total energy (P<0.001) and energy adjusted protein (P<0.001, Table 2 ). Those not meeting the recommended protein intak",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -708,9 +744,9 @@
       "context_window": "elenium per 1,000 kcal across all age groups. However, only 10% of adults 51-60 years old, 12% of adults 61-70 years old, a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-1393",
@@ -726,9 +762,9 @@
       "context_window": "kcal across all age groups. However, only 10% of adults 51-60 years old, 12% of adults 61-70 years old, and 13% of adults over",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-1407",
@@ -744,9 +780,9 @@
       "context_window": "ll age groups. However, only 10% of adults 51-60 years old, 12% of adults 61-70 years old, and 13% of adults over 71 years",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-1424",
@@ -762,9 +798,9 @@
       "context_window": "wever, only 10% of adults 51-60 years old, 12% of adults 61-70 years old, and 13% of adults over 71 years old below the protein",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-1442",
@@ -780,9 +816,9 @@
       "context_window": "adults 51-60 years old, 12% of adults 61-70 years old, and 13% of adults over 71 years old below the protein intake recomm",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-1461",
@@ -798,9 +834,9 @@
       "context_window": "old, 12% of adults 61-70 years old, and 13% of adults over 71 years old below the protein intake recommendation also had carboh",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-1768",
@@ -816,9 +852,9 @@
       "context_window": "es across all age categories ( Table 3 ). In addition, only 11% of adults 51-60 and 61-70 years old, and 13% of adults over",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-1795",
@@ -834,9 +870,9 @@
       "context_window": "s ( Table 3 ). In addition, only 11% of adults 51-60 and 61-70 years old, and 13% of adults over 71 years old not meeting the pr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-1813",
@@ -852,9 +888,9 @@
       "context_window": "addition, only 11% of adults 51-60 and 61-70 years old, and 13% of adults over 71 years old not meeting the protein recomme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-1832",
@@ -870,9 +906,9 @@
       "context_window": "of adults 51-60 and 61-70 years old, and 13% of adults over 71 years old not meeting the protein recommendation were below the E",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-2924",
@@ -888,9 +924,9 @@
       "context_window": "d not meet the protein intake recommendation. Approximately 74% of adults meeting the protein recommendation reported consu",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-3032",
@@ -906,9 +942,9 @@
       "context_window": "reported consuming three meals per day, compared to the 40-43% of those who did not meet the recommendation reporting fewe",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-p-3349",
@@ -924,7 +960,7 @@
       "context_window": "dations had scored significantly less for greens and beans (P<0.001), dairy (P<0.001), total protein foods (P<0.001 for all age",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -942,7 +978,7 @@
       "context_window": "d significantly less for greens and beans (P<0.001), dairy (P<0.001), total protein foods (P<0.001 for all age categories), sea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -960,7 +996,7 @@
       "context_window": "and beans (P<0.001), dairy (P<0.001), total protein foods (P<0.001 for all age categories), seafood and plant protein foods (P",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -978,7 +1014,7 @@
       "context_window": "1 for all age categories), seafood and plant protein foods (P<0.001), refined grains (P=0.022 for 51-60 year old\u2019s, P=0.005 for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -996,7 +1032,7 @@
       "context_window": "seafood and plant protein foods (P<0.001), refined grains (P=0.022 for 51-60 year old\u2019s, P=0.005 for 61-70 year old\u2019s, P<0.001",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1014,7 +1050,7 @@
       "context_window": "ant protein foods (P<0.001), refined grains (P=0.022 for 51-60 year old\u2019s, P=0.005 for 61-70 year old\u2019s, P<0.001 for >70 year o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1032,7 +1068,7 @@
       "context_window": "ds (P<0.001), refined grains (P=0.022 for 51-60 year old\u2019s, P=0.005 for 61-70 year old\u2019s, P<0.001 for >70 year old\u2019s) and added",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1050,7 +1086,7 @@
       "context_window": "efined grains (P=0.022 for 51-60 year old\u2019s, P=0.005 for 61-70 year old\u2019s, P<0.001 for >70 year old\u2019s) and added sugars (P<0.00",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1068,7 +1104,7 @@
       "context_window": "P=0.022 for 51-60 year old\u2019s, P=0.005 for 61-70 year old\u2019s, P<0.001 for >70 year old\u2019s) and added sugars (P<0.001 for all age c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1086,7 +1122,7 @@
       "context_window": "1-60 year old\u2019s, P=0.005 for 61-70 year old\u2019s, P<0.001 for >70 year old\u2019s) and added sugars (P<0.001 for all age categories), h",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1104,7 +1140,7 @@
       "context_window": "0 year old\u2019s, P<0.001 for >70 year old\u2019s) and added sugars (P<0.001 for all age categories), however, the whole grain score was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1122,7 +1158,7 @@
       "context_window": "for those not meeting the protein recommendation in the 61-70 year old\u2019s, although whole grain intakes were low overall (highe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1176,7 @@
       "context_window": "s 3.5/10 in the over 70 age group). Notably, adults aged 51-60 years old not meeting protein recommendations had significantly l",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1194,7 @@
       "context_window": "ion subscale indicates they consumed more of this nutrient (P<0.001). Adults between 61-70 years old not meeting the protein re",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1212,7 @@
       "context_window": "consumed more of this nutrient (P<0.001). Adults between 61-70 years old not meeting the protein recommendation had significantl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1194,7 +1230,7 @@
       "context_window": "ad significantly lower diet quality scores for total fruit (P=0.007). Differences in Healthy Eating Index 2015 scores across a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1266,7 +1302,7 @@
       "context_window": "meeting the protein recommendation, except for adults over 71 years old. Combined hand grip strength was not significantly diff",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1284,7 +1320,7 @@
       "context_window": "e protein recommendation for participants aged 51-60 and 61-70 years, but was significantly lower for participants over 70 years",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1302,7 +1338,7 @@
       "context_window": "70 years, but was significantly lower for participants over 70 years.",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1320,9 +1356,45 @@
       "context_window": "nited States. A considerable proportion of older adults (31-50%) did not meet their protein recommendation (0.8 g/kg/d) on",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-580",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 580,
+      "sentence": "A considerable proportion of older adults (31-50%) did not meet their protein recommendation (0.8 g/kg/d) on the day of their NHANES dietary assessment.",
+      "context_window": "adults (31-50%) did not meet their protein recommendation (0.8 g/kg/d) on the day of their NHANES dietary assessment. This contra",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-730",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 730,
+      "sentence": "This contradicts the common perception that Americans are usually meeting or exceeding the 0.8 g/kg/d protein recommendation.",
+      "context_window": "ception that Americans are usually meeting or exceeding the 0.8 g/kg/d protein recommendation. In the most recent study, Berryman",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-918",
@@ -1338,9 +1410,9 @@
       "context_window": "excess of the recommendation in the majority of people aged 2 years or older. These estimates were statistically adjusted for a",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-pct-1143",
@@ -1356,7 +1428,25 @@
       "context_window": "e protein intake recommendations. These data suggest that 7-19% of older adults did not meet protein intake recommendations",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-2230",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 2230,
+      "sentence": "If protein needs for older people exceed the current recommendation of 0.8 g/kg and over one third are not meeting that standard, these data suggest that far fewer older adults would be meeting the proposed higher levels (1-1.2 g/kg/d) needed to meet the demands to promote healthful aging ( 24 ).",
+      "context_window": "older adults would be meeting the proposed higher levels (1-1.2 g/kg/d) needed to meet the demands to promote healthful aging ( 24",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1446,9 +1536,81 @@
       "context_window": "status and percent of federal poverty rate; ^Significantly (P<0.05) different between below or meeting the protein recommendat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-8413",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 8413,
+      "sentence": "This agrees with findings from the Framingham Offspring Study where those with a protein intake less than the recommended level (0.8 g/kg/d) were associated with a higher risk of becoming dependent in one or more of the functional tasks assessed at follow up (heavy house work, walking half a mile, going up and down stairs, stooping/kneeling/crouching, and lifting heavy items) ( 44 ).",
+      "context_window": "hose with a protein intake less than the recommended level (0.8 g/kg/d) were associated with a higher risk of becoming dependent i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-10031",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 10031,
+      "sentence": "There is a general consensus recommending dietary protein intakes of 1-1.2 g/kg/d for the healthy population and higher for older adults and individuals with acute or chronic disease (up to 2 g/kg/d) depending on the clinical condition, to maintain physical function ( 3 , 8 , 48 , 49 , 50 , 51 ).",
+      "context_window": "general consensus recommending dietary protein intakes of 1-1.2 g/kg/d for the healthy population and higher for older adults and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-10150",
+      "claim_type": "unit_value",
+      "raw_text": "2 g/kg/d",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 10150,
+      "sentence": "There is a general consensus recommending dietary protein intakes of 1-1.2 g/kg/d for the healthy population and higher for older adults and individuals with acute or chronic disease (up to 2 g/kg/d) depending on the clinical condition, to maintain physical function ( 3 , 8 , 48 , 49 , 50 , 51 ).",
+      "context_window": "adults and individuals with acute or chronic disease (up to 2 g/kg/d) depending on the clinical condition, to maintain physical",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-11652",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 11652,
+      "sentence": "There are gaps in the literature regarding methods to increase dietary protein above 0.8 g/kg/d using food only; oral nutritional supplements (ONS), protein only or mixed, are the standard way to increase protein intakes in human studies.",
+      "context_window": "erature regarding methods to increase dietary protein above 0.8 g/kg/d using food only; oral nutritional supplements (ONS), protei",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-461",
@@ -1518,7 +1680,7 @@
       "context_window": "meeting the protein recommendation, except for adults over 71 years old. Combined hand grip strength was not significantly diff",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1536,7 +1698,7 @@
       "context_window": "e protein recommendation for participants aged 51-60 and 61-70 years, but was significantly lower for participants over 70 years",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1554,7 +1716,7 @@
       "context_window": "70 years, but was significantly lower for participants over 70 years.",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1572,9 +1734,9 @@
       "context_window": "Overall diet quality among adults aged 51 years and older needs improvement and dietary protein intakes are",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6507527_low_dietary_protein_intakes_and_associated_dietary_patterns_-u-855",
@@ -1590,7 +1752,7 @@
       "context_window": "reported here could help guide dietary counseling for those 51 years or older. Nutrition screening procedures should not be limi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

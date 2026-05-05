@@ -1,13 +1,49 @@
 {
   "paper_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_",
   "doi": "10.3390/nu7085311",
-  "extracted_at": "2026-05-05T22:35:33+00:00",
+  "extracted_at": "2026-05-05T23:37:07+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "percentage": 26,
-    "unit_value": 34
+    "unit_value": 53,
+    "percentage": 26
   },
   "claims": [
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-1106",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1106,
+      "sentence": "There is good consistent evidence (level III-2 to IV) that consumption of 1.0 to 1.3 g/kg/day dietary protein combined with twice-weekly progressive resistance exercise reduces age-related muscle mass loss.",
+      "context_window": "ent evidence (level III-2 to IV) that consumption of 1.0 to 1.3 g/kg/day dietary protein combined with twice-weekly progressive resi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-1270",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1270,
+      "sentence": "Older people appear to require 1.0 to 1.3 g/kg/day dietary protein to optimize physical function, particularly whilst undertaking resistance exercise recommendations.",
+      "context_window": "ted muscle mass loss. Older people appear to require 1.0 to 1.3 g/kg/day dietary protein to optimize physical function, particularly",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-88",
       "claim_type": "percentage",
@@ -22,9 +58,9 @@
       "context_window": "rotein in the body is skeletal muscle, which makes up about 80% of the cell mass and 30% of whole body protein turnover in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-113",
@@ -40,9 +76,9 @@
       "context_window": "letal muscle, which makes up about 80% of the cell mass and 30% of whole body protein turnover in lean young adults [ 12 ].",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-509",
@@ -418,7 +454,7 @@
       "context_window": "arge women, such that a sedentary elderly woman who weighed 70 kg would require food with more than twice the protein concent",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -436,7 +472,7 @@
       "context_window": "otein distinguish between males and females and recommend a 25% higher intake of dietary protein for those aged 70+ years (",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -477,6 +513,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-12760",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 12760,
+      "sentence": "There is increasing evidence that the current Recommended Dietary Intakes for older people of around 0.8 g/kg/day are insufficient to optimise retention of muscle mass, strength and function [ 31 , 32 ].",
+      "context_window": "rent Recommended Dietary Intakes for older people of around 0.8 g/kg/day are insufficient to optimise retention of muscle mass, stre",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-13006",
       "claim_type": "unit_value",
       "raw_text": "10 days",
@@ -490,9 +544,9 @@
       "context_window": "ive nitrogen balance after consuming the US protein RDA for 10 days [ 33 ]. Subsequent to this, a longitudinal study in older m",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-13097",
@@ -508,9 +562,45 @@
       "context_window": "his, a longitudinal study in older men and women aged 55 to 77 years showed that in response to a 3-month diet containing 0.8 g/",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-13159",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 13159,
+      "sentence": "Subsequent to this, a longitudinal study in older men and women aged 55 to 77 years showed that in response to a 3-month diet containing 0.8 g/kg/day protein, there was a physiological adaptation to this low-protein diet evidenced by a reduction in skeletal muscle whilst whole-body leucine metabolism was maintained [ 34 ].",
+      "context_window": "years showed that in response to a 3-month diet containing 0.8 g/kg/day protein, there was a physiological adaptation to this low-p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-13395",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 13395,
+      "sentence": "These results indicate that a protein intake of 0.8 g/kg/day is not adequate to completely meet the metabolic and physiological needs of virtually all older people.",
+      "context_window": "ned [ 34 ]. These results indicate that a protein intake of 0.8 g/kg/day is not adequate to completely meet the metabolic and physio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-14668",
@@ -526,9 +616,9 @@
       "context_window": "conducted for relatively short periods of time (between 10-15 days) which are insufficient to measure the impact on muscle, bo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-14967",
@@ -562,9 +652,9 @@
       "context_window": "conducted for relatively short periods of time (between 10-15 days) which are insufficient to measure the impact on muscle, bo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-15722",
@@ -616,9 +706,27 @@
       "context_window": "s in basal muscle protein synthesis and/or breakdown rate (<10%) would be clinically relevant when calculating their impact",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-18528",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 18528,
+      "sentence": "One small acute study conducted in healthy elderly people consuming an \u201cadequate\u201d intake of 0.8 g/kg/day demonstrated that leucine supplementation for 2 weeks (4 g/meal; 3 meals/day) improved muscle protein synthesis [ 41 ].",
+      "context_window": "in healthy elderly people consuming an \u201cadequate\u201d intake of 0.8 g/kg/day demonstrated that leucine supplementation for 2 weeks (4 g/",
+      "claim_role": "effect",
+      "endpoint": "protein synthesis",
+      "arm": "leucine",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-18587",
@@ -634,9 +742,9 @@
       "context_window": "0.8 g/kg/day demonstrated that leucine supplementation for 2 weeks (4 g/meal; 3 meals/day) improved muscle protein synthesis [",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-19267",
@@ -652,9 +760,9 @@
       "context_window": "sed mixed muscle fractional synthesis rate by approximately 50% in both young and older persons [ 44 ]. This increase in pr",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-20764",
@@ -670,9 +778,9 @@
       "context_window": "is generally consumed with carbohydrate: many meals provide 15%-30% energy from protein and 60% energy from carbohydrate. A",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-20768",
@@ -688,9 +796,9 @@
       "context_window": "enerally consumed with carbohydrate: many meals provide 15%-30% energy from protein and 60% energy from carbohydrate. A typ",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-20796",
@@ -706,9 +814,45 @@
       "context_window": "hydrate: many meals provide 15%-30% energy from protein and 60% energy from carbohydrate. A typical meal may contain about",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-23322",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 g/kg/day",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 23322,
+      "sentence": "A recent assessment of protein intake in older people in the Netherlands indicated that dietary protein intake averaged 1.1 g/kg/day in community-dwelling and 1.0 g/kg/day in frail older people, with protein intakes being particularly low at breakfast: between 8-10 g protein [ 52 ].",
+      "context_window": "Netherlands indicated that dietary protein intake averaged 1.1 g/kg/day in community-dwelling and 1.0 g/kg/day in frail older peopl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-23361",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 23361,
+      "sentence": "A recent assessment of protein intake in older people in the Netherlands indicated that dietary protein intake averaged 1.1 g/kg/day in community-dwelling and 1.0 g/kg/day in frail older people, with protein intakes being particularly low at breakfast: between 8-10 g protein [ 52 ].",
+      "context_window": "tein intake averaged 1.1 g/kg/day in community-dwelling and 1.0 g/kg/day in frail older people, with protein intakes being particula",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-24724",
@@ -724,7 +868,7 @@
       "context_window": "n the highest quintile of protein intake lost approximately 40% less lean mass than did those in the lowest quintile of pro",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -742,9 +886,9 @@
       "context_window": "ein [ 53 ]. A study that followed over 300 older people for 10 years (average age 72 years at baseline) [ 57 ] found that those",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-24870",
@@ -760,9 +904,45 @@
       "context_window": "at followed over 300 older people for 10 years (average age 72 years at baseline) [ 57 ] found that those on protein intakes in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-24953",
+      "claim_type": "unit_value",
+      "raw_text": "1.76 g/kg/day",
+      "numeric_values": [
+        1.76
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 24953,
+      "sentence": "A study that followed over 300 older people for 10 years (average age 72 years at baseline) [ 57 ] found that those on protein intakes in the range 1.20-1.76 g/kg/day had better health outcomes compared to those with protein intake less than the mid-point within the range 0.8-1.2 g/kg/day.",
+      "context_window": "57 ] found that those on protein intakes in the range 1.20-1.76 g/kg/day had better health outcomes compared to those with protein i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-25077",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 25077,
+      "sentence": "A study that followed over 300 older people for 10 years (average age 72 years at baseline) [ 57 ] found that those on protein intakes in the range 1.20-1.76 g/kg/day had better health outcomes compared to those with protein intake less than the mid-point within the range 0.8-1.2 g/kg/day.",
+      "context_window": "protein intake less than the mid-point within the range 0.8-1.2 g/kg/day. The Women\u2019s Health Initiative, with over 24,000 women aged",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-25156",
@@ -778,7 +958,7 @@
       "context_window": "omen\u2019s Health Initiative, with over 24,000 women aged 65 to 79 years followed for 3 years, reported that a 20% increase in prote",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -796,7 +976,7 @@
       "context_window": "ve, with over 24,000 women aged 65 to 79 years followed for 3 years, reported that a 20% increase in protein intake (% kcal) wa",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -814,7 +994,7 @@
       "context_window": "n aged 65 to 79 years followed for 3 years, reported that a 20% increase in protein intake (% kcal) was associated with a 1",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -832,7 +1012,7 @@
       "context_window": "% increase in protein intake (% kcal) was associated with a 12% lower risk of frailty [ 58 ]. One large cross-sectional stu",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -850,7 +1030,7 @@
       "context_window": "The study which provided an additional 30 g protein/day for 24 weeks and conducted in a frail community population [ 50 ] clearl",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -868,9 +1048,9 @@
       "context_window": "g with increased dietary protein indicated that, for those \u226550 years, an average of 42 g protein on training days increased tota",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-pct-27403",
@@ -886,7 +1066,7 @@
       "context_window": "tance-type exercise training increased FFM by an additional 38% when compared with the placebo. There was no difference bet",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -904,9 +1084,9 @@
       "context_window": "muscle fibre. Protein supplementation improved FFM gain by 0.48 kg in older people and 0.81 kg in younger people, although the",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-27697",
@@ -922,9 +1102,9 @@
       "context_window": "ementation improved FFM gain by 0.48 kg in older people and 0.81 kg in younger people, although there was no statistical differ",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-27910",
@@ -940,7 +1120,7 @@
       "context_window": "M leg press strength in both age-groups (pooled estimate of 14.4 kg in younger people and 13.1 kg in older people). The three s",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "pooled",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -958,7 +1138,25 @@
       "context_window": "ge-groups (pooled estimate of 14.4 kg in younger people and 13.1 kg in older people). The three studies without energy restrict",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "pooled",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-28725",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 28725,
+      "sentence": "Many experts recommend that older people should combine resistance exercise with a protein intake of up to 1.3 g/kg/day [ 49 , 69 ].",
+      "context_window": "combine resistance exercise with a protein intake of up to 1.3 g/kg/day [ 49 , 69 ]. One recent RCT has clearly demonstrated that a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -976,7 +1174,7 @@
       "context_window": "strated that a modest increase in dietary protein (30 g/day/24 weeks) combined with twice-weekly progressive resistance training",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "pooled",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -994,7 +1192,7 @@
       "context_window": "ing in a frail elderly population [ 64 ] induced an average 1.3 kg increase in lean body mass, although there was no protein e",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "pooled",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1012,9 +1210,27 @@
       "context_window": "iencing a similar improvement. Obese older adults (mean age 63 years) undertook a weight-loss diet and combined resistance train",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-29875",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 29875,
+      "sentence": "Another study compared the combination of resistance training (3 times/week) with one of two energy-restricted diets (1.3 MJ (300 kcal) energy deficit), both providing 1.3 g/kg/day, over 4 weeks in older men.",
+      "context_window": "ed diets (1.3 MJ (300 kcal) energy deficit), both providing 1.3 g/kg/day, over 4 weeks in older men. One diet had an even distributi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-29894",
@@ -1048,8 +1264,44 @@
       "context_window": "[ 72 ]. In contrast, another recent trial in active women 60 years and older used increased red meat consumption to increase p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-31454",
+      "claim_type": "unit_value",
+      "raw_text": "1.29 g/kg/day",
+      "numeric_values": [
+        1.29
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 31454,
+      "sentence": "In this study, all participants undertook progressive resistance training (twice-weekly) and half received additional dietary protein (red meat, consumed at lunch and dinner) which took their total protein intake to ~1.29 g/kg/day, compared to the carbohydrate control diet intake of ~1.15 g/kg/day.",
+      "context_window": "lunch and dinner) which took their total protein intake to ~1.29 g/kg/day, compared to the carbohydrate control diet intake of ~1.15",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-31522",
+      "claim_type": "unit_value",
+      "raw_text": "1.15 g/kg/day",
+      "numeric_values": [
+        1.15
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 31522,
+      "sentence": "In this study, all participants undertook progressive resistance training (twice-weekly) and half received additional dietary protein (red meat, consumed at lunch and dinner) which took their total protein intake to ~1.29 g/kg/day, compared to the carbohydrate control diet intake of ~1.15 g/kg/day.",
+      "context_window": "g/day, compared to the carbohydrate control diet intake of ~1.15 g/kg/day. The protein/meat group experienced greater gains in total",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {
@@ -1066,7 +1318,7 @@
       "context_window": "erienced greater gains in total body lean mass (net benefit 0.45 kg) and muscle strength (net benefit 18%) [ 73 ]. The results",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1084,8 +1336,98 @@
       "context_window": "mass (net benefit 0.45 kg) and muscle strength (net benefit 18%) [ 73 ]. The results of both these studies confirm that whe",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-31905",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 31905,
+      "sentence": "The results of both these studies confirm that when performing the recommended level of resistance exercise [ 62 ], a very modest increase in protein intake which nonetheless results in an intake significantly above the RDI of 1.0 g/kg/day is effective in increasing lean mass.",
+      "context_window": "theless results in an intake significantly above the RDI of 1.0 g/kg/day is effective in increasing lean mass. Protein intakes and",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-33290",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 33290,
+      "sentence": "Evans et al. , in their recent review of the studies by Tieland et al. [ 32 , 52 , 64 ], emphasise that these new trials confirm indications from previous work that older persons require greater dietary protein intakes: between 1.0 and 1.5 g/kg/day.",
+      "context_window": "ns require greater dietary protein intakes: between 1.0 and 1.5 g/kg/day. This is specifically required for an optimal increase in m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-36201",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 36201,
+      "sentence": "However, it is likely that larger trials that have demonstrated differences in chronic protein intake spanning the range from inadequate intakes to optimal intakes (<1 g/kg/day to \u22651.2 g/kg/day) over a period of months are required to demonstrate statistical significant functional benefits.",
+      "context_window": "ning the range from inadequate intakes to optimal intakes (<1 g/kg/day to \u22651.2 g/kg/day) over a period of months are required to d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-36216",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 36216,
+      "sentence": "However, it is likely that larger trials that have demonstrated differences in chronic protein intake spanning the range from inadequate intakes to optimal intakes (<1 g/kg/day to \u22651.2 g/kg/day) over a period of months are required to demonstrate statistical significant functional benefits.",
+      "context_window": "from inadequate intakes to optimal intakes (<1 g/kg/day to \u22651.2 g/kg/day) over a period of months are required to demonstrate statis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_-u-377",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 377,
+      "sentence": "The current body of evidence indicates that a dietary protein intake of at least 1.2 g/kg/day is required to maintain optimal muscle function in older people.",
+      "context_window": "vidence indicates that a dietary protein intake of at least 1.2 g/kg/day is required to maintain optimal muscle function in older pe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     }
   ]

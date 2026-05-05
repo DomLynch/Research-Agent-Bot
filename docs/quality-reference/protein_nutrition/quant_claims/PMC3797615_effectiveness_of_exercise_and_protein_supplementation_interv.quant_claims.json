@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv",
   "doi": "10.2147/CIA.S46826",
-  "extracted_at": "2026-05-05T22:35:35+00:00",
+  "extracted_at": "2026-05-05T23:37:06+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 33,
+    "unit_value": 36,
     "percentage": 58,
     "p_value": 24,
     "sample_size": 6,
@@ -25,7 +25,7 @@
       "context_window": "protein supplementation either alone or in combination for 12 weeks, on body composition, functional fitness, and oxidative str",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -282,6 +282,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-2360",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2360,
+      "sentence": "14 Yet, the appropriate amount of protein supplementation needed to increase functional fitness has not been standardized and ranges from 1.2 g/kg/day to 1.5 g/kg/day.",
+      "context_window": "unctional fitness has not been standardized and ranges from 1.2 g/kg/day to 1.5 g/kg/day. Protein supplementation can also increase",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-2376",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2376,
+      "sentence": "14 Yet, the appropriate amount of protein supplementation needed to increase functional fitness has not been standardized and ranges from 1.2 g/kg/day to 1.5 g/kg/day.",
+      "context_window": "s has not been standardized and ranges from 1.2 g/kg/day to 1.5 g/kg/day. Protein supplementation can also increase protein anabolis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-3772",
       "claim_type": "unit_value",
       "raw_text": "60 years",
@@ -295,7 +331,7 @@
       "context_window": "idative stress among community-dwelling elderly people aged 60 years and above, with sarcopenia. It was hypothesized that a well",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -457,9 +493,9 @@
       "context_window": "larly consuming protein and dietary supplementation for the 3 months prior to the study and those with unstable chronic diseases",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-1686",
@@ -516,6 +552,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-4431",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 4431,
+      "sentence": "Bhd., Kuala Lumpur, Malaysia) in a powder form to maintain the protein intake of the subjects at up to 1.5 g/kg/day.",
+      "context_window": "orm to maintain the protein intake of the subjects at up to 1.5 g/kg/day. According to Wolfe et al, 15 a total of 1.5 g/ kg/day can",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4612",
       "claim_type": "percentage",
       "raw_text": "23%",
@@ -529,9 +583,9 @@
       "context_window": "energy composition of the protein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates. This protein sup",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4625",
@@ -547,9 +601,9 @@
       "context_window": "ition of the protein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates. This protein supplementation w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4639",
@@ -565,9 +619,9 @@
       "context_window": "rotein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates. This protein supplementation was chosen beca",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5506",
@@ -872,9 +926,9 @@
       "context_window": "bohydrate and protein intake among the groups at baseline ( P < 0.05); thus these parameters were included as covariates in the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1268",
@@ -1466,9 +1520,9 @@
       "context_window": "able 4 shows a significant group effect ( F 3,61 = 2.969) ( P < 0.05) and time effect ( F 3,61 = 3.777) ( P < 0.05) for protein",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-3463",
@@ -1484,9 +1538,9 @@
       "context_window": "61 = 2.969) ( P < 0.05) and time effect ( F 3,61 = 3.777) ( P < 0.05) for protein carbonyl. A decrease in protein carbonyl level",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3600",
@@ -1502,7 +1556,7 @@
       "context_window": "he 12-week intervention was observed in the ExG+PrG (-0.01 [50%]) and CG (-0.01 [33.0%]) as compared with baseline. Further",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1520,7 +1574,7 @@
       "context_window": "on was observed in the ExG+PrG (-0.01 [50%]) and CG (-0.01 [33.0%]) as compared with baseline. Further, only the ExG+PrG (-0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1538,9 +1592,9 @@
       "context_window": "s compared with baseline. Further, only the ExG+PrG (-0.01 [50%]) showed a reduction in protein carbonyl levels at 12 weeks",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-3745",
@@ -1556,9 +1610,9 @@
       "context_window": ".01 [50%]) showed a reduction in protein carbonyl levels at 12 weeks as compared with the CG. On the other hand, SOD levels sho",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-3863",
@@ -2060,7 +2114,7 @@
       "context_window": "crepancy might be due to the higher composition of leucine (40% of the total amino acid) in that study as compared with 28.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2078,7 +2132,7 @@
       "context_window": "40% of the total amino acid) in that study as compared with 28.8% in the present study. 14 However, our findings were in agre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },

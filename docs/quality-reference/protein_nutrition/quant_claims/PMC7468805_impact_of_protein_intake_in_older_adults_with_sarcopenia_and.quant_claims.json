@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC7468805_impact_of_protein_intake_in_older_adults_with_sarcopenia_and",
   "doi": "10.3390/nu12082285",
-  "extracted_at": "2026-05-05T22:35:28+00:00",
+  "extracted_at": "2026-05-05T23:37:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 5,
+    "unit_value": 6,
     "percentage": 7
   },
   "claims": [
@@ -223,6 +223,24 @@
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7468805_impact_of_protein_intake_in_older_adults_with_sarcopenia_and-u-3758",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 3758,
+      "sentence": "In addition, considering the skeletal muscle anabolic effects of dietary protein, induction of increased protein intakes above the recommended dietary allowance (RDA) 0.8 g/kg/day is considered a valuable tool to counteract the gradual muscle loss and increased appetite for food [ 24 ]-a main characteristic of sarcopenic obesity.",
+      "context_window": "otein intakes above the recommended dietary allowance (RDA) 0.8 g/kg/day is considered a valuable tool to counteract the gradual mus",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
     }
   ]
 }

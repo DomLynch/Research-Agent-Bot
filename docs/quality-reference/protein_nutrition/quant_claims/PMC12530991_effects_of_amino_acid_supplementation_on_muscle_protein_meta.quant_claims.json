@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC12530991_effects_of_amino_acid_supplementation_on_muscle_protein_meta",
   "doi": "10.20463/pan.2025.0026",
-  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extracted_at": "2026-05-05T23:37:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 23,
+    "unit_value": 24,
     "percentage": 17,
     "p_value": 3,
     "mean_sd": 2,
@@ -25,7 +25,7 @@
       "context_window": "(3). Inclusion criteria comprised human participants aged \u226518 years; amino acid supplementation (EAA, BCAA, leucine or NEAA) wi",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "eaa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,9 +43,9 @@
       "context_window": "he total lean mass and grip strength in Korean adults aged >50 years [ 23 ]. Churchward-Venne et al. (2014) observed that the ad",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12530991_effects_of_amino_acid_supplementation_on_muscle_protein_meta-u-3735",
@@ -133,7 +133,7 @@
       "context_window": "observed with 40 g of balanced amino acids, resulting in a 33% increase in fractional synthetic rate (FSR) [ 15 ]. Collect",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -151,9 +151,9 @@
       "context_window": "aily consumption of 15 g EAAs significantly improved FSR (+ 0.04%/h) in participants undergoing RT [ 30 ]. additionaly, B\u00f8rsh",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12530991_effects_of_amino_acid_supplementation_on_muscle_protein_meta-u-6958",
@@ -169,7 +169,7 @@
       "context_window": "g RT [ 30 ]. additionaly, B\u00f8rsheim et al. (2008) found that 16 weeks of EAA supplementation (22 g/day) significantly increased l",
       "claim_role": "protocol",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -187,9 +187,9 @@
       "context_window": "tation (22 g/day) significantly increased lean body mass (+ 1.14kg), improved lower-body strength (+22.2 %) in elderly individ",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12530991_effects_of_amino_acid_supplementation_on_muscle_protein_meta-pct-7083",
@@ -205,6 +205,24 @@
       "context_window": "d lean body mass (+ 1.14kg), improved lower-body strength (+22.2 %) in elderly individuals with impaired glucose tolerance [ 3",
       "claim_role": "effect",
       "endpoint": "muscle strength",
+      "arm": "eaa",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12530991_effects_of_amino_acid_supplementation_on_muscle_protein_meta-u-8677",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 g/kg/day",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 8677,
+      "sentence": "In a double-blind randomized trial, McLeay et al. (2017) found that taurine supplementation (0.1 g/kg/day for 3 days before and 4 days after eccentric exercise) significantly reduced muscle soreness (DOMS score by approximately 18%, p < 0.05), improved isometric peak torque at 48 h post-exercise by approximately 10% compared to placebo, and attenuated serum creatine kinase (CK) elevations by approximately 27%, which indicated enhanced muscle recovery [ 33 ].",
+      "context_window": "l, McLeay et al. (2017) found that taurine supplementation (0.1 g/kg/day for 3 days before and 4 days after eccentric exercise) sign",
+      "claim_role": "effect",
+      "endpoint": "",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -547,9 +565,9 @@
       "context_window": "ibition in vitro reduced protein synthesis by approximately 40% and decreased myotube diameter, which indicates serine's cr",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12530991_effects_of_amino_acid_supplementation_on_muscle_protein_meta-pct-13559",
@@ -565,7 +583,7 @@
       "context_window": "ne supplementation (0.1 g/kg) significantly enhanced MPS by 33% over a control amino acid mixture [ 39 ]. Atherton et al. (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -583,7 +601,7 @@
       "context_window": "protein drink increased post-exercise MPS by approximately 30% in both young and older men, independently of total amino a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -601,7 +619,7 @@
       "context_window": "[ 40 ]. In contrast, Funderburk et al. (2020) reported that 10 weeks of 5 g/day leucine supplementation combined with RT in untr",
       "claim_role": "protocol",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -619,7 +637,7 @@
       "context_window": "or strength, with only minor increases in thigh muscles (+ 2%) and isokinetic knee extension torque (+ 5.5%) [ 42 ]. Fuji",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -637,7 +655,7 @@
       "context_window": "high muscles (+ 2%) and isokinetic knee extension torque (+ 5.5%) [ 42 ]. Fujita et al. (2007) showed that basal intracellul",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -747,7 +765,7 @@
       "context_window": "restriction helped trained males maintain lean body mass (-0.05 kg vs -1.41 kg in control) and preserve bench press 1RM (+1.8",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -765,7 +783,7 @@
       "context_window": "helped trained males maintain lean body mass (-0.05 kg vs -1.41 kg in control) and preserve bench press 1RM (+1.8 kg vs -2.2 k",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -783,7 +801,7 @@
       "context_window": "5 kg vs -1.41 kg in control) and preserve bench press 1RM (+1.8 kg vs -2.2 kg) [ 28 ]. In contrast, a double-blind, crossover",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -801,7 +819,7 @@
       "context_window": "41 kg in control) and preserve bench press 1RM (+1.8 kg vs -2.2 kg) [ 28 ]. In contrast, a double-blind, crossover randomized",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -819,7 +837,7 @@
       "context_window": "ssover randomized trial in young, healthy, untrained women (n = 12) reported that a single pre-exercise BCAA dose (100 mg.kg\u207b\u00b9",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -837,7 +855,7 @@
       "context_window": "men (n = 12) reported that a single pre-exercise BCAA dose (100 mg.kg\u207b\u00b9; isoleucine: leucine: valine = 1:2.3:1.2) before 7 \u00d7 2",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

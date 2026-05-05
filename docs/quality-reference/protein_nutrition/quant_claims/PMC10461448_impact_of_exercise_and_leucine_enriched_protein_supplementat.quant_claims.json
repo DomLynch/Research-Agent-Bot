@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat",
   "doi": "10.3389/fmed.2023.1204198",
-  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extracted_at": "2026-05-05T23:36:59+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 55,
+    "unit_value": 57,
     "percentage": 17,
     "p_value": 23,
     "confidence_interval": 18,
@@ -25,7 +25,25 @@
       "context_window": "iched protein supplementation with or without exercise over 3 months in pre-frail older adults who consumed \u22641 g/kg/day of prote",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "leucine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat-u-509",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 509,
+      "sentence": "This study aimed to evaluate the impact of leucine-enriched protein supplementation with or without exercise over 3 months in pre-frail older adults who consumed \u22641 g/kg/day of protein on improving (i) physical function, (ii) body composition measures, and (iii) inflammatory biomarkers such as interleukin-6 (IL-6) and tumor necrosis factor alpha (TNF-\u03b1).",
+      "context_window": "rcise over 3 months in pre-frail older adults who consumed \u22641 g/kg/day of protein on improving (i) physical function, (ii) body co",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -169,7 +187,7 @@
       "context_window": "g of leucine supplementation with or without exercise over 3 months in pre-frail older adults who consume \u2264 1 g/kg of protein a",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -241,7 +259,7 @@
       "context_window": "participants with creatinine clearance < 30 ml/min, HbA1c >8.0%, food allergies or intolerances, nutrition therapy or preca",
       "claim_role": "dose",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -331,9 +349,9 @@
       "context_window": "an average of 16 g of protein and 3 g of leucine daily for 3 months. Once a month, study team members contacted participants to",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat-u-5099",
@@ -709,7 +727,7 @@
       "context_window": "ble 1 ). Gait speed was significantly lower in the control (0.94 m/s) and Nu groups (0.94 m/s) compared with the Nu+Ex group (1.",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -727,7 +745,7 @@
       "context_window": "ignificantly lower in the control (0.94 m/s) and Nu groups (0.94 m/s) compared with the Nu+Ex group (1.18 m/s). The total SPPB s",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -745,7 +763,7 @@
       "context_window": "/s) and Nu groups (0.94 m/s) compared with the Nu+Ex group (1.18 m/s). The total SPPB score was significantly lower in the Nu gr",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1861,7 +1879,7 @@
       "context_window": "Biomarker data were available for 51 participants (Control, n = 20; Nutrition, n = 18; Nutrition + Exercise, n = 13). # No sig",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1879,7 +1897,7 @@
       "context_window": "available for 51 participants (Control, n = 20; Nutrition, n = 18; Nutrition + Exercise, n = 13). # No significant difference",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1897,7 +1915,7 @@
       "context_window": "(Control, n = 20; Nutrition, n = 18; Nutrition + Exercise, n = 13). # No significant difference ( p > 0.05) between medians a",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1915,7 +1933,7 @@
       "context_window": "utrition + Exercise, n = 13). # No significant difference ( p > 0.05) between medians at baseline; + Adjusted for age, sex, ethn",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1951,7 +1969,7 @@
       "context_window": "many countries ( 4 , 5 , 36 ). Our study demonstrated that 3 months of leucine-enriched protein supplementation and exercise in",
       "claim_role": "protocol",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1969,9 +1987,9 @@
       "context_window": "014 National Health and Nutrition Examination Survey, where 46% of the oldest adults did not meet the requirement of 0.8 g/",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat-u-1273",
@@ -1987,9 +2005,27 @@
       "context_window": "r day ( 37 ). Studies have shown that in older adults above 70 years old, lower than 0.8 g/kg per day of protein intake was asso",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat-u-1738",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 1738,
+      "sentence": "Between 2013 and 2014, both the PROT-AGE Study Group and the European Society for Clinical Nutrition and Metabolism (ESPEN) Group recommended increased protein intake of 1.0-1.2 g/kg of body weight per day or higher in older adults, and countries like Singapore have recommended an increase in the RDA of protein for older adults to 1.2 g/kg/day ( 10 , 38 , 39 ).",
+      "context_window": "ended an increase in the RDA of protein for older adults to 1.2 g/kg/day ( 10 , 38 , 39 ). The amount, quality, type, and timing of",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat-u-4362",
@@ -2023,7 +2059,7 @@
       "context_window": "nutrition supplements ( 49 ). Rondanelli et al. showed that 12 weeks of supplementation with 22 g of whey protein, amino acids i",
       "claim_role": "protocol",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2041,7 +2077,7 @@
       "context_window": "ce exercise in healthy older adults improved muscle mass at 12 weeks ( 11 ). Recently, a meta-analysis by Negm et al. showed tha",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2095,7 +2131,7 @@
       "context_window": "in combination with resistance exercise intervention after 12 weeks ( 63 - 65 ). Sixth, we have no comparison with the exercise",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2113,7 +2149,7 @@
       "context_window": "eucine supplementation together with biweekly exercise over 3 months in pre-frail older adults who consumed \u2264 1 g/kg of protein",
       "claim_role": "dose",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     }

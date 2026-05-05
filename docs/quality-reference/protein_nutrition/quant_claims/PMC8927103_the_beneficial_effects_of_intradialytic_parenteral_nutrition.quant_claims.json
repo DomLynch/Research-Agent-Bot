@@ -1,16 +1,34 @@
 {
   "paper_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition",
   "doi": "10.1038/s41598-022-08726-8",
-  "extracted_at": "2026-05-05T22:35:29+00:00",
+  "extracted_at": "2026-05-05T23:37:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 60,
+    "unit_value": 65,
     "sample_size": 3,
     "mean_sd": 49,
     "p_value": 47,
     "percentage": 24
   },
   "claims": [
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-437",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 437,
+      "sentence": "Maintenance PEW HD patients being unable to tolerate ONS adverse effects, and having spontaneous energy and protein intake of \u2265 20 kcal/kg/day and \u2265 0.8 g/kg/day, respectively were randomly assigned 1:1 into IDPN and control groups.",
+      "context_window": "taneous energy and protein intake of \u2265 20 kcal/kg/day and \u2265 0.8 g/kg/day, respectively were randomly assigned 1:1 into IDPN and cont",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-624",
       "claim_type": "unit_value",
@@ -281,7 +299,7 @@
       "context_window": "rent but leptin levels increased in the control group after 3 months ( p = 0.03). At 6 months, serum albumin in the IDPN group w",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -299,7 +317,7 @@
       "context_window": "ptin levels increased in the control group after 3 months ( p = 0.03). At 6 months, serum albumin in the IDPN group was persiste",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -389,9 +407,9 @@
       "context_window": "ysis centers were screened. Eligible participants were over 18 years of age, receiving maintenance HD for at least 3 months, hav",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-361",
@@ -407,9 +425,27 @@
       "context_window": "over 18 years of age, receiving maintenance HD for at least 3 months, having spontaneous dietary intake of energy \u2265 20 kilocalor",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-478",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 478,
+      "sentence": "Eligible participants were over 18 years of age, receiving maintenance HD for at least 3 months, having spontaneous dietary intake of energy \u2265 20 kilocalorie (kcal)/kilogram (kg)/day and protein intake \u2265 0.8 g/kg/day, being unable to tolerate ONS defined as the inability to tolerate at least one of the adverse gastrointestinal effects such as nausea, vomiting, bloating, or diarrhea, and presence of PEW defined as at least two of the following criteria of serum albumin level \u2264 3.5 g/dL 16 , 17 , serum prealbumin \u2264 30 mg/dL 18 , mild to moderate malnutrition evaluated by 7-point subjective global assessment (SGA) in category B, or MIS \u2265 5 points 2 .",
+      "context_window": "0 kilocalorie (kcal)/kilogram (kg)/day and protein intake \u2265 0.8 g/kg/day, being unable to tolerate ONS defined as the inability to t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-793",
@@ -425,9 +461,9 @@
       "context_window": "serum albumin level \u2264 3.5 g/dL 16 , 17 , serum prealbumin \u2264 30 mg/dL 18 , mild to moderate malnutrition evaluated by 7-point sub",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-1012",
@@ -606,9 +642,9 @@
       "context_window": "a-3 fatty acids (SMOF Kabiven\u00ae central formula 1100 kcal in 986 mL). IDPN was infused at a constant rate during 4 h, but not e",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3590",
@@ -677,6 +713,24 @@
       "sentence": "In the control group, patients obtained a more frequent intensive dietary counselling by a well-trained renal dietitian once weekly for 3 months.",
       "context_window": "unselling by a well-trained renal dietitian once weekly for 3 months. The net calorie and protein deficit was calculated from th",
       "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-4918",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 4918,
+      "sentence": "Patients in the control group were then encouraged to increase their amount of regular food to target total energy and protein intake that complied with the NKF/KDOQI recommendation of 25-35 kcal/kg/day and 1.0-1.2 g/kg/day, respectively 8 .",
+      "context_window": "h the NKF/KDOQI recommendation of 25-35 kcal/kg/day and 1.0-1.2 g/kg/day, respectively 8 . The personalized step diet approach was a",
+      "claim_role": "dose",
       "endpoint": "",
       "arm": "control",
       "direction": "increase",
@@ -968,9 +1022,9 @@
       "context_window": "albumin level, spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respe",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-797",
@@ -987,9 +1041,9 @@
       "context_window": "spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively. Baseline",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-825",
@@ -1006,9 +1060,27 @@
       "context_window": "ein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively. Baseline demographic characteristic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-831",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 g/kg/day",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 831,
+      "sentence": "The average baseline serum albumin level, spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively.",
+      "context_window": "take were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively. Baseline demographic characteristics includi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-1089",
@@ -1152,9 +1224,9 @@
       "context_window": "inistration of IDPN. The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-1966",
@@ -1170,9 +1242,9 @@
       "context_window": "tion of IDPN. The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2032",
@@ -1189,9 +1261,9 @@
       "context_window": "/kg per 4-h HD session which provided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2063",
@@ -1208,9 +1280,9 @@
       "context_window": "ovided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g. T",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2119",
@@ -1227,9 +1299,9 @@
       "context_window": "of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g. Total energy intake was increased to 27.6 \u00b1 6.5 kcal/kg/",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2169",
@@ -1246,7 +1318,7 @@
       "context_window": "y acid of 4.5 \u00b1 0.6 g. Total energy intake was increased to 27.6 \u00b1 6.5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1265,7 +1337,25 @@
       "context_window": ".6 \u00b1 6.5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.2 g/kg/day after IDPN supplementation. After 3 months of IDPN",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2237",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 g/kg/day",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2237,
+      "sentence": "Total energy intake was increased to 27.6 \u00b1 6.5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.2 g/kg/day after IDPN supplementation.",
+      "context_window": ".5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.2 g/kg/day after IDPN supplementation. After 3 months of IDPN suppleme",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1577,7 +1667,7 @@
       "context_window": "baseline consumption, oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake inc",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1595,7 +1685,7 @@
       "context_window": "oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1613,7 +1703,7 @@
       "context_window": "4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN gro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1631,7 +1721,7 @@
       "context_window": "ay and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group. In contrast, spontane",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1649,7 +1739,7 @@
       "context_window": "ke increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group. In contrast, spontaneous energy intake w",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2001,9 +2091,9 @@
       "context_window": "mean \u00b1 SD. p values for between groups comparison. *denotes p < 0.01 between the control and IDPN group at 3 months. Comparison",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-4130",
@@ -2019,9 +2109,9 @@
       "context_window": "on. *denotes p < 0.01 between the control and IDPN group at 3 months. Comparison of changes of primary and secondary outcomes b",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-4623",
@@ -2200,9 +2290,9 @@
       "context_window": "trength did not differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-5170",
@@ -2219,9 +2309,9 @@
       "context_window": "t differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5177",
@@ -2237,9 +2327,9 @@
       "context_window": "r between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar aft",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-5199",
@@ -2255,9 +2345,9 @@
       "context_window": "and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar after stratification by gen",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-5460",
@@ -2819,7 +2909,7 @@
       "context_window": ", the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2838,7 +2928,7 @@
       "context_window": "nths were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2857,7 +2947,7 @@
       "context_window": "tly elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2875,7 +2965,7 @@
       "context_window": "udy inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectivel",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2894,7 +2984,7 @@
       "context_window": "(1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively). In the regre",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2913,7 +3003,7 @@
       "context_window": ".7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively). In the regression model com",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2931,7 +3021,7 @@
       "context_window": ".6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively). In the regression model comparing outcome c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3096,9 +3186,9 @@
       "context_window": "ificant difference between control and intervention group ( p > 0.05).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-884",
@@ -3224,7 +3314,7 @@
       "context_window": "red result on serum prealbumin concentrations in our study (28.9% having significant residual kidney function) compared with",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3278,7 +3368,7 @@
       "context_window": "on 37 , plasma hs-CRP and IL-6 levels were unaffected after 3 months among IDPN and the control groups (Table 2 ). The lower dos",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },

@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC11305142_dietary_protein_amino_acids_and_type_2_diabetes_mellitus_a_s",
   "doi": "10.3389/fnut.2024.1445981",
-  "extracted_at": "2026-05-05T22:35:37+00:00",
+  "extracted_at": "2026-05-05T23:37:01+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 4,
-    "unit_value": 2
+    "unit_value": 4
   },
   "claims": [
     {
@@ -76,7 +76,7 @@
       "context_window": "- risk of - diabetes is not straightforward, as we reviewed 10 years ago ( 11 ). Observational studies have identified a high pr",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -94,8 +94,44 @@
       "context_window": "l protein intake (0.8 g/kgBW/day) can prevent a loss of 0.5-1.0 kg lean mass with moderate weight-loss ( 22 , 23 ). Adequate p",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11305142_dietary_protein_amino_acids_and_type_2_diabetes_mellitus_a_s-u-8703",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 8703,
+      "sentence": "In a moderate weight-loss trial in obese women, a high-protein (1.2 g/kg/day) regular carbohydrate diet compared to a low protein (0.8 g/kg/day) diet reduced the WL-induced decline in lean tissue mass, but it also prevented the WL-induced improvements in muscle insulin signalling and insulin-stimulated glucose uptake ( 23 ).",
+      "context_window": "moderate weight-loss trial in obese women, a high-protein (1.2 g/kg/day) regular carbohydrate diet compared to a low protein (0.8 g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11305142_dietary_protein_amino_acids_and_type_2_diabetes_mellitus_a_s-u-8770",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 8770,
+      "sentence": "In a moderate weight-loss trial in obese women, a high-protein (1.2 g/kg/day) regular carbohydrate diet compared to a low protein (0.8 g/kg/day) diet reduced the WL-induced decline in lean tissue mass, but it also prevented the WL-induced improvements in muscle insulin signalling and insulin-stimulated glucose uptake ( 23 ).",
+      "context_window": "g/day) regular carbohydrate diet compared to a low protein (0.8 g/kg/day) diet reduced the WL-induced decline in lean tissue mass, b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "decrease",
       "binding_confidence": "partial"
     },
     {
@@ -112,7 +148,7 @@
       "context_window": "(1 to 1.5 g per kg body weight per day), representing 15 to 20% of total energy intake, needs to be modified for people wit",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     }

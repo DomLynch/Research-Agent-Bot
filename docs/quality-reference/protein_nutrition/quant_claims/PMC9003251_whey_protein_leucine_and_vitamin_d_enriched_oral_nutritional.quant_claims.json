@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC9003251_whey_protein_leucine_and_vitamin_d_enriched_oral_nutritional",
   "doi": "10.3390/nu14071524",
-  "extracted_at": "2026-05-05T22:35:34+00:00",
+  "extracted_at": "2026-05-05T23:37:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 7,
+    "unit_value": 8,
     "percentage": 4
   },
   "claims": [
@@ -205,6 +205,24 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9003251_whey_protein_leucine_and_vitamin_d_enriched_oral_nutritional-u-6057",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 g/kg/day",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6057,
+      "sentence": "With this perspective, the IRIS trial has shown that most patients admitted to a rehabilitation setting suffer from malnutrition (mean Mini Nutritional Assessment score of approximately 18 points), and it has suggested that, despite the satisfactory optimization of protein intake in patients receiving MT-ONS (mean intake 1.1 g/kg/day) and an increase in energy intake in both study arms, older patients frequently did not reach the minimum suggested energy target of 27-30 kcal/kg/day [ 49 ].",
+      "context_window": "of protein intake in patients receiving MT-ONS (mean intake 1.1 g/kg/day) and an increase in energy intake in both study arms, older",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     }
   ]
 }

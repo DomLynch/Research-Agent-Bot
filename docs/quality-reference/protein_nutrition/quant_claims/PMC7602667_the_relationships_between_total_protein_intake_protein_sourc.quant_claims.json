@@ -1,13 +1,13 @@
 {
   "paper_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc",
   "doi": "10.3390/nu12103151",
-  "extracted_at": "2026-05-05T22:35:37+00:00",
+  "extracted_at": "2026-05-05T23:37:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 1,
     "confidence_interval": 11,
     "p_value": 8,
-    "unit_value": 8,
+    "unit_value": 11,
     "percentage": 17
   },
   "claims": [
@@ -44,7 +44,7 @@
       "context_window": "ed to lean mass in females only (Lean mass index: \u03b2= -0.84, 95%CI: -1.06--0.62; Appendicular lean mass index: \u03b2= -0.35, 95%CI: -0.48--0.22",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -63,7 +63,7 @@
       "context_window": "95%CI: -1.06--0.62; Appendicular lean mass index: \u03b2= -0.35, 95%CI: -0.48--0.22). However, protein sources and physical activity was positi",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -81,7 +81,7 @@
       "context_window": "itively associated with lean mass in males and/or females ( p < 0.05). Conclusion. Study results suggest that consuming more pro",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -140,6 +140,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-u-1152",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 1152,
+      "sentence": "Then, according to the recommended minimum daily protein intake of 0.8 g/kg/d for adults, total protein intake was dichotomized as met/not met the daily protein intake recommendation [ 22 ].",
+      "context_window": "ccording to the recommended minimum daily protein intake of 0.8 g/kg/d for adults, total protein intake was dichotomized as met/no",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-2214",
       "claim_type": "percentage",
       "raw_text": "66%",
@@ -153,9 +171,9 @@
       "context_window": ", scores < 6.51)], (2) Total Protein Foods [good (scored 5, 66%), fair/poor (scored < 5, 34%)], (3) Seafood and Plant Prote",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-2243",
@@ -171,9 +189,9 @@
       "context_window": "Protein Foods [good (scored 5, 66%), fair/poor (scored < 5, 34%)], (3) Seafood and Plant Proteins [good (scored 5, 60%), fa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-2298",
@@ -189,9 +207,9 @@
       "context_window": "< 5, 34%)], (3) Seafood and Plant Proteins [good (scored 5, 60%), fair/poor (scored < 5, 40%)]. Respondents\u2019 physical acti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-2327",
@@ -207,9 +225,9 @@
       "context_window": "lant Proteins [good (scored 5, 60%), fair/poor (scored < 5, 40%)]. Respondents\u2019 physical activity time (min/week) was coll",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-5231",
@@ -225,7 +243,7 @@
       "context_window": "ty, total protein intake, protein sources and lean mass, \u03b2 [95% confidence intervals (CIs), p -values] were obtained by per",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -243,7 +261,7 @@
       "context_window": "tegrated physical activity and protein groups, odds ratios (95%CIs, p -values) were obtained by performing multinomial logi",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -338,6 +356,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-u-863",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 863,
+      "sentence": "Note: Data are presented as weighted mean \u00b1 standard errors for continues variables and count (weighted%) for categorical variables, overall p -value indicated that whether two or more lean mass levels differed from one another. yrs, years, HEI: Healthy Eating Index, DPR: met daily protein intake recommendation of 0.8 g/kg/d, GD: good dairy (3rd tertile, scored 6.51-10), GTP: total protein foods scored 5 (66%), GSPP: seafood and plant proteins scored 5 (60%), MPA: met recommendation of at least 150 min/week moderate intensity or 75 min/week vigorous intensity physical activity or an equivalent combination of both, * p < 0.05.",
+      "context_window": "ting Index, DPR: met daily protein intake recommendation of 0.8 g/kg/d, GD: good dairy (3rd tertile, scored 6.51-10), GTP: total p",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-956",
       "claim_type": "percentage",
       "raw_text": "66%",
@@ -351,7 +387,7 @@
       "context_window": "ertile, scored 6.51-10), GTP: total protein foods scored 5 (66%), GSPP: seafood and plant proteins scored 5 (60%), MPA: met",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -369,7 +405,7 @@
       "context_window": "scored 5 (66%), GSPP: seafood and plant proteins scored 5 (60%), MPA: met recommendation of at least 150 min/week moderate",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -387,7 +423,7 @@
       "context_window": "y physical activity or an equivalent combination of both, * p < 0.05. As shown in Figure 1 and Table 2 , there was not a signif",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -406,9 +442,9 @@
       "context_window": "aily protein intake was inversely related to LMI (\u03b2 =-0.84, 95% CI: -1.06--0.62) and ALMI (\u03b2 =-0.35, 95% CI: -0.48--0.22) in females. Tota",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-ci-1421",
@@ -425,9 +461,9 @@
       "context_window": "to LMI (\u03b2 =-0.84, 95% CI: -1.06--0.62) and ALMI (\u03b2 =-0.35, 95% CI: -0.48--0.22) in females. Total protein intake versus lean mass by sex.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-1623",
@@ -480,9 +516,9 @@
       "context_window": "ip between Total Protein Foods and ALMI in males (\u03b2 = 0.06, 95% CI: 0.01-0.12). In females, as shown in Figure 2 and Figure 3 , and Table",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-ci-2107",
@@ -499,9 +535,9 @@
       "context_window": "igure 3 , and Table 2 , both Total Protein Foods (\u03b2 = 0.04, 95% CI: 0.01-0.08) and Seafood and Plant Proteins (\u03b2 = 0.02, 95% CI: 0.00-0.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-ci-2168",
@@ -518,9 +554,9 @@
       "context_window": "5% CI: 0.01-0.08) and Seafood and Plant Proteins (\u03b2 = 0.02, 95% CI: 0.00-0.04) were positively associated with ALMI. Total protein foods",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-u-2531",
@@ -671,6 +707,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-u-4326",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 4326,
+      "sentence": "Note: @ obtained by performing multinomial logistic regression models and adjusted for age, race/ethnicity, education level, ratio of family income to poverty, weight status, and total daily energy intake, OR: odds ratio, CI: confidence interval, REF: reference group, MPA: met physical activity recommendation of at least 150 min/week moderate intensity or 75 min/week vigorous intensity physical activity or an equivalent combination of both, nMPA: did not meet physical activity recommendation, DPR: met dietary protein recommendation of 0.8 g/kg/d, nDPR: did not meet the dietary protein intake recommendation, * p < 0.05.",
+      "context_window": "recommendation, DPR: met dietary protein recommendation of 0.8 g/kg/d, nDPR: did not meet the dietary protein intake recommendati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-p-4402",
       "claim_type": "p_value",
       "raw_text": "p < 0.05",
@@ -684,9 +738,9 @@
       "context_window": ": did not meet the dietary protein intake recommendation, * p < 0.05. The integrated physical activity and dairy differences by",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-p-5077",
@@ -720,9 +774,9 @@
       "context_window": "activity recommendation, GTP: total protein foods scored 5 (66%), PTP: total protein foods scored < 5 (34%), * p < 0.05. T",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-5770",
@@ -738,9 +792,9 @@
       "context_window": "foods scored 5 (66%), PTP: total protein foods scored < 5 (34%), * p < 0.05. The integrated physical activity and seafood",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-p-5778",
@@ -756,9 +810,9 @@
       "context_window": "cored 5 (66%), PTP: total protein foods scored < 5 (34%), * p < 0.05. The integrated physical activity and seafood and plant pr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602667_the_relationships_between_total_protein_intake_protein_sourc-pct-6446",
@@ -828,7 +882,7 @@
       "context_window": "ith higher leg lean mass among Massachusetts adults aged 29-86 year [ 9 ] or greater lean mass in Taiwanese older adults [ 33 ]",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     }

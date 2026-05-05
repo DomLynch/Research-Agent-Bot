@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo",
   "doi": "10.1002/jcsm.13729",
-  "extracted_at": "2026-05-05T22:35:31+00:00",
+  "extracted_at": "2026-05-05T23:37:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 8,
@@ -43,7 +43,7 @@
       "context_window": "0.2 (standard deviation [SD]: 26.8) g/day, which represents 18.7% of the total energy intake and 1.23 (0.39) g per kg of body",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,9 +61,9 @@
       "context_window": "g per kg of body weight per day. Plant protein represented 6.16% of the energy intake, while animal protein represented 12.5",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-pct-1349",
@@ -79,9 +79,9 @@
       "context_window": ".16% of the energy intake, while animal protein represented 12.5%. During a median follow\u2010up of 12.9 (range: 11.7-13.9) years",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-pct-1680",
@@ -97,9 +97,9 @@
       "context_window": "ailty (hazard ratio [HR] for tertile 3 vs. tertile 1: 0.66; 95% confidence interval [CI]: 0.45, 0.96; p trend: 0.03). In mu",
       "claim_role": "effect",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-ci-1886",
@@ -116,9 +116,9 @@
       "context_window": "rom multimorbidity to frailty (HR per 1\u2010SD increment: 0.81 [95% CI: 0.68, 0.97]), and higher plant protein decreased the risk of progressi",
       "claim_role": "effect",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-n-167",
@@ -242,7 +242,7 @@
       "context_window": "relative risks, estimated by hazard ratios (HR), and their 95% confidence interval (CI) to assess the association between",
       "claim_role": "unknown",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -386,9 +386,9 @@
       "context_window": "on of total protein was 90.2 (26.8) g/day, which represents 18.7% of the total energy intake and a mean of 1.23 (0.39) g/kg p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-pct-1864",
@@ -404,9 +404,9 @@
       "context_window": "mean intake of 98.6 (30.8) g/day. Plant protein represented 6.16% of the total energy intake, while animal protein represente",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-pct-1931",
@@ -422,9 +422,9 @@
       "context_window": "f the total energy intake, while animal protein represented 12.5%. In terms of animal protein, the most consumed source was m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-pct-2079",
@@ -477,9 +477,9 @@
       "context_window": "the fully adjusted model (HR tertile 3 vs. tertile 1: 0.66 [95% CI: 0.45, 0.96]; p \u2010trend: 0.03) as given in Table 3 . When plant protein",
       "claim_role": "effect",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-n-3541",
@@ -495,7 +495,7 @@
       "context_window": "ein intake and frailty in individuals with multimorbidity ( N = 1868). Note: Estimates are hazard ratios (95% confidence interv",
       "claim_role": "unknown",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -550,9 +550,9 @@
       "context_window": "rom multimorbidity to frailty (HR per 1\u2010SD increment: 0.82 [95% CI: 0.69, 0.97]); this association was due to fish protein (0.81 [0.68, 0.",
       "claim_role": "effect",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11839239_plant_and_animal_protein_intake_and_transitions_from_multimo-u-6358",
@@ -604,7 +604,7 @@
       "context_window": "a large cohort, with information on cumulative intake over 22 years of follow\u2010up, found that a higher intake of plant protein w",
       "claim_role": "duration",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     }

@@ -1,13 +1,31 @@
 {
   "paper_id": "PMC7387625_protein_intake_recommendation_for_korean_older_adults_to_pre",
   "doi": "10.4235/agmr.18.0046",
-  "extracted_at": "2026-05-05T22:35:44+00:00",
+  "extracted_at": "2026-05-05T23:37:14+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "percentage": 1,
-    "unit_value": 1
+    "unit_value": 3,
+    "percentage": 1
   },
   "claims": [
+    {
+      "claim_id": "PMC7387625_protein_intake_recommendation_for_korean_older_adults_to_pre-u-1391",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1391,
+      "sentence": "The amount we recommend (1.2 g/kg/day) is 31.4% higher than the previously suggested recommended daily allowance (i.e., 0.91 g/kg/day) for the general population of Korea.",
+      "context_window": "the progression of muscle wasting. The amount we recommend (1.2 g/kg/day) is 31.4% higher than the previously suggested recommended",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC7387625_protein_intake_recommendation_for_korean_older_adults_to_pre-pct-1408",
       "claim_type": "percentage",
@@ -20,6 +38,24 @@
       "source_offset": 1408,
       "sentence": "The amount we recommend (1.2 g/kg/day) is 31.4% higher than the previously suggested recommended daily allowance (i.e., 0.91 g/kg/day) for the general population of Korea.",
       "context_window": "f muscle wasting. The amount we recommend (1.2 g/kg/day) is 31.4% higher than the previously suggested recommended daily allo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7387625_protein_intake_recommendation_for_korean_older_adults_to_pre-u-1486",
+      "claim_type": "unit_value",
+      "raw_text": "0.91 g/kg/day",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1486,
+      "sentence": "The amount we recommend (1.2 g/kg/day) is 31.4% higher than the previously suggested recommended daily allowance (i.e., 0.91 g/kg/day) for the general population of Korea.",
+      "context_window": "the previously suggested recommended daily allowance (i.e., 0.91 g/kg/day) for the general population of Korea. Also, evidence to dat",
       "claim_role": "background",
       "endpoint": "",
       "arm": "",

@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal",
   "doi": "10.3389/fphys.2019.00445",
-  "extracted_at": "2026-05-05T22:35:32+00:00",
+  "extracted_at": "2026-05-05T23:37:11+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 42,
+    "unit_value": 55,
     "mean_sd": 58,
     "sample_size": 4,
     "p_value": 34,
@@ -25,7 +25,7 @@
       "context_window": "obic capacity, and cardiometabolic health in older adults (\u226560 years). Physical activity levels were also evaluated 6 months pos",
       "claim_role": "population",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -62,7 +62,7 @@
       "context_window": "ity-dwelling, previously untrained males, and females [age: 68 \u00b1 5 years (mean \u00b1 SD); BMI: 27.8 \u00b1 6.2 kg/m 2 ] who completed t",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "welling, previously untrained males, and females [age: 68 \u00b1 5 years (mean \u00b1 SD); BMI: 27.8 \u00b1 6.2 kg/m 2 ] who completed the tri",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -99,7 +99,7 @@
       "context_window": "ned males, and females [age: 68 \u00b1 5 years (mean \u00b1 SD); BMI: 27.8 \u00b1 6.2 kg/m 2 ] who completed the trial were initially randomized",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -117,7 +117,7 @@
       "context_window": "es, and females [age: 68 \u00b1 5 years (mean \u00b1 SD); BMI: 27.8 \u00b1 6.2 kg/m 2 ] who completed the trial were initially randomized to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -135,7 +135,7 @@
       "context_window": "itially randomized to one of two independent arms [Exercise n = 24 (E); Exercise+Protein n = 22 (EP)]. Both arms completed 16",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -153,7 +153,7 @@
       "context_window": "two independent arms [Exercise n = 24 (E); Exercise+Protein n = 22 (EP)]. Both arms completed 16 weeks of RE (performed to fat",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -189,9 +189,27 @@
       "context_window": "leucine-enriched whey protein supplement (3 times/day) for 16 weeks based on individual body-weight (1.5 g/kg/day). As a resul",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-933",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 933,
+      "sentence": "Additionally, EP were administered a leucine-enriched whey protein supplement (3 times/day) for 16 weeks based on individual body-weight (1.5 g/kg/day).",
+      "context_window": "(3 times/day) for 16 weeks based on individual body-weight (1.5 g/kg/day). As a result of dietary supplementation, protein intake i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "leucine",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-msd-1022",
@@ -208,7 +226,7 @@
       "context_window": "f dietary supplementation, protein intake increased in EP (\u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day) during the intervention. Maximal str",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -227,7 +245,25 @@
       "context_window": "plementation, protein intake increased in EP (\u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day) during the intervention. Maximal strength (1RM) v",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-1041",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 g/kg/day",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1041,
+      "sentence": "As a result of dietary supplementation, protein intake increased in EP (\u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day) during the intervention.",
+      "context_window": "tation, protein intake increased in EP (\u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day) during the intervention. Maximal strength (1RM) values for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -815,7 +851,7 @@
       "context_window": "diometabolic health (glycaemic control or blood pressure) ( p > 0.05). At follow-up, 86% of older adults reported to performing",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -870,6 +906,24 @@
       "claim_role": "protocol",
       "endpoint": "frailty",
       "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-750",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 750,
+      "sentence": "RE is a potent stimulus to increase muscle strength and physical functioning ( Fiatarone et al., 1990 ; Stec et al., 2017 ) whilst epidemiological data show higher quantities of dietary-protein (>1 g/kg/day) can curb declines in grip strength ( McLean et al., 2016 ) and mobility ( Mustafa et al., 2018 ).",
+      "context_window": "miological data show higher quantities of dietary-protein (>1 g/kg/day) can curb declines in grip strength ( McLean et al., 2016 )",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1067,9 +1121,9 @@
       "context_window": "lling, and previously untrained males and females (aged \u226560-86 years) who completed the trial were initially randomized in a sin",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-n-1897",
@@ -1085,9 +1139,9 @@
       "context_window": "ingle-blind design to one of two independent arms [Exercise n = 24 (E); Exercise+Protein n = 22 (EP); see Figure 1 ]. All part",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-n-1926",
@@ -1103,9 +1157,9 @@
       "context_window": "two independent arms [Exercise n = 24 (E); Exercise+Protein n = 22 (EP); see Figure 1 ]. All participants attended the clinica",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-2445",
@@ -1121,9 +1175,9 @@
       "context_window": "pplement thrice daily (at breakfast, lunch, and dinner) for 16 weeks based on individual body-weight. Protein supplements were c",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-2867",
@@ -1270,6 +1324,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-9653",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 9653,
+      "sentence": "Participants in EP were administered a Vanilla flavored Whey Isolate Protein supplement (MyProtein, Northwich, Cheshire, United Kingdom) (at: 1.5 g/kg/day; 0.5 g/kg/meal) enriched with Leucine (MyProtein, Northwich, United Kingdom) (at: 0.09 g/kg/day; 0.03 g/kg/meal) and mixed with 200 ml of water which was ingested thrice daily (breakfast, lunch, dinner) for 16-weeks.",
+      "context_window": "ement (MyProtein, Northwich, Cheshire, United Kingdom) (at: 1.5 g/kg/day; 0.5 g/kg/meal) enriched with Leucine (MyProtein, Northwich",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-9748",
+      "claim_type": "unit_value",
+      "raw_text": "0.09 g/kg/day",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 9748,
+      "sentence": "Participants in EP were administered a Vanilla flavored Whey Isolate Protein supplement (MyProtein, Northwich, Cheshire, United Kingdom) (at: 1.5 g/kg/day; 0.5 g/kg/meal) enriched with Leucine (MyProtein, Northwich, United Kingdom) (at: 0.09 g/kg/day; 0.03 g/kg/meal) and mixed with 200 ml of water which was ingested thrice daily (breakfast, lunch, dinner) for 16-weeks.",
+      "context_window": "ed with Leucine (MyProtein, Northwich, United Kingdom) (at: 0.09 g/kg/day; 0.03 g/kg/meal) and mixed with 200 ml of water which was i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-p-11803",
       "claim_type": "p_value",
       "raw_text": "p < 0.05",
@@ -1412,7 +1502,7 @@
       "context_window": "ce was observed with dietary- protein supplementation: EP = 43 \u00b1 14%. As a result of supplementation, protein intake increased",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1430,7 +1520,7 @@
       "context_window": "s observed with dietary- protein supplementation: EP = 43 \u00b1 14%. As a result of supplementation, protein intake increased f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1449,7 +1539,7 @@
       "context_window": "a result of supplementation, protein intake increased from \u223c1.2 \u00b1 0.4 at baseline to 1.5 \u00b1 0.7g/kg/day in EP during the intervent",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1468,7 +1558,25 @@
       "context_window": "on, protein intake increased from \u223c1.2 \u00b1 0.4 at baseline to 1.5 \u00b1 0.7g/kg/day in EP during the intervention period. No within- o",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-577",
+      "claim_type": "unit_value",
+      "raw_text": "0.7g/kg/day",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 577,
+      "sentence": "As a result of supplementation, protein intake increased from \u223c1.2 \u00b1 0.4 at baseline to 1.5 \u00b1 0.7g/kg/day in EP during the intervention period.",
+      "context_window": "otein intake increased from \u223c1.2 \u00b1 0.4 at baseline to 1.5 \u00b1 0.7g/kg/day in EP during the intervention period. No within- or betwee",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2864,9 +2972,9 @@
       "context_window": "We report 16 weeks of progressive resistance and FE (3 times/week) significant",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-msd-1379",
@@ -2921,9 +3029,27 @@
       "context_window": "habitually consuming adequate amounts of dietary-protein (\u223c1.2 \u00b1 0.4 g/kg/day) may have masked any effect of supplementation ( T",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-1725",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 g/kg/day",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 1725,
+      "sentence": "Thus, the relative good health of our population who were habitually consuming adequate amounts of dietary-protein (\u223c1.2 \u00b1 0.4 g/kg/day) may have masked any effect of supplementation ( Table 4 ).",
+      "context_window": "ually consuming adequate amounts of dietary-protein (\u223c1.2 \u00b1 0.4 g/kg/day) may have masked any effect of supplementation ( Table 4 ).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-msd-1846",
@@ -2940,7 +3066,7 @@
       "context_window": "Table 4 ). Despite increasing dietary-protein intake from \u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day during the present trial, adherence (",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2959,7 +3085,25 @@
       "context_window": "espite increasing dietary-protein intake from \u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day during the present trial, adherence (43 \u00b1 14%) was",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-1865",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 g/kg/day",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 1865,
+      "sentence": "Despite increasing dietary-protein intake from \u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day during the present trial, adherence (43 \u00b1 14%) was considerably lower than others ( Verdijk et al., 2009 ; Bell et al., 2017 ) although similar in those attempting to supplement 3 times/day ( Norton et al., 2016 ).",
+      "context_window": "increasing dietary-protein intake from \u223c1.2 \u00b1 0.4 to 1.5 \u00b1 0.7 g/kg/day during the present trial, adherence (43 \u00b1 14%) was consider",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2978,7 +3122,7 @@
       "context_window": "to 1.5 \u00b1 0.7 g/kg/day during the present trial, adherence (43 \u00b1 14%) was considerably lower than others ( Verdijk et al., 2009",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2996,7 +3140,7 @@
       "context_window": ".5 \u00b1 0.7 g/kg/day during the present trial, adherence (43 \u00b1 14%) was considerably lower than others ( Verdijk et al., 2009",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3178,9 +3322,9 @@
       "context_window": "A clear drawback of our trial was the lack of compliance (43 \u00b1 14%) to dietary-protein supplementation. As mentioned, future",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-pct-6295",
@@ -3196,9 +3340,9 @@
       "context_window": "lear drawback of our trial was the lack of compliance (43 \u00b1 14%) to dietary-protein supplementation. As mentioned, future r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-pct-6428",
@@ -3219,6 +3363,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-6821",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6821,
+      "sentence": "However, as mounting commentary ( Paddon-Jones and Rasmussen, 2009 ; Bauer et al., 2013 ) advocate higher dietary-protein intakes (\u22651.2 g/kg/day) for older adults it would be unwise to examine the effects in functionally impaired populations alone.",
+      "context_window": "er et al., 2013 ) advocate higher dietary-protein intakes (\u22651.2 g/kg/day) for older adults it would be unwise to examine the effects",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-7035",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 7035,
+      "sentence": "For public health mandates to endorse a greater intake of dietary-protein above the current RDA (0.8 g/kg/day); evidence needs to be established across various populations (i.e., in community-dwelling and institutionalized older adults).",
+      "context_window": "a greater intake of dietary-protein above the current RDA (0.8 g/kg/day); evidence needs to be established across various populatio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-msd-58",
       "claim_type": "mean_sd",
       "raw_text": "43 \u00b1 14",
@@ -3233,9 +3413,9 @@
       "context_window": "A clear drawback of our trial was the lack of compliance (43 \u00b1 14%) to dietary-protein supplementation. As mentioned, future",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-pct-63",
@@ -3251,9 +3431,9 @@
       "context_window": "lear drawback of our trial was the lack of compliance (43 \u00b1 14%) to dietary-protein supplementation. As mentioned, future r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-pct-196",
@@ -3274,6 +3454,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-589",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "limitations",
+      "source_offset": 589,
+      "sentence": "However, as mounting commentary ( Paddon-Jones and Rasmussen, 2009 ; Bauer et al., 2013 ) advocate higher dietary-protein intakes (\u22651.2 g/kg/day) for older adults it would be unwise to examine the effects in functionally impaired populations alone.",
+      "context_window": "er et al., 2013 ) advocate higher dietary-protein intakes (\u22651.2 g/kg/day) for older adults it would be unwise to examine the effects",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-803",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "limitations",
+      "source_offset": 803,
+      "sentence": "For public health mandates to endorse a greater intake of dietary-protein above the current RDA (0.8 g/kg/day); evidence needs to be established across various populations (i.e., in community-dwelling and institutionalized older adults).",
+      "context_window": "a greater intake of dietary-protein above the current RDA (0.8 g/kg/day); evidence needs to be established across various populatio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-13",
       "claim_type": "unit_value",
       "raw_text": "16 weeks",
@@ -3287,9 +3503,9 @@
       "context_window": "To conclude, 16 weeks of progressive resistance and FE (3 times/week) significant",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-pct-362",
@@ -3306,6 +3522,24 @@
       "claim_role": "population",
       "endpoint": "muscle strength",
       "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6524700_exercise_and_dietary_protein_as_a_countermeasure_to_skeletal-u-606",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 606,
+      "sentence": "Finally, future research should focus on methods to incorporate high dietary-protein intakes (\u223c1.5 g/kg/day) through naturally occurring food sources in frail and non-frail older adults habitually consuming the RDA of protein.",
+      "context_window": "us on methods to incorporate high dietary-protein intakes (\u223c1.5 g/kg/day) through naturally occurring food sources in frail and non-",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     }

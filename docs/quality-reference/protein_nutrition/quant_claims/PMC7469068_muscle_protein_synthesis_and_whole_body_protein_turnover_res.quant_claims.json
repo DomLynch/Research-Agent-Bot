@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC7469068_muscle_protein_synthesis_and_whole_body_protein_turnover_res",
   "doi": "10.3390/nu12082457",
-  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extracted_at": "2026-05-05T23:37:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 1,
+    "unit_value": 2,
     "percentage": 2
   },
   "claims": [
@@ -22,9 +22,9 @@
       "context_window": "iduals exposed to high altitudes (4300 m), before and after 22 days of acclimatization and severe energy deficit (40% energy de",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7469068_muscle_protein_synthesis_and_whole_body_protein_turnover_res-pct-1920",
@@ -40,9 +40,9 @@
       "context_window": "after 22 days of acclimatization and severe energy deficit (40% energy deficit, -1766 kcal/day of energy balance) [ 14 ]. W",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7469068_muscle_protein_synthesis_and_whole_body_protein_turnover_res-pct-2196",
@@ -58,8 +58,26 @@
       "context_window": "ry training exercise that elicited a severe energy deficit (54% energy deficit, -3313 kcal/day of energy balance) [ 15 ]. T",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7469068_muscle_protein_synthesis_and_whole_body_protein_turnover_res-u-383",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 383,
+      "sentence": "It appears that ingesting formats that provide ~20 to 30 g or 0.25-0.30 g/kg protein or ~10g or 0.10g/kg free-form EAA per dose optimizes MPS in healthy, non-obese individuals consuming habitual protein intakes of 1.6 g/kg/day during optimal conditions, such as following resistance exercise and in the absence of energy deficit.",
+      "context_window": "non-obese individuals consuming habitual protein intakes of 1.6 g/kg/day during optimal conditions, such as following resistance exe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     }
   ]

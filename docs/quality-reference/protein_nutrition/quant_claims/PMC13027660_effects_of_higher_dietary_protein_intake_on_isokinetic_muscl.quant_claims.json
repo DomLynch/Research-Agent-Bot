@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl",
   "doi": "10.3390/jfmk11010125",
-  "extracted_at": "2026-05-05T22:35:47+00:00",
+  "extracted_at": "2026-05-05T23:37:05+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 21,
+    "unit_value": 30,
     "p_value": 39,
     "percentage": 13,
     "confidence_interval": 4,
@@ -25,7 +25,7 @@
       "context_window": "2DM). Methods : Thirty adults (15 men and 15 women) aged 60-80 years with non-insulin-treated T2DM and sarcopenia-related defici",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "ed T2DM and sarcopenia-related deficits were randomized for 12 weeks to a higher-protein diet (1.2-1.5 g.kg -1 .day -1 ) or a re",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "ing in a significant group d7 time interaction at week 12 ( p < 0.05) (post hoc between-group difference at week 12, p < 0.05).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -97,7 +97,7 @@
       "context_window": "( p < 0.05) (post hoc between-group difference at week 12, p < 0.05). Fat-free mass and blood pressure did not change. In fat m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -115,8 +115,80 @@
       "context_window": "the control group. Conclusions : Higher protein intake for 12 weeks preserved knee muscle performance in older adults with T2DM",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-1706",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1706,
+      "sentence": "While general recommendations suggest \u22480.8 g/kg/day [ 21 ], older adults with acute or chronic disease may require up to \u22481.5 g/kg/day (or approximately 25-30 g/meal) to overcome anabolic resistance and stimulate postprandial muscle protein synthesis [ 22 ], while higher-protein dietary patterns are also supported by the 2025-2030 Dietary Guidelines for Americans [ 23 ].",
+      "context_window": "performance [ 20 ]. While general recommendations suggest \u22480.8 g/kg/day [ 21 ], older adults with acute or chronic disease may requ",
+      "claim_role": "dose",
+      "endpoint": "protein synthesis",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-1789",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1789,
+      "sentence": "While general recommendations suggest \u22480.8 g/kg/day [ 21 ], older adults with acute or chronic disease may require up to \u22481.5 g/kg/day (or approximately 25-30 g/meal) to overcome anabolic resistance and stimulate postprandial muscle protein synthesis [ 22 ], while higher-protein dietary patterns are also supported by the 2025-2030 Dietary Guidelines for Americans [ 23 ].",
+      "context_window": "der adults with acute or chronic disease may require up to \u22481.5 g/kg/day (or approximately 25-30 g/meal) to overcome anabolic resist",
+      "claim_role": "dose",
+      "endpoint": "protein synthesis",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-2164",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2164,
+      "sentence": "Recent 12-week interventions in older adults with non-insulin-treated T2DM indicate that increasing protein intake to \u22481.2-1.5 g/kg/day preserves or improves functional performance compared with standard intake (\u22480.8-1.0 g/kg/day) [ 12 ].",
+      "context_window": "reated T2DM indicate that increasing protein intake to \u22481.2-1.5 g/kg/day preserves or improves functional performance compared with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-2258",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2258,
+      "sentence": "Recent 12-week interventions in older adults with non-insulin-treated T2DM indicate that increasing protein intake to \u22481.2-1.5 g/kg/day preserves or improves functional performance compared with standard intake (\u22480.8-1.0 g/kg/day) [ 12 ].",
+      "context_window": "functional performance compared with standard intake (\u22480.8-1.0 g/kg/day) [ 12 ]. Specifically, higher protein intake has been assoc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {
@@ -133,7 +205,7 @@
       "context_window": "suggests comparable relative preservation/improvement after 12 weeks of higher protein intake between sexes [ 11 , 12 ]. Higher",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -151,7 +223,43 @@
       "context_window": ", the present investigation aimed to examine the effects of 12 weeks of higher-protein intake (1.2-1.5 g/kg/day) versus recommen",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-4895",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 4895,
+      "sentence": "Therefore, the present investigation aimed to examine the effects of 12 weeks of higher-protein intake (1.2-1.5 g/kg/day) versus recommended intake (0.8-1.0 g/kg/day) on isokinetic knee muscle function in the older adults with non-insulin-treated T2DM.",
+      "context_window": "amine the effects of 12 weeks of higher-protein intake (1.2-1.5 g/kg/day) versus recommended intake (0.8-1.0 g/kg/day) on isokinetic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-4940",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 4940,
+      "sentence": "Therefore, the present investigation aimed to examine the effects of 12 weeks of higher-protein intake (1.2-1.5 g/kg/day) versus recommended intake (0.8-1.0 g/kg/day) on isokinetic knee muscle function in the older adults with non-insulin-treated T2DM.",
+      "context_window": "in intake (1.2-1.5 g/kg/day) versus recommended intake (0.8-1.0 g/kg/day) on isokinetic knee muscle function in the older adults wit",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -264,6 +372,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-3004",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 3004,
+      "sentence": "Participants were administered a diet plan in person (based on their weight and aimed in maintaining energy intake) with either the current recommended protein intake (CG; 0.8-1.0 g/kg/day) or a diet plan based on the dietary guidelines for Americans, that is 1.2-1.5 g/kg/day protein intake [ 23 ].",
+      "context_window": "with either the current recommended protein intake (CG; 0.8-1.0 g/kg/day) or a diet plan based on the dietary guidelines for America",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-3092",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 3092,
+      "sentence": "Participants were administered a diet plan in person (based on their weight and aimed in maintaining energy intake) with either the current recommended protein intake (CG; 0.8-1.0 g/kg/day) or a diet plan based on the dietary guidelines for Americans, that is 1.2-1.5 g/kg/day protein intake [ 23 ].",
+      "context_window": "based on the dietary guidelines for Americans, that is 1.2-1.5 g/kg/day protein intake [ 23 ]. Individualized meal plans were devel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-4154",
       "claim_type": "unit_value",
       "raw_text": "6 weeks",
@@ -367,9 +511,9 @@
       "context_window": "NOVA [groups (control and intervention) \u00d7 time (pre, 6, and 12 weeks)] was used to analyze dietary intake, anthropometrics, isok",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-10963",
@@ -403,9 +547,9 @@
       "context_window": "es ANOVA [groups (control and intervention) \u00d7 time (pre and 12 weeks) \u00d7 repetitions (1-5, 6-10, 11-15 and 16-20 repetitions)] wa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-p-11577",
@@ -604,9 +748,9 @@
       "context_window": "y mass differed significantly between groups at weeks 6 (CG 0.83 \u00b1 0.06 vs. IG 1.24 \u00b1 0.15) and 12 (CG 0.83 \u00b1 0.07 vs. IG 1.39 \u00b1 0.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-msd-1087",
@@ -698,7 +842,7 @@
       "context_window": ".kg -1 .day -1 ) increased from baseline to weeks 6 and 12 (0.81 \u00b1 0.13, 1.24 \u00b1 0.15, 1.39 \u00b1 0.08, respectively; p < 0.05) and rema",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -717,7 +861,7 @@
       "context_window": "1 ) increased from baseline to weeks 6 and 12 (0.81 \u00b1 0.13, 1.24 \u00b1 0.15, 1.39 \u00b1 0.08, respectively; p < 0.05) and remained higher t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -736,7 +880,7 @@
       "context_window": "from baseline to weeks 6 and 12 (0.81 \u00b1 0.13, 1.24 \u00b1 0.15, 1.39 \u00b1 0.08, respectively; p < 0.05) and remained higher than in the CG",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -754,7 +898,7 @@
       "context_window": "nd 12 (0.81 \u00b1 0.13, 1.24 \u00b1 0.15, 1.39 \u00b1 0.08, respectively; p < 0.05) and remained higher than in the CG ( p < 0.001). At week 6",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -772,7 +916,7 @@
       "context_window": "espectively; p < 0.05) and remained higher than in the CG ( p < 0.001). At week 6 and week 12, the CG differed from the IG by \u0394 =",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1515,9 +1659,9 @@
       "context_window": "reasing daily protein intake to 1.2-1.5 g.kg -1 .day -1 for 12 weeks could preserve isokinetic knee muscle function in older adu",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-2268",
@@ -1533,8 +1677,26 @@
       "context_window": "ke was sufficient to counterbalance functional decline over 12 weeks, even without measurable increases in fat-free mass. Previ",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13027660_effects_of_higher_dietary_protein_intake_on_isokinetic_muscl-u-2835",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2835,
+      "sentence": "By targeting 1.2-1.5 g/kg/day, our protocol ensured that participants with higher body mass received proportionally higher protein intake.",
+      "context_window": "in heavier or more catabolic individuals. By targeting 1.2-1.5 g/kg/day, our protocol ensured that participants with higher body ma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
       "binding_confidence": "partial"
     },
     {
@@ -1551,7 +1713,7 @@
       "context_window": "que) than for inducing large changes in fatigability within 12 weeks. Given the complex determinants of fatigue (metabolic contr",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1587,7 +1749,7 @@
       "context_window": "h non-insulin-treated T2DM and sarcopenia-related deficits, 12 weeks of higher protein intake, as currently suggested by the die",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     }

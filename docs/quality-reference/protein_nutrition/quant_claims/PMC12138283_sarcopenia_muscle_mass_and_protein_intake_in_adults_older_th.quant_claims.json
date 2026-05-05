@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th",
   "doi": "10.1002/jcsm.13839",
-  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extracted_at": "2026-05-05T23:37:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 42,
+    "unit_value": 47,
     "percentage": 56,
     "mean_sd": 51,
     "p_value": 43
@@ -409,7 +409,7 @@
       "context_window": "ity. Protein intake tended to be higher in BAR than in CON (1.36 \u00b1 0.36 g/kg FFM/day vs. 1.25 \u00b1 0.27, p = 0.09). Most participants",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -775,6 +775,42 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-7156",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 7156,
+      "sentence": "To assess adequacy of protein intake for older adults, we used cut\u2010off points of 1.0 g/kg/day actual bodyweight and 1.6 g/kg/day FFM [ 26 , 27 ].",
+      "context_window": "protein intake for older adults, we used cut\u2010off points of 1.0 g/kg/day actual bodyweight and 1.6 g/kg/day FFM [ 26 , 27 ]. Protein",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-7191",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 7191,
+      "sentence": "To assess adequacy of protein intake for older adults, we used cut\u2010off points of 1.0 g/kg/day actual bodyweight and 1.6 g/kg/day FFM [ 26 , 27 ].",
+      "context_window": "e used cut\u2010off points of 1.0 g/kg/day actual bodyweight and 1.6 g/kg/day FFM [ 26 , 27 ]. Protein intake after MBS was compared to r",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-8739",
@@ -2282,7 +2318,25 @@
       "context_window": "logramme actual bodyweight was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs. 0.73 \u00b1 18, p < 0.05). This difference remained",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-4450",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 g/kg/day",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 4450,
+      "sentence": "Protein intake per kilogramme actual bodyweight was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs.",
+      "context_window": "e actual bodyweight was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs. 0.73 \u00b1 18, p < 0.05). This difference remained as a ten",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2336,6 +2390,24 @@
       "source_offset": 4565,
       "sentence": "This difference remained as a tendency when expressed relative to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs.",
       "context_window": "remained as a tendency when expressed relative to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs. CON 1.25 \u00b1 0.27, p = 0.09). Dietary intak",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-4572",
+      "claim_type": "unit_value",
+      "raw_text": "0.36 g/kg/day",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 4572,
+      "sentence": "This difference remained as a tendency when expressed relative to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs.",
+      "context_window": "ed as a tendency when expressed relative to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs. CON 1.25 \u00b1 0.27, p = 0.09). Dietary intake by grou",
       "claim_role": "dose",
       "endpoint": "lean body mass",
       "arm": "",
@@ -2411,9 +2483,9 @@
       "context_window": "fat free mass; IBW, ideal body weight. p < 0.05. For BAR, 32% of participants did not meet the minimum intake level of 60",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-5023",
@@ -2429,9 +2501,9 @@
       "context_window": "et the minimum intake level of 60 g of protein/day and only 4% met the 1.5 g/kg IBW recommended after MBS (Figure 2 ) [ 28",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-5175",
@@ -2464,6 +2536,24 @@
       "sentence": "Similarly, only 19% of all patients achieved 1.6 g/kg FFM recommended for older adults [ 27 ].",
       "context_window": "ulation based on actual body weight [ 29 ]. Similarly, only 19% of all patients achieved 1.6 g/kg FFM recommended for older",
       "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-5602",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 5602,
+      "sentence": "All bars are mean for the groups. (a) Total dietary intake compared to minimum recommendations after MBS of 60 g/day. (b) Intake/actual bodyweight (ABW) compared to recommended intake for older adults of > 1 g/kg/day. (c) Intake/ideal bodyweight (IBW) compared to recommended intakes of 1.5 g/kg/IBW recommendation after MBS. (d) Intake/fat free mass compared to EAR of 1.6 g/kg FFM for older adults determined by the indicator amino acid oxidation (IAAO) method.",
+      "context_window": "(ABW) compared to recommended intake for older adults of > 1 g/kg/day. (c) Intake/ideal bodyweight (IBW) compared to recommended",
+      "claim_role": "dose",
       "endpoint": "lean body mass",
       "arm": "",
       "direction": "",
@@ -2829,7 +2919,7 @@
       "context_window": "ch additional gramme of dietary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2847,7 +2937,7 @@
       "context_window": "etary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did not improve prediction. The",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },

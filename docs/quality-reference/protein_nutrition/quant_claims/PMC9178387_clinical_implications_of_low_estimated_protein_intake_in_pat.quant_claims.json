@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat",
   "doi": "10.1002/jcsm.12973",
-  "extracted_at": "2026-05-05T22:35:45+00:00",
+  "extracted_at": "2026-05-05T23:37:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 3,
@@ -135,7 +135,7 @@
       "context_window": "compared with the highest quartile [hazard ratio (HR) 1.50; 95% confidence interval (CI) 1.03-2.18, P = 0.036 for the lowes",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -153,7 +153,7 @@
       "context_window": "rd ratio (HR) 1.50; 95% confidence interval (CI) 1.03-2.18, P = 0.036 for the lowest quartile and HR 1.46; 95% CI 1.00-2.18, P =",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -172,7 +172,7 @@
       "context_window": ") 1.03-2.18, P = 0.036 for the lowest quartile and HR 1.46; 95% CI 1.00-2.18, P = 0.049 for the second quartile]. An estimated lower pr",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -190,7 +190,7 @@
       "context_window": ".036 for the lowest quartile and HR 1.46; 95% CI 1.00-2.18, P = 0.049 for the second quartile]. An estimated lower protein intak",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -443,9 +443,9 @@
       "context_window": "and 606 were women (27%). Mean estimated protein intake was 55 \u00b1 11 g/day. In the total population, 75% of the HF patients did",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-pct-196",
@@ -461,9 +461,9 @@
       "context_window": "protein intake was 55 \u00b1 11 g/day. In the total population, 75% of the HF patients did not meet the RDA of 0.8 g/kg of body",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-msd-1440",
@@ -768,9 +768,9 @@
       "context_window": "protein intake was associated with a lower BMI ( r = 0.443, P < 0.001), higher levels of NT\u2010proBNP ( r = -0.257, P < 0.001), lowe",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-2293",
@@ -786,9 +786,9 @@
       "context_window": "0.443, P < 0.001), higher levels of NT\u2010proBNP ( r = -0.257, P < 0.001), lower haemoglobin levels ( r = 0.132, P < 0.001), and hig",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-2343",
@@ -804,9 +804,9 @@
       "context_window": "= -0.257, P < 0.001), lower haemoglobin levels ( r = 0.132, P < 0.001), and higher levels of markers of liver dysfunction such as",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-2478",
@@ -822,9 +822,9 @@
       "context_window": "\u2010glutamyltransferase and alkaline phosphatase ( r = -0.119, P < 0.001 and r = -0.101, P = 0.001, respectively). We also found tha",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-2504",
@@ -840,9 +840,9 @@
       "context_window": "lkaline phosphatase ( r = -0.119, P < 0.001 and r = -0.101, P = 0.001, respectively). We also found that a lower estimated protei",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-2670",
@@ -858,7 +858,7 @@
       "context_window": "ere signs of congestion, such as hepatomegaly ( r = -0.086, P < 0.001) and the presence of rales ( r = -0.077, P < 0.001). Parti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -876,7 +876,7 @@
       "context_window": "-0.086, P < 0.001) and the presence of rales ( r = -0.077, P < 0.001). Partial correlation with estimated protein intake adjust",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -894,9 +894,9 @@
       "context_window": "ro\u2010brain natriuretic peptide. During a median follow\u2010up of 21 months, 26% of the patients had died, ranging from 32% in the lowe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-pct-2999",
@@ -912,9 +912,9 @@
       "context_window": "triuretic peptide. During a median follow\u2010up of 21 months, 26% of the patients had died, ranging from 32% in the lowest qu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-pct-3042",
@@ -930,9 +930,9 @@
       "context_window": "up of 21 months, 26% of the patients had died, ranging from 32% in the lowest quartile to 18% in the highest estimated prot",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-pct-3072",
@@ -948,9 +948,9 @@
       "context_window": "tients had died, ranging from 32% in the lowest quartile to 18% in the highest estimated protein intake quartile ( P < 0.00",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-3127",
@@ -966,9 +966,9 @@
       "context_window": "e to 18% in the highest estimated protein intake quartile ( P < 0.001). The main results of the Kaplan-Meier showed that patient",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-3666",
@@ -984,9 +984,9 @@
       "context_window": "ant interaction between LVEF and estimated protein intake ( P = 0.126). Kaplan-Meier curve for quartiles of estimated protein in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-ci-4109",
@@ -1003,7 +1003,7 @@
       "context_window": "n a continuous level per log decrease, we found an HR 1.97, 95% CI 1.01-3.84, P = 0.048 ( Table 3 ). For the comparison between quartile",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1021,7 +1021,7 @@
       "context_window": "el per log decrease, we found an HR 1.97, 95% CI 1.01-3.84, P = 0.048 ( Table 3 ). For the comparison between quartiles, we used",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1058,9 +1058,9 @@
       "context_window": "significantly compared with the highest quartile (HR 1.45; 95% CI 1.12-1.88, P = 0.004 for the third quartile; for the second quartile,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-5096",
@@ -1076,9 +1076,9 @@
       "context_window": "pared with the highest quartile (HR 1.45; 95% CI 1.12-1.88, P = 0.004 for the third quartile; for the second quartile, HR 1.75; 9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-ci-5164",
@@ -1095,9 +1095,9 @@
       "context_window": "4 for the third quartile; for the second quartile, HR 1.75; 95% CI 1.36-2.24, P < 0.001; and for the quartile with the lowest estimated",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-5182",
@@ -1113,9 +1113,9 @@
       "context_window": "artile; for the second quartile, HR 1.75; 95% CI 1.36-2.24, P < 0.001; and for the quartile with the lowest estimated protein int",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-ci-5265",
@@ -1132,9 +1132,9 @@
       "context_window": "quartile with the lowest estimated protein intake, HR 1.99; 95% CI 1.56-2.54, P < 0.001). In the multivariable adjusted model, these HRs",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-p-5283",
@@ -1150,9 +1150,9 @@
       "context_window": "lowest estimated protein intake, HR 1.99; 95% CI 1.56-2.54, P < 0.001). In the multivariable adjusted model, these HRs remained s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9178387_clinical_implications_of_low_estimated_protein_intake_in_pat-ci-5511",
@@ -1169,7 +1169,7 @@
       "context_window": "ke compared with patients in the highest quartile (HR 1.46; 95% CI 1.00-2.18, P = 0.049 and HR 1.50; 95% CI 1.03-2.18, P = 0.036, respec",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1187,7 +1187,7 @@
       "context_window": "atients in the highest quartile (HR 1.46; 95% CI 1.00-2.18, P = 0.049 and HR 1.50; 95% CI 1.03-2.18, P = 0.036, respectively). T",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1206,7 +1206,7 @@
       "context_window": "quartile (HR 1.46; 95% CI 1.00-2.18, P = 0.049 and HR 1.50; 95% CI 1.03-2.18, P = 0.036, respectively). The findings were validated in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1224,7 +1224,7 @@
       "context_window": "95% CI 1.00-2.18, P = 0.049 and HR 1.50; 95% CI 1.03-2.18, P = 0.036, respectively). The findings were validated in the validat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1260,7 +1260,7 @@
       "context_window": "otein intake. Consistent with these findings, we found that 75% of the HF patients in our cohort did not meet the RDA of 0.",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1278,9 +1278,9 @@
       "context_window": "ality of life and tumour necrosis factor alpha levels after 18 weeks with a high caloric-high protein diet in 29 HF patients. 25",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

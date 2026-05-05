@@ -1,12 +1,12 @@
 {
   "paper_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn",
   "doi": "10.3389/fnut.2023.1289946",
-  "extracted_at": "2026-05-05T22:35:34+00:00",
+  "extracted_at": "2026-05-05T23:37:00+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 19,
     "mean_sd": 7,
-    "unit_value": 4,
+    "unit_value": 8,
     "p_value": 3,
     "sample_size": 1,
     "correlation": 3
@@ -118,9 +118,9 @@
       "context_window": "l component of the human body, accounting for approximately 14%-16% to the total mass of a lean adult ( 1 , 2 ). Dietary pr",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-pct-107",
@@ -136,9 +136,45 @@
       "context_window": "mponent of the human body, accounting for approximately 14%-16% to the total mass of a lean adult ( 1 , 2 ). Dietary protei",
       "claim_role": "background",
       "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-u-795",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 795,
+      "sentence": "The International Society of Sports Nutrition recommends 1.4-2.0 g/kg/day for an athlete who lifts weights or is training for an endurance event ( 3 ).",
+      "context_window": "he International Society of Sports Nutrition recommends 1.4-2.0 g/kg/day for an athlete who lifts weights or is training for an endu",
+      "claim_role": "dose",
+      "endpoint": "",
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-u-965",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 965,
+      "sentence": "The Academy of Nutrition and Dietetics recommends that a protein intake of 1.0-1.6 g/kg/day for older adults >60 years is safe and adequate to meet their needs, while the Institute of Medicine suggests older adults do not have elevated protein needs above 0.8 g/kg/day ( 2 , 5 ).",
+      "context_window": "ition and Dietetics recommends that a protein intake of 1.0-1.6 g/kg/day for older adults >60 years is safe and adequate to meet the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-u-996",
@@ -154,7 +190,25 @@
       "context_window": "that a protein intake of 1.0-1.6 g/kg/day for older adults >60 years is safe and adequate to meet their needs, while the Institu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-u-1142",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1142,
+      "sentence": "The Academy of Nutrition and Dietetics recommends that a protein intake of 1.0-1.6 g/kg/day for older adults >60 years is safe and adequate to meet their needs, while the Institute of Medicine suggests older adults do not have elevated protein needs above 0.8 g/kg/day ( 2 , 5 ).",
+      "context_window": "gests older adults do not have elevated protein needs above 0.8 g/kg/day ( 2 , 5 ). The Acceptable Macronutrient Distribution Range",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -172,9 +226,9 @@
       "context_window": "Distribution Range (AMDR) for protein varies by age and is 10%-35% of total calories for adults >18 years ( 2 ). These dis",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-pct-1258",
@@ -190,9 +244,9 @@
       "context_window": "tribution Range (AMDR) for protein varies by age and is 10%-35% of total calories for adults >18 years ( 2 ). These discrep",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-u-1292",
@@ -208,9 +262,9 @@
       "context_window": "varies by age and is 10%-35% of total calories for adults >18 years ( 2 ). These discrepancies are of consequence for health pr",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-u-2077",
@@ -392,6 +446,24 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-u-2112",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2112,
+      "sentence": "RDA, recommended dietary allowance (for protein: 0.8 g/kg/day); h 2 denotes the communalities.",
+      "context_window": "n = 225). RDA, recommended dietary allowance (for protein: 0.8 g/kg/day); h 2 denotes the communalities. Factor 1 included five it",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10733519_construct_validity_of_a_dietary_protein_assessment_questionn-corr-2572",

@@ -1,12 +1,12 @@
 {
   "paper_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati",
   "doi": "10.5535/arm.23076",
-  "extracted_at": "2026-05-05T22:35:41+00:00",
+  "extracted_at": "2026-05-05T23:37:00+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 16,
     "p_value": 12,
-    "unit_value": 11,
+    "unit_value": 12,
     "sample_size": 1
   },
   "claims": [
@@ -312,7 +312,25 @@
       "context_window": "ase muscle mass and function in individuals aged older than 65 years. A higher protein intake (>1.2 g/kg/day) is advised for tho",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-u-2224",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2224,
+      "sentence": "A higher protein intake (>1.2 g/kg/day) is advised for those who regularly exercise and for community-dwelling older adults [ 8 ].",
+      "context_window": "viduals aged older than 65 years. A higher protein intake (>1.2 g/kg/day) is advised for those who regularly exercise and for commun",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -330,7 +348,7 @@
       "context_window": "tudy design; (2) studies with a group of older adults (age \u226565 years) with sarcopenia; (3) studies comparing muscle mass, muscle",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -402,9 +420,9 @@
       "context_window": "perimental and control groups with regard to ASM (SMD=0.41; 95% CI, 0.24-0.58; p<0.001; I 2 =1%; Fig. 2 ). In the analysis",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-p-1685",
@@ -420,9 +438,9 @@
       "context_window": "rol groups with regard to ASM (SMD=0.41; 95% CI, 0.24-0.58; p<0.001; I 2 =1%; Fig. 2 ). In the analysis of handgrip strength,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-pct-1699",
@@ -438,9 +456,9 @@
       "context_window": "h regard to ASM (SMD=0.41; 95% CI, 0.24-0.58; p<0.001; I 2 =1%; Fig. 2 ). In the analysis of handgrip strength, of 715 pa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-pct-2003",
@@ -456,7 +474,7 @@
       "context_window": "rimental and control groups in handgrip strength (SMD=0.37; 95% CI, -0.32-1.07; p=0.29; I 2 =94%; Fig. 3A ). In the analys",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -474,7 +492,7 @@
       "context_window": "groups in handgrip strength (SMD=0.37; 95% CI, -0.32-1.07; p=0.29; I 2 =94%; Fig. 3A ). In the analysis of the SPPB scores,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -492,7 +510,7 @@
       "context_window": "ndgrip strength (SMD=0.37; 95% CI, -0.32-1.07; p=0.29; I 2 =94%; Fig. 3A ). In the analysis of the SPPB scores, among 667",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -510,7 +528,7 @@
       "context_window": "e experimental and control groups in SPPB scores (SMD=0.35; 95% CI, -0.47-1.18; p=0.40; I 2 =94%; Fig. 3B ). In terms of m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -528,7 +546,7 @@
       "context_window": "ontrol groups in SPPB scores (SMD=0.35; 95% CI, -0.47-1.18; p=0.40; I 2 =94%; Fig. 3B ). In terms of methodological quality,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -546,7 +564,7 @@
       "context_window": "in SPPB scores (SMD=0.35; 95% CI, -0.47-1.18; p=0.40; I 2 =94%; Fig. 3B ). In terms of methodological quality, all partic",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -672,7 +690,7 @@
       "context_window": "trength to improve after protein supplementation (SMD=0.29; p<0.001). Protein supplementation could increase muscle mass and im",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -690,7 +708,7 @@
       "context_window": "would increase SPPB scores in fixed-effect model (SMD=0.32; p<0.001). Improvements in SPPB scores are expected to prevent frail",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },

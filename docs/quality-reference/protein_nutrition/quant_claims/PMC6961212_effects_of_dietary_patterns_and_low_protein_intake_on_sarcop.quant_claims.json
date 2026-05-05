@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop",
   "doi": "10.1016/j.clnu.2019.01.009",
-  "extracted_at": "2026-05-05T22:35:29+00:00",
+  "extracted_at": "2026-05-05T23:37:12+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 31,
@@ -26,7 +26,7 @@
       "context_window": "the association between DPs and the risk of sarcopenia over 3 years, and to determine whether protein intake influences this re",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -153,9 +153,9 @@
       "context_window": "with an increased risk of prevalent sarcopenia at baseline (OR = 2.14, 1.01-4.53, p = 0.05) and 3-year follow-up (OR = 5.45, 1.81",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-p-1605",
@@ -171,9 +171,9 @@
       "context_window": "of prevalent sarcopenia at baseline (OR = 2.14, 1.01-4.53, p = 0.05) and 3-year follow-up (OR = 5.45, 1.81-16.39, p = 0.003) af",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-or-a-1637",
@@ -189,9 +189,9 @@
       "context_window": "line (OR = 2.14, 1.01-4.53, p = 0.05) and 3-year follow-up (OR = 5.45, 1.81-16.39, p = 0.003) after adjustment for key covariates",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-p-1660",
@@ -207,9 +207,9 @@
       "context_window": ".53, p = 0.05) and 3-year follow-up (OR = 5.45, 1.81-16.39, p = 0.003) after adjustment for key covariates in participants with g",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-pct-247",
@@ -243,7 +243,7 @@
       "context_window": "etermine the risk of prevalent and incident sarcopenia over 3 years in relation to DPs, and (c) explore whether the DP-sarcopen",
       "claim_role": "background",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -603,7 +603,7 @@
       "context_window": "s associated with better disability trajectories from 85 to 90 years in this cohort [32] . For g/kg aBW/d calculations, measured",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -639,9 +639,9 @@
       "context_window": "ed to higher estimates of protein inadequacy in those aged \u226571 years [50] . The aBW was then used to establish protein intake cu",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-pct-4706",
@@ -657,7 +657,7 @@
       "context_window": "] versus good [\u22651 g/kg aBW/d]) in 722 participants (of whom 56.1% had BW adjusted to healthy BMI) [31] , [32] , [33] . As a s",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -801,7 +801,7 @@
       "context_window": "ntake (low [<1 g/kg aBW/d] versus good [\u22651 g/kg aBW/d]) (OR 95% CI). Model 1 was unadjusted. Model 2 was adjusted for soci",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -819,7 +819,7 @@
       "context_window": "ipants, and repeated the models with re-categorised BMI (22-27 kg/m 2 as normal/ideal category for older adults aged \u226571 year",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -837,7 +837,7 @@
       "context_window": "2-27 kg/m 2 as normal/ideal category for older adults aged \u226571 years). Finally, we dichotomised protein intake by 0.8 and 1 g/kg",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1253,7 +1253,7 @@
       "context_window": "intake groups ( Table 3 ). In the low protein intake group (n = 332, 46% of analytic sample), 81 (21.5%) and 34 (18.2%) had pre",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1271,7 +1271,7 @@
       "context_window": "oups ( Table 3 ). In the low protein intake group (n = 332, 46% of analytic sample), 81 (21.5%) and 34 (18.2%) had prevalen",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1289,7 +1289,7 @@
       "context_window": "protein intake group (n = 332, 46% of analytic sample), 81 (21.5%) and 34 (18.2%) had prevalent sarcopenia at baseline and 3-",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1307,7 +1307,7 @@
       "context_window": "group (n = 332, 46% of analytic sample), 81 (21.5%) and 34 (18.2%) had prevalent sarcopenia at baseline and 3-year follow-up,",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1325,7 +1325,7 @@
       "context_window": "nia at baseline and 3-year follow-up, respectively, and 14 (9.3%) had incident sarcopenia. In the good protein intake group",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1343,7 +1343,7 @@
       "context_window": "had incident sarcopenia. In the good protein intake group (n = 390, 54% of analytic sample), 64 (19.8%) and 43 (23.8%) had pre",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1361,7 +1361,7 @@
       "context_window": "dent sarcopenia. In the good protein intake group (n = 390, 54% of analytic sample), 64 (19.8%) and 43 (23.8%) had prevalen",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1379,7 +1379,7 @@
       "context_window": "protein intake group (n = 390, 54% of analytic sample), 64 (19.8%) and 43 (23.8%) had prevalent sarcopenia (at baseline and 3",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1397,7 +1397,7 @@
       "context_window": "group (n = 390, 54% of analytic sample), 64 (19.8%) and 43 (23.8%) had prevalent sarcopenia (at baseline and 3-year follow-up",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1415,7 +1415,7 @@
       "context_window": "a (at baseline and 3-year follow-up, respectively), and 19 (12.8%) had incident sarcopenia. The differences in sarcopenia pre",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1451,7 +1451,7 @@
       "context_window": "d 3-year follow-up) a and 3-year incident b sarcopenia (OR, 95% CI) in low and good protein intake group. Table 3 Low prote",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1469,7 +1469,7 @@
       "context_window": "d 3-year follow-up) a and 3-year incident b sarcopenia (OR, 95% CI) in low and good protein intake group. DP1 \u2018Low Red Mea",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1487,9 +1487,9 @@
       "context_window": "th the increased risk of prevalent sarcopenia (at baseline: OR = 2.14, 95% CI: 1.01-4.53, p = 0.05; 3-year follow-up: OR = 5.45,",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-ci-10342",
@@ -1506,9 +1506,9 @@
       "context_window": "eased risk of prevalent sarcopenia (at baseline: OR = 2.14, 95% CI: 1.01-4.53, p = 0.05; 3-year follow-up: OR = 5.45, 1.81-16.39, p = 0.0",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-p-10361",
@@ -1524,9 +1524,9 @@
       "context_window": "lent sarcopenia (at baseline: OR = 2.14, 95% CI: 1.01-4.53, p = 0.05; 3-year follow-up: OR = 5.45, 1.81-16.39, p = 0.003 compare",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-or-a-10389",
@@ -1542,9 +1542,9 @@
       "context_window": ": OR = 2.14, 95% CI: 1.01-4.53, p = 0.05; 3-year follow-up: OR = 5.45, 1.81-16.39, p = 0.003 compared with DP3 (\u2018Low Butter\u2019) aft",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-p-10412",
@@ -1560,9 +1560,9 @@
       "context_window": "01-4.53, p = 0.05; 3-year follow-up: OR = 5.45, 1.81-16.39, p = 0.003 compared with DP3 (\u2018Low Butter\u2019) after adjustment for all c",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-or-a-10752",
@@ -1578,7 +1578,7 @@
       "context_window": "nuate the association between prevalent sarcopenia and DP2 (OR = 2.36, 1.13-4.34, p = 0.02) in all participants (details not show",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1596,7 +1596,7 @@
       "context_window": "between prevalent sarcopenia and DP2 (OR = 2.36, 1.13-4.34, p = 0.02) in all participants (details not shown). Using re-categori",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1686,7 +1686,7 @@
       "context_window": "significant in the fully adjusted models (1.67, 0.96-2.92, p = 0.7; 2.18, 1.00-3.81, p = 0.054, respectively). However, DP2 wa",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1704,7 +1704,7 @@
       "context_window": "adjusted models (1.67, 0.96-2.92, p = 0.7; 2.18, 1.00-3.81, p = 0.054, respectively). However, DP2 was associated with 3-year pre",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1722,7 +1722,7 @@
       "context_window": "tein intake group defined as \u22651 g/kg BW/d (3.62, 1.33-9.88, p = 0.01), confirming the results from Table 2 .",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1740,7 +1740,7 @@
       "context_window": "stigated the risk of prevalent and incident sarcopenia over 3 years in relation to DPs and protein intake in community-dwelling",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1848,9 +1848,9 @@
       "context_window": "P3 had some elements of MED such as the highest percentage (91%) of participants consuming unsaturated fat spreads and oils",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6961212_effects_of_dietary_patterns_and_low_protein_intake_on_sarcop-u-8200",

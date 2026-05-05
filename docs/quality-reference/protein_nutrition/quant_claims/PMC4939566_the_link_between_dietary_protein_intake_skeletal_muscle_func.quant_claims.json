@@ -1,10 +1,11 @@
 {
   "paper_id": "PMC4939566_the_link_between_dietary_protein_intake_skeletal_muscle_func",
   "doi": "10.3390/healthcare3030529",
-  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extracted_at": "2026-05-05T23:37:08+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "percentage": 4
+    "percentage": 4,
+    "unit_value": 1
   },
   "claims": [
     {
@@ -78,6 +79,24 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4939566_the_link_between_dietary_protein_intake_skeletal_muscle_func-u-98",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 98,
+      "sentence": "There is sufficient evidence that protein intake higher than the current dietary recommendations (0.8 g/kg/day) is beneficial for most older adults.",
+      "context_window": "ein intake higher than the current dietary recommendations (0.8 g/kg/day) is beneficial for most older adults. Higher protein intake",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     }
   ]
 }

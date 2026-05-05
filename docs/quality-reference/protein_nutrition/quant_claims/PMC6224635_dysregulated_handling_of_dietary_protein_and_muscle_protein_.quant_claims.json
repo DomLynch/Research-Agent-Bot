@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_",
   "doi": "10.1016/j.ekir.2018.08.001",
-  "extracted_at": "2026-05-05T22:35:41+00:00",
+  "extracted_at": "2026-05-05T23:37:10+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 24,
@@ -265,7 +265,7 @@
       "context_window": ".03). Basal muscle caspase-3 protein content was elevated ( P = 0.03) and large neutral amino acid transporter 1 (LAT1) protein",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -283,7 +283,7 @@
       "context_window": "ino acid transporter 1 (LAT1) protein content was reduced ( P = 0.02) in MHD patients versus control subjects. Basal muscle prot",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -302,7 +302,7 @@
       "context_window": "protein synthesis (MPS) was \u223c2-fold higher in MHD patients (0.030 \u00b1 0.005%/h) versus control subjects (0.014 \u00b1 0.003%/h) ( P = 0.01).",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -320,7 +320,7 @@
       "context_window": "synthesis (MPS) was \u223c2-fold higher in MHD patients (0.030 \u00b1 0.005%/h) versus control subjects (0.014 \u00b1 0.003%/h) ( P = 0.01).",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -339,7 +339,7 @@
       "context_window": "in MHD patients (0.030 \u00b1 0.005%/h) versus control subjects (0.014 \u00b1 0.003%/h) ( P = 0.01). Meal ingestion failed to increase MPS in M",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -357,7 +357,7 @@
       "context_window": "atients (0.030 \u00b1 0.005%/h) versus control subjects (0.014 \u00b1 0.003%/h) ( P = 0.01). Meal ingestion failed to increase MPS in MH",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -375,7 +375,7 @@
       "context_window": "30 \u00b1 0.005%/h) versus control subjects (0.014 \u00b1 0.003%/h) ( P = 0.01). Meal ingestion failed to increase MPS in MHD patients (ab",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -976,7 +976,7 @@
       "context_window": "ge 2-day protein intake tended to be lower in MHD patients (0.9 \u00b1 0.14 g/kg body weight per day) compared with control subjects (1",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -995,7 +995,7 @@
       "context_window": "4 g/kg body weight per day) compared with control subjects (1.14 \u00b1 0.05 g/kg body weight per day) ( P = 0.07) with no differences i",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1013,7 +1013,7 @@
       "context_window": "h control subjects (1.14 \u00b1 0.05 g/kg body weight per day) ( P = 0.07) with no differences in other macronutrients (all P > 0.05)",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1031,7 +1031,7 @@
       "context_window": "P = 0.07) with no differences in other macronutrients (all P > 0.05) ( Supplementary Table S1 ). On the day of the infusion tr",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1049,7 +1049,7 @@
       "context_window": "nts received priming doses of labeled isotopic bicarbonate (2.35 \u03bcmol/kg), L-[1- 13 C]leucine (7.6 \u03bcmol/kg fat-free mass), and L-",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1067,7 +1067,7 @@
       "context_window": "ed isotopic bicarbonate (2.35 \u03bcmol/kg), L-[1- 13 C]leucine (7.6 \u03bcmol/kg fat-free mass), and L-[ ring - 2 H 5 ]phenylalanine (2.0",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1085,7 +1085,7 @@
       "context_window": "mol/kg fat-free mass), and L-[ ring - 2 H 5 ]phenylalanine (2.0 \u03bcmol/kg fat-free mass). Subsequently, a continuous i.v. infusion",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1103,7 +1103,7 @@
       "context_window": "equently, a continuous i.v. infusion of L-[1- 13 C]leucine (0.10 \u03bcmol/kg fat-free mass per minute) and L-[ring- 2 H 5 ]phenylalan",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1121,7 +1121,7 @@
       "context_window": "at-free mass per minute) and L-[ring- 2 H 5 ]phenylalanine (0.05 \u03bcmol/kg fat-free mass per minute) was initiated ( t = -180 minut",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1211,9 +1211,9 @@
       "context_window": "lementing the diet of laying hens (Lohmann LSL Whites) with 0.3% L-[5,5,5- 2 H 3 ]leucine as described previously. 16 The L-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_-u-8957",
@@ -1229,9 +1229,9 @@
       "context_window": "Myofibrillar protein-enriched fractions were isolated from \u223c50 mg of wet tissue and analyzed as described in our previous wor",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_-pct-9332",
@@ -1247,9 +1247,9 @@
       "context_window": "d dried under vacuum. Free amino acids were re-suspended in 60% methanol and centrifuged before the myofibrillar protein-bo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_-n-12101",
@@ -1265,7 +1265,7 @@
       "context_window": "ulation of myofibrillar protein synthesis rates showed that n = 6 was sufficient to detect differences between groups when us",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1283,7 +1283,7 @@
       "context_window": "nces between groups when using a 2-sided statistical test ( P < 0.05, 95% power, f = 0.86; G*power version 3.1.9.3). Considering",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1301,7 +1301,7 @@
       "context_window": "en groups when using a 2-sided statistical test ( P < 0.05, 95% power, f = 0.86; G*power version 3.1.9.3). Considering a po",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1355,7 +1355,7 @@
       "context_window": "ntrations increased after meal consumption in both groups ( P < 0.001) ( Figure 1 a). However, plasma leucine concentrations were",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1373,7 +1373,7 @@
       "context_window": "were lower in MHD patients compared with control subjects ( P = 0.04). Plasma glucose concentrations increased after meal consum",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1463,7 +1463,7 @@
       "context_window": "-meal ingestion in maintenance hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Insets show the areas under",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1481,7 +1481,7 @@
       "context_window": "e hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Insets show the areas under the time curves (AUC) for the",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1517,7 +1517,7 @@
       "context_window": "nutes in the control group compared with the MHD patients ( P < 0.05) ( Figure 2 a). Plasma L-[1- 13 C]leucine enrichments decre",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1535,7 +1535,7 @@
       "context_window": "- 13 C]leucine enrichments decreased after meal ingestion ( P = 0.02), with no differences between groups ( P = 0.78) ( Figure 2",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1553,7 +1553,7 @@
       "context_window": "ingestion ( P = 0.02), with no differences between groups ( P = 0.78) ( Figure 2 b). Plasma \u03b1-[ 13 C]ketoisocaproate enrichments",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1643,7 +1643,7 @@
       "context_window": "eal consumption in maintenance hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed lines refer to meal i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1661,7 +1661,7 @@
       "context_window": "e hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed lines refer to meal ingestion. Data are expressed",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1679,7 +1679,7 @@
       "context_window": "into circulation) increased after mixed-meal consumption ( P < 0.001). ( Figure 3 a). Exogenous leucine appearance rates were hi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1697,7 +1697,7 @@
       "context_window": "estion in the control subjects compared with MHD patients ( P < 0.05). As such, the amount of dietary protein-derived leucine th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1716,7 +1716,7 @@
       "context_window": "to 5-hour postprandial period was reduced in MHD patients (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) ( P = 0.03) ( Fi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "-hour postprandial period was reduced in MHD patients (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) ( P = 0.03) ( Fig",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1753,7 +1753,7 @@
       "context_window": "d in MHD patients (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) ( P = 0.03) ( Figure 3 b). Endogenous leucine rates of ap",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1771,7 +1771,7 @@
       "context_window": "MHD patients (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) ( P = 0.03) ( Figure 3 b). Endogenous leucine rates of app",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1789,7 +1789,7 @@
       "context_window": "tients (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) ( P = 0.03) ( Figure 3 b). Endogenous leucine rates of appearance (whi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1807,7 +1807,7 @@
       "context_window": "wn into the circulation) decreased after meal consumption ( P < 0.001), with no differences between groups ( P = 0.41) ( Figure 4",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1825,7 +1825,7 @@
       "context_window": "sumption ( P < 0.001), with no differences between groups ( P = 0.41) ( Figure 4 a). Total leucine rates of appearance increased",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1843,7 +1843,7 @@
       "context_window": "cine rates of appearance increased after meal consumption ( P = 0.01), with no differences between groups ( P = 0.94) ( Figure 4",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1861,7 +1861,7 @@
       "context_window": "nsumption ( P = 0.01), with no differences between groups ( P = 0.94) ( Figure 4 b). Total leucine rates of disappearance tended",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1879,7 +1879,7 @@
       "context_window": "f disappearance tended to increase after meal consumption ( P = 0.08), with no differences between MHD patients and control subj",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1897,7 +1897,7 @@
       "context_window": "no differences between MHD patients and control subjects ( P = 0.86) ( Figure 4 c). Exogenous leucine rate of appearance (R a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1915,7 +1915,7 @@
       "context_window": "-meal ingestion in maintenance hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed line refers to mixed-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1933,7 +1933,7 @@
       "context_window": "e hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed line refers to mixed-meal ingestion. Gray shapes d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1951,7 +1951,7 @@
       "context_window": "eal consumption in maintenance hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed lines refer to meal i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1969,7 +1969,7 @@
       "context_window": "e hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed lines refer to meal ingestion. Data are mean \u00b1 SEM",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1987,7 +1987,7 @@
       "context_window": "protein breakdown rates decreased after meal consumption ( P < 0.001), with no differences between groups ( P = 0.63). Whole bod",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2005,7 +2005,7 @@
       "context_window": "sumption ( P < 0.001), with no differences between groups ( P = 0.63). Whole body protein synthesis rates remained unchanged aft",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2023,9 +2023,9 @@
       "context_window": "synthesis rates remained unchanged after meal consumption ( P = 0.33), with no differences between groups ( P = 0.55). Whole bod",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_-p-4680",
@@ -2041,9 +2041,9 @@
       "context_window": "nsumption ( P = 0.33), with no differences between groups ( P = 0.55). Whole body oxidation rates increased after meal consumpti",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_-p-4753",
@@ -2113,7 +2113,7 @@
       "context_window": "ater extent in control subjects than that in MHD patients ( P = 0.07). Whole-body leucine metabolism shown as the area under th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2131,7 +2131,7 @@
       "context_window": "eal consumption in maintenance hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed line refers to meal i",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2149,7 +2149,7 @@
       "context_window": "e hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Dashed line refers to meal ingestion. Data are mean \u00b1 SEM",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2167,7 +2167,7 @@
       "context_window": "as reduced in MHD patients compared with control subjects ( P = 0.016) ( Figure 6 a). There was no change in muscle LAT1 protein",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2185,7 +2185,7 @@
       "context_window": "mixed-meal ingestion in MHD patients or control subjects ( P = 0.99). There were no differences in the relative content of tota",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2203,7 +2203,7 @@
       "context_window": "C1 protein between the MHD patients and the control group ( P = 0.34). Moreover, mTORC1 phosphorylation did not differ from base",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2257,7 +2257,7 @@
       "context_window": "-meal ingestion in maintenance hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Data are mean \u00b1 SEMs. AU, ar",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2275,7 +2275,7 @@
       "context_window": "e hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Data are mean \u00b1 SEMs. AU, arbitrary units. *Significantly",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2293,7 +2293,7 @@
       "context_window": "s elevated in MHD patients compared with control subjects ( P = 0.033). There was trend for muscle caspase-3 protein contents to",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2311,7 +2311,7 @@
       "context_window": "n the fed state between MHD patients and control subjects ( P = 0.08). Mixed-meal ingestion did not change muscle caspase-3 prot",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2329,7 +2329,7 @@
       "context_window": "ase-3 protein content in MHD patients or control subjects ( P = 0.85) ( Figure 7 b). Muscle ubiquitin protein content was not di",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2347,7 +2347,7 @@
       "context_window": "s not different between MHD patients and control subjects ( P = 0.23) ( Figure 7 c). Representative blots are shown in Supplemen",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2365,7 +2365,7 @@
       "context_window": "-meal ingestion in maintenance hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Data are mean \u00b1 SEMs. AU, ar",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2383,7 +2383,7 @@
       "context_window": "e hemodialysis (MHD) patients (n = 8) and control subjects (n = 8). Data are mean \u00b1 SEMs. AU, arbitrary units. *Significantly",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2401,7 +2401,7 @@
       "context_window": "old higher in MHD patients compared with control subjects ( P = 0.001) ( Figure 8 ). Meal ingestion did not increase myofibrillar",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2420,7 +2420,7 @@
       "context_window": "ynthesis rates in MHD patients (absolute change from basal: 0.0003 \u00b1 0.005%/h) or control subjects (0.009 \u00b1 0.002%/h) ( P = 0.20). The",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2438,7 +2438,7 @@
       "context_window": "rates in MHD patients (absolute change from basal: 0.0003 \u00b1 0.005%/h) or control subjects (0.009 \u00b1 0.002%/h) ( P = 0.20). Ther",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2457,7 +2457,7 @@
       "context_window": "change from basal: 0.0003 \u00b1 0.005%/h) or control subjects (0.009 \u00b1 0.002%/h) ( P = 0.20). There was a trend for the 0- to 5-hour pos",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2475,7 +2475,7 @@
       "context_window": "from basal: 0.0003 \u00b1 0.005%/h) or control subjects (0.009 \u00b1 0.002%/h) ( P = 0.20). There was a trend for the 0- to 5-hour post",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2493,7 +2493,7 @@
       "context_window": "0.0003 \u00b1 0.005%/h) or control subjects (0.009 \u00b1 0.002%/h) ( P = 0.20). There was a trend for the 0- to 5-hour postprandial myofi",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2511,7 +2511,7 @@
       "context_window": "o be greater in the MHD patients versus the control group ( P = 0.07). Due to the strong main effect of MHD on FSRs within the 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2529,7 +2529,7 @@
       "context_window": "ter mixed-meal ingestion in the control subjects ( t -test: P = 0.004) but not in the MHD patients ( t -test: P = 0.93). Myofibr",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2547,7 +2547,7 @@
       "context_window": "t -test: P = 0.004) but not in the MHD patients ( t -test: P = 0.93). Myofibrillar protein synthesis (a) expressed as the frac",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2565,7 +2565,7 @@
       "context_window": "ore (basal) and after mixed meal ingestion in MHD patients (n = 8) and control subjects (n = 8). Individual data for the myof",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2583,7 +2583,7 @@
       "context_window": "eal ingestion in MHD patients (n = 8) and control subjects (n = 8). Individual data for the myofibrillar protein synthesis re",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2601,9 +2601,9 @@
       "context_window": "action because this protein pool accounts for approximately 60% to 65% of all skeletal muscle proteins, represents the majo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_-pct-1012",
@@ -2619,9 +2619,9 @@
       "context_window": "because this protein pool accounts for approximately 60% to 65% of all skeletal muscle proteins, represents the major force",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6224635_dysregulated_handling_of_dietary_protein_and_muscle_protein_-msd-4757",
@@ -2638,7 +2638,7 @@
       "context_window": "acid availability in circulation was lower in MHD patents (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) throughout the p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2656,7 +2656,7 @@
       "context_window": "availability in circulation was lower in MHD patents (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) throughout the po",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2675,7 +2675,7 @@
       "context_window": "er in MHD patents (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) throughout the postprandial period. This notion was furth",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2693,7 +2693,7 @@
       "context_window": "MHD patents (41 \u00b1 5%) compared with control subjects (61 \u00b1 4%) throughout the postprandial period. This notion was furthe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2711,7 +2711,7 @@
       "context_window": "peak plasma leucine concentrations that were approximately 14% lower in the MHD patients, with no differences in total who",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_",
   "doi": "10.3390/nu13020661",
-  "extracted_at": "2026-05-05T22:35:34+00:00",
+  "extracted_at": "2026-05-05T23:37:16+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 27,
+    "unit_value": 31,
     "percentage": 13,
     "confidence_interval": 9,
     "sample_size": 1,
@@ -25,7 +25,7 @@
       "context_window": "RET had no influence on the results, while younger adults (<50 years) were found to gain absolute and percent lean mass with ani",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "with animal protein intake (weighted mean difference (WMD), 0.41 kg; 95% confidence interval (CI) 0.08 to 0.74; WMD 0.50%; 95%",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "al protein intake (weighted mean difference (WMD), 0.41 kg; 95% confidence interval (CI) 0.08 to 0.74; WMD 0.50%; 95% CI 0.",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "D), 0.41 kg; 95% confidence interval (CI) 0.08 to 0.74; WMD 0.50%; 95% CI 0.00 to 1.01). Collectively, animal protein tends t",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -98,7 +98,7 @@
       "context_window": "1 kg; 95% confidence interval (CI) 0.08 to 0.74; WMD 0.50%; 95% CI 0.00 to 1.01). Collectively, animal protein tends to be more beneficial",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -152,7 +152,7 @@
       "context_window": "lant protein on muscle accretion and strength among adults \u226519 years, with and without RET.",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -260,9 +260,9 @@
       "context_window": "alues between animal protein and plant protein groups, with 95% confidence intervals. Meta-analyses were performed using th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-u-8557",
@@ -355,6 +355,60 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-u-1591",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1591,
+      "sentence": "At baseline, subjects were generally consuming protein above the recommended dietary allowance (RDA) of 0.8 g/kg/day [ 50 ].",
+      "context_window": "ng protein above the recommended dietary allowance (RDA) of 0.8 g/kg/day [ 50 ]. Subjects were estimated to have achieved a final pr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-u-1688",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1688,
+      "sentence": "Subjects were estimated to have achieved a final protein intake of at least 1.0 g/kg/day; the highest total reported was 3.1 g/kg/day.",
+      "context_window": "timated to have achieved a final protein intake of at least 1.0 g/kg/day; the highest total reported was 3.1 g/kg/day. Under select",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-u-1733",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 g/kg/day",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1733,
+      "sentence": "Subjects were estimated to have achieved a final protein intake of at least 1.0 g/kg/day; the highest total reported was 3.1 g/kg/day.",
+      "context_window": "ke of at least 1.0 g/kg/day; the highest total reported was 3.1 g/kg/day. Under selection bias, five and seven studies, respectivel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-u-3230",
       "claim_type": "unit_value",
       "raw_text": "0.22 kg",
@@ -368,7 +422,7 @@
       "context_window": "protein, the result was not statistically significant (WMD 0.22 kg; 95% CI -0.02 to 0.46) ( Figure 2 ). On the other hand, ani",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -387,7 +441,7 @@
       "context_window": "the result was not statistically significant (WMD 0.22 kg; 95% CI -0.02 to 0.46) ( Figure 2 ). On the other hand, animal protein intake was",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -405,7 +459,7 @@
       "context_window": "tatistically significant increase in percent lean mass (WMD 0.50%; 95% CI 0.05 to 0.95) ( Figure 3 ). In the subgroup analysi",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -424,7 +478,7 @@
       "context_window": "cally significant increase in percent lean mass (WMD 0.50%; 95% CI 0.05 to 0.95) ( Figure 3 ). In the subgroup analysis based on age, while",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -442,7 +496,7 @@
       "context_window": "d on age, while no difference was seen among older adults (\u226550 years), there was a gain of 0.41 kg lean mass (95% CI, 0.08 to 0.",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -460,7 +514,7 @@
       "context_window": "as seen among older adults (\u226550 years), there was a gain of 0.41 kg lean mass (95% CI, 0.08 to 0.74) and 0.50% lean mass (95% C",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -478,7 +532,7 @@
       "context_window": "adults (\u226550 years), there was a gain of 0.41 kg lean mass (95% CI, 0.08 to 0.74) and 0.50% lean mass (95% CI 0.00 to 1.01)",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -496,7 +550,7 @@
       "context_window": "was a gain of 0.41 kg lean mass (95% CI, 0.08 to 0.74) and 0.50% lean mass (95% CI 0.00 to 1.01) with animal protein intake",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -515,7 +569,7 @@
       "context_window": "41 kg lean mass (95% CI, 0.08 to 0.74) and 0.50% lean mass (95% CI 0.00 to 1.01) with animal protein intake among subjects <50 years ( Figu",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -533,7 +587,7 @@
       "context_window": "CI 0.00 to 1.01) with animal protein intake among subjects <50 years ( Figure 2 and Figure 3 ). When analyzed according to RET,",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -551,7 +605,7 @@
       "context_window": "tween animal protein and plant protein for 1-RM squat (WMD -0.94 kg; 95% CI -4.57 to 2.70) ( Figure 4 ), grip strength (WMD -0.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -570,7 +624,7 @@
       "context_window": "mal protein and plant protein for 1-RM squat (WMD -0.94 kg; 95% CI -4.57 to 2.70) ( Figure 4 ), grip strength (WMD -0.49 kg, 95% CI -1.28 to",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -588,7 +642,7 @@
       "context_window": "kg; 95% CI -4.57 to 2.70) ( Figure 4 ), grip strength (WMD -0.49 kg, 95% CI -1.28 to 0.30) ( Figure S3 ), leg/knee extension (W",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -607,7 +661,7 @@
       "context_window": "I -4.57 to 2.70) ( Figure 4 ), grip strength (WMD -0.49 kg, 95% CI -1.28 to 0.30) ( Figure S3 ), leg/knee extension (WMD -3.01 Nm; 95% CI -1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -626,7 +680,7 @@
       "context_window": "8 to 0.30) ( Figure S3 ), leg/knee extension (WMD -3.01 Nm; 95% CI -19.25 to 13.23) ( Figure 5 ) and leg/knee flexion (WMD 2.93 Nm; 95% CI -1.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -645,7 +699,7 @@
       "context_window": "5 to 13.23) ( Figure 5 ) and leg/knee flexion (WMD 2.93 Nm; 95% CI -1.70 to 7.56) ( Figure 6 ). For the subgroup analyses based on age, a si",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -663,9 +717,9 @@
       "context_window": "icant effect favoring animal protein was found in subjects <50 years for peak torque of leg/knee extension (WMD 12.00 Nm; 95% CI",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-ci-4479",
@@ -682,9 +736,9 @@
       "context_window": "years for peak torque of leg/knee extension (WMD 12.00 Nm; 95% CI 2.04 to 21.96), although this was not seen for leg/knee flexion ( Figure",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-pct-4862",
@@ -754,7 +808,7 @@
       "context_window": "moved from the analysis, resulting in higher WMD of between 0.25 kg and 0.29 kg. Percent lean mass was highly affected by four",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -772,7 +826,7 @@
       "context_window": "he analysis, resulting in higher WMD of between 0.25 kg and 0.29 kg. Percent lean mass was highly affected by four studies: i.e",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -844,7 +898,25 @@
       "context_window": "percent lean mass with animal protein intake among adults <50 years, while RET did not influence the effect of protein source o",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7926405_animal_protein_versus_plant_protein_in_supporting_lean_mass_-u-3755",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3755,
+      "sentence": "Morton et al. previously demonstrated in a systematic review that protein supplementation augmented gains in fat-free mass in response to RET, up to intakes of ~1.6 g/kg/day [ 58 ].",
+      "context_window": "ains in fat-free mass in response to RET, up to intakes of ~1.6 g/kg/day [ 58 ]. The authors however found no significant role for p",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -862,7 +934,7 @@
       "context_window": "percent lean mass with animal protein intake among adults <50 years, an effect not seen in older adults (\u226550 years). Animal pro",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -880,7 +952,7 @@
       "context_window": "mong adults <50 years, an effect not seen in older adults (\u226550 years). Animal protein generally contains higher EAA content than",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -898,7 +970,7 @@
       "context_window": "ll as absolute and percent lean mass among younger adults (<50 years), the clinical significance of this increase is unclear. Ba",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -916,7 +988,7 @@
       "context_window": "um gain in percent lean mass with animal protein intake was 0.95% overall. In a retrospective study conducted among Korean ad",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -952,9 +1024,9 @@
       "context_window": "ficant effect favoring animal protein was seen in subjects <50 years for peak torque of leg/knee extension only. Although animal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

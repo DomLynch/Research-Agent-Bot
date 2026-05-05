@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC6566799_dietary_protein_and_muscle_mass_translating_science_to_appli",
   "doi": "10.3390/nu11051136",
-  "extracted_at": "2026-05-05T22:35:35+00:00",
+  "extracted_at": "2026-05-05T23:37:11+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 1,
+    "unit_value": 3,
     "percentage": 2
   },
   "claims": [
@@ -22,7 +22,7 @@
       "context_window": "hout life. Dietary protein requirements in healthy adults (\u226519 years old) are dictated largely by body mass and lean body mass,",
       "claim_role": "background",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -40,9 +40,27 @@
       "context_window": "eet the individual indispensable amino acid requirements of 50% of the U.S. adult population. The RDA, however, is 0.8 g/kg",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566799_dietary_protein_and_muscle_mass_translating_science_to_appli-u-810",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 810,
+      "sentence": "The RDA, however, is 0.8 g/kg/d, and reflects the minimum amount of dietary protein required to meet indispensable amino acid requirements, establish nitrogen balance, and prevent muscle mass loss for nearly the entire (i.e., 97.5%) U.S. adult population [ 2 , 3 ].",
+      "context_window": "s of 50% of the U.S. adult population. The RDA, however, is 0.8 g/kg/d, and reflects the minimum amount of dietary protein require",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6566799_dietary_protein_and_muscle_mass_translating_science_to_appli-pct-1015",
@@ -58,9 +76,27 @@
       "context_window": ", and prevent muscle mass loss for nearly the entire (i.e., 97.5%) U.S. adult population [ 2 , 3 ]. The RDA for American adul",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566799_dietary_protein_and_muscle_mass_translating_science_to_appli-u-1187",
+      "claim_type": "unit_value",
+      "raw_text": "0.83 g/kg/d",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 1187,
+      "sentence": "The RDA for American adults is similar to international adult protein recommendations established by the World Health Organization (0.83 g/kg/d) [ 4 ].",
+      "context_window": "commendations established by the World Health Organization (0.83 g/kg/d) [ 4 ]. The current protein RDA, however, is often incorrec",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust",
   "doi": "10.3390/nu15184003",
-  "extracted_at": "2026-05-05T22:35:29+00:00",
+  "extracted_at": "2026-05-05T23:36:59+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 13,
-    "unit_value": 8,
+    "unit_value": 18,
     "sample_size": 3,
     "percentage": 37,
     "confidence_interval": 4,
@@ -68,6 +68,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-874",
+      "claim_type": "unit_value",
+      "raw_text": "5.7 g/kg/day",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 874,
+      "sentence": "The present study showed a significant insufficiency of the mean carbohydrate intake of 5.7 g/kg/day in a group of aerobic male athletes.",
+      "context_window": "ignificant insufficiency of the mean carbohydrate intake of 5.7 g/kg/day in a group of aerobic male athletes. The lower muscle mass",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "carbohydrate",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-pct-1049",
       "claim_type": "percentage",
       "raw_text": "95%",
@@ -81,8 +99,26 @@
       "context_window": "lower-carbohydrate diet (adjusted odd ratio (OR adj ) 0.3; 95% confidence interval (CI): 0.1-0.7). The mean protein intake",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-1116",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1116,
+      "sentence": "The mean protein intake of 1.8 g/kg/day was optimal for anabolism in the samples of both anaerobic and aerobic male athletes.",
+      "context_window": "fidence interval (CI): 0.1-0.7). The mean protein intake of 1.8 g/kg/day was optimal for anabolism in the samples of both anaerobic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {
@@ -100,7 +136,7 @@
       "context_window": "in muscle mass only in anaerobic male athletes (OR adj 2.2; 95% CI: 1.3-3.7). The positive relationship was revealed between the possib",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -175,9 +211,9 @@
       "context_window": "scle (in terms of size) to exercise training. Approximately 5% of essential amino acids (EAAs) from protein catabolism are",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-pct-1450",
@@ -211,7 +247,7 @@
       "context_window": "blood are used by other body tissues. The remaining amount (70%) of essential amino acids is recycled into protein synthesi",
       "claim_role": "background",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -229,9 +265,9 @@
       "context_window": "biological process of the synthesis of new protein cells by 30% on average, depending on an insufficient EAA intake. The h",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-msd-684",
@@ -380,6 +416,42 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-6113",
+      "claim_type": "unit_value",
+      "raw_text": "10 g/kg/day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 6113,
+      "sentence": "More specifically, the carbohydrate content recommended for athletes is consistent with 7-10 g/kg/day.",
+      "context_window": "drate content recommended for athletes is consistent with 7-10 g/kg/day. The protein intake for athletes should be within the limit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "carbohydrate",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-6196",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 6196,
+      "sentence": "The protein intake for athletes should be within the limits of 1.4 to 2.0 g/kg/day [ 47 , 48 ].",
+      "context_window": "n intake for athletes should be within the limits of 1.4 to 2.0 g/kg/day [ 47 , 48 ]. Taking into account that some uncertainty rema",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-7165",
       "claim_type": "unit_value",
       "raw_text": "31 mg",
@@ -393,9 +465,9 @@
       "context_window": "ric acid, creatinine, amino acids) [ 52 , 53 ] estimated as 31 mg/kg [ 54 ]; (4) UNPL-urinary nitrogen protein losses (estima",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-pct-7493",
@@ -849,9 +921,27 @@
       "context_window": "exceeded 35% of calories. The carbohydrate-deficient diet (5.7 \u00b1 0.6 g/kg/day) was usual only among aerobic athletes: \u2206 carbohyd",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-1768",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 g/kg/day",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1768,
+      "sentence": "The carbohydrate-deficient diet (5.7 \u00b1 0.6 g/kg/day) was usual only among aerobic athletes: \u2206 carbohydrates actual intake-avg. recommended) of aerobic athletes was -2.9 (95% PI: -3.2; -2.5, d = 4.7).",
+      "context_window": "ded 35% of calories. The carbohydrate-deficient diet (5.7 \u00b1 0.6 g/kg/day) was usual only among aerobic athletes: \u2206 carbohydrates act",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "carbohydrate",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-pct-1899",
@@ -867,9 +957,9 @@
       "context_window": "tual intake-avg. recommended) of aerobic athletes was -2.9 (95% PI: -3.2; -2.5, d = 4.7). Meanwhile, the mean protein intak",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-msd-1967",
@@ -886,9 +976,45 @@
       "context_window": "-3.2; -2.5, d = 4.7). Meanwhile, the mean protein intake of 1.8 \u00b1 0.6 g/kg/day was within the recommended limits of 1.4-2.0 g/kg/",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-1973",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 g/kg/day",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1973,
+      "sentence": "Meanwhile, the mean protein intake of 1.8 \u00b1 0.6 g/kg/day was within the recommended limits of 1.4-2.0 g/kg/day in both anaerobic and aerobic male athletes.",
+      "context_window": "-2.5, d = 4.7). Meanwhile, the mean protein intake of 1.8 \u00b1 0.6 g/kg/day was within the recommended limits of 1.4-2.0 g/kg/day in bo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-2027",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2027,
+      "sentence": "Meanwhile, the mean protein intake of 1.8 \u00b1 0.6 g/kg/day was within the recommended limits of 1.4-2.0 g/kg/day in both anaerobic and aerobic male athletes.",
+      "context_window": "1.8 \u00b1 0.6 g/kg/day was within the recommended limits of 1.4-2.0 g/kg/day in both anaerobic and aerobic male athletes. Consequently,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-msd-2831",
@@ -905,7 +1031,7 @@
       "context_window": "anaerobic and aerobic athletes were calculated as follows: 10.2 \u00b1 4.5 g/day and 10 \u00b1 3.3 g/day, respectively. Also, our study co",
       "claim_role": "dose",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -924,7 +1050,7 @@
       "context_window": "c athletes were calculated as follows: 10.2 \u00b1 4.5 g/day and 10 \u00b1 3.3 g/day, respectively. Also, our study confirmed that the me",
       "claim_role": "dose",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -943,7 +1069,7 @@
       "context_window": "our study confirmed that the mean 24-h nitrogen balance of 2.0 \u00b1 1.3 g in athletes was positive and related to a sufficient prot",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -961,9 +1087,9 @@
       "context_window": "ted as a stimulus for nitrogen/protein retention (r = 0.23, p = 0.009). The results of the multivariate analysis are displayed i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-pct-4148",
@@ -979,7 +1105,7 @@
       "context_window": "were associated with higher intakes of protein (OR adj 2.2; 95% CI: 1.3; 3.7) as well as EAAs such as isoleucine (OR adj 2.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -997,7 +1123,7 @@
       "context_window": ": 1.3; 3.7) as well as EAAs such as isoleucine (OR adj 2.9; 95% CI: 1.1; 4.7) and histidine (OR adj 2.9; 95% CI: 1.0; 4.3)",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1015,7 +1141,7 @@
       "context_window": "e (OR adj 2.9; 95% CI: 1.1; 4.7) and histidine (OR adj 2.9; 95% CI: 1.0; 4.3) in a group of anaerobic athletes. In addition",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1051,7 +1177,7 @@
       "context_window": "ts of this study revealed only the association (OR adj 0.3; 95% CI: 0.1; 0.7) between the lower-carbohydrate diet and the d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1200,6 +1326,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-3078",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3078,
+      "sentence": "According to our study, the average amount of protein consumed by elite male athletes amounted to 1.8 g/kg/day and fully complied with the current international Recommended Dietary Allowance (RDA) for protein.",
+      "context_window": "ount of protein consumed by elite male athletes amounted to 1.8 g/kg/day and fully complied with the current international Recommend",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-3447",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3447,
+      "sentence": "Both the International Olympic Committee (IOC) and the International Society of Sports Nutrition (ISSN) have reported that, in order to maintain a positive nitrogen balance, professional athletes may benefit from approximately twice the RDA of protein (1.4-2.0 g/kg/day) [ 47 , 48 ].",
+      "context_window": "ay benefit from approximately twice the RDA of protein (1.4-2.0 g/kg/day) [ 47 , 48 ]. A similar situation was observed among foreig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-pct-7159",
       "claim_type": "percentage",
       "raw_text": "50%",
@@ -1213,9 +1375,27 @@
       "context_window": "uch as leucine, valine, and isoleucine correspond to almost 50% of muscle protein EAAs [ 5 , 6 ]. More specifically, leucin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535035_dietary_intake_of_protein_and_essential_amino_acids_for_sust-u-531",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 531,
+      "sentence": "The mean daily protein intake of 1.8 g/kg/day was optimal for anabolism in the samples of both anaerobic and aerobic male athletes.",
+      "context_window": "body composition changes. The mean daily protein intake of 1.8 g/kg/day was optimal for anabolism in the samples of both anaerobic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     }
   ]
 }

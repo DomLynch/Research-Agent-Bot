@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral",
   "doi": "10.3390/nu14214501",
-  "extracted_at": "2026-05-05T22:35:31+00:00",
+  "extracted_at": "2026-05-05T23:37:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 88,
+    "unit_value": 91,
     "mean_sd": 86,
     "p_value": 50,
     "percentage": 8,
@@ -25,9 +25,9 @@
       "context_window": "nd the intake of leucine-rich protein supplements daily for 12 weeks on the body composition and physical function of healthy ad",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-392",
@@ -43,9 +43,9 @@
       "context_window": "y composition and physical function of healthy adults aged >50 years living in Korea. The study analyzed 50 healthy people witho",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-589",
@@ -61,7 +61,7 @@
       "context_window": "ng either protein powder or placebo powder) twice a day for 12 weeks. All participants performed resistance exercises regularly",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -98,7 +98,7 @@
       "context_window": "protein powder group than in the placebo powder group (LBM: 0.95 \u00b1 0.91 kg in the protein powder group vs. 0.38 \u00b1 1.06 kg in the pl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -116,7 +116,7 @@
       "context_window": "powder group than in the placebo powder group (LBM: 0.95 \u00b1 0.91 kg in the protein powder group vs. 0.38 \u00b1 1.06 kg in the place",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -335,7 +335,7 @@
       "context_window": "cids [ 4 ]. In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -353,8 +353,62 @@
       "context_window": "a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-1256",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1256,
+      "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
+      "context_window": "priately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-1304",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 g/kg/day",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1304,
+      "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
+      "context_window": "ein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-1423",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 g/kg/day",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1423,
+      "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
+      "context_window": "gnificantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ]. In addition, several studies confirmed a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "decrease",
       "binding_confidence": "partial"
     },
     {
@@ -371,7 +425,7 @@
       "context_window": "older people taking leucine-rich protein supplements for 3-4 months, but no muscle strength or functional changes were observed",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -389,9 +443,9 @@
       "context_window": "lts taking leucine-rich protein supplements for more than 8-16 months, skeletal muscle mass increased by 13-17% in areas includin",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-pct-3290",
@@ -407,9 +461,9 @@
       "context_window": "more than 8-16 months, skeletal muscle mass increased by 13-17% in areas including the arms and legs, and muscle strength w",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-3561",
@@ -425,7 +479,7 @@
       "context_window": "or insulin sensitivity when consuming 2.5 g of leucine for \u22656 months [ 16 ]. Sarcopenia is caused by not only protein intake, b",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -443,9 +497,9 @@
       "context_window": "en the number of steps per day was reduced by approximately 76% for 2 weeks, insulin resistance increased by 12%, postprand",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-3950",
@@ -461,9 +515,9 @@
       "context_window": "umber of steps per day was reduced by approximately 76% for 2 weeks, insulin resistance increased by 12%, postprandial insulin",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-pct-3991",
@@ -479,9 +533,9 @@
       "context_window": "roximately 76% for 2 weeks, insulin resistance increased by 12%, postprandial insulin sensitivity decreased by 43%, and myo",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-pct-4042",
@@ -497,9 +551,9 @@
       "context_window": "eased by 12%, postprandial insulin sensitivity decreased by 43%, and myofibrillar protein synthesis decreased by 26% [ 18 ]",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-pct-4095",
@@ -515,9 +569,9 @@
       "context_window": "sed by 43%, and myofibrillar protein synthesis decreased by 26% [ 18 ]. On the contrary, proper resistance exercise improve",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-4550",
@@ -551,9 +605,9 @@
       "context_window": "y intake of accessible leucine-rich protein supplements for 12 weeks on the body composition and physical function of healthy ad",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-8027",
@@ -569,9 +623,9 @@
       "context_window": "y composition and physical function of healthy adults aged >50 years residing in Korea. Moreover, we would like to review the us",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-44",
@@ -641,7 +695,7 @@
       "context_window": "ing either protein powder or placebo powder twice a day for 12 weeks. Randomization of intervention (protein powder) group and c",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -749,7 +803,7 @@
       "context_window": "carbohydrate: 12 g, fat: 3 g, protein: 20 g (total leucine 2000 mg), fructo-oligosaccharides: 3 g, calcium: 300 mg, magnesium:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -767,7 +821,7 @@
       "context_window": "al leucine 2000 mg), fructo-oligosaccharides: 3 g, calcium: 300 mg, magnesium: 150 mg, vitamin D: 400 IU (10 \u00b5g), vitamin B6:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -785,7 +839,7 @@
       "context_window": ", fructo-oligosaccharides: 3 g, calcium: 300 mg, magnesium: 150 mg, vitamin D: 400 IU (10 \u00b5g), vitamin B6: 3 mg, zinc: 9 mg, p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -803,7 +857,7 @@
       "context_window": ", magnesium: 150 mg, vitamin D: 400 IU (10 \u00b5g), vitamin B6: 3 mg, zinc: 9 mg, pantothenic acid: 5 mg) or placebo powder (car",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -821,7 +875,7 @@
       "context_window": "150 mg, vitamin D: 400 IU (10 \u00b5g), vitamin B6: 3 mg, zinc: 9 mg, pantothenic acid: 5 mg) or placebo powder (carbohydrate: 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -839,7 +893,7 @@
       "context_window": "IU (10 \u00b5g), vitamin B6: 3 mg, zinc: 9 mg, pantothenic acid: 5 mg) or placebo powder (carbohydrate: 38 g) was consumed twice",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -857,7 +911,7 @@
       "context_window": "wder (carbohydrate: 38 g) was consumed twice a day with 150-200 mL of water, within 30 min before and after exercise on exerci",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -929,7 +983,7 @@
       "context_window": "d a side effect in the follow-up blood test performed after 12 weeks of leucine-rich protein intake in the intervention group (",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2017,9 +2071,9 @@
       "context_window": "combined resistance exercise and protein powder intake for 12 weeks. No significant changes in body weight and BMI were found i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-4658",
@@ -4215,7 +4269,7 @@
       "context_window": "n the body composition and function of healthy adults aged >50 years living in Korea, and consequently, we may utilize it for th",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4251,7 +4305,7 @@
       "context_window": "rcise, body weight and BMI remained at the same level after 12 weeks. In the intervention group, for the decrease in fat mass me",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4269,9 +4323,9 @@
       "context_window": "d protein source. In this study, 40 g of protein containing 4000 mg of leucine was consumed per day for 12 weeks, and we confir",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-10571",
@@ -4287,9 +4341,9 @@
       "context_window": "tein containing 4000 mg of leucine was consumed per day for 12 weeks, and we confirmed that no clinical side effects were noted",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-173",
@@ -4305,9 +4359,9 @@
       "context_window": "rovement during resistance exercise in healthy adults aged >50 years. When resistance exercise was controlled, the intake of leu",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral-u-275",
@@ -4323,7 +4377,7 @@
       "context_window": "trolled, the intake of leucine-rich protein supplements for 12 weeks helped improve muscle mass without weight loss. As suggeste",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     }

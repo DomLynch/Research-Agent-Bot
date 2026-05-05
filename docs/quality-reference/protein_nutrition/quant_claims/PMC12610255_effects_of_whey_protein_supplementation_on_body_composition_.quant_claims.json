@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12610255_effects_of_whey_protein_supplementation_on_body_composition_",
   "doi": "10.3390/healthcare13212814",
-  "extracted_at": "2026-05-05T22:35:41+00:00",
+  "extracted_at": "2026-05-05T23:37:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 36,
@@ -115,9 +115,9 @@
       "context_window": "ofile markers and glycemic control in healthy adults (aged <50 years) with overweight or obesity, and in patients with metabolic",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12610255_effects_of_whey_protein_supplementation_on_body_composition_-u-1263",
@@ -133,7 +133,7 @@
       "context_window": "rk: Population: study of human participants with mean ages \u226560 years, regardless of biological sex or health status; Interventio",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -151,7 +151,7 @@
       "context_window": "intervention included receiving WP supplements for at least 2 weeks; Comparator: control groups receiving either a placebo/cont",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2651,7 +2651,7 @@
       "context_window": "a (2016), who included resistance-trained adults aged 18 to 50 years, found that whey protein alone did not significantly improv",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     }

@@ -317,7 +317,7 @@ _UNIT_VALUE_RE = re.compile(
     # Phase 2.1 reviewer fix: dose units added BEFORE the bare
     # "kg" / "mg" so "5 kg/day" wins over "5 kg" (Mohammed false
     # positive). Order is load-bearing — first match wins.
-    r"(mg/kg/day|mg/kg/d|kg/day|mg/day|μg/day|ug/day|μg/d|"
+    r"(mg/kg/day|mg/kg/d|g/kg/day|g/kg/d|kg/day|mg/day|μg/day|ug/day|μg/d|"
     r"mL/min|kg/m2|mg/dL|mg/d|ng/mL|μg/L|ug/L|IU/L|mmHg|bpm|"
     r"m/s|kg|mg|mmol|μmol|µmol|umol|"
     r"mL|months?|weeks?|days?|years?|cm|mm)"

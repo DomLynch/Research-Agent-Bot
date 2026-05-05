@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo",
   "doi": "10.1093/aje/kwy014",
-  "extracted_at": "2026-05-05T22:35:38+00:00",
+  "extracted_at": "2026-05-05T23:37:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 21,
+    "unit_value": 25,
     "percentage": 23,
     "confidence_interval": 2,
     "sample_size": 6
@@ -24,9 +24,45 @@
       "context_window": "examinations 3 and 5; functional status was determined over 12 years using 7 items selected from standardized questionnaires. Mu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-698",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 698,
+      "sentence": "Functional tasks that benefitted most from a higher-protein diet (\u22651.2 g/kg/day vs. <0.8 g/kg/day) were doing heavy work at home, walking 1/2 mile (0.8 km), going up and down stairs, stooping/kneeling/crouching, and lifting heavy items.",
+      "context_window": "nal tasks that benefitted most from a higher-protein diet (\u22651.2 g/kg/day vs. <0.8 g/kg/day) were doing heavy work at home, walking 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-716",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 716,
+      "sentence": "Functional tasks that benefitted most from a higher-protein diet (\u22651.2 g/kg/day vs. <0.8 g/kg/day) were doing heavy work at home, walking 1/2 mile (0.8 km), going up and down stairs, stooping/kneeling/crouching, and lifting heavy items.",
+      "context_window": "efitted most from a higher-protein diet (\u22651.2 g/kg/day vs. <0.8 g/kg/day) were doing heavy work at home, walking 1/2 mile (0.8 km),",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-pct-907",
@@ -42,7 +78,7 @@
       "context_window": "lifting heavy items. Those with higher protein intakes were 41% less likely (95% CI: 0.43, 0.82) to become dependent in 1 o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -61,7 +97,7 @@
       "context_window": "ms. Those with higher protein intakes were 41% less likely (95% CI: 0.43, 0.82) to become dependent in 1 or more of the functional tasks o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -115,7 +151,7 @@
       "context_window": "ination visits 3, 4, or 5 and provide dietary record data ( n = 1,840); 2) reported extreme intakes (for men, <1,200 or >4,00",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -133,7 +169,7 @@
       "context_window": "ories per day) or extreme intakes of protein-source foods ( n = 322); 3) were less than 50 years old at examinations 3-5 ( n =",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -151,7 +187,7 @@
       "context_window": "takes of protein-source foods ( n = 322); 3) were less than 50 years old at examinations 3-5 ( n = 868); 4) failed to attend or",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -169,7 +205,7 @@
       "context_window": "322); 3) were less than 50 years old at examinations 3-5 ( n = 868); 4) failed to attend or provide functional status data at",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -187,7 +223,7 @@
       "context_window": "vide functional status data at examination 5, 6, 7, and 8 ( n = 129); 5) failed to have more than 1 functional status measureme",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -205,7 +241,7 @@
       "context_window": "failed to have more than 1 functional status measurement ( n = 115); or 6) had prevalent cancer (except nonmelanoma skin cance",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -223,7 +259,7 @@
       "context_window": "ma skin cancer) at time of baseline functional assessment ( n = 71). This left a total of 1,779 subjects for these analyses. H",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -241,9 +277,9 @@
       "context_window": "t dietary protein intake may be accurately estimated with 5-8 days of dietary records ( 20 , 21 ). Data on the functional sta",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-3969",
@@ -367,9 +403,9 @@
       "context_window": "spectively through examination 8 (2005-2008), approximately 12 years, for the development of task-specific functional dependence",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-8278",
@@ -480,6 +516,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-94",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 94,
+      "sentence": "Adults consuming 1.2 g/kg/day or more of protein were leaner, more physically active, drank more alcohol, and consumed a lower proportion of carbohydrates per day.",
+      "context_window": "ristics according to daily protein intake. Adults consuming 1.2 g/kg/day or more of protein were leaner, more physically active, dra",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-1084",
       "claim_type": "unit_value",
       "raw_text": "12 years",
@@ -493,7 +547,7 @@
       "context_window": ") to have a higher prevalence of disabilities at the end of 12 years of follow-up. For example, 18.0% of those in the lowest cat",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -511,9 +565,9 @@
       "context_window": "abilities at the end of 12 years of follow-up. For example, 18.0% of those in the lowest category of weight-adjusted protein",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-pct-1260",
@@ -529,9 +583,9 @@
       "context_window": "unable to walk 1/2 mile by examination 8 compared with only 10.1% of those in the highest quintile of intake. The tasks for w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-1883",
@@ -583,9 +637,9 @@
       "context_window": "tein intakes had the lowest risk of becoming dependent over 12 years. The strongest and most consistent findings were the benefi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-3367",
@@ -601,9 +655,9 @@
       "context_window": "lf mile is approximately 0.8 km, and 10 lb is approximately 4.54 kg. Table 4 examines the association of protein intake with t",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-3517",
@@ -619,9 +673,9 @@
       "context_window": "endent in \u22651 and \u22652 of the 7 selected functional tasks over 12 years. For all subjects combined, those with the highest protein",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-pct-3612",
@@ -637,7 +691,7 @@
       "context_window": ", those with the highest protein intakes were approximately 40% less likely to become dependent in 1 or more functional tas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -655,7 +709,7 @@
       "context_window": "ikely to become dependent in 1 or more functional tasks and 50% less likely to become dependent in 2 or more functional tas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -673,7 +727,7 @@
       "context_window": "kely to become dependent in 2 or more functional tasks over 12 years. The hazard ratios were slightly stronger for women than fo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -691,7 +745,7 @@
       "context_window": "ubjects who were more active and consumed more protein were 61% less likely (95% CI: 0.24, 0.64) to become dependent in 1 o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -710,7 +764,7 @@
       "context_window": "more active and consumed more protein were 61% less likely (95% CI: 0.24, 0.64) to become dependent in 1 or more functional tasks over 12",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -728,7 +782,7 @@
       "context_window": ".64) to become dependent in 1 or more functional tasks over 12 years. Higher physical activity alone led to a 43% reduction in r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -746,7 +800,7 @@
       "context_window": "asks over 12 years. Higher physical activity alone led to a 43% reduction in risk, while being in the highest protein categ",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -764,7 +818,7 @@
       "context_window": "in the highest protein category alone was associated with a 51% reduction in risk of dependence in 1 or more tasks. In thes",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -782,7 +836,7 @@
       "context_window": "functional dependence were stronger for women than for men (66% and 33% reduced risks, respectively). Finally, both men and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -800,7 +854,7 @@
       "context_window": "al dependence were stronger for women than for men (66% and 33% reduced risks, respectively). Finally, both men and women w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -890,7 +944,7 @@
       "context_window": "of body weight and functional status scores among subjects 50 years of age or older, Framingham Offspring Study, Massachusetts,",
       "claim_role": "protocol",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -908,9 +962,9 @@
       "context_window": "residual method and functional status scores among subjects 50 years of age or older, Framingham Offspring Study, Massachusetts,",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-638",
@@ -926,8 +980,26 @@
       "context_window": "to some degree of bias in the reporting of disability. Over 12 years of follow-up, subjects consuming more dietary protein were",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7427817_dietary_protein_and_preservation_of_physical_functioning_amo-u-2686",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2686,
+      "sentence": "A review by Volpi et al. ( 10 ) concluded that to retain muscle mass, strength, and optimal physical functioning among older adults, the current recommendation for dietary protein intakes for older adults of 0.8 g/kg/day should be raised.",
+      "context_window": "ommendation for dietary protein intakes for older adults of 0.8 g/kg/day should be raised. Loss of muscle strength, often a surroga",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {

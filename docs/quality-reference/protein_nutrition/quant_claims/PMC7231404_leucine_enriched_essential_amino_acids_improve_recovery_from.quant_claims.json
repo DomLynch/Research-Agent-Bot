@@ -1,16 +1,34 @@
 {
   "paper_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from",
   "doi": "10.3390/nu12041061",
-  "extracted_at": "2026-05-05T22:35:35+00:00",
+  "extracted_at": "2026-05-05T23:37:13+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
+    "unit_value": 26,
     "percentage": 24,
     "p_value": 64,
-    "unit_value": 19,
     "mean_sd": 14,
     "sample_size": 3
   },
   "claims": [
+    {
+      "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-480",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 480,
+      "sentence": "Methods: In a randomized, double-blind, placebo-controlled, parallel-group design, twenty recreationally active males consuming a controlled diet (1.2 g/kg/d of protein) were supplemented thrice daily with 4 g of LEAAs (containing 1.6 g leucine) or isocaloric placebo for four days following an acute bout of lower-body resistance exercise (RE).",
+      "context_window": "ty recreationally active males consuming a controlled diet (1.2 g/kg/d of protein) were supplemented thrice daily with 4 g of LEAA",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-1058",
       "claim_type": "percentage",
@@ -390,6 +408,42 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-5713",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 5713,
+      "sentence": "The macronutrient distribution was 1.2 g/kg/d of protein, 4 g/kg/d of carbohydrate, and the remaining calories from fat.",
+      "context_window": "energy to cover 1.6*REE. The macronutrient distribution was 1.2 g/kg/d of protein, 4 g/kg/d of carbohydrate, and the remaining cal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-5736",
+      "claim_type": "unit_value",
+      "raw_text": "4 g/kg/d",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 5736,
+      "sentence": "The macronutrient distribution was 1.2 g/kg/d of protein, 4 g/kg/d of carbohydrate, and the remaining calories from fat.",
+      "context_window": ". The macronutrient distribution was 1.2 g/kg/d of protein, 4 g/kg/d of carbohydrate, and the remaining calories from fat. Altho",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6640",
       "claim_type": "percentage",
       "raw_text": "2%",
@@ -403,9 +457,9 @@
       "context_window": "The LEAA mixture consisted of 4 g of essential amino acids (2% histidine, 11% isoleucine, 40% leucine, 17% lysine, 3%, met",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6654",
@@ -421,9 +475,9 @@
       "context_window": "re consisted of 4 g of essential amino acids (2% histidine, 11% isoleucine, 40% leucine, 17% lysine, 3%, methionine, 7% phe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6670",
@@ -439,9 +493,9 @@
       "context_window": "4 g of essential amino acids (2% histidine, 11% isoleucine, 40% leucine, 17% lysine, 3%, methionine, 7% phenylalanine, 9% t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6683",
@@ -457,9 +511,9 @@
       "context_window": "ial amino acids (2% histidine, 11% isoleucine, 40% leucine, 17% lysine, 3%, methionine, 7% phenylalanine, 9% threonine, 1%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6695",
@@ -475,9 +529,9 @@
       "context_window": "ids (2% histidine, 11% isoleucine, 40% leucine, 17% lysine, 3%, methionine, 7% phenylalanine, 9% threonine, 1% tryptophan,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6711",
@@ -493,9 +547,9 @@
       "context_window": "e, 11% isoleucine, 40% leucine, 17% lysine, 3%, methionine, 7% phenylalanine, 9% threonine, 1% tryptophan, and 11% valine)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6729",
@@ -511,9 +565,9 @@
       "context_window": "40% leucine, 17% lysine, 3%, methionine, 7% phenylalanine, 9% threonine, 1% tryptophan, and 11% valine). In total, 20 g o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6743",
@@ -529,9 +583,9 @@
       "context_window": "17% lysine, 3%, methionine, 7% phenylalanine, 9% threonine, 1% tryptophan, and 11% valine). In total, 20 g of Tang (Kraft,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-6762",
@@ -547,9 +601,9 @@
       "context_window": "hionine, 7% phenylalanine, 9% threonine, 1% tryptophan, and 11% valine). In total, 20 g of Tang (Kraft, Mississauga, Canada",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "essential amino acids",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-7161",
@@ -692,9 +746,9 @@
       "context_window": "rotein after an acute bout of RE, with rates (mean \u00b1 SD) of 0.051 \u00b1 0.014%/h and 0.070 \u00b1 0.14%/h, respectively (n = 12 in each group)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-11188",
@@ -710,9 +764,9 @@
       "context_window": "fter an acute bout of RE, with rates (mean \u00b1 SD) of 0.051 \u00b1 0.014%/h and 0.070 \u00b1 0.14%/h, respectively (n = 12 in each group).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-msd-11201",
@@ -729,9 +783,9 @@
       "context_window": "bout of RE, with rates (mean \u00b1 SD) of 0.051 \u00b1 0.014%/h and 0.070 \u00b1 0.14%/h, respectively (n = 12 in each group). Based on these res",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-11209",
@@ -747,9 +801,9 @@
       "context_window": "RE, with rates (mean \u00b1 SD) of 0.051 \u00b1 0.014%/h and 0.070 \u00b1 0.14%/h, respectively (n = 12 in each group). Based on these resu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-n-11232",
@@ -765,9 +819,9 @@
       "context_window": "SD) of 0.051 \u00b1 0.014%/h and 0.070 \u00b1 0.14%/h, respectively (n = 12 in each group). Based on these results and with \u03b1 = 0.05 an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-n-11323",
@@ -1657,7 +1711,7 @@
       "context_window": "EAA or placebo consumption. * Significant effect of group ( p < 0.05). Time points with different letters are significantly diff",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2150,6 +2204,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-288",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 288,
+      "sentence": "The main finding of this study was that, in contrast to our hypothesis, LEAA supplementation three times per day was not more effective than placebo at enhancing integrated MyoPS over 96 h following an unaccustomed bout of RE in recreationally active men consuming a controlled diet with 1.2 g/kg/d of protein.",
+      "context_window": "recreationally active men consuming a controlled diet with 1.2 g/kg/d of protein. However, consistent with our hypothesis, LEAAs",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-1791",
       "claim_type": "unit_value",
       "raw_text": "400 mL",
@@ -2182,6 +2254,60 @@
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-2369",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 2369,
+      "sentence": "To increase the ecological validity of the study, participants in the present study consumed a controlled diet of 1.2 g/kg/d, which is slightly lower than the North American average [ 37 ] but is in line with recent suggested intakes for recreationally active males [ 38 ] and at the lower end of consensus recommendations for athletes [ 56 ].",
+      "context_window": "icipants in the present study consumed a controlled diet of 1.2 g/kg/d, which is slightly lower than the North American average [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-3536",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 3536,
+      "sentence": "This could be consistent with the ability of 5 g of leucine supplemented to meals to be sufficient to enhance post-RE MyoPS rates in free-living older men when consuming a low (0.8 g/kg/d) or higher protein (1.2 g/kg/d) intake [ 19 ].",
+      "context_window": "MyoPS rates in free-living older men when consuming a low (0.8 g/kg/d) or higher protein (1.2 g/kg/d) intake [ 19 ]. However, it",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "leucine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-u-3567",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 3567,
+      "sentence": "This could be consistent with the ability of 5 g of leucine supplemented to meals to be sufficient to enhance post-RE MyoPS rates in free-living older men when consuming a low (0.8 g/kg/d) or higher protein (1.2 g/kg/d) intake [ 19 ].",
+      "context_window": "er men when consuming a low (0.8 g/kg/d) or higher protein (1.2 g/kg/d) intake [ 19 ]. However, it should be acknowledged that the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2235,9 +2361,9 @@
       "context_window": "ntrained males. Nevertheless, muscle protein turns over at ~1%-2%/day, is highly variable between individuals [ 78 ], and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7231404_leucine_enriched_essential_amino_acids_improve_recovery_from-pct-11143",
@@ -2253,9 +2379,9 @@
       "context_window": "ained males. Nevertheless, muscle protein turns over at ~1%-2%/day, is highly variable between individuals [ 78 ], and may",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas",
   "doi": "10.1002/jcsm.12805",
-  "extracted_at": "2026-05-05T22:35:47+00:00",
+  "extracted_at": "2026-05-05T23:37:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 44,
+    "unit_value": 63,
     "mean_sd": 19,
     "percentage": 18,
     "p_value": 34,
@@ -26,7 +26,7 @@
       "context_window": "pool Hope University\u2010Sarcopenia Aging Trial (LHU\u2010SAT) was a 16 week RCT ( ClinicalTrials.gov Identifier: NCT02912130 ) of 100 c",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "2912130 ) of 100 community\u2010dwelling older adults [mean age: 68.73 \u00b1 5.80 years, body mass index: 27.06 \u00b1 5.18 kg/m 2 (52% women)] wh",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -63,7 +63,7 @@
       "context_window": ") of 100 community\u2010dwelling older adults [mean age: 68.73 \u00b1 5.80 years, body mass index: 27.06 \u00b1 5.18 kg/m 2 (52% women)] who were",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -82,7 +82,7 @@
       "context_window": "lder adults [mean age: 68.73 \u00b1 5.80 years, body mass index: 27.06 \u00b1 5.18 kg/m 2 (52% women)] who were randomized to four independent",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -100,7 +100,7 @@
       "context_window": "lts [mean age: 68.73 \u00b1 5.80 years, body mass index: 27.06 \u00b1 5.18 kg/m 2 (52% women)] who were randomized to four independent gr",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -118,7 +118,25 @@
       "context_window": ": 68.73 \u00b1 5.80 years, body mass index: 27.06 \u00b1 5.18 kg/m 2 (52% women)] who were randomized to four independent groups [Con",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-895",
+      "claim_type": "unit_value",
+      "raw_text": "1.50 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 895,
+      "sentence": "E and EP completed supervised and progressive resistance\u2010based exercise (resistance exercise: two times per week, functional circuit exercise: once per week), while EP and P were supplemented with a leucine\u2010enriched whey protein drink (three times per day) based on individual body weight (0.50 g/kg/meal, 1.50 g/kg/day).",
+      "context_window": "s per day) based on individual body weight (0.50 g/kg/meal, 1.50 g/kg/day). Outcome measures including arterial stiffness (pulse wave",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -137,7 +155,25 @@
       "context_window": "in intake (habitual diet plus supplementation) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remain",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-1430",
+      "claim_type": "unit_value",
+      "raw_text": "0.69 g/kg/day",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1430,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remained significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "ke (habitual diet plus supplementation) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remained signif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -156,7 +192,25 @@
       "context_window": "lementation) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remained significantly lower ( P < 0.001",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-1464",
+      "claim_type": "unit_value",
+      "raw_text": "0.72 g/kg/day",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1464,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remained significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "tion) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remained significantly lower ( P < 0.001) in unsu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -174,7 +228,7 @@
       "context_window": "93 \u00b1 0.72 g/kg/day in P, and remained significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -193,7 +247,25 @@
       "context_window": "gnificantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day). At 16 weeks, there was",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-1566",
+      "claim_type": "unit_value",
+      "raw_text": "0.33 g/kg/day",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1566,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remained significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "ntly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day). At 16 weeks, there was a group\u2010b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -212,7 +284,25 @@
       "context_window": ".001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day). At 16 weeks, there was a group\u2010by\u2010time interacti",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-1591",
+      "claim_type": "unit_value",
+      "raw_text": "0.26 g/kg/day",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1591,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased to 1.55 \u00b1 0.69 g/kg/day in EP and to 1.93 \u00b1 0.72 g/kg/day in P, and remained significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "n unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day, C: 1.00 \u00b1 0.26 g/kg/day). At 16 weeks, there was a group\u2010by\u2010time interaction whereb",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -703,7 +793,7 @@
       "context_window": "gether with a shaker bottle (for mixing the supplement with 250 mL water), instructions for consuming the supplements thrice a",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -721,7 +811,7 @@
       "context_window": "instructions for consuming the supplements thrice a day for 16 weeks, and a recording sheet handed to researchers on a monthly b",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -739,9 +829,9 @@
       "context_window": "their habitual diet. All participants completed a validated 4 day food diary at baseline and endpoint of the trial, to provid",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-5588",
@@ -757,9 +847,9 @@
       "context_window": "alidated equation. 15 Dietary control was monitored using a 4 day food diary (three weekdays & one weekend day), and energy a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-7270",
@@ -1231,7 +1321,7 @@
       "context_window": "intake (habitual diet plus supplementation) increased from 1.16 \u00b1 0.37 at baseline to 1.55 \u00b1 0.69 g/kg/day in EP during the trial",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1250,7 +1340,25 @@
       "context_window": "supplementation) increased from 1.16 \u00b1 0.37 at baseline to 1.55 \u00b1 0.69 g/kg/day in EP during the trial and from 0.99 \u00b1 0.24 at bas",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2468",
+      "claim_type": "unit_value",
+      "raw_text": "0.69 g/kg/day",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2468,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased from 1.16 \u00b1 0.37 at baseline to 1.55 \u00b1 0.69 g/kg/day in EP during the trial and from 0.99 \u00b1 0.24 at baseline to 1.93 \u00b1 0.72 g/kg/day in P during the trial meeting our target, with total protein intake remaining significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "mentation) increased from 1.16 \u00b1 0.37 at baseline to 1.55 \u00b1 0.69 g/kg/day in EP during the trial and from 0.99 \u00b1 0.24 at baseline to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1269,7 +1377,7 @@
       "context_window": "ine to 1.55 \u00b1 0.69 g/kg/day in EP during the trial and from 0.99 \u00b1 0.24 at baseline to 1.93 \u00b1 0.72 g/kg/day in P during the trial m",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1288,7 +1396,25 @@
       "context_window": "in EP during the trial and from 0.99 \u00b1 0.24 at baseline to 1.93 \u00b1 0.72 g/kg/day in P during the trial meeting our target, with tot",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2548",
+      "claim_type": "unit_value",
+      "raw_text": "0.72 g/kg/day",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2548,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased from 1.16 \u00b1 0.37 at baseline to 1.55 \u00b1 0.69 g/kg/day in EP during the trial and from 0.99 \u00b1 0.24 at baseline to 1.93 \u00b1 0.72 g/kg/day in P during the trial meeting our target, with total protein intake remaining significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "during the trial and from 0.99 \u00b1 0.24 at baseline to 1.93 \u00b1 0.72 g/kg/day in P during the trial meeting our target, with total protei",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1306,7 +1432,7 @@
       "context_window": ", with total protein intake remaining significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1325,7 +1451,25 @@
       "context_window": "gnificantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day). As previously reported,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2709",
+      "claim_type": "unit_value",
+      "raw_text": "0.33 g/kg/day",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2709,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased from 1.16 \u00b1 0.37 at baseline to 1.55 \u00b1 0.69 g/kg/day in EP during the trial and from 0.99 \u00b1 0.24 at baseline to 1.93 \u00b1 0.72 g/kg/day in P during the trial meeting our target, with total protein intake remaining significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "ntly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day). As previously reported, 13 , 14",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1344,7 +1488,25 @@
       "context_window": ".001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day). As previously reported, 13 , 14 total energy, fa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2734",
+      "claim_type": "unit_value",
+      "raw_text": "0.26 g/kg/day",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2734,
+      "sentence": "Total protein intake (habitual diet plus supplementation) increased from 1.16 \u00b1 0.37 at baseline to 1.55 \u00b1 0.69 g/kg/day in EP during the trial and from 0.99 \u00b1 0.24 at baseline to 1.93 \u00b1 0.72 g/kg/day in P during the trial meeting our target, with total protein intake remaining significantly lower ( P < 0.001) in unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day).",
+      "context_window": "n unsupplemented groups (E: 1.08 \u00b1 0.33 g/kg/day; C: 1.00 \u00b1 0.26 g/kg/day). As previously reported, 13 , 14 total energy, fat, and ca",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1362,7 +1524,7 @@
       "context_window": "and % of total energy intake) did not differ at baseline ( P > 0.05). Regarding dropouts, 3 participants failed to return for f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1947,9 +2109,9 @@
       "context_window": "a, adiponectin, leptin, ferritin, or cystatin\u2010C ( Table 3 , P > 0.05). Effect of intervention of serum biomarkers, insulin resi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-pct-6028",
@@ -2203,9 +2365,9 @@
       "context_window": "\u2010IR, or resistin in EP and P nor in these groups combined ( P > 0.05; Table 4 ). Dose-response relationship between compliance",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-p-7595",
@@ -2239,7 +2401,7 @@
       "context_window": "We report that 16 weeks of leucine\u2010enriched whey protein supplementation alone and",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2258,7 +2420,43 @@
       "context_window": "adults. More specifically, increasing total protein intake (1.7 \u00b1 0.7 g/kg/day, average of EP and P groups) by means of supplemen",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-238",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 g/kg/day",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 238,
+      "sentence": "More specifically, increasing total protein intake (1.7 \u00b1 0.7 g/kg/day, average of EP and P groups) by means of supplementation reduced LDL\u2010cholesterol and serum insulin, and improved estimates of insulin resistance (HOMA\u2010IR) when compared with exercise or control groups alone.",
+      "context_window": ". More specifically, increasing total protein intake (1.7 \u00b1 0.7 g/kg/day, average of EP and P groups) by means of supplementation re",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-511",
+      "claim_type": "unit_value",
+      "raw_text": "1.9 g/kg/day",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 511,
+      "sentence": "Furthermore, an even greater total protein intake (~1.9 g/kg/day) in the absence of exercise conferred beneficial reductions in serum resistin when compared with all other interventional groups.",
+      "context_window": "alone. Furthermore, an even greater total protein intake (~1.9 g/kg/day) in the absence of exercise conferred beneficial reductions",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2276,7 +2474,7 @@
       "context_window": "f whey protein in healthy/metabolically impaired adults (18-80 years) showed reductions in fasting insulin, HOMA\u2010IR, and LDL\u2010cho",
       "claim_role": "population",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2294,9 +2492,9 @@
       "context_window": "the above reviews) lend support to our findings. Following 12 weeks of whey protein supplementation (\u223c55 g/day; 30% of total en",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-pct-1665",
@@ -2312,9 +2510,9 @@
       "context_window": "lowing 12 weeks of whey protein supplementation (\u223c55 g/day; 30% of total energy intake), LDL\u2010cholesterol and serum insulin",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2009",
@@ -2330,7 +2528,43 @@
       "context_window": "ody composition changes (lean and fat mass). More recently, 13 weeks of leucine\u2010enriched whey protein supplementation (increasin",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "placebo",
+      "arm": "leucine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2103",
+      "claim_type": "unit_value",
+      "raw_text": "1.15 g/kg/day",
+      "numeric_values": [
+        1.15
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2103,
+      "sentence": "More recently, 13 weeks of leucine\u2010enriched whey protein supplementation (increasing total protein intake to 1.15 g/kg/day) combined with vitamin D and resistance exercise in older adults with obesity and type 2 diabetes reduced serum insulin and improved HOMA\u2010IR (with no between\u2010group differences in plasma glucose) when compared with isocaloric placebo (0.82 g/kg/day) plus resistance exercise.",
+      "context_window": "protein supplementation (increasing total protein intake to 1.15 g/kg/day) combined with vitamin D and resistance exercise in older a",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "leucine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2351",
+      "claim_type": "unit_value",
+      "raw_text": "0.82 g/kg/day",
+      "numeric_values": [
+        0.82
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2351,
+      "sentence": "More recently, 13 weeks of leucine\u2010enriched whey protein supplementation (increasing total protein intake to 1.15 g/kg/day) combined with vitamin D and resistance exercise in older adults with obesity and type 2 diabetes reduced serum insulin and improved HOMA\u2010IR (with no between\u2010group differences in plasma glucose) when compared with isocaloric placebo (0.82 g/kg/day) plus resistance exercise.",
+      "context_window": "s in plasma glucose) when compared with isocaloric placebo (0.82 g/kg/day) plus resistance exercise. 26 It should be noted this study",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -2353,6 +2587,96 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-2877",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 g/kg/day",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2877,
+      "sentence": "27 showed no greater improvements of whey protein supplementation (increasing total protein intake to \u223c1.4 g/kg/day (average of training/non\u2010training days) plus vitamin D and resistance exercise on HbA1c or HOMA2\u2010IR when compared with resistance exercise alone in overweight/obese older adults with type 2 diabetes.",
+      "context_window": "rotein supplementation (increasing total protein intake to \u223c1.4 g/kg/day (average of training/non\u2010training days) plus vitamin D and",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "whey protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-3182",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3182,
+      "sentence": "28 demonstrated reductions in visceral fat in older men randomized to receive 1.3 g/kg/day of protein (0.7 g/kg/day via packaged meals; 0.5 g/kg/day whey/casein supplement) vs.",
+      "context_window": "ductions in visceral fat in older men randomized to receive 1.3 g/kg/day of protein (0.7 g/kg/day via packaged meals; 0.5 g/kg/day w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-3207",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 g/kg/day",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3207,
+      "sentence": "28 demonstrated reductions in visceral fat in older men randomized to receive 1.3 g/kg/day of protein (0.7 g/kg/day via packaged meals; 0.5 g/kg/day whey/casein supplement) vs.",
+      "context_window": "in older men randomized to receive 1.3 g/kg/day of protein (0.7 g/kg/day via packaged meals; 0.5 g/kg/day whey/casein supplement) vs",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-3240",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 g/kg/day",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3240,
+      "sentence": "28 demonstrated reductions in visceral fat in older men randomized to receive 1.3 g/kg/day of protein (0.7 g/kg/day via packaged meals; 0.5 g/kg/day whey/casein supplement) vs.",
+      "context_window": "e 1.3 g/kg/day of protein (0.7 g/kg/day via packaged meals; 0.5 g/kg/day whey/casein supplement) vs. 0.8 g/kg/day (control) for 24 w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-3281",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3281,
+      "sentence": "0.8 g/kg/day (control) for 24 weeks but observed no changes in serum biomarkers (fasting glucose, fasting insulin, HOMA\u2010IR, leptin, adiponectin, interleukin\u20106, or C\u2010reactive protein).",
+      "context_window": "ia packaged meals; 0.5 g/kg/day whey/casein supplement) vs. 0.8 g/kg/day (control) for 24 weeks but observed no changes in serum bio",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-3308",
       "claim_type": "unit_value",
       "raw_text": "24 weeks",
@@ -2366,7 +2690,7 @@
       "context_window": "/day whey/casein supplement) vs. 0.8 g/kg/day (control) for 24 weeks but observed no changes in serum biomarkers (fasting glucos",
       "claim_role": "dose",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2384,7 +2708,25 @@
       "context_window": "plasma glucose, serum insulin, or HOMA\u2010IR in response to a 12 week milk protein supplement (~0.33 g/kg/day added to habitual d",
       "claim_role": "dose",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-3612",
+      "claim_type": "unit_value",
+      "raw_text": "0.33 g/kg/day",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3612,
+      "sentence": "Another trial 29 found no changes in LDL\u2010cholesterol, plasma glucose, serum insulin, or HOMA\u2010IR in response to a 12 week milk protein supplement (~0.33 g/kg/day added to habitual diet) either alone or as an adjuvant to resistance\u2010based exercise in older adults, although the dose of whey protein (and leucine) was markedly lower than our supplement and the sample size < 50% of our trial.",
+      "context_window": "HOMA\u2010IR in response to a 12 week milk protein supplement (~0.33 g/kg/day added to habitual diet) either alone or as an adjuvant to r",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2402,7 +2744,7 @@
       "context_window": "as markedly lower than our supplement and the sample size < 50% of our trial. In our study, the mechanisms by which leucin",
       "claim_role": "dose",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2420,9 +2762,9 @@
       "context_window": ", 33 , 34 increasing protein intake well\u2010beyond the RDA for 16 weeks did not exert beneficial nor harmful effects on kidney func",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-6220",
@@ -2438,7 +2780,7 @@
       "context_window": "no change in lipids or immunological markers in response to 16 weeks of exercise which we suspect is due to the lower intensity",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2474,7 +2816,7 @@
       "context_window": "e to blood biomarkers at post\u2010intervention in some groups ( n = 11/24, ~ 46% of the exercise group), although we do not believ",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2492,7 +2834,7 @@
       "context_window": "omarkers at post\u2010intervention in some groups ( n = 11/24, ~ 46% of the exercise group), although we do not believe this sig",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2510,7 +2852,7 @@
       "context_window": "ference in energy or macronutrient intake at baseline (from n = 81 food diaries) and all participants were instructured to mai",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2529,9 +2871,9 @@
       "context_window": "e trial. In support, a very recent meta\u2010analysis (mean age: 46 \u00b1 10 years) 39 on the topic which excluded RCTs with very\u2010low to",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-8318",
@@ -2547,9 +2889,9 @@
       "context_window": "al. In support, a very recent meta\u2010analysis (mean age: 46 \u00b1 10 years) 39 on the topic which excluded RCTs with very\u2010low to low f",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8718053_leucine_enriched_whey_protein_supplementation_resistance_bas-u-9403",
@@ -2565,7 +2907,7 @@
       "context_window": "e aspects during study design. To conclude, we report that 16 weeks of leucine\u2010enriched whey protein supplementation alone and",
       "claim_role": "protocol",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

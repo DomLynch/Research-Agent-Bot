@@ -1,8 +1,29 @@
 {
   "paper_id": "PMC11333332_critical_variables_regulating_age_related_anabolic_responses",
   "doi": "10.3389/fnut.2024.1419229",
-  "extracted_at": "2026-05-05T22:35:39+00:00",
+  "extracted_at": "2026-05-05T23:37:01+00:00",
   "extractor_version": "0.6.0",
-  "claims_count_by_type": {},
-  "claims": []
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11333332_critical_variables_regulating_age_related_anabolic_responses-u-2295",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 2295,
+      "sentence": "The current protein recommendation of 0.75-0.8 g protein/kg/day is insufficient for older adults and should be increased to 1.0-1.5 g/kg/day.",
+      "context_window": "nsufficient for older adults and should be increased to 1.0-1.5 g/kg/day. In addition to these practical tips, we have highlighted",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi",
   "doi": "10.1007/s40520-020-01519-x",
-  "extracted_at": "2026-05-05T22:35:34+00:00",
+  "extracted_at": "2026-05-05T23:37:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 32,
@@ -42,9 +42,9 @@
       "context_window": "rvings of WP-MND (21 g protein, 3 g leucine, 10 \u00b5g vitD and 500 mg calcium per serving). Gastro-intestinal tolerability, kidne",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-835",
@@ -60,7 +60,7 @@
       "context_window": "on rate (eGFR) increased in the test group during the RCT ( p = 0.013). The same trend was observed for those participants with m",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -78,9 +78,9 @@
       "context_window": "direction, decreasing during RCT in the test group (T vs C: p < 0.001) and during OLE in former control groups. During RCT, 20/36",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1343",
@@ -294,9 +294,9 @@
       "context_window": "otein (42 g), leucine (6 g), vitamin D (40 \u00b5g) and calcium (1000 mg) per day were consumed on top of the regular diet. However,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2837",
@@ -312,7 +312,7 @@
       "context_window": "of this post-hoc evaluation was to determine the effect of 6 months supplementation with a vitamin D, calcium and leucine-enric",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -366,7 +366,7 @@
       "context_window": "n criteria relevant were: (a) intake of a high protein diet 3 months before start of or during the study, (b) intake of a protei",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "context_window": "a protein- or amino acid- containing nutritional supplement 3 months before start of or during the study, (c) consumption of mor",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -402,7 +402,7 @@
       "context_window": "iol concentration \u2265 50 nmol/L, (e) consumption of more than 500 mg calcium daily from mineral supplement use. The 13-week dou",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -420,9 +420,9 @@
       "context_window": "e, 9 g carbohydrates, 3 g fat, 800 IU (20 \u00b5g) vitamin D 3 , 500 mg calcium, and a mixture of vitamins, minerals and fibers (fo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2792",
@@ -636,7 +636,7 @@
       "context_window": "ed to participate in the OLE sequel of the study (test (T): n = 103; control (C): n = 130). 133 subjects were randomized into t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "he OLE sequel of the study (test (T): n = 103; control (C): n = 130). 133 subjects were randomized into the 1-serving groups (C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "rom 0.9 (IQR: 0.8, 1.1) to 1.3 (IQR: 1.1, 1.5) in the CT1 ( p < 0.001) and to 1.4 (IQR: 1.3, 1.7) g/kg BW/day in the CT2 group (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": ") and to 1.4 (IQR: 1.3, 1.7) g/kg BW/day in the CT2 group ( p < 0.001). In the TT1 group that consumed one serving of WP-MND duri",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "om 1.5 (IQR: 1.3, 1.7) to 1.2 (IQR: 1.1, 1.4) g/kg BW/day ( p < 0.001) versus no change in the TT2 group (TT1 vs. TT2: p < 0.001)",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1032,9 +1032,9 @@
       "context_window": "to be around 0.070 g/kg BW/day (0.9 g protein/kg BW/day) in 50% (median) and 0.086 g/kg BW/day (1.1 g protein/kg BW/day) in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-5572",
@@ -1050,9 +1050,9 @@
       "context_window": "(median) and 0.086 g/kg BW/day (1.1 g protein/kg BW/day) in 75% (upper IQR) of the test group. The WP-MND supplement contri",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-5742",
@@ -1068,9 +1068,9 @@
       "context_window": "resenting 0.086 g/kg BW/day based on a median bodyweight of 70 kg. In total, leucine intake in the WP-MND group was 0.171 g/k",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-5819",
@@ -1086,9 +1086,9 @@
       "context_window": "leucine intake in the WP-MND group was 0.171 g/kg BW/day in 75% of subjects, which is well below the TUL for leucine of 0.5",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-5915",
@@ -1104,7 +1104,7 @@
       "context_window": "the TUL for leucine of 0.5 g/kg BW/day [ 28 - 30 ]. After 13 weeks of intervention with 2 servings of the WP-MND in the test g",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1122,7 +1122,7 @@
       "context_window": "t group, a significant increase in median serum calcidiol ( p < 0.001) was observed versus a significant decrease ( p < 0.001) in",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1140,7 @@
       "context_window": "l ( p < 0.001) was observed versus a significant decrease ( p < 0.001) in the control population (T vs. C: p < 0.001) (Fig. 3 a).",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1194,7 +1194,7 @@
       "context_window": "to the test product in the OLE study period (both CT1, CT2: p < 0.001) and most in the group that received 2 servings of the WP-M",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1302,7 +1302,7 @@
       "context_window": "levels \u2265 100 nmol/L decreased in the former test groups (T: n = 20 \u2192 16) and increased in the former control groups (C: n = 6",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1320,7 +1320,7 @@
       "context_window": "n = 20 \u2192 16) and increased in the former control groups (C: n = 6 \u2192 9). In 13 OLE participants (T: n = 10; C: n = 3) with cal",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1410,7 +1410,7 @@
       "context_window": "from control to test product during the OLE study period ( p < 0.001) (Fig. 4 b). Serum levels of parathyroid hormone (PTH) in",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1500,7 +1500,7 @@
       "context_window": "ium levels increased in the former control population (CT1: p = 0.017; CT2: p = 0.003) whereas no further increase was observed i",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1518,7 +1518,7 @@
       "context_window": "ased in the former control population (CT1: p = 0.017; CT2: p = 0.003) whereas no further increase was observed in the former tes",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2004,7 +2004,7 @@
       "context_window": "the observed increase and subsequent plateau of eGFR after 13 weeks of treatment in older people with moderate CKD suggest that",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },

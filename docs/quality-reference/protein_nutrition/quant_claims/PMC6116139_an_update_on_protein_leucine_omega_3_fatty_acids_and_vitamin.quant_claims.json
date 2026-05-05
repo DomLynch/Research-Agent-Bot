@@ -1,8 +1,47 @@
 {
   "paper_id": "PMC6116139_an_update_on_protein_leucine_omega_3_fatty_acids_and_vitamin",
   "doi": "10.3390/nu10081099",
-  "extracted_at": "2026-05-05T22:35:38+00:00",
+  "extracted_at": "2026-05-05T23:37:09+00:00",
   "extractor_version": "0.6.0",
-  "claims_count_by_type": {},
-  "claims": []
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6116139_an_update_on_protein_leucine_omega_3_fatty_acids_and_vitamin-u-775",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 775,
+      "sentence": "Recent evidence supports a higher protein intake recommendation of 1.0-1.2 g/kg/day in healthy older adults; an evenly distributed mealtime protein intake or minimal protein per meal may be beneficial.",
+      "context_window": "ence supports a higher protein intake recommendation of 1.0-1.2 g/kg/day in healthy older adults; an evenly distributed mealtime pro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6116139_an_update_on_protein_leucine_omega_3_fatty_acids_and_vitamin-u-352",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 352,
+      "sentence": "Groups of authors recommend protein intakes of 1.0-1.2 g/kg/day for older adults, which is higher than the currently established RDA, but may not always be achievable through dietary sources for some individuals with reduced appetite.",
+      "context_window": "rtality. Groups of authors recommend protein intakes of 1.0-1.2 g/kg/day for older adults, which is higher than the currently establ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio",
   "doi": "10.3390/nu15030521",
-  "extracted_at": "2026-05-05T22:35:29+00:00",
+  "extracted_at": "2026-05-05T23:37:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 16,
+    "unit_value": 17,
     "percentage": 15,
     "sample_size": 2,
     "p_value": 9,
@@ -115,9 +115,9 @@
       "context_window": "uated the effect of protein-enriched milk on 36 people aged 70 years or older with reduced physical strength or activity capacit",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-3310",
@@ -133,8 +133,26 @@
       "context_window": "otein and carbohydrate drinks were consumed twice daily for 12 weeks, and both the supplement intake group and the control group",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-3543",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 3543,
+      "sentence": "A nutritional recommendation for the elderly is to increase their daily protein intake (1-1.2 g/kg/day) with large amounts of essential amino acids such as leucine [ 9 ].",
+      "context_window": "or the elderly is to increase their daily protein intake (1-1.2 g/kg/day) with large amounts of essential amino acids such as leucin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
       "binding_confidence": "partial"
     },
     {
@@ -241,7 +259,7 @@
       "context_window": "ticipants were randomly assigned to an experimental group ( n = 184) who received a vitamin D and leucine-enriched whey protein",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -259,7 +277,7 @@
       "context_window": "y protein nutritional supplementation and a control group ( n = 196) who received an isocaloric product. Per serving, the exper",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -367,9 +385,9 @@
       "context_window": "or isocaloric product, with interventions lasting at least 4 weeks and up to 8 weeks. The nutritional supplementation provided",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-4423",
@@ -385,9 +403,9 @@
       "context_window": "duct, with interventions lasting at least 4 weeks and up to 8 weeks. The nutritional supplementation provided to the experiment",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-5235",
@@ -566,7 +584,7 @@
       "context_window": "between the experimental and the control groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%]. However, when a ph",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -584,7 +602,7 @@
       "context_window": "l and the control groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%]. However, when a physical exercise program was",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -602,7 +620,7 @@
       "context_window": "l groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%]. However, when a physical exercise program was used in com",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -764,7 +782,7 @@
       "context_window": "ly nutritional supplementation was administered [SMD, 0.06; 95% CI, -0.14, 0.26; p = 0.54; I 2 = N/A] ( Figure 4 B). The f",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -782,7 +800,7 @@
       "context_window": "mentation was administered [SMD, 0.06; 95% CI, -0.14, 0.26; p = 0.54; I 2 = N/A] ( Figure 4 B). The funnel plots for appendicul",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     }

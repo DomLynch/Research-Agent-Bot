@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6583678_thirteen_weeks_of_supplementation_of_vitamin_d_and_leucine_e",
   "doi": "10.1007/s40520-019-01208-4",
-  "extracted_at": "2026-05-05T22:35:30+00:00",
+  "extracted_at": "2026-05-05T23:37:11+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 43,
@@ -25,9 +25,9 @@
       "context_window": "supplementation on CLIP is limited. To investigate whether 13 weeks of nutritional supplementation of VitD and leucine-enriched",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6583678_thirteen_weeks_of_supplementation_of_vitamin_d_and_leucine_e-u-473",
@@ -43,7 +43,7 @@
       "context_window": "lysis. Sarcopenic adults (low skeletal muscle mass) aged \u2265 65 years with mobility limitations (Short Physical Performance Batte",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "ysical Performance Battery 4-9) and a body mass index of 20-30 kg/m 2 were randomly allocated to two daily servings of active",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "2 were randomly allocated to two daily servings of active ( n = 137, including 20 g of whey protein, 3 g of leucine and 800 IU",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -97,7 +97,7 @@
       "context_window": "of leucine and 800 IU VitD) or isocaloric control product ( n = 151) for a double-blind period of 13 weeks. At baseline and aft",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -115,7 +115,7 @@
       "context_window": "ric control product ( n = 151) for a double-blind period of 13 weeks. At baseline and after 13 weeks, circulating interleukin (I",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -133,7 +133,7 @@
       "context_window": "or a double-blind period of 13 weeks. At baseline and after 13 weeks, circulating interleukin (IL)-8, IL-1 receptor antagonist (",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -295,7 +295,7 @@
       "context_window": "ictor for changes in IL-6 after 13 weeks. We conclude that 13 weeks of nutritional supplementation with VitD and leucine-enrich",
       "claim_role": "protocol",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -313,9 +313,9 @@
       "context_window": "ow contradicting results [ 18 - 20 ]. In the PROVIDE study, 13 weeks of VitD and leucine-enriched whey protein supplementation i",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6583678_thirteen_weeks_of_supplementation_of_vitamin_d_and_leucine_e-u-1920",
@@ -331,7 +331,7 @@
       "context_window": "protein intake obtained greater gains in muscle mass after 13 weeks intervention [ 22 ]. In the present sub-study, we investiga",
       "claim_role": "background",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -493,9 +493,9 @@
       "context_window": "product or the control product for a double-blind period of 13 weeks, as two 40-g sachets to be dissolved in 125 ml of water and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6583678_thirteen_weeks_of_supplementation_of_vitamin_d_and_leucine_e-u-2692",
@@ -747,9 +747,9 @@
       "context_window": "f these components (average of intake measured at baseline, 7 weeks and 13 weeks) were entered in the models as covariates. We",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6583678_thirteen_weeks_of_supplementation_of_vitamin_d_and_leucine_e-u-6139",
@@ -765,9 +765,9 @@
       "context_window": "onents (average of intake measured at baseline, 7 weeks and 13 weeks) were entered in the models as covariates. We also verified",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6583678_thirteen_weeks_of_supplementation_of_vitamin_d_and_leucine_e-u-6536",
@@ -838,7 +838,7 @@
       "context_window": "ean \u00b1 SD n Mean \u00b1 SD n Mean \u00b1 SD n Mean \u00b1 SD Age (years) 62 77.87 \u00b1 6.60 115 77.17 \u00b1 6.66 0.50 66 78.02 \u00b1 7.45 122 78.00 \u00b1 6.70 0.99",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -857,7 +857,7 @@
       "context_window": "SD n Mean \u00b1 SD n Mean \u00b1 SD Age (years) 62 77.87 \u00b1 6.60 115 77.17 \u00b1 6.66 0.50 66 78.02 \u00b1 7.45 122 78.00 \u00b1 6.70 0.99 0.40 MMSE (score",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -876,7 +876,7 @@
       "context_window": "n \u00b1 SD Age (years) 62 77.87 \u00b1 6.60 115 77.17 \u00b1 6.66 0.50 66 78.02 \u00b1 7.45 122 78.00 \u00b1 6.70 0.99 0.40 MMSE (score 0-30) 62 27.94 \u00b1 2.3",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -895,7 +895,7 @@
       "context_window": ") 62 77.87 \u00b1 6.60 115 77.17 \u00b1 6.66 0.50 66 78.02 \u00b1 7.45 122 78.00 \u00b1 6.70 0.99 0.40 MMSE (score 0-30) 62 27.94 \u00b1 2.34 113 28.58 \u00b1 1.4",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -914,7 +914,7 @@
       "context_window": "8.02 \u00b1 7.45 122 78.00 \u00b1 6.70 0.99 0.40 MMSE (score 0-30) 62 27.94 \u00b1 2.34 113 28.58 \u00b1 1.43 0.03 66 27.94 \u00b1 3.18 121 28.63 \u00b1 1.41 0.04",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -933,7 +933,7 @@
       "context_window": "8.00 \u00b1 6.70 0.99 0.40 MMSE (score 0-30) 62 27.94 \u00b1 2.34 113 28.58 \u00b1 1.43 0.03 66 27.94 \u00b1 3.18 121 28.63 \u00b1 1.41 0.04 0.86 BMI (kg/m 2",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -952,7 +952,7 @@
       "context_window": "MMSE (score 0-30) 62 27.94 \u00b1 2.34 113 28.58 \u00b1 1.43 0.03 66 27.94 \u00b1 3.18 121 28.63 \u00b1 1.41 0.04 0.86 BMI (kg/m 2 ) 62 26.27 \u00b1 2.29 11",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -971,7 +971,7 @@
       "context_window": ") 62 27.94 \u00b1 2.34 113 28.58 \u00b1 1.43 0.03 66 27.94 \u00b1 3.18 121 28.63 \u00b1 1.41 0.04 0.86 BMI (kg/m 2 ) 62 26.27 \u00b1 2.29 115 25.85 \u00b1 2.69 0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -990,7 +990,7 @@
       "context_window": "66 27.94 \u00b1 3.18 121 28.63 \u00b1 1.41 0.04 0.86 BMI (kg/m 2 ) 62 26.27 \u00b1 2.29 115 25.85 \u00b1 2.69 0.30 66 26.73 \u00b1 2.72 122 25.95 \u00b1 2.79 0.07",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1009,7 +1009,7 @@
       "context_window": "21 28.63 \u00b1 1.41 0.04 0.86 BMI (kg/m 2 ) 62 26.27 \u00b1 2.29 115 25.85 \u00b1 2.69 0.30 66 26.73 \u00b1 2.72 122 25.95 \u00b1 2.79 0.07 0.42 Handgrip st",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1028,7 +1028,7 @@
       "context_window": "0.86 BMI (kg/m 2 ) 62 26.27 \u00b1 2.29 115 25.85 \u00b1 2.69 0.30 66 26.73 \u00b1 2.72 122 25.95 \u00b1 2.79 0.07 0.42 Handgrip strength (kg) 62 25.81",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1047,7 +1047,7 @@
       "context_window": ") 62 26.27 \u00b1 2.29 115 25.85 \u00b1 2.69 0.30 66 26.73 \u00b1 2.72 122 25.95 \u00b1 2.79 0.07 0.42 Handgrip strength (kg) 62 25.81 \u00b1 7.40 114 16.53",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1066,7 +1066,7 @@
       "context_window": "\u00b1 2.72 122 25.95 \u00b1 2.79 0.07 0.42 Handgrip strength (kg) 62 25.81 \u00b1 7.40 114 16.53 \u00b1 5.70 < 0.01 66 26.17 \u00b1 7.18 121 16.54 \u00b1 5.29 <",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1085,7 +1085,7 @@
       "context_window": "\u00b1 2.79 0.07 0.42 Handgrip strength (kg) 62 25.81 \u00b1 7.40 114 16.53 \u00b1 5.70 < 0.01 66 26.17 \u00b1 7.18 121 16.54 \u00b1 5.29 < 0.01 0.87 SPPB to",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1104,7 +1104,7 @@
       "context_window": "ip strength (kg) 62 25.81 \u00b1 7.40 114 16.53 \u00b1 5.70 < 0.01 66 26.17 \u00b1 7.18 121 16.54 \u00b1 5.29 < 0.01 0.87 SPPB total score (0-9) 62 7.77",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1123,7 +1123,7 @@
       "context_window": "62 25.81 \u00b1 7.40 114 16.53 \u00b1 5.70 < 0.01 66 26.17 \u00b1 7.18 121 16.54 \u00b1 5.29 < 0.01 0.87 SPPB total score (0-9) 62 7.77 \u00b1 1.94 115 7.33",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1142,7 +1142,7 @@
       "context_window": "7.18 121 16.54 \u00b1 5.29 < 0.01 0.87 SPPB total score (0-9) 62 7.77 \u00b1 1.94 115 7.33 \u00b1 1.90 0.14 66 7.61 \u00b1 1.92 122 7.44 \u00b1 1.90 0.58 0.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1161,7 +1161,7 @@
       "context_window": "5.29 < 0.01 0.87 SPPB total score (0-9) 62 7.77 \u00b1 1.94 115 7.33 \u00b1 1.90 0.14 66 7.61 \u00b1 1.92 122 7.44 \u00b1 1.90 0.58 0.94 PASE (score 0",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1180,7 +1180,7 @@
       "context_window": "PB total score (0-9) 62 7.77 \u00b1 1.94 115 7.33 \u00b1 1.90 0.14 66 7.61 \u00b1 1.92 122 7.44 \u00b1 1.90 0.58 0.94 PASE (score 0-793) 62 93.74 \u00b1 64.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1199,7 +1199,7 @@
       "context_window": "0-9) 62 7.77 \u00b1 1.94 115 7.33 \u00b1 1.90 0.14 66 7.61 \u00b1 1.92 122 7.44 \u00b1 1.90 0.58 0.94 PASE (score 0-793) 62 93.74 \u00b1 64.59 113 107.70 \u00b1",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1218,7 +1218,7 @@
       "context_window": "7.61 \u00b1 1.92 122 7.44 \u00b1 1.90 0.58 0.94 PASE (score 0-793) 62 93.74 \u00b1 64.59 113 107.70 \u00b1 75.06 0.22 66 113.74 \u00b1 94.24 118 92.56 \u00b1 58.07",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1237,7 +1237,7 @@
       "context_window": "44 \u00b1 1.90 0.58 0.94 PASE (score 0-793) 62 93.74 \u00b1 64.59 113 107.70 \u00b1 75.06 0.22 66 113.74 \u00b1 94.24 118 92.56 \u00b1 58.07 0.06 0.73 Fat mass",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1256,7 +1256,7 @@
       "context_window": "E (score 0-793) 62 93.74 \u00b1 64.59 113 107.70 \u00b1 75.06 0.22 66 113.74 \u00b1 94.24 118 92.56 \u00b1 58.07 0.06 0.73 Fat mass (%) 50 30.99 \u00b1 5.31 98",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1275,7 +1275,7 @@
       "context_window": "93.74 \u00b1 64.59 113 107.70 \u00b1 75.06 0.22 66 113.74 \u00b1 94.24 118 92.56 \u00b1 58.07 0.06 0.73 Fat mass (%) 50 30.99 \u00b1 5.31 98 39.53 \u00b1 5.03 < 0.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1294,7 +1294,7 @@
       "context_window": "113.74 \u00b1 94.24 118 92.56 \u00b1 58.07 0.06 0.73 Fat mass (%) 50 30.99 \u00b1 5.31 98 39.53 \u00b1 5.03 < 0.01 53 31.34 \u00b1 4.43 111 39.45 \u00b1 4.92 < 0",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1313,7 +1313,7 @@
       "context_window": "118 92.56 \u00b1 58.07 0.06 0.73 Fat mass (%) 50 30.99 \u00b1 5.31 98 39.53 \u00b1 5.03 < 0.01 53 31.34 \u00b1 4.43 111 39.45 \u00b1 4.92 < 0.01 0.76 ALM (kg",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1332,7 +1332,7 @@
       "context_window": "0.73 Fat mass (%) 50 30.99 \u00b1 5.31 98 39.53 \u00b1 5.03 < 0.01 53 31.34 \u00b1 4.43 111 39.45 \u00b1 4.92 < 0.01 0.76 ALM (kg) 58 21.99 \u00b1 3.16 105 1",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1351,7 +1351,7 @@
       "context_window": "50 30.99 \u00b1 5.31 98 39.53 \u00b1 5.03 < 0.01 53 31.34 \u00b1 4.43 111 39.45 \u00b1 4.92 < 0.01 0.76 ALM (kg) 58 21.99 \u00b1 3.16 105 15.72 \u00b1 2.70 < 0.0",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1370,7 +1370,7 @@
       "context_window": "01 53 31.34 \u00b1 4.43 111 39.45 \u00b1 4.92 < 0.01 0.76 ALM (kg) 58 21.99 \u00b1 3.16 105 15.72 \u00b1 2.70 < 0.01 58 21.44 \u00b1 2.89 115 15.51 \u00b1 2.30 <",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1389,7 +1389,7 @@
       "context_window": "3 111 39.45 \u00b1 4.92 < 0.01 0.76 ALM (kg) 58 21.99 \u00b1 3.16 105 15.72 \u00b1 2.70 < 0.01 58 21.44 \u00b1 2.89 115 15.51 \u00b1 2.30 < 0.01 0.29 NSAID u",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1408,7 +1408,7 @@
       "context_window": "01 0.76 ALM (kg) 58 21.99 \u00b1 3.16 105 15.72 \u00b1 2.70 < 0.01 58 21.44 \u00b1 2.89 115 15.51 \u00b1 2.30 < 0.01 0.29 NSAID use ( n ) 6 4 0.10 \u25ca 2 4",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1427,7 +1427,7 @@
       "context_window": "58 21.99 \u00b1 3.16 105 15.72 \u00b1 2.70 < 0.01 58 21.44 \u00b1 2.89 115 15.51 \u00b1 2.30 < 0.01 0.29 NSAID use ( n ) 6 4 0.10 \u25ca 2 4 1.00 \u25ca 0.31 \u25ca 25",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1446,7 +1446,7 @@
       "context_window": "use ( n ) 6 4 0.10 \u25ca 2 4 1.00 \u25ca 0.31 \u25ca 25(OH)D (nmol/l) 62 53.22 \u00b1 24.22 115 49.83 \u00b1 22.27 0.35 63 51.76 \u00b1 19.02 122 50.81 \u00b1 22.96 0",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1465,7 +1465,7 @@
       "context_window": "0 \u25ca 2 4 1.00 \u25ca 0.31 \u25ca 25(OH)D (nmol/l) 62 53.22 \u00b1 24.22 115 49.83 \u00b1 22.27 0.35 63 51.76 \u00b1 19.02 122 50.81 \u00b1 22.96 0.78 0.96 Dietary V",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1484,7 +1484,7 @@
       "context_window": "25(OH)D (nmol/l) 62 53.22 \u00b1 24.22 115 49.83 \u00b1 22.27 0.35 63 51.76 \u00b1 19.02 122 50.81 \u00b1 22.96 0.78 0.96 Dietary VitD intake (\u00b5g/day) 52",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1503,7 +1503,7 @@
       "context_window": "2 53.22 \u00b1 24.22 115 49.83 \u00b1 22.27 0.35 63 51.76 \u00b1 19.02 122 50.81 \u00b1 22.96 0.78 0.96 Dietary VitD intake (\u00b5g/day) 52 3.38 \u00b1 3.14 103 2",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1522,7 +1522,7 @@
       "context_window": "122 50.81 \u00b1 22.96 0.78 0.96 Dietary VitD intake (\u00b5g/day) 52 3.38 \u00b1 3.14 103 2.93 \u00b1 2.85 0.37 52 2.89 \u00b1 5.56 110 3.79 \u00b1 4.21 0.26 0.",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1541,7 +1541,7 @@
       "context_window": "6 0.78 0.96 Dietary VitD intake (\u00b5g/day) 52 3.38 \u00b1 3.14 103 2.93 \u00b1 2.85 0.37 52 2.89 \u00b1 5.56 110 3.79 \u00b1 4.21 0.26 0.35 Dietary prote",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1560,7 +1560,7 @@
       "context_window": "VitD intake (\u00b5g/day) 52 3.38 \u00b1 3.14 103 2.93 \u00b1 2.85 0.37 52 2.89 \u00b1 5.56 110 3.79 \u00b1 4.21 0.26 0.35 Dietary protein intake (g/kg body",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1579,7 +1579,7 @@
       "context_window": "day) 52 3.38 \u00b1 3.14 103 2.93 \u00b1 2.85 0.37 52 2.89 \u00b1 5.56 110 3.79 \u00b1 4.21 0.26 0.35 Dietary protein intake (g/kg body weight/day) 62",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1598,7 +1598,7 @@
       "context_window": "0.26 0.35 Dietary protein intake (g/kg body weight/day) 62 1.00 \u00b1 0.28 108 1.06 \u00b1 0.31 0.17 65 0.96 \u00b1 0.23 116 1.03 \u00b1 0.31 0.12 0.",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1617,7 +1617,7 @@
       "context_window": "ry protein intake (g/kg body weight/day) 62 1.00 \u00b1 0.28 108 1.06 \u00b1 0.31 0.17 65 0.96 \u00b1 0.23 116 1.03 \u00b1 0.31 0.12 0.26 Pre-albumin (",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1636,7 +1636,7 @@
       "context_window": "/kg body weight/day) 62 1.00 \u00b1 0.28 108 1.06 \u00b1 0.31 0.17 65 0.96 \u00b1 0.23 116 1.03 \u00b1 0.31 0.12 0.26 Pre-albumin (g/l) 62 0.27 \u00b1 0.07",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1655,7 +1655,7 @@
       "context_window": "day) 62 1.00 \u00b1 0.28 108 1.06 \u00b1 0.31 0.17 65 0.96 \u00b1 0.23 116 1.03 \u00b1 0.31 0.12 0.26 Pre-albumin (g/l) 62 0.27 \u00b1 0.07 115 0.25 \u00b1 0.04",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1674,7 +1674,7 @@
       "context_window": "0.96 \u00b1 0.23 116 1.03 \u00b1 0.31 0.12 0.26 Pre-albumin (g/l) 62 0.27 \u00b1 0.07 115 0.25 \u00b1 0.04 0.19 63 0.27 \u00b1 0.048 122 0.26 \u00b1 0.06 0.14 0",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1693,7 +1693,7 @@
       "context_window": "1.03 \u00b1 0.31 0.12 0.26 Pre-albumin (g/l) 62 0.27 \u00b1 0.07 115 0.25 \u00b1 0.04 0.19 63 0.27 \u00b1 0.048 122 0.26 \u00b1 0.06 0.14 0.53 Log_sTNFR1 (",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1712,7 +1712,7 @@
       "context_window": "26 Pre-albumin (g/l) 62 0.27 \u00b1 0.07 115 0.25 \u00b1 0.04 0.19 63 0.27 \u00b1 0.048 122 0.26 \u00b1 0.06 0.14 0.53 Log_sTNFR1 (ng/ml) 62 0.43 \u00b1 0.13",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1731,7 +1731,7 @@
       "context_window": "/l) 62 0.27 \u00b1 0.07 115 0.25 \u00b1 0.04 0.19 63 0.27 \u00b1 0.048 122 0.26 \u00b1 0.06 0.14 0.53 Log_sTNFR1 (ng/ml) 62 0.43 \u00b1 0.13 115 0.44 \u00b1 0.13",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1750,7 +1750,7 @@
       "context_window": ".27 \u00b1 0.048 122 0.26 \u00b1 0.06 0.14 0.53 Log_sTNFR1 (ng/ml) 62 0.43 \u00b1 0.13 115 0.44 \u00b1 0.13 0.44 66 0.48 \u00b1 0.15 122 0.45 \u00b1 0.15 0.16 0.",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1769,7 +1769,7 @@
       "context_window": "0.26 \u00b1 0.06 0.14 0.53 Log_sTNFR1 (ng/ml) 62 0.43 \u00b1 0.13 115 0.44 \u00b1 0.13 0.44 66 0.48 \u00b1 0.15 122 0.45 \u00b1 0.15 0.16 0.08 Log_IL8 (pg/m",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1788,7 +1788,7 @@
       "context_window": "3 Log_sTNFR1 (ng/ml) 62 0.43 \u00b1 0.13 115 0.44 \u00b1 0.13 0.44 66 0.48 \u00b1 0.15 122 0.45 \u00b1 0.15 0.16 0.08 Log_IL8 (pg/ml) 62 0.61 \u00b1 0.26 11",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1807,7 +1807,7 @@
       "context_window": "/ml) 62 0.43 \u00b1 0.13 115 0.44 \u00b1 0.13 0.44 66 0.48 \u00b1 0.15 122 0.45 \u00b1 0.15 0.16 0.08 Log_IL8 (pg/ml) 62 0.61 \u00b1 0.26 115 0.56 \u00b1 0.28 0.",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1826,7 +1826,7 @@
       "context_window": "66 0.48 \u00b1 0.15 122 0.45 \u00b1 0.15 0.16 0.08 Log_IL8 (pg/ml) 62 0.61 \u00b1 0.26 115 0.56 \u00b1 0.28 0.32 66 0.64 \u00b1 0.30 122 0.61 \u00b1 0.27 0.52 0.",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1845,7 +1845,7 @@
       "context_window": "22 0.45 \u00b1 0.15 0.16 0.08 Log_IL8 (pg/ml) 62 0.61 \u00b1 0.26 115 0.56 \u00b1 0.28 0.32 66 0.64 \u00b1 0.30 122 0.61 \u00b1 0.27 0.52 0.15 Log_IL1RA (pg",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1864,7 +1864,7 @@
       "context_window": "0.08 Log_IL8 (pg/ml) 62 0.61 \u00b1 0.26 115 0.56 \u00b1 0.28 0.32 66 0.64 \u00b1 0.30 122 0.61 \u00b1 0.27 0.52 0.15 Log_IL1RA (pg/ml) 62 1.88 \u00b1 0.48",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1883,7 +1883,7 @@
       "context_window": "/ml) 62 0.61 \u00b1 0.26 115 0.56 \u00b1 0.28 0.32 66 0.64 \u00b1 0.30 122 0.61 \u00b1 0.27 0.52 0.15 Log_IL1RA (pg/ml) 62 1.88 \u00b1 0.48 115 1.98 \u00b1 0.37",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1902,7 +1902,7 @@
       "context_window": "0.64 \u00b1 0.30 122 0.61 \u00b1 0.27 0.52 0.15 Log_IL1RA (pg/ml) 62 1.88 \u00b1 0.48 115 1.98 \u00b1 0.37 0.12 66 1.95 \u00b1 0.39 122 1.95 \u00b1 0.45 0.96 0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1921,7 +1921,7 @@
       "context_window": "0.61 \u00b1 0.27 0.52 0.15 Log_IL1RA (pg/ml) 62 1.88 \u00b1 0.48 115 1.98 \u00b1 0.37 0.12 66 1.95 \u00b1 0.39 122 1.95 \u00b1 0.45 0.96 0.97 Log_IL-6 (pg/",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1940,7 +1940,7 @@
       "context_window": "15 Log_IL1RA (pg/ml) 62 1.88 \u00b1 0.48 115 1.98 \u00b1 0.37 0.12 66 1.95 \u00b1 0.39 122 1.95 \u00b1 0.45 0.96 0.97 Log_IL-6 (pg/ml) 62 0.29 \u00b1 0.37 1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1959,7 +1959,7 @@
       "context_window": "/ml) 62 1.88 \u00b1 0.48 115 1.98 \u00b1 0.37 0.12 66 1.95 \u00b1 0.39 122 1.95 \u00b1 0.45 0.96 0.97 Log_IL-6 (pg/ml) 62 0.29 \u00b1 0.37 115 0.26 \u00b1 0.46 0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1978,7 +1978,7 @@
       "context_window": "6 1.95 \u00b1 0.39 122 1.95 \u00b1 0.45 0.96 0.97 Log_IL-6 (pg/ml) 62 0.29 \u00b1 0.37 115 0.26 \u00b1 0.46 0.65 66 0.29 \u00b1 0.48 122 0.28 \u00b1 0.44 0.75 0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1997,7 +1997,7 @@
       "context_window": "2 1.95 \u00b1 0.45 0.96 0.97 Log_IL-6 (pg/ml) 62 0.29 \u00b1 0.37 115 0.26 \u00b1 0.46 0.65 66 0.29 \u00b1 0.48 122 0.28 \u00b1 0.44 0.75 0.85 Log_CRP (mg/l",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2016,7 +2016,7 @@
       "context_window": ".97 Log_IL-6 (pg/ml) 62 0.29 \u00b1 0.37 115 0.26 \u00b1 0.46 0.65 66 0.29 \u00b1 0.48 122 0.28 \u00b1 0.44 0.75 0.85 Log_CRP (mg/l) 62 0.40 \u00b1 0.53 115",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2035,7 +2035,7 @@
       "context_window": "/ml) 62 0.29 \u00b1 0.37 115 0.26 \u00b1 0.46 0.65 66 0.29 \u00b1 0.48 122 0.28 \u00b1 0.44 0.75 0.85 Log_CRP (mg/l) 62 0.40 \u00b1 0.53 115 0.26 \u00b1 0.43 0.0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2054,7 +2054,7 @@
       "context_window": "66 0.29 \u00b1 0.48 122 0.28 \u00b1 0.44 0.75 0.85 Log_CRP (mg/l) 62 0.40 \u00b1 0.53 115 0.26 \u00b1 0.43 0.05 63 0.25 \u00b1 0.50 122 0.31 \u00b1 0.46 0.41 0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2073,7 +2073,7 @@
       "context_window": "122 0.28 \u00b1 0.44 0.75 0.85 Log_CRP (mg/l) 62 0.40 \u00b1 0.53 115 0.26 \u00b1 0.43 0.05 63 0.25 \u00b1 0.50 122 0.31 \u00b1 0.46 0.41 0.68 BMI body mass",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2092,7 +2092,7 @@
       "context_window": "0.85 Log_CRP (mg/l) 62 0.40 \u00b1 0.53 115 0.26 \u00b1 0.43 0.05 63 0.25 \u00b1 0.50 122 0.31 \u00b1 0.46 0.41 0.68 BMI body mass index (weight/heigh",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2111,7 +2111,7 @@
       "context_window": "g/l) 62 0.40 \u00b1 0.53 115 0.26 \u00b1 0.43 0.05 63 0.25 \u00b1 0.50 122 0.31 \u00b1 0.46 0.41 0.68 BMI body mass index (weight/height 2 ), SPPB Shor",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2129,7 +2129,7 @@
       "context_window": "- 0.14** 0.18** - 0.13* Pearson correlation coefficients ** p < 0.01, * p < 0.05 Associations between baseline inflammatory par",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2147,7 +2147,7 @@
       "context_window": "8** - 0.13* Pearson correlation coefficients ** p < 0.01, * p < 0.05 Associations between baseline inflammatory parameters, and",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2165,7 +2165,7 @@
       "context_window": "l status, and fat mass Pearson correlation coefficients ** p < 0.01, * p < 0.05 IL-6 and IL-1Ra showed an overall significant",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2183,7 +2183,7 @@
       "context_window": "d fat mass Pearson correlation coefficients ** p < 0.01, * p < 0.05 IL-6 and IL-1Ra showed an overall significant increase aft",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2201,7 +2201,7 @@
       "context_window": "L-6 and IL-1Ra showed an overall significant increase after 13 weeks ( p = 0.006 and p < 0.001, respectively; Fig. 2 ). For IL-6",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2219,7 +2219,7 @@
       "context_window": "1Ra showed an overall significant increase after 13 weeks ( p = 0.006 and p < 0.001, respectively; Fig. 2 ). For IL-6 a significa",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2237,7 +2237,7 @@
       "context_window": "overall significant increase after 13 weeks ( p = 0.006 and p < 0.001, respectively; Fig. 2 ). For IL-6 a significant time \u00d7 trea",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2601,7 +2601,7 @@
       "context_window": "up, p = 0.956). When including only participants with CRP \u2264 10 mg/l throughout the entire study ( n = 227; active n = 103 and",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2619,7 +2619,7 @@
       "context_window": "rticipants with CRP \u2264 10 mg/l throughout the entire study ( n = 227; active n = 103 and control n = 124; subjects with missing",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2637,7 +2637,7 @@
       "context_window": "CRP \u2264 10 mg/l throughout the entire study ( n = 227; active n = 103 and control n = 124; subjects with missing data for CRP wer",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2655,7 +2655,7 @@
       "context_window": "hout the entire study ( n = 227; active n = 103 and control n = 124; subjects with missing data for CRP were also excluded), co",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2691,7 +2691,7 @@
       "context_window": "on analysis for changes in IL-6 after 13-weeks R \u00b2 = 0.049, p = 0.015 B coefficients p value 95.0% Confidence interval for B Lowe",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2709,7 +2709,7 @@
       "context_window": "fter 13-weeks R \u00b2 = 0.049, p = 0.015 B coefficients p value 95.0% Confidence interval for B Lower bound Upper bound Change in",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2727,7 +2727,7 @@
       "context_window": "was significantly associated with changes in Log_IL-6 after 13 weeks; in fact, higher increase in circulating pre-albumin was as",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2745,7 +2745,7 @@
       "context_window": "ed with lower changes in Log_IL6 ( B coefficient = - 1.685, p = 0.002), independently from the other factors entered in the model",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3087,7 +3087,7 @@
       "context_window": "Based on the results of our study, we conclude that 13 weeks of nutritional supplementation with VitD and leucine-enrich",
       "claim_role": "protocol",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

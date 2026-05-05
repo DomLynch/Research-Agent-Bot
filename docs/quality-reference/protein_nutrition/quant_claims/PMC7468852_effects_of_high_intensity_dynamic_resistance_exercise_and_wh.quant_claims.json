@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh",
   "doi": "10.3390/nu12082341",
-  "extracted_at": "2026-05-05T22:35:31+00:00",
+  "extracted_at": "2026-05-05T23:37:15+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 44,
+    "unit_value": 51,
     "sample_size": 9,
     "p_value": 24,
     "percentage": 37,
@@ -331,9 +331,9 @@
       "context_window": "y arm. Correspondingly, 43 men were allocated to a HIT-RT ( n = 21) or control (CG, n = 22) group. Figure 1 shows the particip",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-n-2595",
@@ -349,9 +349,9 @@
       "context_window": "43 men were allocated to a HIT-RT ( n = 21) or control (CG, n = 22) group. Figure 1 shows the participant flow through the stu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-2754",
@@ -421,9 +421,9 @@
       "context_window": "by all participants at baseline, and then after 28, 54, and 78 weeks. The protein product had a chemical score of 159; 100 g pro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5193",
@@ -439,9 +439,9 @@
       "context_window": "g of the product contained 9 g of L-Leucine. Of importance, 1200 mg of calcium were contained in 100 g of the protein product.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5335",
@@ -457,7 +457,7 @@
       "context_window": "participants mix the protein powder with low fat milk (10 g/150 mL) and to split doses of more than 40 g ( n = 3). A specific",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -475,7 +475,7 @@
       "context_window": "t milk (10 g/150 mL) and to split doses of more than 40 g ( n = 3). A specific time of the day to consume the protein was not",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -583,9 +583,9 @@
       "context_window": "tzerland) conducted at baseline, and then after 28, 54, and 78 weeks were used to determine the calcium intake of the participan",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-6286",
@@ -912,6 +912,42 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-20023",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 20023,
+      "sentence": "To adequately realize and monitor our intended protein intake of 1.5-1.6 g/kg/d in the HIT-RT and 1.2 g/kg/d body mass in the CG, all the participants took four-day diet records at baseline and also after 28, 54, and 78 weeks.",
+      "context_window": "tely realize and monitor our intended protein intake of 1.5-1.6 g/kg/d in the HIT-RT and 1.2 g/kg/d body mass in the CG, all the p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-20052",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 20052,
+      "sentence": "To adequately realize and monitor our intended protein intake of 1.5-1.6 g/kg/d in the HIT-RT and 1.2 g/kg/d body mass in the CG, all the participants took four-day diet records at baseline and also after 28, 54, and 78 weeks.",
+      "context_window": "intended protein intake of 1.5-1.6 g/kg/d in the HIT-RT and 1.2 g/kg/d body mass in the CG, all the participants took four-day die",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-20171",
       "claim_type": "unit_value",
       "raw_text": "78 weeks",
@@ -925,9 +961,9 @@
       "context_window": "our-day diet records at baseline and also after 28, 54, and 78 weeks. We provided all participants with standardized diet record",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-msd-21479",
@@ -1763,6 +1799,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5342",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 g/kg/d",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 5342,
+      "sentence": "However, changes within the HIT-RT or CG were non-significant ( p > 0.601; 0.05-0.11 g/kg/d) on average.",
+      "context_window": "hin the HIT-RT or CG were non-significant ( p > 0.601; 0.05-0.11 g/kg/d) on average. Due to the rather high dietary protein intake",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-pct-5441",
       "claim_type": "percentage",
       "raw_text": "30%",
@@ -1776,9 +1830,9 @@
       "context_window": "her high dietary protein intake of the CG ( Table 1 ), only 30% of the corresponding participants were supplemented with wh",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-pct-5530",
@@ -1794,9 +1848,9 @@
       "context_window": "icipants were supplemented with whey protein powder (versus 95% in the HIT-RT). With respect to total protein intake as det",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-msd-5746",
@@ -1813,9 +1867,9 @@
       "context_window": "fied by personal interviews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-msd-5762",
@@ -1832,9 +1886,27 @@
       "context_window": "interviews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5769",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 g/kg/d",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 5769,
+      "sentence": "With respect to total protein intake as determined by the dietary protocol at 28, 54, 78-week FU and our records and dietary logs (\u2026verified by personal interviews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT.",
+      "context_window": "iews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-msd-5795",
@@ -1851,9 +1923,9 @@
       "context_window": "ed between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT. Average diff",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-msd-5810",
@@ -1870,9 +1942,27 @@
       "context_window": "\u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT. Average difference in total",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5817",
+      "claim_type": "unit_value",
+      "raw_text": "0.16 g/kg/d",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 5817,
+      "sentence": "With respect to total protein intake as determined by the dietary protocol at 28, 54, 78-week FU and our records and dietary logs (\u2026verified by personal interviews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT.",
+      "context_window": "and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT. Average difference in total whey p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5928",
@@ -1888,9 +1978,27 @@
       "context_window": "ence in total whey protein consumption varied between 0.34 (12 months) and 0.39 g/kg/d (6 months) between CG and HIT-RT. Choleca",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5943",
+      "claim_type": "unit_value",
+      "raw_text": "0.39 g/kg/d",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 5943,
+      "sentence": "Average difference in total whey protein consumption varied between 0.34 (12 months) and 0.39 g/kg/d (6 months) between CG and HIT-RT.",
+      "context_window": "hey protein consumption varied between 0.34 (12 months) and 0.39 g/kg/d (6 months) between CG and HIT-RT. Cholecalciferol suppleme",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "whey protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-5956",
@@ -1906,9 +2014,9 @@
       "context_window": "onsumption varied between 0.34 (12 months) and 0.39 g/kg/d (6 months) between CG and HIT-RT. Cholecalciferol supplementation wa",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-msd-6374",
@@ -2108,7 +2216,7 @@
       "context_window": "we found a very pronounced hypertrophic effect (i.e. about 1.50 kg on soft fat free mass) that considerably exceeded correspon",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2255,6 +2363,24 @@
       "endpoint": "muscle strength",
       "arm": "",
       "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-8538",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 8538,
+      "sentence": "CG: 1.2 g/kg/d body mass) to account for increased muscular repair and adaptation processes.",
+      "context_window": "higher total protein intake in the HIT-RT (1.5-1.6 vs. CG: 1.2 g/kg/d body mass) to account for increased muscular repair and ada",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
       "binding_confidence": "partial"
     },
     {

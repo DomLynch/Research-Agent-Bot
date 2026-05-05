@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_",
   "doi": "10.1093/ageing/afad018",
-  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extracted_at": "2026-05-05T23:36:58+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 5,
+    "unit_value": 10,
     "sample_size": 3,
     "percentage": 15,
     "p_value": 11,
@@ -120,6 +120,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "Using optimal protein intake as the reference group (1.0-1.3 g/kg/day), there was no significant association between protein intake (neither high nor low) and low muscle strength, or between low protein intake and sarcopenia (odds ratio (OR) 0.7; 95% confidence interval (CI) 0.39-1.25; P = 0.229) in unadjusted models.",
+      "context_window": "s. Using optimal protein intake as the reference group (1.0-1.3 g/kg/day), there was no significant association between protein inta",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-pct-956",
       "claim_type": "percentage",
       "raw_text": "95%",
@@ -133,7 +151,7 @@
       "context_window": "een low protein intake and sarcopenia (odds ratio (OR) 0.7; 95% confidence interval (CI) 0.39-1.25; P = 0.229) in unadjuste",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -151,7 +169,25 @@
       "context_window": "dds ratio (OR) 0.7; 95% confidence interval (CI) 0.39-1.25; P = 0.229) in unadjusted models. High protein intake (>1.3 g/kg/day)",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-u-1051",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1051,
+      "sentence": "High protein intake (>1.3 g/kg/day) was associated with low muscle mass (OR 1.76; 95% CI 1.39-2.24; P < 0.0001), while low protein intake was protective (OR 0.52; 95% CI 0.40-0.67; P < 0.0001).",
+      "context_window": ".25; P = 0.229) in unadjusted models. High protein intake (>1.3 g/kg/day) was associated with low muscle mass (OR 1.76; 95% CI 1.39-",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -170,9 +206,9 @@
       "context_window": "1.3 g/kg/day) was associated with low muscle mass (OR 1.76; 95% CI 1.39-2.24; P < 0.0001), while low protein intake was protective (OR 0",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-p-1129",
@@ -188,9 +224,9 @@
       "context_window": "associated with low muscle mass (OR 1.76; 95% CI 1.39-2.24; P < 0.0001), while low protein intake was protective (OR 0.52; 95% CI",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-ci-1192",
@@ -207,9 +243,9 @@
       "context_window": "0.0001), while low protein intake was protective (OR 0.52; 95% CI 0.40-0.67; P < 0.0001). High protein intake was associated with sarco",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-p-1210",
@@ -225,9 +261,9 @@
       "context_window": "w protein intake was protective (OR 0.52; 95% CI 0.40-0.67; P < 0.0001). High protein intake was associated with sarcopenia (OR 2.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-ci-1284",
@@ -244,7 +280,7 @@
       "context_window": "igh protein intake was associated with sarcopenia (OR 2.04; 95% CI 1.21-3.44; P = 0.008), and this was robust to adjustment for demograp",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -262,7 +298,7 @@
       "context_window": "was associated with sarcopenia (OR 2.04; 95% CI 1.21-3.44; P = 0.008), and this was robust to adjustment for demographic, anthro",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -285,6 +321,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-u-1356",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1356,
+      "sentence": "This has led to the European Society for Clinical Nutrition and Metabolism (ESPEN) producing guidance recommending a higher daily intake of protein (1-1.3 g/kg/day) for older adults, in order to overcome this resistance [ 12 , 13 ].",
+      "context_window": "g guidance recommending a higher daily intake of protein (1-1.3 g/kg/day) for older adults, in order to overcome this resistance [ 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-u-2512",
       "claim_type": "unit_value",
       "raw_text": "60 years",
@@ -298,7 +352,7 @@
       "context_window": "gth and sarcopenia in a large cohort of British twins aged \u226560 years; (ii) explore factors associated with low muscle strength a",
       "claim_role": "background",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -442,7 +496,7 @@
       "context_window": "protein intake was protective of low muscle mass (OR 0.52; 95% confidence interval (CI) 0.40-0.67; P < 0.0001), while high",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -460,7 +514,7 @@
       "context_window": "scle mass (OR 0.52; 95% confidence interval (CI) 0.40-0.67; P < 0.0001), while high protein intake was associated with an increase",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -479,7 +533,7 @@
       "context_window": "with an increased odds of having low muscle mass (OR 1.76; 95% CI 1.39-2.24; P < 0.0001). In terms of sarcopenia, no significant associ",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -497,7 +551,7 @@
       "context_window": "odds of having low muscle mass (OR 1.76; 95% CI 1.39-2.24; P < 0.0001). In terms of sarcopenia, no significant association was no",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -516,7 +570,7 @@
       "context_window": ", and this was robust to adjustment in all models (OR 2.04; 95% CI 1.21-3.44; P = 0.008). ORs and 95% CIs for low muscle strength, low",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -534,7 +588,7 @@
       "context_window": "ust to adjustment in all models (OR 2.04; 95% CI 1.21-3.44; P = 0.008). ORs and 95% CIs for low muscle strength, low muscle mass",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -552,7 +606,7 @@
       "context_window": "all models (OR 2.04; 95% CI 1.21-3.44; P = 0.008). ORs and 95% CIs for low muscle strength, low muscle mass and sarcopenia",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -575,6 +629,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-u-232",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 232,
+      "sentence": "High protein intake (>1.3 g/kg/day) was associated with sarcopenia, even after adjustment for a range of relevant potentially confounding variables including biological, socioeconomic and environmental exposures, muscle, and diet-related variables.",
+      "context_window": "er protein intake than those without. High protein intake (>1.3 g/kg/day) was associated with sarcopenia, even after adjustment for",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-u-1956",
       "claim_type": "unit_value",
       "raw_text": "12 years",
@@ -588,9 +660,27 @@
       "context_window": "deterioration in health-related quality of life scores over 12 years [ 17 ]. In terms of muscle strength in particular, data fro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-u-2430",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2430,
+      "sentence": "Similarly, in the Newcastle 85+ Study, dietary patterns high in characteristic British foods, including red meat, and with protein intake >1 g/kg/day were associated with an increased risk of sarcopenia [ 19 ].",
+      "context_window": "British foods, including red meat, and with protein intake >1 g/kg/day were associated with an increased risk of sarcopenia [ 19 ]",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-pct-5050",
@@ -606,9 +696,9 @@
       "context_window": "consumed all their protein from plant sources alone; indeed 98.8% of our participants consumed \u226420% of their protein intake f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-pct-5086",
@@ -624,9 +714,9 @@
       "context_window": "t sources alone; indeed 98.8% of our participants consumed \u226420% of their protein intake from plant sources (see Supplementa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10248216_higher_dietary_protein_intake_is_associated_with_sarcopenia_-p-7021",
@@ -642,7 +732,7 @@
       "context_window": "both HEI, considered a proxy marker of alkalinity of diet ( P < 0.001), and creatinine clearance ( P = 0.034), an indicator of re",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -660,7 +750,7 @@
       "context_window": "alkalinity of diet ( P < 0.001), and creatinine clearance ( P = 0.034), an indicator of renal function, suggesting that diet alka",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },

@@ -1,12 +1,12 @@
 # Researka Multi-Topic Dashboard
 
 **Topics attempted:** 18
-**Topics at L5 (Journal-Ready):** 6
-**Topics with ≥1 AAA run:** 10
+**Topics at L5 (Journal-Ready):** 7
+**Topics with ≥1 AAA run:** 11
 **Topics with consecutive-AAA cert:** 2
-**Total runs across all topics:** 119
-**Cumulative LLM cost:** $3.577
-**Total reviewer interventions logged:** 155 applied (9 via repair loop)
+**Total runs across all topics:** 120
+**Cumulative LLM cost:** $3.902
+**Total reviewer interventions logged:** 149 applied (9 via repair loop)
 
 ## Per-Topic Status
 
@@ -17,8 +17,8 @@
 | creatine | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 14,414 | $0.165 |
 | glp1 | L5 — JOURNAL-READY | AAA | 📰 | 5 | 1 | 13/13 | 0/0 | 100% | 19,809 | $0.254 |
 | intermittent_fasting | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 19,576 | $0.243 |
+| protein_nutrition | L5 — JOURNAL-READY | AAA | 📰 | 2 | 1 | 13/13 | 0/0 | 100% | 57,960 | $0.540 |
 | resistance_training | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 15,993 | $0.211 |
-| protein_nutrition | L3 — FLOOR-MET | SHIP-BLOCKED | — | 1 | 0 | 12/13 | 0/0 | 97% | 17,855 | $0.215 |
 | aerobic_exercise | L2 — PARTIAL | Trust-Spine Pass | — | 1 | 0 | 13/13 | 0/0 | 100% | 10,210 | $0.116 |
 | berberine | L2 — PARTIAL | Trust-Spine Pass | — | 1 | 0 | 13/13 | 0/0 | 100% | 9,892 | $0.146 |
 | nad_precursors | L2 — PARTIAL | Trust-Spine Pass | — | 1 | 0 | 13/13 | 0/0 | 100% | 8,559 | $0.136 |
@@ -113,6 +113,21 @@
 - **Patches applied:** 8 (0 via repair loop)
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 2490 → 777 → 216 / 155 / 406
 
+### protein_nutrition — L5 — JOURNAL-READY
+
+- **Best run:** `synthesis-protein_nutrition-v06-FIXED-2026-05-05T23-37-32Z`
+- **Verdict:** AAA
+- **Journal-Ready:** yes 📰
+- **Cert (consecutive-AAA gate):** pending
+- **Stage-1 audit:** 13/13
+- **Stage-2 consistency:** P1=0 P2=0
+- **Q2 numeric traceability:** 100%
+- **Grok unresolved P1:** 0
+- **Word count:** 57,960
+- **LLM cost:** $0.540
+- **Patches applied:** 8 (0 via repair loop)
+- **Corpus funnel** (retrieved → keep → core / background / adjacent): 2934 → 1773 → 122 / 435 / 1216
+
 ### resistance_training — L5 — JOURNAL-READY
 
 - **Best run:** `synthesis-resistance_training-v06-ACTIVE-2026-05-05T22-34-24Z`
@@ -127,21 +142,6 @@
 - **LLM cost:** $0.211
 - **Patches applied:** 7 (0 via repair loop)
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 3044 → 1635 → 281 / 114 / 1240
-
-### protein_nutrition — L3 — FLOOR-MET
-
-- **Best run:** `synthesis-protein_nutrition-v06-ACTIVE-2026-05-05T22-47-50Z`
-- **Verdict:** SHIP-BLOCKED
-- **Journal-Ready:** no
-- **Cert (consecutive-AAA gate):** pending
-- **Stage-1 audit:** 12/13
-- **Stage-2 consistency:** P1=0 P2=0
-- **Q2 numeric traceability:** 97%
-- **Grok unresolved P1:** 0
-- **Word count:** 17,855
-- **LLM cost:** $0.215
-- **Patches applied:** 14 (0 via repair loop)
-- **Corpus funnel** (retrieved → keep → core / background / adjacent): 2934 → 1773 → 122 / 435 / 1216
 
 ### aerobic_exercise — L2 — PARTIAL
 

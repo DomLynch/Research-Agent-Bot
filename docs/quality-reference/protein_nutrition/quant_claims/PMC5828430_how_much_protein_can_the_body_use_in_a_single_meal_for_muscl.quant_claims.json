@@ -1,13 +1,49 @@
 {
   "paper_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl",
   "doi": "10.1186/s12970-018-0215-1",
-  "extracted_at": "2026-05-05T22:35:30+00:00",
+  "extracted_at": "2026-05-05T23:37:09+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 2,
+    "unit_value": 9,
     "percentage": 3
   },
   "claims": [
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-1771",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1771,
+      "sentence": "Based on the current evidence, we conclude that to maximize anabolism one should consume protein at a target intake of 0.4 g/kg/meal across a minimum of four meals in order to reach a minimum of 1.6 g/kg/day.",
+      "context_window": "ross a minimum of four meals in order to reach a minimum of 1.6 g/kg/day. Using the upper daily intake of 2.2 g/kg/day reported in t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-1817",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1817,
+      "sentence": "Using the upper daily intake of 2.2 g/kg/day reported in the literature spread out over the same four meals would necessitate a maximum of 0.55 g/kg/meal.",
+      "context_window": "a minimum of 1.6 g/kg/day. Using the upper daily intake of 2.2 g/kg/day reported in the literature spread out over the same four me",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
     {
       "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-7010",
       "claim_type": "unit_value",
@@ -76,9 +112,27 @@
       "context_window": "of a mixed meal on two distinct occasions separated by a ~ 1 week washout period. Results showed that the higher protein inta",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-1952",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 1952,
+      "sentence": "However, 1.6 g/kg/day should not be viewed as an ironclad or universal limit beyond which protein intake will be either wasted or used for physiological demands aside from muscle growth.",
+      "context_window": "ting (eucaloric or hypercaloric) conditions [ 6 ]. However, 1.6 g/kg/day should not be viewed as an ironclad or universal limit beyo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-pct-2228",
@@ -92,6 +146,78 @@
       "source_offset": 2228,
       "sentence": "A recent meta-analysis on protein supplementation involving resistance trainees reported an upper 95% confidence interval (CI) of 2.2 g/kg/day [ 6 ].",
       "context_window": "lementation involving resistance trainees reported an upper 95% confidence interval (CI) of 2.2 g/kg/day [ 6 ]. Bandegan et",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-2260",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 2260,
+      "sentence": "A recent meta-analysis on protein supplementation involving resistance trainees reported an upper 95% confidence interval (CI) of 2.2 g/kg/day [ 6 ].",
+      "context_window": "trainees reported an upper 95% confidence interval (CI) of 2.2 g/kg/day [ 6 ]. Bandegan et al. [ 7 ] also showed an upper CI of 2.2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-2329",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 2329,
+      "sentence": "Bandegan et al. [ 7 ] also showed an upper CI of 2.2 g/kg/day in a cohort of young male bodybuilders, although the method of assessment (indicator amino acid oxidation technique) used in this study has not received universal acceptance for determining optimal protein requirements.",
+      "context_window": "day [ 6 ]. Bandegan et al. [ 7 ] also showed an upper CI of 2.2 g/kg/day in a cohort of young male bodybuilders, although the method",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-2858",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 2858,
+      "sentence": "It is therefore a relatively simple and elegant solution to consume protein at a target intake of 0.4 g/kg/meal across a minimum of four meals in order to reach a minimum of 1.6 g/kg/day - if indeed the primary goal is to build muscle.",
+      "context_window": "ross a minimum of four meals in order to reach a minimum of 1.6 g/kg/day - if indeed the primary goal is to build muscle. Using the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-2955",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 2955,
+      "sentence": "Using the upper CI daily intake of 2.2 g/kg/day over the same four meals would necessitate a maximum of 0.55 g/kg/meal.",
+      "context_window": "goal is to build muscle. Using the upper CI daily intake of 2.2 g/kg/day over the same four meals would necessitate a maximum of 0.5",
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",

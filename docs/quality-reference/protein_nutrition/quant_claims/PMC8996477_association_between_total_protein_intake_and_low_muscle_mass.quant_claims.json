@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass",
   "doi": "10.1186/s12877-022-03019-1",
-  "extracted_at": "2026-05-05T22:35:32+00:00",
+  "extracted_at": "2026-05-05T23:37:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 27,
+    "unit_value": 39,
     "percentage": 20,
     "p_value": 3,
     "confidence_interval": 3,
@@ -26,9 +26,9 @@
       "context_window": "rotein intake and low muscle mass among Korean adults aged \u226519 years. We included 15,995 adults (6528 male and 9467 female) age",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-348",
@@ -62,9 +62,9 @@
       "context_window": "artile: Q1, Q2, Q3 and Q4 groups. The odds ratios (ORs) and 95% confidence intervals (CIs) of low muscle mass according to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-808",
@@ -189,9 +189,9 @@
       "context_window": "rotein intake and low muscle mass among Korean adults aged \u226519 years using the data from the Korea National Health and Nutrition",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-978",
@@ -264,6 +264,78 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2091",
+      "claim_type": "unit_value",
+      "raw_text": "1.49 g/kg/day",
+      "numeric_values": [
+        1.49
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 2091,
+      "sentence": "The cutoff protein intake levels were 0.80, 1.08 and 1.49 g/kg/day in the male participants and 0.67, 0.93 and 1.28 g/kg/day in the female participants.",
+      "context_window": "roups. The cutoff protein intake levels were 0.80, 1.08 and 1.49 g/kg/day in the male participants and 0.67, 0.93 and 1.28 g/kg/day i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2149",
+      "claim_type": "unit_value",
+      "raw_text": "1.28 g/kg/day",
+      "numeric_values": [
+        1.28
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 2149,
+      "sentence": "The cutoff protein intake levels were 0.80, 1.08 and 1.49 g/kg/day in the male participants and 0.67, 0.93 and 1.28 g/kg/day in the female participants.",
+      "context_window": "d 1.49 g/kg/day in the male participants and 0.67, 0.93 and 1.28 g/kg/day in the female participants. Inadequate protein intake was d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2242",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 2242,
+      "sentence": "Inadequate protein intake was defined as less than 0.8 g/kg/day according to the adequacy of the recommended dietary allowances (RDA) for protein [ 22 ].",
+      "context_window": "cipants. Inadequate protein intake was defined as less than 0.8 g/kg/day according to the adequacy of the recommended dietary allowa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2397",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 2397,
+      "sentence": "In older adults, protein intake was suggested to be 1.0 g/kg/day or more, and this analysis was also conducted [ 23 ].",
+      "context_window": "[ 22 ]. In older adults, protein intake was suggested to be 1.0 g/kg/day or more, and this analysis was also conducted [ 23 ]. In K",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-3197",
@@ -459,9 +531,9 @@
       "context_window": "regression analysis and calculated the odds ratio (OR) and 95% confidence intervals (CIs). Variables significantly found i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-p-7623",
@@ -859,7 +931,43 @@
       "context_window": "d higher ORs for low muscle mass by 1.9 times (Model 5; OR, 95% CI: 1.90, 1.52-2.37). Association between protein intake and weight-adjus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2900",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2900,
+      "sentence": "Association between protein intake and weight-adjusted low muscle mass\n\nAbbreviation : OR Odds ratio, CI Confidence interval\n\nModel 1 was not adjusted\n\nModel 2 was adjusted for age, sex, household income and education\n\nModel 3 was adjusted for age, sex, household income, education, smoking status, and physical activity\n\nModel 4 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus and dyslipidemia\n\nModel 5 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus, dyslipidemia, and overconsumption of calories\n\nIn older adults, compared to protein intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had higher ORs for low muscle mass by 1.7 times after adjusting for confounding variables (Model 5; OR, 95% CI: 1.69, 1.15-2.48).",
+      "context_window": "of calories In older adults, compared to protein intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had highe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2950",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 2950,
+      "sentence": "Association between protein intake and weight-adjusted low muscle mass\n\nAbbreviation : OR Odds ratio, CI Confidence interval\n\nModel 1 was not adjusted\n\nModel 2 was adjusted for age, sex, household income and education\n\nModel 3 was adjusted for age, sex, household income, education, smoking status, and physical activity\n\nModel 4 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus and dyslipidemia\n\nModel 5 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus, dyslipidemia, and overconsumption of calories\n\nIn older adults, compared to protein intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had higher ORs for low muscle mass by 1.7 times after adjusting for confounding variables (Model 5; OR, 95% CI: 1.69, 1.15-2.48).",
+      "context_window": "intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had higher ORs for low muscle mass by 1.7 times after adjus",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -878,7 +986,7 @@
       "context_window": "mes after adjusting for confounding variables (Model 5; OR, 95% CI: 1.69, 1.15-2.48). Table 3 shows the results of the stratified analyse",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -932,9 +1040,9 @@
       "context_window": "ntake and weight-adjusted protein among Korean adults aged \u226519 years. Compared with the Q4 group, the ORs for low muscle mass si",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-335",
@@ -968,9 +1076,9 @@
       "context_window": "may be a risk factor for low muscle mass among adults aged \u226519 years. Previous studies showed that protein intake is associated",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-1559",
@@ -991,6 +1099,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2177",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2177,
+      "sentence": "The RDA for protein is 0.8 g/kg/day for all individuals aged 19 years and older.",
+      "context_window": "for the maintenance of muscle mass. The RDA for protein is 0.8 g/kg/day for all individuals aged 19 years and older. The RDA estima",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2215",
       "claim_type": "unit_value",
       "raw_text": "19 years",
@@ -1004,9 +1130,27 @@
       "context_window": "he RDA for protein is 0.8 g/kg/day for all individuals aged 19 years and older. The RDA estimated requirement is considered a mi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2659",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2659,
+      "sentence": "The Society on Sarcopenia, Cachexia and Wasting Disease recommends a protein intake level of 1.0-1.5 g/kg/day to prevent and mitigate low muscle mass [ 34 ].",
+      "context_window": "nd Wasting Disease recommends a protein intake level of 1.0-1.5 g/kg/day to prevent and mitigate low muscle mass [ 34 ]. Many Korean",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2745",
@@ -1022,9 +1166,81 @@
       "context_window": "d mitigate low muscle mass [ 34 ]. Many Korean adults aged \u226519 years failed to meet this level of protein intake, because the cu",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2916",
+      "claim_type": "unit_value",
+      "raw_text": "1.08 g/kg/day",
+      "numeric_values": [
+        1.08
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2916,
+      "sentence": "Many Korean adults aged \u226519 years failed to meet this level of protein intake, because the cutoff levels of the highest and third quartile of protein intake in the male participants were 1.49 and 1.08 g/kg/day, while those in the female participants were 1.28 and 0.93 g/kg/day.",
+      "context_window": "le of protein intake in the male participants were 1.49 and 1.08 g/kg/day, while those in the female participants were 1.28 and 0.93",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2984",
+      "claim_type": "unit_value",
+      "raw_text": "0.93 g/kg/day",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2984,
+      "sentence": "Many Korean adults aged \u226519 years failed to meet this level of protein intake, because the cutoff levels of the highest and third quartile of protein intake in the male participants were 1.49 and 1.08 g/kg/day, while those in the female participants were 1.28 and 0.93 g/kg/day.",
+      "context_window": "g/day, while those in the female participants were 1.28 and 0.93 g/kg/day. In addition, other studies showed that people with a consu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-3084",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3084,
+      "sentence": "In addition, other studies showed that people with a consumption of protein above of 0.8 g/kg/day have better physical performance score than people consume less than 0.8 g/kg/day [ 35 , 36 ].",
+      "context_window": "s showed that people with a consumption of protein above of 0.8 g/kg/day have better physical performance score than people consume",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-3166",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3166,
+      "sentence": "In addition, other studies showed that people with a consumption of protein above of 0.8 g/kg/day have better physical performance score than people consume less than 0.8 g/kg/day [ 35 , 36 ].",
+      "context_window": "er physical performance score than people consume less than 0.8 g/kg/day [ 35 , 36 ]. Therefore, dietary protein intake is a key com",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-6281",
@@ -1040,9 +1256,9 @@
       "context_window": "may be a risk factor for low muscle mass among adults aged \u226519 years using a representative Korean sample. Thus, clear and actio",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-43",
@@ -1058,7 +1274,7 @@
       "context_window": "The low muscle mass in Korean adults aged \u226519 years is associated with a lower intake of protein. Proper protei",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1076,9 +1292,9 @@
       "context_window": "or proper protein intake is also important for adults aged \u226519 years, especially for individuals without chronic diseases, such",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

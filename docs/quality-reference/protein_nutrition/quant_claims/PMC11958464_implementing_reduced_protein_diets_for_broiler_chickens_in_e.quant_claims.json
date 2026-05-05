@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e",
   "doi": "10.1007/s11250-025-04396-6",
-  "extracted_at": "2026-05-05T22:35:28+00:00",
+  "extracted_at": "2026-05-05T23:37:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 48,
@@ -347,7 +347,7 @@
       "context_window": "rowth performance, even if dietary protein is reduced up to 3%, but requires supplementing with AAs other than the first t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -383,9 +383,9 @@
       "context_window": "ets were formulated with targeted levels of 21, 20, 19, and 18% CP during the grower phase; and 19.5, 18.5, 17.5, and 16.5%",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-pct-1856",
@@ -401,9 +401,9 @@
       "context_window": "d 18% CP during the grower phase; and 19.5, 18.5, 17.5, and 16.5% CP during the finisher phase, respectively. Only methionine",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-u-2195",
@@ -581,9 +581,9 @@
       "context_window": "al premix: Copper (min) 15 g; Iron (min) 90 g; Iodine (min) 1500 mg; Manganese (min) 150 g; Zinc (min) 140 g 3 Purities (%) of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-pct-4649",
@@ -923,9 +923,9 @@
       "context_window": "e different CP levels. Birds fed reduced protein diet up to 2% had similar ( P < 0.05) final weight and weight gain to tho",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-p-300",
@@ -941,9 +941,9 @@
       "context_window": "vels. Birds fed reduced protein diet up to 2% had similar ( P < 0.05) final weight and weight gain to those fed control diet. Th",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-pct-425",
@@ -959,9 +959,9 @@
       "context_window": "The FCR was significantly better for birds fed control and 1% CP reduction diets. During the finisher phase, FCR and feed",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-pct-672",
@@ -977,9 +977,9 @@
       "context_window": "in were better and similar for birds fed with control up to 2% reduced CP diets compared to those fed 3% CP reduction. The",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-pct-714",
@@ -995,9 +995,9 @@
       "context_window": "ith control up to 2% reduced CP diets compared to those fed 3% CP reduction. The cumulative growth performance (14 - 42 d",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-p-954",
@@ -1013,7 +1013,7 @@
       "context_window": "dietary protein levels. The broiler chickens had similar ( P < 0.05) and better values of the aforementioned variables up to 2%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1031,7 +1031,7 @@
       "context_window": "05) and better values of the aforementioned variables up to 2% reduced CP diets compared with the birds fed 3% reduced pro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1049,7 +1049,7 @@
       "context_window": "ables up to 2% reduced CP diets compared with the birds fed 3% reduced protein. It was also observed that reducing dietary",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1067,7 +1067,7 @@
       "context_window": "gnificant reduction in overall feed intake, especially with 3% reduced CP. Growth performance of broiler chickens fed red",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1085,7 +1085,7 @@
       "context_window": "ferent superscripts across the same row are significantly ( P < 0.05) different 1 Percentage point 2 Initial weight was used a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1103,7 +1103,7 @@
       "context_window": "iets. The feed price (USD/tonne) was observed to decrease ( P < 0.05) as the level of dietary protein reduced, while the feeding",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1121,7 +1121,7 @@
       "context_window": "re similar for birds fed control diets up to those fed with 2% reduced CP diet, suggesting the suitability for up to 2% CP",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1139,7 +1139,7 @@
       "context_window": "th 2% reduced CP diet, suggesting the suitability for up to 2% CP reduction when only methionine, lysine and threonine are",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1157,7 +1157,7 @@
       "context_window": "as the dietary protein reduced, and was higher and better ( P < 0.05) up to 2% reduced CP diet. Economic returns of broiler chi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1175,7 +1175,7 @@
       "context_window": "rotein reduced, and was higher and better ( P < 0.05) up to 2% reduced CP diet. Economic returns of broiler chickens fed",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1193,9 +1193,9 @@
       "context_window": "returns of broiler chickens fed reduced protein diets at 0-42 days post hatch a - d Means with different superscripts across",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-p-2567",
@@ -1211,9 +1211,9 @@
       "context_window": "ferent superscripts across the same row are significantly ( P < 0.05) different 1 Percentage point BW- Body weight; WG-Weight",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-p-2838",
@@ -1229,9 +1229,9 @@
       "context_window": "s yield (%), breast yield of the broiler chickens reduced ( P < 0.05) as the dietary protein reduced, following the trend of the",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11958464_implementing_reduced_protein_diets_for_broiler_chickens_in_e-p-3027",
@@ -1265,7 +1265,7 @@
       "context_window": "vel. The relative gizzard weight was observed to increase ( P < 0.05) with reduced dietary protein level; however, other interna",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1283,7 +1283,7 @@
       "context_window": "ferent superscripts across the same row are significantly ( P < 0.05) different 1 Percentage point 2 % of liveweight 3 % of d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1301,7 +1301,7 @@
       "context_window": "re significantly ( P < 0.05) different 1 Percentage point 2 % of liveweight 3 % of dressed/carcass weight Meat quality,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1319,7 +1319,7 @@
       "context_window": "P < 0.05) different 1 Percentage point 2 % of liveweight 3 % of dressed/carcass weight Meat quality, meat antioxidant e",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1337,7 +1337,7 @@
       "context_window": "ferent superscripts across the same row are significantly ( P < 0.05) different 1 Percentage point AME - Apparent metabolizabl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1355,7 +1355,7 @@
       "context_window": "levels, the apparent metabolizable energy (AME) increased ( P < 0.05) as the dietary protein levels decreased at both starter an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },

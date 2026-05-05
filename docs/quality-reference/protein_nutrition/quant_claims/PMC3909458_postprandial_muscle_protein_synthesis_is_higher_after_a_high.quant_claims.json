@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high",
   "doi": "10.1186/1475-2891-13-9",
-  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extracted_at": "2026-05-05T23:37:07+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 10,
@@ -25,9 +25,9 @@
       "context_window": "pplement (EXP: 20g whey protein, 3g total leucine, 150kcal; n = 9) or an iso-caloric milk protein control (Control: 6g milk p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-n-1103",
@@ -43,9 +43,9 @@
       "context_window": "iso-caloric milk protein control (Control: 6g milk protein; n = 10), immediately after unilateral resistance exercise. Postpra",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-1407",
@@ -171,7 +171,7 @@
       "context_window": "ation was observed with resting postprandial FSR (r = 0.48, P = 0.038). Ingestion of a high whey protein, leucine-enriched suppl",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -261,9 +261,9 @@
       "context_window": "imental and Control, provided 150 kcal (36 kJ) in a dose of 200 mL (Table 1 ). The experimental study product (EXP) consisted",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-u-6380",
@@ -604,7 +604,7 @@
       "context_window": "n a significantly higher peak plasma leucine concentration (406 \u00b1 35 \u03bcmol.L -1 ) than intake of the Control product (142 \u00b1 5 \u03bcmo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -622,7 +622,7 @@
       "context_window": "gnificantly higher peak plasma leucine concentration (406 \u00b1 35 \u03bcmol.L -1 ) than intake of the Control product (142 \u00b1 5 \u03bcmol.L -",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -641,7 +641,7 @@
       "context_window": "n (406 \u00b1 35 \u03bcmol.L -1 ) than intake of the Control product (142 \u00b1 5 \u03bcmol.L -1 ; P < 0.001). Change in leucine was also signific",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -659,7 +659,7 @@
       "context_window": "\u00b1 35 \u03bcmol.L -1 ) than intake of the Control product (142 \u00b1 5 \u03bcmol.L -1 ; P < 0.001). Change in leucine was also significantly",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -677,7 +677,7 @@
       "context_window": "1 ) than intake of the Control product (142 \u00b1 5 \u03bcmol.L -1 ; P < 0.001). Change in leucine was also significantly higher for EXP (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -696,7 +696,7 @@
       "context_window": "). Change in leucine was also significantly higher for EXP (321 \u00b1 34 \u03bcmol.L -1 ) vs Control (58 \u00b1 6 \u03bcmol.L -1 ) ( P < 0.001), as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -714,7 +714,7 @@
       "context_window": "nge in leucine was also significantly higher for EXP (321 \u00b1 34 \u03bcmol.L -1 ) vs Control (58 \u00b1 6 \u03bcmol.L -1 ) ( P < 0.001), as was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -733,7 +733,7 @@
       "context_window": "nificantly higher for EXP (321 \u00b1 34 \u03bcmol.L -1 ) vs Control (58 \u00b1 6 \u03bcmol.L -1 ) ( P < 0.001), as was iAUC leucine (40471 \u00b1 2655",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -751,7 +751,7 @@
       "context_window": "antly higher for EXP (321 \u00b1 34 \u03bcmol.L -1 ) vs Control (58 \u00b1 6 \u03bcmol.L -1 ) ( P < 0.001), as was iAUC leucine (40471 \u00b1 2655 and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -769,7 +769,7 @@
       "context_window": "EXP (321 \u00b1 34 \u03bcmol.L -1 ) vs Control (58 \u00b1 6 \u03bcmol.L -1 ) ( P < 0.001), as was iAUC leucine (40471 \u00b1 2655 and 6344 \u00b1 971 \u03bcmol.L -",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -788,7 +788,7 @@
       "context_window": "trol (58 \u00b1 6 \u03bcmol.L -1 ) ( P < 0.001), as was iAUC leucine (40471 \u00b1 2655 and 6344 \u00b1 971 \u03bcmol.L -1 .min for EXP and Control respectiv",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -807,7 +807,7 @@
       "context_window": ".L -1 ) ( P < 0.001), as was iAUC leucine (40471 \u00b1 2655 and 6344 \u00b1 971 \u03bcmol.L -1 .min for EXP and Control respectively; P < 0.001)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -825,7 +825,7 @@
       "context_window": "( P < 0.001), as was iAUC leucine (40471 \u00b1 2655 and 6344 \u00b1 971 \u03bcmol.L -1 .min for EXP and Control respectively; P < 0.001). Pea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -843,7 +843,7 @@
       "context_window": "6344 \u00b1 971 \u03bcmol.L -1 .min for EXP and Control respectively; P < 0.001). Peak plasma EAA concentration was significantly higher in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -862,7 +862,7 @@
       "context_window": "k plasma EAA concentration was significantly higher in EXP (2227 \u00b1 139 \u03bcmol.L -1 ) vs Control (1180 \u00b1 33 \u03bcmol.L -1 )( P < 0.001),",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -880,7 +880,7 @@
       "context_window": "a EAA concentration was significantly higher in EXP (2227 \u00b1 139 \u03bcmol.L -1 ) vs Control (1180 \u00b1 33 \u03bcmol.L -1 )( P < 0.001), as wa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -899,7 +899,7 @@
       "context_window": "ificantly higher in EXP (2227 \u00b1 139 \u03bcmol.L -1 ) vs Control (1180 \u00b1 33 \u03bcmol.L -1 )( P < 0.001), as was change in EAA (1306 \u00b1 148 a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -917,7 +917,7 @@
       "context_window": "ly higher in EXP (2227 \u00b1 139 \u03bcmol.L -1 ) vs Control (1180 \u00b1 33 \u03bcmol.L -1 )( P < 0.001), as was change in EAA (1306 \u00b1 148 and 24",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -935,7 +935,7 @@
       "context_window": "(2227 \u00b1 139 \u03bcmol.L -1 ) vs Control (1180 \u00b1 33 \u03bcmol.L -1 )( P < 0.001), as was change in EAA (1306 \u00b1 148 and 249 \u00b1 32 \u03bcmol.L -1 f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -954,7 +954,7 @@
       "context_window": "l (1180 \u00b1 33 \u03bcmol.L -1 )( P < 0.001), as was change in EAA (1306 \u00b1 148 and 249 \u00b1 32 \u03bcmol.L -1 for EXP and Control respectively; P",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -973,7 +973,7 @@
       "context_window": "ol.L -1 )( P < 0.001), as was change in EAA (1306 \u00b1 148 and 249 \u00b1 32 \u03bcmol.L -1 for EXP and Control respectively; P < 0.001), and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -991,7 +991,7 @@
       "context_window": "1 )( P < 0.001), as was change in EAA (1306 \u00b1 148 and 249 \u00b1 32 \u03bcmol.L -1 for EXP and Control respectively; P < 0.001), and iAUC",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1009,7 +1009,7 @@
       "context_window": "48 and 249 \u00b1 32 \u03bcmol.L -1 for EXP and Control respectively; P < 0.001), and iAUC EAA (142281 \u00b1 11931 and 17312 \u00b1 2638 \u03bcmol.L -1 .",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1028,7 +1028,7 @@
       "context_window": "for EXP and Control respectively; P < 0.001), and iAUC EAA (142281 \u00b1 11931 and 17312 \u00b1 2638 \u03bcmol.L -1 .min -1 for EXP and Control resp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1047,7 +1047,7 @@
       "context_window": "respectively; P < 0.001), and iAUC EAA (142281 \u00b1 11931 and 17312 \u00b1 2638 \u03bcmol.L -1 .min -1 for EXP and Control respectively; P < 0.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1065,7 +1065,7 @@
       "context_window": "ively; P < 0.001), and iAUC EAA (142281 \u00b1 11931 and 17312 \u00b1 2638 \u03bcmol.L -1 .min -1 for EXP and Control respectively; P < 0.001).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1083,7 +1083,7 @@
       "context_window": "\u00b1 2638 \u03bcmol.L -1 .min -1 for EXP and Control respectively; P < 0.001). For AA, iAUC was significantly higher after ingestion of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1102,7 +1102,7 @@
       "context_window": "r AA, iAUC was significantly higher after ingestion of EXP (206229 \u00b1 23889 \u03bcmol.L -1 .min -1 ) than Control (39244 \u00b1 11490 \u03bcmol.L -1 .",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1120,7 +1120,7 @@
       "context_window": "C was significantly higher after ingestion of EXP (206229 \u00b1 23889 \u03bcmol.L -1 .min -1 ) than Control (39244 \u00b1 11490 \u03bcmol.L -1 .min -",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1139,7 +1139,7 @@
       "context_window": "on of EXP (206229 \u00b1 23889 \u03bcmol.L -1 .min -1 ) than Control (39244 \u00b1 11490 \u03bcmol.L -1 .min -1 )( P < 0.001). Plasma amino acids. Plasm",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1157,7 +1157,7 @@
       "context_window": "P (206229 \u00b1 23889 \u03bcmol.L -1 .min -1 ) than Control (39244 \u00b1 11490 \u03bcmol.L -1 .min -1 )( P < 0.001). Plasma amino acids. Plasma con",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1175,7 +1175,7 @@
       "context_window": ".min -1 ) than Control (39244 \u00b1 11490 \u03bcmol.L -1 .min -1 )( P < 0.001). Plasma amino acids. Plasma concentrations (means \u00b1 SEM)",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1193,9 +1193,9 @@
       "context_window": "and after ingestion (at T = 0) of the study products EXP ( n = 9) and Control ( n = 10). Baseline values were not different",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-n-2317",
@@ -1211,9 +1211,9 @@
       "context_window": "(at T = 0) of the study products EXP ( n = 9) and Control ( n = 10). Baseline values were not different between groups. iAUC v",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-2475",
@@ -1229,7 +1229,7 @@
       "context_window": "re significantly higher after ingestion of EXP vs Control ( P < 0.001). For leucine and EAA, peak and change-from-baseline concen",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1247,7 +1247,7 @@
       "context_window": "so significantly higher after ingestion of EXP vs Control ( P < 0.001). Plasma concentrations of insulin and glucose over time a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1265,7 +1265,7 @@
       "context_window": "tween EXP and Control, both before and after exercise (both P > 0.60). Ingestion of the Control product increased plasma glucose",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1284,9 +1284,9 @@
       "context_window": "concentration to a significantly higher peak concentration (8.5 \u00b1 0.4 mmol.L -1 ) than did the EXP product (6.4 \u00b1 0.3 mmol.L -1 )",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-u-2944",
@@ -1302,9 +1302,9 @@
       "context_window": "tration to a significantly higher peak concentration (8.5 \u00b1 0.4 mmol.L -1 ) than did the EXP product (6.4 \u00b1 0.3 mmol.L -1 )( P <",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-2986",
@@ -1321,9 +1321,9 @@
       "context_window": "centration (8.5 \u00b1 0.4 mmol.L -1 ) than did the EXP product (6.4 \u00b1 0.3 mmol.L -1 )( P < 0.001). iAUC glucose was also higher for C",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-u-2992",
@@ -1339,9 +1339,9 @@
       "context_window": "tion (8.5 \u00b1 0.4 mmol.L -1 ) than did the EXP product (6.4 \u00b1 0.3 mmol.L -1 )( P < 0.001). iAUC glucose was also higher for Contro",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-3009",
@@ -1357,9 +1357,9 @@
       "context_window": "mol.L -1 ) than did the EXP product (6.4 \u00b1 0.3 mmol.L -1 )( P < 0.001). iAUC glucose was also higher for Control (246 \u00b1 37 mmol.L",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-3063",
@@ -1376,9 +1376,9 @@
       "context_window": "-1 )( P < 0.001). iAUC glucose was also higher for Control (246 \u00b1 37 mmol.L -1 .min -1 ) vs EXP (88 \u00b1 15 mmol.L -1 .min -1 ) ( P",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-u-3069",
@@ -1394,9 +1394,9 @@
       "context_window": "P < 0.001). iAUC glucose was also higher for Control (246 \u00b1 37 mmol.L -1 .min -1 ) vs EXP (88 \u00b1 15 mmol.L -1 .min -1 ) ( P = 0.",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-3100",
@@ -1413,9 +1413,9 @@
       "context_window": "so higher for Control (246 \u00b1 37 mmol.L -1 .min -1 ) vs EXP (88 \u00b1 15 mmol.L -1 .min -1 ) ( P = 0.003). No significant difference",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-u-3105",
@@ -1431,9 +1431,9 @@
       "context_window": "gher for Control (246 \u00b1 37 mmol.L -1 .min -1 ) vs EXP (88 \u00b1 15 mmol.L -1 .min -1 ) ( P = 0.003). No significant differences bet",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-3130",
@@ -1449,9 +1449,9 @@
       "context_window": "7 mmol.L -1 .min -1 ) vs EXP (88 \u00b1 15 mmol.L -1 .min -1 ) ( P = 0.003). No significant differences between EXP and Control were o",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-3253",
@@ -1467,9 +1467,9 @@
       "context_window": "were observed for baseline insulin either before exercise ( P = 0.30) or after exercise ( P = 0.19), and for peak plasma insulin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-3283",
@@ -1485,9 +1485,9 @@
       "context_window": "ulin either before exercise ( P = 0.30) or after exercise ( P = 0.19), and for peak plasma insulin ( P = 0.17) and iAUC insulin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-3324",
@@ -1503,9 +1503,9 @@
       "context_window": "r after exercise ( P = 0.19), and for peak plasma insulin ( P = 0.17) and iAUC insulin ( P = 0.17). Plasma glucose and insulin.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-3353",
@@ -1521,9 +1521,9 @@
       "context_window": "and for peak plasma insulin ( P = 0.17) and iAUC insulin ( P = 0.17). Plasma glucose and insulin. Plasma concentrations (means",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-n-3518",
@@ -1539,9 +1539,9 @@
       "context_window": "and after ingestion (at T = 0) of the study products EXP ( n = 9) and Control ( n = 10). Baseline values were not different",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-n-3539",
@@ -1557,9 +1557,9 @@
       "context_window": "(at T = 0) of the study products EXP ( n = 9) and Control ( n = 10). Baseline values were not different between groups. Peak g",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-3614",
@@ -1575,7 +1575,7 @@
       "context_window": "ne values were not different between groups. Peak glucose ( P < 0.001) and glucose iAUC ( P = 0.003) was significantly higher aft",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1593,7 +1593,7 @@
       "context_window": "etween groups. Peak glucose ( P < 0.001) and glucose iAUC ( P = 0.003) was significantly higher after ingestion of Control, but g",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1611,9 +1611,9 @@
       "context_window": "and after ingestion (at T = 0) of the study products EXP ( n = 9) and Control ( n = 10). Mixed muscle protein-bound enrichm",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-n-4279",
@@ -1629,9 +1629,9 @@
       "context_window": "(at T = 0) of the study products EXP ( n = 9) and Control ( n = 10). Mixed muscle protein-bound enrichment (MPE) of L-[ring-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-4372",
@@ -1648,9 +1648,9 @@
       "context_window": "und enrichment (MPE) of L-[ring- 13 C 6 ]-phenylalanine was 0.031 \u00b1 0.005% (T-45 min), 0.063 \u00b1 0.004% (T240 resting leg) and 0.073 \u00b1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-pct-4380",
@@ -1666,9 +1666,9 @@
       "context_window": "chment (MPE) of L-[ring- 13 C 6 ]-phenylalanine was 0.031 \u00b1 0.005% (T-45 min), 0.063 \u00b1 0.004% (T240 resting leg) and 0.073 \u00b1 0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-4399",
@@ -1685,9 +1685,9 @@
       "context_window": "ring- 13 C 6 ]-phenylalanine was 0.031 \u00b1 0.005% (T-45 min), 0.063 \u00b1 0.004% (T240 resting leg) and 0.073 \u00b1 0.012% (T240 min exercising",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-pct-4407",
@@ -1703,9 +1703,9 @@
       "context_window": "C 6 ]-phenylalanine was 0.031 \u00b1 0.005% (T-45 min), 0.063 \u00b1 0.004% (T240 resting leg) and 0.073 \u00b1 0.012% (T240 min exercising",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-4437",
@@ -1722,9 +1722,9 @@
       "context_window": "\u00b1 0.005% (T-45 min), 0.063 \u00b1 0.004% (T240 resting leg) and 0.073 \u00b1 0.012% (T240 min exercising leg) in the EXP group. In the Control",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-pct-4445",
@@ -1740,9 +1740,9 @@
       "context_window": "% (T-45 min), 0.063 \u00b1 0.004% (T240 resting leg) and 0.073 \u00b1 0.012% (T240 min exercising leg) in the EXP group. In the Control",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-4526",
@@ -2092,7 +2092,7 @@
       "context_window": "one-biopsy baseline muscle protein synthesis rate (FSR) was 0.053 \u00b1 0.010 %.h -1 and 0.052 \u00b1 0.017 %.h -1 for EXP and Control group,",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2110,7 +2110,7 @@
       "context_window": "sy baseline muscle protein synthesis rate (FSR) was 0.053 \u00b1 0.010 %.h -1 and 0.052 \u00b1 0.017 %.h -1 for EXP and Control group, re",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2129,7 +2129,7 @@
       "context_window": "e protein synthesis rate (FSR) was 0.053 \u00b1 0.010 %.h -1 and 0.052 \u00b1 0.017 %.h -1 for EXP and Control group, respectively. Postprandi",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2147,7 +2147,7 @@
       "context_window": "n synthesis rate (FSR) was 0.053 \u00b1 0.010 %.h -1 and 0.052 \u00b1 0.017 %.h -1 for EXP and Control group, respectively. Postprandial",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2166,7 +2166,7 @@
       "context_window": "as significantly higher after ingestion of the EXP product (0.078 \u00b1 0.007 %.h -1 (EMM \u00b1 SE)) than after ingestion of the Control prod",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2184,7 +2184,7 @@
       "context_window": "ficantly higher after ingestion of the EXP product (0.078 \u00b1 0.007 %.h -1 (EMM \u00b1 SE)) than after ingestion of the Control produc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2203,7 +2203,7 @@
       "context_window": "-1 (EMM \u00b1 SE)) than after ingestion of the Control product (0.057 \u00b1 0.007 %.h -1 (EMM \u00b1 SE)) ( P = 0.049) (Figure 6 ). No interaction",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2221,7 +2221,7 @@
       "context_window": "\u00b1 SE)) than after ingestion of the Control product (0.057 \u00b1 0.007 %.h -1 (EMM \u00b1 SE)) ( P = 0.049) (Figure 6 ). No interaction b",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2239,7 +2239,7 @@
       "context_window": "of the Control product (0.057 \u00b1 0.007 %.h -1 (EMM \u00b1 SE)) ( P = 0.049) (Figure 6 ). No interaction between treatment and exercise",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2347,7 +2347,7 @@
       "context_window": "ncrease from the calculated baseline in the resting leg was 28% for EXP and 3% for Control. Postprandial FSR values calcula",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2365,7 +2365,7 @@
       "context_window": "calculated baseline in the resting leg was 28% for EXP and 3% for Control. Postprandial FSR values calculated using the m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2531,9 +2531,9 @@
       "context_window": "ursor, over 4 h after ingestion of the study products EXP ( n = 9) and Control ( n = 10). Data are presented for resting leg",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-n-6364",
@@ -2549,9 +2549,9 @@
       "context_window": "ingestion of the study products EXP ( n = 9) and Control ( n = 10). Data are presented for resting leg and exercising leg sep",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-6880",
@@ -2585,9 +2585,9 @@
       "context_window": "n was observed with the resting postprandial FSR (r = 0.48, P = 0.038) but not with the exercising postprandial FSR ( P = 0.29)(F",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-7122",
@@ -2603,9 +2603,9 @@
       "context_window": ", P = 0.038) but not with the exercising postprandial FSR ( P = 0.29)(Figure 7 ). Correlation between FSR and leg lean mass-cor",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-8136",
@@ -2621,9 +2621,9 @@
       "context_window": "etween postprandial FSR overall and iAUC leucine (r = 0.35, P = 0.031), iAUC EAA (r = 0.34, P = 0.034), maximum leucine (r = 0.32",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-8168",
@@ -2639,9 +2639,9 @@
       "context_window": "and iAUC leucine (r = 0.35, P = 0.031), iAUC EAA (r = 0.34, P = 0.034), maximum leucine (r = 0.32, P = 0.05), and maximum EAA (r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-8207",
@@ -2657,9 +2657,9 @@
       "context_window": "iAUC EAA (r = 0.34, P = 0.034), maximum leucine (r = 0.32, P = 0.05), and maximum EAA (r = 0.31, P = 0.06). iAUC NEAA was not s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-8245",
@@ -2675,9 +2675,9 @@
       "context_window": "um leucine (r = 0.32, P = 0.05), and maximum EAA (r = 0.31, P = 0.06). iAUC NEAA was not significantly correlated with postprand",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-p-8331",
@@ -2693,9 +2693,9 @@
       "context_window": "ot significantly correlated with postprandial FSR overall ( P = 0.18).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3909458_postprandial_muscle_protein_synthesis_is_higher_after_a_high-msd-735",
@@ -2712,7 +2712,7 @@
       "context_window": "protein synthesis rate during the 4-h postprandial period (0.0780 \u00b1 0.0070%/h) than 6g milk protein in an iso-caloric product (0.0574",
       "claim_role": "duration",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2730,7 +2730,7 @@
       "context_window": "synthesis rate during the 4-h postprandial period (0.0780 \u00b1 0.0070%/h) than 6g milk protein in an iso-caloric product (0.0574 \u00b1",
       "claim_role": "duration",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2749,7 +2749,7 @@
       "context_window": "0.0070%/h) than 6g milk protein in an iso-caloric product (0.0574 \u00b1 0.0066%/h). Previous studies showed greater stimulation of postpra",
       "claim_role": "duration",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2767,7 +2767,7 @@
       "context_window": "h) than 6g milk protein in an iso-caloric product (0.0574 \u00b1 0.0066%/h). Previous studies showed greater stimulation of postpran",
       "claim_role": "duration",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2821,7 +2821,7 @@
       "context_window": "gnificant difference between the two groups. The estimated 3% increase of postprandial FSR with the Control product sugge",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2839,7 +2839,7 @@
       "context_window": "tent of the dairy product that is below 7 g EAA [ 11 ]. The 28% estimated increase of postprandial mixed muscle FSR with th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2857,7 +2857,7 @@
       "context_window": "ein protein [ 14 ]. However, the effect is in line with the 16% increase from basal with 20 g whey protein in a recent stud",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     }

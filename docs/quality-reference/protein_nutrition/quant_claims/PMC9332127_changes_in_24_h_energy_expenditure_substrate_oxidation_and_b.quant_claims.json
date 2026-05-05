@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b",
   "doi": "10.14814/phy2.15268",
-  "extracted_at": "2026-05-05T22:35:33+00:00",
+  "extracted_at": "2026-05-05T23:37:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 28,
-    "unit_value": 46,
+    "unit_value": 66,
     "sample_size": 39,
     "p_value": 93,
     "percentage": 34
@@ -448,7 +448,7 @@
       "context_window": "ber (-1.9 \u00b1 1.1%; p = 0.049). PRO decreased fat mass [(FM) -0.5 \u00b1 0.3 kg], increased overnight protein oxidation (30 \u00b1 6 g/d), an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -466,7 +466,7 @@
       "context_window": "1.9 \u00b1 1.1%; p = 0.049). PRO decreased fat mass [(FM) -0.5 \u00b1 0.3 kg], increased overnight protein oxidation (30 \u00b1 6 g/d), and d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -485,7 +485,7 @@
       "context_window": "(FM) -0.5 \u00b1 0.3 kg], increased overnight protein oxidation (30 \u00b1 6 g/d), and decreased 24\u2010h protein balance (-20 \u00b1 4 g/d) grea",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -504,7 +504,7 @@
       "context_window": "xidation (30 \u00b1 6 g/d), and decreased 24\u2010h protein balance (-20 \u00b1 4 g/d) greater than CON ( p < 0.05). RE+PRO decreased FM (-1.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -522,7 +522,7 @@
       "context_window": "eased 24\u2010h protein balance (-20 \u00b1 4 g/d) greater than CON ( p < 0.05). RE+PRO decreased FM (-1.0 \u00b1 0.5 kg) greater than RE+CON (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -793,9 +793,99 @@
       "context_window": "019 ). At present, protein recommendations for adults aged \u226519 years are set according to the recommended dietary allowance (RDA",
       "claim_role": "dose",
       "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-4071",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 4071,
+      "sentence": "At present, protein recommendations for adults aged \u226519 years are set according to the recommended dietary allowance (RDA) of 0.8 g/kg/d (Institute of Medicine, 2005 ).",
+      "context_window": "set according to the recommended dietary allowance (RDA) of 0.8 g/kg/d (Institute of Medicine, 2005 ). However, working groups rea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-4231",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 4231,
+      "sentence": "However, working groups reason that the RDA is insufficient for older individuals to curb sarcopenia and intakes of ~1.2 g/kg/d (Bauer et al., 2013 ; Deutz et al., 2014 ) and even up to 2\u00d7 the RDA of 1.6 g/kg/d (Phillips et al., 2016 ) should be consumed.",
+      "context_window": "nt for older individuals to curb sarcopenia and intakes of ~1.2 g/kg/d (Bauer et al., 2013 ; Deutz et al., 2014 ) and even up to 2",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-4314",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 4314,
+      "sentence": "However, working groups reason that the RDA is insufficient for older individuals to curb sarcopenia and intakes of ~1.2 g/kg/d (Bauer et al., 2013 ; Deutz et al., 2014 ) and even up to 2\u00d7 the RDA of 1.6 g/kg/d (Phillips et al., 2016 ) should be consumed.",
+      "context_window": "., 2013 ; Deutz et al., 2014 ) and even up to 2\u00d7 the RDA of 1.6 g/kg/d (Phillips et al., 2016 ) should be consumed. Indeed, intake",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-4459",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 4459,
+      "sentence": "Indeed, intakes of dietary protein towards the higher end of these recommendations (~1.4-1.6 g/kg/d) have been shown to increase FFM in older adults (Bauer et al., 2015 ; Bell et al., 2017 ; Mitchell et al., 2017 ; Norton et al., 2016 ; Park et al., 2018 ).",
+      "context_window": "otein towards the higher end of these recommendations (~1.4-1.6 g/kg/d) have been shown to increase FFM in older adults (Bauer et",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-4696",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 4696,
+      "sentence": "Normative data in older adults, however, report protein intakes of ~1 g/kg/d (Farsijani et al., 2017 ), highlighting the need for increased intake to mitigate sarcopenia (Phillips & Martinson, 2019 ).",
+      "context_window": "e data in older adults, however, report protein intakes of ~1 g/kg/d (Farsijani et al., 2017 ), highlighting the need for increa",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-pct-4854",
@@ -811,9 +901,27 @@
       "context_window": "nia (Phillips & Martinson, 2019 ). A high protein diet (25-30% of EI) may also mitigate age\u2010related reductions in EE and a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-6468",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 g/kg/d",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 6468,
+      "sentence": "These null findings were, however, likely due to an insufficient increase in dietary protein intake during the intervention period (\u22640.1 g/kg/d).",
+      "context_window": "in dietary protein intake during the intervention period (\u22640.1 g/kg/d). Nonetheless, although Drummen et al. ( 2020 ) reported pr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-6614",
@@ -829,7 +937,7 @@
       "context_window": "fects on EE (specifically, increased RMR) in older adults (~65 years) following ~34 months of a high protein weight maintenance",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -847,7 +955,43 @@
       "context_window": "ally, increased RMR) in older adults (~65 years) following ~34 months of a high protein weight maintenance diet, EE was only asse",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-8137",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 g/kg/d",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 8137,
+      "sentence": "Null findings may be attributed to an inadequate sample size and lack of statistical power (Campbell et al., 1994 ), an adequate habitual protein intake of participants (Weinheimer et al., 2012 ), and an insufficient increase in dietary protein intake from baseline (<0.4 g/kg/d) and a total dietary protein intake of <1.6 g/kg/d during the intervention period (Amamou et al., 2017 ; Maltais et al., 2016 ).",
+      "context_window": "fficient increase in dietary protein intake from baseline (<0.4 g/kg/d) and a total dietary protein intake of <1.6 g/kg/d during t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-8188",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 8188,
+      "sentence": "Null findings may be attributed to an inadequate sample size and lack of statistical power (Campbell et al., 1994 ), an adequate habitual protein intake of participants (Weinheimer et al., 2012 ), and an insufficient increase in dietary protein intake from baseline (<0.4 g/kg/d) and a total dietary protein intake of <1.6 g/kg/d during the intervention period (Amamou et al., 2017 ; Maltais et al., 2016 ).",
+      "context_window": "seline (<0.4 g/kg/d) and a total dietary protein intake of <1.6 g/kg/d during the intervention period (Amamou et al., 2017 ; Malta",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -865,7 +1009,43 @@
       "context_window": "dation, and body composition in healthy older men following 12 weeks of RE and a high protein diet via whey protein supplementat",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-9355",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 g/kg/d",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 9355,
+      "sentence": "The primary aim of this study was to examine changes in 24\u2010h EE, substrate oxidation, and body composition in healthy older men following 12 weeks of RE and a high protein diet via whey protein supplementation [which aimed to increase dietary protein intake by \u22650.4 g/kg/d to ~1.6 g/kg/d (~25% of EI)].",
+      "context_window": "ntation [which aimed to increase dietary protein intake by \u22650.4 g/kg/d to ~1.6 g/kg/d (~25% of EI)]. A secondary aim was to conduc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-9370",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 9370,
+      "sentence": "The primary aim of this study was to examine changes in 24\u2010h EE, substrate oxidation, and body composition in healthy older men following 12 weeks of RE and a high protein diet via whey protein supplementation [which aimed to increase dietary protein intake by \u22650.4 g/kg/d to ~1.6 g/kg/d (~25% of EI)].",
+      "context_window": "aimed to increase dietary protein intake by \u22650.4 g/kg/d to ~1.6 g/kg/d (~25% of EI)]. A secondary aim was to conduct an explorator",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -883,7 +1063,7 @@
       "context_window": "ease dietary protein intake by \u22650.4 g/kg/d to ~1.6 g/kg/d (~25% of EI)]. A secondary aim was to conduct an exploratory sub\u2010",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1100,9 +1280,9 @@
       "context_window": "ry sub\u2010analysis was conducted between RE + control (RE+CON; n = 8) and RE + a high protein diet via whey protein supplementat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-n-1539",
@@ -1118,9 +1298,9 @@
       "context_window": "high protein diet via whey protein supplementation (RE+PRO; n = 9) groups to determine synergistic effects. The experimental",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-2225",
@@ -1226,7 +1406,25 @@
       "context_window": "would increase daily dietary protein intake from ~1.0 (~15-17% of EI) to ~1.6 g/kg/d (~25% of EI), the upper intake recomm",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-3915",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 3915,
+      "sentence": "In addition, it was hypothesized that the whey protein dosing regimen would increase daily dietary protein intake from ~1.0 (~15-17% of EI) to ~1.6 g/kg/d (~25% of EI), the upper intake recommended to curb sarcopenia (Phillips & Martinson, 2019 ).",
+      "context_window": "daily dietary protein intake from ~1.0 (~15-17% of EI) to ~1.6 g/kg/d (~25% of EI), the upper intake recommended to curb sarcopen",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1244,7 +1442,7 @@
       "context_window": "y protein intake from ~1.0 (~15-17% of EI) to ~1.6 g/kg/d (~25% of EI), the upper intake recommended to curb sarcopenia (Ph",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1318,9 +1516,9 @@
       "context_window": "balance (see Table S2 for example). The diet consisted of ~45% of energy from carbohydrate, ~20% of energy from protein, a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-pct-6594",
@@ -1336,9 +1534,9 @@
       "context_window": "). The diet consisted of ~45% of energy from carbohydrate, ~20% of energy from protein, and ~35% of energy from fat. The ma",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-pct-6627",
@@ -1354,9 +1552,9 @@
       "context_window": "energy from carbohydrate, ~20% of energy from protein, and ~35% of energy from fat. The macronutrient distribution of the d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-7588",
@@ -1663,7 +1861,7 @@
       "context_window": "he PRO group greater than the CON group at weeks 6 and 12 ( p < 0.001; Table 2 ). Similarly, protein intake (g/d, g/kg/d, and % e",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1681,7 +1879,7 @@
       "context_window": "PRO group greater than the RE+CON group at weeks 6 and 12 ( p < 0.001; Table S4 ). Carbohydrate intake increased in the CON group",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1699,7 +1897,7 @@
       "context_window": "up greater than the PRO group at weeks 6 (g/d and % energy; p < 0.001) and 12 (g/d only; p < 0.001). In the RE+CON group, carbohy",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1717,7 +1915,7 @@
       "context_window": "at weeks 6 (g/d and % energy; p < 0.001) and 12 (g/d only; p < 0.001). In the RE+CON group, carbohydrate intake (g/d and % energ",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1735,7 +1933,7 @@
       "context_window": "increased greater than the RE+PRO group at weeks 6 and 12 ( p < 0.001). Fat intake (g/d and % energy) and habitual total EI decre",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2531,7 +2729,7 @@
       "context_window": "sed over time in the PRO group greater than the CON group ( p < 0.001; Table 3 ), which remained significant when adjusted for bo",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2549,7 +2747,7 @@
       "context_window": "d significant when adjusted for body mass and composition ( p < 0.001). Similarly, 24\u2010h protein oxidation significantly increased",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2567,7 +2765,7 @@
       "context_window": "er time in the RE+PRO group greater than the RE+CON group ( p < 0.001; Table S5 ). The increase in 24\u2010h protein oxidation followi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2586,7 +2784,7 @@
       "context_window": "y a rise in overnight protein oxidation, which increased by 30 \u00b1 6 g/d ( p < 0.001) (Figure 4 ). No differences in 24\u2010h ( p =",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2604,7 +2802,7 @@
       "context_window": "vernight protein oxidation, which increased by 30 \u00b1 6 g/d ( p < 0.001) (Figure 4 ). No differences in 24\u2010h ( p = 0.99) or overnig",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2622,9 +2820,9 @@
       "context_window": "\u00b1 6 g/d ( p < 0.001) (Figure 4 ). No differences in 24\u2010h ( p = 0.99) or overnight protein oxidation ( p = 0.94) occurred betwee",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-p-8109",
@@ -2640,9 +2838,9 @@
       "context_window": "rences in 24\u2010h ( p = 0.99) or overnight protein oxidation ( p = 0.94) occurred between the RE and non\u2010exercise groups and no bet",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-p-8241",
@@ -2658,9 +2856,9 @@
       "context_window": "\u2010group differences occurred for daytime protein oxidation ( p \u2265 0.19; see Figure 4 for PRO vs. CON). Protein balance was positiv",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-p-8460",
@@ -2676,7 +2874,7 @@
       "context_window": "rotein intake was returned to the chamber diet at week 12 ( p < 0.001). Likewise, protein balance significantly decreased over ti",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2694,7 +2892,7 @@
       "context_window": "ased over time in the RE+PRO compared to the RE+CON group ( p = 0.01). Protein balance did not differ over time between the RE a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2712,7 +2910,7 @@
       "context_window": "t differ over time between the RE and non\u2010exercise groups ( p = 0.38). No between\u2010group differences in 24\u2010h oxidation or balance",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2730,9 +2928,9 @@
       "context_window": "overnight and daytime protein oxidation (g/d) between PRO ( n = 17) and CON ( n = 16) groups over the intervention period (mea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-n-8915",
@@ -2748,9 +2946,9 @@
       "context_window": "ime protein oxidation (g/d) between PRO ( n = 17) and CON ( n = 16) groups over the intervention period (means \u00b1 SE). Circles",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-p-9128",
@@ -3630,7 +3828,7 @@
       "context_window": "ide the respiration chamber; RMR, resting metabolic rate; \u2020 p < 0.05 between groups. # p < 0.05 from baseline At baseline and 1",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3648,7 +3846,7 @@
       "context_window": "; RMR, resting metabolic rate; \u2020 p < 0.05 between groups. # p < 0.05 from baseline At baseline and 12 weeks, across the whole s",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3666,7 +3864,7 @@
       "context_window": "5 between groups. # p < 0.05 from baseline At baseline and 12 weeks, across the whole sample, fat oxidation was significantly g",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3684,7 +3882,7 @@
       "context_window": "he fasted step exercise bout (EX\u20101) than during both EX\u20102 ( p < 0.001) and EX\u20103 ( p < 0.001; Figure 8 ). Energy expenditure did n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3702,7 +3900,7 @@
       "context_window": "e bout (EX\u20101) than during both EX\u20102 ( p < 0.001) and EX\u20103 ( p < 0.001; Figure 8 ). Energy expenditure did not differ between step",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3849,9 +4047,9 @@
       "context_window": "ep exercise bouts performed at 75 steps/min at baseline and 12 weeks ( n = 33; means \u00b1 SE). EX\u20101, step exercise bout 1 (0830 h i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-n-15071",
@@ -3867,9 +4065,9 @@
       "context_window": "bouts performed at 75 steps/min at baseline and 12 weeks ( n = 33; means \u00b1 SE). EX\u20101, step exercise bout 1 (0830 h in the fas",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-p-15425",
@@ -3885,7 +4083,7 @@
       "context_window": "main effect of exercise bout for carbohydrate oxidation. + p < 0.001 compared to EX\u20102. $ p < 0.001 compared to EX\u20103 Step exerci",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "treatment",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3903,7 +4101,7 @@
       "context_window": "for carbohydrate oxidation. + p < 0.001 compared to EX\u20102. $ p < 0.001 compared to EX\u20103 Step exercise energy expenditure and subs",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "treatment",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3921,7 +4119,7 @@
       "context_window": "ubstrate oxidation for each treatment group at baseline and 12 weeks a . Energy expenditure and substrate oxidation values are",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "treatment",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3993,9 +4191,9 @@
       "context_window": "\u2010individual variability was observed (range -3.1-12.5%). At 12 weeks when protein intake was returned to the baseline chamber di",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-124",
@@ -4011,7 +4209,43 @@
       "context_window": "bstrate oxidation, and body composition in older adults (60-75 years) following RE and a high protein diet via whey protein supp",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-256",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 g/kg/d",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 256,
+      "sentence": "The present study is the first to examine changes in 24\u2010h EE, substrate oxidation, and body composition in older adults (60-75 years) following RE and a high protein diet via whey protein supplementation [which aimed to increase dietary protein intake by \u22650.4 g/kg/d to 1.6 g/kg/d (~25% of EI)].",
+      "context_window": "ntation [which aimed to increase dietary protein intake by \u22650.4 g/kg/d to 1.6 g/kg/d (~25% of EI)]. The main findings were: (i) RE",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-270",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 270,
+      "sentence": "The present study is the first to examine changes in 24\u2010h EE, substrate oxidation, and body composition in older adults (60-75 years) following RE and a high protein diet via whey protein supplementation [which aimed to increase dietary protein intake by \u22650.4 g/kg/d to 1.6 g/kg/d (~25% of EI)].",
+      "context_window": "aimed to increase dietary protein intake by \u22650.4 g/kg/d to 1.6 g/kg/d (~25% of EI)]. The main findings were: (i) RE significantly",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4029,9 +4263,27 @@
       "context_window": "rease dietary protein intake by \u22650.4 g/kg/d to 1.6 g/kg/d (~25% of EI)]. The main findings were: (i) RE significantly incre",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-510",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 510,
+      "sentence": "The main findings were: (i) RE significantly increased FFM, RMR, SMR and sedentary EE and mitigated a decline in free\u2010living TEE compared to non\u2010exercise; however, decreased AEE and PAL; (ii) a high protein diet (~1.6 g/kg/day and ~25% of EI) via whey protein supplementation improved body weight maintenance and reduced FM compared to control, but reduced resting fat oxidation and increased overnight protein oxidation, which subsequently decreased 24\u2010h protein balance; and (iii) a high protein diet via whey protein supplementation combined with RE synergistically improved body weight maintenance and reduced FM compared to RE and a carbohydrate control, but did not significantly augment increases in FFM or EE components.",
+      "context_window": "however, decreased AEE and PAL; (ii) a high protein diet (~1.6 g/kg/day and ~25% of EI) via whey protein supplementation improved b",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-pct-528",
@@ -4047,9 +4299,9 @@
       "context_window": "d AEE and PAL; (ii) a high protein diet (~1.6 g/kg/day and ~25% of EI) via whey protein supplementation improved body weigh",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-msd-1296",
@@ -4107,6 +4359,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-2157",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 2157,
+      "sentence": "The present study reports that a high protein diet (~1.6 g/kg/d and ~25% of EI) via whey protein supplementation aided maintenance of body mass and reductions in both absolute and %FM compared to an isocaloric carbohydrate control.",
+      "context_window": "03 ). The present study reports that a high protein diet (~1.6 g/kg/d and ~25% of EI) via whey protein supplementation aided main",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-pct-2173",
       "claim_type": "percentage",
       "raw_text": "25%",
@@ -4120,9 +4390,9 @@
       "context_window": "nt study reports that a high protein diet (~1.6 g/kg/d and ~25% of EI) via whey protein supplementation aided maintenance o",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-pct-3100",
@@ -4156,8 +4426,44 @@
       "context_window": "et al. ( 2020 ), who reported an increase in RMR following ~34 months of a high compared to a moderate protein diet in older adul",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-5375",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 5375,
+      "sentence": "These findings are consistent with others that observed no individual (Bj\u00f6rkman et al., 2020 ; Kim et al., 2012 ; Kirk et al., 2020 ; Verreijen et al., 2017 ; Zhu et al., 2015 ) or synergistic effects (Arnarson et al., 2013 ; Candow et al., 2006 ; Dulac et al., 2021 ; Holm et al., 2008 ; Holwerda et al., 2018 ; Kirk et al., 2020 ; Kukuljan et al., 2009 ; Leenders et al., 2013 ; Thomson et al., 2016 ; Verdijk et al., 2009 ) of increased dietary protein intake on FFM in healthy older adults habitually consuming ample amounts of dietary protein (~1.0-1.2 g/kg/d).",
+      "context_window": "habitually consuming ample amounts of dietary protein (~1.0-1.2 g/kg/d). In contrast, studies conducted in older adults who were e",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-5524",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 5524,
+      "sentence": "In contrast, studies conducted in older adults who were either sarcopenic/frail or reported lower habitual intakes of dietary protein (<1.0 g/kg/d) have observed both individual (Bauer et al., 2015 ; Bo et al., 2019 ; Kang et al., 2020 ; Park et al., 2018 ; ten Haaf et al., 2019 ) and augmented increases in FFM (Kang et al., 2019 ; Rondanelli et al., 2016 , 2018 ; Tieland et al., 2012b ; Yamada et al., 2019 ; Zdzieblik et al., 2015 ).",
+      "context_window": "ail or reported lower habitual intakes of dietary protein (<1.0 g/kg/d) have observed both individual (Bauer et al., 2015 ; Bo et",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "decrease",
       "binding_confidence": "partial"
     },
     {
@@ -4174,7 +4480,7 @@
       "context_window": "ernight protein oxidation and we have previously reported a 73% increase in awakening cortisol concentration following the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4247,8 +4553,26 @@
       "context_window": "pulation. The increase in 24\u2010h protein oxidation following 12 weeks of a high protein diet via whey protein supplementation con",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-10571",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 10571,
+      "sentence": "These findings indicate a potential drawback of older adults habitually consuming high intakes (~1.6 g/kg/d) of dietary protein and suggest that older individuals should refrain from drastically reducing protein intake once commenced on a high protein diet to minimize transient periods of reduced protein balance.",
+      "context_window": "rawback of older adults habitually consuming high intakes (~1.6 g/kg/d) of dietary protein and suggest that older individuals shou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "decrease",
       "binding_confidence": "partial"
     },
     {
@@ -4324,6 +4648,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-13490",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 13490,
+      "sentence": "Investigation of these groups and older adults with insufficient habitual protein intakes (<1 g/kg/d) should form future work.",
+      "context_window": "d older adults with insufficient habitual protein intakes (<1 g/kg/d) should form future work. In conclusion, 12 weeks of RE si",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-13541",
       "claim_type": "unit_value",
       "raw_text": "12 weeks",
@@ -4342,6 +4684,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-u-13698",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 13698,
+      "sentence": "A high protein diet (~1.6 g/kg/d and ~25% of EI) via whey protein supplementation aided body weight maintenance and reduced FM compared to control.",
+      "context_window": "Conversely, RE decreased AEE and PAL. A high protein diet (~1.6 g/kg/d and ~25% of EI) via whey protein supplementation aided body",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
       "claim_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b-pct-13714",
       "claim_type": "percentage",
       "raw_text": "25%",
@@ -4355,9 +4715,9 @@
       "context_window": "ecreased AEE and PAL. A high protein diet (~1.6 g/kg/d and ~25% of EI) via whey protein supplementation aided body weight m",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

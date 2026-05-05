@@ -1,13 +1,31 @@
 {
   "paper_id": "PMC12209347_investigating_muscle_protein_synthesis_using_deuterium_oxide",
   "doi": "10.1113/EP092016",
-  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extracted_at": "2026-05-05T23:37:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "percentage": 5,
-    "unit_value": 1
+    "unit_value": 3,
+    "percentage": 5
   },
   "claims": [
+    {
+      "claim_id": "PMC12209347_investigating_muscle_protein_synthesis_using_deuterium_oxide-u-1198",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1198,
+      "sentence": "Measurements of longer\u2010term MPS using D\u2082O suggest that older adults might benefit from protein intakes of >1.2 g/kg/day to enhance MPS.",
+      "context_window": "st that older adults might benefit from protein intakes of >1.2 g/kg/day to enhance MPS. Additionally, replacing protein in the diet",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC12209347_investigating_muscle_protein_synthesis_using_deuterium_oxide-pct-245",
       "claim_type": "percentage",
@@ -22,9 +40,9 @@
       "context_window": "Brook, Wilkinson, Phillips, et al., 2016 ). Accounting for \u223c40% of total body mass, skeletal muscle is the largest protein",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12209347_investigating_muscle_protein_synthesis_using_deuterium_oxide-pct-1250",
@@ -114,6 +132,24 @@
       "endpoint": "sarcopenia",
       "arm": "",
       "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12209347_investigating_muscle_protein_synthesis_using_deuterium_oxide-u-383",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 383,
+      "sentence": "Evidence suggests that protein intake of >1.2 g/kg/day is generally effective for stimulating MPS, although intakes below this threshold can still benefit from a higher proportion of high\u2010quality, leucine\u2010rich proteins. (Figure 2 ).",
+      "context_window": "in older adults. Evidence suggests that protein intake of >1.2 g/kg/day is generally effective for stimulating MPS, although intake",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
       "binding_confidence": "partial"
     }
   ]

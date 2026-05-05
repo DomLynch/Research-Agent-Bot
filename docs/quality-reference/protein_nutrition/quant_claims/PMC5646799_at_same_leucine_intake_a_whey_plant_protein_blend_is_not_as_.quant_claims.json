@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_",
   "doi": "10.1371/journal.pone.0186204",
-  "extracted_at": "2026-05-05T22:35:43+00:00",
+  "extracted_at": "2026-05-05T23:37:09+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 22,
+    "unit_value": 23,
     "percentage": 21,
     "sample_size": 4,
     "p_value": 2
@@ -27,6 +27,24 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-u-2061",
+      "claim_type": "unit_value",
+      "raw_text": "0.8g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 2061,
+      "sentence": "The cause of this anabolic resistance is multi factorial but the alterations of muscle protein metabolism response to food intake have been partially explained by the presence of a low grade inflammation, an oxidative stress, a lipotoxicity, an elevated glucocorticoid level or an increase of splanchnic extraction of dietary amino acids [ 14 - 22 ] In all cases, an increase of dietary protein intake above the current recommended dietary allowances (RDA at 0.8g/kg/d) [ 23 ] has been recommended to overcome the anabolic resistance observed.",
+      "context_window": "ke above the current recommended dietary allowances (RDA at 0.8g/kg/d) [ 23 ] has been recommended to overcome the anabolic resis",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-u-259",
@@ -60,9 +78,9 @@
       "context_window": "d twice daily with 220 g/d of a concentrate feed containing 16% protein, 1% fat, 4% cellulose and 5% ash (Porcyprima; Sande",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-465",
@@ -78,9 +96,9 @@
       "context_window": "with 220 g/d of a concentrate feed containing 16% protein, 1% fat, 4% cellulose and 5% ash (Porcyprima; Sanders Centre Au",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-473",
@@ -96,9 +114,9 @@
       "context_window": "0 g/d of a concentrate feed containing 16% protein, 1% fat, 4% cellulose and 5% ash (Porcyprima; Sanders Centre Auvergne,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-490",
@@ -114,9 +132,9 @@
       "context_window": "trate feed containing 16% protein, 1% fat, 4% cellulose and 5% ash (Porcyprima; Sanders Centre Auvergne, Aigueperse, Franc",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-u-762",
@@ -384,9 +402,9 @@
       "context_window": "y test meals contained the same amount of dietary proteins (13%) but differed in term of leucine content (+38% whey vs case",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-3862",
@@ -402,9 +420,9 @@
       "context_window": "ry proteins (13%) but differed in term of leucine content (+38% whey vs casein) and digestion speed characteristics ([ 21 ,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-3976",
@@ -420,9 +438,9 @@
       "context_window": "s ([ 21 , 30 ]. The whey/plant protein meal was composed of 70% pea and wheat protein sources (Roquette, France) in a ratio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-4242",
@@ -438,7 +456,7 @@
       "context_window": "he whey meal, the whey/plant protein test meal also contain 30% of whey and its protein content has been increased at 16.5%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -456,7 +474,7 @@
       "context_window": "n 30% of whey and its protein content has been increased at 16.5%. Then, the plant based protein test meal allowed a substitu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -474,9 +492,9 @@
       "context_window": "tein test meal allowed a substitution of animal proteins by 70% but remained identical to the whey meal in terms of leucine",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-n-4887",
@@ -510,9 +528,9 @@
       "context_window": "note: Protein sources: casein (calcium caseinate, isolate, 90% N2 (Lactalis, France), Whey (Native proteins, isolate, 90%N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-5344",
@@ -528,9 +546,9 @@
       "context_window": "90% N2 (Lactalis, France), Whey (Native proteins, isolate, 90%N2 (Lactalis, France); Pea proteins (concentrate, 80%N2, Roq",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-pct-5397",
@@ -546,9 +564,9 @@
       "context_window": "olate, 90%N2 (Lactalis, France); Pea proteins (concentrate, 80%N2, Roquette, France); Wheat (concentrate, Roquette, France)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5646799_at_same_leucine_intake_a_whey_plant_protein_blend_is_not_as_-u-5647",

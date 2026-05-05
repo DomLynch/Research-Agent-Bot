@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a",
   "doi": "10.1186/s12937-025-01131-7",
-  "extracted_at": "2026-05-05T22:35:32+00:00",
+  "extracted_at": "2026-05-05T23:37:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 31,
@@ -26,7 +26,7 @@
       "context_window": "ively associated with HG levels (kg) (\u03b2 = 0.04 and 0.07 per 1% increase, respectively; p < 0.05 for both). Participants ag",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -44,7 +44,7 @@
       "context_window": "vels (kg) (\u03b2 = 0.04 and 0.07 per 1% increase, respectively; p < 0.05 for both). Participants aged \u2265 65 years in the highest NEAA",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -134,7 +134,7 @@
       "context_window": "er participants whose plant protein intake ranged from 8 to 10% of energy, compared to those consuming less than 7%. Howeve",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -152,7 +152,7 @@
       "context_window": "m 8 to 10% of energy, compared to those consuming less than 7%. However, no association was found when intake exceeded 10%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -188,7 +188,7 @@
       "context_window": "ts degradation [ 19 ]. An RCT that involved ten adults aged 20 years or older in the UK found that BCAA supplementation stimulat",
       "claim_role": "population",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -206,7 +206,7 @@
       "context_window": "-rich supplementation increased LBM among 111 adults aged \u2265 50 years compared with a control group [ 21 ]. Previous epidemiolog",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -494,9 +494,9 @@
       "context_window": "logistic regression analysis was used for participants aged 65 years or older to estimate the odds ratio (OR) and 95% confidence",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-pct-5982",
@@ -512,9 +512,9 @@
       "context_window": "aged 65 years or older to estimate the odds ratio (OR) and 95% confidence interval (CI) for low HG across quintiles of die",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-6698",
@@ -764,7 +764,7 @@
       "context_window": "s in the past week 5) Yes: handgrip strength was less than 28 kg for males and less than 18 kg for females Table 2 presents",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -782,7 +782,7 @@
       "context_window": "ndgrip strength was less than 28 kg for males and less than 18 kg for females Table 2 presents dietary protein and amino aci",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -800,9 +800,9 @@
       "context_window": "take of all the participants was 72.5 g/day, accounting for 15.3% of their energy intake. Energy-adjusted total protein intak",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-1985",
@@ -818,9 +818,9 @@
       "context_window": "-adjusted total protein intake was highest in males aged 19-64 years (90.7 g/day) and lowest in females aged \u2265 65 years (46.0 g/",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-2036",
@@ -836,9 +836,9 @@
       "context_window": "aged 19-64 years (90.7 g/day) and lowest in females aged \u2265 65 years (46.0 g/day). Animal protein intake (% of energy) was highe",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-2140",
@@ -854,7 +854,7 @@
       "context_window": "(% of energy) was higher in both males and females aged 19-64 years compared to those aged 65 years, whereas plant protein inta",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -872,7 +872,7 @@
       "context_window": "h males and females aged 19-64 years compared to those aged 65 years, whereas plant protein intake was higher in those aged \u2265 65",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -890,7 +890,7 @@
       "context_window": "rs, whereas plant protein intake was higher in those aged \u2265 65 years ( p < 0.001 for all). The average total amino acid intake w",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -908,7 +908,7 @@
       "context_window": "plant protein intake was higher in those aged \u2265 65 years ( p < 0.001 for all). The average total amino acid intake was 62.1 g/da",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -980,7 +980,7 @@
       "context_window": "carbohydrate intake (Model 3). The effect sizes ( \u03b2 ) for a 1% increase in total and plant protein intake were 0.04 and 0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -998,7 +998,7 @@
       "context_window": "and plant protein intake were 0.04 and 0.07, respectively ( p < 0.05 for both). Regarding amino acids, the p for trend across qu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1016,7 +1016,7 @@
       "context_window": "ntiles of dietary protein and amino acids 1) Quintile 1 ( n = 3,713) Quintile 2 ( n = 3,713) Quintile 3 ( n = 3,713) Q",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1034,7 +1034,7 @@
       "context_window": "and amino acids 1) Quintile 1 ( n = 3,713) Quintile 2 ( n = 3,713) Quintile 3 ( n = 3,713) Quintile 4 ( n = 3,713) Q",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1052,7 +1052,7 @@
       "context_window": "le 1 ( n = 3,713) Quintile 2 ( n = 3,713) Quintile 3 ( n = 3,713) Quintile 4 ( n = 3,713) Quintile 5 ( n = 3,713) V",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1070,7 +1070,7 @@
       "context_window": "le 2 ( n = 3,713) Quintile 3 ( n = 3,713) Quintile 4 ( n = 3,713) Quintile 5 ( n = 3,713) Values are presented as adj",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1088,7 +1088,7 @@
       "context_window": "le 3 ( n = 3,713) Quintile 4 ( n = 3,713) Quintile 5 ( n = 3,713) Values are presented as adjusted mean \u00b1 SE 1) EAA, e",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1106,7 +1106,7 @@
       "context_window": "g increase for EAAs/Total protein In participants aged 19-64 years, total protein intake in males and plant protein intake in",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1124,7 +1124,7 @@
       "context_window": "sociated with HG ( \u03b2 = 0.07 for males and 0.06 for females; p < 0.05 for both) (Supplemental Table 1). No significant difference",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1160,9 +1160,9 @@
       "context_window": "g those who did not perform resistance exercise ( \u03b2 = 0.07; p = 0.0107) (Supplemental Table 2). Supplemental Tables 3 and 4 presen",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-or-a-5289",
@@ -1178,7 +1178,7 @@
       "context_window": "d to those in the lowest quintile groups for total protein (OR: 0.54, 95% CI: 0.35-0.84, p for trend = 0.0362), EAA (OR: 0.59, 9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1197,7 +1197,7 @@
       "context_window": "in the lowest quintile groups for total protein (OR: 0.54, 95% CI: 0.35-0.84, p for trend = 0.0362), EAA (OR: 0.59, 95% CI: 0.38-0.90, p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1215,7 +1215,7 @@
       "context_window": "n (OR: 0.54, 95% CI: 0.35-0.84, p for trend = 0.0362), EAA (OR: 0.59, 95% CI: 0.38-0.90, p for trend = 0.0294), and NEAA (OR: 0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1234,7 +1234,7 @@
       "context_window": "4, 95% CI: 0.35-0.84, p for trend = 0.0362), EAA (OR: 0.59, 95% CI: 0.38-0.90, p for trend = 0.0294), and NEAA (OR: 0.52, 95% CI: 0.34-0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1252,7 +1252,7 @@
       "context_window": ": 0.59, 95% CI: 0.38-0.90, p for trend = 0.0294), and NEAA (OR: 0.52, 95% CI: 0.34-0.79, p for trend = 0.0098) intake (Table 4 )",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1271,7 +1271,7 @@
       "context_window": "% CI: 0.38-0.90, p for trend = 0.0294), and NEAA (OR: 0.52, 95% CI: 0.34-0.79, p for trend = 0.0098) intake (Table 4 ). However, these si",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1290,7 +1290,7 @@
       "context_window": "or quintile 5 was not significant (OR for quintile 3: 0.51, 95% CI: 0.33-0.77; OR for quintile 4: 0.62, 95% CI: 0.40-0.98). In the sex-st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1309,7 +1309,7 @@
       "context_window": "intile 3: 0.51, 95% CI: 0.33-0.77; OR for quintile 4: 0.62, 95% CI: 0.40-0.98). In the sex-stratified analysis, a significant association",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1327,7 +1327,7 @@
       "context_window": "ry Tables 5 and 6). Multivariable-adjusted odds ratios and 95% confidence intervals of low handgrip strength according to",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1345,7 +1345,7 @@
       "context_window": "etary protein and amino acid intake among participants aged 65 years or older 1) Quintile 1 ( n = 494) Quintile 2 ( n = 494)",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1363,7 +1363,7 @@
       "context_window": "among participants aged 65 years or older 1) Quintile 1 ( n = 494) Quintile 2 ( n = 494) Quintile 3 ( n = 494) Quintile",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1381,7 +1381,7 @@
       "context_window": "65 years or older 1) Quintile 1 ( n = 494) Quintile 2 ( n = 494) Quintile 3 ( n = 494) Quintile 4 ( n = 494) Quintile",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1399,7 +1399,7 @@
       "context_window": "intile 1 ( n = 494) Quintile 2 ( n = 494) Quintile 3 ( n = 494) Quintile 4 ( n = 494) Quintile 5 ( n = 494) Values ar",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1417,7 +1417,7 @@
       "context_window": "intile 2 ( n = 494) Quintile 3 ( n = 494) Quintile 4 ( n = 494) Quintile 5 ( n = 494) Values are presented as odds rati",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1435,7 +1435,7 @@
       "context_window": "intile 3 ( n = 494) Quintile 4 ( n = 494) Quintile 5 ( n = 494) Values are presented as odds ratio (95% confidence interv",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1453,7 +1453,7 @@
       "context_window": "Quintile 5 ( n = 494) Values are presented as odds ratio (95% confidence intervals) 1) EAA: essential amino acid, BCAA:",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1471,7 +1471,7 @@
       "context_window": "protein intake and HG levels or low HG risk. Conversely, a 1% increase in plant protein intake was associated with a 0.07",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1489,7 +1489,7 @@
       "context_window": "a 1% increase in plant protein intake was associated with a 0.07 kg increase in HG levels among all participants. Additionally,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1507,7 +1507,7 @@
       "context_window": "s found in older adults whose plant protein intake ranged 8-10% of total energy (quintiles 3 and 4) compared to those consu",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1525,7 +1525,7 @@
       "context_window": "y (quintiles 3 and 4) compared to those consuming less than 7% (quintile 1), but no association was observed when intake e",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1543,7 +1543,7 @@
       "context_window": "le 1), but no association was observed when intake exceeded 10% (quintile 5). This may partly be related to the types of pl",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1561,9 +1561,9 @@
       "context_window": "om other sources was not associated in Korean adults aged \u2265 50 years [ 46 ]. Previous cross-sectional studies examining the ass",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-2216",
@@ -1579,9 +1579,9 @@
       "context_window": "ctors, including resistance exercise. In Korean adults aged 60 years and older, the risk of low HG decreased with increased tota",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-2556",
@@ -1597,9 +1597,9 @@
       "context_window": "rotein intake (measured in g/day) and low HG among men aged 50 years or older [ 46 ]. Conversely, some studies in the Korean pop",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-2732",
@@ -1615,9 +1615,9 @@
       "context_window": "tion between animal protein intake and low HG in women aged 65 years or older [ 25 , 48 ]. In the United States, among adults ov",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-2803",
@@ -1633,9 +1633,9 @@
       "context_window": "older [ 25 , 48 ]. In the United States, among adults over 19 years of age, both animal and plant protein intakes were positive",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-3190",
@@ -1651,7 +1651,7 @@
       "context_window": "resistance exercise [ 49 ]. Similarly, in vegetarians aged 18 years or older in the United States, mung bean protein intake was",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1669,7 +1669,7 @@
       "context_window": "re positively associated with HG in American adults aged 33-71 years [ 26 ]. Meanwhile, the group with the highest NEAA intake",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "eaa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1687,9 +1687,9 @@
       "context_window": ". The average protein intake of the study participants was 15.3% of the total energy intake, similar to the 15.2% reported i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-pct-5747",
@@ -1705,9 +1705,9 @@
       "context_window": "ipants was 15.3% of the total energy intake, similar to the 15.2% reported in a previous study using 1998-2018 KNHANES data [",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-pct-5915",
@@ -1723,7 +1723,7 @@
       "context_window": "tein intake of Koreans was higher than that of the Chinese (13.1%) according to the 1991-2015 China Health and Nutrition Surv",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1741,7 +1741,7 @@
       "context_window": "y (CHNS) [ 55 ], but slightly lower than that of Americans (16.4%) based on 1999-2016 NHANES data [ 56 ]. Approximately 87.6%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1759,9 +1759,9 @@
       "context_window": "16.4%) based on 1999-2016 NHANES data [ 56 ]. Approximately 87.6% of the participants in this study consumed protein within t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-pct-6216",
@@ -1777,9 +1777,9 @@
       "context_window": "n within the acceptable macronutrient distribution range (7-20% of energy) [ 57 ], while 11.9% exceeded 20% of their energy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-pct-6245",
@@ -1795,9 +1795,9 @@
       "context_window": "nutrient distribution range (7-20% of energy) [ 57 ], while 11.9% exceeded 20% of their energy intake from protein. Despite a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-pct-6260",
@@ -1813,9 +1813,9 @@
       "context_window": "bution range (7-20% of energy) [ 57 ], while 11.9% exceeded 20% of their energy intake from protein. Despite a continuous i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-u-6920",
@@ -1831,9 +1831,9 @@
       "context_window": "lder adults, this study included all adults over the age of 19 years. Finally, this study examined the comprehensive aspects of",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11998251_relationship_between_dietary_protein_and_amino_acid_intake_a-pct-7698",

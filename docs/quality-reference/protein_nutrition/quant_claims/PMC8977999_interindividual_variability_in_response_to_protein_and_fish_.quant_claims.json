@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC8977999_interindividual_variability_in_response_to_protein_and_fish_",
   "doi": "10.1002/jcsm.12936",
-  "extracted_at": "2026-05-05T22:35:41+00:00",
+  "extracted_at": "2026-05-05T23:37:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 42,
+    "unit_value": 44,
     "sample_size": 6,
     "mean_sd": 1,
     "confidence_interval": 9,
@@ -1499,6 +1499,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC8977999_interindividual_variability_in_response_to_protein_and_fish_-u-3340",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3340,
+      "sentence": "23 , 32 Counter to this notion however, despite a wide between\u2010participant range in PRE\u2010intervention protein intake (0.4 to 2.2 g/kg/day, 37% of the cohort had a dietary protein intake <1 g/kg/day) and LC n \u20103 PUFA status (erythrocyte EPA + DHA content 4.4% to 17.0% of total membrane fatty acids), we observed no association between these nutritional status measures, or numerous other dietary, phenotypic, or behavioural variables, and the responses to LEU\u2010PRO and LEU\u2010PRO+ n \u20103 supplementation.",
+      "context_window": "articipant range in PRE\u2010intervention protein intake (0.4 to 2.2 g/kg/day, 37% of the cohort had a dietary protein intake <1 g/kg/day",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC8977999_interindividual_variability_in_response_to_protein_and_fish_-pct-3354",
       "claim_type": "percentage",
       "raw_text": "37%",
@@ -1512,9 +1530,27 @@
       "context_window": "ge in PRE\u2010intervention protein intake (0.4 to 2.2 g/kg/day, 37% of the cohort had a dietary protein intake <1 g/kg/day) and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8977999_interindividual_variability_in_response_to_protein_and_fish_-u-3402",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3402,
+      "sentence": "23 , 32 Counter to this notion however, despite a wide between\u2010participant range in PRE\u2010intervention protein intake (0.4 to 2.2 g/kg/day, 37% of the cohort had a dietary protein intake <1 g/kg/day) and LC n \u20103 PUFA status (erythrocyte EPA + DHA content 4.4% to 17.0% of total membrane fatty acids), we observed no association between these nutritional status measures, or numerous other dietary, phenotypic, or behavioural variables, and the responses to LEU\u2010PRO and LEU\u2010PRO+ n \u20103 supplementation.",
+      "context_window": "2 g/kg/day, 37% of the cohort had a dietary protein intake <1 g/kg/day) and LC n \u20103 PUFA status (erythrocyte EPA + DHA content 4.4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8977999_interindividual_variability_in_response_to_protein_and_fish_-pct-3469",
@@ -1530,9 +1566,9 @@
       "context_window": "day) and LC n \u20103 PUFA status (erythrocyte EPA + DHA content 4.4% to 17.0% of total membrane fatty acids), we observed no ass",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8977999_interindividual_variability_in_response_to_protein_and_fish_-pct-3477",
@@ -1548,9 +1584,9 @@
       "context_window": "LC n \u20103 PUFA status (erythrocyte EPA + DHA content 4.4% to 17.0% of total membrane fatty acids), we observed no association",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8977999_interindividual_variability_in_response_to_protein_and_fish_-u-7139",

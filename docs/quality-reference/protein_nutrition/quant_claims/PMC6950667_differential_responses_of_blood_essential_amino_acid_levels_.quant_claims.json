@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_",
   "doi": "10.3390/nu11122987",
-  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extracted_at": "2026-05-05T23:37:12+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 2,
@@ -23,9 +23,9 @@
       "context_window": "max ) of blood leucine were secondary outcomes. Subjects ( n = 18) consumed three plant-based protein blends and WPI (control",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-665",
@@ -41,7 +41,7 @@
       "context_window": ". The total blood eAA iAUC ratios of the three blends were [90% CI]: #1: 0.66 [0.58-0.76]; #2: 0.71 [0.62-0.82]; #3: 0.60 [",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -59,7 +59,7 @@
       "context_window": "pre-defined equivalence range [0.80-1.25], indicative of 30-40% lower iAUC versus WPI. Leucine C max of the three blends wa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -77,7 +77,7 @@
       "context_window": "0.72 [0.68-0.75]; #3: 0.65 [0.62-0.68], indicative of a 28-35% lower response. Leucine T max for two blends were similar t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -95,9 +95,9 @@
       "context_window": "Plant-based protein sources typically have less leucine (~6-8%) compared to animal-based proteins (>10%) [ 1 ]. Therefore,",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-2168",
@@ -113,9 +113,9 @@
       "context_window": "ve less leucine (~6-8%) compared to animal-based proteins (>10%) [ 1 ]. Therefore, to match the leucine content of dairy pr",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-491",
@@ -473,9 +473,9 @@
       "context_window": "imate statement in PROC MIXED, together with the associated 90% two-sided Confidence Interval (CI). These differences in LS",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-9539",
@@ -491,9 +491,9 @@
       "context_window": "esent the ratio of Test to Control GLS-Means and associated 90% CI. For bio-equivalence to be demonstrated, the entirety of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-9607",
@@ -509,9 +509,9 @@
       "context_window": "For bio-equivalence to be demonstrated, the entirety of the 90% CI for the ratio of Test to Control GLS-Means must lie with",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-9936",
@@ -527,9 +527,9 @@
       "context_window": "ere estimated using the ANOVA model described above and the 90% CI for the ratio of Test to Control was estimated with the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-n-656",
@@ -545,7 +545,7 @@
       "context_window": "cal characteristics overall and by sequence-PP population ( N = 18). #1 = Protein Blend #1 (Test)-Pea, Pumpkin; #2 = Protein",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -563,7 +563,7 @@
       "context_window": ". The total sum of blood eAA iAUC over 4 hours was lower (~30% to 40%) in plant-based products compared to WPI product. Fi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -581,7 +581,7 @@
       "context_window": "total sum of blood eAA iAUC over 4 hours was lower (~30% to 40%) in plant-based products compared to WPI product. Figure 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -599,9 +599,9 @@
       "context_window": "s following ingestion of each study product; ( b ) Mean and 95%CI total sum plasma eAA iAUC (nmol/mL) over 4 hours by study",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-1902",
@@ -617,9 +617,9 @@
       "context_window": "confirmed with the model estimates of the three ratios and 90% CI Blend #1 (pea + pumpkin): 0.66 [0.58-0.76]; Blend #2 (pe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-2200",
@@ -671,7 +671,7 @@
       "context_window": "hours per time point of each study product; ( b ) Mean and 95%CI total sum leucine iAUC (nmol/mL) by study product, obtain",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -689,7 +689,7 @@
       "context_window": "acid response over four hours. RPI showed a non-significant 6.8% lower total amino acid concentration in the blood based on",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -707,7 +707,7 @@
       "context_window": "wn to be bio-equivalent to that of WPI as evidenced by a 30-40% lower in total sum eAA iAUC over 4 hours. A unique aspect",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

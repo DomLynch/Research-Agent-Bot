@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC9320473_protein_intake_and_sarcopenia_in_older_adults_a_systematic_r",
   "doi": "10.3390/ijerph19148718",
-  "extracted_at": "2026-05-05T22:35:34+00:00",
+  "extracted_at": "2026-05-05T23:37:20+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 4,
+    "unit_value": 5,
     "percentage": 12,
     "p_value": 2
   },
@@ -23,7 +23,7 @@
       "context_window": "rcopenia as the primary or secondary outcome in people aged 60 years and older were included. Studies published in languages oth",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -41,9 +41,9 @@
       "context_window": "nity-dwelling older adults with a mean age of approximately 73 years were included. The meta-analysis of four studies indicated",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9320473_protein_intake_and_sarcopenia_in_older_adults_a_systematic_r-pct-190",
@@ -64,6 +64,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC9320473_protein_intake_and_sarcopenia_in_older_adults_a_systematic_r-u-1011",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1011,
+      "sentence": "In particular, a protein consumption higher than the current recommended dietary allowance (RDA, 0.8 g/kg/day) is proposed as a strategy to preserve muscle mass and physical function in advanced age [ 11 , 12 , 13 , 14 ].",
+      "context_window": "higher than the current recommended dietary allowance (RDA, 0.8 g/kg/day) is proposed as a strategy to preserve muscle mass and phys",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC9320473_protein_intake_and_sarcopenia_in_older_adults_a_systematic_r-u-674",
       "claim_type": "unit_value",
       "raw_text": "60 years",
@@ -77,9 +95,9 @@
       "context_window": "etween protein intake and sarcopenia; (2) participants aged 60 years or older; (3) sarcopenia identified according to the presen",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9320473_protein_intake_and_sarcopenia_in_older_adults_a_systematic_r-pct-4204",
@@ -185,9 +203,9 @@
       "context_window": "nity-dwelling older adults with a mean age of approximately 73 years from Australia, Belgium, Finland, India, and the Netherland",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9320473_protein_intake_and_sarcopenia_in_older_adults_a_systematic_r-pct-1956",
@@ -239,7 +257,7 @@
       "context_window": "protein than their non-sarcopenic counterparts (SMD = 0.37, 95% CI = 0.19-0.55, p < 0.0001). Heterogeneity was classified a",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -257,7 +275,7 @@
       "context_window": "on-sarcopenic counterparts (SMD = 0.37, 95% CI = 0.19-0.55, p < 0.0001). Heterogeneity was classified as \"might not be important\"",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },

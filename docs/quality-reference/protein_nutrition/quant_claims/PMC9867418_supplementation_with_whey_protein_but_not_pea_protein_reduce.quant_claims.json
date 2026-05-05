@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce",
   "doi": "10.3390/nu15020342",
-  "extracted_at": "2026-05-05T22:35:36+00:00",
+  "extracted_at": "2026-05-05T23:37:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 25,
+    "unit_value": 29,
     "sample_size": 1,
     "mean_sd": 13,
     "p_value": 23,
@@ -25,7 +25,7 @@
       "context_window": "e damage (EIMD) in young adults. We examined the effects of 13 days plant-based (pea) protein supplementation compared to whey",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -136,7 +136,25 @@
       "context_window": "nthesis [ 5 , 6 , 7 , 8 ]. It has been shown that more than 50% of physically active older adults do not reach the recommen",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-729",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 729,
+      "sentence": "It has been shown that more than 50% of physically active older adults do not reach the recommended protein intake of 1.2 g/kg/day [ 9 ].",
+      "context_window": "older adults do not reach the recommended protein intake of 1.2 g/kg/day [ 9 ]. Moreover, an increasing number of individuals avoid",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -154,9 +172,9 @@
       "context_window": "scle damage was observed in young and middle-aged men after 4 days of eccentric exercise and supplementation both with pea and",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1687",
@@ -208,7 +226,7 @@
       "context_window": "sensitive for milk proteins or lactose intolerance, a BMI > 30 kg/m 2 , Chronic Obstructive Pulmonary Disease (COPD), renal i",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -226,7 +244,7 @@
       "context_window": "ts were requested not to perform prolonged exercises in the 4 days before or after the endurance walking exercise. All partici",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -450,6 +468,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1278",
+      "claim_type": "unit_value",
+      "raw_text": "1.13 g/kg/day",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1278,
+      "sentence": "The habitual daily protein intake was 1.13 g/kg/day at baseline and did not differ between the whey, pea and placebo supplemented group ( p = 0.82).",
+      "context_window": "p = 0.57, Table 2 ). The habitual daily protein intake was 1.13 g/kg/day at baseline and did not differ between the whey, pea and pl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-1378",
       "claim_type": "p_value",
       "raw_text": "p = 0.82",
@@ -463,7 +499,7 @@
       "context_window": "ffer between the whey, pea and placebo supplemented group ( p = 0.82). A total of 40% of the participants had a protein intake b",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -481,9 +517,27 @@
       "context_window": "pea and placebo supplemented group ( p = 0.82). A total of 40% of the participants had a protein intake below 1.0 g/kg/day",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1451",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1451,
+      "sentence": "A total of 40% of the participants had a protein intake below 1.0 g/kg/day, but the prevalence was comparable among the three groups.",
+      "context_window": "total of 40% of the participants had a protein intake below 1.0 g/kg/day, but the prevalence was comparable among the three groups.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-1749",
@@ -954,7 +1008,7 @@
       "context_window": "gr/day [ 23 ]) and the younger age of study participants (<40 years versus >60 years) [ 15 , 23 ] in previous work compared to",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -972,7 +1026,7 @@
       "context_window": "nd the younger age of study participants (<40 years versus >60 years) [ 15 , 23 ] in previous work compared to our study. Older",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -990,7 +1044,7 @@
       "context_window": "onged walking exercise [ 1 , 2 , 29 , 30 ]. Taken together, 13 days of pea protein supplementation at 25 g per day was insuffic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1009,9 +1063,9 @@
       "context_window": "Plant based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Le",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-3080",
@@ -1027,9 +1081,9 @@
       "context_window": "based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Leu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-3121",
@@ -1046,9 +1100,9 @@
       "context_window": "ine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Leucine is known as one of the most important fac",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-3127",
@@ -1064,9 +1118,9 @@
       "context_window": "ntent (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Leucine is known as one of the most important fact",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-3359",
@@ -1082,9 +1136,9 @@
       "context_window": "at every protein supplement serving should contain at least 700 mg of leucine [ 37 ]. Given our standardized serving volume fo",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-3518",
@@ -1136,9 +1190,9 @@
       "context_window": "nt (900 mg versus 1150 mg, respectively). The difference of 250 mg of leucine between these supplements may have contributed t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-5845",
@@ -1154,7 +1208,7 @@
       "context_window": ". Several studies with protein supplementation varying from 8 weeks to 1 years show an increase in lean body mass, muscle stren",
       "claim_role": "protocol",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1172,7 +1226,7 @@
       "context_window": "tudies with protein supplementation varying from 8 weeks to 1 years show an increase in lean body mass, muscle strength and mus",
       "claim_role": "protocol",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1213,6 +1267,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-7396",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 7396,
+      "sentence": "At last, this study had a fixed protein supplementation dose (25 g/day) which increased daily protein intake to >1.0 g/kg/day in 93% of our participants.",
+      "context_window": "on dose (25 g/day) which increased daily protein intake to >1.0 g/kg/day in 93% of our participants. A personalized protein suppleme",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-7412",
       "claim_type": "percentage",
       "raw_text": "93%",
@@ -1226,7 +1298,7 @@
       "context_window": "y) which increased daily protein intake to >1.0 g/kg/day in 93% of our participants. A personalized protein supplementation",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },

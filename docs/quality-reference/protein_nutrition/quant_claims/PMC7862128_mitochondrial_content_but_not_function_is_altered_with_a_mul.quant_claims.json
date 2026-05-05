@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul",
   "doi": "10.3389/fnut.2020.619216",
-  "extracted_at": "2026-05-05T22:35:45+00:00",
+  "extracted_at": "2026-05-05T23:37:16+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 14,
-    "unit_value": 40,
+    "unit_value": 42,
     "p_value": 8,
     "percentage": 10,
     "sample_size": 40
@@ -26,7 +26,7 @@
       "context_window": "ntrolled study. Methods: Nineteen pre/frail elderly women (77.5 \u00b1 1.3 y, BMI: 25.1 \u00b1 0.9 kg/m 2 ), based on the Frailty Phenotype",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "thods: Nineteen pre/frail elderly women (77.5 \u00b1 1.3 y, BMI: 25.1 \u00b1 0.9 kg/m 2 ), based on the Frailty Phenotype, underwent 3-month",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -63,7 +63,7 @@
       "context_window": "Nineteen pre/frail elderly women (77.5 \u00b1 1.3 y, BMI: 25.1 \u00b1 0.9 kg/m 2 ), based on the Frailty Phenotype, underwent 3-months o",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -117,7 +117,7 @@
       "context_window": "in leucine supplemented pre/frail elderly women who undergo 12 weeks of RT. Clinical Trial Registration: ClinicalTrials.gov , i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -225,8 +225,26 @@
       "context_window": "pre/frail elderly women undergoing RT. We hypothesized that 12 weeks of RT would improve inherent mitochondrial function and/or",
       "claim_role": "protocol",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-u-383",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 383,
+      "sentence": "All participants underwent a 12-week multimodal high-intensity progressive resistance exercise training program and followed a protein-optimized diet (~1.2 g/kg/d).",
+      "context_window": "se training program and followed a protein-optimized diet (~1.2 g/kg/d). Half were randomized to receive leucine (2.5 g 3\u00d7/d) supp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {
@@ -300,6 +318,24 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-u-2799",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 2799,
+      "sentence": "If needed, minor adjustments were made to their normal food intake to obtain a dietary protein intake of 1.2 g/kg/d.",
+      "context_window": "ir normal food intake to obtain a dietary protein intake of 1.2 g/kg/d. Participants were randomized into receiving either leucine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-u-3421",
@@ -730,9 +766,9 @@
       "context_window": "uding consumed supplement) pre- and post-intervention (Ala: 5.8 \u00b1 0.2 vs. 5.5 \u00b1 0.3 g, Leu: 5.1 \u00b1 0.3 vs. 5.4 \u00b1 0.4 g, pre vs. po",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-msd-619",
@@ -1029,7 +1065,7 @@
       "context_window": "in maximal anaerobic muscular function (Leg Press 1RM, Ala: n = 9, Leu: n = 10) (A) and muscular aerobic function (6MWT, Ala:",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1047,7 +1083,7 @@
       "context_window": "naerobic muscular function (Leg Press 1RM, Ala: n = 9, Leu: n = 10) (A) and muscular aerobic function (6MWT, Ala: n = 8, Leu:",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1065,7 +1101,7 @@
       "context_window": "Leu: n = 10) (A) and muscular aerobic function (6MWT, Ala: n = 8, Leu: n = 10) (B) in pre/frail women with and without leuci",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1083,7 +1119,7 @@
       "context_window": ") (A) and muscular aerobic function (6MWT, Ala: n = 8, Leu: n = 10) (B) in pre/frail women with and without leucine supplement",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1101,7 +1137,7 @@
       "context_window": "n with and without leucine supplementation before and after 12 weeks of resistance exercise training. *denotes interaction effec",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1119,7 +1155,7 @@
       "context_window": "resistance exercise training. *denotes interaction effect, p < 0.05. Ala, alanine supplemented group (control), Leu, leucine su",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1137,7 +1173,7 @@
       "context_window": "t differ pre-training and increased only in the Leu group ( n = 7) with exercise training (interaction p = 0.034, time effect",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1155,7 +1191,7 @@
       "context_window": "the Leu group ( n = 7) with exercise training (interaction p = 0.034, time effect, p = 0.020). Ala ( n = 8) remained unchanged f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1173,7 +1209,7 @@
       "context_window": "with exercise training (interaction p = 0.034, time effect, p = 0.020). Ala ( n = 8) remained unchanged from baseline. (A) VDAC",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1191,7 +1227,7 @@
       "context_window": "ning (interaction p = 0.034, time effect, p = 0.020). Ala ( n = 8) remained unchanged from baseline. (A) VDAC protein expres",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1209,7 +1245,7 @@
       "context_window": "n with and without leucine supplementation before and after 12 weeks of resistance exercise training. Ala: n = 8, Leu: n = 7. No",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1389,7 +1425,7 @@
       "context_window": "n with and without leucine supplementation before and after 12 weeks of resistance exercise training. (C) Acceptor control ratio",
       "claim_role": "duration",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1407,7 +1443,7 @@
       "context_window": "e division of ADP by Glutamate+malate respiration. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 8, Leu: n = 6, (C) Ala: n = 8, Le",
       "claim_role": "duration",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1425,7 +1461,7 @@
       "context_window": "f ADP by Glutamate+malate respiration. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 8, Leu: n = 6, (C) Ala: n = 8, Leu: n = 5. No",
       "claim_role": "duration",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1443,7 +1479,7 @@
       "context_window": "te+malate respiration. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 8, Leu: n = 6, (C) Ala: n = 8, Leu: n = 5. No significant gro",
       "claim_role": "duration",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1461,7 +1497,7 @@
       "context_window": "spiration. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 8, Leu: n = 6, (C) Ala: n = 8, Leu: n = 5. No significant group, time, or",
       "claim_role": "duration",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1479,7 +1515,7 @@
       "context_window": "la: n = 8, Leu: n = 7, (B) Ala: n = 8, Leu: n = 6, (C) Ala: n = 8, Leu: n = 5. No significant group, time, or interaction eff",
       "claim_role": "duration",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1497,7 +1533,7 @@
       "context_window": "eu: n = 7, (B) Ala: n = 8, Leu: n = 6, (C) Ala: n = 8, Leu: n = 5. No significant group, time, or interaction effects in resp",
       "claim_role": "duration",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1587,7 +1623,7 @@
       "context_window": "n with and without leucine supplementation before and after 12 weeks of resistance exercise training. (A) Ala: n = 8, Leu: n = 7",
       "claim_role": "duration",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1605,7 +1641,7 @@
       "context_window": "nd after 12 weeks of resistance exercise training. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 7, Leu: n = 6. No significant gro",
       "claim_role": "duration",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1623,7 +1659,7 @@
       "context_window": "weeks of resistance exercise training. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 7, Leu: n = 6. No significant group, time, or",
       "claim_role": "duration",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1641,7 +1677,7 @@
       "context_window": "nce exercise training. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 7, Leu: n = 6. No significant group, time, or interaction eff",
       "claim_role": "duration",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1659,7 +1695,7 @@
       "context_window": "training. (A) Ala: n = 8, Leu: n = 7, (B) Ala: n = 7, Leu: n = 6. No significant group, time, or interaction effects in ROS",
       "claim_role": "duration",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1785,9 +1821,9 @@
       "context_window": "n with and without leucine supplementation before and after 12 weeks of resistance exercise training. (A) Ala: n = 5, Leu: n = 6",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-n-5262",
@@ -1803,9 +1839,9 @@
       "context_window": "nd after 12 weeks of resistance exercise training. (A) Ala: n = 5, Leu: n = 6, (B) Ala: n = 6, Leu: n = 5, (C) Ala: n = 5, Le",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-n-5274",
@@ -1821,9 +1857,9 @@
       "context_window": "weeks of resistance exercise training. (A) Ala: n = 5, Leu: n = 6, (B) Ala: n = 6, Leu: n = 5, (C) Ala: n = 5, Leu: n = 4. No",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-n-5290",
@@ -1839,9 +1875,9 @@
       "context_window": "nce exercise training. (A) Ala: n = 5, Leu: n = 6, (B) Ala: n = 6, Leu: n = 5, (C) Ala: n = 5, Leu: n = 4. No significant gro",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-n-5302",
@@ -1857,9 +1893,9 @@
       "context_window": "training. (A) Ala: n = 5, Leu: n = 6, (B) Ala: n = 6, Leu: n = 5, (C) Ala: n = 5, Leu: n = 4. No significant group, time, or",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-n-5318",
@@ -1875,9 +1911,9 @@
       "context_window": "la: n = 5, Leu: n = 6, (B) Ala: n = 6, Leu: n = 5, (C) Ala: n = 5, Leu: n = 4. No significant group, time, or interaction eff",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-n-5330",
@@ -1893,9 +1929,9 @@
       "context_window": "eu: n = 6, (B) Ala: n = 6, Leu: n = 5, (C) Ala: n = 5, Leu: n = 4. No significant group, time, or interaction effects in time",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-u-803",
@@ -1911,7 +1947,7 @@
       "context_window": "ured pre and post intervention. Our main findings were that 12 weeks of RT: (1) had no effect on mitochondrial respiration capac",
       "claim_role": "protocol",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1929,9 +1965,9 @@
       "context_window": "luding to this question in 20-month-old rats that underwent 8 weeks of voluntary wheel running with or without HMB (beta-hydrox",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-u-4092",
@@ -2001,9 +2037,9 @@
       "context_window": "ted if leucine impacts ROS emission. It has been found that 5 days of a leucine-rich diet resulted in decreased ROS production",
       "claim_role": "effect",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7862128_mitochondrial_content_but_not_function_is_altered_with_a_mul-u-10071",

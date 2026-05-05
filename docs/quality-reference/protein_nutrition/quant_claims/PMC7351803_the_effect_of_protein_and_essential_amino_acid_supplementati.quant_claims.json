@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati",
   "doi": "10.1007/s00394-019-02108-z",
-  "extracted_at": "2026-05-05T22:35:36+00:00",
+  "extracted_at": "2026-05-05T23:37:14+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 28,
@@ -80,9 +80,9 @@
       "context_window": "ention involved protein or EAA supplementation for at least 4 weeks. Protein supplementation was defined as a request for the p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-767",
@@ -98,7 +98,7 @@
       "context_window": "clude studies that had a supplementation period of at least 4 weeks because a recent systematic review that investigated protei",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -116,7 +116,7 @@
       "context_window": "ng-term condition, suggested that interventions as short as 6 weeks may improve muscle strength and mass [ 17 ]. Further inclus",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -152,9 +152,9 @@
       "context_window": "n Intervention Dietary protein supplementation for at least 4 weeks Dietary essential amino acid supplementation for at least 4",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-1996",
@@ -170,9 +170,9 @@
       "context_window": "s Dietary essential amino acid supplementation for at least 4 weeks Control Standard medical care (no change in diet) Modificat",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-2395",
@@ -188,7 +188,7 @@
       "context_window": "rch was conducted in animal models, (2) participants were < 18 years of age, (3) there was no dietary protein or EAA supplementa",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -206,9 +206,9 @@
       "context_window": "pplementation, (4) the supplementation period was less than 4 weeks or (5) data were from case reports. Systematic reviews were",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-63",
@@ -332,9 +332,9 @@
       "context_window": "e RCTs [ 27 - 31 ] were identified. One-hundred and three ( n = 103) patients were recruited to intervention groups and 64 pati",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-1946",
@@ -350,7 +350,7 @@
       "context_window": "C: Standard medical care. 2 Months Increase in body mass > 1 kg over 2 months I: 0 SAE; 1 AE C: 3 SAE; 0 AE Rozentryt et al",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -368,7 +368,7 @@
       "context_window": "rd medical care. 2 Months Increase in body mass > 1 kg over 2 months I: 0 SAE; 1 AE C: 3 SAE; 0 AE Rozentryt et al. [ 28 ] 2010",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -386,7 +386,7 @@
       "context_window": "xia Sarcopenia and Muscle RCT Cachectic, NYHA II-IV, LVEF \u2264 30%, oedema free weight loss > 7.5% over > 6 months I: 23 C: 6",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -404,7 +404,7 @@
       "context_window": "achectic, NYHA II-IV, LVEF \u2264 30%, oedema free weight loss > 7.5% over > 6 months I: 23 C: 6 I: 52 C: 49 I: 10 C: 12 I: 17 (7",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -422,7 +422,7 @@
       "context_window": "HA II-IV, LVEF \u2264 30%, oedema free weight loss > 7.5% over > 6 months I: 23 C: 6 I: 52 C: 49 I: 10 C: 12 I: 17 (74) C: 5 (83) I:",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -458,9 +458,9 @@
       "context_window": "rvings per day. Dietary protein consumption standardised to 20% of total estimated daily energy intake. Resistance exercise",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-2849",
@@ -476,9 +476,9 @@
       "context_window": "/h per week. C: Dietary protein consumption standardised to 20% of total estimated daily energy intake. Resistance exercise",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-2939",
@@ -494,7 +494,7 @@
       "context_window": "nergy intake. Resistance exercise training 2 \u00d7 1/h per week 12 weeks Not specified I: 2 SAE; No reported AEs C: 2 SAE; No report",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -512,7 +512,7 @@
       "context_window": "t al. [ 30 ] 2015 USA Circulation: heart failure RCT LVEF \u2264 35% I: 14 C: 12 I: 59 C: 56 I: 3 C: 2 I: 12 (86) C: 9 (82) I: 8",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -530,7 +530,7 @@
       "context_window": "Safflower oil and milk powder of equivalent caloric intake 6 weeks Change in CPET, 6MWT and isokinetic and isometric muscle fu",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -548,7 +548,7 @@
       "context_window": "and exercise DVD including aerobic and resistance exercise 6 days per week. C: Standard medical care 6 months Not specified N",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -620,9 +620,9 @@
       "context_window": "rvings per day. Dietary protein consumption standardised to 20% of total estimated daily energy intake. Resistance exercise",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-5320",
@@ -638,9 +638,9 @@
       "context_window": "h per week. C: Dietary protein consumption standardised to 20% of total estimated daily energy intake. Resistance exercise",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-5869",
@@ -656,7 +656,7 @@
       "context_window": "and exercise DVD including aerobic and resistance exercise 6 days per week. C: Standard medical care I intervention group,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -728,9 +728,9 @@
       "context_window": "ation of dietary supplementation of protein/EAA ranged from 6 weeks [ 30 ] to 6 months [ 31 ]. Three studies supplemented prote",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-7782",
@@ -746,9 +746,9 @@
       "context_window": "upplementation of protein/EAA ranged from 6 weeks [ 30 ] to 6 months [ 31 ]. Three studies supplemented protein/EAA for 3 months",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-7842",
@@ -764,9 +764,9 @@
       "context_window": "6 months [ 31 ]. Three studies supplemented protein/EAA for 3 months [ 28 , 29 , 32 ] and one study supplemented protein/EAA for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-u-7911",
@@ -782,9 +782,9 @@
       "context_window": "[ 28 , 29 , 32 ] and one study supplemented protein/EAA for 2 months [ 27 ]. Five out of six studies increased daily dietary pr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-8674",
@@ -800,9 +800,9 @@
       "context_window": "e six studies adjusted daily dietary protein intake to meet 20% of a patient\u2019s daily estimated energy intake in both the in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-10570",
@@ -818,9 +818,9 @@
       "context_window": "oup, whilst having their dietary protein intake adjusted to 20% of their estimated daily energy intake [ 29 ]. Only one con",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-10771",
@@ -836,7 +836,7 @@
       "context_window": "onsistency\u2019 [ 28 ]. Three studies with a combined total of n = 46 intervention patients and n = 41 control patients investiga",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -854,7 +854,7 @@
       "context_window": "s with a combined total of n = 46 intervention patients and n = 41 control patients investigated changes in skeletal muscle st",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2352,9 +2352,9 @@
       "context_window": "cle performance were reported in four studies that included n = 74 intervention and n = 38 control patients. All four studies",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-14561",
@@ -2370,9 +2370,9 @@
       "context_window": "orted in four studies that included n = 74 intervention and n = 38 control patients. All four studies measured changes in 6MWT",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-14779",
@@ -2388,9 +2388,9 @@
       "context_window": "31 ]. One study did not report control data for the 6MWT ( n = 6) [ 28 ] and one was a cohort study ( n = 13) [ 32 ]. Table",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-14822",
@@ -2406,9 +2406,9 @@
       "context_window": "a for the 6MWT ( n = 6) [ 28 ] and one was a cohort study ( n = 13) [ 32 ]. Table 5 Changes in muscle performance measurements",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-msd-15058",
@@ -3475,7 +3475,7 @@
       "context_window": "nce. 6MWT distance increased significantly in intervention (331 \u00b1 124 m to 405 \u00b1 130 m), but not control patients (298 \u00b1 142 m to",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3494,7 +3494,7 @@
       "context_window": "nce increased significantly in intervention (331 \u00b1 124 m to 405 \u00b1 130 m), but not control patients (298 \u00b1 142 m to 310 \u00b1 155 m; P",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3513,7 +3513,7 @@
       "context_window": "ion (331 \u00b1 124 m to 405 \u00b1 130 m), but not control patients (298 \u00b1 142 m to 310 \u00b1 155 m; P = 0.02) [ 27 ]. The RCT that did not re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3532,7 +3532,7 @@
       "context_window": "m to 405 \u00b1 130 m), but not control patients (298 \u00b1 142 m to 310 \u00b1 155 m; P = 0.02) [ 27 ]. The RCT that did not report control da",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3550,7 +3550,7 @@
       "context_window": "0 m), but not control patients (298 \u00b1 142 m to 310 \u00b1 155 m; P = 0.02) [ 27 ]. The RCT that did not report control data found an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3569,7 +3569,7 @@
       "context_window": "eport control data found an increase in 6MWT distance, from 366 \u00b1 110 m to 410 \u00b1 107 m ( P = 0.020) [ 28 ]. In the cohort study,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3588,7 +3588,7 @@
       "context_window": "ata found an increase in 6MWT distance, from 366 \u00b1 110 m to 410 \u00b1 107 m ( P = 0.020) [ 28 ]. In the cohort study, 6MWT distances",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3606,7 +3606,7 @@
       "context_window": "ncrease in 6MWT distance, from 366 \u00b1 110 m to 410 \u00b1 107 m ( P = 0.020) [ 28 ]. In the cohort study, 6MWT distances increased from",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3698,9 +3698,9 @@
       "context_window": "urements are presented in Table 6 . Three studies involving n = 73 intervention and n = 49 control patients reported changes i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-17773",
@@ -3716,9 +3716,9 @@
       "context_window": "n Table 6 . Three studies involving n = 73 intervention and n = 49 control patients reported changes in body mass [ 27 - 29 ].",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-p-18031",
@@ -3734,7 +3734,7 @@
       "context_window": "intervention patients, when compared to control patients ( P > 0.05) [ 29 ]. One study reported an intra-group body mass increa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3955,7 +3955,7 @@
       "context_window": "7 Arm muscle area (Skin fold measurement-derived; cm 2 ) I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.02",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3974,7 +3974,7 @@
       "context_window": "rea (Skin fold measurement-derived; cm 2 ) I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3993,7 +3993,7 @@
       "context_window": "measurement-derived; cm 2 ) I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-gro",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4012,7 +4012,7 @@
       "context_window": "rived; cm 2 ) I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 T",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4030,7 +4030,7 @@
       "context_window": ".2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 Tricep skinfold thi",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4048,7 +4048,7 @@
       "context_window": "10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 Tricep skinfold thickness (mm) I: 10.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4066,7 +4066,7 @@
       "context_window": "37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 Tricep skinfold thickness (mm) I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4085,7 +4085,7 @@
       "context_window": "020 Inter-group: P > 0.05 Tricep skinfold thickness (mm) I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4104,7 +4104,7 @@
       "context_window": "p: P > 0.05 Tricep skinfold thickness (mm) I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4123,7 +4123,7 @@
       "context_window": "icep skinfold thickness (mm) I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4142,7 +4142,7 @@
       "context_window": "thickness (mm) I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 B",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4160,7 +4160,7 @@
       "context_window": "10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 Body mass (kg) I:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4178,7 +4178,7 @@
       "context_window": ".3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 Body mass (kg) I: 55.9 \u00b1 17.0 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4196,7 +4196,7 @@
       "context_window": "11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 Body mass (kg) I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 t",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4215,7 +4215,7 @@
       "context_window": "C: No- P > 0.05 Inter-group: No- P > 0.05 Body mass (kg) I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4234,7 +4234,7 @@
       "context_window": "Inter-group: No- P > 0.05 Body mass (kg) I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4253,7 +4253,7 @@
       "context_window": "No- P > 0.05 Body mass (kg) I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4272,7 +4272,7 @@
       "context_window": "ody mass (kg) I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4290,7 +4290,7 @@
       "context_window": ".9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4308,7 +4308,7 @@
       "context_window": "\u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I: 22.5 \u00b1 2.1 to 23",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4326,7 +4326,7 @@
       "context_window": ".2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4345,7 +4345,7 @@
       "context_window": "C: No- P > 0.05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4364,7 +4364,7 @@
       "context_window": "05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4383,7 +4383,7 @@
       "context_window": ": No- P > 0.05 BMI (kg/m 2 ) I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4402,7 +4402,7 @@
       "context_window": "BMI (kg/m 2 ) I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4420,7 +4420,7 @@
       "context_window": "2.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 Rozentryt et al.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4438,7 +4438,7 @@
       "context_window": "\u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 Rozentryt et al. [ 28 ] I: 23 C:6",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4456,7 +4456,7 @@
       "context_window": ".6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 Rozentryt et al. [ 28 ] I: 23 C:6 Lean body mass (DXA; kg)",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4475,7 +4475,7 @@
       "context_window": "zentryt et al. [ 28 ] I: 23 C:6 Lean body mass (DXA; kg) I: 45.0 \u00b1 12.5 to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No- P >",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4494,7 +4494,7 @@
       "context_window": "[ 28 ] I: 23 C:6 Lean body mass (DXA; kg) I: 45.0 \u00b1 12.5 to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No- P > 0.05 Inter-gro",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4512,7 +4512,7 @@
       "context_window": "; kg) I: 45.0 \u00b1 12.5 to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No- P > 0.05 Inter-group: Not reported Fat mass (DXA; kg",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4530,7 +4530,7 @@
       "context_window": "2.5 to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No- P > 0.05 Inter-group: Not reported Fat mass (DXA; kg) I: 15.6 \u00b1 8.9",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4549,7 +4549,7 @@
       "context_window": "o- P > 0.05 Inter-group: Not reported Fat mass (DXA; kg) I: 15.6 \u00b1 8.9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P >",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4568,7 +4568,7 @@
       "context_window": "ter-group: Not reported Fat mass (DXA; kg) I: 15.6 \u00b1 8.9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-gro",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4586,7 +4586,7 @@
       "context_window": "XA; kg) I: 15.6 \u00b1 8.9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported Body mass (DXA; k",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4604,7 +4604,7 @@
       "context_window": "8.9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported Body mass (DXA; kg) I: 63.9 \u00b1 9.4",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4623,7 +4623,7 @@
       "context_window": "- P > 0.05 Inter-group: Not reported Body mass (DXA; kg) I: 63.9 \u00b1 9.4 to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No- P >",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4642,7 +4642,7 @@
       "context_window": "er-group: Not reported Body mass (DXA; kg) I: 63.9 \u00b1 9.4 to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-gro",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4660,7 +4660,7 @@
       "context_window": "A; kg) I: 63.9 \u00b1 9.4 to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported Pineda-Juarez et",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4678,7 +4678,7 @@
       "context_window": "9.4 to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported Pineda-Juarez et al. [ 29 ] I: 29",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4696,7 +4696,7 @@
       "context_window": ") I: - 0.6 (- 4.4 to 2.1) a C: -0.5 (- 2.4 to 2.7) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4714,7 +4714,7 @@
       "context_window": "4 to 2.1) a C: -0.5 (- 2.4 to 2.7) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I: - 0.4 (- 2.7 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4732,7 +4732,7 @@
       "context_window": "to 2.7) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 BMI (kg/m 2 ) I: - 0.4 (- 2.7 to 2.2) a C: - 0.7 (- 2.1 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4750,7 +4750,7 @@
       "context_window": "I: - 0.4 (- 2.7 to 2.2) a C: - 0.7 (- 2.1 to 2.3) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Arm circumference",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4768,7 +4768,7 @@
       "context_window": "to 2.2) a C: - 0.7 (- 2.1 to 2.3) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Arm circumference (% change) I: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4786,7 +4786,7 @@
       "context_window": "1 to 2.3) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Arm circumference (% change) I: - 2.0 (- 7.4 to 3.3) a C: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4804,7 +4804,7 @@
       "context_window": "I: - 2.0 (- 7.4 to 3.3) a C: - 4.0 (- 7.6 to 0.2) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Hip circumference",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4822,7 +4822,7 @@
       "context_window": "to 3.3) a C: - 4.0 (- 7.6 to 0.2) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Hip circumference (% change) I: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4840,7 +4840,7 @@
       "context_window": "6 to 0.2) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Hip circumference (% change) I: - 3.1 (- 6.6 to - 1.1) C: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4858,7 +4858,7 @@
       "context_window": "I: - 3.1 (- 6.6 to - 1.1) C: - 1.5 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Waist circumferenc",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4876,7 +4876,7 @@
       "context_window": "to - 1.1) C: - 1.5 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Waist circumference (% change) I:",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4894,7 +4894,7 @@
       "context_window": "7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Waist circumference (% change) I: - 0.7 (- 3.2 to - 3.3) C:",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4912,7 +4912,7 @@
       "context_window": "I: - 0.7 (- 3.2 to - 3.3) C: - 1.7 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Wu et al. [ 30 ] I",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4930,7 +4930,7 @@
       "context_window": "to - 3.3) C: - 1.7 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Wu et al. [ 30 ] I: 14 C: 12 Lean",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4948,7 +4948,7 @@
       "context_window": "7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 Wu et al. [ 30 ] I: 14 C: 12 Lean body mass (DXA; kg) I: 54",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4967,7 +4967,7 @@
       "context_window": "05 Wu et al. [ 30 ] I: 14 C: 12 Lean body mass (DXA; kg) I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4986,7 +4986,7 @@
       "context_window": "30 ] I: 14 C: 12 Lean body mass (DXA; kg) I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5005,7 +5005,7 @@
       "context_window": "12 Lean body mass (DXA; kg) I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group: Y",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5024,7 +5024,7 @@
       "context_window": "ass (DXA; kg) I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group: Yes P = 0.040 Fa",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5042,7 +5042,7 @@
       "context_window": ".1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group: Yes P = 0.040 Fat mass (DXA; kg) I: 27.0 \u00b1 7.5",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5060,7 +5060,7 @@
       "context_window": "53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group: Yes P = 0.040 Fat mass (DXA; kg) I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5079,7 +5079,7 @@
       "context_window": "- P > 0.05 Inter-group: Yes P = 0.040 Fat mass (DXA; kg) I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5098,7 +5098,7 @@
       "context_window": "er-group: Yes P = 0.040 Fat mass (DXA; kg) I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5117,7 +5117,7 @@
       "context_window": "P = 0.040 Fat mass (DXA; kg) I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5136,7 +5136,7 @@
       "context_window": "mass (DXA; kg) I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 BM",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5154,7 +5154,7 @@
       "context_window": "27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 BMI (DXA; kg/m 2 )",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5172,7 +5172,7 @@
       "context_window": ".0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 BMI (DXA; kg/m 2 ) I: 30.0 \u00b1 1.0 t",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5190,7 +5190,7 @@
       "context_window": "26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 BMI (DXA; kg/m 2 ) I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5209,7 +5209,7 @@
       "context_window": "No- P > 0.05 Inter-group: No P > 0.05 BMI (DXA; kg/m 2 ) I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5228,7 +5228,7 @@
       "context_window": "nter-group: No P > 0.05 BMI (DXA; kg/m 2 ) I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5247,7 +5247,7 @@
       "context_window": "P > 0.05 BMI (DXA; kg/m 2 ) I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5266,7 +5266,7 @@
       "context_window": "(DXA; kg/m 2 ) I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5284,7 +5284,7 @@
       "context_window": "0.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.05 Lombardi et al. [",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5302,7 +5302,7 @@
       "context_window": "\u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.05 Lombardi et al. [ 32 ] I: 13 C: N/",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5320,7 +5320,7 @@
       "context_window": "9.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.05 Lombardi et al. [ 32 ] I: 13 C: N/A BMI (kg/m 2 ) I: 25.7 \u00b1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5339,7 +5339,7 @@
       "context_window": "> 0.05 Lombardi et al. [ 32 ] I: 13 C: N/A BMI (kg/m 2 ) I: 25.7 \u00b1 3.2 to 25.4 \u00b1 2.8 C: N/A I: No C: N/A Inter-group: N/A Changes",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5358,7 +5358,7 @@
       "context_window": "i et al. [ 32 ] I: 13 C: N/A BMI (kg/m 2 ) I: 25.7 \u00b1 3.2 to 25.4 \u00b1 2.8 C: N/A I: No C: N/A Inter-group: N/A Changes in measuremen",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5377,7 +5377,7 @@
       "context_window": "asurements of body composition (mean \u00b1 SD) I: 21 C:17 I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5396,7 +5396,7 @@
       "context_window": "body composition (mean \u00b1 SD) I: 21 C:17 I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5415,7 +5415,7 @@
       "context_window": "(mean \u00b1 SD) I: 21 C:17 I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5434,7 +5434,7 @@
       "context_window": "I: 21 C:17 I: 31.2 \u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5452,7 +5452,7 @@
       "context_window": "\u00b1 9.9 to 34.9 \u00b1 10.0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 I: 10.4 \u00b1 4.4 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5470,7 +5470,7 @@
       "context_window": ".0 C: 34.2 \u00b1 5.0 to 37.1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5488,7 +5488,7 @@
       "context_window": "1 \u00b1 4.0 I: Yes- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5507,7 +5507,7 @@
       "context_window": "es- P < 0.020 C: Yes- P < 0.020 Inter-group: P > 0.05 I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5526,7 +5526,7 @@
       "context_window": "C: Yes- P < 0.020 Inter-group: P > 0.05 I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5545,7 +5545,7 @@
       "context_window": "020 Inter-group: P > 0.05 I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-grou",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5564,7 +5564,7 @@
       "context_window": "up: P > 0.05 I: 10.4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5582,7 +5582,7 @@
       "context_window": ".4 \u00b1 4.4 to 10.3 \u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 55.9 \u00b1 17.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5600,7 +5600,7 @@
       "context_window": "\u00b1 3.9 C: 11.9 \u00b1 3.7 to 11.4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5618,7 +5618,7 @@
       "context_window": "4 \u00b1 3.7 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5637,7 +5637,7 @@
       "context_window": "o- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5656,7 +5656,7 @@
       "context_window": "No- P > 0.05 Inter-group: No- P > 0.05 I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P >",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5675,7 +5675,7 @@
       "context_window": "Inter-group: No- P > 0.05 I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-gr",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5694,7 +5694,7 @@
       "context_window": "o- P > 0.05 I: 55.9 \u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5712,7 +5712,7 @@
       "context_window": "\u00b1 17.0 to 58.2 \u00b1 7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 22.5 \u00b1 2.1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5730,7 +5730,7 @@
       "context_window": "7.2 C: 60.8 \u00b1 7.0 to 61.2 \u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5748,7 +5748,7 @@
       "context_window": "\u00b1 6.3 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5767,7 +5767,7 @@
       "context_window": "- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5786,7 +5786,7 @@
       "context_window": ": No- P > 0.05 Inter-group: No- P > 0.05 I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P >",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5805,7 +5805,7 @@
       "context_window": "Inter-group: No- P > 0.05 I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-gr",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5824,7 +5824,7 @@
       "context_window": "No- P > 0.05 I: 22.5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5842,7 +5842,7 @@
       "context_window": "5 \u00b1 2.1 to 23.4 \u00b1 1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 23 C:6 I:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5860,7 +5860,7 @@
       "context_window": "1.9 C: 23.2 \u00b1 1.4 to 23.6 \u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 23 C:6 I: 45.0 \u00b1 12.5 to 4",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5878,7 +5878,7 @@
       "context_window": "\u00b1 1.5 I: Yes- P < 0.010 C: No- P > 0.05 Inter-group: No- P > 0.05 I: 23 C:6 I: 45.0 \u00b1 12.5 to 45.5 \u00b1 11.2 C: Not reported",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5897,7 +5897,7 @@
       "context_window": "C: No- P > 0.05 Inter-group: No- P > 0.05 I: 23 C:6 I: 45.0 \u00b1 12.5 to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No-",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5916,7 +5916,7 @@
       "context_window": "5 Inter-group: No- P > 0.05 I: 23 C:6 I: 45.0 \u00b1 12.5 to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No- P > 0.05 Inter",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5934,7 +5934,7 @@
       "context_window": ":6 I: 45.0 \u00b1 12.5 to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No- P > 0.05 Inter-group: Not reported I: 15.6 \u00b1 8.9",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5952,7 +5952,7 @@
       "context_window": "to 45.5 \u00b1 11.2 C: Not reported I: Yes- P = 0.019 C: No- P > 0.05 Inter-group: Not reported I: 15.6 \u00b1 8.9 to 16.6 \u00b1 8.9 C:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5971,7 +5971,7 @@
       "context_window": "- P = 0.019 C: No- P > 0.05 Inter-group: Not reported I: 15.6 \u00b1 8.9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5990,7 +5990,7 @@
       "context_window": ": No- P > 0.05 Inter-group: Not reported I: 15.6 \u00b1 8.9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6008,7 +6008,7 @@
       "context_window": "rted I: 15.6 \u00b1 8.9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported I: 63.9 \u00b1 9.4",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6026,7 +6026,7 @@
       "context_window": "9 to 16.6 \u00b1 8.9 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported I: 63.9 \u00b1 9.4 to 65.5 \u00b1 10.3 C",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6045,7 +6045,7 @@
       "context_window": "- P = 0.003 C: No- P > 0.05 Inter-group: Not reported I: 63.9 \u00b1 9.4 to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No-",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6064,7 +6064,7 @@
       "context_window": ": No- P > 0.05 Inter-group: Not reported I: 63.9 \u00b1 9.4 to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6082,7 +6082,7 @@
       "context_window": "ted I: 63.9 \u00b1 9.4 to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported I: 29 C:26 I",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6100,7 +6100,7 @@
       "context_window": "to 65.5 \u00b1 10.3 C: Not reported I: Yes- P = 0.003 C: No- P > 0.05 Inter-group: Not reported I: 29 C:26 I: - 0.6 (- 4.4 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6118,7 +6118,7 @@
       "context_window": "I: - 0.6 (- 4.4 to 2.1) a C: -0.5 (- 2.4 to 2.7) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 I: - 0.4 (- 2.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6136,7 +6136,7 @@
       "context_window": "o 2.1) a C: -0.5 (- 2.4 to 2.7) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 I: - 0.4 (- 2.7 to 2.2) a C: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6154,7 +6154,7 @@
       "context_window": "2.7) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No- P > 0.05 I: - 0.4 (- 2.7 to 2.2) a C: - 0.7 (- 2.1 to 2.3) a I: N",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6172,7 +6172,7 @@
       "context_window": ": - 0.4 (- 2.7 to 2.2) a C: - 0.7 (- 2.1 to 2.3) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 2.0 (- 7.4",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6190,7 +6190,7 @@
       "context_window": "2.2) a C: - 0.7 (- 2.1 to 2.3) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 2.0 (- 7.4 to 3.3) a C: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6208,7 +6208,7 @@
       "context_window": "o 2.3) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 2.0 (- 7.4 to 3.3) a C: - 4.0 (- 7.6 to 0.2) a I: N",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6226,7 +6226,7 @@
       "context_window": ": - 2.0 (- 7.4 to 3.3) a C: - 4.0 (- 7.6 to 0.2) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 3.1 (- 6.6",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6244,7 +6244,7 @@
       "context_window": "3.3) a C: - 4.0 (- 7.6 to 0.2) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 3.1 (- 6.6 to - 1.1) C: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6262,7 +6262,7 @@
       "context_window": "o 0.2) a I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 3.1 (- 6.6 to - 1.1) C: - 1.5 (- 3.7 to - 1.8) I: N",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6280,7 +6280,7 @@
       "context_window": ": - 3.1 (- 6.6 to - 1.1) C: - 1.5 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 0.7 (- 3.2",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6298,7 +6298,7 @@
       "context_window": "- 1.1) C: - 1.5 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 0.7 (- 3.2 to - 3.3) C: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6316,7 +6316,7 @@
       "context_window": "o - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: - 0.7 (- 3.2 to - 3.3) C: - 1.7 (- 3.7 to - 1.8) I: N",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6334,7 +6334,7 @@
       "context_window": ": - 0.7 (- 3.2 to - 3.3) C: - 1.7 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: 14 C: 12 I",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6352,7 +6352,7 @@
       "context_window": "- 3.3) C: - 1.7 (- 3.7 to - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: 14 C: 12 I: 54.4 \u00b1 2.8 to 5",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6370,7 +6370,7 @@
       "context_window": "o - 1.8) I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: 14 C: 12 I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6389,7 +6389,7 @@
       "context_window": "C: No- P > 0.05 Inter-group: No P > 0.05 I: 14 C: 12 I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6408,7 +6408,7 @@
       "context_window": "5 Inter-group: No P > 0.05 I: 14 C: 12 I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6427,7 +6427,7 @@
       "context_window": "No P > 0.05 I: 14 C: 12 I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6446,7 +6446,7 @@
       "context_window": ": 14 C: 12 I: 54.4 \u00b1 2.8 to 56.1 \u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group: Yes P = 0.040",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6464,7 +6464,7 @@
       "context_window": "\u00b1 2.5 C: 52.4 \u00b1 11.1 to 53.8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group: Yes P = 0.040 I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6482,7 +6482,7 @@
       "context_window": ".8 \u00b1 12.8 I: Yes-< 0.05 C: No- P > 0.05 Inter-group: Yes P = 0.040 I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6501,7 +6501,7 @@
       "context_window": "Yes-< 0.05 C: No- P > 0.05 Inter-group: Yes P = 0.040 I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6520,7 +6520,7 @@
       "context_window": "No- P > 0.05 Inter-group: Yes P = 0.040 I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6539,7 +6539,7 @@
       "context_window": "Inter-group: Yes P = 0.040 I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-grou",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6558,7 +6558,7 @@
       "context_window": "es P = 0.040 I: 27.0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6576,7 +6576,7 @@
       "context_window": ".0 \u00b1 7.5 to 26.0 \u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: 30.0 \u00b1 1.0 t",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6594,7 +6594,7 @@
       "context_window": "\u00b1 7.5 C: 25.0 \u00b1 6.9 to 26.0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C:",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6612,7 +6612,7 @@
       "context_window": ".0 \u00b1 6.9 I: No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6631,7 +6631,7 @@
       "context_window": "No- P > 0.05 C: No- P > 0.05 Inter-group: No P > 0.05 I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6650,7 +6650,7 @@
       "context_window": "C: No- P > 0.05 Inter-group: No P > 0.05 I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P >",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6669,7 +6669,7 @@
       "context_window": "Inter-group: No P > 0.05 I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-gr",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6688,7 +6688,7 @@
       "context_window": "No P > 0.05 I: 30.0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6706,7 +6706,7 @@
       "context_window": "0 \u00b1 1.0 to 30.0 \u00b1 1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.05 I: 13 C: N/A",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6724,7 +6724,7 @@
       "context_window": "1.0 C: 28.0 \u00b1 2.0 to 29.0 \u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.05 I: 13 C: N/A I: 25.7 \u00b1 3.2 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6742,7 +6742,7 @@
       "context_window": "\u00b1 2.0 I: No - P > 0.05 C: No - P > 0.05 Inter-group: No P > 0.05 I: 13 C: N/A I: 25.7 \u00b1 3.2 to 25.4 \u00b1 2.8 C: N/A I: No",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6761,7 +6761,7 @@
       "context_window": "No - P > 0.05 Inter-group: No P > 0.05 I: 13 C: N/A I: 25.7 \u00b1 3.2 to 25.4 \u00b1 2.8 C: N/A I: No C: N/A Inter-group: N/A Fou",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6780,7 +6780,7 @@
       "context_window": "Inter-group: No P > 0.05 I: 13 C: N/A I: 25.7 \u00b1 3.2 to 25.4 \u00b1 2.8 C: N/A I: No C: N/A Inter-group: N/A Four studies [ 27",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6798,7 +6798,7 @@
       "context_window": "hort study [ 32 ] reported data for body mass index [BMI] ( n = 77 intervention and n = 55 control patients). Only one study r",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6816,7 +6816,7 @@
       "context_window": "ed data for body mass index [BMI] ( n = 77 intervention and n = 55 control patients). Only one study reported a significant in",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6926,9 +6926,9 @@
       "context_window": "nges reported in the control group. Two studies, including n = 37 intervention and n = 18 control patients, reported Dual X-r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-23335",
@@ -6944,9 +6944,9 @@
       "context_window": "trol group. Two studies, including n = 37 intervention and n = 18 control patients, reported Dual X-ray Absorptiometry (DXA)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-p-23548",
@@ -7036,7 +7036,7 @@
       "context_window": "parisons were not conducted [ 28 ]. Two studies, including n = 37 intervention and n = 18 control patients reported DXA deriv",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7054,7 +7054,7 @@
       "context_window": "ted [ 28 ]. Two studies, including n = 37 intervention and n = 18 control patients reported DXA derived changes in lean body",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7090,9 +7090,9 @@
       "context_window": "that lean body mass increased among intervention patients ( P = 0.019), but did not report control data. One study (intervention",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-24191",
@@ -7144,7 +7144,7 @@
       "context_window": "cle area increased in the intervention and control groups ( P = 0.020). One study (intervention arm n = 29; control arm n = 26; e",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -7216,9 +7216,9 @@
       "context_window": "control group patients ( P > 0.05). Five studies including n = 100 intervention and n = 61 control patients assessed changes i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-24849",
@@ -7234,9 +7234,9 @@
       "context_window": "P > 0.05). Five studies including n = 100 intervention and n = 61 control patients assessed changes in aerobic fitness (Table",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-p-25151",
@@ -7252,7 +7252,7 @@
       "context_window": "hree studies did not find any changes in either estimated ( P > 0.05) [ 29 ], or directly determined peak oxygen uptake (V\u0307O 2pe",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7270,7 +7270,7 @@
       "context_window": "(V\u0307O 2peak ) following protein and/or EAA supplementation ( P = 0.320 [ 28 ] and P = 0.260 [ 30 ]). One study reported a signific",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7288,7 +7288,7 @@
       "context_window": "g protein and/or EAA supplementation ( P = 0.320 [ 28 ] and P = 0.260 [ 30 ]). One study reported a significant increase in V\u0307O 2",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -9156,9 +9156,9 @@
       "context_window": "changes in SF-36 scores for patients in the intervention ( n = 3) or control groups ( n = 3). Cumulative SF-36 scores and SE",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-29470",
@@ -9174,9 +9174,9 @@
       "context_window": "r patients in the intervention ( n = 3) or control groups ( n = 3). Cumulative SF-36 scores and SEM values were not reported.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-29727",
@@ -9210,7 +9210,7 @@
       "context_window": ", however the cause of death was not reported (total deaths n = 4) [ 29 ].The absolute number of serious adverse events ( n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9228,7 +9228,7 @@
       "context_window": "= 4) [ 29 ].The absolute number of serious adverse events ( n = 13) was higher among intervention patients compared to control",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9246,7 +9246,7 @@
       "context_window": "s higher among intervention patients compared to controls ( n = 8). However, due to a higher sample in the intervention compa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9264,9 +9264,9 @@
       "context_window": "ne in five patients assigned to intervention groups (total; n = 19), and one in seven patients assigned to control groups (tot",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-n-30598",
@@ -9282,9 +9282,9 @@
       "context_window": "nd one in seven patients assigned to control groups (total; n = 9). One study comprehensively reported adverse and serious ad",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-30749",
@@ -9372,9 +9372,9 @@
       "context_window": "ontrol arms. Attrition in the intervention arms ranged from 0% to 50%, and attrition in the control arms ranged from 0% to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-31310",
@@ -9390,9 +9390,9 @@
       "context_window": "arms. Attrition in the intervention arms ranged from 0% to 50%, and attrition in the control arms ranged from 0% to 40%.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-31361",
@@ -9408,9 +9408,9 @@
       "context_window": "om 0% to 50%, and attrition in the control arms ranged from 0% to 40%. Only one study reported supplementation adherence",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-31367",
@@ -9426,9 +9426,9 @@
       "context_window": "to 50%, and attrition in the control arms ranged from 0% to 40%. Only one study reported supplementation adherence (Online",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-31703",
@@ -9444,7 +9444,7 @@
       "context_window": "ine (EAA) concentrations within the intervention group were 279% higher than reported at baseline ( P < 0.001). Based on thi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9462,7 +9462,7 @@
       "context_window": "rvention group were 279% higher than reported at baseline ( P < 0.001). Based on this, the authors concluded that all participant",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9516,7 +9516,7 @@
       "context_window": "rted a mean 1 repetition maximum (1RM) strength increase of 27.0 kg (95% CI 22.0-32.0 kg) following combined resistance exercis",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9535,7 +9535,7 @@
       "context_window": "an 1 repetition maximum (1RM) strength increase of 27.0 kg (95% CI 22.0-32.0 kg) following combined resistance exercise training and pro",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9553,7 +9553,7 @@
       "context_window": "ion maximum (1RM) strength increase of 27.0 kg (95% CI 22.0-32.0 kg) following combined resistance exercise training and protei",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9571,7 +9571,7 @@
       "context_window": "upplementation resulted in a further modest 1RM increase of 2.5 kg (95% CI 0.6-4.3 kg), indicating that protein supplementatio",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9590,7 +9590,7 @@
       "context_window": "tation resulted in a further modest 1RM increase of 2.5 kg (95% CI 0.6-4.3 kg), indicating that protein supplementation plays a smalle",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9608,7 +9608,7 @@
       "context_window": "lted in a further modest 1RM increase of 2.5 kg (95% CI 0.6-4.3 kg), indicating that protein supplementation plays a smaller r",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9626,7 +9626,7 @@
       "context_window": "a long-term condition (standardised mean difference [SMD]: 0.27 kg; 95% CI 0.1-0.4 kg; P < 0.01) [ 17 ]. These findings appear",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -9645,7 +9645,7 @@
       "context_window": "erm condition (standardised mean difference [SMD]: 0.27 kg; 95% CI 0.1-0.4 kg; P < 0.01) [ 17 ]. These findings appeared more pronounc",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -9663,7 +9663,7 @@
       "context_window": "on (standardised mean difference [SMD]: 0.27 kg; 95% CI 0.1-0.4 kg; P < 0.01) [ 17 ]. These findings appeared more pronounced",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -9681,7 +9681,7 @@
       "context_window": "dardised mean difference [SMD]: 0.27 kg; 95% CI 0.1-0.4 kg; P < 0.01) [ 17 ]. These findings appeared more pronounced in individ",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -9717,7 +9717,7 @@
       "context_window": "nts with CHF led to an increase in lean body mass (DXA: 0.5-1.7 kg) [ 28 , 30 ]. Protein/EAA supplementation appears to be ben",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -9807,9 +9807,9 @@
       "context_window": "se-based cardiac rehabilitation in patients with CHF (46 m; P < 0.001) [ 54 ]. It is noteworthy that the gold standard measureme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7351803_the_effect_of_protein_and_essential_amino_acid_supplementati-pct-11162",
@@ -9897,9 +9897,9 @@
       "context_window": "ns using protein and/or EAA supplementation that last up to 3 months [ 28 , 30 , 32 ] may not have a negative effect on renal fu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

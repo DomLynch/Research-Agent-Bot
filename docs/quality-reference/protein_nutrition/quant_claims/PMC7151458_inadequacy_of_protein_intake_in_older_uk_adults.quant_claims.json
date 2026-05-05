@@ -1,15 +1,33 @@
 {
   "paper_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults",
   "doi": "10.3390/geriatrics5010006",
-  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extracted_at": "2026-05-05T23:37:12+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 5,
+    "unit_value": 12,
     "mean_sd": 2,
     "percentage": 18,
     "p_value": 1
   },
   "claims": [
+    {
+      "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-67",
+      "claim_type": "unit_value",
+      "raw_text": "0.75 g/kg/day",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 67,
+      "sentence": "The current dietary recommendation for protein intake in the UK is 0.75 g/kg/day, however, this population-wide recommendation does not necessarily reflect altered requirements for older adults to maintain muscle protein synthesis, nor does it encompass the potential impact of intake timing.",
+      "context_window": "rent dietary recommendation for protein intake in the UK is 0.75 g/kg/day, however, this population-wide recommendation does not nece",
+      "claim_role": "dose",
+      "endpoint": "protein synthesis",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-784",
       "claim_type": "unit_value",
@@ -84,6 +102,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-1079",
+      "claim_type": "unit_value",
+      "raw_text": "0.75 g/kg/day",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1079,
+      "sentence": "Fewer than 50% of the participants met current UK recommendations (0.75 g/kg/day) and fewer than 15% met the ESPEN 1.2 g/kg/day age-specific recommendation.",
+      "context_window": "han 50% of the participants met current UK recommendations (0.75 g/kg/day) and fewer than 15% met the ESPEN 1.2 g/kg/day age-specific",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-pct-1109",
       "claim_type": "percentage",
       "raw_text": "15%",
@@ -100,6 +136,42 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-1127",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 1127,
+      "sentence": "Fewer than 50% of the participants met current UK recommendations (0.75 g/kg/day) and fewer than 15% met the ESPEN 1.2 g/kg/day age-specific recommendation.",
+      "context_window": "mendations (0.75 g/kg/day) and fewer than 15% met the ESPEN 1.2 g/kg/day age-specific recommendation. Only one participant met the 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-1104",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 1104,
+      "sentence": "However, recent research shows higher intakes are more beneficial in the elderly to maintain muscle mass and muscle function (summarized in Table 2 of reference [ 7 ]) which has led international bodies to recommend an increased RNI of 1.2 g/kg/d for optimal MPS in healthy older adults [ 7 ].",
+      "context_window": "s led international bodies to recommend an increased RNI of 1.2 g/kg/d for optimal MPS in healthy older adults [ 7 ]. The suggeste",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-566",
@@ -139,6 +211,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-132",
+      "claim_type": "unit_value",
+      "raw_text": "0.75 g/kg/d",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 132,
+      "sentence": "Thirty-six percent of individuals consumed lower than 0.75 g/kg/d of protein, with the proportion of males not meeting guidelines exceeding the proportion of females (47.5% vs.",
+      "context_window": "ssed. Thirty-six percent of individuals consumed lower than 0.75 g/kg/d of protein, with the proportion of males not meeting guidel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-pct-245",
       "claim_type": "percentage",
       "raw_text": "47.5%",
@@ -152,7 +242,7 @@
       "context_window": "not meeting guidelines exceeding the proportion of females (47.5% vs. 25%). Principle sources of protein were meat, fish, and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -188,9 +278,9 @@
       "context_window": "e sources of protein were meat, fish, and dairy with around 86% of intake from these leucine-rich sources. When the Europea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-pct-502",
@@ -211,6 +301,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-544",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 544,
+      "sentence": "When the European Society for Parenteral and Enteral Nutrition (ESPEN) guidelines for older adults were considered, less than 15% participants reached intake levels of 1.2 g/kg/d ( Figure 1 A).",
+      "context_window": "idered, less than 15% participants reached intake levels of 1.2 g/kg/d ( Figure 1 A). The distribution of protein intake across th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-pct-782",
       "claim_type": "percentage",
       "raw_text": "67%",
@@ -224,7 +332,7 @@
       "context_window": "ed 25 g protein/meal is shown for men and women as follows: 67% of males and 77% of females met the 25 g target in the midd",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -242,7 +350,7 @@
       "context_window": "eal is shown for men and women as follows: 67% of males and 77% of females met the 25 g target in the middle of the day, bu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -260,7 +368,7 @@
       "context_window": "ortions were lower for males and females, in the evenings, (31% and 32%), and in the morning, (21% and 26%), respectively.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -278,7 +386,7 @@
       "context_window": "were lower for males and females, in the evenings, (31% and 32%), and in the morning, (21% and 26%), respectively. Only one",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -296,7 +404,7 @@
       "context_window": "males, in the evenings, (31% and 32%), and in the morning, (21% and 26%), respectively. Only one individual met the 25 g/me",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -314,7 +422,7 @@
       "context_window": "n the evenings, (31% and 32%), and in the morning, (21% and 26%), respectively. Only one individual met the 25 g/meal targe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -368,7 +476,7 @@
       "context_window": "e correlation between BMI and protein intake (r = -0.35 and p < 0.01) ( Figure 1 C). There was no correlation between age and pr",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -386,7 +494,7 @@
       "context_window": "This study found that 35% of participants failed to consume the UK RNI adequate prote",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -404,7 +512,7 @@
       "context_window": "; a meta-analysis of European elderly populations indicated 10% fail to consume enough protein [ 12 ]. With respect to the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -422,7 +530,25 @@
       "context_window": "With respect to the ESPEN recommended protein intake [ 7 ], 85% of the population failed to consume the 1.2 g/kg/day guidel",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-400",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 400,
+      "sentence": "With respect to the ESPEN recommended protein intake [ 7 ], 85% of the population failed to consume the 1.2 g/kg/day guideline (higher value than the 75% identified in other European countries [ 13 ]).",
+      "context_window": "n intake [ 7 ], 85% of the population failed to consume the 1.2 g/kg/day guideline (higher value than the 75% identified in other Eu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -440,7 +566,7 @@
       "context_window": "o consume the 1.2 g/kg/day guideline (higher value than the 75% identified in other European countries [ 13 ]). With respec",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -458,9 +584,9 @@
       "context_window": "r meal [ 5 ], evidence from this sample indicated that only 24.6% achieved protein intakes over 25 g/sitting twice a day, and",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults-u-3016",

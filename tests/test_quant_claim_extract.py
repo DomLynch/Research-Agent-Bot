@@ -656,6 +656,21 @@ def test_mg_per_kg_per_day_dose_unit_extracted() -> None:
     assert doses[0].numeric_values == (300.0,)
 
 
+def test_grams_per_kg_per_day_dose_unit_extracted() -> None:
+    """Human nutrition dosing often uses g/kg/day and must not fall
+    through to bare kg."""
+    text = "Protein intake increased by 0.32 g/kg/day after the intervention."
+    claims = quant_claim_extract.extract_from_text(text, "results")
+    doses = [c for c in claims if c.units == "g/kg/day"]
+    assert len(doses) == 1
+    assert doses[0].numeric_values == (0.32,)
+    bare_kg = [
+        c for c in claims
+        if c.claim_type == "unit_value" and c.units == "kg" and c.numeric_values == (0.32,)
+    ]
+    assert bare_kg == []
+
+
 # ============================================================
 # Phase 2.1 - claim_role tagging
 # ============================================================

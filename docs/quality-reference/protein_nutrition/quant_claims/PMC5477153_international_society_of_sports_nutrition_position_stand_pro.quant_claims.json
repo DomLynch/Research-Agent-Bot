@@ -1,13 +1,49 @@
 {
   "paper_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro",
   "doi": "10.1186/s12970-017-0177-8",
-  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extracted_at": "2026-05-05T23:37:08+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 4,
+    "unit_value": 9,
     "percentage": 7
   },
   "claims": [
+    {
+      "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-u-873",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 g/kg/d",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 873,
+      "sentence": "Higher protein intakes (2.3-3.1 g/kg/d) may be needed to maximize the retention of lean body mass in resistance-trained subjects during hypocaloric periods.",
+      "context_window": "titute of Medicine for protein. Higher protein intakes (2.3-3.1 g/kg/d) may be needed to maximize the retention of lean body mass",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-u-1065",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 g/kg/d",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 1065,
+      "sentence": "There is novel evidence that suggests higher protein intakes (>3.0 g/kg/d) may have positive effects on body composition in resistance-trained individuals (i.e., promote loss of fat mass).",
+      "context_window": "re is novel evidence that suggests higher protein intakes (>3.0 g/kg/d) may have positive effects on body composition in resistanc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-u-1527",
       "claim_type": "unit_value",
@@ -22,7 +58,43 @@
       "context_window": "f 20-40 g. Acute protein doses should strive to contain 700-3000 mg of leucine and/or a higher relative leucine content, in add",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-u-3735",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 g/kg/d",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 3735,
+      "sentence": "Higher protein intakes (2.3-3.1 g/kg/d) may be needed to maximize the retention of lean body mass in resistance-trained subjects during hypocaloric periods.",
+      "context_window": "itute of Medicine for protein. Higher protein intakes (2.3-3.1 g/kg/d) may be needed to maximize the retention of lean body mass",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-u-3928",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 g/kg/d",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 3928,
+      "sentence": "There is novel evidence that suggests higher protein intakes (>3.0 g/kg/d) may have positive effects on body composition in resistance-trained individuals (i.e., promote loss of fat mass).",
+      "context_window": "re is novel evidence that suggests higher protein intakes (>3.0 g/kg/d) may have positive effects on body composition in resistanc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -40,7 +112,7 @@
       "context_window": "20-40 g. Acute protein doses should strive to contain 700-3000 mg of leucine and/or a higher relative leucine content, in add",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -58,9 +130,9 @@
       "context_window": "approximately 150 cal a serving, and of this 8 g, or about 21% is from protein. Skim milk on the other hand contains appro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-pct-512",
@@ -76,9 +148,9 @@
       "context_window": "in in a 90-cal eight-ounce serving, making it approximately 40% protein. When producing milk protein supplements, special p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-pct-944",
@@ -94,9 +166,9 @@
       "context_window": "trate is commonly defined as any protein product that is 29-80% protein by dry weight. Sport nutrition products generally u",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-pct-1035",
@@ -112,9 +184,9 @@
       "context_window": "t nutrition products generally use concentrates that are 70-80% protein [ 200 ]. As extra filtering steps are added, the pu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-pct-1187",
@@ -130,7 +202,7 @@
       "context_window": "reases and when a final protein product yields greater than 90% protein, it is considered an isolated protein [ 200 ]. Fil",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -166,9 +238,9 @@
       "context_window": "centrates during a linear resistance-training protocol over 8 weeks. Results indicated that strength and lean body mass (LBM) i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-pct-439",
@@ -184,9 +256,27 @@
       "context_window": "\u2019s Acceptable Macronutrient Distribution Range (AMDR) of 10-35% protein [ 224 ]. The amount is dependent upon the mode and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-u-746",
+      "claim_type": "unit_value",
+      "raw_text": "3 g/kg/d",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "conclusion",
+      "source_offset": 746,
+      "sentence": "However, it should be noted that there is preliminary evidence that consuming much higher quantities of protein (> 3 g/kg/d) may confer a benefit as it relates to body composition.",
+      "context_window": "vidence that consuming much higher quantities of protein (> 3 g/kg/d) may confer a benefit as it relates to body composition. Co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5477153_international_society_of_sports_nutrition_position_stand_pro-u-1673",
@@ -202,7 +292,7 @@
       "context_window": "ly along with improvements in muscle size and strength over 12 weeks of resistance training. Intact protein supplements, EAAs an",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     }

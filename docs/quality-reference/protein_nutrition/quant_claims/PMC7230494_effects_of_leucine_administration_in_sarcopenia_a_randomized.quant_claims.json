@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized",
   "doi": "10.3390/nu12040932",
-  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extracted_at": "2026-05-05T23:37:13+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -24,7 +24,7 @@
       "context_window": "cipants were randomized to a parallel group intervention of 13 weeks\u2019 duration with a daily intake of leucine (6 g/day) or place",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,9 +42,9 @@
       "context_window": "s such as functional performance measured by walking time ( p = 0.011), and improved lean mass index. For respiratory muscle func",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-1408",
@@ -60,7 +60,7 @@
       "context_window": "unction, the leucine-treated group improved significantly ( p = 0.026) in maximum static expiratory force compared to the placebo",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "this, metabolic studies showed that older individuals aged 65 years and over require approximately 2% more protein intake per m",
       "claim_role": "population",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": "er individuals aged 65 years and over require approximately 2% more protein intake per meal to maximize muscle protein syn",
       "claim_role": "population",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -186,9 +186,9 @@
       "context_window": "uscle protein synthesis [ 13 ]. Furthermore, globally, only 40% of older adults meet the recommended daily protein intake a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1749",
@@ -204,9 +204,9 @@
       "context_window": "older adults meet the recommended daily protein intake and 10% of older women do not even meet the estimated minimal avera",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-179",
@@ -637,7 +637,7 @@
       "context_window": "\u00b1 7.9 (SD) (range 65-93 years). No significant difference ( p = 0.81) was observed between the mean age of individuals in the le",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -656,7 +656,7 @@
       "context_window": "d between the mean age of individuals in the leucine group (78.4 \u00b1 8.4) compared to the placebo group (79.0 \u00b1 7.6). No significant",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -675,7 +675,7 @@
       "context_window": "e leucine group (78.4 \u00b1 8.4) compared to the placebo group (79.0 \u00b1 7.6). No significant difference ( p = 0.97) was found regarding",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -712,7 +712,7 @@
       "context_window": "energy intake at baseline from the dieticians\u2019 reports was 1770 \u00b1 196 kcal/day for the leucine group and 1758 \u00b1 168 kcal/day for",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -731,7 +731,7 @@
       "context_window": "\u2019 reports was 1770 \u00b1 196 kcal/day for the leucine group and 1758 \u00b1 168 kcal/day for the placebo group, with no differences between",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -749,7 +749,7 @@
       "context_window": "for the placebo group, with no differences between groups ( p = 0.96). At 6 weeks of treatment, mean energy intake was 1632 \u00b1 18",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -767,7 +767,7 @@
       "context_window": "o group, with no differences between groups ( p = 0.96). At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day fo",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -786,7 +786,7 @@
       "context_window": "p = 0.96). At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -805,7 +805,7 @@
       "context_window": "gy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for the placebo group with no differences between",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -823,7 +823,7 @@
       "context_window": "for the placebo group with no differences between groups ( p = 0.83). After completion of the trial mean energy intake was 1694",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -842,7 +842,7 @@
       "context_window": "0.83). After completion of the trial mean energy intake was 1694 \u00b1 152 kcal/day for the leucine group and 1707 \u00b1 195 kcal/day for",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -861,7 +861,7 @@
       "context_window": "gy intake was 1694 \u00b1 152 kcal/day for the leucine group and 1707 \u00b1 195 kcal/day for the placebo group with no differences between",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -879,7 +879,7 @@
       "context_window": "for the placebo group with no differences between groups ( p = 0.91). The primary outcome measured was the effect of treatment",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -915,7 +915,7 @@
       "context_window": "nds to Spain). The treatment with leucine or placebo lasted 13 weeks. All participants were re-evaluated (sarcopenia, geriatric",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -969,7 +969,7 @@
       "context_window": "4 men and 29 women). Dropout rates were not significantly ( p = 0.71) different between groups (five participants in the leucine",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1005,7 +1005,7 @@
       "context_window": "included in the analysis, intervention compliance was high (91.5% in the leucine group and 93.5% in the placebo group) from b",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1023,7 +1023,7 @@
       "context_window": "vention compliance was high (91.5% in the leucine group and 93.5% in the placebo group) from baseline to follow-up, and did n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1041,7 +1041,7 @@
       "context_window": "lower in the leucine group compared to the control group ( p = 0.02). Handgrip strength and walking time values did not differ",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1060,9 +1060,9 @@
       "context_window": "d not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine grou",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4266",
@@ -1079,9 +1079,9 @@
       "context_window": "at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group:",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4280",
@@ -1097,9 +1097,9 @@
       "context_window": "eucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4308",
@@ -1116,9 +1116,9 @@
       "context_window": "s. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively). T",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4339",
@@ -1135,9 +1135,9 @@
       "context_window": "p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively). The only differences were in in t",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4353",
@@ -1153,9 +1153,9 @@
       "context_window": "leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively). The only differences were in in the muscle m",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4525",
@@ -1228,7 +1228,7 @@
       "context_window": "ce between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1247,7 +1247,7 @@
       "context_window": "cle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine gro",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1265,7 +1265,7 @@
       "context_window": "dex: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1284,7 +1284,7 @@
       "context_window": "= 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time va",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1303,7 +1303,7 @@
       "context_window": "ength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1321,7 +1321,7 @@
       "context_window": ": leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1340,7 +1340,7 @@
       "context_window": "8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285. The changes indu",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1359,7 +1359,7 @@
       "context_window": "values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285. The changes induced by leucine administration i",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1377,7 +1377,7 @@
       "context_window": "leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285. The changes induced by leucine administration in sarcopeni",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1395,7 +1395,7 @@
       "context_window": "e in walking time compared to baseline levels, expressed as 100% between the leucine and placebo groups, with an increase in",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1414,7 +1414,7 @@
       "context_window": "complete the distance in the placebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1433,7 +1433,7 @@
       "context_window": "cebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89). There",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1451,7 +1451,7 @@
       "context_window": "ine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89). There were no sig",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1469,7 +1469,7 @@
       "context_window": "muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1488,7 +1488,7 @@
       "context_window": "pared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgri",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1507,7 +1507,7 @@
       "context_window": "sed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1525,7 +1525,7 @@
       "context_window": "ucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1544,7 +1544,7 @@
       "context_window": "\u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437). The significa",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1563,7 +1563,7 @@
       "context_window": "ip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437). The significant change in walking time led to",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1581,7 +1581,7 @@
       "context_window": "ucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437). The significant change in walking time led to an increase",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1618,9 +1618,9 @@
       "context_window": "hanges of calf perimeters after leucine administration were 97.95 \u00b1 1.19 for the leucine group vs. 99.59 \u00b1 1.10 for the placebo grou",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-6078",
@@ -1674,9 +1674,9 @@
       "context_window": "or in the percentage change between groups (leucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505). There were als",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-6319",
@@ -1693,9 +1693,9 @@
       "context_window": "een groups (leucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505). There were also no differences between groups",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6333",
@@ -1711,9 +1711,9 @@
       "context_window": "ucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505). There were also no differences between groups before and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6682",
@@ -2174,7 +2174,7 @@
       "context_window": "ine in expiratory muscle strength in the placebo group (LG: 99.05 \u00b1 6.80 vs. PG: 77.67 \u00b1 5.85; p = 0.026, Cohen\u2019s d = 3.37, effect s",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "high"
     },
@@ -2449,7 +2449,7 @@
       "context_window": "ved between the leucine and placebo groups (significance at p < 0.05). No significant differences were observed in these analyti",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2467,9 +2467,9 @@
       "context_window": "duals in the leucine-treated group because at the baseline, 38% of the individuals in this group had a risk of malnutrition",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-2517",
@@ -2503,7 +2503,7 @@
       "context_window": "le mass or strength in either healthy elderly men (mean age 71 years) [ 37 ] or older men with type 2 diabetes [ 38 ]. In contra",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
     },

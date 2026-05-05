@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC13078973_long_term_effects_of_plant_vs_animal_protein_supplementation",
   "doi": "10.3389/fnut.2026.1813846",
-  "extracted_at": "2026-05-05T22:35:37+00:00",
+  "extracted_at": "2026-05-05T23:37:05+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 35,
+    "unit_value": 38,
     "percentage": 39,
     "confidence_interval": 44,
     "p_value": 8
@@ -60,8 +60,26 @@
       "context_window": "in the systematic review and meta-analysis. In adults aged 18 years and older, long-term supplementation of PBP (largely soy pr",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13078973_long_term_effects_of_plant_vs_animal_protein_supplementation-u-575",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 575,
+      "sentence": "Moreover, Cermak et al. ( 11 ) and Morton et al. ( 10 ) reported that supplementing protein (~1.6 g/kg/day) with prolonged-resistance exercise training (lasting at least 6 weeks) in healthy adults augmented muscle mass and strength ( 10 ).",
+      "context_window": "Morton et al. ( 10 ) reported that supplementing protein (~1.6 g/kg/day) with prolonged-resistance exercise training (lasting at le",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "protein",
+      "direction": "increase",
       "binding_confidence": "partial"
     },
     {
@@ -78,7 +96,7 @@
       "context_window": "th prolonged-resistance exercise training (lasting at least 6 weeks) in healthy adults augmented muscle mass and strength ( 10",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -114,7 +132,7 @@
       "context_window": "le adaptations following long-term protein supplementation (6 months or more), with or without exercise training, as short-term",
       "claim_role": "background",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -132,7 +150,7 @@
       "context_window": "lipoprotein (HDL) cholesterol was reduced, approximately by 4% ( 19 ); however, the evidence was inconsistent and mainly b",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -150,9 +168,9 @@
       "context_window": "th plant protein (per each 20 g) has been associated with a 20% reduction in the risk of T2DM ( 22 ). Indeed, this evidence",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13078973_long_term_effects_of_plant_vs_animal_protein_supplementation-u-3899",
@@ -204,9 +222,9 @@
       "context_window": "d that when protein strategies are employed for longer than 6 months, the specific source of protein will be less important, par",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13078973_long_term_effects_of_plant_vs_animal_protein_supplementation-u-527",
@@ -222,7 +240,7 @@
       "context_window": "following criteria: (1) studies conducted on adults aged \u2265 18 years; (2) RCTs (parallel or cross-over); (3) intervention group",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -240,7 +258,7 @@
       "context_window": "exercise component; (5) the duration of the intervention \u2265 6 months; (6) trials reported at least one outcome parameter for bod",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -330,7 +348,7 @@
       "context_window": "udied outcomes) according to the age of the participants (< 60 years vs. \u2265 60 years), protein doses (< 30 g vs. \u2265 40 g), duratio",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -348,7 +366,7 @@
       "context_window": "according to the age of the participants (< 60 years vs. \u2265 60 years), protein doses (< 30 g vs. \u2265 40 g), duration of the interv",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -366,7 +384,7 @@
       "context_window": "doses (< 30 g vs. \u2265 40 g), duration of the intervention (< 9 months vs. \u2265 9 months) and exercise (yes vs. no) if applicable. Su",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -384,7 +402,7 @@
       "context_window": "vs. \u2265 40 g), duration of the intervention (< 9 months vs. \u2265 9 months) and exercise (yes vs. no) if applicable. Subgroup analysis",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2174,7 +2192,43 @@
       "context_window": "meta-analysis based on interventional trials (lasting up to 6 months) in patients with hypercholesterolemia which suggested that",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13078973_long_term_effects_of_plant_vs_animal_protein_supplementation-u-3061",
+      "claim_type": "unit_value",
+      "raw_text": "1.27 g/kg/day",
+      "numeric_values": [
+        1.27
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3061,
+      "sentence": "From the studies reporting baseline dietary intake, mean protein intake was ~1.27 g/kg/day (range: 0.89-1.85 g/kg/day).",
+      "context_window": "reporting baseline dietary intake, mean protein intake was ~1.27 g/kg/day (range: 0.89-1.85 g/kg/day). Therefore, in the absence of a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13078973_long_term_effects_of_plant_vs_animal_protein_supplementation-u-3088",
+      "claim_type": "unit_value",
+      "raw_text": "1.85 g/kg/day",
+      "numeric_values": [
+        1.85
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3088,
+      "sentence": "From the studies reporting baseline dietary intake, mean protein intake was ~1.27 g/kg/day (range: 0.89-1.85 g/kg/day).",
+      "context_window": "intake, mean protein intake was ~1.27 g/kg/day (range: 0.89-1.85 g/kg/day). Therefore, in the absence of a significant exercise stimu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2192,7 +2246,7 @@
       "context_window": "( 6 ). However, further evidence is needed on long-term (\u2265 6 months) effects of other PBP protein sources (such as pea protein)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2210,9 +2264,9 @@
       "context_window": "f mainly short-term studies, that is, a median follow-up of 6 weeks, in the compared study, which might blur the long-term effe",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13078973_long_term_effects_of_plant_vs_animal_protein_supplementation-u-5385",

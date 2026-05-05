@@ -1,13 +1,13 @@
 {
   "paper_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol",
   "doi": "10.1186/s12970-017-0163-1",
-  "extracted_at": "2026-05-05T22:35:38+00:00",
+  "extracted_at": "2026-05-05T23:37:08+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 13,
     "p_value": 34,
     "sample_size": 6,
-    "unit_value": 13,
+    "unit_value": 19,
     "mean_sd": 11,
     "confidence_interval": 1
   },
@@ -624,9 +624,9 @@
       "context_window": "energy (Male [ n = 6]: 27.9 \u00b1 5.9 kcal/kg/day vs. Female [ n = 4]: 26.5 \u00b1 7.3 kcal/kg/day, p = 0.74), carbohydrate (Male: 2.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-msd-627",
@@ -643,9 +643,9 @@
       "context_window": "(Male [ n = 6]: 27.9 \u00b1 5.9 kcal/kg/day vs. Female [ n = 4]: 26.5 \u00b1 7.3 kcal/kg/day, p = 0.74), carbohydrate (Male: 2.6 \u00b1 0.8 g/kg/",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-p-651",
@@ -661,9 +661,9 @@
       "context_window": ".9 kcal/kg/day vs. Female [ n = 4]: 26.5 \u00b1 7.3 kcal/kg/day, p = 0.74), carbohydrate (Male: 2.6 \u00b1 0.8 g/kg/day vs. Female: 3.0 \u00b1",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-msd-682",
@@ -680,9 +680,27 @@
       "context_window": "4]: 26.5 \u00b1 7.3 kcal/kg/day, p = 0.74), carbohydrate (Male: 2.6 \u00b1 0.8 g/kg/day vs. Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-u-688",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 688,
+      "sentence": "Female [ n = 4]: 26.5 \u00b1 7.3 kcal/kg/day, p = 0.74), carbohydrate (Male: 2.6 \u00b1 0.8 g/kg/day vs.",
+      "context_window": "6.5 \u00b1 7.3 kcal/kg/day, p = 0.74), carbohydrate (Male: 2.6 \u00b1 0.8 g/kg/day vs. Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat intake (2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "carbohydrate",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-msd-713",
@@ -697,6 +715,24 @@
       "source_offset": 713,
       "sentence": "Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs.",
       "context_window": "= 0.74), carbohydrate (Male: 2.6 \u00b1 0.8 g/kg/day vs. Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-u-719",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 g/kg/day",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 719,
+      "sentence": "Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs.",
+      "context_window": "), carbohydrate (Male: 2.6 \u00b1 0.8 g/kg/day vs. Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs. 1.7 \u00b1 0.3",
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",
@@ -741,6 +777,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-u-765",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 g/kg/day",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 765,
+      "sentence": "Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs.",
+      "context_window": "Female: 3.0 \u00b1 0.6 g/kg/day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs. 1.7 \u00b1 0.3 g/kg/day, p = 0.14) normalized to body mas in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-msd-782",
       "claim_type": "mean_sd",
       "raw_text": "1.7 \u00b1 0.3",
@@ -753,6 +807,24 @@
       "source_offset": 782,
       "sentence": "1.7 \u00b1 0.3 g/kg/day, p = 0.14) normalized to body mas in kg was not different between genders.",
       "context_window": "g/kg/day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs. 1.7 \u00b1 0.3 g/kg/day, p = 0.14) normalized to body mas in kg was not di",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-u-788",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 g/kg/day",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 788,
+      "sentence": "1.7 \u00b1 0.3 g/kg/day, p = 0.14) normalized to body mas in kg was not different between genders.",
+      "context_window": "day, p = 0.49) and fat intake (2.3 \u00b1 0.7 g/kg/day vs. 1.7 \u00b1 0.3 g/kg/day, p = 0.14) normalized to body mas in kg was not different b",
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",
@@ -791,7 +863,7 @@
       "context_window": "not different between genders. Protein intake was greater ( p = 0.003) in females (1.7 \u00b1 0.2 g/kg/day) than in males (1.2 \u00b1 0.2 g",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -810,7 +882,25 @@
       "context_window": "enders. Protein intake was greater ( p = 0.003) in females (1.7 \u00b1 0.2 g/kg/day) than in males (1.2 \u00b1 0.2 g/kg/day). Total BCAA c",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-u-934",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 g/kg/day",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 934,
+      "sentence": "Protein intake was greater ( p = 0.003) in females (1.7 \u00b1 0.2 g/kg/day) than in males (1.2 \u00b1 0.2 g/kg/day).",
+      "context_window": ". Protein intake was greater ( p = 0.003) in females (1.7 \u00b1 0.2 g/kg/day) than in males (1.2 \u00b1 0.2 g/kg/day). Total BCAA concentrat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -829,7 +919,25 @@
       "context_window": "( p = 0.003) in females (1.7 \u00b1 0.2 g/kg/day) than in males (1.2 \u00b1 0.2 g/kg/day). Total BCAA concentrations in both WPACr and WP",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-u-969",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 g/kg/day",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 969,
+      "sentence": "Protein intake was greater ( p = 0.003) in females (1.7 \u00b1 0.2 g/kg/day) than in males (1.2 \u00b1 0.2 g/kg/day).",
+      "context_window": "0.003) in females (1.7 \u00b1 0.2 g/kg/day) than in males (1.2 \u00b1 0.2 g/kg/day). Total BCAA concentrations in both WPACr and WP peaked 30",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -883,7 +991,7 @@
       "context_window": "in, \u03bcM micromoles. \u2020 = Significantly different from 0 min ( p < 0.05) Individual serum concentrations of leucine, isoleucine an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -901,7 +1009,7 @@
       "context_window": "a similar pattern of response with a significant increase ( p < 0.05) occurring approximately 30 min after ingestion (270 min ti",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -919,9 +1027,9 @@
       "context_window": "y ANOVA revealed no trial x time interactions for leucine ( p = 0.45), isoleucine ( p = 0.51) and valine ( p = 0.35) of these in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-p-1976",
@@ -937,9 +1045,9 @@
       "context_window": "l x time interactions for leucine ( p = 0.45), isoleucine ( p = 0.51) and valine ( p = 0.35) of these individual amino acids nor",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-p-1999",
@@ -955,9 +1063,9 @@
       "context_window": "or leucine ( p = 0.45), isoleucine ( p = 0.51) and valine ( p = 0.35) of these individual amino acids nor were pair-wise differe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-p-2274",
@@ -1027,9 +1135,9 @@
       "context_window": "blood, \u2020 significantly different than 240 min time point ( p < 0.05) Two-way mixed factorial ANOVA using plasma insulin respon",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-p-3077",
@@ -1045,9 +1153,9 @@
       "context_window": "ial ANOVA using plasma insulin responses revealed a trend ( p = 0.09) for a trial x time interaction. Within-trial changes in co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5299635_effects_of_an_amylopectin_and_chromium_complex_on_the_anabol-p-3260",

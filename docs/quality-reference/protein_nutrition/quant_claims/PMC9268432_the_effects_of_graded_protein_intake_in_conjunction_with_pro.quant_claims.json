@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro",
   "doi": "10.3390/nu14132739",
-  "extracted_at": "2026-05-05T22:35:28+00:00",
+  "extracted_at": "2026-05-05T23:37:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
-    "unit_value": 23,
+    "unit_value": 42,
     "percentage": 28,
     "p_value": 26,
     "mean_sd": 2
@@ -25,9 +25,9 @@
       "context_window": "conjunctive RT in older adults are unclear. Older adults ( n = 18) performed 10 weeks of whole-body RT with progressions to i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-269",
@@ -43,9 +43,63 @@
       "context_window": "older adults are unclear. Older adults ( n = 18) performed 10 weeks of whole-body RT with progressions to intensity and volume",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-394",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 394,
+      "sentence": "Older adults ( n = 18) performed 10 weeks of whole-body RT with progressions to intensity and volume while consuming either a constant protein (CP) diet (0.8-1.0 g/kg/d) with no protein supplement or a graded protein (GP) diet progressing from 0.8 g/kg/d at week 1 to 2.2 g/kg/d at week 10 with a whey protein supplement.",
+      "context_window": "me while consuming either a constant protein (CP) diet (0.8-1.0 g/kg/d) with no protein supplement or a graded protein (GP) diet p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-480",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 480,
+      "sentence": "Older adults ( n = 18) performed 10 weeks of whole-body RT with progressions to intensity and volume while consuming either a constant protein (CP) diet (0.8-1.0 g/kg/d) with no protein supplement or a graded protein (GP) diet progressing from 0.8 g/kg/d at week 1 to 2.2 g/kg/d at week 10 with a whey protein supplement.",
+      "context_window": "n supplement or a graded protein (GP) diet progressing from 0.8 g/kg/d at week 1 to 2.2 g/kg/d at week 10 with a whey protein supp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-504",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/d",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 504,
+      "sentence": "Older adults ( n = 18) performed 10 weeks of whole-body RT with progressions to intensity and volume while consuming either a constant protein (CP) diet (0.8-1.0 g/kg/d) with no protein supplement or a graded protein (GP) diet progressing from 0.8 g/kg/d at week 1 to 2.2 g/kg/d at week 10 with a whey protein supplement.",
+      "context_window": "protein (GP) diet progressing from 0.8 g/kg/d at week 1 to 2.2 g/kg/d at week 10 with a whey protein supplement. Data were collec",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-992",
@@ -61,9 +115,9 @@
       "context_window": "monstrated the feasibility of the RT protocol (attendance = 96%), and protein intake protocol (CP in range all weeks; GP de",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-1081",
@@ -79,9 +133,9 @@
       "context_window": "ocol (CP in range all weeks; GP deviation from prescribed = 7%). Peak torque, muscle quality scores, and appendicular lean",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-p-1201",
@@ -210,6 +264,96 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-2728",
+      "claim_type": "unit_value",
+      "raw_text": "2.20 g/kg/d",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 2728,
+      "sentence": "Notably, in this aforementioned analysis the 95% confidence interval ranged from 1.03 to 2.20 g/kg/d.",
+      "context_window": "ed analysis the 95% confidence interval ranged from 1.03 to 2.20 g/kg/d. Furthermore, Antonio et al. have demonstrated that chronic",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-2818",
+      "claim_type": "unit_value",
+      "raw_text": "3 g/kg/d",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 2818,
+      "sentence": "Furthermore, Antonio et al. have demonstrated that chronic protein intakes > 3 g/kg/d demonstrate no adverse effects in a one-year crossover study [ 28 ].",
+      "context_window": "nio et al. have demonstrated that chronic protein intakes > 3 g/kg/d demonstrate no adverse effects in a one-year crossover stud",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-3655",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 3655,
+      "sentence": "It stands to reason that increasing protein intake concurrently with training intensity/volume could enhance skeletal muscle outcomes given that (a) large single protein boluses (\u226540 g) have proven beneficial for older adults, (b) 1.6 g/kg/d has proven more effective than the RDA of 0.8 g/kg/d for adults undergoing RT, and (c) increased protein intake, specifically enhanced leucine intake, has shown promising effects in older adults at the cell signaling level [ 19 , 36 , 37 , 38 ].",
+      "context_window": "oluses (\u226540 g) have proven beneficial for older adults, (b) 1.6 g/kg/d has proven more effective than the RDA of 0.8 g/kg/d for ad",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-3708",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 3708,
+      "sentence": "It stands to reason that increasing protein intake concurrently with training intensity/volume could enhance skeletal muscle outcomes given that (a) large single protein boluses (\u226540 g) have proven beneficial for older adults, (b) 1.6 g/kg/d has proven more effective than the RDA of 0.8 g/kg/d for adults undergoing RT, and (c) increased protein intake, specifically enhanced leucine intake, has shown promising effects in older adults at the cell signaling level [ 19 , 36 , 37 , 38 ].",
+      "context_window": "s, (b) 1.6 g/kg/d has proven more effective than the RDA of 0.8 g/kg/d for adults undergoing RT, and (c) increased protein intake,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-4360",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 4360,
+      "sentence": "Therefore, the purpose of the present study was to examine the feasibility and effects of graded protein intake in conjunction with RT while maintaining both large single protein boluses and average sustained intake of ~1.6 g/kg/d as compared to constant protein intake in conjunction with RT on skeletal muscle outcomes in older adults.",
+      "context_window": "rge single protein boluses and average sustained intake of ~1.6 g/kg/d as compared to constant protein intake in conjunction with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-4855",
       "claim_type": "percentage",
       "raw_text": "80%",
@@ -223,7 +367,7 @@
       "context_window": "both the RT and nutritional protocols, defined as at least 80% attendance to training sessions and deviation of no more th",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -241,7 +385,7 @@
       "context_window": "tendance to training sessions and deviation of no more than 20% from target protein intakes. We primarily hypothesized that",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -277,9 +421,9 @@
       "context_window": ", or if they had adhered to a progressive RT program in the 3 months prior to study initiation. A progressive RT program was def",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-3417",
@@ -408,6 +552,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-5301",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/d",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 5301,
+      "sentence": "Protein intake subsequently increased throughout the course of the study to 2.2 g/kg/d at weeks 9 and 10.",
+      "context_window": "ubsequently increased throughout the course of the study to 2.2 g/kg/d at weeks 9 and 10. Notably, protein intake levels did not i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-5554",
       "claim_type": "unit_value",
       "raw_text": "10 weeks",
@@ -421,9 +583,63 @@
       "context_window": "chosen because (a) the targeted mean protein intake across 10 weeks was 1.56 g/kg/d, very close to the value of 1.6 g/kg/d reco",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-5567",
+      "claim_type": "unit_value",
+      "raw_text": "1.56 g/kg/d",
+      "numeric_values": [
+        1.56
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 5567,
+      "sentence": "The protein intake strategy was chosen because (a) the targeted mean protein intake across 10 weeks was 1.56 g/kg/d, very close to the value of 1.6 g/kg/d recommended by Morton et al. [ 27 ], (b) by increasing protein intake to 2.2 g/kg/d at weeks 9 and 10 the full 95% confidence interval presented by Morton et al. was consumed by participants, and (c) high protein intakes > 2.0 g/kg/d have previously been observed to be safe and efficacious in older adults [ 41 , 42 ].",
+      "context_window": "se (a) the targeted mean protein intake across 10 weeks was 1.56 g/kg/d, very close to the value of 1.6 g/kg/d recommended by Morto",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-5607",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 5607,
+      "sentence": "The protein intake strategy was chosen because (a) the targeted mean protein intake across 10 weeks was 1.56 g/kg/d, very close to the value of 1.6 g/kg/d recommended by Morton et al. [ 27 ], (b) by increasing protein intake to 2.2 g/kg/d at weeks 9 and 10 the full 95% confidence interval presented by Morton et al. was consumed by participants, and (c) high protein intakes > 2.0 g/kg/d have previously been observed to be safe and efficacious in older adults [ 41 , 42 ].",
+      "context_window": "across 10 weeks was 1.56 g/kg/d, very close to the value of 1.6 g/kg/d recommended by Morton et al. [ 27 ], (b) by increasing prot",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-5691",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/d",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 5691,
+      "sentence": "The protein intake strategy was chosen because (a) the targeted mean protein intake across 10 weeks was 1.56 g/kg/d, very close to the value of 1.6 g/kg/d recommended by Morton et al. [ 27 ], (b) by increasing protein intake to 2.2 g/kg/d at weeks 9 and 10 the full 95% confidence interval presented by Morton et al. was consumed by participants, and (c) high protein intakes > 2.0 g/kg/d have previously been observed to be safe and efficacious in older adults [ 41 , 42 ].",
+      "context_window": "y Morton et al. [ 27 ], (b) by increasing protein intake to 2.2 g/kg/d at weeks 9 and 10 the full 95% confidence interval presente",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-5729",
@@ -439,9 +655,27 @@
       "context_window": "ing protein intake to 2.2 g/kg/d at weeks 9 and 10 the full 95% confidence interval presented by Morton et al. was consumed",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-5841",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/d",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 5841,
+      "sentence": "The protein intake strategy was chosen because (a) the targeted mean protein intake across 10 weeks was 1.56 g/kg/d, very close to the value of 1.6 g/kg/d recommended by Morton et al. [ 27 ], (b) by increasing protein intake to 2.2 g/kg/d at weeks 9 and 10 the full 95% confidence interval presented by Morton et al. was consumed by participants, and (c) high protein intakes > 2.0 g/kg/d have previously been observed to be safe and efficacious in older adults [ 41 , 42 ].",
+      "context_window": "as consumed by participants, and (c) high protein intakes > 2.0 g/kg/d have previously been observed to be safe and efficacious in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-5974",
@@ -457,9 +691,45 @@
       "context_window": "der adults [ 41 , 42 ]. The whey protein supplement, Combat 100% Whey (MusclePharm \u00ae , Las Vegas, NV, USA), was provided to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-7182",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 g/kg/d",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 7182,
+      "sentence": "Notably, on weeks in which protein supplementation remained constant and overall protein prescription increased, participants were instructed to increase dietary protein intake (e.g., weeks 1-5 where protein intake targets increased from 0.8 to 1.4 g/kg/d while supplemental protein was held constant at 25 g/d).",
+      "context_window": "eeks 1-5 where protein intake targets increased from 0.8 to 1.4 g/kg/d while supplemental protein was held constant at 25 g/d). C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-7337",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 7337,
+      "sentence": "Conversely, the CP group was instructed to consume protein at a constant level of 0.8-1.0 g/kg/d, in accordance with the recommended daily allowance, for the duration of the study.",
+      "context_window": "as instructed to consume protein at a constant level of 0.8-1.0 g/kg/d, in accordance with the recommended daily allowance, for th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-8480",
@@ -746,9 +1016,9 @@
       "context_window": "h absolute (g/day) and relative (g/kg/day) protein intake ( p < 0.001). These data are presented in Table 4 . The GP group exceed",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-1401",
@@ -764,7 +1034,7 @@
       "context_window": "P group exceeded prescribed protein intake for weeks 1-2 by 37.92% and 15.10% respectively, after which this group deviated no",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -782,7 +1052,7 @@
       "context_window": "eeded prescribed protein intake for weeks 1-2 by 37.92% and 15.10% respectively, after which this group deviated no more than",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -800,7 +1070,7 @@
       "context_window": "respectively, after which this group deviated no more than ~5%. Target vs. actual protein intake values for the GP group a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -818,7 +1088,7 @@
       "context_window": "oup fell within the prescribed protein intake range for all 10 weeks of the intervention. Protein supplement adherence in the GP",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -836,9 +1106,9 @@
       "context_window": "ervention. Protein supplement adherence in the GP group was 81% as determined via bag return (supplement bags returned/supp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-p-2145",
@@ -1196,9 +1466,63 @@
       "context_window": "0-week intervention, and the GP group deviated no more than 5.4% after week 2 of the intervention. This demonstrates the fea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-1621",
+      "claim_type": "unit_value",
+      "raw_text": "1.59 g/kg/d",
+      "numeric_values": [
+        1.59
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 1621,
+      "sentence": "Additionally, overall average self-reported protein intakes per group as compared to prescribed were 1.59 g/kg/d (actual) vs.",
+      "context_window": "ed protein intakes per group as compared to prescribed were 1.59 g/kg/d (actual) vs. 1.56 g/kg/d (prescribed) for the GP group and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-1646",
+      "claim_type": "unit_value",
+      "raw_text": "1.56 g/kg/d",
+      "numeric_values": [
+        1.56
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 1646,
+      "sentence": "1.56 g/kg/d (prescribed) for the GP group and 0.96 g/kg/d (actual) vs.",
+      "context_window": "oup as compared to prescribed were 1.59 g/kg/d (actual) vs. 1.56 g/kg/d (prescribed) for the GP group and 0.96 g/kg/d (actual) vs.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-1692",
+      "claim_type": "unit_value",
+      "raw_text": "0.96 g/kg/d",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 1692,
+      "sentence": "1.56 g/kg/d (prescribed) for the GP group and 0.96 g/kg/d (actual) vs.",
+      "context_window": "(actual) vs. 1.56 g/kg/d (prescribed) for the GP group and 0.96 g/kg/d (actual) vs. 0.8-1.0 (prescribed) for the CP group. Supplem",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-pct-1786",
@@ -1449,7 +1773,7 @@
       "context_window": "ults from a randomized trial in a cohort of elderly women ( n = 91; mean age = 83.6 years) demonstrate similar improvements to",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1467,7 +1791,7 @@
       "context_window": "zed trial in a cohort of elderly women ( n = 91; mean age = 83.6 years) demonstrate similar improvements to muscle quality between",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1505,6 +1829,24 @@
       "endpoint": "",
       "arm": "",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9268432_the_effects_of_graded_protein_intake_in_conjunction_with_pro-u-896",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "conclusion",
+      "source_offset": 896,
+      "sentence": "Despite ubiquitous improvements across groups, no group * time interactions were observed, suggesting that differential protein intake did not play a role in lean/soft tissue mass, strength, and muscle quality adaptation, provided that 0.8-1.0 g/kg/d of protein is consumed.",
+      "context_window": "strength, and muscle quality adaptation, provided that 0.8-1.0 g/kg/d of protein is consumed. This study serves as a step to inve",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "pooled",
+      "direction": "",
       "binding_confidence": "partial"
     }
   ]

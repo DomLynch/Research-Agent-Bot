@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC9684029_assessing_the_effects_of_dietary_protein_supplementation_on_",
   "doi": "10.5770/cgj.25.608",
-  "extracted_at": "2026-05-05T22:35:39+00:00",
+  "extracted_at": "2026-05-05T23:37:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 3,
-    "unit_value": 15
+    "unit_value": 18
   },
   "claims": [
     {
@@ -22,7 +22,7 @@
       "context_window": "4 ) In fact, older adults over the age of 80 may lose up to 50% of their muscle mass. ( 2 , 3 ) Sarcopenia also acts as a s",
       "claim_role": "background",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -40,7 +40,7 @@
       "context_window": "nd in age-appropriate non-sarcopenic healthy controls after 16 months. ( 10 ) Similarly, Peng et al . discovered that 12 weeks of",
       "claim_role": "protocol",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -58,7 +58,7 @@
       "context_window": "r 16 months. ( 10 ) Similarly, Peng et al . discovered that 12 weeks of daily amino acid supplementation significantly improves",
       "claim_role": "protocol",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -76,7 +76,7 @@
       "context_window": ", a randomized controlled trial by Ellis et al . found that 16 weeks of amino acid supplementation can significantly improve tot",
       "claim_role": "protocol",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -94,7 +94,7 @@
       "context_window": "g et al . reported that 20 g of protein supplementation for 12 weeks only significantly improved total lean mass in healthy adul",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -112,7 +112,7 @@
       "context_window": "d 50-64, but had no effects on muscle mass in participants >65 years old. ( 13 ) Furthermore, protein supplementation did not si",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -130,7 +130,7 @@
       "context_window": "an mass, in sarcopenic and pre-frail older adults over 3 to 16 months. However, amino acid supplementation had no significant eff",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "placebo",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "high"
     },
@@ -166,7 +166,7 @@
       "context_window": "h the protein supplementation and exercise intervention for 12 weeks had significant improvements in total muscle mass and appen",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -184,7 +184,7 @@
       "context_window": "l . reported that sarcopenic obese older women who received 12 weeks of both protein and exercise interventions had significant",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -202,7 +202,7 @@
       "context_window": "dy on community-dwelling sarcopenic older adults found that 12 months of protein supplementation in addition to home-based exerci",
       "claim_role": "protocol",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -220,7 +220,7 @@
       "context_window": "group. ( 22 ) However, the study reported poor compliance (45% compliance) throughout the intervention period. ( 22 ) Last",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -238,7 +238,7 @@
       "context_window": "ho received both whey protein and exercise intervention for 12 weeks had significantly greater handgrip strength, gait speed, an",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -256,7 +256,7 @@
       "context_window": "entions in healthy older adults. Kirk et al . reported that 16 weeks of whey protein supplementation in addition to resistance e",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -274,9 +274,9 @@
       "context_window": "ever, this study also cited a lack of compliance, with only 43% of participants completing the allocated intervention regim",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9684029_assessing_the_effects_of_dietary_protein_supplementation_on_-u-8924",
@@ -292,9 +292,9 @@
       "context_window": "group, exercise-only, and protein-only groups. ( 28 ) After 24 weeks of intervention, the exercise + protein group had significa",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9684029_assessing_the_effects_of_dietary_protein_supplementation_on_-u-9694",
@@ -310,9 +310,9 @@
       "context_window": "le growth, on sarcopenia in obese older males. ( 29 ) After 16 weeks of WB-EMS and whey protein supplementation, the interventio",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9684029_assessing_the_effects_of_dietary_protein_supplementation_on_-u-10209",
@@ -328,7 +328,61 @@
       "context_window": "enic and pre-frail older adults, most studies indicate that 12 weeks of whey protein supplementation combined with exercise inte",
       "claim_role": "protocol",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9684029_assessing_the_effects_of_dietary_protein_supplementation_on_-u-11404",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 11404,
+      "sentence": "One randomized trial evaluated the effects of daily ricotta cheese supplementation in sarcopenic older adults and found no significant differences in total muscle mass or handgrip strength between the intervention and control groups. ( 30 ) In comparison, in their cross-sectional study, Ten Haaf et al . reported that older adults with > 1 g/kg/day protein intake did not have significant improvements in handgrip strength and the SPPB score compared to participants with lower protein intake. ( 31 ) In contrast, in a prospective cohort study, Scott et al . assessed the effects of dietary protein intake on sarcopenia in healthy older adults, using cutoffs for protein intake based on the Australian Department of Health and Aging (64 and 81 g/day for men aged 51-70 and >70, respectively, and 46 and 57 g/day for women in the same age groups).",
+      "context_window": "l study, Ten Haaf et al . reported that older adults with > 1 g/kg/day protein intake did not have significant improvements in han",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9684029_assessing_the_effects_of_dietary_protein_supplementation_on_-u-3822",
+      "claim_type": "unit_value",
+      "raw_text": "0.8g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3822,
+      "sentence": "The National Academy of Science and the WHO established a Recommended Dietary Allowance of 0.8g/kg/day in older adults. ( 51 , 52 ) Nevertheless, recent reviews have suggested that higher levels of protein intake ranging from 1.0-1.5 g/kg/day may be more effective in preventing muscle loss in older adults. ( 53 , 54 )\n\nOn the other hand, our literature review found mixed results when comparing vegetable-based proteins versus animal-based proteins and their effects on sarcopenia.",
+      "context_window": "and the WHO established a Recommended Dietary Allowance of 0.8g/kg/day in older adults. ( 51 , 52 ) Nevertheless, recent reviews h",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9684029_assessing_the_effects_of_dietary_protein_supplementation_on_-u-3961",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3961,
+      "sentence": "The National Academy of Science and the WHO established a Recommended Dietary Allowance of 0.8g/kg/day in older adults. ( 51 , 52 ) Nevertheless, recent reviews have suggested that higher levels of protein intake ranging from 1.0-1.5 g/kg/day may be more effective in preventing muscle loss in older adults. ( 53 , 54 )\n\nOn the other hand, our literature review found mixed results when comparing vegetable-based proteins versus animal-based proteins and their effects on sarcopenia.",
+      "context_window": "ested that higher levels of protein intake ranging from 1.0-1.5 g/kg/day may be more effective in preventing muscle loss in older ad",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     }

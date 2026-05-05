@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas",
   "doi": "10.3390/nu13041205",
-  "extracted_at": "2026-05-05T22:35:44+00:00",
+  "extracted_at": "2026-05-05T23:37:17+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 1,
@@ -22,7 +22,7 @@
       "context_window": "ents with proteinuria <0.5 g/day, and rate of eGFR decline <3.0 mL/min/1.73 m 2 /year. However, the effect of increasing protein i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -40,9 +40,9 @@
       "context_window": "PEW) assessed by clinical global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without d",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3049",
@@ -58,9 +58,9 @@
       "context_window": "cal global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3066",
@@ -76,9 +76,9 @@
       "context_window": "ment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ]. On t",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3102",
@@ -94,9 +94,9 @@
       "context_window": "G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ]. On the other hand, protein restriction i",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3442",
@@ -112,7 +112,7 @@
       "context_window": "n the highest quintile of protein intake lost approximately 40% less lean mass than did those in the lowest quintile of pro",
       "claim_role": "background",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     }

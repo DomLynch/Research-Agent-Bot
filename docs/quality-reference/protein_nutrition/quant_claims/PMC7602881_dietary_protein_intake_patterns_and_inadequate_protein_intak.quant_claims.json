@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak",
   "doi": "10.3390/nu12103156",
-  "extracted_at": "2026-05-05T22:35:41+00:00",
+  "extracted_at": "2026-05-05T23:37:16+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "p_value": 17,
-    "unit_value": 8,
+    "unit_value": 17,
     "sample_size": 5,
     "percentage": 66
   },
@@ -22,6 +22,24 @@
       "source_offset": 700,
       "sentence": "The IPI per day significantly differed among countries for <0.8 and <1.0 (both p < 0.001), but not for <1.2 g/kg/d ( p = 0.135).",
       "context_window": "nificantly differed among countries for <0.8 and <1.0 (both p < 0.001), but not for <1.2 g/kg/d ( p = 0.135). IPI per meal (<30 g",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-725",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "abstract",
+      "source_offset": 725,
+      "sentence": "The IPI per day significantly differed among countries for <0.8 and <1.0 (both p < 0.001), but not for <1.2 g/kg/d ( p = 0.135).",
+      "context_window": "countries for <0.8 and <1.0 (both p < 0.001), but not for <1.2 g/kg/d ( p = 0.135). IPI per meal (<30 g/meal) did not differ amon",
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",
@@ -137,6 +155,60 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 662,
+      "sentence": "A growing body of evidence suggests that daily protein intake above the recommended dietary allowance (R.D.A.) of 0.8 g/kg/d is associated with better physical performance, maintenance or even an increase in muscle mass, and decreased risk of physical disability.",
+      "context_window": "intake above the recommended dietary allowance (R.D.A.) of 0.8 g/kg/d is associated with better physical performance, maintenance",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-903",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 903,
+      "sentence": "Therefore, it has been suggested to set the protein recommendation to a higher dose of 1.0-1.2 g/kg/d [ 7 , 8 , 9 , 10 ].",
+      "context_window": "d to set the protein recommendation to a higher dose of 1.0-1.2 g/kg/d [ 7 , 8 , 9 , 10 ]. Additionally, it seems that other trai",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-2737",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 2737,
+      "sentence": "Similarly, the comparison of the percentage of older adults that did not eat enough protein per day (i.e., 0.8, 1.0, and 1.2 g/kg/d) or per meal (30 g/meal; 0.4 g/kg/meal) among countries is missing.",
+      "context_window": "hat did not eat enough protein per day (i.e., 0.8, 1.0, and 1.2 g/kg/d) or per meal (30 g/meal; 0.4 g/kg/meal) among countries is",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-160",
       "claim_type": "unit_value",
       "raw_text": "60 years",
@@ -150,9 +222,9 @@
       "context_window": "rs reported protein intake per day and meal in adults aged \u226560 years. Corresponding authors were contacted to gather demographic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-725",
@@ -222,7 +294,7 @@
       "context_window": "ant differences between included and nonincluded subjects ( n = 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -240,7 +312,7 @@
       "context_window": "ween included and nonincluded subjects ( n = 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -258,7 +330,7 @@
       "context_window": "cluded subjects ( n = 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98), nor total protein in",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -276,7 +348,7 @@
       "context_window": "= 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98), nor total protein intake per day ( p = 0",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,7 +366,7 @@
       "context_window": "p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98), nor total protein intake per day ( p = 0.15). This sample",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -312,7 +384,7 @@
       "context_window": "0.38), BMI ( p = 0.98), nor total protein intake per day ( p = 0.15). This sample was not weighted according to the NHANES comp",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -654,9 +726,9 @@
       "context_window": "ge of inadequate protein intake per day; whiskers represent 95% confidence intervals. p -values and \u03c6 statistic are for com",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-p-3995",
@@ -672,9 +744,9 @@
       "context_window": "a similar letter (a, b, c) denote significant differences ( p \u2264 0.05) among countries within cut points ( t -test for proportion",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-4341",
@@ -798,9 +870,9 @@
       "context_window": "e of inadequate protein intake per meal; whiskers represent 95% confidence intervals. p -values and \u03c6 statistic are for com",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-p-5175",
@@ -996,9 +1068,9 @@
       "context_window": "). When the \u226530 g protein/meal criterion was used, Mexico (61.0%) and Germany (60.8%) showed the highest percentages of 0M (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-5985",
@@ -1014,9 +1086,9 @@
       "context_window": "rotein/meal criterion was used, Mexico (61.0%) and Germany (60.8%) showed the highest percentages of 0M (50% difference vs. U",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-6030",
@@ -1032,9 +1104,9 @@
       "context_window": ") and Germany (60.8%) showed the highest percentages of 0M (50% difference vs. U.K., small effect), U.K. (76.3%) showed the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-6076",
@@ -1122,9 +1194,9 @@
       "context_window": "ree) with the mentioned protein content; whiskers represent 95% confidence intervals. p -values and \u03c6 statistic are for com",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-p-6962",
@@ -1158,9 +1230,9 @@
       "context_window": "hen the \u22650.4 g protein/kg/meal criterion was used, Germany (57.7%) and U.S.A. (48.5%) showed the highest percentages of 0M (5",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-7248",
@@ -1176,9 +1248,9 @@
       "context_window": "ein/kg/meal criterion was used, Germany (57.7%) and U.S.A. (48.5%) showed the highest percentages of 0M (50% difference vs. U",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-7293",
@@ -1194,9 +1266,9 @@
       "context_window": "%) and U.S.A. (48.5%) showed the highest percentages of 0M (50% difference vs. U.K., small effect), whereas U.K. (73.7%) sh",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-7347",
@@ -1284,9 +1356,9 @@
       "context_window": "ure S3d ). When data from the four samples were combined ( n = 522), we calculated the percentage of IPID-0.8, IPID-1.0, IPID-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-8136",
@@ -1338,9 +1410,9 @@
       "context_window": "Combined data ( n = 522) from the four samples analyzed. 95% CI: 95% confidence intervals; IPID-0.8: inadequate protein",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-8514",
@@ -1356,9 +1428,63 @@
       "context_window": "ed data ( n = 522) from the four samples analyzed. 95% CI: 95% confidence intervals; IPID-0.8: inadequate protein intake p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-8586",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 8586,
+      "sentence": "95% CI: 95% confidence intervals; IPID-0.8: inadequate protein intake per day (<0.8 g/kg/d); IPID-1.0: inadequate protein intake per day (<1.0 g/kg/d); IPID-1.2: inadequate protein intake per day (<1.2 g/kg/d); IPIM-30: inadequate protein intake per meal (<30 g/meal); IPIM-0.4: inadequate protein intake per meal (<0.4 g/kg/meal).",
+      "context_window": "ce intervals; IPID-0.8: inadequate protein intake per day (<0.8 g/kg/d); IPID-1.0: inadequate protein intake per day (<1.0 g/kg/d)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-8645",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 8645,
+      "sentence": "95% CI: 95% confidence intervals; IPID-0.8: inadequate protein intake per day (<0.8 g/kg/d); IPID-1.0: inadequate protein intake per day (<1.0 g/kg/d); IPID-1.2: inadequate protein intake per day (<1.2 g/kg/d); IPIM-30: inadequate protein intake per meal (<30 g/meal); IPIM-0.4: inadequate protein intake per meal (<0.4 g/kg/meal).",
+      "context_window": "<0.8 g/kg/d); IPID-1.0: inadequate protein intake per day (<1.0 g/kg/d); IPID-1.2: inadequate protein intake per day (<1.2 g/kg/d)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-8704",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "results",
+      "source_offset": 8704,
+      "sentence": "95% CI: 95% confidence intervals; IPID-0.8: inadequate protein intake per day (<0.8 g/kg/d); IPID-1.0: inadequate protein intake per day (<1.0 g/kg/d); IPID-1.2: inadequate protein intake per day (<1.2 g/kg/d); IPIM-30: inadequate protein intake per meal (<30 g/meal); IPIM-0.4: inadequate protein intake per meal (<0.4 g/kg/meal).",
+      "context_window": "<1.0 g/kg/d); IPID-1.2: inadequate protein intake per day (<1.2 g/kg/d); IPIM-30: inadequate protein intake per meal (<30 g/meal);",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-519",
@@ -1464,9 +1590,9 @@
       "context_window": "come this problem. Another important finding is that about 90%, 70%, and 74% of the participants did not eat enough protei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-3630",
@@ -1482,9 +1608,9 @@
       "context_window": "this problem. Another important finding is that about 90%, 70%, and 74% of the participants did not eat enough protein at",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-3639",
@@ -1500,9 +1626,27 @@
       "context_window": "lem. Another important finding is that about 90%, 70%, and 74% of the participants did not eat enough protein at breakfast",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-4076",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 4076,
+      "sentence": "We [ 20 ] and others [ 15 , 21 , 46 ] have previously reported that reaching an adequate protein content per meal (i.e., \u226530 g) is significantly associated with higher daily protein intake and lower proportion of IPI per day (<1.2 g/kg/d).",
+      "context_window": "daily protein intake and lower proportion of IPI per day (<1.2 g/kg/d). However, this practice is not usual. We reported here tha",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "decrease",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-4159",
@@ -1518,9 +1662,9 @@
       "context_window": "his practice is not usual. We reported here that only about 15% of participants ate two or three meals with adequate protei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-pct-4649",
@@ -1536,7 +1680,7 @@
       "context_window": "he difficulties mentioned earlier. On the other hand, about 45% of the participants did not eat enough protein at any meal",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1608,7 +1752,7 @@
       "context_window": "/kg of actual body weight/day), the IPI was 29.1, 54.3, and 75.7%, respectively. Nevertheless, when they used the adjusted bo",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1703,6 +1847,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-6086",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/d",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/d",
+      "source_section": "discussion",
+      "source_offset": 6086,
+      "sentence": "However, despite these differences in comparison to our study, they showed similar results when the protein intake was reported with the actual body weight for the 1.0 and 1.2 g/kg/d criteria.",
+      "context_window": "ke was reported with the actual body weight for the 1.0 and 1.2 g/kg/d criteria. Nonetheless, the authors suggest using the adjust",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-10776",
       "claim_type": "unit_value",
       "raw_text": "3 years",
@@ -1734,9 +1896,9 @@
       "context_window": "are recommended. Additionally, mean ages ranged from 71 to 79 year; this eight-year gap might have influenced the differences",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

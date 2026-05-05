@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_",
   "doi": "10.1016/j.clnu.2017.11.005",
-  "extracted_at": "2026-05-05T22:35:44+00:00",
+  "extracted_at": "2026-05-05T23:37:10+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 18,
-    "unit_value": 59,
+    "unit_value": 60,
     "p_value": 39,
     "sample_size": 8
   },
@@ -24,9 +24,9 @@
       "context_window": "ic sample consisted of 722 community-dwelling participants (60% women) from the Newcastle 85+ Study who had protein intake",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-764",
@@ -78,9 +78,9 @@
       "context_window": "articipants, and also stratified by sex. At baseline, 390 (54%) participants (261 women, p < 0.001) reported low protein i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-p-1017",
@@ -96,9 +96,9 @@
       "context_window": "ed by sex. At baseline, 390 (54%) participants (261 women, p < 0.001) reported low protein intake, and these differed from parti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-1270",
@@ -114,7 +114,7 @@
       "context_window": "e, consuming <1 g/kg aBW/d of protein was associated with a 1.62 kg lower GS (p = 0.008) in all participants, and especially in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "kg aBW/d of protein was associated with a 1.62 kg lower GS (p = 0.008) in all participants, and especially in women (\u03b2 (SE) = -0.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "rticipants, and especially in women (\u03b2 (SE) = -0.83 (0.41), p = 0.05) after adjusting for key baseline covariates (anthropometry",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": "atus and physical activity). The rate of decline in GS over 5 years was not associated with protein intake. Women, but not men,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "rotein intake had worse baseline TUG (\u03b2 (SE) = 0.04 (0.02), p = 0.03) compared with those with good protein intake in the fully",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -204,9 +204,27 @@
       "context_window": "mainly healthy young adults [20] . For individuals aged 65-85 years, outcomes from metabolic studies using amino acid oxidation",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-2272",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/d",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 2272,
+      "sentence": "The estimates increased to 1.6 g/kg/d in older men when based on fat-free mass (FFM).",
+      "context_window": "d 1.3 g/kg BW/d for women [21] . The estimates increased to 1.6 g/kg/d in older men when based on fat-free mass (FFM). Use of the",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-pct-2439",
@@ -222,9 +240,9 @@
       "context_window": "(aged 80-87) has suggested that 1.15 g protein/kg BW/d, or \u223c30% above the current RDA, is the minimum amount required to av",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-3785",
@@ -240,7 +258,7 @@
       "context_window": "erformance (Timed Up-and-Go test, TUG) in the very old over 5 years. Secondly, we investigated whether PA and protein intake di",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -276,9 +294,9 @@
       "context_window": "tudy comprised of 722 community-dwelling participants (289 [40%] men, and 433 [60%] women) with measure of protein intake (",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-pct-457",
@@ -294,9 +312,9 @@
       "context_window": "22 community-dwelling participants (289 [40%] men, and 433 [60%] women) with measure of protein intake (g/kg BW)/day), mult",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-733",
@@ -384,9 +402,9 @@
       "context_window": "ir usual place of residence. At baseline, 713 participants (98.8%) with measured protein intake had a complete GS measurement",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-pct-924",
@@ -402,9 +420,9 @@
       "context_window": "sured protein intake had a complete GS measurement and 714 (98.9%) had TUG assessment. The Newcastle & North Tyneside Local",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-1360",
@@ -456,9 +474,9 @@
       "context_window": "ted with a reduced risk of mortality for older adults aged \u226571 years if an individual was outside of a healthy BMI range of 22.0",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-n-3517",
@@ -528,7 +546,7 @@
       "context_window": "d categorised as (a) below CV mean of 0.187 (SD = 0.058) or 18.7% indicating more even protein intake distribution, and (b) a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -546,7 +564,7 @@
       "context_window": "cating more even protein intake distribution, and (b) above 18.7% representing skewed (pulse) protein intake [41] . In the m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -564,7 +582,7 @@
       "context_window": "participants by protein intake were: education (0-9/10-11/\u226512 years), marital status (married/not married), social class (highe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,7 +600,7 @@
       "context_window": "c All participants Low protein intake Good protein intake p n = 722 n = 390 n = 332 Socio-demographic factors Women % (n) 60.0",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -600,7 +618,7 @@
       "context_window": "rticipants Low protein intake Good protein intake p n = 722 n = 390 n = 332 Socio-demographic factors Women % (n) 60.0 (433) 66",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -618,7 +636,7 @@
       "context_window": "ts Low protein intake Good protein intake p n = 722 n = 390 n = 332 Socio-demographic factors Women % (n) 60.0 (433) 66.9 (261)",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -636,7 +654,7 @@
       "context_window": "tein intake distribution b % (n) 0.02 Even (below CV mean: <18.7%) 52.8 (381) 58.3 (222) 41.7 (159) Skewed (above CV mean: >1",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -654,7 +672,7 @@
       "context_window": "%) 52.8 (381) 58.3 (222) 41.7 (159) Skewed (above CV mean: >18.7%) 47.2 (341) 49.3 (169) 50.7 (173)* Misreporting food intake",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -672,7 +690,7 @@
       "context_window": "ean (total) protein intake). Values below CV mean of 0.187 (18.7%) represented more even, and above 18.7% represented more sk",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -690,7 +708,7 @@
       "context_window": "w CV mean of 0.187 (18.7%) represented more even, and above 18.7% represented more skewed (pulse) protein intake throughout t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -708,7 +726,7 @@
       "context_window": "ean (total) protein intake). Values below CV mean of 0.187 (18.7%) represented more even, and above 18.7% represented more sk",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -726,7 +744,7 @@
       "context_window": "w CV mean of 0.187 (18.7%) represented more even, and above 18.7% represented more skewed (pulse) protein intake throughout t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -744,7 +762,7 @@
       "context_window": "All participants Low protein intake Good protein intake p a n = 722 n = 390 n = 332 Grip strength Baseline (n) 713 385 328 kg (",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -762,7 +780,7 @@
       "context_window": "icipants Low protein intake Good protein intake p a n = 722 n = 390 n = 332 Grip strength Baseline (n) 713 385 328 kg (M, SD) 1",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -780,7 +798,7 @@
       "context_window": "Low protein intake Good protein intake p a n = 722 n = 390 n = 332 Grip strength Baseline (n) 713 385 328 kg (M, SD) 18.20 (7.",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -798,7 +816,7 @@
       "context_window": "n = 722 n = 390 n = 332 Grip strength Baseline (n) 713 385 328 kg (M, SD) 18.20 (7.08) 17.15 (7.64) 19.43 (7.33) <0.001 Follo",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -816,7 +834,7 @@
       "context_window": "18.20 (7.08) 17.15 (7.64) 19.43 (7.33) <0.001 Follow-up at 1.5 years (n) 567 294 273 kg (M, SD) 17.37 (7.64) 16.52 (7.67) 18.28",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -834,7 +852,7 @@
       "context_window": ".64) 19.43 (7.33) <0.001 Follow-up at 1.5 years (n) 567 294 273 kg (M, SD) 17.37 (7.64) 16.52 (7.67) 18.28 (7.52) <0.001 Follo",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -852,7 +870,7 @@
       "context_window": "17.37 (7.64) 16.52 (7.67) 18.28 (7.52) <0.001 Follow-up at 3 years (n) 430 227 203 kg (M, SD) 16.58 (7.28) 16.14 (7.49) 17.08",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -870,7 +888,7 @@
       "context_window": "(7.67) 18.28 (7.52) <0.001 Follow-up at 3 years (n) 430 227 203 kg (M, SD) 16.58 (7.28) 16.14 (7.49) 17.08 (7.04) 0.18 Follow-",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -888,7 +906,7 @@
       "context_window": "D) 16.58 (7.28) 16.14 (7.49) 17.08 (7.04) 0.18 Follow-up at 5 years (n) 286 139 147 kg (M, SD) 14.91 (7.04) 14.32 (7.19) 15.48",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -906,7 +924,7 @@
       "context_window": "4 (7.49) 17.08 (7.04) 0.18 Follow-up at 5 years (n) 286 139 147 kg (M, SD) 14.91 (7.04) 14.32 (7.19) 15.48 (6.87) 0.17 Timed U",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -924,7 +942,7 @@
       "context_window": "% (n) yes 17.1 (122) 19.3 (74) 14.5 (48) 0.09 Follow-up at 1.5 years (n) 530 274 254 s (M, SD) 21.03 (15.06) 22.64 (16.15) 19.32",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -942,7 +960,7 @@
       "context_window": ", % (n) yes 16.4 (87) 19.8 (54) 12.8 (33) 0.03 Follow-up at 3 years (n) 386 199 187 s (M, SD) 20.37 (13.82) 21.80 (13.93) 18.85",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -960,7 +978,7 @@
       "context_window": ", % (n) yes 16.9 (65) 21.2 (42) 12.3 (23) 0.02 Follow-up at 5 years (n) 267 137 133 s (M, SD) 20.75 (12.05) 21.29 (11.17) 20.21",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1014,9 +1032,9 @@
       "context_window": "effects of time (i.e. to account for nonlinear change over 5 years) and protein intake \u00d7 time interaction term, and adjusted f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-21544",
@@ -1068,7 +1086,7 @@
       "context_window": "pants with low protein intake were more likely to be women (p < 0.001), less educated (p = 0.009), had more difficulties with (I)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1086,7 +1104,7 @@
       "context_window": "ke were more likely to be women (p < 0.001), less educated (p = 0.009), had more difficulties with (I)ADLs (p = 0.02) and were mo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1104,7 +1122,7 @@
       "context_window": "s educated (p = 0.009), had more difficulties with (I)ADLs (p = 0.02) and were more likely to report fair/poor health (p = 0.001",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1122,7 +1140,7 @@
       "context_window": "(p = 0.02) and were more likely to report fair/poor health (p = 0.001). Participants with good protein intake had lower FM (p < 0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1158,7 @@
       "context_window": "0.001). Participants with good protein intake had lower FM (p < 0.001), consumed more total energy from diet (p < 0.001), were mo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1176,7 @@
       "context_window": "lower FM (p < 0.001), consumed more total energy from diet (p < 0.001), were more likely to have skewed protein distribution (p =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1194,7 @@
       "context_window": "001), were more likely to have skewed protein distribution (p = 0.02), but less likely to misreport food intake (p < 0.001) comp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1194,7 +1212,7 @@
       "context_window": "ution (p = 0.02), but less likely to misreport food intake (p < 0.001) compared with those with low protein intake. Untransforme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1212,9 +1230,9 @@
       "context_window": "g the association between protein intake and GS change over 5 years are shown in Table 3 . In the analysis with all participant",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-n-1146",
@@ -1320,7 +1338,7 @@
       "context_window": "intake was associated with lower GS (\u03b2 [SE] = -2.03 [0.65], p = 0.002) at baseline, but not with the rate GS decline over 5 years",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1338,7 +1356,7 @@
       "context_window": "= 0.002) at baseline, but not with the rate GS decline over 5 years (p = 0.08). After adjustment for key covariates (sex, FFM,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1356,7 +1374,7 @@
       "context_window": "at baseline, but not with the rate GS decline over 5 years (p = 0.08). After adjustment for key covariates (sex, FFM, height, mu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1374,7 +1392,7 @@
       "context_window": "nd low protein intake remained only in women (-0.83 [0.41], p = 0.046) ( Fig. 1 , panel C). Fig. 1 A similar rate of decline in G",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1392,7 +1410,7 @@
       "context_window": "er GS at baseline, but not with the rate of GS decline over 5 years. The growth curves represent \u03b2 estimates of the fully adjus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1410,7 +1428,7 @@
       "context_window": "er GS at baseline, but not with the rate of GS decline over 5 years. The growth curves represent \u03b2 estimates of the fully adjus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1428,7 +1446,7 @@
       "context_window": "of GS decline (slopes) did not vary by protein intake over 5 years ( Fig. 1 ), but they varied by the levels of PA in all part",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1572,7 +1590,7 @@
       "context_window": "UG did not vary by protein intake (panels A, B, and C) over 5 years. The growth curves represent \u03b2 estimates of the fully adjus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1590,7 +1608,7 @@
       "context_window": "UG did not vary by protein intake (panels A, B, and C) over 5 years. The growth curves represent \u03b2 estimates of the fully adjus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1608,9 +1626,9 @@
       "context_window": "associated with slower TUG times at baseline (0.04 [0.02], p = 0.03) in women, but not in men. The rate of decline in TUG (slop",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-5484",
@@ -1626,7 +1644,7 @@
       "context_window": "en, but not in men. The rate of decline in TUG (slope) over 5 years was not associated with protein intake ( Table 4 , Fig. 2 )",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1680,7 +1698,7 @@
       "context_window": "ting of food intake, and total energy intake (-0.80 [0.45], p = 0.08; details not shown), although neither covariate was a signi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1716,7 +1734,7 @@
       "context_window": "t high PA remained significant predictors of GS change over 5 years in all participants and in men [0.42 (0.21), p = 0.04; 1.00",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1752,7 @@
       "context_window": "e over 5 years in all participants and in men [0.42 (0.21), p = 0.04; 1.00 (0.38), p = 0.01, respectively], but not in women [-0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1770,7 @@
       "context_window": "articipants and in men [0.42 (0.21), p = 0.04; 1.00 (0.38), p = 0.01, respectively], but not in women [-0.03 (0.23), p = 0.92].",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1770,7 +1788,7 @@
       "context_window": "), p = 0.01, respectively], but not in women [-0.03 (0.23), p = 0.92]. Similarly, adding diet change in the past year and total",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1788,7 +1806,7 @@
       "context_window": "with initial level and change (decline) in GS and TUG over 5 years ( Supplementary Tables 1 and 2 , respectively). We reported",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1914,7 +1932,7 @@
       "context_window": "t, FFM, high PA), including having no cognitive impairment (p = 0.03). Men experienced a greater rate of annual decline in GS (-",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1986,7 +2004,7 @@
       "context_window": "UG at baseline or with rate of decline in GS or in TUG over 5 years, and adding total energy intake to the models did not chang",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2004,7 +2022,7 @@
       "context_window": "muscle strength (GS) and physical performance (TUG) at age 85 years (baseline) and decline in these outcomes over 5 years in pa",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2022,7 +2040,7 @@
       "context_window": "age 85 years (baseline) and decline in these outcomes over 5 years in participants from the Newcastle 85+ Study living in the",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2040,7 +2058,7 @@
       "context_window": "aily intake of protein of <1 g/kg aBW was associated with a 0.83 kg lower GS and worse TUG performance at baseline in women aft",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2058,9 +2076,9 @@
       "context_window": "ts and none included a significant number of the very old (\u226585 years). In addition, these studies have used various cut-offs to",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-4012",
@@ -2076,7 +2094,7 @@
       "context_window": "decline in GS and in chair stands over a mean follow-up of 11.5 years [25] . Higher intake of total and animal protein (\u22651.0 g/kg",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2094,7 +2112,7 @@
       "context_window": "loss in adults aged \u226560 in the Framingham Offspring Cohort (20% postmenopausal women) over 6 years [26] , independently of",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2112,7 +2130,7 @@
       "context_window": "Framingham Offspring Cohort (20% postmenopausal women) over 6 years [26] , independently of lean mass. Higher protein intake (\u2265",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2130,7 +2148,7 @@
       "context_window": "e present study who consumed <1.0 g/kg aBW/d of protein had 0.83 kg lower GS and 0.04 log 10 -s worse TUG at baseline compared",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2148,9 +2166,9 @@
       "context_window": "r men [21] . The recent comparison of MPS between younger (\u223c22 years) and older men (\u223c71 years) set protein intake at \u223c1.2 g/kg",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-5782",
@@ -2166,9 +2184,9 @@
       "context_window": "mparison of MPS between younger (\u223c22 years) and older men (\u223c71 years) set protein intake at \u223c1.2 g/kg BW/d as optimal for muscle",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6295979_low_protein_intake_muscle_strength_and_physical_performance_-u-6663",
@@ -2184,7 +2202,7 @@
       "context_window": "in intake group who reported moderate and high PA had 2 and 4 kg higher GS at baseline and lost less GS per year (0.77 kg an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2202,7 +2220,7 @@
       "context_window": "2 and 4 kg higher GS at baseline and lost less GS per year (0.77 kg and 0.83 kg), respectively compared to those with low PA. H",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2220,7 +2238,7 @@
       "context_window": "igher GS at baseline and lost less GS per year (0.77 kg and 0.83 kg), respectively compared to those with low PA. However, high",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2238,7 +2256,7 @@
       "context_window": "abitual intake accurately, and misreporting of food intake (17.2% of analytic sample) may have led to misclassification of ex",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     }

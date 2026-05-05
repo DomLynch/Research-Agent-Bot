@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_",
   "doi": "10.3390/nu17040731",
-  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extracted_at": "2026-05-05T23:37:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 10,
+    "unit_value": 18,
     "mean_sd": 6,
     "p_value": 9,
     "percentage": 5
@@ -80,9 +80,9 @@
       "context_window": "aged 70.3 \u00b1 5.5 years). The energy and protein intakes were 28.7 \u00b1 6.1 kcal/kg/day and 1.2 \u00b1 0.3 g/kg/day, respectively. A signifi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-msd-849",
@@ -99,9 +99,27 @@
       "context_window": "energy and protein intakes were 28.7 \u00b1 6.1 kcal/kg/day and 1.2 \u00b1 0.3 g/kg/day, respectively. A significant positive correlation",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-855",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 g/kg/day",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "The energy and protein intakes were 28.7 \u00b1 6.1 kcal/kg/day and 1.2 \u00b1 0.3 g/kg/day, respectively.",
+      "context_window": "y and protein intakes were 28.7 \u00b1 6.1 kcal/kg/day and 1.2 \u00b1 0.3 g/kg/day, respectively. A significant positive correlation was found",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-p-976",
@@ -117,9 +135,9 @@
       "context_window": "n was found between the SMI and energy and protein intake ( p < 0.001). Multiple regression analysis with the SMI as the dependen",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-pct-445",
@@ -158,6 +176,78 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-922",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 922,
+      "sentence": "Several studies have suggested targets for energy and protein intake that are necessary to maintain adequate physical function and prevent or improve sarcopenia; in the case of sarcopenia, it is generally necessary to consume at least 1.0 to 1.2 g/kg/day of protein, but 1.2 to 1.5 g/kg/day is recommended for people with acute or chronic disease and about 2.0 g/kg/day for those with severe inflammation [ 4 ].",
+      "context_window": "penia, it is generally necessary to consume at least 1.0 to 1.2 g/kg/day of protein, but 1.2 to 1.5 g/kg/day is recommended for peop",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-958",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 958,
+      "sentence": "Several studies have suggested targets for energy and protein intake that are necessary to maintain adequate physical function and prevent or improve sarcopenia; in the case of sarcopenia, it is generally necessary to consume at least 1.0 to 1.2 g/kg/day of protein, but 1.2 to 1.5 g/kg/day is recommended for people with acute or chronic disease and about 2.0 g/kg/day for those with severe inflammation [ 4 ].",
+      "context_window": "consume at least 1.0 to 1.2 g/kg/day of protein, but 1.2 to 1.5 g/kg/day is recommended for people with acute or chronic disease and",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-1037",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1037,
+      "sentence": "Several studies have suggested targets for energy and protein intake that are necessary to maintain adequate physical function and prevent or improve sarcopenia; in the case of sarcopenia, it is generally necessary to consume at least 1.0 to 1.2 g/kg/day of protein, but 1.2 to 1.5 g/kg/day is recommended for people with acute or chronic disease and about 2.0 g/kg/day for those with severe inflammation [ 4 ].",
+      "context_window": "ommended for people with acute or chronic disease and about 2.0 g/kg/day for those with severe inflammation [ 4 ]. We previously con",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-1229",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 g/kg/day",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 1229,
+      "sentence": "We previously conducted a randomized controlled trial which indicated that intensive protein intervention to achieve a protein intake of 1.3 g/kg/day is effective in improving muscle strength and physical function in people aged 75 years or older with chronic diseases [ 5 ].",
+      "context_window": "tensive protein intervention to achieve a protein intake of 1.3 g/kg/day is effective in improving muscle strength and physical func",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-1321",
       "claim_type": "unit_value",
       "raw_text": "75 years",
@@ -171,7 +261,7 @@
       "context_window": "roving muscle strength and physical function in people aged 75 years or older with chronic diseases [ 5 ]. In addition, as anabo",
       "claim_role": "dose",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -406,8 +496,26 @@
       "context_window": "the genders, but carbohydrate intake was higher in males ( p = 0.013). Both genders showed energy intake below the target for ad",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-1532",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1532,
+      "sentence": "Both genders showed energy intake below the target for adequate nutrition (30-35 kcal/kg/day) [ 4 ], while the majority of males and half of the females showed protein intake below the target for preventing or treating sarcopenia (1.2-1.5 g/kg/day) [ 4 ].",
+      "context_window": "below the target for preventing or treating sarcopenia (1.2-1.5 g/kg/day) [ 4 ]. No significant difference was found between the gen",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {
@@ -425,9 +533,9 @@
       "context_window": "s the three meals, with breakfast having the lowest intake (16.0 \u00b1 6.4 g in males and 14.7 \u00b1 5.0 g in females). Additionally, ther",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-msd-1924",
@@ -444,9 +552,9 @@
       "context_window": "eakfast having the lowest intake (16.0 \u00b1 6.4 g in males and 14.7 \u00b1 5.0 g in females). Additionally, there was no significant diffe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-p-2791",
@@ -480,9 +588,9 @@
       "context_window": "ant positive correlations between energy intake (R = 0.522, p < 0.001), protein intake (R = 0.401, p < 0.001), fat intake (R = 0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-p-3001",
@@ -498,9 +606,9 @@
       "context_window": "y intake (R = 0.522, p < 0.001), protein intake (R = 0.401, p < 0.001), fat intake (R = 0.300, p = 0.004), and carbohydrate intak",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-p-3036",
@@ -516,9 +624,9 @@
       "context_window": "otein intake (R = 0.401, p < 0.001), fat intake (R = 0.300, p = 0.004), and carbohydrate intake (R = 0.358, p < 0.001). We conduc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-p-3084",
@@ -534,9 +642,45 @@
       "context_window": "(R = 0.300, p = 0.004), and carbohydrate intake (R = 0.358, p < 0.001). We conducted a multiple regression analysis with the SMI",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-441",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 441,
+      "sentence": "The data show that the majority of males and approximately half of the females fall below the recommended nutritional intake (energy 30-35 kcal/kg/day, protein 1.2-1.5 g/kg/day) [ 4 ], posing a risk for sarcopenia.",
+      "context_window": "d nutritional intake (energy 30-35 kcal/kg/day, protein 1.2-1.5 g/kg/day) [ 4 ], posing a risk for sarcopenia. Previous research has",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-605",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 605,
+      "sentence": "Previous research has suggested that people with chronic diseases such as diabetes may need to consume more than 1.5 g/kg/day of protein [ 4 ], so the elderly population who are below the protein intake required to prevent sarcopenia is potentially higher than assumed.",
+      "context_window": "nic diseases such as diabetes may need to consume more than 1.5 g/kg/day of protein [ 4 ], so the elderly population who are below t",
+      "claim_role": "dose",
+      "endpoint": "sarcopenia",
+      "arm": "protein",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11858215_dietary_protein_intake_is_a_determining_factor_for_skeletal_-u-26",
@@ -552,7 +696,7 @@
       "context_window": "In a group of people aged 65 years or older with T2D who had not received nutritional guidance",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     }

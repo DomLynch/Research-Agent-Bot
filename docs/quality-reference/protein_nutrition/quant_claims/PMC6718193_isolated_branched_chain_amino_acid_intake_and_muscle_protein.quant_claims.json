@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6718193_isolated_branched_chain_amino_acid_intake_and_muscle_protein",
   "doi": "10.31744/einstein_journal/2019RB4898",
-  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extracted_at": "2026-05-05T23:37:11+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 2,
@@ -40,9 +40,9 @@
       "context_window": "The BCAA leucine, isoleucine and valine account for almost 50% of muscle protein EAA. The remaining 11 EAA are classified",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6718193_isolated_branched_chain_amino_acid_intake_and_muscle_protein-pct-4704",
@@ -58,9 +58,9 @@
       "context_window": "scle protein degradation exceeds synthesis by approximately 30% in the postabsorptive state, since 25% of EAA released into",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6718193_isolated_branched_chain_amino_acid_intake_and_muscle_protein-pct-4743",
@@ -76,9 +76,9 @@
       "context_window": "sis by approximately 30% in the postabsorptive state, since 25% of EAA released into the plasma are captured by other tissu",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6718193_isolated_branched_chain_amino_acid_intake_and_muscle_protein-pct-4813",
@@ -94,9 +94,9 @@
       "context_window": "released into the plasma are captured by other tissues and 5% are oxidized in the muscle. The remaining 70% are reutilize",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6718193_isolated_branched_chain_amino_acid_intake_and_muscle_protein-pct-4858",
@@ -112,7 +112,7 @@
       "context_window": "er tissues and 5% are oxidized in the muscle. The remaining 70% are reutilized for sustained muscle protein synthesis. 12 H",
       "claim_role": "background",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -130,7 +130,7 @@
       "context_window": "is based on the premise that exogenous intake decreases the 30% degradation rate by increasing EAA availability for synthes",
       "claim_role": "background",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -148,9 +148,9 @@
       "context_window": "ung, fit men). Within 4 hours, muscle protein synthesis was 22% higher in the treated group as compared to the placebo grou",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6718193_isolated_branched_chain_amino_acid_intake_and_muscle_protein-u-11211",
@@ -166,7 +166,7 @@
       "context_window": "f complete, high quality EAA-rich protein containing 700 to 3.000mg of leucine in evenly distributed amounts throughout the day",
       "claim_role": "dose",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "eaa",
       "direction": "",
       "binding_confidence": "partial"
     }

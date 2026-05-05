@@ -1,13 +1,13 @@
 {
   "paper_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa",
   "doi": "10.1016/j.advnut.2023.05.011",
-  "extracted_at": "2026-05-05T22:35:35+00:00",
+  "extracted_at": "2026-05-05T23:36:58+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 16,
     "sample_size": 6,
     "confidence_interval": 5,
-    "unit_value": 18
+    "unit_value": 19
   },
   "claims": [
     {
@@ -24,7 +24,7 @@
       "context_window": "nt improvement was found in physical function (SMD = 0.561; 95% confidence interval [CIs]: 0.256, 0.865, n = 33), particula",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "(SMD = 0.561; 95% confidence interval [CIs]: 0.256, 0.865, n = 33), particularly gait speed (GS). On the contrary, whey prote",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -61,9 +61,9 @@
       "context_window": "ein supplementation significantly improved LM (SMD = 0.982; 95% CI: 0.228, 1.736; n = 11), appendicular lean mass and physical function (SMD",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-n-1060",
@@ -79,9 +79,9 @@
       "context_window": "gnificantly improved LM (SMD = 0.982; 95% CI: 0.228, 1.736; n = 11), appendicular lean mass and physical function (SMD = 1.211",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-ci-1128",
@@ -98,9 +98,9 @@
       "context_window": "appendicular lean mass and physical function (SMD = 1.211; 95% CI: 0.588, 1.834; n = 16), and GS in sarcopenic/frail older adults. By contr",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-n-1150",
@@ -116,9 +116,9 @@
       "context_window": "s and physical function (SMD = 1.211; 95% CI: 0.588, 1.834; n = 16), and GS in sarcopenic/frail older adults. By contrast, co-",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-ci-1278",
@@ -232,6 +232,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-u-805",
+      "claim_type": "unit_value",
+      "raw_text": "1.59 g/kg/d",
+      "numeric_values": [
+        1.59
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 805,
+      "sentence": "A recent meta-analysis showed that protein intakes of 1.2-1.59 g/kg/d added to RE training positively affected LBM and function in older adults [ 7 ].",
+      "context_window": ". A recent meta-analysis showed that protein intakes of 1.2-1.59 g/kg/d added to RE training positively affected LBM and function i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "protein",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-u-1010",
       "claim_type": "unit_value",
       "raw_text": "60 years",
@@ -245,7 +263,7 @@
       "context_window": "er adults with or without sarcopenia or frailty (older than 60 years) and without any other overt disease that may affect the ou",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -263,7 +281,7 @@
       "context_window": "er adults with or without sarcopenia or frailty (older than 60 years) and without any other overt disease that may affect the ou",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "placebo",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -407,7 +425,7 @@
       "context_window": "ation, studying postmenopausal women in the age range of 50-55 years, and using protein-based placebo in the control group. Fina",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -443,9 +461,9 @@
       "context_window": "d 60 years or older). The intervention duration ranged from 12 weeks to 2 years and 8 weeks to 24 weeks in whey protein and comb",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-u-1980",
@@ -461,9 +479,9 @@
       "context_window": "r older). The intervention duration ranged from 12 weeks to 2 years and 8 weeks to 24 weeks in whey protein and combined whey p",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-u-1992",
@@ -479,9 +497,9 @@
       "context_window": "e intervention duration ranged from 12 weeks to 2 years and 8 weeks to 24 weeks in whey protein and combined whey protein and v",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-u-2003",
@@ -497,9 +515,9 @@
       "context_window": "ion duration ranged from 12 weeks to 2 years and 8 weeks to 24 weeks in whey protein and combined whey protein and vitamin D stu",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-pct-2142",
@@ -515,9 +533,9 @@
       "context_window": "ctively. The dose of whey protein varied from 15 to 40 g/d (68% of the studies prescribed >20 g/d) in the studies evaluatin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-pct-2260",
@@ -533,9 +551,9 @@
       "context_window": "uating whey protein supplementation and from 8.5 to 40 g/d (38% of the studies specified>20 g/d) in studies related to the",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-pct-2666",
@@ -551,9 +569,9 @@
       "context_window": "ric placebo in the control groups. Furthermore, 20 studies (66% of all included RCTs) had RE in both intervention and contr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-u-1261",
@@ -605,7 +623,7 @@
       "context_window": "penic or frail older adults, and studies with durations of >12 weeks. We are unsure how whey protein supplementation would promo",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -641,7 +659,7 @@
       "context_window": "uscle strength and function are shown in longer durations (>12 weeks) studies. However, the effects of whey protein plus vitamin",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -659,9 +677,9 @@
       "context_window": "supplementation were observed in shorter-duration studies (\u226412 weeks). We propose that these findings are related to the fact th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-pct-6957",
@@ -677,7 +695,7 @@
       "context_window": "on studies depending on the outcome; for example, an I 2 of 72% for LM in Tagawa et al. [ 74 ]; an I 2 of 20% for LM and 50",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -695,7 +713,7 @@
       "context_window": "le, an I 2 of 72% for LM in Tagawa et al. [ 74 ]; an I 2 of 20% for LM and 50%-60% for strength and physical function in Nu",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -713,7 +731,7 @@
       "context_window": "2% for LM in Tagawa et al. [ 74 ]; an I 2 of 20% for LM and 50%-60% for strength and physical function in Nunes et al. [ 7",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -731,7 +749,7 @@
       "context_window": "or LM in Tagawa et al. [ 74 ]; an I 2 of 20% for LM and 50%-60% for strength and physical function in Nunes et al. [ 7 ]; a",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -749,7 +767,7 @@
       "context_window": "ngth and physical function in Nunes et al. [ 7 ]; an I 2 of 50%-56% for strength in Tagawa et al. [ 75 ]; and an I 2 of 90%",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -767,7 +785,7 @@
       "context_window": "and physical function in Nunes et al. [ 7 ]; an I 2 of 50%-56% for strength in Tagawa et al. [ 75 ]; and an I 2 of 90% or",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -785,7 +803,7 @@
       "context_window": "50%-56% for strength in Tagawa et al. [ 75 ]; and an I 2 of 90% or more for strength and physical function in Chang et al.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -803,7 +821,7 @@
       "context_window": "es of whey (>20 g) when combined with RE. Longer duration (>12 weeks) whey protein supplementation significantly improved physic",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -821,9 +839,9 @@
       "context_window": "tamin D supplement, showing improved LM in the short term (<12 weeks). Whey protein plus vitamin D co-supplementation increased",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

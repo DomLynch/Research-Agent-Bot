@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act",
   "doi": "10.1186/s12986-021-00585-w",
-  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extracted_at": "2026-05-05T23:37:17+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 9,
@@ -26,7 +26,7 @@
       "context_window": "in a randomized controlled trial of 14 subjects (10 M, 4 F; 26 \u00b1 4 year) that ingested 10 g of essential amino acids (EAA) aft",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -44,7 +44,7 @@
       "context_window": "randomized controlled trial of 14 subjects (10 M, 4 F; 26 \u00b1 4 year) that ingested 10 g of essential amino acids (EAA) after re",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -62,7 +62,7 @@
       "context_window": "ngested 10 g of essential amino acids (EAA) after receiving 750 mg of chloroquine (CHQ, n = 7) or serving as controls (CON, n",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "ino acids (EAA) after receiving 750 mg of chloroquine (CHQ, n = 7) or serving as controls (CON, n = 7; no chloroquine). Addit",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -98,7 +98,7 @@
       "context_window": "mg of chloroquine (CHQ, n = 7) or serving as controls (CON, n = 7; no chloroquine). Additionally, differentiated C2C12 cells",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -116,9 +116,9 @@
       "context_window": "tion increased in both CON and CHQ 1 h post EAA ingestion ( P < 0.05). MPS increased similarly in both groups (CON, P = 0.06; CH",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-p-1061",
@@ -170,9 +170,9 @@
       "context_window": "s, 1 mM leucine increased mTORC1 and S6K1 phosphorylation ( P < 0.05), which was inhibited by 2 mg/ml chloroquine. Chloroquine (",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-1207",
@@ -188,9 +188,9 @@
       "context_window": "nd S6K1 phosphorylation ( P < 0.05), which was inhibited by 2 mg/ml chloroquine. Chloroquine (2 mg/ml) was sufficient to dis",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "leucine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-1241",
@@ -394,7 +394,7 @@
       "context_window": "randomized to either a control or treatment group, control (N = 7 Con) or chloroquine (N = 7 CHQ). Both groups completed an i",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "treatment",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -412,7 +412,7 @@
       "context_window": "rol or treatment group, control (N = 7 Con) or chloroquine (N = 7 CHQ). Both groups completed an identical experimental trial",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "treatment",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -430,7 +430,7 @@
       "context_window": "were fed a standardized dinner (10 kcal/kg of body weight; 60% carbohydrate, 20% fat, and 20% protein) and a snack at 2100",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -448,7 +448,7 @@
       "context_window": "rdized dinner (10 kcal/kg of body weight; 60% carbohydrate, 20% fat, and 20% protein) and a snack at 2100 h (5 kcal/kg of b",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -466,7 +466,7 @@
       "context_window": "(10 kcal/kg of body weight; 60% carbohydrate, 20% fat, and 20% protein) and a snack at 2100 h (5 kcal/kg of body weight; 6",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -484,7 +484,7 @@
       "context_window": "% protein) and a snack at 2100 h (5 kcal/kg of body weight; 60% carbohydrate, 20% fat, and 20% protein), and asked to sleep",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -502,7 +502,7 @@
       "context_window": "nack at 2100 h (5 kcal/kg of body weight; 60% carbohydrate, 20% fat, and 20% protein), and asked to sleep in the UTMB CRC.",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -520,7 +520,7 @@
       "context_window": "h (5 kcal/kg of body weight; 60% carbohydrate, 20% fat, and 20% protein), and asked to sleep in the UTMB CRC. After 2300 h,",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "carbohydrate",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -718,9 +718,9 @@
       "context_window": "ed following biopsy two. The ingested EAA were dissolved in 300 mL of Fresca\u00ae and enriched (8%) with L-[ring- 13 C 6 ] and L-[",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-pct-5710",
@@ -736,9 +736,9 @@
       "context_window": "ested EAA were dissolved in 300 mL of Fresca\u00ae and enriched (8%) with L-[ring- 13 C 6 ] and L-[ 15 N] phenylalanine to main",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-pct-10681",
@@ -754,9 +754,9 @@
       "context_window": "of protein from each sample was loaded in duplicate onto a 7.5% or 15% polyacrylamide gel (Criterion; Bio-Rad) and subjecte",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-pct-10689",
@@ -772,9 +772,9 @@
       "context_window": "ein from each sample was loaded in duplicate onto a 7.5% or 15% polyacrylamide gel (Criterion; Bio-Rad) and subjected to el",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-pct-10916",
@@ -934,9 +934,9 @@
       "context_window": "vation media of HEPES\u2010buffered saline with no leucine (HBS, 20 mmol/L HEPES/Na, 140 mmol/L NaCl, 2.5 mmol/L MgSO4, 5 mmol/L KCl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-12722",
@@ -952,9 +952,9 @@
       "context_window": "S\u2010buffered saline with no leucine (HBS, 20 mmol/L HEPES/Na, 140 mmol/L NaCl, 2.5 mmol/L MgSO4, 5 mmol/L KCl, and 1 mmol/L CaCl2;",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-12739",
@@ -970,9 +970,9 @@
       "context_window": "with no leucine (HBS, 20 mmol/L HEPES/Na, 140 mmol/L NaCl, 2.5 mmol/L MgSO4, 5 mmol/L KCl, and 1 mmol/L CaCl2; pH 7.4; Sigma\u2010Al",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-12757",
@@ -988,9 +988,9 @@
       "context_window": "HBS, 20 mmol/L HEPES/Na, 140 mmol/L NaCl, 2.5 mmol/L MgSO4, 5 mmol/L KCl, and 1 mmol/L CaCl2; pH 7.4; Sigma\u2010Aldrich). For each",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-12775",
@@ -1006,9 +1006,9 @@
       "context_window": "ES/Na, 140 mmol/L NaCl, 2.5 mmol/L MgSO4, 5 mmol/L KCl, and 1 mmol/L CaCl2; pH 7.4; Sigma\u2010Aldrich). For each 6-well plate, two",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-13259",
@@ -1024,9 +1024,9 @@
       "context_window": "e wells were nutrient starved for 8 h and then administered 2 mg/ml chloroquine for 60 min followed by 1 mM leucine treatmen",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-13631",
@@ -1366,9 +1366,9 @@
       "context_window": "were separated by electrophoresis at 150 V for 60 min on a 7.5% polyacrylamide gel (Criterion, Bio\u2010Rad). All samples were l",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-pct-16880",
@@ -1456,7 +1456,7 @@
       "context_window": "ups at 1 h and at 2 h post ingestion compared to baseline ( P < 0.05) while 1 h post ingestion was significantly different ( P <",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1474,7 +1474,7 @@
       "context_window": ".05) while 1 h post ingestion was significantly different ( P < 0.05) than 2 h post ingestion for both groups (Fig. 3 B). There",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1492,7 +1492,7 @@
       "context_window": "s no difference between groups for either leucine measure ( P > 0.05). Phenylalanine concentrations in the blood were elevated f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1744,9 +1744,9 @@
       "context_window": "etween groups at any time point for all measured proteins ( P > 0.05). Fig. 4 Muscle mTORC1 Signaling. Western blot analyses of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-n-3366",
@@ -1870,9 +1870,9 @@
       "context_window": "een groups for muscle protein synthesis at any time point ( P > 0.05). Post EAA ingestion FSR was elevated from resting values f",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-p-4005",
@@ -1888,7 +1888,7 @@
       "context_window": "AA ingestion FSR was elevated from resting values for CHQ ( P < 0.05) while CON showed a trend for an increase P = 0.06 (Fig. 5",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1906,7 +1906,7 @@
       "context_window": "or CHQ ( P < 0.05) while CON showed a trend for an increase P = 0.06 (Fig. 5 ). Fig. 5 Fractional Synthetic Rate, Fractional Bre",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2140,7 +2140,7 @@
       "context_window": ". CON, control. CHQ, chloroquine There was no difference ( P > 0.05) between groups for muscle protein breakdown at rest (Fig.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2176,7 +2176,7 @@
       "context_window": "ly decreased from baseline in CON following EAA ingestion ( P < 0.05) (Fig. 5 ). The phosphorylation status of mTORC1 (Ser 2448",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "eaa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2194,9 +2194,9 @@
       "context_window": "significantly increased with 1 mM leucine administration ( P < 0.05) compared to control and chloroquine + leucine (Fig. 6 A).",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-p-6327",
@@ -2212,9 +2212,9 @@
       "context_window": "significantly increased with 1 mM leucine administration ( P < 0.05) compared to control and chloroquine + leucine (Fig. 6 B).",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-p-6504",
@@ -2248,7 +2248,7 @@
       "context_window": "wo control conditions (nutrient rich vs. nutrient starve) ( P = 0.095) nor was there a difference between control in the nutrient",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2266,7 +2266,7 @@
       "context_window": "arvation state and chloroquine in the nutrient rich state ( P = 0.478). Nutrient rich control was different compared to nutrient",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "protein",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2284,9 +2284,9 @@
       "context_window": "ol was different compared to nutrient starved chloroquine ( P < 0.05) (Fig. 6 C). Fig. 6 Myotube mTORC1 signaling and protein sy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-7398",
@@ -2302,7 +2302,7 @@
       "context_window": "trol, leucine (1 mM for 10 min), and chloroquine + leucine (2 mg/ml chloroquine for 60 min followed by 1 mM leucine for 10 m",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2320,9 +2320,9 @@
       "context_window": "ative western blot for each condition. Data are mean \u00b1 SEM. N = 8 for both treatment groups. *Different from control, P < 0.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-p-7735",
@@ -2338,9 +2338,9 @@
       "context_window": ". N = 8 for both treatment groups. *Different from control, P < 0.05. &Different from chloroquine + leucine. Chq, chloroquine. C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-7971",
@@ -2356,9 +2356,9 @@
       "context_window": "e were serum starved for 16 h and nutrient starved for 1 h (2 mg/ml for Chloroquine group only) prior to 30 min puromycin (1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-n-8216",
@@ -2374,7 +2374,7 @@
       "context_window": "r to 30 min puromycin (1 \u00b5M) exposure. Data are mean \u00b1 SEM, N = 6. abc Columns with uncommon letters differ, P < 0.05 Myotub",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2392,7 +2392,7 @@
       "context_window": "ean \u00b1 SEM, N = 6. abc Columns with uncommon letters differ, P < 0.05 Myotube mTORC1 signaling and protein synthesis. Cells were",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2410,7 +2410,7 @@
       "context_window": "trol, leucine (1 mM for 10 min), and chloroquine + leucine (2 mg/ml chloroquine for 60 min followed by 1 mM leucine for 10 m",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2428,9 +2428,9 @@
       "context_window": "ative western blot for each condition. Data are mean \u00b1 SEM. N = 8 for both treatment groups. *Different from control, P < 0.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-p-9087",
@@ -2446,9 +2446,9 @@
       "context_window": ". N = 8 for both treatment groups. *Different from control, P < 0.05. &Different from chloroquine + leucine. Chq, chloroquine. C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-u-9323",
@@ -2464,9 +2464,9 @@
       "context_window": "e were serum starved for 16 h and nutrient starved for 1 h (2 mg/ml for Chloroquine group only) prior to 30 min puromycin (1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8199655_effect_of_the_lysosomotropic_agent_chloroquine_on_mtorc1_act-n-9568",
@@ -2554,7 +2554,7 @@
       "context_window": "dministration. This increase was not seen in cells provided 2 mg of chloroquine for 1 h prior to leucine administration. The",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
     }
