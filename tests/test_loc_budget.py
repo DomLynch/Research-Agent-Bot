@@ -159,6 +159,15 @@ failed → spar_accepted → clustered_into_n → synthesized. Sidecar
 manifest persists state for the dashboard. Universal across
 topics + domains (2026-05-05).
 
+Wave 7 cont. — Slice 8 step D (16,600 → 16,800): evidence clusterer.
+agent/evidence_clusters.py (~150 cloc) — groups receipts by
+outcome × design; composite score (tier + directness + recency +
+claim density) ranks within cluster; top_n_per_cluster=3 cap
+prevents 45-receipt corpus → 23K-word body bloat. Domain-driven
+hierarchy passed in (no biomedical hardcoding). Slice 8 E writer
+consumes cluster summaries instead of paper-by-paper dumps —
+keeps Q13 strict at 15% (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -166,7 +175,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16600
+TOTAL_LIMIT = 16800
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
