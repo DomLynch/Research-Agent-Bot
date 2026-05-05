@@ -149,6 +149,16 @@ GLOBAL_SAFETY_CAP across the union of all sources combined.
 Resumable: an interrupted 6-hour pull picks up at the last saved
 offset on restart. Universal across topics (2026-05-05).
 
+Wave 7 cont. — Slice 8 step C (16,400 → 16,600): extraction queue
++ funnel telemetry. agent/extraction_queue.py (~150 cloc) —
+classify-before-extract gate. Drops reject + off_thesis from CPU
+queue (already done classification); only kept entries hit
+quant_claim_extract. ExtractionFunnel carries 9 stages:
+retrieved → classified_keep / drop → extracted_ok / cached /
+failed → spar_accepted → clustered_into_n → synthesized. Sidecar
+manifest persists state for the dashboard. Universal across
+topics + domains (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -156,7 +166,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16400
+TOTAL_LIMIT = 16600
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
