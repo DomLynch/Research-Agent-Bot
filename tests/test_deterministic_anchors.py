@@ -154,7 +154,7 @@ def test_anchors_contribute_meaningful_word_count():
     # Discussion anchor is the structural Q11 fallback, so it must be
     # able to carry a near-empty LLM Discussion above the 800-word gate.
     assert len(cd.split()) >= 100, f"cd anchor only {len(cd.split())} words"
-    assert len(disc.split()) >= 700, (
+    assert len(disc.split()) >= 800, (
         f"disc anchor only {len(disc.split())} words"
     )
     for hedge in ("may", "context-dependent", "uncertain", "preliminary"):
