@@ -125,6 +125,132 @@ def _dedupe_key(hit: RawHit) -> str:
     return f"title:{hit.title.lower()[:80]}"
 
 
+async def discover_calibrated(
+    spec: "RetrievalSpec",
+    *,
+    params: "RetrievalParams | None" = None,
+    enabled_sources: Iterable[str] | None = None,
+    timeout: float = 120.0,
+) -> tuple[list[AggregatedHit], dict[str, int]]:
+    """Slice 6 step 4 (Wave 7 cont., 2026-05-05): calibrated discovery.
+
+    Builds a per-source advanced query from `spec` (via query_builder)
+    and runs each source with a per-call limit appropriate for its
+    API (~1000 per source × ~14 sources ≈ up to 14K candidates pre-
+    dedupe, typically 3-8K post-dedupe for a calibrated query).
+
+    Honors `params.safety_cap` as a hard ceiling on output size.
+    Returns `(hits, stats)` where stats is a dict of per-source raw
+    counts + dedup totals — fed into the funnel dashboard.
+    """
+    from agent.query_builder import build_query_for_source
+    from agent.retrieval_modes import resolve_params
+    p = params or resolve_params("calibrated")
+    registry = _build_registry()
+    if enabled_sources is None:
+        enabled_sources = [
+            name for name, (_, default_en, auth_env)
+            in registry.items()
+            if default_en and (
+                auth_env is None or os.environ.get(auth_env)
+            )
+        ]
+    # Per-source limit: ample enough to pull real corpora but
+    # bounded by source-API caps (most cap at ~100/call internally).
+    per_source_limit = max(100, p.page_size * 10)
+    stats: dict[str, int] = {}
+
+    async def _safe_search(name: str, client, query: str):
+        try:
+            hits = await client.search(
+                http, query, limit=per_source_limit,
+            )
+            stats[f"raw_{name}"] = len(hits)
+            return hits
+        except (httpx.HTTPError, ValueError, OSError) as e:
+            stats[f"err_{name}"] = 1
+            print(
+                f"  ! source {name} failed: "
+                f"{type(e).__name__}: {str(e)[:120]}",
+            )
+            return []
+
+    async with httpx.AsyncClient(
+        timeout=timeout,
+        headers={
+            "User-Agent": "researka/1.0 (calibrated discovery)",
+        },
+    ) as http:
+        tasks = []
+        for name in enabled_sources:
+            if name not in registry:
+                continue
+            client, _, _ = registry[name]
+            query_for_source = build_query_for_source(name, spec)
+            if not query_for_source:
+                stats[f"empty_{name}"] = 1
+                continue
+            tasks.append(_safe_search(name, client, query_for_source))
+        results = await asyncio.gather(
+            *tasks, return_exceptions=False,
+        )
+
+    out = _merge_and_dedupe(results, stats)
+    # Honor universal safety cap (200K default).
+    if len(out) > p.safety_cap:
+        stats["safety_cap_triggered"] = 1
+        out = out[: p.safety_cap]
+    stats["aggregated_total"] = len(out)
+    return out, stats
+
+
+def _merge_and_dedupe(
+    results: list[list[RawHit]], stats: dict[str, int],
+) -> list[AggregatedHit]:
+    """Flatten per-source raw hits into deduped AggregatedHits.
+    Extracted from `discover` so calibrated and legacy code share
+    the same dedup semantics. Mutates `stats` to add dedup totals."""
+    all_hits: list[RawHit] = []
+    for r in results:
+        all_hits.extend(r)
+    stats["raw_total_pre_dedupe"] = len(all_hits)
+    grouped: dict[str, list[RawHit]] = {}
+    for hit in all_hits:
+        key = _dedupe_key(hit)
+        grouped.setdefault(key, []).append(hit)
+    stats["unique_keys_post_dedupe"] = len(grouped)
+    out: list[AggregatedHit] = []
+    for _key, hits in grouped.items():
+        best_abstract = max(
+            (h.abstract for h in hits), key=len, default="",
+        )
+        best_title = max(
+            (h.title for h in hits), key=len, default="",
+        )
+        doi = next((h.doi for h in hits if h.doi), None)
+        pmid = next((h.pmid for h in hits if h.pmid), None)
+        nct = next((h.nct for h in hits if h.nct), None)
+        year = next(
+            (h.year for h in hits if h.year is not None), None,
+        )
+        url = next(
+            (h.url for h in hits if h.url and "doi.org" in h.url),
+            hits[0].url,
+        )
+        venue = next(
+            (h.venue for h in hits if h.venue), None,
+        )
+        source_names = tuple(sorted({h.source for h in hits}))
+        out.append(AggregatedHit(
+            title=best_title, abstract=best_abstract,
+            doi=doi, pmid=pmid, nct=nct, year=year,
+            url=url, venue=venue,
+            sources=source_names, n_sources=len(source_names),
+        ))
+    out.sort(key=lambda h: (-h.n_sources, -(h.year or 0)))
+    return out
+
+
 async def discover(
     topic_keywords: str,
     *,
@@ -177,48 +303,5 @@ async def discover(
             *tasks, return_exceptions=False,
         )
 
-    # Flatten + dedupe
-    all_hits: list[RawHit] = []
-    for r in results:
-        all_hits.extend(r)
-    grouped: dict[str, list[RawHit]] = {}
-    for hit in all_hits:
-        key = _dedupe_key(hit)
-        grouped.setdefault(key, []).append(hit)
-
-    out: list[AggregatedHit] = []
-    for key, hits in grouped.items():
-        # Pick best fields across sources (longest abstract wins,
-        # any DOI, any PMID, etc.)
-        best_abstract = max(
-            (h.abstract for h in hits), key=len, default="",
-        )
-        best_title = max(
-            (h.title for h in hits), key=len, default="",
-        )
-        doi = next((h.doi for h in hits if h.doi), None)
-        pmid = next((h.pmid for h in hits if h.pmid), None)
-        nct = next((h.nct for h in hits if h.nct), None)
-        year = next(
-            (h.year for h in hits if h.year is not None), None,
-        )
-        url = next(
-            (h.url for h in hits if h.url and "doi.org" in h.url),
-            hits[0].url,
-        )
-        venue = next(
-            (h.venue for h in hits if h.venue), None,
-        )
-        source_names = tuple(sorted({h.source for h in hits}))
-        out.append(AggregatedHit(
-            title=best_title,
-            abstract=best_abstract,
-            doi=doi, pmid=pmid, nct=nct, year=year,
-            url=url, venue=venue,
-            sources=source_names,
-            n_sources=len(source_names),
-        ))
-
-    # Rank: more sources = higher confidence
-    out.sort(key=lambda h: (-h.n_sources, -(h.year or 0)))
-    return out
+    # Flatten + dedupe via shared helper (Slice 6 step 4 refactor).
+    return _merge_and_dedupe(list(results), stats={})
