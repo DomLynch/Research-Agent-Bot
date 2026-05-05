@@ -175,10 +175,126 @@ def build_methods_section_clustered(
     )
 
 
+async def dispatch_methods_and_results(
+    *,
+    accepted, rejected, receipts, matrix, thesis,
+    topic: str, submission_id: str,
+    chain, client, ledger, seed,
+    background_lit_entries,
+    legacy_results_writer,
+    legacy_methods_writer,
+):
+    """Slice 8 E wire-up dispatcher. Routes Methods + Results through
+    the large-corpus writer when n_accepted_receipts >=
+    LARGE_CORPUS_THRESHOLD; otherwise falls through to the legacy
+    paper-by-paper writers (back-compat for thin corpora).
+
+    Lives here (not in paper_writer.py) to keep that file under the
+    600-line per-file ceiling. Universal across topics + domains —
+    the only domain-specific input is the evidence_hierarchy
+    resolved from agent.domain_evidence.
+
+    Returns (methods_section, results_section, log_label)."""
+    from agent.evidence_clusters import (
+        cluster_funnel_summary, cluster_receipts,
+    )
+    from agent.domain_evidence import get_adapter
+    from agent.synthesis_schemas import SynthesisSection
+
+    accepted_list = list(accepted)
+    n_accepted = len(accepted_list)
+    domain = "biomedical"
+    try:
+        from agent.topic_pack import load_topic_pack
+        from pathlib import Path as _Path
+        tp_path = (
+            _Path(__file__).resolve().parent.parent
+            / "topic_packs" / f"{topic}.toml"
+        )
+        if tp_path.exists():
+            domain = load_topic_pack(tp_path).domain
+    except (ImportError, OSError, ValueError):
+        pass
+    adapter = get_adapter(domain)
+
+    if not is_large_corpus(n_accepted):
+        # Legacy thin-corpus path: paper-by-paper writer.
+        methods_section = legacy_methods_writer(
+            receipts, topic=topic, submission_id=submission_id,
+        )
+        results_section = await legacy_results_writer(
+            accepted, rejected, matrix, thesis,
+            topic=topic, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            background_lit_entries=background_lit_entries,
+        )
+        return methods_section, results_section, (
+            "methods + results (legacy thin-corpus mode)"
+        )
+
+    # Large-corpus mode: cluster summaries, deterministic.
+    accepted_dicts = [
+        {
+            "receipt_id": getattr(r, "receipt_id", "?"),
+            "outcome_class": getattr(r, "outcome_class", "?"),
+            "design": getattr(r, "design", None) or getattr(
+                r, "evidence_tier", "?",
+            ),
+            "evidence_tier": getattr(r, "evidence_tier", "?"),
+            "directness": getattr(r, "directness", ""),
+            "year": getattr(r, "year", None),
+            "n_claims": getattr(r, "n_claims", 0),
+            "effect_direction": getattr(r, "effect_direction", ""),
+        }
+        for r in accepted_list
+    ]
+    clusters = cluster_receipts(
+        accepted_dicts,
+        evidence_hierarchy=adapter.evidence_hierarchy,
+    )
+    funnel = {
+        "spar_accepted": n_accepted,
+        "clustered_into_n": len(clusters),
+    }
+    methods_section = SynthesisSection(
+        name="methods",
+        body_md=build_methods_section_clustered(
+            topic=topic, submission_id=submission_id,
+            funnel=funnel, clusters=clusters,
+        ),
+        anchors=(),
+    )
+    results_section = SynthesisSection(
+        name="results",
+        body_md=build_results_section_clustered(clusters, topic=topic),
+        anchors=(),
+    )
+    # Persist cluster summary sidecar for the dashboard (Slice 8 F).
+    try:
+        import json as _json
+        from pathlib import Path as _Path2
+        cs_path = (
+            _Path2(__file__).resolve().parent.parent
+            / "docs" / "quality-reference" / topic
+            / "cluster_summary.json"
+        )
+        cs_path.parent.mkdir(parents=True, exist_ok=True)
+        cs_path.write_text(_json.dumps(
+            cluster_funnel_summary(clusters), indent=2,
+        ))
+    except OSError:
+        pass
+    return methods_section, results_section, (
+        f"methods + results (large-corpus mode, "
+        f"n_clusters={len(clusters)})"
+    )
+
+
 __all__ = [
     "LARGE_CORPUS_THRESHOLD",
     "CLUSTER_PARAGRAPH_WORDS",
     "is_large_corpus",
     "build_results_section_clustered",
     "build_methods_section_clustered",
+    "dispatch_methods_and_results",
 ]
