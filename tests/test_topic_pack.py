@@ -239,3 +239,66 @@ def test_known_role_overrides_still_iterable_and_readable() -> None:
     assert set(pack.known_role_overrides.keys()) == {
         "NCT02308228", "ISRCTN29932357", "NCT04264897", "NCT01765946",
     }
+
+
+# --- Slice 6 step 2: [retrieval] schema -----------------------------
+
+RAPAMYCIN_PATH = (
+    Path(__file__).parent.parent / "topic_packs" / "rapamycin.toml"
+)
+
+
+def test_retrieval_block_loads_when_present() -> None:
+    """Rapamycin pack has a [retrieval] block (added 2026-05-05)."""
+    pack = load_topic_pack(RAPAMYCIN_PATH)
+    r = pack.retrieval
+    assert r is not None
+    assert "rapamycin" in r.topic_terms
+    assert "sirolimus" in r.topic_terms
+    assert "aging" in r.scope_terms
+    assert "clinical trial" in r.evidence_types
+    assert "transplant rejection" in r.exclude_terms
+    assert r.date_from == 2010
+    assert r.languages == ("English",)
+    assert r.species == ("humans",)
+
+
+def test_retrieval_background_allow_loads_from_subblock() -> None:
+    """[retrieval.background] sub-block populates background_allow."""
+    pack = load_topic_pack(RAPAMYCIN_PATH)
+    r = pack.retrieval
+    assert r is not None
+    assert "mTOR mechanism" in r.background_allow
+    assert "preclinical lifespan landmark" in r.background_allow
+
+
+def test_retrieval_is_none_when_block_absent() -> None:
+    """Packs without [retrieval] block fall back to legacy
+    corpus_search_queries (back-compat)."""
+    pack = load_topic_pack(METFORMIN_PATH)
+    # metformin pack has not been migrated yet — retrieval should be None
+    assert pack.retrieval is None
+    # legacy field still works
+    assert pack.corpus_search_queries  # non-empty
+
+
+def test_retrieval_spec_is_frozen() -> None:
+    """RetrievalSpec is frozen — caller can't mutate after load."""
+    from agent.topic_pack import RetrievalSpec
+    pack = load_topic_pack(RAPAMYCIN_PATH)
+    r = pack.retrieval
+    assert isinstance(r, RetrievalSpec)
+    with pytest.raises((dataclasses.FrozenInstanceError,
+                        AttributeError)):
+        r.date_from = 1990  # type: ignore[misc]
+
+
+def test_retrieval_spec_default_empty():
+    """A bare RetrievalSpec() with no fields → empty tuples + None
+    dates. Defensive: the dataclass should NOT require any fields."""
+    from agent.topic_pack import RetrievalSpec
+    r = RetrievalSpec()
+    assert r.topic_terms == ()
+    assert r.scope_terms == ()
+    assert r.date_from is None
+    assert r.background_allow == ()

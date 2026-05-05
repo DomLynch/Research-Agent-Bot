@@ -77,6 +77,33 @@ class CanonicalTrial:
 
 
 @dataclass(frozen=True, slots=True)
+class RetrievalSpec:
+    """Slice 6 step 2 (Wave 7 cont., 2026-05-05): structured search
+    parameters for calibrated exhaustive retrieval. Drives the per-
+    source query builder so the same topic pack produces correct
+    advanced queries on PubMed (MeSH+pt+dp), Europe PMC (KW+PUB_TYPE),
+    OpenAlex (concepts+type), Crossref (type+from-pub-date), etc.
+
+    All fields optional with sensible defaults so existing topic packs
+    that lack a [retrieval] block fall back to their corpus_search_queries
+    list unchanged.
+    """
+    topic_terms: tuple[str, ...] = ()       # canonical drug/concept names
+    scope_terms: tuple[str, ...] = ()       # relevance context (e.g. aging)
+    evidence_types: tuple[str, ...] = ()    # RCT / cohort / meta-analysis
+    exclude_terms: tuple[str, ...] = ()     # known noise to drop
+    date_from: int | None = None            # year, e.g. 2010
+    date_to: int | None = None
+    languages: tuple[str, ...] = ()         # e.g. ("English",)
+    species: tuple[str, ...] = ()           # e.g. ("humans",)
+    # [retrieval.background] sub-block — what counts as canonical
+    # background literature (preclinical landmark, mechanism, dose
+    # rationale, field history). Pulled into the background_literature
+    # citation pool, NOT the core_on_thesis pool.
+    background_allow: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
 class BackgroundLiteratureEntry:
     """One topic-specific background-numeric registry entry. Hoisted
     out of the global docs/background_literature.json so each topic
@@ -138,6 +165,10 @@ class TopicPack:
     # Was hardcoded in _claim_metformin_effect() polarity logic.
     # Map: outcome_class → "lower_is_better" | "higher_is_better"
     endpoint_polarity: Mapping[str, str] = MappingProxyType({})
+    # Slice 6 step 2: structured retrieval spec. None when the pack
+    # has no [retrieval] block — caller falls back to the legacy
+    # corpus_search_queries list.
+    retrieval: "RetrievalSpec | None" = None
 
     # --- Lookups (intentionally explicit, not __contains__-style) ----------
 
@@ -331,6 +362,29 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         dict(data.get("endpoint_polarity", {}))
     )
 
+    # Slice 6 step 2: load [retrieval] / [retrieval.background] block.
+    # All optional — packs without this block keep working via the
+    # legacy corpus_search_queries fallback.
+    retrieval = None
+    raw_retrieval = data.get("retrieval")
+    if isinstance(raw_retrieval, dict):
+        bg_block = raw_retrieval.get("background", {}) or {}
+        retrieval = RetrievalSpec(
+            topic_terms=tuple(raw_retrieval.get("topic_terms", ())),
+            scope_terms=tuple(raw_retrieval.get("scope_terms", ())),
+            evidence_types=tuple(
+                raw_retrieval.get("evidence_types", ())
+            ),
+            exclude_terms=tuple(
+                raw_retrieval.get("exclude_terms", ())
+            ),
+            date_from=raw_retrieval.get("date_from"),
+            date_to=raw_retrieval.get("date_to"),
+            languages=tuple(raw_retrieval.get("languages", ())),
+            species=tuple(raw_retrieval.get("species", ())),
+            background_allow=tuple(bg_block.get("allow", ())),
+        )
+
     return TopicPack(
         topic=data["topic"],
         drug_class=data["class_"],
@@ -353,4 +407,5 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         canonical_rct_paper_ids=canonical_rct_paper_ids,
         background_literature=background_literature,
         endpoint_polarity=endpoint_polarity,
+        retrieval=retrieval,
     )

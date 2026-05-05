@@ -100,6 +100,52 @@ canonical_rct_paper_ids = [
 ]
 
 
+# --- Calibrated retrieval (Slice 6 step 2, 2026-05-05) -------------
+# Structured search parameters drive the per-source query builder
+# (PubMed MeSH+pt+dp, Europe PMC KW+PUB_TYPE, OpenAlex concepts+type,
+# Crossref type+from-pub-date). Replaces the bare corpus_search_queries
+# strings with calibrated boolean expressions targeting on-thesis
+# clinical evidence + explicit exclusion of transplant / oncology /
+# preclinical-only noise.
+
+[retrieval]
+topic_terms    = [
+  "rapamycin", "sirolimus", "Rapamune", "mTOR inhibitor",
+  "mTORC1 inhibitor", "RAD001",
+]
+scope_terms    = [
+  "aging", "longevity", "healthspan", "older adults", "elderly",
+  "geriatric", "geroscience", "senescence", "frailty",
+]
+evidence_types = [
+  "clinical trial", "randomized controlled trial", "cohort study",
+  "observational study", "meta-analysis", "systematic review",
+]
+exclude_terms  = [
+  "transplant rejection", "allograft survival", "oncology only",
+  "kidney transplant only", "tumor regression", "neoplasm therapy",
+  "in vitro only", "yeast", "drosophila", "c. elegans",
+  "pediatric only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+# Background canon — Harrison/Lamming/Mannick-style preclinical
+# landmark + mechanism papers that belong in the background_literature
+# pool, not the core_on_thesis pool. Allowing them by topic ensures
+# the retrieval pulls them in (a strict on-thesis filter would reject
+# them as preclinical — Wave 7 fixes this with explicit pool targeting).
+[retrieval.background]
+allow = [
+  "preclinical lifespan landmark",
+  "mTOR mechanism",
+  "dose rationale",
+  "field history",
+  "intermittent dosing rationale",
+]
+
+
 # --- Canonical trials (informational; surface-check feeds qa_report) -------
 
 # PEARL — randomized 1-year trial in healthy older adults; the flagship
