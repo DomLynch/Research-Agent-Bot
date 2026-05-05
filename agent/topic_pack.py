@@ -169,6 +169,11 @@ class TopicPack:
     # has no [retrieval] block — caller falls back to the legacy
     # corpus_search_queries list.
     retrieval: "RetrievalSpec | None" = None
+    # Slice 8 step B: domain adapter name. Falls back to 'biomedical'
+    # for back-compat. Resolves via agent.domain_evidence.get_adapter
+    # at call site (not stored as object so the dataclass remains
+    # serializable + frozen).
+    domain: str = "biomedical"
 
     # --- Lookups (intentionally explicit, not __contains__-style) ----------
 
@@ -408,4 +413,5 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         background_literature=background_literature,
         endpoint_polarity=endpoint_polarity,
         retrieval=retrieval,
+        domain=str(data.get("domain", "biomedical")),
     )

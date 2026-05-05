@@ -1,0 +1,67 @@
+# Management domain adapter — Slice 8 step B (2026-05-05).
+#
+# Used by topic packs targeting management research (e.g. "remote
+# work productivity", "OKR adoption rates", "consulting firm
+# performance"). Domain-specific evidence hierarchy and outcome
+# classes; same retrieval + classification + synthesis engine.
+
+[domain]
+name = "management"
+
+# Evidence hierarchy — management research has a different pyramid
+# than biomedical. Field experiments (with random assignment) are
+# the gold standard; surveys are weakest.
+evidence_hierarchy = [
+  "field_experiment",
+  "panel_study",            # multi-firm longitudinal
+  "natural_experiment",     # quasi-experimental org change
+  "longitudinal_study",
+  "case_study",
+  "survey",
+  "consultant_report",
+  "opinion",
+]
+
+outcome_classes = [
+  "productivity",
+  "retention",
+  "cost",
+  "quality",
+  "adoption",
+  "engagement",
+  "revenue",
+  "satisfaction",
+]
+
+required_context_fields = [
+  "organization_type",
+  "intervention",
+  "comparator",
+  "metric",
+]
+
+core_clinical_signals = [
+  "field experiment",
+  "field study",
+  "multi-firm panel",
+  "longitudinal study",
+  "treatment effect",
+  "quasi-experiment",
+  "controlled trial",
+  "randomized assignment",
+  "difference-in-differences",
+]
+
+mechanism_signals = [
+  "theoretical framework",
+  "conceptual model",
+  "literature review",
+  "narrative synthesis",
+  "consultant report",
+  "white paper",
+]
+
+reject_signals = [
+  "advertising case study",
+  "marketing testimonial",
+]

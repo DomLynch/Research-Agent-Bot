@@ -1,0 +1,62 @@
+# Computer Science / AI domain adapter — Slice 8 step B (2026-05-05).
+
+[domain]
+name = "cs_ai"
+
+# Evidence hierarchy: empirical rigor (held-out + ablation > demo).
+evidence_hierarchy = [
+  "ablation_benchmark",     # multi-benchmark + ablation + held-out
+  "multi_benchmark",
+  "single_benchmark",
+  "empirical_partial",
+  "empirical_demo",
+  "theoretical_proof",
+  "qualitative_demo",
+  "position_paper",
+]
+
+outcome_classes = [
+  "accuracy",
+  "latency",
+  "throughput",
+  "cost",
+  "robustness",
+  "fairness",
+  "alignment",
+  "scalability",
+  "data_efficiency",
+]
+
+required_context_fields = [
+  "task",
+  "model_or_system",
+  "baseline",
+  "metric",
+]
+
+core_clinical_signals = [
+  "ablation study",
+  "ablation analysis",
+  "held-out test set",
+  "benchmark evaluation",
+  "leaderboard",
+  "multi-benchmark",
+  "reproducibility",
+  "statistical significance",
+  "confidence interval",
+]
+
+mechanism_signals = [
+  "theoretical analysis",
+  "complexity bound",
+  "convergence proof",
+  "lemma",
+  "proposition",
+  "qualitative example",
+  "case study",
+]
+
+reject_signals = [
+  "preprint without code",
+  "marketing whitepaper",
+]

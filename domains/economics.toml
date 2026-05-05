@@ -1,0 +1,66 @@
+# Economics domain adapter — Slice 8 step B (2026-05-05).
+
+[domain]
+name = "economics"
+
+# Evidence hierarchy: causal-identification quality.
+evidence_hierarchy = [
+  "natural_experiment",
+  "rct",                    # randomized field experiment
+  "regression_discontinuity",
+  "diff_in_diff",
+  "instrumental_variable",
+  "panel_data",
+  "structural_model",
+  "calibrated_model",
+  "theory",
+]
+
+outcome_classes = [
+  "growth",
+  "employment",
+  "inflation",
+  "welfare",
+  "inequality",
+  "productivity",
+  "trade",
+  "consumption",
+  "investment",
+]
+
+required_context_fields = [
+  "population_or_economy",
+  "policy_or_shock",
+  "counterfactual",
+  "outcome_metric",
+]
+
+core_clinical_signals = [
+  "randomized field experiment",
+  "randomized experiment",
+  "difference-in-differences",
+  "diff-in-diff",
+  "synthetic control",
+  "instrumental variable",
+  "regression discontinuity",
+  "rdd",
+  "natural experiment",
+  "policy experiment",
+  "causal effect",
+  "treatment effect estimate",
+]
+
+mechanism_signals = [
+  "theoretical model",
+  "structural model",
+  "calibration",
+  "general equilibrium",
+  "agent-based model",
+  "simulation",
+  "stylized fact",
+]
+
+reject_signals = [
+  "op-ed",
+  "blog post",
+]
