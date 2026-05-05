@@ -313,6 +313,8 @@ _ENDPOINT_POLARITY: dict[str, int] = {
     "blood pressure": -1, "mTOR signaling": -1, "walk speed": +1,
 }
 
+_RATIO_CLAIM_TYPES = {"hazard_ratio", "odds_ratio", "risk_ratio"}
+
 
 def _author_year_token(receipt) -> str | None:
     """Slice 7 P1b: resolve a receipt's 'Author YYYY' citation token
@@ -360,7 +362,20 @@ def _claim_topic_effect(claim: dict) -> int:
     arm = (claim.get("arm") or "").strip().lower()
     endpoint = claim.get("endpoint") or ""
     polarity = _ENDPOINT_POLARITY.get(endpoint, 0)
-    if not polarity or not direction or direction == "no_change":
+    if not polarity:
+        return 0
+    if claim.get("claim_type") in _RATIO_CLAIM_TYPES:
+        vals = claim.get("numeric_values") or []
+        try:
+            ratio = float(vals[0])
+        except (IndexError, TypeError, ValueError):
+            ratio = 0.0
+        if ratio and abs(ratio - 1.0) > 1e-9:
+            movement = +1 if ratio > 1.0 else -1
+            return polarity * movement
+    if claim.get("claim_type") in {"p_value", "confidence_interval"}:
+        return 0
+    if not direction or direction == "no_change":
         return 0
     direction_sign = +1 if direction == "increase" else -1
     # If the direction is described from the active-drug arm, +1.

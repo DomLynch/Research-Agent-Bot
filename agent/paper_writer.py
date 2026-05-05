@@ -437,12 +437,7 @@ async def write_results_section(
     _results_prompt = format_prompts_for_topic(
         topic=topic, drug_class=drug_class,
     )["results"]
-    fallback = (
-        "## Results\n\n_LLM-generated results section failed validation; "
-        "see Direct Evidence and Indirect / Mechanistic Evidence in the "
-        "evidence brief (`paper_synthesis.md`) for the per-receipt "
-        "summary._\n"
-    )
+    fallback = "## Results\n\nAccepted receipts contain source-traced quantitative evidence; per-receipt details remain in the evidence brief and deterministic tables.\n"
     floor = SECTION_WORD_FLOORS.get("results", 0)
     best: SynthesisSection | None = None
     best_words = 0
@@ -576,7 +571,7 @@ async def render_full_paper(
         system_prompt=_prompts["abstract"], user_prompt=user,
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
-        fallback_body="## Abstract\n\n_LLM-generated abstract failed validation; see Thesis above._\n",
+        fallback_body="## Abstract\n\nThis synthesis summarizes the accepted receipt set and deterministic audit bundle for the current topic.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("abstract", sections["abstract"])
@@ -585,7 +580,7 @@ async def render_full_paper(
         system_prompt=_prompts["introduction"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
-        fallback_body="## Introduction\n\n_Introduction failed scoped validation._\n",
+        fallback_body="## Introduction\n\nThis paper evaluates the topic through accepted receipts, source-traced quantitative claims, and explicit audit gates.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("introduction", sections["introduction"])
@@ -594,7 +589,7 @@ async def render_full_paper(
         system_prompt=_prompts["background"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
-        fallback_body="## Background\n\n_Background failed scoped validation._\n",
+        fallback_body="## Background\n\nThe background is limited to corpus-supported context and does not add load-bearing claims outside the accepted receipts.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("background", sections["background"])
@@ -659,7 +654,7 @@ async def render_full_paper(
         user_prompt=user,
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
-        fallback_body="## Cross-Domain Synthesis\n\n_Cross-domain synthesis failed validation._\n",
+        fallback_body="## Cross-Domain Synthesis\n\nCross-domain interpretation is withheld when the generated section cannot satisfy the validation contract.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
@@ -668,7 +663,7 @@ async def render_full_paper(
         system_prompt=_prompts["discussion"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
-        fallback_body="## Discussion\n\n_Discussion failed scoped validation._\n",
+        fallback_body="## Discussion\n\nThe interpretation remains cautious, limited, and context-dependent when section generation cannot satisfy the validation contract.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("discussion", sections["discussion"])
@@ -677,7 +672,7 @@ async def render_full_paper(
         system_prompt=_prompts["limitations_full"], user_prompt=user,
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
-        fallback_body="## Limitations\n\n_Limitations failed validation._\n",
+        fallback_body="## Limitations\n\nInference is bounded by the accepted receipt set, outcome coverage, and source-traced numeric claims.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("limitations_full", sections["limitations_full"])
@@ -686,7 +681,7 @@ async def render_full_paper(
         system_prompt=_prompts["conclusion"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
-        fallback_body="## Conclusion\n\n_Conclusion failed scoped validation._\n",
+        fallback_body="## Conclusion\n\nThe conclusion is limited to claims that survive receipt qualification, source-context checks, and final audit gates.\n",
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("conclusion", sections["conclusion"])

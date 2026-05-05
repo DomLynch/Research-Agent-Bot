@@ -625,7 +625,9 @@ def _check_hedge_density(paper: str) -> tuple[bool, str]:
     module-global _PAPER_META (set by audit() at the start of
     each run); falls back to ≥4 if metadata isn't available."""
     discussion_match = re.search(
-        r"##\s+Discussion(.*?)(?=##\s+\w)", paper, re.DOTALL,
+        r"^##\s+Discussion(.*?)(?=^##\s+\w|\Z)",
+        paper,
+        re.DOTALL | re.MULTILINE,
     )
     if not discussion_match:
         return False, "Discussion section not found"

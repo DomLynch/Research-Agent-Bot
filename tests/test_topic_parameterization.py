@@ -223,3 +223,29 @@ def test_population_summary_does_not_render_derived_sample_sum() -> None:
         [152.0, 152.0],
     )
     assert summary == "older adults"
+
+
+def test_ratio_below_one_on_adverse_endpoint_is_beneficial() -> None:
+    """Universal polarity guard: for adverse endpoints such as
+    mortality, a ratio below 1 is a beneficial active-treatment signal
+    even if the extractor records the comparator arm."""
+    claim = {
+        "claim_type": "risk_ratio",
+        "endpoint": "mortality",
+        "arm": "placebo",
+        "numeric_values": [0.90],
+    }
+    assert orch._claim_topic_effect(claim) == 1
+
+
+def test_p_value_does_not_carry_effect_direction() -> None:
+    """P-values establish significance for an endpoint; they should
+    not independently flip direction labels in receipt aggregation."""
+    claim = {
+        "claim_type": "p_value",
+        "endpoint": "mortality",
+        "arm": "placebo",
+        "direction": "decrease",
+        "numeric_values": [0.004],
+    }
+    assert orch._claim_topic_effect(claim) == 0

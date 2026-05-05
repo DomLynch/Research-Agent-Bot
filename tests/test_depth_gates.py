@@ -199,6 +199,27 @@ def test_q10_threshold_falls_back_to_4_when_no_claims(
     assert audit._adaptive_hedge_threshold() == 4
 
 
+def test_q10_discussion_extraction_allows_h3_subheads(
+    monkeypatch, tmp_path,
+) -> None:
+    """Q10 must parse the full Discussion section. A non-anchored
+    lookahead used to stop at the first H3 subheading (`###`), so
+    deterministic anchors with H3s were counted as zero hedges."""
+    qdir = tmp_path / "empty"
+    qdir.mkdir()
+    monkeypatch.setattr(audit, "QUANT_DIR", qdir)
+    paper = (
+        "## Discussion\n\n"
+        "### Interpretation constraints\n\n"
+        "The finding may be preliminary and limited. It remains "
+        "uncertain, context-dependent, and warrants cautious reuse.\n\n"
+        "## Limitations\n\nDone.\n"
+    )
+    ok, msg = audit._check_hedge_density(paper)
+    assert ok is True
+    assert "0/" not in msg
+
+
 # ============ End-to-end: catches the grok-smart regression =============
 
 
