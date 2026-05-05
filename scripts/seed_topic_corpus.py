@@ -44,6 +44,11 @@ from agent.sources.aggregator import (  # noqa: E402
 from agent.topic_pack import (  # noqa: E402
     TopicPack, load_topic_pack,
 )
+from agent.wave_retrieval import run_waves  # noqa: E402
+from agent.retrieval_modes import resolve_params  # noqa: E402
+from agent.corpus_pipeline import (  # noqa: E402
+    classify_and_filter, format_funnel_md,
+)
 
 
 def _topic_pack_path(topic: str) -> Path:
@@ -99,65 +104,130 @@ async def _do_seed(
             "first (use topic_packs/metformin.toml as template)."
         )
     pack: TopicPack = load_topic_pack(pack_path)
-    if not pack.corpus_search_queries:
-        raise ValueError(
-            f"Topic pack {pack_path} has no corpus_search_queries. "
-            "Add at least one search query to enable auto-corpus."
-        )
 
     quant_dir, parsed_dir = _corpus_paths(topic)
     parsed_dir.mkdir(parents=True, exist_ok=True)
     quant_dir.mkdir(parents=True, exist_ok=True)
 
-    # 1. Fan-out search across all enabled sources
-    print(
-        f"=== Discovering corpus for topic={topic} ===\n"
-        f"Search queries: {len(pack.corpus_search_queries)}\n"
-        f"Active sources: see --list-sources",
-        file=sys.stderr,
-    )
-    all_hits = []
-    for query in pack.corpus_search_queries:
-        print(f"\n[query] {query}", file=sys.stderr)
-        hits = await discover(
-            query,
-            enabled_sources=sources,
-            limit_per_source=max_per_source,
-        )
+    # ===== Slice 7 step 3: dispatch on calibrated [retrieval] block =====
+    # If the pack has a [retrieval] block, run the wave-based
+    # calibrated retrieval + classify-before-extract gate. Only
+    # kept (core/background/adjacent) hits proceed to PMCID
+    # resolution + JATS fetch + extract. Drops 50-70% of CPU on
+    # papers that would have been classified out anyway.
+    #
+    # Legacy fallback: pack with only corpus_search_queries strings
+    # uses the old single-query loop (back-compat for unmigrated
+    # packs).
+
+    if pack.retrieval is not None:
         print(
-            f"  → {len(hits)} unique hits (after cross-source dedupe)",
+            f"=== Calibrated retrieval for topic={topic} ===\n"
+            f"  topic_terms     : {len(pack.retrieval.topic_terms)}\n"
+            f"  scope_terms     : {len(pack.retrieval.scope_terms)}\n"
+            f"  evidence_types  : {len(pack.retrieval.evidence_types)}\n"
+            f"  exclude_terms   : {len(pack.retrieval.exclude_terms)}\n"
+            f"  background_allow: "
+            f"{len(pack.retrieval.background_allow)}",
             file=sys.stderr,
         )
-        all_hits.extend(hits)
-
-    # Dedupe across queries (by DOI/PMID/title)
-    seen: set[str] = set()
-    deduped = []
-    for h in all_hits:
-        key = (
-            f"doi:{h.doi}" if h.doi
-            else f"pmid:{h.pmid}" if h.pmid
-            else f"title:{h.title.lower()[:80]}"
+        params = resolve_params("calibrated")
+        report = await run_waves(pack.retrieval, params=params)
+        manifest = classify_and_filter(
+            report, topic=topic,
+            topic_aliases=tuple(pack.aliases_display),
+            expected_slots=pack.expected_evidence_slots,
         )
-        if key in seen:
-            continue
-        seen.add(key)
-        deduped.append(h)
-    print(
-        f"\n=== {len(deduped)} unique candidates after cross-query "
-        "dedupe ===",
-        file=sys.stderr,
-    )
+        # Write the corpus manifest for the dashboard / funnel
+        manifest_path = (
+            REPO / "docs/quality-reference" / topic
+            / "corpus_manifest.json"
+        )
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        manifest_path.write_text(json.dumps({
+            "topic": manifest.topic,
+            "funnel": dict(manifest.funnel),
+            "per_wave_stats": [
+                dict(s) for s in manifest.per_wave_stats
+            ],
+            "n_kept": len(manifest.kept()),
+        }, indent=2))
+        (REPO / "docs/quality-reference" / topic
+         / "corpus_manifest.md").write_text(
+            format_funnel_md(manifest),
+        )
+        kept = manifest.kept()
+        print(
+            f"  → retrieved={manifest.funnel.get('retrieved', 0)} "
+            f"keep={len(kept)} "
+            f"core={manifest.funnel.get('extractable_core', 0)} "
+            f"bg={manifest.funnel.get('extractable_background', 0)}",
+            file=sys.stderr,
+        )
+        # Truncate to user-supplied --limit (caller can still bound
+        # extraction CPU). 200K+ extraction is impractical without
+        # parallelism that's not built yet.
+        selected = [e.hit for e in kept][:limit]
+        print(
+            f"=== Selecting top {len(selected)} kept hits for "
+            f"fetch (limit={limit}) ===",
+            file=sys.stderr,
+        )
+    else:
+        if not pack.corpus_search_queries:
+            raise ValueError(
+                f"Topic pack {pack_path} has no [retrieval] block "
+                f"AND no corpus_search_queries. Add one of them."
+            )
+        # 1. Fan-out search across all enabled sources (legacy path)
+        print(
+            f"=== Discovering corpus for topic={topic} (legacy) ===\n"
+            f"Search queries: {len(pack.corpus_search_queries)}\n"
+            f"Active sources: see --list-sources",
+            file=sys.stderr,
+        )
+        all_hits = []
+        for query in pack.corpus_search_queries:
+            print(f"\n[query] {query}", file=sys.stderr)
+            hits = await discover(
+                query,
+                enabled_sources=sources,
+                limit_per_source=max_per_source,
+            )
+            print(
+                f"  → {len(hits)} unique hits (after cross-source dedupe)",
+                file=sys.stderr,
+            )
+            all_hits.extend(hits)
 
-    # Rank: more sources first, then year desc
-    deduped.sort(
-        key=lambda h: (-h.n_sources, -(h.year or 0)),
-    )
-    selected = deduped[:limit]
-    print(
-        f"=== Selecting top {len(selected)} for fetch ===",
-        file=sys.stderr,
-    )
+        # Dedupe across queries (by DOI/PMID/title)
+        seen: set[str] = set()
+        deduped = []
+        for h in all_hits:
+            key = (
+                f"doi:{h.doi}" if h.doi
+                else f"pmid:{h.pmid}" if h.pmid
+                else f"title:{h.title.lower()[:80]}"
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            deduped.append(h)
+        print(
+            f"\n=== {len(deduped)} unique candidates after cross-query "
+            "dedupe ===",
+            file=sys.stderr,
+        )
+
+        # Rank: more sources first, then year desc
+        deduped.sort(
+            key=lambda h: (-h.n_sources, -(h.year or 0)),
+        )
+        selected = deduped[:limit]
+        print(
+            f"=== Selecting top {len(selected)} for fetch ===",
+            file=sys.stderr,
+        )
 
     # 2. Resolve PMCIDs (for full-text fetch)
     import httpx
@@ -283,11 +353,11 @@ def main(argv: list[str] | None = None) -> int:
              "(e.g. metformin, rapamycin, GLP-1, statins).",
     )
     parser.add_argument(
-        "--limit", type=int, default=30,
+        "--limit", type=int, default=500,
         help="Max papers to fetch per topic (default: 30).",
     )
     parser.add_argument(
-        "--max-per-source", type=int, default=15,
+        "--max-per-source", type=int, default=200,
         help="Max hits per source per query (default: 15).",
     )
     parser.add_argument(
